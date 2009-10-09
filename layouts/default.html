@@ -1,0 +1,222 @@
+-----
+
+# les representations (un par langue + une multi)
+reps:
+  default: {}
+  fr: {}
+  en: {}
+
+# les langues
+languages:
+    - fr
+    - en
+
+# les formats de date en fonction de la langue
+dateFormat:
+    fr: "%d/%m/%Y"
+    en: "%m/%d/%Y"
+
+# le dictionnaire pour les mots communs
+translations:
+    langue: 
+        fr: "langue"
+        en: "language"
+    liens:
+        fr: "liens"
+        en: "links"
+    telecharger:
+        fr: "télécharger"
+        en: "download"
+    nojsclickme:
+        fr: "Javascript semble désactivé ;<br/> cliquez ici"
+        en: "Javascript seems disabled <br/> click on me"
+    suivant:
+        fr: "suivant"
+        en: "next"
+    precedent:
+        fr: "précédent"
+        en: "previous"
+    comment:
+        fr: "commentaires"
+        en: "comments"
+    onlyin:
+        fr: "Seulement en"
+        fr: "Only in"
+
+-----
+<?xml version="1.0" encoding="utf-8"?>
+<%
+# init variables
+multi=( @item_rep.name == :default )    # the current rep is the multi one
+language=( @item_rep.name )             # the current rep language (if not multi)
+article=( ( not @item[:kind].nil? ) && @item[:kind] == 'article' )    # the current item is an article
+blog=( ( not @item[:kind].nil? ) && @item[:kind] == 'blog' )          # the current item is a blog entry page
+languages=@item[:languages]              # all supported languages
+if languages.nil?
+    puts "ERROR: nil languages"
+    languages=[:fr,:en]
+end
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/shadows.css" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/gen.css" />
+<% if article %>
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/originaldisqus.css" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/disqus.css" />
+<% end %>
+<% if article or blog %>
+    <% if multi %>
+        <% languages.each do |lang| %>
+    <link rel="alternate" type="application/rss+xml" title="RSS in <%= lang %>" href="http://feeds.feedburner.com/yannespositocom<%= lang %>"/>
+        <% end %>
+    <% else %>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocom<%= language %>">
+    <% end %>
+<% end %>
+<% if multi %>
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/js.css" />
+    <% languages.each do |lang| %>
+    <link rel="alternate" lang="<%= lang %>" xml:lang="<%= lang %>" title="<%= @item_rep[:multiTitle][lang] %>" type="text/html" hreflang="<%= lang %>" href="<%= @item[:path].sub(/multi/,lang) %>" />
+    <% end %>
+    <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/Scratch/js/jquery.ga.js"></script>
+    <script type="text/javascript" src="/Scratch/js/index.js"></script>
+    <title>Yann Esposito</title>
+<% else %>
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/nojs.css" />
+    <title>Yogsototh's Blog - <%= multiPageTitle %></title>
+<% end %>
+</head>
+<body>
+    <% if multi %>
+    <noscript>
+    <div id="blackpage"></div>
+    <div id="nojsredirect">
+        <% languages.each do |lang| %>
+        <div class="nojsbutton">
+        <a href="<%= @item[:path].sub(/multi/,lang) %>">
+        <%= tradOfKeywordIn(:nojsclickme,lang) %>
+        </a>
+        </div>
+        <% end %>
+    </div>
+    </noscript>
+    <% end %>
+
+    <div id="content">
+
+        <div id="entete">
+            <div id="titre">
+                <h1>
+                    <%= multiTitleFor(@page) %>
+                </h1>
+            </div>
+            <% if article or blog %>
+            <div id="rss">
+                <% if multi %>
+                    <% languages.each do |lang| %>
+                <span class="<%=lang%>"><a href="http://feeds.feedburner.com/yannespositocom<%=lang%>">RSS</a></span>
+                    <% end %>
+                <% else %>
+                    <span class="<%=@item_rep.name%>"><a href="http://feeds.feedburner.com/yannespositocom<%= language %>">RSS</a></span>
+                <% end %>
+            </div>
+            <% end %>
+            <% unless @item[multiSubTitle].nil? %> 
+            <div class="flush"></div>
+            <h2>
+                <%= multiSubTitleFor(@page) %>
+            </h2>
+            <% end %>
+            <div id="choix"> 
+                <%= tradOf(:langue) %>
+                <%= generateLanguageChoice %>
+            </div>
+            <div class="flush"></div>
+            <div id="liens">
+                <% if article %>
+                <%= generateMultiMenuForBlog %>
+                <% else %>
+                <%= generateMultiMenu %>
+                <% end %>
+            </div>
+            <div class="ombre"></div>
+        </div>
+
+        <div class="flush"></div>
+
+        <% if article  and depthOf(@page) == 2 %>
+            <% if hasPrevious(@page) %>
+            <%= previousArticleFor(@page) %>
+            <% end %>
+            <% if hasNext(@page) %>
+            <%= nextArticleFor(@page) %>
+            <% end %>
+            <div class="flush"></div>
+        <% end %>
+
+        <%= generateMultiSubMenuFor(@page) %>
+    
+        <div class="flush"></div>
+        <%= generateLanguageOnlyTag %>
+        <div id="afterheader">
+
+            <div class="corps">
+                <%= @item_rep[content] %>
+            </div>
+
+            <% if article  %>
+                <% if depthOf(@page) == 3 %>
+            <div class="navigation">
+                <%= previousFor(@page) %>
+                <%= nextFor(@page) %>
+            </div>
+            <div class="flush"></div>
+                <% end %>
+
+        <% if article %> 
+          <%= generateAddThisButton %>
+        <% end %>
+
+            <div class="corps" id="comment">
+                <h2><%= tradOf(:comment) %></h2>
+                <%= generateDisqusThread %>
+            </div>
+            <% end %>
+
+            <div id="bottom">
+                <div>
+                en:Entirely done with:: 
+                fr:Site entièrement réalisé avec::
+                <a href="http://www.vim.org">Vim</a>
+                fr:et::en:and:: 
+                <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <% validationPage = @items.find{ |p| p[:path] == '/Scratch/multi/validation/' } %>
+                <%= span_multi_link_to_unless_current( {:en => "Validation: ", :fr => "Validation : "}, validationPage) %>
+                <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                .
+                <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                .
+                <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml" class="en">[rss]</a>
+                <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml" class="fr">[rss]</a>
+                </div>
+                <div id="lastmod">
+                <en>Last modified: <%= @item[:mtime].strftime("%m/%d/%Y") %> </en>
+                <fr>dernière modification: <%= @item[:mtime].strftime("%d/%m/%Y") %> </fr>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</body>
+</html>

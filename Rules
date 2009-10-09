@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+# default
+compile '*' do
+  filter :erb
+  layout 'default'
+end
+route '*' do
+  '/multi' + item.identifier + 'index.html'
+end
+
+# fr
+compile '*', :rep => :fr do
+  filter :erb
+  layout 'default'
+end
+route '*', :rep => :fr do
+  '/fr' + item.identifier + 'index.html'
+end
+
+# en
+compile '*', :rep => :en do
+  filter :erb
+  layout 'default'
+end
+route '*', :rep => :en do
+  '/en' + item.identifier + 'index.html'
+end
+
+layout '*', :erb
