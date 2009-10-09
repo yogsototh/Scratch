@@ -1,0 +1,6 @@
+*.swp
+.DS_Store
+output/Scratch/en
+output/Scratch/fr
+output/Scratch/multi
+output/Scratch/map.yrf
