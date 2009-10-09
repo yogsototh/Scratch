@@ -83,7 +83,7 @@ end
 <% if multi %>
     <link rel="stylesheet" type="text/css" href="/Scratch/css/js.css" />
     <% languages.each do |lang| %>
-    <link rel="alternate" lang="<%= lang %>" xml:lang="<%= lang %>" title="<%= @item[:multiTitle][lang] %>" type="text/html" hreflang="<%= lang %>" href="<%= @item_rep.path.sub(/multi/,lang) %>" />
+    <link rel="alternate" lang="<%= lang %>" xml:lang="<%= lang %>" title="<%= @item[:multiTitle][lang] %>" type="text/html" hreflang="<%= lang %>" href="<%= puts %{@item_rep.path.sub(/multi/,lang)} %>" />
     <% end %>
     <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
     <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
@@ -92,7 +92,7 @@ end
     <title>Yann Esposito</title>
 <% else %>
     <link rel="stylesheet" type="text/css" href="/Scratch/css/nojs.css" />
-    <title>Yogsototh's Blog - <%= multiPageTitle %></title>
+    <title>Yogsototh's Blog - <%= puts %{multiPageTitle} %></title>
 <% end %>
 </head>
 <body>
@@ -102,8 +102,8 @@ end
     <div id="nojsredirect">
         <% languages.each do |lang| %>
         <div class="nojsbutton">
-        <a href="<%= @item_rep.path.sub(/multi/,lang) %>">
-        <%= tradOfKeywordIn(:nojsclickme,lang) %>
+            <a href="<%= puts %{@item_rep.path.sub(/multi/,lang)} %>">
+                <%= puts %{tradOfKeywordIn(:nojsclickme,lang)} %>
         </a>
         </div>
         <% end %>
@@ -116,7 +116,7 @@ end
         <div id="entete">
             <div id="titre">
                 <h1>
-                    <%= multiTitleFor(@page) %>
+                    <%= puts %{multiTitleFor(@page)} %>
                 </h1>
             </div>
             <% if article or blog %>
@@ -137,15 +137,15 @@ end
             </h2>
             <% end %>
             <div id="choix"> 
-                <%= tradOf(:langue) %>
-                <%= generateLanguageChoice %>
+                <%= puts %{tradOf(:langue)} %>
+                <%= puts %{generateLanguageChoice} %>
             </div>
             <div class="flush"></div>
             <div id="liens">
                 <% if article %>
-                <%= generateMultiMenuForBlog %>
+                <%= puts %{generateMultiMenuForBlog} %>
                 <% else %>
-                <%= generateMultiMenu %>
+                <%= puts %{generateMultiMenu} %>
                 <% end %>
             </div>
             <div class="ombre"></div>
@@ -163,14 +163,14 @@ end
             <div class="flush"></div>
         <% end %>
 
-        <%= generateMultiSubMenuFor(@page) %>
+        <%= puts %{generateMultiSubMenuFor(@page)} %>
     
         <div class="flush"></div>
-        <%= generateLanguageOnlyTag %>
+        <%= puts %{generateLanguageOnlyTag} %>
         <div id="afterheader">
 
             <div class="corps">
-                <%= @item_rep[:content] %>
+                <%= yield %>
             </div>
 
             <% if article  %>
@@ -201,8 +201,8 @@ end
                 <a href="http://nanoc.stoneship.org">nanoc</a>
                 </div>
                 <div>
-                    <% validationPage = @items.find{ |p| p[:path] == '/Scratch/multi/validation/' } %>
-                <%= span_multi_link_to_unless_current( {:en => "Validation: ", :fr => "Validation : "}, validationPage) %>
+                    <% puts %{validationPage = @items.each{ |p| p.path == '/Scratch/multi/validation/' } } %>
+                    <%= puts %{span_multi_link_to_unless_current( {:en => "Validation: ", :fr => "Validation : "}, validationPage)} %>
                 <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
                 .
                 <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
@@ -211,8 +211,8 @@ end
                 <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml" class="fr">[rss]</a>
                 </div>
                 <div id="lastmod">
-                <en>Last modified: <%= @item[:mtime].strftime("%m/%d/%Y") %> </en>
-                <fr>dernière modification: <%= @item[:mtime].strftime("%d/%m/%Y") %> </fr>
+                <en>Last modified: <%= @item.mtime.strftime("%m/%d/%Y") %> </en>
+                <fr>dernière modification: <%= @item.mtime.strftime("%d/%m/%Y") %> </fr>
                 </div>
             </div>
             <div class="clear"></div>
