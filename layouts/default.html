@@ -8,10 +8,20 @@
 
 -----
 <%
+
 # -- init variables --
 
 class LocalConf
     attr_accessor :multi, :blog, :article, :languages, :language, :indent
+    def to_s
+        instance_variables.map{ |x| 
+            if instance_variable_get(x).class == Array
+                %{#{x.intern}=  [#{instance_variable_get(x).join(', ')}]} 
+            else
+                %{#{x.intern}=  #{instance_variable_get(x)}} 
+            end
+        }
+    end
 end
 
 conf=LocalConf.new
@@ -32,16 +42,12 @@ conf.blog=blog
 languages=@config[:languages]
 conf.languages=languages
 
+self.instance_variable_set(:@conf, conf)
 
-puts "YYY"
-puts %{multi=     #{conf.multi}}
-puts %{article=   #{conf.article}}
-puts %{language=  #{conf.language}}
-puts %{blog=      #{conf.blog}}
-puts %{languages= [#{conf.languages.join(", ")}]}
-puts "YYY"
+puts '---'
+# puts conf.to_s
 
-%><?xml version="1.0" encoding="utf-8"?>
+    %><?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
@@ -51,42 +57,46 @@ puts "YYY"
     <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/layout.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/gen.css" />
-    <%= conf.indent='    '; feeds(conf) %>
+    <%= conf.indent='    '; feeds %>
 <% if multi %>
     <link rel="stylesheet" type="text/css" href="/Scratch/css/js.css" />
-    <% alternate(conf) %>
+    <% alternate %>
     <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
     <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/Scratch/js/jquery.ga.js"></script>
     <script type="text/javascript" src="/Scratch/js/index.js"></script>
-    <title>Yann Esposito</title>
+    <title>Yogsototh's Blog</title>
 <% else %>
     <link rel="stylesheet" type="text/css" href="/Scratch/css/nojs.css" />
-    <title>Yogsototh's Blog - <%= puts %{multiPageTitle} %></title>
+    <title>Yogsototh's Blog - <%= multiPageTitle %></title>
 <% end %>
 </head>
 <body>
     <% if multi %>
     <noscript>
     <div id="blackpage"></div>
-    <div id="nojsredirect">
-        <% languages.each do |lang| %>
+    <div id="nojsredirect"><% 
+        # verrue pour l'index
+        chemin=@item_rep.path
+        if chemin == '/'
+            chemin = '/Scratch/multi/'
+        end
+        # fin de verrue
+        languages.each do |lang| %>
         <div class="nojsbutton">
-            <a href="<%= puts %{@item_rep.path.sub(/multi/,lang)} %>">
-                <%= puts %{tradOfKeywordIn(:nojsclickme,lang)} %>
-        </a>
-        </div>
-        <% end %>
+            <a href="<%= chemin.sub(/multi/,lang) %>">
+                <%= tradOfKeywordIn(:nojsclickme,lang) %>
+            </a>
+        </div><% 
+        end %>
     </div>
     </noscript>
     <% end %>
-
     <div id="content">
-
         <div id="entete">
             <div id="titre">
                 <h1>
-                    <%= puts %{multiTitleFor(@page)} %>
+                    <%= multiTitle %>
                 </h1>
             </div>
             <% if article or blog %>
@@ -96,7 +106,7 @@ puts "YYY"
                 <span class="<%=lang%>"><a href="http://feeds.feedburner.com/yannespositocom<%=lang%>">RSS</a></span>
                     <% end %>
                 <% else %>
-                    <span class="<%=@item_rep.name%>"><a href="http://feeds.feedburner.com/yannespositocom<%= language %>">RSS</a></span>
+                <span class="<%=@item_rep.name%>"><a href="http://feeds.feedburner.com/yannespositocom<%= language %>">RSS</a></span>
                 <% end %>
             </div>
             <% end %>
@@ -122,6 +132,12 @@ puts "YYY"
         </div>
 
         <div class="flush"></div>
+
+        <% if @item[:content_for_summary] %>
+            <div class="summary">
+                <% @item[:content_for_summary] %>
+            </div>
+        <% end %>
 
         <% if article  and depthOf(@page) == 2 %>
             <% if hasPrevious(@page) %>
