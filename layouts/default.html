@@ -1,62 +1,47 @@
 -----
 
-# les representations (un par langue + une multi)
-reps:
-  default: {}
-  fr: {}
-  en: {}
-
-# les langues
-languages:
-    - fr
-    - en
-
-# les formats de date en fonction de la langue
-dateFormat:
-    fr: "%d/%m/%Y"
-    en: "%m/%d/%Y"
-
-# le dictionnaire pour les mots communs
-translations:
-    langue: 
-        fr: "langue"
-        en: "language"
-    liens:
-        fr: "liens"
-        en: "links"
-    telecharger:
-        fr: "télécharger"
-        en: "download"
-    nojsclickme:
-        fr: "Javascript semble désactivé ;<br/> cliquez ici"
-        en: "Javascript seems disabled <br/> click on me"
-    suivant:
-        fr: "suivant"
-        en: "next"
-    precedent:
-        fr: "précédent"
-        en: "previous"
-    comment:
-        fr: "commentaires"
-        en: "comments"
-    onlyin:
-        fr: "Seulement en"
-        fr: "Only in"
+# # les representations (une par langue + une multi)
+# reps:
+#   default: {}
+#   en: {}
+#   fr: {}
 
 -----
-<?xml version="1.0" encoding="utf-8"?>
 <%
-# init variables
-multi=( @item_rep.name == :default )    # the current rep is the multi one
-language=( @item_rep.name )             # the current rep language (if not multi)
-article=( ( not @item[:kind].nil? ) && @item[:kind] == 'article' )    # the current item is an article
-blog=( ( not @item[:kind].nil? ) && @item[:kind] == 'blog' )          # the current item is a blog entry page
-languages=@item[:languages]              # all supported languages
-if languages.nil?
-    puts "ERROR: nil languages"
-    languages=[:fr,:en]
+# -- init variables --
+
+class LocalConf
+    attr_accessor :multi, :blog, :article, :languages, :language, :indent
 end
-%>
+
+conf=LocalConf.new
+
+# the current rep is the multi one
+multi=      ( @item_rep.name == :default )
+conf.multi=multi
+# the current item is an article
+article=    ( ( not @item[:kind].nil? ) && @item[:kind] == 'article' )
+conf.article=article
+# the current rep language (if not multi)
+language=   ( @item_rep.name )
+conf.language=language
+# the current item is a blog entry page
+blog=       ( ( not @item[:kind].nil? ) && @item[:kind] == 'blog' )
+conf.blog=blog
+# all supported languages
+languages=@config[:languages]
+conf.languages=languages
+
+
+puts "YYY"
+puts %{multi=     #{conf.multi}}
+puts %{article=   #{conf.article}}
+puts %{language=  #{conf.language}}
+puts %{blog=      #{conf.blog}}
+puts %{languages= [#{conf.languages.join(", ")}]}
+puts "YYY"
+
+%><?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
@@ -65,26 +50,11 @@ end
     <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/layout.css" />
-    <link rel="stylesheet" type="text/css" href="/Scratch/css/shadows.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/gen.css" />
-<% if article %>
-    <link rel="stylesheet" type="text/css" href="/Scratch/css/originaldisqus.css" />
-    <link rel="stylesheet" type="text/css" href="/Scratch/css/disqus.css" />
-<% end %>
-<% if article or blog %>
-    <% if multi %>
-        <% languages.each do |lang| %>
-    <link rel="alternate" type="application/rss+xml" title="RSS in <%= lang %>" href="http://feeds.feedburner.com/yannespositocom<%= lang %>"/>
-        <% end %>
-    <% else %>
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocom<%= language %>">
-    <% end %>
-<% end %>
+    <%= conf.indent='    '; feeds(conf) %>
 <% if multi %>
     <link rel="stylesheet" type="text/css" href="/Scratch/css/js.css" />
-    <% languages.each do |lang| %>
-    <link rel="alternate" lang="<%= lang %>" xml:lang="<%= lang %>" title="<%= @item[:multiTitle][lang] %>" type="text/html" hreflang="<%= lang %>" href="<%= puts %{@item_rep.path.sub(/multi/,lang)} %>" />
-    <% end %>
+    <% alternate(conf) %>
     <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
     <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/Scratch/js/jquery.ga.js"></script>

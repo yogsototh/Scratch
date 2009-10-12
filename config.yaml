@@ -3,4 +3,41 @@ data_sources:
 - items_root: /
   layouts_root: /
   type: filesystem_combined
-output_dir: output/Scratch
+output_dir: output/
+
+# les langues
+languages:
+    - fr
+    - en
+
+# les formats de date en fonction de la langue
+dateFormat:
+    fr: "%d/%m/%Y"
+    en: "%m/%d/%Y"
+
+# le dictionnaire pour les mots communs
+translations:
+    langue: 
+        fr: "langue"
+        en: "language"
+    liens:
+        fr: "liens"
+        en: "links"
+    telecharger:
+        fr: "télécharger"
+        en: "download"
+    nojsclickme:
+        fr: "Javascript semble désactivé ;<br/> cliquez ici"
+        en: "Javascript seems disabled <br/> click on me"
+    suivant:
+        fr: "suivant"
+        en: "next"
+    precedent:
+        fr: "précédent"
+        en: "previous"
+    comment:
+        fr: "commentaires"
+        en: "comments"
+    onlyin:
+        fr: "Seulement en"
+        fr: "Only in"
