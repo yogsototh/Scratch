@@ -8,9 +8,7 @@
 
 -----
 <%
-
 # -- init variables --
-
 class LocalConf
     attr_accessor :multi, :blog, :article, :languages, :language, :indent
     def to_s
@@ -56,6 +54,7 @@ puts '---'
     <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/shadows.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/gen.css" />
     <%= conf.indent='    '; feeds %>
 <% if multi %>
@@ -74,9 +73,12 @@ puts '---'
 <body>
     <% if multi %>
     <noscript>
-    <div id="blackpage"></div>
+    <div id="blackpage">
+        <p>Loading...</p>
+        <img src="/Scratch/img/loading.gif" alt="loading logo"/>
+    </div>
     <div id="nojsredirect"><% 
-        # verrue pour l'index
+        # verrue pour l'index principal du site
         chemin=@item_rep.path
         if chemin == '/'
             chemin = '/Scratch/multi/'
@@ -92,61 +94,65 @@ puts '---'
     </div>
     </noscript>
     <% end %>
-    <div id="content">
-        <div id="entete">
-            <div id="titre">
-                <h1>
-                    <%= multiTitle %>
-                </h1>
-            </div>
-            <% if article or blog %>
-            <div id="rss">
-                <% if multi %>
-                    <% languages.each do |lang| %>
-                <span class="<%=lang%>"><a href="http://feeds.feedburner.com/yannespositocom<%=lang%>">RSS</a></span>
-                    <% end %>
-                <% else %>
-                <span class="<%=@item_rep.name%>"><a href="http://feeds.feedburner.com/yannespositocom<%= language %>">RSS</a></span>
+    <div id="entete">
+        <div id="rss">
+            <% if multi %>
+                <% languages.each do |lang| %>
+            <span class="<%=lang%>">
+                <a href="http://feeds.feedburner.com/yannespositocom<%=lang%>">
+                    <img src="/Scratch/img/menu/rss-128.png" alt="rss" height="32"/>
+                </a>
+                <sup>
+                    <a href="/Scratch/multi/rss"><%= tradOf('whatsthis') %></a>
+                </sup>
+            </span>
                 <% end %>
-            </div>
+            <% else %>
+            <span class="<%=@item_rep.name%>">
+                <a href="http://feeds.feedburner.com/yannespositocom<%= language %>">
+                    <img src="/Scratch/img/menu/rss-128.png" alt="rss" height="32"/>
+                </a>
+                <sup>
+                    <a href="/Scratch/multi/rss"><%= tradOf('whatsthis') %></a>
+                </sup>
+            </span>
             <% end %>
+        </div>
+        <div id="choix"> 
+            <%= puts %{tradOf(:langue)} %>
+            <%= puts %{generateLanguageChoice} %>
+        </div>
+        <div id="liens">
+            <% if article %>
+            <%= puts %{generateMultiMenuForBlog} %>
+            <% else %>
+            <%= puts %{generateMultiMenu} %>
+            <% end %>
+        </div>
+    </div>
+
+    <% if multi %>
+    <div id="menuButton"></div>
+    <% end %>
+
+    <div id="content">
+        <div id="titre">
+            <h1>
+                <%= multiTitle %>
+            </h1>
             <% unless @item[:multiSubTitle].nil? %> 
-            <div class="flush"></div>
             <h2>
                 <%= multiSubTitleFor(@page) %>
             </h2>
             <% end %>
-            <div id="choix"> 
-                <%= puts %{tradOf(:langue)} %>
-                <%= puts %{generateLanguageChoice} %>
-            </div>
-            <div class="flush"></div>
-            <div id="liens">
-                <% if article %>
-                <%= puts %{generateMultiMenuForBlog} %>
-                <% else %>
-                <%= puts %{generateMultiMenu} %>
-                <% end %>
-            </div>
-            <div class="ombre"></div>
         </div>
 
         <div class="flush"></div>
 
         <% if @item[:content_for_summary] %>
-            <div class="summary">
+            <div class="corps summary">
                 <% @item[:content_for_summary] %>
             </div>
-        <% end %>
-
-        <% if article  and depthOf(@page) == 2 %>
-            <% if hasPrevious(@page) %>
-            <%= previousArticleFor(@page) %>
-            <% end %>
-            <% if hasNext(@page) %>
-            <%= nextArticleFor(@page) %>
-            <% end %>
-            <div class="flush"></div>
         <% end %>
 
         <%= puts %{generateMultiSubMenuFor(@page)} %>
@@ -159,14 +165,14 @@ puts '---'
                 <%= yield %>
             </div>
 
-            <% if article  %>
+        <% if article  %>
                 <% if depthOf(@page) == 3 %>
             <div class="navigation">
                 <%= previousFor(@page) %>
                 <%= nextFor(@page) %>
             </div>
             <div class="flush"></div>
-                <% end %>
+        <% end %>
 
         <% if article %> 
           <%= generateAddThisButton %>
@@ -195,6 +201,10 @@ puts '---'
                 .
                 <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml" class="en">[rss]</a>
                 <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml" class="fr">[rss]</a>
+                </div>
+                <div>
+                    <en><a href="http://creativecommons.org/licenses/by-sa/2.5/deed.en">Copyright©</a></en>
+                    <fr><a href="http://creativecommons.org/licenses/by-sa/2.5/deed.fr">Droits de reproduction ©</a></fr>
                 </div>
                 <div id="lastmod">
                 <en>Last modified: <%= @item.mtime.strftime("%m/%d/%Y") %> </en>

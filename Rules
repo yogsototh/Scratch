@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
 
+# engendrement des fichiers html
+
 # page d'Accueil
-route '/' do
-    '/index.html'
-end
+# route '/' do
+#     '/index.html'
+# end
 
 # default
 # rep => :default est sous-entendu
@@ -34,3 +36,4 @@ route '*', :rep => :en do
 end
 
 layout '*', :erb
+
