@@ -29,12 +29,13 @@ binary: false
     :style solid
     :width 1px
   :color = !texte_normal
-  a, a:link 
+  a, 
+  a:link 
     color: #a00
-  a:visited 
-    color: #a00 
-  a:active, a:hover
-    color: #f00
+    &:visited 
+      color: #a00 
+    &:active, &:hover
+      color: #f00
 
 =black
   :text-shadow 0 1px #000
@@ -47,12 +48,13 @@ binary: false
     :style solid
     :width 1px
   color: #eee
-  a, a:link
+  a, 
+  a:link
     :color #ddd
-  a:visited
-    :color = !blanc_fonce
-  a:active, a:hover
-    :color #cc0000
+    &:visited
+      :color = !blanc_fonce
+    &:active, &:hover
+      :color #cc0000
 
 =red
   :background
@@ -61,14 +63,15 @@ binary: false
     :color = !rouge_fonce
   :border-color = !rouge_fonce
   color: #fff
-  a, a:link
+  a, 
+  a:link
     :font-weight bold
     :text-decoration none
     :color #eee
-  a:visited
-    :color = !blanc_fonce
-  a:active, a:hover
-    :color #fff
+    &:visited
+      :color = !blanc_fonce
+    &:active, &:hover
+      :color #fff
 
 =smallblock
   background-position: 50% 50%
@@ -178,20 +181,23 @@ binary: false
   +white
   :text-weight bold
   :font-size 1.3em
-  a, a:link
-    :color = !texte_attenue
+  a, 
+  a:link,
   a:visited 
     :color = !texte_attenue
-  a:active, a:hover
-    color = !rouge_clair
+    &:active, &:hover
+      color = !rouge_clair
 
 .corps
   +white
-  a, a:link, a:visited 
+  a, 
+  a:link, 
+  a:visited 
     color = !rouge_fonce
     font-weight: normal
-  a:active, a:hover
-    color: #f00
+    &:active, 
+    &:hover
+      color: #f00
 
 a.navigationprev, 
 a.navigationnext
@@ -375,18 +381,19 @@ body
 //    :image url('../../css/img/background.jpg')
 //    :attachment fixed
 
-a 
+a, 
+a:link 
   :font-weight     bold
   :text-decoration none
-a, a:link 
   color: #a00
   outline: none
-a:visited 
-  color: #a00 
-  outline: none
-a:active, a:hover
-  color: #f00
-  outline: none
+  &:visited 
+    color: #a00 
+    outline: none
+  &:active, 
+  &:hover
+    color: #f00
+    outline: none
 
 ul 
   :list-style square
@@ -416,11 +423,11 @@ ul
   a,
   a:link 
     :color #ddd 
-  a:visited
-    :color = !blanc_fonce
-  a:active, 
-  a:hover
-    color: #cc0000
+    &:visited
+      :color = !blanc_fonce
+    &:active, 
+    &:hover
+      color: #cc0000
 
 // --- les fontes
 #boutonMessage 
