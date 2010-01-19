@@ -40,4 +40,10 @@ translations:
         en: "comments"
     onlyin:
         fr: "Seulement en"
-        fr: "Only in"
+        en: "Only in"
+    whatsthis:
+        fr: "?"
+        en: "?"
+    loading:
+        fr: "Chargement en cours..."
+        en: "loading..."

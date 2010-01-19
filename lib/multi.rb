@@ -23,6 +23,7 @@ def tradOfKeywordIn(keyword, language)
 end
 
 def item_of_language(language)
-    puts %{lib/multi::item_of_language not implemented yet}
-    return @item
+    searched_path=@item_rep.path.sub(@conf.language,language) 
+    puts %{source path = #{@item_rep.path}, searched_path = #{searched_path}}
+    @items.find { |i| i.reps[0].path == searched_path }
 end

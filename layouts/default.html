@@ -17,8 +17,7 @@ end
 
 conf=LocalConf.new
 
-language=@item_rep.path
-language.sub!(/\/Scratch\//,'').sub!(/\/.*$/,'')
+language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'')
 conf.language=language
 
 # the current item is an article
