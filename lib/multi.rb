@@ -1,30 +1,5 @@
-def multiPageTitle
-    if @conf.multi
-        @item.title
-    else
-        @item[:multiTitle][@conf.language]
-    end
-end
-
-def multiTitle
-    multiTitleFor(@item)
-end
-
-def multiTitleFor(item)
-    begin
-        if @conf.multi
-            @conf.languages.map{ |l| %{<span class="#{l}">#{item[:multiTitle][l.intern]}</span>} }.join("\n")
-        else
-            item[:multiTitle][@conf.language]
-        end
-    rescue 
-        puts "ERROR (lib/multi.rb) certainement pas d'attribut multiTitle"
-        return item[:title]
-    end
-end
-
 def tradOf(keyword)
-    
+    tradOfKeywordIn(keyword, @conf.language )    
 end
 
 def tradOfKeywordIn(keyword, language) 
@@ -45,4 +20,9 @@ def tradOfKeywordIn(keyword, language)
         end
         return '[Sorry Translation Error]'
     end
+end
+
+def item_of_language(language)
+    puts %{lib/multi::item_of_language not implemented yet}
+    return @item
 end

@@ -3,36 +3,25 @@
 # engendrement des fichiers html
 
 # page d'Accueil
-# route '/' do
-#     '/index.html'
-# end
+#route '/' do
+#    '/index.html'
+#end
 
-# default
-# rep => :default est sous-entendu
-compile '*' do
+# CSS
+compile '/css/*' do
+    filter :sass
+end
+route '/css/*' do
+    '/Scratch' + item.identifier.chop + '.css'
+end
+
+# HTML
+compile '/html/*' do
   filter :erb
   layout 'default'
 end
-route '*' do
-  '/Scratch/multi' + item.identifier + 'index.html'
-end
-
-# fr
-compile '*', :rep => :fr do
-  filter :erb
-  layout 'default'
-end
-route '*', :rep => :fr do
-  '/Scratch/fr' + item.identifier + 'index.html'
-end
-
-# en
-compile '*', :rep => :en do
-  filter :erb
-  layout 'default'
-end
-route '*', :rep => :en do
-  '/Scratch/en' + item.identifier + 'index.html'
+route '/html/*' do
+  '/Scratch' + item.identifier.sub('/html','') + 'index.html'
 end
 
 layout '*', :erb

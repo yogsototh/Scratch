@@ -1,0 +1,610 @@
+-----
+# Built-in
+filters:
+    - sass
+binary: false
+
+# Custom 
+
+-----
+!rouge_clair = #cc0000
+!rouge_fonce = #6c0000
+!blanc_fonce = #cccccc
+!gris_fonce = #888888
+!texte_normal = #222222
+!texte_attenue = #666666
+
+!tiny_radius = 10px
+!small_radius = 20px
+!large_radius = 27px
+
+=white
+  :text-shadow 0 1px #EEEEEE
+  :background
+    :image url("../../css/img/white.jpg")
+    :repeat no-repeat
+    :color = !blanc_fonce
+  :border
+    :color = !gris_fonce
+    :style solid
+    :width 1px
+  :color = !texte_normal
+  a, a:link 
+    color: #a00
+  a:visited 
+    color: #a00 
+  a:active, a:hover
+    color: #f00
+
+=black
+  :text-shadow 0 1px #000
+  :background
+    :image  url("../../css/img/black.jpg")
+    :repeat no-repeat
+    :color  #000
+  :border
+    :color #666
+    :style solid
+    :width 1px
+  color: #eee
+  a, a:link
+    :color #ddd
+  a:visited
+    :color = !blanc_fonce
+  a:active, a:hover
+    :color #cc0000
+
+=red
+  :background
+    :image url("../../css/img/red.jpg")
+    :repeat no-repeat
+    :color = !rouge_fonce
+  :border-color = !rouge_fonce
+  color: #fff
+  a, a:link
+    :font-weight bold
+    :text-decoration none
+    :color #eee
+  a:visited
+    :color = !blanc_fonce
+  a:active, a:hover
+    :color #fff
+
+=smallblock
+  background-position: 50% 50%
+
+=largeblock
+  background-position: 50% 0%
+
+=tinyround
+  :border
+    :style solid
+    :width 1px 1px 1px 1px
+  :-moz-border-radius
+    :topleft 1px
+    :topright = !tiny_radius
+    :bottomleft = !tiny_radius
+    :bottomright = !tiny_radius
+  :-webkit-border
+    :top-left-radius = 1px
+    :top-right-radius = !tiny_radius
+    :bottom-left-radius = !tiny_radius
+    :bottom-right-radius = !tiny_radius
+
+=downsmallround
+  :border none
+  :-moz-border-radius
+    :topleft = 0px
+    :topright = 0px
+    :bottomleft = !small_radius
+    :bottomright = !small_radius
+  :-webkit-border
+    :top-left-radius = 0px
+    :top-right-radius = 0px
+    :bottom-left-radius = !small_radius
+    :bottom-right-radius = !small_radius
+
+=smallround
+  :border
+    :style solid
+    :width 1px 1px 1px 1px
+  :-moz-border-radius
+    :topleft 1px
+    :topright = !small_radius
+    :bottomleft = !small_radius
+    :bottomright = !small_radius
+  :-webkit-border
+    :top-left-radius = 1px
+    :top-right-radius = !small_radius
+    :bottom-left-radius = !small_radius
+    :bottom-right-radius = !small_radius
+
+=largeround
+  :border
+    :style solid
+    :width 1px
+  :-moz-border-radius
+    :topleft 1px
+    :topright = !large_radius
+    :bottomleft = !large_radius
+    :bottomright = !large_radius
+  :-webkit-border
+    :top-left-radius 1px
+    :top-right-radius = !large_radius
+    :bottom-left-radius = !large_radius
+    :bottom-right-radius = !large_radius
+
+=first_round_base
+  :border
+    :style none
+    :width 2px
+  :-moz-border-radius
+    :topleft 1px
+    :bottomleft = 1px
+    :bottomright = 1px
+  :-webkit-border
+    :top-left-radius 1px
+    :bottom-left-radius = 1px
+    :bottom-right-radius = 1px
+
+=large_first_round
+  +first_round_base
+  :-moz-border-radius
+    :topright = !large_radius
+  :-webkit-border
+    :top-right-radius = !large_radius
+
+=small_first_round
+  +first_round_base
+  :-moz-border-radius
+    :topright = !small_radius
+  :-webkit-border
+    :top-right-radius = !small_radius
+
+=tiny_first_round
+  +first_round_base
+  :-moz-border-radius
+    :topright = !tiny_radius
+  :-webkit-border
+    :top-right-radius = !tiny_radius
+
+// ------- Fin des definitions ------------
+#entete
+  +white
+  +smallblock
+  +downsmallround
+
+#sousliens
+  +white
+  :text-weight bold
+  :font-size 1.3em
+  a, a:link
+    :color = !texte_attenue
+  a:visited 
+    :color = !texte_attenue
+  a:active, a:hover
+    color = !rouge_clair
+
+.corps
+  +white
+  a, a:link, a:visited 
+    color = !rouge_fonce
+    font-weight: normal
+  a:active, a:hover
+    color: #f00
+
+a.navigationprev, 
+a.navigationnext
+  color: #222
+a.navigationprev:visited, 
+a.navigationnext:visited
+  color: #333 
+a.navigationprev:hover, 
+a.navigationnext:hover,
+a.navigationprev:active, 
+a.navigationnext:active
+  color: #f00
+
+.presarticle
+  font-size: .8em
+  width: 20%
+
+.corps
+  +largeblock
+
+#titre
+  +largeround
+
+img
+  :padding .6em
+
+pre.twilight,
+.corps h2,
+#bottom,
+#nojsredirect
+  +black
+  +smallblock
+
+.corps h1,
+#titre,
+#blocMessage,
+.encadre,
+.nojsbutton
+  +red
+  +smallblock
+
+.encadre
+  +smallround
+
+.black
+  +black
+  +smallblock
+  +smallround
+
+.red
+  +red
+  +smallblock
+  +smallround
+
+.shadow
+  :background
+    :image url("../../css/img/sombre10percent.png")
+    :repeat repeat
+  +smallround
+
+.intro, .resume
+  font-size: .8em
+  font-style: italic
+  line-height: 1.4em
+
+.corps h1
+  :border
+    :style solid
+    :width 1px 1px 1px 1px
+  :-moz-border-radius
+    :topleft 0px
+    :topright 29px
+    :bottomleft 0px
+    :bottomright 29px
+  :-webkit-border
+    :top-left-radius 0px
+    :top-right-radius 29px
+    :bottom-left-radius 0px
+    :bottom-right-radius 29px
+  :text
+    :align right
+
+.corps h2
+  :border
+    :style solid
+  :border
+    :top 1px
+    :right 1px
+    :bottom 1px
+    :left 0px
+  :-moz-border-radius
+    :topleft 0px
+    :topright = !small_radius
+    :bottomleft 0px
+    :bottomright = !small_radius
+  :-webkit-border
+    :top-left-radius 0px
+    :top-right-radius = !small_radius
+    :bottom-left-radius 0px
+    :bottom-right-radius = !small_radius
+  :text
+    :align right
+
+.corps h3,
+.corps h4
+  :border
+    :color #6c6c6c
+    :top 1px
+    :right 1px
+    :bottom 1px
+    :left 0px
+    :style solid
+  :color #00ee00
+  :-moz-border-radius
+    :topleft 0px
+    :topright = !tiny_radius
+    :bottomleft 0px
+    :bottomright = !tiny_radius
+  :-webkit-border
+    :top-left-radius 0px
+    :top-right-radius = !tiny_radius
+    :bottom-left-radius 0px
+    :bottom-right-radius = !tiny_radius
+  :text
+    :align right
+
+.corps h1.first
+  +large_first_round
+
+.corps h2.first
+  +small_first_round
+
+.corps h1.first,
+.corps h2.first,
+.corps h3.first,
+.corps h4.first
+  text-align: center
+
+img
+  +tinyround
+
+#sousliens,
+pre.twilight,
+#bottom,
+#blocMessage,
+#presentation,
+#Menu,
+table.description tr td,
+.corps
+  +tinyround
+
+#titre, h1 
+  text-shadow: 0px -1px 1px #333
+
+.corps h2
+  color: #999
+  text-shadow: 0 1px #ccc
+
+.corps h2 a,
+.corps h3 a,
+.corps h4 a
+  text-shadow: 0 1px #fcc
+
+.corps h3,
+.corps h4
+  color: #555
+  text-shadow: 0 1px #ccc
+
+table.description tr td
+  :border none
+
+.nojsbutton,
+.corps
+  +largeround
+
+// --- Les couleurs
+body
+  :background
+    :color #fff
+  :color #000
+//    :image url('../../css/img/background.jpg')
+//    :attachment fixed
+
+a 
+  :font-weight     bold
+  :text-decoration none
+a, a:link 
+  color: #a00
+  outline: none
+a:visited 
+  color: #a00 
+  outline: none
+a:active, a:hover
+  color: #f00
+  outline: none
+
+ul 
+  :list-style square
+
+.corps h1 
+  :font-variant small-caps
+
+#lastmod 
+  :color     #999
+  :font-size .8em
+
+#content 
+  :background-color white
+
+.corps h1,
+.corps h2,
+.corps h3,
+.corps h4
+  :-moz-box-shadow 0 1px #fff
+  :-webkit-box-shadow 0 1px #fff
+
+.withfile pre.twilight
+  :background
+    :position 50% -10%
+
+.file 
+  a,
+  a:link 
+    :color #ddd 
+  a:visited
+    :color = !blanc_fonce
+  a:active, 
+  a:hover
+    color: #cc0000
+
+// --- les fontes
+#boutonMessage 
+  :color black
+  :font
+    :size = !tiny_radius 
+    :family sans-serif
+
+body, h1, h2, h3, h4, #entete
+  font-family: Optima, "Century Gothic", Helvetica, Arial, sans-serif
+  line-height: 1.4em
+
+.corps
+  font-family: Georgia, "Times New Roman", Times, serif
+  line-height: 1.6em
+
+p
+  margin-bottom: 1.2em
+
+.corps
+  :text-align justify
+
+#liens,
+#sousliens 
+  :font-weight bold
+
+// --- le style des blocs de liens
+#liens ul 
+  :list-style    none
+
+#sousliens ul 
+  :list-style    none
+  :margin
+    :top        0px
+    :bottom     0px
+
+#liens ul li a:hover
+  +red
+  +smallround
+  +smallblock
+
+
+#liens ul li.active
+  +black
+  +smallround
+  +smallblock
+
+// --- bords arrondis
+#content 
+  +largeround
+  :border none
+
+// --- les ombres
+
+.nojsbutton 
+  font-size: 2.5em 
+
+.nojsbutton > a:hover,
+.nojsbutton > a:active 
+  color: #000 !important
+
+
+.assombris10 
+  :text
+    :shadow 0 1px #eee
+  :background
+    :image url("../../css/img/sombre10percent.png")
+    :repeat repeat
+
+.assombris20 
+  :text
+    :shadow 0 1px #ddd
+  :background
+    :image url("../../css/img/sombre20percent.png")
+    :repeat repeat
+
+.corps h3, img
+  :background
+    :image url("../../css/img/sombre20percent.png")
+    :repeat repeat
+
+.corps h4
+  :background
+    :image url("../../css/img/sombre20percent.png")
+    :repeat repeat
+  :padding
+    :left .5em
+    :right .5em
+
+.small
+  :font-size .8em
+
+.strong
+  :font-weight bold
+
+#sousliens .active
+  :font-style italic
+
+#entete
+  :font-variant small-caps
+
+#choix ul li.activelang
+  +black
+  +tinyround
+
+#titre
+  :border solid 1px #300
+  // :left -1px
+  // :position relative
+
+#titre h1 
+  :font
+    :size     2.5em
+    :variant  small-caps
+    :weight   bold
+  :text-align center
+  :margin
+    :bottom .3em
+    :top    .3em
+    :left   auto
+    :right  auto
+
+abbr, 
+acronym
+  :text
+    :decoration none
+  :border
+    :bottom
+      :width 0
+
+blockquote ul
+  list-style: none
+
+.impact, .darkimpact
+  +smallblock
+  +largeround
+  font-size: 2em
+  margin: 0 auto 1em auto
+  line-height: 1.3em
+
+.darkimpact
+  +black
+  text-shadow: 0 1px 0 #fff
+  a:hover
+    text-shadow: 0 1px 0 #f77
+
+.impact
+  +red
+  text-shadow: 0 -2px 0 #000
+
+.sc
+  font-variant: small-caps
+
+.tag:hover
+  :color = !rouge_clair
+
+.tag.selected
+  :color = !rouge_fonce
+
+abbr
+  :color = !rouge_fonce
+
+.black abbr
+  :color #ddd
+  :text-shadow 0px 0px 2px #fff
+
+small
+  line-height: 1em
+
+#rss a
+  +smallround
+  +smallblock
+  :line-height 2em
+  :border none
+  img
+    :border none 
+    :outline none
+
+#rss a:hover
+  +red
+
+hr
+  border-bottom: solid 1px #fff
+
+#menuMessage
+  +smallblock
+  +downsmallround
