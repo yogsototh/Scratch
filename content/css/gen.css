@@ -1,11 +1,4 @@
 -----
-# Built-in
-filters:
-    - sass
-binary: false
-
-# Custom 
-
 -----
 !rouge_clair = #cc0000
 !rouge_fonce = #6c0000
@@ -29,13 +22,12 @@ binary: false
     :style solid
     :width 1px
   :color = !texte_normal
-  a, 
-  a:link 
+  a, a:link 
     color: #a00
-    &:visited 
-      color: #a00 
-    &:active, &:hover
-      color: #f00
+  a:visited 
+    color: #a00 
+  a:active, a:hover
+    color: #f00
 
 =black
   :text-shadow 0 1px #000
@@ -48,13 +40,12 @@ binary: false
     :style solid
     :width 1px
   color: #eee
-  a, 
-  a:link
+  a, a:link
     :color #ddd
-    &:visited
-      :color = !blanc_fonce
-    &:active, &:hover
-      :color #cc0000
+  a:visited
+    :color = !blanc_fonce
+  a:active, a:hover
+    :color #cc0000
 
 =red
   :background
@@ -63,15 +54,14 @@ binary: false
     :color = !rouge_fonce
   :border-color = !rouge_fonce
   color: #fff
-  a, 
-  a:link
+  a, a:link
     :font-weight bold
     :text-decoration none
     :color #eee
-    &:visited
-      :color = !blanc_fonce
-    &:active, &:hover
-      :color #fff
+  a:visited
+    :color = !blanc_fonce
+  a:active, a:hover
+    :color #fff
 
 =smallblock
   background-position: 50% 50%
@@ -181,23 +171,20 @@ binary: false
   +white
   :text-weight bold
   :font-size 1.3em
-  a, 
-  a:link,
+  a, a:link
+    :color = !texte_attenue
   a:visited 
     :color = !texte_attenue
-    &:active, &:hover
-      color = !rouge_clair
+  a:active, a:hover
+    color = !rouge_clair
 
 .corps
   +white
-  a, 
-  a:link, 
-  a:visited 
+  a, a:link, a:visited 
     color = !rouge_fonce
     font-weight: normal
-    &:active, 
-    &:hover
-      color: #f00
+  a:active, a:hover
+    color: #f00
 
 a.navigationprev, 
 a.navigationnext
@@ -353,8 +340,8 @@ table.description tr td,
   text-shadow: 0px -1px 1px #333
 
 .corps h2
-  color: #999
-  text-shadow: 0 1px #ccc
+  color: #ddd
+  text-shadow: 0 -1px #999
 
 .corps h2 a,
 .corps h3 a,
@@ -381,19 +368,18 @@ body
 //    :image url('../../css/img/background.jpg')
 //    :attachment fixed
 
-a, 
-a:link 
+a 
   :font-weight     bold
   :text-decoration none
+a, a:link 
   color: #a00
   outline: none
-  &:visited 
-    color: #a00 
-    outline: none
-  &:active, 
-  &:hover
-    color: #f00
-    outline: none
+a:visited 
+  color: #a00 
+  outline: none
+a:active, a:hover
+  color: #f00
+  outline: none
 
 ul 
   :list-style square
@@ -423,11 +409,11 @@ ul
   a,
   a:link 
     :color #ddd 
-    &:visited
-      :color = !blanc_fonce
-    &:active, 
-    &:hover
-      color: #cc0000
+  a:visited
+    :color = !blanc_fonce
+  a:active, 
+  a:hover
+    color: #cc0000
 
 // --- les fontes
 #boutonMessage 
@@ -443,6 +429,10 @@ body, h1, h2, h3, h4, #entete
 .corps
   font-family: Georgia, "Times New Roman", Times, serif
   line-height: 1.6em
+
+pre, code
+  :font
+    :family monaco, monospace
 
 p
   margin-bottom: 1.2em

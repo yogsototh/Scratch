@@ -24,6 +24,6 @@ end
 
 def item_of_language(language)
     searched_path=@item_rep.path.sub(@conf.language,language) 
-    puts %{source path = #{@item_rep.path}, searched_path = #{searched_path}}
+    # puts %{source path = #{@item_rep.path}, searched_path = #{searched_path}}
     @items.find { |i| i.reps[0].path == searched_path }
 end

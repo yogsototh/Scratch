@@ -45,17 +45,16 @@ puts conf.to_s
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
-    <link rel="stylesheet" type="text/css" href="/Scratch/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/layout.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/css/shadows.css" />
-    <link rel="stylesheet" type="text/css" href="/Scratch/css/gen.css" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/gen.css" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocom<%= language %>">
     <link rel="stylesheet" type="text/css" href="/Scratch/css/js.css" />
     <% @conf.languages.collect do |lang| %>
-    <link rel="alternate" lang="<%= lang %>" xml:lang="<%= lang %>" title="<%= item_of_language(lang)[:title] %>" type="text/html" hreflang="<%= lang %>" href="<%= item_of_language(lang)[:path] %>" />
+    <link rel="alternate" lang="<%= lang %>" xml:lang="<%= lang %>" title="<%= item_of_language(lang)[:title] %>" type="text/html" hreflang="<%= lang %>" href="<%= item_of_language(lang).reps[0].path %>" />
     <% end %>
     <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
     <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="/Scratch/js/jquery.ga.js"></script>
     <script type="text/javascript" src="/Scratch/js/index.js"></script>
     <noscript>
         <link rel="stylesheet" type="text/css" href="/Scratch/css/nojs.css" />
@@ -67,37 +66,38 @@ puts conf.to_s
         document.write('<div id="blackpage"><p><%= tradOf(:loading) %></p><img src="/Scratch/img/loading.gif" alt="loading logo"/></div>');
     </script>
 
-    <div id="entete">
-        <div id="rss">
-            <span>
-                <a href="http://feeds.feedburner.com/yannespositocom<%= language %>">
-                    <img src="/Scratch/img/menu/rss-128.png" alt="rss" height="32"/>
-                </a>
-                <sup>
-                    <a href="/Scratch/multi/rss"><%= tradOf('whatsthis') %></a>
-                </sup>
-            </span>
-        </div>
-        <div id="choix"> 
-            <%= puts %{tradOf(:langue)} %>
-            <div id="choixlang">
-                <ul>
-                    <% languages.each do |l| %>
-                        <li><%= l %></li>
-                    <% end %>
-                </ul>
+    <div id="content">
+        <div id="entete">
+            <div id="rss">
+                <span>
+                    <a href="http://feeds.feedburner.com/yannespositocom<%= language %>">
+                        <%= tradOf(:subscribe) %>
+                        <img src="/Scratch/img/menu/rss-128.png" alt="rss" height="32"/>
+                    </a>
+                    <sup>
+                        <a href="/Scratch/multi/rss"><%= tradOf(:whatsthis) %></a>
+                    </sup>
+                </span>
+            </div>
+            <div id="choix"> 
+                <%= puts %{tradOf(:langue)} %>
+                <div id="choixlang">
+                    <ul>
+                        <% languages.each do |l| %>
+                            <li><%= l %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+            <div id="liens">
+                <% if article %>
+                <%= puts %{generateMenuForBlog} %>
+                <% else %>
+                <%= puts %{generateMenu} %>
+                <% end %>
             </div>
         </div>
-        <div id="liens">
-            <% if article %>
-            <%= puts %{generateMenuForBlog} %>
-            <% else %>
-            <%= puts %{generateMenu} %>
-            <% end %>
-        </div>
-    </div>
 
-    <div id="content">
         <div id="titre">
             <h1>
                 <%= @item[:title] %>
@@ -144,10 +144,9 @@ puts conf.to_s
 
             <div id="bottom">
                 <div>
-                en:Entirely done with:: 
-                fr:Site entièrement réalisé avec::
+                    <%= tradOf(:entirely_done_with) %>
                 <a href="http://www.vim.org">Vim</a>
-                fr:et::en:and:: 
+                    <%= tradOf(:and) %> 
                 <a href="http://nanoc.stoneship.org">nanoc</a>
                 </div>
                 <div>
@@ -161,12 +160,10 @@ puts conf.to_s
                 <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml" class="fr">[rss]</a>
                 </div>
                 <div>
-                    <en><a href="http://creativecommons.org/licenses/by-sa/2.5/deed.en">Copyright©</a></en>
-                    <fr><a href="http://creativecommons.org/licenses/by-sa/2.5/deed.fr">Droits de reproduction ©</a></fr>
+                    <%=tradOf(:copyright) %>
                 </div>
                 <div id="lastmod">
-                <en>Last modified: <%= @item.mtime.strftime("%m/%d/%Y") %> </en>
-                <fr>dernière modification: <%= @item.mtime.strftime("%d/%m/%Y") %> </fr>
+                    <%=tradOf(:last_modified)%>: <%= @item.mtime.strftime(@config[:dateFormat][language.intern]) %> 
                 </div>
             </div>
             <div class="clear"></div>

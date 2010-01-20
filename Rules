@@ -12,8 +12,22 @@ compile '/css/*' do
     filter :sass
 end
 route '/css/*' do
-    '/Scratch' + item.identifier.chop + '.css'
+    '/Scratch/assets' + item.identifier.chop + '.css'
 end
+
+compile '/css/raw/*' do
+end
+route '/css/raw/*' do
+    '/Scratch' + item.identifier.sub(/raw\//,'').chop + '.css'
+end
+
+# JS
+compile '/js/*' do
+end
+route '/js/*' do
+    '/Scratch/assets' + item.identifier.chop + '.js'
+end
+
 
 # HTML
 compile '/html/*' do

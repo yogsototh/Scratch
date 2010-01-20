@@ -47,3 +47,18 @@ translations:
     loading:
         fr: "Chargement en cours..."
         en: "loading..."
+    entirely_done_with:
+        en: "Entirely done with"
+        fr: "Site entièrement réalisé avec"
+    and:
+        en: "and"
+        fr: "et"
+    last_modified:
+        en: "Last modified"
+        fr: "dernière modification "
+    copyright:
+        en: "<a href=\"http://creativecommons.org/licenses/by-sa/2.5/deed.en\">Copyright©</a>"
+        fr: "<a href=\"http://creativecommons.org/licenses/by-sa/2.5/deed.fr\">Droits de reproduction ©</a>"
+    subscribe:
+        en: "Subscribe"
+        fr: "s'abonner"

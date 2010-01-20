@@ -1,0 +1,229 @@
+/* pour supprimer les warnings */
+
+#choixlang, #entete, #sousliens {
+    color: #000;
+}
+
+/* body */
+body {
+	margin: 0 10px;
+	background-color: #fff;
+	color: #000;
+	font-size: 1em ;
+	}
+
+.highlight {
+    color: #f60;
+}
+
+
+/* links */
+a:link {
+	color: #00f;
+	text-decoration: none;
+	}
+
+a:visited {
+	color: #00a;
+	text-decoration: none;
+	}
+
+a:hover {
+	color: #f60;
+	text-decoration: underline;
+	}
+	
+a:active {
+	color: #f60;
+	text-decoration: underline;
+	}
+
+/* html tags */
+th, td, ul, ol, li {
+	font-size: 1em ;
+	}
+		
+code, pre	{
+	font-size: .8em;
+	}
+
+	/*  Work around IE/Win code size bug - courtesy Jesper, waffle.wootest.net  */
+
+* html code	{
+	font-size: 101%; 
+	}
+
+* html pre {
+	font-size: 101%; 
+	}
+
+h1 code, h2 code, h3 code, h4 code, th code, ol.faq li code { font-size: 95%; font-weight: normal; }
+
+h1	{
+	margin: 0 0 15px 0;
+	padding: 0.5em;
+	font-size: 2em ;
+    font-weight: bold;
+	color: #000;
+	}
+	
+h2	{
+	margin: 0 0 5px 0;
+	padding: 0;
+	font-size: 1.3em;
+	color: #000;
+	}
+	
+#header h2 { 
+	margin: 0;
+	}
+	
+p + h2 {
+	margin: 20px 0 5px 0;
+	}
+
+ol + h2 {
+	margin: 20px 0 5px 0;
+	}
+
+ul + h2 {
+	margin: 20px 0 5px 0;
+	}
+	
+h6	{
+	margin: 0;
+	padding: 0;
+	font-size: 1em ;
+	color: #000;
+	}
+
+p	{
+	margin: 0 0 10px 0;
+	padding: 0;
+	font-size: 1em ;
+	color: #000;
+	}
+	
+cite {
+	font-style: italic;
+	}
+	
+th {
+	font-weight: bold;
+	text-align: left;
+	vertical-align: top;
+	}
+	
+form {
+	margin: 0;
+	}
+	
+button {
+	margin: 3px 0 10px 0;
+	}
+	
+/* lists */
+ul	{
+	list-style: square outside;
+	margin: 0 0 0 30px;
+	padding: 0 0 1em 0;
+	}
+
+li	{
+	margin-top: 3px;
+	}
+	
+ul ul {
+	margin-left: 40px;
+	}
+	
+ul.compressed {
+	margin-top: -10px;
+	}
+	
+ul.compressed li {
+	margin-top: 0;
+	}
+
+ul.marketing {
+	padding-left: 0;
+	margin: 0 0 16px 0;
+	list-style: none;
+	}
+	
+ul.marketing li	{
+	margin-top: 0;
+	margin-left: 0;
+	margin-bottom: 2px;
+	font-size: .8em;
+	}
+	
+ol {
+	margin: 0 0 10px 1.5em;
+	padding-left: 1.5em;
+	}
+
+ul.inline, ol.inline, p.inline {
+	margin-top: -7px;
+	}
+	
+ul.inline ul, ul.inline ol, ol.inline ul, ol.inline ol {
+	margin-top: 0;
+	}
+
+ol.faq li {
+	font-weight: bold;
+	}
+	
+ol.steps li {
+	font-weight: bold;
+	}
+	
+ul.nav {
+	margin: 8px 0 0;
+	padding: 0;
+	list-style-type: none;
+	}
+
+ul.nav li {
+	margin-top: 4px;
+	padding-left: 0;
+	}
+	
+ul.nobullet {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	}
+	
+ul.nobullet li {
+	margin: 3px 0 5px;
+	padding-left: 0;
+	}
+	
+/* images */
+.leftinline {
+	margin: 0 10px 5px 0;
+	float: left;
+	}
+
+.rightinline {
+	margin: 0 0 5px 10px;
+	float: right;
+	}
+
+
+#choixlang, #choix, #liens, #sousliens, #address, #presentation, #Menu, #bottom, #entete, h4  {
+	border-color: #000 ;
+	}
+#presentation, #Menu, #entete  {
+	background-color : #f1F7F9;
+	}
+/*    
+h1, h2, #choixlang, #choix, #liens, #sousliens {
+	background-color: #F0F5F9 ;
+	}
+h3, h4, h5, h6 {
+	background-color: #FFF ;
+	}
+*/ 

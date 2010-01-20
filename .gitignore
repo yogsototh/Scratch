@@ -1,4 +1,7 @@
 *.swp
 .DS_Store
-output/
+output/Scratch/assets
+output/Scratch/en
+output/Scratch/fr
+output/Scratch/map.yrf
 tmp/
