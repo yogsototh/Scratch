@@ -34,8 +34,8 @@ conf.languages=languages
 
 self.instance_variable_set(:@conf, conf)
 
-puts '--- conf ---'
-puts conf.to_s
+# puts '--- conf ---'
+# puts conf.to_s
 
     %><?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -80,7 +80,7 @@ puts conf.to_s
                 </span>
             </div>
             <div id="choix"> 
-                <%= puts %{tradOf(:langue)} %>
+                <%= tradOf(:langue) %>
                 <div id="choixlang">
                     <ul>
                         <% languages.each do |l| %>
@@ -120,13 +120,10 @@ puts conf.to_s
         <%= puts %{generateSubMenuFor} %>
     
         <div class="flush"></div>
-        <%= puts %{generateLanguageOnlyTag} %>
         <div id="afterheader">
-
             <div class="corps">
                 <%= yield %>
             </div>
-
             <% if article  %>
                 <% if depthOf(@item) == 3 %>
                 <div class="navigation">
@@ -141,7 +138,6 @@ puts conf.to_s
                     <%= generateIntenseDebateThread %>
                 </div>
             <% end %>
-
             <div id="bottom">
                 <div>
                     <%= tradOf(:entirely_done_with) %>
@@ -150,14 +146,12 @@ puts conf.to_s
                 <a href="http://nanoc.stoneship.org">nanoc</a>
                 </div>
                 <div>
-                    <% puts %{validationPage = @items.each{ |p| p.path == '/Scratch/multi/validation/' } } %>
-                    <%= puts %{span_multi_link_to_unless_current( {:en => "Validation: ", :fr => "Validation : "}, validationPage)} %>
+                <a href="/Scratch/<%=language%>/validation/">Validation</a> 
                 <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
                 .
                 <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
                 .
-                <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml" class="en">[rss]</a>
-                <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml" class="fr">[rss]</a>
+                <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/<%=language%>/blog/feed/feed.xml">[rss]</a>
                 </div>
                 <div>
                     <%=tradOf(:copyright) %>
