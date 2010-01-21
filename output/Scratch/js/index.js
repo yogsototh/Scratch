@@ -5,6 +5,63 @@ function detectIE() {
     }
 }
 
+function message(msg) {
+    $('#blackpage').css({cursor: 'auto'});
+    $('#blackpage').show().html(msg);
+}
+
+// -- from cookie first if not, from Navigator
+function getUserLanguage() {
+    var language = $.cookie('language');
+    if (! language) {
+        if ( (navigator) && 
+                (navigator.language) && 
+                (navigator.language.substring(0,2) == 'fr' ) ) {
+            language='fr';
+        } else {
+            language='en';
+        }
+    }
+    return language;
+}
+function pathToLanguage(lang) {
+    return window.location.pathname.replace(/(.*\/Scratch\/)(..)(\/.*$)/,'$1'+lang+'$3');
+}
+function linkToLang(lang, msg) {
+    return '<a href="'+pathToLanguage(lang)+'">'+msg+'</a>';
+}
+function hideClickMessage(msg) {
+    return '<div><a onclick="hideMessage()">'+msg+'</a></div>';
+}
+function setLanguage(lang) {
+    $.cookie('language',lang, { path: '/Scratch'});
+}
+
+function hideMessage() {
+    setLanguage(getPageLanguage());
+    $('#blackpage').fadeOut();
+}
+
+function getPageLanguage() {
+    return window.location.pathname.replace(/.*\/Scratch\/(..)\/.*$/,'$1');
+}
+
+function alertLanguage() {
+    var language=getUserLanguage();
+    var language_of_current_page=getPageLanguage();
+    if (language != language_of_current_page) {
+        if ( language == 'fr' ) {
+            message(linkToLang('en','Aller sur la Version Française ?') + hideClickMessage('No thanks, I prefer read english.'));
+        } else if (language == 'en') {
+            message(linkToLang('en','Go to English Version?')+ hideClickMessage('Non merci, je préfère le français.'));
+        } else {
+            // don't know which language the user prefer
+            message(linkToLang('en','Go to English Version?')+'<br/>'+linkToLang('fr','Version Française ?') + hideClickMessage('Non merci, je préfère le français.'));
+        }
+        return false;
+    }
+    return true;
+}
 // --- fin pour la contribution de la fin de IE ---
 function detectiPhone() {
     if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
@@ -63,6 +120,8 @@ $(document).ready( function() {
     detectIE();
     detectiPhone();
     initMenu();
-    // affiche la page une fois propre
-    $('#blackpage').fadeOut();
+    // affiche la page une fois propre et la langue choisie
+    if ( alertLanguage() ) {
+        $('#blackpage').fadeOut();
+    }
 });
