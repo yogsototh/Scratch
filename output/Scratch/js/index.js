@@ -5,12 +5,15 @@ function detectIE() {
     }
 }
 
+// -- multilanguage handling --
+
+// show a message to user
 function message(msg) {
     $('#blackpage').css({cursor: 'auto'});
     $('#blackpage').show().html(msg);
 }
 
-// -- from cookie first if not, from Navigator
+// from cookie first if not, from Navigator
 function getUserLanguage() {
     var language = $.cookie('language');
     if (! language) {
@@ -24,28 +27,40 @@ function getUserLanguage() {
     }
     return language;
 }
+
+// return the path of the equivalent page in another language
 function pathToLanguage(lang) {
     return window.location.pathname.replace(/(.*\/Scratch\/)(..)(\/.*$)/,'$1'+lang+'$3');
 }
+
+// return the link to the equivalent page in another language
 function linkToLang(lang, msg) {
     return '<a href="'+pathToLanguage(lang)+'">'+msg+'</a>';
 }
+
+// return a link that will hide the message
 function hideClickMessage(msg) {
     return '<div><a onclick="hideMessage()">'+msg+'</a></div>';
 }
+
+// put the selected language in the cookie
 function setLanguage(lang) {
     $.cookie('language',lang, { path: '/Scratch'});
 }
 
+// select the good language and hide the message
 function hideMessage() {
     setLanguage(getPageLanguage());
     $('#blackpage').fadeOut();
 }
 
+// get the language of the current page
 function getPageLanguage() {
     return window.location.pathname.replace(/.*\/Scratch\/(..)\/.*$/,'$1');
 }
 
+// alert the user if its navigator configuration tell
+// me it should prefer another language
 function alertLanguage() {
     var language=getUserLanguage();
     var language_of_current_page=getPageLanguage();
@@ -62,6 +77,7 @@ function alertLanguage() {
     }
     return true;
 }
+
 // --- fin pour la contribution de la fin de IE ---
 function detectiPhone() {
     if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
@@ -71,6 +87,7 @@ function detectiPhone() {
         $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/iphone.css"/>');
         // $('body').attr('onorientation','updateOrientation();');
         decalageTop=0;
+        // disable the animation of the menu
         initMenu=function(){};
     }
 }
