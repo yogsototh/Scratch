@@ -11,3 +11,4 @@
 # Pour remplir à la fois le texte et le sommaire
 
 include Nanoc3::Helpers::Capturing
+include Nanoc3::Helpers::LinkTo
