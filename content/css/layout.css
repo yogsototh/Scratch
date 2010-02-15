@@ -315,6 +315,8 @@ ul.horizontal
   img
     background: none
     border: none
+  a
+    cursor: pointer
 
 #nojsredirect
   z-index: 9001
