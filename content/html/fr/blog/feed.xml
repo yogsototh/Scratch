@@ -1,0 +1,14 @@
+-----
+# Built-in
+filename: feed
+extension: xml
+layout: feed
+
+# Custom 
+isHidden: true
+reps:
+    francais:
+        language: fr
+    anglais:
+        language: en
+-----

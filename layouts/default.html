@@ -50,8 +50,11 @@ self.instance_variable_set(:@conf, conf)
     <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/gen.css" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocom<%= language %>">
     <link rel="stylesheet" type="text/css" href="/Scratch/css/js.css" />
-    <% @conf.languages.collect do |lang| %>
-    <link rel="alternate" lang="<%= lang %>" xml:lang="<%= lang %>" title="<%= item_of_language(lang)[:title] %>" type="text/html" hreflang="<%= lang %>" href="<%= item_of_language(lang).reps[0].path %>" />
+    <% languages.each do |lang| %>
+        <% item_for_lang=item_of_language(lang) %>
+        <% if not item_for_lang.nil? %>
+    <link rel="alternate" lang="<%= lang %>" xml:lang="<%= lang %>" title="<%= item_for_lang[:title] %>" type="text/html" hreflang="<%= lang %>" href="<%= item_for_lang.reps[0].path %>" />
+        <% end %>
     <% end %>
     <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
     <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
@@ -135,7 +138,7 @@ self.instance_variable_set(:@conf, conf)
 
                 <div class="corps" id="comment">
                     <h2><%= tradOf(:comment) %></h2>
-                    <%= generateIntenseDebateThread %>
+                    <%= puts 'generateIntenseDebateThread' %>
                 </div>
             <% end %>
             <div id="bottom">

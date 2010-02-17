@@ -32,6 +32,7 @@ end
 # HTML
 compile '/html/*' do
   filter :erb
+  filter :bluecloth
   layout 'default'
 end
 route '/html/*' do

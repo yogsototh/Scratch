@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+root=/home/e640846/Sites/n3blog
+cd $root
+for langue in fr en; do
+    \cp -r ../webroot/content/* content/html/$langue
+    cp recup.pl recup$langue.pl
+    [[ $langue = "fr" ]] && other=en
+    [[ $langue = "en" ]] && other=fr
+    echo 'replaceminim( "'$langue':", 1);' >> recup$langue.pl
+    echo 'replaceminim( "'$other':", 0);' >> recup$langue.pl
+    perl -pi recup$langue.pl content/html/$langue/**/*(.)
+done
