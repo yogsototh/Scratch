@@ -11,18 +11,73 @@ end
 
 def generateMenu
     home=homepage
-    buffer=link_to_unless_current(home[:title],home.reps[0])
+    liste=[]
+    liste<<=link_to_unless_current(home[:title],home.reps[0])
         sortedChildrenByMenuPriority(home).each do |page|
-        buffer <<= '<li>' + 
-            link_to_unless_current(page[:title],page.reps[0]) + '</li>'
+        liste <<= link_to_unless_current(page[:title],page.reps[0]) 
     end   
-    '<ul>'+buffer+'</ul>'
+    "<ul><li>"+liste.join("</li><li>")+"</li></ul>"
 end
 
 def depthOf(item)
-    puts 'depthOf'
-    return 1
+    res=0
+    while item.parent != nil
+        res+=1
+        item=item.parent
+    end
+    return res
 end
+
+def getSortedChildren(parent)
+    if parent[:kind] == "blog"
+        return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:date] <=> y[:date] }
+    else
+        return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:menupriority] <=> y[:menupriority] }
+    end
+end
+
+def generateBlogSubMenu
+    liste=getSortedChildren(@item).reverse!.collect! do |p|
+        link_to_unless_current(p[:title],p)
+    end
+    if ! liste.empty?
+        '<div id="sousliens"><ul><li>'+liste.join('</li><li>')+'</li></ul></div>'
+    else
+        return
+    end
+end
+
+def generateSubMenu()
+    if @item[:noSubMenu]
+        return 
+    end
+
+    depth=depthOf(@item)
+
+    if depth == 0
+        return
+    end
+
+    if @item[:kind] == "blog"
+        generateBlogSubMenu
+    else
+        if @item[:kind] == "article" and depth > 3
+            page=@item.parent
+        elsif depth > 2
+            page=@item.parent
+        end
+        link_to_unless_current(@item[:title],@item)
+        liste=getSortedChildren(@item).collect do |p|
+            link_to_unless_current(p[:title],p)
+        end
+        if ! liste.empty?  then
+            '<div id="sousliens"><ul><li>'+liste.join('</li><li>')+'</li></ul></div>'
+        else
+            return
+        end
+    end
+end
+# =======================
 
 def blogimage(val,title)
     puts 'blogimage'
@@ -40,3 +95,4 @@ def lnkto(title,item)
     puts 'lnkto'
     return %{<a href="#">#{title}</a>}
 end
+
