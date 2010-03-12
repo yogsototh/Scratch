@@ -7,7 +7,7 @@ kind:           article
 date:           2010-01-12T16:36:40+02:00
 title: antialias font in Firefox under Ubuntu
 multiTitle: 
-    fr: 
+    fr: Fontes adoucies sous Ubuntu Firefox
     en: antialias font in Firefox under Ubuntu
 multiDescription:
     fr: Voici comment faire pour ne plus utiliser les fontes Microsoft© sous Linux Ubuntu pour avoir de belles fontes adoucies (anti aliased) qui ne font pas mal aux yeux sous Firefox.
@@ -28,7 +28,7 @@ Just modify the <code>/etc/fonts/local.conf</code> with the following code:
 
 
 <div>
-<code class="xml">
+<code class="xml" file="local.conf">
 
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
@@ -57,7 +57,9 @@ Just modify the <code>/etc/fonts/local.conf</code> with the following code:
   <selectfont>
       <acceptfont>
           <pattern>
-              <patelt name="family"> <string>Lucida Grande</string> </patelt>
+              <patelt name="family"> 
+                <string>Lucida Grande</string> 
+              </patelt>
           </pattern>
       </acceptfont>
   </selectfont>
@@ -73,7 +75,9 @@ Just modify the <code>/etc/fonts/local.conf</code> with the following code:
   <selectfont>
       <acceptfont>
           <pattern>
-              <patelt name="family"> <string>Century Schoolbook L</string> </patelt>
+              <patelt name="family"> 
+                <string>Century Schoolbook L</string> 
+              </patelt>
           </pattern>
       </acceptfont>
   </selectfont>
@@ -81,4 +85,6 @@ Just modify the <code>/etc/fonts/local.conf</code> with the following code:
 </fontconfig>
 </code>
 </div>
+
+Hope it helped someone who like me had his eyes crying in face of such ugly fonts.
 

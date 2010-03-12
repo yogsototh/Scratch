@@ -8,16 +8,16 @@ date:           2010-02-15T11:16:12+02:00
 title: All but something regexp
 multiTitle: 
     fr: Expression Régulière pour "Tout sauf un mot"
-    en: All but a word regexp
+    en: Pragmatic Regular Expression Exclude
 multiDescription:
     fr: pas de description.
-    en: no description.
+    en: Sometimes you want to exclude some string with an existing regular expression. Here are some examples on how you could achieved that when it is possible (it is not always the case).
 tags:
   - regexp
 
 -----
 
-Sometimes you can not simply write:
+Sometimes you cannot simply write:
 
 <div><code class="ruby">
 if str.match(regexp) and 
@@ -58,7 +58,9 @@ Notice this method is not always the best. For example try to write a regular ex
 # Begin with 'a': ^a
 # End with 'a': c$
 # Contain 'b': .*b.*
-if str.match(/^a.*b.*c$/) and not str.match(/^axbxc$/)
+# But isn't 'axbxc'
+if str.match(/^a.*b.*c$/) and 
+        not str.match(/^axbxc$/)
     do_something
 end
 </code></div>

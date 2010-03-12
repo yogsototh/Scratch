@@ -11,7 +11,7 @@ multiTitle:
     en: All but something regexp (2)
 multiDescription:
     fr: pas de description.
-    en: no description.
+    en: How to match internal shortest string possible with regexp? Here are some solutions.
 tags:
   - regexp
   - regular expression
@@ -20,49 +20,56 @@ tags:
 
 In my [previous post](previouspost) I had given some trick to match all except something. On the same idea, the trick to match the smallest possible string. Say you want to match the string between 'a' and 'b', for example, you want to match:
 
-`a.....<b>a......b</b>....a....<b>a....b</b>....`
+<pre class="twilight">
+a.....<span class="Constant"><strong>a......b</strong></span>..b..a....<span class="Constant"><strong>a....b</strong></span>...
+</pre>
 
-Here are two common error and a solution:
+Here are two common errors and a solution:
 
-<table>
-    <hr>
-        <td> Regexp </td>
-        <td> Match </td>
-    </hr>
-    <tr>
-        <td> `a.*b` </td>
-        <td> `<b>a.....a......b....a....a....b</b>....` </td>
-    </tr>
-    <tr>
-        <td> `a.*?b` </td>
-        <td> `a.....<b>a......b</b>....a....<b>a....b</b>....` </td>
-    </tr>
-    <tr>
-        <td> `a[^a]*b` </td>
-        <td> `a.....<b>a......b</b>....a....<b>a....b</b>....` </td>
-    </tr>
-</table>
+<pre class="twilight">
+/a.*b/
+<span class="Constant"><strong>a.....a......b..b..a....a....b</strong></span>...
+</pre>
 
-The first error is to use the *evil* `.*`. Because you will match from the first to the last. The next natural way, is to change the *greediness*. But it is not enough as you will match from the first `a` to the first `b`. Then a simple constatation is that our matching string shouldn't contain any `a`. Which lead to the last elegant solution.
+<pre class="twilight">
+/a.*?b/
+<span class="Constant"><strong>a.....a......b</strong></span>..b..<span class="Constant"><strong>a....a....b</strong></span>...
+</pre>
+
+<pre class="twilight">
+/a[^ab]*b/
+a.....<span class="Constant"><strong>a......b</strong></span>..b..a....<span class="Constant"><strong>a....b</strong></span>...
+</pre>
+
+The first error is to use the *evil* `.*`. Because you will match from the first to the last. The next natural way, is to change the *greediness*. But it is not enough as you will match from the first `a` to the first `b`. Then a simple constatation is that our matching string shouldn't contain any `a` nor `b`. Which lead to the last elegant solution.
 
 Until now, that was, easy. Now, how do you manage when instead of `a` you have a string?
 
 Say you want to match: 
-    `&lt;li&gt;...&lt;li&gt;`
+<div><code class="perl">
+<li>...<li>
+</code></div>
 
 This is a bit difficult. You need to match 
-`&lt;li&gt;[anything not containing &lt;li&gt;]&lt;/li&gt;`
+<div><code class="perl">
+<li>[anything not containing <li>]</li>
+</code></div>
 
 The first method would be to use the same reasoning as in my [previous post](previouspost). Here is a first try:
-<pre>
-&lt;li&gt;([^&lt;]|&lt;[^l]|&lt;l[^i]|&lt;li[^&gt;])*&lt;/li&gt;
-</pre>
 
-But what about the following string: `&lt;li&gt;...&lt;li&lt;/li&gt;`.
+<div><code class="perl">
+<li>([^<]|<[^l]|<l[^i]|<li[^>])*</li>
+</code></div>
+
+But what about the following string: 
+<div><code class="perl">
+<li>...<li</li>
+</code></div>
+
 That string should not match. This is why if we really want to match it correctly<sup><a href="#note1">&dagger;</a></sup> we need to add:
-<pre>
-&lt;li&gt;([^&lt;]|&lt;[^l]|&lt;l[^i]|&lt;li[^&gt;])*(|&lt;|&lt;l|&lt;li)&lt;/li&gt;
-</pre>
+<div><code class="perl">
+<li>([^<]|<[^l]|<l[^i]|<li[^>])*(|<|<l|<li)</li>
+</code></div>
 
 Yes a bit complicated. But what if the string I wanted to match was even longer?
 
@@ -74,16 +81,26 @@ Here is the algorithm way to handle this easily. You reduce the problem to the f
 # (you should verify the identifier is REALLY unique)
 # beware the unique ID must not contain the 
 # choosen character
-s/X/_unique_id_for_capitalized_x_/g
+s/X/_was_x_/g
+s/Y/_was_y_/g
+
 # transform the long string in this simple character
 s/<li>/X/g
+s/<\/li>/Y/g
+
 # use the first method
-s/X([^X]*)<\/li>//g
+s/X([^X]*)Y//g
+
+# retransform choosen letter by string
+s/X/<li>/g
+s/Y/<\/li>/g
+
 # retransform the choosen character back
-s/_unique_id_for_capitalized_x_/X/g
+s/_was_x_/X/g
+s/_was_y_/Y/g
 </code></div>
 
-And it works in only 4 lines for any beginning string. This solution should look less *I AM THE GREAT REGEXP M45T3R, URAN00B*, but is more convenient in my humble opinion. Further more, using this last solution prove you master regexp, because you know it is difficult to manage such problems with only a regexp.
+And it works in only 9 lines for any beginning and ending string. This solution should look less *I AM THE GREAT REGEXP M45T3R, URAN00B*, but is more convenient in my humble opinion. Further more, using this last solution prove you master regexp, because you know it is difficult to manage such problems with only a regexp.
 
 ---
 
