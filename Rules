@@ -57,6 +57,7 @@ compile '/html/*' do
   filter :yabbreviations
   filter :multicorps
   filter :firsthi
+  filter :ultraviolet
 
   layout 'default' unless item[:layout] == "none"
 end

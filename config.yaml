@@ -4,6 +4,7 @@ data_sources:
   layouts_root: /
   type: filesystem_unified
 output_dir: output
+ultraviolet_theme: "twilight"
 
 # les langues
 languages:
