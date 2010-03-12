@@ -39,7 +39,7 @@ Lorsqu'on modifie un fichier un peu critique et qu'on a pas envie de perdre, on 
 
 
 
-<div><code class="zsh">$ cp fichier_important.c fichier_important.c.bak</code></div>
+<code class="zsh">$ cp fichier_important.c fichier_important.c.bak</code>
 
 
 Du coups, ce nouveau fichier joue le rôle de *backup*. Si on casse tout, on peut toujours écraser les modifications que nous avons faites. Évidemment le problème avec cette façon de faire c'est que ce n'est pas très professionnel. Et puis c'est un peu limité. Si on veut faire trois ou quatre modifications on se retrouve avec plein de fichiers. Parfois avec des nom bizarres comme :
@@ -110,7 +110,7 @@ Sur un fichier contenant un liste de dieux *Lovecraftiens* :
 Cthulhu
 Shubniggurath
 Yogsototh
-</code></div>
+</code>
 
 Disons que Alex est chez lui, il modifie le fichier :
 

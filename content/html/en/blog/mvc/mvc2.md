@@ -29,7 +29,7 @@ I choosen webrick)
 Here an example of a very minimal HTTP Server. When it receives
 a GET request at the port number 2000 at the directory '/' it returns:
 
-<div><code class="html"><html>Content</html></code></div>
+<code class="html"><html>Content</html></code>
 
 Here is the code:
 

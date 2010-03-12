@@ -4,7 +4,7 @@ class UltraVioletFilter < Nanoc3::Filter
         require 'rio'
         require 'rubygems'
         require 'uv'
-        code_rule = %r{(<code class="(.+?)"( file="(.+?)")?>(.+?)</code>)}m
+        code_rule = %r{(<code class="([^"]+?)"( file="([^"]+?)")?>(.+?)</code>)}m
         content.gsub!(code_rule) do |full|
             # original, lang, filename, code = full[0], full[1], full[3], full[4]
             original, lang, filename, code = $1, $2, $4, $5
@@ -19,7 +19,7 @@ class UltraVioletFilter < Nanoc3::Filter
                 code_path = [ 'output' , webpath, 'code']
                 url = webpath + 'code/' + filename
                 if (url == @url)
-                    puts %{erreur de redo : #{url}}
+                    puts %{# erreur de redo : #{url}}
                     break
                 end
                 @url=url
@@ -38,6 +38,5 @@ class UltraVioletFilter < Nanoc3::Filter
         dest_rio = rio(dir).mkpath
         frio = rio(dir, fname).delete
         frio << str
-        puts "\t\twrote file #{dir}/#{fname}"
     end
 end 

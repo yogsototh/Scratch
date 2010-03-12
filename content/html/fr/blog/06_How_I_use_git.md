@@ -164,14 +164,14 @@ C'est pourquoi j'ai créé deux simples scripts pour automatiser cette opératio
 Ainsi, lorsque je veux créer une nouvelle branche (localement et ligne) ; je lance le script :
 
 
-<div><code class="zsh">git-create-new-branch branch_name</code></div>
+<code class="zsh">git-create-new-branch branch_name</code>
 
 
 
 et quand je suis sur un autre ordinateur et que je veux récupérer les branches crées sur un autre poste, j'exécute :
 
 
-<div><code class="zsh">git-get-remote-branches</code></div>
+<code class="zsh">git-get-remote-branches</code>
 
 
 Voici le code des deux script (en zsh) : 

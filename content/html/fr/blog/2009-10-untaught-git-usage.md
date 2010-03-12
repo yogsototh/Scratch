@@ -173,19 +173,19 @@ Mais dans ce cas-là, je n'ai qu'à utiliser des *clônes* et pas des *branches 
 
 Je trouve toujours que les terminologies de bazaar sont plus claires et plus concises.
 
-<div><code class="zsh">bzr revert</code></div>
+<code class="zsh">bzr revert</code>
 
 est quand même plus clair que
 
-<div><code class="zsh">git reset --hard HEAD</code></div>
+<code class="zsh">git reset --hard HEAD</code>
 
 De la même façon
 
-<div><code class="zsh">bzr revert -r -3</code></div>
+<code class="zsh">bzr revert -r -3</code>
 
 je trouve ça mieux que
 
-<div><code class="zsh">git reset --hard HEAD~3</code></div>
+<code class="zsh">git reset --hard HEAD~3</code>
 
 Là ça va commencer à se compliquer. Si on veut revenir dans le temps sur toute l'arborescence, avec Git on utilise `reset`. 
 
@@ -195,20 +195,20 @@ Là ça va commencer à se compliquer. Si on veut revenir dans le temps sur tout
 Maintenant si je veux revenir dans le temps sur un seul fichier. Naturellement on se dit :
 
 
-<div><code class="zsh">git reset --hard FILE</code></div>
+<code class="zsh">git reset --hard FILE</code>
 
 <center>**ET BIEN NON !**</center>
 
 La solution c'est :
 
 
-<div><code class="zsh">git checkout FILE</code></div>
+<code class="zsh">git checkout FILE</code>
 
 Quoi ? **`checkout`** !? Bon, d'accord, j'accepte, pourquoi pas après tout ?
 En plus quand on est habitué à Bazaar c'est :
 
 
-<div><code class="zsh">git revert FILE</code></div>
+<code class="zsh">git revert FILE</code>
 
 Ce que je trouve quand même bien plus naturel.
 
@@ -217,12 +217,12 @@ Mais là où ça devient vraiment difficile de s'y faire c'est pour changer de b
 Avec Bazaar ça donne : 
 
 
-<div><code class="zsh">cd ../branch</code></div>
+<code class="zsh">cd ../branch</code>
 
 Bon ok, il faut changer de répertoire, un répertoire par branche. Ça consomme de l'espace disque mais au moins on voit où on est. Avec Git voilà comment on change de branche (*branche légère*) :
 
 
-<div><code class="zsh">git checkout branch</code></div>
+<code class="zsh">git checkout branch</code>
 
 Alors là, on se dit "<abbr title="What the Fuck?">WTF?</abbr>" ; en français : mais qu'est-ce que c'est que ça ? Je croyais que `checkout` c'était pour récupérer l'état d'un fichier ?
 

@@ -24,16 +24,16 @@ For developer IE is a nightmare. This is why, I use a method to disable my stand
 
 
 
-<div><code class="javascript">
+<code class="javascript">
 $(document).ready( function() {
     if ($.browser["msie"]) {
         // include the ie.js file
         $('head').append('<script type="text/javascript" src="/js/ie.js"></scr' + 'ipt>');
     }
 });
-</code></div>
+</code>
 
-<div><code class="javascript" file="ie.js">
+<code class="javascript" file="ie.js">
 // Remove all CSS I don't want to use on IE
 $('link[rel=stylesheet]').each(function(i)
 {
@@ -51,6 +51,6 @@ $('head').append('<link rel="stylesheet" type="text/css" href="/css/ie.css"/>');
 // I also add a message on top of the page
 $('body').prepend('<div id="iemessage"><p><span class="fr"><em>Avec <a href="http://www.firefox.com"> Firefox </a> et <a href="http://www.apple.com/safari">Safari</a> cette page est bien plus jolie !</em></span><span class="en"><em>This page is far nicer with <a href="http://www.firefox.com"> Firefox </a> and <a href="http://www.apple.com/safari">Safari</a>!</em></span></p>.</div>');
 
-</code></div>
+</code>
 
 That's it.

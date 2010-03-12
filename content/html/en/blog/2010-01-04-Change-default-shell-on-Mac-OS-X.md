@@ -22,6 +22,6 @@ tags:
 
 I just found a way to change the default shell on Mac OS X. This note is mostly for me, but somebody else should find it useful. Just launch the following command: 
 
-<div><code class="zsh">
+<code class="zsh">
 > chsh
-</code></div>
+</code>

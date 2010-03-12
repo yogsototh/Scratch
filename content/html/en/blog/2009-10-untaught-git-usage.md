@@ -179,19 +179,19 @@ And I return exactly in branches Bazaar provided me.
 
 For now, I prefer (from far) Bazaar terminology. They are cleaner and more understandable.
 
-<div><code class="zsh">bzr revert</code></div>
+<code class="zsh">bzr revert</code>
 
 Is clearer than
 
-<div><code class="zsh">git reset --hard HEAD</code></div>
+<code class="zsh">git reset --hard HEAD</code>
 
 We can tell the same thing about
 
-<div><code class="zsh">bzr revert -r -3</code></div>
+<code class="zsh">bzr revert -r -3</code>
 
 which seems preferable to
 
-<div><code class="zsh">git reset --hard HEAD~3</code></div>
+<code class="zsh">git reset --hard HEAD~3</code>
 
 
 Until now, it is not big business. But now, things will go worse.
@@ -204,7 +204,7 @@ If we want to revert time on all the tree we use the keyword `reset`.
 Now, if I want to revert time on on file. We should naturally imagine the command will be:
 
 
-<div><code class="zsh">git reset --hard FILE</code></div>
+<code class="zsh">git reset --hard FILE</code>
 
 <center>**OF COURSE NOT!**</center>
 
@@ -212,14 +212,14 @@ Now, if I want to revert time on on file. We should naturally imagine the comman
 The solution is:
 
 
-<div><code class="zsh">git checkout FILE</code></div>
+<code class="zsh">git checkout FILE</code>
 
 
 What? **`checkout`** !? Well, ok. I accept. why not?
 With Bazaar it is:
 
 
-<div><code class="zsh">git revert FILE</code></div>
+<code class="zsh">git revert FILE</code>
 
 
 What I personally found far more natural.
@@ -230,13 +230,13 @@ But the command to change the current *cheap branch* is really hard to be accept
 With Bazaar it is:
 
 
-<div><code class="zsh">cd ../branch</code></div>
+<code class="zsh">cd ../branch</code>
 
 
 Well yes. With Bazaar you have to change your directory to change your branch. It needs more disk resources but it is really clear. Which is my current branch, is just a `pwd` away. For Git here is the command:
 
 
-<div><code class="zsh">git checkout branch</code></div>
+<code class="zsh">git checkout branch</code>
 
 
 **WTF?** I believed `checkout` was the key to get a file in some state (not the entire tree).

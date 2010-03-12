@@ -46,117 +46,117 @@ In the first part, we saw the list of resolved problem by [Git][git]. To resume 
 
 ### get others modifications
 
-<div><code class="zsh">
+<code class="zsh">
 $ git pull
-</code></div>
+</code>
 
 ### send modifications to others
 
-<div><code class="zsh">
+<code class="zsh">
 $ git push
-</code></div>
+</code>
 
 or more generally
 
-<div><code class="zsh">
+<code class="zsh">
 $ git pull
 $ git push
-</code></div>
+</code>
 
 ### get back in time
 
 #### For all tree
 
-<div><code class="zsh">
+<code class="zsh">
 $ git checkout
-</code></div>
+</code>
 
-<div><code class="zsh">
+<code class="zsh">
 $ git revert
-</code></div>
+</code>
 
 
 revert three version before (see my `.gitconfig` file).
 
-<div><code class="zsh">
+<code class="zsh">
 $ git uncommit 3
-</code></div>
+</code>
 
 Undo the las merge (if something goes wrong)
 
 
-<div><code class="zsh">
+<code class="zsh">
 $ git revertbeforemerge
-</code></div>
+</code>
 
 #### For one file
 
-<div><code class="zsh">
+<code class="zsh">
 $ git checkout file
 $ git checkout VersionHash file
 $ git checkout HEAD~3 file
-</code></div>
+</code>
 
 ### list differences between each version
 
 list files being modified
 
-<div><code class="zsh">
+<code class="zsh">
 $ git status
-</code></div>
+</code>
 
 fr:différences entre les fichier de la dernière version et les fichiers locaux.
 
-<div><code class="zsh">
+<code class="zsh">
 $ git diff
-</code></div>
+</code>
 
 liste les différences entre les fichier d'une certaine version et les fichiers locaux.
 
-<div><code class="zsh">
+<code class="zsh">
 $ git diff VersionHash fichier
-</code></div>
+</code>
 
 ### name some version to refer to them in the future
 
-<div><code class="zsh">
+<code class="zsh">
 $ git tag 'toto'
-</code></div>
+</code>
 
 ### show historic of modifications
 
-<div><code class="zsh">
+<code class="zsh">
 $ git log
 $ git lg
 $ git logfull
-</code></div>
+</code>
 
 ### en:know who did what and when::
 
-<div><code class="zsh">
+<code class="zsh">
 $ git blame fichier
-</code></div>
+</code>
 
 ### handle conflicts
 
-<div><code class="zsh">
+<code class="zsh">
 $ git conflict
-</code></div>
+</code>
 
 ### manage branches
 
 
 To create a branch: 
 
-<div><code class="zsh">
+<code class="zsh">
 $ git branch branch_name
-</code></div>
+</code>
 
 
 To change the current branch: 
 
-<div><code class="zsh">
+<code class="zsh">
 $ git checkout branch_name
-</code></div>
+</code>
 
 [git]: http://git-scm.org "Git"

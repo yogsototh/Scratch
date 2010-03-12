@@ -26,7 +26,7 @@ Here is a tip, I don't know why, but I almost always forgot how to do that.
 When you want to launch a command and this command should not be killed after you close your terminal. Here is how to accomplish that from command line: 
 
 
-<div><code class="zsh">
+<code class="zsh">
 nohup cmd &
 </code>
 <small>where <code>cmd</code> is your command.</small>

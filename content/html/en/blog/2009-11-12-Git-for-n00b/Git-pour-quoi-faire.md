@@ -39,7 +39,7 @@ When somebody work with files without a versions system, the following happens f
 When you modify a somehow critical file you don't want to loose. You copy naturally this file with another name. For example:
 
 
-<div><code class="zsh">$ cp fichier_important.c fichier_important.c.bak</code></div>
+<code class="zsh">$ cp fichier_important.c fichier_important.c.bak</code>
 
 
 In consequence of what, the new file, play the role of *backup*. If you break everything, you can always return in the last state by overwriting your modifications.
@@ -112,7 +112,7 @@ Let's begin by an example, a two person project ; Alex and Beatrice. On a file c
 Cthulhu
 Shubniggurath
 Yogsototh
-</code></div>
+</code>
 
 Say Alex is home and modify the file: 
 <div style="width: 10em; margin-left: auto; margin-right: auto">

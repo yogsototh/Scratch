@@ -22,6 +22,6 @@ tags:
 Je viens de trouver le moyen de changer son shell par défaut sous Mac OS X. Cette note est plus pour moi. Mais elle peut aussi servir à quelqu'un d'autre. Il suffit de lancer la commande : 
 
 
-<div><code class="zsh">
+<code class="zsh">
 > chsh
-</code></div>
+</code>

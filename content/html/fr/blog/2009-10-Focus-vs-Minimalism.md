@@ -50,7 +50,7 @@ L'HTML :
 
 La CSS : 
 
-<div><code class="css">
+<code class="css">
 #menuButton {
   font-size: 2em;
   height: 2em;

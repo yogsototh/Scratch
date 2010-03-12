@@ -46,118 +46,118 @@ Dans la première partie, nous avons vu la liste des problèmes résolus par [Gi
 
 ### récupérer les modifications des autres
 
-<div><code class="zsh">
+<code class="zsh">
 $ git pull
-</code></div>
+</code>
 
 ### envoyer ses modifications aux autres
 
-<div><code class="zsh">
+<code class="zsh">
 $ git push
-</code></div>
+</code>
 
 ou plus généralement
 
 
-<div><code class="zsh">
+<code class="zsh">
 $ git pull
 $ git push
-</code></div>
+</code>
 
 ### revenir dans le temps
 
 #### Pour toute l'arborescence
 
-<div><code class="zsh">
+<code class="zsh">
 $ git checkout
-</code></div>
+</code>
 
-<div><code class="zsh">
+<code class="zsh">
 $ git revert
-</code></div>
+</code>
 
 revenir trois versions en arrière
 
 
-<div><code class="zsh">
+<code class="zsh">
 $ git uncommit 3
-</code></div>
+</code>
 
 Revenir avant le dernier merge (s'il s'est mal passé).
 
 
-<div><code class="zsh">
+<code class="zsh">
 $ git revertbeforemerge
-</code></div>
+</code>
 
 #### Pour un seul fichier
 
-<div><code class="zsh">
+<code class="zsh">
 $ git checkout file
 $ git checkout VersionHash file
 $ git checkout HEAD~3 file
-</code></div>
+</code>
 
 ### lister les différences entre chaque version
 
 liste les fichier en cours de modifications
 
-<div><code class="zsh">
+<code class="zsh">
 $ git status
-</code></div>
+</code>
 
 fr:différences entre les fichier de la dernière version et les fichiers locaux.
 
-<div><code class="zsh">
+<code class="zsh">
 $ git diff
-</code></div>
+</code>
 
 liste les différences entre les fichier d'une certaine version et les fichiers locaux.
 
-<div><code class="zsh">
+<code class="zsh">
 $ git diff VersionHash fichier
-</code></div>
+</code>
 
 ### nommer certaines versions pour s'y référer facilement
 
-<div><code class="zsh">
+<code class="zsh">
 $ git tag 'toto'
-</code></div>
+</code>
 
 ### afficher l'historique des modifications
 
-<div><code class="zsh">
+<code class="zsh">
 $ git log
 $ git lg
 $ git logfull
-</code></div>
+</code>
 
 ### savoir qui a fait quoi et quanden:know who did what and when::
 
-<div><code class="zsh">
+<code class="zsh">
 $ git blame fichier
-</code></div>
+</code>
 
 ### gérer des conflits
 
-<div><code class="zsh">
+<code class="zsh">
 $ git conflict
-</code></div>
+</code>
 
 ### manipuler facilement des branches
 
 Pour créer une branche : 
 
 
-<div><code class="zsh">
+<code class="zsh">
 $ git branch branch_name
-</code></div>
+</code>
 
 Pour changer de branche courante : 
 
 
-<div><code class="zsh">
+<code class="zsh">
 $ git checkout branch_name
-</code></div>
+</code>
 
 [git]: http://git-scm.org "Git"
