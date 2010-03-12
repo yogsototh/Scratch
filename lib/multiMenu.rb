@@ -29,14 +29,10 @@ def depthOf(item)
 end
 
 def getSortedChildren(parent)
-    begin
-        if parent[:kind] == "article"
-                return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:date] <=> y[:date] }
-        else
-            return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:menupriority] <=> y[:menupriority] }
-        end
-    rescue
-        return parent.children.reject{|p| p[:isHidden]}
+    if parent[:kind] == "blog"
+            return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:date] <=> y[:date] }
+    else
+        return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:menupriority] <=> y[:menupriority] }
     end
 end
 
