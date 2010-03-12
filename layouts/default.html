@@ -48,6 +48,9 @@ self.instance_variable_set(:@conf, conf)
     <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/layout.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/css/shadows.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/gen.css" />
+    <% if article  %>
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+    <% end %>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocom<%= language %>">
     <link rel="stylesheet" type="text/css" href="/Scratch/css/js.css" /> <% 
     languages.each do |lang|

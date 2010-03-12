@@ -30,11 +30,37 @@ end
 
 
 # HTML
+# compile '/*' do
+#   filter :erb
+#   filter :bluecloth
+#   layout 'default'
+# end
+
 compile '/html/*' do
-  filter :erb
-  filter :bluecloth
-  layout 'default'
+  # item[:extension] returns 'html.erb' for multi-dotted filename
+  ext = item[:extension].nil? ? nil : item[:extension].split('.').last
+
+  if ext == 'erb'
+    filter :erb
+  elsif ext == 'haml' || ext.nil?
+    filter :haml
+  elsif ext == 'md' || ext == 'markdown'
+    filter :erb
+    filter :kramdown
+  else
+    raise "Filter is not configured for #{item.identifier} in Rules file."
+  end
+
+  filter :description
+  filter :frenchspace
+  filter :ytypo
+  filter :yabbreviations
+  filter :multicorps
+  filter :firsthi
+
+  layout 'default' unless item[:layout] == "none"
 end
+
 route '/html/*' do
   '/Scratch' + item.identifier.sub('/html','') + 'index.html'
 end
