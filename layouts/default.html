@@ -92,7 +92,7 @@ self.instance_variable_set(:@conf, conf)
                     <% languages.each do |l| %>
                         <% dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/})  %>
                         <% if @item_rep.path != dest %>
-                        <li><a href="<%=dest%>"><%= l %></a></li>
+                        <li><a href="<%=dest%>" onclick="setLanguage('<%=l%>')"><%= l %></a></li>
                         <% end %>
                     <% end %>
                     </ul>
