@@ -40,6 +40,8 @@ compile '/html/*' do
   # item[:extension] returns 'html.erb' for multi-dotted filename
   ext = item[:extension].nil? ? nil : item[:extension].split('.').last
 
+  filter :ultraviolet
+
   if ext == 'erb'
     filter :erb
   elsif ext == 'haml' || ext.nil?
@@ -51,13 +53,12 @@ compile '/html/*' do
     raise "Filter is not configured for #{item.identifier} in Rules file."
   end
 
+  filter :firsthi
   filter :description
   filter :frenchspace
   filter :ytypo
   filter :yabbreviations
   filter :multicorps
-  filter :firsthi
-  filter :ultraviolet
 
   layout 'default' unless item[:layout] == "none"
 end

@@ -63,8 +63,10 @@ module Nanoc3::Filters
     class FirstHierarchy < Nanoc3::Filter
         identifiers :firsthi
         def run(content, params={})
-            content.gsub(/<div[^>]*class="corps"[^>]*>(\s|\n)*?<h[1-4]?/m) do
-               $& + ' class="first"'
+            content.gsub(/\A(\s|\n)*<h[1-4]/m)do
+                $& + ' class="first"'
+            end.gsub(/<div[^>]*class="corps"[^>]*>(\s|\n)*<h[1-4]/m) do
+                $& + ' class="first"'
             end
         end
     end
