@@ -65,7 +65,7 @@ module Nanoc3::Filters
         def run(content, params={})
             content.gsub(/\A(\s|\n)*<h[1-4]/m)do
                 $& + ' class="first"'
-            end.gsub(/<div[^>]*class="corps"[^>]*>(\s|\n)*<h[1-4]/m) do
+            end.gsub(/<div[^>]*class="corps"[^>]*>(\s)*<h[1-4]/m) do
                 $& + ' class="first"'
             end
         end

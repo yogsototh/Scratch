@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   2
 kind:           article
-date:           2009-11-12T11:39:54+02:00
+created_at:           2009-11-12T11:39:54+02:00
 title: Configure before Use
 multiTitle: 
     fr: Avant l'utilisation, la configuration

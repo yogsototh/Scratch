@@ -30,7 +30,7 @@ end
 
 def getSortedChildren(parent)
     if parent[:kind] == "blog"
-            return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:date] <=> y[:date] }
+            return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:created_at] <=> y[:created_at] }
     else
         return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:menupriority] <=> y[:menupriority] }
     end
@@ -92,7 +92,7 @@ def tagCloud
     return '<div>This should be a TagCloud</div>'
 end
 def lnkto(title,item)
-    puts 'lnkto'
-    return %{<a href="#">#{title}</a>}
+    language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'')
+    link_to(title, "/Scratch/#{language}"+item)
 end
 

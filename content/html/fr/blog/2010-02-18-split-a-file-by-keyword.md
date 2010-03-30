@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2010-02-18T15:29:14+02:00
+created_at:           2010-02-18T15:29:14+02:00
 title: split a file by keyword
 multiTitle: 
     fr: split a file by keyword

@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2009-09-11T14:35:35+02:00
+created_at:           2009-09-11T14:35:35+02:00
 title: Synchronize Custom WebSite with mobileMe
 multiTitle: 
     fr: Héberger son site personnel sur le site mobileMe

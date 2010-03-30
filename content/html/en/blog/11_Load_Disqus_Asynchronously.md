@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2009-09-17T23:27:54+02:00
+created_at:           2009-09-17T23:27:54+02:00
 title: Load Disqus Asynchronously
 multiTitle: 
     fr: Load Disqus Asynchronously

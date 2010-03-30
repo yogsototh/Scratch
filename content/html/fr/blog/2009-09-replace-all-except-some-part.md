@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2009-09-22T22:13:25+02:00
+created_at:           2009-09-22T22:13:25+02:00
 title: replace all except some part
 multiTitle: 
     fr: replace all except some part

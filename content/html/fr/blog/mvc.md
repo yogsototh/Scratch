@@ -8,7 +8,7 @@ filters_pre:
 # l'article n'est pas encore prêt
 isHidden: true
 kind: article
-date: 2009-07-06T16:15:23+02:00
+created_at: 2009-07-06T16:15:23+02:00
 title: MVC explained
 multiTitle: 
     fr: Les raisons du MVC

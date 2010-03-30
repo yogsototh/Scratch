@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2009-10-26T21:56:09+02:00
+created_at:           2009-10-26T21:56:09+02:00
 title: Wait to hide a menu in jQuery
 multiTitle: 
     fr: Un menu qui attends avant de se cacher

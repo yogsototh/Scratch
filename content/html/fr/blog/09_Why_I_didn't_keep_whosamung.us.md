@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2009-09-11T14:27:09+02:00
+created_at:           2009-09-11T14:27:09+02:00
 title: Why I didn't keep whos.amung.us
 multiTitle: 
     fr: Why I didn't keep whos.amung.us

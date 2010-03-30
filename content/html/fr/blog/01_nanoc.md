@@ -1,6 +1,6 @@
 -----
 # Custom 
-date: 2008-10-10T16:15:23+02:00
+created_at: 2008-10-10T16:15:23+02:00
 kind: article
 title: Nanoc
 multiTitle: 

@@ -3,6 +3,7 @@
 
 # Custom 
 kind: article
+created_at: 01/02/2008
 title: An ultraviolet test
 multiTitle: 
     en: Ultraviolet

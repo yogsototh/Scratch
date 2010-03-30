@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2010-01-12T16:36:40+02:00
+created_at:           2010-01-12T16:36:40+02:00
 title: antialias font in Firefox under Ubuntu
 multiTitle: 
     fr: Fontes adoucies sous Ubuntu Firefox

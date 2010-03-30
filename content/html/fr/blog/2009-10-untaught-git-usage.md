@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2009-10-13T13:10:09+02:00
+created_at:           2009-10-13T13:10:09+02:00
 title: untaught Git usage
 multiTitle: 
     fr: Usages non dits de Git

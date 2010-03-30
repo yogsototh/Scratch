@@ -40,7 +40,7 @@ compile '/html/*' do
   # item[:extension] returns 'html.erb' for multi-dotted filename
   ext = item[:extension].nil? ? nil : item[:extension].split('.').last
 
-  filter :ultraviolet
+  filter :ultraviolet # must be before kramdown
 
   if ext == 'erb'
     filter :erb
@@ -53,18 +53,29 @@ compile '/html/*' do
     raise "Filter is not configured for #{item.identifier} in Rules file."
   end
 
-  filter :firsthi
+  filter :multicorps # must be before firsthi
+  filter :firsthi # must be after multicorps
   filter :description
   filter :frenchspace
   filter :ytypo
   filter :yabbreviations
-  filter :multicorps
 
   layout 'default' unless item[:layout] == "none"
 end
 
 route '/html/*' do
   '/Scratch' + item.identifier.sub('/html','') + 'index.html'
+end
+
+compile '/xml/*' do
+    layout 'feed'
+end
+
+route '/xml/*' do
+    '/Scratch/en/feed.xml'
+end
+route '/xml/*' do
+    '/Scratch/fr/feed.xml'
 end
 
 layout '*', :erb

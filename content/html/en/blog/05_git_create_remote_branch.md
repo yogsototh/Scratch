@@ -4,7 +4,7 @@
 # isHidden: true
 kind: article
 menupriority: 1
-date: 2009-08-17T14:00:00+02:00
+created_at: 2009-08-17T14:00:00+02:00
 title: Git remote branch creation
 multiTitle: 
     fr: Création de branches avec Git

@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2009-10-28T11:03:30+02:00
+created_at:           2009-10-28T11:03:30+02:00
 title: custom website synchronisation with mobileme (2)
 multiTitle: 
     en: custom website synchronisation with mobileme (2)

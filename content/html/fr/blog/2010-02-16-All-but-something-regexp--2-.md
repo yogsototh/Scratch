@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2010-02-16T10:33:21+02:00
+created_at:           2010-02-16T10:33:21+02:00
 title: All but something regexp (2)
 multiTitle: 
     fr: All but something regexp (2)

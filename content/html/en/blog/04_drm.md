@@ -3,7 +3,7 @@
 # isHidden: true
 kind: article
 menupriority: 1
-date: 2009-08-15T11:00:00+02:00
+created_at: 2009-08-15T11:00:00+02:00
 title: DRM are EVIL
 multiTitle: 
     fr: Les protections anti-copies sont LE MAL

@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2009-09-06T17:59:16+02:00
+created_at:           2009-09-06T17:59:16+02:00
 title: Screensaver compilation option for Snow Leopard<sub>&copy;</sub>
 multiTitle: 
     fr: Screensaver compilation option for Snow Leopard<small>&copy;</small> 

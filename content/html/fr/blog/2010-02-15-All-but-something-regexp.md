@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2010-02-15T11:16:12+02:00
+created_at:           2010-02-15T11:16:12+02:00
 title: All but something regexp
 multiTitle: 
     fr: Expression Régulière pour "Tout sauf un mot"

@@ -4,7 +4,7 @@
 # isHidden:       true
 menupriority:   1
 kind:           article
-date:           2009-08-18T14:44:31+02:00
+created_at:           2009-08-18T14:44:31+02:00
 title: Git for self
 multiTitle: 
     fr: Git en solo

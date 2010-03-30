@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2009-09-28T10:58:20+02:00
+created_at:           2009-09-28T10:58:20+02:00
 title: Disqus versus Intense Debate (Why I switched)
 multiTitle: 
     fr: Disqus contre Intense Debate (pourquois j'ai changé)

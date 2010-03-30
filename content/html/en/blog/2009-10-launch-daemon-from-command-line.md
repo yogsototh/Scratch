@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2009-10-23T10:53:16+02:00
+created_at:           2009-10-23T10:53:16+02:00
 title: launch daemon from command line
 multiTitle: 
     fr: lancer un démon en ligne de commande

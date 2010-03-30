@@ -4,7 +4,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-date:           2009-10-03T14:34:11+02:00
+created_at:           2009-10-03T14:34:11+02:00
 title: How to preload your site with style
 multiTitle: 
     fr: La classe pour charger une page web
