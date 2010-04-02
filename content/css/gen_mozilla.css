@@ -1,0 +1,167 @@
+-----
+-----
+!rouge_clair = #cc0000
+!rouge_fonce = #6c0000
+!blanc_fonce = #cccccc
+!gris_fonce = #888888
+!texte_normal = #222222
+!texte_attenue = #666666
+
+!tiny_radius = 10px
+!small_radius = 20px
+!large_radius = 27px
+
+=tinyround
+  :-moz-border-radius
+    :topleft 1px
+    :topright = !tiny_radius
+    :bottomleft = !tiny_radius
+    :bottomright = !tiny_radius
+
+=downsmallround
+  :-moz-border-radius
+    :topleft = 0px
+    :topright = 0px
+    :bottomleft = !small_radius
+    :bottomright = !small_radius
+
+=smallround
+  :-moz-border-radius
+    :topleft 1px
+    :topright = !small_radius
+    :bottomleft = !small_radius
+    :bottomright = !small_radius
+
+=largeround
+  :-moz-border-radius
+    :topleft 1px
+    :topright = !large_radius
+    :bottomleft = !large_radius
+    :bottomright = !large_radius
+
+=first_round_base
+  :-moz-border-radius
+    :topleft 1px
+    :bottomleft = 1px
+    :bottomright = 1px
+
+=large_first_round
+  :-moz-border-radius
+    :topright = !large_radius
+
+=small_first_round
+  :-moz-border-radius
+    :topright = !small_radius
+
+=tiny_first_round
+  :-moz-border-radius
+    :topright = !tiny_radius
+
+=large_first_round
+  +first_round_base
+
+=small_first_round
+  +first_round_base
+
+=tiny_first_round
+  +first_round_base
+
+.corps h1
+  :-moz-border-radius
+    :topleft 0px
+    :topright 29px
+    :bottomleft 0px
+    :bottomright 29px
+
+.corps h2
+  :-moz-border-radius
+    :topleft 0px
+    :topright = !small_radius
+    :bottomleft 0px
+    :bottomright = !small_radius
+
+.corps h3,
+.corps h4
+  :-moz-border-radius
+    :topleft 0px
+    :topright = !tiny_radius
+    :bottomleft 0px
+    :bottomright = !tiny_radius
+
+
+// -----
+=large_first_round
+  +first_round_base
+
+=small_first_round
+  +first_round_base
+
+=tiny_first_round
+  +first_round_base
+
+// ------- Fin des definitions ------------
+#entete
+  +downsmallround
+
+#titre
+  +largeround
+
+.encadre
+  +smallround
+
+.black
+  +smallround
+
+.red
+  +smallround
+
+.shadow
+  +smallround
+
+.corps h1.first
+  +large_first_round
+
+.corps h2.first
+  +small_first_round
+
+img
+  +tinyround
+
+#sousliens,
+pre.twilight,
+#bottom,
+#blocMessage,
+#presentation,
+#Menu,
+table.description tr td,
+.corps
+  +tinyround
+
+.nojsbutton,
+.corps
+  +largeround
+
+#liens ul li a:hover
+  +smallround
+
+
+#liens ul li.active
+  +smallround
+
+// --- bords arrondis
+#content 
+  +largeround
+
+// --- les ombres
+
+#choix ul li.activelang
+  +tinyround
+
+.impact, .darkimpact
+  +largeround
+
+#rss a
+  +smallround
+
+#menuMessage
+  +downsmallround

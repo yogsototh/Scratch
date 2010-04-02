@@ -132,8 +132,19 @@ function initMenu() {
     hideMenu();
 }
 
+function setSpecificCss() {
+    var userAgent = navigator.userAgent.toLowerCase();
+    if ( /webkit/.test(userAgent) ) {
+        $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_webkit.css"/>');
+    } else if ( /mozilla/.test(userAgent) ) {
+        $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_mozilla.css"/>');
+    }
+}
+
+
 // Ce que l'on va lancer à l'init.
 $(document).ready( function() {
+    setSpecificCss();
     detectIE();
     detectiPhone();
     initMenu();

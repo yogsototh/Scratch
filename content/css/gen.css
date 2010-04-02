@@ -73,93 +73,33 @@
   :border
     :style solid
     :width 1px 1px 1px 1px
-  :-moz-border-radius
-    :topleft 1px
-    :topright = !tiny_radius
-    :bottomleft = !tiny_radius
-    :bottomright = !tiny_radius
-  :-webkit-border
-    :top-left-radius = 1px
-    :top-right-radius = !tiny_radius
-    :bottom-left-radius = !tiny_radius
-    :bottom-right-radius = !tiny_radius
 
 =downsmallround
   :border none
-  :-moz-border-radius
-    :topleft = 0px
-    :topright = 0px
-    :bottomleft = !small_radius
-    :bottomright = !small_radius
-  :-webkit-border
-    :top-left-radius = 0px
-    :top-right-radius = 0px
-    :bottom-left-radius = !small_radius
-    :bottom-right-radius = !small_radius
 
 =smallround
   :border
     :style solid
     :width 1px 1px 1px 1px
-  :-moz-border-radius
-    :topleft 1px
-    :topright = !small_radius
-    :bottomleft = !small_radius
-    :bottomright = !small_radius
-  :-webkit-border
-    :top-left-radius = 1px
-    :top-right-radius = !small_radius
-    :bottom-left-radius = !small_radius
-    :bottom-right-radius = !small_radius
 
 =largeround
   :border
     :style solid
     :width 1px
-  :-moz-border-radius
-    :topleft 1px
-    :topright = !large_radius
-    :bottomleft = !large_radius
-    :bottomright = !large_radius
-  :-webkit-border
-    :top-left-radius 1px
-    :top-right-radius = !large_radius
-    :bottom-left-radius = !large_radius
-    :bottom-right-radius = !large_radius
 
 =first_round_base
   :border
     :style none
     :width 2px
-  :-moz-border-radius
-    :topleft 1px
-    :bottomleft = 1px
-    :bottomright = 1px
-  :-webkit-border
-    :top-left-radius 1px
-    :bottom-left-radius = 1px
-    :bottom-right-radius = 1px
 
 =large_first_round
   +first_round_base
-  :-moz-border-radius
-    :topright = !large_radius
-  :-webkit-border
-    :top-right-radius = !large_radius
 
 =small_first_round
   +first_round_base
-  :-moz-border-radius
-    :topright = !small_radius
-  :-webkit-border
-    :top-right-radius = !small_radius
 
 =tiny_first_round
   +first_round_base
-  :-moz-border-radius
-    :topright = !tiny_radius
-  :-webkit-border
-    :top-right-radius = !tiny_radius
 
 // ------- Fin des definitions ------------
 #entete
@@ -254,16 +194,6 @@ pre.twilight,
   :border
     :style solid
     :width 1px 1px 1px 1px
-  :-moz-border-radius
-    :topleft 0px
-    :topright 29px
-    :bottomleft 0px
-    :bottomright 29px
-  :-webkit-border
-    :top-left-radius 0px
-    :top-right-radius 29px
-    :bottom-left-radius 0px
-    :bottom-right-radius 29px
   :text
     :align right
 
@@ -275,16 +205,6 @@ pre.twilight,
     :right 1px
     :bottom 1px
     :left 0px
-  :-moz-border-radius
-    :topleft 0px
-    :topright = !small_radius
-    :bottomleft 0px
-    :bottomright = !small_radius
-  :-webkit-border
-    :top-left-radius 0px
-    :top-right-radius = !small_radius
-    :bottom-left-radius 0px
-    :bottom-right-radius = !small_radius
   :text
     :align right
 
@@ -298,16 +218,6 @@ pre.twilight,
     :left 0px
     :style solid
   :color #00ee00
-  :-moz-border-radius
-    :topleft 0px
-    :topright = !tiny_radius
-    :bottomleft 0px
-    :bottomright = !tiny_radius
-  :-webkit-border
-    :top-left-radius 0px
-    :top-right-radius = !tiny_radius
-    :bottom-left-radius 0px
-    :bottom-right-radius = !tiny_radius
   :text
     :align right
 
@@ -393,13 +303,6 @@ ul
 
 #content 
   :background-color white
-
-.corps h1,
-.corps h2,
-.corps h3,
-.corps h4
-  :-moz-box-shadow 0 1px #fff
-  :-webkit-box-shadow 0 1px #fff
 
 .withfile pre.twilight
   :background
