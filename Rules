@@ -10,6 +10,7 @@
 # CSS
 compile '/css/*' do
     filter :sass
+    filter :rainpress
 end
 route '/css/*' do
     '/Scratch/assets' + item.identifier.chop + '.css'
@@ -73,10 +74,10 @@ compile '/xml/*' do
 end
 
 route '/xml/en/*' do
-    '/Scratch/en/feed.xml'
+    '/Scratch/en/blog/feed/feed.xml'
 end
 route '/xml/fr/*' do
-    '/Scratch/fr/feed.xml'
+    '/Scratch/fr/blog/feed/feed.xml'
 end
 
 layout '*', :erb
