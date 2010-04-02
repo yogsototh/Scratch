@@ -67,14 +67,15 @@ route '/html/*' do
   '/Scratch' + item.identifier.sub('/html','') + 'index.html'
 end
 
+# feed
 compile '/xml/*' do
     layout 'feed'
 end
 
-route '/xml/*' do
+route '/xml/en/*' do
     '/Scratch/en/feed.xml'
 end
-route '/xml/*' do
+route '/xml/fr/*' do
     '/Scratch/fr/feed.xml'
 end
 
