@@ -132,8 +132,8 @@ self.instance_variable_set(:@conf, conf)
             <% if article  %>
                 <% if depthOf(@item) == 3 %>
                 <div class="navigation">
-                    <%= puts "previousFor(@item)" %>
-                    <%= puts "nextFor(@item)" %>
+                    <%= previousFor(@item) %>
+                    <%= nextFor(@item) %>
                 </div>
                 <div class="flush"></div>
                 <% end %>

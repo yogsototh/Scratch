@@ -96,3 +96,28 @@ def lnkto(title,item)
     link_to(title, "/Scratch/#{language}"+item)
 end
 
+def nextFor(page)
+    if depthOf(page) == 3
+        target=getSortedChildren(page).first
+    else
+        sorted_children=getSortedChildren(page)
+        target=sorted_children[ sorted_children.index(page) + 1 ]
+    end
+    if target.nil?
+        return nil
+    end
+    link_to("&rarr;&nbsp;"+tradOf(:next), target)
+end
+
+def previousFor(page)
+    if depthOf(page) <= 3
+        return nil
+    end
+
+    sorted_children=getSortedChildren(page.parent)
+    target=sorted_children[ sorted_children.index(page) - 1 ]
+    if target.nil?
+        return nil
+    end
+    link_to(tradOf(:previous)+"&nbsp;&larr;", target)
+end
