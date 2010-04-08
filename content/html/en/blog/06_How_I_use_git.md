@@ -19,7 +19,7 @@ tags:
 
 -----
 
-<%= blogimage("central architecture","central_architecture.png") %>
+<%= blogimage("central_architecture.png","central architecture") %>
 
 
 I use [Git](http://www.git-scm.org/) to manage my personnal projects.

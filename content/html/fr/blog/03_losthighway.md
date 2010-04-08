@@ -15,7 +15,7 @@ multiDescription:
 
 -----
 
-<%= blogimage( 'Lost Highway' , 'intro.jpg' ) %>
+<%= blogimage( 'intro.jpg' , 'Lost Highway' ) %>
 
 
 Lost Highway ne laisse pas indiférent. Le revoir ne lasse pas même s'il parrait complètement obscur. C'est une des forces de David Lynch.
@@ -68,7 +68,7 @@ I believe I had found a coherent interpretation which allow to follow the movie 
 
 ## Le test de Rorschach
 
-<%= leftblogimage( 'test de Rorschach','rorschach.gif' ) %>
+<%= leftblogimage('rorschach.gif' , 'test de Rorschach') %>
 !!fr!!
 À l'instar du protagoniste chacun voit dans ce film ce qu'il a envie d'y voir. Nous pouvons nous y perdre simplement parce que nous pouvons nous perdre dans notre propre esprit. C'est une invitation à la réflexion. Regarder ce film c'est un peu comme passer un test de Rorschach. Qu'y voit-on ? Chacun y met un peu de sa propre personnalité dans l'explication du film.
 

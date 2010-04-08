@@ -79,18 +79,31 @@ def generateSubMenu()
 end
 # =======================
 
-def blogimage(val,title)
-    puts 'blogimage'
-    return '<img alt="pas encore fait" src="/404"></img>'
+def blogimage(val,title="no name")
+    if depthOf( @item ) == 3
+        imgpath=@item.parent.path
+    else
+        imgpath=@item.path
+    end
+    imgpath=imgpath.sub(%r{/Scratch/../},'/Scratch/img/')+val
+    return %{<img alt="#{title}" src="#{imgpath}"></img>}
 end
-def leftblogimage(val,title)
-    puts 'blogimage'
-    return '<img class="left" alt="pas encore fait" src="/404"></img>'
+
+def leftblogimage(val,title="no name")
+    if depthOf( @item ) == 3
+        imgpath=@item.parent.path
+    else
+        imgpath=@item.path
+    end
+    imgpath=imgpath.sub(%r{/Scratch/../},'/Scratch/img/')+val
+    return %{<img class="left" alt="#{title}" src="#{imgpath}"></img>}
 end
+
 def tagCloud
     puts 'tagCloud'
     return '<div>This should be a TagCloud</div>'
 end
+
 def lnkto(title,item)
     language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'')
     link_to(title, "/Scratch/#{language}"+item)
