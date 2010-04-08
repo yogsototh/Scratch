@@ -130,10 +130,11 @@ self.instance_variable_set(:@conf, conf)
                 <%= yield %>
             </div>
             <% if article  %>
-                <% if depthOf(@item) >= 3 %>
+                <% depth = depthOf(@item) %>
+                <% if depth > 2 or ( depth == 2 and @item.children.length > 0 ) %>
                 <div class="navigation">
-                    <%= previousFor(@item) %>
-                    <%= nextFor(@item) %>
+                    <div class="navigationprev"><%= previousFor(@item) %></div>
+                    <div class="navigationnext"><%= nextFor(@item) %></div>
                 </div>
                 <div class="flush"></div>
                 <% end %>
