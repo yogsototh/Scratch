@@ -30,7 +30,7 @@ end
 
 def getSortedChildren(parent)
     if parent[:kind] == "blog"
-            return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:created_at] <=> y[:created_at] }
+        return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:created_at] <=> y[:created_at] }
     else
         return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:menupriority] <=> y[:menupriority] }
     end
@@ -97,27 +97,34 @@ def lnkto(title,item)
 end
 
 def nextFor(page)
-    if depthOf(page) == 3
-        target=getSortedChildren(page).first
+    depth=depthOf(page)
+
+    case depth
+    when 0..1 then return nil
+    when 2 then target=getSortedChildren(page)[0]
     else
-        sorted_children=getSortedChildren(page)
-        target=sorted_children[ sorted_children.index(page) + 1 ]
-    end
-    if target.nil?
-        return nil
+        sorted_children=getSortedChildren(page.parent)
+        index=sorted_children.index(page)
+        target=sorted_children[ index + 1]
+        if target.nil?
+            return nil
+        end
     end
     link_to("&rarr;&nbsp;"+tradOf(:next), target)
 end
 
+# return the previous page of a post containing many
 def previousFor(page)
-    if depthOf(page) <= 3
+    if depthOf(page) < 3
         return nil
     end
 
     sorted_children=getSortedChildren(page.parent)
-    target=sorted_children[ sorted_children.index(page) - 1 ]
-    if target.nil?
-        return nil
+    index=sorted_children.index(page)
+    if index==0
+        target=page.parent
+    else
+        target=sorted_children[ index - 1 ]
     end
     link_to(tradOf(:previous)+"&nbsp;&larr;", target)
 end

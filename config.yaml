@@ -32,10 +32,10 @@ translations:
     nojsclickme:
         fr: "Javascript semble désactivé ;<br/> cliquez ici"
         en: "Javascript seems disabled <br/> click on me"
-    suivant:
+    next:
         fr: "suivant"
         en: "next"
-    precedent:
+    previous:
         fr: "précédent"
         en: "previous"
     comment:
