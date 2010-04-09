@@ -50,7 +50,6 @@ end
 def generateSubMenu()
     if @item[:noSubMenu]
         return 
-    end
 
     depth=depthOf(@item)
 
@@ -58,23 +57,23 @@ def generateSubMenu()
         return
     end
 
-    if @item[:kind] == "blog"
-        generateBlogSubMenu
+    if @item[:kind].to_s == "blog"
+        return generateBlogSubMenu
+    end
+
+    if @item[:kind].to_s == "article" and depth > 2
+        page=@item.parent
+    elsif depth > 1
+        page=@item
+    end
+    link_to_unless_current(page[:title],page)
+    liste=getSortedChildren(page).collect do |p|
+        link_to_unless_current(p[:title],p)
+    end
+    if ! liste.empty?  then
+        '<div id="sousliens"><ul><li>'+liste.join('</li><li>')+'</li></ul></div>'
     else
-        if @item[:kind] == "article" and depth > 3
-            page=@item.parent
-        elsif depth > 2
-            page=@item.parent
-        end
-        link_to_unless_current(@item[:title],@item)
-        liste=getSortedChildren(@item).collect do |p|
-            link_to_unless_current(p[:title],p)
-        end
-        if ! liste.empty?  then
-            '<div id="sousliens"><ul><li>'+liste.join('</li><li>')+'</li></ul></div>'
-        else
-            return
-        end
+        return
     end
 end
 # =======================
