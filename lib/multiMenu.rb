@@ -13,7 +13,7 @@ def generateMenu
     home=homepage
     liste=[]
     liste<<=link_to_unless_current(home[:title],home.reps[0])
-        sortedChildrenByMenuPriority(home).each do |page|
+    sortedChildrenByMenuPriority(home).each do |page|
         liste <<= link_to_unless_current(page[:title],page.reps[0]) 
     end   
     "<ul><li>"+liste.join("</li><li>")+"</li></ul>"
@@ -50,6 +50,7 @@ end
 def generateSubMenu()
     if @item[:noSubMenu]
         return 
+    end
 
     depth=depthOf(@item)
 
@@ -61,9 +62,9 @@ def generateSubMenu()
         return generateBlogSubMenu
     end
 
-    if @item[:kind].to_s == "article" and depth > 2
+    if depth > 2
         page=@item.parent
-    elsif depth > 1
+    else
         page=@item
     end
     link_to_unless_current(page[:title],page)
