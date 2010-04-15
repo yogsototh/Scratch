@@ -7,7 +7,12 @@ for langue in fr en; do
     cp recup.pl recup$langue.pl
     [[ $langue = "fr" ]] && other=en
     [[ $langue = "en" ]] && other=fr
-    echo 'replaceminim( "'$langue':", 1);' >> recup$langue.pl
-    echo 'replaceminim( "'$other':", 0);' >> recup$langue.pl
+    echo 'replaceminim( "'$langue':","::" 1);' >> recup$langue.pl
+    echo 'replaceminim( "'$other':","::" 0);' >> recup$langue.pl
+    echo 'replaceminim( "<'$langue'>", "</'$langue'>", 1);' >> recup$langue.pl
+    echo 'replaceminim( "<'$other'>", "</'$other'>", 0);' >> recup$langue.pl
+    echo 'replaceminim( "!!'$langue'!!", "!!!!", 1);' >> recup$langue.pl
+    echo 'replaceminim( "!!'$other'!!", "!!!!", 0);' >> recup$langue.pl
+    echo 's#date:#created_at:#' >> recup$langue.pl
     perl -pi recup$langue.pl content/html/$langue/**/*(.)
 done

@@ -4,16 +4,17 @@ BEGIN{
 }
 
 sub replaceminim {
-    my $langue = $_[0] ;
-    my $keep = $_[1] ;
+    my $begin = $_[0] ;
+    my $end = $_[1] ;
+    my $keep = $_[2] ;
 
     # protection des X et Y pour qu'ils disparaissent
     s/X/_wasx_/g;
     s/Y/_wasy_/g;
     
     # remplacement de la chaine en un seul caractère
-    s/$langue/X/g;          # begin
-    s/::/Y/g;               # end
+    s/$begin/X/g;          # begin
+    s/$end/Y/g;               # end
 
     # A partir de maintenant tous les X sont les begin
     # tous les Y sont les ends
@@ -25,8 +26,8 @@ sub replaceminim {
     }
     
     # recuperation des X, Y, et begin et end non traites
-    s/X/$langue/g;
-    s/Y/::/g;
+    s/X/$begin/g;
+    s/Y/$end/g;
     s/_wasx_/X/g;
     s/_wasy_/Y/g;
 }
