@@ -40,11 +40,11 @@ clientB: project adapted for client B
 
 Here how I want to work: 
 
-<%= blogimage("Dynamic branching","dynamic_branching.png") %>
+<%= blogimage("dynamic_branching.png","Dynamic branching") %>
 
 And more precisely the branch hierarchy: 
 
-<%= blogimage("Branch hierarchy","branch_hierarchy.png") %>
+<%= blogimage("branch_hierarchy.png","Branch hierarchy") %>
 
 An arrow from A to B means, you can merge A in B. If there is no arrow from A to B that means it is *forbidden* to merge A in B. Here is the corresponding rubycode:
 

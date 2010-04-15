@@ -19,7 +19,7 @@ tags:
 
 -----
 
-<%= blogimage("central architecture","central_architecture.png") %>
+<%= blogimage("central_architecture.png","central architecture") %>
 
 J'utilise [Git](http://www.git-scm.org/) pour gérer mes projets personnels.
 J'ai un *repository* centralisé et tous mes ordinateurs se synchronisent avec lui.
