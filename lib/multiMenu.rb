@@ -99,11 +99,6 @@ def leftblogimage(val,title="no name")
     return %{<img class="left" alt="#{title}" src="#{imgpath}"></img>}
 end
 
-def tagCloud
-    puts 'tagCloud'
-    return '<div>This should be a TagCloud</div>'
-end
-
 def lnkto(title,item)
     language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'')
     link_to(title, "/Scratch/#{language}"+item)

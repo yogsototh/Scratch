@@ -1,21 +1,28 @@
 # All files in the 'lib' directory will be loaded
 # before nanoc starts compiling.
 
-module Tags
+# module Tags
     def tags
         if not @item.has_key?[:tags]
             return ''
         end
         return @item[:tags].join(', ')
     end
-    
+   
+    def alltags
+        language=@item.path
+        language =~ %r{/Scratch/([^/]*)/}
+        language = $1
+        @items.select {|p| p.path =~ %r{/Scratch/#{language}/}}
+    end
+
     def tagNumber
         tags={}
-        @items.each do |p|
-            if p.tags.nil?
+        alltags.each do |p|
+            if p[:tags].nil?
                 next
             end
-            p.tags.each do |t|
+            p[:tags].each do |t|
                 if tags[t]
                     tags[t]+=1
                 else
@@ -28,11 +35,11 @@ module Tags
     
     def tagRefs
         tagLinks={}
-        @items.each do |p|
-            if p.tags.nil?
+        alltags.each do |p|
+            if p[:tags].nil?
                 next
             end
-            p.tags.each do |t|
+            p[:tags].each do |t|
                 if tagLinks[t].nil?
                     tagLinks[t]=[ p ]
                 else
@@ -80,11 +87,11 @@ module Tags
             protected=t.gsub(/\W/,'_')
             tagCloud <<= %{<div id="#{protected}" class="list"><h4>#{t}</h4><ul>}
             l.each do |p|
-                tagCloud <<= %{<li><a href="#{p.path}">#{p.title}</a></li>}
+                tagCloud <<= %{<li><a href="#{p.path}">#{p[:title]}</a></li>}
             end
             tagCloud <<= %{</ul></div>}
         end
         tagCloud <<= %{</div>}
         return tagCloud
     end
-end
+# end
