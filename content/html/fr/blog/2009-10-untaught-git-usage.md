@@ -19,19 +19,15 @@ tags:
 
 -----
 
-<en>
-<small> <em>I explain why I had so much difficulties to use Git. There is an "untaught rule" that make hard to work without. Until I read the good document. </em></small>
-</en>
-<fr>
-<small> <em>Je décris pourquoi j'ai eu tant de mal à me faire à Git. Il y a en effet une partie "non dite" qui m'a bloqué pendant un bon moment. Jusqu'à ce que je découvre le bon document. </em></small>
-</fr>
 
-<en>
-<small> <em> "Cheap branches" aren't designed to be totally isolated branches but rather should follow a "Master Branch". There is a </em>Standard Workflow<em> to follow. If you don't follow it, you prepare yourself with some hard time with Git.</em> </small>
-</en>
-<fr>
+
+<small> <em>Je décris pourquoi j'ai eu tant de mal à me faire à Git. Il y a en effet une partie "non dite" qui m'a bloqué pendant un bon moment. Jusqu'à ce que je découvre le bon document. </em></small>
+
+
+
+
 <small> <em> Le fait est que les *branches légères* ne sont pas destinée à être des branches isolées. Ainsi, il y a un </em>"workflow standard"<em> qui s'il n'est pas suivi rend l'utilisation de Git inappropriée.  </em> </small>
-</fr>
+
 
 newcorps
 
@@ -173,19 +169,19 @@ Mais dans ce cas-là, je n'ai qu'à utiliser des *clônes* et pas des *branches 
 
 Je trouve toujours que les terminologies de bazaar sont plus claires et plus concises.
 
-<code class="zsh">bzr revert</code>
+<div><code class="zsh">bzr revert</code></div>
 
 est quand même plus clair que
 
-<code class="zsh">git reset --hard HEAD</code>
+<div><code class="zsh">git reset --hard HEAD</code></div>
 
 De la même façon
 
-<code class="zsh">bzr revert -r -3</code>
+<div><code class="zsh">bzr revert -r -3</code></div>
 
 je trouve ça mieux que
 
-<code class="zsh">git reset --hard HEAD~3</code>
+<div><code class="zsh">git reset --hard HEAD~3</code></div>
 
 Là ça va commencer à se compliquer. Si on veut revenir dans le temps sur toute l'arborescence, avec Git on utilise `reset`. 
 
@@ -195,20 +191,20 @@ Là ça va commencer à se compliquer. Si on veut revenir dans le temps sur tout
 Maintenant si je veux revenir dans le temps sur un seul fichier. Naturellement on se dit :
 
 
-<code class="zsh">git reset --hard FILE</code>
+<div><code class="zsh">git reset --hard FILE</code></div>
 
 <center>**ET BIEN NON !**</center>
 
 La solution c'est :
 
 
-<code class="zsh">git checkout FILE</code>
+<div><code class="zsh">git checkout FILE</code></div>
 
 Quoi ? **`checkout`** !? Bon, d'accord, j'accepte, pourquoi pas après tout ?
 En plus quand on est habitué à Bazaar c'est :
 
 
-<code class="zsh">git revert FILE</code>
+<div><code class="zsh">git revert FILE</code></div>
 
 Ce que je trouve quand même bien plus naturel.
 
@@ -217,12 +213,12 @@ Mais là où ça devient vraiment difficile de s'y faire c'est pour changer de b
 Avec Bazaar ça donne : 
 
 
-<code class="zsh">cd ../branch</code>
+<div><code class="zsh">cd ../branch</code></div>
 
 Bon ok, il faut changer de répertoire, un répertoire par branche. Ça consomme de l'espace disque mais au moins on voit où on est. Avec Git voilà comment on change de branche (*branche légère*) :
 
 
-<code class="zsh">git checkout branch</code>
+<div><code class="zsh">git checkout branch</code></div>
 
 Alors là, on se dit "<abbr title="What the Fuck?">WTF?</abbr>" ; en français : mais qu'est-ce que c'est que ça ? Je croyais que `checkout` c'était pour récupérer l'état d'un fichier ?
 

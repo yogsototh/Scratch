@@ -21,7 +21,7 @@ tags:
 Dans la première partie, nous avons vu la liste des problèmes résolus par [Git][git]. En résumé Git doit pouvoir :
 
 
-<fr>
+
 - récupérer les modifications des autres ;
 - envoyer ses modifications aux autres ;
 - revenir dans le temps ;
@@ -31,133 +31,123 @@ Dans la première partie, nous avons vu la liste des problèmes résolus par [Gi
 - savoir qui a fait quoi et quand ;
 - gérer des conflits ;
 - manipuler facilement des branches.
-</fr>
-<en>
-- get others modifications,
-- send modifications to others,
-- get back in time,
-- list differences between each version,
-- name some versions in order to refer easily to them,
-- write an historic of modifications,
-- know who did what and when,
-- manage conflicts,
-- easily manage branches.
-</en>
+
+
 
 ### récupérer les modifications des autres
 
-<code class="zsh">
+<div><code class="zsh">
 $ git pull
-</code>
+</code></div>
 
 ### envoyer ses modifications aux autres
 
-<code class="zsh">
+<div><code class="zsh">
 $ git push
-</code>
+</code></div>
 
 ou plus généralement
 
 
-<code class="zsh">
+<div><code class="zsh">
 $ git pull
 $ git push
-</code>
+</code></div>
 
 ### revenir dans le temps
 
 #### Pour toute l'arborescence
 
-<code class="zsh">
+<div><code class="zsh">
 $ git checkout
-</code>
+</code></div>
 
-<code class="zsh">
+<div><code class="zsh">
 $ git revert
-</code>
+</code></div>
 
 revenir trois versions en arrière
 
 
-<code class="zsh">
+<div><code class="zsh">
 $ git uncommit 3
-</code>
+</code></div>
 
 Revenir avant le dernier merge (s'il s'est mal passé).
 
 
-<code class="zsh">
+<div><code class="zsh">
 $ git revertbeforemerge
-</code>
+</code></div>
 
 #### Pour un seul fichier
 
-<code class="zsh">
+<div><code class="zsh">
 $ git checkout file
 $ git checkout VersionHash file
 $ git checkout HEAD~3 file
-</code>
+</code></div>
 
 ### lister les différences entre chaque version
 
 liste les fichier en cours de modifications
 
-<code class="zsh">
+<div><code class="zsh">
 $ git status
-</code>
+</code></div>
 
 fr:différences entre les fichier de la dernière version et les fichiers locaux.
 
-<code class="zsh">
+<div><code class="zsh">
 $ git diff
-</code>
+</code></div>
 
 liste les différences entre les fichier d'une certaine version et les fichiers locaux.
 
-<code class="zsh">
+<div><code class="zsh">
 $ git diff VersionHash fichier
-</code>
+</code></div>
 
 ### nommer certaines versions pour s'y référer facilement
 
-<code class="zsh">
+<div><code class="zsh">
 $ git tag 'toto'
-</code>
+</code></div>
 
 ### afficher l'historique des modifications
 
-<code class="zsh">
+<div><code class="zsh">
 $ git log
 $ git lg
 $ git logfull
-</code>
+</code></div>
 
 ### savoir qui a fait quoi et quanden:know who did what and when::
 
-<code class="zsh">
+<div><code class="zsh">
 $ git blame fichier
-</code>
+</code></div>
 
 ### gérer des conflits
 
-<code class="zsh">
+<div><code class="zsh">
 $ git conflict
-</code>
+</code></div>
 
 ### manipuler facilement des branches
 
 Pour créer une branche : 
 
 
-<code class="zsh">
+<div><code class="zsh">
 $ git branch branch_name
-</code>
+</code></div>
 
 Pour changer de branche courante : 
 
 
-<code class="zsh">
+<div><code class="zsh">
 $ git checkout branch_name
-</code>
+</code></div>
 
 [git]: http://git-scm.org "Git"

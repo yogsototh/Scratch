@@ -71,13 +71,11 @@ Je suis un passioné. Passioné par :
   - Sécurité informatique: j'ai modélisé [un protocole sécurisé (similaire à TOR)](http://yann.esposito.free.fr/enseignement/rez0.php#projet), [une méthode pour gérer de façon sécurisé ses mots de passes](/YBlog/Computer/Entries/2008/7/30_Easy,_secure_and_portable_password_management_system.html), un [widget](/YBlog/YPassword.html) et un script shell pour utiliser cette méthode.
 </fr>
 
-<en>
-But before all, I love to learn. For example, I learned many programming languages: `C`, `C++`, `Objective-C`, `Python`, `Java`, `Perl`, `awk`, `bash`, `zsh`, `LaTeX`, `Metapost`, `camL`... And I’ve got the same passion about computer science research, computer security, philosophy and many other things.
-</en>
-<fr>
+
+
 Mais avant tout j'adore apprendre. Par exemple, j'ai appris de nombreux langages de programmation: 
 `C`, `C++`, `Objective-C`, `Python`, `Java`, `Perl`, `awk`, `bash`, `zsh`, `LaTeX`, `Metapost`, `CamL`... Et j'ai la même passion pour la recherche scientifique, la sécurité informatique, la philosophie et encore pas mal d'autres choses.
-</fr>
+
 
 newcorps 
 

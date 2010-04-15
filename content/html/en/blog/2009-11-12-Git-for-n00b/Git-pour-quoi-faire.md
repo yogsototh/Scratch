@@ -39,7 +39,7 @@ When somebody work with files without a versions system, the following happens f
 When you modify a somehow critical file you don't want to loose. You copy naturally this file with another name. For example:
 
 
-<code class="zsh">$ cp fichier_important.c fichier_important.c.bak</code>
+<div><code class="zsh">$ cp fichier_important.c fichier_important.c.bak</code></div>
 
 
 In consequence of what, the new file, play the role of *backup*. If you break everything, you can always return in the last state by overwriting your modifications.
@@ -82,18 +82,13 @@ begindiv(black)
 *What gives versions system?* (I didn't mention everything at all)
 
 
-<fr>
-- backup automatique de tous les fichiers: *Revenir dans le temps.* ;
-- donne la possibilité de voir les différences entre chaque version et les différences entre la version en cours et les modifications locales ;
-- permet de poser un *tag* sur certaines versions et ainsi pouvoir s'y référer facilement ;
-- permet d'avoir un historique des modifications. Car en général il est demandé aux utilisateur d'ajouter un petit commentaire à chaque nouvelle version.
-</fr>
-<en>
+
+
 - automatic backups: *back in time*,
 - gives the ability to see differences between each version,
 - put a *tag* on some version to be able to refer to them easily,
 - gives the ability to see an historic of all modifications. Generally the user must add a comment for each new version.
-</en>
+
 
 enddiv
 
@@ -112,7 +107,7 @@ Let's begin by an example, a two person project ; Alex and Beatrice. On a file c
 Cthulhu
 Shubniggurath
 Yogsototh
-</code>
+</code></div>
 
 Say Alex is home and modify the file: 
 <div style="width: 10em; margin-left: auto; margin-right: auto">
@@ -168,18 +163,13 @@ begindiv(black)
 
 **In what Concurrent Versions System help?**
 
-<fr>
-- récupérer sans problème les modifications des autres ;
-- envoyer sans problème ses modifications aux autres ;
-- permet de gérer les conflits. Je n'en ai pas parlé, mais quand un conflit arrive (ça peut arriver si deux personnes modifient la même ligne avec deux contenus différents), les <abbr title="Systèmes de versions concurrentes">SVC</abbr> proposent leur aide pour les résoudre. J'en dirai un mot plus loin.
-- permet de savoir qui a fait quoi et quand
-</fr>
-<en>
+
+
 - get without any problem others modifications,
 - send without any problem its own modifications to others,
 - manage conflicts. I didn't speak about it, but sometimes a conflict can occur (when two different people modify the same line on a file for example). SVC help to resolve such problem. More on that later,
 - help to know who done what and when.
-</en>
+
 
 enddiv
 

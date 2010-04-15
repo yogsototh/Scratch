@@ -13,4 +13,4 @@ multiTitle:
 
 noSubMenu: true
 -----
- Hello and welcome on my personnal website. This is mainly my blog. 
+Hello and welcome on my personnal website. This is mainly my blog. 

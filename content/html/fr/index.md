@@ -13,5 +13,4 @@ multiTitle:
 
 noSubMenu: true
 -----
- Bonjour et bienvenue sur mon site personnel. C'est principalement ma plateforme de blog. 
-
+Bonjour et bienvenue sur mon site personnel. C'est principalement ma plateforme de blog. 

@@ -36,7 +36,7 @@ newcorps
     Expérience professionnelle
     
 </h1>
-<fr>
+
     <desc Expérience professionnelle>
     <small>depuis</small> 2007 : Consultant Airfrance, Astek, Sophia Antipolis  ::
     2006-2007 : Post Doctorat au Laboratoire Hubert Curien, Saint-etienne ::
@@ -44,17 +44,9 @@ newcorps
     2001-2004 : Allocataire Moniteur (Étudiant ayant reçu une bourse ministérielle ainsi qu'une bourse permettant d'enseigner en faculté)  ::
     1999-2000 : Vacataire (enseignant pour DEUG) ::
     </desc>
-</fr>
 
-<en>
-    <desc Professionnal background>
-    from 2007 : Airfrance consultant, Astek, Sophia Antipolis, France ::
-    2006-2007 : Post PhD in the Laboratory Hubert Curien, Saint-Etienne, France ::
-    2004-2006 : ATER, (College Degree Teacher)  ::
-    2001-2004 : Allocataire Moniteur (PhD student with a grant + a teach grant)  ::
-    1999-2000 : College degree teaching ::
-    </desc>
-</en>
+
+
 
 newcorps
 
@@ -63,7 +55,7 @@ newcorps
     
 </h1>
 
-<fr>
+
     <desc>
     2004 : Doctorat en informatique au 
         <a href="http://www.lif.univ-mrs.fr"><abbr title="Laboratoire d'Informatique Fondamentale">LIF</abbr></a>, 
@@ -75,20 +67,8 @@ newcorps
     1998 : DEUG MIAS (Mathématiques) ::
     1995 : BAC S option mathématiques ::
     </desc>
-</fr>
-<en>  
-    <desc>
-    2004 : PhD Degree in computer science in the 
-        <a href="http://www.lif.univ-mrs.fr"><abbr title="Laboratoire d'Informatique Fondamentale">LIF</abbr></a>,
-        <a href="http://www.up.univ-mrs.fr/"> Université de Provence</a>,
-        Marseille (France) ::
-    2001 : DEA in computer science ::
-    2000 : Maîtrise in computer science ::
-    1999 : Licence in computer science ::
-    1998 : DEUG MIAS (Math) ::
-    1995 : BAC S ::
-    </desc>
-</en>
+
+
 
 newcorps
 
@@ -102,37 +82,22 @@ newcorps
     Domaines 
     
 </h4>
-    <en> 
-    <ul> 
-        <li>Machine Learning, </li> 
-        <li>Data Mining, </li> 
-        <li>Grammatical Inference </li> 
-    </ul>  
-    </en> 
-    <fr> 
+     
+     
         <ul> 
         <li>Apprentissage automatique ; </li> 
         <li>Fouille de données ; </li> 
         <li>Inférence grammaticale </li> 
         </ul> 
-    </fr>
+    
 
     <h4>
          Objets étudiés
         
     </h4>
 
-    <en>
-    <ul>
-        <li>Markov chains,</li>
-        <li>Hidden Markov Models, </li>
-        <li>Multiplicity Automata, </li> 
-        <li>Weighted Transducer, </li>
-        <li>Tree Weighted Automata, </li>
-        <li>Tree Edit Distance</li>
-    </ul>  
-    </en>
-    <fr>
+    
+    
     <ul>
         <li>Chaînes de Markov Cachées ; </li>
         <li>Automates à multiplicité ; </li> 
@@ -140,7 +105,7 @@ newcorps
         <li>Automates d'arbres pondérés ; </li>
         <li>Distances d'edition d'arbres</li>
     </ul>
-    </fr>
+    
 
 <h4>
      Principaux résultats théoriques 
@@ -216,16 +181,12 @@ newcorps
 
     <h4> <a href="http://yann.esposito.free.fr/dees.php">DEES</a> </h4>
 
-    <fr>
+    
     <a href="http://yann.esposito.free.fr/dees.php?lang=fr">DEES</a> :
     Programme d'inférence d'automates à multiplicité 
     écrit en C++ (7<small>500</small> lignes, 10<small>000</small> avec les commentaires) ; 
-    </fr>
-    <en>
-    <a href="http://yann.esposito.free.fr/dees.php">DEES</a>:
-    Software of Multiplicity Automata inference 
-    written in C++ (7.500 lines, 10.000 with comments) ; 
-    </en>
+    
+    
     <p>
     Principales fonctionnalités : 
     

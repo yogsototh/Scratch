@@ -46,36 +46,36 @@ The first error is to use the *evil* `.*`. Because you will match from the first
 Until now, that was, easy. Now, how do you manage when instead of `a` you have a string?
 
 Say you want to match: 
-<code class="perl">
+<div><code class="perl">
 <li>...<li>
-</code>
+</code></div>
 
 This is a bit difficult. You need to match 
-<code class="perl">
+<div><code class="perl">
 <li>[anything not containing <li>]</li>
-</code>
+</code></div>
 
 The first method would be to use the same reasoning as in my [previous post](previouspost). Here is a first try:
 
-<code class="perl">
+<div><code class="perl">
 <li>([^<]|<[^l]|<l[^i]|<li[^>])*</li>
-</code>
+</code></div>
 
 But what about the following string: 
-<code class="perl">
+<div><code class="perl">
 <li>...<li</li>
-</code>
+</code></div>
 
 That string should not match. This is why if we really want to match it correctly<sup><a href="#note1">&dagger;</a></sup> we need to add:
-<code class="perl">
+<div><code class="perl">
 <li>([^<]|<[^l]|<l[^i]|<li[^>])*(|<|<l|<li)</li>
-</code>
+</code></div>
 
 Yes a bit complicated. But what if the string I wanted to match was even longer?
 
 Here is the algorithm way to handle this easily. You reduce the problem to the first one letter matching:
 
-<code class="perl">
+<div><code class="perl">
 # transform a simple randomly choosen character
 # to an unique ID 
 # (you should verify the identifier is REALLY unique)
@@ -98,7 +98,7 @@ s/Y/<\/li>/g
 # retransform the choosen character back
 s/_was_x_/X/g
 s/_was_y_/Y/g
-</code>
+</code></div>
 
 And it works in only 9 lines for any beginning and ending string. This solution should look less *I AM THE GREAT REGEXP M45T3R, URAN00B*, but is more convenient in my humble opinion. Further more, using this last solution prove you master regexp, because you know it is difficult to manage such problems with only a regexp.
 

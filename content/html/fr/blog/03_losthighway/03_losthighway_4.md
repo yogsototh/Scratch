@@ -31,9 +31,7 @@ Dans ma première vision du film, j'avais envie de dire qu'il ne la tue pas. Mai
 
 !!!!
 
-!!en!!
-The protagonist is a garagist fallen in love with a porno actress. He believe the producer is the bad guy who go again his will. Then he kills Dick Laurent.
-!!!!
+
 
 ### Hypothese n°2
 

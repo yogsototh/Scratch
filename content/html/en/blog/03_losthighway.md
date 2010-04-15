@@ -15,7 +15,7 @@ multiDescription:
 
 -----
 
-<%= blogimage( 'intro.jpg' , 'Lost Highway' ) %>
+<%= blogimage( 'Lost Highway' , 'intro.jpg' ) %>
 
 
 
@@ -68,7 +68,7 @@ I believe I had found a coherent interpretation which allow to follow the movie 
 
 ## The Rorschach test
 
-<%= leftblogimage('rorschach.gif' , 'test de Rorschach') %>
+<%= leftblogimage( 'test de Rorschach','rorschach.gif' ) %>
 !!fr!!
 À l'instar du protagoniste chacun voit dans ce film ce qu'il a envie d'y voir. Nous pouvons nous y perdre simplement parce que nous pouvons nous perdre dans notre propre esprit. C'est une invitation à la réflexion. Regarder ce film c'est un peu comme passer un test de Rorschach. Qu'y voit-on ? Chacun y met un peu de sa propre personnalité dans l'explication du film.
 
@@ -104,5 +104,5 @@ I write this post because I believe I had found an interpretation which seems co
 
 
 <div style="text-align: center">
-<span style="font-size: 2em"> <a href="./03_losthighway_1/"><fr>Lire la suite</fr><en>Read more</en></a></span>
+<span style="font-size: 2em"> <a href="./03_losthighway_1/">Read more</a></span>
 </div>

@@ -19,7 +19,7 @@ tags:
 
 -----
 
-<%= blogimage("central_architecture.png","central architecture") %>
+<%= blogimage("central architecture","central_architecture.png") %>
 
 
 I use [Git](http://www.git-scm.org/) to manage my personnal projects.
@@ -162,12 +162,12 @@ This is why I created two simple scripts to automate this. One for creating a br
 Then when you want to create a new branch (locally and remotely) ; you simply have to do a: 
 
 
-<code class="zsh">git-create-new-branch branch_name</code>
+<div><code class="zsh">git-create-new-branch branch_name</code></div>
 
 and when you are on another computer and want to get locally all the remote branches you execute: 
 
 
-<code class="zsh">git-get-remote-branches</code>
+<div><code class="zsh">git-get-remote-branches</code></div>
 
 Here are the code of theese two scripts: 
 

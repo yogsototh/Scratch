@@ -42,7 +42,7 @@ HTML:
 
 CSS: 
 
-<code class="css">
+<div><code class="css">
     #entete {
       top: 1em;
       left: 0;
@@ -56,11 +56,11 @@ CSS:
       left: 0;
       position: fixed;
       width: 10em; }
-</code>
+</code></div>
 
 Javascript: 
 
-<code class="javascript">
+<div><code class="javascript">
 var last=0;
 
 // will hide the menu in 5 seconds
@@ -100,7 +100,7 @@ function showMenu() {
     autoHideMenu(last);
 }
 
-</code>
+</code></div>
 
 
 Simple and lightweight. No timer (almost), no memory leak, no Date...

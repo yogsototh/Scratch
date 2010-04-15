@@ -10,6 +10,7 @@ isHidden: true
 kind: article
 created_at: 2009-07-06T16:15:23+02:00
 title: MVC explained
+created_at: 01/01/2009
 multiTitle: 
     fr: Les raisons du MVC
     en: Why MVC?

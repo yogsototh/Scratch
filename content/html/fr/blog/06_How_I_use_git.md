@@ -19,7 +19,7 @@ tags:
 
 -----
 
-<%= blogimage("central_architecture.png","central architecture") %>
+<%= blogimage("central architecture","central_architecture.png") %>
 
 J'utilise [Git](http://www.git-scm.org/) pour gérer mes projets personnels.
 J'ai un *repository* centralisé et tous mes ordinateurs se synchronisent avec lui.
@@ -164,14 +164,14 @@ C'est pourquoi j'ai créé deux simples scripts pour automatiser cette opératio
 Ainsi, lorsque je veux créer une nouvelle branche (localement et ligne) ; je lance le script :
 
 
-<code class="zsh">git-create-new-branch branch_name</code>
+<div><code class="zsh">git-create-new-branch branch_name</code></div>
 
 
 
 et quand je suis sur un autre ordinateur et que je veux récupérer les branches crées sur un autre poste, j'exécute :
 
 
-<code class="zsh">git-get-remote-branches</code>
+<div><code class="zsh">git-get-remote-branches</code></div>
 
 
 Voici le code des deux script (en zsh) : 

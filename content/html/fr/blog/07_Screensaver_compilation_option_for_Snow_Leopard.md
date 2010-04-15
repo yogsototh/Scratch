@@ -27,7 +27,7 @@ After a bit more research (thanks to [ElectricSheep](http://community.electricsh
 
 I discovered the good parameters for compilation.
 
-<%= blogimage("xcodeConfig.png","XCode configuration") %>
+<%= blogimage("XCode configuration","xcodeConfig.png") %>
 
 For now I didn't compiled it to work also on Tiger and Leopard. I don't know XCode enought to know how to make the Garbage collector to be disabled on 32 bits version and enabled on 64 bits version.
 

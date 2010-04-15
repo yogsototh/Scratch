@@ -24,7 +24,7 @@ Voici une parmi de nombreuses autres façon d'utiliser [Git][git]. Cette méthod
 La façon immédiate de travailler avec [Git][git] :
 
 
-<fr>
+
 + récupérer les modifications des autres <span class="black">`git pull`</span>
 + voir les détails de ces modifications <span class="black">`git log`</span>
 + Plusieurs fois:
@@ -33,18 +33,9 @@ La façon immédiate de travailler avec [Git][git] :
   + indiquer si nécessaire que de nouveaux fichiers doivent être *versionnés* <span class="black">`git add [file]`</span>
   + enregistrer ses modifications <br/><span class="black">`git commit -a -m "message"`</span>
   + envoyer ses modifications aux autres <span class="black">`git push`</span> (refaire un `git pull` si le push renvoie une erreur).
-</fr>
 
-<en>
-+ Get modification done by others <span class="black">`git pull`</span>,
-+ See details of these modifications <span class="black">`git log`</span>,
-+ Many times:
-  + *Make an atomic modification*
-  + Verify details of this modification: <span class="black">`git status`</span> and <span class="black">`git diff`</span>,
-  + Add some file to be versionned if necessary:<br/><span class="black">`git add [file]`</span>,
-  + Save you modifications <br/><span class="black">`git commit -a -m "message"`</span>,
-  + Send your modifications to others: <span class="black">`git push`</span> (redo a `git pull` if push return an error).
-</en>
+
+
 
 Voilà, avec ces quelques commandes vous pouvez utiliser [Git][git] sur un projet avec d'autres personnes. Même si c'est suffisant, il faut quand même connaître une chose avant de se lancer ; la gestion des *conflits*.
 

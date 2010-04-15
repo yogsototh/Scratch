@@ -31,17 +31,17 @@ Here is my new script, it first create a map which associate to each file its ha
 Even with this script I also have some problem. Mostly due to 'webdav' issues. For example, renaming a folder work really badly (on Linux at least). I use webdavfs. For example:
 
 
-<code class="zsh">
+<div><code class="zsh">
 mv folder folder2
-</code>
+</code></div>
 
 It returns OK and I've got: 
 
 
-<code class="zsh">
+<div><code class="zsh">
 $ ls 
 folder folder2
-</code>
+</code></div>
 
 Booh....
 
@@ -49,7 +49,7 @@ Booh....
 In order to handle most webdav issues I use a *framework* in zsh. It handle almost all except the correct renaming of folder. Working on it... Anyway here is the code I use.
 
 
-<code class="zsh" file="webdav-framework">
+<div><code class="zsh" file="webdav-framework">
 #!/usr/bin/env zsh
 
 function samelineprint {
@@ -158,12 +158,12 @@ function trymv {
     done
     print
 }
-</code>
+</code></div>
 
 And here is the code on how I synchronize my website. There is a little cryptic code. It correspond a problem caused by the bluecloth filter which is a markdown program made in ruby. Each time my email is written it is transformed differently. This is why I remove this part from the content of each html file. Without it, all my files containing email are different at each regeneration of my website.
 
 
-<code class="zsh" file="publish">
+<div><code class="zsh" file="publish">
 #!/usr/bin/env zsh
 
 # Script synchronisant le site sur me.com
@@ -285,7 +285,7 @@ else
     print -P -- "%BSync%b[${Root:t} => ${destRep:t}$suffix]"
     incrementalPublish
 fi
-</code>
+</code></div>
 
 
 This is my way to replace `rsync` with filesystem not handling it.

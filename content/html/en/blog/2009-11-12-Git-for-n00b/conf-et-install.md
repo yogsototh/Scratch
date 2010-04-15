@@ -19,7 +19,7 @@ multiTitle:
 Under Linux Ubuntu or Debian:
 
 
-<code class="zsh">$ sudo apt-get install git</code>
+<div><code class="zsh">$ sudo apt-get install git</code></div>
 
 Under Mac OS X:
 
@@ -27,18 +27,18 @@ Under Mac OS X:
 * install [MacPorts](http://macports.org/install.php)
 * install [Git][git]
 
-<code class="zsh">
+<div><code class="zsh">
 $ sudo port selfupdate
 
 $ sudo port install git-core
-</code>
+</code></div>
 
 ## Global configuration
 
 Save the following file as your `~/.gitconfig`.
 
 
-<code class="zsh" file="gitconfig">
+<div><code class="zsh" file="gitconfig">
 [color]
     branch = auto
     diff   = auto
@@ -59,17 +59,17 @@ Save the following file as your `~/.gitconfig`.
 	# conflict    = !gitx --left-right HEAD...MERGE_HEAD
 [branch]
 	autosetupmerge = true
-</code>
+</code></div>
 
 
 You can achieve the same result using for each entry the command: `git config --global`. Next, configure your name and your email. For example, if your name is John Doe and your email is `john.doe@email.com`. Launch the following commands:
 
 
-<code class="zsh">
+<div><code class="zsh">
 $ git config --global user.name John Doe
 
 $ git config --global user.email john.doe@email.com
-</code>
+</code></div>
 
 
 Here it is. Base configuration is over. The file containing alias will help to type shorter commands.
@@ -81,31 +81,31 @@ Here it is. Base configuration is over. The file containing alias will help to t
 If a project is already versionned with [Git][git] you should have an `URL` of the sources. Then use the following command:
 
 
-<code class="zsh">
+<div><code class="zsh">
 $ cd ~/Projets
 $ git clone git://main.server/path/to/file
-</code>
+</code></div>
 
 
 If there is no git server but you've got an `ssh` access. Just replace the `git://host` by `ssh://user@host`. In order not to type your password each time, use:
 
 
-<code class="zsh">
+<div><code class="zsh">
 $ ssh-keygen -t rsa
-</code>
+</code></div>
 
 
 Reply to question and **do not enter* a password. Then copy your keys to the distant server. This is not the safest way to do this. The safest being, using `ssh-agent`.
 
 
-<code class="zsh">
+<div><code class="zsh">
 me@locahost$ scp ~/.ssh/id_rsa.pub me@main.server:
 me@locahost$ ssh me@main.server
 password:
 me@main.server$ cat id_rsa.pub >> ~/.ssh/authorized_keys
 me@main.server$ rm id_rsa.pub
 me@main.server$ logout
-</code>
+</code></div>
 
 
 Now you don't need to write your password to access the `main.server`.
@@ -117,40 +117,40 @@ Now you don't need to write your password to access the `main.server`.
 Suppose you already have a project with files. Then it is really easy to version it.
 
 
-<code class="zsh">
+<div><code class="zsh">
 $ cd /path/to/project
 $ git init
 $ git add .
 $ git commit -m "Initial commit"
-</code>
+</code></div>
 
 
 Let do a small remark. If you don't want to *version* every file. Typically intermediate compilation file, swap files... Then you need to exclude them. Just before launching the `git add .` command. You need to create a `.gitignore` file in the root directory of your project. This file will contain all exclude *pattern*. For example:
 
 
-<code class="zsh">
+<div><code class="zsh">
 *.o
 *.bak
 *.swp
 *~
-</code>
+</code></div>
 
 
 Now, if you want to create a repository on a distant server, it *must* not be in `bare` mode. The repository will contain only versionning informations, but not the files of the project. To achieve that:
 
 
-<code class="zsh">
+<div><code class="zsh">
 $ cd /path/to/local/project
 $ git clone --bare . ssh://server/path/to/project
-</code>
+</code></div>
 
 
 Others will be able to get your modifications.
 
 
-<code class="zsh">
+<div><code class="zsh">
 git clone ssh://server/path/to/project
-</code>
+</code></div>
 
 ## Abstract of the second step
 

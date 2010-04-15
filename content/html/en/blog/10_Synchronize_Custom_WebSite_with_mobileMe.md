@@ -53,8 +53,8 @@ Here is the script I use in order to synchronize my website with maximum safety.
 The idea are: 
 
 
-  - synchronize to a temporary folder then swap the name therefore the website isn't accessible only during the swap time. It takes only the time of two rename.
-  - reiterate all operations until they work (for example, renaming).
+  - Synchroniser vers un répertoire temporaire sur le serveur distant, puis "swapper" les noms des répertoires. Ainsi le site ne reste indisponible que le temps du "swap" du nom des deux répertoires.
+  - Réitérer toutes les opérations jusqu'à ce qu'elle aient réussi (par exemple pour le renommage)
 
 For now I use `rsync` which in fact is no more efficient than a simple `cp` with WebDav. And I should use a method to keep track of elements who have changed. before the publication.
 
@@ -68,6 +68,113 @@ My script take a `-s` option in order to make only the swap option. It also take
 
 
 In order to keep this script working for you, just modify the username by yours (the value of the `mobileMeUser`).
+
+
+<div class="fr">
+<code class="zsh" file="publish">
+#!/usr/bin/env zsh
+
+# Script synchronisant le site sur me.com
+# normalement, le site est indisponible le moins de temps possible
+# le temps de deux renommages de répertoire
+
+mobileMeUser="yann.esposito"
+siteName="siteName"
+
+# Depending of my hostname the 
+if [[ $(hostname) == 'ubuntu' ]]; then
+    iDisk='/mnt/iDisk'
+else
+    iDisk="/Volumes/$mobileMeUser"
+fi
+
+root=$HOME/Sites/$siteName
+destRep=$iDisk/Web/Sites/$siteName
+
+[[ ! -d $root ]] && { 
+    print -- "$root n'existe pas ; vérifiez la conf" >&2; 
+    exit 1 
+}
+
+[[ ! -d $destRep ]] && { 
+    print -- "$destRep n'existe pas, veuillez remonter le FS" >&2; 
+    exit 1 
+}
+
+if [[ $1 == '-h' ]]; then
+    print -- "usage: $0:h [-h|-a|-s]"
+    print -- "  -a sychronise aussi l'index"
+    print -- "  -h affiche l'aide"
+    print -- "  -s swappe simplement les répertoires"
+fi
+
+if [[ $1 == '-a' ]]; then
+    print -- "Synchronisation de l'index (${destRep:h})"
+    rsync -av $root/index.html ${destRep:h}/index.html
+fi
+
+print -- "Root = $root"
+print -- "Dest = $destRep"
+
+if [[ ! $1 = '-s' ]]; then
+    [[ ! -d $destRep.tmp ]] && mkdir $destRep.tmp
+    print -P -- "%B[Sync => tmp]%b"
+    result=1
+    essai=1
+    while (( $result > 0 )); do
+        rsync -arv $root/Scratch/ $destRep.tmp
+        result=$?
+        if (( $result > 0 )); then
+            print -P -- "%BEchec du rsync%b (essai n°$essai)" >&2
+        fi
+        ((essai++))
+    done
+fi
+
+# SWAP
+print -P -- "%B[Swap des Répertoires (tmp <=> target)]%b"
+essai=1
+while [[ -e $destRep.old ]]; do
+    print -n -- "suppression de $destRep.old"
+    if ((essai>1)); then 
+        print " (essai n°$essai)"
+    else
+        print
+    fi
+    ((essai++))
+    \rm -rf $destRep.old
+done
+
+print -- "  renommage du repertoire sandard vers le .old"
+essai=1
+while [[ -e $destRep ]]; do
+    mv $destRep $destRep.old 
+    (($?)) && print -- "Echec du renommage (essai n°$essai)" >&2
+    ((essai++))
+done
+
+print -- "  renommage du repertoire tmp (nouveau) vers le standard"
+print -P -- "  %BSite Indisponible%b $(date)"
+essai=1
+while [[ ! -e $destRep ]]; do
+    mv $destRep.tmp $destRep
+    (($?)) && print -P -- "%B[Site Indisponible]%b(essai n°$essai) Echec du renommage (mv $destRep.tmp $destRep)" >&2
+    ((essai++))
+done
+
+print -P -- "\t===\t%BSITE DISPONIBLE%b\t==="
+
+print -- "  renommage du repertoire old vers le tmp"
+essai=1
+while [[ ! -e $destRep ]]; do
+    mv $destRep.old $destRep.tmp
+    (($?)) && print -P -- "Echec du renommage n°$essai" >&2
+    ((essai++))
+done
+
+print -P -- "  publication terminée"
+</code>
+</div>
 
 <div class="en">
 <code class="zsh" file="publish">

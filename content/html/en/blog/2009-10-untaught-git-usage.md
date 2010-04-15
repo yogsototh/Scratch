@@ -19,19 +19,15 @@ tags:
 
 -----
 
-<en>
-<small> <em>I explain why I had so much difficulties to use Git. There is an "untaught rule" that make hard to work without. Until I read the good document. </em></small>
-</en>
-<fr>
-<small> <em>Je décris pourquoi j'ai eu tant de mal à me faire à Git. Il y a en effet une partie "non dite" qui m'a bloqué pendant un bon moment. Jusqu'à ce que je découvre le bon document. </em></small>
-</fr>
 
-<en>
+<small> <em>I explain why I had so much difficulties to use Git. There is an "untaught rule" that make hard to work without. Until I read the good document. </em></small>
+
+
+
+
 <small> <em> "Cheap branches" aren't designed to be totally isolated branches but rather should follow a "Master Branch". There is a </em>Standard Workflow<em> to follow. If you don't follow it, you prepare yourself with some hard time with Git.</em> </small>
-</en>
-<fr>
-<small> <em> Le fait est que les *branches légères* ne sont pas destinée à être des branches isolées. Ainsi, il y a un </em>"workflow standard"<em> qui s'il n'est pas suivi rend l'utilisation de Git inappropriée.  </em> </small>
-</fr>
+
+
 
 newcorps
 
@@ -179,19 +175,19 @@ And I return exactly in branches Bazaar provided me.
 
 For now, I prefer (from far) Bazaar terminology. They are cleaner and more understandable.
 
-<code class="zsh">bzr revert</code>
+<div><code class="zsh">bzr revert</code></div>
 
 Is clearer than
 
-<code class="zsh">git reset --hard HEAD</code>
+<div><code class="zsh">git reset --hard HEAD</code></div>
 
 We can tell the same thing about
 
-<code class="zsh">bzr revert -r -3</code>
+<div><code class="zsh">bzr revert -r -3</code></div>
 
 which seems preferable to
 
-<code class="zsh">git reset --hard HEAD~3</code>
+<div><code class="zsh">git reset --hard HEAD~3</code></div>
 
 
 Until now, it is not big business. But now, things will go worse.
@@ -204,7 +200,7 @@ If we want to revert time on all the tree we use the keyword `reset`.
 Now, if I want to revert time on on file. We should naturally imagine the command will be:
 
 
-<code class="zsh">git reset --hard FILE</code>
+<div><code class="zsh">git reset --hard FILE</code></div>
 
 <center>**OF COURSE NOT!**</center>
 
@@ -212,14 +208,14 @@ Now, if I want to revert time on on file. We should naturally imagine the comman
 The solution is:
 
 
-<code class="zsh">git checkout FILE</code>
+<div><code class="zsh">git checkout FILE</code></div>
 
 
 What? **`checkout`** !? Well, ok. I accept. why not?
 With Bazaar it is:
 
 
-<code class="zsh">git revert FILE</code>
+<div><code class="zsh">git revert FILE</code></div>
 
 
 What I personally found far more natural.
@@ -230,13 +226,13 @@ But the command to change the current *cheap branch* is really hard to be accept
 With Bazaar it is:
 
 
-<code class="zsh">cd ../branch</code>
+<div><code class="zsh">cd ../branch</code></div>
 
 
 Well yes. With Bazaar you have to change your directory to change your branch. It needs more disk resources but it is really clear. Which is my current branch, is just a `pwd` away. For Git here is the command:
 
 
-<code class="zsh">git checkout branch</code>
+<div><code class="zsh">git checkout branch</code></div>
 
 
 **WTF?** I believed `checkout` was the key to get a file in some state (not the entire tree).

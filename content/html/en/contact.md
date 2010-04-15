@@ -5,7 +5,10 @@ filters_pre:
     - bluecloth
 
 # Custom 
-title: Contact
+title: About
+multiTitle:
+    fr: Contact
+    en: Contact
 menupriority: 5
 -----
 # How to contact me
