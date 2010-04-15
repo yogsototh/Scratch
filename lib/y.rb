@@ -24,7 +24,7 @@ module Nanoc3::Filters
         identifiers :description
 
         def description(content)
-            content.gsub(/<desc( [^>]*)?>(.+?)<\/desc>/m) do
+            content.gsub(/^\s*<desc( [^>]*)?>(.+?)<\/desc>/m) do
                 n=0
                 if $1 then
                     summary=$1
@@ -32,7 +32,7 @@ module Nanoc3::Filters
                 else
                     summary="no description"
                 end
-                '<table class="description" summary="'+summary+'">'+$2.gsub(/([^:]+):(.+?)::/m) do
+                '<div><table class="description" summary="'+summary+'">'+$2.gsub(/([^:]+):(.+?)::/m) do
                     n+=1
                     if n % 2 == 0
                         sombre=' class="assombris10"'
@@ -40,7 +40,7 @@ module Nanoc3::Filters
                         sombre=' class="assombris20"'
                     end
                     '<tr'+sombre+'><td class="definitionCell">'+$1+'</td><td class="valueCell">'+$2+'</td></tr>'
-                end+'</table>'
+                end+'</table></div>'
             end
         end
 

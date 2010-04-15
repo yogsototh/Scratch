@@ -3,10 +3,10 @@
 
 # module Tags
     def tags
-        if not @item.has_key?[:tags]
+        if @item[:tags].nil?
             return ''
         end
-        return @item[:tags].join(', ')
+        @item[:tags].join(', ')
     end
    
     def alltags

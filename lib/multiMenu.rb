@@ -62,7 +62,7 @@ def generateSubMenu()
         return generateBlogSubMenu
     end
 
-    if depth > 2
+    if @item.children.length == 0
         page=@item.parent
     else
         page=@item

@@ -59,7 +59,7 @@ compile '/html/*' do
   filter :firsthi # must be after multicorps
   filter :frenchspace
   filter :ytypo
-  filter :yabbreviations
+  # filter :yabbreviations
 
   layout 'default' unless item[:layout] == "none"
 end
