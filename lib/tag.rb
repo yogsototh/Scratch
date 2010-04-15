@@ -86,8 +86,11 @@
         tagLinks.sort{|a,b| a[0].downcase <=> b[0].downcase}.each do |t,l|
             protected=t.gsub(/\W/,'_')
             tagCloud <<= %{<div id="#{protected}" class="list"><h4>#{t}</h4><ul>}
-            l.each do |p|
-                tagCloud <<= %{<li><a href="#{p.path}">#{p[:title]}</a></li>}
+            l.sort{|x,y| x[:created_at] <=> y[:created_at]}.each do |p|
+                tagCloud <<= %{<li>
+                    <span class="date">#{p[:created_at].strftime("%d/%m/%Y")}</span> 
+                    <a href="#{p.path}">#{p[:title]}</a>
+                    </li>\n}
             end
             tagCloud <<= %{</ul></div>}
         end

@@ -1,5 +1,8 @@
 def tradOf(keyword)
-    tradOfKeywordIn(keyword, @conf.language )    
+    language=@item.path
+    language.match('/Scratch/(..)')
+    language=$1
+    tradOfKeywordIn(keyword, language )    
 end
 
 def tradOfKeywordIn(keyword, language) 
