@@ -24,4 +24,7 @@ noSubMenu: true
     <h1><span class="date"><%= a[:created_at].strftime( @config[:dateFormat][language.intern] ) %></span> <%= link_to(a[:title], a) %></h1>
     <div class="corps">
     <%= repair_html ( excerptize( a.reps[0].compiled_content, {:length => number_of_char_for_resume} ) ) %>
+    <p>
+        <%= link_to("lire la suite", a) %>
+    </p>
 <% end %>
