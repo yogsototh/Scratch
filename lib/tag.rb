@@ -83,12 +83,16 @@
             tagCloud <<= %{<span style="font-size: #{s}em;" class="tag" onclick="tagSelected('#{protected}')" id="tag_#{protected}">#{grouped}</span> }
         end
         tagCloud <<= %{</div><div id="hiddenDivs" >}
+        language=@item.path
+        language =~ %r{/Scratch/([^/]*)/}
+        language = $1
+        language = language.intern
         tagLinks.sort{|a,b| a[0].downcase <=> b[0].downcase}.each do |t,l|
             protected=t.gsub(/\W/,'_')
             tagCloud <<= %{<div id="#{protected}" class="list"><h4>#{t}</h4><ul>}
             l.sort{|x,y| y[:created_at] <=> x[:created_at]}.each do |p|
                 tagCloud <<= %{<li>
-                    <span class="date">#{p[:created_at].strftime("%d/%m/%Y")}</span> 
+                    <span class="date">#{p[:created_at].strftime(@config[:dateFormat][language])}</span> 
                     <a href="#{p.path}">#{p[:title]}</a>
                     </li>\n}
             end

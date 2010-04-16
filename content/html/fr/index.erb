@@ -1,0 +1,39 @@
+-----
+# Built-in
+filters_pre: 
+    - erb
+    - bluecloth
+
+# Custom 
+# menu
+title: Welcome
+multiTitle: 
+    fr: Bienvenue
+    en: Welcome
+
+noSubMenu: true
+-----
+Bonjour et bienvenue sur mon site personnel. Je l'utilise principalement comme 
+plateforme de blog.
+
+Trouvez ici le résumé de mes cinq dernières entrées de blog.
+
+<% 
+    number_of_articles=5
+    language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
+    last_articles = articles.select do |a| 
+            a.reps[0].path =~ /\/#{language}\// 
+        end.sort { |x,y| x[:created_at] <=> y[:created_at] }[0..(number_of_articles-1)]
+%>
+<% last_articles.each do |a| %>
+    </div>
+    <% puts @config[:dateFormat].to_s %>
+    <% puts language %>
+    <% puts @config[:dateFormat][language.intern] %>
+    <h1><span class="date"><%= a[:created_at].strftime( @config[:dateFormat][language.intern] ) %></span> <%= link_to(a[:title], a) %></h1>
+
+    <div class="corps">
+    <%= excerptize( a.reps[0].compiled_content, {:length => 500} ) %>
+    </div>
+
+<% end %>

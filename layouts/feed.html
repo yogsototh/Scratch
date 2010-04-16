@@ -1,4 +1,3 @@
 -----
 -----
-<% language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') %>
-<%= atom_feed({:articles => articles.select { |a| a.reps[0].path =~ /\/#{language}\// } }) %>
+<% language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') %><%= atom_feed({:articles => articles.select { |a| a.reps[0].path =~ /\/#{language}\// } }) %>
