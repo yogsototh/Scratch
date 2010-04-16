@@ -62,7 +62,7 @@ def generateSubMenu()
         return generateBlogSubMenu
     end
 
-    if @item.children.length == 0 and not @item.parent[:kind] == :blog
+    if @item.children.length == 0 and not @item.parent[:kind].to_s == "blog"
         page=@item.parent
     else
         page=@item

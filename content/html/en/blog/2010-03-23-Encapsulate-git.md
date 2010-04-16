@@ -164,7 +164,7 @@ def do_merge
         else
             puts %{Warning! #{src_branch} not mentionned in rb configuration}
             sleep 2
-            f system %{git merge #{src_branch}}
+            system %{git merge #{src_branch}}
             puts %{Warning! #{src_branch} not mentionned in rb configuration}
         end
     end
