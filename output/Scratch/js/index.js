@@ -45,7 +45,7 @@ function hideClickMessage(msg) {
 
 // put the selected language in the cookie
 function setLanguage(lang) {
-    $.cookie('language',lang);
+    $.cookie('language',lang, { path: '/Scratch'});
 }
 
 // select the good language and hide the message

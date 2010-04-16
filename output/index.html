@@ -21,7 +21,7 @@
             return language;
         }
         function setLanguage(lang) {
-            $.cookie('language',lang);
+            $.cookie('language',lang, { path: '/Scratch'});
         }
 $(document).ready( function() {
     // affiche la page une fois propre et la langue choisie
