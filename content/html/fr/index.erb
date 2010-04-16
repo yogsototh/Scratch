@@ -1,39 +1,27 @@
 -----
-# Built-in
-filters_pre: 
-    - erb
-    - bluecloth
-
-# Custom 
-# menu
-title: Welcome
-multiTitle: 
-    fr: Bienvenue
-    en: Welcome
-
+title: Bienvenue
 noSubMenu: true
 -----
-Bonjour et bienvenue sur mon site personnel. Je l'utilise principalement comme 
-plateforme de blog.
-
-Trouvez ici le résumé de mes cinq dernières entrées de blog.
-
 <% 
     number_of_articles=5
+    number_of_char_for_resume=800
     language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
     last_articles = articles.select do |a| 
             a.reps[0].path =~ /\/#{language}\// 
-        end.sort { |x,y| x[:created_at] <=> y[:created_at] }[0..(number_of_articles-1)]
+    end
+    last_articles=last_articles.sort { |x,y| y[:created_at] <=> x[:created_at] }[0..(number_of_articles-1)]
 %>
+
+<p>Bonjour et bienvenue sur mon site personnel.</p>
+
+<p>Voici un aperçu<sup>&dagger;</sup> de mes <%= number_of_articles %> derniers articles.</p>
+
+<hr/>
+<p class="small">&dagger; approximativement les <%= number_of_char_for_resume %> premiers caractères.</p>
+
 <% last_articles.each do |a| %>
     </div>
-    <% puts @config[:dateFormat].to_s %>
-    <% puts language %>
-    <% puts @config[:dateFormat][language.intern] %>
     <h1><span class="date"><%= a[:created_at].strftime( @config[:dateFormat][language.intern] ) %></span> <%= link_to(a[:title], a) %></h1>
-
     <div class="corps">
-    <%= excerptize( a.reps[0].compiled_content, {:length => 500} ) %>
-    </div>
-
+    <%= repair_html ( excerptize( a.reps[0].compiled_content, {:length => number_of_char_for_resume} ) ) %>
 <% end %>

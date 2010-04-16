@@ -509,3 +509,6 @@ hr
 #menuMessage
   +smallblock
   +downsmallround
+
+#content > .date
+  :color = !blanc_fonce
