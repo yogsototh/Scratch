@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+    <script>
+        function getUserLanguage() {
+            var language = $.cookie('language');
+            if (! language) {
+                if ( (navigator) && 
+                        (navigator.language) && 
+                        (navigator.language.substring(0,2) == 'fr' ) ) {
+                    language='fr';
+                } else {
+                    language='en';
+                }
+            }
+            return language;
+        }
+        function setLanguage(lang) {
+            $.cookie('language',lang, { path: '/Scratch'});
+        }
+$(document).ready( function() {
+    // affiche la page une fois propre et la langue choisie
+    language=getUserLanguage();
+    setLanguage(language);
+    window.location.pathname = '/Scratch/' + language + '/';
+});
+    </script>
+</head>
+<body>
+    <p> Please wait while redirecting </p>
+    <p> Attendez un instant le temps de vous rediriger s'il vous plait.</p>
+</body>
+</html>
