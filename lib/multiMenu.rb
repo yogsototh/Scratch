@@ -136,3 +136,21 @@ def previousFor(page)
     end
     link_to(tradOf(:previous)+"&nbsp;&larr;", target)
 end
+
+def brother_for_at(page,n)
+    brothers=getSortedChildren(page.parent)
+    i=brothers.index(page)
+    if i.nil?
+        return nil
+    end
+    brothers[ brothers.index(page) + n ]
+end
+
+def article_brother(n)
+    if depthOf(@item) > 3
+        page=@item.parent
+    else
+        page=@item
+    end
+    brother_for_at(page,n)
+end

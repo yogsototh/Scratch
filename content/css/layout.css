@@ -452,6 +452,9 @@ table.impact tr td
   :width 100%
   :text-align center
 
+#choixrss
+  width: 100%
+  clear: both
 #choix
   padding: 1em
   text-align: left
@@ -473,3 +476,18 @@ table.impact tr td
   line-heigh: 2em
 .date
   font-size: .8em
+#next_before_articles
+  clear: both
+  width: 100%
+  :font-size 1.2em
+  :padding
+    :top    1em
+    :bottom 1em
+#previous_articles
+  float: left
+  width: 45%
+  text-align: left
+#next_articles
+  float: right
+  width: 45%
+  text-align: right
