@@ -4,41 +4,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/layout.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/css/shadows.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/gen.css" />
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr">
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/js.css" /> 
+    <link rel="alternate" lang="fr" xml:lang="fr" title="Bienvenue" type="text/html" hreflang="fr" href="/Scratch/fr/" /> 
+    <link rel="alternate" lang="en" xml:lang="en" title="Welcome" type="text/html" hreflang="en" href="/Scratch/en/" /> 
     <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
     <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
     <script>
-        function getUserLanguage() {
-            var language = $.cookie('language');
-            if (! language) {
-                if ( (navigator) && 
-                        (navigator.language) && 
-                        (navigator.language.substring(0,2) == 'fr' ) ) {
-                    language='fr';
-                } else {
-                    language='en';
-                }
-            }
-            return language;
-        }
+        // put the selected language in the cookie
         function setLanguage(lang) {
             $.cookie('language',lang, { path: '/Scratch'});
         }
-$(document).ready( function() {
-    // affiche la page une fois propre et la langue choisie
-    language=getUserLanguage();
-    setLanguage(language);
-    window.location.pathname = '/Scratch/' + language + '/';
-});
+        // Ce que l'on va lancer à l'init.
+        $(document).ready( function() {
+                var userAgent = navigator.userAgent.toLowerCase();
+                if ( /webkit/.test(userAgent) ) {
+                    $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_webkit.css"/>');
+                } else if ( /mozilla/.test(userAgent) ) {
+                    $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_mozilla.css"/>');
+                }
+        } );
     </script>
-    <title>Loading...</title>
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/nojs.css" />
+    </noscript>
+    <title>Yann Esposito - Yogsototh</title>
 </head>
-<body>
-    <script type="text/javascript">
-        document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="Loading..."/></div>');
-    </script>
-    <p>Loading...</p>
+<body lang="fr">
+    <div id="content">
+        <div id="titre">
+            <h1>Yann Esposito</h1>
+            <h2>Yogsototh</h2>
+        </div>
+        <div id="afterheader">
+            <div class="corps" style="font-size: 1.5em; line-height: 3em"> 
+                <p>
+                J'écris un <a href="/Scratch/fr/" onclick="setLanguage('fr')">blog</a> </li>, <br/> 
+                je programme des <a href="http://yannesposito.com/Softwares/Welcome.html">logiciels</a></li>.<br/> 
+                Donne des <a href="http://yann.esposito.free.fr/enseignement/enseignement.php">cours d'informatique</a> </li><br/> 
+                notamment un gros <a href="http://yann.esposito.free.fr/enseignement/projetrez0/projetrez0.html">projet de réseau anonyme</a> </li>.<br/> 
+                Tous les détails sur mon <a href="http://j.mp/btfRJ2">Curriculum vitæ</a> </li>
+                </p>
+            </div>
+
+            <div class="corps">
+                <p>
+                Hello,
+                I write a <a href="/Scratch/en/" onclick="setLanguage('en')">blog</a> </li> and 
+                develop <a href="http://yannesposito.com/Softwares/Welcome.html">softwares</a></li>.
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

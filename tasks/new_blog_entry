@@ -1,0 +1,58 @@
+#!/usr/bin/env zsh
+
+# print usage if no title is given
+if (($#<1)); then
+    print -- "Create a new blog entry setting default parameters such as the date."
+    print -P -- "%BUsage:%b\t$0:t post_title"
+    exit 1
+fi
+
+root="$HOME/Sites/webroot"
+
+title="$*"
+
+# basefilename is the filename where all spaces
+# were replaced by underline
+basefilename="$( print $title | perl -pe 'chomp(); s#ç#c#g; s#àâ#a#g; s#éèê#e#g; s#ô#o#g; s#û#u#g; s#\W#-#g')"
+
+# construct the final filename
+yearmonthday=$( date "+%Y-%m-%d" )
+filename="$root/content/blog/${yearmonthday}-$basefilename.html"
+dirname="$root/output/Scratch/img/blog/${yearmonthday}-${basefilename}"
+
+[[ -e $filename ]] && {
+    print -P -- "%BAttention%b : $filename existe déjà."
+    print -P -- "%BError try with a new name%b"
+    exit 3
+}
+
+# now title and filename are well defined
+print "   title = $title"
+print "filename = $filename"
+
+now=$( date "+%Y-%m-%dT%H:%M:%S+02:00" )
+
+> $filename cat << ENDFORMAT
+-----
+
+# Custom 
+isHidden:       false
+menupriority:   1
+kind:           article
+date:           $now
+title: $title
+multiTitle: 
+    fr: $title
+    en: $title
+multiDescription:
+    fr: pas de description.
+    en: no description.
+# tags:
+
+-----
+ENDFORMAT
+
+print "imagedir = $dirname"
+mkdir $dirname
+
+vi $filename
