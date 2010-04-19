@@ -14,6 +14,7 @@ multiDescription:
     en: Sometimes you want to exclude some string with an existing regular expression. Here are some examples on how you could achieved that when it is possible (it is not always the case).
 tags:
   - regexp
+  - regular expression
 
 -----
 
