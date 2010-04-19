@@ -48,14 +48,17 @@
 =large_first_round
   :-moz-border-radius
     :topright = !large_radius
+    :bottomright = 1px
 
 =small_first_round
   :-moz-border-radius
     :topright = !small_radius
+    :bottomright = 1px
 
 =tiny_first_round
   :-moz-border-radius
     :topright = !tiny_radius
+    :bottomright = 1px
 
 =large_first_round
   +first_round_base
@@ -118,12 +121,6 @@
 .shadow
   +smallround
 
-.corps h1.first
-  +large_first_round
-
-.corps h2.first
-  +small_first_round
-
 img
   +tinyround
 
@@ -165,3 +162,10 @@ table.description tr td,
 
 #menuMessage
   +downsmallround
+
+.corps h1.first
+  +large_first_round
+
+.corps h2.first
+  +small_first_round
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/shadows.css" />
+    <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/gen.css" />
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr">
+    <link rel="stylesheet" type="text/css" href="/Scratch/css/js.css" /> 
+    <link rel="alternate" lang="fr" xml:lang="fr" title="Bienvenue" type="text/html" hreflang="fr" href="/Scratch/fr/" /> 
+    <link rel="alternate" lang="en" xml:lang="en" title="Welcome" type="text/html" hreflang="en" href="/Scratch/en/" /> 
+    <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+    <script>
+        // put the selected language in the cookie
+        function setLanguage(lang) {
+            $.cookie('language',lang, { path: '/Scratch'});
+        }
+        // Ce que l'on va lancer à l'init.
+        $(document).ready( function() {
+                var userAgent = navigator.userAgent.toLowerCase();
+                if ( /webkit/.test(userAgent) ) {
+                    $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_webkit.css"/>');
+                } else if ( /mozilla/.test(userAgent) ) {
+                    $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_mozilla.css"/>');
+                }
+        } );
+    </script>
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/nojs.css" />
+    </noscript>
+    <title>Yann Esposito - Yogsototh</title>
+</head>
+<body lang="fr">
+    <div id="content">
+        <div id="titre">
+            <h1>Yann Esposito</h1>
+            <h2>Yogsototh</h2>
+        </div>
+        <div id="afterheader">
+            <div class="corps" lang="fr"> 
+                <ul>
+                    <li>un <a href="/Scratch/fr/" onclick="setLanguage('fr')">blog</a> </li>
+                    <li>des <a href="http://yannesposito.com/Softwares/Welcome.html">logiciels</a></li>
+                    <li>des <a href="http://yann.esposito.free.fr/enseignement/enseignement.php">cours d'informatique</a></li>
+                    <li>un <a href="http://yann.esposito.free.fr/enseignement/projetrez0/projetrez0.html">projet de réseau anonyme</a> </li>
+                    <li>un <a href="http://j.mp/btfRJ2">curriculum vitæ</a> </li>
+                </p>
+            </div>
+
+            <div class="corps" lang="en"> 
+                <p> If you speak English:</p>
+                <ul><li> a <a href="/Scratch/en/" onclick="setLanguage('en')">blog</a> </li>
+                    <li> some <a href="http://yannesposito.com/Softwares/Welcome.html">softwares</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -11,10 +11,10 @@ noSubMenu: true
     end
     last_articles=last_articles.sort { |x,y| y[:created_at] <=> x[:created_at] }[0..(number_of_articles-1)]
 %>
-
 <p>Welcome on my personnal website.</p>
 
 <p>Here are my <%= number_of_articles %> last posts begining<sup>&dagger;</sup>.</p>
+<p> You can also search the entries with <a href="#tagcloud">tag cloud</a></p>
 
 <hr/>
 <p class="small">&dagger; approximatively the <%= number_of_char_for_resume %> first characters.</p>
@@ -28,3 +28,8 @@ noSubMenu: true
         <%= link_to("Read more &rarr;", a) %>
     </p>
 <% end %>
+</div>
+<a href="#titre">&uarr; back to top &uarr;</a>
+<div class="corps">
+    <h2 id="tagcloud">tag cloud</h2>
+    <%= tagCloud %>

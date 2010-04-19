@@ -47,14 +47,17 @@
 =large_first_round
   :-webkit-border
     :top-right-radius = !large_radius
+    :bottom-right-radius = 1px
 
 =small_first_round
   :-webkit-border
     :top-right-radius = !small_radius
+    :bottom-right-radius = 1px
 
 =tiny_first_round
   :-webkit-border
     :top-right-radius = !tiny_radius
+    :bottom-right-radius = 1px
 
 .corps h1
   :-webkit-border
@@ -103,12 +106,6 @@
 .shadow
   +smallround
 
-.corps h1.first
-  +large_first_round
-
-.corps h2.first
-  +small_first_round
-
 img
   +tinyround
 
@@ -149,3 +146,10 @@ table.description tr td,
 
 #menuMessage
   +downsmallround
+  
+.corps h1.first
+  +large_first_round
+
+.corps h2.first
+  +small_first_round
+

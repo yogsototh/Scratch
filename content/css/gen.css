@@ -510,5 +510,6 @@ hr
   +smallblock
   +downsmallround
 
-#content > .date
-  :color = !blanc_fonce
+h1 > .date
+  :font-size .6em
+  :color = !gris_fonce
