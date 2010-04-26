@@ -5,13 +5,7 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2010-02-18T15:29:14+02:00
-title: split a file by keyword
-multiTitle: 
-    fr: split a file by keyword
-    en: split a file by keyword
-multiDescription:
-    fr: pas de description.
-    en: no description.
+title: découper un fichier par mots clés
 tags:
     - awk
     - shell
@@ -19,8 +13,9 @@ tags:
 
 -----
 
-Strangely enough, I didn't find any built-in tool to split a file by keyword. I made one myself in `awk`. I put it here mostly for myself. But it could also helps someone else.
-The following code split a file for each line containing the word `UTC`.
+Assez bizarrement, je n'ai trouvé aucun outil UNIX pour découper un fichier par mot clé. 
+Alors j'en ai fait un en `awk`. Je le met ici principalement pour moi, mais ça peut toujours servir à quelqu'un d'autre.
+Le code suivant découpe un fichier pour chacune de ses ligne contenant le mot `UTC`.
 
 <div><code class="perl">
 #!/usr/bin/env awk
@@ -32,13 +27,13 @@ BEGIN{i=0;}
 {print $0>>FIC}
 </code></div>
 
-In my real world example, I wanted one file per day, each line containing UTC being in the following format:
+En réalité, j'avais besoin de cet outils pour avoir un fichier par jour. Chaque ligne contenant UTC ayant le format suivant :
 
 <pre class="twilight">
 Mon Dec  7 10:32:30 UTC 2009
 </pre>
 
-I then finished with the following code:
+J'en suis finallement arrivé au code suivant :
 
 <div><code class="perl">
 #!/usr/bin/env awk

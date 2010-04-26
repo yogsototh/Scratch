@@ -104,7 +104,7 @@ And it works in only 9 lines for any beginning and ending string. This solution 
 
 ---
 
-<small><a name="note1"><sup>&dagger;</sup></a> I know I used an HTML syntax example, but in my real life usage, I needed to match between `` and ``. And sometimes the string could finish with `e::`.</small>
+<small><a name="note1"><sup>&dagger;</sup></a> I know I used an HTML syntax example, but in my real life usage, I needed to match between `en:` and `::`. And sometimes the string could finish with `e::`.</small>
     
 
-[previouspost]: /Scratch/multi/blog/2010-02-16-All-but-something-regexp--2- "All but something regexp"
+[previouspost]: /Scratch/en/blog/2010-02-16-All-but-something-regexp--2- "All but something regexp"
