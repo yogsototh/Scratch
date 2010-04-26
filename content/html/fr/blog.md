@@ -8,6 +8,9 @@ noSubMenu: true
 -----
 
 <% 
+    require 'locale'
+    require 'time'
+    Locale.set('fr_FR');
     number_of_articles=10
     number_of_char_for_resume=800
     language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
@@ -27,7 +30,7 @@ noSubMenu: true
 <% end %>
 </ul>
 
-<a href="#archives">Archives &rarr;</a>
+<a href="#archives">Archives &darr;</a>
 
 newcorps
 

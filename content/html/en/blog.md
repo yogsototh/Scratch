@@ -3,7 +3,7 @@
 kind: blog
 title: Blog
 menupriority: 2
-
+noSubMenu: true
 -----
 <% 
     number_of_articles=10
@@ -25,7 +25,7 @@ menupriority: 2
 <% end %>
 </ul>
 
-<a href="#archives">Archives &rarr;</a>
+<a href="#archives">Archives &darr;</a>
 
 newcorps
 
