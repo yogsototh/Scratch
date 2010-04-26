@@ -13,7 +13,6 @@ source $0:h/webdav-framework
 
 if [[ $1 == '-h' ]]; then
     print -- "usage : $0:h [-h|-s|-d]"
-    print -- "  -a sychronise aussi l'index"
     print -- "  -h affiche l'aide"
     print -- "  -d modification directe (pas de swap)"
     print -- "  -s swappe simplement les répertoires"
@@ -108,8 +107,16 @@ print -- "Dest = $destRep"
 if [[ "$1" = "-s" ]]; then
     swap
 else 
-    # print -P "Copie de l'init"
-    # \cp -f $webroot/Scratch/en/index.html $webroot/index.html
+    if [[ "$1" = "-a" ]]; then
+        print -Pn "Copie de l'init "
+        \cp -f ${webroot:t}/index.html ${destRep:h}/index.html
+        if [[ $? -eq 0 ]]; then
+            print -P "[%Bdone%b]"
+        else
+            print -P "[%BFailed%b]"
+            exit 1
+        fi
+    fi
 
     if [[ "$1" = "-d" ]]; then
         suffix=""
