@@ -37,11 +37,19 @@ def getSortedChildren(parent)
 end
 
 def generateBlogSubMenu
+    year=0
+    res=""
     liste=getSortedChildren(@item).reverse!.collect! do |p|
-        link_to_unless_current(p[:title],p)
+        if p[:created_at].strftime("%Y") != year
+            year=p[:created_at].strftime("%Y") 
+            res<<=%{</ul><h4>#{year}</h4><ul>}
+        end
+        res<<='<li>'
+        res<<=%{<span class="date"><span class="small"><em>#{p[:created_at].strftime("%d %b")}</em></span></span> }+link_to_unless_current(p[:title],p)
+        res<<='</li>'
     end
     if ! liste.empty?
-        '<div id="sousliens"><ul><li>'+liste.join('</li><li>')+'</li></ul></div>'
+        '<div id="sousliens"><ul>'+res+'</ul></div>'
     else
         return
     end

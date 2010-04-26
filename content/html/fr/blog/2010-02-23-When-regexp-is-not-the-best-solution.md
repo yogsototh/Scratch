@@ -5,26 +5,20 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2010-02-23T10:09:52+02:00
-title: When regexp is not the best solution
-multiTitle: 
-    fr: When regexp is not the best solution
-    en: When regexp is not the best solution
-multiDescription:
-    fr: pas de description.
-    en: no description.
+title: Quand se passer des expressions régulières ?
 tags:
-    - programming
+    - programmation
     - regexp
-    - regular expression
+    - expressions régulières
     - extension
-    - file
+    - fichier
 
 -----
 
-Regular expression are really useful. Unfortunately, they are not always the best way of doing things.
-Particularly when transformations you want to make are easy.
+Les expressions régulières sont très utiles. Cependant, elles ne sont pas toujours la meilleure manière d'aborder certain problème autour des chaines de caractères.
+Et surtout quand les transformations que vous voulez accomplir sont simples.
 
-I wanted to know how to get file extension from filename the fastest way possible. There is 3 natural way of doing this:
+Je voulais savoir comment récupérer le plus vite possible l'extension d'un nom de fichier. Il y a trois manière naturelle d'accomplir celà :
 
 <div><code class="ruby">
 # regexp
@@ -38,9 +32,9 @@ ext=str.split('.')[-1]
 ext=File.extname(str)
 </code></div>
 
-At first sight I believed that the regexp should be faster than the split because it could be many `.` in a filename. But in reality, most of time there is only one dot and I realized the split will be faster. But not the fastest way. There is a function dedicated to this work in the `File` module.
+A première vue, je pensais que l'expression régulière serait plus rapide que le `split` parce qu'il pouvait y avoir plusieurs de `.` dans un nom de fichier. Mais la majorité du temps il n'y a qu'un seul point par nom de fichier. C'est pourquoi j'ai réalisé que le `split` serait plus rapide. Mais pas le plus rapide possible. Il y a une fonction qui est dédiée à faire ce travail dans un module standard de ruby ; le module `File`.
 
-Here is the Benchmark ruby code:
+Voici le code pour faire un benchmark :
 
 <div><code class="ruby" file="regex_benchmark_ext.rb">
 #!/usr/bin/env ruby
@@ -69,7 +63,7 @@ Benchmark.bm do |x|
 end
 </code></div>
 
-And here is the result
+Et voici les résultats :
 
 <pre class="twilight">
 Get extname
@@ -79,9 +73,9 @@ regexp:  2.550000   0.020000   2.570000 (  2.693407)
   File:  0.640000   0.030000   0.670000 (  0.717748)
 </pre>
 
-Conclusion of this benchmark, dedicated function are better than your way of doing stuff (most of time).
+En conclusion, les fonction dédiées sont meilleures que votre façon de faire (la plupart du temps).
 
-## file path without the extension.
+## Chemin complet d'un fichier sans l'extension
 
 <div><code class="ruby" file="regex_benchmark_strip.rb">
 #!/usr/bin/env ruby
@@ -106,7 +100,7 @@ Benchmark.bm do |x|
 end
 </code></div>
 
-and here is the result:
+et voici les résultats :
 
 <pre class="twilight">
 remove extension
@@ -115,4 +109,4 @@ remove extension
 chomp:  0.820000   0.040000   0.860000 (  0.947432)
 </pre>
 
-Conclusion of the second benchmark. One simple function is better than three dedicated functions. No surprise, but it is good to know.
+En conclusion du ce second benchmark. Un fonction simple est meilleure que trois fonctions dédiées. Pas de surprise, mais c'est toujours bien de savoir.

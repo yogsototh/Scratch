@@ -5,48 +5,42 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2010-03-23T22:37:36+02:00
-title: Encapsulate git
-multiTitle: 
-    fr: Encapsuler git
-    en: Encapsulate git
-multiDescription:
-    fr: pas de description.
-    en: no description.
+title: Encapsuler git
 tags:
     - git
     - protection
     - branches
-    - diverged
 
 -----
 
-<div class="small">
-Here is a solution to maintain divergent branches in git. Because it is easy to merge by mistake. I give a script that encapsulate git in order to forbid some merge and warn you some merge should be dangerous.
-</div>
+<span class="small">
+Voici une solution pour conserver des branches divergentes avec `git`.
+Parce qu'il est facile de *merger* par erreur, je propose un script qui encapsule le comportement de `git` pour interdire certains *merges* dangereux.
+</span>
 
-## how to protect against your own dumb
+## Comment se protoger de sa propre bêtise ?
 
-I work on a project in which some of my git branches should remain divergent. And divergences should grow.
+Je travaille sur un projet dans lequel certaines de mes branches `git` doivent rester divergentes. Et les divergences devraient aller en s'accentuant.
 
-I also use some branch to contain what is common between projects.
+J'utilise aussi certaines branches qui contiennent la partie commune de ces projets.
 
-Say I have some branches:
+Dison que j'ai les branches :
 
-master: common to all branches
-dev:    branch devoted to unstable development
-client: branch with features for all client but not general enough for master
-clientA: project adapted for client A
-clientB: project adapted for client B
+master: commune à toutes les branches
+dev:    branche instable pour le développement
+client: Branche commune à plusieurs clients
+clientA: le projet spécialisé pour le client A
+clientB: le projet spécialisé pour le client B
 
-Here how I want to work: 
+Voilà comment je souhaiterai que ça fonctionne
 
 <%= blogimage("dynamic_branching.png","Dynamic branching") %>
 
-And more precisely the branch hierarchy: 
+Et plus précisément la hiérarchie des branches :
 
 <%= blogimage("branch_hierarchy.png","Branch hierarchy") %>
 
-An arrow from A to B means, you can merge A in B. If there is no arrow from A to B that means it is *forbidden* to merge A in B. Here is the corresponding rubycode:
+Une flèche de A vers B signifie que l'on peut merger A dans B. S'il n'y a pas de flèche de A vers B cela signifie qu'il est *interdit* de merger A dans B. Voici le code ruby correspondant :
 
 <div><code class="ruby">
 $architecture={ 
@@ -55,11 +49,13 @@ $architecture={
     :client => [ :clientA, :clientB ] }
 </code></div>
 
-Having a `:master => [ :dev, :client ]` means you can merge `master` branch into `dev` and `client`.
+`:master => [ :dev, :client ]` signifie que l'on peut merger la branche `master` dans la branche `dev` et la branche `client`.
 
-If by mistake I make a `git checkout master && git merge clientA`, I made a mistake. This is why I made a script which encapsulate the git behaviour to dodge this kind of mistake.
 
-But this script do far more than that. It also merge from top to down. The action `allmerges` will do:
+Je fait une erreur si je tape `git checkout master && git merge clientA`.
+C'est pour éviter ça que j'ai fait un script pour encapsuler le comportement de `git`.
+
+Mais ce script fait bien plus que ça. Il fait des merges en cascade de la racine vers les feuilles avec l'acion `allmerges`.
 
 <div><code class="zsh">
 git co dev && git merge master
@@ -68,9 +64,8 @@ git co clientA && git merge client
 git co clientB && git merge client
 </code></div>
 
-That means, I can update all branches. The algorithm will not make loop even if there is a cycle in the branch hierarchy.
-
-Here it is:
+Je peux ainsi mettre à jour toutes les branches. L'algorithme ne boucle pas même s'il y a des cycles dans la structure des branches.  
+Le voici :
 
 <div class="small"><code class="ruby" file="eng">
 #!/usr/bin/env ruby
@@ -177,6 +172,6 @@ case ARGV[0]
 end
 </code></div>
 
-All you need to do to make it work is simply to copy eng in a directory contained in your PATH.
+Pour que ça fonctionne il vous suffit de copier `eng` dans un répertoire présent dans votre `PATH`.
 
-Of course try to use as few as possible `cherry-pick` and `rebase`. This script was intended to work with workflow using `pull` and `merge`.
+Bien entendu, il faut essayer de faire aussi peu que possible des `cherry-pick` et des `rebase`. Ce script a pour but de s'intégrer avec les workflow basé sur les `pull` et `merge`.

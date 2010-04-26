@@ -30,13 +30,6 @@ route '/js/*' do
 end
 
 
-# HTML
-# compile '/*' do
-#   filter :erb
-#   filter :bluecloth
-#   layout 'default'
-# end
-
 compile '/html/*' do
   # item[:extension] returns 'html.erb' for multi-dotted filename
   ext = item[:extension].nil? ? nil : item[:extension].split('.').last

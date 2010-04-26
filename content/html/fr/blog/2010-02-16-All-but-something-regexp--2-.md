@@ -5,26 +5,21 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2010-02-16T10:33:21+02:00
-title: All but something regexp (2)
-multiTitle: 
-    fr: All but something regexp (2)
-    en: All but something regexp (2)
-multiDescription:
-    fr: pas de description.
-    en: How to match internal shortest string possible with regexp? Here are some solutions.
+title: Tout sauf quelquechose en expression régulière.
 tags:
   - regexp
   - regular expression
 
 -----
 
-In my [previous post](previouspost) I had given some trick to match all except something. On the same idea, the trick to match the smallest possible string. Say you want to match the string between 'a' and 'b', for example, you want to match:
+Dans mon [précédent article](previouspost) j'ai donné certaines astuces pour matcher 'tout sauf quelque chose'. De la même manière, un truc pour matcher la chaine de caractère la plus petite possible.
+Disons que vous voulez matcher la chaine de caractère entre 'a' et 'b'. Par exemple, vous voulez matcher :
 
 <pre class="twilight">
 a.....<span class="Constant"><strong>a......b</strong></span>..b..a....<span class="Constant"><strong>a....b</strong></span>...
 </pre>
 
-Here are two common errors and a solution:
+Voici les deux erreurs communes et une solution :
 
 <pre class="twilight">
 /a.*b/
@@ -41,70 +36,73 @@ Here are two common errors and a solution:
 a.....<span class="Constant"><strong>a......b</strong></span>..b..a....<span class="Constant"><strong>a....b</strong></span>...
 </pre>
 
-The first error is to use the *evil* `.*`. Because you will match from the first to the last. The next natural way, is to change the *greediness*. But it is not enough as you will match from the first `a` to the first `b`. Then a simple constatation is that our matching string shouldn't contain any `a` nor `b`. Which lead to the last elegant solution.
+La première erreur vient de l'utilisation du *terrible* `.*`. Parce que vous allez matcher la chaîne de caractère la plus longue possible. L'autre manière naturelle de répondre à ce problème est de changer la *greediness*. Mais ce n'est pas assez parce que vous allez matcher du premier `a` au premier `b` après celui-ci. On peut alors constater que votre chaine de caractère ne devrait comprendre ni la lettre `a` ni la lettre `b`. Ce qui emène à la dernière solution élégante.
 
-Until now, that was, easy. Now, how do you manage when instead of `a` you have a string?
+Jusqu'ici, c'était facile. Maintenant comment fait vous quand au lieu de `a` vous avez une chaine de caractère ?
 
-Say you want to match: 
+Par exemple, vous voulez matcher:
 <div><code class="perl">
 <li>...<li>
 </code></div>
 
-This is a bit difficult. You need to match 
+C'est un peu difficile. Vous devez matcher
 <div><code class="perl">
 <li>[anything not containing <li>]</li>
 </code></div>
 
-The first method would be to use the same reasoning as in my [previous post](previouspost). Here is a first try:
+La première méthode serait d'utiliser le même rainsonnement que dans mon [article précédent](previouspost). Ici un premier essai :
 
 <div><code class="perl">
 <li>([^<]|<[^l]|<l[^i]|<li[^>])*</li>
 </code></div>
 
-But what about the following string: 
+Mais il y a encore une erreur. Pensez à la chaine de caractère suivante :
 <div><code class="perl">
 <li>...<li</li>
 </code></div>
 
-That string should not match. This is why if we really want to match it correctly<sup><a href="#note1">&dagger;</a></sup> we need to add:
+Cette chaine ne matchera pas. C'est pourquoi si on veut vraiment la matcher correctement<sup><a href="#note1">&dagger;</a></sup> nous devons ajouter :
 <div><code class="perl">
 <li>([^<]|<[^l]|<l[^i]|<li[^>])*(|<|<l|<li)</li>
 </code></div>
 
-Yes a bit complicated. But what if the string I wanted to match was even longer?
+Oui, c'est un peu compliqué. Mais que se passe t'il lorsque la chaine de caractère que vous voulez matcher est encore plus longue que `<li>` ?
 
-Here is the algorithm way to handle this easily. You reduce the problem to the first one letter matching:
+Voici un algorithme qui permet de résoudre ce problème aisément. Vous devez réduire ce problème au premier. C'est-à-dire celui avec une seule lettre :
 
 <div><code class="perl">
-# transform a simple randomly choosen character
-# to an unique ID 
-# (you should verify the identifier is REALLY unique)
-# beware the unique ID must not contain the 
-# choosen character
+# transforme un simple caractère choisi aléatoirement
+# en un identifiant unique
+# (vous devez vérifier que l'identifier est VRAIMENT unique)
+# attention l'identifiant unique ne doit pas 
+# contenir le caractère choisi.
 s/X/_was_x_/g
 s/Y/_was_y_/g
 
-# transform the long string in this simple character
+# transforme la longue chaine de caractère
+# en un seul caractère
 s/<li>/X/g
 s/<\/li>/Y/g
 
-# use the first method
+# Utilisation de la première méthode
 s/X([^X]*)Y//g
 
-# retransform choosen letter by string
+# Retransformation des lettres en chaines
+# de caractères
 s/X/<li>/g
 s/Y/<\/li>/g
 
-# retransform the choosen character back
+# retour des anciens caractères.
 s/_was_x_/X/g
 s/_was_y_/Y/g
 </code></div>
 
-And it works in only 9 lines for any beginning and ending string. This solution should look less *I AM THE GREAT REGEXP M45T3R, URAN00B*, but is more convenient in my humble opinion. Further more, using this last solution prove you master regexp, because you know it is difficult to manage such problems with only a regexp.
+Et ça fonctionne en seulement 9 lignes pour toute chaine de début et de fin.
+Cette solution fait un peu moins *I AM THE GREAT REGEXP M45T3R, URAN00B*, mais elle est mieux adaptée à mon avis. De plus, utiliser cette dernière solution prouve que vous maitrisez les expressions régulières. Simplement parce que vous savez qu'il est difficile de résoudre des problèmes de cette forme en utilisant seulement des expressions régulières.
 
 ---
 
-<small><a name="note1"><sup>&dagger;</sup></a> I know I used an HTML syntax example, but in my real life usage, I needed to match between ``. And sometimes the string could finish with `e::`.</small>
+<small><a name="note1"><sup>&dagger;</sup></a> Je sais que j'ai utilisé une syntaxe HTML dans mon exemple. Mais dans l'utilisation réelle que j'en ai faite, je devais matcher entre `en:` et `::`, sachant que parfois les chaines pouvaient se terminer par `e::`. </small>
     
 
-[previouspost]: /Scratch/multi/blog/2010-02-16-All-but-something-regexp--2- "All but something regexp"
+[previouspost]: /Scratch/fr/blog/2010-02-16-All-but-something-regexp--2- "All but something regexp"

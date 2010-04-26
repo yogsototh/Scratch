@@ -5,20 +5,14 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2010-02-15T11:16:12+02:00
-title: All but something regexp
-multiTitle: 
-    fr: Expression Régulière pour "Tout sauf un mot"
-    en: Pragmatic Regular Expression Exclude
-multiDescription:
-    fr: pas de description.
-    en: Sometimes you want to exclude some string with an existing regular expression. Here are some examples on how you could achieved that when it is possible (it is not always the case).
+title: Expression régulière pour tout sauf quelquechose
 tags:
   - regexp
   - regular expression
 
 -----
 
-Sometimes you cannot simply write:
+Parfois vous ne pouvez simplement pas écrire :
 
 <div><code class="ruby">
 if str.match(regexp) and 
@@ -26,63 +20,63 @@ if str.match(regexp) and
         do_something
 </code></div>
 
-and you have to make this behaviour with only one regular expression. The problem is the complementary of regular languages is not regular. Then, for some expression it is absolutely not impossible.
+et vous devez obtenir le même comportement avec seulement une expression régulière. Le problème c'est que le complémentaire des régulier n'est pas régulier. Donc pour cetaines expression, c'est absolument impossible à faire.
 
-But sometimes with some simple regular expression it should be possible<sup><a href="#note1">&dagger;</a></sup>. Say you want to match everything containing the some word say `bull` but don't want to match `bullshit`. Here is a nice way to do that:
+Cependant, pour certaines expressions ce peut être possible<sup><a href="#note1">&dagger;</a></sup>. Disons que vous souhaitez matcher tout les lignes contenant le mot `bull`, mais que vous ne souhaitez pas matcher `bullshit`. Voici une façon sympa d'y arriver :
 
 <div><code class="ruby">
-# match all string containing 'bull' (bullshit comprised)
+# matcher toute les chaines qui 
+# matchent 'bull' (bullshit compris)
 /bull/
 
-# match all string containing 'bull' except 'bullshit'
+# matcher toutes les chaines qui 
+# contiennent 'bull' sauf 'bullshit'
 /bull([^s]|$)|
 bulls([^h]|$)|
 bullsh([^i]|$)|
 bullshi([^t]|$)/
 
-# another way to write it would be
+# une autre façon de l'écrire serait
 /bull([^s]|$|s([^h]|$)|sh([^i]|$)|shi([^t]|$))/
 </code></div>
 
-Let look closer. In the first line the expression is:
-`bull([^s]|$)`, why does the `$` is needed?
-Because, without it the word `bull` would be no more matched. This expression means:
+Regardons de plus près. Dans la première ligne, l'expression est :
+`bull([^s]|$)`, pourquoi avons nous besoin du `$` ?
+Parce que sans lui, le mot `bull` ne serait pas matché. Cette expression signifie :
 
-> The string finish by `bull`    
-> or,   
-> contains `bull` followed by a letter different from `s`. 
+> La chaine finie par `bull`    
+> ou,   
+> contient `bull` suivi d'une lettre différente de `s`.
 
-And this is it. I hope it could help you.
+Et voilà. J'espère que ça a pu vous aider.
 
-Notice this method is not always the best. For example try to write a regular expression equivalent to the following conditional expression:
+Notez que cette méthode n'est pas toujours la meilleure. Par exemple essayons d'écrire une expression régulière équivalente à l'expression conditionnelle suivante :
 <div><code class="ruby">
-# Begin with 'a': ^a
-# End with 'a': c$
-# Contain 'b': .*b.*
-# But isn't 'axbxc'
+# Commence avec 'a': ^a
+# Se finit par 'a': c$
+# Contient 'b': .*b.*
+# Mais n'est pas 'axbxc'
 if str.match(/^a.*b.*c$/) and 
         not str.match(/^axbxc$/)
     do_something
 end
 </code></div>
 
-A nice solution is:
+Une solution est :
 
 <div><code class="ruby">
-/abc|           # length 3
-a.bc|           # length 4
+/abc|           # longueur 3
+a.bc|           # longueur 4
 ab.c|
-a[^x]b[^x]c|    # length 5
-a...*b.*c|      # length >5
+a[^x]b[^x]c|    # longueur 5
+a...*b.*c|      # longueur >5
 a.*b...*c/
 </code></div>
 
-This solution uses the maximal length of the string not to be matched.
-There certainly exists many other methods. But the important lesson is
-it is not straightforward to exclude something of a regular expression.
+Cette solution utilise la longueur maximale de la chaine qui ne doit pas être matchée. Il existe certainement d'autres méthodes. Mais la leçon importante c'est qu'il n'est pas naturel d'exclure des solutions d'un expression régulière.
 
 ---
 
 <small><a name="note1">&dagger;</a>
-It can be proved that any regular set minus a finite set is also regular.
+Il peut être démontré que tout ensemble régulier privé d'un ensemble fini est aussi régulier.
 </small>
