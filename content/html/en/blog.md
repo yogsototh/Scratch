@@ -1,28 +1,38 @@
 -----
-filters_pre:
-    - erb
-    - bluecloth
-    - frenchspace
-
-filters_post: 
-    - ytypo
-    - multilang
-    - multicorps
-    - firsthi
-
 # Custom 
 kind: blog
 title: Blog
-multiTitle: 
-    fr: Blog
-    en: Blog
 menupriority: 2
 
 -----
+<% 
+    number_of_articles=10
+    number_of_char_for_resume=800
+    language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
+    last_articles = articles.select do |a| 
+            a.reps[0].path =~ /\/#{language}\// 
+    end
+    last_articles=last_articles.sort { |x,y| y[:created_at] <=> x[:created_at] }[0..(number_of_articles-1)]
+%>
+
+## Last <%= number_of_articles %> articles
+
+<ul>
+<% last_articles.each do |a| %>
+    <li>
+        <span class="date"><%= a[:created_at].strftime( @config[:dateFormat][language.intern] ) %></span> <%= link_to(a[:title], a) %>
+    </li>
+<% end %>
+</ul>
+
+<a href="#archives">Archives &rarr;</a>
+
+newcorps
 
 <div>
-<%= tagCloud %>
+<%= tagCloud(2) %>
 </div>
+
 
 newcorps
 
@@ -52,3 +62,9 @@ The first impression I'll let you if we meet in real life should be different fr
 
 I wish you to find something useful or interesting on this website.
 
+
+enddiv
+
+## Archives
+
+<%= generateBlogSubMenu %>

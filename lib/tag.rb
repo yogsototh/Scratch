@@ -50,9 +50,9 @@
         return tagLinks
     end
     
-    def tagCloud
-        tags=tagNumber
-        tagLinks=tagRefs
+    def tagCloud(minval=0)
+        tags=tagNumber.reject { |k,v| v<minval }
+        tagLinks=tagRefs.reject { |k,v| tags[k].nil? }
         max=tags.values.max
         min=tags.values.min
         minSize=1.0
