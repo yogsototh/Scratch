@@ -105,7 +105,7 @@ ul.horizontal
   display: inline-block
   height = !hauteur_menu
   margin-left:  .2em
-  maring-right: .2em
+  margin-right: .2em
   width: 23%
 
 #liens ul li a,
@@ -474,7 +474,7 @@ table.impact tr td
   margin: .3em
 #choixlang ul li a
   width: 100%
-  line-heigh: 2em
+  line-height: 2em
 .date
   font-size: .8em
 #next_before_articles

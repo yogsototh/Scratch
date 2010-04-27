@@ -109,7 +109,7 @@
 
 #sousliens
   +white
-  :text-weight bold
+  :font-weight bold
   :font-size 1.3em
   a, a:link
     :color = !texte_attenue

@@ -169,3 +169,8 @@ table.description tr td,
 .corps h2.first
   +small_first_round
 
+/* Shadows */
+.corps, #bottom, #sousliens 
+  -moz-box-shadow: 0px 2px 5px #333
+#titre, #entete
+  -moz-box-shadow: 0px 0px 5px #000
