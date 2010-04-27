@@ -67,6 +67,8 @@ module Nanoc3::Filters
                 $& + ' class="first"'
             end.gsub(/<div[^>]*class="corps"[^>]*>(\s)*<h[1-4]/m) do
                 $& + ' class="first"'
+            end.gsub(/class="first" class="first"/) do
+                'class="first"'
             end
         end
     end

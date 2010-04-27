@@ -16,7 +16,7 @@ def generateMenu
     sortedChildrenByMenuPriority(home).each do |page|
         liste <<= link_to_unless_current(page[:title],page.reps[0]) 
     end   
-    "<ul><li>"+liste.join("</li><li>")+"</li></ul>"
+    "<ul><li>"+liste.join("</li>\n<li>")+"</li></ul>"
 end
 
 def depthOf(item)
@@ -42,7 +42,7 @@ def generateBlogSubMenu
     liste=getSortedChildren(@item).reverse!.collect! do |p|
         if p[:created_at].strftime("%Y") != year
             if year != 0
-                res<<=%{</ul><script>$('#archives_#{year}').hide()</script>}
+                res<<=%{</ul><script type="text/javascript">$('#archives_#{year}').hide()</script>}
             end
             year=p[:created_at].strftime("%Y") 
             res<<=%{<h4 style="cursor: pointer;" onclick="$('#archives_#{year}').slideToggle()">[#{year}]</h4><ul id="archives_#{year}">}
@@ -51,9 +51,9 @@ def generateBlogSubMenu
         res<<=%{<span class="date"><span class="small"><em>#{p[:created_at].strftime("%d %b")}</em></span></span> }+link_to_unless_current(p[:title],p)
         res<<='</li>'
     end
-    res<<=%{</ul><script>$('#archives_#{year}').hide()</script>}
+    res<<=%{</ul><script type="text/javascript">$('#archives_#{year}').hide()</script>}
     if ! liste.empty?
-        '<div id="sousliens"><ul>'+res+'</div>'
+        '<div id="sousliens">'+res+'</div>'
     else
         return
     end

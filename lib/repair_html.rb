@@ -24,6 +24,7 @@ def repair_html( html )
         end
     end
     res=html.sub(/<[^>]*$/m,'')
+    depth-=1
     depth.downto(0).each { |x| res<<= %{</#{parents[x]}>} }
     res
 end
