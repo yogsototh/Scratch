@@ -17,7 +17,7 @@ noSubMenu: true
     last_articles=last_articles.sort { |x,y| y[:created_at] <=> x[:created_at] }[0..(number_of_articles-1)]
 %>
 
-## Last <%= number_of_articles %> articles
+## Les <%= number_of_articles %> derniers articles
 
 <ul>
 <% last_articles.each do |a| %>
