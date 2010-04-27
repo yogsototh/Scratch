@@ -5,10 +5,7 @@ filters_pre:
     - bluecloth
 
 # Custom 
-title: About
-multiTitle:
-    fr: À propos
-    en: About
+title: À propos
 menupriority: 4
 -----
 
