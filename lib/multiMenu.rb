@@ -41,15 +41,19 @@ def generateBlogSubMenu
     res=""
     liste=getSortedChildren(@item).reverse!.collect! do |p|
         if p[:created_at].strftime("%Y") != year
+            if year != 0
+                res<<=%{</ul><script>$('#archives_#{year}').hide()</script>}
+            end
             year=p[:created_at].strftime("%Y") 
-            res<<=%{</ul><h4>#{year}</h4><ul>}
+            res<<=%{<h4 style="cursor: pointer;" onclick="$('#archives_#{year}').slideToggle()">[#{year}]</h4><ul id="archives_#{year}">}
         end
         res<<='<li>'
         res<<=%{<span class="date"><span class="small"><em>#{p[:created_at].strftime("%d %b")}</em></span></span> }+link_to_unless_current(p[:title],p)
         res<<='</li>'
     end
+    res<<=%{</ul><script>$('#archives_#{year}').hide()</script>}
     if ! liste.empty?
-        '<div id="sousliens"><ul>'+res+'</ul></div>'
+        '<div id="sousliens"><ul>'+res+'</div>'
     else
         return
     end
