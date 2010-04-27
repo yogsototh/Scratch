@@ -9,7 +9,7 @@ title: Contact
 noSubMenu: true
 menupriority: 5
 -----
-# en:How to contact meComment me contacter
+# Comment me contacter
 
 <img src="/Scratch/img/about/avatar.png" alt="Avatar" class="left"/>
 

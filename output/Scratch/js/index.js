@@ -1,8 +1,8 @@
 // Message en fonction du browser
 function detectIE() {
-    if ($.browser["msie"]) {
+    // if ($.browser["msie"]) {
         $('head').append('<script type="text/javascript" src="/Scratch/js/ie.js"></script>');
-    }
+    // }
 }
 
 // -- multilanguage handling --
