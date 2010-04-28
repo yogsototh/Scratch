@@ -73,3 +73,5 @@ pre {
     margin-bottom: 1em;
     line-height: 1.5em;
 }
+#liens ul{list-style:none;}
+#liens ul li{width: 22%; display: inline}

@@ -1,5 +1,6 @@
 $('link[rel=stylesheet]').each(function(i)
 {
+    initMenu=function(){};
     // if (this.getAttribute('href') == '/Scratch/assets/css/layout.css') this.disabled = true;
     if (this.getAttribute('href') == '/Scratch/css/shadows.css') this.disabled = true;
     if (this.getAttribute('href') == '/Scratch/assets/css/gen.css')    this.disabled = true;
