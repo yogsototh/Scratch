@@ -12,7 +12,7 @@ tags:
 
 -----
 
-<div class="small">
+<div class="intro">
 Here is a solution to maintain divergent branches in git. Because it is easy to merge by mistake. I give a script that encapsulate git in order to forbid some merge and warn you some merge should be dangerous.
 </div>
 
