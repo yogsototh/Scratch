@@ -4,8 +4,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    
-    
     <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
     <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/layout.css" />
@@ -30,6 +28,8 @@
                     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_webkit.css"/>');
                 } else if ( /mozilla/.test(userAgent) ) {
                     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_mozilla.css"/>');
+                } else if ($.browser["msie"]) {
+                    $('head').append('<script type="text/javascript" src="/Scratch/js/ie.js"></script>');
                 }
         } );
     </script>
