@@ -7,7 +7,7 @@ title: Git pour les nuls
 subtitle: Git pour quoi faire ?
 -----
 
-# [Git][git] pour quoi faire ?en:[Git][git] for what?
+# [Git][git] pour quoi faire ?
 
 begindiv(intro)
 
@@ -61,7 +61,7 @@ begindiv(black)
 
 enddiv
 
-### concurrentesen:concurrent:
+### concurrentes
 
 Les systèmes de versions sont déjà intéressants pour gérer ses projets personnels. Car ils permettent de mieux organiser celui-ci. De ne (presque) plus se poser de questions à propos des backups. Je dis presque parce qu'il faut quand même penser à protéger par backup son repository. Mais là où les systèmes de versions deviennent vraiment intéressant, c'est pour la gestion de projets à plusieurs.
 

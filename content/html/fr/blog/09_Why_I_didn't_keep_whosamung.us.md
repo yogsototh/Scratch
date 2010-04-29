@@ -1,5 +1,4 @@
 ----- 
-isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-09-11T14:27:09+02:00
@@ -7,7 +6,6 @@ title: Pourquoi je n'ai pas conservé whos.amung.us
 tags:
   - analytics
   - web
-
 -----
 
 J'ai arrété d'utiliser [whos.amung.us](http://whos.amung.us) en faveur de [Google Analytics](http://www.google.com/analytics).

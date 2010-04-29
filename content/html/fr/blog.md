@@ -3,7 +3,6 @@ kind: blog
 title: Blog
 menupriority: 2
 noSubMenu: true
-
 -----
 
 <% 

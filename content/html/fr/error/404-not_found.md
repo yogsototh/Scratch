@@ -1,11 +1,8 @@
 ----- 
-# menu
 is_hidden: true
 title: Page non trouvée
-    en: Page not found
 error_number: 404
 error_message: Page not found
-
 noSubMenu: true
 -----
 The page you're looking at doesn't exists on the server.

@@ -1,5 +1,4 @@
 ----- 
-isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-10-28T11:03:30+02:00

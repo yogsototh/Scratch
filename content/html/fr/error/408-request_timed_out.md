@@ -1,10 +1,6 @@
 ----- 
-# menu
 is_hidden: true
-title: Page not found
-multiTitle: 
-    fr: Page non trouvée
-    en: Page not found
+title: Page non trouvée
 error_number: 408
 error_message: Request Timed Out
 

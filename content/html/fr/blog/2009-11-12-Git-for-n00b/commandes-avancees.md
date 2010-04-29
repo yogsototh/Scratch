@@ -113,7 +113,7 @@ $ git lg
 $ git logfull
 </code></div>
 
-### savoir qui a fait quoi et quanden:know who did what and when::
+### savoir qui a fait quoi et quand
 
 <div><code class="zsh">
 $ git blame fichier

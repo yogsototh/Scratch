@@ -1,5 +1,4 @@
 -----
-isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-10-13T13:10:09+02:00
@@ -67,7 +66,7 @@ Sauf que les concepteurs de Git (conçu pour le noyau Linux) ont plutôt imagin�
 D'un côté *Mondes Parallèles*, de l'autre *Patchs*. Il y a beaucoup de notions équivalentes dans les deux cas, mais aussi quelques différences. 
 
 * Bazaar est complètement basé sur la notion de *Mondes Parallèles* qui va impliquer un phénomène de *Patch*. 
-* Alors que Git est basé sur la notion de *Patch* qui va impliquer la création de *Mondes Parallèles*.en:While Git seem base on the *Patch* model which will implie the creation of *Parallel Worlds*.
+* Alors que Git est basé sur la notion de *Patch* qui va impliquer la création de *Mondes Parallèles*.
 
 Je ne vais pas argumenté pour savoir si une façon de voir est meilleure que l'autre. Disons simplement que ma façon d'entrer dans l'explication des DCVS était par le biais des *Mondes Parallèles* alors que Git est conçut selon l'autre notion<sup><a href="#note3">&Dagger;</a></sup>.
 
