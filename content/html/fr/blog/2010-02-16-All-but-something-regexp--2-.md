@@ -24,17 +24,20 @@ Voici les deux erreurs communes et une solution :
 <span class="Constant"><strong>a.....a......b..b..a....a....b</strong></span>...
 </pre>
 
+La première erreur vient de l'utilisation du *terrible* `.*`. Parce que vous allez matcher la chaîne de caractère la plus longue possible.
+
 <pre class="twilight">
 /a.*?b/
 <span class="Constant"><strong>a.....a......b</strong></span>..b..<span class="Constant"><strong>a....a....b</strong></span>...
 </pre>
+
+ L'autre manière naturelle de répondre à ce problème est de changer la *greediness*. Mais ce n'est pas assez parce que vous allez matcher du premier `a` au premier `b` après celui-ci. On peut alors constater que votre chaine de caractère ne devrait comprendre ni la lettre `a` ni la lettre `b`. Ce qui emène à la dernière solution élégante.
 
 <pre class="twilight">
 /a[^ab]*b/
 a.....<span class="Constant"><strong>a......b</strong></span>..b..a....<span class="Constant"><strong>a....b</strong></span>...
 </pre>
 
-La première erreur vient de l'utilisation du *terrible* `.*`. Parce que vous allez matcher la chaîne de caractère la plus longue possible. L'autre manière naturelle de répondre à ce problème est de changer la *greediness*. Mais ce n'est pas assez parce que vous allez matcher du premier `a` au premier `b` après celui-ci. On peut alors constater que votre chaine de caractère ne devrait comprendre ni la lettre `a` ni la lettre `b`. Ce qui emène à la dernière solution élégante.
 
 Jusqu'ici, c'était facile. Maintenant comment fait vous quand au lieu de `a` vous avez une chaine de caractère ?
 
