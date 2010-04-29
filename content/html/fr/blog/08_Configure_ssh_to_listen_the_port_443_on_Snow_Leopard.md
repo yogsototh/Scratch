@@ -1,29 +1,21 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-09-07T20:25:56+02:00
-title: Configure ssh to listen the port 443 on Snow Leopard
-multiTitle: 
-    fr: ssh to Listen 443 on Snow Leopard
-    en: ssh to Listen 443 on Snow Leopard
-multiDescription:
-    fr: no description.
-    en: no description.
+title: ssh sur le port 443 avec Snow Leopard
 tags:
   - Apple
   - mac
   - ssh
-  - security
-
+  - securité
 -----
-# Surf everywhere as if you were at home
 
-In order to bypass *evil* company firewall and to surf safely on unsafe <sc>wifi</sc>. I keep an ssh server listening on the port 443.
+# Surfez partout comme si vous étiez chez vous
 
-Then from my laptop or my local computer I just have to launch the marvelous
+Que ce soit pour surfer en toute sécurité depuis un accès <sc>wifi</sc> non sécurisé ou pour contourner les parefeux diaboliques des entreprises. J'ai configuré un serveur ssh écoutant sur le port 443 chez moi.
+
+Ensuite de mon portable ou de mon ordinateur local, je dois simplement lancé la merveilleuse commande :
 
 <div>
 <code class="zsh">
@@ -31,19 +23,20 @@ ssh -p 443 -D 9050 username@host
 </code>
 </div>
 
-and a local <sc>socks</sc> proxy listening on port 9050 is launched. The <sc>socks</sc> proxy will transfer local requests via the ssh tunnel. Therefore I can surf locally as if I was on my own computer. I can put password and card number without fear the local <sc>wifi</sc> network to be *sniffed*. I simply need to configure my web browser to user the <sc>socks</sc> proxy on localhost and port 9050.
+et un proxy <sc>socks</sc> écoute sur le port 9050. Ce proxy <sc>socks</sc> transférera toutes les requêtes locales via le tunnel ssh. Ainsi je peux surfer en local comme si je naviguais depuis mon ordinateur à la maison. Je peux écrire mon numéro de carte bleu sans avoir peur que le <sc>wifi</sc> local soit *sniffé*. Je dois simplement configurer mon navigateur web pour utiliser le proxy <sc>socks</sc> sur  `localhost` écoutant le port 9050.
 
-I get this information from [this post](http://dltj.org/article/ssh-as-socks-proxy/).
+J'ai eu cette information à partir de [cet article](http://dltj.org/article/ssh-as-socks-proxy/).
 
-# Ssh and Snow Leopard(c)
+# Ssh et Snow Leopard(c)
 
-Here I don't want to talk about how great <sc>socks</sc> proxy via ssh tunneling is but how to configure my local server.
+J'ai un Mac avec Snow Leopard(c) à la maison. 
+Il ne suffit pas de modifier le fichier `/etc/sshd.config` pour changer le port d'écoute d'`sshd`.
+Le système utilise `launchd` pour lancer les démons.
 
-I have Mac with Snow Leopard(c) at home and it is far from enough to modify the `/etc/sshd.config` file. The system use `launchd` to launch starting daemons.
+J'ai posé cette question sur [Apple Discussions](discussions.apple.com) dans ce [fil de discussion](http://discussions.apple.com/thread.jspa?messageID=10141032). 
+Merci à tous ceux qui m'ont aidé. Et la solution est :
 
-I posted the question on [Apple Discussions](discussions.apple.com) in this [discussion thread](http://discussions.apple.com/thread.jspa?messageID=10141032). Thanks to all guys who helped me. And the solution is:
-
-Create the file <tt>/Library/LaunchDaemons/ssh-443.plist</tt> containing:
+Créer un fichier <tt>/Library/LaunchDaemons/ssh-443.plist</tt> contenant :
 
 <div>
 <code class="xml" file="ssh-443.plist">
@@ -84,9 +77,9 @@ Create the file <tt>/Library/LaunchDaemons/ssh-443.plist</tt> containing:
 </code>
 </div>
 
-It is a copy of `/System/Library/LaunchDaemons/ssh.plist` with some modifications:
+C'est une copie de `/System/Library/LaunchDaemons/ssh.plist` avec quelques modifications :
 
-  - the `SockServiceName` from `ssh` to `https`.
-  - the `Label` from `com.openssh.sshd` to something not existing as `local.sshd`
+  - le `SockServiceName` est devenu `https` au lieu de `ssh`
+  - le `Label` est passé de `com.openssh.sshd` à quelque chose qui n'existait pas comme `local.sshd`
 
-Tell me if it was helpfull or if you have any question.
+Encore une fois j'espère que ça a pu être utile.

@@ -1,6 +1,4 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article

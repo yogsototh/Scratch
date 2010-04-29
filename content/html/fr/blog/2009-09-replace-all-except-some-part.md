@@ -1,17 +1,9 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-09-22T22:13:25+02:00
-title: replace all except some part
-multiTitle: 
-    fr: replace all except some part
-    en: replace all except some part
-multiDescription:
-    fr: pas de description.
-    en: no description.
+title: Remplacer tout sauf une partie
 tags:
     - ruby
     - regexp

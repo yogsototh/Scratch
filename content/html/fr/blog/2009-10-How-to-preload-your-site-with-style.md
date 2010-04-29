@@ -1,26 +1,16 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-10-03T14:34:11+02:00
-title: How to preload your site with style
-multiTitle: 
-    fr: La classe pour charger une page web
-    en: How to preload your site with style
-multiDescription:
-    fr: pas de description.
-    en: no description.
+title: Charger une page web avec style
 tags:
     - web
     - jquery
     - webdesign
-
 -----
 
 ## Exemple
-
 
 Voici comment apparaissent mes pages pendant leur chargement.
 
@@ -45,13 +35,9 @@ Voici comment apparaissent mes pages pendant leur chargement.
     </script>
 </div>
 
-
 J'ai d'abord essayé d'intégrer [queryLoader](http://www.gayadesign.com/diy/queryloader-preload-your-website-in-style/), mais il ne comblait pas mes besoins.
 
-
-
 Ce plugin ajoutait un 'div' noir pour cacher le contenu du site. Cependant, comme le script doit être lancé à la fin du code source. Pendant un petit moment, on peut voir mon site en train de se mettre à jour.
-
 
 Pour cacher ce petit 'artefact', voici comment je m'y suis pris.
 
@@ -69,7 +55,6 @@ D'abort il faut ajouter tout en haut du body cette fois un div qui va être le v
 ...
 </code>
 </div>
-
 
 et le CSS correspondant au div `#blackpage` : 
 
@@ -93,7 +78,6 @@ et le CSS correspondant au div `#blackpage` :
 </code>
 </div>
 
-
 ainsi que le code jQuery associé : 
 
 <div>
@@ -104,9 +88,8 @@ $(document).ready(function(){
 </code>
 </div>
 
-
 Oui, c'est aussi simple que ça. Maintenant ajouter le `#blackpage` tout en haut de ma page me permet d'être certain de tout cacher pendant le chargement de la page.
 
-
 J'espère que ça a pu vous être utile !
+
 

@@ -1,11 +1,9 @@
 -----
-
-# Custom 
-# isHidden: true
 kind: article
 menupriority: 3
 created_at: 2009-08-04T19:00:00+02:00
-title: Lost Highway démystifié (un peu) - Qui filme et dépose les cassettes ?
+title: Lost Highway démystifié (un peu) 
+subtitle: Qui filme et dépose les cassettes ?
 tags:
   - film
   - David Lynch

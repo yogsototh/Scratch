@@ -1,32 +1,24 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-09-11T14:27:09+02:00
-title: Why I didn't keep whos.amung.us
-multiTitle: 
-    fr: Why I didn't keep whos.amung.us
-    en: Why I didn't keep whos.amung.us
-multiDescription:
-    fr: no description.
-    en: no description.
+title: Pourquoi je n'ai pas conservé whos.amung.us
 tags:
   - analytics
   - web
 
 -----
 
-I changed from [whos.amung.us](http://whos.amung.us) to [Google Analytics](http://www.google.com/analytics).
+J'ai arrété d'utiliser [whos.amung.us](http://whos.amung.us) en faveur de [Google Analytics](http://www.google.com/analytics).
 
-Most of time I prefer not to use the same product as everybody and try some new. But this time I believe whosamung.us had too much ads on the page. I had to put their image on my website and they only give then number of user currently on the website, not the number of visits.
+La plupart du temps je préfère ne pas utiliser le même produit que tout le monde. J'aime bien essayer des choses un peu nouvelles. Mais whosamung.us avait trop de publicités. Je devais affichier une de leur image sur mon site qui n'écrivait que le nombre de personne actuellement présentes. Pas les nombres de visites.
 
-This is why I now use google analytics. The only problem, remains for pages with no javascript support.
+C'est pourquoi j'utilise maintenant google analytics. Le problème reste entier pour les navigateurs sans javascript.
 
-Then for now: 
+Donc pour l'instant
 <div class="encadre">
-Theorem:<br/>
+Théoreme :<br/>
 <center>
 Google Analytics <big><strong>&gt;</strong></big> Who's Amung Us
 <center></div>

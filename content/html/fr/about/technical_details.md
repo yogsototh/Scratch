@@ -1,30 +1,15 @@
------
-# Built-in
-filters_pre: 
-    - erb
-    - bluecloth
-
-# Custom 
+----- 
 # menu
-title: Technical details
-multiTitle: 
-    fr: Détails techniques
-    en: Technical details
-multiSubTitle:
-    fr: Comment ce site vie.
-    en: How live this website.
+title: Détails techniques
+subtitle: Comment vie ce site
 menupriority: 3
 -----
-
 
 Ce site a été réalisé à partir de rien ou presque.  Quasiment toutes les 
 pages ont été codées avec [Vim](http://www.vim.org) et engendrées
 avec [nanoc](http://nanoc.stoneship.org).
 
-
-
 <p>
-
 
 Les images ont été faites avec
 <a href="http://inkscape.org">Inkscape</a> et 
@@ -41,17 +26,13 @@ Les commentaires de blog sont gérés par
 d'un serveur de pages statiques. Ce qui a de nombreux avantages. 
 Principalement concernant la charge et la sécurité du serveur.
 
-
-
 <p>
-
 
 Si vous n'avez pas tout compris, rappelez-vous simplement que je n'utilise
 que des outils <a href="http://fr.wikipedia.org/wiki/OpenSource">Opensource</a> 
 et que j'ai conçu ce site quasiment <em>ex nihilo</em>.
 
 </p>
-
 
 Si au contraire vous voulez connaitre tous les détails je vous suggère 
 d'aller lire mon <%= lnkto( "article concernant nanoc","/blog/nanoc") %>. 

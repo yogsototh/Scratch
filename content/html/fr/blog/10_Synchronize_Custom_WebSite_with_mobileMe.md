@@ -1,17 +1,9 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-09-11T14:35:35+02:00
-title: Synchronize Custom WebSite with mobileMe
-multiTitle: 
-    fr: Héberger son site personnel sur le site mobileMe
-    en: Synchronize Custom WebSite with mobileMe
-multiDescription:
-    fr: pas de description.
-    en: no description.
+title: Héberger son site personnel sur le site mobileMe
 tags:
   - Apple
   - mobileme
@@ -27,50 +19,32 @@ tags:
 J'ai mis à jour mon script [avec une version incrémentale](/Scratch/multi/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-) bien plus pratique.
 En plus depuis l'écriture de cet article Apple(c) semble avoir nettement amélioré la vitesse de ses serveurs en Europe.
 
-
 newcorps
 
 # WebDav terror
 
-
 En France l'iDisk d'Apple(c) est très lent. La vitesse d'upload me rapelle l'époque des modem 56k, c'est dire. La plupart du temps les opérations telles que lister le contenu d'un répertoire prennent au moins 30 secondes (pour 15 éléments). Renommer un répertoire échoue presque systématiquement.
-
-
 
 Apple(c) utilise des serveurs WebDav pour héberger les fichiers. Le protocole fonctionne sur le port 80 (comme http). Je me suis rendu compte qu'utiliser WebDav via https fontionne bien mieux (2 à 3 fois plus rapide avec moins d'erreurs). Mais, ça reste quand même très lent et insuffisant.
 
-
-
 J'*uploade* mes fichiers à partir de mon Mac et de temps en temps à partir d'un PC sous Ubuntu (iDisk monté avec webdavfs).
-
 
 # Synchroniser de façon sûre
 
-
 Voici le script que j'utilise pour synchroniser mon site web (non créé avec iWeb(c)) avec le maximum de sécurité. Chaque opération est répétée jusqu'à ce qu'elle fonctionne.
-
-
 
 Les idées sont : 
 
   - synchronize to a temporary folder then swap the name therefore the website isn't accessible only during the swap time. It takes only the time of two rename.
   - reiterate all operations until they work (for example, renaming).
 
-
 Jusqu'ici j'utilise `rsync` qui n'est en fait pas plus efficace qu'une simple copie `cp` avec WebDav. Je devrais utiliser une méthode pour mémoriser les changements entre chaque publication.
-
-
 
 En réalité quand je suis sur mon Mac j'utilise [Transmit](http://www.panic.com/transmit) qui est vraiment très bien et surtout beaucoup plus efficace que le finder pour synchroniser des fichiers. Ensuite, je ne fait que le "swap" des répertoires.
 
-
-
 Mon script prend un paramètre `-s` pour ne faire que le "swap". Il prend aussi une option `-a` pour envoyer le fichier `index.html` qui va rediriger vers ma nouvelle page principale (iWeb(c) à la fâcheuse habitude de le remplacer).
 
-
-
 Pour utiliser le script vous devriez remplacer la valeur de la variable `mobileMeUser` par votre nom d'utilisateur mobileMe(c).
-
 
 <div class="fr">
 <code class="zsh" file="publish">

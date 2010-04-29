@@ -1,49 +1,32 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-11-12T11:39:54+02:00
-title: Git for n00b
-multiTitle: 
-    fr: Git pour quoi faire ?
-    en: Git for what?
-
+title: Git pour les nuls 
+subtitle: Git pour quoi faire ?
 -----
 
 # [Git][git] pour quoi faire ?en:[Git][git] for what?
 
 begindiv(intro)
 
-
 Si tout ce qui vous intéresse c'est d'utiliser [Git][git] **tout de suite**. Lisez simplement les parties sur fond noir. Je vous conseille aussi de revenir relire tout ça un peu plus tard, pour mieux comprendre les fondements des systèmes de versions et ne pas faire de bêtises quand vous les utilisez.
-
-
 
 enddiv
 
 [Git][git] est un <abbr title="Decentralized Concurent Versions System">DCVS</abbr>, c'est-à-dire un système de versions concurrentes décentralisé. Analysons chaque partie de cette appellation compliqué.
 
-
 ### Système de versions
-
 
 Tout d'abord, les systèmes de versions gèrent des fichiers.
 Quand on travaille avec des fichiers sans système de version voilà ce qui arrive souvent :
 
-
-
-
 Lorsqu'on modifie un fichier un peu critique et qu'on a pas envie de perdre, on se retrouve souvent à le recopier sous un autre nom. Par exemple
-
-
 
 <div><code class="zsh">$ cp fichier_important.c fichier_important.c.bak</code></div>
 
-
 Du coups, ce nouveau fichier joue le rôle de *backup*. Si on casse tout, on peut toujours écraser les modifications que nous avons faites. Évidemment le problème avec cette façon de faire c'est que ce n'est pas très professionnel. Et puis c'est un peu limité. Si on veut faire trois ou quatre modifications on se retrouve avec plein de fichiers. Parfois avec des nom bizarres comme :
-
 
 <div>
 <code class="zsh">
@@ -57,37 +40,24 @@ old.fichier_important.c
 </code>
 </div>
 
-
 Bon alors si on veut que ça marche il faut se fixer des conventions de nommage. Les fichiers prennent beaucoup de place alors que souvent il n'y a que quelques lignes différentes entre le fichier et son backup...
-
 
 *Heureusement les systèmes de version viennent à la rescousse.*
 
-
-
 Il suffit de signaler que l'on va faire une nouvelle version d'un fichier et le système de version se débrouille pour l'enregistrer quelque part où on pourra facilement le retrouver. Et en général, le système de version fait les choses bien. C'est-à-dire qu'il n'utilise que très peu d'espace disque pour faire ces backups.
-
-
 
 Il fut un temps où les versions étaient gérées fichier par fichier. Je pense à CVS. Puis on s'est vite aperçu qu'un projet c'est un ensemble de fichiers cohérents. Et donc il ne suffit pas de pouvoir revenir en arrière par fichier, mais plutôt dans le temps. Les numéros de versions sont donc passé d'un numéro par fichier à un numéro par projet tout entier. 
 
-
 Ainsi on peut dire, «je veux revenir trois jours en arrière», et tous les fichiers se remettent à jour.
-
 
 begindiv(black)
 
-
 *Qu'apportent les systèmes de versions ?* (je n'ai pas tout mentionné)
-
-
 
 - backup automatique de tous les fichiers: *Revenir dans le temps.* ;
 - donne la possibilité de voir les différences entre chaque version et les différences entre la version en cours et les modifications locales ;
 - permet de poser un *tag* sur certaines versions et ainsi pouvoir s'y référer facilement ;
 - permet d'avoir un historique des modifications. Car en général il est demandé aux utilisateur d'ajouter un petit commentaire à chaque nouvelle version.
-
-
 
 enddiv
 
@@ -95,10 +65,8 @@ enddiv
 
 Les systèmes de versions sont déjà intéressants pour gérer ses projets personnels. Car ils permettent de mieux organiser celui-ci. De ne (presque) plus se poser de questions à propos des backups. Je dis presque parce qu'il faut quand même penser à protéger par backup son repository. Mais là où les systèmes de versions deviennent vraiment intéressant, c'est pour la gestion de projets à plusieurs.
 
-
 Commençons par un exemple avec un projet fait par deux personnes ; Alex et Béatrice.
 Sur un fichier contenant un liste de dieux *Lovecraftiens* :
-
 
 <div style="width: 10em; margin-left: auto; margin-right: auto">
 <code class="zsh">
@@ -133,12 +101,9 @@ Yogsototh
 
 Puis Béatrice envoi son fichier sur le serveur.
 
-
 La modification d'Alex est *perdue*. Encore une fois les systèmes de versions sont là pour résoudre ce type de soucis.
 
-
 Un système de version aurait *mergé* les deux fichiers au moment où Béatrice voulait envoyer la modification sur le serveur. Et comme par magie, sur le serveur le fichier deviendra :
-
 
 <div style="width: 10em; margin-left: auto; margin-right: auto">
 <pre class="twilight">
@@ -152,18 +117,14 @@ Yogsototh
 
 En pratique, au moment où Béatrice veut envoyer ses modifications, le système de version la préviens qu'une modification a eu lieu sur le serveur. Elle utilise la commande qui rapatrie les modifications localement et qui va mettre à jour le fichier. Ensuite Béatrice renvoie le nouveau fichier sur le serveur.
 
-
 begindiv(black)
 
 **Qu'apportent les Systèmes de Versions Concurrentes ?**
-
 
 - récupérer sans problème les modifications des autres ;
 - envoyer sans problème ses modifications aux autres ;
 - permet de gérer les conflits. Je n'en ai pas parlé, mais quand un conflit arrive (ça peut arriver si deux personnes modifient la même ligne avec deux contenus différents), les <abbr title="Systèmes de versions concurrentes">SVC</abbr> proposent leur aide pour les résoudre. J'en dirai un mot plus loin.
 - permet de savoir qui a fait quoi et quand
-
-
 
 enddiv
 
@@ -171,24 +132,17 @@ enddiv
 
 Ce mot n'est devenu populaire que très récemment dans le milieu des systèmes de version. Et bien ça veut dire principalement deux choses.
 
-
 Tout d'abord, jusqu'à très récemment (SVN) il fallait être connecté sur un serveur distant pour avoir des informations sur un projet. Comme avoir l'historique. Les nouveaux systèmes décentralisés permettent de travailler avec un *REPOSITORY* (le répertoire contenant tous les backups, et les différentes info nécessaires au fonctionnement du système de versions) local au projet. Ainsi on peut avoir l'historique du projet sans avoir à se connecter au serveur.
-
 
 Toutes les instances de projets peuvent vivre de façon indépendantes.
 
-
 Pour préciser, les systèmes de versions concurrentes décentralisés sont basés sur la notion de **branche**.
-
 
 Et la signification pratique est très importante. Ça veut dire que tout les utilisateurs travaillent de façon complètement indépendante les uns des autres. Et c'est l'outil de version qui se charge de mettre tout ça ensemble.
 
-
 Ça va même encore plus loin. Ça permet de développer plusieurs features de manière complètement indépendantes. Sous les autres systèmes c'était plus difficile.
 
-
 L'exemple type :
-
 
 > Je développe mon projet. Je suis en train de l'améliorer. Lorsqu'un bug urgent est reporté.
 > 
@@ -210,7 +164,6 @@ enddiv
 
 Résumons l'ensemble des choses que l'on peut faire facilement avec un <abbr title="Decentralized Concurrent Versions System">DCVS</abbr> :
 
-
 **Systèmes de versions**
 
 - revenir dans le temps ;
@@ -230,6 +183,5 @@ Résumons l'ensemble des choses que l'on peut faire facilement avec un <abbr tit
 - manipuler facilement des branches
 
 Maintenant voyons comment obtenir toutes ces choses facilement avec [Git][git].
-
 
 [git]: http://git-scm.org "Git"

@@ -5,7 +5,8 @@
 kind: article
 menupriority: 4
 created_at: 2009-08-04T19:00:00+02:00
-title: Lost Highway démystifié (un peu) - Que s'est-il vraiment passé ?
+title: Lost Highway démystifié (un peu) 
+subtitle: Que s'est-il vraiment passé ?
 tags:
   - film
   - David Lynch

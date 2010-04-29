@@ -1,23 +1,15 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-09-17T23:27:54+02:00
-title: Load Disqus Asynchronously
-multiTitle: 
-    fr: Load Disqus Asynchronously
-    en: Load Disqus Asynchronously
-multiDescription:
-    fr: pas de description.
-    en: no description.
+title: Load Disqus Asynchronously [en]
 tags:
     - disqus
     - web
     - javascript
     - intense debate
-    - comments
+    - commentaires
 
 -----
 

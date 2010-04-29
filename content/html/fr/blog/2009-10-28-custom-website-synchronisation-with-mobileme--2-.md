@@ -1,17 +1,9 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-10-28T11:03:30+02:00
-title: custom website synchronisation with mobileme (2)
-multiTitle: 
-    en: custom website synchronisation with mobileme (2)
-    fr: Synchronisation avec mobileme (2)
-multiDescription:
-    fr: pas de description.
-    en: no description.
+title: Synchronisation avec mobileme (2)
 tags:
   - Apple
   - mobileme
@@ -24,19 +16,13 @@ tags:
 
 J'ai déjà discuté de la façon dont je [synchronise mon site web sur mobileme](/Scratch/multi/blog/10_Synchronize_Custom_WebSite_with_mobileMe). J'ai amélioré mon script pour le rendre incrémental.
 
-
-
 Voici mon script, il créé tout d'abord un fichier qui contient la liste des fichiers avec leur *hash*. Afin de les comparer avec ceux qui sont en ligne sans avoir à les parcourir. Ensuite pour chaque fichier qui semble différent, je met à jour le contenu.
 
-
-
 Cependant même avec ce script j'ai encore des problèmes. Dû à webdav. En particulier le renommage de répertoire. Par exemple :
-
 
 <div><code class="zsh">
 mv folder folder2
 </code></div>
-
 
 Retourne OK et pourtant : 
 
@@ -45,12 +31,9 @@ $ ls
 folder folder2
 </code></div>
 
-
 Bouuhh...
 
-
 Pour résoudre ce type de problèmes j'utilise un *framework* en zsh. Il résout presque tous les problèmes liés à webdav à l'exception du renommage de répertoire.
-
 
 <div><code class="zsh" file="webdav-framework">
 #!/usr/bin/env zsh
@@ -163,9 +146,7 @@ function trymv {
 }
 </code></div>
 
-
 Et voici le code qui me permet de synchroniser mon site web. Il y a une partie un peu incompréhensible. C'est pour enlever les mail réencodés par le filtre bluecloth qui est une implémentation de markdown. Mes mails, sont encodés à chaque fois de façon différente à chaque réengendrement de page html. C'est pourquoi je les enlève pour ne pas les *uploadés* inutilement à chaque fois.
-
 
 <div><code class="zsh" file="publish">
 #!/usr/bin/env zsh
@@ -291,6 +272,6 @@ else
 fi
 </code></div>
 
-
 C'est ma façon de remplacer `rsync` avec des filesystem qui ne permettent pas de l'utiliser. J'espère que ça pourra vous être utile. Je serai heureux de savoir si quelqu'un à une idée sur comment gérer le problème de renommage de répertoire avec webdav.
+
 

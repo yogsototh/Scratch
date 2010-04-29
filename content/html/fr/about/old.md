@@ -1,16 +1,6 @@
------
-# Built-in
-filters_pre: 
-    - erb
-    - bluecloth
-
-# Custom 
+----- 
 # menu
-title: Old
-multiTitle: 
-    fr: Autres sites
-    en: Other stuff
-
+title: Autres sites
 menupriority: 2
 -----
 
@@ -35,4 +25,5 @@ newcorps
 <div class="impact">
     <a href="/Perso">&#x27A8; Famille &amp; Photos</a></sup>
 </div>
+
 

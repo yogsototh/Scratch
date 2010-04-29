@@ -1,29 +1,19 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   3
 kind:           article
 created_at:           2009-11-12T11:39:54+02:00
-title: The Adventure Begins
-multiTitle: 
-    fr: Utiliser Git simplement et rapidement
-    en: Use Git with very few commands
-
+title: Git pour les nuls
+subtitle: Utiliser git avec quelques commandes simples
 -----
 
 # Et c'est parti !
 
 Voici une parmi de nombreuses autres façon d'utiliser [Git][git]. Cette méthode est nécessaire et suffisante pour travailler seul ou en collaboration sur un projet commun. Cependant, on peut faire beaucoup mieux avec [Git][git] que ce *workflow* (en langage anglo-saxon).
 
-
-
 ## Utilisation basique
 
-
 La façon immédiate de travailler avec [Git][git] :
-
-
 
 + récupérer les modifications des autres <span class="black">`git pull`</span>
 + voir les détails de ces modifications <span class="black">`git log`</span>
@@ -34,16 +24,11 @@ La façon immédiate de travailler avec [Git][git] :
   + enregistrer ses modifications <br/><span class="black">`git commit -a -m "message"`</span>
   + envoyer ses modifications aux autres <span class="black">`git push`</span> (refaire un `git pull` si le push renvoie une erreur).
 
-
-
-
 Voilà, avec ces quelques commandes vous pouvez utiliser [Git][git] sur un projet avec d'autres personnes. Même si c'est suffisant, il faut quand même connaître une chose avant de se lancer ; la gestion des *conflits*.
-
 
 ### Gestion des conflits
 
 Les conflits peuvent survenir lorsque vous modifiez les même lignes de codes sur le même fichier d'une autre branche que vous *mergez*. Ça peut sembler un peu intimidant, mais avec [Git][git] ce genre de chose est très facile a régler.
-
 
 #### exemple
 
@@ -65,7 +50,6 @@ Zoot <span class="Constant"><strong>the pure</strong></span>
 
 sauf que pendant ce temps, un autre utilisateur a aussi modifié cette ligne et a fait un `push` de sa modification. 
 
-
 <div style="width: 18em; margin-left: auto; margin-right: auto">
 <pre class="twilight">
 Zoot<span class="StringConstant"><strong>, just Zoot</strong></span>
@@ -73,7 +57,6 @@ Zoot<span class="StringConstant"><strong>, just Zoot</strong></span>
 </div>
 
 Maintenant quand vous lancez la commande
-
 
 <div>
 <code class="zsh">
@@ -105,7 +88,6 @@ Zoot <span class="Constant"><strong>the pure</strong></span>
 
 Régler le conflit, il suffit d'éditer le fichier, par exemple en écrivant :
 
-
 <div style="width: 18em; margin-left: auto; margin-right: auto">
 <pre class="twilight">
 Zoot <span class="Constant"><strong>the not so pure</strong></span>
@@ -120,9 +102,7 @@ git commit -a -m "conflict resolved"
 </code>
 </div>
 
-
 Maintenant vous êtes fin prêt pour utiliser [Git][git].
 Sauf que [Git][git], c'est un outil qui permet de faire beaucoup plus que juste ça. Alors nous allons maintenant voir des façon d'utiliser git qui étaient avant lui interdite d'utilisation pour les autres CVS.
-
 
 [git]: http://git-scm.org "Git"

@@ -1,21 +1,9 @@
------
-filters_pre:
-    - erb
-    - bluecloth
-    - frenchspace
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-09-23T13:18:26+02:00
-title: jQuery Tag Cloud
-multiTitle: 
-    fr: jQuery Tag Cloud
-    en: Simple jQuery Tag Cloud
-multiDescription:
-    fr: pas de description.
-    en: no description.
+title: jQuery Tag Cloud [en]
 tags:
     - jquery
     - javascript

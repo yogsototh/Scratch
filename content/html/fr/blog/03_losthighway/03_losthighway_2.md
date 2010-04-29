@@ -1,11 +1,9 @@
 -----
-
-# Custom 
-# isHidden: true
 kind: article
 menupriority: 2
 created_at: 2009-08-04T19:00:00+02:00
-title: Lost Highway démystifié (un peu) - Qui est l'homme mystérieux ?
+title: Lost Highway démystifié (un peu) 
+subtitle: Qui est l'homme mystérieux ?
 tags:
   - film
   - David Lynch

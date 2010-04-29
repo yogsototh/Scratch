@@ -1,43 +1,27 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-10-22T20:45:18+02:00
-title: Focus vs Minimalism
-multiTitle: 
-    fr: <em>Focus</em> &gt; Minimalisme
-    en: Focus &gt; Minimalism
-multiSubTitle:
-    fr: Cacher la navigation pour une meilleure concentration
-    en: Hide navigation for better focus
-multiDescription:
-    fr: Je crois que le but du minimalisme est de facilité le <em><strong>Focus</strong></em> c'est-à-dire la concentration sur le contenu.   Je crois que le minimalisme doit être un moyen et pas une fin.
-    en: I believe the goal researched by minimalism is <strong>Focus</strong>.  But I don't believe minimalism should be the goal. Focus should be the goal, and I believe minimalism isn't necessary to reach it.
-
+title: <em>Focus</em> &gt; Minimalisme
+subtitle: Cacher la navigation pour une meilleure concentration
 tags:
     - jquery
     - design
     - web
-
 -----
 
  Je crois que le but du minimalisme est de facilité le <em><strong>Focus</strong></em> c'est-à-dire la concentration sur le contenu.   Je crois que le minimalisme doit être un moyen et pas une fin. Le <em>Focus</em> devrait être le but, et je pense que le minimalisme n'est pas obligatoire pour l'atteindre.
 en: I believe the goal researched by minimalism is <strong>Focus</strong>.  But I don't believe minimalism should be the goal. Focus should be the goal, and I believe minimalism isn't necessary to reach it.
 
-
 C'est pourquoi mon design n'est pas minimaliste. Mais j'ai décidé d'enlever la majorité des objets servant à la navigation pour améliorer l'attention sur l'article. Peut-être que plus tard, je préfèrerai laisser le menu dans les pages normales du site pour ne le cacher que dans les articles de blog.
 Pour l'instant je le cache partout.
-
 
 newcorps
 
 ## Détails techniques
 
-
 Pour ceux qui souhaitent connaître les détails techniques derrière le menu apparaissant/disparaissant, voici le code utilisant jQuery.
-
 
 L'HTML : 
 
@@ -94,6 +78,5 @@ function toggleMenu() {
 }
 </code>
 </div>
-
 
 Le résultat est visible dans le coin en haut à droite de cet article. 

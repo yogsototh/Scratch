@@ -5,10 +5,8 @@ isHidden:       false
 menupriority:   30
 kind:           article
 created_at:           2009-11-12T11:39:54+02:00
-title: The Adventure Begins
-multiTitle: 
-    fr: Liste de commandes
-    en: Command List
+title: Git pour les nuls
+subtitle: Liste de commandes
 tags:
   - git
 
@@ -20,8 +18,6 @@ tags:
 
 Dans la première partie, nous avons vu la liste des problèmes résolus par [Git][git]. En résumé Git doit pouvoir :
 
-
-
 - récupérer les modifications des autres ;
 - envoyer ses modifications aux autres ;
 - revenir dans le temps ;
@@ -31,8 +27,6 @@ Dans la première partie, nous avons vu la liste des problèmes résolus par [Gi
 - savoir qui a fait quoi et quand ;
 - gérer des conflits ;
 - manipuler facilement des branches.
-
-
 
 ### récupérer les modifications des autres
 
@@ -47,7 +41,6 @@ $ git push
 </code></div>
 
 ou plus généralement
-
 
 <div><code class="zsh">
 $ git pull
@@ -68,13 +61,11 @@ $ git revert
 
 revenir trois versions en arrière
 
-
 <div><code class="zsh">
 $ git uncommit 3
 </code></div>
 
 Revenir avant le dernier merge (s'il s'est mal passé).
-
 
 <div><code class="zsh">
 $ git revertbeforemerge
@@ -138,13 +129,11 @@ $ git conflict
 
 Pour créer une branche : 
 
-
 <div><code class="zsh">
 $ git branch branch_name
 </code></div>
 
 Pour changer de branche courante : 
-
 
 <div><code class="zsh">
 $ git checkout branch_name

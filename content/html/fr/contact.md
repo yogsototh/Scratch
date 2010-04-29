@@ -1,10 +1,4 @@
------
-# Built-in
-filters_pre:
-    - erb
-    - bluecloth
-
-# Custom 
+----- 
 title: Contact
 noSubMenu: true
 menupriority: 5

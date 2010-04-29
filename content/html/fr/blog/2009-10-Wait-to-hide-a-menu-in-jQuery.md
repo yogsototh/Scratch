@@ -1,28 +1,17 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-10-26T21:56:09+02:00
-title: Wait to hide a menu in jQuery
-multiTitle: 
-    fr: Un menu qui attends avant de se cacher
-    en: Menu waiting to hide himself
-multiDescription:
-    fr: pas de description.
-    en: no description.
+title: Un menu qui attends avant de se cacher
 tags:
     - jQuery
     - web
     - javascript
     - design
-
 -----
 
-
 J'ai déjà dit pourquoi [je préférais que mon menu de navigation soit caché](/Scratch/multi/blog/2009-10-Focus-vs-Minimalism). J'ai finalement décidé d'attendre un peu avant de cacher le menu. Juste le temps que l'utilisateur le voit. Mais voilà. Comment faire pour qu'il ne disparaisse que lorsque l'on ne s'en sert pas pendant un petit moment ?
-
 
 Voici la solution que j'utilise avec jQuery
 
@@ -104,4 +93,5 @@ function showMenu() {
 </code></div>
 
 Simple et peu gourmand en ressources. Pas de timer (ou presque), pas de fuite de mémoire, pas d'utilisation de date... 
+
 

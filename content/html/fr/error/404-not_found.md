@@ -1,16 +1,7 @@
------
-# Built-in
-layout: error
-filters_pre: 
-    - erb
-    - bluecloth
-
-# Custom 
+----- 
 # menu
 is_hidden: true
-title: Page not found
-multiTitle: 
-    fr: Page non trouvée
+title: Page non trouvée
     en: Page not found
 error_number: 404
 error_message: Page not found
