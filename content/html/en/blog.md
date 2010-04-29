@@ -1,5 +1,4 @@
------
-# Custom 
+----- 
 kind: blog
 title: Blog
 menupriority: 2

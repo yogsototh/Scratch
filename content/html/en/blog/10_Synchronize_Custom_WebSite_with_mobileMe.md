@@ -1,17 +1,9 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-09-11T14:35:35+02:00
 title: Synchronize Custom WebSite with mobileMe
-multiTitle: 
-    fr: Héberger son site personnel sur le site mobileMe
-    en: Synchronize Custom WebSite with mobileMe
-multiDescription:
-    fr: pas de description.
-    en: no description.
 tags:
   - Apple
   - mobileme

@@ -1,22 +1,12 @@
 -----
-
-# Custom 
-# isHidden:       true
 menupriority:   1
 kind:           article
 created_at:           2009-08-18T14:44:31+02:00
 title: Git for self
-multiTitle: 
-    fr: Git en solo
-    en: Git for self
-multiDescription:
-    fr: J'utilise Git pour des projets personnels gérés à partir de plusieurs oridinateurs. Voici comment concilier les avantages de Git avec un workflow proche de celui de SVN.
-    en: I use Git for personnal projects on many differents computers. Here is how to use almost the SVN workflow with all advantages of Git.
 tags:
   - git
   - svn
   - workflow
-
 -----
 
 <%= blogimage("central_architecture.png","central architecture") %>

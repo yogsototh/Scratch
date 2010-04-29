@@ -1,28 +1,16 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-10-30T22:34:46+02:00
 title: How to handle evil IE
-multiTitle: 
-    en: How to handle evil IE with jQuery
-    fr: Une CSS pour IE seulement
-multiDescription:
-    fr: Pour les développeur de site web Internet Explorer est un cauchemar. C'est pourquoi j'utilise un style complètement différent pour ce navigateur. Avec la librairie jQuery.
-    en: For developer IE is a nightmare. This is why, I use a method to disable my standard CSS and enable a IE only CSS. I use jQuery to accomplish that.
-
 tags:
     - web
     - webdesign
     - jQuery
-
 -----
 
 For developer IE is a nightmare. This is why, I use a method to disable my standard CSS and enable a IE only CSS. I use jQuery to accomplish that.
-
-
 
 <div><code class="javascript">
 $(document).ready( function() {

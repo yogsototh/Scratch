@@ -1,17 +1,9 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-10-03T14:34:11+02:00
 title: How to preload your site with style
-multiTitle: 
-    fr: La classe pour charger une page web
-    en: How to preload your site with style
-multiDescription:
-    fr: pas de description.
-    en: no description.
 tags:
     - web
     - jquery
@@ -22,7 +14,6 @@ tags:
 ## Example
 
 Here is a live example of what appear while loading my pages.
-
 
 <div id="demo" style="width:45%; position: relative; height: 8em; background-image: url('/Scratch/css/img/red.jpg'); background-position: 50% 50%; color: #fff; text-align: center; padding-top: 1em; margin-left: auto; margin-right: auto; border: solid 10px rgba(255,255,255,0.7); -webkit-border-radius: 1em; -moz-border-radius: 1em; border-radius: 1em; cursor: pointer; ">
     <p>Hello! I've finished loading!</p>
@@ -47,13 +38,9 @@ Here is a live example of what appear while loading my pages.
 
 I first tried to integrate [queryLoader](http://www.gayadesign.com/diy/queryloader-preload-your-website-in-style/), but it didn't fill my needs.
 
-
-
 The plugin add a black div to hide all the content. But as the script had to be launched at the end of the source code my website show for a small time.
 
-
 In order to hide this small artefact, here is how I do that.
-
 
 ## Code
 
@@ -71,7 +58,6 @@ In a first time, I added at the top of the body the div hiding all the content.
 </div>
 
 and here is the associated CSS to `#blackpage`: 
-
 
 <div>
 <code class="css">
@@ -95,7 +81,6 @@ and here is the associated CSS to `#blackpage`:
 
 and the associated jQuery code: 
 
-
 <div>
 <code class="javascript">
 $(document).ready(function(){
@@ -105,7 +90,5 @@ $(document).ready(function(){
 </div>
 
 Yes, it is as simple as that. And, putting the `#blackpage` div at the top of my page, I ensure to hide anything while loading.
-
-
 
 I hope it had helped you!

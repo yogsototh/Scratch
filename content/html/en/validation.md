@@ -1,16 +1,8 @@
------
-# Built-in
-filters_pre:
-    - "bluecloth"
-
-# Custom 
+----- 
 title: validation
 isHidden: true
-multiTitle: 
-    fr: Validation
-    en: Validation
+title: Validation
 menupriority: 500
-
 -----
 One word to explain why there is some validation errors.
 

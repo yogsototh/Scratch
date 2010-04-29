@@ -1,17 +1,9 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2010-02-18T15:29:14+02:00
 title: split a file by keyword
-multiTitle: 
-    fr: split a file by keyword
-    en: split a file by keyword
-multiDescription:
-    fr: pas de description.
-    en: no description.
 tags:
     - awk
     - shell

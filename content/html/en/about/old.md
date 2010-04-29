@@ -1,16 +1,5 @@
 -----
-# Built-in
-filters_pre: 
-    - erb
-    - bluecloth
-
-# Custom 
-# menu
-title: Old
-multiTitle: 
-    fr: Autres sites
-    en: Other stuff
-
+title: Other stuff
 menupriority: 2
 -----
 

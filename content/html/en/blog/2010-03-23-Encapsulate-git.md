@@ -1,17 +1,9 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2010-03-23T22:37:36+02:00
 title: Encapsulate git
-multiTitle: 
-    fr: Encapsuler git
-    en: Encapsulate git
-multiDescription:
-    fr: pas de description.
-    en: no description.
 tags:
     - git
     - protection

@@ -1,31 +1,19 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   3
 kind:           article
 created_at:           2009-11-12T11:39:54+02:00
 title: The Adventure Begins
-multiTitle: 
-    fr: Utiliser Git simplement et rapidement
-    en: Use Git with very few commands
 
 -----
 
 # Here we go!
 
-
 Here is one from many way to use [Git][git]. This method is sufficient to work on a project. Not there is many other *workflows*.
-
 
 ## Basic usage
 
-
 Work with [Git][git] immediately:
-
-
-
-
 
 + Get modification done by others <span class="black">`git pull`</span>,
 + See details of these modifications <span class="black">`git log`</span>,
@@ -36,16 +24,11 @@ Work with [Git][git] immediately:
   + Save you modifications <br/><span class="black">`git commit -a -m "message"`</span>,
   + Send your modifications to others: <span class="black">`git push`</span> (redo a `git pull` if push return an error).
 
-
-
 With these few commands you can use [Git][git]. Even if it is sufficient, you need to know one more thing before really begin ; How to manage *conflicts*.
-
 
 ### Conflicts management
 
-
 Conflicts can arise when you change the same line of code on the same file from another branch you're merging. It can seems a bit intimidating, but with [Git][git] this kind of thing is really simple to handle.
-
 
 #### example
 
@@ -74,7 +57,6 @@ Zoot<span class="StringConstant"><strong>, just Zoot</strong></span>
 </div>
 
 Now when you do a:
-
 
 <div>
 <code class="zsh">
@@ -106,7 +88,6 @@ Zoot <span class="Constant"><strong>the pure</strong></span>
 
 To resolve the conflict you only have to edit the file for example, writing:
 
-
 <div style="width: 18em; margin-left: auto; margin-right: auto">
 <pre class="twilight">
 Zoot <span class="Constant"><strong>the not so pure</strong></span>
@@ -121,9 +102,7 @@ git commit -a -m "conflict resolved"
 </code>
 </div>
 
-
 Now you're ready to use [Git][git].
 [Git][git] provide many other functionnalities. Now we'll see some [Git][git] usages older CVS couldn't handle.
-
 
 [git]: http://git-scm.org "Git"

@@ -1,17 +1,9 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-09-28T10:58:20+02:00
 title: Disqus versus Intense Debate (Why I switched)
-multiTitle: 
-    fr: Disqus contre Intense Debate (pourquois j'ai changé)
-    en: Disqus versus Intense Debate (Why I switched)
-multiDescription:
-    fr: pas de description.
-    en: no description.
 tags:
   - disqus
   - intense debate
@@ -24,23 +16,13 @@ tags:
 
 I made a blog entry about how I tried to integrate [Disqus](http://disqus.com). I had to wait Disqus comment to be displayed before loading correctly my page. This is why I tried to include it in a "non-blocking" way. Unfortunately, I had [difficulties to make it works correctly](/Scratch/multi/blog/11_Load_Disqus_Asynchronously/). 
 
-
-
 Furthermore, it was not trivial to make comment to be shared between multiple version of the same page (each page has three differents representations, one for each language and one more for the multi-language version).
-
-
 
 I am a bit sad to quit [Disqus](http://disqus.com) because I must confess [giannii](http://giannii.com) had helped me has efficiently as he could. But the problem I had with disqus are inherent to some design choice not simply technical ones.
 
-
-
 During the time I tried to integrate [Disqus](http://disqus.com/) I never tried [Intense Debate](http://intensedebate.com). Now that I have tried, i must confess it does exactly what I needed. 
 
-
-
-
 In order to make it fully asynchronous, you've just to download their common js and replace the following line:
-
 
 <div>
 <code class="javascript">
@@ -61,7 +43,6 @@ $(document).ready( function() {
 ## And the Winner is: [Intense Debate](http://intensedebate.com/)
 
  To conclude, main advantages (for me) of [Intense Debate](http://intensedebate.com/) over [Disqus](http://disqus.com/): 
-
 
   - Load Asynchronously ; don't block my website
   - Add for free buttons like "share to any" and load them **asynchronously**.

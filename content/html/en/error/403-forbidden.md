@@ -1,11 +1,4 @@
------
-# Built-in
-layout: error
-filters_pre: 
-    - erb
-    - bluecloth
-
-# Custom 
+----- 
 # menu
 is_hidden: true
 title: Page not found

@@ -1,14 +1,9 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   30
 kind:           article
 created_at:           2009-11-12T11:39:54+02:00
-title: The Adventure Begins
-multiTitle: 
-    fr: Liste de commandes
-    en: Command List
+title: Command List
 tags:
   - git
 
@@ -20,9 +15,6 @@ tags:
 
 In the first part, we saw the list of resolved problem by [Git][git]. To resume [Git][git] should do:
 
-
-
-
 - get others modifications,
 - send modifications to others,
 - get back in time,
@@ -32,7 +24,6 @@ In the first part, we saw the list of resolved problem by [Git][git]. To resume 
 - know who did what and when,
 - manage conflicts,
 - easily manage branches.
-
 
 ### get others modifications
 
@@ -65,7 +56,6 @@ $ git checkout
 $ git revert
 </code></div>
 
-
 revert three version before (see my `.gitconfig` file).
 
 <div><code class="zsh">
@@ -73,7 +63,6 @@ $ git uncommit 3
 </code></div>
 
 Undo the las merge (if something goes wrong)
-
 
 <div><code class="zsh">
 $ git revertbeforemerge
@@ -135,13 +124,11 @@ $ git conflict
 
 ### manage branches
 
-
 To create a branch: 
 
 <div><code class="zsh">
 $ git branch branch_name
 </code></div>
-
 
 To change the current branch: 
 

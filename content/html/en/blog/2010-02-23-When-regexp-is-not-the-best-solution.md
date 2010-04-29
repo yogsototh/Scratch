@@ -1,24 +1,15 @@
------
-
-# Custom 
+----- 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2010-02-23T10:09:52+02:00
 title: When regexp is not the best solution
-multiTitle: 
-    fr: When regexp is not the best solution
-    en: When regexp is not the best solution
-multiDescription:
-    fr: pas de description.
-    en: no description.
 tags:
     - programming
     - regexp
     - regular expression
     - extension
     - file
-
 -----
 
 Regular expression are really useful. Unfortunately, they are not always the best way of doing things.

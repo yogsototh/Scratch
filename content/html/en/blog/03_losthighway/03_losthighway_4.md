@@ -1,36 +1,16 @@
 -----
-
-# Custom 
-# isHidden: true
 kind: article
 menupriority: 4
 created_at: 2009-08-04T19:00:00+02:00
-title: a try to demystify 'Lost Highway'
-multiTitle: 
-    fr: Lost Highway démystifié (un peu) - Que s'est-il vraiment passé ?
-    en: Lost Highway demystified (a bit) - What really happened?
-multiDescription:
-
+title: Lost Highway demystified (a bit) - What really happened?
 -----
 
 ## What really happened?
-
-
 
 There is many possibilities here. But we have many indices. Here is a supposition.
 
 
 ### #1 Hypothesis
-
-!!fr!!
-
-Je dirais que le protagoniste est un garagiste qui est tombé amoureux d'une actrice porno. Il l'a certainement vu la première fois accompagnant le fameux Dick Laurent. Voyant qu'il ne peut pas l'avoir pour lui, fou de jalousie il tue Dick Laurent dans un motel où celui-ci à couché avec Renée. 
-
-On a la liberté de décider s'il a vraiment tué la femme ou pas.
-Dans ma première vision du film, j'avais envie de dire qu'il ne la tue pas. Mais qu'une fois le meurtre commis, il va chez elle, sonne pour lui annoncer la mort de Dick Laurent. Il a alors juste le temps de s'enfuir, la police à ses trousses.
-
-!!!!
-
 
 The protagonist is a garagist fallen in love with a porno actress. He believe the producer is the bad guy who go again his will. Then he kills Dick Laurent.
 

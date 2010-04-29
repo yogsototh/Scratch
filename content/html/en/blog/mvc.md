@@ -1,6 +1,4 @@
------
-# Custom 
-# l'article n'est pas encore prêt
+----- 
 isHidden: true
 kind: article
 created_at: 2009-07-06T16:15:23+02:00

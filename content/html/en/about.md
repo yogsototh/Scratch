@@ -1,14 +1,5 @@
------
-# Built-in
-filters_pre:
-    - erb
-    - bluecloth
-
-# Custom 
+----- 
 title: About
-multiTitle:
-    fr: À propos
-    en: About
 menupriority: 4
 -----
 

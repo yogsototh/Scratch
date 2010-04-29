@@ -1,41 +1,24 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-10-22T20:45:18+02:00
-title: Focus vs Minimalism
-multiTitle: 
-    fr: <em>Focus</em> &gt; Minimalisme
-    en: Focus &gt; Minimalism
-multiSubTitle:
-    fr: Cacher la navigation pour une meilleure concentration
-    en: Hide navigation for better focus
-multiDescription:
-    fr: Je crois que le but du minimalisme est de facilité le <em><strong>Focus</strong></em> c'est-à-dire la concentration sur le contenu.   Je crois que le minimalisme doit être un moyen et pas une fin.
-    en: I believe the goal researched by minimalism is <strong>Focus</strong>.  But I don't believe minimalism should be the goal. Focus should be the goal, and I believe minimalism isn't necessary to reach it.
-
+title: Focus &gt; Minimalism
 tags:
     - jquery
     - design
     - web
-
 -----
-
 
 en: I believe the goal researched by minimalism is <strong>Focus</strong>.  But I don't believe minimalism should be the goal. Focus should be the goal, and I believe minimalism isn't necessary to reach it.
 
 This is why my design is not minimalist, but I decided to remove most of the navigation stuff of all pages of my website. May be I'll prefer to hide the menu only when you are on blog article. For now, I hide the menu everywhere on the website.
-
 
 newcorps
 
 ## technical details
 
 For those who want the technical details behind the show/hide menu, here is the simple jQuery code.
-
-
 
 The HTML: 
 

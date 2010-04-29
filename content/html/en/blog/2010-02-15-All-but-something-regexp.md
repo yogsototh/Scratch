@@ -1,17 +1,9 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2010-02-15T11:16:12+02:00
-title: All but something regexp
-multiTitle: 
-    fr: Expression Régulière pour "Tout sauf un mot"
-    en: Pragmatic Regular Expression Exclude
-multiDescription:
-    fr: pas de description.
-    en: Sometimes you want to exclude some string with an existing regular expression. Here are some examples on how you could achieved that when it is possible (it is not always the case).
+title: Pragmatic Regular Expression Exclude
 tags:
   - regexp
   - regular expression

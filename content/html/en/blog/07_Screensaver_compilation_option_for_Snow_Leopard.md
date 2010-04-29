@@ -1,17 +1,9 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-09-06T17:59:16+02:00
 title: Screensaver compilation option for Snow Leopard<sub>&copy;</sub>
-multiTitle: 
-    fr: Screensaver compilation option for Snow Leopard<small>&copy;</small> 
-    en: Screensaver compilation option for Snow Leopard<small>&copy;</small>
-multiDescription:
-    fr: no description.
-    en: no description.
 tags:
     - screensaver
     - Apple

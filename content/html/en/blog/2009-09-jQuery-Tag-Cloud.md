@@ -1,31 +1,19 @@
 -----
-filters_pre:
-    - erb
-    - bluecloth
-    - frenchspace
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:           2009-09-23T13:18:26+02:00
+created_at:     2009-09-23T13:18:26+02:00
 title: jQuery Tag Cloud
-multiTitle: 
-    fr: jQuery Tag Cloud
-    en: Simple jQuery Tag Cloud
-multiDescription:
-    fr: pas de description.
-    en: no description.
 tags:
     - jquery
     - javascript
     - web
     - ruby
-
 -----
 Here is how I done the tag cloud of my blog. It is done mostly in jQuery.
 All my site is static and pages are generated with [nanoc](nanoc.stoneship.org).
-It is (in my humble opinion) the modern geek way to make a website.
+It is (in my humble opinion) the modern geek way to make a website. 
+The tagcloud should work for machine with and without javascript.
 
 This is why I'll give only a Ruby Generator, not a full javascript generator. 
 But you can easily translate from Ruby to Javascript.
@@ -99,7 +87,7 @@ In a first time `tags` correpond of the list of all tags.
 <div>
 <code class="ruby">
 def tags
-    return @page.tags.join(', ')
+    return @items.tags.join(', ')
 end
 </code>
 </div>
@@ -112,7 +100,7 @@ tag its occurence.
 # generate an hash tag => number of occurence of tag
 def tagNumber
     tags={}
-    @pages.each do |p|
+    @items.each do |p|
         if p.tags.nil?
             next
         end
@@ -137,7 +125,7 @@ tag a list of pages (at least url and title).
 # generate an hash tag => [ page1, page2 ... ]
 def tagRefs
     tagLinks={}
-    @pages.each do |p|
+    @items.each do |p|
         if p.tags.nil?
             next
         end
@@ -240,7 +228,7 @@ end
 </code>
 </div>
 
-You can [download the complete file](/Scratch/multi/blog/2009-09-jQuery-Tag-Cloud/code/tag.rb) to put in your 'lib' directory. **Beware, it is a nanoc 2 version, you'll have to make some small changes like replace `@pages` by `@items` to be nanoc3 compatible.**
+You can [download the complete file](/Scratch/multi/blog/2009-09-jQuery-Tag-Cloud/code/tag.rb) to put in your 'lib' directory.
 
 Of course to be nice you need the associated CSS
 

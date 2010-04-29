@@ -1,17 +1,9 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2010-02-16T10:33:21+02:00
-title: All but something regexp (2)
-multiTitle: 
-    fr: All but something regexp (2)
-    en: All but something regexp (2)
-multiDescription:
-    fr: pas de description.
-    en: How to match internal shortest string possible with regexp? Here are some solutions.
+title: Pragmatic Regular Expression Exclude (2)
 tags:
   - regexp
   - regular expression
@@ -31,21 +23,25 @@ Here are two common errors and a solution:
 <span class="Constant"><strong>a.....a......b..b..a....a....b</strong></span>...
 </pre>
 
+The first error is to use the *evil* `.*`. Because you will match from the first to the last.
+
 <pre class="twilight">
 /a.*?b/
 <span class="Constant"><strong>a.....a......b</strong></span>..b..<span class="Constant"><strong>a....a....b</strong></span>...
 </pre>
+
+The next natural way, is to change the *greediness*. But it is not enough as you will match from the first `a` to the first `b`.
+Then a simple constatation is that our matching string shouldn't contain any `a` nor `b`. Which lead to the last elegant solution.
 
 <pre class="twilight">
 /a[^ab]*b/
 a.....<span class="Constant"><strong>a......b</strong></span>..b..a....<span class="Constant"><strong>a....b</strong></span>...
 </pre>
 
-The first error is to use the *evil* `.*`. Because you will match from the first to the last. The next natural way, is to change the *greediness*. But it is not enough as you will match from the first `a` to the first `b`. Then a simple constatation is that our matching string shouldn't contain any `a` nor `b`. Which lead to the last elegant solution.
 
-Until now, that was, easy. Now, how do you manage when instead of `a` you have a string?
-
-Say you want to match: 
+Until now, that was, easy. 
+Now, just pass at the case you need to match not between `a` and `b`, but between strings.
+For example:
 <div><code class="perl">
 <li>...<li>
 </code></div>

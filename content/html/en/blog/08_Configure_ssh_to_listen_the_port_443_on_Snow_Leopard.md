@@ -1,17 +1,9 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-09-07T20:25:56+02:00
-title: Configure ssh to listen the port 443 on Snow Leopard
-multiTitle: 
-    fr: ssh to Listen 443 on Snow Leopard
-    en: ssh to Listen 443 on Snow Leopard
-multiDescription:
-    fr: no description.
-    en: no description.
+title: ssh to Listen 443 on Snow Leopard
 tags:
   - Apple
   - mac

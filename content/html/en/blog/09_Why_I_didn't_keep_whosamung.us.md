@@ -1,17 +1,9 @@
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
 created_at:           2009-09-11T14:27:09+02:00
 title: Why I didn't keep whos.amung.us
-multiTitle: 
-    fr: Why I didn't keep whos.amung.us
-    en: Why I didn't keep whos.amung.us
-multiDescription:
-    fr: no description.
-    en: no description.
 tags:
   - analytics
   - web
