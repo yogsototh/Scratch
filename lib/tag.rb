@@ -13,7 +13,7 @@
         language=@item.path
         language =~ %r{/Scratch/([^/]*)/}
         language = $1
-        @items.select {|p| p.path =~ %r{/Scratch/#{language}/}}
+        @items.select {|p| p.path =~ %r{/Scratch/#{language}/} and p[:kind].to_s == "article" and p.parent[:kind].to_s == 'blog'}
     end
 
     def tagNumber

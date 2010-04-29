@@ -30,7 +30,7 @@ noSubMenu: true
 newcorps
 
 <div>
-<%= tagCloud(2) %>
+<%= tagCloud %>
 </div>
 
 

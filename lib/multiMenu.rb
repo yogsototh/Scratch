@@ -159,7 +159,7 @@ def brother_for_at(page,n)
 end
 
 def article_brother(n)
-    if depthOf(@item) > 3
+    if depthOf(@item) > 2
         page=@item.parent
     else
         page=@item
