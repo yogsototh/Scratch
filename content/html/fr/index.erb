@@ -15,6 +15,7 @@ noSubMenu: true
 <p>Bonjour et bienvenue sur mon site personnel.</p>
 
 <p>Voici un aperçu<sup>&dagger;</sup> de mes <%= number_of_articles %> derniers articles.</p>
+<p> Vous pouvez aussi chercher des entrées en utilisant le <a href="#tagcloud">nuage de mots clés (tag cloud)</a></p>
 
 <hr/>
 <p class="small">&dagger; approximativement les <%= number_of_char_for_resume %> premiers caractères.</p>
@@ -28,4 +29,9 @@ noSubMenu: true
         <%= link_to("en lire plus &rarr;", a) %>
     </p>
 <% end %>
+</div>
+<a href="#titre">&uarr; back to top &uarr;</a>
+<div class="corps">
+    <h2>tag cloud</h2>
+    <%= tagCloud %>
 </div>

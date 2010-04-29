@@ -5,24 +5,25 @@
 kind: article
 menupriority: 1
 created_at: 2009-08-04T19:00:00+02:00
-title: a try to demystify 'Lost Highway'
-multiTitle: 
-    fr: Lost Highway démystifié (un peu)
-    en: Lost Highway demystified (a bit)
-multiDescription:
-    fr: ...Il faut garder à l'esprit qu'il n'existe pas une seule interprétation possible et cohérente du film. Seul David Lynch pourrait donner l'explication complète du film.<br/>Je donne quelques clés aidant à suivre le film sans être complètement perdu.Ces clés devraient vous aider à vous faire votre propre idée du film...
-    en: ...this movie must be watched knowing you'll cannot resolve the solution. At his best you'll can suggest an interpretation close to the one of David Lynch.<br/>I believe I had found a coherent interpretation which allow to follow the movie without being totally lost. I believed it can give the keys necessary to make its own idea of the movie...
+title: Lost Highway démystifié (un peu)
+tags:
+  - film
+  - David Lynch
+  - Lost Highway
+  - Réalité alternée
 
 -----
 
 <%= blogimage( 'intro.jpg' , 'Lost Highway' ) %>
 
-
-Lost Highway ne laisse pas indiférent. Le revoir ne lasse pas même s'il parrait complètement obscur. C'est une des forces de David Lynch.
-
-
-
-!!fr!!
+<div class="intro">
+Lost Highway ne laisse pas indiférent. Le revoir ne lasse pas même s'il parrait complètement obscur. 
+C'est une des forces de David Lynch.
+Il faut garder à l'esprit qu'il n'existe pas une seule interprétation possible et cohérente du film. 
+Seul David Lynch pourrait donner une explication complète du film. 
+Je donne cependant quelques clés que j'ai découverte qui aident à suivre le film sans être complètement perdu. 
+Ces clés devraient vous aider à vous faire votre propre idée du film...
+</div>
 
 La première fois que j'ai vu Lost Highway je me suis senti un peu perdu.
 J'en ai alors cherché le sens. Voilà ce que j'ai pu trouver sur Internet :
@@ -42,34 +43,10 @@ Il faut garder à l'esprit qu'il n'existe pas une seule interprétation possible
 Je donne quelques clés aidant à suivre le film **sans être complètement perdu**.
 Ces clés devraient vous aider à vous faire votre propre idée du film.
 
-!!!!
-
-!!en!!
-
-The first time I watched Lost Highway, I was a bit lost.
-Here some of explanations of Lost Highway I found on the Internet:
-
-  - Fred make a pact with the devil incarnated by the *Mysterious Man*,
-  - *Mysterious Man* is a video camera,
-  - Just the first part of the story is real. The rest is in the Fred's imagination,
-
-and I don't speak about many point of view found in forums.
-
-I finished to find two good site talking about this movie. But none of them still totally convinced me:
-
-  - the first is [mediacircus](http://www.mediacircus.net/lh.html),
-  - the second which state almost the same interpretation about the movie and explain with even more details is on [jasonweb](http://www.jasonsweb.com/LostHighway/main.htm)
-
-Nonetheless, this movie must be watched knowing you'll cannot resolve the solution. At his best you'll can suggest an interpretation close to the one of David Lynch.
-
-I believe I had found a coherent interpretation which allow to follow the movie **without being totally lost**. I believed it can give the keys necessary to make its own idea of the movie.
-
-!!!!
 
 ## Le test de Rorschach
 
 <%= leftblogimage('rorschach.gif' , 'test de Rorschach') %>
-!!fr!!
 À l'instar du protagoniste chacun voit dans ce film ce qu'il a envie d'y voir. Nous pouvons nous y perdre simplement parce que nous pouvons nous perdre dans notre propre esprit. C'est une invitation à la réflexion. Regarder ce film c'est un peu comme passer un test de Rorschach. Qu'y voit-on ? Chacun y met un peu de sa propre personnalité dans l'explication du film.
 
   - Si vous êtes un mystique, vous verrez dans l'homme mystérieux un démon
@@ -77,32 +54,9 @@ I believe I had found a coherent interpretation which allow to follow the movie 
 
 En général en essayant d'expliquer ce film, on se perd un peu dans notre pensée. Et souvent on échoue à tout expliquer. Il y a toujours un point qui rend la construction incohérente avec le film. C'est pourquoi rechercher une explication unique est un entreprise vaine.
 
-!!!!
-
-!!en!!
-
-Like the protagonist, everybody see what he want to see in this movie. It is an invitation to think. Watch this movie is a little like watch a Rorschach's test. What do we see in it? Everybody put its own personnality in the interpretation of the movie.
-
-  - If you are mystic, you'll see in the mysterious man a devil,
-  - If you are more psychanalytics, you'll see an inconscient part of the protagonist...
-
-Generally, we stay in this movie and we fail explaining everything. There is almost always a point that don't fit within the interpretation of the movie. This is why trying to find a unique good interpretation of this movie is a mistake.
-
-!!!!
-
 ## Interprétation &ne; Explication
-
 
 Je donne une **interprétation** et non pas une **explication**. Ma vision des choses, me semble cohérente. Cependant il est très probable que mon adhésion au film soit très différente de la votre. 
 Il y a certainement beaucoup d'autres explications qui restent cohérentes. 
 
-
-
-
 J'écris cet article, parce que j'ai l'impression d'en avoir trouver une qui marche pour plus de 97% du film (peut-être 100%, mais j'en doute, il faudrait que je le revois encore une fois).
-
-
-
-<div style="text-align: center">
-<span style="font-size: 2em"> <a href="./03_losthighway_1/">Lire la suite</a></span>
-</div>

@@ -5,10 +5,12 @@
 kind: article
 menupriority: 1
 created_at: 2009-08-04T19:00:00+02:00
-title: a try to demystify 'Lost Highway'
-multiTitle: 
-    fr: Lost Highway démystifié (un peu) - Les clefs du film
-    en: Lost Highway demystified (a bit) - Movie's keys
+title: Lost Highway démystifié (un peu) - Les clefs du film
+tags:
+  - film
+  - David Lynch
+  - Lost Highway
+  - Réalité alternée
 
 -----
 
@@ -53,7 +55,6 @@ Cet interprétation me semble valide à cause du dialogue au début du film avec
 > - &ndash; What do you mean by that?
 > - &ndash; How I remember them, not necessarily the way they happened.
 
-!!fr!!
 Ce que l'on peut traduire approximativement par :
 
 > - &ndash; Avez-vous une caméra ?
@@ -62,10 +63,4 @@ Ce que l'on peut traduire approximativement par :
 > - &ndash; Qu'entendez-vous par là ?
 > - &ndash; Je me rapelle des choses pas nécessairement comme elles se sont passées.
 
-!!!!
-
-
 Ainsi, ce que l'on voit n'est pas la réalité, mais la réalité telle que le conçoit Fred. Il est donc le Dieu de cette réalité. Ainsi les interprétations mystiques faisant intervenir le Diable ont une certaine validité.
-
-
-

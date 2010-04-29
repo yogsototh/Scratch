@@ -6,18 +6,19 @@ kind: article
 menupriority: 1
 created_at: 2009-08-04T19:00:00+02:00
 title: a try to demystify 'Lost Highway'
-multiTitle: 
-    fr: Lost Highway démystifié (un peu)
-    en: Lost Highway demystified (a bit)
-multiDescription:
-    fr: ...Il faut garder à l'esprit qu'il n'existe pas une seule interprétation possible et cohérente du film. Seul David Lynch pourrait donner l'explication complète du film.<br/>Je donne quelques clés aidant à suivre le film sans être complètement perdu.Ces clés devraient vous aider à vous faire votre propre idée du film...
-    en: ...this movie must be watched knowing you'll cannot resolve the solution. At his best you'll can suggest an interpretation close to the one of David Lynch.<br/>I believe I had found a coherent interpretation which allow to follow the movie without being totally lost. I believed it can give the keys necessary to make its own idea of the movie...
+tags:
+  - movie
+  - David Lynch
+  - Lost Highway
+  - alternate reality
 
 -----
 
 <%= blogimage( 'intro.jpg' , 'Lost Highway' ) %>
 
-
+<div class="small">
+...this movie must be watched knowing you'll cannot resolve the solution. At his best you'll can suggest an interpretation close to the one of David Lynch.<br/>I believe I had found a coherent interpretation which allow to follow the movie without being totally lost. I believed it can give the keys necessary to make its own idea of the movie...
+</div>
 
 Lost Higway is a really good movie. You keep watching it event it seem totally obscure. This is one of the strength of David Lynch.
 
