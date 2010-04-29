@@ -82,8 +82,8 @@ def generateSubMenu()
     liste=getSortedChildren(page).collect do |p|
         link_to_unless_current(p[:title],p)
     end
-    liste = [ link_to_unless_current(page[:title],page) ].concat( liste )
     if ! liste.empty?  then
+        liste = [ link_to_unless_current(page[:title],page) ].concat( liste )
         '<div id="sousliens"><ul><li>'+liste.join('</li><li>')+'</li></ul></div>'
     else
         return
