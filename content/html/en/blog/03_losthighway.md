@@ -57,7 +57,3 @@ I give an **interpretation** and not an **explanation**. Just to tell my vision 
 There is certainly many coherent explanations.
 
 I write this post because I believe I had found an interpretation which seems coherent for most of the movie.
-
-<div style="text-align: center">
-<span style="font-size: 2em"> <a href="./03_losthighway_1/">Read more</a></span>
-</div>
