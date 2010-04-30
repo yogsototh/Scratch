@@ -3,7 +3,10 @@ isHidden:       false
 menupriority:   3
 kind:           article
 created_at:           2009-11-12T11:39:54+02:00
-title: The Adventure Begins
+title: Git for n00b
+subtitle: The Adventure Begins
+tags:
+  - git
 
 -----
 

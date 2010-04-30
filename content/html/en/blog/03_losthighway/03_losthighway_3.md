@@ -2,7 +2,8 @@
 kind: article
 menupriority: 3
 created_at: 2009-08-04T19:00:00+02:00
-title: Lost Highway demystified (a bit) - Who's at the origin of the video tapes?
+title: A try to demystify 'Lost Highway'
+subtitle: Who's at the origin of the video tapes?
 -----
 
 ## Who's at the origin of the video tapes?

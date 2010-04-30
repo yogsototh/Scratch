@@ -5,6 +5,8 @@ kind:           article
 created_at:           2009-11-12T11:39:54+02:00
 title: Git for n00b
 subtitle: Git for what?
+tags:
+  - git
 -----
 
 # en:[Git][git] for what?

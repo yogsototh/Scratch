@@ -3,7 +3,8 @@ isHidden:       false
 menupriority:   10
 kind:           article
 created_at:     2009-11-12T11:39:54+02:00
-title: Understanding
+title: Git for n00b
+subtitle: Understanding
 tags:
   - git
 

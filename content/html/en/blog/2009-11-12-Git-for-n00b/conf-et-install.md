@@ -3,7 +3,10 @@ isHidden:       false
 menupriority:   2
 kind:           article
 created_at:     2009-11-12T11:39:54+02:00
-title: Configure before Use
+title: Git for n00b
+subtitle: Configure before Use
+tags:
+  - git
 -----
 
 # Before usage, configuration
