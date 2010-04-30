@@ -90,7 +90,7 @@ def generateSubMenu()
         link_to_unless_current(p[key],p)
     end
     if ! liste.empty?  then
-        liste = [ link_to_unless_current(page[:title],page) ].concat( liste )
+        liste = [ link_to_unless_current(page[key],page) ].concat( liste )
         '<div id="sousliens"><ul><li>'+liste.join('</li><li>')+'</li></ul></div>'
     else
         return
