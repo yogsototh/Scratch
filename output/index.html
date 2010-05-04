@@ -28,8 +28,8 @@
                     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_webkit.css"/>');
                 } else if ( /mozilla/.test(userAgent) ) {
                     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_mozilla.css"/>');
-                } else if ($.browser["msie"]) {
-                    $('head').append('<script type="text/javascript" src="/Scratch/js/ie.js"></script>');
+                } else if ( $.browser["msie"] ) {
+                    $('head').append('<script type="text/javascript" src="/Scratch/js/ie.js"><'+'/script>');
                 }
         } );
     </script>
