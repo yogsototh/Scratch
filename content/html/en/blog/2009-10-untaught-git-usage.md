@@ -66,7 +66,7 @@ Git was designed to manage the Linux Kernel. Git was designed using the concept 
 From one site *Parallel World* and *Patches* from the other. There is many equivalent notions in the two point of vue, but also some differences.
 
 * Bazaar seems base on the *Parallel World* vision which implies *Patches* 
-* en:While Git seem base on the *Patch* model which will implie the creation of *Parallel Worlds*.
+* While Git seem base on the *Patch* model which will implie the creation of *Parallel Worlds*.
 
 I will not argument about which is the best. Just tell my vision of DCVS come from the *Parallel World* vision and Git was designed the other way<sup><a href="#note3">&Dagger;</a></sup>.
 

@@ -13,7 +13,7 @@ tags:
   - script
 
 -----
-I already talked about how [I synchronized my website with mobileme](/Scratch/multi/blog/10_Synchronize_Custom_WebSite_with_mobileMe). I ameliorated this script in order to make it incremental.
+I already talked about how [I synchronized my website with mobileme](/Scratch/en/blog/10_Synchronize_Custom_WebSite_with_mobileMe). I ameliorated this script in order to make it incremental.
 
 Here is my new script, it first create a map which associate to each file its hash. After that it compare this file to the remote one. Then for each different file, update the content.
 
@@ -258,9 +258,6 @@ print -- "Dest = $destRep"
 if [[ "$1" = "-s" ]]; then
     swap
 else 
-    print -P "Copie de l'init"
-    \cp -f $webroot/Scratch/multi/index.html $webroot/index.html
-
     if [[ "$1" = "-d" ]]; then
         suffix=""
     else

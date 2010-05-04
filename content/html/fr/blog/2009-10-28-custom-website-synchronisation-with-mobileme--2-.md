@@ -13,7 +13,7 @@ tags:
 
 -----
 
-J'ai déjà discuté de la façon dont je [synchronise mon site web sur mobileme](/Scratch/multi/blog/10_Synchronize_Custom_WebSite_with_mobileMe). J'ai amélioré mon script pour le rendre incrémental.
+J'ai déjà discuté de la façon dont je [synchronise mon site web sur mobileme](/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe). J'ai amélioré mon script pour le rendre incrémental.
 
 Voici mon script, il créé tout d'abord un fichier qui contient la liste des fichiers avec leur *hash*. Afin de les comparer avec ceux qui sont en ligne sans avoir à les parcourir. Ensuite pour chaque fichier qui semble différent, je met à jour le contenu.
 

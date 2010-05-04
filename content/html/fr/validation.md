@@ -1,9 +1,7 @@
 ----- 
 title: validation
 isHidden: true
-multiTitle: 
-    fr: Validation
-    en: Validation
+title: Validation
 menupriority: 500
 
 -----

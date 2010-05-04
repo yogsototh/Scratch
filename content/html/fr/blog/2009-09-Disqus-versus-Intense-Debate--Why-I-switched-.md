@@ -14,7 +14,7 @@ tags:
 # [Disqus](http://disqus.com/) *vs.* [Intense Debate](http://intensedebate.com/)
 
 J'ai écrit un article sur la façon dont j'ai essayé d'intégrer [Disqus](http://disqus.com). Mon problème majeur avec [Disqus](http://disqus.com/) c'était que ma page ne s'affichait pas correctement tant que les commentaire n'avait pas fini de s'afficher. Ça m'est arrivé plusieurs fois d'avoir ma page complètement bloquée parce que les serveurs de [Disqus](http://disqus.com/) ne répondait pas.
-C'est pourquoi j'ai essayer de l'inclure de manière asynchrone. Cependant j'ai eu des [difficultés pour le faire fonctionner correctement](/Scratch/multi/blog/11_Load_Disqus_Asynchronously/).
+C'est pourquoi j'ai essayer de l'inclure de manière asynchrone. Cependant j'ai eu des [difficultés pour le faire fonctionner correctement](/Scratch/fr/blog/11_Load_Disqus_Asynchronously/).
 
 De plus il n'a pas été trivial de faire en sorte que les commentaires soient commun à plusieurs pages différentes (chaque page à trois représentations différentes, une par language plus une version multi-langue).
 

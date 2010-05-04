@@ -228,7 +228,7 @@ end
 </code>
 </div>
 
-You can [download the complete file](/Scratch/multi/blog/2009-09-jQuery-Tag-Cloud/code/tag.rb) to put in your 'lib' directory.
+You can [download the complete file](/Scratch/en/blog/2009-09-jQuery-Tag-Cloud/code/tag.rb) to put in your 'lib' directory.
 
 Of course to be nice you need the associated CSS
 

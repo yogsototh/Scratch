@@ -33,7 +33,7 @@ git commit
 </code>
 </div>
 
-fr:Maintenant tous les fichiers du répertoire <code>to/project/directory/</code> sont *versionnés*. Si vous voulez ignorer certains fichiers il suffit de modifier le fichier <code>.gitignore</code>.
+Maintenant tous les fichiers du répertoire <code>to/project/directory/</code> sont *versionnés*. Si vous voulez ignorer certains fichiers il suffit de modifier le fichier <code>.gitignore</code>.
 
 Par exemple voici le mien : 
 <div>

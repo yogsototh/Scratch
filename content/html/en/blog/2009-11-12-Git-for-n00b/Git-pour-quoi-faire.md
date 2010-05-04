@@ -9,7 +9,7 @@ tags:
   - git
 -----
 
-# en:[Git][git] for what?
+# [Git][git] for what?
 
 begindiv(intro)
 
@@ -64,7 +64,7 @@ begindiv(black)
 
 enddiv
 
-### en:concurrent:
+### concurrent:
 
 Version Systems are already useful to manage its own projects. They help to organize and resolve partially backup problems. I say partially because you have to backup your repository on a decent file system. But versions system are really interesting is on projects done by many people.
 

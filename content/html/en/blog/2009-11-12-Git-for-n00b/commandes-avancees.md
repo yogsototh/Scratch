@@ -85,13 +85,13 @@ list files being modified
 $ git status
 </code></div>
 
-fr:différences entre les fichier de la dernière version et les fichiers locaux.
+differences between last version files and local files
 
 <div><code class="zsh">
 $ git diff
 </code></div>
 
-liste les différences entre les fichier d'une certaine version et les fichiers locaux.
+differences between some version and local files
 
 <div><code class="zsh">
 $ git diff VersionHash fichier
@@ -111,7 +111,7 @@ $ git lg
 $ git logfull
 </code></div>
 
-### en:know who did what and when::
+### know who did what and when
 
 <div><code class="zsh">
 $ git blame fichier

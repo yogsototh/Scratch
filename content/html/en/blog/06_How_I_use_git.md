@@ -37,7 +37,6 @@ git commit
 
 Now all files in the <code>to/project/directory/</code> are versionned.
 If you want not to follow some just edit the file <code>.gitignore</code>
-fr:Maintenant tous les fichiers du répertoire <code>to/project/directory/</code> sont *versionnés*. Si vous voulez ignorer certains fichiers il suffit de modifier le fichier <code>.gitignore</code>.
 
 for example mine is: 
 

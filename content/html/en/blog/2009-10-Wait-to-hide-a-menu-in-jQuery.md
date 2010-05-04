@@ -12,7 +12,7 @@ tags:
 
 -----
 
-I discussed [earlier why I prefer to hide my navigation menu](/Scratch/multi/blog/2009-10-Focus-vs-Minimalism). I finally decided to hide it only after a short time. Just the time needed for a user to see it. But how make it disappear only when it is not used for some time?
+I discussed [earlier why I prefer to hide my navigation menu](/Scratch/en/blog/2009-10-Focus-vs-Minimalism). I finally decided to hide it only after a short time. Just the time needed for a user to see it. But how make it disappear only when it is not used for some time?
 
 Here is how to accomplish that easily.
 

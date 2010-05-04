@@ -10,7 +10,7 @@ tags:
     - design
 -----
 
-J'ai déjà dit pourquoi [je préférais que mon menu de navigation soit caché](/Scratch/multi/blog/2009-10-Focus-vs-Minimalism). J'ai finalement décidé d'attendre un peu avant de cacher le menu. Juste le temps que l'utilisateur le voit. Mais voilà. Comment faire pour qu'il ne disparaisse que lorsque l'on ne s'en sert pas pendant un petit moment ?
+J'ai déjà dit pourquoi [je préférais que mon menu de navigation soit caché](/Scratch/fr/blog/2009-10-Focus-vs-Minimalism). J'ai finalement décidé d'attendre un peu avant de cacher le menu. Juste le temps que l'utilisateur le voit. Mais voilà. Comment faire pour qu'il ne disparaisse que lorsque l'on ne s'en sert pas pendant un petit moment ?
 
 Voici la solution que j'utilise avec jQuery
 

@@ -69,7 +69,7 @@ If you forget the `window.disqus_no_style=true;` then your page will be blank. S
 
 ### CSS
 
-But with this option you still need to provide a CSS. This is why you have to copy the css code from the `embed.js` file and rewrite it in a CSS file. You can [download the CSS](/Scratch/multi/blog/11_Load_Disqus_Asynchronously/code/original_disqus.css) I obtained.
+But with this option you still need to provide a CSS. This is why you have to copy the css code from the `embed.js` file and rewrite it in a CSS file. You can [download the CSS](/Scratch/en/blog/11_Load_Disqus_Asynchronously/code/original_disqus.css) I obtained.
 
 ---
 

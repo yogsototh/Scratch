@@ -17,7 +17,7 @@ tags:
 # Update <small>(2009/10/28)</small>
 
 
-I [updated my script](/Scratch/multi/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-) which is now incremental. Since the writing of this article, Apple(c) had made many efforts about the bandwith of its European servers.
+I [updated my script](/Scratch/en/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-) which is now incremental. Since the writing of this article, Apple(c) had made many efforts about the bandwith of its European servers.
 
 
 newcorps

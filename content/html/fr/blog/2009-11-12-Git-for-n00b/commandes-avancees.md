@@ -87,7 +87,7 @@ liste les fichier en cours de modifications
 $ git status
 </code></div>
 
-fr:différences entre les fichier de la dernière version et les fichiers locaux.
+différences entre les fichier de la dernière version et les fichiers locaux.
 
 <div><code class="zsh">
 $ git diff

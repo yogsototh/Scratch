@@ -14,7 +14,7 @@ tags:
 
 # mise à jour du <small>28/10/2009</small>
 
-J'ai mis à jour mon script [avec une version incrémentale](/Scratch/multi/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-) bien plus pratique.
+J'ai mis à jour mon script [avec une version incrémentale](/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-) bien plus pratique.
 En plus depuis l'écriture de cet article Apple(c) semble avoir nettement amélioré la vitesse de ses serveurs en Europe.
 
 newcorps
