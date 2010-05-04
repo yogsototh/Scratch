@@ -2,7 +2,7 @@
 -----
 !rouge_clair = #cc0000
 !rouge_fonce = #6c0000
-!blanc_fonce = #cccccc
+!blanc_fonce = #ddd
 !gris_fonce = #888888
 !texte_normal = #222222
 !texte_attenue = #666666
@@ -174,3 +174,9 @@ table.description tr td,
   -moz-box-shadow: 0px 2px 5px #333
 #titre, #entete
   -moz-box-shadow: 0px 0px 5px #000
+
+=white
+  background-image: -moz-radial-gradient(30% 150, 0, 30% 150, 300, from(#fff), to(#ddd) ) no-repeat
+#entete, #sousliens, .corps
+  +white
+

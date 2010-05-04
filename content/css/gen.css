@@ -2,7 +2,7 @@
 -----
 !rouge_clair = #cc0000
 !rouge_fonce = #6c0000
-!blanc_fonce = #cccccc
+!blanc_fonce = #ddd
 !gris_fonce = #888888
 !texte_normal = #222222
 !texte_attenue = #666666
@@ -14,8 +14,6 @@
 =white
   :text-shadow 0 1px #EEEEEE
   :background
-    :image url("../../css/img/white.jpg")
-    :repeat no-repeat
     :color = !blanc_fonce
   :border
     :color = !gris_fonce
@@ -27,7 +25,8 @@
   a:visited 
     color: #a00 
   a:active, a:hover
-    color: #f00
+    color = !rouge_clair
+    text-shadow = 0 0 1px !rouge_fonce
 
 =black
   :text-shadow 0 1px #000
@@ -273,7 +272,7 @@ table.description tr td
 // --- Les couleurs
 body
   :background
-    :color #fff
+    :color #ccc
   :color #000
 //    :image url('../../css/img/background.jpg')
 //    :attachment fixed
@@ -300,9 +299,6 @@ ul
 #lastmod 
   :color     #999
   :font-size .8em
-
-#content 
-  :background-color white
 
 .withfile pre.twilight
   :background
@@ -362,7 +358,7 @@ p
   +red
   +smallround
   +smallblock
-
+  border: none
 
 #liens ul li.active
   +black
@@ -512,4 +508,4 @@ hr
 
 h1 > .date
   :font-size .6em
-  :color = !gris_fonce
+  :color = #000
