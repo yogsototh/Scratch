@@ -98,6 +98,10 @@ var decalageTop = 10;
 function entete_height() {
     return $('#entete').height() - $('#menuMessage').height() + decalageTop;
 }
+function fastHideMenu() {
+    $('#content').css({top: - entete_height()});
+    $('#menuMessage').html('↓ Menu ↓')
+}
 function hideMenu() {
     $('#content').animate({top: - entete_height()}, 500 );
     $('#menuMessage').html('↓ Menu ↓')
@@ -129,7 +133,7 @@ function initMenu() {
     $('#entete').hover(showMenu);
     $('#entete').hover(function(){last+=1;}, function(){autoHideMenu(last);});
     autoHideMenu(0);
-    hideMenu();
+    fastHideMenu();
 }
 
 function setSpecificCss() {
