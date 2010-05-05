@@ -94,16 +94,13 @@
 #titre
   +largeround
 
-.encadre
-  +smallround
-
-.black
-  +smallround
-
-.red
-  +smallround
-
-.shadow
+.encadre,
+.black,
+.red,
+.shadow,
+.return a,
+#liens ul li a:hover,
+#liens ul li.active
   +smallround
 
 img
@@ -122,12 +119,6 @@ table.description tr td,
 .nojsbutton,
 .corps
   +largeround
-
-#liens ul li a:hover
-  +smallround
-
-#liens ul li.active
-  +smallround
 
 // --- bords arrondis
 #content 

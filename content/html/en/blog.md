@@ -32,6 +32,11 @@ newcorps
 <%= tagCloud %>
 </div>
 
+enddiv
+
+## Archives
+
+<%= generateBlogSubMenu %>
 
 newcorps
 
@@ -61,9 +66,3 @@ The first impression I'll let you if we meet in real life should be different fr
 
 I wish you to find something useful or interesting on this website.
 
-
-enddiv
-
-## Archives
-
-<%= generateBlogSubMenu %>

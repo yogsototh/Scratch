@@ -509,3 +509,14 @@ hr
 h1 > .date
   :font-size .6em
   :color = #000
+
+.corps .return a
+  +black
+  +smallround
+  +smallblock
+
+.corps .return 
+  a:active, 
+  a:hover
+    :color #fff
+    :text-shadow 0 0 1px #ddd

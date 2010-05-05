@@ -33,6 +33,12 @@ newcorps
 <%= tagCloud %>
 </div>
 
+enddiv
+
+## Archives
+
+<%= generateBlogSubMenu %>
+
 newcorps
 
 ## Un petit mot sur le contenu
@@ -61,8 +67,3 @@ L'impression que ce site laisse de moi n'est certainement pas l'impression que j
 
 Je vous souhaite de trouver ce que vous cherchez sur ce site.
 
-enddiv
-
-## Archives
-
-<%= generateBlogSubMenu %>

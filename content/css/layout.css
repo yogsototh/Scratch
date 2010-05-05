@@ -48,7 +48,7 @@ body
 
 // /* le pied de page */
 #bottom
-  clear: both 
+  clear: right
   margin-right: 0px
   text-align: right
   width: 45%
@@ -494,3 +494,14 @@ table.impact tr td
   width: 45%
   margin-right: 1em
   text-align: right
+
+.return a
+  display: block
+  line-height: 1em
+  text-align: center
+  height: 1em
+  width: 1em
+  float: left
+  font-size: 3em
+  margin-top: -.2em
+  margin-left: -1.5em
