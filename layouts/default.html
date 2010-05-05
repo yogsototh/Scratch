@@ -164,7 +164,7 @@ self.instance_variable_set(:@conf, conf)
             <div id="afterheader">
                 <div class="corps">
                     <%= yield %>
-                    <div class="return"><a href="#entete">&uarr;</a></div>
+                    <div class="return"><a href="#entete" onclick="fastShowMenu()">&uarr;</a></div>
                 </div>
             <% if article  %>
             <% depth = depthOf(@item) %>

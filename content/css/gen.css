@@ -511,12 +511,17 @@ h1 > .date
   :color = #000
 
 .corps .return a
-  +black
+  :color #ccc
   +smallround
-  +smallblock
+  :border 
+    :style solid 
+    :color #ccc
+    :width 1px
 
 .corps .return 
-  a:active, 
+  a:active,
   a:hover
-    :color #fff
-    :text-shadow 0 0 1px #ddd
+    :text-shadow 0 1px #fff
+    :color #aaa
+    :border-color #aaa
+    :background-color #dadada

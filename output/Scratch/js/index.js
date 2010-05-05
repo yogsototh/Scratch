@@ -112,6 +112,12 @@ function showMenu() {
     last+=1;
     autoHideMenu(last);
 }
+function fastShowMenu() {
+    $('#content').css({top:"-1em"});
+    $('#menuMessage').html('↑ Menu ↑').click(hideMenu);
+    last+=1;
+    autoHideMenu(last);
+}
 function toggleMenu() {
     if ( $('#entete').css('top')==entete_height() ) {
         showMenu();

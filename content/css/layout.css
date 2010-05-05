@@ -497,11 +497,11 @@ table.impact tr td
 
 .return a
   display: block
-  line-height: 1em
+  line-height: 1.5em
   text-align: center
-  height: 1em
-  width: 1em
+  height: 1.5em
+  width: 1.5em
   float: left
-  font-size: 3em
-  margin-top: -.2em
-  margin-left: -1.5em
+  font-size: 2em
+  margin-top: -.5em
+  margin-left: -2em
