@@ -9,6 +9,11 @@ noSubMenu: true
     number_of_articles=10
     number_of_char_for_resume=800
     language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
+    if language == "fr"
+        monthnames=[nil]+%w(Jan Fév Mar Avr Mai Jui Jul Aoû Sep Oct Nov Déc)
+    else
+        monthnames=[nil]+%w(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
+    end
     last_articles = articles.select do |a| 
             a.reps[0].path =~ /\/#{language}\// 
     end
@@ -17,10 +22,14 @@ noSubMenu: true
 
 ## Les <%= number_of_articles %> derniers articles
 
-<ul>
+<ul style="list-style-type: none; margin: 0;">
 <% last_articles.each do |a| %>
-    <li>
-        <span class="date"><%= a[:created_at].strftime( @config[:dateFormat][language.intern] ) %></span> <%= link_to(a[:title], a) %>
+    <li style="line-height: 3em; margin: 0;">
+        <div class="date">
+        <div class="day"><%= a[:created_at].day %></div>
+        <div class="month"><%= monthnames[ a[:created_at].mon ] %></div>
+        <div class="year"><%= a[:created_at].year %></div>
+        </div> <%= link_to(a[:title], a) %>
     </li>
 <% end %>
 </ul>
@@ -37,7 +46,7 @@ enddiv
 
 ## Archives
 
-<%= generateBlogSubMenu %>
+<%= generateBlogSubMenu(monthnames) %>
 
 newcorps
 

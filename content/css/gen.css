@@ -525,3 +525,31 @@ h1 > .date
     :color #aaa
     :border-color #aaa
     :background-color #dadada
+
+.date 
+  text-align: center
+  font-size: .7em
+  color: #bbb
+  width: 4em
+  border: 1px solid #000
+  line-height: 1.5em
+  display: inline-block
+  margin-top: 1em
+.date .day 
+  color: #800
+  background-color: #fff
+  float: left
+  width: 1.7em
+.date .month 
+  background-color: #666
+  color: #eee
+  float: right
+  width: 2.3em
+.date .year
+  clear: both
+  background-color: #bbb
+  color: #333
+.date
+  position: relative
+  top: .7em
+  left: -2em
