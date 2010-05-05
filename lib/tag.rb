@@ -87,13 +87,24 @@
         language =~ %r{/Scratch/([^/]*)/}
         language = $1
         language = language.intern
+        if language == "fr"
+            monthnames=[nil]+%w(Jan Fév Mar Avr Mai Jui Jul Aoû Sep Oct Nov Déc)
+        else
+            monthnames=[nil]+%w(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
+        end
+
         tagLinks.sort{|a,b| a[0].downcase <=> b[0].downcase}.each do |t,l|
             protected=t.gsub(/\W/,'_')
-            tagCloud <<= %{<div id="#{protected}" class="list"><h4>#{t}</h4><ul>}
+            tagCloud <<= %{<div id="#{protected}" class="list"><h4>#{t}</h4><ul style="list-style-type: none; margin: 0;">}
             l.sort{|x,y| y[:created_at] <=> x[:created_at]}.each do |p|
-                tagCloud <<= %{<li>
-                    <span class="date">#{p[:created_at].strftime(@config[:dateFormat][language])}</span> 
-                    <a href="#{p.path}">#{p[:title]}</a>
+                tagCloud <<= %{
+                    <li style="line-height: 3em; margin: 0;">
+                        <div class="date">
+                        <div class="day">#{ p[:created_at].day }</div>
+                        <div class="month">#{ monthnames[ p[:created_at].mon ] }</div>
+                        <div class="year">#{ p[:created_at].year }</div>
+                        </div> 
+                        <a href="#{p.path}">#{p[:title]}</a>
                     </li>\n}
             end
             tagCloud <<= %{</ul></div>}
