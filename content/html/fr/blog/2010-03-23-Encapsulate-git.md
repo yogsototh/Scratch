@@ -16,7 +16,7 @@ Voici une solution pour conserver des branches divergentes avec `git`.
 Parce qu'il est facile de *merger* par erreur, je propose un script qui encapsule le comportement de `git` pour interdire certains *merges* dangereux. Mais qui permet aussi de faire des merges en cascades de la racines vers les autres branches.
 </span>
 
-## Comment se protoger de sa propre bêtise ?
+## Se prémunir contre les erreurs
 
 Je travaille sur un projet dans lequel certaines de mes branches `git` doivent rester divergentes. Et les divergences devraient aller en s'accentuant.
 
