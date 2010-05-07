@@ -86,13 +86,6 @@
         language=@item.path
         language =~ %r{/Scratch/([^/]*)/}
         language = $1
-        language = language.intern
-        if language == :fr
-            monthnames=[nil]+%w(Jan Fév Mar Avr Mai Jui Jul Aoû Sep Oct Nov Déc)
-        else
-            monthnames=[nil]+%w(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
-        end
-
         tagLinks.sort{|a,b| a[0].downcase <=> b[0].downcase}.each do |t,l|
             protected=t.gsub(/\W/,'_')
             tagCloud <<= %{<div id="#{protected}" class="list"><h4>#{t}</h4><ul style="list-style-type: none; margin: 0;">}
