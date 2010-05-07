@@ -87,7 +87,7 @@
         language =~ %r{/Scratch/([^/]*)/}
         language = $1
         language = language.intern
-        if language == "fr"
+        if language == :fr
             monthnames=[nil]+%w(Jan Fév Mar Avr Mai Jui Jul Aoû Sep Oct Nov Déc)
         else
             monthnames=[nil]+%w(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
@@ -99,11 +99,7 @@
             l.sort{|x,y| y[:created_at] <=> x[:created_at]}.each do |p|
                 tagCloud <<= %{
                     <li style="line-height: 3em; margin: 0;">
-                        <div class="date">
-                        <div class="day">#{ p[:created_at].day }</div>
-                        <div class="month">#{ monthnames[ p[:created_at].mon ] }</div>
-                        <div class="year">#{ p[:created_at].year }</div>
-                        </div> 
+                        #{calendar_for(p[:created_at], language)}
                         <a href="#{p.path}">#{p[:title]}</a>
                     </li>\n}
             end

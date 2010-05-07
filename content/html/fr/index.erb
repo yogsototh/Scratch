@@ -20,22 +20,10 @@ noSubMenu: true
 <hr/>
 <p class="small">&dagger; approximativement les <%= number_of_char_for_resume %> premiers caractères.</p>
 
-<%
-    if language == "fr"
-        monthnames=[nil]+%w(Jan Fév Mar Avr Mai Jui Jul Aoû Sep Oct Nov Déc)
-    else
-        monthnames=[nil]+%w(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
-    end
-%>
 <% last_articles.each do |a| %>
     </div>
     <h1>
-
-        <div class="date">
-            <div class="day"><%= a[:created_at].day %></div>
-            <div class="month"><%= monthnames[ a[:created_at].mon ] %></div>
-            <div class="year"><%= a[:created_at].year %></div>
-        </div> 
+        <%= calendar_for( a[:created_at], language ) %>
         <%= link_to(a[:title], a) %>
     </h1>
     <div class="corps">
