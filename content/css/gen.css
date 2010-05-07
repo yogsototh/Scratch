@@ -531,7 +531,7 @@ h1 > .date
   font-size: .7em
   color: #bbb
   width: 4em
-  border: 1px solid #000
+  border: 1px solid #888
   line-height: 1.5em
   display: inline-block
   margin-top: 1em
@@ -541,8 +541,8 @@ h1 > .date
   float: left
   width: 1.7em
 .date .month 
-  background-color: #666
-  color: #eee
+  background-color: #000
+  color: #ccc
   float: right
   width: 2.3em
 .date .year
