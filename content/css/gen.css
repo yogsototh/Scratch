@@ -530,7 +530,7 @@ h1 > .date
   text-align: center
   font-size: .7em
   color: #bbb
-  width: 4em
+  width: 4.1em
   border: 1px solid #888
   line-height: 1.5em
   display: inline-block
@@ -541,15 +541,20 @@ h1 > .date
   float: left
   width: 1.7em
 .date .month 
+  border-left: solid #888 .1em
   background-color: #000
-  color: #ccc
+  color: #fff
   float: right
   width: 2.3em
 .date .year
+  border-top: solid #888 1px
+  border-bottom: solid #888 1px
+  line-height: 3ex
   clear: both
   background-color: #bbb
-  color: #333
+  color: #000
 .date
+  border: solid #000 1px
   position: relative
   top: .7em
   left: -2em

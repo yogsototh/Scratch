@@ -147,10 +147,25 @@ table.description tr td,
 /* Shadows */
 .corps, #bottom, #sousliens
   -webkit-box-shadow: 0px 2px 5px #333
-#titre, #entete
+#titre, #entete, .date
   -webkit-box-shadow: 0px 0px 5px #000
 
 =white
   background-image: -webkit-gradient(radial, 30% 150, 0, 30% 150, 300, from(#fff), to(#ddd) )
 #entete, #sousliens, .corps
   +white
+
+.date
+  :-webkit-border
+    :top-left-radius = 1px
+    :top-right-radius = !tiny_radius
+    :bottom-left-radius = !tiny_radius
+    :bottom-right-radius = !tiny_radius
+.month
+  :-webkit-border
+    :top-right-radius = !tiny_radius
+.year
+  :-webkit-border
+    :top-right-radius = 1px
+    :bottom-left-radius = !tiny_radius
+    :bottom-right-radius = !tiny_radius

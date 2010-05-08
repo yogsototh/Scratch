@@ -488,7 +488,7 @@ table.impact tr td
   float: left
   margin-left: 1em
   width: 45%
-  text-align: left
+  left-align: left
 #next_articles
   float: right
   width: 45%
