@@ -12,7 +12,7 @@
 !large_radius = 27px
 
 =white
-  :text-shadow 0 1px #EEEEEE
+  :text-shadow 0 1px #fff
   :background
     :color = !blanc_fonce
   :border

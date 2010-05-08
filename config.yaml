@@ -62,6 +62,9 @@ translations:
     and:
         en: "and"
         fr: "et"
+    created_at:
+        en: "Created"
+        fr: "Écrit le "
     last_modified:
         en: "Last modified"
         fr: "dernière modification "
