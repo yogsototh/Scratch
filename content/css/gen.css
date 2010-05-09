@@ -125,18 +125,6 @@
   a:active, a:hover
     color: #f00
 
-a.navigationprev, 
-a.navigationnext
-  color: #222
-a.navigationprev:visited, 
-a.navigationnext:visited
-  color: #333 
-a.navigationprev:hover, 
-a.navigationnext:hover,
-a.navigationprev:active, 
-a.navigationnext:active
-  color: #f00
-
 .presarticle
   font-size: .8em
   width: 20%
@@ -558,3 +546,7 @@ h1 > .date
   position: relative
   top: .7em
   left: -2em
+
+#next_before_articles a
+  color: #000 !important
+  :font-size .9em
