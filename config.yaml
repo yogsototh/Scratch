@@ -69,8 +69,8 @@ translations:
         en: "Last modified"
         fr: "dernière modification "
     copyright:
-        en: "<a href=\"http://creativecommons.org/licenses/by-sa/2.5/deed.en\">Copyright©</a>"
-        fr: "<a href=\"http://creativecommons.org/licenses/by-sa/2.5/deed.fr\">Droits de reproduction ©</a>"
+        en: "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\">Copyright ©</a>"
+        fr: "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.fr\">Droits de reproduction ©</a>"
     subscribe:
         en: "Subscribe"
         fr: "s'abonner"
