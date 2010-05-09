@@ -3,6 +3,8 @@ kind: article
 menupriority: 1
 created_at: 2009-08-17T14:00:00+02:00
 title: Git remote branch creation
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - git
   - branch

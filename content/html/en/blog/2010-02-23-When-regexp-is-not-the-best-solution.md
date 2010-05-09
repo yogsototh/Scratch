@@ -4,6 +4,8 @@ menupriority:   1
 kind:           article
 created_at:           2010-02-23T10:09:52+02:00
 title: When regexp is not the best solution
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
     - programming
     - regexp

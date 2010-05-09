@@ -3,6 +3,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-10-03T14:34:11+02:00
 title: Charger une page web avec style
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
     - web
     - jquery

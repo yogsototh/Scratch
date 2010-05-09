@@ -3,6 +3,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-10-13T13:10:09+02:00
 title: Usages non dits de Git
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - git
   - dcvs

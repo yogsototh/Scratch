@@ -3,6 +3,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-09-11T14:35:35+02:00
 title: Héberger son site personnel sur le site mobileMe
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - Apple
   - mobileme

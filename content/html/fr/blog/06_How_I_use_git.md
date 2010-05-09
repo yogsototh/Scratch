@@ -3,6 +3,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-08-18T14:44:31+02:00
 title: Git en solo
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - git
   - svn

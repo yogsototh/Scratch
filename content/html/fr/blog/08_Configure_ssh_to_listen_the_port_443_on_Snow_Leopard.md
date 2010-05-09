@@ -3,6 +3,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-09-07T20:25:56+02:00
 title: ssh sur le port 443 avec Snow Leopard
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - Apple
   - mac

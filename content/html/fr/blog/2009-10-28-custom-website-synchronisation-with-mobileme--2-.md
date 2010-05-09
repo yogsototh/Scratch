@@ -3,6 +3,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-10-28T11:03:30+02:00
 title: Synchronisation avec mobileme (2)
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - Apple
   - mobileme

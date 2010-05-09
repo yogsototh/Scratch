@@ -3,6 +3,8 @@ kind: article
 menupriority: 1
 created_at: 2009-08-15T11:00:00+02:00
 title: DRM are EVIL
+author_name: Yann Esposito
+author_uri: yannesposito.com
 subtitle: DRM are bad (+1)
 tags:
   - drm

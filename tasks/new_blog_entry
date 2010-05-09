@@ -34,21 +34,14 @@ now=$( date "+%Y-%m-%dT%H:%M:%S+02:00" )
 
 > $filename cat << ENDFORMAT
 -----
-
-# Custom 
 isHidden:       false
 menupriority:   1
 kind:           article
 date:           $now
 title: $title
-multiTitle: 
-    fr: $title
-    en: $title
-multiDescription:
-    fr: pas de description.
-    en: no description.
+author_name: Yann Esposito
+author_uri: yannesposito.com
 # tags:
-
 -----
 ENDFORMAT
 

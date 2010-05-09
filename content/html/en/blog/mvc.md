@@ -3,6 +3,8 @@ isHidden: true
 kind: article
 created_at: 2009-07-06T16:15:23+02:00
 title: MVC explained
+author_name: Yann Esposito
+author_uri: yannesposito.com
 menupriority: 2
 -----
 

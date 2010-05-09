@@ -4,6 +4,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-09-17T23:27:54+02:00
 title: Load Disqus Asynchronously
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
     - disqus
     - web

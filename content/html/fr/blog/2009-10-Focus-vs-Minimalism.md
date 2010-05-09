@@ -3,6 +3,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-10-22T20:45:18+02:00
 title: <em>Focus</em> &gt; Minimalisme
+author_name: Yann Esposito
+author_uri: yannesposito.com
 subtitle: Cacher la navigation pour une meilleure concentration
 tags:
     - jquery

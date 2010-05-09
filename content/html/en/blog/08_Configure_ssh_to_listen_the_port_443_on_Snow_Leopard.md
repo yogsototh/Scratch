@@ -4,6 +4,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-09-07T20:25:56+02:00
 title: ssh to Listen 443 on Snow Leopard
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - Apple
   - mac

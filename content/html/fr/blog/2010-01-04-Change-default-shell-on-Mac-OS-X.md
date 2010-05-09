@@ -4,6 +4,8 @@ menupriority:   1
 kind:           article
 created_at:           2010-01-04T12:31:47+02:00
 title: Changer le shell par défaut sous Mac OS X
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - Apple
   - Mac

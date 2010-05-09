@@ -4,6 +4,8 @@ menupriority:   1
 kind:           article
 created_at:           2010-02-16T10:33:21+02:00
 title: Pragmatic Regular Expression Exclude (2)
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - regexp
   - regular expression

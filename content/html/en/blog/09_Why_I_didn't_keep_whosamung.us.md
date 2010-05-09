@@ -4,6 +4,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-09-11T14:27:09+02:00
 title: Why I didn't keep whos.amung.us
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - analytics
   - web

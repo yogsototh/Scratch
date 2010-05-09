@@ -3,6 +3,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-09-23T13:18:26+02:00
 title: jQuery Tag Cloud [en]
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
     - jquery
     - javascript

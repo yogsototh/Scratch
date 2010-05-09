@@ -2,6 +2,8 @@
 created_at: 2009-07-22T16:15:23+02:00
 kind: article
 title: Better than Grep
+author_name: Yann Esposito
+author_uri: yannesposito.com
 menupriority: 1
 -----
 

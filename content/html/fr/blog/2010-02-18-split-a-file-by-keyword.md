@@ -4,6 +4,8 @@ menupriority:   1
 kind:           article
 created_at:           2010-02-18T15:29:14+02:00
 title: découper un fichier par mots clés
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
     - awk
     - shell

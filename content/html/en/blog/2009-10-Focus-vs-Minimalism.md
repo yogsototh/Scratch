@@ -4,6 +4,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-10-22T20:45:18+02:00
 title: Focus &gt; Minimalism
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
     - jquery
     - design

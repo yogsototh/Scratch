@@ -2,6 +2,8 @@
 created_at: 2008-10-10T16:15:23+02:00
 kind: article
 title: Nanoc
+author_name: Yann Esposito
+author_uri: yannesposito.com
 menupriority: 1
 -----
 

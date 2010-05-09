@@ -3,6 +3,8 @@ kind: article
 menupriority: 1
 created_at: 2009-08-17T14:00:00+02:00
 title: Création de branches externe avec Git
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - git
   - branch

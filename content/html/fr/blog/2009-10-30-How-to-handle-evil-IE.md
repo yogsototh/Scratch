@@ -3,6 +3,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-10-30T22:34:46+02:00
 title: Une CSS pour IE seulement
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
     - web
     - webdesign

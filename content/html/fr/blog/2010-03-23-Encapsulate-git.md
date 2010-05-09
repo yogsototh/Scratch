@@ -4,6 +4,8 @@ menupriority:   1
 kind:           article
 created_at:           2010-03-23T22:37:36+02:00
 title: Encapsuler git
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
     - git
     - protection

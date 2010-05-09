@@ -6,6 +6,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-12-06T11:35:34+02:00
 title: iphone call filter
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - iPhone
   - Apple

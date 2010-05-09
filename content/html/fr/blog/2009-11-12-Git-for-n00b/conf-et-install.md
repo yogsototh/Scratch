@@ -4,6 +4,8 @@ menupriority:   2
 kind:           article
 created_at:           2009-11-12T11:39:54+02:00
 title: Git pour les nuls
+author_name: Yann Esposito
+author_uri: yannesposito.com
 subtitle: Avant l'utilisation, la configuration
 -----
 

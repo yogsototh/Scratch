@@ -3,6 +3,8 @@ kind: article
 menupriority: 1
 created_at: 2009-08-15T11:00:00+02:00
 title: Les protections anti-copies sont LE MAL
+author_name: Yann Esposito
+author_uri: yannesposito.com
 subtitle: Protections anti-copie = Belle connerie (+1) !
 tags:
   - drm

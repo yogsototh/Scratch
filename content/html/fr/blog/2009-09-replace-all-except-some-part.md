@@ -3,6 +3,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-09-22T22:13:25+02:00
 title: Remplacer tout sauf une partie
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
     - ruby
     - regexp

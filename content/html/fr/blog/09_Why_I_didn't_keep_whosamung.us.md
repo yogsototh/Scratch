@@ -3,6 +3,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-09-11T14:27:09+02:00
 title: Pourquoi je n'ai pas conservé whos.amung.us
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - analytics
   - web

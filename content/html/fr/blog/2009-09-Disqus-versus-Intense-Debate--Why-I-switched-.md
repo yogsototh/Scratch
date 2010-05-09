@@ -3,6 +3,8 @@ menupriority:   1
 kind:           article
 created_at:           2009-09-28T10:58:20+02:00
 title: Disqus contre Intense Debate (pourquois j'ai changé)
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
   - disqus
   - intense debate

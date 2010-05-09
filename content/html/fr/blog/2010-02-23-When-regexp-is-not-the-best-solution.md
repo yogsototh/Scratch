@@ -4,6 +4,8 @@ menupriority:   1
 kind:           article
 created_at:           2010-02-23T10:09:52+02:00
 title: Quand se passer des expressions régulières ?
+author_name: Yann Esposito
+author_uri: yannesposito.com
 tags:
     - programmation
     - regexp
