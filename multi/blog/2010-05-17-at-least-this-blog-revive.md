@@ -11,7 +11,7 @@ tags:
   - blog
 -----
 en: Hi all!
-Bonjour à tous !
+fr: Bonjour à tous !
 
 en: > The more you wait to do something, the more difficult it is to start doing it.
 fr: > ...plus on retarde quelque chose, plus il devient difficile de s'y mettre...
@@ -44,7 +44,7 @@ fr: J'ai aussi fini d'adapter mon site à la dernière version de `nanoc`. La pa
 en: I also have a *real* life. I enjoyed some vacancies with my family. 
 fr: J'ai aussi une *vrai* vie. J'ai passé quelques moments agréables avec ma famille et des amis.
 
-en: I work with [luc](http://www.lucarea.net) on a simple ruby REST/JSON/API oriented framework. It works fairly well, with really few bug until now. We planify to make a simple todolist tutorial. May be in two to three blog posts. This framework is not public for now. It will certainly be after we'll create some simple web service with it and made a nice website for it.
+en: I work with [Luc](http://www.lucarea.net) on a simple ruby REST/JSON/API oriented framework. It works fairly well, with really few bug until now. We planify to make a simple todolist tutorial. May be in two to three blog posts. This framework is not public for now. It will certainly be after we'll create some simple web service with it and made a nice website for it.
 fr: J'ai travaillé avec [luc](http://www.lucarea.net) sur un framework REST/JSON orienté API écrit en ruby. Il fonctionne assez bien, avec très peu de bug jusqu'ici. Nous espérons pouvoir écrire un tutoriel de todolist. Peut-être en deux ou trois posts. Ce framework n'est pas encore public. Il le deviendra certainement lorsque nous aurons fini d'écrire une application web et que nous aurons fait un joli site pour lui.
 
 en: Then what I plan to do from now:

@@ -10,7 +10,6 @@ tags:
   - blog
 -----
 Hi all!
-Bonjour à tous !
 
 > The more you wait to do something, the more difficult it is to start doing it.
 {: cite="http://www.madore.org/~david/weblog/2010-05.html#d.2010-05-12.1752" }
@@ -33,7 +32,7 @@ I also finished to update my blog engine to nanoc3. The difficult part was to ha
 
 I also have a *real* life. I enjoyed some vacancies with my family. 
 
-I work with [luc](http://www.lucarea.net) on a simple ruby REST/JSON/API oriented framework. It works fairly well, with really few bug until now. We planify to make a simple todolist tutorial. May be in two to three blog posts. This framework is not public for now. It will certainly be after we'll create some simple web service with it and made a nice website for it.
+I work with [Luc](http://www.lucarea.net) on a simple ruby REST/JSON/API oriented framework. It works fairly well, with really few bug until now. We planify to make a simple todolist tutorial. May be in two to three blog posts. This framework is not public for now. It will certainly be after we'll create some simple web service with it and made a nice website for it.
 
 Then what I plan to do from now:
 
