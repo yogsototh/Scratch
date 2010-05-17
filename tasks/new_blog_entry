@@ -18,7 +18,9 @@ basefilename="$( print $title | perl -pe 'chomp(); s#ç#c#g; s#àâ#a#g; s#éè�
 
 # construct the final filename
 yearmonthday=$( date "+%Y-%m-%d" )
+linkname="$root/latest.md"
 filename="$root/multi/blog/${yearmonthday}-$basefilename.md"
+[[ ! -d ${filename:h} ]] && mkdir -p ${filename:h}
 dirname="$root/output/Scratch/img/blog/${yearmonthday}-${basefilename}"
 
 [[ -e $filename ]] && {
@@ -49,5 +51,5 @@ ENDFORMAT
 
 print "imagedir = $dirname"
 mkdir $dirname
-
-vi $filename
+ln -sf $filename $linkname
+vim $linkname
