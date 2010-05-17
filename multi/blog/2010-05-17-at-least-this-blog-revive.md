@@ -13,8 +13,9 @@ tags:
 en: Hi all!
 Bonjour à tous !
 
-en: > The longer you wait to make something, the more difficult it is to achieve it.
-fr: > Plus on reporte quelque chose à faire, plus il est difficile de le faire.
+en: > The more you wait to do something, the more difficult it is to start doing it.
+fr: > ...plus on retarde quelque chose, plus il devient difficile de s'y mettre...
+{: cite="http://www.madore.org/~david/weblog/2010-05.html#d.2010-05-12.1752" }
 
 en: I had to write another post for this blog. I had added many article idea in my todolist. But, I made many other things, and I've always said (until now), I'll do this later. What changed my mind is the haunt of this simple remark about how to be productive in programming. 
 en: > Stop write `TODO` in your code and make it now!  
@@ -25,8 +26,8 @@ fr: > Arrétez d'écrire des `TODO` dans votre code est faites le maintenant !
 fr: > Vous serez surpris de l'efficacité de cette mesure.
 
 en: In short:
-fr: En résumé
-> **Just do it**
+fr: En résumé :
+> **Just do it!**
 
 en: Finally I'll certainly write blog post more often for a short period of time.
 fr: Finallement j'écrirais plus souvent ces derniers temps.

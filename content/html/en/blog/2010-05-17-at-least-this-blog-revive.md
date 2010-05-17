@@ -12,8 +12,8 @@ tags:
 Hi all!
 Bonjour à tous !
 
-> The longer you wait to make something, the more difficult it is to achieve it.
-> <div class="ref">David Malore</div>
+> The more you wait to do something, the more difficult it is to start doing it.
+{: cite="http://www.madore.org/~david/weblog/2010-05.html#d.2010-05-12.1752" }
 
 I had to write another post for this blog. I had added many article idea in my todolist. But, I made many other things, and I've always said (until now), I'll do this later. What changed my mind is the haunt of this simple remark about how to be productive in programming. 
 > Stop write `TODO` in your code and make it now!  
@@ -21,7 +21,7 @@ I had to write another post for this blog. I had added many article idea in my t
 
 
 In short:
-> **Just do it**
+> **Just do it!**
 
 Finally I'll certainly write blog post more often for a short period of time.
 

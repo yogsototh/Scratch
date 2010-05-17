@@ -12,16 +12,16 @@ tags:
 -----
 Bonjour à tous !
 
-> Plus on reporte quelque chose à faire, plus il est difficile de le faire.
-> <div class="ref">David Malore</div>
+> ...plus on retarde quelque chose, plus il devient difficile de s'y mettre...
+{: cite="http://www.madore.org/~david/weblog/2010-05.html#d.2010-05-12.1752" }
 
 
 Je devais écrire d'autres articles pour ce blog. J'ai noté plein d'idées dans mes *todolist*. Mais j'avais pas mal d'autres choses à faire. Et jusqu'ici, j'ai toujours dit &laquo;je le ferai plus tard&raquo;.
 > Arrétez d'écrire des `TODO` dans votre code est faites le maintenant !  
 > Vous serez surpris de l'efficacité de cette mesure.
 
-En résumé
-> **Just do it**
+En résumé :
+> **Just do it!**
 
 Finallement j'écrirais plus souvent ces derniers temps.
 
