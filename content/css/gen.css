@@ -550,3 +550,9 @@ h1 > .date
 #next_before_articles a
   color: #000 !important
   :font-size .9em
+
+blockquote
+  :font
+    :style italic
+  :background-image url("/Scratch/css/img/sombre10percent.png")
+  :padding .5em 1em

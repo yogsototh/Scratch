@@ -115,7 +115,8 @@
 .shadow,
 .return a,
 #liens ul li a:hover,
-#liens ul li.active
+#liens ul li.active,
+blockquote
   +smallround
 
 img
