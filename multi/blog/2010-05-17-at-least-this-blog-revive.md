@@ -4,7 +4,7 @@ menupriority:   1
 kind:           article
 created_at:     2010-05-17T13:25:51+02:00
 fr: title: Je reviens à la vie !
-title: I live again!
+en: title: I live again!
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
@@ -21,13 +21,13 @@ en: I had to write another post for this blog. I had added many article idea in 
 en: > Stop write `TODO` in your code and make it now!  
 en: > You'll be surprised by the results.
 
-fr: Je devais écrire d'autres articles pour ce blog. J'ai noté plein d'idées dans mes *todolist*. Mais j'avais pas mal d'autres choses à faire. Et jusqu'ici, j'ai toujours dit &laquo;je le ferai plus tard&raquo;.
+fr: Je devais écrire d'autres articles pour ce blog. J'ai noté plein d'idées dans mes *todolist*. Mais j'avais pas mal d'autres choses à faire. Et jusqu'ici, j'ai toujours dit &laquo;je le ferai plus tard&raquo;. Ce qui m'a fait agir, c'est la petite réflexion que j'avais lu une fois.
 fr: > Arrétez d'écrire des `TODO` dans votre code est faites le maintenant !  
 fr: > Vous serez surpris de l'efficacité de cette mesure.
 
 en: In short:
 fr: En résumé :
-> **Just do it!**
+> **Just do it!** ou **Juste fait le** comme auraient dit les nuls.
 
 en: Finally I'll certainly write blog post more often for a short period of time.
 fr: Finallement j'écrirais plus souvent ces derniers temps.

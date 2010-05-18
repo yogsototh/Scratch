@@ -4,7 +4,6 @@ menupriority:   1
 kind:           article
 created_at:     2010-05-17T13:25:51+02:00
 title: Je reviens à la vie !
-title: I live again!
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
@@ -16,12 +15,12 @@ Bonjour à tous !
 {: cite="http://www.madore.org/~david/weblog/2010-05.html#d.2010-05-12.1752" }
 
 
-Je devais écrire d'autres articles pour ce blog. J'ai noté plein d'idées dans mes *todolist*. Mais j'avais pas mal d'autres choses à faire. Et jusqu'ici, j'ai toujours dit &laquo;je le ferai plus tard&raquo;.
+Je devais écrire d'autres articles pour ce blog. J'ai noté plein d'idées dans mes *todolist*. Mais j'avais pas mal d'autres choses à faire. Et jusqu'ici, j'ai toujours dit &laquo;je le ferai plus tard&raquo;. Ce qui m'a fait agir, c'est la petite réflexion que j'avais lu une fois.
 > Arrétez d'écrire des `TODO` dans votre code est faites le maintenant !  
 > Vous serez surpris de l'efficacité de cette mesure.
 
 En résumé :
-> **Just do it!**
+> **Just do it!** ou **Juste fait le** comme auraient dit les nuls.
 
 Finallement j'écrirais plus souvent ces derniers temps.
 

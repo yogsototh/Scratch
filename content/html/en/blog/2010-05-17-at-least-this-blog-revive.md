@@ -20,7 +20,7 @@ I had to write another post for this blog. I had added many article idea in my t
 
 
 In short:
-> **Just do it!**
+> **Just do it!** ou **Juste fait le** comme auraient dit les nuls.
 
 Finally I'll certainly write blog post more often for a short period of time.
 
