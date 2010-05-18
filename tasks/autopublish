@@ -17,4 +17,4 @@ fi
 # pull updates from webroot
 # regen all website
 # publish to mobile me
-cd $publishdir && git pull && nanoc co && ./tasks/publish
+cd $publishdir && git pull && ./tasks/recompile && ./tasks/publish
