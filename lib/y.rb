@@ -59,6 +59,15 @@ module Nanoc3::Filters
         end
     end
 
+    class Footnotes < Nanoc3::Filter
+        identifiers :footnotes
+        def hr_before_footnote(content)
+            content.gsub(/<div class="footnotes">/) { %{<hr/>#{$&}} }
+        end
+        def run(content, params={})
+            allExceptCode( :hr_before_footnote, content )
+        end
+    end
 
     class FirstHierarchy < Nanoc3::Filter
         identifiers :firsthi
@@ -101,6 +110,7 @@ module Nanoc3::Filters
             { 
                     'WebDav' => 'Web-based Distributed Authoring and Versionning',
                     'cms' => 'Content Management System',
+                    'xml' => 'eXtended Markup Language',
             }.each do |keyword,abbreviation|
                 text=text.gsub(/\b#{keyword}\b/i) do
                    %{<abbr title="#{abbreviation}"><span class="sc">#{keyword}</span></abbr>}

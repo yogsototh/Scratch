@@ -53,6 +53,7 @@ compile '/html/*' do
   filter :frenchspace
   filter :ytypo
   # filter :yabbreviations
+  filter :footnotes
 
   layout 'default' unless item[:layout] == "none"
 end

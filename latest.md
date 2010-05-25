@@ -1,1 +1,1 @@
-/Users/esposito/Sites/webroot/multi/blog/2010-05-19-How-to-cut-HTML-and-repair-it.md
+/Users/esposito/Sites/webroot/multi/blog/2010-05-24-Trees--Pragmatism-and-Formalism.md
