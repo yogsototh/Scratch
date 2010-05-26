@@ -17,6 +17,36 @@ fr:  - arbre
 fr:  - théorie
 fr:  - mathématiques
 -----
+
+begindiv(intro)
+
+<abbr title="Too Long; Don't Read:">TL;DR:</abbr> 
+
+- I tried to program a simple filter
+- Was blocked 2 days
+- Then stopped working like an engineer monkey
+- Used a pen and a sheet of paper.
+- Made some math.
+- Crushed the problem in 10 minutes
+- Conclusion: The pragmatism shouldn't mean "never use theory".
+
+enddiv
+
+## Abstract (longer than <small><abbr title="Too Long; Don't Read:">TL;DR:</abbr></small>)
+
+For my job, I needed to resolve a problem. It first seems not too hard. 
+Then I started working directly on my program. 
+I entered in a try &amp; repair loop.
+Unfortunately, I stay blocked in that loop for 2 days. 
+At each turn, I believed I was almost at the solution. 
+And this is why, I just said:
+
+> Just a simple thing to repair and that should be done.
+
+Unfortunately
+
+newcorps
+
 en: # First: my experience
 fr: # L'anecdote
 
@@ -55,16 +85,19 @@ And the destination format was in the following general format:
 <code class="xml">
 <rubrique>
     <value>
-        <item name="tag1"><value>value1</value></item>
-        <item name="tag2"><value>value2</value></item>
+        <item name="tag1">
+            <value>value1</value>
+        </item>
+        <item name="tag2">
+            <value>value2</value>
+        </item>
         ...
         <item name="menu">
-          <rubrique>
-            ...
-          </rubrique>
-          <rubrique>
-            ...
-          </rubrique>
+            <value>
+                <rubrique>
+                  ...
+                </rubrique>
+            </value>
         </menu>
     </value>
     <value>
@@ -95,7 +128,7 @@ What was my behaviour (workflow)?
 6. Resolve the bug
 7. Go to the third step
 
-And this is the *standard* workflow for computer engineer. The flaw came from the first step. 
+And this is a *standard* workflow for computer engineer. The flaw came from the first step. 
 I thought about how to resolve the problem but with the eyes of a *pragmatic engineer*. I was saying:
 
 > That should be a simple perl search and replace program.  
