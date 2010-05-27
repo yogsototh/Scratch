@@ -62,20 +62,20 @@ I had to face a problem of the same kind at my job. The problem was simple to th
 The source <sc>xml</sc> was in the following general format:
 
 <code class="xml">
-<menu>
-    <content>
+<rubrique>
+    <contenu>
         <tag1>value1</tag1>
         <tag2>value2</tag2>
         ...
-    </content>
+    </contenu>
     <enfant>
-        <menu>
+        <rubrique>
             ...
-        </menu>
+        </rubrique>
         ...
-        <menu>
+        <rubrique>
             ...
-        </menu>
+        </rubrique>
     </enfant>
 </menu>
 </code>
@@ -83,28 +83,29 @@ The source <sc>xml</sc> was in the following general format:
 And the destination format was in the following general format:
 
 <code class="xml">
-<rubrique>
+<item name="Menu">
     <value>
-        <item name="tag1">
-            <value>value1</value>
-        </item>
-        <item name="tag2">
-            <value>value2</value>
-        </item>
-        ...
         <item name="menu">
             <value>
-                <rubrique>
-                  ...
-                </rubrique>
+                <item name="tag1">
+                    <value>value1</value>
+                </item>
+                <item name="tag2">
+                    <value>value2</value>
+                </item>
+                ...
+                <item name="menu">
+                    <value>
+                        ...
+                    </value>
+                    <value>
+                        ...
+                    </value>
+                </item>
             </value>
-        </menu>
+        </item>
     </value>
-    <value>
-        ...
-    </value>
-</rubrique>
-</menu>
+</item>
 </code>
 
 At first sight I believed it will be easy. I was so certain it will be easy that I fixed to myself the following rules:
@@ -141,11 +142,53 @@ Let's have a look at the *engineer workflow*. In fact, it is a simple algorithm 
 ## spoiler
 
 In the end, the program should be a simple list of search and replace:
-<code>
+<code class="perl">
 s/something/something else/g 
 </code>
 
 It is not only possible but I believe it is the best way of doing this.
+
+# Solution
+
+Transform this tree:
+
+<pre>
+R - C - tag1
+  \   \ tag2
+   \
+    E - R - C - tag1
+      \   \   \ tag2
+       \   E ...
+        R - C - tag1
+          \   \ tag2
+           E ...
+</pre>
+
+to this tree:
+
+<code class="Text">
+                tag1
+              /
+M - V - M - V - tag2     tag1
+              \        / 
+                M -- V - tag2
+                  \    \ 
+                   \     M
+                    \     tag1
+                     \  / 
+                      V - tag2
+                        \ 
+                          M
+</code>
+
+using only an acyclic deterministic tree transducer:
+
+
+>    C -> \varepsilon
+>    E -> R
+>    R -> V
+
+That is all.
 
 # conclusion
 
