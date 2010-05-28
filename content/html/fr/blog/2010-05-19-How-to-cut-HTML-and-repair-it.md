@@ -8,11 +8,10 @@ subtitle: et comment s'en sortir sans parseur ?
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
- - arbre
-  - HTML
-  - script
-  - ruby
-
+    - arbre
+    - HTML
+    - script
+    - ruby
 -----
 
 Sur ma page d'accueil vous pouvez voir la liste des mes derniers articles avec le début de ceux-ci. Pour arriver à faire ça, j'ai besoin de couper le code XHTML de mes pages en plein milieu. Il m'a donc fallu trouver un moyen de les réparer.

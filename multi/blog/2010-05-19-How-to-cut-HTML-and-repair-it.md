@@ -10,12 +10,11 @@ en: subtitle: and how to do it without any parsor?
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
-fr:  - arbre
-en:  - tree
-  - HTML
-  - script
-  - ruby
-
+fr:     - arbre
+en:     - tree
+    - HTML
+    - script
+    - ruby
 -----
 
 en: For my main page, you can see, a list of my latest blog entry. And you have the first part of each article. To accomplish that, I needed to include the begining of the entry and to cut it somewhere. But now, I had to repair this cutted HTML.
