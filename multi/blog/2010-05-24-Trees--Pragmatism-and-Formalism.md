@@ -166,7 +166,7 @@ R - C - tag1
 
 to this tree:
 
-<code class="Text">
+<pre>
                 tag1
               /
 M - V - M - V - tag2     tag1
@@ -179,7 +179,7 @@ M - V - M - V - tag2     tag1
                       V - tag2
                         \ 
                           M
-</code>
+<pre>
 
 using only an acyclic deterministic tree transducer:
 
