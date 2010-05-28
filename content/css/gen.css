@@ -561,3 +561,6 @@ blockquote
 #tagcloud a:link,
 #tagcloud a:visited
   color: #000
+.archive h4
+  font-size: 2em
+  text-align: center

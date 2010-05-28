@@ -53,7 +53,7 @@ def generateBlogSubMenu(language)
     end
     res<<=%{</ul><script type="text/javascript">$('#archives_#{year}').hide()</script>}
     if ! liste.empty?
-        '<div id="sousliens">'+res+'</div>'
+        '<div id="sousliens" class="archive">'+res+'</div>'
     else
         return
     end
@@ -68,10 +68,6 @@ def generateSubMenu()
 
     if depth == 0
         return
-    end
-
-    if @item[:kind].to_s == "blog"
-        return generateBlogSubMenu
     end
 
     if @item.children.length == 0 and not @item.parent[:kind].to_s == "blog"
