@@ -3,6 +3,7 @@
 title: Welcome
 title: Que sont les flux RSS ?
 subtitle: Comment recevoir des news sans se fatiguer
+noSubMenu: true
 isHidden: true
 -----
 
