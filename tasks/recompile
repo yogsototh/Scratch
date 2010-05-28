@@ -14,7 +14,7 @@ function join {
   print $res
 }
 
-
+typeset -a priority_list
 for fic in multi/**/*(.); do
     for language in $languages; do
         dest=content/html/$language/${fic#multi/}
@@ -29,8 +29,10 @@ for fic in multi/**/*(.); do
                 exclu=( $exclu $l )
             done
             awk '! /^('$exclu'): / { sub(/^'$language': /,""); print $0 }' < $fic > $dest
+            priority_list=( $priority_list ${dest#content/} )
         fi
     done
 done
 
-nanoc co
+print $priority_list
+nanoc co $priority_list
