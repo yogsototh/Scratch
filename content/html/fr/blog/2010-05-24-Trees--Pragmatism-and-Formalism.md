@@ -8,52 +8,68 @@ subtitle: Quand la théorie est plus pratique que la pratique
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
- - arbre
- - théorie
- - mathématiques
+    - arbre
+    - théorie
+    - mathématiques
+    - regexp
+    - script
 -----
 
 begindiv(intro)
+<% tlal=%{<abbr title="Trop Long À Lire"><sc>tlàl</sc></abbr>} %>
 
-<abbr title="Too Long; Don't Read:">TL;DR:</abbr> 
 
-- I tried to program a simple filter
-- Was blocked 2 days
-- Then stopped working like an engineer monkey
-- Used a pen and a sheet of paper.
-- Made some math.
-- Crushed the problem in 10 minutes
-- Conclusion: The pragmatism shouldn't mean "never use theory".
+<%=tlal%> :
 
+- J'ai essayé de programmer un simple filtre ;
+- J'ai été bloqué pendant deux jours ;
+- J'ai arrêté de penser comme un robot ;
+- J'ai utilisé un papier et un stylo ;
+- J'ai fait un peu de maths ;
+- J'ai résolu le problème en 10 minutes ;
+- Conclusion: Pragmatisme n'est pas : &laquo;n'utilisez jamais la théorie&raquo;.
 enddiv
 
-## Abstract (longer than <small><abbr title="Too Long; Don't Read:">TL;DR:</abbr></small>)
+## Résumé (plus long que le  <%=tlal%>)
 
-For my job, I needed to resolve a problem. It first seems not too hard. 
-Then I started working directly on my program. 
-I entered in a try &amp; repair loop.
-Unfortunately, I stay blocked in that loop for 2 days. 
-At each turn, I believed I was almost at the solution. 
-And this is why, I just said:
 
-> Just a simple thing to repair and that should be done.
+Je devais résoudre un problème à mon travail. Au début cela
+semblait assez facile. J'ai donc commencé à programmer
+tout de suite. Je suis alors entré dans un cercle infernal d'essais
+et de réparations. Voilà à quoi ressemblait cet étrange état
+de boucle infini :
 
-Unfortunately
+
+>   -- Plus que ça a réparer et ça devrait être bon.  
+>   -- Très bien, maintenant ça doit marcher.  
+>   -- Oui !!  
+>   -- Ah mince! J'ai oublié ce détail...  
+>   `répéter jusqu'à la mort`
+
+Après deux jours à me prendre pour [Sisyphe](http://fr.wikipedia.org/wiki/Sisyphe), je me suis arrêté pour repenser le problème.
+J'ai pris un stylo et une feuille de papier. Je me suis souvenu de de ce que j'avais appris sur les arbres pendant mon doctorat.
+Finalement, le problème fut résolu en moins de 20 minutes.
+
+Je pense que la leçon à retenir de cette expérience est de se souvenir que la méthodologie la plus efficace pour résoudre ce problème *pragamtique* était la méthode *théorique*. 
+Et par conséquent, les arguments qui opposent la science et la théories au pragmatisme et à l'efficacité sont faux.
 
 newcorps
 
 # L'anecdote
 
-Apparently 90% of programmer are unable to program a binary search without bug. 
-The algorithm is well known and easy to understand. 
-However it is difficult to program it without any flaw. 
-I participated to [this contest](http://reprog.wordpress.com/2010/04/19/are-you-one-of-the-10-percent/).
-And you can see the [results here](http://reprog.wordpress.com/2010/04/21/binary-search-redux-part-1/)[^1].
-I had to face a problem of the same kind at my job. The problem was simple to the start. Simply transform an <sc>xml</sc> from one format to another.
 
-[^1]: Hopefully I am in the 10% who had given a bug free implementation.
+Apparemment 90% des programmeurs sont incapable de programmer une recherche binaire sans faire de bug.
+L'algorithme est pourtant connu et facile à comprendre.
+Cependant, il est difficile à programmer sans bug.
+J'ai participé à [ce concours](http://reprog.wordpress.com/2010/04/19/are-you-one-of-the-10-percent/).
+Vous pouvez voir les [résultats ici](http://reprog.wordpress.com/2010/04/21/binary-search-redux-part-1/)[^1].
+J'ai dû faire face à un problème similaire à mon travail.
+Il paraissait simple au départ.
+Transformer un <sc>xml</sc> d'un format à un autre.
 
-The source <sc>xml</sc> was in the following general format:
+[^1]: Normalement, je fais parti des 10% qui ont fourni une implémentation sans bug.
+
+Voici le format général du <sc>xml</sc> source :
 
 <code class="xml">
 <rubrique>
@@ -74,7 +90,7 @@ The source <sc>xml</sc> was in the following general format:
 </menu>
 </code>
 
-And the destination format was in the following general format:
+et le format d'arrivé est celui-ci :
 
 <code class="xml">
 <item name="Menu">
@@ -102,36 +118,39 @@ And the destination format was in the following general format:
 </item>
 </code>
 
-At first sight I believed it will be easy. I was so certain it will be easy that I fixed to myself the following rules:
+À première vue, cela m'a paru simple. J'étais certain de pouvoir y arriver en me fixant les règles suivantes :
 
-1. do not use <sc>xslt</sc>
-2. avoid the use of an <sc>xml</sc> parser
-3. resolve the problem using a simple perl script[^2]
+1. ne pas utiliser <sc>xslt</sc> ;
+2. ne pas utiliser de parseur <sc>xml</sc> ;
+3. résoudre le problème en utilisant un simple script perl
 
-You can try if you want. If you attack the problem directly opening an editor, I assure you, it will certainly be not so simple.
-I can tell that, because it's what I've done. And I must say I lost almost a complete day at work trying to resolve this. Each time, I made a try, each time I was close, but not on the solution. There was also, many small problems around that make me lose more than two days for this problem.
+Vous pouvez essayer si vous le souhaitez. Si vous attaquez ce problème directement en écrivant le programme, ce ne sera certainement pas si simple.
+Je peux le dire, parce que c'est ce que j'ai fait.
+Et je dois dire que j'ai perdu une journée de travail complète en m'y prenant de la sorte.
+En réalité, il y avait pas mal de petits détails dont je ne parle pas qui m'ont induis en erreur et qui m'ont fait perdre encore plus de temps.
 
-Why after two days did I was unable to resolve this problem which seems so simple?
+Pourquoi étais-je incapable de résoudre se problème alors qu'il avait l'air 
 
-What was my behaviour (workflow)?
+Voici comment je m'y prenais :
 
-1. Think
-2. Write the program
-3. Try the program 
-4. Verify the result
-5. Found a bug
-6. Resolve the bug
-7. Go to the third step
 
-And this is a *standard* workflow for computer engineer. The flaw came from the first step. 
-I thought about how to resolve the problem but with the eyes of a *pragmatic engineer*. I was saying:
+1. Réfléchir
+2. Écrire le programme
+3. Essayer le programme
+4. Vérifier les résultats
+5. Trouver un bug
+6. Résoudre le bug
+7. Reprendre à l'étape 3
 
-> That should be a simple perl search and replace program.  
-> Let's begin to write code
+Il s'agissait d'une méthode de travail standard pour un ingénieur en informatique. L'erreur venait de la première étape.
+J'ai d'abord pensé à comment résoudre le problème mais avec des yeux d'*ingéinieur pragmatique*. Je me suis simplement dit :
 
-This is the second sentence that was plainly wrong. Because of old external errors I started in the wrong direction. And the workflow did not work from this entry point.
+> Ça à l'air de pouvoir se résouvre avec un petit script de *search&amp;replace* en perl
+> Commençons à écrire le code maintenant.
 
-Let's have a look at the *engineer workflow*. In fact, it is a simple algorithm which start from some point, and ameliorate himself at each step until it reach a solution. The key point is, you have a bad start, you can potentially never reach a solution point.
+C'est la deuxième phrase qui est complètement fausse. Parce que j'avais mal commencé et que cette méthodologie de travail ne fonctionne pas lorsque l'on part vraiment mal.
+
+## La réflexion
 
 ## spoiler
 
@@ -146,41 +165,61 @@ It is not only possible but I believe it is the best way of doing this.
 
 Transform this tree:
 
-<pre>
+<pre class="twilight">
 R - C - tag1
-  \   \ tag2
-   \
-    E - R - C - tag1
-      \   \   \ tag2
-       \   E ...
-        R - C - tag1
-          \   \ tag2
-           E ...
+  \   \
+   \    tag2
+    E -- R - C - tag1
+      \   \    \
+       \   \     tag2
+        \    E ...
+         R - C - tag1 
+           \    \
+            \     tag2
+             E ...
 </pre>
 
 to this tree:
 
-<pre>
+<pre class="twilight">
                 tag1
               /
-M - V - M - V - tag2     tag1
-              \        / 
-                M -- V - tag2
-                  \    \ 
-                   \     M
+M - V - M - V - tag2      tag1
+              \         / 
+                M --- V - tag2
+                  \     \ 
+                   \      M
                     \     tag1
                      \  / 
                       V - tag2
                         \ 
                           M
-<pre>
+</pre>
 
 using only an acyclic deterministic tree transducer:
 
 
->    C -> \varepsilon
->    E -> R
->    R -> V
+>    C -> &epsilon;  
+>    E -> R  
+>    R -> V  
+
+Wich can be traduced by the following simple regular expression expression:
+
+<code class="perl">
+s/C//g
+s/E/M/g
+s/R/V/g
+</code>
+
+Adapted to XML it becomes:
+
+<code class="perl">
+s!</?contenu>!!g
+s!<enfant>!<item name="menu">!g
+s!</enfant>!<item>!g
+s!</?rubrique>!<value>!g
+s!</rubrique>!</value>!g
+</code>
 
 That is all.
 

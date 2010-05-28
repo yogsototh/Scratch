@@ -8,37 +8,49 @@ subtitle: When theory is more efficient than practice
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
- - tree
- - theory
- - mathematics
+    - tree
+    - theory
+    - mathematics
+    - regexp
+    - script
 -----
 
 begindiv(intro)
+<% tldr=%{<abbr title="Too Long; Don't Read"><sc>tl;dr</sc></abbr>} %>
 
-<abbr title="Too Long; Don't Read:">TL;DR:</abbr> 
+<%=tldr%>: 
 
 - I tried to program a simple filter
 - Was blocked 2 days
 - Then stopped working like an engineer monkey
-- Used a pen and a sheet of paper.
+- Used a pen and a sheet of paper
 - Made some math.
 - Crushed the problem in 10 minutes
 - Conclusion: The pragmatism shouldn't mean "never use theory".
 
 enddiv
 
-## Abstract (longer than <small><abbr title="Too Long; Don't Read:">TL;DR:</abbr></small>)
+## Abstract (longer than <%=tldr%>)
 
 For my job, I needed to resolve a problem. It first seems not too hard. 
 Then I started working directly on my program. 
-I entered in a try &amp; repair loop.
-Unfortunately, I stay blocked in that loop for 2 days. 
-At each turn, I believed I was almost at the solution. 
-And this is why, I just said:
+I entered in the *infernal*: *try &amp; repair loop*.
+Each step was like:
 
-> Just a simple thing to repair and that should be done.
 
-Unfortunately
+>   -- Just this thing to repair and that should be done.  
+>   -- OK, now that should just work.  
+>   -- Yeah!!!  
+>   -- Oops! I forgotten that...  
+>   `repeat until death`
+
+
+After two days of this [Sisyphus](http://fr.wikipedia.org/wiki/Sisyphe) work, I finally just stopped to rethink the problem.
+I took a pen, a sheet of paper. I simplified the problem, reminded what I learned during my Ph.D. about trees.
+Finally, the problem was crushed in less than 20 minutes.
+
+I believe the important lesson is to remember that the most efficient methodology to resolve this *pragmatic* problem was the *theoretical* one. 
+And therefore, argues opposing science, theory to pragmatism and efficiency are fallacies.
 
 newcorps
 
@@ -50,6 +62,7 @@ However it is difficult to program it without any flaw.
 I participated to [this contest](http://reprog.wordpress.com/2010/04/19/are-you-one-of-the-10-percent/).
 And you can see the [results here](http://reprog.wordpress.com/2010/04/21/binary-search-redux-part-1/)[^1].
 I had to face a problem of the same kind at my job. The problem was simple to the start. Simply transform an <sc>xml</sc> from one format to another.
+
 
 [^1]: Hopefully I am in the 10% who had given a bug free implementation.
 
@@ -74,7 +87,7 @@ The source <sc>xml</sc> was in the following general format:
 </menu>
 </code>
 
-And the destination format was in the following general format:
+and the destination format was in the following general format:
 
 <code class="xml">
 <item name="Menu">
@@ -109,7 +122,7 @@ At first sight I believed it will be easy. I was so certain it will be easy that
 3. resolve the problem using a simple perl script[^2]
 
 You can try if you want. If you attack the problem directly opening an editor, I assure you, it will certainly be not so simple.
-I can tell that, because it's what I've done. And I must say I lost almost a complete day at work trying to resolve this. Each time, I made a try, each time I was close, but not on the solution. There was also, many small problems around that make me lose more than two days for this problem.
+I can tell that, because it's what I've done. And I must say I lost almost a complete day at work trying to resolve this. There was also, many small problems around that make me lose more than two days for this problem.
 
 Why after two days did I was unable to resolve this problem which seems so simple?
 
@@ -121,17 +134,18 @@ What was my behaviour (workflow)?
 4. Verify the result
 5. Found a bug
 6. Resolve the bug
-7. Go to the third step
+7. Go to step 3.
 
-And this is a *standard* workflow for computer engineer. The flaw came from the first step. 
+
+This was a *standard* workflow for computer engineer. The flaw came from the first step. 
 I thought about how to resolve the problem but with the eyes of a *pragmatic engineer*. I was saying:
 
 > That should be a simple perl search and replace program.  
 > Let's begin to write code
 
-This is the second sentence that was plainly wrong. Because of old external errors I started in the wrong direction. And the workflow did not work from this entry point.
+This is the second sentence that was plainly wrong. I started in the wrong direction. And the workflow did not work from this entry point.
 
-Let's have a look at the *engineer workflow*. In fact, it is a simple algorithm which start from some point, and ameliorate himself at each step until it reach a solution. The key point is, you have a bad start, you can potentially never reach a solution point.
+## Thinking
 
 ## spoiler
 
@@ -146,41 +160,61 @@ It is not only possible but I believe it is the best way of doing this.
 
 Transform this tree:
 
-<pre>
+<pre class="twilight">
 R - C - tag1
-  \   \ tag2
-   \
-    E - R - C - tag1
-      \   \   \ tag2
-       \   E ...
-        R - C - tag1
-          \   \ tag2
-           E ...
+  \   \
+   \    tag2
+    E -- R - C - tag1
+      \   \    \
+       \   \     tag2
+        \    E ...
+         R - C - tag1 
+           \    \
+            \     tag2
+             E ...
 </pre>
 
 to this tree:
 
-<pre>
+<pre class="twilight">
                 tag1
               /
-M - V - M - V - tag2     tag1
-              \        / 
-                M -- V - tag2
-                  \    \ 
-                   \     M
+M - V - M - V - tag2      tag1
+              \         / 
+                M --- V - tag2
+                  \     \ 
+                   \      M
                     \     tag1
                      \  / 
                       V - tag2
                         \ 
                           M
-<pre>
+</pre>
 
 using only an acyclic deterministic tree transducer:
 
 
->    C -> \varepsilon
->    E -> R
->    R -> V
+>    C -> &epsilon;  
+>    E -> R  
+>    R -> V  
+
+Wich can be traduced by the following simple regular expression expression:
+
+<code class="perl">
+s/C//g
+s/E/M/g
+s/R/V/g
+</code>
+
+Adapted to XML it becomes:
+
+<code class="perl">
+s!</?contenu>!!g
+s!<enfant>!<item name="menu">!g
+s!</enfant>!<item>!g
+s!</?rubrique>!<value>!g
+s!</rubrique>!</value>!g
+</code>
 
 That is all.
 
