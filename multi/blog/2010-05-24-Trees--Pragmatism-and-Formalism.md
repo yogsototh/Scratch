@@ -215,33 +215,51 @@ fr: C'est la deuxième phrase qui est complètement fausse. Parce que j'avais ma
 en: ## Think
 fr: ## Réfléchir
 
-After some times, I just stopped to work. Tell myself *"it is enough, now, I must finish it!"*.
-I took a sheet of paper, a pen and began to write down some trees.
+en: After some times, I just stopped to work. Tell myself *"it is enough, now, I must finish it!"*.
+en: I took a sheet of paper, a pen and began to draw some trees.
+fr: Après un certain temps, j'ai arrêté de programmer et je me suis dit : &laquo;Maintenant, ça suffit !&raquo;.
+fr: J'ai pris une feuille et un stylo et j'ai commencé à dessiner des arbres.
 
-I first renamed `<item name="Menu">` by simpler name `M` for example.
-I obtained something like:
+en: I began by make by removing most of the verbosity.
+en: I first renamed `<item name="Menu">` by simpler name `M` for example.
+en: I obtained something like:
+fr: J'ai commencer par simplifier un peu en enlevant le maximum de verbiage.
+fr: Tout d'abord en renommant `<item name="Menu">` par un simple `M` par exemple.
+fr: J'ai obtenu quelque chose comme :
 
 <%= blogimage('formal_DCR_tree.png', 'The source tree') %>
 
-and
+en: and
+fr: et
 
 <%= blogimage('formal_Menu_tree.png', 'The destination tree') %>
 
 
-And I made myself the following reflexion:
+en: Then I made myself the following reflexion:
+fr: Puis, je me suis fait la réflexion suivante :
 
-Considering Tree Edit Distance, each unitary transformation of tree correspond to a simple search and replace on my XML source.
-I did a program which generate automatically the weight in a matrix of each edit distance.
-We consider three atomic transformations on trees:
+en: Considering Tree Edit Distance, each unitary transformation of tree correspond to a simple search and replace on my <sc>xml</sc> source[^nb].
+en: We consider three atomic transformations on trees:
+fr: Dans les distances d'éditions sur les arbres, chaque opération atomique correspond à un simple *search and replace* sur mon fichier <sc>xml</sc> source[^nb].
+fr: On considère trois opérations atomiques sur les arbres :
 
-  - *substitution*: renaming a node
-  - *insertion*: adding a node
-  - *deletion*: remove a node
+en:  - *substitution*: renaming a node
+en:  - *insertion*: adding a node
+en:  - *deletion*: remove a node
+fr:  - *substitution*: renommer un nœud
+fr:  - *insertion*: ajouter un nœud
+fr:  - *délétion*: supprimer un nœud
 
-The particularity with trees, is that, removing a node, do the following:
-all children of this node, became children of its father.
 
-An example:
+en: [^nb]: I did a program which generate automatically the weight in a matrix of each edit distance from data.
+fr: [^nb]: J'ai programmé un outil qui calcule automatiquement le poids de chaque élément des matrices d'édition à partir de données.
+
+en: One of the particularity of atomic transformations on trees, is ; if you remove a node, all children of this node, became children of its father.
+fr: Une des particularité avec les transformations sur les arbres est celle-ci : 
+fr: supprimer un nœud et tous ses enfants deviendront les enfants du père de ce nœud.
+
+en: An example:
+fr: Un exemple:
 
 <pre class="twilight">
 r - x - a
@@ -250,7 +268,8 @@ r - x - a
     y - c   
 </pre>
 
-If you delete the `x` node, you obtain
+en: If you delete the `x` node, you obtain
+fr: Si vous supprimez le nœud `x`, vous obtenez
 
 <pre class="twilight">
     a
@@ -260,7 +279,8 @@ r - b
     y - c   
 </pre>
 
-And look at what it implies when you write it in <sc>xml</sc>:
+fr: And look at what it implies when you write it in <sc>xml</sc>:
+en: Et regardez ce que ça implique quand on l'écrit en <sc>xml</sc> :
 
 <code class="xml">
 <r>
@@ -274,18 +294,22 @@ And look at what it implies when you write it in <sc>xml</sc>:
 </r>
 </code>
 
-Then deleting all `x` nodes is equivalent to pass the <sc>xml</sc> via the following search and replace:
+en: Then deleting all `x` nodes is equivalent to pass the <sc>xml</sc> via the following search and replace script:
+fr: Alors supprimer tous les nœuds `x` revient à faire passer le <sc>xml</sc> à travers le filtre suivant :
 
 <code class="perl">
 s/<\/?x>//g
 </code>
 
-Therefore, if there exists a one state deterministic transducer to transform the source tree to the destination tree.
-I can transform the <sc>xml</sc> from one format to another with just a simple list of search and replace directives.
+en: Therefore, if there exists a one state deterministic transducer which transform my trees ;
+en: I can transform the <sc>xml</sc> from one format to another with just a simple list of search and replace directives.
+fr: Par conséquent, s'il existe un transducteur déterministe à un état qui permet de transformer mes arbres ; 
+fr: je suis capable de transformer le <sc>xml</sc> d'un format à l'autre en utilisant une simple liste de *search and replace*.
 
 # Solution
 
-Transform this tree:
+en: Transform this tree:
+fr: Transformer cet arbre :
 
 <pre class="twilight">
 R - C - tag1
@@ -301,7 +325,8 @@ R - C - tag1
              E ...
 </pre>
 
-to this tree:
+en: to this tree:
+fr: en celui-ci :
 
 <pre class="twilight">
                 tag1
@@ -318,14 +343,17 @@ M - V - M - V - tag2      tag1
                           M
 </pre>
 
-using only an acyclic deterministic tree transducer:
+
+en: can be done using the following one state deterministic tree transducer:
+fr: peut-être fait en utilisant le transducteur déterministe à un état suivant: 
 
 
 >    C -> &epsilon;  
 >    E -> R  
 >    R -> V  
 
-Wich can be traduced by the following simple regular expression expression:
+en: Wich can be traduced by the following simple search and replace directives: 
+fr: Ce qui peut-être traduit par les simples directives Perl suivantes :
 
 <code class="perl">
 s/C//g
@@ -333,7 +361,8 @@ s/E/M/g
 s/R/V/g
 </code>
 
-Adapted to XML it becomes:
+en: Once adapted to <sc>xml</sc> it becomes:
+fr: Une fois adapté au <sc>xml</sc> cela devient :
 
 <code class="perl">
 s%</?contenu>%%g
@@ -343,8 +372,10 @@ s%</?rubrique>%<value>%g
 s%</rubrique>%</value>%g
 </code>
 
-That is all.
+en: That is all.
+fr: Et c'est tout.
 
-# conclusion
+# Conclusion
 
-It should seems a bit paradoxal, but sometimes the most pragmatic approach to a pragmatic problem is to use the theoretical methodology. Not the commonly accepted pragmatic one. This simple experience prove this point.
+en: It should seems a bit paradoxal, but sometimes the most efficient approach to a pragmatic problem is to use the theoretical methodology.
+fr: Même si cela peut sembler paradoxal, parfois la solution la plus efficace à un problème pragmatique est d'utiliser une méthodologie théorique.

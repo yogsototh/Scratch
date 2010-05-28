@@ -51,7 +51,7 @@ J'ai pris un stylo et une feuille de papier. Je me suis souvenu de de ce que j'a
 Finalement, le problème fut résolu en moins de 20 minutes.
 
 Je pense que la leçon à retenir de cette expérience est de se souvenir que la méthodologie la plus efficace pour résoudre ce problème *pragamtique* était la méthode *théorique*. 
-Et par conséquent, les arguments qui opposent la science et la théories au pragmatisme et à l'efficacité sont faux.
+Ça ne signifie pas que la méthode théorique est toujours la meilleure, mais en tout cas, il ne faut pas l'écarter.
 
 newcorps
 
@@ -152,33 +152,36 @@ C'est la deuxième phrase qui est complètement fausse. Parce que j'avais mal co
 
 ## Réfléchir
 
-After some times, I just stopped to work. Tell myself *"it is enough, now, I must finish it!"*.
-I took a sheet of paper, a pen and began to write down some trees.
+Après un certain temps, j'ai arrêté de programmer et je me suis dit : &laquo;Maintenant, ça suffit !&raquo;.
+J'ai pris une feuille et un stylo et j'ai commencé à dessiner des arbres.
 
-I first renamed `<item name="Menu">` by simpler name `M` for example.
-I obtained something like:
+J'ai commencer par simplifier un peu en enlevant le maximum de verbiage.
+Tout d'abord en renommant `<item name="Menu">` par un simple `M` par exemple.
+J'ai obtenu quelque chose comme :
 
 <%= blogimage('formal_DCR_tree.png', 'The source tree') %>
 
-and
+et
 
 <%= blogimage('formal_Menu_tree.png', 'The destination tree') %>
 
 
-And I made myself the following reflexion:
+Puis, je me suis fait la réflexion suivante :
 
-Considering Tree Edit Distance, each unitary transformation of tree correspond to a simple search and replace on my XML source.
-I did a program which generate automatically the weight in a matrix of each edit distance.
-We consider three atomic transformations on trees:
+Dans les distances d'éditions sur les arbres, chaque opération atomique correspond à un simple *search and replace* sur mon fichier <sc>xml</sc> source[^nb].
+On considère trois opérations atomiques sur les arbres :
 
-  - *substitution*: renaming a node
-  - *insertion*: adding a node
-  - *deletion*: remove a node
+ - *substitution*: renommer un nœud
+ - *insertion*: ajouter un nœud
+ - *délétion*: supprimer un nœud
 
-The particularity with trees, is that, removing a node, do the following:
-all children of this node, became children of its father.
 
-An example:
+[^nb]: J'ai programmé un outil qui calcule automatiquement le poids de chaque élément des matrices d'édition à partir de données.
+
+Une des particularité avec les transformations sur les arbres est celle-ci : 
+supprimer un nœud et tous ses enfants deviendront les enfants du père de ce nœud.
+
+Un exemple:
 
 <pre class="twilight">
 r - x - a
@@ -187,7 +190,7 @@ r - x - a
     y - c   
 </pre>
 
-If you delete the `x` node, you obtain
+Si vous supprimez le nœud `x`, vous obtenez
 
 <pre class="twilight">
     a
@@ -211,18 +214,18 @@ And look at what it implies when you write it in <sc>xml</sc>:
 </r>
 </code>
 
-Then deleting all `x` nodes is equivalent to pass the <sc>xml</sc> via the following search and replace:
+Alors supprimer tous les nœuds `x` revient à faire passer le <sc>xml</sc> à travers le filtre suivant :
 
 <code class="perl">
 s/<\/?x>//g
 </code>
 
-Therefore, if there exists a one state deterministic transducer to transform the source tree to the destination tree.
-I can transform the <sc>xml</sc> from one format to another with just a simple list of search and replace directives.
+Par conséquent, s'il existe un transducteur déterministe à un état qui permet de transformer mes arbres ; 
+je suis capable de transformer le <sc>xml</sc> d'un format à l'autre en utilisant une simple liste de *search and replace*.
 
 # Solution
 
-Transform this tree:
+Transformer cet arbre :
 
 <pre class="twilight">
 R - C - tag1
@@ -238,7 +241,7 @@ R - C - tag1
              E ...
 </pre>
 
-to this tree:
+en celui-ci :
 
 <pre class="twilight">
                 tag1
@@ -255,14 +258,15 @@ M - V - M - V - tag2      tag1
                           M
 </pre>
 
-using only an acyclic deterministic tree transducer:
+
+peut-être fait en utilisant le transducteur déterministe à un état suivant: 
 
 
 >    C -> &epsilon;  
 >    E -> R  
 >    R -> V  
 
-Wich can be traduced by the following simple regular expression expression:
+Ce qui peut-être traduit par les simples directives Perl suivantes :
 
 <code class="perl">
 s/C//g
@@ -270,7 +274,7 @@ s/E/M/g
 s/R/V/g
 </code>
 
-Adapted to XML it becomes:
+Une fois adapté au <sc>xml</sc> cela devient :
 
 <code class="perl">
 s%</?contenu>%%g
@@ -280,8 +284,8 @@ s%</?rubrique>%<value>%g
 s%</rubrique>%</value>%g
 </code>
 
-That is all.
+Et c'est tout.
 
-# conclusion
+# Conclusion
 
-It should seems a bit paradoxal, but sometimes the most pragmatic approach to a pragmatic problem is to use the theoretical methodology. Not the commonly accepted pragmatic one. This simple experience prove this point.
+Même si cela peut sembler paradoxal, parfois la solution la plus efficace à un problème pragmatique est d'utiliser une méthodologie théorique.
