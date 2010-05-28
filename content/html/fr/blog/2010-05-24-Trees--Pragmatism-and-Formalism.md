@@ -93,7 +93,7 @@ Voici le format général du <sc>xml</sc> source :
 et le format d'arrivé est celui-ci :
 
 <code class="xml">
-<item name="Menu">
+<item name="Menu0">
     <value>
         <item name="menu">
             <value>
@@ -150,16 +150,75 @@ J'ai d'abord pensé à comment résoudre le problème mais avec des yeux d'*ing�
 
 C'est la deuxième phrase qui est complètement fausse. Parce que j'avais mal commencé et que cette méthodologie de travail ne fonctionne pas lorsque l'on part vraiment mal.
 
-## La réflexion
+## Réfléchir
 
-## spoiler
+After some times, I just stopped to work. Tell myself *"it is enough, now, I must finish it!"*.
+I took a sheet of paper, a pen and began to write down some trees.
 
-In the end, the program should be a simple list of search and replace:
-<code class="perl">
-s/something/something else/g 
+I first renamed `<item name="Menu">` by simpler name `M` for example.
+I obtained something like:
+
+<%= blogimage('formal_DCR_tree.png', 'The source tree') %>
+
+and
+
+<%= blogimage('formal_Menu_tree.png', 'The destination tree') %>
+
+
+And I made myself the following reflexion:
+
+Considering Tree Edit Distance, each unitary transformation of tree correspond to a simple search and replace on my XML source.
+I did a program which generate automatically the weight in a matrix of each edit distance.
+We consider three atomic transformations on trees:
+
+  - *substitution*: renaming a node
+  - *insertion*: adding a node
+  - *deletion*: remove a node
+
+The particularity with trees, is that, removing a node, do the following:
+all children of this node, became children of its father.
+
+An example:
+
+<pre class="twilight">
+r - x - a
+  \   \
+   \    b
+    y - c   
+</pre>
+
+If you delete the `x` node, you obtain
+
+<pre class="twilight">
+    a
+  /
+r - b
+  \
+    y - c   
+</pre>
+
+And look at what it implies when you write it in <sc>xml</sc>:
+
+<code class="xml">
+<r>
+  <x>
+    <a>value for a</a>
+    <b>vblue for b</b>
+  </x>
+  <y>
+    <c>value for c</c>
+  </y>
+</r>
 </code>
 
-It is not only possible but I believe it is the best way of doing this.
+Then deleting all `x` nodes is equivalent to pass the <sc>xml</sc> via the following search and replace:
+
+<code class="perl">
+s/<\/?x>//g
+</code>
+
+Therefore, if there exists a one state deterministic transducer to transform the source tree to the destination tree.
+I can transform the <sc>xml</sc> from one format to another with just a simple list of search and replace directives.
 
 # Solution
 
@@ -214,11 +273,11 @@ s/R/V/g
 Adapted to XML it becomes:
 
 <code class="perl">
-s!</?contenu>!!g
-s!<enfant>!<item name="menu">!g
-s!</enfant>!<item>!g
-s!</?rubrique>!<value>!g
-s!</rubrique>!</value>!g
+s%</?contenu>%%g
+s%<enfant>%<item name="menu">%g
+s%</enfant>%<item>%g
+s%</?rubrique>%<value>%g
+s%</rubrique>%</value>%g
 </code>
 
 That is all.
