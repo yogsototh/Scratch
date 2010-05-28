@@ -477,6 +477,8 @@ table.impact tr td
   line-height: 2em
 .date
   font-size: .8em
+.date, .date .year, .date .month, .date .year
+  display: block
 #next_before_articles
   clear: both
   width: 100%

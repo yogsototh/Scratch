@@ -14,11 +14,11 @@ noSubMenu: true
 
 <p>Bonjour et bienvenue sur mon site personnel.</p>
 
-<p>Voici un aperçu<sup>&dagger;</sup> de mes <%= number_of_articles %> derniers articles.</p>
+<p>Voici un aperçu<sup><a href="#footnote1">&dagger;</a></sup> de mes <%= number_of_articles %> derniers articles.</p>
 <p> Vous pouvez aussi chercher des entrées en utilisant le <a href="#tagcloud">nuage de mots clés (tag cloud)</a></p>
 
 <hr/>
-<p class="small">&dagger; approximativement les <%= number_of_char_for_resume %> premiers caractères.</p>
+<p class="small"><span id="footnote1">&dagger;</span> approximativement les <%= number_of_char_for_resume %> premiers caractères.</p>
 
 <% last_articles.each do |a| %>
     </div>
@@ -29,13 +29,13 @@ noSubMenu: true
     <div class="corps">
     <%= repair_html ( excerptize( a.reps[0].compiled_content, {:length => number_of_char_for_resume} ) ) %>
     <p>
-        <%= link_to("en lire plus &rarr;", a) %>
+       <%= link_to("en lire plus &rarr;", a) %>
     </p>
 <% end %>
 </div>
 <a href="#titre">&uarr; back to top &uarr;</a>
 <div class="corps">
-    <h2>tag cloud (2 articles au moins)</h2>
+   <h2>tag cloud (2 articles au moins)</h2>
     <%= tagCloud(2) %>
 </div>
 

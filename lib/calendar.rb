@@ -7,9 +7,9 @@ def calendar_for( d, language="en" )
     else
         monthnames=[nil]+%w(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
     end
-    %{<div class="date">
-        <div class="day">#{d.day}</div>
-        <div class="month">#{monthnames[ d.mon ]}</div>
-        <div class="year">#{d.year}</div>
-    </div> }
+    %{<span class="date">
+        <span class="day">#{d.day}</span>
+        <span class="month">#{monthnames[ d.mon ]}</span>
+        <span class="year">#{d.year}</span>
+    </span> }
 end

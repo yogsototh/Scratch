@@ -39,7 +39,7 @@
     :style solid
     :width 1px
   color: #eee
-  a, a:link
+  abbr, acronym, a, a:link
     :color #ddd
   a:visited
     :color = !blanc_fonce
@@ -53,7 +53,7 @@
     :color = !rouge_fonce
   :border-color = !rouge_fonce
   color: #fff
-  a, a:link
+  abbr, acronym, a, a:link
     :font-weight bold
     :text-decoration none
     :color #eee
@@ -556,3 +556,11 @@ blockquote
     :style italic
   :background-image url("/Scratch/css/img/sombre10percent.png")
   :padding .5em 1em
+
+#tagcloud a,
+#tagcloud a:link,
+#tagcloud a:visited
+  color: #000
+.archive h4
+  font-size: 2em
+  text-align: center

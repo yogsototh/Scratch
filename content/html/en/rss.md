@@ -1,7 +1,7 @@
 ----- 
 # menu
 title: What is this RSS thing?
-
+noSubMenu: true
 isHidden: true
 -----
 
