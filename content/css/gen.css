@@ -556,3 +556,8 @@ blockquote
     :style italic
   :background-image url("/Scratch/css/img/sombre10percent.png")
   :padding .5em 1em
+
+#tagcloud a,
+#tagcloud a:link,
+#tagcloud a:visited
+  color: #000

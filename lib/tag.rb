@@ -69,7 +69,7 @@
             end
         end
         tagCloud=%{<script type="text/javascript">
-            $(document).ready( function(){$('.list').hide();} );
+            $(document).ready( function(){$('.list').hide();$('#tagcloud a').removeAttr("href")} );
             function tagSelected(id) {
                 $('.list').hide();
                 $('#'+id).fadeIn();
@@ -80,7 +80,7 @@
         tagSize.sort{|a,b| a[0].downcase <=> b[0].downcase}.each do |t,s|
             protected=t.gsub(/\W/,'_')
             grouped=t.gsub(/&/,'&amp;').gsub(/ /,'&nbsp;').gsub(/</,'&lt;').gsub(/>/,'&gt;')
-            tagCloud <<= %{<span style="font-size: #{s}em;" class="tag" onclick="tagSelected('#{protected}')" id="tag_#{protected}">#{grouped}</span> }
+            tagCloud <<= %{<a href="##{protected}" style="font-size: #{s}em;" class="tag" onclick="tagSelected('#{protected}')" id="tag_#{protected}">#{grouped}</a> }
         end
         tagCloud <<= %{</div><div id="hiddenDivs" >}
         language=@item.path
@@ -88,7 +88,7 @@
         language = $1
         tagLinks.sort{|a,b| a[0].downcase <=> b[0].downcase}.each do |t,l|
             protected=t.gsub(/\W/,'_')
-            tagCloud <<= %{<div id="#{protected}" class="list"><h4>#{t}</h4><ul style="list-style-type: none; margin: 0;">}
+            tagCloud <<= %{<div id="#{protected}" class="list"><h4>#{t} <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">}
             l.sort{|x,y| y[:created_at] <=> x[:created_at]}.each do |p|
                 tagCloud <<= %{
                     <li style="line-height: 3em; margin: 0;">
