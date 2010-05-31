@@ -346,7 +346,7 @@ Once adapted to <sc>xml</sc> it becomes:
 <code class="perl">
 s%</?contenu>%%g
 s%<enfant>%<item name="menu">%g
-s%</enfant>%<item>%g
+s%</enfant>%</item>%g
 s%</?rubrique>%<value>%g
 s%</rubrique>%</value>%g
 </code>
