@@ -441,7 +441,7 @@ fr: Une fois adapté au <sc>xml</sc> cela devient :
 s%</?contenu>%%g
 s%<enfant>%<item name="menu">%g
 s%</enfant>%</item>%g
-s%</?rubrique>%<value>%g
+s%<rubrique>%<value>%g
 s%</rubrique>%</value>%g
 </code>
 
