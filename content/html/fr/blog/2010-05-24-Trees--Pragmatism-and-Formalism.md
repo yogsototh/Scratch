@@ -336,7 +336,7 @@ peut-être fait en utilisant le transducteur déterministe à un état suivant:
 
 
 >    C -> &epsilon;  
->    E -> R  
+>    E -> M  
 >    R -> V  
 
 Ce qui peut-être traduit par les simples directives Perl suivantes :

@@ -330,7 +330,7 @@ can be done using the following one state deterministic tree transducer:
 
 
 >    C -> &epsilon;  
->    E -> R  
+>    E -> M  
 >    R -> V  
 
 Wich can be traduced by the following simple search and replace directives: 
