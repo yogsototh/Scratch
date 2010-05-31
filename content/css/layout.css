@@ -507,3 +507,7 @@ table.impact tr td
   font-size: 2em
   margin-top: -.5em
   margin-left: -2em
+.footnotes
+  font-size: .8em
+.fontnotes ol
+  margin-left: 0

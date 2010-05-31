@@ -35,6 +35,7 @@ compile '/html/*' do
   ext = item[:extension].nil? ? nil : item[:extension].split('.').last
 
   filter :ultraviolet # must be before kramdown
+  filter :graph
   filter :description
 
   if ext == 'erb'
@@ -53,6 +54,7 @@ compile '/html/*' do
   filter :frenchspace
   filter :ytypo
   # filter :yabbreviations
+  filter :footnotes
 
   layout 'default' unless item[:layout] == "none"
 end
