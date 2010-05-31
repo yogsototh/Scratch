@@ -197,7 +197,7 @@ and
 
 <graph title="The destination tree">
     subgraph cluster_x {
-        node [label="R"] E_x ;
+        node [label="M"] E_x ;
         node [label="a1"] tag1_x ;
         node [label="V"] value_tag1_x ;
         node [label="a2"] tag2_x ;
@@ -208,7 +208,7 @@ and
         R_x -> E_x ;
     }
     subgraph cluster_y {
-        node [label="R"] E_y ;
+        node [label="M"] E_y ;
         node [label="a1"] tag1_y ;
         node [label="V"] value_tag1_y ;
         node [label="a2"] tag2_y ;
@@ -219,7 +219,7 @@ and
         R_y -> E_y ;
     }
     subgraph cluster_z {
-        node [label="R"] E_z ;
+        node [label="M"] E_z ;
         node [label="a1"] tag1_z ;
         node [label="V"] value_tag1_z ;
         node [label="a2"] tag2_z ;
