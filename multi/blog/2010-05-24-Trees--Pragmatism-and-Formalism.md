@@ -178,10 +178,10 @@ fr: Et je dois dire que j'ai perdu une journée de travail complète en m'y pren
 fr: En réalité, il y avait pas mal de petits détails dont je ne parle pas qui m'ont induis en erreur et qui m'ont fait perdre encore plus de temps.
 
 en: Why after two days did I was unable to resolve this problem which seems so simple?
-fr: Pourquoi étais-je incapable de résoudre se problème alors qu'il avait l'air 
+fr: Pourquoi étais-je incapable de résoudre ce problème si simple en aparence ?
 
 en: What was my behaviour (workflow)?
-fr: Voici comment je m'y prenais :
+fr: Voici comment je m'y suis pris :
 
 en: 1. Think
 en: 2. Write the program
@@ -227,13 +227,86 @@ fr: J'ai commencer par simplifier un peu en enlevant le maximum de verbiage.
 fr: Tout d'abord en renommant `<item name="Menu">` par un simple `M` par exemple.
 fr: J'ai obtenu quelque chose comme :
 
-<%= blogimage('formal_DCR_tree.png', 'The source tree') %>
+<graph title="The source tree">
+    subgraph cluster_x {
+        node [label="C"] C_x ;
+        node [label="E"] E_x ;
+        node [label="a1"] tag1_x ;
+        node [label="a2"] tag2_x ;
+        node [label="R", color="#880000", fillcolor="#880000", fontcolor="white"] R_x ;
+        R_x -> C_x;
+        C_x -> tag1_x ;
+        C_x -> tag2_x ;
+        R_x -> E_x ;
+    }
+    subgraph cluster_y {
+        node [label="C"] C_y ;
+        node [label="E"] E_y ;
+        node [label="a1"] tag1_y ;
+        node [label="a2"] tag2_y ;
+        node [label="R", color="#880000", fillcolor="#880000", fontcolor="white"] R_y ;
+        R_y -> C_y;
+        C_y -> tag1_y ;
+        C_y -> tag2_y ;
+        R_y -> E_y ;
+    }
+    subgraph cluster_z {
+        node [label="C"] C_z ;
+        node [label="E"] E_z ;
+        node [label="a1"] tag1_z ;
+        node [label="a2"] tag2_z ;
+        node [label="R", color="#880000", style="filled", fillcolor="#880000", fontcolor="white"] R_z ;
+        R_z -> C_z;
+        C_z -> tag1_z ;
+        C_z -> tag2_z ;
+        R_z -> E_z ;
+    }
+    E_x -> R_y ;
+    E_x -> R_z ;
+
+</graph>
 
 en: and
 fr: et
 
-<%= blogimage('formal_Menu_tree.png', 'The destination tree') %>
+<graph title="The destination tree">
+    subgraph cluster_x {
+        node [label="R"] E_x ;
+        node [label="a1"] tag1_x ;
+        node [label="V"] value_tag1_x ;
+        node [label="a2"] tag2_x ;
+        node [label="V"] value_tag2_x ;
+        node [label="V", color="#880000", fillcolor="#880000", fontcolor="white"] R_x ;
+        R_x -> value_tag1_x -> tag1_x ;
+        R_x -> value_tag2_x -> tag2_x ;
+        R_x -> E_x ;
+    }
+    subgraph cluster_y {
+        node [label="R"] E_y ;
+        node [label="a1"] tag1_y ;
+        node [label="V"] value_tag1_y ;
+        node [label="a2"] tag2_y ;
+        node [label="V"] value_tag2_y ;
+        node [label="V", color="#880000", fillcolor="#880000", fontcolor="white"] R_y ;
+        R_y -> value_tag1_y -> tag1_y ;
+        R_y -> value_tag2_y -> tag2_y ;
+        R_y -> E_y ;
+    }
+    subgraph cluster_z {
+        node [label="R"] E_z ;
+        node [label="a1"] tag1_z ;
+        node [label="V"] value_tag1_z ;
+        node [label="a2"] tag2_z ;
+        node [label="V"] value_tag2_z ;
+        node [label="V", color="#880000", fillcolor="#880000", fontcolor="white"] R_z ;
+        R_z -> value_tag1_z -> tag1_z ;
+        R_z -> value_tag2_z -> tag2_z ;
+        R_z -> E_z ;
+    }
+    E_x -> R_y ;
+    E_x -> R_z ;
 
+</graph>
 
 en: Then I made myself the following reflexion:
 fr: Puis, je me suis fait la réflexion suivante :
@@ -286,7 +359,7 @@ en: Et regardez ce que ça implique quand on l'écrit en <sc>xml</sc> :
 <r>
   <x>
     <a>value for a</a>
-    <b>vblue for b</b>
+    <b>value for b</b>
   </x>
   <y>
     <c>value for c</c>
