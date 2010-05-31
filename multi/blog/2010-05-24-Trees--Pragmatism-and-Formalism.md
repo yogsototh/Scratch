@@ -422,7 +422,7 @@ fr: peut-être fait en utilisant le transducteur déterministe à un état suiva
 
 
 >    C -> &epsilon;  
->    E -> R  
+>    E -> M  
 >    R -> V  
 
 en: Wich can be traduced by the following simple search and replace directives: 
