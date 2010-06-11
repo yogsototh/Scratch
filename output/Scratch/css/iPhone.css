@@ -19,6 +19,7 @@ html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6, #content {
     -webkit-text-size-adjust:none; }
 body { font-size: 12px; }
 code { font-size: 12px; }
+pre { font-size: 10px; }
 #content { width: 98%; margin-left: 1%; }
 .corps { padding-right: 2em; padding-left: 2em;}
 ol, ul { list-style: none; }
@@ -70,3 +71,25 @@ ul {
 #iphone { display: none; }
 #entete { min-width: 0; font-size: .8em ;}
 #liens ul li {margin: 2px; }
+.corps h1,
+.corps h2,
+.corps h3,
+.corps h4 {
+    font-size: 14px;
+    width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+    top: 0;
+    left: 0;
+    position: relative;
+}
+.corps h1.first,
+.corps h2.first,
+.corps h3.first,
+.corps h4.first
+{
+    width: 113.5%;
+    left: -2.25em;
+    top: -3.25em;
+    position: relative;
+}

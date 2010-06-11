@@ -81,9 +81,7 @@ function alertLanguage() {
 // --- fin pour la contribution de la fin de IE ---
 function detectiPhone() {
     if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-        $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/iphone.css"/>');
         $('head').append('<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">');
-        // $('head').append('<link rel="apple-touch-icon" href="images/template/engage.png"/>'); 
         $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/iphone.css"/>');
         // $('body').attr('onorientation','updateOrientation();');
         decalageTop=0;
@@ -99,18 +97,18 @@ function entete_height() {
     return $('#entete').height() - $('#menuMessage').height() + decalageTop;
 }
 function fastHideMenu() {
-    $('#content').css({opacity: .2});
+    $('#entete').css({opacity: .2});
 }
 function hideMenu() {
-    $('#content').animate({opacity: .2}, 3000 );
+    $('#entete').animate({opacity: .2}, 3000 );
 }
 function showMenu() {
-    $('#content').animate({opacity:1}, 500 );
+    $('#entete').animate({opacity:1}, 200 );
     last+=1;
     autoHideMenu(last);
 }
 function fastShowMenu() {
-    $('#content').css({opacity:1});
+    $('#entete').css({opacity:1});
     last+=1;
     autoHideMenu(last);
 }
@@ -131,11 +129,9 @@ function autoHideMenu(value) {
 }
 function initMenu() {
     $('#titre').css({top: -entete_height});
-    $('#entete').append('<div id="menuMessage">↓ Menu ↓</div>');
     $('#entete').hover(showMenu);
     $('#entete').hover(function(){last+=1;}, function(){autoHideMenu(last);});
     autoHideMenu(0);
-    fastHideMenu();
 }
 
 function setSpecificCss() {
