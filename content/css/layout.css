@@ -126,6 +126,7 @@ ul.horizontal
   position: relative
   padding-bottom: 10px 
   width = !content_width
+  top: -1em
   clear: both
 
 !contentMargin = 0em
