@@ -20,9 +20,9 @@ if str.match(regexp) and
         do_something
 </code></div>
 
-et vous devez obtenir le même comportement avec seulement une expression régulière. Le problème c'est que le complémentaire des régulier n'est pas régulier. Donc pour cetaines expression, c'est absolument impossible à faire.
+et vous devez obtenir le même comportement avec seulement une expression régulière. Le problème c'est que le complémentaire des régulier n'est pas régulier. Celà peut s'avérer impossible.
 
-Cependant, pour certaines expressions ce peut être possible<sup><a href="#note1">&dagger;</a></sup>. Disons que vous souhaitez matcher tout les lignes contenant le mot `bull`, mais que vous ne souhaitez pas matcher `bullshit`. Voici une façon sympa d'y arriver :
+Cependant, pour certaines expressions ce peut être possible<sup><a href="#note1">&dagger;</a></sup>. Disons que vous souhaitez *matcher* toutes les lignes contenant le mot `bull`, mais que vous ne souhaitez pas matcher `bullshit`. Voici une façon sympa d'y arriver :
 
 <div><code class="ruby">
 # matcher toute les chaines qui 
