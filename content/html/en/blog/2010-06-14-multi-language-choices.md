@@ -38,7 +38,7 @@ This is why I preferred to handle it differently.
 I use *tags* on a single file.
 Finally my files looks like:
 
-<pre>
+<pre class="twilight">
  fr:   Bonjour, 
  en:   Hello, 
 
@@ -50,4 +50,4 @@ Finally my files looks like:
 As I edit my files with [vim](http://vim.org), it is really easy to add `fr:` or `en:` at some line's beginning using the useful `C-v`.
 However [nanoc](http://nanoc.stoneship.org) was conceived to be used for one language only. Or to be used with the first method. I tried to adapt nanoc to my usage. But after a while, I found it easier to pre-filter the nanoc work by a simple script. My script transform my file into two new files. And all work like a charm.
 
-You can get my blog source at [github.com/yogsototh/n3blog](http://github.com/yogsototh/n3blog). I'll make a new blog entry about how to use it. I added many scripts and libraries to help making nice website.
+You can get my blog code source (without most of articles) at [github.com/yogsototh/nanoc3_blog](http://github.com/yogsototh/nanoc3_blog). I'll make a new blog entry about how to use it. I added many scripts and libraries to help making nice website.
