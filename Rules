@@ -75,5 +75,12 @@ route '/xml/fr/*' do
     '/Scratch/fr/blog/feed/feed.xml'
 end
 
+compile '/sitemap/*' do
+    layout 'sitemap'
+end
+route '/sitemap/*' do
+    '/Scratch/sitemap.xml'
+end
+
 layout '*', :erb
 
