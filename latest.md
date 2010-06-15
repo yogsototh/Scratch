@@ -1,1 +1,1 @@
-./multi/blog/2010-06-14-multi-language-choices.md
+./multi/blog/2010-06-15-Get-my-blog-engine.md
