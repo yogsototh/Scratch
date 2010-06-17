@@ -159,9 +159,21 @@ $(document).ready( function() {
     $('a').click(function () {
         // tell analytics to save event
         try {
-            _gaq.push(['_trackEvent', thisel.parents('[id!=""]:first').get(0).id, 'clicked', (thisel.text() || thisel.children('img:first').attr('alt'))]);
+            var identifier=$(this).attr('id') ;
+            var href=$(this).attr('href')
+            var label="";
+            if ( typeof( identifier ) != 'undefined' ) {
+                label=label+'[id]:'+identifier
+            }
+            if ( typeof( href ) != 'undefined' ) {
+                label=label+' [href]:'+href
+            }
+            _gaq.push(['_trackEvent', label, 'clicked' ]);
+            // console.log(label + ' tracked');
         }
-        catch (err) {}
+        catch (err) {
+            console.log(err);
+        }
 
         // pause to allow google script to run
         var date = new Date();
