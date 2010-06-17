@@ -7,7 +7,7 @@ title: Focus &gt; Minimalism
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
-    - jquery
+    - jQuery
     - design
     - web
 -----

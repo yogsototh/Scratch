@@ -11,7 +11,7 @@ tags:
   - statistics
   - hide
   - blog
-  - jquery
+  - jQuery
   - javascript
 -----
 

@@ -7,7 +7,7 @@ author_name: Yann Esposito
 author_uri: yannesposito.com
 subtitle: Cacher la navigation pour une meilleure concentration
 tags:
-    - jquery
+    - jQuery
     - design
     - web
 -----

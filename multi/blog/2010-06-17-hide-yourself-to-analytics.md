@@ -14,7 +14,7 @@ fr:   - statistiques
 en:   - hide
 fr:   - cacher
   - blog
-  - jquery
+  - jQuery
   - javascript
 -----
 

@@ -7,7 +7,7 @@ title: jQuery Tag Cloud
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
-    - jquery
+    - jQuery
     - javascript
     - web
     - ruby

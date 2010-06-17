@@ -8,7 +8,7 @@ author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
     - web
-    - jquery
+    - jQuery
     - webdesign
 
 -----

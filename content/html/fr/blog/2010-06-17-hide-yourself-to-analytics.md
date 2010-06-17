@@ -11,7 +11,7 @@ tags:
   - statistiques
   - cacher
   - blog
-  - jquery
+  - jQuery
   - javascript
 -----
 
