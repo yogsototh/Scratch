@@ -1,3 +1,16 @@
 -----
 -----
-<% language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') %><%= atom_feed({:articles => articles.select { |a| a.reps[0].path =~ /\/#{language}\// }, :limit => 40 }) %>
+<% 
+language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
+number_of_char_for_resume=800
+
+%><%= atom_feed( {
+    :articles => articles.select { |a| a.reps[0].path =~ /\/#{language}\// }, 
+    :content_proc =>lambda { |a|
+                        repair_html( 
+                            excerptize( 
+                                a.compiled_content(:snapshot => :pre),
+                                {:length => number_of_char_for_resume} ))
+                    },
+    :limit => 40 
+}) %>
