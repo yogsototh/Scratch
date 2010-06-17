@@ -1,1 +1,1 @@
-./multi/blog/2010-06-17-track-events-with-google-analytics.md
+./multi/blog/2010-06-17-hide-yourself-to-analytics.md
