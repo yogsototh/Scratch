@@ -4,7 +4,6 @@ title: Blog
 menupriority: 2
 noSubMenu: true
 -----
-
 <% 
     number_of_articles=10
     number_of_char_for_resume=800
@@ -14,6 +13,13 @@ noSubMenu: true
     end
     last_articles=last_articles.sort { |x,y| y[:created_at] <=> x[:created_at] }[0..(number_of_articles-1)]
 %>
+
+* [Les <%= number_of_articles %> derniers articles](#les-<%= number_of_articles %>-derniers-articles)
+* [Nuage de mots clés](#tagcloud)
+* [Archives](#archives)
+* [Un petit mot sur le contenu](#un-petit-mot-sur-le-contenu)
+
+newcorps
 
 ## Les <%= number_of_articles %> derniers articles
 
@@ -42,16 +48,14 @@ enddiv
 
 newcorps
 
+
 ## Un petit mot sur le contenu
-
-
 
 Vous trouverez ici des articles qui sont pour la plupart
 écrits en anglais et qui sont techniques.
 Certain sont justes là pour me souvenir de petits trucs, que
 d'autres pourraient trouver utiles. Mais il y a aussi de
 long articles techniques qui vont un peu plus dans les détails.
-
 
 ---
 
@@ -67,4 +71,3 @@ L'impression que ce site laisse de moi n'est certainement pas l'impression que j
 
 
 Je vous souhaite de trouver ce que vous cherchez sur ce site.
-
