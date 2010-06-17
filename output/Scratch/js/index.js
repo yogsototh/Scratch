@@ -164,12 +164,18 @@ $(document).ready( function() {
             var label="";
             if ( typeof( identifier ) != 'undefined' ) {
                 label=label+'[id]:'+identifier
+                category='JSLink'
             }
             if ( typeof( href ) != 'undefined' ) {
                 label=label+' [href]:'+href
+                if ( href[0] == '#' ) {
+                    category='Anchor';
+                } else {
+                    category='Link';
+                }
             }
-            _gaq.push(['_trackEvent', label, 'clicked' ]);
-            // console.log(label + ' tracked');
+            _gaq.push(['_trackEvent', category, 'clicked', label]);
+            // console.log('[tracked]: ' + category + ' ; clicked ; ' + label );
         }
         catch (err) {
             console.log(err);
