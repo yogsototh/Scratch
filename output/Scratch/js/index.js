@@ -7,7 +7,6 @@ function detectIE() {
 
 // --- code popup ---
 function openWide() {
-    console.log('open id : ' + $(this).attr('class'));
     $(this).clone(false).appendTo($("#_code"));
     $('#_code a').css({"margin-right":"3em"});
     $("#_code").show();
