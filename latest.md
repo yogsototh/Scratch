@@ -1,1 +1,1 @@
-./multi/blog/2010-06-17-hide-yourself-to-analytics.md
+./multi/blog/2010-06-19-jQuery-popup-the-easy-way.md
