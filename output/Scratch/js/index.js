@@ -5,6 +5,29 @@ function detectIE() {
     }
 }
 
+// --- code popup ---
+function openWide() {
+    console.log('open id : ' + $(this).attr('class'));
+    $(this).clone(false).appendTo($("#_code"));
+    $('#_code a').css({"margin-right":"3em"});
+    $("#_code").show();
+}
+
+function returnToNormal() {
+    $("#_code").html("");
+    $("#_code").hide();
+}
+
+function initCode() {
+    $(".code").click(openWide);
+    $(".code").css({cursor: "pointer"});
+    $('body').append('<div id="_code"></div>');
+    $('#_code').css( { 'text-align': "justify", position: "fixed", left:0, top:0, width: "100%", height: "100%", "background-color": "rgba(0, 0, 0, 0.8)", 'z-index':2000, 'padding':'1em'} );
+    $('#_code').hide();
+    $('#_code').click(returnToNormal);
+}
+// --- end of code popup section ---
+
 // -- multilanguage handling --
 
 // show a message to user
@@ -150,6 +173,7 @@ $(document).ready( function() {
     detectIE();
     detectiPhone();
     initMenu();
+    initCode();
     // affiche la page une fois propre et la langue choisie
     if ( alertLanguage() ) {
         $('#blackpage').fadeOut();

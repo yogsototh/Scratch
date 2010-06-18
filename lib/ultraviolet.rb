@@ -24,8 +24,8 @@ class UltraVioletFilter < Nanoc3::Filter
                 end
                 @url=url
                 copy_text_to_file(code, filename, code_path)
-                codeprefix=%{<div class="file"><a href="#{url}"> &#x27A5; #{filename} </a></div><div class="withfile">\n}
-                codesuffix=%{\n</div>}
+                codeprefix=%{<div class="code"><div class="file"><a href="#{url}"> &#x27A5; #{filename} </a></div><div class="withfile">\n}
+                codesuffix=%{\n</div></div>}
             end
             # Substitute the un-highlighted code with the highlighted code.
             codeprefix+Uv.parse(code, "xhtml", lang, false, @config[:ultraviolet_theme])+codesuffix
