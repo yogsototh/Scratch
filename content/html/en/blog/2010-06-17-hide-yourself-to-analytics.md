@@ -18,9 +18,9 @@ tags:
 This is a way not to count your own visits to your blog.
 First you should look on how [I handle analytics](/Scratch/en/blog/2010-06-17-track-events-with-google-analytics). All analytics are handled in one javascript file, this make things really convenient.
 
-Then you need to know my method use the `jquery-cookie` module and of course `jquery`.
+Then you need to know my method use the `jquery-cookie`.
 
-First before launching analysis, I check if the key `admin` is not set in the cookie.
+I check if the key `admin` is not set in the cookie before adding the visit.
 
 <code class="javascript">
     var admin = $.cookie('admin');

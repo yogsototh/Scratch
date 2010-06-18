@@ -15,14 +15,13 @@ tags:
   - javascript
 -----
 
-Un des problèmes avec les systèmes d'analyses c'est que sur certaines pages, nous sommes nous même ceux qui allons visiter ces pages. 
-Alors, voici un moyen très simple de ne plus compter ses propres visites de son blog dans les statistiques.
+Voici un moyen très simple de ne plus être comptabilisé dans les visites de son propre site.
 Tout d'abord, vous devriez jeter un coup d'œil sur comment [je gère les systèmes de récupération de statistiques](/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics). 
-Parce que tout est centralisé dans un seul javascript, ce qui rend les choses bien plus simple.
+Je centralise tout dans un seul fichier javascript ce qui facilite le travail.
 
-Ensuite ma méthode nécessite l'utilisation du module `jquery-cookie` et bien entendu de `jquery`.
+Cette méthode nécessite l'utilisation de `jquery-cookie`.
 
-Ensuite avant de lancer les moteurs d'analyse, je vérifie que la clé `admin` n'est pas utilisée dans mes cookies.
+Avant de comptabiliser les visites, je vérifie que la clé `admin` n'est pas utilisée dans mes cookies.
 
 <code class="javascript">
     var admin = $.cookie('admin');

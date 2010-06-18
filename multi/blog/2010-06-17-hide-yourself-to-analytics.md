@@ -18,18 +18,17 @@ fr:   - cacher
   - javascript
 -----
 
-fr: Un des problèmes avec les systèmes d'analyses c'est que sur certaines pages, nous sommes nous même ceux qui allons visiter ces pages. 
-fr: Alors, voici un moyen très simple de ne plus compter ses propres visites de son blog dans les statistiques.
+fr: Voici un moyen très simple de ne plus être comptabilisé dans les visites de son propre site.
 fr: Tout d'abord, vous devriez jeter un coup d'œil sur comment [je gère les systèmes de récupération de statistiques](/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics). 
-fr: Parce que tout est centralisé dans un seul javascript, ce qui rend les choses bien plus simple.
+fr: Je centralise tout dans un seul fichier javascript ce qui facilite le travail.
 en: This is a way not to count your own visits to your blog.
 en: First you should look on how [I handle analytics](/Scratch/en/blog/2010-06-17-track-events-with-google-analytics). All analytics are handled in one javascript file, this make things really convenient.
 
-fr: Ensuite ma méthode nécessite l'utilisation du module `jquery-cookie` et bien entendu de `jquery`.
-en: Then you need to know my method use the `jquery-cookie` module and of course `jquery`.
+fr: Cette méthode nécessite l'utilisation de `jquery-cookie`.
+en: Then you need to know my method use the `jquery-cookie`.
 
-fr: Ensuite avant de lancer les moteurs d'analyse, je vérifie que la clé `admin` n'est pas utilisée dans mes cookies.
-en: First before launching analysis, I check if the key `admin` is not set in the cookie.
+fr: Avant de comptabiliser les visites, je vérifie que la clé `admin` n'est pas utilisée dans mes cookies.
+en: I check if the key `admin` is not set in the cookie before adding the visit.
 
 <code class="javascript">
     var admin = $.cookie('admin');
