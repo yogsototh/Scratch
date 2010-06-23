@@ -1,34 +1,36 @@
 -----
+
 -----
+
 // /*
-//  La dedans, seulement ce qui concerne le layout 
+//  La dedans, seulement ce qui concerne le layout
 //  La largeur, la hauteur des objets. S'ils sont en float
 //  Les marges, le padding...
 //
 //  En particulier, il n'y a rien relatif à la couleur ou aux fontes
 //  ni aux background image.
 //  Rien relatif aux border non plus.
-// */
+//
 
-!VPadCorps = 3em
-!HPadCorps = 5em
-!VMarginCorps = 3em
+$VPadCorps: 3em
+$HPadCorps: 5em
+$VMarginCorps: 3em
+
 // ATTENTION DOIT ETRE 0 pour le bon callage
-!HMarginCorps = 0
-!content_width = 52em
+$HMarginCorps: 0
+$content_width: 52em
 
 body
   text-align: center
   font-size: 1em
 
-// /* l'entete */
+// /* l'entete
 #entete
   position: relative
   left: 0
   width: 100%
-  min-width = !content_width - 2em
+  min-width: $content_width - 2em
   z-index: 2000
-
 
 #titre h2
   width: 80%
@@ -39,14 +41,14 @@ body
 #titre
   text-align: center
   width: 100%
-  margin-top = !VMarginCorps
-  margin-bottom = !VMarginCorps
+  margin-top: $VMarginCorps
+  margin-bottom: $VMarginCorps
 
 #titre h1, #titre h2
   padding-left: 1em
   padding-right: 1em
 
-// /* le pied de page */
+// /* le pied de page
 #bottom
   clear: right
   margin-right: 0px
@@ -58,36 +60,36 @@ body
 
 // Les menus
 
-#sousliens 
+#sousliens
   padding: 1em 0
-  :line-height 2em
+  line-height: 2em
 
-ul.horizontal li 
+ul.horizontal li
   display: inline
-  font-size: .9em 
+  font-size: 0.9em
 
-ul.horizontal 
+ul.horizontal
   margin-top: 0px
-  margin-bottom: 0px 
+  margin-bottom: 0px
 
 #rss a
-  :width 9em
-  :padding
-    :left 1em
-    :right 1em
-  :display inline-block
+  width: 9em
+  padding:
+    left: 1em
+    right: 1em
+  display: inline-block
 
 #rss img
-  :padding 0
-  :float right
-  :margin
-    :top .2em
-    :left .2em
-  :display inline
+  padding: 0
+  float: right
+  margin:
+    top: 0.2em
+    left: 0.2em
+  display: inline
 
 #rss sup a
-  :float right
-  :width .5em
+  float: right
+  width: 0.5em
 
 #liens
   width: 100%
@@ -100,56 +102,57 @@ ul.horizontal
   padding: 0
   margin: 0
 
-!hauteur_menu=2em
+$hauteur_menu: 2em
+
 #liens ul li
   display: inline-block
-  height = !hauteur_menu
-  margin-left:  .2em
-  margin-right: .2em
+  height: $hauteur_menu
+  margin-left: 0.2em
+  margin-right: 0.2em
   width: 23%
 
 #liens ul li a,
 #liens ul li span
   width: 100%
   display: block
-  line-height = !hauteur_menu
+  line-height: $hauteur_menu
 
 // Un 'helper'
-.clear 
+.clear
   clear: both
 
 // Le Contenu
 #content
   margin-left: auto
-  margin-right: auto 
+  margin-right: auto
   margin-top: 0
   position: relative
-  padding-bottom: 10px 
-  width = !content_width
+  padding-bottom: 10px
+  width: $content_width
   top: -1em
   clear: both
 
-!contentMargin = 0em
+$contentMargin: 0em
 
 .encadre, .black, .red, .intro, .resume, .shadow
-  :padding
-    :left 2em
-    :right 2em
-  :margin
-    :top 2em
-    :bottom 2em
+  padding:
+    left: 2em
+    right: 2em
+  margin:
+    top: 2em
+    bottom: 2em
 
 #afterheader
-  padding-left  = !contentMargin
-  padding-right = !contentMargin
+  padding-left: $contentMargin
+  padding-right: $contentMargin
 
 #sousliens
   width: 100%
-  margin-left: auto 
-  margin-right: auto 
-  :margin
-    :top = !VMarginCorps
-    :bottom = !VMarginCorps
+  margin-left: auto
+  margin-right: auto
+  margin:
+    top: $VMarginCorps
+    bottom: $VMarginCorps
   font-size: 1.2em
   letter-spacing: 1px
   text-align: left
@@ -157,147 +160,164 @@ ul.horizontal
 
 .corps
   text-align: left
-  padding = !VPadCorps !HPadCorps
-  margin = !VMarginCorps !HMarginCorps
-  clear: both 
+  padding: $VPadCorps $HPadCorps
+  margin: $VMarginCorps $HMarginCorps
+  clear: both
 
 .twilight
   line-height: 1.1em
 
 .corps h1
-  width: 90% 
+  width: 90%
+
 .corps h2
-  width: 80% 
+  width: 80%
+
 .corps h3
-  width: 70% 
+  width: 70%
+
 .corps h4
-  width: 60% 
+  width: 60%
 
 .corps h1,
 .corps h2,
 .corps h3,
-.corps h4 
+.corps h4
   padding-top: 5px
   padding-bottom: 5px
   clear: both
   text-align: center
 
-// /* on decale les titres pour qu'ils touchent le bord */
-!fonth1 = 2em
-!fonth2 = 1.6em
-!fonth3 = 1.25em
-!fonth4 = 1em
+// /* on decale les titres pour qu'ils touchent le bord
+$fonth1: 2em
+$fonth2: 1.6em
+$fonth3: 1.25em
+$fonth4: 1em
 
-!htopbottommargin = 2em
+$htopbottommargin: 2em
 
 .corps h1
-  :margin
-    :bottom = "#{ !htopbottommargin / !fonth1}em"
-    :top    = "#{ !htopbottommargin / !fonth1}em"
+  margin:
+    bottom: #{$htopbottommargin / $fonth1}em
+    top: #{$htopbottommargin / $fonth1}em
 
 .corps h2
-  :margin
-    :bottom = "#{ !htopbottommargin / !fonth2}em"
-    :top    = "#{ !htopbottommargin / !fonth2}em"
+  margin:
+    bottom: #{$htopbottommargin / $fonth2}em
+    top: #{$htopbottommargin / $fonth2}em
 
 .corps h3
-  :margin
-    :bottom = "#{ !htopbottommargin / !fonth3}em"
-    :top    = "#{ !htopbottommargin / !fonth3}em"
+  margin:
+    bottom: #{$htopbottommargin / $fonth3}em
+    top: #{$htopbottommargin / $fonth3}em
 
 .corps h4
-  :margin
-    :bottom = "#{ 1em / !fonth4}em"
-    :top    = "#{ 1em / !fonth4}em"
+  margin:
+    bottom: #{1em / $fonth4}em
+    top: #{1em / $fonth4}em
 
 .corps h1,
 .corps h2,
 .corps h3,
 .corps h4
-  :position relative
-  :margin
-    :left 0px
-.corps h1
-  :left = "#{- !HPadCorps / !fonth1}em"
-.corps h2
-  :left = "#{- !HPadCorps / !fonth2}em"
-.corps h3
-  :left = "#{- !HPadCorps / !fonth3}em"
-.corps h4
-  :left = "#{- !HPadCorps / !fonth4}em"
+  position: relative
+  margin:
+    left: 0px
 
-!fontcorps = 1.25
+.corps h1
+  left: #{-$HPadCorps / $fonth1}em
+
+.corps h2
+  left: #{-$HPadCorps / $fonth2}em
+
+.corps h3
+  left: #{-$HPadCorps / $fonth3}em
+
+.corps h4
+  left: #{-$HPadCorps / $fonth4}em
+
+$fontcorps: 1.25
 
 .corps
-  font-size = "#{!fontcorps}em"
-.corps h1
-  font-size = !fonth1
-.corps h2
-  font-size = !fonth2
-.corps h3
-  font-size = !fonth3
-.corps h4
-  font-size = !fonth4
+  font-size: #{$fontcorps}em
 
-!corps_width = ( !content_width - ( 2 * !contentMargin )  ) / !fontcorps
-!hpadding = 1
+.corps h1
+  font-size: $fonth1
+
+.corps h2
+  font-size: $fonth2
+
+.corps h3
+  font-size: $fonth3
+
+.corps h4
+  font-size: $fonth4
+
+$corps_width: ($content_width - 2 * $contentMargin) / $fontcorps
+$hpadding: 1
 
 .corps h1,
 .corps h2,
 .corps h3,
 .corps h4
-  :padding = 0 "#{!hpadding}em"
+  padding: 0 #{$hpadding}em
 
 .corps h1.first,
 .corps h2.first,
 .corps h3.first,
 .corps h4.first
-  :padding = 1em "#{!hpadding}em"
-  :margin
-    :top   = 0
-    :bottom = 0
+  padding: 1em #{$hpadding}em
+  margin:
+    top: 0
+    bottom: 0
 
 .corps h1.first
-  top = "#{- !VPadCorps / !fonth1}em"
-  width = "#{ ( !corps_width / !fonth1 ) - ( 2 * !hpadding ) }em"
+  top: #{-$VPadCorps / $fonth1}em
+  width: #{$corps_width / $fonth1 - 2 * $hpadding}em
+
 .corps h2.first
-  top = "#{- !VPadCorps / !fonth2}em"
-  width = "#{ ( !corps_width / !fonth2 ) - ( 2 * !hpadding ) }em"
+  top: #{-$VPadCorps / $fonth2}em
+  width: #{$corps_width / $fonth2 - 2 * $hpadding}em
+
 .corps h3.first
-  top = "#{- !VPadCorps / !fonth3}em"
-  width = "#{ ( !corps_width / !fonth3 ) - ( 2 * !hpadding ) }em"
+  top: #{-$VPadCorps / $fonth3}em
+  width: #{$corps_width / $fonth3 - 2 * $hpadding}em
+
 .corps h4.first
-  top = "#{- !VPadCorps / !fonth4}em"
-  width = "#{ ( !corps_width / !fonth4 ) - ( 2 * !hpadding ) }em"
+  top: #{-$VPadCorps / $fonth4}em
+  width: #{$corps_width / $fonth4 - 2 * $hpadding}em
 
 .corps img
   max-width: 30em
 
-//  les clear 
+//  les clear
 
 #address
-  clear: both 
+  clear: both
+
 .definitionCell
-  width: 5em 
-  vertical-align: top 
-  font-weight: bold 
+  width: 5em
+  vertical-align: top
+  font-weight: bold
   text-align: center
+
 .valueCell
-  text-align: right 
+  text-align: right
 
 .smallblock
-  float: left  
-  width: 50%  
+  float: left
+  width: 50%
   font-size: 1em
   font-weight: bold
+
 .largeblock
-  float: right  
-  width: 70%  
+  float: right
+  width: 70%
   font-size: 1em
 
 #blackpage, #nojsredirect
-  top: 0 
-  left: 0 
+  top: 0
+  left: 0
   width: 100%
   height: 100%
   margin-left: 0
@@ -308,9 +328,9 @@ ul.horizontal
   text-align: center
 
 #blackpage
-  color: #666
+  color: #666666
   padding-top: 10em
-  background-color: #eee
+  background-color: #eeeeee
   z-index: 9000
   cursor: wait
   img
@@ -322,22 +342,21 @@ ul.horizontal
 #nojsredirect
   z-index: 9001
 
-
 .nojsbutton
   width: 50%
   padding: 1em
-  border: solid 3px #fff
+  border: solid 3px white
   margin-left: auto
   margin-right: auto
   margin-top: 2em
   z-index: 9002
 
 .file
-  font-size: .8em
+  font-size: 0.8em
   text-align: right
   float: right
   width: 80%
-  margin-right: .3em
+  margin-right: 0.3em
 
 .flush
   clear: both
@@ -349,10 +368,10 @@ table.description
   margin-left: auto
 
 table.description tr td
-  padding-left: .5em
-  padding-right: .5em
-  padding-top: .5ex
-  padding-bottom: .5ex
+  padding-left: 0.5em
+  padding-right: 0.5em
+  padding-top: 0.5ex
+  padding-bottom: 0.5ex
   vertical-align: middle
   margin-right: 5px
 
@@ -367,8 +386,8 @@ img
 img.left
   float: left
   max-width: 30%
-  :margin
-    :right 1em
+  margin:
+    right: 1em
 
 img.inside
   display: inline
@@ -383,16 +402,16 @@ pre
 
 .navigationprev, .navigationnext
   padding: 0px
-  margin-left: .2em
-  margin-right: .2em
+  margin-left: 0.2em
+  margin-right: 0.2em
   margin-bottom: 0
-  :margin-top = !VMarginCorps
+  margin-top: $VMarginCorps
   width: 45%
 
 .navigation .navigationprev,
 .navigation .navigationnext
   width: 30%
-  :margin-top = 0
+  margin-top: 0
 
 .navigation
   font-size: 2em
@@ -412,15 +431,15 @@ pre
 .impact, .darkimpact
   text-align: left
   width: 66%
-  padding-left: .25em
-  padding-right: .25em
+  padding-left: 0.25em
+  padding-right: 0.25em
 
 table.impact
   text-align: left
 
-table.impact tr td 
-  padding-left: .25em
-  padding-right: .25em
+table.impact tr td
+  padding-left: 0.25em
+  padding-right: 0.25em
 
 #liens
   font-size: 1.5em
@@ -428,11 +447,11 @@ table.impact tr td
 #rss
   text-align: right
   font-size: 1.4em
-  padding-right: .3em
-  :margin
-    :top .4em
-  :float right
-  :width 16em
+  padding-right: 0.3em
+  margin:
+    top: 0.4em
+  float: right
+  width: 16em
 
 #iemessage
   font-size: 1.5em
@@ -440,58 +459,68 @@ table.impact tr td
 .tag
   display: inline
   cursor: pointer
-  margin-left: .5em
-  margin-right: .5em
+  margin-left: 0.5em
+  margin-right: 0.5em
 
 .list
-  margin-top = !VPadCorps
+  margin-top: $VPadCorps
 
 #menuMessage
-  :font
-    :size 1.2em
-  :line
-    :height 1.5em
-  :width 100%
-  :text-align center
+  font:
+    size: 1.2em
+  line:
+    height: 1.5em
+  width: 100%
+  text-align: center
 
 #choixrss
   width: 100%
   clear: both
+
 #choix
   padding: 1em
   text-align: left
   font-size: 1.2em
+
 #choixlang
   display: inline
+
 #choixlang ul
   display: inline
+
 #choixlang ul li
   display: inline
-  :padding 
-    :left   .5em
-    :right  .5em
-    :top    .3em
-    :bottom .3em
-  margin: .3em
+  padding:
+    left: 0.5em
+    right: 0.5em
+    top: 0.3em
+    bottom: 0.3em
+  margin: 0.3em
+
 #choixlang ul li a
   width: 100%
   line-height: 2em
+
 .date
-  font-size: .8em
+  font-size: 0.8em
+
 .date, .date .year, .date .month, .date .year
   display: block
+
 #next_before_articles
   clear: both
   width: 100%
-  :font-size 1.2em
-  :padding
-    :top    1em
-    :bottom 1em
+  font-size: 1.2em
+  padding:
+    top: 1em
+    bottom: 1em
+
 #previous_articles
   float: left
   margin-left: 1em
   width: 45%
   text-align: left
+
 #next_articles
   float: right
   width: 45%
@@ -506,9 +535,11 @@ table.impact tr td
   width: 1.5em
   float: left
   font-size: 2em
-  margin-top: -.5em
+  margin-top: -0.5em
   margin-left: -2em
+
 .footnotes
-  font-size: .8em
+  font-size: 0.8em
+
 .fontnotes ol
   margin-left: 0

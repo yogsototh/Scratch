@@ -1,66 +1,68 @@
 -----
------
-!rouge_clair = #cc0000
-!rouge_fonce = #6c0000
-!blanc_fonce = #ddd
-!gris_fonce = #888888
-!texte_normal = #222222
-!texte_attenue = #666666
 
-!tiny_radius = 10px
-!small_radius = 20px
-!large_radius = 27px
+-----
+
+$rouge_clair: #cc0000
+$rouge_fonce: #6c0000
+$blanc_fonce: #dddddd
+$gris_fonce: #888888
+$texte_normal: #222222
+$texte_attenue: #666666
+
+$tiny_radius: 10px
+$small_radius: 20px
+$large_radius: 27px
 
 =white
-  :text-shadow 0 1px #fff
-  :background
-    :color = !blanc_fonce
-  :border
-    :color = !gris_fonce
-    :style solid
-    :width 1px
-  :color = !texte_normal
-  a, a:link 
-    color: #a00
-  a:visited 
-    color: #a00 
+  text-shadow: 0 1px white
+  background:
+    color: $blanc_fonce
+  border:
+    color: $gris_fonce
+    style: solid
+    width: 1px
+  color: $texte_normal
+  a, a:link
+    color: #aa0000
+  a:visited
+    color: #aa0000
   a:active, a:hover
-    color = !rouge_clair
-    text-shadow = 0 0 1px !rouge_fonce
+    color: $rouge_clair
+    text-shadow: 0 0 1px $rouge_fonce
 
 =black
-  :text-shadow 0 1px #000
-  :background
-    :image  url("../../css/img/black.jpg")
-    :repeat no-repeat
-    :color  #000
-  :border
-    :color #666
-    :style solid
-    :width 1px
-  color: #eee
+  text-shadow: 0 1px black
+  background:
+    image: url("../../css/img/black.jpg")
+    repeat: no-repeat
+    color: black
+  border:
+    color: #666666
+    style: solid
+    width: 1px
+  color: #eeeeee
   abbr, acronym, a, a:link
-    :color #ddd
+    color: #dddddd
   a:visited
-    :color = !blanc_fonce
+    color: $blanc_fonce
   a:active, a:hover
-    :color #cc0000
+    color: #cc0000
 
 =red
-  :background
-    :image url("../../css/img/red.jpg")
-    :repeat no-repeat
-    :color = !rouge_fonce
-  :border-color = !rouge_fonce
-  color: #fff
+  background:
+    image: url("../../css/img/red.jpg")
+    repeat: no-repeat
+    color: $rouge_fonce
+  border-color: $rouge_fonce
+  color: white
   abbr, acronym, a, a:link
-    :font-weight bold
-    :text-decoration none
-    :color #eee
+    font-weight: bold
+    text-decoration: none
+    color: #eeeeee
   a:visited
-    :color = !blanc_fonce
+    color: $blanc_fonce
   a:active, a:hover
-    :color #fff
+    color: white
 
 =smallblock
   background-position: 50% 50%
@@ -69,27 +71,27 @@
   background-position: 50% 0%
 
 =tinyround
-  :border
-    :style solid
-    :width 1px 1px 1px 1px
+  border:
+    style: solid
+    width: 1px 1px 1px 1px
 
 =downsmallround
-  :border none
+  border: none
 
 =smallround
-  :border
-    :style solid
-    :width 1px 1px 1px 1px
+  border:
+    style: solid
+    width: 1px 1px 1px 1px
 
 =largeround
-  :border
-    :style solid
-    :width 1px
+  border:
+    style: solid
+    width: 1px
 
 =first_round_base
-  :border
-    :style none
-    :width 2px
+  border:
+    style: none
+    width: 2px
 
 =large_first_round
   +first_round_base
@@ -108,25 +110,25 @@
 
 #sousliens
   +white
-  :font-weight bold
-  :font-size 1.3em
+  font-weight: bold
+  font-size: 1.3em
   a, a:link
-    :color = !texte_attenue
-  a:visited 
-    :color = !texte_attenue
+    color: $texte_attenue
+  a:visited
+    color: $texte_attenue
   a:active, a:hover
-    color = !rouge_clair
+    color: $rouge_clair
 
 .corps
   +white
-  a, a:link, a:visited 
-    color = !rouge_fonce
+  a, a:link, a:visited
+    color: $rouge_fonce
     font-weight: normal
   a:active, a:hover
-    color: #f00
+    color: red
 
 .presarticle
-  font-size: .8em
+  font-size: 0.8em
   width: 20%
 
 .corps
@@ -136,7 +138,7 @@
   +largeround
 
 img
-  :padding .6em
+  padding: 0.6em
 
 pre.twilight,
 .corps h2,
@@ -167,46 +169,46 @@ pre.twilight,
   +smallround
 
 .shadow
-  :background
-    :image url("../../css/img/sombre10percent.png")
-    :repeat repeat
+  background:
+    image: url("../../css/img/sombre10percent.png")
+    repeat: repeat
   +smallround
 
 .intro, .resume
-  font-size: .8em
+  font-size: 0.8em
   font-style: italic
   line-height: 1.4em
 
 .corps h1
-  :border
-    :style solid
-    :width 1px 1px 1px 1px
-  :text
-    :align right
+  border:
+    style: solid
+    width: 1px 1px 1px 1px
+  text:
+    align: right
 
 .corps h2
-  :border
-    :style solid
-  :border
-    :top 1px
-    :right 1px
-    :bottom 1px
-    :left 0px
-  :text
-    :align right
+  border:
+    style: solid
+  border:
+    top: 1px
+    right: 1px
+    bottom: 1px
+    left: 0px
+  text:
+    align: right
 
 .corps h3,
 .corps h4
-  :border
-    :color #6c6c6c
-    :top 1px
-    :right 1px
-    :bottom 1px
-    :left 0px
-    :style solid
-  :color #00ee00
-  :text
-    :align right
+  border:
+    color: #6c6c6c
+    top: 1px
+    right: 1px
+    bottom: 1px
+    left: 0px
+    style: solid
+  color: #00ee00
+  text:
+    align: right
 
 .corps h1.first
   +large_first_round
@@ -233,25 +235,25 @@ table.description tr td,
 .corps
   +tinyround
 
-#titre, h1 
-  text-shadow: 0px -1px 1px #333
+#titre, h1
+  text-shadow: 0px -1px 1px #333333
 
 .corps h2
-  color: #ddd
-  text-shadow: 0 -1px #999
+  color: #dddddd
+  text-shadow: 0 -1px #999999
 
 .corps h2 a,
 .corps h3 a,
 .corps h4 a
-  text-shadow: 0 1px #fcc
+  text-shadow: 0 1px #ffcccc
 
 .corps h3,
 .corps h4
-  color: #555
-  text-shadow: 0 1px #ccc
+  color: #555555
+  text-shadow: 0 1px #cccccc
 
 table.description tr td
-  :border none
+  border: none
 
 .nojsbutton,
 .corps
@@ -259,55 +261,59 @@ table.description tr td
 
 // --- Les couleurs
 body
-  :background
-    :color #ccc
-  :color #000
+  background:
+    color: #cccccc
+  color: black
+
 //    :image url('../../css/img/background.jpg')
 //    :attachment fixed
 
-a 
-  :font-weight     bold
-  :text-decoration none
-a, a:link 
-  color: #a00
+a
+  font-weight: bold
+  text-decoration: none
+
+a, a:link
+  color: #aa0000
   outline: none
-a:visited 
-  color: #a00 
+
+a:visited
+  color: #aa0000
   outline: none
+
 a:active, a:hover
-  color: #f00
+  color: red
   outline: none
 
-ul 
-  :list-style square
+ul
+  list-style: square
 
-.corps h1 
-  :font-variant small-caps
+.corps h1
+  font-variant: small-caps
 
-#lastmod 
-  :color     #999
-  :font-size .8em
+#lastmod
+  color: #999999
+  font-size: 0.8em
 
 .withfile pre.twilight
-  :background
-    :position 50% -10%
+  background:
+    position: 50% -10%
 
-.file 
+.file
   a,
-  a:link 
-    :color #ddd 
+  a:link
+    color: #dddddd
   a:visited
-    :color = !blanc_fonce
-  a:active, 
+    color: $blanc_fonce
+  a:active,
   a:hover
     color: #cc0000
 
 // --- les fontes
-#boutonMessage 
-  :color black
-  :font
-    :size = !tiny_radius 
-    :family sans-serif
+#boutonMessage
+  color: black
+  font:
+    size: $tiny_radius
+    family: sans-serif
 
 body, h1, h2, h3, h4, #entete
   font-family: Optima, "Century Gothic", Helvetica, Arial, sans-serif
@@ -318,29 +324,29 @@ body, h1, h2, h3, h4, #entete
   line-height: 1.6em
 
 pre, code
-  :font
-    :family monaco, monospace
-    :size .7em
+  font:
+    family: monaco, monospace
+    size: 0.7em
 
 p
   margin-bottom: 1.2em
 
 .corps
-  :text-align justify
+  text-align: justify
 
 #liens,
-#sousliens 
-  :font-weight bold
+#sousliens
+  font-weight: bold
 
 // --- le style des blocs de liens
-#liens ul 
-  :list-style    none
+#liens ul
+  list-style: none
 
-#sousliens ul 
-  :list-style    none
-  :margin
-    :top        0px
-    :bottom     0px
+#sousliens ul
+  list-style: none
+  margin:
+    top: 0px
+    bottom: 0px
 
 #liens ul li a:hover
   +red
@@ -354,87 +360,86 @@ p
   +smallblock
 
 // --- bords arrondis
-#content 
+#content
   +largeround
-  :border none
+  border: none
 
 // --- les ombres
 
-.nojsbutton 
-  font-size: 2.5em 
+.nojsbutton
+  font-size: 2.5em
 
 .nojsbutton > a:hover,
-.nojsbutton > a:active 
-  color: #000 !important
+.nojsbutton > a:active
+  color: black !important
 
+.assombris10
+  text:
+    shadow: 0 1px #eeeeee
+  background:
+    image: url("../../css/img/sombre10percent.png")
+    repeat: repeat
 
-.assombris10 
-  :text
-    :shadow 0 1px #eee
-  :background
-    :image url("../../css/img/sombre10percent.png")
-    :repeat repeat
-
-.assombris20 
-  :text
-    :shadow 0 1px #ddd
-  :background
-    :image url("../../css/img/sombre20percent.png")
-    :repeat repeat
+.assombris20
+  text:
+    shadow: 0 1px #dddddd
+  background:
+    image: url("../../css/img/sombre20percent.png")
+    repeat: repeat
 
 .corps h3, img
-  :background
-    :image url("../../css/img/sombre20percent.png")
-    :repeat repeat
+  background:
+    image: url("../../css/img/sombre20percent.png")
+    repeat: repeat
 
 .corps h4
-  :background
-    :image url("../../css/img/sombre20percent.png")
-    :repeat repeat
-  :padding
-    :left .5em
-    :right .5em
+  background:
+    image: url("../../css/img/sombre20percent.png")
+    repeat: repeat
+  padding:
+    left: 0.5em
+    right: 0.5em
 
 .small
-  :font-size .8em
+  font-size: 0.8em
 
 .strong
-  :font-weight bold
+  font-weight: bold
 
 #sousliens .active
-  :font-style italic
+  font-style: italic
 
 #entete
-  :font-variant small-caps
+  font-variant: small-caps
 
 #choix ul li.activelang
   +black
   +tinyround
 
 #titre
-  :border solid 1px #300
+  border: solid 1px #330000
   // :left -1px
   // :position relative
 
-#titre h1 
-  :font
-    :size     2.5em
-    :variant  small-caps
-    :weight   bold
-  :text-align center
-  :margin
-    :bottom .3em
-    :top    .3em
-    :left   auto
-    :right  auto
+#titre h1
+  font:
+    size: 2.5em
+    variant: small-caps
+    weight: bold
+  text-align: center
+  margin:
+    bottom: 0.3em
+    top: 0.3em
+    left: auto
+    right: auto
 
-abbr, 
+abbr,
 acronym
-  :text
-    :decoration none
-  :border
-    :bottom
-      :width 0
+  text:
+    decoration: none
+  border:
+    bottom:
+      width: 0
 
 blockquote ul
   list-style: none
@@ -448,29 +453,29 @@ blockquote ul
 
 .darkimpact
   +black
-  text-shadow: 0 1px 0 #fff
+  text-shadow: 0 1px 0 white
   a:hover
-    text-shadow: 0 1px 0 #f77
+    text-shadow: 0 1px 0 #ff7777
 
 .impact
   +red
-  text-shadow: 0 -2px 0 #000
+  text-shadow: 0 -2px 0 black
 
 .sc
   font-variant: small-caps
 
 .tag:hover
-  :color = !rouge_clair
+  color: $rouge_clair
 
 .tag.selected
-  :color = !rouge_fonce
+  color: $rouge_fonce
 
 abbr
-  :color = !rouge_fonce
+  color: $rouge_fonce
 
 .black abbr
-  :color #ddd
-  :text-shadow 0px 0px 2px #fff
+  color: #dddddd
+  text-shadow: 0px 0px 2px white
 
 small
   line-height: 1em
@@ -478,89 +483,94 @@ small
 #rss a
   +smallround
   +smallblock
-  :line-height 2em
-  :border none
+  line-height: 2em
+  border: none
   img
-    :border none 
-    :outline none
+    border: none
+    outline: none
 
 #rss a:hover
   +red
 
 hr
-  border-bottom: solid 1px #fff
+  border-bottom: solid 1px white
 
 #menuMessage
   +smallblock
   +downsmallround
 
 h1 > .date
-  :font-size .6em
-  :color = #000
+  font-size: 0.6em
+  color: black
 
 .corps .return a
-  :color #ccc
+  color: #cccccc
   +smallround
-  :border 
-    :style solid 
-    :color #ccc
-    :width 1px
+  border:
+    style: solid
+    color: #cccccc
+    width: 1px
 
-.corps .return 
+.corps .return
   a:active,
   a:hover
-    :text-shadow 0 1px #fff
-    :color #aaa
-    :border-color #aaa
-    :background-color #dadada
+    text-shadow: 0 1px white
+    color: #aaaaaa
+    border-color: #aaaaaa
+    background-color: #dadada
 
-.date 
+.date
   text-align: center
-  font-size: .7em
-  color: #bbb
+  font-size: 0.7em
+  color: #bbbbbb
   width: 4.1em
-  border: 1px solid #888
+  border: 1px solid #888888
   line-height: 1.5em
   display: inline-block
   margin-top: 1em
-.date .day 
-  color: #800
-  background-color: #fff
+
+.date .day
+  color: #880000
+  background-color: white
   float: left
   width: 1.7em
-.date .month 
-  border-left: solid #888 .1em
-  background-color: #000
-  color: #fff
+
+.date .month
+  border-left: solid #888888 0.1em
+  background-color: black
+  color: white
   float: right
   width: 2.3em
+
 .date .year
-  border-top: solid #888 1px
-  border-bottom: solid #888 1px
+  border-top: solid #888888 1px
+  border-bottom: solid #888888 1px
   line-height: 3ex
   clear: both
-  background-color: #bbb
-  color: #000
+  background-color: #bbbbbb
+  color: black
+
 .date
-  border: solid #000 1px
+  border: solid black 1px
   position: relative
-  top: .7em
+  top: 0.7em
   left: -2em
 
 #next_before_articles a
-  color: #000 !important
-  :font-size .9em
+  color: black !important
+  font-size: 0.9em
 
 blockquote
-  :font
-    :style italic
-  :background-image url("/Scratch/css/img/sombre10percent.png")
-  :padding .5em 1em
+  font:
+    style: italic
+  background-image: url("/Scratch/css/img/sombre10percent.png")
+  padding: 0.5em 1em
 
 #tagcloud a,
 #tagcloud a:link,
 #tagcloud a:visited
-  color: #000
+  color: black
+
 .archive h4
   font-size: 2em
   text-align: center
