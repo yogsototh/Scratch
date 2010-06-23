@@ -52,6 +52,7 @@ self.instance_variable_set(:@conf, conf)
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/layout.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/shadows.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/gen.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocom<%= language %>"/>
         <link rel="stylesheet" type="text/css" href="/Scratch/css/js.css" /> <% 
         languages.each do |lang|
@@ -63,8 +64,7 @@ self.instance_variable_set(:@conf, conf)
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
-        <script type="text/javascript" src="/Scratch/js/menu.js"></script>
-        <title><%= @item[:title] %></title>
+        <title><%= @item[:title] %> ARTICLE</title>
     </head>
     <body lang="<%= language %>">
         <script type="text/javascript">// <![CDATA[
@@ -73,34 +73,17 @@ self.instance_variable_set(:@conf, conf)
         </script>
 
         <div id="content">
-            <div id="entete">
-                <div id="choixrss">
-                    <div id="rss">
-                        <span>
-                            <a href="http://feeds.feedburner.com/yannespositocom<%= language %>">
-                                <%= tradOf(:subscribe) %>
-                                <img src="/Scratch/img/menu/rss-128.png" alt="rss" height="32"/>
-                            </a>
-                            <sup>
-                                <a href="/Scratch/<%=language%>/rss"><%= tradOf(:whatsthis) %></a>
-                            </sup>
-                        </span>
-                    </div>
-                    <div id="choix"> 
-                        <div id="choixlang">
-                            <ul>
-                                <% languages.each do |l| %>
-                                <% dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/})  %>
-                                <% if @item_rep.path != dest %>
-                                <li><a href="<%=dest%>" onclick="setLanguage('<%=l%>')"><%= tradOfKeywordIn(:switchTo,l) %></a></li>
-                                <% end %>
-                                <% end %>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div id="liens">
-                    <%= generateMenu %>
+            <div id="choix"> 
+                <%= tradOf(:langue) %>
+                <div id="choixlang">
+                    <ul>
+                        <% languages.each do |l| %>
+                            <% dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/})  %>
+                            <% if @item_rep.path != dest %>
+                        <li><a href="<%=dest%>" onclick="setLanguage('<%=l%>')"><%= tradOfKeywordIn(:switchTo,l) %></a></li>
+                            <% end %>
+                        <% end %>
+                    </ul>
                 </div>
             </div>
 
@@ -131,6 +114,81 @@ self.instance_variable_set(:@conf, conf)
                     <%= yield %>
                     <div class="return"><a href="#entete" onclick="fastShowMenu()">&uarr;</a></div>
                 </div>
+            <% depth = depthOf(@item) %>
+                <% if depth > 2 or ( depth == 2 and @item.children.length > 0 ) %>
+                    <div class="navigation">
+                        <div class="navigationprev"><%= previousFor(@item) %></div>
+                        <div class="navigationnext"><%= nextFor(@item) %></div>
+                    </div>
+                    <div class="flush"></div>
+                <% end %>
+
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment"><%= tradOf(:clickForComment) %></div>');
+                </script>
+                <div class="corps" id="comment">
+                    <h2 class="first"><%= tradOf(:comment) %></h2>
+                    <%= generateIntenseDebateThread %>
+                </div>
+
+            <div id="entete">
+                <div id="liens">
+                    <%= generateMenu %>
+                </div>
+                <div id="choixrss">
+                    <div id="rss">
+                        <span>
+                            <a href="http://feeds.feedburner.com/yannespositocom<%= language %>">
+                                <%= tradOf(:subscribe) %>
+                                <img src="/Scratch/img/menu/rss-128.png" alt="rss" height="32"/>
+                            </a>
+                            <sup>
+                                <a href="/Scratch/<%=language%>/rss"><%= tradOf(:whatsthis) %></a>
+                            </sup>
+                        </span>
+                    </div>
+                </div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        <%= tradOf(:previousArticles) %>
+                        <% 
+                        (1..3).each do |n|
+                        a=article_brother(-n)
+                        if not a.nil?
+                        %>
+                        <div class="previous_article">
+                            <%= link_to('&larr; ' + a[:title], a)  %>
+                        </div>
+                        <% end %>
+                        <% end %>
+                    </div>
+                    <div id="next_articles">
+                        <%= tradOf(:nextArticles) %>
+                        <% 
+                        (1..3).each do |n|
+                        a=article_brother(n)
+                        if not a.nil?
+                        %>
+                        <div class="next_article">
+                            <%= link_to(a[:title] + '&rarr; ', a)  %>
+                        </div>
+                        <% end %>
+                        <% end %>
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
             <div id="bottom">
                 <div>
                     <%= tradOf(:entirely_done_with) %>
@@ -150,6 +208,7 @@ self.instance_variable_set(:@conf, conf)
                     <%=tradOf(:copyright) %>
                 </div>
                 <div id="lastmod">
+                    <%=tradOf(:created_at)%>: <%= @item[:created_at].strftime(@config[:dateFormat][language.intern]) %> <br/>
                     <%=tradOf(:last_modified)%>: <%= @item.mtime.strftime(@config[:dateFormat][language.intern]) %> 
                 </div>
             </div>

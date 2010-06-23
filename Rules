@@ -56,7 +56,11 @@ compile '/html/*' do
   # filter :yabbreviations
   filter :footnotes
 
-  layout 'default' unless item[:layout] == "none"
+  if item[:kind] == 'article'
+      layout 'article'
+  else
+    layout 'default' unless item[:layout] == "none"
+  end
 end
 
 route '/html/*' do
