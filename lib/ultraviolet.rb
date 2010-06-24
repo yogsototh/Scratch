@@ -15,7 +15,7 @@ class UltraVioletFilter < Nanoc3::Filter
             codesuffix=''
             if filename
                 webpath = @item.path
-                code_path = "/output/#{webpath}/code"
+                code_path = "output#{webpath}code"
                 url = webpath + 'code/' + filename
                 if (url == @url)
                     puts %{# erreur de redo : #{url}}
@@ -36,6 +36,6 @@ class UltraVioletFilter < Nanoc3::Filter
     def copy_text_to_file(str, fname, dir)
         FileUtils.mkdir_p dir
         File.open(%{#{dir}/#{fname}}, 'w'){|f|f.write(str)}
-        puts %{Ecriture de #{dir}/#{fname}}
+        puts %{\t\tEcriture de #{dir}/#{fname}}
     end
 end 
