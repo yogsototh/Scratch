@@ -57,8 +57,8 @@ translations:
         fr: "Seulement en"
         en: "Only in"
     whatsthis:
-        fr: "?"
-        en: "?"
+        fr: "Qu'est-ce que c'est ?"
+        en: "What's this?"
     loading:
         fr: "Chargement en cours..."
         en: "loading..."
@@ -80,3 +80,6 @@ translations:
     subscribe:
         en: "Subscribe"
         fr: "s'abonner"
+    enableJavascriptToComment:
+        en: "You must enable javascript to comment."
+        en: "Vous devez activer javascript pour commenter."

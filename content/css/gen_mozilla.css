@@ -118,6 +118,8 @@ $large_radius: 27px
 #liens ul li a:hover,
 #liens ul li.active,
 #content > #choix > #choixlang ul li a,
+#clickcomment,
+#rss,
 blockquote
   +smallround
 

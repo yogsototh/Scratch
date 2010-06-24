@@ -77,25 +77,6 @@ ul.horizontal
   margin-top: 0px
   margin-bottom: 0px
 
-#rss a
-  width: 9em
-  padding:
-    left: 1em
-    right: 1em
-  display: inline-block
-
-#rss img
-  padding: 0
-  float: right
-  margin:
-    top: 0.2em
-    left: 0.2em
-  display: inline
-
-#rss sup a
-  float: right
-  width: 0.5em
-
 #liens
   width: 100%
   padding: 0
@@ -449,15 +430,6 @@ table.impact tr td
 #liens
   font-size: 1.5em
 
-#rss
-  text-align: right
-  font-size: 1.4em
-  padding-right: 0.3em
-  margin:
-    top: 0.4em
-  float: right
-  width: 16em
-
 #iemessage
   font-size: 1.5em
 
@@ -479,8 +451,8 @@ table.impact tr td
   text-align: center
 
 #choixrss
-  width: 100%
-  clear: both
+  float: right
+  width: 25%
 
 #choix
   padding: 1em
@@ -538,8 +510,20 @@ table.impact tr td
 #content > #choix > #choixlang ul li
   padding-left: 0
 
-#content > #choix > #choixlang ul li a
+#content > #choix > #choixlang ul li a,
+#clickcomment
   padding: .1em 1em
+
+#clickcomment
+  margin-left: 0
+  width: 25%
+
+#rss
+  display: block
+  width: 100%
+  float: right
+  padding: .1em 1em
+
 
 .return a
   line-height: 1.5em
@@ -561,3 +545,8 @@ table.impact tr td
 
 .fontnotes ol
   margin-left: 0
+
+#whatsthis
+  font-size: .8em
+  font-weight: normal
+  text-align: center

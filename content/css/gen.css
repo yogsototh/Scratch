@@ -478,18 +478,6 @@ abbr
 small
   line-height: 1em
 
-#rss a
-  +smallround
-  +smallblock
-  line-height: 2em
-  border: none
-  img
-    border: none
-    outline: none
-
-#rss a:hover
-  +red
-
 hr
   border-bottom: solid 1px white
 
@@ -500,6 +488,20 @@ hr
 h1 > .date
   font-size: 0.6em
   color: black
+
+#rss
+  +black
+  font-size: 1.2em
+  font-weight: normal
+  +smallround
+  +smallblock
+
+#clickcomment
+  +black
+  cursor: pointer
+  font-size: 1.2em
+  +smallround
+  +smallblock
 
 #content > #choix a
   color: #999

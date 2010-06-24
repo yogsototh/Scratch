@@ -136,5 +136,4 @@ layouts/    : erb templates ::
 lib/        : ruby libraries used to process files ::
 output/     : website ::
 Rakefile    : not mandatory for this blog ::
-tmp
 </desc>
