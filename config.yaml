@@ -24,11 +24,11 @@ translations:
         fr: "langue"
         en: "language"
     switchTo: 
-        fr: "lire en Français"
-        en: "switch to English"
+        fr: "Version Française"
+        en: "Switch to English"
     clickForComment:
-        fr: "Cliquez ici pour commenter"
-        en: "Click me Comment"
+        fr: "Cliquez pour commenter"
+        en: "Click to Comment"
     liens:
         fr: "liens"
         en: "links"

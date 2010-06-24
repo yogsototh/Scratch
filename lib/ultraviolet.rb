@@ -1,7 +1,6 @@
 class UltraVioletFilter < Nanoc3::Filter
     identifier :ultraviolet
     def run(content, params={})
-        require 'rio'
         require 'rubygems'
         require 'uv'
         code_rule = %r{(<code class="([^"]+?)"( file="([^"]+?)")?>(.+?)</code>)}m
@@ -16,7 +15,7 @@ class UltraVioletFilter < Nanoc3::Filter
             codesuffix=''
             if filename
                 webpath = @item.path
-                code_path = [ 'output' , webpath, 'code']
+                code_path = "/output/#{webpath}/code"
                 url = webpath + 'code/' + filename
                 if (url == @url)
                     puts %{# erreur de redo : #{url}}
@@ -35,8 +34,8 @@ class UltraVioletFilter < Nanoc3::Filter
 
     private
     def copy_text_to_file(str, fname, dir)
-        dest_rio = rio(dir).mkpath
-        frio = rio(dir, fname).delete
-        frio << str
+        FileUtils.mkdir_p dir
+        File.open(%{#{dir}/#{fname}}, 'w'){|f|f.write(str)}
+        puts %{Ecriture de #{dir}/#{fname}}
     end
 end 

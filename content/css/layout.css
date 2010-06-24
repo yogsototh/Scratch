@@ -31,6 +31,11 @@ body
   width: 100%
   min-width: $content_width - 2em
   z-index: 2000
+  margin-bottom: $VMarginCorps
+
+.corps_spaced
+  margin-bottom: $VMarginCorps
+  margin-top: $VMarginCorps
 
 #titre h2
   width: 80%
@@ -527,12 +532,25 @@ table.impact tr td
   margin-right: 1em
   text-align: right
 
+#content > #choix,
+#content > #choix > #choixlang,
+#content > #choix > #choixlang ul,
+#content > #choix > #choixlang ul li
+  padding-left: 0
+
+#content > #choix > #choixlang ul li a
+  padding: .1em 1em
+
 .return a
-  display: block
   line-height: 1.5em
   text-align: center
+  font-size: 1.5em
   height: 1.5em
   width: 1.5em
+  float: right
+  padding: .1em
+
+.corps .return a
   float: left
   font-size: 2em
   margin-top: -0.5em

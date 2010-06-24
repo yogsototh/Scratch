@@ -104,6 +104,7 @@ $large_radius: 27px
 .return a,
 #liens ul li a:hover,
 #liens ul li.active,
+#content > #choix > #choixlang ul li a,
 blockquote
   +smallround
 

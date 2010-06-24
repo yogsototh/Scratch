@@ -74,7 +74,7 @@ self.instance_variable_set(:@conf, conf)
 
         <div id="content">
             <div id="choix"> 
-                <%= tradOf(:langue) %>
+                <div class="return"><a href="#entete">&darr;</a></div>
                 <div id="choixlang">
                     <ul>
                         <% languages.each do |l| %>
@@ -112,7 +112,6 @@ self.instance_variable_set(:@conf, conf)
             <div id="afterheader">
                 <div class="corps">
                     <%= yield %>
-                    <div class="return"><a href="#entete" onclick="fastShowMenu()">&uarr;</a></div>
                 </div>
             <% depth = depthOf(@item) %>
                 <% if depth > 2 or ( depth == 2 and @item.children.length > 0 ) %>
@@ -139,7 +138,7 @@ self.instance_variable_set(:@conf, conf)
                     <%= generateIntenseDebateThread %>
                 </div>
 
-            <div id="entete">
+            <div id="entete" class="corps_spaced">
                 <div id="liens">
                     <%= generateMenu %>
                 </div>

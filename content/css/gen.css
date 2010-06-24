@@ -1,7 +1,5 @@
 -----
-
 -----
-
 $rouge_clair: #cc0000
 $rouge_fonce: #6c0000
 $blanc_fonce: #dddddd
@@ -502,6 +500,35 @@ hr
 h1 > .date
   font-size: 0.6em
   color: black
+
+#content > #choix a
+  color: #999
+  font-size: 1.2em
+  background-color: #bababa
+  +smallround
+  border:
+    style: solid
+    color: #999
+    width: 1px
+
+#content > #choix > #choixlang ul li a
+  +smallround
+
+#content > #choix a
+  a:active,
+  a:hover
+    text-shadow: 0 1px white
+    color: #aaaaaa
+    border-color: #aaaaaa
+    background-color: #dadada
+
+.corps .return
+  a:active,
+  a:hover
+    text-shadow: 0 1px white
+    color: #aaaaaa
+    border-color: #aaaaaa
+    background-color: #dadada
 
 .corps .return a
   color: #cccccc
