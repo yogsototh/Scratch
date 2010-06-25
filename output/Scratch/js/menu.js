@@ -20,10 +20,10 @@ function fastShowMenu() {
     autoHideMenu(last);
 }
 function toggleMenu() {
-    if ( $('#entete').css('top')==entete_height() ) {
-        showMenu();
-    } else {
+    if ( $('#entete').css('opacity')==1 ) {
         hideMenu();
+    } else {
+        showMenu();
     }
 }
 var last=0;
@@ -35,7 +35,6 @@ function autoHideMenu(value) {
     },2000);
 }
 function initMenu() {
-    $('#titre').css({top: -entete_height});
     $('#entete').hover(showMenu);
     $('#entete').hover(function(){last+=1;}, function(){autoHideMenu(last);});
     autoHideMenu(0);

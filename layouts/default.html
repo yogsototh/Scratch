@@ -74,30 +74,25 @@ self.instance_variable_set(:@conf, conf)
 
         <div id="content">
             <div id="entete">
+            <div id="choix"> 
                 <div id="choixrss">
-                    <div id="rss">
-                        <span>
-                            <a href="http://feeds.feedburner.com/yannespositocom<%= language %>">
-                                <%= tradOf(:subscribe) %>
-                            </a>
-                            <sup>
-                                <a href="/Scratch/<%=language%>/rss"><%= tradOf(:whatsthis) %></a>
-                            </sup>
-                        </span>
-                    </div>
-                    <div id="choix"> 
-                        <div id="choixlang">
-                            <ul>
-                                <% languages.each do |l| %>
-                                <% dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/})  %>
-                                <% if @item_rep.path != dest %>
-                                <li><a href="<%=dest%>" onclick="setLanguage('<%=l%>')"><%= tradOfKeywordIn(:switchTo,l) %></a></li>
-                                <% end %>
-                                <% end %>
-                            </ul>
-                        </div>
-                    </div>
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocom<%= language %>">
+                        <%= tradOf(:subscribe) %>
+                    </a>
+                    <a id="whatsthis" href="/Scratch/<%=language%>/rss"><%= tradOf(:whatsthis) %></a>
                 </div>
+                <div id="choixlang">
+                    <%= languages.map do |l|
+                        dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/}) 
+                        if @item_rep.path != dest
+                            %{<a href="#{dest}" onclick="setLanguage('#{l}')">#{ tradOfKeywordIn(:switchTo,l)}</a>}
+                        else
+                            nil
+                        end
+                    end.join('</br>') %>
+                </div>
+            </div>
+            <div class="flush"></div>
                 <div id="liens">
                     <%= generateMenu %>
                 </div>

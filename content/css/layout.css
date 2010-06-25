@@ -28,9 +28,11 @@ body
 #entete
   position: relative
   left: 0
+  top: .5em
   width: 100%
   min-width: $content_width - 2em
   z-index: 2000
+  padding-bottom: 1em
   margin-bottom: $VMarginCorps
 
 .corps_spaced
@@ -81,6 +83,7 @@ ul.horizontal
   width: 100%
   padding: 0
   clear: both
+  margin-top: 1em
 
 #liens ul
   width: 100%
@@ -455,28 +458,8 @@ table.impact tr td
   width: 25%
 
 #choix
-  padding: 1em
   text-align: left
   font-size: 1.2em
-
-#choixlang
-  display: inline
-
-#choixlang ul
-  display: inline
-
-#choixlang ul li
-  display: inline
-  padding:
-    left: 0.5em
-    right: 0.5em
-    top: 0.3em
-    bottom: 0.3em
-  margin: 0.3em
-
-#choixlang ul li a
-  width: 100%
-  line-height: 2em
 
 .date
   font-size: 0.8em
@@ -504,13 +487,10 @@ table.impact tr td
   margin-right: 1em
   text-align: right
 
-#content > #choix,
-#content > #choix > #choixlang,
-#content > #choix > #choixlang ul,
-#content > #choix > #choixlang ul li
+#choixlang
+  margin-left: 0
   padding-left: 0
-
-#content > #choix > #choixlang ul li a,
+#choixlang a,
 #clickcomment
   padding: .1em 1em
 
@@ -519,6 +499,7 @@ table.impact tr td
   width: 25%
 
 #rss
+  text-align: center
   display: block
   width: 100%
   float: right
@@ -530,7 +511,6 @@ table.impact tr td
   text-align: center
   font-size: 1.5em
   height: 1.5em
-  width: 1.5em
   float: right
   padding: .1em
 
