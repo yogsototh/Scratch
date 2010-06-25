@@ -641,10 +641,6 @@ blockquote
   font-size: 2em
   text-align: center
 
-#whatsthis
-  border: none
-  background: none
-
 #content > #choix a:hover
   color: #666
   border-color: #666
