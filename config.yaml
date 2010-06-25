@@ -27,8 +27,8 @@ translations:
         fr: "Version Française"
         en: "Switch to English"
     clickForComment:
-        fr: "Cliquez pour commenter"
-        en: "Click to Comment"
+        fr: "Commentaires"
+        en: "Comments"
     liens:
         fr: "liens"
         en: "links"

@@ -3,7 +3,7 @@ class Graph < Nanoc3::Filter
     @@tmpfic="/tmp/graphtemp.dot"
     def run(content, params={}) 
         content.gsub!(%r{<graph title="([^"]*)">(.+?)</graph>}m) do |full|
-            FileUtils.rm(@@tmpfic)
+            # FileUtils.rm(@@tmpfic)
             title=$1
             str=$2
             filename=title.gsub(/[^a-zA-Z0-9_]/,"_")

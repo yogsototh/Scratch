@@ -76,14 +76,14 @@ self.instance_variable_set(:@conf, conf)
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
                 <div id="choixlang">
-                    <ul>
-                        <% languages.each do |l| %>
-                            <% dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/})  %>
-                            <% if @item_rep.path != dest %>
-                        <li><a href="<%=dest%>" onclick="setLanguage('<%=l%>')"><%= tradOfKeywordIn(:switchTo,l) %></a></li>
-                            <% end %>
-                        <% end %>
-                    </ul>
+                    <%= languages.map do |l|
+                        dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/}) 
+                        if @item_rep.path != dest
+                            %{<a href="#{dest}" onclick="setLanguage('#{l}')">#{ tradOfKeywordIn(:switchTo,l)}</a>}
+                        else
+                            nil
+                        end
+                    end.join('</br>') %>
                 </div>
             </div>
 

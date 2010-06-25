@@ -506,19 +506,21 @@ h1 > .date
     image: url("../../css/img/sombre20percent.png")
     repeat: repeat
 
-#entete > #rss,
-#entete > #choix a
-  +smallround
-  +smallblock
-  font-size: .8em
-  +assombris
-
-#content > #rss
+#afterheader #rss
   +black
   font-size: 1.2em
   font-weight: normal
   +smallround
   +smallblock
+
+#entete #rss,
+#entete > #choix a
+  +smallround
+  +smallblock
+  font-size: .8em
+  +assombris
+  padding: .1em 1em
+
 
 #clickcomment
   +black
@@ -540,7 +542,18 @@ h1 > .date
 #content > #choix > #choixlang ul li a
   +smallround
 
-#content > #choix a
+#entete #choix
+  a,
+  a:active,
+  a:hover
+    border-color: #333
+#entete #choix
+  a:active,
+  a:hover
+    text-shadow: 0 0 9px #866 
+
+#afterhead #choix
+  a,
   a:active,
   a:hover
     text-shadow: 0 1px white
@@ -627,3 +640,12 @@ blockquote
 .archive h4
   font-size: 2em
   text-align: center
+
+#whatsthis
+  border: none
+  background: none
+
+#content > #choix a:hover
+  color: #666
+  border-color: #666
+ 

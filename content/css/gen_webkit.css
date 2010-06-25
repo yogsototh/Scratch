@@ -104,12 +104,13 @@ $large_radius: 27px
 .return a,
 #liens ul li a:hover,
 #liens ul li span.active,
-#content > #choix > #choixlang ul li a,
+#choixlang a,
 #clickcomment,
 #rss,
 blockquote
   +smallround
 
+#whatsthis,
 img
   +tinyround
 
