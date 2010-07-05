@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+source ~/.zshrc
+
 languages=( fr en )
 typeset -a exclu
 
@@ -29,10 +31,12 @@ for fic in multi/**/*(.); do
                 exclu=( $exclu $l )
             done
             awk '! /^('$exclu'): / { sub(/^'$language': /,""); print $0 }' < $fic > $dest
-            priority_list=( $priority_list ${dest#content/} )
+            priority_list=( $priority_list ${${dest#content/}:r} )
         fi
     done
 done
 
-print $priority_list
-nanoc co $priority_list
+cmd="nanoc co $priority_list"
+print -- '==='
+print -- $cmd
+eval $cmd
