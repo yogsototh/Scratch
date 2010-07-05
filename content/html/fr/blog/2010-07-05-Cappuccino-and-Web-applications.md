@@ -24,12 +24,21 @@ begindiv(intro)
 * J'ai essayé de faire une version de [YPassword](http://yannesposito.com/Softwares/YPassword.html) en jQuery et avec Cappuccino.
 * Cappuccino est très bien sur les navigateurs non mobile mais l'application pèse 1.4Mo et n'est pas compatible avec l'iPhone.
 * la version jQuery n'est pas aussi jolie que la version réalisée avec Cappuccino mais elle pèse seulement 106Ko et est compatible avec l'iPhone.
-* Si les applications réalisées avec Dashcode 3 sont portables sur les navigateurs non basés sur webkit cela peut sonner le glas de projets comme Cappuccino et Sproutcore.
+* J'essayerai Dashcode 3
+
+enddiv
+
+---
+
+begindiv(intro)
+
+Avant de commencer, je dois dire que je sais que Cappuccino et jQuery ne sont pas plus comparable que Cocoa et la *standard library* en C++. L'un est fait pour créer des interfaces utilisateurs tandis que l'autre est plus une librairie qui aide aux tâches de bas niveaux.
+Par contre je les ai utilisé tous les deux pour faire la même application. C'est pourquoi je compare l'expérience que j'ai retenu de chacun pour cette tâche.
 
 enddiv
 
 J'ai fait une version web de mon widget [YPassword](http://yannesposito.com/Softwares/YPassword.html).
-C'est un simple widget qui permet d'organiser ses mots de passes en ligne avec une grande sécurité et de façon portable. 
+C'est un simple widget qui permet d'organiser ses mots de passes simplement avec une grande sécurité et de façon portable. 
 Ce n'est pas un widget créé pour remplacer le *trousseau d'accès*, mais
 plus un générateur de mots de passe.
 
@@ -40,9 +49,15 @@ J'ai ensuite fait une version avec [Cappuccino](http://cappuccino.org), que vous
 
 ## Que fait ce widget ?
 
+begindiv(intro)
+
+Si vous vous moquez de savoir ce que fait mon widget, vous pouvez allez directement à la [section suivante](#cappuccino).
+
+enddiv
+
 J'organise mes mots de passe avec une méthode simple.
 Je mémorise un mot de passe *maître*. Et mon mot de passe est alors (principalement) : 
-`hash(motDePasseMaitre+NomDeDomaine)`.
+<code class="ruby">hash(motDePasseMaitre+NomDeDomaine)</code>
 
 En réalité j'ai besoin d'un plus d'informations pour créer mon mot de passe :
 
@@ -92,7 +107,7 @@ Si vous ne connaissez pas Cocoa, je vous conseille de vous y intéresser.
 Il s'agit vraiment d'un framework excellent pour faire des interfaces utilisateur.
 Je ne suis pas un spécialiste de tous les frameworks.
 Mais j'ai réalisé des Interfaces Utilisateurs avec les MFC, Java Swing[^1] et WXWindows il y a quelques années.
-Et je dois dire que Coco est bien meilleurs que tous ces framework.
+Et je dois dire que Cocoa est bien meilleurs que tous ces framework.
 
 [^1]: Si ça vous intéresse vous pouvez jeter un coup d'œil à [SEDiL](http://labh-curien.univ-st-etienne.fr/informatique/SEDiL/). Je suis assez fier de la vue automatique des arbres que j'ai programmé sans librairie de départ.
 
@@ -107,34 +122,33 @@ Les choses qui m'ont plu :
 
 Les choses qui ne m'ont pas plu :
 
-* I made some time to understand how to handle the 'onChange' on the text fields.
-* Documentation lacked a bit of organisation.
-* It doesn't work on iPhone.
-* It weighted 11MB to deploy.
-* It weight 1.3MB to load.
+* J'ai mis un bon moment avant de comprendre comment récupérer le `onChange` des champs textuels.
+* La documentation manquait d'organisation.
+* Ça ne marche pas sous iPhone.
+* Il a fallu déployer 11Mo.
+* Il faut télécharger 1,3Mo pour que l'application se charge dans le navigateur.
 
-I didn't use bindings because I believe they are not ready by now.
+Je n'ai pas utilisé les `bindings` parce qu'il me semble qu'ils ne sont pas prêts.
 
 ## jQuery
 
-The jQuery version of YPassword is not as finished as the Cappuccino one. Because, there is no *slider* directly with jQuery. I'd have to use jQueryUI. And I believe, using it will make the application weight far more than the today 106KB.
+La version jQuery de YPassword n'est pas aussi bien finie que celle de Cappuccino. Simplement parce qu'il n'y a pas de *slider* directement avec jQuery. Il faudrait que j'utilise jQueryUI. Et je pense que l'application deviendrait beaucoup plus lourde pour le coups. En tout cas largement au dessus des 106Ko actuels.
 
-To make this version I simply copied my widget source code and adapted it. It was straightforward. But jQuery is not an *application oriented framework*. It is more a "*darkside* javascript animation framework"[^2].
+J'ai utilisé le code de mon widget mac en l'adaptant un peu pour faire cette version. C'était relativement facile. Mais jQuery n'est pas un *framework orienté application*. Il s'agit plus d'un *framework pour faire des animations qui la pête*.
+
 
 [^2]: I don't want to feel like a *troll* I use jQuery to make some *darkside* animation on this blog. But the javascript on my blog is not needed except for commenting.
 
-I don't have too much to say about the jQuery version. But this was way more *low level* programming than Cappuccino.
+Je n'ai pas beaucoup plus à dire sur la version jQuery, sinon que programmer avec jQuery était de la programmation de niveau beaucoup plus bas qu'avec Cappuccino.
 
-## My conclusion
+## En conclusion
 
-My conclusion over these two framework is. 
-If you want to make an iPhone compatible web application just don't use Cappuccino yet.
-If you want to make *simple* application like mine, I also believe, Cappuccino is a bit too much.
+Si vous voulez faire une application compatible iPhone n'utilisez pas Cappuccino. Du moins pas encore.
+Si vous souhaitez faire un application très simple (comme la mienne), je pense que Cappuccino est un peu trop lourd pour ça.
 
-If you want to make a complex web oriented application, Cappuccino is a great choice. 
-But you may have some difficulties to begin programming with it.
+Si vous souhaitez faire des applications web complexes qui ressemblent à des applications de bureau alors clairement Cappuccino est un très bon choix.
+Notez cependant qu'il peut être un peu difficile de débuter.
 
-Finally, to terminate my web version of my widget, I'll give a try to Dashcode 3. 
-It seems to be a good alternative to create web widgets.
-I don't know if dashcode 3 is portable on non webkit browser.
-But if it is, it could be the end of projects like Cappuccino and Sproutcore.
+Finallement, pour terminer la version web de mon widget, j'essayerai Dashcode 3.
+Il semblerai que ce soit une bonne alternative pour créer des widget sur le web compatible iPhone.
+Je ne sais pas si les applications réalisées avec Dashcode 3 sont compatibles pour les browser n'utilisant pas webkit. Mais si c'est le cas, alors ça pourrait sonner le glas des projets comme Cappuccino et Sproutcore.

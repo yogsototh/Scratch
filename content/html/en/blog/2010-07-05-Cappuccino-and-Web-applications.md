@@ -22,9 +22,18 @@ begindiv(intro)
 
 * Tried to make [YPassword](http://yannesposito.com/Softwares/YPassword.html) in jQuery and with Cappuccino.
 * Cappuccino nice in desktop brower but 1.4MB, not compatible with iPhone.
-* jQuery not as nice as the cappuccino version but 106KB. iPhone compatible.
-* If Dashcode 3 application are portable not only on webkit this should be the end of projects like Cappuccino and Sproutcore.
+* jQuery not as nice as the Cappuccino version but 106KB. iPhone compatible.
+* I'll give a try to Dashcode 3.
 
+
+enddiv
+
+---
+
+begindiv(intro)
+
+Before start, I must say I know Cappuccino and jQuery are no more comparable than Cocoa and the C++ standard library. One is oriented for user interface while the other is and helper for low level programming.
+Nonetheless I used these two to make the same web application. This is why I compare the experience I had with each of them for this specific task.
 
 enddiv
 
@@ -39,9 +48,16 @@ I then made a second version with the [Cappuccino](http://cappuccino.org). You c
 
 ## What this widget do?
 
+begindiv(intro)
+
+If you don't mind about what does my widget and just want to know how the two frameworkcompare, you should go
+directly to the [next part](#cappuccino).
+
+enddiv
+
 I manage my password on many site with a simple method. 
 I remember a strong master password. And my password is mainly
-`hash(masterPassword+domainName)`.
+<code class="ruby">hash(masterPassword+domainName)</code>
 
 In reality I need a bit more informations to create a password:
 
@@ -107,7 +123,7 @@ Things I liked:
 
 Some things I didn't like:
 
-* I made some time to understand how to handle the 'onChange' on the text fields.
+* I made some time to understand how to handle the `onChange` on the text fields.
 * Documentation lacked a bit of organisation.
 * It doesn't work on iPhone.
 * It weighted 11MB to deploy.
@@ -121,13 +137,13 @@ The jQuery version of YPassword is not as finished as the Cappuccino one. Becaus
 
 To make this version I simply copied my widget source code and adapted it. It was straightforward. But jQuery is not an *application oriented framework*. It is more a "*darkside* javascript animation framework"[^2].
 
+
 [^2]: I don't want to feel like a *troll* I use jQuery to make some *darkside* animation on this blog. But the javascript on my blog is not needed except for commenting.
 
 I don't have too much to say about the jQuery version. But this was way more *low level* programming than Cappuccino.
 
 ## My conclusion
 
-My conclusion over these two framework is. 
 If you want to make an iPhone compatible web application just don't use Cappuccino yet.
 If you want to make *simple* application like mine, I also believe, Cappuccino is a bit too much.
 
