@@ -1,1 +1,1 @@
-./multi/blog/2010-06-19-jQuery-popup-the-easy-way.md
+./multi/blog/2010-07-05-Cappuccino-and-Web-applications.md
