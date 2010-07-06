@@ -165,13 +165,6 @@ table.description tr td,
 .corps h2.first
   +small_first_round
 
-/* Shadows
-.corps, #bottom, #sousliens
-  -moz-box-shadow: 0px 2px 5px #333333
-
-#titre, #entete, .date
-  -moz-box-shadow: 0px 0px 5px black
-
 =white
   background-image: -moz-radial-gradient(30% 150, 0, 30% 150, 300, from(white), to(#dddddd)) no-repeat
 
