@@ -5,7 +5,7 @@ menupriority: 2
 noSubMenu: true
 -----
 <% 
-    number_of_articles=10
+    number_of_articles=20
     number_of_char_for_resume=800
     language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
     last_articles = articles.select do |a| 
@@ -25,9 +25,15 @@ newcorps
 
 <ul style="list-style-type: none; margin: 0;">
 <% last_articles.each do |a| %>
-    <li style="line-height: 3em; margin: 0;">
+    <li style="line-height: 1em; margin: 0;">
         <%= calendar_for(a[:created_at], language) %>
-        <%= link_to(a[:title], a) %>
+        <%
+        linktext=%{<span class="sc">#{a[:title]}</span>}
+        if a[:subtitle]
+            linktext<<=%{ <br> <span class="small" style="margin-left: 5em"><span class="small"><em>#{a[:subtitle]}</em></span></span>}
+        end
+        %>
+        <%= link_to(linktext, a) %>
     </li>
 <% end %>
 </ul>
