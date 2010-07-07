@@ -10,19 +10,21 @@ tags:
   - css
   - web
   - programming
+  - Chrome
+  - Safari
+  - Firefox
 -----
 
-Beaucoup d'utilisateurs de [Reddit](http://reddit.com) m'ont rapporter que mon site était très long à charger et à scroller.
-Ils pensaient qu'il s'agissait d'un problème à cause des ombres que j'applique à quasiment tout le texte du site.
-J'étais un peu surpris puisque je fais mes tests sur une machine vraiment très lente et je n'avais jamais détecté ces problèmes.
-En réalité, ce qui ralenti le rendu de ce site est par ordre d'importance :
+Some [Reddit](http://reddit.com) users reported my website was really long to load and to scroll.
+They thinks it was because of the '1px shadow' I apply on all the text.
+I was a bit surprised, because I make some test into a really *slow* virtual machine. And all have always worked fine. In fact, what slow down so much are by order of importance:
 
-1. Radial gradient on chrome (not in Safari on Mac)
-2. Box shadows on Firefox and chrome
+1. Radial gradient on Chrome (not in Safari on Mac)
+2. Box shadows on Firefox and Chrome
 
 ## Gradient
 
-On Safari on Mac there is absolutely no rendering time problem. But when I use chrome under Linux it is almost unusable.
+On Safari on Mac there is absolutely no rendering time problem. But when I use Chrome under Linux it is almost unusable.
 
 Safari and Chrome use webkit, when you access my website with javascript enabled, an additionnal browser specific CSS is loaded. Until now I switched only between: IE, Mozilla and Webkit. Now I added one more special case for Chrome. Now I continue to use gradient for Safari but no more on Chrome.
 

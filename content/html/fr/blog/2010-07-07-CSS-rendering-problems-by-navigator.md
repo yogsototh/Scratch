@@ -10,18 +10,22 @@ tags:
   - css
   - web
   - programming
+  - Chrome
+  - Safari
+  - Firefox
 -----
 
-Some [Reddit](http://reddit.com) users reported my website was really long to load and to scroll.
-They thinks it was because of the '1px shadow' I apply on all the text.
-I was a bit surprised, because I make some test into a really *slow* virtual machine. And all have always worked fine. In fact, what slow down so much are by order of importance:
+Beaucoup d'utilisateurs de [Reddit](http://reddit.com) m'ont rapporter que mon site était très long à charger et à *scroller*.
+Ils pensaient qu'il s'agissait d'un problème dû aux ombres que j'applique sur le texte.
+J'étais un peu surpris puisque je fais mes tests sur une machine vraiment très lente et je n'avais jamais détecté ces problèmes.
+En réalité, ce qui ralenti le rendu de ce site est par ordre d'importance :
 
-1. Les dégradés sur chrome (pas dans Safari sur Mac)
+1. Les dégradés sur Chrome (pas dans Safari sur Mac)
 2. les *box shadows* sur Firefox
 
 ## les dégradés
 
-Sur Safari il n'y a absolument aucun problème avec les dégradés. Par contre sur chrome sous Linux le site devient quasiment inutilisable.
+Sur Safari il n'y a absolument aucun problème avec les dégradés. Par contre sur Chrome sous Linux le site devient quasiment inutilisable.
 
 Safari et Chrome utilisent *webkit* tous les deux. Lorsque vous accéder à ce blog avec javascript activé, un CSS spécifique à votre navigateur est ajouté. Jusqu'à maintenant je faisais un tri entre : IE, Mozilla et Webkit. Maintenant j'ai rajouté un cas particulier pour Chrome.
 Maintenant j'ai supprimé les gradients lorsque vous naviguer sur ce site en utilisant Chrome.
