@@ -1,1 +1,1 @@
-./multi/blog/2010-07-05-Cappuccino-and-Web-applications.md
+./multi/blog/2010-07-07-CSS-rendering-problems-by-navigator.md

@@ -12,6 +12,7 @@ $small_radius: 20px
 $large_radius: 27px
 
 =white
+  text-shadow: 0 1px white
   background:
     color: $blanc_fonce
   border:
@@ -28,6 +29,7 @@ $large_radius: 27px
     text-shadow: 0 0 1px $rouge_fonce
 
 =black
+  text-shadow: 0 1px black
   background:
     image: url("../../css/img/black.jpg")
     repeat: no-repeat
@@ -246,6 +248,9 @@ table.description tr td,
 .corps
   +tinyround
 
+#titre, h1
+  text-shadow: 0px -1px 1px #333333
+
 .corps h2
   color: #dddddd
   text-shadow: 0 -1px #999999
@@ -457,9 +462,13 @@ blockquote ul
 
 .darkimpact
   +black
+  text-shadow: 0 1px 0 white
+  a:hover
+    text-shadow: 0 1px 0 #ff7777
 
 .impact
   +red
+  text-shadow: 0 -2px 0 black
 
 .sc
   font-variant: small-caps
@@ -475,6 +484,7 @@ abbr
 
 .black abbr
   color: #dddddd
+  text-shadow: 0px 0px 2px white
 
 small
   line-height: 1em
@@ -547,6 +557,7 @@ h1 > .date
   a,
   a:active,
   a:hover
+    text-shadow: 0 1px white
     color: #aaaaaa
     border-color: #aaaaaa
     background-color: #dadada
@@ -554,6 +565,7 @@ h1 > .date
 .corps .return
   a:active,
   a:hover
+    text-shadow: 0 1px white
     color: #aaaaaa
     border-color: #aaaaaa
     background-color: #dadada

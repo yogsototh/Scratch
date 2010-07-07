@@ -158,12 +158,6 @@ table.description tr td,
 #titre, #entete, .date
   -webkit-box-shadow: 0px 0px 5px black
 
-=white
-  background-image: -webkit-gradient(radial, 30% 150, 0, 30% 150, 300, from(white), to(#dddddd))
-
-#entete, #sousliens, .corps
-  +white
-
 .date
   -webkit-border:
     top-left-radius: 1px
