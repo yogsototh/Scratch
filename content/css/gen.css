@@ -450,9 +450,6 @@ acronym
     bottom:
       width: 0
 
-blockquote ul
-  list-style: none
-
 .impact, .darkimpact
   +smallblock
   +largeround
