@@ -191,6 +191,8 @@ pre.twilight,
   font-size: 0.8em
   font-style: italic
   line-height: 1.4em
+  em
+    font-style: normal
 
 .corps h1
   border:
