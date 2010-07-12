@@ -54,90 +54,103 @@ fr: # Les indécidabilités
 en: ## Undecidability due to measure errors
 fr: ## Indécidabilité dues aux erreurs de mesures
 
-Problème: trouver la formule de la taille de l'hypoténuse en fonction
-de la longueur des deux autres cotés.
+fr: Problème: Démontrer que le théorème de Pythagore est vrai
+en: Problem: Prove the Pythagoras Theorem is true
 
-Supposons que nous soyons dans _notre_ système mathématique.
-Et que des habitants y habitent.
-Ils ont a disposition des tas de triangles.
-Mais ils font des erreurs de mesure à chaque fois.
-Comment certifier la formule exacte alors ?
-Ils peuvent essayer de démontrer que c'est vrai comme nous.
-Mais la preuve s'appuie sur des axiomes non démontrés.
-Supposons que la célèbre formule de Pythagore soit un des axiomes de leur systèmes mathématique.
-Ils auront beau faire des mesures de plus en plus précises qui viendront toujours conforter leur formule.
-Ils n'auront _jamais_ la certitude d'avoir la bonne.
+fr: Tout d'abord, ne nous plaçons pas dans notre Univers réel, mais
+fr: plutôt dans un Univers imaginaire que je fabrique. Youpi! 
+fr: Je suis le Dieu tout puissant, hahaha !!!!
+fr: Bon, je me calme...
+fr: Donc je crée l'Univers avec les axiomes mathématiques de nos mathématiques.
+fr: Et je fais habiter ce monde à des êtres imaginaire.
+fr: Sauf que comme je suis un Dieu bon je leur donne des sens qui leur permette
+fr: d'observer le monde.  Mais comme je suis aussi un Dieu facétieux, 
+fr: je rend leur possibilités d'observations imparfaites.
+fr: Je leur interdit d'avoir des mesures exactes.
+fr: En y réfléchissant la position de ces être est très proche de la notre.
+fr: Un Univers existe, mais nous ne pouvons pas être certain de nos observations.
 
-Les habitants de ce monde ne peuvent qu'espérer (comme nous)
-que leur représentation des triangles qui sont proche de leur mesure est vraie. 
-Mais il leur est impossible de savoir quel leur formule est exacte.
+fr: Je leur présente des tas de triangles rectangles.
+fr: Assez vite ils trouvent la bonne formule: $h^2=a^2 + b^2$
+fr: Mais comment certifier que c'est la formule exacte ?
+fr: Ils peuvent essayer de démontrer que c'est vrai comme nous.
+fr: Mais la preuve s'appuie sur des axiomes non démontrables parce que soumis aux mêmes règles d'imperfections de l'observation.
+fr: On peut placer le théorème de Pythagore au niveau des axiomes de l'Univers que je leur donne.
+fr: En effet on peut remplacer certains Axiomes par des théorèmes qui en découlent.
+fr: Ils auront beau faire des mesures de plus en plus précises qui viendront toujours conforter leur formule.
+fr: Ils n'auront que l'_espoir_ et  _jamais_ la certitude d'avoir la bonne.
+fr: À la fin de l'article nous reprendrons cet exemple de façon plus formelle.
 
-À la fin de l'article nous reprendrons cet exemple de façon plus formelle.
+fr: Imaginons que je sois _vraiment_ un Dieu terriblement farceur. 
+fr: Je me débrouille pour que leur Univers ne soit pas plat. 
+fr: Mais presque plat. 
+fr: La formule réelle que je choisis pouvant être $h^2=a^2+b^2$ à
+fr: $h^(2+\varepsilon)=a^2+b^2$ où $\varepsilon$ est vraiment une valeur minuscule.
 
-On peut quand même espérer quelque chose :
+fr: On peut quand même espérer quelque chose :
 
-De petites erreurs de mesures devraient nous assurer d'avoir de petites erreurs sur les formules prédictives.
-Si je trace un triangle rectangle alors les mesures que j'en ferai rendront compte de ma loi.
+fr: De petites erreurs de mesures devraient nous assurer d'avoir de petites erreurs sur les formules prédictives.
+fr: Si je trace un triangle rectangle alors les mesures que j'en ferai rendront compte de ma loi.
 
-Cotés de longueur 3 et 4 et on prévoit 5 pour l'hypoténuse et on ne tombera pas loin.
-Cependant cet espoir est vain.
+fr: Cotés de longueur 3 et 4 et on prévoit 5 pour l'hypoténuse et on ne tombera pas loin.
+fr: Cependant cet espoir est vain.
 
-## Indécidabilité avec erreurs croissantes
+fr: ## Indécidabilité avec erreurs croissantes
 
-Problème des 3 corps. 
-Une petite erreur de départ va provoquer de grandes erreurs à l'arrivée.
-Mais pour une erreur à l'arrivée donnée on peut trouver l'erreur de depart minimale. 
-Exemple: Si on veut une precision à 10m dans 3 mois, il faut une précision des mesures de 1m aujourd'hui.
+fr: Problème des 3 corps. 
+fr: Une petite erreur de départ va provoquer de grandes erreurs à l'arrivée.
+fr: Mais pour une erreur à l'arrivée donnée on peut trouver l'erreur de depart minimale. 
+fr: Exemple: Si on veut une precision à 10m dans 3 mois, il faut une précision des mesures de 1m aujourd'hui.
 
-## Indécidabilité avec erreurs discontinues
+fr: ## Indécidabilité avec erreurs discontinues
 
-Fractales et Mandelbrot. 
-Position à 1cm près sur une cote de Bretagne.
-Si une erreur très faible de mesure, impossible de savoir si on est dans l'eau ou pas.
-On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q)
+fr: Fractales et Mandelbrot. 
+fr: Position à 1cm près sur une cote de Bretagne.
+fr: Si une erreur très faible de mesure, impossible de savoir si on est dans l'eau ou pas.
+fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q)
 
-## Indécidabilité sans erreur
+fr: ## Indécidabilité sans erreur
 
-Jusqu'ici, on a vu que toutes les activité humaines font faces à des problèmes indécidables.
-Mais jusqu'ici, cette indécidabilité était due aux *erreurs*.
-Mais on pourrait espérer que ça se fasse sans erreur.
-Et bien non.
-Même dans un monde mathématique complètement contrôlé.
-On peut créer un objet pour lequel on ne pourra pas décider à l'avance ce qu'il fait.
+fr: Jusqu'ici, on a vu que toutes les activité humaines font faces à des problèmes indécidables.
+fr: Mais jusqu'ici, cette indécidabilité était due aux *erreurs*.
+fr: Mais on pourrait espérer que ça se fasse sans erreur.
+fr: Et bien non.
+fr: Même dans un monde mathématique complètement contrôlé.
+fr: On peut créer un objet pour lequel on ne pourra pas décider à l'avance ce qu'il fait.
 
-Théorème d'indécidabilité du problème de l'arrêt. La preuve est suffisamment simple pour rentrer dans ce post, donc je me fais un petit plaisir en la donnant.
+fr: Théorème d'indécidabilité du problème de l'arrêt. La preuve est suffisamment simple pour rentrer dans ce post, donc je me fais un petit plaisir en la donnant.
 
-> Supposons qu'il existe un programme qui puisse dire si un autre programme s'arrête. Plus précisément :
-> 
-> Hypothèse: Il existe `P` tel que: 
->
-> * `P(x,y)` réponde "s'arrête" en un temps fini si et seulement si `x(y)` s'arrête effectivement en temps fini et 
-> * `P(x,y)` réponde "ne s'arrête pas" en un temps fini dans le cas contraire.
->
-> Remarque: Tout code de programme est une chaîne de caractère qui peut être utilisée aussi comme entrée d'un autre programme. 
-Ainsi écrire `P(x,x)` est autorisé.
-> 
-> Soit le programme Q que j'écris comme suit :
-> <pre class="twilight">
-> Q(x) :
->     si P(x,x)="s'arrête" alors je fais une boucle infinie.
->     si P(x,x)="ne s'arrête pas" alors je m'arrête.
-> </pre>
-> 
-> Maintenant que répond `P(Q,Q)'?
->
-> * si `P(Q,Q)' répond "s'arrête" ça implique que `P(Q,Q)'="ne s'arrête pas"
-> * si `P(Q,Q)' répond "ne s'arrête pas" ça implique que `P(Q,Q)'="s'arrête"
-> 
-> Il y a donc une contradiction que le seul moyen de régler est par la non existence du programme P.
+fr: > Supposons qu'il existe un programme qui puisse dire si un autre programme s'arrête. Plus précisément :
+fr: > 
+fr: > Hypothèse: Il existe `P` tel que: 
+fr: >
+fr: > * `P(x,y)` réponde "s'arrête" en un temps fini si et seulement si `x(y)` s'arrête effectivement en temps fini et 
+fr: > * `P(x,y)` réponde "ne s'arrête pas" en un temps fini dans le cas contraire.
+fr: >
+fr: > Remarque: Tout code de programme est une chaîne de caractère qui peut être utilisée aussi comme entrée d'un autre programme. 
+fr: Ainsi écrire `P(x,x)` est autorisé.
+fr: > 
+fr: > Soit le programme Q que j'écris comme suit :
+fr: > <pre class="twilight">
+fr: > Q(x) :
+fr: >     si P(x,x)="s'arrête" alors je fais une boucle infinie.
+fr: >     si P(x,x)="ne s'arrête pas" alors je m'arrête.
+fr: > </pre>
+fr: > 
+fr: > Maintenant que répond `P(Q,Q)'?
+fr: >
+fr: > * si `P(Q,Q)' répond "s'arrête" ça implique que `P(Q,Q)'="ne s'arrête pas"
+fr: > * si `P(Q,Q)' répond "ne s'arrête pas" ça implique que `P(Q,Q)'="s'arrête"
+fr: > 
+fr: > Il y a donc une contradiction que le seul moyen de régler est par la non existence du programme P.
 
-Cette indécidabilité est vraiment la plus gênant de toute. Elle signifie que l'on peut créer un objet duquel on ne peut absolument pas prédire le comportement quelque soit mes possibilité de contrôler cet objet.
+fr: Cette indécidabilité est vraiment la plus gênant de toute. Elle signifie que l'on peut créer un objet duquel on ne peut absolument pas prédire le comportement quelque soit mes possibilité de contrôler cet objet.
 
-newcorps
+fr: newcorps
 
-# What best can we do?
+fr: # What best can we do?
 
-Expérience monde mathématique et théorème de Pythagore.
-Utilisation des fractions rationnelles pour retrouver la formule exacte.
-Problème, on sait qu'on converge mais on ne sait pas quand.
+fr: Expérience monde mathématique et théorème de Pythagore.
+fr: Utilisation des fractions rationnelles pour retrouver la formule exacte.
+fr: Problème, on sait qu'on converge mais on ne sait pas quand.
 
