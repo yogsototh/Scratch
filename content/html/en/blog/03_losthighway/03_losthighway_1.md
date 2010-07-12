@@ -31,11 +31,11 @@ Fred had commited an horrible act, a murder, and try to *repair* his memory to a
 
 Because of the dialog at the begining of the movie. Cops ask Fred if he's own a video camera:
 
-> - &ndash; Do you own a video camera?
-> - &ndash; No, Fred hates them.
-> - &ndash; I like to remember things my own way.
-> - &ndash; What do you mean by that?
-> - &ndash; How I remember them, not necessarily the way they happened.
+> "Do you own a video camera?"  
+> "No, Fred hates them."  
+> "I like to remember things my own way."  
+> "What do you mean by that?"  
+> "How I remember them, not necessarily the way they happened."  
 
 Then, what we see is not reality but the Fred's perception. Fred is the God of the reality we see. This is why some God/Devil interpretation of the movie works not so bad.
 

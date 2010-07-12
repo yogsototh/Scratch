@@ -49,18 +49,18 @@ Cet interprétation me semble valide à cause du dialogue au début du film avec
 
 
 
-> - &ndash; Do you own a video camera?
-> - &ndash; No, Fred hates them.
-> - &ndash; I like to remember things my own way.
-> - &ndash; What do you mean by that?
-> - &ndash; How I remember them, not necessarily the way they happened.
+> "Do you own a video camera?"  
+> "No, Fred hates them."  
+> "I like to remember things my own way."  
+> "What do you mean by that?"  
+> "How I remember them, not necessarily the way they happened."
 
 Ce que l'on peut traduire approximativement par :
 
-> - &ndash; Avez-vous une caméra ?
-> - &ndash; Non, Fred les détestes.
-> - &ndash; J'aime me rappeler les choses à ma façon.
-> - &ndash; Qu'entendez-vous par là ?
-> - &ndash; Je me rapelle des choses pas nécessairement comme elles se sont passées.
+> &ndash; Avez-vous une caméra ?  
+> &ndash; Non, Fred les détestes.  
+> &ndash; J'aime me rappeler les choses à ma façon.  
+> &ndash; Qu'entendez-vous par là ?  
+> &ndash; Je me rapelle des choses pas nécessairement comme elles se sont passées.
 
 Ainsi, ce que l'on voit n'est pas la réalité, mais la réalité telle que le conçoit Fred. Il est donc le Dieu de cette réalité. Ainsi les interprétations mystiques faisant intervenir le Diable ont une certaine validité.
