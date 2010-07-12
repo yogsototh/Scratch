@@ -4,7 +4,7 @@ menupriority:   1
 kind:           article
 created_at:     2010-07-09T10:04:31+02:00
 fr: title: Indécidabilités
-en: title: Indecidabilities
+en: title: Undecidabilities
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
@@ -16,29 +16,26 @@ fr:   - mathématiques
 -----
 
 begindiv(intro)
-en: <%= tldr %> The word undecidability can have different meaning. I give here some each science related.
+
+en: <%= tldr %> The word undecidability can have different meaning. 
+en: I give here some each science related.
 en: 
 en: - _Undecidability_: due to measure errors
 en: - _Hope_: small measure error implies small calculus error.
-en: - But: _Undecidability_ with big error from small measure error
+en: - _But_: Undecidability with big error from small measure error
 en: - _Hope_: error remain controllable given a final mesure error, retrive the maximal measure error authorized
-en: - Also false hope: _Undecidability_ width discontinuities
-en: - Hope: _Undecidability_ is due to error, but without any measure error, all is decidable
-en: - Yet another false hope: _Undecidability_ without any measure error
+en: - Also false hope: Undecidability width _discontinuities_
+en: - _Hope_: Undecidability is due to error, but without any measure error, all is decidable
+en: - Yet another false hope: Undecidability without any measure error
 en: 
 en: Is the situation so bad we cannot truly believe anything?
-en: A theorem in learning theory (in my thesis) prove that under some reasonable conditions, we could learn many true things. But at no moment we can be absolutely sure this is _the_ truth.
+en: A theorem in learning theory (in my thesis) prove that under some reasonable conditions, we could learn many true things. 
+en: But at no moment we can be absolutely sure this is _the_ truth.
 en: But as far as I can see, we cannot do better than that.
-fr: <%= tlal %> Le terme "indécidabilité" a été utilisé pour désigner différentes choses. Je donnes quelques un de ces sens (orienté science) ici.
+fr: <%= tlal %> Le terme "indécidabilité" a été utilisé pour désigner différentes choses. 
+fr: Je donnes quelques un de ces sens (orienté science) ici.
 fr: Ainsi qu'un piste philosophique sur ce qu'on peut espérer de mieux.
 fr: 
-fr: - _Undecidability_: due to measure errors
-fr: - _Hope_: small measure error implies small calculus error.
-fr: - But: _Undecidability_ with big error from small measure error
-fr: - _Hope_: error remain controllable given a final mesure error, retrive the maximal measure error authorized
-fr: - Also false hope: _Undecidability_ width discontinuities
-fr: - Hope: _Undecidability_ is due to error, but without any measure error, all is decidable
-fr: - Yet another false hope: _Undecidability_ without any measure error
 fr: 
 fr: Est-ce le maximum
 
@@ -62,7 +59,7 @@ Mais pour une erreur à l'arrivée donnée on peut trouver l'erreur de depart mi
 Fractales et Mandelbrot. 
 Position à 1cm près sur une cote de Bretagne.
 Si une erreur très faible de mesure, impossible de savoir si on est dans l'eau ou pas.
-    On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q)
+On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q)
 
 ## Indécidabilité sans erreur
 
@@ -77,10 +74,10 @@ Théorème d'indécidabilité du problème de l'arrêt. La preuve est suffisamme
 
 > Supposons qu'il existe un programme qui puisse dire si un autre programme s'arrête. Plus précisément :
 > 
->Hypothèse: Il existe `P` tel que: 
+> Hypothèse: Il existe `P` tel que: 
 >
->* - `P(x,y)` réponde "s'arrête" en un temps fini si et seulement si `x(y)` s'arrête effectivement en temps fini et 
->* - `P(x,y)` réponde "ne s'arrête pas" en un temps fini dans le cas contraire.
+> * `P(x,y)` réponde "s'arrête" en un temps fini si et seulement si `x(y)` s'arrête effectivement en temps fini et 
+> * `P(x,y)` réponde "ne s'arrête pas" en un temps fini dans le cas contraire.
 >
 > Remarque: Tout code de programme est une chaîne de caractère qui peut être utilisée aussi comme entrée d'un autre programme. 
 Ainsi écrire `P(x,x)` est autorisé.
@@ -93,8 +90,9 @@ Ainsi écrire `P(x,x)` est autorisé.
 > </pre>
 > 
 > Maintenant que répond `P(Q,Q)'?
-> si `P(Q,Q)' répond "s'arrête" ça implique que `P(Q,Q)'="ne s'arrête pas"
-> si `P(Q,Q)' répond "ne s'arrête pas" ça implique que `P(Q,Q)'="s'arrête"
+>
+> * si `P(Q,Q)' répond "s'arrête" ça implique que `P(Q,Q)'="ne s'arrête pas"
+> * si `P(Q,Q)' répond "ne s'arrête pas" ça implique que `P(Q,Q)'="s'arrête"
 > 
 > Il y a donc une contradiction que le seul moyen de régler est par la non existence du programme P.
 
