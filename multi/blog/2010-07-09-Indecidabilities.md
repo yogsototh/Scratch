@@ -17,42 +17,77 @@ fr:   - mathématiques
 
 begindiv(intro)
 
-en: <%= tldr %> The word undecidability can have different meaning. 
-en: I give here some each science related.
+en: <%= tldr %> Four different _undecidabilities_:
 en: 
-en: - _Undecidability_: due to measure errors
-en: - _Hope_: small measure error implies small calculus error.
-en: - _But_: Undecidability with big error from small measure error
-en: - _Hope_: error remain controllable given a final mesure error, retrive the maximal measure error authorized
-en: - Also false hope: Undecidability width _discontinuities_
+en: - _Undecidability_ due to measure errors 
+en: - _Hope_: small measure error implies small predictive errors.
+en: - _Undecidability_ with big error from small measure error
+en: - _Hope_: error remain controllable given a final mesure error
+en: - _Undecidability_ with _discontinuities_
 en: - _Hope_: Undecidability is due to error, but without any measure error, all is decidable
-en: - Yet another false hope: Undecidability without any measure error
+en: - _Undecidability_ without any measure error
 en: 
 en: Is the situation so bad we cannot truly believe anything?
 en: A theorem in learning theory (in my thesis) prove that under some reasonable conditions, we could learn many true things. 
 en: But at no moment we can be absolutely sure this is _the_ truth.
 en: But as far as I can see, we cannot do better than that.
-fr: <%= tlal %> Le terme "indécidabilité" a été utilisé pour désigner différentes choses. 
-fr: Je donnes quelques un de ces sens (orienté science) ici.
-fr: Ainsi qu'un piste philosophique sur ce qu'on peut espérer de mieux.
+fr: <%= tlal %> Cinq indécidabilités différentes :
+fr: - Indécidabilité due aux erreurs de mesures ;
+fr: - Espoir : de petites erreurs de mesures impliquent de petites erreurs prédictives ;
+fr: - Indécidabilités avec de petites erreurs de mesures ;
+fr: - Espoir : l'erreur est contrôlable, i.e. on peut trouver l'erreur maximale de mesure à partir de l'erreur maximale que l'on peut se permettre ;
+fr: - Indécidabilités avec discontinuités ;
+fr: - Espoir : l'indécidabilité est due aux erreurs de mesure. Sans erreur on peut tout prévoir ;
+fr: - Indécidabilité sans erreur de mesure
 fr: 
-fr: 
-fr: Est-ce le maximum
+fr: Est-ce que la situation est perdue ?
+fr: Un théorème d'apprentissage automatique (qui est dans ma thèse) démontre que sous certaines circonstances raisonnables, on peut découvrir la vérité. 
+fr: Par contre il est impossible d'être sûr que nous l'ayons atteinte.
+fr: Je ne pense pas que l'on puisse faire mieux.
+
 
 enddiv
 
-# The Undecidabilities
+en: # The Undecidabilities
+fr: # Les indécidabilités
 
-## Indécidabilité dues aux erreurs de mesures
+en: ## Undecidability due to measure errors
+fr: ## Indécidabilité dues aux erreurs de mesures
 
-expérience monde mathématique et théorème de pythagore.
-Utilisation des fractions rationnelles pour retrouver la formule exacte.
-Problème, on sait qu'on converge mais on ne sait pas quand.
+Problème: trouver la formule de la taille de l'hypoténuse en fonction
+de la longueur des deux autres cotés.
+
+Supposons que nous soyons dans _notre_ système mathématique.
+Et que des habitants y habitent.
+Ils ont a disposition des tas de triangles.
+Mais ils font des erreurs de mesure à chaque fois.
+Comment certifier la formule exacte alors ?
+Ils peuvent essayer de démontrer que c'est vrai comme nous.
+Mais la preuve s'appuie sur des axiomes non démontrés.
+Supposons que la célèbre formule de Pythagore soit un des axiomes de leur systèmes mathématique.
+Ils auront beau faire des mesures de plus en plus précises qui viendront toujours conforter leur formule.
+Ils n'auront _jamais_ la certitude d'avoir la bonne.
+
+Les habitants de ce monde ne peuvent qu'espérer (comme nous)
+que leur représentation des triangles qui sont proche de leur mesure est vraie. 
+Mais il leur est impossible de savoir quel leur formule est exacte.
+
+À la fin de l'article nous reprendrons cet exemple de façon plus formelle.
+
+On peut quand même espérer quelque chose :
+
+De petites erreurs de mesures devraient nous assurer d'avoir de petites erreurs sur les formules prédictives.
+Si je trace un triangle rectangle alors les mesures que j'en ferai rendront compte de ma loi.
+
+Cotés de longueur 3 et 4 et on prévoit 5 pour l'hypoténuse et on ne tombera pas loin.
+Cependant cet espoir est vain.
 
 ## Indécidabilité avec erreurs croissantes
 
-Problème des 3 corps. Une petite erreur de départ va provoquer de grandes erreurs à l'arrivée.
-Mais pour une erreur à l'arrivée donnée on peut trouver l'erreur de depart minimale. Exemple: Si on veut une precision à 10m dans 3 mois, il faut une précision des mesures de 1m aujourd'hui.
+Problème des 3 corps. 
+Une petite erreur de départ va provoquer de grandes erreurs à l'arrivée.
+Mais pour une erreur à l'arrivée donnée on peut trouver l'erreur de depart minimale. 
+Exemple: Si on veut une precision à 10m dans 3 mois, il faut une précision des mesures de 1m aujourd'hui.
 
 ## Indécidabilité avec erreurs discontinues
 
@@ -101,3 +136,8 @@ Cette indécidabilité est vraiment la plus gênant de toute. Elle signifie que 
 newcorps
 
 # What best can we do?
+
+Expérience monde mathématique et théorème de Pythagore.
+Utilisation des fractions rationnelles pour retrouver la formule exacte.
+Problème, on sait qu'on converge mais on ne sait pas quand.
+
