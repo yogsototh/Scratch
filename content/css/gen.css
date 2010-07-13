@@ -279,6 +279,7 @@ body
   background:
     color: #cccccc
   color: black
+  text-rendering: optimizeLegibility
 
 //    :image url('../../css/img/background.jpg')
 //    :attachment fixed
@@ -332,10 +333,12 @@ ul
 
 body, h1, h2, h3, h4, #entete
   font-family: Optima, "Century Gothic", Helvetica, Arial, sans-serif
+  text-rendering: optimizeLegibility
   line-height: 1.4em
 
 .corps
   font-family: Georgia, "Century Schoolbook L", "Times New Roman", Times, serif
+  text-rendering: optimizeLegibility
   line-height: 1.6em
 
 pre, code

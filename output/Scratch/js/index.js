@@ -133,10 +133,6 @@ $(document).ready( function() {
     detectiPhone();
     initCode();
 
-
-    $('head').append('<script type="text/javascript" src="/Scratch/js/ligature.js"></script>');
-    ligature();
-
     // affiche la page une fois propre et la langue choisie
     if ( alertLanguage() ) {
         $('#blackpage').fadeOut();
