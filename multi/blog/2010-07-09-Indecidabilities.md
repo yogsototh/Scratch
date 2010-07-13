@@ -231,13 +231,13 @@ fr: Théorème d'indécidabilité du problème de l'arrêt. La preuve est suffis
 
 fr: > Supposons qu'il existe un programme qui puisse dire si un autre programme s'arrête. Plus précisément :
 fr: > 
-fr: > Hypothèse: Il existe `P` tel que: 
+fr: > Hypothèse: Il existe un programme `P` tel que: 
 fr: >
-fr: > - `P(x,y)` réponde "s'arrête" en un temps fini si et seulement si `x(y)` s'arrête effectivement en temps fini et 
+fr: > - `P(x,y)` réponde "s'arrête" en un temps fini si et seulement si `x(y)`[^1] s'arrête effectivement en temps fini et 
 fr: > - `P(x,y)` réponde "ne s'arrête pas" en un temps fini dans le cas contraire.
 fr: >
 fr: > Remarque: Tout code de programme est une chaîne de caractère qui peut être utilisée aussi comme entrée d'un autre programme. 
-fr: Ainsi écrire `P(x,x)` est autorisé.
+fr: > Ainsi écrire `P(x,x)` est autorisé.
 fr: > 
 fr: > Soit le programme Q que j'écris comme suit :
 fr: > <pre class="twilight">
@@ -252,6 +252,8 @@ fr: > - si `P(Q,Q)` répond "s'arrête" ça implique que `P(Q,Q)`="ne s'arrête 
 fr: > - si `P(Q,Q)` répond "ne s'arrête pas" ça implique que `P(Q,Q)`="s'arrête"
 fr: > 
 fr: > Il y a donc une contradiction que le seul moyen de régler est par la non existence du programme P.
+
+fr: [^1]: C'est-à-dire le programme `x` prenant l'entrée `y`.
 
 fr: Cette indécidabilité est vraiment la plus gênante de toute. 
 fr: Elle signifie que l'on peut créer un objet dont on ne peut pas prédire le comportement quelque soit mes possibilité de contrôler cet objet.
@@ -283,8 +285,11 @@ fr: Alors que là, l'erreur semble vraiment très grande.
 
 fr: Et oui ! Comme je suis un Dieu terriblement farceur, je me suis débrouillé pour que leur Univers ne soit pas plat (comme l'imaginais leur théoricien).
 fr: Mais presque plat. Disons que je les fais vivre sur une sphère qui a un rayon de courbure d'environ 6000km (ça ne vous rappelle rien ?).
+
 fr: Ah ah ah ! Cette blague je la trouve bien bonne. 
-fr: De toute évidence, certains ne goûtent pas mon sens de l'humour et certains d'entre eux se font brûler parce qu'il ont trouver la solution. 
+fr: De toute évidence, certains ne goûtent pas mon sens de l'humour. 
+fr: J'ai remarqué que ceux qui ont trouvé cette petit surprise, la solution avant les autres et qui fanfaronne en énerve certains au plus haut point. 
+fr: Certains se font même brûler.
 fr: Apparemment il y a de mauvais perdant chez ces êtres là.
 fr: Et oui sur une sphere on peut très bien dessiner des triangles dont la somme des angles fait 270° au lieu des 180° attendu dans un Univers plat.
 fr: Disons que pour tous les triangle moins grand que quelques kilomètres, l'erreur est minime.
