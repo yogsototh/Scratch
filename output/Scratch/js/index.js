@@ -88,7 +88,7 @@ function alertLanguage() {
     var language_of_current_page=getPageLanguage();
     if (language != language_of_current_page) {
         if ( language == 'fr' ) {
-            message(linkToLang('en','Aller sur la Version Française ?') + hideClickMessage('No thanks, I prefer read english.'));
+            message(linkToLang('fr','Aller sur la Version Française ?') + hideClickMessage('No thanks, I prefer read english.'));
         } else if (language == 'en') {
             message(linkToLang('en','Go to English Version?')+ hideClickMessage('Non merci, je préfère le français.'));
         } else {
