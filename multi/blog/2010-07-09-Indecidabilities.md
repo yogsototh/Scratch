@@ -32,6 +32,7 @@ en: A theorem in learning theory (in my thesis) prove that under some reasonable
 en: But at no moment we can be absolutely sure this is _the_ truth.
 en: But as far as I can see, we cannot do better than that.
 fr: <%= tlal %> Cinq indécidabilités différentes :
+fr: 
 fr: - Indécidabilité due aux erreurs de mesures ;
 fr: - Espoir : de petites erreurs de mesures impliquent de petites erreurs prédictives ;
 fr: - Indécidabilités avec de petites erreurs de mesures ;
@@ -48,66 +49,111 @@ fr: Je ne pense pas que l'on puisse faire mieux.
 
 enddiv
 
+newcorps
+
 en: # The Undecidabilities
 fr: # Les indécidabilités
+
+Si le monde a été fabriqué par un Démiurge, on peut dire que celui-ci devait avoir le sens de l'humour. 
+Et le récit que je vais faire va vous en fournir la preuve.
+Pour avoir une idée de ce qu'est l'indécidabilité qui nous touche tous, prenons un exemple.
+J'écris ce texte et j'ai donc tout pouvoir créatif sur celui-ci.  
+Alors tant qu'a avoir du pouvoir autant l'utiliser pour faire les choses en grand.
+
+Tout d'abord, *je crée un Univers* semblable au notre sauf qu'il n'est pas réel, mais simplement une représentation, une vue de l'esprit. Ce monde est peuplé d'êtres intelligents.
+
+Comme je suis un Dieu sympa, je le fabrique avec quelques règles très simples. 
+Un monde où les _vrai_ règles sont les règles mathématiques.
+Bien entendu les habitant de ce monde se posent des questions.
+En particulier, ils se demandent quelles sont les lois qui régissent leur monde. 
+Ils pensent que connaître toutes ces règles leur permettrait de connaître l'avenir. Leur naïveté est touchante. Ah, si seulement ils savaient.
+Mais je suis là pour les aider à apprendre.
+
+Comme je suis un Dieu un peu facétieux, je vais leur jouer quelques tours.
+Le premier est de leur donner des sens imparfaits. 
+De plus il leur est impossible d'avoir des mesures parfaites.
+Bien entendu, je ne suis pas trop dur, et je leur laisse toutes libertés pour améliorer leur technologie et diminuer ces erreurs de mesures.
+
+Il n'empêche qu'ils vont vite déchanter ces être que je commence à trouver un peu présomptueux de vouloir se mesurer à mon infinie sagesse (du moins concernant le monde dans lequel ils vivent).
+
+Alors commençons par la première leçon, _les erreurs causent de l'indécidabilité_.
 
 en: ## Undecidability due to measure errors
 fr: ## Indécidabilité dues aux erreurs de mesures
 
-fr: Problème: Démontrer que le théorème de Pythagore est vrai
-en: Problem: Prove the Pythagoras Theorem is true
-
-fr: Tout d'abord, ne nous plaçons pas dans notre Univers réel, mais
-fr: plutôt dans un Univers imaginaire que je fabrique. Youpi! 
-fr: Je suis le Dieu tout puissant, hahaha !!!!
-fr: Bon, je me calme...
-fr: Donc je crée l'Univers avec les axiomes mathématiques de nos mathématiques.
-fr: Et je fais habiter ce monde à des êtres imaginaire.
-fr: Sauf que comme je suis un Dieu bon je leur donne des sens qui leur permette
-fr: d'observer le monde.  Mais comme je suis aussi un Dieu facétieux, 
-fr: je rend leur possibilités d'observations imparfaites.
-fr: Je leur interdit d'avoir des mesures exactes.
-fr: En y réfléchissant la position de ces être est très proche de la notre.
-fr: Un Univers existe, mais nous ne pouvons pas être certain de nos observations.
-
-fr: Je leur présente des tas de triangles rectangles.
-fr: Assez vite ils trouvent la bonne formule: $h^2=a^2 + b^2$
+fr: Je leur présente des tas de triangles.
+fr: Assez vite ils font plein de mesures et trouve que la somme des angles des triangles est toujours très proche de 180° (ou π radians).
 fr: Mais comment certifier que c'est la formule exacte ?
-fr: Ils peuvent essayer de démontrer que c'est vrai comme nous.
-fr: Mais la preuve s'appuie sur des axiomes non démontrables parce que soumis aux mêmes règles d'imperfections de l'observation.
-fr: On peut placer le théorème de Pythagore au niveau des axiomes de l'Univers que je leur donne.
-fr: En effet on peut remplacer certains Axiomes par des théorèmes qui en découlent.
+fr: Certain d'entre eux commencent à formaliser un petit peu le problème
+fr: et ils finissent par démontrer que la somme fais toujours 180°.
+fr: Magnifique !
+fr: Seulement la preuve s'appuie sur des axiomes non démontrables parce que soumis aux mêmes règles d'imperfections de l'observation.
 fr: Ils auront beau faire des mesures de plus en plus précises qui viendront toujours conforter leur formule.
 fr: Ils n'auront que l'_espoir_ et  _jamais_ la certitude d'avoir la bonne.
-fr: À la fin de l'article nous reprendrons cet exemple de façon plus formelle.
 
-fr: Imaginons que je sois _vraiment_ un Dieu terriblement farceur. 
-fr: Je me débrouille pour que leur Univers ne soit pas plat. 
-fr: Mais presque plat. 
-fr: La formule réelle que je choisis pouvant être $h^2=a^2+b^2$ à
-fr: $h^(2+\varepsilon)=a^2+b^2$ où $\varepsilon$ est vraiment une valeur minuscule.
+fr: Pour prouver que même les très grand triangles obéissent à cette loi,
+fr: ils partent en expédition, avec trois bateaux.
+fr: Un va très au nord, pendant que l'un va vers l'est et l'autre vers l'ouest.
+fr: Ils naviguent tous à la même vitesse et pendant la même durée.
+fr: 
+fr: D'après leur calcul, les deux bateaux du sud doivent tourner avec un angle de 45° (respectivement -45°) pour rejoindre le bateau du nord.
+fr: Après de longues semaines de navigation, les deux bateaux du sud se rejoignent. Mais, il n'y a pas de trace du bateaux nordique.
+fr: Que se passe-t-il ? Bien entendu, leur Dieu facétieux leur fait faire des mesures imparfaites et donc ils ne sont pas allé exactement à la même vitesse, ils n'ont pas tourné exactement en même temps, ni d'un angle valant exactement 45°.
+fr: Sauf que leur ingénieurs en sont sûr l'erreur ne devait être que de quelques centaines de mètres. 
+fr: Alors que là, l'erreur semble vraiment très grande.
 
-fr: On peut quand même espérer quelque chose :
 
-fr: De petites erreurs de mesures devraient nous assurer d'avoir de petites erreurs sur les formules prédictives.
-fr: Si je trace un triangle rectangle alors les mesures que j'en ferai rendront compte de ma loi.
+fr: Et oui ! Comme je suis un Dieu terriblement farceur, je me suis débrouillé pour que leur Univers ne soit pas plat (comme l'imaginais leur théoricien).
+fr: Mais presque plat. Disons que je les fais vivre sur une sphère qui a un rayon de courbure d'environ 6000km (ça ne vous rappelle rien ?).
+fr: Ah ah ah ! Cette blague je la trouve bien bonne. 
+fr: De toute évidence, certains ne goûtent pas mon sens de l'humour et certains d'entre eux se font brûler parce qu'il ont trouver la solution. 
+fr: Apparemment il y a de mauvais perdant chez ces êtres là.
+fr: Et oui sur une sphere on peut très bien dessiner des triangles dont la somme des angles fait 270° au lieu des 180° attendu dans un Univers plat.
+fr: Disons que pour tous les triangle moins grand que quelques kilomètres, l'erreur est minime.
 
-fr: Cotés de longueur 3 et 4 et on prévoit 5 pour l'hypoténuse et on ne tombera pas loin.
-fr: Cependant cet espoir est vain.
+fr: Après cette découverte, les questions hantent certains personnage.
+fr: On ne peut vraiment être sûr de rien alors ?
+fr: Mais certains ont un fol espoir.
+
+fr: Si on fait de très petites erreurs de mesures, on pourra quand même en retirer des prédictions précises.
 
 fr: ## Indécidabilité avec erreurs croissantes
 
-fr: Problème des 3 corps. 
-fr: Une petite erreur de départ va provoquer de grandes erreurs à l'arrivée.
-fr: Mais pour une erreur à l'arrivée donnée on peut trouver l'erreur de depart minimale. 
-fr: Exemple: Si on veut une precision à 10m dans 3 mois, il faut une précision des mesures de 1m aujourd'hui.
+fr: C'est bien espéré, mais malheureusement il existe un problème très ennuyeux qui ne possède pas cette jolie propriété.
+fr: Il s'agit du _problème des 3 corps_. 
+fr: Prenons les formules de la gravitation Universelle et appliquons la à deux corps celeste. Si on connait la position des deux corps celeste avec un grande précision, on pourra connaître la position future de ces corps aussi avec une grande précision.
+fr: Maintenant rajoutons un corps (par exemple, Soleil + Terre + Lune).
+fr: L'erreur de mesure initiale va s'amplifier de plus en plus jusqu'à rendre toute prédiction impossible.
+fr: 
+fr: Là encore un espoir est permis.
+fr: Pour une erreur à l'arrivée donnée on peut trouver l'erreur de depart maximale autorisée. 
+fr: On sait que l'on pourra prévoir quelques temps en avance, mais pas autant qu'on le voudrait.
+fr: Par exemple, si on souhaite une precision à 1km dans 3 mois, il faut une précision des mesures de 300m aujourd'hui.
+
+fr: Sauf que là aussi, ce n'est pas aussi simple.
 
 fr: ## Indécidabilité avec erreurs discontinues
+
+fr: Considération la question suivante. Etant donné les coordonnées GPS d'un point à la surface de la Terre proche des cotes bretonnes (avec une certaine imprecision comme toujours). Est-ce que si je pose mon doigt au lieu de ces coordonnées GPS, celui-ci va toucher la mer ou la Terre ?
+fr: Et bien, il est impossible de le savoir, même si je réduis l'erreur à une valeur infinitésimale. Simplement parce que si je prends ce qu'il y a autour de mon point, il y aura toujours des zones avec et sans eau.
 
 fr: Fractales et Mandelbrot. 
 fr: Position à 1cm près sur une cote de Bretagne.
 fr: Si une erreur très faible de mesure, impossible de savoir si on est dans l'eau ou pas.
 fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q)
+
+fr: Mais qu'entends-je ? Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde ?
+fr: > Jusqu'ici, faire des prédiction à partir des données observées semble être une quête vouée à l'échec. Mais je suis persuadé que l'on peut aller au delà.
+fr: > Au diable ce Dieu qui nous embête, et qui nous empêche de mesurer avec précision !
+fr: > Inventons notre propre Univers mathématique avec des axiomes connus, clairs et précis. Un monde qui se suffit à lui-même, un monde _self-contained_.
+fr: > Un monde dans lequel il n'y aura plus d'erreur de mesure. 
+fr: > Un monde entièrement contrôlé par des règles claires et précises.
+fr: > Un monde où tout pourra être prédis.
+
+
+fr: Et mais attends mon petit gars, tu ne crois pas que ça va se passer comme ça.
+fr: Je te ferai remarquer, que s'il y a certaines choses que même moi, le Démiurge de ton Univers, je ne puis décider. Il est absolument hors de question que tu le puisses aussi.
+fr: Et tien rien que pour t'embêter, je vous mets sur la voix d'un problème indécidable très, mais alors vraiment très embêtant.
 
 fr: ## Indécidabilité sans erreur
 
