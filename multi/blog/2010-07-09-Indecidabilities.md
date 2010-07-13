@@ -17,34 +17,27 @@ fr:   - mathématiques
 
 begindiv(intro)
 
-en: <%= tldr %> Four different _undecidabilities_:
+en: <%= tldr %> We can attribute different meaning to undecidability:
 en: 
-en: - _Undecidability_ due to measure errors 
-en: - _Hope_: small measure error implies small predictive errors.
-en: - _Undecidability_ with big error from small measure error
-en: - _Hope_: error remain controllable given a final mesure error
-en: - _Undecidability_ with _discontinuities_
-en: - _Hope_: Undecidability is due to error, but without any measure error, all is decidable
-en: - _Undecidability_ without any measure error
+en: - Undecidability due to measure errors, 
+en: - Undecidability with big error from small measure error,
+en: - Fractal undecidability ;
+en: - Undecidability without any measure error.
 en: 
-en: Is the situation so bad we cannot truly believe anything?
-en: A theorem in learning theory (in my thesis) prove that under some reasonable conditions, we could learn many true things. 
-en: But at no moment we can be absolutely sure this is _the_ truth.
-en: But as far as I can see, we cannot do better than that.
-fr: <%= tlal %> Différentes indécidabilités :
+en: Is the situation so bad we cannot do anything?
+en: We can find the truth, but we can never be sure we had reach it.
+en: I don't think we can do better than that.
+fr: <%= tlal %> Plusieurs choses sont indécidables et pour des raisons différentes :
 fr: 
 fr: - Indécidabilité due aux erreurs de mesures ;
-fr: - Espoir : de petites erreurs de mesures impliquent de petites erreurs prédictives ;
 fr: - Indécidabilités avec de petites erreurs de mesures ;
-fr: - Espoir : l'erreur est contrôlable, i.e. on peut trouver l'erreur maximale de mesure à partir de l'erreur maximale que l'on peut se permettre ;
-fr: - Indécidabilités avec discontinuités ;
-fr: - Espoir : l'indécidabilité est due aux erreurs de mesure. Sans erreur on peut tout prévoir ;
-fr: - Indécidabilité sans erreur de mesure.
+fr: - Indécidabilités fractales ;
+fr: - Indécidabilité dans un monde sans erreur de mesure.
 fr: 
 fr: Est-ce que la situation est perdue ?
-fr: Un théorème d'apprentissage automatique (qui est dans ma thèse) démontre que sous certaines circonstances raisonnables, on peut découvrir la vérité. 
-fr: Par contre il est impossible d'être sûr que nous l'ayons atteinte.
+fr: On peut découvrir la vérité, par contre il est impossible d'être sûr que nous l'ayons atteinte.
 fr: Je ne pense pas que l'on puisse faire mieux.
+fr: Ainsi il faut toujours adopter un grande ouverture d'esprit si l'on recherche la vérité.
 
 
 enddiv
@@ -56,7 +49,7 @@ fr: # Les indécidabilités
 
 begindiv(intro)
 
-fr: Si le monde a été fabriqué par un Démiurge, on peut dire que celui-ci devait avoir le sens de l'humour. 
+fr: Si le monde a été fabriqué par un démiurge, on peut dire que celui-ci devait avoir le sens de l'humour. 
 fr: Et le récit que je vais faire va vous en fournir la preuve.
 fr: Je vais me mettre à sa place. 
 fr: Je vais créer un monde simplifié.
@@ -66,6 +59,14 @@ fr: L'*indécidabilité*.
 fr: L'incapacité de savoir si nous avons trouvé la vérité, ou seulement une approximation de celle-ci.
 fr: L'incapacité de prédire certaines choses qui semblent pourtant aller de soi.
 fr: Voilà comment tout aurait pu commencer.
+en: If the world was made by a demiurge he certainly have a great sense of humor.
+en: And this read will prove it to you.
+en: I'll pretend to be him.
+en: I'll create a simplified world.
+en: A world that obey to simple mathematical rules.
+en: And I'll tell you about the *undecidability*.
+en: The inability to know if we had find the *truth* or only an approximation to it.
+en: The inability to predict many things.
 
 enddiv
 
@@ -76,8 +77,14 @@ fr: Puis un article de blog commença à prendre forme.
 fr: J'inspire profondément pour sentir la pesanteur de ce que je vais accomplir.
 fr: Attention, une dernier moment de tension et je crée l'_Univers_.
 fr: Un *Univers* qui n'existera que le temps de la lecture de cet article.
+en: At the beginning there was only void.
+en: Then a blog post beginning to be written.
+en: I breath profoundly to feel the weight the act I will accomplish.
+en: A last tense moment and... I create the _Universe_.
+en: A _Universe_ which will exists only the time of this read.
 
-fr: Me voici le _Démiurge_ de cet Univers et te voilà son observateur privilégié.
+fr: Me voici le _démiurge_ de cet Univers et te voilà son observateur privilégié.
+en: I'm the _demiurge_ of this universe and you are its observer.
 
 fr: Comme j'aime bien tout contrôler, je fabrique ce monde avec quelques règles simples.
 fr: Je décide que les _vrais_ règles de ce monde sont celles que nous pensons qui régissent notre monde.
@@ -87,6 +94,15 @@ fr: Leur monde est donc plus _simple_ à priori que le notre.
 fr: En particulier, on peut le décrire avec des axiomes et des règles mathématiques.
 fr: Alors qu'il est possible que ce ne soit pas le cas de notre Univers. 
 fr: Mais nous reviendront là-dessus plus tard.
+en: I like to control everything.
+en: I construct this world using only some simples rules.
+en: I decide that _real_ rules of this world will be the one we believe are _true_ for our world.
+en: Note the difference.
+en: For their world, everything we _believe_ today is _true_ for them.
+en: Their world is then _simpler_ than our.
+en: Particularly, we can describe this world with axioms and mathematic rules.
+en: It is not so sure for our Universe. 
+en: But we'll talk about that later.
 
 fr: Bon au travail maintenant, je crée une *Terre*.
 fr: J'y ajoute des habitants intelligents.
@@ -250,7 +266,7 @@ fr: [^1]: C'est-à-dire le programme `x` prenant l'entrée `y`.
 fr: Cette indécidabilité est vraiment la plus gênante de toute. 
 fr: Elle signifie que l'on peut créer un objet dont on ne peut pas prédire le comportement quelque soit mes possibilité de contrôler cet objet.
 
-fr: C'est simple, je suis le Démiurge de ce monde imaginaire. 
+fr: C'est simple, je suis le démiurge de ce monde imaginaire. 
 fr: Et même moi, je dois me soumettre à cette règle.
 fr: Comme quoi, avoir la possibilité de créer le monde et la toute puissance sont deux choses différentes.
 
