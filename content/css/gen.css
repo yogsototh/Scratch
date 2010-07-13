@@ -188,7 +188,7 @@ pre.twilight,
   +smallround
 
 .intro, .resume
-  font-size: 0.8em
+  font-size: 0.9em
   font-style: italic
   line-height: 1.4em
   em
@@ -333,12 +333,10 @@ ul
 
 body, h1, h2, h3, h4, #entete
   font-family: Optima, "Century Gothic", Helvetica, Arial, sans-serif
-  text-rendering: optimizeLegibility
   line-height: 1.4em
 
 .corps
-  font-family: Georgia, "Century Schoolbook L", "Times New Roman", Times, serif
-  text-rendering: optimizeLegibility
+  font-family: Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   line-height: 1.6em
 
 pre, code

@@ -190,12 +190,12 @@ Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en f
 Alors là je me fâche !
 J'apparais devant ce petit importun dans un flot de lumière aveuglante.
 
-> Eh mon petit gars, tu ne crois pas que ça va se passer comme ça ?
-> Je te ferai remarquer, que s'il y a certaines choses que même moi, le Démiurge de ton Univers, je ne puis décider. 
-> Il est absolument hors de question que tu le puisses aussi.
-> Et tiens, rien que pour t'embêter, je te mets sur la voie d'un problème indécidable qui va rabattre ton caquet.
+> << C'est ton créateur qui te parle !
+> Certaines choses sont interdites !
+> Mais comme je suis sympa, je te mets sur la voie.
 > Vous avez des ordinateurs.
-> Poses toi cette question. Existe-t-il un programme qui permette de décider si un autre programme s'arrête ?
+> Poses toi cette question.
+> Existe-t-il un programme qui permette de décider si un autre programme s'arrête ? >>
 
 ## Indécidabilité sans erreur
 
@@ -212,13 +212,13 @@ Théorème d'indécidabilité du problème de l'arrêt. La preuve est suffisamme
 
 > Supposons qu'il existe un programme qui puisse dire si un autre programme s'arrête. Plus précisément :
 > 
-> Hypothèse: Il existe `P` tel que: 
+> Hypothèse: Il existe un programme `P` tel que: 
 >
-> - `P(x,y)` réponde "s'arrête" en un temps fini si et seulement si `x(y)` s'arrête effectivement en temps fini et 
+> - `P(x,y)` réponde "s'arrête" en un temps fini si et seulement si `x(y)`[^1] s'arrête effectivement en temps fini et 
 > - `P(x,y)` réponde "ne s'arrête pas" en un temps fini dans le cas contraire.
 >
 > Remarque: Tout code de programme est une chaîne de caractère qui peut être utilisée aussi comme entrée d'un autre programme. 
-Ainsi écrire `P(x,x)` est autorisé.
+> Ainsi écrire `P(x,x)` est autorisé.
 > 
 > Soit le programme Q que j'écris comme suit :
 > <pre class="twilight">
@@ -233,6 +233,8 @@ Ainsi écrire `P(x,x)` est autorisé.
 > - si `P(Q,Q)` répond "ne s'arrête pas" ça implique que `P(Q,Q)`="s'arrête"
 > 
 > Il y a donc une contradiction que le seul moyen de régler est par la non existence du programme P.
+
+[^1]: C'est-à-dire le programme `x` prenant l'entrée `y`.
 
 Cette indécidabilité est vraiment la plus gênante de toute. 
 Elle signifie que l'on peut créer un objet dont on ne peut pas prédire le comportement quelque soit mes possibilité de contrôler cet objet.
@@ -264,8 +266,11 @@ Alors que là, l'erreur semble vraiment très grande.
 
 Et oui ! Comme je suis un Dieu terriblement farceur, je me suis débrouillé pour que leur Univers ne soit pas plat (comme l'imaginais leur théoricien).
 Mais presque plat. Disons que je les fais vivre sur une sphère qui a un rayon de courbure d'environ 6000km (ça ne vous rappelle rien ?).
+
 Ah ah ah ! Cette blague je la trouve bien bonne. 
-De toute évidence, certains ne goûtent pas mon sens de l'humour et certains d'entre eux se font brûler parce qu'il ont trouver la solution. 
+De toute évidence, certains ne goûtent pas mon sens de l'humour. 
+J'ai remarqué que ceux qui ont trouvé cette petit surprise, la solution avant les autres et qui fanfaronne en énerve certains au plus haut point. 
+Certains se font même brûler.
 Apparemment il y a de mauvais perdant chez ces êtres là.
 Et oui sur une sphere on peut très bien dessiner des triangles dont la somme des angles fait 270° au lieu des 180° attendu dans un Univers plat.
 Disons que pour tous les triangle moins grand que quelques kilomètres, l'erreur est minime.

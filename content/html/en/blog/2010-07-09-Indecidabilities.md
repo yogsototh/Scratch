@@ -90,9 +90,11 @@ enddiv
 
 
 
+
 ## Des bateaux à la rescousse de la *vérité*.
 
 <%= leftblogimage("3DTriangle.png") %>
+
 
 
 

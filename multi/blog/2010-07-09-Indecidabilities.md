@@ -197,37 +197,29 @@ fr: On peut même imaginer une structure ou *tous* les points sont au bord de ce
 fr: Mais que vois-je ? 
 fr: Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en faisant un article sur un blog ?
 fr: Ça ne va pas se passer comme ça ! Croyez moi !
-fr: > Jusqu'ici, faire des prédictions à partir des données observées semble être une quête vouée à l'échec. 
+fr: > Faire des prédictions précises à partir des données observées semble être une quête vouée à l'échec. 
 fr: > Mais je suis persuadé que l'on peut aller au delà.
 fr: > Au diable ce Dieu qui nous empêche d'avoir des mesures précises !
-fr: > Inventons notre propre Univers mathématique avec des axiomes connus, clairs et précis. 
-fr: > Un monde qui se suffit à lui-même, un monde _self-contained_.
+fr: > Inventons notre propre Univers mathématique.
+fr: > Un monde qui se suffit à lui-même.
 fr: > Un monde dans lequel il n'y aura plus d'erreur de mesure. 
 fr: > Un monde entièrement contrôlé par des règles que nous aurons choisi.
-fr: > Un monde où enfin tout pourra être prédis.
-
-fr: Alors là je me fâche !
-fr: J'apparais devant ce petit importun dans un flot de lumière aveuglante.
-
-fr: > Eh mon petit gars, tu ne crois pas que ça va se passer comme ça ?
-fr: > Je te ferai remarquer, que s'il y a certaines choses que même moi, le Démiurge de ton Univers, je ne puis décider. 
-fr: > Il est absolument hors de question que tu le puisses aussi.
-fr: > Et tiens, rien que pour t'embêter, je te mets sur la voie d'un problème indécidable qui va rabattre ton caquet.
-fr: > Vous avez des ordinateurs.
-fr: > Poses toi cette question. Existe-t-il un programme qui permette de décider si un autre programme s'arrête ?
+fr: > Un monde similaire au notre mais où tout pourra être prédit.
 
 fr: ## Indécidabilité sans erreur
 
 <%= leftblogimage("Turing_undecidability.png") %>
 
-fr: Jusqu'ici, on a vu que toutes les activité humaines font faces à des problèmes indécidables.
-fr: Mais jusqu'ici, cette indécidabilité était due aux _erreurs_.
+fr: Jusqu'ici, tous les problèmes d'indécidabilités était dûs aux _erreurs_.
 fr: Maintenant peut-être que privé d'erreur de mesure, on pourrait enfin résoudre tous les problèmes.
 fr: Et bien non.
 fr: Même dans un monde mathématique complètement contrôlé.
 fr: On peut créer un objet pour lequel on ne pourra pas décider à l'avance ce qu'il fait.
 
-fr: Théorème d'indécidabilité du problème de l'arrêt. La preuve est suffisamment simple pour rentrer dans ce post, donc je me fais un petit plaisir en la donnant.
+fr: Il s'agit du problème de l'arrêt. 
+fr: 
+fr: Le Théorème stipule qu'il n'existe pas de programme permettant de _décider_ si un autre programme s'arrête.
+fr: La preuve est suffisamment simple pour rentrer dans ce post, donc je me fais un petit plaisir en la donnant.
 
 fr: > Supposons qu'il existe un programme qui puisse dire si un autre programme s'arrête. Plus précisément :
 fr: > 
