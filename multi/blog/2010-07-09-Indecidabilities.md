@@ -60,7 +60,7 @@ fr: Si le monde a été fabriqué par un Démiurge, on peut dire que celui-ci de
 fr: Et le récit que je vais faire va vous en fournir la preuve.
 fr: Je vais me mettre à sa place. 
 fr: Je vais créer un monde simplifié.
-fr: Un monde régie par des règles mathématiques très simples.
+fr: Un monde régi par des règles mathématiques très simples.
 fr: Puis je vais vous parler du mal qui touche cet Univers semblable au notre.
 fr: L'*indécidabilité*. 
 fr: L'incapacité de savoir si nous avons trouvé la vérité, ou seulement une approximation de celle-ci.
@@ -69,26 +69,28 @@ fr: Voilà comment tout aurait pu commencer.
 
 enddiv
 
+<%= leftblogimage("genese.png") %>
+
 fr: Au début, il n'y avait rien. 
 fr: Puis un article de blog commença à prendre forme.
-fr: J'hésitais tant le poids de ce que j'allais accomplir était imposant.
-fr: Mais devant le défi, je décidais finalement de créer l'*Univers*.
-fr: Bien entendu cet Univers n'est pas réel. 
-fr: Il s'agit d'une représentation, une vue de l'esprit. 
+fr: J'inspire profondément pour sentir la pesanteur de ce que je vais accomplir.
+fr: Attention, une dernier moment de tension et je crée l'_Univers_.
 fr: Un *Univers* qui n'existera que le temps de la lecture de cet article.
 
-fr: Ce qui est agréable c'est que maintenant je suis Dieu. 
-fr: Toi aussi tu possèdes une place privilégiée.
-fr: Tu es un observateur de ce monde.
+fr: Me voici le _Démiurge_ de cet Univers et te voilà son observateur privilégié.
 
-fr: Comme je suis un Dieu sympa, je fabrique ce monde avec quelques règles simples.
-fr: C'est *la* différence entre ce monde est celui dans lequel je vis.
-fr: Comme je crée ce monde je connais précisément toutes ses règles.
-fr: Et je décide d'utiliser les axiomes actuels des mathématiques.
+fr: Comme j'aime bien tout contrôler, je fabrique ce monde avec quelques règles simples.
+fr: Je décide que les _vrais_ règles de ce monde sont celles que nous pensons qui régissent notre monde.
+fr: Notez qu'il y a une grande différence. 
+fr: Pour leur monde, ce que l'on _croit_ vrai aujourd'hui, est vraiment vrai pour eux.
+fr: Leur monde est donc plus _simple_ à priori que le notre. 
+fr: En particulier, on peut le décrire avec des axiomes et des règles mathématiques.
+fr: Alors qu'il est possible que ce ne soit pas le cas de notre Univers. 
+fr: Mais nous reviendront là-dessus plus tard.
 
-fr: Pour que ce monde soit un peu sympathique je crée une *Terre*.
-fr: Et j'y ajoute des habitants intelligents.
-fr: Bien entendu les habitants de ce monde se posent des questions.
+fr: Bon au travail maintenant, je crée une *Terre*.
+fr: J'y ajoute des habitants intelligents.
+fr: Bien entendu ils se posent des questions.
 fr: En particulier, ils se demandent quelles sont les lois qui régissent leur monde. 
 fr: Ils pensent que connaître toutes ces règles leur permettrait de connaître l'avenir. 
 fr: Leur naïveté est touchante. 
@@ -101,23 +103,33 @@ fr: Le premier est de leur donner des sens imparfaits.
 fr: De plus il leur est impossible d'avoir des mesures parfaites.
 fr: Je leur laisse cependant toutes libertés pour améliorer leur technologie et diminuer ces erreurs de mesures.
 
+fr: Les habitants n'ont pas eu notre évolution historique.
+fr: En particulier, il pensent que le monde est plat avec ou sans bord (ça dépend) et le ciel repose dessus.
+fr: Une vision proche de celle de nos ancêtres.
 fr: Certains d'entre eux pensent qu'il est possible de découvrir les règles du monde que j'ai créé.
-fr: Et mais ! Moi je veux jouer.
-fr: Bon alors, le jeu commence.
+fr: Et bien que le jeu commence.
 fr: Le but des habitants est de retrouver les règles de mon monde.
-fr: Et moi, je vais leur montrer qu'ils vont avoir du mal à y parvenir.
-fr: Ne serait-ce que pour leur fermer le clapet à ces présomptueux.
-fr: Non mais. 
-fr: Trouver tous les secrets de mon monde aussi facilement.
+fr: Et moi, je vais les aider à découvrir qu'ils vont avoir du mal à y parvenir.
+fr: Je vais intervenir le moins possible. 
+fr: Mais je vais prendre un malin plaisir à voir ces présomptueux se ramasser.
+fr: Je suis le Dieu de ce monde après tout.
+fr: Je ne voudrais pas que mes secrets de fabrication soit dévoilés trop facilement.
 
 fr: Commençons par leur première leçon, _les erreurs causent de l'indécidabilité_.
 
 en: ## Undecidability due to measure errors
 fr: ## Indécidabilité dues aux erreurs de mesures
 
-fr: Je leur présente des tas de triangles.
-fr: Assez vite ils font plein de mesures et trouve que la somme des angles des triangles est toujours très proche de 180° (ou π radians).
+fr: > Incroyable voix de Dieu
+fr: >
+fr: > Voici des triangles. Vous pouvez en fabriquer vous même.
+fr: > Serez vous capable de savoir quelle est la somme de leurs angles ?
+
+<%= leftblogimage('triangles_plats.png') %>
+
+fr: En prenant des mesures, ils découvrent rapidement que la somme des angles des triangles est toujours très proche de 180° (ou π radians).
 fr: Mais comment certifier que c'est la formule exacte ?
+fr: Pourquoi ne serait-ce pas 179,999995 ou 180,000003 ?
 fr: Certain d'entre eux commencent à formaliser un petit peu le problème
 fr: et ils finissent par démontrer que la somme fais toujours 180°.
 fr: Magnifique !
@@ -125,16 +137,25 @@ fr: Seulement la preuve s'appuie sur des axiomes non démontrables parce que sou
 fr: Ils auront beau faire des mesures de plus en plus précises qui viendront toujours conforter leur formule.
 fr: Ils n'auront que l'_espoir_ et  _jamais_ la certitude d'avoir la bonne.
 
-fr: Quand certain s'en rendent compte, ça les accable. Mais heureusement un espoir transparait :
+fr: Bien entendu, ils prient, ils m'appellent à l'aide.
+fr: Et comme tout Dieu qui se respecte, je ne réponds pas.
+fr: Ah ah ah ! J'ai toujours aimé faire ce genre de chose.
+fr: Et oui, j'aime bien rigoler.
 
-fr: > Espoir
+fr: Quand certain se rendent compte du problème des axiomes, ça les accable. 
+fr: Mais heureusement un espoir transparait :
+
+fr: > _Espoir_
 fr: >
 fr: > Si Dieu nous empêche de mesurer avec une infinie précision.
-fr: > Il nous est quand même possible de trouver des loi avec des erreurs minimes.
+fr: > Il nous est quand même possible de trouver des lois avec des erreurs minimes.
 fr: > Et comme l'erreur que nous faisons est faible, nos prédictions auront elles aussi de faibles erreurs.
 
 fr: ## Indécidabilité avec erreurs croissantes
 en: ## Growing errors Undecidability
+
+
+<%= leftblogimage('trois_corps.png') %>
 
 fr: C'est bien espéré, mais malheureusement il existe un problème très ennuyeux qui ne possède pas cette jolie propriété.
 fr: Il s'agit du _problème des 3 corps_. 
@@ -157,12 +178,18 @@ fr: Mais je vous l'ai dit. Je suis un Dieu facétieux.
 
 fr: ## Indécidabilité avec erreurs discontinues
 
-fr: Considération la question suivante. 
-fr: Je vous donne les coordonnées GPS d'un point et une erreur de mesure.
-fr: Ma question est : est-ce que je vais être dans la mer où sur Terre ?
-fr: Et bien, il est impossible de le savoir, même si je réduis l'erreur à une valeur infinitésimale. 
-fr: Simplement parce que si je prends ce qu'il y a autour de mon point, il y aura toujours des zones avec et sans eau. 
-fr: Et ce quelque soit la distance de mon point.
+fr: Considérons la question suivante :
+
+fr: Soit des coordonnées GPS précises à quelques centimètres près.
+fr: Les coordonnées sont proches des côtes de la Bretagne.
+fr: Ce point va-t-il tomber dans la mer ou sur la terre ferme ?
+
+fr: Et bien, pour certaines coordonnées, c'est impossible de le savoir. 
+fr: Même si je réduis l'erreur à une valeur infinitésimale. 
+fr: Simplement parce que certains voisinages autour d'un point contiennent toujours à la fois de l'eau et de la terre.
+fr: Et ce quelque soit la taille du voisinage.
+
+<%= leftblogimage('fractale.png') %>
 
 fr: Fractales et Mandelbrot. 
 fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q)
@@ -190,6 +217,8 @@ fr: > Vous avez des ordinateurs.
 fr: > Poses toi cette question. Existe-t-il un programme qui permette de décider si un autre programme s'arrête ?
 
 fr: ## Indécidabilité sans erreur
+
+<%= leftblogimage("Turing_undecidability.png") %>
 
 fr: Jusqu'ici, on a vu que toutes les activité humaines font faces à des problèmes indécidables.
 fr: Mais jusqu'ici, cette indécidabilité était due aux _erreurs_.
@@ -238,6 +267,8 @@ fr: # Que peut-on espérer ?
 
 ## Des bateaux à la rescousse de la *vérité*.
 
+<%= leftblogimage("3DTriangle.png") %>
+
 fr: Pour prouver que même les très grand triangles obéissent à cette loi,
 fr: ils partent en expédition, avec trois bateaux.
 fr: Un va très au nord, pendant que l'un va vers l'est et l'autre vers l'ouest.
@@ -259,6 +290,8 @@ fr: Et oui sur une sphere on peut très bien dessiner des triangles dont la somm
 fr: Disons que pour tous les triangle moins grand que quelques kilomètres, l'erreur est minime.
 
 ## Fractions rationnelles
+
+<%= leftblogimage("rational_fraction.png") %>
 
 fr: Utilisation des fractions rationnelles pour retrouver la formule exacte.
 fr: Problème, on sait qu'on converge mais on ne sait pas quand.
