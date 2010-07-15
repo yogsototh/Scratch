@@ -15,20 +15,16 @@ tags:
 
 begindiv(intro)
 
-<%= tldr %> Four different _undecidabilities_:
+<%= tldr %> We can attribute different meaning to undecidability:
 
-- _Undecidability_ due to measure errors 
-- _Hope_: small measure error implies small predictive errors.
-- _Undecidability_ with big error from small measure error
-- _Hope_: error remain controllable given a final mesure error
-- _Undecidability_ with _discontinuities_
-- _Hope_: Undecidability is due to error, but without any measure error, all is decidable
-- _Undecidability_ without any measure error
+- Undecidability due to measure errors, 
+- Undecidability with big error from small measure error,
+- Fractal undecidability ;
+- Undecidability without any measure error.
 
-Is the situation so bad we cannot truly believe anything?
-A theorem in learning theory (in my thesis) prove that under some reasonable conditions, we could learn many true things. 
-But at no moment we can be absolutely sure this is _the_ truth.
-But as far as I can see, we cannot do better than that.
+Is the situation so bad we cannot do anything?
+We can find the truth, but we can never be sure we had reach it.
+I don't think we can do better than that.
 
 
 enddiv
@@ -39,20 +35,70 @@ newcorps
 
 begindiv(intro)
 
+If the world was made by a demiurge he certainly have a great sense of humor.
+And this read will prove it to you.
+I'll pretend to be him.
+I'll create a simplified world.
+A world that obey to simple mathematical rules.
+And I'll tell you about the *undecidability*.
+The inability to know if we had find the *truth* or only an approximation to it.
+The inability to predict many things.
 
 enddiv
 
 <%= leftblogimage("genese.png") %>
 
+At the beginning there was only void.
+Then a blog post beginning to be written.
+I breath profoundly to feel the weight the act I will accomplish.
+A last tense moment and... I create the _Universe_.
+A _Universe_ which will exists only the time of this read.
+
+I'm the _demiurge_ of this universe and you are its observer.
+
+I like to control everything.
+I construct this world using only some simples rules.
+I decide that _real_ rules of this world will be the one we believe are _true_ for our world.
+Note the difference.
+For their world, everything we _believe_ today is _true_ for them.
+Their world is then _simpler_ than our.
+Particularly, we can describe this world with axioms and mathematic rules.
+It is not so sure for our Universe. 
+But we'll talk about that later.
 
 
+Lets begin to work.
+I create an _Earth_.
+I populate it with intelligent people.
+Of course they are curious.
+In particular they try to understand their world.
+They believe that if they know the rules of their world they will be able to predict the consequences of most of their acts.
+They are so naive.
+If only they knew.
+But I'm here to help them.
 
 
+As a God I like jokes.
+The first joke I do it give them imperfect sense.
+Furthermore I make my world such that it is absolutely not possible to make perfect precise measure.
+I let them ameliorate their technology but there is a theoretical limits to the best precision they can access to.
 
 
+These people believe their world is flat.
+Some believe it is possible to find the rules of their Universe.
+The game begins.
+
+Let begin easily, _errors can cause undecidability_.
 
 ## Undecidability due to measure errors
 
+Here is what one of them think:
+
+
+> All triangle I observe seems to share the same property.
+> Each time I sum up their angles I obtain 180°.
+> It is certainly a rule of my Universe.
+> But how to be certain all triangle in my Universe share this property?
 
 <%= leftblogimage('triangles_plats.png') %>
 
@@ -74,8 +120,6 @@ enddiv
 
 
 <%= leftblogimage('fractale.png') %>
-
-
 
 
 

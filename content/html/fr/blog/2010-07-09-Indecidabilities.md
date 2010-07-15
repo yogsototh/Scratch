@@ -15,20 +15,17 @@ tags:
 
 begindiv(intro)
 
-<%= tlal %> Différentes indécidabilités :
+<%= tlal %> Plusieurs choses sont indécidables et pour des raisons différentes :
 
 - Indécidabilité due aux erreurs de mesures ;
-- Espoir : de petites erreurs de mesures impliquent de petites erreurs prédictives ;
 - Indécidabilités avec de petites erreurs de mesures ;
-- Espoir : l'erreur est contrôlable, i.e. on peut trouver l'erreur maximale de mesure à partir de l'erreur maximale que l'on peut se permettre ;
-- Indécidabilités avec discontinuités ;
-- Espoir : l'indécidabilité est due aux erreurs de mesure. Sans erreur on peut tout prévoir ;
-- Indécidabilité sans erreur de mesure.
+- Indécidabilités fractales ;
+- Indécidabilité dans un monde sans erreur de mesure.
 
 Est-ce que la situation est perdue ?
-Un théorème d'apprentissage automatique (qui est dans ma thèse) démontre que sous certaines circonstances raisonnables, on peut découvrir la vérité. 
-Par contre il est impossible d'être sûr que nous l'ayons atteinte.
+On peut découvrir la vérité, par contre il est impossible d'être sûr que nous l'ayons atteinte.
 Je ne pense pas que l'on puisse faire mieux.
+Ainsi il faut toujours adopter un grande ouverture d'esprit si l'on recherche la vérité.
 
 
 enddiv
@@ -39,7 +36,7 @@ newcorps
 
 begindiv(intro)
 
-Si le monde a été fabriqué par un Démiurge, on peut dire que celui-ci devait avoir le sens de l'humour. 
+Si le monde a été fabriqué par un démiurge, on peut dire que celui-ci devait avoir le sens de l'humour. 
 Et le récit que je vais faire va vous en fournir la preuve.
 Je vais me mettre à sa place. 
 Je vais créer un monde simplifié.
@@ -60,7 +57,7 @@ J'inspire profondément pour sentir la pesanteur de ce que je vais accomplir.
 Attention, une dernier moment de tension et je crée l'_Univers_.
 Un *Univers* qui n'existera que le temps de la lecture de cet article.
 
-Me voici le _Démiurge_ de cet Univers et te voilà son observateur privilégié.
+Me voici le _démiurge_ de cet Univers et te voilà son observateur privilégié.
 
 Comme j'aime bien tout contrôler, je fabrique ce monde avec quelques règles simples.
 Je décide que les _vrais_ règles de ce monde sont celles que nous pensons qui régissent notre monde.
@@ -80,32 +77,30 @@ Leur naïveté est touchante.
 Ah, si seulement ils savaient.
 Mais je suis là pour les aider à apprendre.
 
+
 Comme je suis un Dieu un peu facétieux, je vais leur jouer quelques tours.
 Sinon on s'ennuierai à mourir.
 Le premier est de leur donner des sens imparfaits. 
 De plus il leur est impossible d'avoir des mesures parfaites.
 Je leur laisse cependant toutes libertés pour améliorer leur technologie et diminuer ces erreurs de mesures.
 
-Les habitants n'ont pas eu notre évolution historique.
-En particulier, il pensent que le monde est plat avec ou sans bord (ça dépend) et le ciel repose dessus.
-Une vision proche de celle de nos ancêtres.
+
+Les habitants de ce monde pensent que celui-ci est plat.
 Certains d'entre eux pensent qu'il est possible de découvrir les règles du monde que j'ai créé.
 Et bien que le jeu commence.
-Le but des habitants est de retrouver les règles de mon monde.
-Et moi, je vais les aider à découvrir qu'ils vont avoir du mal à y parvenir.
-Je vais intervenir le moins possible. 
-Mais je vais prendre un malin plaisir à voir ces présomptueux se ramasser.
-Je suis le Dieu de ce monde après tout.
-Je ne voudrais pas que mes secrets de fabrication soit dévoilés trop facilement.
+
 
 Commençons par leur première leçon, _les erreurs causent de l'indécidabilité_.
 
 ## Indécidabilité dues aux erreurs de mesures
 
-> Incroyable voix de Dieu
->
-> Voici des triangles. Vous pouvez en fabriquer vous même.
-> Serez vous capable de savoir quelle est la somme de leurs angles ?
+Voici ce que pense l'un de ces individus.
+
+> Tous les triangles que j'observe semble avoir une propriété commune.
+> La somme de leurs angles est toujours 180°.
+> Il s'agit certainement d'une loi de mon Univers.
+> Mais comment être certain que tous les triangles de mon Univers possèdent cette propriété ?
+
 
 <%= leftblogimage('triangles_plats.png') %>
 
@@ -178,37 +173,29 @@ On peut même imaginer une structure ou *tous* les points sont au bord de celle-
 Mais que vois-je ? 
 Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en faisant un article sur un blog ?
 Ça ne va pas se passer comme ça ! Croyez moi !
-> Jusqu'ici, faire des prédictions à partir des données observées semble être une quête vouée à l'échec. 
+> Faire des prédictions précises à partir des données observées semble être une quête vouée à l'échec. 
 > Mais je suis persuadé que l'on peut aller au delà.
 > Au diable ce Dieu qui nous empêche d'avoir des mesures précises !
-> Inventons notre propre Univers mathématique avec des axiomes connus, clairs et précis. 
-> Un monde qui se suffit à lui-même, un monde _self-contained_.
+> Inventons notre propre Univers mathématique.
+> Un monde qui se suffit à lui-même.
 > Un monde dans lequel il n'y aura plus d'erreur de mesure. 
 > Un monde entièrement contrôlé par des règles que nous aurons choisi.
-> Un monde où enfin tout pourra être prédis.
-
-Alors là je me fâche !
-J'apparais devant ce petit importun dans un flot de lumière aveuglante.
-
-> << C'est ton créateur qui te parle !
-> Certaines choses sont interdites !
-> Mais comme je suis sympa, je te mets sur la voie.
-> Vous avez des ordinateurs.
-> Poses toi cette question.
-> Existe-t-il un programme qui permette de décider si un autre programme s'arrête ? >>
+> Un monde similaire au notre mais où tout pourra être prédit.
 
 ## Indécidabilité sans erreur
 
 <%= leftblogimage("Turing_undecidability.png") %>
 
-Jusqu'ici, on a vu que toutes les activité humaines font faces à des problèmes indécidables.
-Mais jusqu'ici, cette indécidabilité était due aux _erreurs_.
+Jusqu'ici, tous les problèmes d'indécidabilités était dûs aux _erreurs_.
 Maintenant peut-être que privé d'erreur de mesure, on pourrait enfin résoudre tous les problèmes.
 Et bien non.
 Même dans un monde mathématique complètement contrôlé.
 On peut créer un objet pour lequel on ne pourra pas décider à l'avance ce qu'il fait.
 
-Théorème d'indécidabilité du problème de l'arrêt. La preuve est suffisamment simple pour rentrer dans ce post, donc je me fais un petit plaisir en la donnant.
+Il s'agit du problème de l'arrêt. 
+
+Le Théorème stipule qu'il n'existe pas de programme permettant de _décider_ si un autre programme s'arrête.
+La preuve est suffisamment simple pour rentrer dans ce post, donc je me fais un petit plaisir en la donnant.
 
 > Supposons qu'il existe un programme qui puisse dire si un autre programme s'arrête. Plus précisément :
 > 
@@ -239,7 +226,7 @@ Théorème d'indécidabilité du problème de l'arrêt. La preuve est suffisamme
 Cette indécidabilité est vraiment la plus gênante de toute. 
 Elle signifie que l'on peut créer un objet dont on ne peut pas prédire le comportement quelque soit mes possibilité de contrôler cet objet.
 
-C'est simple, je suis le Démiurge de ce monde imaginaire. 
+C'est simple, je suis le démiurge de ce monde imaginaire. 
 Et même moi, je dois me soumettre à cette règle.
 Comme quoi, avoir la possibilité de créer le monde et la toute puissance sont deux choses différentes.
 

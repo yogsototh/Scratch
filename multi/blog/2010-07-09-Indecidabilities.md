@@ -113,33 +113,53 @@ fr: Leur naïveté est touchante.
 fr: Ah, si seulement ils savaient.
 fr: Mais je suis là pour les aider à apprendre.
 
+en: Lets begin to work.
+en: I create an _Earth_.
+en: I populate it with intelligent people.
+en: Of course they are curious.
+en: In particular they try to understand their world.
+en: They believe that if they know the rules of their world they will be able to predict the consequences of most of their acts.
+en: They are so naive.
+en: If only they knew.
+en: But I'm here to help them.
+
 fr: Comme je suis un Dieu un peu facétieux, je vais leur jouer quelques tours.
 fr: Sinon on s'ennuierai à mourir.
 fr: Le premier est de leur donner des sens imparfaits. 
 fr: De plus il leur est impossible d'avoir des mesures parfaites.
 fr: Je leur laisse cependant toutes libertés pour améliorer leur technologie et diminuer ces erreurs de mesures.
 
-fr: Les habitants n'ont pas eu notre évolution historique.
-fr: En particulier, il pensent que le monde est plat avec ou sans bord (ça dépend) et le ciel repose dessus.
-fr: Une vision proche de celle de nos ancêtres.
+en: As a God I like jokes.
+en: The first joke I do it give them imperfect sense.
+en: Furthermore I make my world such that it is absolutely not possible to make perfect precise measure.
+en: I let them ameliorate their technology but there is a theoretical limits to the best precision they can access to.
+
+fr: Les habitants de ce monde pensent que celui-ci est plat.
 fr: Certains d'entre eux pensent qu'il est possible de découvrir les règles du monde que j'ai créé.
 fr: Et bien que le jeu commence.
-fr: Le but des habitants est de retrouver les règles de mon monde.
-fr: Et moi, je vais les aider à découvrir qu'ils vont avoir du mal à y parvenir.
-fr: Je vais intervenir le moins possible. 
-fr: Mais je vais prendre un malin plaisir à voir ces présomptueux se ramasser.
-fr: Je suis le Dieu de ce monde après tout.
-fr: Je ne voudrais pas que mes secrets de fabrication soit dévoilés trop facilement.
+
+en: These people believe their world is flat.
+en: Some believe it is possible to find the rules of their Universe.
+en: The game begins.
 
 fr: Commençons par leur première leçon, _les erreurs causent de l'indécidabilité_.
+en: Let begin easily, _errors can cause undecidability_.
 
 en: ## Undecidability due to measure errors
 fr: ## Indécidabilité dues aux erreurs de mesures
 
-fr: > Incroyable voix de Dieu
-fr: >
-fr: > Voici des triangles. Vous pouvez en fabriquer vous même.
-fr: > Serez vous capable de savoir quelle est la somme de leurs angles ?
+fr: Voici ce que pense l'un de ces individus.
+en: Here is what one of them think:
+
+fr: > Tous les triangles que j'observe semble avoir une propriété commune.
+fr: > La somme de leurs angles est toujours 180°.
+fr: > Il s'agit certainement d'une loi de mon Univers.
+fr: > Mais comment être certain que tous les triangles de mon Univers possèdent cette propriété ?
+
+en: > All triangle I observe seems to share the same property.
+en: > Each time I sum up their angles I obtain 180°.
+en: > It is certainly a rule of my Universe.
+en: > But how to be certain all triangle in my Universe share this property?
 
 <%= leftblogimage('triangles_plats.png') %>
 
