@@ -100,7 +100,7 @@ Here is what one of them think:
 > It is certainly a rule of my Universe.
 > But how to be certain all triangle in my Universe share this property?
 
-<%= leftblogimage('triangles_plats.png') %>
+<%= leftblogimage('triangle_3_angles.png') %>
 
 
 
@@ -109,7 +109,7 @@ Here is what one of them think:
 ## Growing errors Undecidability
 
 
-<%= leftblogimage('trois_corps.png') %>
+<%= leftblogimage('3_corps.png') %>
 
 
 
@@ -119,7 +119,7 @@ Here is what one of them think:
 
 
 
-<%= leftblogimage('fractale.png') %>
+<%= leftblogimage('mandelbrot.png') %>
 
 
 

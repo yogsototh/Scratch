@@ -102,7 +102,7 @@ Voici ce que pense l'un de ces individus.
 > Mais comment être certain que tous les triangles de mon Univers possèdent cette propriété ?
 
 
-<%= leftblogimage('triangles_plats.png') %>
+<%= leftblogimage('triangle_3_angles.png') %>
 
 En prenant des mesures, ils découvrent rapidement que la somme des angles des triangles est toujours très proche de 180° (ou π radians).
 Mais comment certifier que c'est la formule exacte ?
@@ -131,7 +131,7 @@ Mais heureusement un espoir transparait :
 ## Indécidabilité avec erreurs croissantes
 
 
-<%= leftblogimage('trois_corps.png') %>
+<%= leftblogimage('3_corps.png') %>
 
 C'est bien espéré, mais malheureusement il existe un problème très ennuyeux qui ne possède pas cette jolie propriété.
 Il s'agit du _problème des 3 corps_. 
@@ -165,7 +165,7 @@ Même si je réduis l'erreur à une valeur infinitésimale.
 Simplement parce que certains voisinages autour d'un point contiennent toujours à la fois de l'eau et de la terre.
 Et ce quelque soit la taille du voisinage.
 
-<%= leftblogimage('fractale.png') %>
+<%= leftblogimage('mandelbrot.png') %>
 
 Fractales et Mandelbrot. 
 On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q)

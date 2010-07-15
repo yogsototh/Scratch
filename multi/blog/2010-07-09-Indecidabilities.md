@@ -161,7 +161,7 @@ en: > Each time I sum up their angles I obtain 180°.
 en: > It is certainly a rule of my Universe.
 en: > But how to be certain all triangle in my Universe share this property?
 
-<%= leftblogimage('triangles_plats.png') %>
+<%= leftblogimage('triangle_3_angles.png') %>
 
 fr: En prenant des mesures, ils découvrent rapidement que la somme des angles des triangles est toujours très proche de 180° (ou π radians).
 fr: Mais comment certifier que c'est la formule exacte ?
@@ -191,7 +191,7 @@ fr: ## Indécidabilité avec erreurs croissantes
 en: ## Growing errors Undecidability
 
 
-<%= leftblogimage('trois_corps.png') %>
+<%= leftblogimage('3_corps.png') %>
 
 fr: C'est bien espéré, mais malheureusement il existe un problème très ennuyeux qui ne possède pas cette jolie propriété.
 fr: Il s'agit du _problème des 3 corps_. 
@@ -225,7 +225,7 @@ fr: Même si je réduis l'erreur à une valeur infinitésimale.
 fr: Simplement parce que certains voisinages autour d'un point contiennent toujours à la fois de l'eau et de la terre.
 fr: Et ce quelque soit la taille du voisinage.
 
-<%= leftblogimage('fractale.png') %>
+<%= leftblogimage('mandelbrot.png') %>
 
 fr: Fractales et Mandelbrot. 
 fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q)
