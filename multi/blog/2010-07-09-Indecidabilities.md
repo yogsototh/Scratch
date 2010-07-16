@@ -17,28 +17,22 @@ fr:   - mathématiques
 
 begindiv(intro)
 
-en: <%= tldr %> We can attribute different meaning to undecidability:
+en: <%= tldr %> I create a simple mathematical world to talk about the different meaning of undecidability:
 en: 
 en: - Undecidability due to measure errors, 
-en: - Undecidability with big error from small measure error,
+en: - Big errors resulting from small initial measure error,
 en: - Fractal undecidability ;
-en: - Undecidability without any measure error.
+en: - Logic Undecidability.
 en: 
-en: Is the situation so bad we cannot do anything?
-en: We can find the truth, but we can never be sure we had reach it.
-en: I don't think we can do better than that.
-fr: <%= tlal %> Plusieurs choses sont indécidables et pour des raisons différentes :
+en: After that, I try to find what is the best we can do knowing many things are undecidable.
+fr: <%= tlal %> Je crée un mode mathématique simple pour parler de différents types d'indécidabilités :
 fr: 
-fr: - Indécidabilité due aux erreurs de mesures ;
-fr: - Indécidabilités avec de petites erreurs de mesures ;
-fr: - Indécidabilités fractales ;
-fr: - Indécidabilité dans un monde sans erreur de mesure.
+fr: - indécidabilité due aux erreurs d'observation ;
+fr: - grandes erreurs résultant de petites erreurs de mesure ;
+fr: - indécidabilité fractales ;
+fr: - indécidabilité logique.
 fr: 
-fr: Est-ce que la situation est perdue ?
-fr: On peut découvrir la vérité, par contre il est impossible d'être sûr que nous l'ayons atteinte.
-fr: Je ne pense pas que l'on puisse faire mieux.
-fr: Ainsi il faut toujours adopter un grande ouverture d'esprit si l'on recherche la vérité.
-
+fr: Ensuite je discute un peu sur ce qu'on peut faire de mieux sachant que beaucoup de choses sont indécidables.
 
 enddiv
 
@@ -59,14 +53,15 @@ fr: L'*indécidabilité*.
 fr: L'incapacité de savoir si nous avons trouvé la vérité, ou seulement une approximation de celle-ci.
 fr: L'incapacité de prédire certaines choses qui semblent pourtant aller de soi.
 fr: Voilà comment tout aurait pu commencer.
-en: If the world was made by a demiurge he certainly have a great sense of humor.
+en: If the world was made by a demiurge he certainly had a great sense of humor.
 en: And this read will prove it to you.
 en: I'll pretend to be him.
 en: I'll create a simplified world.
 en: A world that obey to simple mathematical rules.
-en: And I'll tell you about the *undecidability*.
-en: The inability to know if we had find the *truth* or only an approximation to it.
-en: The inability to predict many things.
+en: And I'll tell you about one of the curse on this world: the *undecidability*.
+en: The inability to know if we had find the *truth*.
+en: The inability to predict many things that should be natural.
+en: Here begin the story.
 
 enddiv
 
@@ -77,13 +72,12 @@ fr: Puis un article de blog commença à prendre forme.
 fr: J'inspire profondément pour sentir la pesanteur de ce que je vais accomplir.
 fr: Attention, une dernier moment de tension et je crée l'_Univers_.
 fr: Un *Univers* qui n'existera que le temps de la lecture de cet article.
-en: At the beginning there was only void.
+fr: Me voici le _démiurge_ de cet Univers et te voilà son observateur privilégié.
+en: In the beginning there was only void.
 en: Then a blog post beginning to be written.
 en: I breath profoundly to feel the weight the act I will accomplish.
 en: A last tense moment and... I create the _Universe_.
-en: A _Universe_ which will exists only the time of this read.
-
-fr: Me voici le _démiurge_ de cet Univers et te voilà son observateur privilégié.
+en: An incredible _Universe_ which will exists only the time of this read.
 en: I'm the _demiurge_ of this universe and you are its observer.
 
 fr: Comme j'aime bien tout contrôler, je fabrique ce monde avec quelques règles simples.
@@ -94,18 +88,17 @@ fr: Leur monde est donc plus _simple_ à priori que le notre.
 fr: En particulier, on peut le décrire avec des axiomes et des règles mathématiques.
 fr: Alors qu'il est possible que ce ne soit pas le cas de notre Univers. 
 fr: Mais nous reviendront là-dessus plus tard.
-en: I like to control everything.
 en: I construct this world using only some simples rules.
 en: I decide that _real_ rules of this world will be the one we believe are _true_ for our world.
 en: Note the difference.
 en: For their world, everything we _believe_ today is _true_ for them.
-en: Their world is then _simpler_ than our.
+en: Their world is then probably _simpler_ than our.
 en: Particularly, we can describe this world with axioms and mathematic rules.
 en: It is not so sure for our Universe. 
 en: But we'll talk about that later.
 
 fr: Bon au travail maintenant, je crée une *Terre*.
-fr: J'y ajoute des habitants intelligents.
+fr: J'y ajoute des habitants intelligents, les _Ys_.
 fr: Bien entendu ils se posent des questions.
 fr: En particulier, ils se demandent quelles sont les lois qui régissent leur monde. 
 fr: Ils pensent que connaître toutes ces règles leur permettrait de connaître l'avenir. 
@@ -113,9 +106,9 @@ fr: Leur naïveté est touchante.
 fr: Ah, si seulement ils savaient.
 fr: Mais je suis là pour les aider à apprendre.
 
-en: Lets begin to work.
+en: Lets the work begin.
 en: I create an _Earth_.
-en: I populate it with intelligent people.
+en: I populate it with intelligent people, the _Ys_.
 en: Of course they are curious.
 en: In particular they try to understand their world.
 en: They believe that if they know the rules of their world they will be able to predict the consequences of most of their acts.
@@ -129,18 +122,18 @@ fr: Le premier est de leur donner des sens imparfaits.
 fr: De plus il leur est impossible d'avoir des mesures parfaites.
 fr: Je leur laisse cependant toutes libertés pour améliorer leur technologie et diminuer ces erreurs de mesures.
 
-en: As a God I like jokes.
-en: The first joke I do it give them imperfect sense.
-en: Furthermore I make my world such that it is absolutely not possible to make perfect precise measure.
-en: I let them ameliorate their technology but there is a theoretical limits to the best precision they can access to.
+en: I am a God who likes jokes.
+en: The first joke I make to Ys is to make their sense imperfect.
+en: Furthermore it is not possible to make perfect precise measure in my world.
+en: I let Ys ameliorate their technology but there is a theoretical limits to the best precision they can access to.
 
 fr: Les habitants de ce monde pensent que celui-ci est plat.
 fr: Certains d'entre eux pensent qu'il est possible de découvrir les règles du monde que j'ai créé.
 fr: Et bien que le jeu commence.
 
-en: These people believe their world is flat.
+en: I'd like to precise that these people believe their world is flat.
 en: Some believe it is possible to find the rules of their Universe.
-en: The game begins.
+en: Now, let the game begins.
 
 fr: Commençons par leur première leçon, _les erreurs causent de l'indécidabilité_.
 en: Let begin easily, _errors can cause undecidability_.
@@ -163,29 +156,51 @@ en: > But how to be certain all triangle in my Universe share this property?
 
 <%= leftblogimage('triangle_3_angles.png') %>
 
-fr: En prenant des mesures, ils découvrent rapidement que la somme des angles des triangles est toujours très proche de 180° (ou π radians).
-fr: Mais comment certifier que c'est la formule exacte ?
-fr: Pourquoi ne serait-ce pas 179,999995 ou 180,000003 ?
 fr: Certain d'entre eux commencent à formaliser un petit peu le problème
-fr: et ils finissent par démontrer que la somme fais toujours 180°.
+fr: et ils finissent faire une preuve mathématique.
 fr: Magnifique !
-fr: Seulement la preuve s'appuie sur des axiomes non démontrables parce que soumis aux mêmes règles d'imperfections de l'observation.
+fr: La preuve est correcte, mais il reste un petit problème.
+fr: La preuve s'appuie sur des axiomes et des règles.
+fr: Comment être certain que ces règles et ces axiomes sont vrai dans leur monde?
 fr: Ils auront beau faire des mesures de plus en plus précises qui viendront toujours conforter leur formule.
 fr: Ils n'auront que l'_espoir_ et  _jamais_ la certitude d'avoir la bonne.
+fr: Simplement parce que le seul moyen de vérifier la véracité des axiomes est par l'observation.
+fr: Hors en tant que dieu facétieux, j'ai interdit les observation avec des mesures parfaites.
+
+en: Some began to formalise the problem.
+en: They end by writing a mathematical proof.
+en: Marvelous!
+en: The proof seems correct, but, a problem remain.
+en: The proof is based on rules and axioms.
+en: How to be certain these rules and axioms are right in their world?
+en: They will try to measure again and again the sum of triangle angles.
+en: The measure will never fail.
+en: But they'll never be certain the rules and axioms are right.
+en: Because then only way to verify all axioms depends of observation.
+en: And as a facetious god, I forbid perfect measure in observation.
 
 fr: Bien entendu, ils prient, ils m'appellent à l'aide.
 fr: Et comme tout Dieu qui se respecte, je ne réponds pas.
 fr: Ah ah ah ! J'ai toujours aimé faire ce genre de chose.
-fr: Et oui, j'aime bien rigoler.
+fr: Ensuite je ferai comme si je n'existe pas.
+fr: Encore un bonne blague !
 
-fr: Quand certain se rendent compte du problème des axiomes, ça les accable. 
-fr: Mais heureusement un espoir transparait :
+en: Of course, they prey, they call me to help.
+en: And as any respectful god, I don't answer.
+en: Ah ah ah! I've always loved to make these kind of thing.
+en: Next, I'll act as if I don't exists.
+en: Another good joke!
+
+fr: Si certains se sentent accablés, il leur reste un espoir :
+en: They feel sad. But they have some hope:
 
 fr: > _Espoir_
 fr: >
-fr: > Si Dieu nous empêche de mesurer avec une infinie précision.
-fr: > Il nous est quand même possible de trouver des lois avec des erreurs minimes.
-fr: > Et comme l'erreur que nous faisons est faible, nos prédictions auront elles aussi de faibles erreurs.
+fr: > Si nous faisons de faibles erreurs de mesure, nous aurons de faibles erreurs dans nos prédictions.
+
+en: _Hope_
+en: 
+en: > If we make small measure error, we will make small predictive error.
 
 fr: ## Indécidabilité avec erreurs croissantes
 en: ## Growing errors Undecidability
@@ -193,28 +208,41 @@ en: ## Growing errors Undecidability
 
 <%= leftblogimage('3_corps.png') %>
 
-fr: C'est bien espéré, mais malheureusement il existe un problème très ennuyeux qui ne possède pas cette jolie propriété.
-fr: Il s'agit du _problème des 3 corps_. 
+fr: Malheureusement pour eux, il y a le  _problème des 3 corps_. 
 fr: Prenons les formules de la gravitation Universelle et appliquons la à deux corps célestes. 
 fr: Si on connait la position de ces corps avec un grande précision, on pourra aussi connaître la position future de ces corps avec une grande précision.
 fr: L'hypothèse selon laquelle de petite erreurs de mesures impliquent de petites erreurs prédictive est confortée.
 fr: Cependant, il y a un problème.
-
 fr: Reprenons le même problème mais avec trois corps. Par exemple, avec le Soleil, la Terre et la Lune.
 fr: Dans ce cas, les erreurs de mesures initiales vont s'amplifier. 
 fr: S'amplifier au point de rendre toute prédiction inutilisable.
 
+en: Unfortunately, the three bodies problem will crush this _hope_.
+en: Using Newton's Universal Law of gravitation with two bodies.
+en: We can predict with precision what will be their position and speed in the future.
+en: Until there all seems OK.
+en: But now, add another body.
+en: All error will grow.
+en: Errors will grow at a point that any prediction will be unusable.
+
 fr: Là encore une voix d'espoir s'élève :
-fr: > Certes les erreurs prédictives augmentent. Mais plus le temps passe, plus notre technologie s'améliore.
-fr: > Plus les erreurs de mesures diminuent.
-fr: > Et plus les prédictions seront précises sur du long terme.
-fr: > Ainsi, on peut toujours espérer progresser dans nos prédictions.
+fr: > Peut-être pouvons nous calculer l'erreur maximale acceptable pour prédire quelque chose.
+fr: > Et nous pourrions au moins savoir ce que nous pouvons prédire ou pas.
 
-fr: Mais je vous l'ai dit. Je suis un Dieu facétieux.
+en: Even with this bad news there is the _hope_ to _control_ the error.
+en: > May we should know the maximal measure error we can handle to predict something. 
+en: > And we should at least determine what we can predict and what we cannot.
 
-fr: ## Indécidabilité avec erreurs discontinues
+fr: Une fois encore, ça ne va pas très bien se passer.
+en: Once again, this should not terminate has they hope.
+
+fr: ## Indécidabilité fractale
+en: ## Fractal Undecidability
 
 fr: Considérons la question suivante :
+en: Consider the following question:
+
+<%= leftblogimage('mandelbrot.png') %>
 
 fr: Soit des coordonnées GPS précises à quelques centimètres près.
 fr: Les coordonnées sont proches des côtes de la Bretagne.
@@ -225,9 +253,6 @@ fr: Même si je réduis l'erreur à une valeur infinitésimale.
 fr: Simplement parce que certains voisinages autour d'un point contiennent toujours à la fois de l'eau et de la terre.
 fr: Et ce quelque soit la taille du voisinage.
 
-<%= leftblogimage('mandelbrot.png') %>
-
-fr: Fractales et Mandelbrot. 
 fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q)
 
 fr: Mais que vois-je ? 
