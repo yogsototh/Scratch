@@ -163,25 +163,61 @@ Even if we are authorize to move a bit to dodge the borders.
 Because there are some zone in which all point could be a "border" for any size of the zone.
 
 We can even imagine some mathematical structure where _all_ points are at the border[^2]. 
-[^2]: more precisely let $ \varepsilon > 0 $,
-let the neighbourhood be 
-$ V\varepsilon = \{ y \mid |x-y| < \varepsilon \} $.
-Then $ V\varepsilon \cap \Q \neq \emptyset $ and
-$ V\varepsilon \cap \R \neq \emptyset $
+[^2]: Imagine R\Q and Q.
 
 
 ## Logical Undecidability
 
-<%= leftblogimage("Turing_undecidability.png") %>
+<%= leftblogimage("stackOverflow.png") %>
 
 
+Until there all problem were undecidable because of measure _errors_.
+May be in a controlled world without any _error_ we should be able to predict anything.  
+I'm sorry to say no.
+Even in a self-contained mathematical world it can be possible to create object with an unpredictable behaviour.
 
 
+It is the _halting problem_.
+
+Theorem: It is undecidable given a description of a program, whether the program finishes running or will run forever.
+The idea of the proof is simple enough to be part of this entry. 
+And this is with pleasure I give you one here.
 
 
+> Suppose a program able to decide if any program halt exists.
+> More precisely:
+> 
+> Hypothesis: there exists a program `P`such that:
+> - `P(x,y)` return "stop" in a finite amount of time if `x(y)`[^1] will stop running.
+> - `P(x,y)` return "loop" in a finite amount of time if `x(y)` will never stop running.
+> 
+> Remark: Any program can be represented as a string. Therefore, a program can be used as the input of another program.
+> It is authorized to write `P(x,x)`.
+> 
+> Let `Q` be the following program using the return value of `P`.
+> <pre class="twilight">
+> Q(x) :
+>     if P(x,x)="stop" then I enter in an infinite loop
+>     if P(x,x)="loop" then I stop
+> </pre>
+> 
+> Now, what is the value of `P(Q,Q)`?
+> 
+> - if `P(Q,Q)` returns "stop" that means by construction of `Q` that `P(Q,Q)` never stop running.
+> - if `P(Q,Q)` returns "loop" that means by construction of `Q` that `P(Q,Q)` will halt.
+> 
+> Therefore there is a contradiction the only way to handle is by the non existence of the program `P`.
+
+[^1]: Meaning `x` taking `y` as input.
 
 
+I am the demiurge of this imaginary world. 
+And I cannot know the future of this world.
+Therefore, creative power isn't equivalent to omnipotence.
 
+newcorps
+
+# What could we do then?
 
 ## Des bateaux à la rescousse de la *vérité*.
 

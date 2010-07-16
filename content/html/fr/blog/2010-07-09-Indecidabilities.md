@@ -164,7 +164,8 @@ Simplement parce que certains voisinages autour d'un point contiennent toujours 
 Et ce quelque soit la taille du voisinage.
 
 
-On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q et Q)
+On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur[^2].
+[^2]: Pensez aux deux ensembles R\Q et Q.
 
 Mais que vois-je ? 
 Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en faisant un article sur un blog ?
@@ -180,18 +181,20 @@ Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en f
 
 ## Indécidabilité logique
 
-<%= leftblogimage("Turing_undecidability.png") %>
+<%= leftblogimage("stackOverflow.png") %>
 
 Jusqu'ici, tous les problèmes d'indécidabilités était dûs aux _erreurs_.
-Maintenant peut-être que privé d'erreur de mesure, on pourrait enfin résoudre tous les problèmes.
+Maintenant peut-être que privé d'erreur de mesure, on pourrait enfin résoudre tous les problèmes.  
 Et bien non.
 Même dans un monde mathématique complètement contrôlé.
 On peut créer un objet pour lequel on ne pourra pas décider à l'avance ce qu'il fait.
+
 
 Il s'agit du problème de l'arrêt. 
 
 Le Théorème stipule qu'il n'existe pas de programme permettant de _décider_ si un autre programme s'arrête.
 La preuve est suffisamment simple pour rentrer dans ce post, donc je me fais un petit plaisir en la donnant.
+
 
 > Supposons qu'il existe un programme qui puisse dire si un autre programme s'arrête. Plus précisément :
 > 
@@ -217,19 +220,17 @@ La preuve est suffisamment simple pour rentrer dans ce post, donc je me fais un 
 > 
 > Il y a donc une contradiction que le seul moyen de régler est par la non existence du programme P.
 
-[^1]: C'est-à-dire le programme `x` prenant l'entrée `y`.
 
-Cette indécidabilité est vraiment la plus gênante de toute. 
-Elle signifie que l'on peut créer un objet dont on ne peut pas prédire le comportement quelque soit mes possibilité de contrôler cet objet.
+[^1]: C'est-à-dire le programme `x` prenant l'entrée `y`.
 
 C'est simple, je suis le démiurge de ce monde imaginaire. 
 Et même moi, je dois me soumettre à cette règle.
 Comme quoi, avoir la possibilité de créer le monde et la toute puissance sont deux choses différentes.
 
+
 newcorps
 
 # Que peut-on espérer ?
-
 
 ## Des bateaux à la rescousse de la *vérité*.
 

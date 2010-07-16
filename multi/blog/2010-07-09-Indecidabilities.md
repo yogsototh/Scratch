@@ -261,13 +261,10 @@ en: For some coordinates it is not possible to know.
 en: Even if we are authorize to move a bit to dodge the borders.
 en: Because there are some zone in which all point could be a "border" for any size of the zone.
 
-fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q et Q)
+fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur[^2].
+fr: [^2]: Pensez aux deux ensembles R\Q et Q.
 en: We can even imagine some mathematical structure where _all_ points are at the border[^2]. 
-en: [^2]: more precisely let $ \varepsilon > 0 $,
-en: let the neighbourhood be 
-en: $ V\varepsilon = \{ y \mid |x-y| < \varepsilon \} $.
-en: Then $ V\varepsilon \cap \Q \neq \emptyset $ and
-en: $ V\varepsilon \cap \R \neq \emptyset $
+en: [^2]: Imagine R\Q and Q.
 
 fr: Mais que vois-je ? 
 fr: Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en faisant un article sur un blog ?
@@ -284,18 +281,29 @@ fr: > Un monde similaire au notre mais où tout pourra être prédit.
 fr: ## Indécidabilité logique
 en: ## Logical Undecidability
 
-<%= leftblogimage("Turing_undecidability.png") %>
+<%= leftblogimage("stackOverflow.png") %>
 
 fr: Jusqu'ici, tous les problèmes d'indécidabilités était dûs aux _erreurs_.
-fr: Maintenant peut-être que privé d'erreur de mesure, on pourrait enfin résoudre tous les problèmes.
+fr: Maintenant peut-être que privé d'erreur de mesure, on pourrait enfin résoudre tous les problèmes.  
 fr: Et bien non.
 fr: Même dans un monde mathématique complètement contrôlé.
 fr: On peut créer un objet pour lequel on ne pourra pas décider à l'avance ce qu'il fait.
+
+en: Until there all problem were undecidable because of measure _errors_.
+en: May be in a controlled world without any _error_ we should be able to predict anything.  
+en: I'm sorry to say no.
+en: Even in a self-contained mathematical world it can be possible to create object with an unpredictable behaviour.
 
 fr: Il s'agit du problème de l'arrêt. 
 fr: 
 fr: Le Théorème stipule qu'il n'existe pas de programme permettant de _décider_ si un autre programme s'arrête.
 fr: La preuve est suffisamment simple pour rentrer dans ce post, donc je me fais un petit plaisir en la donnant.
+
+en: It is the _halting problem_.
+en: 
+en: Theorem: It is undecidable given a description of a program, whether the program finishes running or will run forever.
+en: The idea of the proof is simple enough to be part of this entry. 
+en: And this is with pleasure I give you one here.
 
 fr: > Supposons qu'il existe un programme qui puisse dire si un autre programme s'arrête. Plus précisément :
 fr: > 
@@ -321,19 +329,45 @@ fr: > - si `P(Q,Q)` répond "ne s'arrête pas" ça implique que `P(Q,Q)`="s'arr�
 fr: > 
 fr: > Il y a donc une contradiction que le seul moyen de régler est par la non existence du programme P.
 
-fr: [^1]: C'est-à-dire le programme `x` prenant l'entrée `y`.
+en: > Suppose a program able to decide if any program halt exists.
+en: > More precisely:
+en: > 
+en: > Hypothesis: there exists a program `P`such that:
+en: > - `P(x,y)` return "stop" in a finite amount of time if `x(y)`[^1] will stop running.
+en: > - `P(x,y)` return "loop" in a finite amount of time if `x(y)` will never stop running.
+en: > 
+en: > Remark: Any program can be represented as a string. Therefore, a program can be used as the input of another program.
+en: > It is authorized to write `P(x,x)`.
+en: > 
+en: > Let `Q` be the following program using the return value of `P`.
+en: > <pre class="twilight">
+en: > Q(x) :
+en: >     if P(x,x)="stop" then I enter in an infinite loop
+en: >     if P(x,x)="loop" then I stop
+en: > </pre>
+en: > 
+en: > Now, what is the value of `P(Q,Q)`?
+en: > 
+en: > - if `P(Q,Q)` returns "stop" that means by construction of `Q` that `P(Q,Q)` never stop running.
+en: > - if `P(Q,Q)` returns "loop" that means by construction of `Q` that `P(Q,Q)` will halt.
+en: > 
+en: > Therefore there is a contradiction the only way to handle is by the non existence of the program `P`.
 
-fr: Cette indécidabilité est vraiment la plus gênante de toute. 
-fr: Elle signifie que l'on peut créer un objet dont on ne peut pas prédire le comportement quelque soit mes possibilité de contrôler cet objet.
+fr: [^1]: C'est-à-dire le programme `x` prenant l'entrée `y`.
+en: [^1]: Meaning `x` taking `y` as input.
 
 fr: C'est simple, je suis le démiurge de ce monde imaginaire. 
 fr: Et même moi, je dois me soumettre à cette règle.
 fr: Comme quoi, avoir la possibilité de créer le monde et la toute puissance sont deux choses différentes.
 
-fr: newcorps
+en: I am the demiurge of this imaginary world. 
+en: And I cannot know the future of this world.
+en: Therefore, creative power isn't equivalent to omnipotence.
+
+newcorps
 
 fr: # Que peut-on espérer ?
-
+en: # What could we do then?
 
 ## Des bateaux à la rescousse de la *vérité*.
 
