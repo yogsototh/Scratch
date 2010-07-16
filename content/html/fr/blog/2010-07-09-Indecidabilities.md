@@ -15,18 +15,14 @@ tags:
 
 begindiv(intro)
 
-<%= tlal %> Plusieurs choses sont indécidables et pour des raisons différentes :
+<%= tlal %> Je crée un mode mathématique simple pour parler de différents types d'indécidabilités :
 
-- Indécidabilité due aux erreurs de mesures ;
-- Indécidabilités avec de petites erreurs de mesures ;
-- Indécidabilités fractales ;
-- Indécidabilité dans un monde sans erreur de mesure.
+- indécidabilité due aux erreurs d'observation ;
+- grandes erreurs résultant de petites erreurs de mesure ;
+- indécidabilité fractales ;
+- indécidabilité logique.
 
-Est-ce que la situation est perdue ?
-On peut découvrir la vérité, par contre il est impossible d'être sûr que nous l'ayons atteinte.
-Je ne pense pas que l'on puisse faire mieux.
-Ainsi il faut toujours adopter un grande ouverture d'esprit si l'on recherche la vérité.
-
+Ensuite je discute un peu sur ce qu'on peut faire de mieux sachant que beaucoup de choses sont indécidables.
 
 enddiv
 
@@ -56,7 +52,6 @@ Puis un article de blog commença à prendre forme.
 J'inspire profondément pour sentir la pesanteur de ce que je vais accomplir.
 Attention, une dernier moment de tension et je crée l'_Univers_.
 Un *Univers* qui n'existera que le temps de la lecture de cet article.
-
 Me voici le _démiurge_ de cet Univers et te voilà son observateur privilégié.
 
 Comme j'aime bien tout contrôler, je fabrique ce monde avec quelques règles simples.
@@ -69,7 +64,7 @@ Alors qu'il est possible que ce ne soit pas le cas de notre Univers.
 Mais nous reviendront là-dessus plus tard.
 
 Bon au travail maintenant, je crée une *Terre*.
-J'y ajoute des habitants intelligents.
+J'y ajoute des habitants intelligents, les _Ys_.
 Bien entendu ils se posent des questions.
 En particulier, ils se demandent quelles sont les lois qui régissent leur monde. 
 Ils pensent que connaître toutes ces règles leur permettrait de connaître l'avenir. 
@@ -104,71 +99,72 @@ Voici ce que pense l'un de ces individus.
 
 <%= leftblogimage('triangle_3_angles.png') %>
 
-En prenant des mesures, ils découvrent rapidement que la somme des angles des triangles est toujours très proche de 180° (ou π radians).
-Mais comment certifier que c'est la formule exacte ?
-Pourquoi ne serait-ce pas 179,999995 ou 180,000003 ?
 Certain d'entre eux commencent à formaliser un petit peu le problème
-et ils finissent par démontrer que la somme fais toujours 180°.
+et ils finissent faire une preuve mathématique.
 Magnifique !
-Seulement la preuve s'appuie sur des axiomes non démontrables parce que soumis aux mêmes règles d'imperfections de l'observation.
-Ils auront beau faire des mesures de plus en plus précises qui viendront toujours conforter leur formule.
-Ils n'auront que l'_espoir_ et  _jamais_ la certitude d'avoir la bonne.
+La preuve est correcte, mais il reste un petit problème.
+La preuve s'appuie sur des axiomes et des règles.
+Comment être certain que ces règles et ces axiomes sont vrai dans leur monde?
+Ils auront beau faire des mesures de plus en plus précises qui conforteront cette formule,
+ils n'auront que l'_espoir_ et  _jamais_ la certitude que la formule est vrai.
+Simplement parce que le seul moyen de vérifier la véracité des axiomes est par l'observation.
+Hors en tant que dieu facétieux, j'ai interdit les observation avec des mesures parfaites.
+
 
 Bien entendu, ils prient, ils m'appellent à l'aide.
 Et comme tout Dieu qui se respecte, je ne réponds pas.
 Ah ah ah ! J'ai toujours aimé faire ce genre de chose.
-Et oui, j'aime bien rigoler.
+Ensuite je ferai comme si je n'existe pas.
+Encore un bonne blague !
 
-Quand certain se rendent compte du problème des axiomes, ça les accable. 
-Mais heureusement un espoir transparait :
+
+Si certains se sentent accablés, il leur reste un espoir :
 
 > _Espoir_
 >
-> Si Dieu nous empêche de mesurer avec une infinie précision.
-> Il nous est quand même possible de trouver des lois avec des erreurs minimes.
-> Et comme l'erreur que nous faisons est faible, nos prédictions auront elles aussi de faibles erreurs.
+> Si nous faisons de faibles erreurs de mesure, nous aurons de faibles erreurs dans nos prédictions.
+
 
 ## Indécidabilité avec erreurs croissantes
 
 
 <%= leftblogimage('3_corps.png') %>
 
-C'est bien espéré, mais malheureusement il existe un problème très ennuyeux qui ne possède pas cette jolie propriété.
-Il s'agit du _problème des 3 corps_. 
+Malheureusement pour eux, il y a le  _problème des 3 corps_. 
 Prenons les formules de la gravitation Universelle et appliquons la à deux corps célestes. 
 Si on connait la position de ces corps avec un grande précision, on pourra aussi connaître la position future de ces corps avec une grande précision.
 L'hypothèse selon laquelle de petite erreurs de mesures impliquent de petites erreurs prédictive est confortée.
 Cependant, il y a un problème.
-
 Reprenons le même problème mais avec trois corps. Par exemple, avec le Soleil, la Terre et la Lune.
 Dans ce cas, les erreurs de mesures initiales vont s'amplifier. 
 S'amplifier au point de rendre toute prédiction inutilisable.
 
+
 Là encore une voix d'espoir s'élève :
-> Certes les erreurs prédictives augmentent. Mais plus le temps passe, plus notre technologie s'améliore.
-> Plus les erreurs de mesures diminuent.
-> Et plus les prédictions seront précises sur du long terme.
-> Ainsi, on peut toujours espérer progresser dans nos prédictions.
+> Peut-être pouvons nous calculer l'erreur maximale acceptable pour prédire quelque chose.
+> Et nous pourrions au moins savoir ce que nous pouvons prédire ou pas.
 
-Mais je vous l'ai dit. Je suis un Dieu facétieux.
 
-## Indécidabilité avec erreurs discontinues
+Une fois encore, ça ne va pas très bien se passer.
+
+## Indécidabilité fractale
 
 Considérons la question suivante :
 
-Soit des coordonnées GPS précises à quelques centimètres près.
+<%= leftblogimage('mandelbrot.png') %>
+
+Soit des coordonnées GPS précises à 1m près.
 Les coordonnées sont proches des côtes de la Bretagne.
 Ce point va-t-il tomber dans la mer ou sur la terre ferme ?
+
 
 Et bien, pour certaines coordonnées, c'est impossible de le savoir. 
 Même si je réduis l'erreur à une valeur infinitésimale. 
 Simplement parce que certains voisinages autour d'un point contiennent toujours à la fois de l'eau et de la terre.
 Et ce quelque soit la taille du voisinage.
 
-<%= leftblogimage('mandelbrot.png') %>
 
-Fractales et Mandelbrot. 
-On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q)
+On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q et Q)
 
 Mais que vois-je ? 
 Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en faisant un article sur un blog ?
@@ -182,7 +178,7 @@ Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en f
 > Un monde entièrement contrôlé par des règles que nous aurons choisi.
 > Un monde similaire au notre mais où tout pourra être prédit.
 
-## Indécidabilité sans erreur
+## Indécidabilité logique
 
 <%= leftblogimage("Turing_undecidability.png") %>
 

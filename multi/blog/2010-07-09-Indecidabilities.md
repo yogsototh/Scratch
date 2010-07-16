@@ -136,7 +136,7 @@ en: Some believe it is possible to find the rules of their Universe.
 en: Now, let the game begins.
 
 fr: Commençons par leur première leçon, _les erreurs causent de l'indécidabilité_.
-en: Let begin easily, _errors can cause undecidability_.
+en: Lets begin easily, _errors can cause undecidability_.
 
 en: ## Undecidability due to measure errors
 fr: ## Indécidabilité dues aux erreurs de mesures
@@ -162,8 +162,8 @@ fr: Magnifique !
 fr: La preuve est correcte, mais il reste un petit problème.
 fr: La preuve s'appuie sur des axiomes et des règles.
 fr: Comment être certain que ces règles et ces axiomes sont vrai dans leur monde?
-fr: Ils auront beau faire des mesures de plus en plus précises qui viendront toujours conforter leur formule.
-fr: Ils n'auront que l'_espoir_ et  _jamais_ la certitude d'avoir la bonne.
+fr: Ils auront beau faire des mesures de plus en plus précises qui conforteront cette formule,
+fr: ils n'auront que l'_espoir_ et  _jamais_ la certitude que la formule est vrai.
 fr: Simplement parce que le seul moyen de vérifier la véracité des axiomes est par l'observation.
 fr: Hors en tant que dieu facétieux, j'ai interdit les observation avec des mesures parfaites.
 
@@ -244,16 +244,30 @@ en: Consider the following question:
 
 <%= leftblogimage('mandelbrot.png') %>
 
-fr: Soit des coordonnées GPS précises à quelques centimètres près.
+fr: Soit des coordonnées GPS précises à 1m près.
 fr: Les coordonnées sont proches des côtes de la Bretagne.
 fr: Ce point va-t-il tomber dans la mer ou sur la terre ferme ?
+
+en: Consider some GPS coordinates on a point around the cost of the "Bretagne" in France.
+en: The coordinates are 3 feet precise.
+en: Is the point in the water or on Earth?
 
 fr: Et bien, pour certaines coordonnées, c'est impossible de le savoir. 
 fr: Même si je réduis l'erreur à une valeur infinitésimale. 
 fr: Simplement parce que certains voisinages autour d'un point contiennent toujours à la fois de l'eau et de la terre.
 fr: Et ce quelque soit la taille du voisinage.
 
-fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q)
+en: For some coordinates it is not possible to know.
+en: Even if we are authorize to move a bit to dodge the borders.
+en: Because there are some zone in which all point could be a "border" for any size of the zone.
+
+fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur. (Imaginer R\Q et Q)
+en: We can even imagine some mathematical structure where _all_ points are at the border[^2]. 
+en: [^2]: more precisely let $ \varepsilon > 0 $,
+en: let the neighbourhood be 
+en: $ V\varepsilon = \{ y \mid |x-y| < \varepsilon \} $.
+en: Then $ V\varepsilon \cap \Q \neq \emptyset $ and
+en: $ V\varepsilon \cap \R \neq \emptyset $
 
 fr: Mais que vois-je ? 
 fr: Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en faisant un article sur un blog ?
@@ -267,7 +281,8 @@ fr: > Un monde dans lequel il n'y aura plus d'erreur de mesure.
 fr: > Un monde entièrement contrôlé par des règles que nous aurons choisi.
 fr: > Un monde similaire au notre mais où tout pourra être prédit.
 
-fr: ## Indécidabilité sans erreur
+fr: ## Indécidabilité logique
+en: ## Logical Undecidability
 
 <%= leftblogimage("Turing_undecidability.png") %>
 
