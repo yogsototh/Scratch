@@ -49,7 +49,7 @@ Voilà comment tout aurait pu commencer.
 
 enddiv
 
-<%= leftblogimage("genese.png") %>
+<%= leftblogimage("genesis.png") %>
 
 Au début, il n'y avait rien. 
 Puis un article de blog commença à prendre forme.

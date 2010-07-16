@@ -46,7 +46,7 @@ The inability to predict many things.
 
 enddiv
 
-<%= leftblogimage("genese.png") %>
+<%= leftblogimage("genesis.png") %>
 
 At the beginning there was only void.
 Then a blog post beginning to be written.

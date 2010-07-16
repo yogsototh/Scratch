@@ -70,7 +70,7 @@ en: The inability to predict many things.
 
 enddiv
 
-<%= leftblogimage("genese.png") %>
+<%= leftblogimage("genesis.png") %>
 
 fr: Au début, il n'y avait rien. 
 fr: Puis un article de blog commença à prendre forme.
