@@ -134,10 +134,10 @@ Je n'ai pas utilisé les `bindings` parce qu'il me semble qu'ils ne sont pas pr�
 
 La version jQuery de YPassword n'est pas aussi bien finie que celle de Cappuccino. Simplement parce qu'il n'y a pas de *slider* directement avec jQuery. Il faudrait que j'utilise jQueryUI. Et je pense que l'application deviendrait beaucoup plus lourde pour le coups. En tout cas largement au dessus des 106Ko actuels.
 
-J'ai utilisé le code de mon widget mac en l'adaptant un peu pour faire cette version. C'était relativement facile. Mais jQuery n'est pas un *framework orienté application*. Il s'agit plus d'un *framework pour faire des animations qui la pête*.
+J'ai utilisé le code de mon widget mac en l'adaptant un peu pour faire cette version. C'était relativement facile. Mais jQuery n'est pas un *framework orienté application*. Il s'agit plus d'un *framework pour faire des animations qui la pète*.
 
 
-[^2]: I don't want to feel like a *troll* I use jQuery to make some *darkside* animation on this blog. But the javascript on my blog is not needed except for commenting.
+[^2]: I don't want to feel like a *troll* I use jQuery to make some *dark side* animation on this blog. But the javascript on my blog is not needed except for commenting.
 
 Je n'ai pas beaucoup plus à dire sur la version jQuery, sinon que programmer avec jQuery était de la programmation de niveau beaucoup plus bas qu'avec Cappuccino.
 
