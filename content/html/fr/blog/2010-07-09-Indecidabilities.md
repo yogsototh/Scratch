@@ -92,7 +92,7 @@ Commençons par leur première leçon, _les erreurs causent de l'indécidabilit�
 Voici ce que pense l'un de ces individus.
 
 > Tous les triangles que j'observe semble avoir une propriété commune.
-> La somme de leurs angles est toujours 180°.
+> La somme de leurs angles est toujours π radiants (180°).
 > Il s'agit certainement d'une loi de mon Univers.
 > Mais comment être certain que tous les triangles de mon Univers possèdent cette propriété ?
 
@@ -227,14 +227,18 @@ C'est simple, je suis le démiurge de ce monde imaginaire.
 Et même moi, je dois me soumettre à cette règle.
 Comme quoi, avoir la possibilité de créer le monde et la toute puissance sont deux choses différentes.
 
+Après tout ceci, il peut sembler difficile de savoir en quoi nous pouvons croire.
+Mais ce serait une erreur de jeter à l'eau toutes nos connaissances.
+La prochaine section discute du pourquoi.
+
 
 newcorps
 
 # Que peut-on espérer ?
 
-## Des bateaux à la rescousse de la *vérité*.
+## Des bateaux découvrent une vérité inattendue
 
-<%= leftblogimage("3DTriangle.png") %>
+<%= leftblogimage("triangle_on_sphere.png") %>
 
 Pour prouver que même les très grand triangles obéissent à cette loi,
 ils partent en expédition, avec trois bateaux.
@@ -261,7 +265,7 @@ Disons que pour tous les triangle moins grand que quelques kilomètres, l'erreur
 
 ## Fractions rationnelles
 
-<%= leftblogimage("rational_fraction.png") %>
+<%= leftblogimage("controled_error.png") %>
 
 Utilisation des fractions rationnelles pour retrouver la formule exacte.
 Problème, on sait qu'on converge mais on ne sait pas quand.

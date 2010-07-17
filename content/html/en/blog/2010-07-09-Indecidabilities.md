@@ -92,7 +92,7 @@ Here is what one of them think:
 
 
 > All triangle I observe seems to share the same property.
-> Each time I sum up their angles I obtain 180°.
+> Each time I sum up their angles I obtain π radiants (180°).
 > It is certainly a rule of my Universe.
 > But how to be certain all triangle in my Universe share this property?
 
@@ -163,7 +163,8 @@ Even if we are authorize to move a bit to dodge the borders.
 Because there are some zone in which all point could be a "border" for any size of the zone.
 
 We can even imagine some mathematical structure where _all_ points are at the border[^2]. 
-[^2]: Imagine R\Q and Q.
+[^2]: The set $$\mathbb{R}\setminus\mathbb{Q}$$ has this property.
+$$\forall \varepsilon > 0, \{ x \mid |x-y|<\varepsilon \}\cap \Q \neq \emptyset $$
 
 
 ## Logical Undecidability
@@ -215,20 +216,33 @@ I am the demiurge of this imaginary world.
 And I cannot know the future of this world.
 Therefore, creative power isn't equivalent to omnipotence.
 
+After all this, it becomes difficult to know what we can believe.
+But it would be another error to throw away all our knowledge.
+The next section discuss about this.
+
 newcorps
 
 # What could we do then?
 
-## Des bateaux à la rescousse de la *vérité*.
+## Boat Serendipity
 
-<%= leftblogimage("3DTriangle.png") %>
+<%= leftblogimage("triangle_on_sphere.png") %>
 
 
+The Ys have boats. And they navigate, the send two boats.
+The first to the North and the second to the West.
+The first boat stop after one week.
+The second make a $$\frac{3}{4}π$$ turn to the right.
+After what should have been $$\sqrt{2}$$ weeks, the second boat should have encounter the first boat.
+But the north boat seems to have disappeared.
+And after sometimes, they discovered the boat is very far to the north north east.
+The proof is here.
+There was a triangle were sum of its angle is not π radiant (180°).
 
 
 
 ## Fractions rationnelles
 
-<%= leftblogimage("rational_fraction.png") %>
+<%= leftblogimage("controled_error.png") %>
 
 

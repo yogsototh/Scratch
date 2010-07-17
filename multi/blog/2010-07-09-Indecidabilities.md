@@ -145,12 +145,12 @@ fr: Voici ce que pense l'un de ces individus.
 en: Here is what one of them think:
 
 fr: > Tous les triangles que j'observe semble avoir une propriété commune.
-fr: > La somme de leurs angles est toujours 180°.
+fr: > La somme de leurs angles est toujours π radiants (180°).
 fr: > Il s'agit certainement d'une loi de mon Univers.
 fr: > Mais comment être certain que tous les triangles de mon Univers possèdent cette propriété ?
 
 en: > All triangle I observe seems to share the same property.
-en: > Each time I sum up their angles I obtain 180°.
+en: > Each time I sum up their angles I obtain π radiants (180°).
 en: > It is certainly a rule of my Universe.
 en: > But how to be certain all triangle in my Universe share this property?
 
@@ -264,7 +264,7 @@ en: Because there are some zone in which all point could be a "border" for any s
 fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur[^2].
 fr: [^2]: Pensez aux deux ensembles R\Q et Q.
 en: We can even imagine some mathematical structure where _all_ points are at the border[^2]. 
-en: [^2]: Imagine R\Q and Q.
+en: [^2]: The set R\Q has this property.
 
 fr: Mais que vois-je ? 
 fr: Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en faisant un article sur un blog ?
@@ -363,15 +363,23 @@ fr: Comme quoi, avoir la possibilité de créer le monde et la toute puissance s
 en: I am the demiurge of this imaginary world. 
 en: And I cannot know the future of this world.
 en: Therefore, creative power isn't equivalent to omnipotence.
+fr: Après tout ceci, il peut sembler difficile de savoir en quoi nous pouvons croire.
+fr: Mais ce serait une erreur de jeter à l'eau toutes nos connaissances.
+fr: La prochaine section discute du pourquoi.
+
+en: After all this, it becomes difficult to know what we can believe.
+en: But it would be another error to throw away all our knowledge.
+en: The next section discuss about this.
 
 newcorps
 
 fr: # Que peut-on espérer ?
 en: # What could we do then?
 
-## Des bateaux à la rescousse de la *vérité*.
+fr: ## Des bateaux découvrent une vérité inattendue
+en: ## Boat Serendipity
 
-<%= leftblogimage("3DTriangle.png") %>
+<%= leftblogimage("triangle_on_sphere.png") %>
 
 fr: Pour prouver que même les très grand triangles obéissent à cette loi,
 fr: ils partent en expédition, avec trois bateaux.
@@ -384,6 +392,15 @@ fr: Que se passe-t-il ? Bien entendu, leur Dieu facétieux leur fait faire des m
 fr: Sauf que leur ingénieurs en sont sûr l'erreur ne devait être que de quelques centaines de mètres. 
 fr: Alors que là, l'erreur semble vraiment très grande.
 
+en: The Ys have boats. And they navigate, the send two boats.
+en: The first to the North and the second to the West.
+en: The first boat stop after one week.
+en: The second make a $$\frac{3}{4}π$$ turn to the right.
+en: After what should have been $$\sqrt{2}$$ weeks, the second boat should have encounter the first boat.
+en: But the north boat seems to have disappeared.
+en: And after sometimes, they discovered the boat is very far to the north north east.
+en: The proof is here.
+en: There was a triangle were sum of its angle is not π radiant (180°).
 
 fr: Et oui ! Comme je suis un Dieu terriblement farceur, je me suis débrouillé pour que leur Univers ne soit pas plat (comme l'imaginais leur théoricien).
 fr: Mais presque plat. Disons que je les fais vivre sur une sphère qui a un rayon de courbure d'environ 6000km (ça ne vous rappelle rien ?).
@@ -398,7 +415,7 @@ fr: Disons que pour tous les triangle moins grand que quelques kilomètres, l'er
 
 ## Fractions rationnelles
 
-<%= leftblogimage("rational_fraction.png") %>
+<%= leftblogimage("controled_error.png") %>
 
 fr: Utilisation des fractions rationnelles pour retrouver la formule exacte.
 fr: Problème, on sait qu'on converge mais on ne sait pas quand.
