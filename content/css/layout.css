@@ -465,8 +465,8 @@ table.impact tr td
   #choixrss,
   #choixlang a
     margin-top: .3em
-    margin-left: 2em
-    margin-right: 2em
+    margin-left: 1em
+    margin-right: 1em
 
 #choixlang a
   display: block
@@ -479,6 +479,11 @@ table.impact tr td
   display: block
   text-align: left
   font-size: 1em
+
+h1 > .date
+  float: left
+  left: 0
+  top: -1.25em
 
 .date
   font-size: 0.8em
