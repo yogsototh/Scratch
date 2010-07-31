@@ -20,6 +20,9 @@ dateFormat:
 
 # le dictionnaire pour les mots communs
 translations:
+    author: 
+        fr: "auteur"
+        en: "author"
     langue: 
         fr: "langue"
         en: "language"
@@ -75,8 +78,8 @@ translations:
         en: "Last modified"
         fr: "dernière modification "
     copyright:
-        en: "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\">Copyright ©</a>"
-        fr: "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.fr\">Droits de reproduction ©</a>"
+        en: "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\">Copyright ©, Yann Esposito</a>"
+        fr: "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.fr\">Droits de reproduction ©, Yann Esposito</a>"
     subscribe:
         en: "Subscribe"
         fr: "s'abonner"

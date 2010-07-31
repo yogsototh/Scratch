@@ -2,27 +2,33 @@
 -----
 
 // -- MAIN --
+$behindColor: #1a0000
 $mainBackgroundColor: #fffae3
-$mainColor: #772200
+$mainColor: #551100
 $revealColor: #faeac3
 $mainLinkColor: #aa5522
 $lighterColor: #eee0c2
-$codeBlockColor: #220000
+$codeBlockColor: $behindColor
 
 table.description tr td
   border: none
 
 body
   background:
+    color: $behindColor
+  color: $mainBackgroundColor
+
+#content
+  background:
     color: $mainBackgroundColor
   color: $mainColor
 
-a, a:link, a:visited, a:active, a:hover
+a, a:link, a:visited, a:active, a:hover, #clickcomment
   text-decoration: none
   outline: none
   color: $mainLinkColor
 
-a:hover
+a:hover, #clickcomment:hover
   background-color: $revealColor
 
 hr
@@ -71,6 +77,11 @@ acronym
       width: 0
 
 // -- STYLE --
+
+#titre
+  background: $lighterColor
+  border-top: 1px solid $mainColor
+  border-bottom: 1px solid $mainColor
 
 #liens .active, #bottom, #sousliens
   background-color: $lighterColor
@@ -142,8 +153,8 @@ h1 > .date
 .date
   border: solid black 1px
   position: relative
-  top: 0.7em
-  left: -2em
+  top: 2em
+  left: -5em
 
 // --- LAYOUTS --
 $VPadCorps: 3em
@@ -168,10 +179,6 @@ body > #entete
   padding-bottom: 1em
   margin-bottom: $VMarginCorps
 
-.corps_spaced
-  margin-bottom: $VMarginCorps
-  margin-top: $VMarginCorps
-
 #titre h2
   width: 80%
   margin-left: auto
@@ -181,8 +188,8 @@ body > #entete
 #titre
   text-align: center
   width: 100%
-  margin-top: $VMarginCorps
-  margin-bottom: $VMarginCorps
+  padding-top: $VMarginCorps
+  padding-bottom: $VMarginCorps
 
 #titre h1, #titre h2
   padding-left: 1em
@@ -193,10 +200,7 @@ body > #entete
   clear: right
   margin-right: 0px
   text-align: right
-  width: 45%
-  margin-top: 0px
-  padding: 5px
-  float: right
+  padding: 1.5em
 
 // Les menus
 
@@ -214,6 +218,8 @@ ul.horizontal
 
 #entete
   padding-top: 0.1em
+  border-top: 1px solid $mainColor
+  border-bottom: 1px solid $mainColor
 
 #liens
   width: 100%
@@ -253,7 +259,6 @@ $hauteur_menu: 2em
   margin-top: 0
   position: relative
   top: -1em
-  padding-bottom: 10px
   clear: both
   width: $content_width
 
@@ -269,6 +274,11 @@ $contentMargin: 0em
   margin:
     top: 2em
     bottom: 2em
+
+#afterheader > h1
+  background-color: $lighterColor
+  width: 100%
+  padding-bottom: 1.5em
 
 #afterheader
   padding-left: $contentMargin
@@ -289,7 +299,7 @@ $contentMargin: 0em
 .corps
   text-align: left
   padding: $VPadCorps $HPadCorps
-  margin: $VMarginCorps $HMarginCorps
+  margin: 0 $HMarginCorps
   clear: both
 
 .twilight
@@ -431,6 +441,8 @@ pre
 
 .navigation
   font-size: 2em
+  height: 2em
+  margin-bottom: $VMarginCorps
 
 .presarticleleft,
 .presarticleright
@@ -523,6 +535,9 @@ table.impact tr td
   width: 45%
   text-align: left
 
+.previous_article, .next_article
+  margin-top: 1em
+
 #next_articles
   float: right
   width: 45%
@@ -541,6 +556,7 @@ table.impact tr td
   width: 25%
 
 #rss
+  font-size: 1.2em
   text-align: center
   display: block
   width: 100%
@@ -552,8 +568,9 @@ table.impact tr td
   float: right
   width: 25%
   padding: 0.1em 1em
+
+.corps .return a
   color: $lighterColor
-  border: 1px dotted $lighterColor
 
 .return a:hover
   color: $mainLinkColor

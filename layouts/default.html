@@ -123,6 +123,12 @@ self.instance_variable_set(:@conf, conf)
                 </div>
             <div id="bottom">
                 <div>
+                    <%=tradOf(:copyright) %>
+                </div>
+                <div id="lastmod">
+                    <%=tradOf(:last_modified)%>: <%= @item.mtime.strftime(@config[:dateFormat][language.intern]) %> 
+                </div>
+                <div>
                     <%= tradOf(:entirely_done_with) %>
                     <a href="http://www.vim.org">Vim</a>
                     <%= tradOf(:and) %> 
@@ -135,12 +141,6 @@ self.instance_variable_set(:@conf, conf)
                     <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
                     .
                     <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/<%=language%>/blog/feed/feed.xml">[rss]</a>
-                </div>
-                <div>
-                    <%=tradOf(:copyright) %>
-                </div>
-                <div id="lastmod">
-                    <%=tradOf(:last_modified)%>: <%= @item.mtime.strftime(@config[:dateFormat][language.intern]) %> 
                 </div>
             </div>
             <div class="clear"></div>
