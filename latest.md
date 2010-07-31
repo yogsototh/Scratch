@@ -1,1 +1,1 @@
-./multi/blog/2010-07-07-CSS-rendering-problems-by-navigator.md
+./multi/blog/2010-07-31-New-style-after-holidays.md
