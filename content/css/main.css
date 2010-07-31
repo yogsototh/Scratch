@@ -208,6 +208,11 @@ body > #entete
   padding: 1em 0
   line-height: 2em
 
+#sousliens ul
+  list-style: none
+  margin-left: 4em
+
+
 ul.horizontal li
   display: inline
   font-size: 0.9em
@@ -285,9 +290,6 @@ $contentMargin: 0em
   padding-right: $contentMargin
 
 #sousliens
-  width: 100%
-  margin-left: auto
-  margin-right: auto
   margin:
     top: $VMarginCorps
     bottom: $VMarginCorps
@@ -591,3 +593,4 @@ table.impact tr td
 
 .fontnotes ol
   margin-left: 0
+
