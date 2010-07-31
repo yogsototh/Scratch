@@ -48,11 +48,9 @@ self.instance_variable_set(:@conf, conf)
         <meta name="keywords" content="<%= t %>">
         <% end %>
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/layout.css" />
-        <link rel="stylesheet" type="text/css" href="/Scratch/css/shadows.css" />
-        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/gen.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocom<%= language %>"/>
-        <link rel="stylesheet" type="text/css" href="/Scratch/css/js.css" /> <% 
+        <% 
         languages.each do |lang|
         item_for_lang=item_of_language(lang)
         if not item_for_lang.nil? %>
@@ -95,7 +93,6 @@ self.instance_variable_set(:@conf, conf)
                     <%= generateMenu %>
                 </div>
             </div>
-
             <div id="titre">
                 <h1>
                     <%= @item[:title] %>
@@ -118,6 +115,7 @@ self.instance_variable_set(:@conf, conf)
             <%= generateSubMenu %>
 
             <div class="flush"></div>
+
             <div id="afterheader">
                 <div class="corps">
                     <%= yield %>
