@@ -19,10 +19,10 @@ tags:
 
 begindiv(intro)
 
-en: <abbr title="Too long; don't read">tl;dr</abbr>:
+en: <abbr class="sc" title="Too long; don't read">tl;dr</abbr>:
 en: 
 en: * Tried to make [YPassword](http://yannesposito.com/Softwares/YPassword.html) in jQuery and with Cappuccino.
-en: * Cappuccino nice in desktop brower but 1.4MB, not compatible with iPhone.
+en: * Cappuccino nice in desktop browser but 1.4MB, not compatible with iPhone.
 en: * jQuery not as nice as the Cappuccino version but 106KB. iPhone compatible.
 en: * I'll give a try to Dashcode 3.
 
@@ -156,7 +156,7 @@ fr: Je ne suis pas un spécialiste de tous les frameworks.
 fr: Mais j'ai réalisé des Interfaces Utilisateurs avec les MFC, Java Swing[^1] et WXWindows il y a quelques années.
 fr: Et je dois dire que Cocoa est bien meilleurs que tous ces framework.
 
-en: [^1]: If you are interrested you can take a look at [SEDiL](http://labh-curien.univ-st-etienne.fr/informatique/SEDiL/). I am proud of the tree drawing view made from scratch.
+en: [^1]: If you are interested you can take a look at [SEDiL](http://labh-curien.univ-st-etienne.fr/informatique/SEDiL/). I am proud of the tree drawing view made from scratch.
 fr: [^1]: Si ça vous intéresse vous pouvez jeter un coup d'œil à [SEDiL](http://labh-curien.univ-st-etienne.fr/informatique/SEDiL/). Je suis assez fier de la vue automatique des arbres que j'ai programmé sans librairie de départ.
 
 en: Cappuccino is a great web application oriented development.
@@ -197,11 +197,11 @@ fr: Je n'ai pas utilisé les `bindings` parce qu'il me semble qu'ils ne sont pas
 en: The jQuery version of YPassword is not as finished as the Cappuccino one. Because, there is no *slider* directly with jQuery. I'd have to use jQueryUI. And I believe, using it will make the application weight far more than the today 106KB.
 fr: La version jQuery de YPassword n'est pas aussi bien finie que celle de Cappuccino. Simplement parce qu'il n'y a pas de *slider* directement avec jQuery. Il faudrait que j'utilise jQueryUI. Et je pense que l'application deviendrait beaucoup plus lourde pour le coups. En tout cas largement au dessus des 106Ko actuels.
 
-en: To make this version I simply copied my widget source code and adapted it. It was straightforward. But jQuery is not an *application oriented framework*. It is more a "*darkside* javascript animation framework"[^2].
-fr: J'ai utilisé le code de mon widget mac en l'adaptant un peu pour faire cette version. C'était relativement facile. Mais jQuery n'est pas un *framework orienté application*. Il s'agit plus d'un *framework pour faire des animations qui la pête*.
+en: To make this version I simply copied my widget source code and adapted it. It was straightforward. But jQuery is not an *application oriented framework*. It is more a "*dark side* javascript animation framework"[^2].
+fr: J'ai utilisé le code de mon widget mac en l'adaptant un peu pour faire cette version. C'était relativement facile. Mais jQuery n'est pas un *framework orienté application*. Il s'agit plus d'un *framework pour faire des animations qui la pète*.
 
 
-[^2]: I don't want to feel like a *troll* I use jQuery to make some *darkside* animation on this blog. But the javascript on my blog is not needed except for commenting.
+[^2]: I don't want to feel like a *troll* I use jQuery to make some *dark side* animation on this blog. But the javascript on my blog is not needed except for commenting.
 
 en: I don't have too much to say about the jQuery version. But this was way more *low level* programming than Cappuccino.
 fr: Je n'ai pas beaucoup plus à dire sur la version jQuery, sinon que programmer avec jQuery était de la programmation de niveau beaucoup plus bas qu'avec Cappuccino.
@@ -221,7 +221,7 @@ fr: Notez cependant qu'il peut être un peu difficile de débuter.
 
 en: Finally, to terminate my web version of my widget, I'll give a try to Dashcode 3. 
 en: It seems to be a good alternative to create web widgets.
-en: I don't know if dashcode 3 is portable on non webkit browser.
+en: I don't know if Dashcode 3 is portable on non webkit browser.
 en: But if it is, it could be the end of projects like Cappuccino and Sproutcore.
 fr: Finallement, pour terminer la version web de mon widget, j'essayerai Dashcode 3.
 fr: Il semblerai que ce soit une bonne alternative pour créer des widget sur le web compatible iPhone.

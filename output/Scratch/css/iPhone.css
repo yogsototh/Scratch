@@ -1,5 +1,5 @@
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, h5, h6, p, blockquote,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -15,13 +15,25 @@ table, caption, tbody, tfoot, thead, tr, th, td, #content {
     vertical-align: baseline;
     background: transparent;
 }
+pre {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
 html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6, #content {
     -webkit-text-size-adjust:none; }
-body { font-size: 12px; }
-code { font-size: 12px; }
-pre { font-size: 10px; }
-#content { width: 98%; margin-left: 1%; }
-.corps { padding-right: 2em; padding-left: 2em;}
+#content { width: 100% }
+h1 { font-size: 20px; }
+h2 { font-size: 18px; }
+h3 { font-size: 16px; }
+h4 { font-size: 14px; }
+body { font-size: 14px; width: 100%; }
+code { font-size: 14px; }
+pre { font-size: 12px; }
+.corps { padding-right: 2px; padding-left: 2px;}
 ol, ul { list-style: none; }
 blockquote, q { quotes: none; }
 blockquote:before, blockquote:after,
@@ -36,60 +48,3 @@ del { text-decoration: line-through; }
 
 /* tables still need 'cellspacing="0"' in the markup */
 table { border-collapse: collapse; border-spacing: 0; }
-
-/* --- recuperation des couleurs --- */
-
-body {
-  font-family: "Sabon LT Std","Hoefler Text","Palatino Linotype","Book Antiqua",serif;
-  background-color: #fff;
-  color: #000; }
-
-a {
-  font-weight: bold;
-  text-decoration: none; }
-
-a, a:link {
-  color: #a00;
-  outline: none; }
-
-a:visited {
-  color: #a00;
-  outline: none; }
-
-a:active, a:hover {
-  color: #f00;
-  outline: none; }
-
-ul {
-  list-style: square; }
-
-.corps {
-  text-align: justify; }
-
-#corps { margin-left: 0 }
-#corps { margin-right: 0 }
-#iphone { display: none; }
-#entete { min-width: 0; font-size: .8em ;}
-#liens ul li {margin: 2px; }
-.corps h1,
-.corps h2,
-.corps h3,
-.corps h4 {
-    font-size: 14px;
-    width: 50%;
-    margin-left: 0;
-    margin-right: 0;
-    top: 0;
-    left: 0;
-    position: relative;
-}
-.corps h1.first,
-.corps h2.first,
-.corps h3.first,
-.corps h4.first
-{
-    width: 113.5%;
-    left: -2.25em;
-    top: -3.25em;
-    position: relative;
-}

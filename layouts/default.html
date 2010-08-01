@@ -48,12 +48,9 @@ self.instance_variable_set(:@conf, conf)
         <meta name="keywords" content="<%= t %>">
         <% end %>
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
-        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/layout.css" />
-        <link rel="stylesheet" type="text/css" href="/Scratch/css/shadows.css" />
-        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/gen.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocom<%= language %>"/>
-        <link rel="stylesheet" type="text/css" href="/Scratch/css/js.css" /> <% 
+        <% 
         languages.each do |lang|
         item_for_lang=item_of_language(lang)
         if not item_for_lang.nil? %>
@@ -96,7 +93,6 @@ self.instance_variable_set(:@conf, conf)
                     <%= generateMenu %>
                 </div>
             </div>
-
             <div id="titre">
                 <h1>
                     <%= @item[:title] %>
@@ -119,12 +115,19 @@ self.instance_variable_set(:@conf, conf)
             <%= generateSubMenu %>
 
             <div class="flush"></div>
+
             <div id="afterheader">
                 <div class="corps">
                     <%= yield %>
                     <div class="return"><a href="#entete" onclick="fastShowMenu()">&uarr;</a></div>
                 </div>
             <div id="bottom">
+                <div>
+                    <%=tradOf(:copyright) %>
+                </div>
+                <div id="lastmod">
+                    <%=tradOf(:last_modified)%>: <%= @item.mtime.strftime(@config[:dateFormat][language.intern]) %> 
+                </div>
                 <div>
                     <%= tradOf(:entirely_done_with) %>
                     <a href="http://www.vim.org">Vim</a>
@@ -138,12 +141,6 @@ self.instance_variable_set(:@conf, conf)
                     <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
                     .
                     <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/<%=language%>/blog/feed/feed.xml">[rss]</a>
-                </div>
-                <div>
-                    <%=tradOf(:copyright) %>
-                </div>
-                <div id="lastmod">
-                    <%=tradOf(:last_modified)%>: <%= @item.mtime.strftime(@config[:dateFormat][language.intern]) %> 
                 </div>
             </div>
             <div class="clear"></div>

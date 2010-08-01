@@ -1,0 +1,596 @@
+-----
+-----
+
+// -- MAIN --
+$behindColor: #1a0000
+$mainBackgroundColor: #fffae3
+$mainColor: #551100
+$revealColor: #faeac3
+$mainLinkColor: #aa5522
+$lighterColor: #eee0c2
+$codeBlockColor: $behindColor
+
+table.description tr td
+  border: none
+
+body
+  background:
+    color: $behindColor
+  color: $mainBackgroundColor
+
+#content
+  background:
+    color: $mainBackgroundColor
+  color: $mainColor
+
+a, a:link, a:visited, a:active, a:hover, #clickcomment
+  text-decoration: none
+  outline: none
+  color: $mainLinkColor
+
+a:hover, #clickcomment:hover
+  background-color: $revealColor
+
+hr
+  color: $mainColor
+  border-bottom: 1px solid $revealColor
+
+ul
+  list-style: square
+
+h1, h2, h3, h4, h5, h6
+  font-variant: small-caps
+
+body, h1, h2, h3, h4, #entete
+  font-family: Optima, "Century Gothic", Helvetica, Arial, sans-serif
+  line-height: 1.4em
+
+.corps
+  font-family: Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
+  line-height: 1.6em
+  text-align: justify
+  border-bottom: 1px dotted $lighterColor
+
+pre
+  background-color: $codeBlockColor
+
+pre, code
+  font:
+    family: monaco, monospace
+    size: 0.7em
+
+p
+  margin-bottom: 1.2em
+
+blockquote
+  font:
+    style: italic
+  padding: 0.5em 1em
+
+abbr,
+acronym
+  font-variant: small-caps
+  text:
+    decoration: none
+  border:
+    bottom:
+      width: 0
+
+// -- STYLE --
+
+#titre
+  background: $lighterColor
+  border-top: 1px solid $mainColor
+  border-bottom: 1px solid $mainColor
+
+#liens .active, #bottom, #sousliens
+  background-color: $lighterColor
+
+// -- FOOTER --
+#lastmod
+  font-size: 0.8em
+
+// --- DYNAMICS --
+.nojsbutton
+  font-size: 2.5em
+
+#clickcomment
+  cursor: pointer
+  font-size: 1.2em
+
+// -- TYPOGRAPHY --
+.small
+  font-size: 0.8em
+
+.strong
+  font-weight: bold
+
+.sc
+  font-variant: small-caps
+
+.impact, .darkimpact
+  font-size: 2em
+  margin: 0 auto 1em auto
+  line-height: 1.3em
+
+// -- DATES --
+
+h1 > .date
+  font-size: 0.6em
+  color: $mainColor
+
+.date
+  text-align: center
+  font-size: 0.7em
+  color: $mainBackgroundColor
+  width: 4.1em
+  border: 1px solid $lighterColor
+  line-height: 1.5em
+  display: inline-block
+  margin-top: 1em
+
+.date .day
+  color: $mainColor
+  background-color: $mainBackgroundColor
+  float: left
+  width: 1.7em
+
+.date .month
+  border-left: solid $mainColor 0.1em
+  background-color: $lighterColor
+  color: $mainColor
+  float: right
+  width: 2.3em
+
+.date .year
+  border-top: solid $mainColor 1px
+  border-bottom: solid $mainColor 1px
+  line-height: 3ex
+  clear: both
+  background-color: $mainColor
+  color: $mainBackgroundColor
+
+.date
+  border: solid black 1px
+  position: relative
+  top: 2em
+  left: -5em
+
+// --- LAYOUTS --
+$VPadCorps: 3em
+$HPadCorps: 5em
+$VMarginCorps: 3em
+
+// ATTENTION DOIT ETRE 0 pour le bon callage
+$HMarginCorps: 0
+$content_width: 52em
+
+body
+  text-align: center
+  font-size: 1em
+
+body > #entete
+  position: relative
+  left: 0
+  top: 0.5em
+  width: 100%
+  min-width: $content_width - 2em
+  z-index: 1800
+  padding-bottom: 1em
+  margin-bottom: $VMarginCorps
+
+#titre h2
+  width: 80%
+  margin-left: auto
+  margin-right: auto
+  text-align: center
+
+#titre
+  text-align: center
+  width: 100%
+  padding-top: $VMarginCorps
+  padding-bottom: $VMarginCorps
+
+#titre h1, #titre h2
+  padding-left: 1em
+  padding-right: 1em
+
+// le pied de page
+#bottom
+  clear: right
+  margin-right: 0px
+  text-align: right
+  padding: 1.5em
+
+// Les menus
+
+#sousliens
+  padding: 1em 0
+  line-height: 2em
+
+#sousliens ul
+  list-style: none
+  margin-left: 4em
+
+
+ul.horizontal li
+  display: inline
+  font-size: 0.9em
+
+ul.horizontal
+  margin-top: 0px
+  margin-bottom: 0px
+
+#entete
+  padding-top: 0.1em
+  border-top: 1px solid $mainColor
+  border-bottom: 1px solid $mainColor
+
+#liens
+  width: 100%
+  padding: 0
+  clear: both
+  margin-top: 0.5em
+
+#liens ul
+  width: 100%
+  clear: both
+  padding: 0
+  margin: 0
+
+$hauteur_menu: 2em
+
+#liens ul li
+  display: inline-block
+  height: $hauteur_menu
+  margin-left: 0.2em
+  margin-right: 0.2em
+  width: 23%
+
+#liens ul li a,
+#liens ul li span
+  width: 100%
+  display: block
+  line-height: $hauteur_menu
+
+// Un 'helper'
+.clear
+  clear: both
+
+// Le Contenu
+#content
+  margin-left: auto
+  margin-right: auto
+  margin-top: 0
+  position: relative
+  top: -1em
+  clear: both
+  width: $content_width
+
+#content > #choix
+  margin-top: 1.5em
+
+$contentMargin: 0em
+
+.encadre, .black, .red, .intro, .resume, .shadow
+  padding:
+    left: 2em
+    right: 2em
+  margin:
+    top: 2em
+    bottom: 2em
+
+#afterheader > h1
+  background-color: $lighterColor
+  width: 100%
+  padding-bottom: 1.5em
+
+#afterheader
+  padding-left: $contentMargin
+  padding-right: $contentMargin
+
+#sousliens
+  margin:
+    top: $VMarginCorps
+    bottom: $VMarginCorps
+  font-size: 1.2em
+  letter-spacing: 1px
+  text-align: left
+  clear: both
+
+.corps
+  text-align: left
+  padding: $VPadCorps $HPadCorps
+  margin: 0 $HMarginCorps
+  clear: both
+
+.twilight
+  line-height: 1.1em
+
+$fontcorps: 1.25
+
+.corps
+  font-size: #{$fontcorps}em
+
+$corps_width: ($content_width - 2 * $contentMargin) / $fontcorps
+$hpadding: 1
+
+.corps img
+  max-width: 30em
+
+//  les clear
+
+#address
+  clear: both
+
+.definitionCell
+  width: 5em
+  vertical-align: top
+  font-weight: bold
+  text-align: center
+
+.valueCell
+  text-align: right
+
+.smallblock
+  float: left
+  width: 50%
+  font-size: 1em
+  font-weight: bold
+
+.largeblock
+  float: right
+  width: 70%
+  font-size: 1em
+
+#blackpage, #nojsredirect
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  margin-left: 0
+  margin-right: 0
+  margin-top: 0
+  margin-bottom: 0
+  position: fixed
+  text-align: center
+
+#blackpage
+  color: #666666
+  padding-top: 10em
+  background-color: #eeeeee
+  z-index: 9000
+  cursor: wait
+  img
+    background: none
+    border: none
+  a
+    cursor: pointer
+
+#nojsredirect
+  z-index: 9001
+
+.nojsbutton
+  width: 50%
+  padding: 1em
+  border: solid 3px white
+  margin-left: auto
+  margin-right: auto
+  margin-top: 2em
+  z-index: 9002
+
+.file
+  font-size: 0.8em
+  text-align: right
+  float: right
+  width: 80%
+  margin-right: 0.3em
+
+.flush
+  clear: both
+
+table.description
+  border-spacing: 5px
+  border-collapse: separate
+  margin-right: auto
+  margin-left: auto
+
+table.description tr td
+  padding-left: 0.5em
+  padding-right: 0.5em
+  padding-top: 0.5ex
+  padding-bottom: 0.5ex
+  vertical-align: middle
+  margin-right: 5px
+
+ul.long li
+  margin-bottom: 1em
+
+img
+  display: block
+  margin-left: auto
+  margin-right: auto
+
+img.left
+  float: left
+  max-width: 30%
+  margin:
+    right: 1em
+
+img.inside
+  display: inline
+  vertical-align: middle
+
+pre
+  overflow: hidden
+
+.withfile pre
+  overflow: hidden
+  width: 96.6%
+
+.navigationprev, .navigationnext
+  padding: 0px
+  margin-left: 0.2em
+  margin-right: 0.2em
+  margin-bottom: 0
+  margin-top: $VMarginCorps
+  width: 45%
+
+.navigation .navigationprev,
+.navigation .navigationnext
+  width: 30%
+  margin-top: 0
+
+.navigation
+  font-size: 2em
+  height: 2em
+  margin-bottom: $VMarginCorps
+
+.presarticleleft,
+.presarticleright
+  font-size: 1em
+
+.navigationprev
+  float: left
+  text-align: left
+
+.navigationnext
+  float: right
+  text-align: right
+
+.impact, .darkimpact
+  text-align: left
+  width: 66%
+  padding-left: 0.25em
+  padding-right: 0.25em
+
+table.impact
+  text-align: left
+
+table.impact tr td
+  padding-left: 0.25em
+  padding-right: 0.25em
+
+#liens
+  font-size: 1.5em
+
+#iemessage
+  font-size: 1.5em
+
+.tag
+  display: inline
+  cursor: pointer
+  margin-left: 0.5em
+  margin-right: 0.5em
+
+.list
+  margin-top: $VPadCorps
+
+#menuMessage
+  font:
+    size: 1.2em
+  line:
+    height: 1.5em
+  width: 100%
+  text-align: center
+
+#choixrss
+  float: right
+  width: 25%
+
+#entete
+  #choixrss,
+  #choixlang a
+    margin-top: 0.3em
+    margin-left: 2em
+    margin-right: 2em
+
+#choixlang a
+  display: block
+  width: 25%
+  text-align: center
+
+#choix
+  padding: 0
+  top: 3em
+  display: block
+  text-align: left
+  font-size: 1em
+
+.date
+  font-size: 0.8em
+
+.date, .date .year, .date .month, .date .year
+  display: block
+
+#next_before_articles
+  clear: both
+  width: 100%
+  font-size: 1.2em
+  padding:
+    top: 1em
+    bottom: 1em
+
+#previous_articles
+  float: left
+  margin-left: 1em
+  width: 45%
+  text-align: left
+
+.previous_article, .next_article
+  margin-top: 1em
+
+#next_articles
+  float: right
+  width: 45%
+  margin-right: 1em
+  text-align: right
+
+#choixlang
+  padding-top: 0.1em
+
+#choixlang a,
+#clickcomment
+  padding: 0.1em 1em
+
+#clickcomment
+  margin-left: 0
+  width: 25%
+
+#rss
+  font-size: 1.2em
+  text-align: center
+  display: block
+  width: 100%
+  float: right
+  padding: 0.1em 1em
+
+.return a
+  text-align: center
+  float: right
+  width: 25%
+  padding: 0.1em 1em
+
+.corps .return a
+  color: $lighterColor
+
+.return a:hover
+  color: $mainLinkColor
+
+.corps .return a
+  padding: 0.1em
+  line-height: 1.5em
+  font-size: 1.5em
+  height: 1.5em
+  float: left
+  font-size: 2em
+  margin-top: -0.5em
+  margin-left: -2em
+  width: 1.5em
+
+.footnotes
+  font-size: 0.8em
+
+.fontnotes ol
+  margin-left: 0
+

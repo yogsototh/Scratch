@@ -116,13 +116,13 @@ function detectiPhone() {
 
 function setSpecificCss() {
     var userAgent = navigator.userAgent.toLowerCase();
-    if ( /chrome/.test(userAgent) ) {
-        $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_chrome.css"/>');
-    } else if ( /webkit/.test(userAgent) ) {
-        $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_webkit.css"/>');
-    } else if ( /mozilla/.test(userAgent) ) {
-        $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_mozilla.css"/>');
-    }
+    // if ( /chrome/.test(userAgent) ) {
+    //     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_chrome.css"/>');
+    // } else if ( /webkit/.test(userAgent) ) {
+    //     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_webkit.css"/>');
+    // } else if ( /mozilla/.test(userAgent) ) {
+    //     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_mozilla.css"/>');
+    // }
 }
 
 

@@ -18,10 +18,10 @@ tags:
 
 begindiv(intro)
 
-<abbr title="Too long; don't read">tl;dr</abbr>:
+<abbr class="sc" title="Too long; don't read">tl;dr</abbr>:
 
 * Tried to make [YPassword](http://yannesposito.com/Softwares/YPassword.html) in jQuery and with Cappuccino.
-* Cappuccino nice in desktop brower but 1.4MB, not compatible with iPhone.
+* Cappuccino nice in desktop browser but 1.4MB, not compatible with iPhone.
 * jQuery not as nice as the Cappuccino version but 106KB. iPhone compatible.
 * I'll give a try to Dashcode 3.
 
@@ -109,7 +109,7 @@ This is a really _great_ framework to make User Interface.
 I am not a specialist, but I have done some MFC, java Swing[^1] and WXWindows User Interfaces (some years ago).
 And I must say, Cocoa is far better than those.
 
-[^1]: If you are interrested you can take a look at [SEDiL](http://labh-curien.univ-st-etienne.fr/informatique/SEDiL/). I am proud of the tree drawing view made from scratch.
+[^1]: If you are interested you can take a look at [SEDiL](http://labh-curien.univ-st-etienne.fr/informatique/SEDiL/). I am proud of the tree drawing view made from scratch.
 
 Cappuccino is a great web application oriented development.
 But there was also some drawbacks
@@ -135,10 +135,10 @@ I didn't use bindings because I believe they are not ready by now.
 
 The jQuery version of YPassword is not as finished as the Cappuccino one. Because, there is no *slider* directly with jQuery. I'd have to use jQueryUI. And I believe, using it will make the application weight far more than the today 106KB.
 
-To make this version I simply copied my widget source code and adapted it. It was straightforward. But jQuery is not an *application oriented framework*. It is more a "*darkside* javascript animation framework"[^2].
+To make this version I simply copied my widget source code and adapted it. It was straightforward. But jQuery is not an *application oriented framework*. It is more a "*dark side* javascript animation framework"[^2].
 
 
-[^2]: I don't want to feel like a *troll* I use jQuery to make some *darkside* animation on this blog. But the javascript on my blog is not needed except for commenting.
+[^2]: I don't want to feel like a *troll* I use jQuery to make some *dark side* animation on this blog. But the javascript on my blog is not needed except for commenting.
 
 I don't have too much to say about the jQuery version. But this was way more *low level* programming than Cappuccino.
 
@@ -152,5 +152,5 @@ But you may have some difficulties to begin programming with it.
 
 Finally, to terminate my web version of my widget, I'll give a try to Dashcode 3. 
 It seems to be a good alternative to create web widgets.
-I don't know if dashcode 3 is portable on non webkit browser.
+I don't know if Dashcode 3 is portable on non webkit browser.
 But if it is, it could be the end of projects like Cappuccino and Sproutcore.
