@@ -12,7 +12,7 @@ tags:
   - design
 -----
 
-Avant les vacances beaucoup d'utilisateurs se sont plaint de la lenteur de rendu de mon site. 
+Avant les vacances beaucoup d'utilisateurs se sont plaints de la lenteur de rendu de mon site. 
 Il s'agit notamment de problèmes avec Chrome en particulier. 
 Mais pour éviter tout problème. 
 J'ai complètement modifié le style de mon site web. 

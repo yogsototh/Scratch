@@ -13,7 +13,7 @@ tags:
   - design
 -----
 
-fr: Avant les vacances beaucoup d'utilisateurs se sont plaint de la lenteur de rendu de mon site. 
+fr: Avant les vacances beaucoup d'utilisateurs se sont plaints de la lenteur de rendu de mon site. 
 fr: Il s'agit notamment de problèmes avec Chrome en particulier. 
 fr: Mais pour éviter tout problème. 
 fr: J'ai complètement modifié le style de mon site web. 
