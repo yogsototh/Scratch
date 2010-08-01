@@ -280,6 +280,13 @@ $contentMargin: 0em
     top: 2em
     bottom: 2em
 
+.encadre, .black, .red, .shadow
+  background-color: $lighterColor
+
+.intro, .resume
+  font-size: .9em
+  font-style: italic
+
 #afterheader > h1
   background-color: $lighterColor
   width: 100%
