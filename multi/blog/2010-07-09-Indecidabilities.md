@@ -47,9 +47,8 @@ fr: Si le monde a été fabriqué par un démiurge, on peut dire que celui-ci de
 fr: Et le récit que je vais faire va vous en fournir la preuve.
 fr: Je vais me mettre à sa place. 
 fr: Je vais créer un monde simplifié.
-fr: Un monde régi par des règles mathématiques très simples.
-fr: Puis je vais vous parler du mal qui touche cet Univers semblable au notre.
-fr: L'*indécidabilité*. 
+fr: Un monde régi exactement par nos règles mathématiques.
+fr: Puis je vais vous parler du mal qui touche cet Univers semblable au notre ; l'*indécidabilité*. 
 fr: L'incapacité de savoir si nous avons trouvé la vérité, ou seulement une approximation de celle-ci.
 fr: L'incapacité de prédire certaines choses qui semblent pourtant aller de soi.
 fr: Voilà comment tout aurait pu commencer.
