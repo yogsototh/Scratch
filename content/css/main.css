@@ -16,6 +16,7 @@ table.description tr td
 body
   background:
     color: $behindColor
+    image: url('/Scratch/css/img/background.png')
   color: $mainBackgroundColor
 
 #content
