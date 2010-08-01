@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2010-07-09T10:04:31+02:00
+created_at:     2010-08-01T10:04:31+02:00
 title: Undecidabilities
 author_name: Yann Esposito
 author_uri: yannesposito.com
@@ -163,8 +163,7 @@ Even if we are authorize to move a bit to dodge the borders.
 Because there are some zone in which all point could be a "border" for any size of the zone.
 
 We can even imagine some mathematical structure where _all_ points are at the border[^2]. 
-[^2]: The set $$\mathbb{R}\setminus\mathbb{Q}$$ has this property.
-$$\forall \varepsilon > 0, \{ x \mid |x-y|<\varepsilon \}\cap \Q \neq \emptyset $$
+[^2]: The set R\Q has this property.
 
 
 ## Logical Undecidability

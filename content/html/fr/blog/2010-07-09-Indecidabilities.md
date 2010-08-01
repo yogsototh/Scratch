@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2010-07-09T10:04:31+02:00
+created_at:     2010-08-01T10:04:31+02:00
 title: Indécidabilités
 author_name: Yann Esposito
 author_uri: yannesposito.com
@@ -36,9 +36,8 @@ Si le monde a été fabriqué par un démiurge, on peut dire que celui-ci devait
 Et le récit que je vais faire va vous en fournir la preuve.
 Je vais me mettre à sa place. 
 Je vais créer un monde simplifié.
-Un monde régi par des règles mathématiques très simples.
-Puis je vais vous parler du mal qui touche cet Univers semblable au notre.
-L'*indécidabilité*. 
+Un monde régi exactement par nos règles mathématiques.
+Puis je vais vous parler du mal qui touche cet Univers semblable au notre ; l'*indécidabilité*. 
 L'incapacité de savoir si nous avons trouvé la vérité, ou seulement une approximation de celle-ci.
 L'incapacité de prédire certaines choses qui semblent pourtant aller de soi.
 Voilà comment tout aurait pu commencer.

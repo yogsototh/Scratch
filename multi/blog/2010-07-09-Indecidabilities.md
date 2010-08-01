@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2010-07-09T10:04:31+02:00
+created_at:     2010-08-01T10:04:31+02:00
 fr: title: Indécidabilités
 en: title: Undecidabilities
 author_name: Yann Esposito
