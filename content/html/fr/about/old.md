@@ -7,7 +7,6 @@ menupriority: 2
 <table class="darkimpact">
     <tr><td><a href="/Softwares/Welcome.html">&#x27A8; Applications Mac</a></td></tr>
     <tr><td>
-    <span class="en"><a href="http://yann.esposito.free.fr/recherche.php?css=blue.css&amp;lang=en">&#x27A8; Research</a></span>
     <span class="fr"><a href="http://yann.esposito.free.fr/recherche.php?css=blue.css&amp;lang=fr">&#x27A8; Recherche</a></span>
     </td></tr> 
 </table>

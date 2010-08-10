@@ -35,6 +35,6 @@ and I mostly all done myself from scratch.
 </p>
 
 If you want all the gory details I suggest you to read
-my <%= lnkto( "article about nanoc", "/blog/nanoc") %>.
+my <%= lnkto( "article about nanoc", "/blog/01_nanoc") %>.
 
 

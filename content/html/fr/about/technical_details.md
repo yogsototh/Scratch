@@ -35,4 +35,4 @@ et que j'ai conçu ce site quasiment <em>ex nihilo</em>.
 </p>
 
 Si au contraire vous voulez connaitre tous les détails je vous suggère 
-d'aller lire mon <%= lnkto( "article concernant nanoc","/blog/nanoc") %>. 
+d'aller lire mon <%= lnkto( "article concernant nanoc","/blog/01_nanoc") %>. 

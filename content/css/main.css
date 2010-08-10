@@ -11,11 +11,15 @@ $lighterColor: #eee0c2
 $codeBlockColor: $behindColor
 
 table.description tr td
-  border: none
+  border: 1px solid $lighterColor
+
+.assombris20
+  background-color: $lighterColor
 
 body
   background:
     color: $behindColor
+    image: url('/Scratch/css/img/background.png')
   color: $mainBackgroundColor
 
 #content
@@ -49,7 +53,9 @@ body, h1, h2, h3, h4, #entete
   font-family: Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   line-height: 1.6em
   text-align: justify
-  border-bottom: 1px dotted $lighterColor
+  background-image: url('/Scratch/css/img/separator.png')
+  background-position: center bottom
+  background-repeat: no-repeat
 
 pre
   background-color: $codeBlockColor
@@ -188,8 +194,8 @@ body > #entete
 #titre
   text-align: center
   width: 100%
-  padding-top: $VMarginCorps
-  padding-bottom: $VMarginCorps
+  padding-top: 1em
+  padding-bottom: 1em
 
 #titre h1, #titre h2
   padding-left: 1em
@@ -280,6 +286,13 @@ $contentMargin: 0em
     top: 2em
     bottom: 2em
 
+.encadre, .black, .red, .shadow
+  background-color: $lighterColor
+
+.intro, .resume
+  font-size: .9em
+  font-style: italic
+
 #afterheader > h1
   background-color: $lighterColor
   width: 100%
@@ -298,18 +311,16 @@ $contentMargin: 0em
   text-align: left
   clear: both
 
-.corps
-  text-align: left
-  padding: $VPadCorps $HPadCorps
-  margin: 0 $HMarginCorps
-  clear: both
-
 .twilight
   line-height: 1.1em
 
 $fontcorps: 1.25
 
 .corps
+  text-align: left
+  padding: $VPadCorps $HPadCorps
+  margin: 0 $HMarginCorps
+  clear: both
   font-size: #{$fontcorps}em
 
 $corps_width: ($content_width - 2 * $contentMargin) / $fontcorps

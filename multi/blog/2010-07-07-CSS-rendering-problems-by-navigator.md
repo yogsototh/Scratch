@@ -19,7 +19,7 @@ tags:
 en: Some [Reddit](http://reddit.com) users reported my website was really long to load and to scroll.
 en: They thinks it was because of the '1px shadow' I apply on all the text.
 en: I was a bit surprised, because I make some test into a really *slow* virtual machine. And all have always worked fine. In fact, what slow down so much are by order of importance:
-fr: Beaucoup d'utilisateurs de [Reddit](http://reddit.com) m'ont rapporter que mon site était très long à charger et à *scroller*.
+fr: Beaucoup d'utilisateurs de [Reddit](http://reddit.com) m'ont rapporté que mon site était très long à charger et à *scroller*.
 fr: Ils pensaient qu'il s'agissait d'un problème dû aux ombres que j'applique sur le texte.
 fr: J'étais un peu surpris puisque je fais mes tests sur une machine vraiment très lente et je n'avais jamais détecté ces problèmes.
 fr: En réalité, ce qui ralenti le rendu de ce site est par ordre d'importance :
