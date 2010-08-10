@@ -15,14 +15,15 @@ tags:
 
 begindiv(intro)
 
-<%= tldr %> I create a simple mathematical world to talk about the different meaning of undecidability:
+<%= tldr %> I prepend to be the creator of a simple world. 
+And I use this world to give examples of different meanings behind the word _undecidability_:
 
 - Undecidability due to measure errors, 
 - Big errors resulting from small initial measure error,
 - Fractal undecidability ;
 - Logic Undecidability.
 
-After that, I try to find what is the best we can do knowing many things are undecidable.
+After that, I try to find what is the best we can do to discover truths.
 
 enddiv
 
@@ -32,8 +33,8 @@ newcorps
 
 begindiv(intro)
 
-If the world was made by a demiurge he certainly had a great sense of humor.
-And this read will prove it to you.
+If a demiurge made our world, he certainly had a great sense of humor.
+After this read, you should be convinced.
 I'll pretend to be him.
 I'll create a simplified world.
 A world that obey to simple mathematical rules.
@@ -48,12 +49,12 @@ enddiv
 
 In the beginning there was only void.
 Then a blog post beginning to be written.
-I breath profoundly to feel the weight the act I will accomplish.
-A last tense moment and... I create the _Universe_.
+I breath profoundly to feel the weight of the act I will accomplish.
+A last tense moment and... I _create_ the _Universe_.
 An incredible _Universe_ which will exists only the time of this read.
 I'm the _demiurge_ of this universe and you are its observer.
 
-I construct this world using only some simples rules.
+I construct this world using only simples rules.
 I decide that _real_ rules of this world will be the one we believe are _true_ for our world.
 Note the difference.
 For their world, everything we _believe_ today is _true_ for them.
@@ -77,14 +78,14 @@ But I'm here to help them.
 I am a God who likes jokes.
 The first joke I make to Ys is to make their sense imperfect.
 Furthermore it is not possible to make perfect precise measure in my world.
-I let Ys ameliorate their technology but there is a theoretical limits to the best precision they can access to.
+I let Ys ameliorate their technology but there is a theoretical limit to the best precision they can reach.
 
 
 I'd like to precise that these people believe their world is flat.
 Some believe it is possible to find the rules of their Universe.
 Now, let the game begins.
 
-Lets begin easily, _errors can cause undecidability_.
+Lets start easily, _errors can cause undecidability_.
 
 ## Undecidability due to measure errors
 
@@ -99,13 +100,13 @@ Here is what one of them think:
 <%= leftblogimage('triangle_3_angles.png') %>
 
 
-Some began to formalise the problem.
+Some began to formalize the problem.
 They end by writing a mathematical proof.
 Marvelous!
-The proof seems correct, but, a problem remain.
+The proof seems correct, but, a problem remains.
 The proof is based on rules and axioms.
 How to be certain these rules and axioms are right in their world?
-They will try to measure again and again the sum of triangle angles.
+They will try to measure again and again the sum of the angles of triangles.
 The measure will never fail.
 But they'll never be certain the rules and axioms are right.
 Because then only way to verify all axioms depends of observation.
@@ -115,8 +116,8 @@ And as a facetious god, I forbid perfect measure in observation.
 Of course, they prey, they call me to help.
 And as any respectful god, I don't answer.
 Ah ah ah! I've always loved to make these kind of thing.
-Next, I'll act as if I don't exists.
-Another good joke!
+Let's act as if I don't exists.
+What a good joke!
 
 They feel sad. But they have some hope:
 
@@ -132,11 +133,10 @@ _Hope_
 
 
 Unfortunately, the three bodies problem will crush this _hope_.
-Using Newton's Universal Law of gravitation with two bodies.
-We can predict with precision what will be their position and speed in the future.
+Using Newton's Universal Law of gravitation with two bodies, we can predict with precision what will be their position and speed in the future.
 Until there all seems OK.
 But now, add another body.
-All error will grow.
+All errors will grow.
 Errors will grow at a point that any prediction will be unusable.
 
 
@@ -163,7 +163,7 @@ Even if we are authorize to move a bit to dodge the borders.
 Because there are some zone in which all point could be a "border" for any size of the zone.
 
 We can even imagine some mathematical structure where _all_ points are at the border[^2]. 
-[^2]: The set R\Q has this property.
+[^2]: The set $$\mathbb{R}\setminus\mathbb{Q}$$ has this property.
 
 
 ## Logical Undecidability
@@ -180,14 +180,15 @@ Even in a self-contained mathematical world it can be possible to create object 
 It is the _halting problem_.
 
 Theorem: It is undecidable given a description of a program, whether the program finishes running or will run forever.
-The idea of the proof is simple enough to be part of this entry. 
+The idea of the proof is simple enough to be part of this article. 
 And this is with pleasure I give you one here.
 
 
 > Suppose a program able to decide if any program halt exists.
 > More precisely:
 > 
-> Hypothesis: there exists a program `P`such that:
+> Hypothesis: there exists a program `P` such that:
+>
 > - `P(x,y)` return "stop" in a finite amount of time if `x(y)`[^1] will stop running.
 > - `P(x,y)` return "loop" in a finite amount of time if `x(y)` will never stop running.
 > 
@@ -203,8 +204,8 @@ And this is with pleasure I give you one here.
 > 
 > Now, what is the value of `P(Q,Q)`?
 > 
-> - if `P(Q,Q)` returns "stop" that means by construction of `Q` that `P(Q,Q)` never stop running.
-> - if `P(Q,Q)` returns "loop" that means by construction of `Q` that `P(Q,Q)` will halt.
+> - if `P(Q,Q)` returns "stop" that imply by construction of `Q` that `P(Q,Q)` returns "loop".
+> - if `P(Q,Q)` returns "loop" that means by construction of `Q` that `P(Q,Q)` return "stop".
 > 
 > Therefore there is a contradiction the only way to handle is by the non existence of the program `P`.
 
@@ -239,8 +240,23 @@ The proof is here.
 There was a triangle were sum of its angle is not π radiant (180°).
 
 
+Yes! Good joke!
+As God I'd like all these jokes.
+Their world isn't _flat_.
+That means, two parallel line have two common point.
+They live on a spherical planet. 
+Huge enough for they didn't notice it for a long time.
 
-## Fractions rationnelles
+
+Ah Ah Ah! How funny I am!
+But I don't know why some don't like my jokes.
+The firsts who discovered this little surprise are happy to tell the world and some are annoyed.
+Annoyed to the point to burn some of them.
+They apparently are bad losers within these people.
+And yes, you can draw triangle were the sum of angle is 270° instead of the 180° on a flat world.
+For triangle small than many kilometers the error is minimal.
+
+## Rational fractions
 
 <%= leftblogimage("controled_error.png") %>
 

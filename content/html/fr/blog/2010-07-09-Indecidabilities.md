@@ -254,6 +254,7 @@ Alors que là, l'erreur semble vraiment très grande.
 Et oui ! Comme je suis un Dieu terriblement farceur, je me suis débrouillé pour que leur Univers ne soit pas plat (comme l'imaginais leur théoricien).
 Mais presque plat. Disons que je les fais vivre sur une sphère qui a un rayon de courbure d'environ 6000km (ça ne vous rappelle rien ?).
 
+
 Ah ah ah ! Cette blague je la trouve bien bonne. 
 De toute évidence, certains ne goûtent pas mon sens de l'humour. 
 J'ai remarqué que ceux qui ont trouvé cette petit surprise, la solution avant les autres et qui fanfaronne en énerve certains au plus haut point. 
@@ -261,6 +262,7 @@ Certains se font même brûler.
 Apparemment il y a de mauvais perdant chez ces êtres là.
 Et oui sur une sphere on peut très bien dessiner des triangles dont la somme des angles fait 270° au lieu des 180° attendu dans un Univers plat.
 Disons que pour tous les triangle moins grand que quelques kilomètres, l'erreur est minime.
+
 
 ## Fractions rationnelles
 

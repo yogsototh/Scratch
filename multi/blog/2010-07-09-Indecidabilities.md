@@ -17,14 +17,15 @@ fr:   - mathématiques
 
 begindiv(intro)
 
-en: <%= tldr %> I create a simple mathematical world to talk about the different meaning of undecidability:
+en: <%= tldr %> I prepend to be the creator of a simple world. 
+en: And I use this world to give examples of different meanings behind the word _undecidability_:
 en: 
 en: - Undecidability due to measure errors, 
 en: - Big errors resulting from small initial measure error,
 en: - Fractal undecidability ;
 en: - Logic Undecidability.
 en: 
-en: After that, I try to find what is the best we can do knowing many things are undecidable.
+en: After that, I try to find what is the best we can do to discover truths.
 fr: <%= tlal %> Je crée un mode mathématique simple pour parler de différents types d'indécidabilités :
 fr: 
 fr: - indécidabilité due aux erreurs d'observation ;
@@ -52,8 +53,8 @@ fr: Puis je vais vous parler du mal qui touche cet Univers semblable au notre ; 
 fr: L'incapacité de savoir si nous avons trouvé la vérité, ou seulement une approximation de celle-ci.
 fr: L'incapacité de prédire certaines choses qui semblent pourtant aller de soi.
 fr: Voilà comment tout aurait pu commencer.
-en: If the world was made by a demiurge he certainly had a great sense of humor.
-en: And this read will prove it to you.
+en: If a demiurge made our world, he certainly had a great sense of humor.
+en: After this read, you should be convinced.
 en: I'll pretend to be him.
 en: I'll create a simplified world.
 en: A world that obey to simple mathematical rules.
@@ -74,8 +75,8 @@ fr: Un *Univers* qui n'existera que le temps de la lecture de cet article.
 fr: Me voici le _démiurge_ de cet Univers et te voilà son observateur privilégié.
 en: In the beginning there was only void.
 en: Then a blog post beginning to be written.
-en: I breath profoundly to feel the weight the act I will accomplish.
-en: A last tense moment and... I create the _Universe_.
+en: I breath profoundly to feel the weight of the act I will accomplish.
+en: A last tense moment and... I _create_ the _Universe_.
 en: An incredible _Universe_ which will exists only the time of this read.
 en: I'm the _demiurge_ of this universe and you are its observer.
 
@@ -87,7 +88,7 @@ fr: Leur monde est donc plus _simple_ à priori que le notre.
 fr: En particulier, on peut le décrire avec des axiomes et des règles mathématiques.
 fr: Alors qu'il est possible que ce ne soit pas le cas de notre Univers. 
 fr: Mais nous reviendront là-dessus plus tard.
-en: I construct this world using only some simples rules.
+en: I construct this world using only simples rules.
 en: I decide that _real_ rules of this world will be the one we believe are _true_ for our world.
 en: Note the difference.
 en: For their world, everything we _believe_ today is _true_ for them.
@@ -124,7 +125,7 @@ fr: Je leur laisse cependant toutes libertés pour améliorer leur technologie e
 en: I am a God who likes jokes.
 en: The first joke I make to Ys is to make their sense imperfect.
 en: Furthermore it is not possible to make perfect precise measure in my world.
-en: I let Ys ameliorate their technology but there is a theoretical limits to the best precision they can access to.
+en: I let Ys ameliorate their technology but there is a theoretical limit to the best precision they can reach.
 
 fr: Les habitants de ce monde pensent que celui-ci est plat.
 fr: Certains d'entre eux pensent qu'il est possible de découvrir les règles du monde que j'ai créé.
@@ -135,7 +136,7 @@ en: Some believe it is possible to find the rules of their Universe.
 en: Now, let the game begins.
 
 fr: Commençons par leur première leçon, _les erreurs causent de l'indécidabilité_.
-en: Lets begin easily, _errors can cause undecidability_.
+en: Lets start easily, _errors can cause undecidability_.
 
 en: ## Undecidability due to measure errors
 fr: ## Indécidabilité dues aux erreurs de mesures
@@ -166,13 +167,13 @@ fr: ils n'auront que l'_espoir_ et  _jamais_ la certitude que la formule est vra
 fr: Simplement parce que le seul moyen de vérifier la véracité des axiomes est par l'observation.
 fr: Hors en tant que dieu facétieux, j'ai interdit les observation avec des mesures parfaites.
 
-en: Some began to formalise the problem.
+en: Some began to formalize the problem.
 en: They end by writing a mathematical proof.
 en: Marvelous!
-en: The proof seems correct, but, a problem remain.
+en: The proof seems correct, but, a problem remains.
 en: The proof is based on rules and axioms.
 en: How to be certain these rules and axioms are right in their world?
-en: They will try to measure again and again the sum of triangle angles.
+en: They will try to measure again and again the sum of the angles of triangles.
 en: The measure will never fail.
 en: But they'll never be certain the rules and axioms are right.
 en: Because then only way to verify all axioms depends of observation.
@@ -187,8 +188,8 @@ fr: Encore un bonne blague !
 en: Of course, they prey, they call me to help.
 en: And as any respectful god, I don't answer.
 en: Ah ah ah! I've always loved to make these kind of thing.
-en: Next, I'll act as if I don't exists.
-en: Another good joke!
+en: Let's act as if I don't exists.
+en: What a good joke!
 
 fr: Si certains se sentent accablés, il leur reste un espoir :
 en: They feel sad. But they have some hope:
@@ -217,11 +218,10 @@ fr: Dans ce cas, les erreurs de mesures initiales vont s'amplifier.
 fr: S'amplifier au point de rendre toute prédiction inutilisable.
 
 en: Unfortunately, the three bodies problem will crush this _hope_.
-en: Using Newton's Universal Law of gravitation with two bodies.
-en: We can predict with precision what will be their position and speed in the future.
+en: Using Newton's Universal Law of gravitation with two bodies, we can predict with precision what will be their position and speed in the future.
 en: Until there all seems OK.
 en: But now, add another body.
-en: All error will grow.
+en: All errors will grow.
 en: Errors will grow at a point that any prediction will be unusable.
 
 fr: Là encore une voix d'espoir s'élève :
@@ -263,7 +263,7 @@ en: Because there are some zone in which all point could be a "border" for any s
 fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur[^2].
 fr: [^2]: Pensez aux deux ensembles R\Q et Q.
 en: We can even imagine some mathematical structure where _all_ points are at the border[^2]. 
-en: [^2]: The set R\Q has this property.
+en: [^2]: The set $$\mathbb{R}\setminus\mathbb{Q}$$ has this property.
 
 fr: Mais que vois-je ? 
 fr: Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en faisant un article sur un blog ?
@@ -301,7 +301,7 @@ fr: La preuve est suffisamment simple pour rentrer dans ce post, donc je me fais
 en: It is the _halting problem_.
 en: 
 en: Theorem: It is undecidable given a description of a program, whether the program finishes running or will run forever.
-en: The idea of the proof is simple enough to be part of this entry. 
+en: The idea of the proof is simple enough to be part of this article. 
 en: And this is with pleasure I give you one here.
 
 fr: > Supposons qu'il existe un programme qui puisse dire si un autre programme s'arrête. Plus précisément :
@@ -331,7 +331,8 @@ fr: > Il y a donc une contradiction que le seul moyen de régler est par la non 
 en: > Suppose a program able to decide if any program halt exists.
 en: > More precisely:
 en: > 
-en: > Hypothesis: there exists a program `P`such that:
+en: > Hypothesis: there exists a program `P` such that:
+en: >
 en: > - `P(x,y)` return "stop" in a finite amount of time if `x(y)`[^1] will stop running.
 en: > - `P(x,y)` return "loop" in a finite amount of time if `x(y)` will never stop running.
 en: > 
@@ -347,8 +348,8 @@ en: > </pre>
 en: > 
 en: > Now, what is the value of `P(Q,Q)`?
 en: > 
-en: > - if `P(Q,Q)` returns "stop" that means by construction of `Q` that `P(Q,Q)` never stop running.
-en: > - if `P(Q,Q)` returns "loop" that means by construction of `Q` that `P(Q,Q)` will halt.
+en: > - if `P(Q,Q)` returns "stop" that imply by construction of `Q` that `P(Q,Q)` returns "loop".
+en: > - if `P(Q,Q)` returns "loop" that means by construction of `Q` that `P(Q,Q)` return "stop".
 en: > 
 en: > Therefore there is a contradiction the only way to handle is by the non existence of the program `P`.
 
@@ -404,6 +405,13 @@ en: There was a triangle were sum of its angle is not π radiant (180°).
 fr: Et oui ! Comme je suis un Dieu terriblement farceur, je me suis débrouillé pour que leur Univers ne soit pas plat (comme l'imaginais leur théoricien).
 fr: Mais presque plat. Disons que je les fais vivre sur une sphère qui a un rayon de courbure d'environ 6000km (ça ne vous rappelle rien ?).
 
+en: Yes! Good joke!
+en: As God I'd like all these jokes.
+en: Their world isn't _flat_.
+en: That means, two parallel line have two common point.
+en: They live on a spherical planet. 
+en: Huge enough for they didn't notice it for a long time.
+
 fr: Ah ah ah ! Cette blague je la trouve bien bonne. 
 fr: De toute évidence, certains ne goûtent pas mon sens de l'humour. 
 fr: J'ai remarqué que ceux qui ont trouvé cette petit surprise, la solution avant les autres et qui fanfaronne en énerve certains au plus haut point. 
@@ -412,7 +420,16 @@ fr: Apparemment il y a de mauvais perdant chez ces êtres là.
 fr: Et oui sur une sphere on peut très bien dessiner des triangles dont la somme des angles fait 270° au lieu des 180° attendu dans un Univers plat.
 fr: Disons que pour tous les triangle moins grand que quelques kilomètres, l'erreur est minime.
 
-## Fractions rationnelles
+en: Ah Ah Ah! How funny I am!
+en: But I don't know why some don't like my jokes.
+en: The firsts who discovered this little surprise are happy to tell the world and some are annoyed.
+en: Annoyed to the point to burn some of them.
+en: They apparently are bad losers within these people.
+en: And yes, you can draw triangle were the sum of angle is 270° instead of the 180° on a flat world.
+en: For triangle small than many kilometers the error is minimal.
+
+fr: ## Fractions rationnelles
+en: ## Rational fractions
 
 <%= leftblogimage("controled_error.png") %>
 
