@@ -594,3 +594,8 @@ table.impact tr td
 .fontnotes ol
   margin-left: 0
 
+.typeset img
+  display: inline
+  border: none
+  margin: 0
+  padding: 0
