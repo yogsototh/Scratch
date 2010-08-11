@@ -17,8 +17,7 @@ fr:   - mathématiques
 
 begindiv(intro)
 
-en: <%= tldr %> I prepend to be the creator of a simple world. 
-en: And I use this world to give examples of different meanings behind the word _undecidability_:
+en: <%= tldr %> I pretend to create a world to give examples of different meanings behind the word _undecidability_:
 en: 
 en: - Undecidability due to measure errors, 
 en: - Big errors resulting from small initial measure error,
@@ -26,7 +25,7 @@ en: - Fractal undecidability ;
 en: - Logic Undecidability.
 en: 
 en: After that, I try to find what is the best we can do to discover truths.
-fr: <%= tlal %> Je crée un mode mathématique simple pour parler de différents types d'indécidabilités :
+fr: <%= tlal %> Je crée un mode mathématique simple pour parler de différents types d'_indécidabilités_ :
 fr: 
 fr: - indécidabilité due aux erreurs d'observation ;
 fr: - grandes erreurs résultant de petites erreurs de mesure ;
@@ -364,12 +363,12 @@ en: I am the demiurge of this imaginary world.
 en: And I cannot know the future of this world.
 en: Therefore, creative power isn't equivalent to omnipotence.
 fr: Après tout ceci, il peut sembler difficile de savoir en quoi nous pouvons croire.
-fr: Mais ce serait une erreur de jeter à l'eau toutes nos connaissances.
-fr: La prochaine section discute du pourquoi.
+fr: Mais ce serait une erreur de jeter le bébé avec l'eau du bain.
+fr: J'expliquerai ce que nous pouvons espérer et qu'elle attitude nous devons adopter une fois que l'on a réalisé que beaucoup de vérité nous sont inaccessibles.
 
 en: After all this, it becomes difficult to know what we can believe.
 en: But it would be another error to throw away all our knowledge.
-en: The next section discuss about this.
+en: I'll explain in a future article what we can hope and what attitude we should have once we've realized most of truth are unaccessible.
 
 newcorps
 
