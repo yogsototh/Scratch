@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2010-08-01T10:04:31+02:00
+created_at:     2010-08-11T10:04:31+02:00
 title: Indécidabilités
 author_name: Yann Esposito
 author_uri: yannesposito.com
@@ -15,14 +15,12 @@ tags:
 
 begindiv(intro)
 
-<%= tlal %> Je crée un mode mathématique simple pour parler de différents types d'indécidabilités :
+<%= tlal %> Je crée un mode mathématique simple pour parler de différents types d'_indécidabilités_ :
 
 - indécidabilité due aux erreurs d'observation ;
 - grandes erreurs résultant de petites erreurs de mesure ;
 - indécidabilité fractales ;
 - indécidabilité logique.
-
-Ensuite je discute un peu sur ce qu'on peut faire de mieux sachant que beaucoup de choses sont indécidables.
 
 enddiv
 
@@ -226,48 +224,10 @@ C'est simple, je suis le démiurge de ce monde imaginaire.
 Et même moi, je dois me soumettre à cette règle.
 Comme quoi, avoir la possibilité de créer le monde et la toute puissance sont deux choses différentes.
 
-Après tout ceci, il peut sembler difficile de savoir en quoi nous pouvons croire.
-Mais ce serait une erreur de jeter à l'eau toutes nos connaissances.
-La prochaine section discute du pourquoi.
 
 
 newcorps
 
-# Que peut-on espérer ?
-
-## Des bateaux découvrent une vérité inattendue
-
-<%= leftblogimage("triangle_on_sphere.png") %>
-
-Pour prouver que même les très grand triangles obéissent à cette loi,
-ils partent en expédition, avec trois bateaux.
-Un va très au nord, pendant que l'un va vers l'est et l'autre vers l'ouest.
-Ils naviguent tous à la même vitesse et pendant la même durée.
-
-D'après leur calcul, les deux bateaux du sud doivent tourner avec un angle de 45° (respectivement -45°) pour rejoindre le bateau du nord.
-Après de longues semaines de navigation, les deux bateaux du sud se rejoignent. Mais, il n'y a pas de trace du bateaux nordique.
-Que se passe-t-il ? Bien entendu, leur Dieu facétieux leur fait faire des mesures imparfaites et donc ils ne sont pas allé exactement à la même vitesse, ils n'ont pas tourné exactement en même temps, ni d'un angle valant exactement 45°.
-Sauf que leur ingénieurs en sont sûr l'erreur ne devait être que de quelques centaines de mètres. 
-Alors que là, l'erreur semble vraiment très grande.
-
-
-Et oui ! Comme je suis un Dieu terriblement farceur, je me suis débrouillé pour que leur Univers ne soit pas plat (comme l'imaginais leur théoricien).
-Mais presque plat. Disons que je les fais vivre sur une sphère qui a un rayon de courbure d'environ 6000km (ça ne vous rappelle rien ?).
-
-
-Ah ah ah ! Cette blague je la trouve bien bonne. 
-De toute évidence, certains ne goûtent pas mon sens de l'humour. 
-J'ai remarqué que ceux qui ont trouvé cette petit surprise, la solution avant les autres et qui fanfaronne en énerve certains au plus haut point. 
-Certains se font même brûler.
-Apparemment il y a de mauvais perdant chez ces êtres là.
-Et oui sur une sphere on peut très bien dessiner des triangles dont la somme des angles fait 270° au lieu des 180° attendu dans un Univers plat.
-Disons que pour tous les triangle moins grand que quelques kilomètres, l'erreur est minime.
-
-
-## Fractions rationnelles
-
-<%= leftblogimage("controled_error.png") %>
-
-Utilisation des fractions rationnelles pour retrouver la formule exacte.
-Problème, on sait qu'on converge mais on ne sait pas quand.
-
+Après tout ceci, il peut sembler difficile de savoir en quoi nous pouvons croire.
+Mais ce serait une erreur de jeter le bébé avec l'eau du bain.
+Dans une seconde partie, j'expliquerai ce que nous pouvons espérer et qu'elle attitude nous devons adopter une fois que l'on a réalisé que beaucoup de vérité nous sont inaccessibles.

@@ -15,7 +15,7 @@ tags:
   - Firefox
 -----
 
-Beaucoup d'utilisateurs de [Reddit](http://reddit.com) m'ont rapporter que mon site était très long à charger et à *scroller*.
+Beaucoup d'utilisateurs de [Reddit](http://reddit.com) m'ont rapporté que mon site était très long à charger et à *scroller*.
 Ils pensaient qu'il s'agissait d'un problème dû aux ombres que j'applique sur le texte.
 J'étais un peu surpris puisque je fais mes tests sur une machine vraiment très lente et je n'avais jamais détecté ces problèmes.
 En réalité, ce qui ralenti le rendu de ce site est par ordre d'importance :

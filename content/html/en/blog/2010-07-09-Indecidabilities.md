@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2010-08-01T10:04:31+02:00
+created_at:     2010-08-11T10:04:31+02:00
 title: Undecidabilities
 author_name: Yann Esposito
 author_uri: yannesposito.com
@@ -15,15 +15,12 @@ tags:
 
 begindiv(intro)
 
-<%= tldr %> I prepend to be the creator of a simple world. 
-And I use this world to give examples of different meanings behind the word _undecidability_:
+<%= tldr %> I pretend to create a world to give examples of different meanings behind the word _undecidability_:
 
 - Undecidability due to measure errors, 
 - Big errors resulting from small initial measure error,
 - Fractal undecidability ;
 - Logic Undecidability.
-
-After that, I try to find what is the best we can do to discover truths.
 
 enddiv
 
@@ -163,7 +160,7 @@ Even if we are authorize to move a bit to dodge the borders.
 Because there are some zone in which all point could be a "border" for any size of the zone.
 
 We can even imagine some mathematical structure where _all_ points are at the border[^2]. 
-[^2]: The set $$\mathbb{R}\setminus\mathbb{Q}$$ has this property.
+[^2]: The set R\Q has this property.
 
 
 ## Logical Undecidability
@@ -216,48 +213,9 @@ I am the demiurge of this imaginary world.
 And I cannot know the future of this world.
 Therefore, creative power isn't equivalent to omnipotence.
 
-After all this, it becomes difficult to know what we can believe.
-But it would be another error to throw away all our knowledge.
-The next section discuss about this.
 
 newcorps
 
-# What could we do then?
-
-## Boat Serendipity
-
-<%= leftblogimage("triangle_on_sphere.png") %>
-
-
-The Ys have boats. And they navigate, the send two boats.
-The first to the North and the second to the West.
-The first boat stop after one week.
-The second make a $$\frac{3}{4}π$$ turn to the right.
-After what should have been $$\sqrt{2}$$ weeks, the second boat should have encounter the first boat.
-But the north boat seems to have disappeared.
-And after sometimes, they discovered the boat is very far to the north north east.
-The proof is here.
-There was a triangle were sum of its angle is not π radiant (180°).
-
-
-Yes! Good joke!
-As God I'd like all these jokes.
-Their world isn't _flat_.
-That means, two parallel line have two common point.
-They live on a spherical planet. 
-Huge enough for they didn't notice it for a long time.
-
-
-Ah Ah Ah! How funny I am!
-But I don't know why some don't like my jokes.
-The firsts who discovered this little surprise are happy to tell the world and some are annoyed.
-Annoyed to the point to burn some of them.
-They apparently are bad losers within these people.
-And yes, you can draw triangle were the sum of angle is 270° instead of the 180° on a flat world.
-For triangle small than many kilometers the error is minimal.
-
-## Rational fractions
-
-<%= leftblogimage("controled_error.png") %>
-
-
+After all this, it becomes difficult to know what we can believe.
+But it would be another error to throw away all our knowledge.
+In a future next part, I'll explain what we can hope and what attitude we should have once we've realized most of truth are unaccessible.

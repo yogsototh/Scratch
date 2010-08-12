@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2010-08-01T10:04:31+02:00
+created_at:     2010-08-11T10:04:31+02:00
 fr: title: Indécidabilités
 en: title: Undecidabilities
 author_name: Yann Esposito
@@ -23,16 +23,12 @@ en: - Undecidability due to measure errors,
 en: - Big errors resulting from small initial measure error,
 en: - Fractal undecidability ;
 en: - Logic Undecidability.
-en: 
-en: After that, I try to find what is the best we can do to discover truths.
 fr: <%= tlal %> Je crée un mode mathématique simple pour parler de différents types d'_indécidabilités_ :
 fr: 
 fr: - indécidabilité due aux erreurs d'observation ;
 fr: - grandes erreurs résultant de petites erreurs de mesure ;
 fr: - indécidabilité fractales ;
 fr: - indécidabilité logique.
-fr: 
-fr: Ensuite je discute un peu sur ce qu'on peut faire de mieux sachant que beaucoup de choses sont indécidables.
 
 enddiv
 
@@ -262,7 +258,7 @@ en: Because there are some zone in which all point could be a "border" for any s
 fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur[^2].
 fr: [^2]: Pensez aux deux ensembles R\Q et Q.
 en: We can even imagine some mathematical structure where _all_ points are at the border[^2]. 
-en: [^2]: The set $$\mathbb{R}\setminus\mathbb{Q}$$ has this property.
+en: [^2]: The set R\Q has this property.
 
 fr: Mais que vois-je ? 
 fr: Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en faisant un article sur un blog ?
@@ -362,76 +358,13 @@ fr: Comme quoi, avoir la possibilité de créer le monde et la toute puissance s
 en: I am the demiurge of this imaginary world. 
 en: And I cannot know the future of this world.
 en: Therefore, creative power isn't equivalent to omnipotence.
-fr: Après tout ceci, il peut sembler difficile de savoir en quoi nous pouvons croire.
-fr: Mais ce serait une erreur de jeter le bébé avec l'eau du bain.
-fr: J'expliquerai ce que nous pouvons espérer et qu'elle attitude nous devons adopter une fois que l'on a réalisé que beaucoup de vérité nous sont inaccessibles.
 
-en: After all this, it becomes difficult to know what we can believe.
-en: But it would be another error to throw away all our knowledge.
-en: I'll explain in a future article what we can hope and what attitude we should have once we've realized most of truth are unaccessible.
 
 newcorps
 
-fr: # Que peut-on espérer ?
-en: # What could we do then?
-
-fr: ## Des bateaux découvrent une vérité inattendue
-en: ## Boat Serendipity
-
-<%= leftblogimage("triangle_on_sphere.png") %>
-
-fr: Pour prouver que même les très grand triangles obéissent à cette loi,
-fr: ils partent en expédition, avec trois bateaux.
-fr: Un va très au nord, pendant que l'un va vers l'est et l'autre vers l'ouest.
-fr: Ils naviguent tous à la même vitesse et pendant la même durée.
-fr: 
-fr: D'après leur calcul, les deux bateaux du sud doivent tourner avec un angle de 45° (respectivement -45°) pour rejoindre le bateau du nord.
-fr: Après de longues semaines de navigation, les deux bateaux du sud se rejoignent. Mais, il n'y a pas de trace du bateaux nordique.
-fr: Que se passe-t-il ? Bien entendu, leur Dieu facétieux leur fait faire des mesures imparfaites et donc ils ne sont pas allé exactement à la même vitesse, ils n'ont pas tourné exactement en même temps, ni d'un angle valant exactement 45°.
-fr: Sauf que leur ingénieurs en sont sûr l'erreur ne devait être que de quelques centaines de mètres. 
-fr: Alors que là, l'erreur semble vraiment très grande.
-
-en: The Ys have boats. And they navigate, the send two boats.
-en: The first to the North and the second to the West.
-en: The first boat stop after one week.
-en: The second make a $$\frac{3}{4}π$$ turn to the right.
-en: After what should have been $$\sqrt{2}$$ weeks, the second boat should have encounter the first boat.
-en: But the north boat seems to have disappeared.
-en: And after sometimes, they discovered the boat is very far to the north north east.
-en: The proof is here.
-en: There was a triangle were sum of its angle is not π radiant (180°).
-
-fr: Et oui ! Comme je suis un Dieu terriblement farceur, je me suis débrouillé pour que leur Univers ne soit pas plat (comme l'imaginais leur théoricien).
-fr: Mais presque plat. Disons que je les fais vivre sur une sphère qui a un rayon de courbure d'environ 6000km (ça ne vous rappelle rien ?).
-
-en: Yes! Good joke!
-en: As God I'd like all these jokes.
-en: Their world isn't _flat_.
-en: That means, two parallel line have two common point.
-en: They live on a spherical planet. 
-en: Huge enough for they didn't notice it for a long time.
-
-fr: Ah ah ah ! Cette blague je la trouve bien bonne. 
-fr: De toute évidence, certains ne goûtent pas mon sens de l'humour. 
-fr: J'ai remarqué que ceux qui ont trouvé cette petit surprise, la solution avant les autres et qui fanfaronne en énerve certains au plus haut point. 
-fr: Certains se font même brûler.
-fr: Apparemment il y a de mauvais perdant chez ces êtres là.
-fr: Et oui sur une sphere on peut très bien dessiner des triangles dont la somme des angles fait 270° au lieu des 180° attendu dans un Univers plat.
-fr: Disons que pour tous les triangle moins grand que quelques kilomètres, l'erreur est minime.
-
-en: Ah Ah Ah! How funny I am!
-en: But I don't know why some don't like my jokes.
-en: The firsts who discovered this little surprise are happy to tell the world and some are annoyed.
-en: Annoyed to the point to burn some of them.
-en: They apparently are bad losers within these people.
-en: And yes, you can draw triangle were the sum of angle is 270° instead of the 180° on a flat world.
-en: For triangle small than many kilometers the error is minimal.
-
-fr: ## Fractions rationnelles
-en: ## Rational fractions
-
-<%= leftblogimage("controled_error.png") %>
-
-fr: Utilisation des fractions rationnelles pour retrouver la formule exacte.
-fr: Problème, on sait qu'on converge mais on ne sait pas quand.
-
+fr: Après tout ceci, il peut sembler difficile de savoir en quoi nous pouvons croire.
+fr: Mais ce serait une erreur de jeter le bébé avec l'eau du bain.
+fr: Dans une seconde partie, j'expliquerai ce que nous pouvons espérer et qu'elle attitude nous devons adopter une fois que l'on a réalisé que beaucoup de vérité nous sont inaccessibles.
+en: After all this, it becomes difficult to know what we can believe.
+en: But it would be another error to throw away all our knowledge.
+en: In a future next part, I'll explain what we can hope and what attitude we should have once we've realized most of truth are unaccessible.
