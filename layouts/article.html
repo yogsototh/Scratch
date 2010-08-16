@@ -66,19 +66,7 @@ self.instance_variable_set(:@conf, conf)
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
         <% if containMaths %>
-        <script type="text/javascript">
-            jsMath = {
-                Controls: {cookie: {scale: 133, font:'image', autofont:0}},
-                Parser: {prototype: {
-macros: {warning: ["Macro","\\color{##00CC00}{\\rm jsMath\\ image\\ mode\\ appears\\ to\\ be\\  working!}",1]}
-          }}
-            }
-        $(document).ready(function(){
-            jsMath.Process(document);
-        });
-        </script>
-        <script type="text/javascript" src="/Scratch/js/jsMath-3.6e/jsMath.js"></script>
-        <script type="text/javascript" src="/Scratch/js/jsMath-3.6e/plugin/noImageFonts.js"></script>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
         <% end %>
         <title><%= @item[:title] %></title>
     </head>
