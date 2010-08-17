@@ -180,7 +180,7 @@ Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en f
 
 <%= leftblogimage("stackOverflow.png") %>
 
-Jusqu'ici, tous les problèmes d'indécidabilités était dûs aux _erreurs_.
+Jusqu'ici, tous les problèmes d'indécidabilités étaient dûs aux _erreurs_.
 Maintenant peut-être que privé d'erreur de mesure, on pourrait enfin résoudre tous les problèmes.  
 Et bien non.
 Même dans un monde mathématique complètement contrôlé.

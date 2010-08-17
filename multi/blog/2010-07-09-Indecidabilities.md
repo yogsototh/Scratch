@@ -277,7 +277,7 @@ en: ## Logical Undecidability
 
 <%= leftblogimage("stackOverflow.png") %>
 
-fr: Jusqu'ici, tous les problèmes d'indécidabilités était dûs aux _erreurs_.
+fr: Jusqu'ici, tous les problèmes d'indécidabilités étaient dûs aux _erreurs_.
 fr: Maintenant peut-être que privé d'erreur de mesure, on pourrait enfin résoudre tous les problèmes.  
 fr: Et bien non.
 fr: Même dans un monde mathématique complètement contrôlé.
