@@ -3,7 +3,7 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2010-08-11T10:04:31+02:00
-title: Indécidabilités
+title: Indécidabilités (partie 1)
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:

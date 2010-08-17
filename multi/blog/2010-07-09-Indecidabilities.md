@@ -3,8 +3,8 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2010-08-11T10:04:31+02:00
-fr: title: Indécidabilités
-en: title: Undecidabilities
+fr: title: Indécidabilités (partie 1)
+en: title: Undecidabilities (part 1)
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
