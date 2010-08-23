@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-08-11T08:04:31Z</updated>
+  <updated>2010-08-23T13:05:13Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
@@ -10,8 +10,29 @@
     <uri>http://yannesposito.com</uri>
   </author>
   <entry>
+    <id>tag:yannesposito.com,2010-08-23:/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/</id>
+    <title type="html">Now heberged on heroku</title>
+    <published>2010-08-23T13:05:13Z</published>
+    <updated>2010-08-23T13:05:13Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/"/>
+    <content type="html">&lt;h1 class="first" id="now-on-herokuhttpherokucom"&gt;Now on &lt;a href="http://heroku.com"&gt;Heroku&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;I now changed my hosting to &lt;a href="http://heroku.com"&gt;Heroku&lt;/a&gt;. 
+I believe it will be far more reliable.&lt;/p&gt;
+
+&lt;p&gt;But as you should know my website is completely static.
+I use &lt;a href="http://nanoc.stoneship.org/"&gt;nanoc&lt;/a&gt; to generate it.
+But here is the conf to make it work on heroku.&lt;/p&gt;
+
+&lt;p&gt;The root of my files is &lt;code&gt;/output&lt;/code&gt;. You only need to create a &lt;code&gt;config.ru&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;a href="/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/code/config.ru"&gt; &amp;#x27A5; config.ru &lt;/a&gt;&lt;/div&gt;&lt;div class="withfile"&gt;
+&lt;pre class="twilight"&gt;
+&lt;span class="Keyword"&gt;require&lt;/span&gt; &lt;span class="String"&gt;&lt;span class="String"&gt;'&lt;/span&gt;rubygems&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2010-08-11:/Scratch/en/blog/2010-07-09-Indecidabilities/</id>
-    <title type="html">Undecidabilities</title>
+    <title type="html">Undecidabilities (part 1)</title>
     <published>2010-08-11T08:04:31Z</published>
     <updated>2010-08-11T08:04:31Z</updated>
     <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-07-09-Indecidabilities/"/>
@@ -893,27 +914,5 @@ text
 &lt;p&gt;I know there is a similar blog entry at &lt;a href="http://trephine.org/t/index.php?title=Site_improvements_-_fighting_with_Disqus"&gt;Trephine.org&lt;/a&gt;. Here I just add a straight and easy way to load disqus asynchronously using jQuery. &lt;/p&gt;
 
 &lt;p&gt;I also know there is a jQuery plugin to ma...&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-09-11:/Scratch/en/blog/10_Synchronize_Custom_WebSite_with_mobileMe/</id>
-    <title type="html">Synchronize Custom WebSite with mobileMe</title>
-    <published>2009-09-11T12:35:35Z</published>
-    <updated>2009-09-11T12:35:35Z</updated>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/10_Synchronize_Custom_WebSite_with_mobileMe/"/>
-    <content type="html">&lt;h1 class="first" id="update-small20091028small"&gt;Update &lt;small&gt;(2009/10/28)&lt;/small&gt;&lt;/h1&gt;
-
-&lt;p&gt;I &lt;a href="/Scratch/en/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-"&gt;updated my script&lt;/a&gt; which is now incremental. Since the writing of this article, Apple&lt;small&gt;&amp;copy;&lt;/small&gt; had made many efforts about the bandwith of its European servers.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;h1 class="first" id="webdav-terror"&gt;WebDav terror&lt;/h1&gt;
-
-&lt;p&gt;I live in France and iDisk upload is just terrible. Upload speed remind me the old 56k modem. Most operations such as list the content of a directory take at least 30 seconds (for 15 elements). Renaming a directory fail most of time.&lt;/p&gt;
-
-&lt;p&gt;Apple&lt;small&gt;&amp;copy;&lt;/small&gt; use a WebDav server to host files. It works on port 80 (like http). I real...&lt;/p&gt;</content>
   </entry>
 </feed>

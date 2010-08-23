@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="blog">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Now heberged on heroku" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Now heberged on heroku" type="text/html" hreflang="en" href="/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        
+        <title>Now heberged on heroku</title>
+    </head>
+    <body lang="fr">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="Chargement en cours..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/" onclick="setLanguage('en')">Switch to English</a>
+                </div>
+            </div>
+
+            <div id="titre">
+                <h1>
+                    Now heberged on heroku
+                </h1>
+                 
+                <h2>
+                    Héberger un site web statique sur heroku 
+                </h2>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <h1 class="first" id="maintenant-sur-herokuhttpherokucom">Maintenant sur <a href="http://heroku.com">Heroku</a></h1>
+
+<p>J&rsquo;ai changé mon hébergeur. Mobileme n&rsquo;est absolument pas adapté à la diffusion de mon blog. C&rsquo;est pourquoi je suis passé à <a href="http://heroku.com">Heroku</a>.</p>
+
+<p>Mais comme vous devez le savoir mon blog est un site complètement statique.
+J&rsquo;utilise <a href="http://nanoc.stoneship.org/">nanoc</a> pour l&rsquo;engendrer.
+Avoir un site statique amène beaucoup d&rsquo;avantages par rapport à un site dynamique. Surtout en terme de sécurité.
+Voici comment configurer un site statique sur heroku.</p>
+
+<p>La racine de mes fichiers est &lsquo;/output&rsquo;. Vous devez simplement créer deux fichiers. Un fichier <code>config.ru</code>&nbsp;:</p>
+
+<div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/code/config.ru"> &#x27A5; config.ru </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Keyword">require</span> <span class="String"><span class="String">'</span>rubygems<span class="String">'</span></span>
+<span class="Keyword">require</span> <span class="String"><span class="String">'</span>rack<span class="String">'</span></span>
+<span class="Keyword">require</span> <span class="String"><span class="String">'</span>rack-rewrite<span class="String">'</span></span>
+
+use <span class="Support">Rack</span>::<span class="Entity">Rewrite</span> <span class="Keyword">do</span>
+    rewrite <span class="StringRegexp"><span class="StringRegexp">%r{</span><span class="StringRegexp"><span class="StringRegexp">(</span>.*<span class="StringRegexp">)</span></span>/$<span class="StringRegexp">}</span></span>,<span class="String"><span class="String">&quot;</span>$1/index.html<span class="String">&quot;</span></span>
+<span class="Keyword">end</span>
+use <span class="Support">Rack</span>::<span class="Entity">Static</span>, <span class="Constant"><span class="Constant">:</span>urls</span> =&gt; [<span class="String"><span class="String">&quot;</span>/<span class="String">&quot;</span></span>], <span class="Constant"><span class="Constant">:</span>root</span> =&gt; <span class="String"><span class="String">&quot;</span>output<span class="String">&quot;</span></span>
+app <span class="Keyword">=</span> lambda { |<span class="Variable">env</span>| [<span class="Constant">404</span>, { <span class="String"><span class="String">'</span>Content-Type<span class="String">'</span></span> =&gt; <span class="String"><span class="String">'</span>text/html<span class="String">'</span></span> }, <span class="String"><span class="String">'</span>File Not Found<span class="String">'</span></span>] }
+run app
+</pre>
+</div></div>
+
+<p>et un fichier <code>.gems</code> qui liste les gems nécessaires.</p>
+
+<div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/code/.gems"> &#x27A5; .gems </a></div><div class="withfile">
+<pre class="twilight">
+rack
+rack<span class="Keyword">-</span>rewrite
+</pre>
+</div></div>
+
+<p>Maintenant il suffit de suivre l&rsquo;introduction rapide d&rsquo;heroku pour créer une nouvelle application&nbsp;:</p>
+
+<pre class="twilight">
+git init
+git add .
+heroku create
+git push heroku master
+</pre>
+
+<p>Maintenant je devrait être capable de rediriger correctement mes erreurs 404.
+J&rsquo;espère que ça a pu vous être utile.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">
+                        s'abonner
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Commentaires</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">commentaires</h2>
+                    <noscript>
+                        
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/fr/">Acceuil</a></li>
+<li><a href="/Scratch/fr/blog/">Blog</a></li>
+<li><a href="/Scratch/fr/about/">À propos</a></li>
+<li><a href="/Scratch/fr/contact/">Contact</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        articles précédents
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2010-07-09-Indecidabilities/">&larr; Indécidabilités (partie 1)</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2010-07-31-New-style-after-holidays/">&larr; Nouveau style après les vacances</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">&larr; N'utilisez pas de gradients avec Chrome</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        articles suivants
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Écrit le : 23/08/2010 <br/>
+                    dernière modification : 23/08/2010 
+                </div>
+                <div>
+                    Site entièrement réalisé avec
+                    <a href="http://www.vim.org">Vim</a>
+                    et 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/fr/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

@@ -1,1 +1,1 @@
-./multi/blog/2010-07-09-Indecidabilities.md
+./multi/blog/2010-08-23-Now-heberged-on-heroku.md
