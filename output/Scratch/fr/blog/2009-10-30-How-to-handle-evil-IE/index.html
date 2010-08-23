@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="web, webdesign, jQuery">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Une CSS pour IE seulement" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="How to handle evil IE" type="text/html" hreflang="en" href="/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        
+        <title>Une CSS pour IE seulement</title>
+    </head>
+    <body lang="fr">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="Chargement en cours..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/" onclick="setLanguage('en')">Switch to English</a>
+                </div>
+            </div>
+
+            <div id="titre">
+                <h1>
+                    Une CSS pour IE seulement
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p>Pour les développeur de site web Internet Explorer est un cauchemar. C&rsquo;est pourquoi j&rsquo;utilise un style complètement différent pour ce navigateur. Avec la librairie jQuery.</p>
+
+<div><pre class="twilight">
+<span class="Keyword">$</span>(<span class="Support">document</span>).ready( <span class="Storage">function</span>() {
+    <span class="Keyword">if</span> (<span class="Keyword">$</span>.browser[<span class="String"><span class="String">&quot;</span>msie<span class="String">&quot;</span></span>]) {
+        <span class="Comment"><span class="Comment">//</span> include the ie.js file</span>
+        <span class="Keyword">$</span>(<span class="String"><span class="String">'</span>head<span class="String">'</span></span>).append(<span class="String"><span class="String">'</span>&lt;script type=&quot;text/javascript&quot; src=&quot;/js/ie.js&quot;&gt;&lt;/scr<span class="String">'</span></span> <span class="Keyword">+</span> <span class="String"><span class="String">'</span>ipt&gt;<span class="String">'</span></span>);
+    }
+});
+</pre></div>
+
+<div><div class="code"><div class="file"><a href="/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/code/ie.js"> &#x27A5; ie.js </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">//</span> Remove all CSS I don't want to use on IE</span>
+<span class="Keyword">$</span>(<span class="String"><span class="String">'</span>link[rel=stylesheet]<span class="String">'</span></span>).each(<span class="Storage">function</span>(i)
+{
+    <span class="Keyword">if</span> (<span class="Variable">this</span>.<span class="SupportFunction">getAttribute</span>(<span class="String"><span class="String">'</span>href<span class="String">'</span></span>) <span class="Keyword">==</span> <span class="String"><span class="String">'</span>/css/layout.css<span class="String">'</span></span>) 
+        <span class="Variable">this</span>.<span class="SupportConstant">disabled</span> <span class="Keyword">=</span> <span class="Constant">true</span>;
+    <span class="Keyword">if</span> (<span class="Variable">this</span>.<span class="SupportFunction">getAttribute</span>(<span class="String"><span class="String">'</span>href<span class="String">'</span></span>) <span class="Keyword">==</span> <span class="String"><span class="String">'</span>/css/shadows.css<span class="String">'</span></span>) 
+        <span class="Variable">this</span>.<span class="SupportConstant">disabled</span> <span class="Keyword">=</span> <span class="Constant">true</span>;
+    <span class="Keyword">if</span> (<span class="Variable">this</span>.<span class="SupportFunction">getAttribute</span>(<span class="String"><span class="String">'</span>href<span class="String">'</span></span>) <span class="Keyword">==</span> <span class="String"><span class="String">'</span>/css/gen.css<span class="String">'</span></span>)    
+        <span class="Variable">this</span>.<span class="SupportConstant">disabled</span> <span class="Keyword">=</span> <span class="Constant">true</span>;
+})&nbsp;;
+
+<span class="Comment"><span class="Comment">//</span> Append the CSS for IE only</span>
+<span class="Keyword">$</span>(<span class="String"><span class="String">'</span>head<span class="String">'</span></span>).append(<span class="String"><span class="String">'</span>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/ie.css&quot;/&gt;<span class="String">'</span></span>);
+
+<span class="Comment"><span class="Comment">//</span> I also add a message on top of the page</span>
+<span class="Keyword">$</span>(<span class="String"><span class="String">'</span>body<span class="String">'</span></span>).prepend(<span class="String"><span class="String">'</span>&lt;div id=&quot;iemessage&quot;&gt;&lt;p&gt;&lt;span class=&quot;fr&quot;&gt;&lt;em&gt;Avec &lt;a href=&quot;http://www.firefox.com&quot;&gt; Firefox &lt;/a&gt; et &lt;a href=&quot;http://www.apple.com/safari&quot;&gt;Safari&lt;/a&gt; cette page est bien plus jolie&nbsp;!&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;en&quot;&gt;&lt;em&gt;This page is far nicer with &lt;a href=&quot;http://www.firefox.com&quot;&gt; Firefox &lt;/a&gt; and &lt;a href=&quot;http://www.apple.com/safari&quot;&gt;Safari&lt;/a&gt;!&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;.&lt;/div&gt;<span class="String">'</span></span>);
+
+</pre>
+</div></div></div>
+
+<p>Voilà.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">
+                        s'abonner
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Commentaires</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">commentaires</h2>
+                    <noscript>
+                        
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/fr/">Acceuil</a></li>
+<li><a href="/Scratch/fr/blog/">Blog</a></li>
+<li><a href="/Scratch/fr/about/">À propos</a></li>
+<li><a href="/Scratch/fr/contact/">Contact</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        articles précédents
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">&larr; Synchronisation avec mobileme (2)</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">&larr; Un menu qui attends avant de se cacher</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/">&larr; lancer un démon en ligne de commande</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        articles suivants
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/2009-11-12-Git-for-n00b/">Git pour les nuls&rarr; </a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/2009-12-06-iphone-call-filter/">Filtrage d'appel avec l'iPhone&rarr; </a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/2009-12-14-Git-vs--Bzr/">Git ou Bazaar ?&rarr; </a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Écrit le : 30/10/2009 <br/>
+                    dernière modification : 15/07/2010 
+                </div>
+                <div>
+                    Site entièrement réalisé avec
+                    <a href="http://www.vim.org">Vim</a>
+                    et 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/fr/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

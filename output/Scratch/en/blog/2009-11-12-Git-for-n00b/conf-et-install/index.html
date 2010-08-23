@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="git">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Git pour les nuls" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Git for n00b" type="text/html" hreflang="en" href="/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        
+        <title>Git for n00b</title>
+    </head>
+    <body lang="en">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="loading..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/" onclick="setLanguage('fr')">Version Française</a>
+                </div>
+            </div>
+
+            <div id="titre">
+                <h1>
+                    Git for n00b
+                </h1>
+                 
+                <h2>
+                    Configure before Use 
+                </h2>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            <div id="sousliens"><ul><li><a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/">introduction</a></li><li><a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/">Git for what?</a></li><li><span class="active" title="You're here.">Configure before Use</span></li><li><a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/">The Adventure Begins</a></li><li><a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/">Understanding</a></li><li><a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/">Command List</a></li></ul></div>
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <h1 class="first" id="before-usage-configuration">Before usage, configuration</h1>
+
+<h2 id="install">install</h2>
+
+<p>Under Linux Ubuntu or Debian:</p>
+
+<div><pre class="twilight">$ sudo apt-get install git
+</pre></div>
+
+<p>Under Mac OS X:</p>
+
+<ul>
+  <li>install <a href="http://macports.org/install.php">MacPorts</a></li>
+  <li>install <a href="http://git-scm.org" title="Git">Git</a></li>
+</ul>
+
+<div><pre class="twilight">
+$ sudo port selfupdate
+
+$ sudo port install git-core
+</pre></div>
+
+<h2 id="global-configuration">Global configuration</h2>
+
+<p>Save the following file as your <code>~/.gitconfig</code>.</p>
+
+<div><div class="code"><div class="file"><a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/code/gitconfig"> &#x27A5; gitconfig </a></div><div class="withfile">
+<pre class="twilight">
+[color]
+    branch = auto
+    diff   = auto
+    status = auto
+[alias]
+    st        = status
+    co        = checkout
+    br        = branch
+    lg        = log --pretty=oneline --graph
+    logfull   = log --pretty=fuller --graph --stat -p
+    undo      = checkout
+    unstage   = reset HEAD
+    <span class="Comment"><span class="Comment">#</span> there should be an article on what this command do</span>
+    uncommit = <span class="Keyword">!</span>zsh -c <span class="String"><span class="String">'</span>&quot;if (($0)); then nb=$(( $0 - 1 )); else nb=0; fi; i=0; while ((i&lt;=nb)); do git revert -n --no-edit HEAD~$i; ((i++)); done; git commit -m \&quot;revert to $0 version(s) back\&quot;&quot;<span class="String">'</span></span>
+    undomerge = reset --hard ORIG_HEAD
+	conflict  = <span class="Keyword">!</span>gitk --left-right HEAD...MERGE_HEAD
+    <span class="Comment"><span class="Comment">#</span> under Mac OS X, you should use gitx instead</span>
+	<span class="Comment"><span class="Comment">#</span> conflict    =&nbsp;!gitx --left-right HEAD...MERGE_HEAD</span>
+[branch]
+	autosetupmerge = true
+</pre>
+</div></div></div>
+
+<p>You can achieve the same result using for each entry the command: <code>git config --global</code>. Next, configure your name and your email. For example, if your name is John Doe and your email is <code>john.doe@email.com</code>. Launch the following commands:</p>
+
+<div><pre class="twilight">
+$ git config --global user.name John Doe
+
+$ git config --global user.email john.doe@email.com
+</pre></div>
+
+<p>Here it is. Base configuration is over. The file containing alias will help to type shorter commands.</p>
+
+<h2 id="get-a-project">Get a project</h2>
+
+<p>If a project is already versionned with <a href="http://git-scm.org" title="Git">Git</a> you should have an <code>URL</code> of the sources. Then use the following command:</p>
+
+<div><pre class="twilight">
+$ cd <span class="Keyword">~</span>/Projets
+$ git clone git://main.server/path/to/file
+</pre></div>
+
+<p>If there is no git server but you&rsquo;ve got an <code>ssh</code> access. Just replace the <code>git://host</code> by <code>ssh://user@host</code>. In order not to type your password each time, use:</p>
+
+<div><pre class="twilight">
+$ ssh-keygen -t rsa
+</pre></div>
+
+<p>Reply to question and <em>*do not enter</em> a password. Then copy your keys to the distant server. This is not the safest way to do this. The safest being, using <code>ssh-agent</code>.</p>
+
+<div><pre class="twilight">
+me@locahost$ scp <span class="Keyword">~</span>/.ssh/id_rsa.pub me@main.server:
+me@locahost$ ssh me@main.server
+password:
+me@main.server$ cat id_rsa.pub <span class="Keyword">&gt;&gt;</span> <span class="Keyword">~</span>/.ssh/authorized_keys
+me@main.server$ rm id_rsa.pub
+me@main.server$ logout
+</pre></div>
+
+<p>Now you don&rsquo;t need to write your password to access the <code>main.server</code>.</p>
+
+<h2 id="creating-a-new-project">Creating a new project</h2>
+
+<p>Suppose you already have a project with files. Then it is really easy to version it.</p>
+
+<div><pre class="twilight">
+$ cd /path/to/project
+$ git init
+$ git add .
+$ git commit -m <span class="String"><span class="String">&quot;</span>Initial commit<span class="String">&quot;</span></span>
+</pre></div>
+
+<p>Let do a small remark. If you don&rsquo;t want to <em>version</em> every file. Typically intermediate compilation file, swap files&hellip; Then you need to exclude them. Just before launching the <code>git add .</code> command. You need to create a <code>.gitignore</code> file in the root directory of your project. This file will contain all exclude <em>pattern</em>. For example:</p>
+
+<div><pre class="twilight">
+*.o
+*.bak
+*.swp
+*~
+</pre></div>
+
+<p>Now, if you want to create a repository on a distant server, it <em>must</em> not be in <code>bare</code> mode. The repository will contain only versionning informations, but not the files of the project. To achieve that:</p>
+
+<div><pre class="twilight">
+$ cd /path/to/local/project
+$ git clone --bare . ssh://server/path/to/project
+</pre></div>
+
+<p>Others will be able to get your modifications.</p>
+
+<div><pre class="twilight">
+git clone ssh://server/path/to/project
+</pre></div>
+
+<h2 id="abstract-of-the-second-step">Abstract of the second step</h2>
+
+<p>You now have a local directory on your computer. It is versionned and you can say it is, because there is a <code>.git</code> directory at the root (and the root only) of your project. This directory contain all necessary informations for <a href="http://git-scm.org" title="Git">Git</a> to version your project.</p>
+
+<p>Now you only need to know how to use it.</p>
+
+
+                </div>
+            
+                
+                    <div class="navigation">
+                        <div class="navigationprev"><a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/">previous&nbsp;&larr;</a></div>
+                        <div class="navigationnext"><a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/">&rarr;&nbsp;next</a></div>
+                    </div>
+                    <div class="flush"></div>
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomen">
+                        Subscribe
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Comments</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">comments</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/en/blog/2009-11-12-Git-for-n00b/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/en/">Homepage</a></li>
+<li><a href="/Scratch/en/blog/">Blog</a></li>
+<li><a href="/Scratch/en/about/">About</a></li>
+<li><a href="/Scratch/en/contact/">Contact</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        previous entries
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/">&larr; How to handle evil IE</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">&larr; custom website synchronisation with mobileme (2)</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">&larr; Menu waiting to hide himself</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        next entries
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2009-12-06-iphone-call-filter/">iphone call filter&rarr; </a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2009-12-14-Git-vs--Bzr/">Git vs. Bzr&rarr; </a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2010-01-04-Change-default-shell-on-Mac-OS-X/">Change default shell on Mac OS X&rarr; </a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Created: 11/12/2009 <br/>
+                    Last modified: 07/15/2010 
+                </div>
+                <div>
+                    Entirely done with
+                    <a href="http://www.vim.org">Vim</a>
+                    and 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/en/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

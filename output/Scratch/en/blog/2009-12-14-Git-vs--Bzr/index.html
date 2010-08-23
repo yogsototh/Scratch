@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="git, bzr, DCVS, Bazaar">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Git ou Bazaar ?" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2009-12-14-Git-vs--Bzr/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Git vs. Bzr" type="text/html" hreflang="en" href="/Scratch/en/blog/2009-12-14-Git-vs--Bzr/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        
+        <title>Git vs. Bzr</title>
+    </head>
+    <body lang="en">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="loading..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/fr/blog/2009-12-14-Git-vs--Bzr/" onclick="setLanguage('fr')">Version Française</a>
+                </div>
+            </div>
+
+            <div id="titre">
+                <h1>
+                    Git vs. Bzr
+                </h1>
+                 
+                <h2>
+                    Why I switched from bazaar to git 
+                </h2>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    
+<div class="intro">
+
+
+<p>Why even if I believe <code>git</code> has many bad point I believe it is the best DCVS around to work with. This is why I first tell why I prefer <a href="http://bazaar-vcs.org">Bazaar</a> over <a href="http://git-scm.org">Git</a>. Secondly I&rsquo;ll talk about the only advantage of git against Bazaar which lead me to prefer it.</p>
+
+
+</div>
+
+
+<h2 id="the-dcvs-discovery">The DCVS discovery</h2>
+
+<p>Before beginning this article, you should know I come from <em>subversion</em>. I find subversion to be a really good CVS. But I was converted to the decentralized ones.</p>
+
+<p>There is two way of perceive version control system. Either you think in term of branches (see the really good article on <a href="http://betterexplained.com/articles/a-visual-guide-to-version-control/">betterexplained</a>) or think in term of patches. Another way to say that, is weather you concentrate on vertices or on transitions of the graph of possible states of your project.</p>
+
+<p>This is the second approach who was behind <code>git</code> and this is the first behind Bazaar. <code>git</code> was created by Linus Torvald in order to close some gap in the version system used to develop the Linux kernel. And patches is a term which is more present than &lsquo;state&rsquo; in the development community.</p>
+
+<p>I first was convinced by Bazaar. Why? Argument in favor of Bazaar were: user friendly, terminology close to the subversion one. And I tried a bit the two, and it was clearly more natural for me to use Bazaar. But after seeing so many people using <code>git</code> I decided to give it a serious try.</p>
+
+<p>And it was so fastidious! The <code>git</code> terminology was <em>horrible</em>! And it is nothing to say it.</p>
+
+<h2 id="where-bazaar-is-better-than-git">Where Bazaar is better than <code>git</code></h2>
+
+<p>The first example, <code>checkout</code> is used to make only one thing from the technical point of vue. But from the user perspective, you make many <em>different</em> things with this word. Example:</p>
+
+<div><pre class="twilight">
+git checkout pipo
+</pre></div>
+
+<p>undo the current modification of the file <code>pipo</code></p>
+
+<div><pre class="twilight">
+git checkout pipo
+</pre></div>
+
+<p>change the current branch to the branch <code>pipo</code></p>
+
+<p>And, like me, you remark, it is exactly the same command to make two completely different things. What occur when you have a <code>pipo</code> branch and a <code>pipo</code> file? By default, it change the current branch. In order to leave the ambiguity you have to use the following syntax:</p>
+
+<div><pre class="twilight">
+git checkout ./pipo
+</pre></div>
+
+<p>Yes, hum&hellip;</p>
+
+<p>It works, but it is clearly not really user friendly. Furthermore, checkout had a complete different signification in older CSV like <code>cvs</code> et <code>svn</code>. <code>checkout</code> was used to get a distant project locally.</p>
+
+<p>Bazaar terminology is far more natural, because there is no command to change the current branch as there is only one branch per directory. Changing a branch in Bazaar is changing the current directory. I also believe it is the biggest problem of Bazaar, I&rsquo;ll tell you why. And to undo things in Bazaar:</p>
+
+<div><pre class="twilight">
+bzr revert pipo
+</pre></div>
+
+<p>Furthermore, most Bazaar command take a revision number in parameter. For example, to get back 3 versions earlier, it is enough to write:</p>
+
+<div><pre class="twilight">
+bzr revert -r -3 pipo
+</pre></div>
+
+<p>The <code>git</code> equivalent is far more cryptic:</p>
+
+<div><pre class="twilight">
+bzr checkout HEAD~3 pipo
+</pre></div>
+
+<p>One more time, Bazaar is far more readable.</p>
+
+<p>Back in time for all the project: </p>
+
+<p>with Bazaar: </p>
+
+<div><pre class="twilight">
+bzr revert -r -3 pipo
+</pre></div>
+
+<p>and with <code>git</code>? <code>git checkout</code>? Of course not! It would be too simple. What we find in the documentation (<code>man</code>) and everywhere on the net:</p>
+
+<div><pre class="twilight">
+git reset --hard HEAD~3
+</pre></div>
+
+<p>Except that this command is horrible. It forget revisions! Then you must use it with prudence. And you cannot tell other people working on the project you discard some changes. If someone had pulled the <em>bad</em> version, you are <em>doomed</em>. This is why you can also use:</p>
+
+<div><pre class="twilight">
+git checkout HEAD~3 -- . <span class="Keyword">&amp;&amp;</span> git commit -m <span class="String"><span class="String">'</span>back in time<span class="String">'</span></span>
+</pre></div>
+
+<p>Just to keep a backup branch. Without it we can definitively loose the current version HEAD. But some error may rest when there were some addition and deletion of files. <em>The unique way to be really clean without any risk is to use the following command:</em></p>
+
+<div><pre class="twilight">
+<span class="Keyword">for</span> i <span class="Keyword">in</span> <span class="String"><span class="String">$(</span>seq 0 2<span class="String">)</span></span><span class="Keyword">;</span> <span class="Keyword">do</span> 
+    git revert -n --no-edit head~<span class="Variable"><span class="Variable">$</span>i</span><span class="Keyword">;</span> 
+<span class="Keyword">done</span>
+git commit -m <span class="String"><span class="String">&quot;</span>reverted 3 versions back<span class="String">&quot;</span></span>
+</pre></div>
+
+<p>And with this command this is the only good way to undo things in a project and tell other contributor you reverted something. You simply revert version in backward order.</p>
+
+<p>The rule is simple: <em>NEVER use the <code>git reset</code> command on a version somebody else could have <code>fetched</code></em></p>
+
+<p>It was said. Discover the best method took me some time. I&rsquo;d made many different tries. The safer and best way of reverting back your tree is to use this method. If you want to make it automatic just had the following alias in your <code>~/.gitconfig</code>. Of course this alias will work only on environment having <code>zsh</code> installed. Which is the cas for most UNIX (Ubuntu, Mac OS X&hellip;).</p>
+
+<div><div class="code"><div class="file"><a href="/Scratch/en/blog/2009-12-14-Git-vs--Bzr/code/gitconfig"> &#x27A5; gitconfig </a></div><div class="withfile">
+<pre class="twilight">
+[alias]
+    uncommit = <span class="Keyword">!</span>zsh -c <span class="String"><span class="String">'</span>&quot;if (($0)); then nb=$(( $0 - 1 )); else nb=0; fi; i=0; while ((i&lt;=nb)); do git revert -n --no-edit HEAD~$i; ((i++)); done; git commit -m \&quot;revert to $0 version(s) back\&quot;&quot;<span class="String">'</span></span>
+</pre>
+</div></div></div>
+
+<h1 id="what-make-git-by-far-the-best-dcvs-today">What make <code>git</code> by far the best DCVS today</h1>
+
+<p>After talking about the negatives points of <code>git</code>, now it&rsquo;s time to speak about the very positive feature that make <code>git</code> the best DCVS in my humble opinion.</p>
+
+<h2 id="cheap-branching">Cheap branching</h2>
+
+<p>You always work into the same main directory. For example, you can work on two fix in the same time. Say <code>fix1</code> require you to work on <code>file1</code> and <code>fix2</code> to work on <code>file2</code>. You can work in any order on <code>file1</code> and <code>file2</code> in the <code>master</code> branch. And then go to branch <code>fix1</code>, commit <code>file1</code> into it. Then go to branch <code>fix2</code> and commit <code>file2</code> into it. And finally merge the two branches <code>fix1</code> and <code>fix2</code> into <code>master</code>.</p>
+
+<div><pre class="twilight">
+<span class="Keyword">&gt;</span> vim file1
+<span class="Keyword">&gt;</span> vim file2
+<span class="Keyword">&gt;</span> git br fix1
+<span class="Keyword">&gt;</span> git add file1 
+<span class="Keyword">&gt;</span> git commit -m <span class="String"><span class="String">'</span>fix1<span class="String">'</span></span>
+<span class="Keyword">&gt;</span> git br fix2
+<span class="Keyword">&gt;</span> git add file2
+<span class="Keyword">&gt;</span> git commit -m <span class="String"><span class="String">'</span>fix2<span class="String">'</span></span>
+<span class="Keyword">&gt;</span> git commit master
+<span class="Keyword">&gt;</span> git merge fix1
+<span class="Keyword">&gt;</span> git merge fix2
+</pre></div>
+
+<p>And this is great not to worry about working in the <em>good</em> branch and coding in the same time. You just worry about your code and then about the versionning system.</p>
+
+<p>And I use this possibilities <em>a lot</em>. Working with bazaar, I often made the error to begin a change in the bad branch. then I have to copy my modifications, then revert. In short it was tiedous.</p>
+
+<p>This is why I prefer using <code>git</code> on an every day usage. If Bazaar implement the same way of cheap branching than git. I should switch again.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomen">
+                        Subscribe
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Comments</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">comments</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/en/blog/2009-12-14-Git-vs--Bzr/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/2009-12-14-Git-vs--Bzr/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/en/">Homepage</a></li>
+<li><a href="/Scratch/en/blog/">Blog</a></li>
+<li><a href="/Scratch/en/about/">About</a></li>
+<li><a href="/Scratch/en/contact/">Contact</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        previous entries
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2009-12-06-iphone-call-filter/">&larr; iphone call filter</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/">&larr; Git for n00b</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/">&larr; How to handle evil IE</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        next entries
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2010-01-04-Change-default-shell-on-Mac-OS-X/">Change default shell on Mac OS X&rarr; </a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/">antialias font in Firefox under Ubuntu&rarr; </a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2010-02-15-All-but-something-regexp/">Pragmatic Regular Expression Exclude&rarr; </a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Created: 12/14/2009 <br/>
+                    Last modified: 07/15/2010 
+                </div>
+                <div>
+                    Entirely done with
+                    <a href="http://www.vim.org">Vim</a>
+                    and 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/en/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

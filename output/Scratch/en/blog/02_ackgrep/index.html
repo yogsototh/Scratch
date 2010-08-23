@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Mieux que grep" type="text/html" hreflang="fr" href="/Scratch/fr/blog/02_ackgrep/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Better than Grep" type="text/html" hreflang="en" href="/Scratch/en/blog/02_ackgrep/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        
+        <title>Better than Grep</title>
+    </head>
+    <body lang="en">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="loading..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/fr/blog/02_ackgrep/" onclick="setLanguage('fr')">Version Française</a>
+                </div>
+            </div>
+
+            <div id="titre">
+                <h1>
+                    Better than Grep
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <h1 class="first" id="update">update</h1>
+
+<p>As <a href="http://www.theworkinggeek.com">Andy Lester</a> told me <a href="http://betterthangrep.com"><code>ack</code></a> is a simple file you only have to copy in your <code>~/bin</code> folder. Now I&rsquo;ve got <code>ack</code> on my professional server.</p>
+
+<p>Go on <a href="http://betterthangrep.com">http://betterthangrep.com</a> to download it.</p>
+
+<p>Sincerely, I don&rsquo;t understand <code>ack</code> don&rsquo;t become a common command on all UNIX systems. I can no more live without. For me it is as essential as <code>which</code> or <code>find</code>.</p>
+
+
+</div>
+
+<div class="corps">
+
+
+<h1 class="first" id="better-than-grep">Better than grep</h1>
+
+<p>One of the my main usage of <code>grep</code> is</p>
+
+<div>
+    <pre class="twilight">
+grep <span class="String"><span class="String">'</span>pattern<span class="String">'</span></span> **/*(.)
+</pre>
+</div>
+
+<p>Most of time it is enough. 
+But it is far better with colored output. 
+<code>ack-grep</code> in Ubuntu does that. 
+As I couldn&rsquo;t install it on my &lsquo;Evil Company Server&rsquo;,
+I had done one myself in very few lines:</p>
+
+<div>
+    <div class="code"><div class="file"><a href="/Scratch/en/blog/02_ackgrep/code/ack"> &#x27A5; ack </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
+((<span class="Variable"><span class="Variable">$</span>#</span><span class="Keyword">&lt;</span>1)) <span class="Keyword">&amp;&amp;</span> { print <span class="String"><span class="String">'</span>usage: ack &quot;regexp&quot;<span class="String">'</span></span> <span class="Keyword">&gt;&amp;2</span><span class="Keyword">;</span> exit 1 }
+
+listeFic=( **/*(.) )
+autoload zargs
+zargs -- <span class="Variable"><span class="Variable">$</span>listeFic</span> -- grep <span class="Variable"><span class="Variable">$</span>1</span> <span class="Keyword">|</span> perl -ne <span class="String"><span class="String">'</span>use Term::ANSIColor;</span>
+<span class="String">if (m/([^:]*)(:.*)(<span class="String">'</span></span><span class="Variable"><span class="Variable">$</span>1</span><span class="String"><span class="String">'</span>)(.*)/) {</span>
+<span class="String">    print color(&quot;green&quot;).$1;</span>
+<span class="String">    print color(&quot;reset&quot;).$2;</span>
+<span class="String">    print color(&quot;black&quot;,&quot;on_yellow&quot;).$3;</span>
+<span class="String">    print color(&quot;reset&quot;).$4.&quot;\n&quot;;</span>
+<span class="String">} <span class="String">'</span></span>
+    
+</pre>
+</div></div>
+</div>
+
+<p>For my team  and I it is usable enough.
+I hope it could help.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomen">
+                        Subscribe
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Comments</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">comments</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/en/blog/02_ackgrep/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/02_ackgrep/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/en/">Homepage</a></li>
+<li><a href="/Scratch/en/blog/">Blog</a></li>
+<li><a href="/Scratch/en/about/">About</a></li>
+<li><a href="/Scratch/en/contact/">Contact</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        previous entries
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/01_nanoc/">&larr; Nanoc</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2010-07-09-Indecidabilities/">&larr; Undecidabilities</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2010-07-31-New-style-after-holidays/">&larr; New style after holidays</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        next entries
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/03_losthighway/">A try to demystify 'Lost Highway'&rarr; </a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/04_drm/">DRM are EVIL&rarr; </a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/05_git_create_remote_branch/">Git remote branch creation&rarr; </a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Created: 07/22/2009 <br/>
+                    Last modified: 07/15/2010 
+                </div>
+                <div>
+                    Entirely done with
+                    <a href="http://www.vim.org">Vim</a>
+                    and 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/en/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

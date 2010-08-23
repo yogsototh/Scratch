@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="tree, HTML, script, ruby">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Comment réparer un XML coupé ?" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="How to repair a cutted XML?" type="text/html" hreflang="en" href="/Scratch/en/blog/2010-05-19-How-to-cut-HTML-and-repair-it/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        
+        <title>How to repair a cutted XML?</title>
+    </head>
+    <body lang="en">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="loading..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/" onclick="setLanguage('fr')">Version Française</a>
+                </div>
+            </div>
+
+            <div id="titre">
+                <h1>
+                    How to repair a cutted XML?
+                </h1>
+                 
+                <h2>
+                    and how to do it without any parsor? 
+                </h2>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p>For my main page, you can see, a list of my latest blog entry. And you have the first part of each article. To accomplish that, I needed to include the begining of the entry and to cut it somewhere. But now, I had to repair this cutted HTML.</p>
+
+<p>Here is an example:</p>
+
+<pre class="twilight">
+<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll">class</span>=<span class="String"><span class="String">&quot;</span>corps<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll">class</span>=<span class="String"><span class="String">&quot;</span>intro<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>Introduction<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>The first paragraph<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">img</span> <span class="MetaTagInline">src</span>=<span class="String"><span class="String">&quot;</span>/img/img.png<span class="String">&quot;</span></span> <span class="MetaTagInline">alt</span>=<span class="String"><span class="String">&quot;</span>an image<span class="String">&quot;</span></span>/<span class="MetaTagInline">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>Another long paragraph<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
+<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span>
+</pre>
+
+<p>Après avoir coupé, j&rsquo;obtiens&nbsp;:</p>
+
+<pre class="twilight">
+<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll">class</span>=<span class="String"><span class="String">&quot;</span>corps<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll">class</span>=<span class="String"><span class="String">&quot;</span>intro<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>Introduction<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>The first paragraph<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">img</span> <span class="MetaTagInline">src</span>=<span class="String"><span class="String">&quot;</span>/img/im</span></span>
+</pre>
+
+<p>Argh! In the middle of an <code>&lt;img&gt;</code> tag.</p>
+
+<p>In fact, it is not as difficult as it should sound first. The secret is, you don&rsquo;t need to keep the complete tree structure to repair it, but only the list of not closed parents.</p>
+
+<p>Given with our example, when we are after the first paragraph. we only have to close the <code>div</code> for class <code>corps</code> and the XML is repaired. Of course, when you cut inside a tag, you sould go back, as if you where just before it. Delete this tag and all is ok.</p>
+
+<p>Then, all you have to do, is not remember all the XML tree, but only the heap containing your parents. Suppose we treat the complete first example, the stack will pass through the following state, in order:</p>
+
+<pre class="twilight">
+[]           
+[div]           <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll">class</span>=<span class="String"><span class="String">&quot;</span>corps<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
+[div, div]          <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll">class</span>=<span class="String"><span class="String">&quot;</span>intro<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
+[div, div, p]           <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
+                            Introduction
+[div, div]              <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
+[div]               <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span>
+[div, p]            <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
+                        The first paragraph
+[div]               <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
+[div]               <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">img</span> <span class="MetaTagInline">src</span>=<span class="String"><span class="String">&quot;</span>/img/img.png<span class="String">&quot;</span></span> <span class="MetaTagInline">alt</span>=<span class="String"><span class="String">&quot;</span>an image<span class="String">&quot;</span></span>/<span class="MetaTagInline">&gt;</span></span>
+[div, p]            <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
+                        Another long paragraph
+[div]               <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
+[]              <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span>
+</pre>
+
+<p>The algorihm, is then really simple: </p>
+<pre class="twilight">
+let res be the XML as a string&nbsp;; 
+read res and each time you encouter a tag: 
+    if it is an opening one: 
+        push it to the stack
+    else if it is a closing one: 
+        pop the stack.
+
+remove any malformed/cutted tag in the end of res
+for each tag in the stack, pop it, and write:
+    res = res + closed tag
+
+return res
+</pre>
+
+<p>And <code>res</code> contain the repaired XML.</p>
+
+<p>Finally, this is the code in ruby I use. The <code>xml</code> variable contain the cutted XML.</p>
+
+<div class="code"><div class="file"><a href="/Scratch/en/blog/2010-05-19-How-to-cut-HTML-and-repair-it/code/repair_xml.rb"> &#x27A5; repair_xml.rb </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span> repair cutted XML code by closing the tags</span>
+<span class="Comment"><span class="Comment">#</span> work even if the XML is cut into a tag.</span>
+<span class="Comment"><span class="Comment">#</span> example:</span>
+<span class="Comment"><span class="Comment">#</span>    transform '&lt;div&gt; &lt;span&gt; toto &lt;/span&gt; &lt;p&gt; hello &lt;a href=&quot;http://tur'</span>
+<span class="Comment"><span class="Comment">#</span>    into      '&lt;div&gt; &lt;span&gt; toto &lt;/span&gt; &lt;p&gt; hello &lt;/p&gt;&lt;/div&gt;'</span>
+<span class="Keyword">def</span> <span class="Entity">repair_xml</span>(<span class="Variable"> xml </span>)
+    parents<span class="Keyword">=</span>[]
+    depth<span class="Keyword">=</span><span class="Constant">0</span>
+    xml.<span class="Entity">scan</span>( <span class="StringRegexp"><span class="StringRegexp">%r{</span>&lt;<span class="StringRegexp"><span class="StringRegexp">(</span>/?<span class="StringRegexp">)</span></span><span class="StringRegexp"><span class="StringRegexp">(</span><span class="StringRegexpSpecial">\w</span>*<span class="StringRegexp">)</span></span><span class="StringRegexp"><span class="StringRegexp">[</span>^&gt;<span class="StringRegexp">]</span></span>*<span class="StringRegexp"><span class="StringRegexp">(</span>/?<span class="StringRegexp">)</span></span>&gt;<span class="StringRegexp">}</span></span> ).<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">m</span>|
+        <span class="Keyword">if</span> m[<span class="Constant">2</span>] <span class="Keyword">==</span> <span class="String"><span class="String">&quot;</span>/<span class="String">&quot;</span></span>
+            <span class="Keyword">next</span>
+        <span class="Keyword">end</span>
+        <span class="Keyword">if</span> m[<span class="Constant">0</span>] <span class="Keyword">==</span> <span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span> 
+            parents[depth]<span class="Keyword">=</span>m[<span class="Constant">1</span>]
+            depth<span class="Keyword">+=</span><span class="Constant">1</span>
+        <span class="Keyword">else</span>
+            depth<span class="Keyword">-=</span><span class="Constant">1</span>
+        <span class="Keyword">end</span>
+    <span class="Keyword">end</span>
+    res<span class="Keyword">=</span>xml.<span class="Entity">sub</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp">&lt;<span class="StringRegexp"><span class="StringRegexp">[</span>^&gt;<span class="StringRegexp">]</span></span>*$</span><span class="StringRegexp"><span class="StringRegexp">/m</span></span>,<span class="String"><span class="String">'</span><span class="String">'</span></span>)
+    depth<span class="Keyword">-=</span><span class="Constant">1</span>
+    depth.<span class="Entity">downto</span>(<span class="Constant">0</span>).<span class="Entity">each</span> { |<span class="Variable">x</span>| res<span class="Keyword">&lt;&lt;=</span> <span class="String"><span class="String">%{</span>&lt;/<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>parents<span class="StringEmbeddedSource">[</span>x<span class="StringEmbeddedSource">]</span><span class="StringEmbeddedSource">}</span></span>&gt;<span class="String">}</span></span> }
+    res
+<span class="Keyword">end</span>
+</pre>
+</div></div>
+
+<p>I don&rsquo;t know if the code can help you, but the raisonning should definitively be known.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomen">
+                        Subscribe
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Comments</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">comments</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/en/blog/2010-05-19-How-to-cut-HTML-and-repair-it/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/2010-05-19-How-to-cut-HTML-and-repair-it/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/en/">Homepage</a></li>
+<li><a href="/Scratch/en/blog/">Blog</a></li>
+<li><a href="/Scratch/en/about/">About</a></li>
+<li><a href="/Scratch/en/contact/">Contact</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        previous entries
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2010-05-17-at-least-this-blog-revive/">&larr; I live again!</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2010-03-23-Encapsulate-git/">&larr; Encapsulate git</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2010-03-22-Git-Tips/">&larr; Git Tips</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        next entries
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2010-05-24-Trees--Pragmatism-and-Formalism/">Trees; Pragmatism and Formalism&rarr; </a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2010-06-14-multi-language-choices/">multi language choices&rarr; </a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2010-06-15-Get-my-blog-engine/">Get my blog engine&rarr; </a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Created: 05/19/2010 <br/>
+                    Last modified: 07/15/2010 
+                </div>
+                <div>
+                    Entirely done with
+                    <a href="http://www.vim.org">Vim</a>
+                    and 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/en/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

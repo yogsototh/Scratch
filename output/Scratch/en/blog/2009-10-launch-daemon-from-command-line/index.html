@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="zsh, shell, script, tip">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="lancer un démon en ligne de commande" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="launch daemon from command line" type="text/html" hreflang="en" href="/Scratch/en/blog/2009-10-launch-daemon-from-command-line/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        
+        <title>launch daemon from command line</title>
+    </head>
+    <body lang="en">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="loading..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/" onclick="setLanguage('fr')">Version Française</a>
+                </div>
+            </div>
+
+            <div id="titre">
+                <h1>
+                    launch daemon from command line
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p>Here is a tip, I don&rsquo;t know why, but I almost always forgot how to do that.</p>
+
+<p>When you want to launch a command and this command should not be killed after you close your terminal. Here is how to accomplish that from command line: </p>
+
+<div><pre class="twilight">
+nohup cmd <span class="Keyword">&amp;</span>
+</pre>
+<small>where <code>cmd</code> is your command.</small>
+</div>
+
+<p>I let this command here for me and I wish it could also help someone.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomen">
+                        Subscribe
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Comments</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">comments</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/en/blog/2009-10-launch-daemon-from-command-line/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/2009-10-launch-daemon-from-command-line/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/en/">Homepage</a></li>
+<li><a href="/Scratch/en/blog/">Blog</a></li>
+<li><a href="/Scratch/en/about/">About</a></li>
+<li><a href="/Scratch/en/contact/">Contact</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        previous entries
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2009-10-Focus-vs-Minimalism/">&larr; Focus &gt; Minimalism</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2009-10-untaught-git-usage/">&larr; Untaught Git usage</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2009-10-How-to-preload-your-site-with-style/">&larr; How to preload your site with style</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        next entries
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Menu waiting to hide himself&rarr; </a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">custom website synchronisation with mobileme (2)&rarr; </a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/">How to handle evil IE&rarr; </a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Created: 10/23/2009 <br/>
+                    Last modified: 07/15/2010 
+                </div>
+                <div>
+                    Entirely done with
+                    <a href="http://www.vim.org">Vim</a>
+                    and 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/en/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>
