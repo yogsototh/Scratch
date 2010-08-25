@@ -65,20 +65,52 @@ J&rsquo;utilise <a href="http://nanoc.stoneship.org/">nanoc</a> pour l&rsquo;eng
 Avoir un site statique amène beaucoup d&rsquo;avantages par rapport à un site dynamique. Surtout en terme de sécurité.
 Voici comment configurer un site statique sur heroku.</p>
 
-<p>La racine de mes fichiers est &lsquo;/output&rsquo;. Vous devez simplement créer deux fichiers. Un fichier <code>config.ru</code>&nbsp;:</p>
+<p>La racine de mes fichiers est &lsquo;/output&rsquo;. Vous devez simplement créer deux fichiers. Un fichier <code>config.ru</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>&nbsp;:</p>
 
 <div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/code/config.ru"> &#x27A5; config.ru </a></div><div class="withfile">
 <pre class="twilight">
 <span class="Keyword">require</span> <span class="String"><span class="String">'</span>rubygems<span class="String">'</span></span>
 <span class="Keyword">require</span> <span class="String"><span class="String">'</span>rack<span class="String">'</span></span>
+<span class="Keyword">require</span> <span class="String"><span class="String">'</span>rack/contrib<span class="String">'</span></span>
 <span class="Keyword">require</span> <span class="String"><span class="String">'</span>rack-rewrite<span class="String">'</span></span>
+<span class="Keyword">require</span> <span class="String"><span class="String">'</span>mime/types<span class="String">'</span></span>
 
-use <span class="Support">Rack</span>::<span class="Entity">Rewrite</span> <span class="Keyword">do</span>
-    rewrite <span class="StringRegexp"><span class="StringRegexp">%r{</span><span class="StringRegexp"><span class="StringRegexp">(</span>.*<span class="StringRegexp">)</span></span>/$<span class="StringRegexp">}</span></span>,<span class="String"><span class="String">&quot;</span>$1/index.html<span class="String">&quot;</span></span>
+use <span class="Support">Rack</span>::<span class="Entity">ETag</span>
+<span class="Keyword">module</span>&nbsp;::<span class="Entity">Rack</span>
+    <span class="Keyword">class</span> <span class="Entity">TryStatic<span class="EntityInheritedClass"> <span class="EntityInheritedClass">&lt;</span> Static</span></span>
+
+        <span class="Keyword">def</span> <span class="Entity">initialize</span>(<span class="Variable">app<span class="Variable">,</span> options</span>)
+            <span class="Keyword">super</span>
+            <span class="Variable"><span class="Variable">@</span>try</span> <span class="Keyword">=</span> ([<span class="String"><span class="String">'</span><span class="String">'</span></span>] <span class="Keyword">+</span> <span class="Variable">Array</span>(options.<span class="Entity">delete</span>(<span class="Constant"><span class="Constant">:</span>try</span>)) <span class="Keyword">+</span> [<span class="String"><span class="String">'</span><span class="String">'</span></span>])
+        <span class="Keyword">end</span>
+
+        <span class="Keyword">def</span> <span class="Entity">call</span>(<span class="Variable">env</span>)
+            <span class="Variable"><span class="Variable">@</span>next</span> <span class="Keyword">=</span> <span class="Constant">0</span>
+            <span class="Keyword">while</span> <span class="Variable"><span class="Variable">@</span>next</span> <span class="Keyword">&lt;</span> <span class="Variable"><span class="Variable">@</span>try</span>.<span class="Entity">size</span> <span class="Keyword">&amp;&amp;</span> <span class="Constant">404</span> <span class="Keyword">==</span> (resp <span class="Keyword">=</span> <span class="Keyword">super</span>(<span class="Entity">try_next</span>(env)))[<span class="Constant">0</span>] 
+                <span class="Variable"><span class="Variable">@</span>next</span> <span class="Keyword">+=</span> <span class="Constant">1</span>
+            <span class="Keyword">end</span>
+            <span class="Constant">404</span> <span class="Keyword">==</span> resp[<span class="Constant">0</span>] <span class="Keyword">?</span> <span class="Variable"><span class="Variable">@</span>app</span>.<span class="Entity">call</span>&nbsp;: resp
+        <span class="Keyword">end</span>
+
+        <span class="Keyword">private</span>
+        <span class="Keyword">def</span> <span class="Entity">try_next</span>(<span class="Variable">env</span>)
+            env.<span class="Entity">merge</span>(<span class="String"><span class="String">'</span>PATH_INFO<span class="String">'</span></span> =&gt; env[<span class="String"><span class="String">'</span>PATH_INFO<span class="String">'</span></span>] <span class="Keyword">+</span> <span class="Variable"><span class="Variable">@</span>try</span>[<span class="Variable"><span class="Variable">@</span>next</span>])
+        <span class="Keyword">end</span>
+
+    <span class="Keyword">end</span>
 <span class="Keyword">end</span>
-use <span class="Support">Rack</span>::<span class="Entity">Static</span>, <span class="Constant"><span class="Constant">:</span>urls</span> =&gt; [<span class="String"><span class="String">&quot;</span>/<span class="String">&quot;</span></span>], <span class="Constant"><span class="Constant">:</span>root</span> =&gt; <span class="String"><span class="String">&quot;</span>output<span class="String">&quot;</span></span>
-app <span class="Keyword">=</span> lambda { |<span class="Variable">env</span>| [<span class="Constant">404</span>, { <span class="String"><span class="String">'</span>Content-Type<span class="String">'</span></span> =&gt; <span class="String"><span class="String">'</span>text/html<span class="String">'</span></span> }, <span class="String"><span class="String">'</span>File Not Found<span class="String">'</span></span>] }
-run app
+
+use <span class="Support">Rack</span>::<span class="Entity">TryStatic</span>, 
+    <span class="Constant"><span class="Constant">:</span>root</span> =&gt; <span class="String"><span class="String">&quot;</span>output<span class="String">&quot;</span></span>,                              <span class="Comment"><span class="Comment">#</span> static files root dir</span>
+    <span class="Constant"><span class="Constant">:</span>urls</span> =&gt; <span class="String"><span class="String">%w[</span>/<span class="String">]</span></span>,                                 <span class="Comment"><span class="Comment">#</span> match all requests </span>
+    <span class="Constant"><span class="Constant">:</span>try</span> =&gt; [<span class="String"><span class="String">'</span>.html<span class="String">'</span></span>, <span class="String"><span class="String">'</span>index.html<span class="String">'</span></span>, <span class="String"><span class="String">'</span>/index.html<span class="String">'</span></span>]  <span class="Comment"><span class="Comment">#</span> try these postfixes sequentially</span>
+
+errorFile<span class="Keyword">=</span><span class="String"><span class="String">'</span>output/Scratch/en/error/404-not_found/index.html<span class="String">'</span></span>
+run lambda { [<span class="Constant">404</span>, {
+                <span class="String"><span class="String">&quot;</span>Last-Modified<span class="String">&quot;</span></span>  =&gt; <span class="Support">File</span>.<span class="Entity">mtime</span>(errorFile).<span class="Entity">httpdate</span>,
+                <span class="String"><span class="String">&quot;</span>Content-Type<span class="String">&quot;</span></span>   =&gt; <span class="String"><span class="String">&quot;</span>text/html<span class="String">&quot;</span></span>,
+                <span class="String"><span class="String">&quot;</span>Content-Length<span class="String">&quot;</span></span> =&gt; <span class="Support">File</span>.<span class="Entity">size</span>(errorFile).<span class="Entity">to_s</span>
+            }, <span class="Support">File</span>.<span class="Entity">read</span>(errorFile)] }
 </pre>
 </div></div>
 
@@ -88,6 +120,7 @@ run app
 <pre class="twilight">
 rack
 rack<span class="Keyword">-</span>rewrite
+rack<span class="Keyword">-</span>contrib
 </pre>
 </div></div>
 
@@ -102,6 +135,13 @@ git push heroku master
 
 <p>Maintenant je devrait être capable de rediriger correctement mes erreurs 404.
 J&rsquo;espère que ça a pu vous être utile.</p>
+<hr/><div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Je me suis complètement inspiré de cet <a href="http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free">article</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
                 </div>
             
@@ -187,7 +227,7 @@ J&rsquo;espère que ça a pu vous être utile.</p>
                 </div>
                 <div id="lastmod">
                     Écrit le : 23/08/2010 <br/>
-                    dernière modification : 23/08/2010 
+                    dernière modification : 25/08/2010 
                 </div>
                 <div>
                     Site entièrement réalisé avec

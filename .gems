@@ -1,2 +1,3 @@
 rack
+rack-contrib
 rack-rewrite

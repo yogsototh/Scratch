@@ -28,19 +28,54 @@ fr: Avoir un site statique amène beaucoup d'avantages par rapport à un site dy
 fr: Voici comment configurer un site statique sur heroku.
 
 en: The root of my files is `/output`. You only need to create a `config.ru` file:
-fr: La racine de mes fichiers est '/output'. Vous devez simplement créer deux fichiers. Un fichier `config.ru` :
+fr: La racine de mes fichiers est '/output'. Vous devez simplement créer deux fichiers. Un fichier `config.ru`[^1] :
+
+fr: [^1]: Je me suis complètement inspiré de cet [article](http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free).
+en: [^1]: I was inspired by this [article](http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free). 
 
 <code class="ruby" file="config.ru">
 require 'rubygems'
 require 'rack'
+require 'rack/contrib'
 require 'rack-rewrite'
+require 'mime/types'
 
-use Rack::Rewrite do
-    rewrite %r{(.*)/$},"$1/index.html"
+use Rack::ETag
+module ::Rack
+    class TryStatic < Static
+
+        def initialize(app, options)
+            super
+            @try = ([''] + Array(options.delete(:try)) + [''])
+        end
+
+        def call(env)
+            @next = 0
+            while @next < @try.size && 404 == (resp = super(try_next(env)))[0] 
+                @next += 1
+            end
+            404 == resp[0] ? @app.call : resp
+        end
+
+        private
+        def try_next(env)
+            env.merge('PATH_INFO' => env['PATH_INFO'] + @try[@next])
+        end
+
+    end
 end
-use Rack::Static, :urls => ["/"], :root => "output"
-app = lambda { |env| [404, { 'Content-Type' => 'text/html' }, 'File Not Found'] }
-run app
+
+use Rack::TryStatic, 
+    :root => "output",                              # static files root dir
+    :urls => %w[/],                                 # match all requests 
+    :try => ['.html', 'index.html', '/index.html']  # try these postfixes sequentially
+
+errorFile='output/Scratch/en/error/404-not_found/index.html'
+run lambda { [404, {
+                "Last-Modified"  => File.mtime(errorFile).httpdate,
+                "Content-Type"   => "text/html",
+                "Content-Length" => File.size(errorFile).to_s
+            }, File.read(errorFile)] }
 </code>
 
 
@@ -50,6 +85,7 @@ fr: et un fichier `.gems` qui liste les gems nécessaires.
 <code class="ruby" file=".gems">
 rack
 rack-rewrite
+rack-contrib
 </code>
 
 en: Now, just follow the heroku tutorial to create an application :
