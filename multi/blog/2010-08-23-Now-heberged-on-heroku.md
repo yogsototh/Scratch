@@ -27,7 +27,7 @@ fr: J'utilise [nanoc](http://nanoc.stoneship.org/) pour l'engendrer.
 fr: Avoir un site statique amène beaucoup d'avantages par rapport à un site dynamique. Surtout en terme de sécurité.
 fr: Voici comment configurer un site statique sur heroku.
 
-en: The root of my files is `/output`. You only need to create a `config.ru` file:
+en: The root of my files is `/output`. You only need to create a `config.ru`[^1] file:
 fr: La racine de mes fichiers est '/output'. Vous devez simplement créer deux fichiers. Un fichier `config.ru`[^1] :
 
 fr: [^1]: Je me suis complètement inspiré de cet [article](http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free).
