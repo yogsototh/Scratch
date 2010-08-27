@@ -78,7 +78,7 @@ function hideMessage() {
 
 // get the language of the current page
 function getPageLanguage() {
-    return window.location.pathname.replace(/.*\/Scratch\/(..)\/.*$/,'$1');
+    return window.location.pathname.replace(/.*\/Scratch\/(..).*$/,'$1');
 }
 
 // alert the user if its navigator configuration tell
