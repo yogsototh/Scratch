@@ -78,7 +78,13 @@ function hideMessage() {
 
 // get the language of the current page
 function getPageLanguage() {
-    return window.location.pathname.replace(/.*\/Scratch\/(..).*$/,'$1');
+    var lang=window.location.pathname.replace(/.*\/Scratch\/(..).*$/,'$1');
+    if ( lang == window.location.pathname ) {
+        return "";
+    }
+    else {
+        return lang;
+    }
 }
 
 // alert the user if its navigator configuration tell
@@ -86,6 +92,9 @@ function getPageLanguage() {
 function alertLanguage() {
     var language=getUserLanguage();
     var language_of_current_page=getPageLanguage();
+    if ( language_of_current_page == "" ) {
+        return true;
+    }
     if (language != language_of_current_page) {
         if ( language == 'fr' ) {
             message(linkToLang('fr','Aller sur la Version Française ?') + hideClickMessage('No thanks, I prefer read english.'));
