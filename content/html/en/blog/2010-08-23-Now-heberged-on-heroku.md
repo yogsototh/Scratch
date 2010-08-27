@@ -19,7 +19,7 @@ But as you should know my website is completely static.
 I use [nanoc](http://nanoc.stoneship.org/) to generate it.
 But here is the conf to make it work on heroku.
 
-The root of my files is `/output`. You only need to create a `config.ru` file:
+The root of my files is `/output`. You only need to create a `config.ru`[^1] file:
 
 [^1]: I was inspired by this [article](http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free). 
 

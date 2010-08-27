@@ -24,11 +24,11 @@ I believe it will be far more reliable.&lt;/p&gt;
 I use &lt;a href="http://nanoc.stoneship.org/"&gt;nanoc&lt;/a&gt; to generate it.
 But here is the conf to make it work on heroku.&lt;/p&gt;
 
-&lt;p&gt;The root of my files is &lt;code&gt;/output&lt;/code&gt;. You only need to create a &lt;code&gt;config.ru&lt;/code&gt; file:&lt;/p&gt;
+&lt;p&gt;The root of my files is &lt;code&gt;/output&lt;/code&gt;. You only need to create a &lt;code&gt;config.ru&lt;/code&gt;&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; file:&lt;/p&gt;
 
 &lt;div class="code"&gt;&lt;div class="file"&gt;&lt;a href="/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/code/config.ru"&gt; &amp;#x27A5; config.ru &lt;/a&gt;&lt;/div&gt;&lt;div class="withfile"&gt;
 &lt;pre class="twilight"&gt;
-&lt;span class="Keyword"&gt;require&lt;/span&gt; &lt;span class="String"&gt;&lt;span class="String"&gt;'&lt;/span&gt;rubygems&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+&lt;span class="Keyword"&gt;require&lt;/span&gt; &lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-08-11:/Scratch/en/blog/2010-07-09-Indecidabilities/</id>
