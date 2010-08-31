@@ -8,7 +8,8 @@ $mainColor: #551100
 $revealColor: #faeac3
 $mainLinkColor: #aa5522
 $lighterColor: #eee0c2
-$codeBlockColor: $behindColor
+$codeBlockColor: $mainBackgroundColor
+$codeBlockBackgroundColor: $behindColor
 
 table.description tr td
   border: 1px solid $lighterColor
@@ -58,7 +59,10 @@ body, h1, h2, h3, h4, #entete
   background-repeat: no-repeat
 
 pre
-  background-color: $codeBlockColor
+  background-color: $codeBlockBackgroundColor
+  color: $codeBlockColor
+  padding: 1em
+  line-height: 1.2em
 
 pre, code
   font:
