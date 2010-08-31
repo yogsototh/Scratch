@@ -2,13 +2,34 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-08-23T13:05:13Z</updated>
+  <updated>2010-08-31T08:16:04Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomfr"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2010-08-31:/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/</id>
+    <title type="html">Envoyer un mail en ligne de commande avec un fichier attach&#233;</title>
+    <published>2010-08-31T08:16:04Z</published>
+    <updated>2010-08-31T08:16:04Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/"/>
+    <content type="html">&lt;p&gt;J&amp;rsquo;ai d&#251; envoyer un mail en ligne de commande r&#233;cemment. 
+Quelle ne f&#251;t pas ma surprise lorsque je constatais que ce n&amp;rsquo;&#233;tait vraiment pas &#233;vident.
+Je n&amp;rsquo;avais ni &lt;code&gt;pine&lt;/code&gt; ni &lt;code&gt;mutt&lt;/code&gt;. Seulement &lt;code&gt;mail&lt;/code&gt; et &lt;code&gt;mailx&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ce qu&amp;rsquo;on trouve sur internet pour envoyer un mail avec fichier attach&#233; c&amp;rsquo;est &#231;a&amp;nbsp;:&lt;/p&gt;
+
+&lt;pre class="twilight"&gt;
+uuencode fic.jpg fic.jpg &lt;span class="Keyword"&gt;|&lt;/span&gt; mail -s &lt;span class="String"&gt;&lt;span class="String"&gt;'&lt;/span&gt;Subject&lt;span class="String"&gt;'&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Bon, alors, b&#234;te et disciplin&#233; j&amp;rsquo;ai essay&#233;. 
+Et bien, &#231;a marche &lt;em&gt;presque&lt;/em&gt; tout le temps. 
+Pour mon fichier &#231;a n&amp;rsquo;a pas march&#233; du tout. 
+Je l&amp;rsquo;ai compress&#233; au format &lt;code&gt;.gz&lt;/code&gt;, &lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2010-08-23:/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/</id>
     <title type="html">Now heberged on heroku</title>
@@ -523,18 +544,6 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 &lt;p&gt;Voici la liste des commandes n&#233;cessaires et suffisantes pour utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. Il y en a tr&#232;s peu. Il est normal de ne pas les comprendre tout de suite mais c&amp;rsquo;est pour vous donner une id&#233;e. Malgr&#233; la longueur de l&amp;rsquo;article, 95% de l&amp;rsquo;utilisation de &lt;/p&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/"/>
-    <content type="html">&lt;h1 class="first" id="pourquoi-git-est-cool-"&gt;Pourquoi Git est cool&amp;nbsp;?&lt;/h1&gt;
-
-&lt;p&gt;Parce que grace &#224; &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; vous pouvez travailler sur plusieurs partie du projet de fa&#231;on compl&#232;tement isol&#233;e les unes des autres. &#199;a c&amp;rsquo;est la partie d&#233;centralis&#233;e de &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Toutes les branches locales utilisent le m&#234;me r&#233;pertoire. Ainsi on peu changer de branche tr&#232;s ais&#233;ment et rapidement. On peut aussi changer de branche alors que certains fichier sont en cours de modifications. On peut m&#234;me pousser le vice jusqu&amp;rsquo;&#224; modifier un fichier, changer de branche, commiter une partie seulement des modifications de ce fichier dans la branche courante. Revenir dans l&amp;rsquo;ancienne branche et commi...&lt;/p&gt;</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
     <title type="html">Git pour les nuls</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -589,6 +598,18 @@ $ sudo port install git-core
 &lt;p&gt;Enregistrez le fichier suivant comme le fichier &lt;code&gt;~/.gitconfig&lt;/code&gt;.&lt;/p&gt;
 
 &lt;div&gt;&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/"/>
+    <content type="html">&lt;h1 class="first" id="pourquoi-git-est-cool-"&gt;Pourquoi Git est cool&amp;nbsp;?&lt;/h1&gt;
+
+&lt;p&gt;Parce que grace &#224; &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; vous pouvez travailler sur plusieurs partie du projet de fa&#231;on compl&#232;tement isol&#233;e les unes des autres. &#199;a c&amp;rsquo;est la partie d&#233;centralis&#233;e de &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Toutes les branches locales utilisent le m&#234;me r&#233;pertoire. Ainsi on peu changer de branche tr&#232;s ais&#233;ment et rapidement. On peut aussi changer de branche alors que certains fichier sont en cours de modifications. On peut m&#234;me pousser le vice jusqu&amp;rsquo;&#224; modifier un fichier, changer de branche, commiter une partie seulement des modifications de ce fichier dans la branche courante. Revenir dans l&amp;rsquo;ancienne branche et commi...&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
@@ -814,29 +835,5 @@ text
 &lt;pre class="twilight"&gt;
 &lt;span class="Keyword"&gt;def&lt;/span&gt; &lt;span class="Entity"&gt;allExceptCode&lt;/span&gt;(&lt;span class="Variable"&gt; f&lt;span class="Variable"&gt;,&lt;/span&gt; content &lt;/span&gt;)
     regexp&lt;span class="Keyword"&gt;=&lt;/span&gt;&lt;span class="StringRegexp"&gt;&lt;span class="StringRegexp"&gt;/&lt;/span&gt;&lt;/span&gt;&lt;span class="StringRegexp"&gt;&amp;lt;code&lt;span class="StringRegexp"&gt;&lt;span class="StringRegexp"&gt;[&lt;/span&gt;^&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-09-17:/Scratch/fr/blog/11_Load_Disqus_Asynchronously/</id>
-    <title type="html">Load Disqus Asynchronously [en]</title>
-    <published>2009-09-17T21:27:54Z</published>
-    <updated>2009-09-17T21:27:54Z</updated>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/11_Load_Disqus_Asynchronously/"/>
-    <content type="html">&lt;h1 class="first" id="update"&gt;Update&lt;/h1&gt;
-
-&lt;p&gt;In fact this method works for old threads. But it fails to create new post threads. This is why I tried and be conquered by &lt;a href="http://intensedebate.com"&gt;intensedebate&lt;/a&gt;, as you can see in the bottom of this page.&lt;/p&gt;
-
-&lt;p&gt;Remark I didn&amp;rsquo;t have any comment on my blog when I switched. Therefore my lack of influence was a good thing&amp;nbsp;:-).&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;p&gt;Before begining, I must state that I &lt;strong&gt;love&lt;/strong&gt; Disqus. &lt;/p&gt;
-
-&lt;p&gt;I know there is a similar blog entry at &lt;a href="http://trephine.org/t/index.php?title=Site_improvements_-_fighting_with_Disqus"&gt;Trephine.org&lt;/a&gt;. Here I just add a straight and easy way to load disqus asynchronously using jQuery. &lt;/p&gt;
-
-&lt;p&gt;I also know there is a jQuery plugin to ma...&lt;/p&gt;</content>
   </entry>
 </feed>

@@ -77,6 +77,34 @@ Vous pouvez aussi vous abonner au flux RSS pour être certain d'être prévenu q
     </div>
     <h1>
         <span class="date">
+        <span class="day">31</span>
+        <span class="month">Aoû</span>
+        <span class="year">2010</span>
+    </span> 
+        <a href="/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché</a>
+    </h1>
+    <div class="corps">
+    <p>J&rsquo;ai dû envoyer un mail en ligne de commande récemment. 
+Quelle ne fût pas ma surprise lorsque je constatais que ce n&rsquo;était vraiment pas évident.
+Je n&rsquo;avais ni <code>pine</code> ni <code>mutt</code>. Seulement <code>mail</code> et <code>mailx</code>.</p>
+
+<p>Ce qu&rsquo;on trouve sur internet pour envoyer un mail avec fichier attaché c&rsquo;est ça&nbsp;:</p>
+
+<pre class="twilight">
+uuencode fic.jpg fic.jpg <span class="Keyword">|</span> mail -s <span class="String"><span class="String">'</span>Subject<span class="String">'</span></span>
+</pre>
+
+<p>Bon, alors, bête et discipliné j&rsquo;ai essayé. 
+Et bien, ça marche <em>presque</em> tout le temps. 
+Pour mon fichier ça n&rsquo;a pas marché du tout. 
+Je l&rsquo;ai compressé au format <code>.gz</code>, </p>
+    <p>
+       <a href="/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">en lire plus &rarr;</a>
+    </p>
+
+    </div>
+    <h1>
+        <span class="date">
         <span class="day">23</span>
         <span class="month">Aoû</span>
         <span class="year">2010</span>
@@ -193,43 +221,6 @@ En réalité, ce qui ralenti le rendu de ce site est par ordre d&rsquo;importanc
        <a href="/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">en lire plus &rarr;</a>
     </p>
 
-    </div>
-    <h1>
-        <span class="date">
-        <span class="day">5</span>
-        <span class="month">Jul</span>
-        <span class="year">2010</span>
-    </span> 
-        <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;?</a>
-    </h1>
-    <div class="corps">
-    
-<div class="intro">
-
-
-<p><abbr title="Trop long à lire">tlàl</abbr>:</p>
-
-<ul>
-  <li>J&rsquo;ai essayé de faire une version de <a href="http://yannesposito.com/Softwares/YPassword.html">YPassword</a> en jQuery et avec Cappuccino.</li>
-  <li>Cappuccino est très bien sur les navigateurs non mobile mais l&rsquo;application pèse 1.4Mo et n&rsquo;est pas compatible avec l&rsquo;iPhone.</li>
-  <li>la version jQuery n&rsquo;est pas aussi jolie que la version réalisée avec Cappuccino mais elle pèse seulement 106Ko et est compatible avec l&rsquo;iPhone.</li>
-  <li>J&rsquo;essayerai Dashcode 3</li>
-</ul>
-
-
-</div>
-
-
-<hr />
-
-<div class="intro">
-
-
-<p>Avant de commencer, je dois dire que je sais que Cappuccino et jQuery ne sont pas plus comparable que Cocoa et la <em>standard library</em> en...</p></div></hr>
-    <p>
-       <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">en lire plus &rarr;</a>
-    </p>
-
 </div>
 <a href="#titre">&uarr; back to top &uarr;</a>
 <div class="corps">
@@ -242,7 +233,7 @@ En réalité, ce qui ralenti le rendu de ce site est par ordre d&rsquo;importanc
                 $('.tag.selected').removeClass('selected');
                 $('#tag_'+id).addClass('selected');
             }
-        </script><div id="tagcloud"><a href="#analytics" style="font-size: 1.15em;" class="tag" onclick="tagSelected('analytics')" id="tag_analytics">analytics</a> <a href="#Apple" style="font-size: 1.75em;" class="tag" onclick="tagSelected('Apple')" id="tag_Apple">Apple</a> <a href="#arbre" style="font-size: 1.0em;" class="tag" onclick="tagSelected('arbre')" id="tag_arbre">arbre</a> <a href="#blog" style="font-size: 1.9em;" class="tag" onclick="tagSelected('blog')" id="tag_blog">blog</a> <a href="#design" style="font-size: 1.15em;" class="tag" onclick="tagSelected('design')" id="tag_design">design</a> <a href="#disqus" style="font-size: 1.0em;" class="tag" onclick="tagSelected('disqus')" id="tag_disqus">disqus</a> <a href="#git" style="font-size: 1.75em;" class="tag" onclick="tagSelected('git')" id="tag_git">git</a> <a href="#intense_debate" style="font-size: 1.0em;" class="tag" onclick="tagSelected('intense_debate')" id="tag_intense_debate">intense&nbsp;debate</a> <a href="#iPhone" style="font-size: 1.0em;" class="tag" onclick="tagSelected('iPhone')" id="tag_iPhone">iPhone</a> <a href="#javascript" style="font-size: 1.75em;" class="tag" onclick="tagSelected('javascript')" id="tag_javascript">javascript</a> <a href="#jQuery" style="font-size: 2.05em;" class="tag" onclick="tagSelected('jQuery')" id="tag_jQuery">jQuery</a> <a href="#mac" style="font-size: 1.0em;" class="tag" onclick="tagSelected('mac')" id="tag_mac">mac</a> <a href="#math__matiques" style="font-size: 1.0em;" class="tag" onclick="tagSelected('math__matiques')" id="tag_math__matiques">mathématiques</a> <a href="#mobileme" style="font-size: 1.0em;" class="tag" onclick="tagSelected('mobileme')" id="tag_mobileme">mobileme</a> <a href="#programming" style="font-size: 1.15em;" class="tag" onclick="tagSelected('programming')" id="tag_programming">programming</a> <a href="#protection" style="font-size: 1.0em;" class="tag" onclick="tagSelected('protection')" id="tag_protection">protection</a> <a href="#regexp" style="font-size: 1.45em;" class="tag" onclick="tagSelected('regexp')" id="tag_regexp">regexp</a> <a href="#regular_expression" style="font-size: 1.15em;" class="tag" onclick="tagSelected('regular_expression')" id="tag_regular_expression">regular&nbsp;expression</a> <a href="#ruby" style="font-size: 1.15em;" class="tag" onclick="tagSelected('ruby')" id="tag_ruby">ruby</a> <a href="#script" style="font-size: 1.6em;" class="tag" onclick="tagSelected('script')" id="tag_script">script</a> <a href="#shell" style="font-size: 1.0em;" class="tag" onclick="tagSelected('shell')" id="tag_shell">shell</a> <a href="#synchronisation" style="font-size: 1.0em;" class="tag" onclick="tagSelected('synchronisation')" id="tag_synchronisation">synchronisation</a> <a href="#tip" style="font-size: 1.0em;" class="tag" onclick="tagSelected('tip')" id="tag_tip">tip</a> <a href="#web" style="font-size: 2.5em;" class="tag" onclick="tagSelected('web')" id="tag_web">web</a> <a href="#WebDav" style="font-size: 1.0em;" class="tag" onclick="tagSelected('WebDav')" id="tag_WebDav">WebDav</a> <a href="#webdesign" style="font-size: 1.0em;" class="tag" onclick="tagSelected('webdesign')" id="tag_webdesign">webdesign</a> <a href="#zsh" style="font-size: 1.15em;" class="tag" onclick="tagSelected('zsh')" id="tag_zsh">zsh</a> </div><div id="hiddenDivs" ><div id="analytics" class="list"><h4>analytics <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+        </script><div id="tagcloud"><a href="#analytics" style="font-size: 1.13636363636364em;" class="tag" onclick="tagSelected('analytics')" id="tag_analytics">analytics</a> <a href="#Apple" style="font-size: 1.68181818181818em;" class="tag" onclick="tagSelected('Apple')" id="tag_Apple">Apple</a> <a href="#arbre" style="font-size: 1.0em;" class="tag" onclick="tagSelected('arbre')" id="tag_arbre">arbre</a> <a href="#blog" style="font-size: 1.81818181818182em;" class="tag" onclick="tagSelected('blog')" id="tag_blog">blog</a> <a href="#design" style="font-size: 1.13636363636364em;" class="tag" onclick="tagSelected('design')" id="tag_design">design</a> <a href="#disqus" style="font-size: 1.0em;" class="tag" onclick="tagSelected('disqus')" id="tag_disqus">disqus</a> <a href="#git" style="font-size: 1.68181818181818em;" class="tag" onclick="tagSelected('git')" id="tag_git">git</a> <a href="#intense_debate" style="font-size: 1.0em;" class="tag" onclick="tagSelected('intense_debate')" id="tag_intense_debate">intense&nbsp;debate</a> <a href="#iPhone" style="font-size: 1.0em;" class="tag" onclick="tagSelected('iPhone')" id="tag_iPhone">iPhone</a> <a href="#javascript" style="font-size: 1.68181818181818em;" class="tag" onclick="tagSelected('javascript')" id="tag_javascript">javascript</a> <a href="#jQuery" style="font-size: 1.95454545454545em;" class="tag" onclick="tagSelected('jQuery')" id="tag_jQuery">jQuery</a> <a href="#mac" style="font-size: 1.0em;" class="tag" onclick="tagSelected('mac')" id="tag_mac">mac</a> <a href="#math__matiques" style="font-size: 1.0em;" class="tag" onclick="tagSelected('math__matiques')" id="tag_math__matiques">mathématiques</a> <a href="#mobileme" style="font-size: 1.0em;" class="tag" onclick="tagSelected('mobileme')" id="tag_mobileme">mobileme</a> <a href="#programming" style="font-size: 1.13636363636364em;" class="tag" onclick="tagSelected('programming')" id="tag_programming">programming</a> <a href="#protection" style="font-size: 1.0em;" class="tag" onclick="tagSelected('protection')" id="tag_protection">protection</a> <a href="#regexp" style="font-size: 1.40909090909091em;" class="tag" onclick="tagSelected('regexp')" id="tag_regexp">regexp</a> <a href="#regular_expression" style="font-size: 1.13636363636364em;" class="tag" onclick="tagSelected('regular_expression')" id="tag_regular_expression">regular&nbsp;expression</a> <a href="#ruby" style="font-size: 1.13636363636364em;" class="tag" onclick="tagSelected('ruby')" id="tag_ruby">ruby</a> <a href="#script" style="font-size: 1.54545454545455em;" class="tag" onclick="tagSelected('script')" id="tag_script">script</a> <a href="#shell" style="font-size: 1.13636363636364em;" class="tag" onclick="tagSelected('shell')" id="tag_shell">shell</a> <a href="#synchronisation" style="font-size: 1.0em;" class="tag" onclick="tagSelected('synchronisation')" id="tag_synchronisation">synchronisation</a> <a href="#tip" style="font-size: 1.0em;" class="tag" onclick="tagSelected('tip')" id="tag_tip">tip</a> <a href="#web" style="font-size: 2.5em;" class="tag" onclick="tagSelected('web')" id="tag_web">web</a> <a href="#WebDav" style="font-size: 1.0em;" class="tag" onclick="tagSelected('WebDav')" id="tag_WebDav">WebDav</a> <a href="#webdesign" style="font-size: 1.0em;" class="tag" onclick="tagSelected('webdesign')" id="tag_webdesign">webdesign</a> <a href="#zsh" style="font-size: 1.13636363636364em;" class="tag" onclick="tagSelected('zsh')" id="tag_zsh">zsh</a> </div><div id="hiddenDivs" ><div id="analytics" class="list"><h4>analytics <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">17</span>
@@ -965,6 +956,15 @@ En réalité, ce qui ralenti le rendu de ce site est par ordre d&rsquo;importanc
 </ul></div><div id="shell" class="list"><h4>shell <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
+        <span class="day">31</span>
+        <span class="month">Aoû</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché</a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
         <span class="day">18</span>
         <span class="month">Fév</span>
         <span class="year">2010</span>
@@ -1017,6 +1017,15 @@ En réalité, ce qui ralenti le rendu de ce site est par ordre d&rsquo;importanc
                         <a href="/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande</a>
                     </li>
 </ul></div><div id="web" class="list"><h4>web <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">31</span>
+        <span class="month">Aoû</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché</a>
+                    </li>
+
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">31</span>
@@ -1204,7 +1213,7 @@ Le bouton en bas à gauche sert à revenir en haut de la page et à afficher le 
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
                 </div>
                 <div id="lastmod">
-                    dernière modification : 23/08/2010 
+                    dernière modification : 15/07/2010 
                 </div>
                 <div>
                     Site entièrement réalisé avec

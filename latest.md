@@ -1,1 +1,1 @@
-./multi/blog/2010-08-23-Now-heberged-on-heroku.md
+./multi/blog/2010-08-31-send-mail-from-command-line-with-attached-file.md

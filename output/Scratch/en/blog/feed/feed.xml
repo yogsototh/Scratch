@@ -2,13 +2,40 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-08-23T13:05:13Z</updated>
+  <updated>2010-08-31T08:16:04Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2010-08-31:/Scratch/en/blog/2010-08-31-send-mail-from-command-line-with-attached-file/</id>
+    <title type="html">send mail from command line with attached file</title>
+    <published>2010-08-31T08:16:04Z</published>
+    <updated>2010-08-31T08:16:04Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-08-31-send-mail-from-command-line-with-attached-file/"/>
+    <content type="html">&lt;p&gt;I had to send a mail using only command line. 
+I was surprised it isn&amp;rsquo;t straightforward at all.
+I didn&amp;rsquo;t had &lt;code&gt;pine&lt;/code&gt; nor &lt;code&gt;mutt&lt;/code&gt; or anything like that.
+Just &lt;code&gt;mail&lt;/code&gt; and &lt;code&gt;mailx&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;What Internet say (via google) is&lt;/p&gt;
+
+&lt;pre class="twilight"&gt;
+uuencode fic.jpg fic.jpg &lt;span class="Keyword"&gt;|&lt;/span&gt; mail -s &lt;span class="String"&gt;&lt;span class="String"&gt;'&lt;/span&gt;Subject&lt;span class="String"&gt;'&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;I tried it.
+And it works almost each times.
+But for my file, it didn&amp;rsquo;t worked.
+I compressed it to &lt;code&gt;.gz&lt;/code&gt;, &lt;code&gt;.bz2&lt;/code&gt; and &lt;code&gt;.zip&lt;/code&gt;.
+Using &lt;code&gt;.bz2&lt;/code&gt; format it worked nicely, but not with other formats.
+Instead of having an attached file I saw this in my email.&lt;/p&gt;
+
+&lt;pre&gt;
+begin 664 fic....&lt;/pre&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2010-08-23:/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/</id>
     <title type="html">Now heberged on heroku</title>
@@ -540,6 +567,22 @@ When somebody work with files without a versions system, the following happens f
 ...</content>
   </entry>
   <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/"/>
+    <content type="html">&lt;h1 class="first" id="why-git-is-cool"&gt;Why Git is cool?&lt;/h1&gt;
+
+&lt;p&gt;Because with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; you can work on many part of some project totally independently. This is the true efficiency of decentralisation.&lt;/p&gt;
+
+&lt;p&gt;Each branch use the same directory. Then you can easily change your branch. You can also change branch when some files are modified. You can then dispatch your work on many different branches and merge them on one master branch at will.&lt;/p&gt;
+
+&lt;p&gt;Using the &lt;code&gt;git rebase&lt;/code&gt; you can decide which modifications should be forget or merged into only one modification.&lt;/p&gt;
+
+&lt;p&gt;What does it mean for real usage? You can focus on coding. For example, you can code, a fix for bug b01 and for bug b02 and code a feature f03. Once finished you can creat...&lt;/p&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -567,76 +610,6 @@ When somebody work with files without a versions system, the following happens f
 
 &lt;div&gt;&lt;pre class="twilight"&gt;
 $ g...&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/"/>
-    <content type="html">
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;A detailed tutorial of &lt;a href="http://git-scm.org"&gt;Git&lt;/a&gt; for people knowing very few about versions systems. You&amp;rsquo;ll understand utility of such program and how we use modern version control system. I try to stay as pragmatic as possible.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;h1 class="first" id="begin-with-conclusion"&gt;Begin with conclusion&lt;/h1&gt;
-
-&lt;p&gt;Here is the list of sufficient and necessary command to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. There is very few. It is normal not to understand immediately but it is to gives you an idea. Even if this article is long, 95% of &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; usage is in these 7 commands:&lt;/p&gt;
-
-&lt;p&gt;Get a project from the web: &lt;/p&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;
-git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
-    <content type="html">&lt;h1 class="first" id="here-we-go"&gt;Here we go!&lt;/h1&gt;
-
-&lt;p&gt;Here is one from many way to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. This method is sufficient to work on a project. Not there is many other &lt;em&gt;workflows&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id="basic-usage"&gt;Basic usage&lt;/h2&gt;
-
-&lt;p&gt;Work with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; immediately:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Get modification done by others &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-  &lt;li&gt;See details of these modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-  &lt;li&gt;Many times:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
-      &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-      &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/"/>
-    <content type="html">&lt;h1 class="first" id="why-git-is-cool"&gt;Why Git is cool?&lt;/h1&gt;
-
-&lt;p&gt;Because with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; you can work on many part of some project totally independently. This is the true efficiency of decentralisation.&lt;/p&gt;
-
-&lt;p&gt;Each branch use the same directory. Then you can easily change your branch. You can also change branch when some files are modified. You can then dispatch your work on many different branches and merge them on one master branch at will.&lt;/p&gt;
-
-&lt;p&gt;Using the &lt;code&gt;git rebase&lt;/code&gt; you can decide which modifications should be forget or merged into only one modification.&lt;/p&gt;
-
-&lt;p&gt;What does it mean for real usage? You can focus on coding. For example, you can code, a fix for bug b01 and for bug b02 and code a feature f03. Once finished you can creat...&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
@@ -672,6 +645,60 @@ $ sudo port install git-core
 
 &lt;div&gt;&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/code/gitconfig"&gt; &amp;#x27A5; gitconfig &lt;/a&gt;&lt;/div&gt;&lt;div class="withfile"&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
+    <content type="html">&lt;h1 class="first" id="here-we-go"&gt;Here we go!&lt;/h1&gt;
+
+&lt;p&gt;Here is one from many way to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. This method is sufficient to work on a project. Not there is many other &lt;em&gt;workflows&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id="basic-usage"&gt;Basic usage&lt;/h2&gt;
+
+&lt;p&gt;Work with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; immediately:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Get modification done by others &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+  &lt;li&gt;See details of these modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+  &lt;li&gt;Many times:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+      &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/"/>
+    <content type="html">
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;A detailed tutorial of &lt;a href="http://git-scm.org"&gt;Git&lt;/a&gt; for people knowing very few about versions systems. You&amp;rsquo;ll understand utility of such program and how we use modern version control system. I try to stay as pragmatic as possible.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+
+&lt;/div&gt;
+
+&lt;div class="corps"&gt;
+
+
+&lt;h1 class="first" id="begin-with-conclusion"&gt;Begin with conclusion&lt;/h1&gt;
+
+&lt;p&gt;Here is the list of sufficient and necessary command to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. There is very few. It is normal not to understand immediately but it is to gives you an idea. Even if this article is long, 95% of &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; usage is in these 7 commands:&lt;/p&gt;
+
+&lt;p&gt;Get a project from the web: &lt;/p&gt;
+
+&lt;div&gt;&lt;pre class="twilight"&gt;
+git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-10-30:/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/</id>
@@ -890,29 +917,5 @@ text
 &lt;pre class="twilight"&gt;
 &lt;span class="Keyword"&gt;def&lt;/span&gt; &lt;span class="Entity"&gt;allExceptCode&lt;/span&gt;(&lt;span class="Variable"&gt; f&lt;span class="Variable"&gt;,&lt;/span&gt; content &lt;/span&gt;)
     regexp&lt;span class="Keyword"&gt;=&lt;/span&gt;&lt;span class="StringRegexp"&gt;&lt;span class="StringRegexp"&gt;/&lt;/span&gt;&lt;/span&gt;&lt;span class="StringRegexp"&gt;&amp;lt;code&lt;span class="StringRegexp"&gt;&lt;span class="StringRegexp"&gt;[&lt;/span&gt;^&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-09-17:/Scratch/en/blog/11_Load_Disqus_Asynchronously/</id>
-    <title type="html">Load Disqus Asynchronously</title>
-    <published>2009-09-17T21:27:54Z</published>
-    <updated>2009-09-17T21:27:54Z</updated>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/11_Load_Disqus_Asynchronously/"/>
-    <content type="html">&lt;h1 class="first" id="update"&gt;Update&lt;/h1&gt;
-
-&lt;p&gt;In fact this method works for old threads. But it fails to create new post threads. This is why I tried and be conquered by &lt;a href="http://intensedebate.com"&gt;intensedebate&lt;/a&gt;, as you can see in the bottom of this page.&lt;/p&gt;
-
-&lt;p&gt;Remark I didn&amp;rsquo;t have any comment on my blog when I switched. Therefore my lack of influence was a good thing&amp;nbsp;:-).&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;p&gt;Before begining, I must state that I &lt;strong&gt;love&lt;/strong&gt; Disqus. &lt;/p&gt;
-
-&lt;p&gt;I know there is a similar blog entry at &lt;a href="http://trephine.org/t/index.php?title=Site_improvements_-_fighting_with_Disqus"&gt;Trephine.org&lt;/a&gt;. Here I just add a straight and easy way to load disqus asynchronously using jQuery. &lt;/p&gt;
-
-&lt;p&gt;I also know there is a jQuery plugin to ma...&lt;/p&gt;</content>
   </entry>
 </feed>
