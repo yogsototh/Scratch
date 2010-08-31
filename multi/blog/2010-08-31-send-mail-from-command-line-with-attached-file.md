@@ -98,10 +98,14 @@ H4sICB6Ke0wAA2Rjcl93aXRob3V0X2tleXdvcmQuY3N2ANSdW5ubOJPH7/e7
 
 fr: Et pour avoir le code il suffit de lancer la commande :
 en: And to obtain the "encoded" file in base64 I used:
-`uuencode -m fic.jpg fic.jpg`
+
+<code classs="zsh">
+uuencode -m fic.jpg fic.jpg
+</code>
 
 fr: Et voilà. 
 fr: Parfois la technique c'est tellement simple.
+fr: Si j'en ai besoin encore quelques fois, je pense que j'écrirai un émetteur de mail en shell.
 en: That is all.
 en: Sometimes technology is so easy to use.
-Si j'en ai besoin encore quelques fois, je pense que j'écrirai un émetteur de mail en shell.
+en: If I need it another time I should consider to make a shell script to automatize this.

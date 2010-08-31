@@ -77,7 +77,10 @@ H4sICB6Ke0wAA2Rjcl93aXRob3V0X2tleXdvcmQuY3N2ANSdW5ubOJPH7/e7
 </pre>
 
 Et pour avoir le code il suffit de lancer la commande :
-`uuencode -m fic.jpg fic.jpg`
+
+<code classs="zsh">
+uuencode -m fic.jpg fic.jpg
+</code>
 
 Et voilà. 
 Parfois la technique c'est tellement simple.
