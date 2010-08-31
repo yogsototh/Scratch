@@ -125,9 +125,6 @@ self.instance_variable_set(:@conf, conf)
                 <div>
                     <%=tradOf(:copyright) %>
                 </div>
-                <div id="lastmod">
-                    <%=tradOf(:last_modified)%>: <%= @item.mtime.strftime(@config[:dateFormat][language.intern]) %> 
-                </div>
                 <div>
                     <%= tradOf(:entirely_done_with) %>
                     <a href="http://www.vim.org">Vim</a>
