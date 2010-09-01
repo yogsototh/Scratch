@@ -2,13 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-08-31T08:16:04Z</updated>
+  <updated>2010-09-01T22:02:17Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2010-09-01:/Scratch/en/blog/2010-09-02-base64-and-sha1-on-iPhone/</id>
+    <title type="html">base64 and sha1 on iPhone</title>
+    <published>2010-09-01T22:02:17Z</published>
+    <updated>2010-09-01T22:02:17Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-09-02-base64-and-sha1-on-iPhone/"/>
+    <content type="html">&lt;p&gt;Lets be straight:
+here are two functions to add to your code to have &lt;code&gt;base64&lt;/code&gt; and &lt;code&gt;hexadecimal&lt;/code&gt; version of the &lt;code&gt;sha1&lt;/code&gt; hash of an NSString.&lt;/p&gt;
+
+&lt;p&gt;To use it, simply copy the code in your class and use as this:&lt;/p&gt;
+
+&lt;pre class="twilight"&gt;
+&lt;span class="CCCPreprocessorLine"&gt;#&lt;span class="CCCPreprocessorDirective"&gt;import&lt;/span&gt; &lt;span class="String"&gt;&lt;span class="String"&gt;&amp;lt;&lt;/span&gt;CommonCrypto/CommonDigest.h&lt;span class="String"&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+...
+NSString *b64_hash = [self b64_sha1:@&lt;span class="String"&gt;&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;some NSString to be sha1'ed&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;];
+...
+NSString *hex_hash = [self hex_sha1:@&lt;span class="String"&gt;&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;some NSString to be sha1'ed&lt;/span&gt;&lt;/pre&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2010-08-31:/Scratch/en/blog/2010-08-31-send-mail-from-command-line-with-attached-file/</id>
     <title type="html">send mail from command line with attached file</title>
@@ -583,35 +601,6 @@ When somebody work with files without a versions system, the following happens f
 &lt;p&gt;What does it mean for real usage? You can focus on coding. For example, you can code, a fix for bug b01 and for bug b02 and code a feature f03. Once finished you can creat...&lt;/p&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
-    <content type="html">&lt;h1 class="first" id="command-list"&gt;Command List&lt;/h1&gt;
-
-&lt;h2 id="command-for-each-functionality"&gt;Command for each functionality&lt;/h2&gt;
-
-&lt;p&gt;In the first part, we saw the list of resolved problem by &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. To resume &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; should do:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;get others modifications,&lt;/li&gt;
-  &lt;li&gt;send modifications to others,&lt;/li&gt;
-  &lt;li&gt;get back in time,&lt;/li&gt;
-  &lt;li&gt;list differences between each version,&lt;/li&gt;
-  &lt;li&gt;name some versions in order to refer easily to them,&lt;/li&gt;
-  &lt;li&gt;write an historic of modifications,&lt;/li&gt;
-  &lt;li&gt;know who did what and when,&lt;/li&gt;
-  &lt;li&gt;manage conflicts,&lt;/li&gt;
-  &lt;li&gt;easily manage branches.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="get-others-modifications"&gt;get others modifications&lt;/h3&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;
-$ g...&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -647,29 +636,6 @@ $ sudo port install git-core
 &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
-    <content type="html">&lt;h1 class="first" id="here-we-go"&gt;Here we go!&lt;/h1&gt;
-
-&lt;p&gt;Here is one from many way to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. This method is sufficient to work on a project. Not there is many other &lt;em&gt;workflows&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id="basic-usage"&gt;Basic usage&lt;/h2&gt;
-
-&lt;p&gt;Work with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; immediately:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Get modification done by others &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-  &lt;li&gt;See details of these modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-  &lt;li&gt;Many times:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
-      &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-      &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -699,6 +665,58 @@ $ sudo port install git-core
 
 &lt;div&gt;&lt;pre class="twilight"&gt;
 git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
+    <content type="html">&lt;h1 class="first" id="here-we-go"&gt;Here we go!&lt;/h1&gt;
+
+&lt;p&gt;Here is one from many way to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. This method is sufficient to work on a project. Not there is many other &lt;em&gt;workflows&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id="basic-usage"&gt;Basic usage&lt;/h2&gt;
+
+&lt;p&gt;Work with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; immediately:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Get modification done by others &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+  &lt;li&gt;See details of these modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+  &lt;li&gt;Many times:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+      &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
+    <content type="html">&lt;h1 class="first" id="command-list"&gt;Command List&lt;/h1&gt;
+
+&lt;h2 id="command-for-each-functionality"&gt;Command for each functionality&lt;/h2&gt;
+
+&lt;p&gt;In the first part, we saw the list of resolved problem by &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. To resume &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; should do:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;get others modifications,&lt;/li&gt;
+  &lt;li&gt;send modifications to others,&lt;/li&gt;
+  &lt;li&gt;get back in time,&lt;/li&gt;
+  &lt;li&gt;list differences between each version,&lt;/li&gt;
+  &lt;li&gt;name some versions in order to refer easily to them,&lt;/li&gt;
+  &lt;li&gt;write an historic of modifications,&lt;/li&gt;
+  &lt;li&gt;know who did what and when,&lt;/li&gt;
+  &lt;li&gt;manage conflicts,&lt;/li&gt;
+  &lt;li&gt;easily manage branches.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="get-others-modifications"&gt;get others modifications&lt;/h3&gt;
+
+&lt;div&gt;&lt;pre class="twilight"&gt;
+$ g...&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-10-30:/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/</id>
@@ -884,38 +902,5 @@ But you can easily translate from Ruby to Javascript.&lt;/p&gt;
                 $('.list').hide();
                 $('#'+id).fadeIn();
                 $('.ta...&lt;/script&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-09-22:/Scratch/en/blog/2009-09-replace-all-except-some-part/</id>
-    <title type="html">replace all except some part</title>
-    <published>2009-09-22T20:13:25Z</published>
-    <updated>2009-09-22T20:13:25Z</updated>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-09-replace-all-except-some-part/"/>
-    <content type="html">&lt;p&gt;My problem is simple:&lt;/p&gt;
-
-&lt;p&gt;I want to filter a text except some part of it. I can match easily the part I don&amp;rsquo;t want to be filtered. For example&lt;/p&gt;
-
-&lt;div&gt;
-&lt;pre class="twilight"&gt;
-...
-text
-...
-BEGIN not to filter
-...
-text
-...
-END not to filter
-...
-text
-...
-&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I searched a better way to do that, but the best I can do is using &lt;code&gt;split&lt;/code&gt; and &lt;code&gt;scan&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div&gt;
-&lt;pre class="twilight"&gt;
-&lt;span class="Keyword"&gt;def&lt;/span&gt; &lt;span class="Entity"&gt;allExceptCode&lt;/span&gt;(&lt;span class="Variable"&gt; f&lt;span class="Variable"&gt;,&lt;/span&gt; content &lt;/span&gt;)
-    regexp&lt;span class="Keyword"&gt;=&lt;/span&gt;&lt;span class="StringRegexp"&gt;&lt;span class="StringRegexp"&gt;/&lt;/span&gt;&lt;/span&gt;&lt;span class="StringRegexp"&gt;&amp;lt;code&lt;span class="StringRegexp"&gt;&lt;span class="StringRegexp"&gt;[&lt;/span&gt;^&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
 </feed>
