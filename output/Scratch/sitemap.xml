@@ -52,6 +52,9 @@
     <loc>http://yannesposito.com/Scratch/fr/blog/09_Why_I_didn-t_keep_whosamung-us/</loc>
   </url>
   <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/</loc>
+  </url>
+  <url>
     <loc>http://yannesposito.com/Scratch/assets/css/gen.css</loc>
   </url>
   <url>
@@ -62,9 +65,6 @@
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2009-10-Focus-vs-Minimalism/</loc>
@@ -97,6 +97,9 @@
     <loc>http://yannesposito.com/Scratch/en/blog/2009-12-06-iphone-call-filter/</loc>
   </url>
   <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_1/</loc>
+  </url>
+  <url>
     <loc>http://yannesposito.com/Scratch/assets/css/gen_chrome.css</loc>
   </url>
   <url>
@@ -104,9 +107,6 @@
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/11_Load_Disqus_Asynchronously/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_1/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-07-05-Cappuccino-and-Web-applications/</loc>
@@ -131,6 +131,9 @@
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-07-07-CSS-rendering-problems-by-navigator/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-06-15-Get-my-blog-engine/</loc>
@@ -164,6 +167,9 @@
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/02_ackgrep/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/en/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/03_losthighway/</loc>

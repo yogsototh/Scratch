@@ -6,19 +6,21 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
         
+        <meta name="keywords" content="nanoc, web, git">
+        
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
-        <link rel="alternate" lang="fr" xml:lang="fr" title="Lost Highway démystifié (un peu)" type="text/html" hreflang="fr" href="/Scratch/fr/blog/03_losthighway/03_losthighway_2/" /> 
-        <link rel="alternate" lang="en" xml:lang="en" title="A try to demystify 'Lost Highway'" type="text/html" hreflang="en" href="/Scratch/en/blog/03_losthighway/03_losthighway_2/" /> 
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Utilisation de git pour calculer les mtimes" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Use git to calculate trusted mtimes" type="text/html" hreflang="en" href="/Scratch/en/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/" /> 
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
         
-        <title>A try to demystify 'Lost Highway'</title>
+        <title>Use git to calculate trusted mtimes</title>
     </head>
     <body lang="en">
         <script type="text/javascript">// <![CDATA[
@@ -30,18 +32,14 @@
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
                 <div id="choixlang">
-                    <a href="/Scratch/fr/blog/03_losthighway/03_losthighway_2/" onclick="setLanguage('fr')">Version Française</a>
+                    <a href="/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/" onclick="setLanguage('fr')">Version Française</a>
                 </div>
             </div>
 
             <div id="titre">
                 <h1>
-                    A try to demystify 'Lost Highway'
+                    Use git to calculate trusted mtimes
                 </h1>
-                 
-                <h2>
-                    Who is the mystery man? 
-                </h2>
                 
             </div>
 
@@ -49,33 +47,48 @@
 
             
 
-            <div id="sousliens"><ul><li><a href="/Scratch/en/blog/03_losthighway/">introduction</a></li><li><a href="/Scratch/en/blog/03_losthighway/03_losthighway_1/">Movie's keys</a></li><li><span class="active" title="You're here.">Who is the mystery man?</span></li><li><a href="/Scratch/en/blog/03_losthighway/03_losthighway_3/">Who's at the origin of the video tapes?</a></li><li><a href="/Scratch/en/blog/03_losthighway/03_losthighway_4/">What really happened?</a></li></ul></div>
+            
 
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <h2 class="first" id="who-is-the-mysterious-man">Who is the mysterious man?</h2>
+                    <p>You can remark at the bottom of each page I provide a last modification date.
+This label was first calculated using the <code>mtime</code> of the file on the file system.
+But many times I modify this date just to force some recompilation. 
+Therefore the date wasn&rsquo;t a date of <em>real</em> modification.</p>
 
-<p><img alt="l'homme mystérieux" class="left" src="/Scratch/img/blog/03_losthighway/mysteryman.jpg" /></p>
+<p>I use <a href="http://git-scm.org">git</a> to version my website.
+And fortunately I can know the last date of <em>real</em> change of a file.
+This is how I do this with <a href="http://nanoc.stoneship.org">nanoc</a>:</p>
 
-<p>Who&rsquo;s this mysterious man? He tells Fred it&rsquo;s him who invited him in his house. He&rsquo;s present at the party and in the house of Fred in the same time. Eyes wide open, looking everything Fred&rsquo;s doing?</p>
+<div class="code"><div class="file"><a href="/Scratch/en/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/code/gitmtime.rb"> &#x27A5; gitmtime.rb </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Keyword">def</span> <span class="Entity">gitmtime</span>
+    filepath<span class="Keyword">=</span><span class="Variable"><span class="Variable">@</span>item</span>.<span class="Entity">path</span>.<span class="Entity">sub</span>(<span class="String"><span class="String">'</span>/Scratch/<span class="String">'</span></span>,<span class="String"><span class="String">'</span>content/html/<span class="String">'</span></span>).<span class="Entity">sub</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexpSpecial">\/</span>$</span><span class="StringRegexp"><span class="StringRegexp">/</span></span>,<span class="String"><span class="String">'</span><span class="String">'</span></span>)
+    ext<span class="Keyword">=</span><span class="String"><span class="String">%{</span>.<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span><span class="StringVariable"><span class="StringVariable">@</span>item</span><span class="StringEmbeddedSource">[</span><span class="StringConstant"><span class="StringConstant">:</span>extension</span><span class="StringEmbeddedSource">]</span><span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>
+    filepath<span class="Keyword">&lt;&lt;=</span>ext
+    <span class="Keyword">if</span> <span class="Keyword">not</span> <span class="Support">FileTest</span>.<span class="Entity">exists?</span>(filepath)
+        filepath.<span class="Entity">sub!</span>(ext,<span class="String"><span class="String">%{</span>/index<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>ext<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>)
+    <span class="Keyword">end</span>
+    str<span class="Keyword">=</span><span class="String"><span class="String">`</span>git log -1 --format='%ci' -- <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>filepath<span class="StringEmbeddedSource">}</span></span><span class="String">`</span></span>
+    <span class="Keyword">if</span> str <span class="Keyword">==</span> <span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
+        <span class="Keyword">return</span> <span class="Variable"><span class="Variable">@</span>item</span>.<span class="Entity">mtime</span>
+    <span class="Keyword">else</span>
+        <span class="Keyword">return</span> <span class="Support">DateTime</span>.<span class="Entity">parse</span>( str )
+    <span class="Keyword">end</span>
+<span class="Keyword">end</span>
+</pre>
+</div></div>
 
-<p>It&rsquo;s a key of the movie. In my humble opinion, I believe it represents the bad part of Fred. Certainly jalousy. If I was catholic, I&rsquo;ll said he&rsquo;s Satan. He observe, film but don&rsquo;t act. He helps Fred to kill Dick Laurent.
-Fred had let him enter and cannot let him go.
-As <em>Iago</em> of Shakespeare is imprisonned by its own jalousy.
-The Mysterious Man help Fred doing the acts of violence. 
-It also force Fred to remember the reality.</p>
+<p>Of course I know it is really slow and absolutely not optimized.
+But it works as expected.
+Now the date you see at the bottom is exactly the date I modified the <em>content</em> of the page.</p>
 
-<p>When he makes love to his wife (Renee), he sees the face of the Mysterious Man instead of his wife&rsquo;s face. In reality, it&rsquo;s the same person for Fred. It should be her who&rsquo;s the origin of his interior badness.</p>
+<p>Thanks to Eric Sunshine to provide me some hints at cleaning my code.
+Je tiens à remercier Eric Sunshine pour ses conseils sur ce problème.</p>
 
                 </div>
             
-                
-                    <div class="navigation">
-                        <div class="navigationprev"><a href="/Scratch/en/blog/03_losthighway/03_losthighway_1/">previous&nbsp;&larr;</a></div>
-                        <div class="navigationnext"><a href="/Scratch/en/blog/03_losthighway/03_losthighway_3/">&rarr;&nbsp;next</a></div>
-                    </div>
-                    <div class="flush"></div>
                 
 
                 <div id="choixrss">
@@ -103,8 +116,8 @@ It also force Fred to remember the reality.</p>
                     
     <script type="text/javascript">
     var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
-    var idcomments_post_id = '/Scratch/en/blog/03_losthighway/';
-    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/03_losthighway/';
+    var idcomments_post_id = '/Scratch/en/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/';
     </script>
     <span id="IDCommentsPostTitle" style="display:none"></span>
     <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
@@ -125,17 +138,17 @@ It also force Fred to remember the reality.</p>
                         previous entries
                         
                         <div class="previous_article">
-                            <a href="/Scratch/en/blog/02_ackgrep/">&larr; Better than Grep</a>
+                            <a href="/Scratch/en/blog/2010-09-02-base64-and-sha1-on-iPhone/">&larr; base64 and sha1 on iPhone</a>
                         </div>
                         
                         
                         <div class="previous_article">
-                            <a href="/Scratch/en/blog/01_nanoc/">&larr; Nanoc</a>
+                            <a href="/Scratch/en/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">&larr; send mail from command line with attached file</a>
                         </div>
                         
                         
                         <div class="previous_article">
-                            <a href="/Scratch/en/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/">&larr; Use git to calculate trusted mtimes</a>
+                            <a href="/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/">&larr; Now heberged on heroku</a>
                         </div>
                         
                         
@@ -143,19 +156,7 @@ It also force Fred to remember the reality.</p>
                     <div id="next_articles">
                         next entries
                         
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/04_drm/">DRM are EVIL&rarr; </a>
-                        </div>
                         
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/05_git_create_remote_branch/">Git remote branch creation&rarr; </a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/06_How_I_use_git/">Git for self&rarr; </a>
-                        </div>
                         
                         
                     </div>
@@ -169,8 +170,8 @@ It also force Fred to remember the reality.</p>
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
                 </div>
                 <div id="lastmod">
-                    Created: 08/04/2009
-                    Modified: 05/09/2010 
+                    Created: 09/02/2010
+                    Modified: 09/02/2010 
                 </div>
                 <div>
                     Entirely done with

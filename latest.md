@@ -1,1 +1,1 @@
-./multi/blog/2010-09-02-base64-and-sha1-on-iPhone.md
+./multi/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes.md

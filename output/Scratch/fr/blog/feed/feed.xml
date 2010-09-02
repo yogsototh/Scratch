@@ -2,13 +2,34 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-09-01T22:02:17Z</updated>
+  <updated>2010-09-02T13:54:10Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomfr"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2010-09-02:/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/</id>
+    <title type="html">Utilisation de git pour calculer les mtimes</title>
+    <published>2010-09-02T13:54:10Z</published>
+    <updated>2010-09-02T13:54:10Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/"/>
+    <content type="html">&lt;p&gt;Vous pouvez remarquer qu&amp;rsquo;&#224; la fin de chaque page je donne une date de derni&#232;re modification.
+Pr&#233;c&#233;demment cette date &#233;tait calcul&#233;e en utilisant la date du fichier.
+Mais il arrive fr&#233;quemment que je fasse un &lt;code&gt;touch&lt;/code&gt; d&amp;rsquo;un fichier pour engendrer tout le site de nouveau.
+Donc la date n&amp;rsquo;est pas n&#233;cessairement la &lt;em&gt;vraie&lt;/em&gt; de modification du contenue.&lt;/p&gt;
+
+&lt;p&gt;J&amp;rsquo;utilise &lt;a href="http://git-scm.org"&gt;git&lt;/a&gt; pour &lt;em&gt;versionner&lt;/em&gt; mon site web.
+Et cet outil me permet de r&#233;cup&#233;rer la derni&#232;re date de &lt;em&gt;vraie&lt;/em&gt; modification d&amp;rsquo;un fichier.
+Voici comment je m&amp;rsquo;y prend avec &lt;a href="http://nanoc.stoneship.org"&gt;nanoc&lt;/a&gt;&amp;nbsp;:&lt;/p&gt;
+
+&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2010-09-01:/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/</id>
     <title type="html">base64 et sha1 sur iPhone</title>
@@ -641,6 +662,60 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
   &lt;li&gt;voir les d&#233;tails de ces modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
   <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/"/>
+    <content type="html">&lt;h1 class="first" id="avant-lutilisation-la-configuration"&gt;Avant l&amp;rsquo;utilisation, la configuration&lt;/h1&gt;
+
+&lt;h2 id="installation"&gt;installation&lt;/h2&gt;
+
+&lt;p&gt;Sous Linux Ubuntu ou Debian&amp;nbsp;:&lt;/p&gt;
+
+&lt;div&gt;&lt;pre class="twilight"&gt;$ sudo apt-get install git
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Sous Mac OS X&amp;nbsp;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;installez &lt;a href="http://macports.org/install.php"&gt;MacPorts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;installez &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div&gt;&lt;pre class="twilight"&gt;
+$ sudo port selfupdate
+
+$ sudo port install git-core
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="configuration-globale"&gt;Configuration globale&lt;/h2&gt;
+
+&lt;p&gt;Enregistrez le fichier suivant comme le fichier &lt;code&gt;~/.gitconfig&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div&gt;&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/"/>
+    <content type="html">&lt;h1 class="first" id="pourquoi-git-est-cool-"&gt;Pourquoi Git est cool&amp;nbsp;?&lt;/h1&gt;
+
+&lt;p&gt;Parce que grace &#224; &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; vous pouvez travailler sur plusieurs partie du projet de fa&#231;on compl&#232;tement isol&#233;e les unes des autres. &#199;a c&amp;rsquo;est la partie d&#233;centralis&#233;e de &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Toutes les branches locales utilisent le m&#234;me r&#233;pertoire. Ainsi on peu changer de branche tr&#232;s ais&#233;ment et rapidement. On peut aussi changer de branche alors que certains fichier sont en cours de modifications. On peut m&#234;me pousser le vice jusqu&amp;rsquo;&#224; modifier un fichier, changer de branche, commiter une partie seulement des modifications de ce fichier dans la branche courante. Revenir dans l&amp;rsquo;ancienne branche et commi...&lt;/p&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/</id>
     <title type="html">Git pour les nuls</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -695,60 +770,6 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 &lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; est un &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, c&amp;rsquo;est-&#224;-dire un syst&#232;me de versions concurrentes d&#233;centralis&#233;. Analysons chaque partie de cette appellation compliqu&#233;.&lt;/p&gt;
 
 ...</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/"/>
-    <content type="html">&lt;h1 class="first" id="pourquoi-git-est-cool-"&gt;Pourquoi Git est cool&amp;nbsp;?&lt;/h1&gt;
-
-&lt;p&gt;Parce que grace &#224; &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; vous pouvez travailler sur plusieurs partie du projet de fa&#231;on compl&#232;tement isol&#233;e les unes des autres. &#199;a c&amp;rsquo;est la partie d&#233;centralis&#233;e de &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Toutes les branches locales utilisent le m&#234;me r&#233;pertoire. Ainsi on peu changer de branche tr&#232;s ais&#233;ment et rapidement. On peut aussi changer de branche alors que certains fichier sont en cours de modifications. On peut m&#234;me pousser le vice jusqu&amp;rsquo;&#224; modifier un fichier, changer de branche, commiter une partie seulement des modifications de ce fichier dans la branche courante. Revenir dans l&amp;rsquo;ancienne branche et commi...&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/"/>
-    <content type="html">&lt;h1 class="first" id="avant-lutilisation-la-configuration"&gt;Avant l&amp;rsquo;utilisation, la configuration&lt;/h1&gt;
-
-&lt;h2 id="installation"&gt;installation&lt;/h2&gt;
-
-&lt;p&gt;Sous Linux Ubuntu ou Debian&amp;nbsp;:&lt;/p&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;$ sudo apt-get install git
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Sous Mac OS X&amp;nbsp;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;installez &lt;a href="http://macports.org/install.php"&gt;MacPorts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;installez &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;
-$ sudo port selfupdate
-
-$ sudo port install git-core
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="configuration-globale"&gt;Configuration globale&lt;/h2&gt;
-
-&lt;p&gt;Enregistrez le fichier suivant comme le fichier &lt;code&gt;~/.gitconfig&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div&gt;&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
@@ -947,39 +968,5 @@ Pour l&amp;rsquo;instant je le cache partout.&lt;/p&gt;
 
 &lt;p&gt;J&amp;rsquo;ai &#233;crit un article sur la fa&#231;on dont j&amp;rsquo;ai essay&#233; d&amp;rsquo;int&#233;grer &lt;a href="http://disqus.com"&gt;Disqus&lt;/a&gt;. Mon probl&#232;me majeur avec &lt;a href="http://disqus.com/"&gt;Disqus&lt;/a&gt; c&amp;rsquo;&#233;tait que ma page ne s&amp;rsquo;affichait pas correctement tant que les commentaire n&amp;rsquo;avait pas fini de s&amp;rsquo;afficher. &#199;a m&amp;rsquo;est arriv&#233; plusieurs fois d&amp;rsquo;avoir ma page compl&#232;tement bloqu&#233;e parce que les serveurs de &lt;a href="http://disqus.com/"&gt;Disqus&lt;/a&gt; ne r&#233;pondait pas.
 C&amp;rsquo;est pourquoi j&amp;rsquo;ai essayer de l&amp;rsquo;inclure de mani&#232;re asynchrone. Cependant j&amp;rsquo;ai e...&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-09-23:/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/</id>
-    <title type="html">jQuery Tag Cloud [en]</title>
-    <published>2009-09-23T11:18:26Z</published>
-    <updated>2009-09-23T11:18:26Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/"/>
-    <content type="html">&lt;p&gt;Here is how I done the tag cloud of my blog. It is done mostly in jQuery.
-All my site is static and pages are generated with &lt;a href="nanoc.stoneship.org"&gt;nanoc&lt;/a&gt;.
-It is (in my humble opinion) the modern geek way to make a website.&lt;/p&gt;
-
-&lt;p&gt;This is why I&amp;rsquo;ll give only a Ruby Generator, not a full javascript generator. 
-But you can easily translate from Ruby to Javascript.&lt;/p&gt;
-
-&lt;p&gt;Here is what you should obtain:&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;div&gt;
-&lt;script type="text/javascript"&gt;
-            $(document).ready( function(){$('.list').hide();$('#tagcloud a').removeAttr("href")} );
-            function tagSelected(id) {
-                $('.list').hide();
-                $('#'+id).fadeIn();
-                $('.tag.selected').removeClass('selected');
-                $('#tag_'+id)...&lt;/script&gt;&lt;/div&gt;</content>
   </entry>
 </feed>
