@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-08-31T08:16:04Z</updated>
+  <updated>2010-09-01T22:02:17Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomfr"/>
   <author>
@@ -10,14 +10,29 @@
     <uri>http://yannesposito.com</uri>
   </author>
   <entry>
+    <id>tag:yannesposito.com,2010-09-01:/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/</id>
+    <title type="html">base64 et sha1 sur iPhone</title>
+    <published>2010-09-01T22:02:17Z</published>
+    <updated>2010-09-01T22:02:17Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/"/>
+    <content type="html">&lt;p&gt;Allons directement &#224; l&amp;rsquo;essentiel&amp;nbsp;:
+voici deux fonctions &#224; int&#233;grer &#224; votre application iPhone pour afficher l&amp;rsquo;encodage en base64 ou en hexadecimal du hash sha1 d&amp;rsquo;un string en Objective-C pour iPhone.&lt;/p&gt;
+
+&lt;p&gt;Pour l&amp;rsquo;usage c&amp;rsquo;est tr&#232;s simple, copiez le code dans la classe de votre choix.
+Puis&amp;nbsp;:&lt;/p&gt;
+
+&lt;pre class="twilight"&gt;
+&lt;span class="CCCPreprocessorLine"&gt;#&lt;span class="CCCPreprocessorDirective"&gt;import&lt;/span&gt; &lt;span class="String"&gt;&lt;span class="String"&gt;&amp;lt;&lt;/span&gt;CommonCrypto/CommonDigest.h&lt;span class="String"&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+...
+NSString *b64_hash = [self b64_sha1:@&lt;span class="String"&gt;&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;some NSString to be sha1'ed&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;];
+...
+NSString *hex_hash = [self hex_sha1:@&lt;/pre&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2010-08-31:/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/</id>
     <title type="html">Envoyer un mail en ligne de commande avec un fichier attach&#233;</title>
     <published>2010-08-31T08:16:04Z</published>
     <updated>2010-08-31T08:16:04Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/"/>
     <content type="html">&lt;p&gt;J&amp;rsquo;ai d&#251; envoyer un mail en ligne de commande r&#233;cemment. 
 Quelle ne f&#251;t pas ma surprise lorsque je constatais que ce n&amp;rsquo;&#233;tait vraiment pas &#233;vident.
@@ -39,10 +54,6 @@ Je l&amp;rsquo;ai compress&#233; au format &lt;code&gt;.gz&lt;/code&gt;, &lt;/p&
     <title type="html">Now heberged on heroku</title>
     <published>2010-08-23T13:05:13Z</published>
     <updated>2010-08-23T13:05:13Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/"/>
     <content type="html">&lt;h1 class="first" id="maintenant-sur-herokuhttpherokucom"&gt;Maintenant sur &lt;a href="http://heroku.com"&gt;Heroku&lt;/a&gt;&lt;/h1&gt;
 
@@ -60,10 +71,6 @@ Voici comment configurer un site statique sur heroku.&lt;/p&gt;
     <title type="html">Ind&#233;cidabilit&#233;s (partie 1)</title>
     <published>2010-08-11T08:04:31Z</published>
     <updated>2010-08-11T08:04:31Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-07-09-Indecidabilities/"/>
     <content type="html">
 &lt;div class="intro"&gt;
@@ -103,10 +110,6 @@ Je vais me mettre &#224; sa p...&lt;/p&gt;&lt;/div&gt;</content>
     <title type="html">Nouveau style apr&#232;s les vacances</title>
     <published>2010-07-31T21:59:10Z</published>
     <updated>2010-07-31T21:59:10Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-07-31-New-style-after-holidays/"/>
     <content type="html">&lt;p&gt;Avant les vacances beaucoup d&amp;rsquo;utilisateurs se sont plaints de la lenteur de rendu de mon site. 
 Il s&amp;rsquo;agit notamment de probl&#232;mes avec Chrome en particulier. 
@@ -122,10 +125,6 @@ Il est inspir&#233; du style de l&amp;rsquo;application iBooks&lt;small&gt;&amp;
     <title type="html">N'utilisez pas de gradients avec Chrome</title>
     <published>2010-07-07T13:43:43Z</published>
     <updated>2010-07-07T13:43:43Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/"/>
     <content type="html">&lt;p&gt;Beaucoup d&amp;rsquo;utilisateurs de &lt;a href="http://reddit.com"&gt;Reddit&lt;/a&gt; m&amp;rsquo;ont rapport&#233; que mon site &#233;tait tr&#232;s long &#224; charger et &#224; &lt;em&gt;scroller&lt;/em&gt;.
 Ils pensaient qu&amp;rsquo;il s&amp;rsquo;agissait d&amp;rsquo;un probl&#232;me d&#251; aux ombres que j&amp;rsquo;applique sur le texte.
@@ -146,10 +145,6 @@ En r&#233;alit&#233;, ce qui ralenti le rendu de ce site est par ordre d&amp;rsq
     <title type="html">Cappuccino ou jQuery ?</title>
     <published>2010-07-05T11:49:04Z</published>
     <updated>2010-07-05T11:49:04Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/"/>
     <content type="html">
 &lt;div class="intro"&gt;
@@ -176,14 +171,10 @@ En r&#233;alit&#233;, ce qui ralenti le rendu de ce site est par ordre d&amp;rsq
 &lt;p&gt;Avant de commencer, je dois dire que je sais que Cappuccino et jQuery ne sont pas plus comparable que Cocoa et la &lt;em&gt;standard library&lt;/em&gt; en...&lt;/p&gt;&lt;/div&gt;&lt;/hr&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2010-06-18:/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/</id>
+    <id>tag:yannesposito.com,2010-06-19:/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/</id>
     <title type="html">Comment faire des popups en jQuery rapidement</title>
     <published>2010-06-18T22:44:50Z</published>
     <updated>2010-06-18T22:44:50Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/"/>
     <content type="html">&lt;p&gt;Sur ce blog, je donne parfois la possibilit&#233; de t&#233;l&#233;charger certaines sources de code. 
 Dans ce cas, le code est souvent plus large que le &lt;code&gt;div&lt;/code&gt; qui le contient. 
@@ -202,10 +193,6 @@ C&amp;rsquo;est pourquoi, j&amp;rsquo;utilise une m&#233;thode qui permet d&amp;
     <title type="html">Se cacher de ses statistiques web</title>
     <published>2010-06-17T14:37:22Z</published>
     <updated>2010-06-17T14:37:22Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/"/>
     <content type="html">&lt;p&gt;Voici un moyen tr&#232;s simple de ne plus &#234;tre comptabilis&#233; dans les visites de son propre site.
 Tout d&amp;rsquo;abord, vous devriez jeter un coup d&amp;rsquo;&#339;il sur comment &lt;a href="/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics"&gt;je g&#232;re les syst&#232;mes de r&#233;cup&#233;ration de statistiques&lt;/a&gt;. 
@@ -223,10 +210,6 @@ Je centralise tout dans un seul fichier javascript ce qui facilite le travail.&l
     <title type="html">Analyser les clicks sur votre Site</title>
     <published>2010-06-17T12:41:36Z</published>
     <updated>2010-06-17T12:41:36Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics/"/>
     <content type="html">&lt;p&gt;Voici comment analyser tous les clics que font vos utilisateurs sur votre blog en incluant google analytics de fa&#231;on asynchrone.&lt;/p&gt;
 
@@ -240,10 +223,6 @@ Je centralise tout dans un seul fichier javascript ce qui facilite le travail.&l
     <title type="html">R&#233;cup&#233;rez mon syst&#232;me de blog</title>
     <published>2010-06-15T08:56:32Z</published>
     <updated>2010-06-15T08:56:32Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-06-15-Get-my-blog-engine/"/>
     <content type="html">&lt;p&gt;J&amp;rsquo;ai publi&#233; une version &lt;em&gt;light&lt;/em&gt; de mon syst&#232;me de blog hier soir. Par &lt;em&gt;light&lt;/em&gt; il faut comprendre avec un CSS plus &#233;pur&#233; et plus portable (sans les bords ronds).
 Vous pouvez le r&#233;cup&#233;rer sur &lt;a href="http://github.com/yogsototh/nanoc3_blog"&gt;github.com&lt;/a&gt;.&lt;/p&gt;
@@ -262,10 +241,6 @@ Vous pouvez le r&#233;cup&#233;rer sur &lt;a href="http://github.com/yogsototh/n
     <title type="html">choix li&#233;s &#224; l'&#233;criture dans plusieurs langues</title>
     <published>2010-06-14T14:14:57Z</published>
     <updated>2010-06-14T14:14:57Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-06-14-multi-language-choices/"/>
     <content type="html">&lt;p&gt;Je traduis la plupart de mes articles pour qu&amp;rsquo;ils soient disponibles en fran&#231;ais et en anglais. 
 La fa&#231;on que l&amp;rsquo;on m&amp;rsquo;a conseill&#233; &#233;tait d&amp;rsquo;avoir un fichier par langue. En g&#233;n&#233;ral &#231;a donne &#231;a.&lt;/p&gt;
@@ -296,10 +271,6 @@ Lorsque je m&amp;...&lt;/p&gt;</content>
     <title type="html">Arbres ; Pragmatisme et Formalisme</title>
     <published>2010-05-24T18:05:14Z</published>
     <updated>2010-05-24T18:05:14Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/"/>
     <content type="html">
 &lt;div class="intro"&gt;
@@ -329,10 +300,6 @@ Lorsque je m&amp;...&lt;/p&gt;</content>
     <title type="html">Comment r&#233;parer un XML coup&#233; ?</title>
     <published>2010-05-19T20:20:34Z</published>
     <updated>2010-05-19T20:20:34Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/"/>
     <content type="html">&lt;p&gt;Sur ma page d&amp;rsquo;accueil vous pouvez voir la liste des mes derniers articles avec le d&#233;but de ceux-ci. Pour arriver &#224; faire &#231;a, j&amp;rsquo;ai besoin de couper le code XHTML de mes pages en plein milieu. Il m&amp;rsquo;a donc fallu trouver un moyen de les r&#233;parer.&lt;/p&gt;
 
@@ -347,10 +314,6 @@ Lorsque je m&amp;...&lt;/p&gt;</content>
     <title type="html">Je reviens &#224; la vie !</title>
     <published>2010-05-17T11:25:51Z</published>
     <updated>2010-05-17T11:25:51Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-05-17-at-least-this-blog-revive/"/>
     <content type="html">&lt;p&gt;Bonjour &#224; tous&amp;nbsp;!&lt;/p&gt;
 
@@ -371,10 +334,6 @@ Vous serez surpris de l&amp;rsquo;efficacit&#233; de cette mesure.&lt;/p&gt;
     <title type="html">Encapsuler git</title>
     <published>2010-03-23T20:37:36Z</published>
     <updated>2010-03-23T20:37:36Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-03-23-Encapsulate-git/"/>
     <content type="html">&lt;p&gt;&lt;span class="intro"&gt;
 Voici une solution pour conserver des branches divergentes avec &lt;code&gt;git&lt;/code&gt;.
@@ -396,10 +355,6 @@ Parce qu&amp;rsquo;il est facile de &lt;em&gt;merger&lt;/em&gt; par erreur, je p
     <title type="html">Astuces Git</title>
     <published>2010-03-22T08:42:27Z</published>
     <updated>2010-03-22T08:42:27Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-03-22-Git-Tips/"/>
     <content type="html">&lt;h2 class="first" id="cloner-de-github--travers-un-pare-feu"&gt;Cloner de github &#224; travers un pare-feu&lt;/h2&gt;
 
@@ -432,10 +387,6 @@ git branch --track local_branch remote_branch
     <title type="html">Quand se passer des expressions r&#233;guli&#232;res ?</title>
     <published>2010-02-23T08:09:52Z</published>
     <updated>2010-02-23T08:09:52Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/"/>
     <content type="html">&lt;p&gt;Les expressions r&#233;guli&#232;res sont tr&#232;s utiles. Cependant, elles ne sont pas toujours la meilleure mani&#232;re d&amp;rsquo;aborder certain probl&#232;me autour des chaines de caract&#232;res.
 Et surtout quand les transformations que vous voulez accomplir sont simples.&lt;/p&gt;
@@ -451,10 +402,6 @@ str.&lt;span class="Entity"&gt;match&lt;/span&gt;(&lt;span class="StringRegexp"&
     <title type="html">d&#233;couper un fichier par mots cl&#233;s</title>
     <published>2010-02-18T13:29:14Z</published>
     <updated>2010-02-18T13:29:14Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/"/>
     <content type="html">&lt;p&gt;Assez bizarrement, je n&amp;rsquo;ai trouv&#233; aucun outil UNIX pour d&#233;couper un fichier par mot cl&#233;. 
 Alors j&amp;rsquo;en ai fait un en &lt;code&gt;awk&lt;/code&gt;. Je le met ici principalement pour moi, mais &#231;a peut toujours servir &#224; quelqu&amp;rsquo;un d&amp;rsquo;autre.
@@ -474,10 +421,6 @@ Le code suivant d&#233;coupe un fichier pour chacune de ses ligne contenant le m
     <title type="html">Tout sauf quelquechose en expression r&#233;guli&#232;re.</title>
     <published>2010-02-16T08:33:21Z</published>
     <updated>2010-02-16T08:33:21Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-02-16-All-but-something-regexp--2-/"/>
     <content type="html">&lt;p&gt;Dans mon &lt;a href="previouspost"&gt;pr&#233;c&#233;dent article&lt;/a&gt; j&amp;rsquo;ai donn&#233; certaines astuces pour matcher &amp;lsquo;tout sauf quelque chose&amp;rsquo;. De la m&#234;me mani&#232;re, un truc pour matcher la chaine de caract&#232;re la plus petite possible.
 Disons que vous voulez matcher la chaine de caract&#232;re entre &amp;lsquo;a&amp;rsquo; et &amp;lsquo;b&amp;rsquo;. Par exemple, vous voulez matcher&amp;nbsp;:&lt;/p&gt;
@@ -500,10 +443,6 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
     <title type="html">Expression r&#233;guli&#232;re pour tout sauf quelquechose</title>
     <published>2010-02-15T09:16:12Z</published>
     <updated>2010-02-15T09:16:12Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-02-15-All-but-something-regexp/"/>
     <content type="html">&lt;p&gt;Parfois vous ne pouvez simplement pas &#233;crire&amp;nbsp;:&lt;/p&gt;
 
@@ -522,10 +461,6 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
     <title type="html">Fontes adoucies sous Ubuntu Firefox</title>
     <published>2010-01-12T14:36:40Z</published>
     <updated>2010-01-12T14:36:40Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/"/>
     <content type="html">&lt;p&gt;Voici comment faire pour ne plus utiliser les fontes Microsoft&#169; sous Linux Ubuntu pour avoir de belles fontes adoucies (anti aliased) qui ne font pas mal aux yeux sous Firefox.&lt;/p&gt;
 
@@ -542,10 +477,6 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
     <title type="html">Changer le shell par d&#233;faut sous Mac OS X</title>
     <published>2010-01-04T10:31:47Z</published>
     <updated>2010-01-04T10:31:47Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-01-04-Change-default-shell-on-Mac-OS-X/"/>
     <content type="html">&lt;p&gt;Je viens de trouver le moyen de changer son shell par d&#233;faut sous Mac OS X. Cette note est plus pour moi. Mais elle peut aussi servir &#224; quelqu&amp;rsquo;un d&amp;rsquo;autre. Il suffit de lancer la commande&amp;nbsp;: &lt;/p&gt;
 
@@ -559,10 +490,6 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
     <title type="html">Git ou Bazaar ?</title>
     <published>2009-12-14T08:46:36Z</published>
     <updated>2009-12-14T08:46:36Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-12-14-Git-vs--Bzr/"/>
     <content type="html">
 &lt;div class="intro"&gt;
@@ -585,10 +512,6 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
     <title type="html">Filtrage d'appel avec l'iPhone</title>
     <published>2009-12-06T09:35:34Z</published>
     <updated>2009-12-06T09:35:34Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-12-06-iphone-call-filter/"/>
     <content type="html">&lt;p&gt;Il est vraiment incroyable que le filtrage d&amp;rsquo;appel soit impossible avec un iPhone&amp;nbsp;! Le &lt;em&gt;seul&lt;/em&gt; int&#233;r&#234;t que j&amp;rsquo;y vois, c&amp;rsquo;est une n&#233;gociation avec les op&#233;rateurs pour interdire aux utilisateurs de passer &#224; travers la publicit&#233;. C&amp;rsquo;est tout simplement inacceptable.&lt;/p&gt;
 
@@ -600,10 +523,6 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
     <title type="html">Git pour les nuls</title>
     <published>2009-11-12T09:39:54Z</published>
     <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
     <content type="html">&lt;h1 class="first" id="et-cest-parti-"&gt;Et c&amp;rsquo;est parti&amp;nbsp;!&lt;/h1&gt;
 
@@ -618,14 +537,93 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
   &lt;li&gt;voir les d&#233;tails de ces modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
   <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/"/>
+    <content type="html">&lt;h1 class="first" id="gitgit-pour-quoi-faire-"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; pour quoi faire&amp;nbsp;?&lt;/h1&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;Si tout ce qui vous int&#233;resse c&amp;rsquo;est d&amp;rsquo;utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; &lt;strong&gt;tout de suite&lt;/strong&gt;. Lisez simplement les parties sur fond noir. Je vous conseille aussi de revenir relire tout &#231;a un peu plus tard, pour mieux comprendre les fondements des syst&#232;mes de versions et ne pas faire de b&#234;tises quand vous les utilisez.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; est un &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, c&amp;rsquo;est-&#224;-dire un syst&#232;me de versions concurrentes d&#233;centralis&#233;. Analysons chaque partie de cette appellation compliqu&#233;.&lt;/p&gt;
+
+...</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/"/>
+    <content type="html">
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;Voici un tutoriel &lt;a href="http://git-scm.org"&gt;Git&lt;/a&gt; d&#233;taill&#233; pour ceux qui en connaissent tr&#232;s peu sur les syst&#232;mes de versions. Vous comprendrez l&amp;rsquo;utilit&#233; de tels syst&#232;mes et surtout comment on se sert des syst&#232;mes de versions modernes, le tout en restant le plus pragmatique possible.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+
+&lt;/div&gt;
+
+&lt;div class="corps"&gt;
+
+
+&lt;h1 class="first" id="pour-commencer-la-conclusion"&gt;Pour commencer, la conclusion&lt;/h1&gt;
+
+&lt;p&gt;Voici la liste des commandes n&#233;cessaires et suffisantes pour utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. Il y en a tr&#232;s peu. Il est normal de ne pas les comprendre tout de suite mais c&amp;rsquo;est pour vous donner une id&#233;e. Malgr&#233; la longueur de l&amp;rsquo;article, 95% de l&amp;rsquo;utilisation de &lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/"/>
+    <content type="html">&lt;h1 class="first" id="pourquoi-git-est-cool-"&gt;Pourquoi Git est cool&amp;nbsp;?&lt;/h1&gt;
+
+&lt;p&gt;Parce que grace &#224; &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; vous pouvez travailler sur plusieurs partie du projet de fa&#231;on compl&#232;tement isol&#233;e les unes des autres. &#199;a c&amp;rsquo;est la partie d&#233;centralis&#233;e de &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Toutes les branches locales utilisent le m&#234;me r&#233;pertoire. Ainsi on peu changer de branche tr&#232;s ais&#233;ment et rapidement. On peut aussi changer de branche alors que certains fichier sont en cours de modifications. On peut m&#234;me pousser le vice jusqu&amp;rsquo;&#224; modifier un fichier, changer de branche, commiter une partie seulement des modifications de ce fichier dans la branche courante. Revenir dans l&amp;rsquo;ancienne branche et commi...&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
+    <content type="html">&lt;h1 class="first" id="liste-de-commandes"&gt;Liste de commandes&lt;/h1&gt;
+
+&lt;h2 id="les-commandes-pour-chaque-choses"&gt;Les commandes pour chaque choses&lt;/h2&gt;
+
+&lt;p&gt;Dans la premi&#232;re partie, nous avons vu la liste des probl&#232;mes r&#233;solus par &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. En r&#233;sum&#233; Git doit pouvoir&amp;nbsp;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;r&#233;cup&#233;rer les modifications des autres&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;envoyer ses modifications aux autres&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;revenir dans le temps&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;lister les diff&#233;rences entre chaque version&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;nommer certaines versions pour s&amp;rsquo;y r&#233;f&#233;rer facilement&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;afficher l&amp;rsquo;historique des modifications&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;savoir qui a fait quoi et quand&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;g&#233;rer des conflits&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;manipuler facileme...&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
     <title type="html">Git pour les nuls</title>
     <published>2009-11-12T09:39:54Z</published>
     <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/"/>
     <content type="html">&lt;h1 class="first" id="avant-lutilisation-la-configuration"&gt;Avant l&amp;rsquo;utilisation, la configuration&lt;/h1&gt;
 
@@ -656,113 +654,10 @@ $ sudo port install git-core
 &lt;div&gt;&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/"/>
-    <content type="html">&lt;h1 class="first" id="gitgit-pour-quoi-faire-"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; pour quoi faire&amp;nbsp;?&lt;/h1&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;Si tout ce qui vous int&#233;resse c&amp;rsquo;est d&amp;rsquo;utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; &lt;strong&gt;tout de suite&lt;/strong&gt;. Lisez simplement les parties sur fond noir. Je vous conseille aussi de revenir relire tout &#231;a un peu plus tard, pour mieux comprendre les fondements des syst&#232;mes de versions et ne pas faire de b&#234;tises quand vous les utilisez.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; est un &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, c&amp;rsquo;est-&#224;-dire un syst&#232;me de versions concurrentes d&#233;centralis&#233;. Analysons chaque partie de cette appellation compliqu&#233;.&lt;/p&gt;
-
-...</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/"/>
-    <content type="html">
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;Voici un tutoriel &lt;a href="http://git-scm.org"&gt;Git&lt;/a&gt; d&#233;taill&#233; pour ceux qui en connaissent tr&#232;s peu sur les syst&#232;mes de versions. Vous comprendrez l&amp;rsquo;utilit&#233; de tels syst&#232;mes et surtout comment on se sert des syst&#232;mes de versions modernes, le tout en restant le plus pragmatique possible.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;h1 class="first" id="pour-commencer-la-conclusion"&gt;Pour commencer, la conclusion&lt;/h1&gt;
-
-&lt;p&gt;Voici la liste des commandes n&#233;cessaires et suffisantes pour utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. Il y en a tr&#232;s peu. Il est normal de ne pas les comprendre tout de suite mais c&amp;rsquo;est pour vous donner une id&#233;e. Malgr&#233; la longueur de l&amp;rsquo;article, 95% de l&amp;rsquo;utilisation de &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/"/>
-    <content type="html">&lt;h1 class="first" id="pourquoi-git-est-cool-"&gt;Pourquoi Git est cool&amp;nbsp;?&lt;/h1&gt;
-
-&lt;p&gt;Parce que grace &#224; &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; vous pouvez travailler sur plusieurs partie du projet de fa&#231;on compl&#232;tement isol&#233;e les unes des autres. &#199;a c&amp;rsquo;est la partie d&#233;centralis&#233;e de &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Toutes les branches locales utilisent le m&#234;me r&#233;pertoire. Ainsi on peu changer de branche tr&#232;s ais&#233;ment et rapidement. On peut aussi changer de branche alors que certains fichier sont en cours de modifications. On peut m&#234;me pousser le vice jusqu&amp;rsquo;&#224; modifier un fichier, changer de branche, commiter une partie seulement des modifications de ce fichier dans la branche courante. Revenir dans l&amp;rsquo;ancienne branche et commi...&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
-    <content type="html">&lt;h1 class="first" id="liste-de-commandes"&gt;Liste de commandes&lt;/h1&gt;
-
-&lt;h2 id="les-commandes-pour-chaque-choses"&gt;Les commandes pour chaque choses&lt;/h2&gt;
-
-&lt;p&gt;Dans la premi&#232;re partie, nous avons vu la liste des probl&#232;mes r&#233;solus par &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. En r&#233;sum&#233; Git doit pouvoir&amp;nbsp;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;r&#233;cup&#233;rer les modifications des autres&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;envoyer ses modifications aux autres&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;revenir dans le temps&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;lister les diff&#233;rences entre chaque version&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;nommer certaines versions pour s&amp;rsquo;y r&#233;f&#233;rer facilement&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;afficher l&amp;rsquo;historique des modifications&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;savoir qui a fait quoi et quand&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;g&#233;rer des conflits&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;manipuler facileme...&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2009-10-30:/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/</id>
     <title type="html">Une CSS pour IE seulement</title>
     <published>2009-10-30T20:34:46Z</published>
     <updated>2009-10-30T20:34:46Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/"/>
     <content type="html">&lt;p&gt;Pour les d&#233;veloppeur de site web Internet Explorer est un cauchemar. C&amp;rsquo;est pourquoi j&amp;rsquo;utilise un style compl&#232;tement diff&#233;rent pour ce navigateur. Avec la librairie jQuery.&lt;/p&gt;
 
@@ -777,10 +672,6 @@ $ sudo port install git-core
     <title type="html">Synchronisation avec mobileme (2)</title>
     <published>2009-10-28T09:03:30Z</published>
     <updated>2009-10-28T09:03:30Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/"/>
     <content type="html">&lt;p&gt;J&amp;rsquo;ai d&#233;j&#224; discut&#233; de la fa&#231;on dont je &lt;a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe"&gt;synchronise mon site web sur mobileme&lt;/a&gt;. J&amp;rsquo;ai am&#233;lior&#233; mon script pour le rendre incr&#233;mental.&lt;/p&gt;
 
@@ -802,10 +693,6 @@ $ ls...&lt;/pre&gt;&lt;/div&gt;</content>
     <title type="html">Un menu qui attends avant de se cacher</title>
     <published>2009-10-26T19:56:09Z</published>
     <updated>2009-10-26T19:56:09Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/"/>
     <content type="html">&lt;p&gt;J&amp;rsquo;ai d&#233;j&#224; dit pourquoi &lt;a href="/Scratch/fr/blog/2009-10-Focus-vs-Minimalism"&gt;je pr&#233;f&#233;rais que mon menu de navigation soit cach&#233;&lt;/a&gt;. J&amp;rsquo;ai finalement d&#233;cid&#233; d&amp;rsquo;attendre un peu avant de cacher le menu. Juste le temps que l&amp;rsquo;utilisateur le voit. Mais voil&#224;. Comment faire pour qu&amp;rsquo;il ne disparaisse que lorsque l&amp;rsquo;on ne s&amp;rsquo;en sert pas pendant un petit moment&amp;nbsp;?&lt;/p&gt;
 
@@ -822,10 +709,6 @@ $ ls...&lt;/pre&gt;&lt;/div&gt;</content>
     <title type="html">lancer un d&#233;mon en ligne de commande</title>
     <published>2009-10-23T08:53:16Z</published>
     <updated>2009-10-23T08:53:16Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/"/>
     <content type="html">&lt;p&gt;Une petite astuce dont je ne me souvient jamais (je ne sais pas pourquoi).&lt;/p&gt;
 
@@ -845,10 +728,6 @@ nohup cmd &lt;span class="Keyword"&gt;&amp;amp;&lt;/span&gt;
     <title type="html">&lt;em&gt;Focus&lt;/em&gt; &amp;gt; Minimalisme</title>
     <published>2009-10-22T18:45:18Z</published>
     <updated>2009-10-22T18:45:18Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-10-Focus-vs-Minimalism/"/>
     <content type="html">&lt;p&gt;Je crois que le but du minimalisme est de facilit&#233; le &lt;em&gt;&lt;strong&gt;Focus&lt;/strong&gt;&lt;/em&gt; c&amp;rsquo;est-&#224;-dire la concentration sur le contenu.   Je crois que le minimalisme doit &#234;tre un moyen et pas une fin. Le &lt;em&gt;Focus&lt;/em&gt; devrait &#234;tre le but, et je pense que le minimalisme n&amp;rsquo;est pas obligatoire pour l&amp;rsquo;atteindre.&lt;/p&gt;
 
@@ -868,10 +747,6 @@ Pour l&amp;rsquo;instant je le cache partout.&lt;/p&gt;
     <title type="html">Usages non dits de Git</title>
     <published>2009-10-13T11:10:09Z</published>
     <updated>2009-10-13T11:10:09Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-10-untaught-git-usage/"/>
     <content type="html">&lt;p&gt;&lt;small&gt; &lt;em&gt;Je d&#233;cris pourquoi j&amp;rsquo;ai eu tant de mal &#224; me faire &#224; Git. Il y a en effet une partie &amp;ldquo;non dite&amp;rdquo; qui m&amp;rsquo;a bloqu&#233; pendant un bon moment. Jusqu&amp;rsquo;&#224; ce que je d&#233;couvre le bon document. &lt;/em&gt;&lt;/small&gt;&lt;/p&gt;
 
@@ -894,10 +769,6 @@ Pour l&amp;rsquo;instant je le cache partout.&lt;/p&gt;
     <title type="html">Charger une page web avec style</title>
     <published>2009-10-03T12:34:11Z</published>
     <updated>2009-10-03T12:34:11Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-10-How-to-preload-your-site-with-style/"/>
     <content type="html">&lt;h2 class="first" id="exemple"&gt;Exemple&lt;/h2&gt;
 
@@ -915,10 +786,6 @@ Pour l&amp;rsquo;instant je le cache partout.&lt;/p&gt;
     <title type="html">Disqus contre Intense Debate (pourquois j'ai chang&#233;)</title>
     <published>2009-09-28T08:58:20Z</published>
     <updated>2009-09-28T08:58:20Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/"/>
     <content type="html">&lt;h1 class="first" id="disqushttpdisquscom-vs-intense-debatehttpintensedebatecom"&gt;&lt;a href="http://disqus.com/"&gt;Disqus&lt;/a&gt; &lt;em&gt;vs.&lt;/em&gt; &lt;a href="http://intensedebate.com/"&gt;Intense Debate&lt;/a&gt;&lt;/h1&gt;
 
@@ -930,10 +797,6 @@ C&amp;rsquo;est pourquoi j&amp;rsquo;ai essayer de l&amp;rsquo;inclure de mani&#
     <title type="html">jQuery Tag Cloud [en]</title>
     <published>2009-09-23T11:18:26Z</published>
     <updated>2009-09-23T11:18:26Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/"/>
     <content type="html">&lt;p&gt;Here is how I done the tag cloud of my blog. It is done mostly in jQuery.
 All my site is static and pages are generated with &lt;a href="nanoc.stoneship.org"&gt;nanoc&lt;/a&gt;.
@@ -958,42 +821,5 @@ But you can easily translate from Ruby to Javascript.&lt;/p&gt;
                 $('#'+id).fadeIn();
                 $('.tag.selected').removeClass('selected');
                 $('#tag_'+id)...&lt;/script&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-09-22:/Scratch/fr/blog/2009-09-replace-all-except-some-part/</id>
-    <title type="html">Remplacer tout sauf une partie</title>
-    <published>2009-09-22T20:13:25Z</published>
-    <updated>2009-09-22T20:13:25Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-09-replace-all-except-some-part/"/>
-    <content type="html">&lt;p&gt;My problem is simple:&lt;/p&gt;
-
-&lt;p&gt;I want to filter a text except some part of it. I can match easily the part I don&amp;rsquo;t want to be filtered. For example&lt;/p&gt;
-
-&lt;div&gt;
-&lt;pre class="twilight"&gt;
-...
-text
-...
-BEGIN not to filter
-...
-text
-...
-END not to filter
-...
-text
-...
-&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I searched a better way to do that, but the best I can do is using &lt;code&gt;split&lt;/code&gt; and &lt;code&gt;scan&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div&gt;
-&lt;pre class="twilight"&gt;
-&lt;span class="Keyword"&gt;def&lt;/span&gt; &lt;span class="Entity"&gt;allExceptCode&lt;/span&gt;(&lt;span class="Variable"&gt; f&lt;span class="Variable"&gt;,&lt;/span&gt; content &lt;/span&gt;)
-    regexp&lt;span class="Keyword"&gt;=&lt;/span&gt;&lt;span class="StringRegexp"&gt;&lt;span class="StringRegexp"&gt;/&lt;/span&gt;&lt;/span&gt;&lt;span class="StringRegexp"&gt;&amp;lt;code&lt;span class="StringRegexp"&gt;&lt;span class="StringRegexp"&gt;[&lt;/span&gt;^&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
 </feed>
