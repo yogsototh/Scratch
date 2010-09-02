@@ -662,6 +662,79 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
   &lt;li&gt;voir les d&#233;tails de ces modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
   <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/"/>
+    <content type="html">
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;Voici un tutoriel &lt;a href="http://git-scm.org"&gt;Git&lt;/a&gt; d&#233;taill&#233; pour ceux qui en connaissent tr&#232;s peu sur les syst&#232;mes de versions. Vous comprendrez l&amp;rsquo;utilit&#233; de tels syst&#232;mes et surtout comment on se sert des syst&#232;mes de versions modernes, le tout en restant le plus pragmatique possible.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+
+&lt;/div&gt;
+
+&lt;div class="corps"&gt;
+
+
+&lt;h1 class="first" id="pour-commencer-la-conclusion"&gt;Pour commencer, la conclusion&lt;/h1&gt;
+
+&lt;p&gt;Voici la liste des commandes n&#233;cessaires et suffisantes pour utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. Il y en a tr&#232;s peu. Il est normal de ne pas les comprendre tout de suite mais c&amp;rsquo;est pour vous donner une id&#233;e. Malgr&#233; la longueur de l&amp;rsquo;article, 95% de l&amp;rsquo;utilisation de &lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/"/>
+    <content type="html">&lt;h1 class="first" id="pourquoi-git-est-cool-"&gt;Pourquoi Git est cool&amp;nbsp;?&lt;/h1&gt;
+
+&lt;p&gt;Parce que grace &#224; &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; vous pouvez travailler sur plusieurs partie du projet de fa&#231;on compl&#232;tement isol&#233;e les unes des autres. &#199;a c&amp;rsquo;est la partie d&#233;centralis&#233;e de &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Toutes les branches locales utilisent le m&#234;me r&#233;pertoire. Ainsi on peu changer de branche tr&#232;s ais&#233;ment et rapidement. On peut aussi changer de branche alors que certains fichier sont en cours de modifications. On peut m&#234;me pousser le vice jusqu&amp;rsquo;&#224; modifier un fichier, changer de branche, commiter une partie seulement des modifications de ce fichier dans la branche courante. Revenir dans l&amp;rsquo;ancienne branche et commi...&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
+    <content type="html">&lt;h1 class="first" id="liste-de-commandes"&gt;Liste de commandes&lt;/h1&gt;
+
+&lt;h2 id="les-commandes-pour-chaque-choses"&gt;Les commandes pour chaque choses&lt;/h2&gt;
+
+&lt;p&gt;Dans la premi&#232;re partie, nous avons vu la liste des probl&#232;mes r&#233;solus par &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. En r&#233;sum&#233; Git doit pouvoir&amp;nbsp;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;r&#233;cup&#233;rer les modifications des autres&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;envoyer ses modifications aux autres&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;revenir dans le temps&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;lister les diff&#233;rences entre chaque version&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;nommer certaines versions pour s&amp;rsquo;y r&#233;f&#233;rer facilement&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;afficher l&amp;rsquo;historique des modifications&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;savoir qui a fait quoi et quand&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;g&#233;rer des conflits&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;manipuler facileme...&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
     <title type="html">Git pour les nuls</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -700,52 +773,6 @@ $ sudo port install git-core
 &lt;div&gt;&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/"/>
-    <content type="html">&lt;h1 class="first" id="pourquoi-git-est-cool-"&gt;Pourquoi Git est cool&amp;nbsp;?&lt;/h1&gt;
-
-&lt;p&gt;Parce que grace &#224; &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; vous pouvez travailler sur plusieurs partie du projet de fa&#231;on compl&#232;tement isol&#233;e les unes des autres. &#199;a c&amp;rsquo;est la partie d&#233;centralis&#233;e de &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Toutes les branches locales utilisent le m&#234;me r&#233;pertoire. Ainsi on peu changer de branche tr&#232;s ais&#233;ment et rapidement. On peut aussi changer de branche alors que certains fichier sont en cours de modifications. On peut m&#234;me pousser le vice jusqu&amp;rsquo;&#224; modifier un fichier, changer de branche, commiter une partie seulement des modifications de ce fichier dans la branche courante. Revenir dans l&amp;rsquo;ancienne branche et commi...&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/"/>
-    <content type="html">
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;Voici un tutoriel &lt;a href="http://git-scm.org"&gt;Git&lt;/a&gt; d&#233;taill&#233; pour ceux qui en connaissent tr&#232;s peu sur les syst&#232;mes de versions. Vous comprendrez l&amp;rsquo;utilit&#233; de tels syst&#232;mes et surtout comment on se sert des syst&#232;mes de versions modernes, le tout en restant le plus pragmatique possible.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;h1 class="first" id="pour-commencer-la-conclusion"&gt;Pour commencer, la conclusion&lt;/h1&gt;
-
-&lt;p&gt;Voici la liste des commandes n&#233;cessaires et suffisantes pour utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. Il y en a tr&#232;s peu. Il est normal de ne pas les comprendre tout de suite mais c&amp;rsquo;est pour vous donner une id&#233;e. Malgr&#233; la longueur de l&amp;rsquo;article, 95% de l&amp;rsquo;utilisation de &lt;/p&gt;</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
     <title type="html">Git pour les nuls</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -770,33 +797,6 @@ $ sudo port install git-core
 &lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; est un &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, c&amp;rsquo;est-&#224;-dire un syst&#232;me de versions concurrentes d&#233;centralis&#233;. Analysons chaque partie de cette appellation compliqu&#233;.&lt;/p&gt;
 
 ...</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
-    <content type="html">&lt;h1 class="first" id="liste-de-commandes"&gt;Liste de commandes&lt;/h1&gt;
-
-&lt;h2 id="les-commandes-pour-chaque-choses"&gt;Les commandes pour chaque choses&lt;/h2&gt;
-
-&lt;p&gt;Dans la premi&#232;re partie, nous avons vu la liste des probl&#232;mes r&#233;solus par &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. En r&#233;sum&#233; Git doit pouvoir&amp;nbsp;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;r&#233;cup&#233;rer les modifications des autres&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;envoyer ses modifications aux autres&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;revenir dans le temps&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;lister les diff&#233;rences entre chaque version&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;nommer certaines versions pour s&amp;rsquo;y r&#233;f&#233;rer facilement&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;afficher l&amp;rsquo;historique des modifications&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;savoir qui a fait quoi et quand&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;g&#233;rer des conflits&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;manipuler facileme...&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-10-30:/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/</id>

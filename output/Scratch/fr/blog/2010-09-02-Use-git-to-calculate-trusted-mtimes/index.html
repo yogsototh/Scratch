@@ -71,8 +71,8 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         filepath.<span class="Entity">sub!</span>(ext,<span class="String"><span class="String">%{</span>/index<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>ext<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>)
     <span class="Keyword">end</span>
     str<span class="Keyword">=</span><span class="String"><span class="String">`</span>git log -1 --format='%ci' -- <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>filepath<span class="StringEmbeddedSource">}</span></span><span class="String">`</span></span>
-    <span class="Keyword">if</span> str <span class="Keyword">==</span> <span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
-        <span class="Keyword">return</span> <span class="Variable"><span class="Variable">@</span>item</span>.<span class="Entity">mtime</span>
+    <span class="Keyword">if</span> str.<span class="Entity">nil?</span> <span class="Keyword">or</span> str.<span class="Entity">empty?</span>
+        <span class="Keyword">return</span> <span class="Support">Time</span>.<span class="Entity">now</span>
     <span class="Keyword">else</span>
         <span class="Keyword">return</span> <span class="Support">DateTime</span>.<span class="Entity">parse</span>( str )
     <span class="Keyword">end</span>
