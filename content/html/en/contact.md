@@ -8,7 +8,7 @@ menupriority: 5
 <img src="/Scratch/img/about/avatar.png" alt="Avatar" class="left"/>
 
 <span style="font-size: 1.5em; line-height: 2em">
-  <yann.esposito@gmail.com>  
+  <% mail_perso %>  
   follow me on [twitter](http://twitter.com/yogsototh)  
   My bookmarks [diigo](http://diigo.com/profile/yogsototh)  
 </span>
