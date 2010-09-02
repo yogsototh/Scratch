@@ -6,4 +6,4 @@ error_message: Request Timed Out
 
 noSubMenu: true
 -----
-Contact: <yann.esposito@gmail.com>
+Contact: <% mail_perso %>

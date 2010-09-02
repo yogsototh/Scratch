@@ -7,4 +7,4 @@ error_message: Forbidden
 
 noSubMenu: true
 -----
-Contact: <yann.esposito@gmail.com>
+Contact: <% mail_perso %>
