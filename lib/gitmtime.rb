@@ -1,6 +1,10 @@
 def gitmtime
     filepath=@item.path.sub('/Scratch/','content/html/').sub(/\/$/,'')
-    filepath<<=%{.#{@item[:extension]}}
+    ext=%{.#{@item[:extension]}}
+    filepath<<=ext
+    if not FileTest.exists?(filepath)
+        filepath.sub!(ext,%{/index#{ext}})
+    end
     str=`git log -1 --format='%ci' -- #{filepath}`
     if str == ""
         return @item.mtime
