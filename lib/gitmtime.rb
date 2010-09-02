@@ -13,5 +13,9 @@ def gitmtime
     # puts "item #{filepath}"
     # puts "str #{str}"
     # puts '#############'
-    DateTime.parse( str )
+    if str == ""
+        return @item.mtime
+    else
+        return DateTime.parse( str )
+    end
 end
