@@ -126,7 +126,7 @@ self.instance_variable_set(:@conf, conf)
                     <%=tradOf(:copyright) %>
                 </div>
                 <div id="lastmod">
-                    <%=tradOf(:last_modified)%>: <%= @item.mtime.strftime(@config[:dateFormat][language.intern]) %> 
+                    <%=tradOf(:last_modified)%>: <%= gitmtime.strftime(@config[:dateFormat][language.intern]) %> 
                 </div>
                 <div>
                     <%= tradOf(:entirely_done_with) %>
