@@ -6,16 +6,8 @@ def gitmtime
         filepath.sub!(ext,%{/index#{ext}})
     end
     str=`git log -1 --format='%ci' -- #{filepath}`
-    puts '###'
-    puts filepath
-    puts str
-    puts '###'
     if str.nil? or str.empty?
-        if @item.mtime.nil?
-            return Time.now
-        else
-            return @item.mtime
-        end
+        return Time.now
     else
         return DateTime.parse( str )
     end
