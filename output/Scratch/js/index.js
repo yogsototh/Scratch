@@ -18,12 +18,14 @@ function returnToNormal() {
 }
 
 function initCode() {
-    $(".code").click(openWide);
-    $(".code").css({cursor: "pointer"});
-    $('body').append('<div id="_code"></div>');
-    $('#_code').css( { 'font-size':$('.corps:first').css('font-size'), 'text-align': "justify", position: "fixed", left:0, top:0, width: "100%", height: "100%", "background-color": "rgba(0, 0, 0, 0.8)", 'z-index':2000, 'padding':'3px'} );
-    $('#_code').hide();
-    $('#_code').click(returnToNormal);
+    if ( ! iphone ) {
+        $(".code").click(openWide);
+        $(".code").css({cursor: "pointer"});
+        $('body').append('<div id="_code"></div>');
+        $('#_code').css( { 'font-size':$('.corps:first').css('font-size'), 'text-align': "justify", position: "fixed", left:0, top:0, width: "100%", height: "100%", "background-color": "rgba(0, 0, 0, 0.8)", 'z-index':2000, 'padding':'3px'} );
+        $('#_code').hide();
+        $('#_code').click(returnToNormal);
+    }
 }
 // --- end of code popup section ---
 
@@ -109,10 +111,13 @@ function alertLanguage() {
     return true;
 }
 
+var iphone;
+
 // --- fin pour la contribution de la fin de IE ---
 function detectiPhone() {
     if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-        $('head').append('<meta name="viewport" content="width=device-width; initial-scale=2.0; maximum-scale=2.0;">');
+        iphone=true;
+        $('head').append('<meta name="viewport" content="width=device-width; initial-scale=0.5; maximum-scale=2.0;">');
         $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/iPhone.css"/>');
         // $('body').attr('onorientation','updateOrientation();');
         decalageTop=0;
@@ -134,19 +139,7 @@ function setSpecificCss() {
     // }
 }
 
-
-// Ce que l'on va lancer à l'init.
-$(document).ready( function() {
-    setSpecificCss();
-    detectIE();
-    detectiPhone();
-    initCode();
-
-    // affiche la page une fois propre et la langue choisie
-    if ( alertLanguage() ) {
-        $('#blackpage').fadeOut();
-    }
-
+function analytics() {
     var admin = $.cookie('admin');
     if (! admin) {
         // console.log("you're logged by google analytics");
@@ -186,10 +179,25 @@ $(document).ready( function() {
     } else {
         console.log("[WARNING] you're HIDDEN to analytics");
     }
+}
+
+// Ce que l'on va lancer à l'init.
+$(document).ready( function() {
+    setSpecificCss();
+    detectIE();
+    detectiPhone();
+    initCode();
+
+    // affiche la page une fois propre et la langue choisie
+    if ( alertLanguage() ) {
+        $('#blackpage').fadeOut();
+    }
+
+    analytics();
+
 });
 
-
-
+// --- Google Analytics ---
 if ( ! $.cookie('admin') ) {
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-10612400-1']);
