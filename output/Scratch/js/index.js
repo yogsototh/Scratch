@@ -112,8 +112,8 @@ function alertLanguage() {
 // --- fin pour la contribution de la fin de IE ---
 function detectiPhone() {
     if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-        $('head').append('<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">');
-        $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/iphone.css"/>');
+        $('head').append('<meta name="viewport" content="width=device-width; initial-scale=2.0; maximum-scale=2.0;">');
+        $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/iPhone.css"/>');
         // $('body').attr('onorientation','updateOrientation();');
         decalageTop=0;
         // disable the animation of the menu
