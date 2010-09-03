@@ -44,4 +44,3 @@ Now the date you see at the bottom is exactly the date I modified the _content_ 
 
 
 Thanks to Eric Sunshine to provide me some hints at cleaning my code.
-Je tiens à remercier Eric Sunshine pour ses conseils sur ce problème.

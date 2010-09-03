@@ -55,4 +55,4 @@ fr: Mais ça fonctionne comme prévu.
 fr: Maintenant la date que vous voyez en bas de la page correspond exactement à la dernière date de modification de son contenu.
 
 en: Thanks to Eric Sunshine to provide me some hints at cleaning my code.
-en: Je tiens à remercier Eric Sunshine pour ses conseils sur ce problème.
+fr: Je tiens à remercier Eric Sunshine pour ses conseils sur ce problème.

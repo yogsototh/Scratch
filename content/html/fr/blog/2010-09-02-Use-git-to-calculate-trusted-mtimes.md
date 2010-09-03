@@ -43,3 +43,4 @@ Bien entendu je sais que c'est très lent et absolument pas optimisé.
 Mais ça fonctionne comme prévu.
 Maintenant la date que vous voyez en bas de la page correspond exactement à la dernière date de modification de son contenu.
 
+Je tiens à remercier Eric Sunshine pour ses conseils sur ce problème.
