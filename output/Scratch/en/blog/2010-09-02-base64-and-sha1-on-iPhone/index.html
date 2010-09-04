@@ -60,9 +60,9 @@ here are two functions to add to your code to have <code>base64</code> and <code
 <pre class="twilight">
 <span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">import</span> <span class="String"><span class="String">&lt;</span>CommonCrypto/CommonDigest.h<span class="String">&gt;</span></span></span>
 ...
-NSString *b64_hash = [self b64_sha1:@<span class="String"><span class="String">&quot;</span>some NSString to be sha1'ed<span class="String">&quot;</span></span>];
+<span class="Support">NSString</span> *b64_hash = [<span class="Variable">self</span> <span class="SupportFunction">b64_sha1<span class="SupportFunction">:</span></span><span class="String"><span class="String">@&quot;</span>some NSString to be sha1'ed<span class="String">&quot;</span></span>];
 ...
-NSString *hex_hash = [self hex_sha1:@<span class="String"><span class="String">&quot;</span>some NSString to be sha1'ed<span class="String">&quot;</span></span>];
+<span class="Support">NSString</span> *hex_hash = [<span class="Variable">self</span> <span class="SupportFunction">hex_sha1<span class="SupportFunction">:</span></span><span class="String"><span class="String">@&quot;</span>some NSString to be sha1'ed<span class="String">&quot;</span></span>];
 </pre>
 
 <p>The <code>base64</code> algorithm must be programmed by hand on iPhone!</p>

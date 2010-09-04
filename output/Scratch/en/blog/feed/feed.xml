@@ -50,9 +50,9 @@ here are two functions to add to your code to have &lt;code&gt;base64&lt;/code&g
 &lt;pre class="twilight"&gt;
 &lt;span class="CCCPreprocessorLine"&gt;#&lt;span class="CCCPreprocessorDirective"&gt;import&lt;/span&gt; &lt;span class="String"&gt;&lt;span class="String"&gt;&amp;lt;&lt;/span&gt;CommonCrypto/CommonDigest.h&lt;span class="String"&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 ...
-NSString *b64_hash = [self b64_sha1:@&lt;span class="String"&gt;&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;some NSString to be sha1'ed&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;];
+&lt;span class="Support"&gt;NSString&lt;/span&gt; *b64_hash = [&lt;span class="Variable"&gt;self&lt;/span&gt; &lt;span class="SupportFunction"&gt;b64_sha1&lt;span class="SupportFunction"&gt;:&lt;/span&gt;&lt;/span&gt;&lt;span class="String"&gt;&lt;span class="String"&gt;@&amp;quot;&lt;/span&gt;some NSString to be sha1'ed&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;];
 ...
-NSString *hex_hash = [self hex_sha1:@&lt;span class="String"&gt;&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;some NSString to be sha1'ed&lt;/span&gt;&lt;/pre&gt;</content>
+&lt;/pre&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-08-31:/Scratch/en/blog/2010-08-31-send-mail-from-command-line-with-attached-file/</id>

@@ -23,7 +23,7 @@ fr: Pour l'usage c'est très simple, copiez le code dans la classe de votre choi
 fr: Puis :
 en: To use it, simply copy the code in your class and use as this:
 
-<code class="c">
+<code class="objective-c">
 #import <CommonCrypto/CommonDigest.h>
 ...
 NSString *b64_hash = [self b64_sha1:@"some NSString to be sha1'ed"];
