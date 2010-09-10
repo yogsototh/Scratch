@@ -5,6 +5,7 @@ if [[ $HOST = "YiMac.local" ]]; then
     git pull
     ./tasks/recompile
     if git status | grep 'nothing to commit'>/dev/null 2>&1; then 
+    else
         git commit -a -m "regeneration" 
     fi
     git push heroku master
