@@ -3,7 +3,7 @@
 if [[ $HOST = "YiMac.local" ]]; then
     cd $HOME/Sites/webroot
     git pull
-    ./task/recompile
+    ./tasks/recompile
     if git status | grep 'nothing to commit'>/dev/null 2>&1; then 
         git commit -a -m "regeneration" 
     fi
