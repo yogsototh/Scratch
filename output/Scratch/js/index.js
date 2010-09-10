@@ -1,11 +1,4 @@
-// Message en fonction du browser
-function detectIE() {
-    if ($.browser["msie"]) {
-        $('head').append('<script type="text/javascript" src="/Scratch/js/ie.js"></script>');
-    }
-}
-
-// --- code popup ---
+// --- code popin handling ---
 function openWide() {
     $(this).clone(false).appendTo($("#_code"));
     $('#_code a').css({"margin-right":"3em"});
@@ -18,7 +11,7 @@ function returnToNormal() {
 }
 
 function initCode() {
-    if ( ! iphone ) {
+    if ( /ip(od|hone)/.test(userAgent) ) {
         $(".code").click(openWide);
         $(".code").css({cursor: "pointer"});
         $('body').append('<div id="_code"></div>');
@@ -27,7 +20,7 @@ function initCode() {
         $('#_code').click(returnToNormal);
     }
 }
-// --- end of code popup section ---
+// --- end of popin code ---
 
 // -- multilanguage handling --
 
@@ -110,35 +103,9 @@ function alertLanguage() {
     }
     return true;
 }
+// --- end for language ---
 
-var iphone;
-
-// --- fin pour la contribution de la fin de IE ---
-function detectiPhone() {
-    if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-        iphone=true;
-        $('head').append('<meta name="viewport" content="width=device-width; initial-scale=0.5; maximum-scale=2.0;">');
-        $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/iPhone.css"/>');
-        // $('body').attr('onorientation','updateOrientation();');
-        decalageTop=0;
-        // disable the animation of the menu
-        initMenu=function(){};
-    }
-}
-
-
-
-function setSpecificCss() {
-    var userAgent = navigator.userAgent.toLowerCase();
-    // if ( /chrome/.test(userAgent) ) {
-    //     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_chrome.css"/>');
-    // } else if ( /webkit/.test(userAgent) ) {
-    //     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_webkit.css"/>');
-    // } else if ( /mozilla/.test(userAgent) ) {
-    //     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_mozilla.css"/>');
-    // }
-}
-
+// Google analytics
 function analytics() {
     var admin = $.cookie('admin');
     if (! admin) {
@@ -181,20 +148,34 @@ function analytics() {
     }
 }
 
+var userAgent;
+
+function detectClient() {
+    userAgent = navigator.userAgent.toLowerCase();
+    // if ( /chrome/.test(userAgent) ) {
+    //     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_chrome.css"/>');
+    // } else if ( /webkit/.test(userAgent) ) {
+    //     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_webkit.css"/>');
+    // } else if ( /mozilla/.test(userAgent) ) {
+    //     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_mozilla.css"/>');
+    // } else 
+        if (/msie/.test(userAgent) ) {
+        $('head').append('<script type="text/javascript" src="/Scratch/js/ie.js"></script>');
+    } else if (/ip(od|hone)/.test(userAgent)) {
+        $('head').append('<meta name="viewport" content="width=device-width; initial-scale=0.5; maximum-scale=2.0;">');
+        $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/iPhone.css"/>');
+    }
+}
+
 // Ce que l'on va lancer à l'init.
 $(document).ready( function() {
-    setSpecificCss();
-    detectIE();
-    detectiPhone();
+    detectClient();
     initCode();
-
     // affiche la page une fois propre et la langue choisie
     if ( alertLanguage() ) {
         $('#blackpage').fadeOut();
     }
-
     analytics();
-
 });
 
 // --- Google Analytics ---
