@@ -517,8 +517,8 @@ table.impact tr td
   #choixrss,
   #choixlang a
     margin-top: 0.3em
-    margin-left: 2em
-    margin-right: 2em
+    height: 4em
+    line-height: 4em
 
 #choixlang a
   display: block
