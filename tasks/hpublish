@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+if [[ $HOST = "YiMac.local" ]]; then
+    cd $HOME/Sites/webroot
+    git pull
+    ./task/recompile
+    if git status | grep 'nothing to commit'>/dev/null 2>&1; then 
+        git commit -a -m "regeneration" 
+    fi
+    git push heroku master
+else
+    ssh yimac ./Sites/webroot/tasks/hpublish
+fi
