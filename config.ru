@@ -4,6 +4,7 @@ require 'rack/contrib'
 require 'rack-rewrite'
 require 'mime/types'
 
+use Rack::Deflater
 use Rack::ETag
 module ::Rack
     class TryStatic < Static
