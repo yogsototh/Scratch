@@ -27,8 +27,8 @@ translations:
         fr: "langue"
         en: "language"
     switchTo: 
-        fr: "Version Française"
-        en: "Switch to English"
+        fr: "en Français"
+        en: "in English"
     clickForComment:
         fr: "Commentaires"
         en: "Comments"
