@@ -20,7 +20,7 @@ conf=LocalConf.new
 language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'')
 conf.language=language
 
-containMaths=yield.match(/$(.|\n)*$/)
+containMaths=yield.match(/<p>([^<]|\n)*\$([^<]|\n)*\$/)
 conf.containMaths=containMaths
 
 # the current item is an article
