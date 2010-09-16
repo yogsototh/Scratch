@@ -20,6 +20,20 @@ def allExceptCode( f, content )
 end
 
 module Nanoc3::Filters
+    class MathJaxKramdownRepair < Nanoc3::Filter
+        identifiers :math_repair
+
+        def description(content)
+            content.gsub(/<div class="math">(.+?)<\/div>/m) do
+                return %{$$ #{$1} $$}
+            end
+        end
+
+        def run(content, params={})
+            allExceptCode( :description , content )
+        end
+    end
+
     class Description < Nanoc3::Filter
         identifiers :description
 
