@@ -175,6 +175,7 @@ h1 > .date
 .date .month
   border-left: solid $mainColor 0.1em
   @include secondColor
+  border: none
   color: $mainColor
   float: right
   width: 2.3em
