@@ -100,5 +100,5 @@ git push heroku master
 
 en: Now I'll should be able to redirect properly to my own 404 page for example.
 en: I hope it is helpful.
-fr: Maintenant je devrait être capable de rediriger correctement mes erreurs 404.
+fr: Maintenant je peux rediriger correctement mes erreurs 404.
 fr: J'espère que ça a pu vous être utile.
