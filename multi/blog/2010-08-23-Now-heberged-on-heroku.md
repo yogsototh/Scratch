@@ -3,10 +3,10 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2010-08-23T15:05:13+02:00
-fr: title: Now heberged on heroku
+fr: title: Maintenant sur Heroku
 fr: subtitle: Héberger un site web statique sur heroku
-en: title: Now heberged on heroku
-en: subtitle: Heberge static website on Heroku
+en: title: Now hosted by heroku
+en: subtitle: Host static website on Heroku
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
