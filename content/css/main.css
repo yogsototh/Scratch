@@ -8,6 +8,8 @@ $mainColor: #551100
 $revealColor: #f9e1a8
 $mainLinkColor: #663300
 $lighterColor: #eddfc1
+$lighterColorBorderTop: #fffae9
+$lighterColorBorderBottom: #e0d0b4
 $codeBlockColor: $mainBackgroundColor
 $codeBlockBackgroundColor: $behindColor
 
@@ -22,6 +24,9 @@ $codeBlockBackgroundColor: $behindColor
   background:
     color: $lighterColor
     image: url('/Scratch/css/img/secondColor.png')
+  border:
+    top: 1px solid $lighterColorBorderTop
+    bottom: 1px solid $lighterColorBorderBottom
 
 @mixin revealColor
   background:
@@ -58,8 +63,8 @@ a:hover, #clickcomment:hover
   @include revealColor
 
 hr
-  color: $mainColor
-  border-bottom: 1px solid $revealColor
+  color: $lighterColor
+  border-bottom: 1px solid $lighterColorBorderBottom
 
 ul
   list-style: square
@@ -110,8 +115,6 @@ acronym
 
 #titre
   @include secondColor
-  border-top: 1px solid $mainColor
-  border-bottom: 1px solid $mainColor
 
 #liens .active, #bottom, #sousliens
   @include secondColor
@@ -252,7 +255,7 @@ ul.horizontal
 
 #entete
   padding-top: 0.1em
-  border-top: 1px solid $mainColor
+  border-top: 1px solid $lighterColorBorderTop
   margin-bottom: 2em
 
 #liens
