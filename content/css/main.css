@@ -2,12 +2,12 @@
 -----
 
 // -- MAIN --
-$behindColor: #1a0000
-$mainBackgroundColor: #fffae3
+$behindColor: #280000
+$mainBackgroundColor: #f9f1dd
 $mainColor: #551100
-$revealColor: #faeac3
+$revealColor: #f9e1a8
 $mainLinkColor: #663300
-$lighterColor: #eee0c2
+$lighterColor: #eddfc1
 $codeBlockColor: $mainBackgroundColor
 $codeBlockBackgroundColor: $behindColor
 
@@ -42,6 +42,7 @@ table.description tr td
 
 body
   background:
+    color: $behindColor
     image: url('/Scratch/css/img/background.png')
   color: $mainBackgroundColor
 
