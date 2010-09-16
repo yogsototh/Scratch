@@ -3,7 +3,7 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2010-08-23T15:05:13+02:00
-title: Now heberged on heroku
+title: Maintenant sur Heroku
 subtitle: Héberger un site web statique sur heroku
 author_name: Yann Esposito
 author_uri: yannesposito.com
@@ -86,5 +86,5 @@ heroku create
 git push heroku master
 </code>
 
-Maintenant je devrait être capable de rediriger correctement mes erreurs 404.
+Maintenant je peux rediriger correctement mes erreurs 404.
 J'espère que ça a pu vous être utile.

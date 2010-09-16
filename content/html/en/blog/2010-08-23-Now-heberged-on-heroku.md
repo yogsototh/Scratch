@@ -3,8 +3,8 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2010-08-23T15:05:13+02:00
-title: Now heberged on heroku
-subtitle: Heberge static website on Heroku
+title: Now hosted by heroku
+subtitle: Host static website on Heroku
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
