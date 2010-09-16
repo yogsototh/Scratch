@@ -6,10 +6,33 @@ $behindColor: #1a0000
 $mainBackgroundColor: #fffae3
 $mainColor: #551100
 $revealColor: #faeac3
-$mainLinkColor: #aa5522
+$mainLinkColor: #663300
 $lighterColor: #eee0c2
 $codeBlockColor: $mainBackgroundColor
 $codeBlockBackgroundColor: $behindColor
+
+@mixin mainColor
+  color: $behindColor
+  background:
+    color: $mainBackgroundColor
+    image: url('/Scratch/css/img/mainColor.png')
+
+@mixin secondColor
+  color: $behindColor
+  background:
+    color: $lighterColor
+    image: url('/Scratch/css/img/secondColor.png')
+
+@mixin revealColor
+  background:
+    color: $revealColor
+    image: url('/Scratch/css/img/revealColor.png')
+
+@mixin codeColor
+  background:
+    color: $codeBlockBackgroundColor
+    image: url('/Scratch/css/img/codeColor.png')
+  color: $codeBlockColor
 
 table.description tr td
   border: 1px solid $lighterColor
@@ -19,14 +42,11 @@ table.description tr td
 
 body
   background:
-    color: $behindColor
     image: url('/Scratch/css/img/background.png')
   color: $mainBackgroundColor
 
 #content
-  background:
-    color: $mainBackgroundColor
-  color: $mainColor
+  @include mainColor
 
 a, a:link, a:visited, a:active, a:hover, #clickcomment
   text-decoration: none
@@ -34,7 +54,7 @@ a, a:link, a:visited, a:active, a:hover, #clickcomment
   color: $mainLinkColor
 
 a:hover, #clickcomment:hover
-  background-color: $revealColor
+  @include revealColor
 
 hr
   color: $mainColor
@@ -59,8 +79,7 @@ body, h1, h2, h3, h4, #entete, .tag
   background-repeat: no-repeat
 
 pre
-  background-color: $codeBlockBackgroundColor
-  color: $codeBlockColor
+  @include codeColor
   padding: 1em
   line-height: 1.2em
 
@@ -89,12 +108,12 @@ acronym
 // -- STYLE --
 
 #titre
-  background: $lighterColor
+  @include secondColor
   border-top: 1px solid $mainColor
   border-bottom: 1px solid $mainColor
 
 #liens .active, #bottom, #sousliens
-  background-color: $lighterColor
+  @include secondColor
 
 // -- FOOTER --
 #lastmod
@@ -151,7 +170,7 @@ h1 > .date
 
 .date .month
   border-left: solid $mainColor 0.1em
-  background-color: $lighterColor
+  @include secondColor
   color: $mainColor
   float: right
   width: 2.3em
@@ -291,14 +310,14 @@ $contentMargin: 0em
     bottom: 2em
 
 .encadre, .black, .red, .shadow
-  background-color: $lighterColor
+  @include secondColor
 
 .intro, .resume
   font-size: .9em
   font-style: italic
 
 #afterheader > h1
-  background-color: $lighterColor
+  @include secondColor
   width: 100%
   padding-bottom: 1.5em
 
