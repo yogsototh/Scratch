@@ -171,13 +171,6 @@ h1 > .date
   width: 1.7em
 
 .date .month
-<<<<<<< HEAD
-  border-left: solid $mainColor 0.1em
-  @include secondColor
-  border: none
-  color: $mainColor
-=======
->>>>>>> c536957f4ab16f4a3ce43568ee133a3eb22ba0ec
   float: right
   width: 2.3em
   background-color: $mainColor
