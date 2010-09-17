@@ -46,10 +46,10 @@ table.description tr td
   background-color: $lighterColor
 
 body
+  color: $behindColor
   background:
-    color: $behindColor
-    image: url('/Scratch/css/img/background.png')
-  color: $mainBackgroundColor
+    color: $mainBackgroundColor
+    image: url('/Scratch/css/img/mainColor.png')
 
 #content
   @include mainColor
@@ -153,18 +153,16 @@ h1 > .date
   color: $mainColor
 
 .date
+  color: $mainBackgroundColor
+  border: 1px solid $lighterColor
   text-align: center
   font-size: 0.7em
-  color: $mainBackgroundColor
   width: 4.1em
-  border: 1px solid $lighterColor
   line-height: 1.5em
   display: inline-block
-  border: solid black 1px
   position: relative
   top: 2.75em
   left: -5em
-
 
 .date .day
   color: $mainColor
@@ -173,20 +171,22 @@ h1 > .date
   width: 1.7em
 
 .date .month
+<<<<<<< HEAD
   border-left: solid $mainColor 0.1em
   @include secondColor
   border: none
   color: $mainColor
+=======
+>>>>>>> c536957f4ab16f4a3ce43568ee133a3eb22ba0ec
   float: right
   width: 2.3em
-
-.date .year
-  border-top: solid $mainColor 1px
-  border-bottom: solid $mainColor 1px
-  line-height: 3ex
-  clear: both
   background-color: $mainColor
   color: $mainBackgroundColor
+
+.date .year
+  line-height: 3ex
+  clear: both
+  @include secondColor
 
 // --- LAYOUTS --
 $VPadCorps: 3em
