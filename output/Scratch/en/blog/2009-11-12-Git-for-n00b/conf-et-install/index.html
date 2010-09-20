@@ -94,7 +94,6 @@ $ sudo port install git-core
     br        = branch
     lg        = log --pretty=oneline --graph
     logfull   = log --pretty=fuller --graph --stat -p
-    undo      = checkout
     unstage   = reset HEAD
     <span class="Comment"><span class="Comment">#</span> there should be an article on what this command do</span>
     uncommit = <span class="Keyword">!</span>zsh -c <span class="String"><span class="String">'</span>&quot;if (($0)); then nb=$(( $0 - 1 )); else nb=0; fi; i=0; while ((i&lt;=nb)); do git revert -n --no-edit HEAD~$i; ((i++)); done; git commit -m \&quot;revert to $0 version(s) back\&quot;&quot;<span class="String">'</span></span>
@@ -133,6 +132,13 @@ $ ssh-keygen -t rsa
 </pre></div>
 
 <p>Reply to question and <em>*do not enter</em> a password. Then copy your keys to the distant server. This is not the safest way to do this. The safest being, using <code>ssh-agent</code>.</p>
+
+<p>The easiest way if you have <code>ssh-copy-id</code>:</p>
+<div><pre class="twilight">
+me@locahost$ ssh-copy-id <span class="Keyword">~</span>/.ssh/id_rsa.pub me@main.server
+</pre></div>
+
+<p>or manually</p>
 
 <div><pre class="twilight">
 me@locahost$ scp <span class="Keyword">~</span>/.ssh/id_rsa.pub me@main.server:
@@ -287,7 +293,7 @@ git clone ssh://server/path/to/project
                 </div>
                 <div id="lastmod">
                     Created: 11/12/2009
-                    Modified: 05/09/2010 
+                    Modified: 09/20/2010 
                 </div>
                 <div>
                     Entirely done with

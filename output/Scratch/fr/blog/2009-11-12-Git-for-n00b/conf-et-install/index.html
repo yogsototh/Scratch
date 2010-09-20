@@ -92,7 +92,6 @@ $ sudo port install git-core
     br        = branch
     lg        = log --pretty=oneline --graph
     logfull   = log --pretty=fuller --graph --stat -p
-    undo      = checkout
     unstage   = reset HEAD
     <span class="Comment"><span class="Comment">#</span> there should be an article on what this command do</span>
     uncommit = <span class="Keyword">!</span>zsh -c <span class="String"><span class="String">'</span>&quot;if (($0)); then nb=$(( $0 - 1 )); else nb=0; fi; i=0; while ((i&lt;=nb)); do git revert -n --no-edit HEAD~$i; ((i++)); done; git commit -m \&quot;revert to $0 version(s) back\&quot;&quot;<span class="String">'</span></span>
@@ -132,6 +131,14 @@ $ ssh-keygen -t rsa
 </pre></div>
 
 <p>Répondez aux question et n&rsquo;entrez <strong>surtout PAS</strong> de mot de passe. Ensuite copiez les clés sur le serveur distant. Ce n&rsquo;est pas la façon la plus sûre de procéder. L&rsquo;idéal étant d&rsquo;écrire quand même un mot de passe et d&rsquo;utiliser <code>ssh-agent</code>.</p>
+
+<p>Ensuite le plus simple, si vous possédez <code>ssh-copy-id</code> (sous Ubuntu par exemple)&nbsp;:</p>
+
+<div><pre class="twilight">
+me@locahost$ ssh-copy-id -i <span class="Keyword">~</span>/.ssh/id_rsa.pub me@main.server
+</pre></div>
+
+<p>ou manuellement&nbsp;:</p>
 
 <div><pre class="twilight">
 me@locahost$ scp <span class="Keyword">~</span>/.ssh/id_rsa.pub me@main.server:
@@ -286,7 +293,7 @@ git clone ssh://server/path/to/project
                 </div>
                 <div id="lastmod">
                     Écrit le : 12/11/2009
-                    modifié le : 09/05/2010 
+                    modifié le : 20/09/2010 
                 </div>
                 <div>
                     Site entièrement réalisé avec
