@@ -43,7 +43,6 @@ Enregistrez le fichier suivant comme le fichier `~/.gitconfig`.
     br        = branch
     lg        = log --pretty=oneline --graph
     logfull   = log --pretty=fuller --graph --stat -p
-    undo      = checkout
     unstage   = reset HEAD
     # there should be an article on what this command do
     uncommit = !zsh -c '"if (($0)); then nb=$(( $0 - 1 )); else nb=0; fi; i=0; while ((i<=nb)); do git revert -n --no-edit HEAD~$i; ((i++)); done; git commit -m \"revert to $0 version(s) back\""'
@@ -82,6 +81,14 @@ $ ssh-keygen -t rsa
 </code></div>
 
 Répondez aux question et n'entrez **surtout PAS** de mot de passe. Ensuite copiez les clés sur le serveur distant. Ce n'est pas la façon la plus sûre de procéder. L'idéal étant d'écrire quand même un mot de passe et d'utiliser `ssh-agent`.
+
+Ensuite le plus simple, si vous possédez `ssh-copy-id` (sous Ubuntu par exemple) :
+
+<div><code class="zsh">
+me@locahost$ ssh-copy-id -i ~/.ssh/id_rsa.pub me@main.server
+</code></div>
+
+ou manuellement :
 
 <div><code class="zsh">
 me@locahost$ scp ~/.ssh/id_rsa.pub me@main.server:

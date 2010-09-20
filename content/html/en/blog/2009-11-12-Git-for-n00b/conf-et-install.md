@@ -45,7 +45,6 @@ Save the following file as your `~/.gitconfig`.
     br        = branch
     lg        = log --pretty=oneline --graph
     logfull   = log --pretty=fuller --graph --stat -p
-    undo      = checkout
     unstage   = reset HEAD
     # there should be an article on what this command do
     uncommit = !zsh -c '"if (($0)); then nb=$(( $0 - 1 )); else nb=0; fi; i=0; while ((i<=nb)); do git revert -n --no-edit HEAD~$i; ((i++)); done; git commit -m \"revert to $0 version(s) back\""'
@@ -83,6 +82,13 @@ $ ssh-keygen -t rsa
 </code></div>
 
 Reply to question and **do not enter* a password. Then copy your keys to the distant server. This is not the safest way to do this. The safest being, using `ssh-agent`.
+
+The easiest way if you have `ssh-copy-id`:
+<div><code class="zsh">
+me@locahost$ ssh-copy-id ~/.ssh/id_rsa.pub me@main.server
+</code></div>
+
+or manually
 
 <div><code class="zsh">
 me@locahost$ scp ~/.ssh/id_rsa.pub me@main.server:
