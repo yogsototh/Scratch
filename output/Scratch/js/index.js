@@ -11,7 +11,7 @@ function returnToNormal() {
 }
 
 function initCode() {
-    if ( /ip(od|hone)/.test(userAgent) ) {
+    if ( ! /ip(od|hone)/.test(userAgent) ) {
         $(".code").click(openWide);
         $(".code").css({cursor: "pointer"});
         $('body').append('<div id="_code"></div>');
