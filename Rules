@@ -9,11 +9,28 @@
 
 # CSS
 compile '/css/*' do
+    filter :no_custom_css
     filter :sass
     filter :rainpress
 end
 route '/css/*' do
     '/Scratch/assets' + item.identifier.chop + '.css'
+end
+compile '/css/*', :rep => :mozilla do
+    filter :mozilla
+    filter :sass
+    filter :rainpress
+end
+route '/css/*', :rep => :mozilla do
+    '/Scratch/assets' + item.identifier.chop + '_mozilla.css'
+end
+compile '/css/*', :rep => :mozilla do
+    filter :webkit
+    filter :sass
+    filter :rainpress
+end
+route '/css/*', :rep => :webkit do
+    '/Scratch/assets' + item.identifier.chop + '_webkit.css'
 end
 
 compile '/css/raw/*' do
