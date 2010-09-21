@@ -1,10 +1,8 @@
 -----
 -----
 
-// -- MAIN --
 $behindColor: #280000
 $mainBackgroundColor: #f9f1dd
-$mainColor: #551100
 $revealColor: #f9e1a8
 $mainLinkColor: #663300
 $lighterColor: #eddfc1
@@ -150,7 +148,7 @@ acronym
 
 h1 > .date
   font-size: 0.6em
-  color: $mainColor
+  color: $behindColor
 
 .date
   color: $mainBackgroundColor
@@ -165,7 +163,7 @@ h1 > .date
   left: -5em
 
 .date .day
-  color: $mainColor
+  color: $behindColor
   background-color: $mainBackgroundColor
   float: left
   width: 1.7em
@@ -173,7 +171,7 @@ h1 > .date
 .date .month
   float: right
   width: 2.3em
-  background-color: $mainColor
+  background-color: $behindColor
   color: $mainBackgroundColor
 
 .date .year

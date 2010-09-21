@@ -352,8 +352,8 @@ r - b
     y - c   
 </pre>
 
-fr: And look at what it implies when you write it in <sc>xml</sc>:
-en: Et regardez ce que ça implique quand on l'écrit en <sc>xml</sc> :
+en: And look at what it implies when you write it in <sc>xml</sc>:
+fr: Et regardez ce que ça implique quand on l'écrit en <sc>xml</sc> :
 
 <code class="xml">
 <r>
