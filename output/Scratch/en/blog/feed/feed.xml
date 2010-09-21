@@ -3,8 +3,8 @@
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
   <updated>2010-09-02T13:54:10Z</updated>
-  <link href="http://yannesposito.com/" rel="alternate"/>
-  <link href="http://feeds.feedburner.com/yannespositocomen" rel="self"/>
+  <link rel="alternate" href="http://yannesposito.com/"/>
+  <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
@@ -18,7 +18,7 @@
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/"/>
     <content type="html">&lt;p&gt;You can remark at the bottom of each page I provide a last modification date.
 This label was first calculated using the &lt;code&gt;mtime&lt;/code&gt; of the file on the file system.
 But many times I modify this date just to force some recompilation. 
@@ -41,7 +41,7 @@ This is how I do this with &lt;a href="http://nanoc.stoneship.org"&gt;nanoc&lt;/
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-09-02-base64-and-sha1-on-iPhone/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-09-02-base64-and-sha1-on-iPhone/"/>
     <content type="html">&lt;p&gt;Lets be straight:
 here are two functions to add to your code to have &lt;code&gt;base64&lt;/code&gt; and &lt;code&gt;hexadecimal&lt;/code&gt; version of the &lt;code&gt;sha1&lt;/code&gt; hash of an NSString.&lt;/p&gt;
 
@@ -63,7 +63,7 @@ here are two functions to add to your code to have &lt;code&gt;base64&lt;/code&g
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-08-31-send-mail-from-command-line-with-attached-file/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-08-31-send-mail-from-command-line-with-attached-file/"/>
     <content type="html">&lt;p&gt;I had to send a mail using only command line. 
 I was surprised it isn&amp;rsquo;t straightforward at all.
 I didn&amp;rsquo;t had &lt;code&gt;pine&lt;/code&gt; nor &lt;code&gt;mutt&lt;/code&gt; or anything like that.
@@ -94,7 +94,7 @@ begin 664 fic....&lt;/pre&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/"/>
     <content type="html">&lt;h1 class="first" id="now-on-herokuhttpherokucom"&gt;Now on &lt;a href="http://heroku.com"&gt;Heroku&lt;/a&gt;&lt;/h1&gt;
 
 &lt;p&gt;I now changed my hosting to &lt;a href="http://heroku.com"&gt;Heroku&lt;/a&gt;. 
@@ -119,7 +119,7 @@ But here is the conf to make it work on heroku.&lt;/p&gt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-07-09-Indecidabilities/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-07-09-Indecidabilities/"/>
     <content type="html">
 &lt;div class="intro"&gt;
 
@@ -165,7 +165,7 @@ And I&amp;rsquo;ll ...&lt;/p&gt;&lt;/div&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-07-31-New-style-after-holidays/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-07-31-New-style-after-holidays/"/>
     <content type="html">&lt;p&gt;Before my holidays many visitors tell me my website was too long to scroll.
 This is why I completely changed my website design.
 Now all should scroll smoothly on all platforms.
@@ -183,7 +183,7 @@ I was inspired by Readability and iBooks&lt;small&gt;&amp;copy;&lt;/small&gt; (t
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-07-07-CSS-rendering-problems-by-navigator/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-07-07-CSS-rendering-problems-by-navigator/"/>
     <content type="html">&lt;p&gt;Some &lt;a href="http://reddit.com"&gt;Reddit&lt;/a&gt; users reported my website was really long to load and to scroll.
 They thinks it was because of the &amp;lsquo;1px shadow&amp;rsquo; I apply on all the text.
 I was a bit surprised, because I make some test into a really &lt;em&gt;slow&lt;/em&gt; virtual machine. And all have always worked fine. In fact, what slow down so much are by order of importance:&lt;/p&gt;
@@ -208,7 +208,7 @@ I was a bit surprised, because I make some test into a really &lt;em&gt;slow&lt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-07-05-Cappuccino-and-Web-applications/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-07-05-Cappuccino-and-Web-applications/"/>
     <content type="html">
 &lt;div class="intro"&gt;
 
@@ -243,7 +243,7 @@ Nonetheless I used these two to make the same web application. This is why I com
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-06-19-jQuery-popup-the-easy-way/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-06-19-jQuery-popup-the-easy-way/"/>
     <content type="html">&lt;p&gt;Some source code on this blog can be downloaded. 
 Most of time, the code is larger than the &lt;code&gt;div&lt;/code&gt; bloc. 
 This is why I use a method to show this code in a large jQuery popup. &lt;/p&gt;
@@ -265,7 +265,7 @@ This is why I use a method to show this code in a large jQuery popup. &lt;/p&gt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-06-17-hide-yourself-to-analytics/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-06-17-hide-yourself-to-analytics/"/>
     <content type="html">&lt;p&gt;This is a way not to count your own visits to your blog.
 First you should look on how &lt;a href="/Scratch/en/blog/2010-06-17-track-events-with-google-analytics"&gt;I handle analytics&lt;/a&gt;. All analytics are handled in one javascript file, this make things really convenient.&lt;/p&gt;
 
@@ -287,7 +287,7 @@ First you should look on how &lt;a href="/Scratch/en/blog/2010-06-17-track-event
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-06-17-track-events-with-google-analytics/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-06-17-track-events-with-google-analytics/"/>
     <content type="html">&lt;p&gt;Here is how to track all clicks on your website using google analytics asynchronously.&lt;/p&gt;
 
 &lt;p&gt;First in your &lt;span class="sc"&gt;html&lt;/span&gt; you need to use &lt;a href="http://jquery.com"&gt;jQuery&lt;/a&gt; and a javscript file I named &lt;code&gt;yga.js&lt;/code&gt;:&lt;/p&gt;
@@ -304,7 +304,7 @@ First you should look on how &lt;a href="/Scratch/en/blog/2010-06-17-track-event
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-06-15-Get-my-blog-engine/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-06-15-Get-my-blog-engine/"/>
     <content type="html">&lt;p&gt;I published a &lt;em&gt;light&lt;/em&gt; version of my blog engine based on &lt;a href="http://nanoc.stoneship.org"&gt;nanoc&lt;/a&gt; yesterday night. By &lt;em&gt;light&lt;/em&gt;, I mean a lighter, more portable CSS (without round border).
 You can get it on &lt;a href="http://github.com/yogsototh/nanoc3_blog"&gt;github.com&lt;/a&gt;.&lt;/p&gt;
 
@@ -328,7 +328,7 @@ You can get it on &lt;a href="http://github.com/yogsototh/nanoc3_blog"&gt;github
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-06-14-multi-language-choices/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-06-14-multi-language-choices/"/>
     <content type="html">&lt;p&gt;I translate most of my blog entries in French and English.
 Most people advice me to have one file per language. Generally it ends with:&lt;/p&gt;
 
@@ -364,7 +364,7 @@ Finally my files...&lt;/p&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-05-24-Trees--Pragmatism-and-Formalism/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-05-24-Trees--Pragmatism-and-Formalism/"/>
     <content type="html">
 &lt;div class="intro"&gt;
 
@@ -400,7 +400,7 @@ I entered in the &lt;em&gt;infernal&lt;/em&gt;: ...&lt;/p&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-05-19-How-to-cut-HTML-and-repair-it/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-05-19-How-to-cut-HTML-and-repair-it/"/>
     <content type="html">&lt;p&gt;For my main page, you can see, a list of my latest blog entry. And you have the first part of each article. To accomplish that, I needed to include the begining of the entry and to cut it somewhere. But now, I had to repair this cutted HTML.&lt;/p&gt;
 
 &lt;p&gt;Here is an example:&lt;/p&gt;
@@ -418,7 +418,7 @@ I entered in the &lt;em&gt;infernal&lt;/em&gt;: ...&lt;/p&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-05-17-at-least-this-blog-revive/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-05-17-at-least-this-blog-revive/"/>
     <content type="html">&lt;p&gt;Hi all!&lt;/p&gt;
 
 &lt;blockquote cite="http://www.madore.org/~david/weblog/2010-05.html#d.2010-05-12.1752"&gt;
@@ -447,7 +447,7 @@ You&amp;rsquo;ll be surprised by the results.&lt;/p&gt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-03-23-Encapsulate-git/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-03-23-Encapsulate-git/"/>
     <content type="html">&lt;div class="intro"&gt;
 Here is a solution to maintain divergent branches in git. Because it is easy to merge by mistake. I give a script that encapsulate git in order to forbid some merge and warn you some merge should be dangerous.
 &lt;/div&gt;
@@ -477,7 +477,7 @@ clientB: project adapted for client B&lt;/p&gt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-03-22-Git-Tips/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-03-22-Git-Tips/"/>
     <content type="html">&lt;h2 class="first" id="clone-from-github-behind-an-evil-firewall"&gt;clone from github behind an evil firewall&lt;/h2&gt;
 
 &lt;p&gt;Standard:&lt;/p&gt;
@@ -518,7 +518,7 @@ $ git ...&lt;/pre&gt;&lt;/div&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-02-23-When-regexp-is-not-the-best-solution/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-02-23-When-regexp-is-not-the-best-solution/"/>
     <content type="html">&lt;p&gt;Regular expression are really useful. Unfortunately, they are not always the best way of doing things.
 Particularly when transformations you want to make are easy.&lt;/p&gt;
 
@@ -538,7 +538,7 @@ ext&lt;span class="Keyword"&gt;=&lt;/span&gt;&lt;span class="Variable"&gt;&lt;sp
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-02-18-split-a-file-by-keyword/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-02-18-split-a-file-by-keyword/"/>
     <content type="html">&lt;p&gt;Strangely enough, I didn&amp;rsquo;t find any built-in tool to split a file by keyword. I made one myself in &lt;code&gt;awk&lt;/code&gt;. I put it here mostly for myself. But it could also helps someone else.
 The following code split a file for each line containing the word &lt;code&gt;UTC&lt;/code&gt;.&lt;/p&gt;
 
@@ -560,7 +560,7 @@ The following code split a file for each line containing the word &lt;code&gt;UT
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-02-16-All-but-something-regexp--2-/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-02-16-All-but-something-regexp--2-/"/>
     <content type="html">&lt;p&gt;In my &lt;a href="previouspost"&gt;previous post&lt;/a&gt; I had given some trick to match all except something. On the same idea, the trick to match the smallest possible string. Say you want to match the string between &amp;lsquo;a&amp;rsquo; and &amp;lsquo;b&amp;rsquo;, for example, you want to match:&lt;/p&gt;
 
 &lt;pre class="twilight"&gt;
@@ -589,7 +589,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-02-15-All-but-something-regexp/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-02-15-All-but-something-regexp/"/>
     <content type="html">&lt;p&gt;Sometimes you cannot simply write:&lt;/p&gt;
 
 &lt;div&gt;&lt;pre class="twilight"&gt;
@@ -611,7 +611,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/"/>
     <content type="html">&lt;p&gt;How to stop using bad Microsoft&#169; font under Ubuntu Linux in order to user nice anti aliased font under Firefox.&lt;/p&gt;
 
 &lt;p&gt;Just modify the &lt;code&gt;/etc/fonts/local.conf&lt;/code&gt; with the following code: &lt;/p&gt;
@@ -632,7 +632,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2010-01-04-Change-default-shell-on-Mac-OS-X/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-01-04-Change-default-shell-on-Mac-OS-X/"/>
     <content type="html">&lt;p&gt;I just found a way to change the default shell on Mac OS X. This note is mostly for me, but somebody else should find it useful. Just launch the following command: &lt;/p&gt;
 
 &lt;div&gt;&lt;pre class="twilight"&gt;
@@ -649,7 +649,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-12-14-Git-vs--Bzr/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-12-14-Git-vs--Bzr/"/>
     <content type="html">
 &lt;div class="intro"&gt;
 
@@ -675,7 +675,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-12-06-iphone-call-filter/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-12-06-iphone-call-filter/"/>
     <content type="html">&lt;p&gt;It is unbelievable you cannot filter your call with an iPhone! The only reason I see for that is a negotiation with phone operator to force users to get phone advertising. It is simple unacceptable.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m a &#955; iPhone&amp;rsquo;s user. The only way to filter your call and to manage blacklist is to &lt;em&gt;jailbreak&lt;/em&gt; your iPhone. And I don&amp;rsquo;t want to do that. Then, if like me you find it unacceptable, just write a line to Apple: &lt;a href="http://www.apple.com/feedback/iphone.html"&gt;http://www.apple.com/feedback/iphone.html&lt;/a&gt;&lt;/p&gt;
@@ -690,7 +690,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/"/>
     <content type="html">&lt;h1 class="first" id="why-git-is-cool"&gt;Why Git is cool?&lt;/h1&gt;
 
 &lt;p&gt;Because with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; you can work on many part of some project totally independently. This is the true efficiency of decentralisation.&lt;/p&gt;
@@ -710,7 +710,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
     <content type="html">&lt;h1 class="first" id="here-we-go"&gt;Here we go!&lt;/h1&gt;
 
 &lt;p&gt;Here is one from many way to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. This method is sufficient to work on a project. Not there is many other &lt;em&gt;workflows&lt;/em&gt;.&lt;/p&gt;
@@ -737,7 +737,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
     <content type="html">&lt;h1 class="first" id="command-list"&gt;Command List&lt;/h1&gt;
 
 &lt;h2 id="command-for-each-functionality"&gt;Command for each functionality&lt;/h2&gt;
@@ -770,7 +770,7 @@ $ g...&lt;/pre&gt;&lt;/div&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/"/>
     <content type="html">
 &lt;div class="intro"&gt;
 
@@ -805,7 +805,7 @@ git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/"/>
     <content type="html">&lt;h1 class="first" id="gitgit-for-what"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; for what?&lt;/h1&gt;
 
 
@@ -835,7 +835,7 @@ When somebody work with files without a versions system, the following happens f
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/"/>
     <content type="html">&lt;h1 class="first" id="before-usage-configuration"&gt;Before usage, configuration&lt;/h1&gt;
 
 &lt;h2 id="install"&gt;install&lt;/h2&gt;
@@ -874,7 +874,7 @@ $ sudo port install git-core
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/"/>
     <content type="html">&lt;p&gt;For developer IE is a nightmare. This is why, I use a method to disable my standard CSS and enable a IE only CSS. I use jQuery to accomplish that.&lt;/p&gt;
 
 &lt;div&gt;&lt;pre class="twilight"&gt;
@@ -892,7 +892,7 @@ $ sudo port install git-core
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/"/>
     <content type="html">&lt;p&gt;I already talked about how &lt;a href="/Scratch/en/blog/10_Synchronize_Custom_WebSite_with_mobileMe"&gt;I synchronized my website with mobileme&lt;/a&gt;. I ameliorated this script in order to make it incremental.&lt;/p&gt;
 
 &lt;p&gt;Here is my new script, it first create a map which associate to each file its hash. After that it compare this file to the remote one. Then for each different file, update the content.&lt;/p&gt;
@@ -923,7 +923,7 @@ folder folder2
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/"/>
     <content type="html">&lt;p&gt;I discussed &lt;a href="/Scratch/en/blog/2009-10-Focus-vs-Minimalism"&gt;earlier why I prefer to hide my navigation menu&lt;/a&gt;. I finally decided to hide it only after a short time. Just the time needed for a user to see it. But how make it disappear only when it is not used for some time?&lt;/p&gt;
 
 &lt;p&gt;Here is how to accomplish that easily.&lt;/p&gt;
@@ -943,7 +943,7 @@ folder folder2
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-10-launch-daemon-from-command-line/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-launch-daemon-from-command-line/"/>
     <content type="html">&lt;p&gt;Here is a tip, I don&amp;rsquo;t know why, but I almost always forgot how to do that.&lt;/p&gt;
 
 &lt;p&gt;When you want to launch a command and this command should not be killed after you close your terminal. Here is how to accomplish that from command line: &lt;/p&gt;
@@ -966,7 +966,7 @@ nohup cmd &lt;span class="Keyword"&gt;&amp;amp;&lt;/span&gt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-10-Focus-vs-Minimalism/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-Focus-vs-Minimalism/"/>
     <content type="html">&lt;p&gt;I believe the goal researched by minimalism is &lt;strong&gt;Focus&lt;/strong&gt;.  But I don&amp;rsquo;t believe minimalism should be the goal. Focus should be the goal, and I believe minimalism isn&amp;rsquo;t necessary to reach it.&lt;/p&gt;
 
 &lt;p&gt;This is why my design is not minimalist, but I decided to remove most of the navigation stuff of all pages of my website. May be I&amp;rsquo;ll prefer to hide the menu only when you are on blog article. For now, I hide the menu everywhere on the website.&lt;/p&gt;
@@ -996,7 +996,7 @@ nohup cmd &lt;span class="Keyword"&gt;&amp;amp;&lt;/span&gt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-10-untaught-git-usage/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-untaught-git-usage/"/>
     <content type="html">&lt;p&gt;&lt;small&gt; &lt;em&gt;I explain why I had so much difficulties to use Git. There is an &amp;ldquo;untaught rule&amp;rdquo; that make hard to work without. Until I read the good document. &lt;/em&gt;&lt;/small&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;small&gt; &lt;em&gt; &amp;ldquo;Cheap branches&amp;rdquo; aren&amp;rsquo;t designed to be totally isolated branches but rather should follow a &amp;ldquo;Master Branch&amp;rdquo;. There is a &lt;/em&gt;Standard Workflow&lt;em&gt; to follow. If you don&amp;rsquo;t follow it, you prepare yourself with some hard time with Git.&lt;/em&gt; &lt;/small&gt;&lt;/p&gt;
@@ -1022,7 +1022,7 @@ nohup cmd &lt;span class="Keyword"&gt;&amp;amp;&lt;/span&gt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-10-How-to-preload-your-site-with-style/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-How-to-preload-your-site-with-style/"/>
     <content type="html">&lt;h2 class="first" id="example"&gt;Example&lt;/h2&gt;
 
 &lt;p&gt;Here is a live example of what appear while loading my pages.&lt;/p&gt;
@@ -1043,7 +1043,7 @@ nohup cmd &lt;span class="Keyword"&gt;&amp;amp;&lt;/span&gt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/"/>
     <content type="html">&lt;h1 class="first" id="disqushttpdisquscom-vs-intense-debatehttpintensedebatecom"&gt;&lt;a href="http://disqus.com/"&gt;Disqus&lt;/a&gt; &lt;em&gt;vs.&lt;/em&gt; &lt;a href="http://intensedebate.com/"&gt;Intense Debate&lt;/a&gt;&lt;/h1&gt;
 
 &lt;p&gt;I made a blog entry about how I tried to integrate &lt;a href="http://disqus.com"&gt;Disqus&lt;/a&gt;. I had to wait Disqus comment to be displayed before loading correctly my page. This is why I tried to include it in a &amp;ldquo;non-blocking&amp;rdquo; way. Unfortunately, I had &lt;a href="/Scratch/en/blog/11_Load_Disqus_Asynchronously/"&gt;difficulties to make it works correctly&lt;/a&gt;. &lt;/p&gt;
