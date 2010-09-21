@@ -13,16 +13,8 @@ class MozillaCSS < Nanoc3::Filter
     identifier :mozilla
     def run(content, params={})
         res=""
-        pref=[]
-        depth=0
         content.each do |line|
-            depth=line.sub(/^ */,'').size/2
-            pref[depth]=line
-            if res=~/-(moz)/
-                [0..depth].each do |i|
-                    res <<= pref[i]+'\n'
-                end
-            end
+            res <<= line if not res=~/-webkit/
         end
         return res
     end
@@ -32,16 +24,8 @@ class WebkitCSS < Nanoc3::Filter
     identifier :webkit
     def run(content, params={})
         res=""
-        pref=[]
-        depth=0
         content.each do |line|
-            depth=line.sub(/[^ ]*$/).size/2
-            pref[depth]=line
-            if res=~/-(moz)/
-                [0..depth].each do |i|
-                    res <<= pref[i]+'\n'
-                end
-            end
+            res <<= line if not res=~/-moz/
         end
         return res
     end
