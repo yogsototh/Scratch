@@ -91,215 +91,219 @@ En plus depuis l&rsquo;écriture de cet article Apple<small>&copy;</small> sembl
 <p>Pour utiliser le script vous devriez remplacer la valeur de la variable <code>mobileMeUser</code> par votre nom d&rsquo;utilisateur mobileMe<small>&copy;</small>.</p>
 
 <div class="fr">
-<code class="zsh" file="publish">
-#!/usr/bin/env zsh
+<div class="code"><div class="file"><a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/code/publish"> &#x27A5; publish </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
 
-# Script synchronisant le site sur me.com
-# normalement, le site est indisponible le moins de temps possible
-# le temps de deux renommages de répertoire
+<span class="Comment"><span class="Comment">#</span> Script synchronisant le site sur me.com</span>
+<span class="Comment"><span class="Comment">#</span> normalement, le site est indisponible le moins de temps possible</span>
+<span class="Comment"><span class="Comment">#</span> le temps de deux renommages de répertoire</span>
 
-mobileMeUser="yann.esposito"
-siteName="siteName"
+mobileMeUser=<span class="String"><span class="String">&quot;</span>yann.esposito<span class="String">&quot;</span></span>
+siteName=<span class="String"><span class="String">&quot;</span>siteName<span class="String">&quot;</span></span>
 
-# Depending of my hostname the 
-if [[ $(hostname) == 'ubuntu' ]]; then
-    iDisk='/mnt/iDisk'
-else
-    iDisk="/Volumes/$mobileMeUser"
-fi
+<span class="Comment"><span class="Comment">#</span> Depending of my hostname the </span>
+<span class="Keyword">if</span> [[ <span class="String"><span class="String">$(</span>hostname<span class="String">)</span></span> <span class="Keyword">==</span> <span class="String"><span class="String">'</span>ubuntu<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
+    iDisk=<span class="String"><span class="String">'</span>/mnt/iDisk<span class="String">'</span></span>
+<span class="Keyword">else</span>
+    iDisk=<span class="String"><span class="String">&quot;</span>/Volumes/<span class="StringVariable"><span class="StringVariable">$</span>mobileMeUser</span><span class="String">&quot;</span></span>
+<span class="Keyword">fi</span>
 
-root=$HOME/Sites/$siteName
-destRep=$iDisk/Web/Sites/$siteName
+root=<span class="Variable"><span class="Variable">$</span>HOME</span>/Sites/<span class="Variable"><span class="Variable">$</span>siteName</span>
+destRep=<span class="Variable"><span class="Variable">$</span>iDisk</span>/Web/Sites/<span class="Variable"><span class="Variable">$</span>siteName</span>
 
-[[ ! -d $root ]] &amp;&amp; { 
-    print -- "$root n'existe pas ; vérifiez la conf" &gt;&2; 
+[[ <span class="Keyword">!</span> -d <span class="Variable"><span class="Variable">$</span>root</span> ]] <span class="Keyword">&amp;&amp;</span> { 
+    print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>root</span> n'existe pas&nbsp;; vérifiez la conf<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span><span class="Keyword">;</span> 
     exit 1 
 }
 
-[[ ! -d $destRep ]] &amp;&amp; { 
-    print -- "$destRep n'existe pas, veuillez remonter le FS" &gt;&2; 
+[[ <span class="Keyword">!</span> -d <span class="Variable"><span class="Variable">$</span>destRep</span> ]] <span class="Keyword">&amp;&amp;</span> { 
+    print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>destRep</span> n'existe pas, veuillez remonter le FS<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span><span class="Keyword">;</span> 
     exit 1 
 }
 
-if [[ $1 == '-h' ]]; then
-    print -- "usage: $0:h [-h|-a|-s]"
-    print -- "  -a sychronise aussi l'index"
-    print -- "  -h affiche l'aide"
-    print -- "  -s swappe simplement les répertoires"
-fi
+<span class="Keyword">if</span> [[ <span class="Variable"><span class="Variable">$</span>1</span> <span class="Keyword">==</span> <span class="String"><span class="String">'</span>-h<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
+    print -- <span class="String"><span class="String">&quot;</span>usage: <span class="StringVariable"><span class="StringVariable">$</span>0</span>:h [-h|-a|-s]<span class="String">&quot;</span></span>
+    print -- <span class="String"><span class="String">&quot;</span>  -a sychronise aussi l'index<span class="String">&quot;</span></span>
+    print -- <span class="String"><span class="String">&quot;</span>  -h affiche l'aide<span class="String">&quot;</span></span>
+    print -- <span class="String"><span class="String">&quot;</span>  -s swappe simplement les répertoires<span class="String">&quot;</span></span>
+<span class="Keyword">fi</span>
 
-if [[ $1 == '-a' ]]; then
-    print -- "Synchronisation de l'index (${destRep:h})"
-    rsync -av $root/index.html ${destRep:h}/index.html
-fi
+<span class="Keyword">if</span> [[ <span class="Variable"><span class="Variable">$</span>1</span> <span class="Keyword">==</span> <span class="String"><span class="String">'</span>-a<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
+    print -- <span class="String"><span class="String">&quot;</span>Synchronisation de l'index (<span class="StringVariable"><span class="StringVariable">${</span>destRep:h<span class="StringVariable">}</span></span>)<span class="String">&quot;</span></span>
+    rsync -av <span class="Variable"><span class="Variable">$</span>root</span>/index.html <span class="Variable"><span class="Variable">${</span>destRep:h<span class="Variable">}</span></span>/index.html
+<span class="Keyword">fi</span>
 
-print -- "Root = $root"
-print -- "Dest = $destRep"
+print -- <span class="String"><span class="String">&quot;</span>Root = <span class="StringVariable"><span class="StringVariable">$</span>root</span><span class="String">&quot;</span></span>
+print -- <span class="String"><span class="String">&quot;</span>Dest = <span class="StringVariable"><span class="StringVariable">$</span>destRep</span><span class="String">&quot;</span></span>
 
-if [[ ! $1 = '-s' ]]; then
-    [[ ! -d $destRep.tmp ]] &amp;&amp; mkdir $destRep.tmp
-    print -P -- "%B[Sync =&gt; tmp]%b"
+<span class="Keyword">if</span> [[ <span class="Keyword">!</span> <span class="Variable"><span class="Variable">$</span>1</span> = <span class="String"><span class="String">'</span>-s<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
+    [[ <span class="Keyword">!</span> -d <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp ]] <span class="Keyword">&amp;&amp;</span> mkdir <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
+    print -P -- <span class="String"><span class="String">&quot;</span>%B[Sync =&gt; tmp]%b<span class="String">&quot;</span></span>
     result=1
     essai=1
-    while (( $result &gt; 0 )); do
-        rsync -arv $root/Scratch/ $destRep.tmp
-        result=$?
-        if (( $result &gt; 0 )); then
-            print -P -- "%BEchec du rsync%b (essai n°$essai)" &gt;&amp;2
-        fi
+    <span class="Keyword">while</span> (( <span class="Variable"><span class="Variable">$</span>result</span> <span class="Keyword">&gt;</span> 0 ))<span class="Keyword">;</span> <span class="Keyword">do</span>
+        rsync -arv <span class="Variable"><span class="Variable">$</span>root</span>/Scratch/ <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
+        result=<span class="Variable"><span class="Variable">$</span>?</span>
+        <span class="Keyword">if</span> (( <span class="Variable"><span class="Variable">$</span>result</span> <span class="Keyword">&gt;</span> 0 ))<span class="Keyword">;</span> <span class="Keyword">then</span>
+            print -P -- <span class="String"><span class="String">&quot;</span>%BEchec du rsync%b (essai n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span>)<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
+        <span class="Keyword">fi</span>
         ((essai++))
-    done
-fi
+    <span class="Keyword">done</span>
+<span class="Keyword">fi</span>
 
-# SWAP
-print -P -- "%B[Swap des Répertoires (tmp &lt;=&gt; target)]%b"
+<span class="Comment"><span class="Comment">#</span> SWAP</span>
+print -P -- <span class="String"><span class="String">&quot;</span>%B[Swap des Répertoires (tmp &lt;=&gt; target)]%b<span class="String">&quot;</span></span>
 essai=1
-while [[ -e $destRep.old ]]; do
-    print -n -- "suppression de $destRep.old"
-    if ((essai&gt;1)); then 
-        print " (essai n°$essai)"
-    else
+<span class="Keyword">while</span> [[ -e <span class="Variable"><span class="Variable">$</span>destRep</span>.old ]]<span class="Keyword">;</span> <span class="Keyword">do</span>
+    print -n -- <span class="String"><span class="String">&quot;</span>suppression de <span class="StringVariable"><span class="StringVariable">$</span>destRep</span>.old<span class="String">&quot;</span></span>
+    <span class="Keyword">if</span> ((essai<span class="Keyword">&gt;</span>1))<span class="Keyword">;</span> <span class="Keyword">then</span> 
+        print <span class="String"><span class="String">&quot;</span> (essai n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span>)<span class="String">&quot;</span></span>
+    <span class="Keyword">else</span>
         print
-    fi
+    <span class="Keyword">fi</span>
     ((essai++))
-    \rm -rf $destRep.old
-done
+    <span class="Constant">\r</span>m -rf <span class="Variable"><span class="Variable">$</span>destRep</span>.old
+<span class="Keyword">done</span>
 
-print -- "  renommage du repertoire sandard vers le .old"
+print -- <span class="String"><span class="String">&quot;</span>  renommage du repertoire sandard vers le .old<span class="String">&quot;</span></span>
 essai=1
-while [[ -e $destRep ]]; do
-    mv $destRep $destRep.old 
-    (($?)) &amp;&amp; print -- "Echec du renommage (essai n°$essai)" &gt;&amp;2
+<span class="Keyword">while</span> [[ -e <span class="Variable"><span class="Variable">$</span>destRep</span> ]]<span class="Keyword">;</span> <span class="Keyword">do</span>
+    mv <span class="Variable"><span class="Variable">$</span>destRep</span> <span class="Variable"><span class="Variable">$</span>destRep</span>.old 
+    ((<span class="Variable"><span class="Variable">$</span>?</span>)) <span class="Keyword">&amp;&amp;</span> print -- <span class="String"><span class="String">&quot;</span>Echec du renommage (essai n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span>)<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
     ((essai++))
-done
+<span class="Keyword">done</span>
 
-print -- "  renommage du repertoire tmp (nouveau) vers le standard"
-print -P -- "  %BSite Indisponible%b $(date)"
+print -- <span class="String"><span class="String">&quot;</span>  renommage du repertoire tmp (nouveau) vers le standard<span class="String">&quot;</span></span>
+print -P -- <span class="String"><span class="String">&quot;</span>  %BSite Indisponible%b <span class="String"><span class="String">$(</span>date<span class="String">)</span></span><span class="String">&quot;</span></span>
 essai=1
-while [[ ! -e $destRep ]]; do
-    mv $destRep.tmp $destRep
-    (($?)) &amp;&amp; print -P -- "%B[Site Indisponible]%b(essai n°$essai) Echec du renommage (mv $destRep.tmp $destRep)" &gt;&amp;2
+<span class="Keyword">while</span> [[ <span class="Keyword">!</span> -e <span class="Variable"><span class="Variable">$</span>destRep</span> ]]<span class="Keyword">;</span> <span class="Keyword">do</span>
+    mv <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp <span class="Variable"><span class="Variable">$</span>destRep</span>
+    ((<span class="Variable"><span class="Variable">$</span>?</span>)) <span class="Keyword">&amp;&amp;</span> print -P -- <span class="String"><span class="String">&quot;</span>%B[Site Indisponible]%b(essai n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span>) Echec du renommage (mv <span class="StringVariable"><span class="StringVariable">$</span>destRep</span>.tmp <span class="StringVariable"><span class="StringVariable">$</span>destRep</span>)<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
     ((essai++))
-done
+<span class="Keyword">done</span>
 
-print -P -- "\t===\t%BSITE DISPONIBLE%b\t==="
+print -P -- <span class="String"><span class="String">&quot;</span>\t===\t%BSITE DISPONIBLE%b\t===<span class="String">&quot;</span></span>
 
-print -- "  renommage du repertoire old vers le tmp"
+print -- <span class="String"><span class="String">&quot;</span>  renommage du repertoire old vers le tmp<span class="String">&quot;</span></span>
 essai=1
-while [[ ! -e $destRep ]]; do
-    mv $destRep.old $destRep.tmp
-    (($?)) &amp;&amp; print -P -- "Echec du renommage n°$essai" &gt;&amp;2
+<span class="Keyword">while</span> [[ <span class="Keyword">!</span> -e <span class="Variable"><span class="Variable">$</span>destRep</span> ]]<span class="Keyword">;</span> <span class="Keyword">do</span>
+    mv <span class="Variable"><span class="Variable">$</span>destRep</span>.old <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
+    ((<span class="Variable"><span class="Variable">$</span>?</span>)) <span class="Keyword">&amp;&amp;</span> print -P -- <span class="String"><span class="String">&quot;</span>Echec du renommage n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span><span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
     ((essai++))
-done
+<span class="Keyword">done</span>
 
-print -P -- "  publication terminée"
-</code>
+print -P -- <span class="String"><span class="String">&quot;</span>  publication terminée<span class="String">&quot;</span></span>
+</pre>
+</div></div>
 </div>
 
 <div class="en">
-<code class="zsh" file="publish">
-#!/usr/bin/env zsh
+<div class="code"><div class="file"><a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/code/publish"> &#x27A5; publish </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
 
-# Author: Yann Esposito
-#   Mail: yann.esposito@gmail.com
-# Synchronize with "mobileMe" iDisk account.
+<span class="Comment"><span class="Comment">#</span> Author: Yann Esposito</span>
+<span class="Comment"><span class="Comment">#</span>   Mail: yann.esposito@gmail.com</span>
+<span class="Comment"><span class="Comment">#</span> Synchronize with &quot;mobileMe&quot; iDisk account.</span>
 
-mobileMeUser="firstname.lastname"
-siteName="siteName"
+mobileMeUser=<span class="String"><span class="String">&quot;</span>firstname.lastname<span class="String">&quot;</span></span>
+siteName=<span class="String"><span class="String">&quot;</span>siteName<span class="String">&quot;</span></span>
 
-# Depending of my hostname the 
-if [[ $(hostname) == 'ubuntu' ]]; then
-    iDisk='/mnt/iDisk'
-else
-    iDisk="/Volumes/$mobileMeUser"
-fi
+<span class="Comment"><span class="Comment">#</span> Depending of my hostname the </span>
+<span class="Keyword">if</span> [[ <span class="String"><span class="String">$(</span>hostname<span class="String">)</span></span> <span class="Keyword">==</span> <span class="String"><span class="String">'</span>ubuntu<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
+    iDisk=<span class="String"><span class="String">'</span>/mnt/iDisk<span class="String">'</span></span>
+<span class="Keyword">else</span>
+    iDisk=<span class="String"><span class="String">&quot;</span>/Volumes/<span class="StringVariable"><span class="StringVariable">$</span>mobileMeUser</span><span class="String">&quot;</span></span>
+<span class="Keyword">fi</span>
 
-root=$HOME/Sites/$siteName
-destRep=$iDisk/Web/Sites/$siteName
+root=<span class="Variable"><span class="Variable">$</span>HOME</span>/Sites/<span class="Variable"><span class="Variable">$</span>siteName</span>
+destRep=<span class="Variable"><span class="Variable">$</span>iDisk</span>/Web/Sites/<span class="Variable"><span class="Variable">$</span>siteName</span>
 
-[[ ! -d $root ]] &amp;&amp; { 
-    print -- "$root does not exist ; please verify the configuration ($0)" &gt;&2; 
+[[ <span class="Keyword">!</span> -d <span class="Variable"><span class="Variable">$</span>root</span> ]] <span class="Keyword">&amp;&amp;</span> { 
+    print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>root</span> does not exist&nbsp;; please verify the configuration (<span class="StringVariable"><span class="StringVariable">$</span>0</span>)<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span><span class="Keyword">;</span> 
     exit 1 
 }
 
-[[ ! -d $destRep ]] &amp;&amp; { 
-    print -- "$destRep does not exist, please mount the filesystem" &gt;&2; 
+[[ <span class="Keyword">!</span> -d <span class="Variable"><span class="Variable">$</span>destRep</span> ]] <span class="Keyword">&amp;&amp;</span> { 
+    print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>destRep</span> does not exist, please mount the filesystem<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span><span class="Keyword">;</span> 
     exit 1 
 }
 
-if [[ $1 == '-h' ]]; then
-    print -- "usage: $0:h [-h|-a|-s]"
-    print -- "  -a sychronize primary index"
-    print -- "  -h show this help"
-    print -- "  -s only swap directories"
-fi
+<span class="Keyword">if</span> [[ <span class="Variable"><span class="Variable">$</span>1</span> <span class="Keyword">==</span> <span class="String"><span class="String">'</span>-h<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
+    print -- <span class="String"><span class="String">&quot;</span>usage: <span class="StringVariable"><span class="StringVariable">$</span>0</span>:h [-h|-a|-s]<span class="String">&quot;</span></span>
+    print -- <span class="String"><span class="String">&quot;</span>  -a sychronize primary index<span class="String">&quot;</span></span>
+    print -- <span class="String"><span class="String">&quot;</span>  -h show this help<span class="String">&quot;</span></span>
+    print -- <span class="String"><span class="String">&quot;</span>  -s only swap directories<span class="String">&quot;</span></span>
+<span class="Keyword">fi</span>
 
-if [[ $1 == '-a' ]]; then
-    print -- "Index synchronisation (${destRep:h})"
-    rsync -av $root/index.html ${destRep:h}/index.html
-fi
+<span class="Keyword">if</span> [[ <span class="Variable"><span class="Variable">$</span>1</span> <span class="Keyword">==</span> <span class="String"><span class="String">'</span>-a<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
+    print -- <span class="String"><span class="String">&quot;</span>Index synchronisation (<span class="StringVariable"><span class="StringVariable">${</span>destRep:h<span class="StringVariable">}</span></span>)<span class="String">&quot;</span></span>
+    rsync -av <span class="Variable"><span class="Variable">$</span>root</span>/index.html <span class="Variable"><span class="Variable">${</span>destRep:h<span class="Variable">}</span></span>/index.html
+<span class="Keyword">fi</span>
 
-print -- "Root = $root"
-print -- "Dest = $destRep"
+print -- <span class="String"><span class="String">&quot;</span>Root = <span class="StringVariable"><span class="StringVariable">$</span>root</span><span class="String">&quot;</span></span>
+print -- <span class="String"><span class="String">&quot;</span>Dest = <span class="StringVariable"><span class="StringVariable">$</span>destRep</span><span class="String">&quot;</span></span>
 
-if [[ ! $1 = '-s' ]]; then
-    [[ ! -d $destRep.tmp ]] &amp;&amp; mkdir $destRep.tmp
-    print -P -- "%B[Sync =&gt; tmp]%b"
+<span class="Keyword">if</span> [[ <span class="Keyword">!</span> <span class="Variable"><span class="Variable">$</span>1</span> = <span class="String"><span class="String">'</span>-s<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
+    [[ <span class="Keyword">!</span> -d <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp ]] <span class="Keyword">&amp;&amp;</span> mkdir <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
+    print -P -- <span class="String"><span class="String">&quot;</span>%B[Sync =&gt; tmp]%b<span class="String">&quot;</span></span>
     result=1
     essai=1
-    while (( $result &gt; 0 )); do
-        rsync -arv $root/Scratch/ $destRep.tmp
-        result=$?
-        if (( $result &gt; 0 )); then
-            print -P -- "%Brsync failed%b (try n°$essai)" &gt;&amp;2
-        fi
+    <span class="Keyword">while</span> (( <span class="Variable"><span class="Variable">$</span>result</span> <span class="Keyword">&gt;</span> 0 ))<span class="Keyword">;</span> <span class="Keyword">do</span>
+        rsync -arv <span class="Variable"><span class="Variable">$</span>root</span>/Scratch/ <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
+        result=<span class="Variable"><span class="Variable">$</span>?</span>
+        <span class="Keyword">if</span> (( <span class="Variable"><span class="Variable">$</span>result</span> <span class="Keyword">&gt;</span> 0 ))<span class="Keyword">;</span> <span class="Keyword">then</span>
+            print -P -- <span class="String"><span class="String">&quot;</span>%Brsync failed%b (try n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span>)<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
+        <span class="Keyword">fi</span>
         ((essai++))
-    done
-fi
+    <span class="Keyword">done</span>
+<span class="Keyword">fi</span>
 
-# SWAP
-print -P -- "%B[Directory Swap (tmp &lt;=&gt; target)]%b"
+<span class="Comment"><span class="Comment">#</span> SWAP</span>
+print -P -- <span class="String"><span class="String">&quot;</span>%B[Directory Swap (tmp &lt;=&gt; target)]%b<span class="String">&quot;</span></span>
 essai=1
-while [[ -e $destRep.old ]]; do
-    print -n -- "remove $destRep.old"
-    if ((essai&gt;1)); then 
-        print " (try n°$essai)"
-    else
+<span class="Keyword">while</span> [[ -e <span class="Variable"><span class="Variable">$</span>destRep</span>.old ]]<span class="Keyword">;</span> <span class="Keyword">do</span>
+    print -n -- <span class="String"><span class="String">&quot;</span>remove <span class="StringVariable"><span class="StringVariable">$</span>destRep</span>.old<span class="String">&quot;</span></span>
+    <span class="Keyword">if</span> ((essai<span class="Keyword">&gt;</span>1))<span class="Keyword">;</span> <span class="Keyword">then</span> 
+        print <span class="String"><span class="String">&quot;</span> (try n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span>)<span class="String">&quot;</span></span>
+    <span class="Keyword">else</span>
         print
-    fi
+    <span class="Keyword">fi</span>
     ((essai++))
-    \rm -rf $destRep.old
-done
+    <span class="Constant">\r</span>m -rf <span class="Variable"><span class="Variable">$</span>destRep</span>.old
+<span class="Keyword">done</span>
 
-print -- "  renommage du repertoire sandard vers le .old"
+print -- <span class="String"><span class="String">&quot;</span>  renommage du repertoire sandard vers le .old<span class="String">&quot;</span></span>
 essai=1
-while [[ -e $destRep ]]; do
-    mv $destRep $destRep.old 
-    (($?)) &amp;&amp; print -- "Failed to rename (try n°$essai)" &gt;&amp;2
+<span class="Keyword">while</span> [[ -e <span class="Variable"><span class="Variable">$</span>destRep</span> ]]<span class="Keyword">;</span> <span class="Keyword">do</span>
+    mv <span class="Variable"><span class="Variable">$</span>destRep</span> <span class="Variable"><span class="Variable">$</span>destRep</span>.old 
+    ((<span class="Variable"><span class="Variable">$</span>?</span>)) <span class="Keyword">&amp;&amp;</span> print -- <span class="String"><span class="String">&quot;</span>Failed to rename (try n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span>)<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
     ((essai++))
-done
+<span class="Keyword">done</span>
 
-print -- "  renaming folder tmp (new) to the standard one"
-print -P -- "  %BThe WebSite isn't working%b $(date)"
+print -- <span class="String"><span class="String">&quot;</span>  renaming folder tmp (new) to the standard one<span class="String">&quot;</span></span>
+print -P -- <span class="String"><span class="String">&quot;</span>  %BThe WebSite isn't working%b <span class="String"><span class="String">$(</span>date<span class="String">)</span></span><span class="String">&quot;</span></span>
 essai=1
-while [[ ! -e $destRep ]]; do
-    mv $destRep.tmp $destRep
-    (($?)) &amp;&amp; print -P -- "%B[WebSite not working]%b(try n°$essai) Failed to rename (mv $destRep.tmp $destRep)" &gt;&amp;2
+<span class="Keyword">while</span> [[ <span class="Keyword">!</span> -e <span class="Variable"><span class="Variable">$</span>destRep</span> ]]<span class="Keyword">;</span> <span class="Keyword">do</span>
+    mv <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp <span class="Variable"><span class="Variable">$</span>destRep</span>
+    ((<span class="Variable"><span class="Variable">$</span>?</span>)) <span class="Keyword">&amp;&amp;</span> print -P -- <span class="String"><span class="String">&quot;</span>%B[WebSite not working]%b(try n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span>) Failed to rename (mv <span class="StringVariable"><span class="StringVariable">$</span>destRep</span>.tmp <span class="StringVariable"><span class="StringVariable">$</span>destRep</span>)<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
     ((essai++))
-done
+<span class="Keyword">done</span>
 
-print -P -- "\t===\t%BWEBSITE SHOULD WORK NOW%b\t==="
+print -P -- <span class="String"><span class="String">&quot;</span>\t===\t%BWEBSITE SHOULD WORK NOW%b\t===<span class="String">&quot;</span></span>
 
-print -- "  rename old folder to tmp folder"
+print -- <span class="String"><span class="String">&quot;</span>  rename old folder to tmp folder<span class="String">&quot;</span></span>
 essai=1
-while [[ ! -e $destRep ]]; do
-    mv $destRep.old $destRep.tmp
-    (($?)) &amp;&amp; print -P -- "Failed to rename n°$essai" &gt;&amp;2
+<span class="Keyword">while</span> [[ <span class="Keyword">!</span> -e <span class="Variable"><span class="Variable">$</span>destRep</span> ]]<span class="Keyword">;</span> <span class="Keyword">do</span>
+    mv <span class="Variable"><span class="Variable">$</span>destRep</span>.old <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
+    ((<span class="Variable"><span class="Variable">$</span>?</span>)) <span class="Keyword">&amp;&amp;</span> print -P -- <span class="String"><span class="String">&quot;</span>Failed to rename n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span><span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
     ((essai++))
-done
+<span class="Keyword">done</span>
 
-print -P -- "  Publish terminated"
-</code>
+print -P -- <span class="String"><span class="String">&quot;</span>  Publish terminated<span class="String">&quot;</span></span>
+</pre>
+</div></div>
 </div>
 
                 </div>
