@@ -273,7 +273,7 @@ r - b
     y - c   
 </pre>
 
-And look at what it implies when you write it in <sc>xml</sc>:
+Et regardez ce que ça implique quand on l'écrit en <sc>xml</sc> :
 
 <code class="xml">
 <r>
