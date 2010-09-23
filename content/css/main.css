@@ -47,7 +47,7 @@ body
   color: $behindColor
   background:
     color: $mainBackgroundColor
-    image: url('/Scratch/css/img/mainColor.png')
+    image: url('/Scratch/css/img/background.png')
 
 #content
   @include mainColor
