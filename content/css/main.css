@@ -1,13 +1,13 @@
 -----
 -----
 
-$behindColor: #280000
-$mainBackgroundColor: #f9f1dd
-$revealColor: #f9e1a8
-$mainLinkColor: #663300
-$lighterColor: #eddfc1
-$lighterColorBorderTop: #fffae9
-$lighterColorBorderBottom: #e0d0b4
+$behindColor: #111
+$mainBackgroundColor: #fff
+$revealColor: #FF0000
+$mainLinkColor: #111
+$lighterColor: #eee
+$lighterColorBorderTop: #fafafa
+$lighterColorBorderBottom: #ddd
 $codeBlockColor: $mainBackgroundColor
 $codeBlockBackgroundColor: $behindColor
 
@@ -15,26 +15,21 @@ $codeBlockBackgroundColor: $behindColor
   color: $behindColor
   background:
     color: $mainBackgroundColor
-    image: url('/Scratch/css/img/mainColor.png')
 
 @mixin secondColor
   color: $behindColor
   background:
     color: $lighterColor
-    image: url('/Scratch/css/img/secondColor.png')
   border:
     top: 1px solid $lighterColorBorderTop
     bottom: 1px solid $lighterColorBorderBottom
 
 @mixin revealColor
-  background:
-    color: $revealColor
-    image: url('/Scratch/css/img/revealColor.png')
+  color: $revealColor
 
 @mixin codeColor
   background:
     color: $codeBlockBackgroundColor
-    image: url('/Scratch/css/img/codeColor.png')
   color: $codeBlockColor
 
 table.description tr td
@@ -47,7 +42,6 @@ body
   color: $behindColor
   background:
     color: $mainBackgroundColor
-    image: url('/Scratch/css/img/background.png')
 
 #content
   @include mainColor
@@ -67,20 +61,14 @@ hr
 ul
   list-style: square
 
-h1, h2, h3, h4, h5, h6
-  font-variant: small-caps
-
 body, h1, h2, h3, h4, #entete, .tag
-  font-family: Optima, "Century Gothic", Helvetica, Arial, sans-serif
+  font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   line-height: 1.4em
 
 .corps
-  font-family: Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
+  font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   line-height: 1.6em
   text-align: justify
-  background-image: url('/Scratch/css/img/separator.png')
-  background-position: center bottom
-  background-repeat: no-repeat
 
 pre
   @include codeColor
@@ -112,7 +100,10 @@ acronym
 // -- STYLE --
 
 #titre
-  @include secondColor
+  letter-spacing: -0.06em
+  border:
+    bottom: 4px double #CCC
+    top: 4px double #CCC
 
 #liens .active, #bottom, #sousliens
   @include secondColor
@@ -181,7 +172,6 @@ h1 > .date
 
 // --- LAYOUTS --
 $VPadCorps: 3em
-$HPadCorps: 5em
 $VMarginCorps: 3em
 
 // ATTENTION DOIT ETRE 0 pour le bon callage
@@ -193,14 +183,16 @@ body
   font-size: 1em
 
 body > #entete
-  position: relative
+  position: absolute
   left: 0
   top: 0.5em
   width: 100%
   min-width: $content_width - 2em
-  z-index: 1800
+  z-index: 8000
   padding-bottom: 1em
   margin-bottom: $VMarginCorps
+  background-color: #111
+  color: #AAA
 
 #titre h2
   width: 80%
@@ -288,12 +280,24 @@ $hauteur_menu: 4em
   margin-right: auto
   margin-top: 0
   position: relative
-  top: -1em
+  top: 5em
   clear: both
   width: $content_width
 
+
 #content > #choix
   margin-top: 1em
+
+#choix
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  background-color: #111
+  color: #CCC
+  z-index: 5000
+  a
+    color: #CCC 
 
 $contentMargin: 0em
 
@@ -337,7 +341,7 @@ $fontcorps: 1.25
 
 .corps
   text-align: left
-  padding: $VPadCorps $HPadCorps
+  padding: $VPadCorps 3em
   margin: 0 $HMarginCorps
   clear: both
   font-size: #{$fontcorps}em
@@ -539,13 +543,6 @@ table.impact tr td
   display: block
   width: 25%
   text-align: center
-
-#choix
-  padding: 0
-  top: 3em
-  display: block
-  text-align: left
-  font-size: 1em
 
 .date
   font-size: 0.8em
