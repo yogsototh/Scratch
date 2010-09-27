@@ -3,9 +3,9 @@
 
 $behindColor: #111
 $mainBackgroundColor: #fff
-$revealColor: #FF0000
-$lighterRevealColor: #FFBFBE
-$secondRevealColor: #FF8080
+$revealColor: #78426C
+$lighterRevealColor: #B584AA
+$secondRevealColor: #B584AA
 $mainLinkColor: #111
 $highlightColor: #888
 $lighterColor: #eee
@@ -35,7 +35,7 @@ $codeBlockBackgroundColor: $behindColor
   color: $highlightColor
   a:hover
     color: $revealColor
-  strong, b, i, .strong
+  strong, b, i, em
     font:
       weight: normal
       style: normal
@@ -56,7 +56,7 @@ $codeBlockBackgroundColor: $behindColor
     color: $secondTextColor
     border:
       top: 1px solid $secondTextColor
-  strong, b, i, .em
+  strong, b, i, em
     color: behindColor
 
 @mixin revealColor
@@ -663,7 +663,7 @@ table.impact tr td
   margin: 0
   padding: 0
 
-strong, b, i, .strong
+strong, b, i, em
   font-weight: normal
   color: $highlightColor
 
