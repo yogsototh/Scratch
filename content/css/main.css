@@ -4,11 +4,15 @@
 $behindColor: #111
 $mainBackgroundColor: #fff
 $revealColor: #FF0000
+$lighterRevealColor: #FFBFBE
+$secondRevealColor: #FF8080
 $mainLinkColor: #111
 $highlightColor: #888
 $lighterColor: #eee
+$lighterText: #ccc
 $lighterColorBorderTop: #fafafa
 $lighterColorBorderBottom: #ddd
+$secondTextColor: #666
 $codeBlockColor: $mainBackgroundColor
 $codeBlockBackgroundColor: $behindColor
 
@@ -16,6 +20,13 @@ $codeBlockBackgroundColor: $behindColor
   color: $behindColor
   background:
     color: $mainBackgroundColor
+
+@mixin lightColor
+  color: $lighterText
+  a 
+    color: $lighterText
+  a:hover
+    color: $lighterRevealColor
 
 @mixin highlight
   font:
@@ -37,6 +48,16 @@ $codeBlockBackgroundColor: $behindColor
   border:
     top: 1px solid $lighterColorBorderTop
     bottom: 1px solid $lighterColorBorderBottom
+  a
+    color: $secondTextColor
+  a:hover
+    color: $secondRevealColor
+  hr
+    color: $secondTextColor
+    border:
+      top: 1px solid $secondTextColor
+  strong, b, i, .em
+    color: behindColor
 
 @mixin revealColor
   color: $revealColor
@@ -70,7 +91,11 @@ a:hover, #clickcomment:hover
 
 hr
   color: $lighterColor
-  border-bottom: 1px solid $lighterColorBorderBottom
+  border:
+    top: 1px solid $lighterColor
+    bottom: none
+    left: none
+    right: none
 
 ul
   list-style: square
@@ -114,8 +139,8 @@ acronym
 #titre
   letter-spacing: -0.06em
   border:
-    bottom: 4px double #CCC
-    top: 4px double #CCC
+    bottom: 4px double $lighterText
+    top: 4px double $lighterText
 
 #liens .active, #sousliens
   @include secondColor
@@ -200,8 +225,6 @@ body > #entete
   z-index: 8000
   padding-bottom: 1em
   margin-bottom: $VMarginCorps
-  background-color: #111
-  color: #AAA
 
 #titre h2
   width: 80%
@@ -221,12 +244,13 @@ body > #entete
 #bottom
   clear: right
   margin-right: 0px
-  text-align: right
   padding: 1.5em
   line-height: 1.5em
-  color: #ccc
+  color: $lighterText
+  margin-top: 2em
+  text-align: center
   a
-    color: #ccc
+    color: $lighterText
   a:hover
     @include revealColor
 
@@ -253,6 +277,7 @@ ul.horizontal
   padding-top: 0.1em
   border-top: 1px solid $lighterColorBorderTop
   margin-bottom: 2em
+  @include secondColor
 
 #liens
   width: 100%
@@ -292,24 +317,21 @@ $hauteur_menu: 4em
   margin-right: auto
   margin-top: 0
   position: relative
-  top: 5em
   clear: both
   width: $content_width
-
 
 #content > #choix
   margin-top: 1em
 
 #choix
-  position: fixed
+  position: relative
   left: 0
   right: 0
   top: 0
-  background-color: #111
   color: #CCC
   z-index: 5000
   a
-    color: #CCC 
+    color: #CCC
 
 $contentMargin: 0em
 
@@ -431,6 +453,7 @@ $hpadding: 1
   float: right
   width: 80%
   margin-right: 0.3em
+  color: $codeBlockColor
 
 .flush
   clear: both

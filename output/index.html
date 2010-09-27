@@ -55,30 +55,31 @@
     // ]]>
     </script>
     <style type="text/css">
-        .languageLabel {opacity:.3;display:block;float:left;position:absolute;left:-3.5em}
-        .lucida {
+        .languageLabel {color:#ccc;display:block;float:left;position:relative;}
+        .nicer {
             color: #CCCCCC;
             font-family: "Lucida Grande", Tahoma;
         }
-        a:hover .lucida {
+        a:hover .nicer {
             color: #FFBFBE;
         }
         h3 { margin: 0; font-size: 1.3em; }
         .block {
-            float: left;
             width: 28%;
             text-align: left;
             line-height: 1em;
-            margin-left: 1em;
-            margin-right: 1em;
+            margin-left: 0;
+            margin-right: 4%;
         }
         .block p {
             line-height: 1.2em;
         }
+        .left { float: left; }
+        .right { float: right; }
     </style>
 </head>
 <body lang="fr" style="margin: 0em">
-    <div id="content" style="top:0">
+    <div id="content" style="top:0;">
         <img src="/Scratch/img/presentation.png" alt="Presentation drawing"/>
         <h1 style="font-weight: normal; font-size: 5em; margin-top: 0; line-height: 1ex">
             <span style="letter-spacing:-.20em">Ya</span><spacer type="block" width="12"/><span style="letter-spacing: -.12em">nn</span> 
@@ -88,59 +89,146 @@
             <h2 style="letter-spacing: 2.7em">Yogsototh</h2>
         </div>
         <div id="afterheader" style="font-size: 1.1em; padding: 2em">
-            <div> 
-                <div class="languageLabel"><i>English</i></div>
-                <div class="flush"/>
-                <div class="block">
-                    <h3>
-                        <a href="/Scratch/en/" onclick="setLanguage('en')">
-                            Blog
-                            <span class="lucida">»</span>
-                        </a>
-                    </h3>
-                    <p>
-                    I blog mostly technical things. 
-                    But sometimes about philosophy and science.
-                    </p>
-                </div>
-                <div class="block">
-                    <h3><a href="http://web.me.com/yann.esposito/Softwares/Welcome.html">Softwares
-                        <span class="lucida">»</span>
-                        </a>
-                    </h3>
-                    <p>
-                    I make some software. Screensavers, 
-                    password manager,
-                    scientific applications.
-                    </p>
-                </div>
-                <div class="block">
+            <div class="languageLabel"><i>English</i></div>
+            <div class="flush"></div>
+            <div class="block left">
                 <h3>
-                    <a href="/Scratch/en/contact" onclick="setLanguage('en')">Contact <span class="lucida">»</span>
+                    <a href="/Scratch/en/" onclick="setLanguage('en')">
+                        Blog
+                        <span class="nicer">»</span>
                     </a>
-                    </h3>
-                    <p>
-                    Feel free to contact me about anything.
-                    Don't be shy, I'll be happy to contact you.
-                    </p>
                 </h3>
-                </div>
-                <div class="flush"/>
-                <hr/>
-                <i class="languageLabel">Français</i>
-                <span style="letter-spacing: .2em">
-                <a href="/Scratch/fr/" onclick="setLanguage('fr')">Blog</a> -
-                <a href="http://web.me.com/yann.esposito/Softwares/Welcome.html">Logiciels</a> -
-                <a href="/Scratch/fr/contact" onclick="setLanguage('fr')">Contact</a>
-                </span>
-                <br/>
-                    <a href="http://j.mp/btfRJ2" style="letter-spacing:.3em">Curriculum Vitæ</a>
-                <div class="small" style="letter-spacing: -.02em">
-                    <a href="http://yann.esposito.free.fr/enseignement/enseignement.php">Enseignement informatique(BAC+1 à BAC+5)</a> - 
-                <a href="http://yann.esposito.free.fr/enseignement/projetrez0/projetrez0.html">Projet réseau anonyme</a>
-                </div>
+                <p>
+                Computer, Philosophy <i>&amp;</i> Life.
+                </p>
             </div>
+            <div class="block left">
+                <h3><a href="http://web.me.com/yann.esposito/Softwares/Welcome.html">Softwares
+                        <span class="nicer">»</span>
+                    </a>
+                </h3>
+                <p>
+                Password Manager,
+                Screensavers  <i>&amp;</i>
+                Scientific Applications.
+                </p>
+            </div>
+            <div class="block right">
+                <h3>
+                    <a href="/Scratch/en/contact" onclick="setLanguage('en')">Contact 
+                        <span class="nicer">»</span>
+                    </a>
+                </h3>
+                <p>
+                Don't be shy, I'll be happy to talk to <i>you</i>.
+                </p>
+            </h3>
+        </div>
+        <div class="flush"></div>
+        <hr/>
+        <div class="languageLabel"><i>Français</i></div>
+        <div class="flush"></div>
+        <div class="block left">
+            <h3>
+                <a href="/Scratch/fr/" onclick="setLanguage('fr')">
+                    Blog
+                    <span class="nicer">»</span>
+                </a>
+            </h3>
+            <p>
+            Ordinateurs, philosophie <i>&amp;</i> des choses de la vie. 
+            </p>
+        </div>
+        <div class="block left">
+            <h3>
+                <a href="http://web.me.com/yann.esposito/Softwares/Welcome.html">
+                    Logiciels
+                    <span class="nicer">»</span>
+                </a>
+            </h3>
+            <p>
+            Des économiseurs d'écran,
+            un gestionnaire de mots de passe <i>&amp;</i>
+            des applications scientifiques.
+            </p>
+        </div>
+        <div class="block right">
+            <h3>
+                <a href="/Scratch/fr/contact" onclick="setLanguage('fr')">
+                    Contact
+                    <span class="nicer">»</span>
+                </a>
+            </h3>
+            <p>
+            Au diable la timidité, n'hésitez pas à me contacter, j'en serai ravi de <i>vous</i> parler.
+            </p>
+        </div>
+        <div class="flush"></div>
+        <div class="block left">
+            <h3>
+                <a href="http://j.mp/btfRJ2">
+                    Curriculum Vitæ
+                    <span class="nicer">»</span>
+                </a>
+            </h3>
+            <p>
+            Doctorat &rarr; Post Doc &rarr; Consultant<br/>
+            <i>Geek &rarr; G33K &rarr; G33|&lt;
+            </i>
+            </p>
+        </h4>
+        </div>
+        <div class="block left">
+            <h3>
+                <a href="http://yann.esposito.free.fr/enseignement/enseignement.php">
+                    Enseignement
+                    <span class="nicer">»</span>
+                </a>
+            </h3>
+            <p>
+            Informatique:<br/>
+            TD, TD <i>&amp;</i> solutions<br/>
+            BAC+1 à BAC+5<br/>
+            <i><a href="http://yann.esposito.free.fr/enseignement/projetrez0/projetrez0.html">Projet réseau anonyme
+                        <span class="nicer">»</span></a>
+            </i>
+             </p>
+        </div>
+        <div class="block right">
+            <h3>
+                <a href="http://web.me.com/yann.esposito/Perso/Welcome.html">
+                    Photos
+                    <span class="nicer">»</span>
+                </a>
+            </h3>
+            <p>
+            <a href="mailto:yannesposito@gmail.com?Subject=Permission%20site%20famille" >
+            Cliquez ici pour avoir le mot de passe.
+                    <span class="nicer">»</span>
+            </a>
+            </p>
         </div>
     </div>
+    <div class="flush"></div>
+    <div id="bottom" style="">
+        <div>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright © 2010 Yann Esposito</a>
+        </div>
+        <div>
+            Entirely done with
+            <a href="http://www.vim.org">Vim</a>
+            and 
+            <a href="http://nanoc.stoneship.org">nanoc</a>
+        </div>
+        <div>
+            <a href="/Scratch/en/validation/">Validation</a> 
+            <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+            .
+            <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+            .
+            <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml">[rss]</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
