@@ -1,13 +1,19 @@
 -----
 -----
 
-$behindColor: #280000
-$mainBackgroundColor: #f9f1dd
-$revealColor: #f9e1a8
-$mainLinkColor: #663300
-$lighterColor: #eddfc1
-$lighterColorBorderTop: #fffae9
-$lighterColorBorderBottom: #e0d0b4
+$behindColor: #111
+$mainBackgroundColor: #fff
+$revealColor: #D53300
+$secondRevealColor: #E25F2F
+$lighterRevealColor: #FFBE96
+$mainLinkColor: #111
+$highlightColor: #888
+$highlightRevealColor: #E25F2F
+$lighterText: #ccc
+$lighterColor: #eee
+$lighterColorBorderTop: $lighterText
+$lighterColorBorderBottom: $lighterText
+$secondTextColor: #666
 $codeBlockColor: $mainBackgroundColor
 $codeBlockBackgroundColor: $behindColor
 
@@ -15,26 +21,53 @@ $codeBlockBackgroundColor: $behindColor
   color: $behindColor
   background:
     color: $mainBackgroundColor
-    image: url('/Scratch/css/img/mainColor.png')
+
+@mixin lightColor
+  color: $lighterText
+  a 
+    color: $lighterText
+  a:hover
+    color: $lighterRevealColor
+
+@mixin highlight
+  font:
+    style: italic
+  padding: 0.5em 1em
+  color: $highlightColor
+  a:hover
+    color: $revealColor
+  strong, b, i, em
+    font:
+      weight: normal
+      style: normal
+    color: $behindColor
 
 @mixin secondColor
   color: $behindColor
   background:
     color: $lighterColor
-    image: url('/Scratch/css/img/secondColor.png')
   border:
     top: 1px solid $lighterColorBorderTop
     bottom: 1px solid $lighterColorBorderBottom
+  a
+    color: $secondTextColor
+  a:hover
+    color: $secondRevealColor
+    strong, b, i, em
+      color: $lighterRevealColor
+  hr
+    color: $secondTextColor
+    border:
+      top: 1px solid $secondTextColor
+  strong, b, i, em
+    color: $behindColor
 
 @mixin revealColor
-  background:
-    color: $revealColor
-    image: url('/Scratch/css/img/revealColor.png')
+  color: $revealColor
 
 @mixin codeColor
   background:
     color: $codeBlockBackgroundColor
-    image: url('/Scratch/css/img/codeColor.png')
   color: $codeBlockColor
 
 table.description tr td
@@ -47,7 +80,6 @@ body
   color: $behindColor
   background:
     color: $mainBackgroundColor
-    image: url('/Scratch/css/img/background.png')
 
 #content
   @include mainColor
@@ -62,25 +94,18 @@ a:hover, #clickcomment:hover
 
 hr
   color: $lighterColor
-  border-bottom: 1px solid $lighterColorBorderBottom
+  border:
+    top: 1px solid $lighterColor
+    bottom: none
+    left: none
+    right: none
 
 ul
   list-style: square
 
-h1, h2, h3, h4, h5, h6
-  font-variant: small-caps
-
 body, h1, h2, h3, h4, #entete, .tag
-  font-family: Optima, "Century Gothic", Helvetica, Arial, sans-serif
+  font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   line-height: 1.4em
-
-.corps
-  font-family: Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
-  line-height: 1.6em
-  text-align: justify
-  background-image: url('/Scratch/css/img/separator.png')
-  background-position: center bottom
-  background-repeat: no-repeat
 
 pre
   @include codeColor
@@ -96,9 +121,7 @@ p
   margin-bottom: 1.2em
 
 blockquote
-  font:
-    style: italic
-  padding: 0.5em 1em
+  @include highlight
 
 abbr,
 acronym
@@ -112,10 +135,14 @@ acronym
 // -- STYLE --
 
 #titre
-  @include secondColor
+  letter-spacing: -0.06em
+  border:
+    bottom: 4px double $lighterText
+    top: 4px double $lighterText
 
-#liens .active, #bottom, #sousliens
+#liens .active, #sousliens
   @include secondColor
+  border-top: none
 
 // -- FOOTER --
 #lastmod
@@ -132,9 +159,6 @@ acronym
 // -- TYPOGRAPHY --
 .small
   font-size: 0.8em
-
-.strong
-  font-weight: bold
 
 .sc
   font-variant: small-caps
@@ -181,7 +205,6 @@ h1 > .date
 
 // --- LAYOUTS --
 $VPadCorps: 3em
-$HPadCorps: 5em
 $VMarginCorps: 3em
 
 // ATTENTION DOIT ETRE 0 pour le bon callage
@@ -193,12 +216,12 @@ body
   font-size: 1em
 
 body > #entete
-  position: relative
+  position: absolute
   left: 0
   top: 0.5em
   width: 100%
   min-width: $content_width - 2em
-  z-index: 1800
+  z-index: 8000
   padding-bottom: 1em
   margin-bottom: $VMarginCorps
 
@@ -211,8 +234,6 @@ body > #entete
 #titre
   text-align: center
   width: 100%
-  padding-top: 1em
-  padding-bottom: 1em
 
 #titre h1, #titre h2
   padding-left: 1em
@@ -222,9 +243,15 @@ body > #entete
 #bottom
   clear: right
   margin-right: 0px
-  text-align: right
   padding: 1.5em
   line-height: 1.5em
+  color: $lighterText
+  margin-top: 2em
+  text-align: center
+  a
+    color: $lighterText
+  a:hover
+    @include revealColor
 
 // Les menus
 
@@ -249,6 +276,7 @@ ul.horizontal
   padding-top: 0.1em
   border-top: 1px solid $lighterColorBorderTop
   margin-bottom: 2em
+  @include secondColor
 
 #liens
   width: 100%
@@ -288,7 +316,6 @@ $hauteur_menu: 4em
   margin-right: auto
   margin-top: 0
   position: relative
-  top: -1em
   clear: both
   width: $content_width
 
@@ -310,10 +337,9 @@ $contentMargin: 0em
 
 .intro, .resume
   font-size: .9em
-  font-style: italic
+  @include highlight
 
 #afterheader > h1
-  @include secondColor
   width: 100%
   padding-bottom: 1.5em
 
@@ -336,11 +362,16 @@ $contentMargin: 0em
 $fontcorps: 1.25
 
 .corps
-  text-align: left
-  padding: $VPadCorps $HPadCorps
-  margin: 0 $HMarginCorps
-  clear: both
+  font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   font-size: #{$fontcorps}em
+  line-height: 1.6em
+  text-align: justify
+  text-align: left
+  padding: $VPadCorps 3em
+  margin: 0 $HMarginCorps
+  border-bottom: 1px $lighterColorBorderBottom solid
+  clear: both
+
 
 $corps_width: ($content_width - 2 * $contentMargin) / $fontcorps
 $hpadding: 1
@@ -413,8 +444,12 @@ $hpadding: 1
   font-size: 0.8em
   text-align: right
   float: right
-  width: 80%
-  margin-right: 0.3em
+  width: 97.4%
+  padding-right: 1em
+  margin-right: .2em
+  background: $codeBlockBackgroundColor
+  a
+    color: $codeBlockColor
 
 .flush
   clear: both
@@ -540,13 +575,6 @@ table.impact tr td
   width: 25%
   text-align: center
 
-#choix
-  padding: 0
-  top: 3em
-  display: block
-  text-align: left
-  font-size: 1em
-
 .date
   font-size: 0.8em
 
@@ -629,3 +657,17 @@ table.impact tr td
   border: none
   margin: 0
   padding: 0
+
+strong, b, i, em
+  font-weight: normal
+  color: $highlightColor
+a:hover
+  strong, b, i, em
+    color: $highlightRevealColor
+
+.nicer
+  color: $lighterText
+  font-family: "Lucida Grande", Tahoma
+
+a:hover .nicer
+  color: $lighterRevealColor

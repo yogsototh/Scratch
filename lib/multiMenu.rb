@@ -133,7 +133,7 @@ def nextFor(page)
             return nil
         end
     end
-    link_to("&rarr;&nbsp;"+tradOf(:next), target)
+    link_to(tradOf(:next)+%{&nbsp;<span class="nicer">»</span>}, target)
 end
 
 # return the previous page of a post containing many
@@ -149,7 +149,7 @@ def previousFor(page)
     else
         target=sorted_children[ index - 1 ]
     end
-    link_to(tradOf(:previous)+"&nbsp;&larr;", target)
+    link_to(%{<span class="nicer">«</span>&nbsp;}+tradOf(:previous), target)
 end
 
 def brother_for_at(page,n)

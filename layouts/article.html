@@ -77,20 +77,21 @@ self.instance_variable_set(:@conf, conf)
         </script>
 
         <div id="content">
+
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
                 <div id="choixlang">
                     <%= languages.map do |l|
-                        dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/}) 
-                        if @item_rep.path != dest
-                            %{<a href="#{dest}" onclick="setLanguage('#{l}')">#{ tradOfKeywordIn(:switchTo,l)}</a>}
-                        else
-                            nil
-                        end
+                    dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/}) 
+                    if @item_rep.path != dest
+                    %{<a href="#{dest}" onclick="setLanguage('#{l}')">#{ tradOfKeywordIn(:switchTo,l)}</a>}
+                    else
+                    nil
+                    end
                     end.join() %>
                 </div>
             </div>
-
+            <img src="/Scratch/img/presentation.png" alt="Presentation drawing"/>
             <div id="titre">
                 <h1>
                     <%= @item[:title] %>
