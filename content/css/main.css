@@ -5,6 +5,7 @@ $behindColor: #111
 $mainBackgroundColor: #fff
 $revealColor: #FF0000
 $mainLinkColor: #111
+$highlightColor: #888
 $lighterColor: #eee
 $lighterColorBorderTop: #fafafa
 $lighterColorBorderBottom: #ddd
@@ -15,6 +16,19 @@ $codeBlockBackgroundColor: $behindColor
   color: $behindColor
   background:
     color: $mainBackgroundColor
+
+@mixin highlight
+  font:
+    style: italic
+  padding: 0.5em 1em
+  color: $highlightColor
+  a:hover
+    color: $revealColor
+  strong, b, i, .strong
+    font:
+      weight: normal
+      style: normal
+    color: $behindColor
 
 @mixin secondColor
   color: $behindColor
@@ -84,9 +98,7 @@ p
   margin-bottom: 1.2em
 
 blockquote
-  font:
-    style: italic
-  padding: 0.5em 1em
+  @include highlight
 
 abbr,
 acronym
@@ -123,9 +135,6 @@ acronym
 // -- TYPOGRAPHY --
 .small
   font-size: 0.8em
-
-.strong
-  font-weight: bold
 
 .sc
   font-variant: small-caps
@@ -317,7 +326,7 @@ $contentMargin: 0em
 
 .intro, .resume
   font-size: .9em
-  font-style: italic
+  @include highlight
 
 #afterheader > h1
   @include secondColor
@@ -629,3 +638,10 @@ table.impact tr td
   border: none
   margin: 0
   padding: 0
+
+strong, b, i, .strong
+  font-weight: normal
+  color: $highlightColor
+
+
+
