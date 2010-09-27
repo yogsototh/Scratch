@@ -3,15 +3,16 @@
 
 $behindColor: #111
 $mainBackgroundColor: #fff
-$revealColor: #78426C
-$lighterRevealColor: #B584AA
-$secondRevealColor: #B584AA
+$revealColor: #D53300
+$secondRevealColor: #E25F2F
+$lighterRevealColor: #FFBE96
 $mainLinkColor: #111
 $highlightColor: #888
-$lighterColor: #eee
+$highlightRevealColor: #E25F2F
 $lighterText: #ccc
-$lighterColorBorderTop: #fafafa
-$lighterColorBorderBottom: #ddd
+$lighterColor: #eee
+$lighterColorBorderTop: $lighterText
+$lighterColorBorderBottom: $lighterText
 $secondTextColor: #666
 $codeBlockColor: $mainBackgroundColor
 $codeBlockBackgroundColor: $behindColor
@@ -52,12 +53,14 @@ $codeBlockBackgroundColor: $behindColor
     color: $secondTextColor
   a:hover
     color: $secondRevealColor
+    strong, b, i, em
+      color: $lighterRevealColor
   hr
     color: $secondTextColor
     border:
       top: 1px solid $secondTextColor
   strong, b, i, em
-    color: behindColor
+    color: $behindColor
 
 @mixin revealColor
   color: $revealColor
@@ -104,11 +107,6 @@ body, h1, h2, h3, h4, #entete, .tag
   font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   line-height: 1.4em
 
-.corps
-  font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
-  line-height: 1.6em
-  text-align: justify
-
 pre
   @include codeColor
   padding: 1em
@@ -144,6 +142,7 @@ acronym
 
 #liens .active, #sousliens
   @include secondColor
+  border-top: none
 
 // -- FOOTER --
 #lastmod
@@ -323,16 +322,6 @@ $hauteur_menu: 4em
 #content > #choix
   margin-top: 1em
 
-#choix
-  position: relative
-  left: 0
-  right: 0
-  top: 0
-  color: #CCC
-  z-index: 5000
-  a
-    color: #CCC
-
 $contentMargin: 0em
 
 .encadre, .black, .red, .intro, .resume, .shadow
@@ -351,7 +340,6 @@ $contentMargin: 0em
   @include highlight
 
 #afterheader > h1
-  @include secondColor
   width: 100%
   padding-bottom: 1.5em
 
@@ -374,11 +362,16 @@ $contentMargin: 0em
 $fontcorps: 1.25
 
 .corps
+  font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
+  font-size: #{$fontcorps}em
+  line-height: 1.6em
+  text-align: justify
   text-align: left
   padding: $VPadCorps 3em
   margin: 0 $HMarginCorps
+  border-bottom: 1px $lighterColorBorderBottom solid
   clear: both
-  font-size: #{$fontcorps}em
+
 
 $corps_width: ($content_width - 2 * $contentMargin) / $fontcorps
 $hpadding: 1
@@ -451,8 +444,10 @@ $hpadding: 1
   font-size: 0.8em
   text-align: right
   float: right
-  width: 80%
-  margin-right: 0.3em
+  width: 97.4%
+  padding-right: 1em
+  margin-right: .2em
+  background: $codeBlockBackgroundColor
   a
     color: $codeBlockColor
 
@@ -666,6 +661,13 @@ table.impact tr td
 strong, b, i, em
   font-weight: normal
   color: $highlightColor
+a:hover
+  strong, b, i, em
+    color: $highlightRevealColor
 
+.nicer
+  color: $lighterText
+  font-family: "Lucida Grande", Tahoma
 
-
+a:hover .nicer
+  color: $lighterRevealColor
