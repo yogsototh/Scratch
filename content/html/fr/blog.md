@@ -12,12 +12,16 @@ noSubMenu: true
             a.reps[0].path =~ /\/#{language}\// 
     end
     last_articles=last_articles.sort { |x,y| y[:created_at] <=> x[:created_at] }[0..(number_of_articles-1)]
+
+def dArr
+    return %{<span class="nicer">&dArr;</span>}
+end
 %>
 
-* [Les <%= number_of_articles %> derniers articles](#les-<%= number_of_articles %>-derniers-articles)
-* [Nuage de mots clés](#tagcloud)
-* [Archives](#archives)
-* [Un petit mot sur le contenu](#un-petit-mot-sur-le-contenu)
+* [Les <%= number_of_articles %> derniers articles <%=dArr%>](#les-<%= number_of_articles %>-derniers-articles)
+* [Nuage de mots clés <%=dArr%>](#tagcloud)
+* [Archives <%=dArr%>](#archives)
+* [Un petit mot sur le contenu <%=dArr%>](#un-petit-mot-sur-le-contenu)
 
 newcorps
 
@@ -38,7 +42,7 @@ newcorps
 <% end %>
 </ul>
 
-<a href="#archives">Archives &darr;</a>
+<a href="#archives">Archives <%=dArr%></a>
 
 newcorps
 
