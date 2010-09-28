@@ -671,3 +671,20 @@ a:hover
 
 a:hover .nicer
   color: $lighterRevealColor
+
+.block
+  width: 31%
+  text-align: left
+  line-height: 1em
+  margin-left: 1%
+  margin-right: 1%
+  font-size: .8em
+.block h3 
+  margin: 0
+  font-size: 1.3em
+.block p
+  line-height: 1.2em
+.left
+  float: left
+.right
+  float: right
