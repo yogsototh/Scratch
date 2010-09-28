@@ -225,8 +225,8 @@ body > #entete
   padding-bottom: 1em
   margin-bottom: $VMarginCorps
 
-body > #entete > #choix > #choixrss
-  font-size: .9em
+body > #content > #entete > #choix > #choixrss > #rss
+  font-size: 1em
 
 #titre h2
   width: 80%
