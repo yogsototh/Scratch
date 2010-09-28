@@ -225,6 +225,9 @@ body > #entete
   padding-bottom: 1em
   margin-bottom: $VMarginCorps
 
+body > #entete > #choix > #choixrss
+  font-size: .9em
+
 #titre h2
   width: 80%
   margin-left: auto
@@ -443,10 +446,9 @@ $hpadding: 1
 .file
   font-size: 0.8em
   text-align: right
-  float: right
-  width: 97.4%
   padding-right: 1em
-  margin-right: .2em
+  margin-right: 0.1
+  margin-bottom: 0
   background: $codeBlockBackgroundColor
   a
     color: $codeBlockColor
@@ -490,8 +492,8 @@ pre
   overflow: hidden
 
 .withfile pre
+  margin-top: 0
   overflow: hidden
-  width: 96.6%
 
 .navigationprev, .navigationnext
   padding: 0px
