@@ -4,13 +4,12 @@ menupriority: 3
 noSubMenu: true
 hidden: false
 -----
-
 <%= block( %{YPassword}, 
     %{/Scratch/en/softwares/ypassword}, 
     %{YPassword is a password manager that make your web life more secure} 
 ) %>
 
-<%= block( %{YAquabubbles}, 
+<%= block( %{YAquaBubbles}, 
     %{/Scratch/en/softwares/yaquabubbles}, 
     %{Nice underwater floating bubbles}
     ) %>
