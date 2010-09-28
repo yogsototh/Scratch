@@ -167,7 +167,7 @@ self.instance_variable_set(:@conf, conf)
                         if not a.nil?
                         %>
                         <div class="previous_article">
-                            <%= link_to('&larr; ' + a[:title], a)  %>
+                            <%= link_to( %{<span class="nicer">«</span>&nbsp;}+ a[:title], a)  %>
                         </div>
                         <% end %>
                         <% end %>
@@ -180,7 +180,7 @@ self.instance_variable_set(:@conf, conf)
                         if not a.nil?
                         %>
                         <div class="next_article">
-                            <%= link_to(a[:title] + '&rarr; ', a)  %>
+                            <%= link_to(a[:title] + %{&nbsp;<span class="nicer">»</span>}, a)  %>
                         </div>
                         <% end %>
                         <% end %>
