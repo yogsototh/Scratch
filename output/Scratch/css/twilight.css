@@ -1,12 +1,6 @@
 pre.twilight {
     padding: .8em;
 }
-.withfile pre.twilight {
-    padding-top: 3ex;
-    padding-bottom: .8em;
-    padding-right: .8em;
-    padding-left: .8em;
-}
 
 pre.twilight .DiffInserted {
    /* background-color: #253B22; */
