@@ -233,6 +233,7 @@ body > #entete > #choix > #choixrss
   margin-left: auto
   margin-right: auto
   text-align: center
+  color: $lighterText
 
 #titre
   text-align: center
