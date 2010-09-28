@@ -1,6 +1,6 @@
 -----
 title: Other stuff
-menupriority: 2
+menupriority: 5
 -----
 
 <table class="darkimpact">

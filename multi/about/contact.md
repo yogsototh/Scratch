@@ -1,8 +1,7 @@
 ----- 
 en: title: Contact
 fr: title: Contact
-noSubMenu: true
-menupriority: 5
+menupriority: 1
 -----
 en: # How to contact me
 fr: # Comment me contacter

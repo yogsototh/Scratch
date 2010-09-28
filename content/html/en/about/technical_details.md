@@ -1,7 +1,7 @@
 -----
 title: Technical details
 subtitle: How this website live.
-menupriority: 3
+menupriority: 4
 -----
 
 This website was completely made from scratch.  Most is done using 
