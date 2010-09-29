@@ -48,37 +48,39 @@ end
 
 
 compile '/html/*' do
-  # item[:extension] returns 'html.erb' for multi-dotted filename
-  ext = item[:extension].nil? ? nil : item[:extension].split('.').last
+    # item[:extension] returns 'html.erb' for multi-dotted filename
+    ext = item[:extension].nil? ? nil : item[:extension].split('.').last
 
-  filter :ultraviolet # must be before kramdown
-  filter :graph
-  filter :description
+    filter :ultraviolet # must be before kramdown
+    filter :graph
+    filter :description
 
-  if ext == 'erb'
-    filter :erb
-  elsif ext == 'haml' || ext.nil?
-    filter :haml
-  elsif ext == 'md' || ext == 'markdown'
-    filter :erb
-    filter :kramdown
-    filter :math_repair # after kramdown
-  else
-    raise "Filter is not configured for #{item.identifier} in Rules file."
-  end
+    if ext == 'erb'
+        filter :erb
+    elsif ext == 'haml' || ext.nil?
+        filter :haml
+    elsif ext == 'md' || ext == 'markdown'
+        filter :erb
+        filter :kramdown
+        filter :math_repair # after kramdown
+    else
+        raise "Filter is not configured for #{item.identifier} in Rules file."
+    end
 
-  filter :multicorps # must be before firsthi
-  filter :firsthi # must be after multicorps
-  filter :frenchspace
-  filter :ytypo
-  # filter :yabbreviations
-  filter :footnotes
+    filter :multicorps # must be before firsthi
+    filter :firsthi # must be after multicorps
+    filter :frenchspace
+    filter :ytypo
+    # filter :yabbreviations
+    filter :footnotes
 
-  if item[:kind] == 'article'
-      layout 'article'
-  else
-    layout 'default' unless item[:layout] == "none"
-  end
+    if item[:kind] == 'article'
+        layout 'article'
+    elsif not item[:layout].nil?
+        layout item[:layout]
+    else
+        layout 'default' unless item[:layout] == "none"
+    end
 end
 
 route '/html/*' do
