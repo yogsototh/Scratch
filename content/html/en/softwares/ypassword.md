@@ -1,6 +1,6 @@
 ----- 
 title: YPassword
-menupriority: 3
+menupriority: 1
 noSubMenu: true
 hidden: false
 -----

@@ -634,11 +634,6 @@ table.impact tr td
 
 .corps .return a
   color: $lighterColor
-
-.return a:hover
-  color: $mainLinkColor
-
-.corps .return a
   padding: 0.1em
   line-height: 1.5em
   font-size: 1.5em
@@ -648,6 +643,8 @@ table.impact tr td
   margin-top: -0.5em
   margin-left: -2em
   width: 1.5em
+.corps .return a:hover
+  color: $revealColor
 
 .footnotes
   font-size: 0.8em

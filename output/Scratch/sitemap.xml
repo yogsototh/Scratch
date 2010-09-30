@@ -61,6 +61,9 @@
     <loc>http://yannesposito.com/Scratch/en/blog/03_losthighway/03_losthighway_2/</loc>
   </url>
   <url>
+    <loc>http://yannesposito.com/Scratch/en/softwares/yaquabubbles/</loc>
+  </url>
+  <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</loc>
   </url>
   <url>
@@ -94,13 +97,13 @@
     <loc>http://yannesposito.com/Scratch/en/blog/2009-12-06-iphone-call-filter/</loc>
   </url>
   <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_1/</loc>
+  </url>
+  <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-02-15-All-but-something-regexp/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/11_Load_Disqus_Asynchronously/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_1/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-07-05-Cappuccino-and-Web-applications/</loc>
@@ -136,22 +139,25 @@
     <loc>http://yannesposito.com/Scratch/fr/blog/mvc/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/en/validation/</loc>
-  </url>
-  <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_3/</loc>
   </url>
   <url>
+    <loc>http://yannesposito.com/Scratch/en/validation/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_4/</loc>
+  </url>
+  <url>
     <loc>http://yannesposito.com/Scratch/en/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/en/softwares/yclock/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2009-10-untaught-git-usage/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2009-10-How-to-preload-your-site-with-style/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_4/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/about/old/</loc>
@@ -272,6 +278,9 @@
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-07-31-New-style-after-holidays/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/softwares/yaquabubbles/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2009-12-14-Git-vs--Bzr/</loc>
@@ -419,6 +428,9 @@
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/sitemap.xml</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/softwares/yclock/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/04_drm/</loc>

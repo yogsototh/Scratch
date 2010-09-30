@@ -33,6 +33,12 @@ end
 #     '/Scratch/assets' + item.identifier.chop + '_webkit.css'
 # end
 
+compile '/img/*' do
+end
+route '/img/*' do
+    '/Scratch/assets' + item.identifier.chop + '.png'
+end
+
 compile '/css/raw/*' do
 end
 route '/css/raw/*' do
