@@ -2,11 +2,14 @@
 -----
 
 $behindColor: #111
+$mainTextColor: $behindColor
 $mainBackgroundColor: #fff
 $revealColor: #D53300
 $secondRevealColor: #E25F2F
 $lighterRevealColor: #FFBE96
-$mainLinkColor: #111
+$imageBackgroundColor: $mainBackgroundColor
+$imageBorderColor: #CCC
+$mainLinkColor: #555
 $highlightColor: #888
 $highlightRevealColor: #E25F2F
 $lighterText: #ccc
@@ -87,6 +90,8 @@ body
 a, a:link, a:visited, a:active, a:hover, #clickcomment
   text-decoration: none
   outline: none
+
+a, a:link, a:visited, a:active, #clickcomment
   color: $mainLinkColor
 
 a:hover, #clickcomment:hover
@@ -176,7 +181,7 @@ h1 > .date
 
 .date
   color: $mainBackgroundColor
-  border: 1px solid $lighterColor
+  border: 1px solid $mainTextColor
   text-align: center
   font-size: 0.7em
   width: 4.1em
@@ -279,8 +284,7 @@ ul.horizontal
 #entete
   padding-top: 0.1em
   border-top: 1px solid $lighterColorBorderTop
-  margin-bottom: 2em
-  @include secondColor
+  border-bottom: 1px solid $lighterColorBorderTop
 
 #liens
   width: 100%
@@ -382,6 +386,12 @@ $hpadding: 1
 
 .corps img
   max-width: 30em
+  border: 1px solid $imageBackgroundColor
+  background-color: $imageBorderColor
+  padding: 0.5em
+  box-shadow: 0 10px 15px #CCC
+  -moz-box-shadow: 0 10px 15px #CCC
+  -webkit-box-shadow: 0 10px 15px #CCC
 
 //  les clear
 
@@ -540,10 +550,10 @@ table.impact tr td
   padding-right: 0.25em
 
 #liens
-  font-size: 1.5em
+  font-size: 1.2em
 
 #iemessage
-  font-size: 1.5em
+  font-size: 1.2em
 
 .tag
   display: inline
