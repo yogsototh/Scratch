@@ -1,38 +1,39 @@
 -----
+
 -----
 
-$behindColor: #111
+$behindColor: #111111
 $mainTextColor: $behindColor
-$mainBackgroundColor: #fff
-$revealColor: #D53300
-$secondRevealColor: #E25F2F
-$lighterRevealColor: #FFBE96
+$mainBackgroundColor: white
+$revealColor: #d53300
+$secondRevealColor: #e25f2f
+$lighterRevealColor: #ffbe96
 $imageBackgroundColor: $mainBackgroundColor
-$imageBorderColor: #CCC
-$mainLinkColor: #555
-$highlightColor: #888
-$highlightRevealColor: #E25F2F
-$lighterText: #ccc
-$lighterColor: #eee
+$imageBorderColor: #cccccc
+$mainLinkColor: #555555
+$highlightColor: #888888
+$highlightRevealColor: #e25f2f
+$lighterText: #cccccc
+$lighterColor: #eeeeee
 $lighterColorBorderTop: $lighterText
 $lighterColorBorderBottom: $lighterText
-$secondTextColor: #666
+$secondTextColor: #666666
 $codeBlockColor: $mainBackgroundColor
 $codeBlockBackgroundColor: $behindColor
 
-@mixin mainColor
+=mainColor
   color: $behindColor
   background:
     color: $mainBackgroundColor
 
-@mixin lightColor
+=lightColor
   color: $lighterText
-  a 
+  a
     color: $lighterText
   a:hover
     color: $lighterRevealColor
 
-@mixin highlight
+=highlight
   font:
     style: italic
   padding: 0.5em 1em
@@ -45,7 +46,7 @@ $codeBlockBackgroundColor: $behindColor
       style: normal
     color: $behindColor
 
-@mixin secondColor
+=secondColor
   color: $behindColor
   background:
     color: $lighterColor
@@ -65,10 +66,10 @@ $codeBlockBackgroundColor: $behindColor
   strong, b, i, em
     color: $behindColor
 
-@mixin revealColor
+=revealColor
   color: $revealColor
 
-@mixin codeColor
+=codeColor
   background:
     color: $codeBlockBackgroundColor
   color: $codeBlockColor
@@ -85,7 +86,7 @@ body
     color: $mainBackgroundColor
 
 #content
-  @include mainColor
+  +mainColor
 
 a, a:link, a:visited, a:active, a:hover, #clickcomment
   text-decoration: none
@@ -95,7 +96,7 @@ a, a:link, a:visited, a:active, #clickcomment
   color: $mainLinkColor
 
 a:hover, #clickcomment:hover
-  @include revealColor
+  +revealColor
 
 hr
   color: $lighterColor
@@ -113,7 +114,7 @@ body, h1, h2, h3, h4, #entete, .tag
   line-height: 1.4em
 
 pre
-  @include codeColor
+  +codeColor
   padding: 1em
   line-height: 1.2em
 
@@ -126,7 +127,7 @@ p
   margin-bottom: 1.2em
 
 blockquote
-  @include highlight
+  +highlight
 
 abbr,
 acronym
@@ -146,7 +147,7 @@ acronym
     top: 4px double $lighterText
 
 #liens .active, #sousliens
-  @include secondColor
+  +secondColor
   border-top: none
 
 // -- FOOTER --
@@ -206,7 +207,7 @@ h1 > .date
 .date .year
   line-height: 3ex
   clear: both
-  @include secondColor
+  +secondColor
 
 // --- LAYOUTS --
 $VPadCorps: 3em
@@ -260,7 +261,7 @@ body > #content > #entete > #choix > #choixrss > #rss
   a
     color: $lighterText
   a:hover
-    @include revealColor
+    +revealColor
 
 // Les menus
 
@@ -271,7 +272,6 @@ body > #content > #entete > #choix > #choixrss > #rss
 #sousliens ul
   list-style: none
   margin-left: 4em
-
 
 ul.horizontal li
   display: inline
@@ -341,11 +341,11 @@ $contentMargin: 0em
     bottom: 2em
 
 .encadre, .black, .red, .shadow
-  @include secondColor
+  +secondColor
 
 .intro, .resume
-  font-size: .9em
-  @include highlight
+  font-size: 0.9em
+  +highlight
 
 #afterheader > h1
   width: 100%
@@ -380,7 +380,6 @@ $fontcorps: 1.25
   border-bottom: 1px $lighterColorBorderBottom solid
   clear: both
 
-
 $corps_width: ($content_width - 2 * $contentMargin) / $fontcorps
 $hpadding: 1
 
@@ -389,9 +388,6 @@ $hpadding: 1
   border: 1px solid $imageBackgroundColor
   background-color: $imageBorderColor
   padding: 0.5em
-  box-shadow: 0 10px 15px #CCC
-  -moz-box-shadow: 0 10px 15px #CCC
-  -webkit-box-shadow: 0 10px 15px #CCC
 
 //  les clear
 
@@ -653,6 +649,7 @@ table.impact tr td
   margin-top: -0.5em
   margin-left: -2em
   width: 1.5em
+
 .corps .return a:hover
   color: $revealColor
 
@@ -671,6 +668,7 @@ table.impact tr td
 strong, b, i, em
   font-weight: normal
   color: $highlightColor
+
 a:hover
   strong, b, i, em
     color: $highlightRevealColor
@@ -688,13 +686,21 @@ a:hover .nicer
   line-height: 1em
   margin-left: 1%
   margin-right: 1%
-  font-size: .8em
-.block h3 
+  font-size: 0.8em
+  a
+    color: $mainTextColor
+  a:hover
+    color: $revealColor
+
+.block h3
   margin: 0
   font-size: 1.3em
+
 .block p
   line-height: 1.2em
+
 .left
   float: left
+
 .right
   float: right
