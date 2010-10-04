@@ -7,7 +7,7 @@ title: N'utilisez pas de gradients avec Chrome
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
-  - css
+  - CSS
   - web
   - programming
   - Chrome

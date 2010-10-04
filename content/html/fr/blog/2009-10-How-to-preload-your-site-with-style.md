@@ -15,7 +15,7 @@ tags:
 
 Voici comment apparaissent mes pages pendant leur chargement.
 
-<div id="demo" style="width:45%; position: relative; height: 8em; background-image: url('/Scratch/css/img/red.jpg'); background-position: 50% 50%; color: #fff; text-align: center; padding-top: 1em; margin-left: auto; margin-right: auto; border: solid 10px rgba(255,255,255,0.7); -webkit-border-radius: 1em; -moz-border-radius: 1em; border-radius: 1em; cursor: pointer; ">
+<div id="demo" style="width:45%; position: relative; height: 8em; background: #333; background-position: 50% 50%; color: #fff; text-align: center; padding-top: 1em; margin-left: auto; margin-right: auto; border: solid 10px rgba(255,255,255,0.7); -webkit-border-radius: 1em; -moz-border-radius: 1em; border-radius: 1em; cursor: pointer; ">
     <p>Voilà ! Je suis chargée !</p>
     <p>Cliquez-moi dessus pour recommencer.</p>
     <div id="todisapear" style="color: #000; position:absolute;top:0;left:0;text-align: center; padding-top: 1em; width: 100%; background-color: #eee; height: 8em;">

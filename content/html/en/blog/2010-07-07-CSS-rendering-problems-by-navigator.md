@@ -7,7 +7,7 @@ title: Do not use CSS gradient with Chrome
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
-  - css
+  - CSS
   - web
   - programming
   - Chrome

@@ -12,4 +12,4 @@ YClock is a nice clock screensaver.
 It has three themes: white, black and red. 
 It is based on a QuartzComposition and with some little Objective-C code to handle gently the frame per second.
 
-[yclock]: /Scratch/file/YClock.dmg
+[yclock]: /Scratch/files/YClock.dmg

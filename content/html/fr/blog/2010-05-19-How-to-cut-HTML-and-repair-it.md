@@ -29,7 +29,7 @@ Prenons un exemple :
 </div>
 </code>
 
-After the cut, I obtain:
+Après avoir coupé, j'obtiens :
 
 <code class="html">
 <div class="corps">
