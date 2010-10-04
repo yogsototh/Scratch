@@ -1027,7 +1027,7 @@ nohup cmd &lt;span class="Keyword"&gt;&amp;amp;&lt;/span&gt;
 
 &lt;p&gt;Here is a live example of what appear while loading my pages.&lt;/p&gt;
 
-&lt;div id="demo" style="width:45%; position: relative; height: 8em; background-image: url('/Scratch/css/img/red.jpg'); background-position: 50% 50%; color: #fff; text-align: center; padding-top: 1em; margin-left: auto; margin-right: auto; border: solid 10px rgba(255,255,255,0.7); -webkit-border-radius: 1em; -moz-border-radius: 1em; border-radius: 1em; cursor: pointer; "&gt;
+&lt;div id="demo" style="width:45%; position: relative; height: 8em; background: #333; background-position: 50% 50%; color: #fff; text-align: center; padding-top: 1em; margin-left: auto; margin-right: auto; border: solid 10px rgba(255,255,255,0.7); -webkit-border-radius: 1em; -moz-border-radius: 1em; border-radius: 1em; cursor: pointer; "&gt;
     &lt;p&gt;Hello! I've finished loading!&lt;/p&gt;
     &lt;p&gt;Click me to see me disapear again.&lt;/p&gt;
     &lt;div id="todisapear" style="color: #000; position:absolute;top:0;left:0;text-align: center; padding-top: 1em; width: 100%; background-color: #eee; height: 8em;"&gt;
