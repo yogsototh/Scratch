@@ -1,28 +1,20 @@
 ----- 
-# menu
 title: Autres sites
-menupriority: 4
+menupriority: 5
 -----
+<%= block( %{Recherche}, 
+    %{http://yann.esposito.free.fr/recherche.php?css=blue&amp;lang=fr}, 
+    %{Mes activités de recherches.} 
+) %>
 
-<table class="darkimpact">
-    <tr><td><a href="/Softwares/Welcome.html">&#x27A8; Applications Mac</a></td></tr>
-    <tr><td>
-    <span class="fr"><a href="http://yann.esposito.free.fr/recherche.php?css=blue.css&amp;lang=fr">&#x27A8; Recherche</a></span>
-    </td></tr> 
-</table>
+<%= block( %{Site étudiant}, 
+    %{http://yann.esposito.free.fr/}, 
+    %{Mon site personnel lorsque j'étais étudiant. &#x271E; 2007} 
+) %>
 
-## Obsolètes
-<table class="darkimpact">
-    <tr><td> <a href="/YBlog">&#x27A8; iWeb</a></td><td><small>&#x271E; 2009</small> </td></tr> 
-    <tr><td> <a href="http://yann.esposito.free.fr">&#x27A8; Étudiant</a></td><td><small>&#x271E; 2007</small> </td></tr>
-</table>
+<%= block( %{Famille <em>&amp;</em> Photos}, 
+    %{http://web.me.com/yann.esposito/Perso/}, 
+    %{Le login est "invite", si vous l'avez oublié, demandez-moi le mot de passe.} 
+) %>
 
-newcorps
-
-# Password required
-
-<div class="impact">
-    <a href="/Perso">&#x27A8; Famille &amp; Photos</a></sup>
-</div>
-
-
+<div class="flush"></div>

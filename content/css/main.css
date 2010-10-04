@@ -10,8 +10,10 @@ $secondRevealColor: #e25f2f
 $lighterRevealColor: #ffbe96
 $imageBackgroundColor: $mainBackgroundColor
 $imageBorderColor: #cccccc
-$mainLinkColor: #555555
+$mainLinkColor: $mainTextColor
+$textLinkColor: #555555
 $highlightColor: #888888
+$highlightBlockColor: #555555
 $highlightRevealColor: #e25f2f
 $lighterText: #cccccc
 $lighterColor: #eeeeee
@@ -37,7 +39,7 @@ $codeBlockBackgroundColor: $behindColor
   font:
     style: italic
   padding: 0.5em 1em
-  color: $highlightColor
+  color: $highlightBlockColor
   a:hover
     color: $revealColor
   strong, b, i, em
@@ -57,7 +59,7 @@ $codeBlockBackgroundColor: $behindColor
     color: $secondTextColor
   a:hover
     color: $secondRevealColor
-    strong, b, i, em
+    strong, b, i, em, .nicer
       color: $lighterRevealColor
   hr
     color: $secondTextColor
@@ -385,9 +387,10 @@ $hpadding: 1
 
 .corps img
   max-width: 30em
-  border: 1px solid $imageBackgroundColor
-  background-color: $imageBorderColor
+  border: 1px solid $imageBorderColor
+  background-color: $imageBackgroundColor
   padding: 0.5em
+  box-shadow: 0 10px 15px #CCC
 
 //  les clear
 
@@ -598,6 +601,11 @@ table.impact tr td
     top: 1em
     bottom: 1em
 
+#previous_articles, #next_articles
+  color: $highlightColor
+  font-style: italic
+  font-size: .8em
+
 #previous_articles
   float: left
   margin-left: 1em
@@ -669,16 +677,21 @@ strong, b, i, em
   font-weight: normal
   color: $highlightColor
 
+.corps p
+  strong, b, i, em
+    color: $highlightBlockColor
+
 a:hover
   strong, b, i, em
     color: $highlightRevealColor
+
+a:hover .nicer
+  color: $lighterRevealColor
 
 .nicer
   color: $lighterText
   font-family: "Lucida Grande", Tahoma
 
-a:hover .nicer
-  color: $lighterRevealColor
 
 .block
   width: 31%
@@ -704,3 +717,8 @@ a:hover .nicer
 
 .right
   float: right
+
+p a
+  color: $textLinkColor
+p a:hover
+  color: $revealColor

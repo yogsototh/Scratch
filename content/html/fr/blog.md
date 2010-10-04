@@ -8,8 +8,8 @@ noSubMenu: true
     number_of_articles=20
     number_of_char_for_resume=800
     language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
-    last_articles = articles.select do |a| 
-            a.reps[0].path =~ /\/#{language}\// 
+    last_articles = @items.select do |a| 
+            a.reps[0].path =~ /\/#{language}\//  && a[:kind] == 'article'
     end
     last_articles=last_articles.sort { |x,y| y[:created_at] <=> x[:created_at] }[0..(number_of_articles-1)]
 

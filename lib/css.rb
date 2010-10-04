@@ -3,7 +3,7 @@ class NoCustomCSS < Nanoc3::Filter
     def run(content, params={})
         res=""
         content.each do |line|
-            res <<= line if not res=~/-(moz|webkit)/
+            res <<= line if not res=~/^\s*-(moz|webkit)/
         end
         return res
     end
