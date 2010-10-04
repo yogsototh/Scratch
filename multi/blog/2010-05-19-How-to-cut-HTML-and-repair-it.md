@@ -34,8 +34,8 @@ fr: Prenons un exemple :
 </div>
 </code>
 
-fr: After the cut, I obtain:
-en: Après avoir coupé, j'obtiens :
+en: After the cut, I obtain:
+fr: Après avoir coupé, j'obtiens :
 
 <code class="html">
 <div class="corps">
