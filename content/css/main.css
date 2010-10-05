@@ -487,6 +487,8 @@ img
   display: block
   margin-left: auto
   margin-right: auto
+  background: none
+  border: none
 
 img.left
   float: left
