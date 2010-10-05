@@ -10,13 +10,13 @@ hidden: false
 ) %>
 
 <%= block( %{YAquaBubbles}, 
-    %{/Scratch/en/softwares/yaquabubbles}, 
-    %{Nice underwater floating bubbles}
+   %{/Scratch/en/softwares/yaquabubbles}, 
+   %{Nice underwater floating bubbles}
     ) %>
 
 <%= block( %{YClock}, 
-    %{/Scratch/en/softwares/yclock}, 
-    %{Biohazard logo inspired clock},
+   %{/Scratch/en/softwares/yclock}, 
+   %{Biohazard logo inspired clock},
     "right"
     ) %>
 

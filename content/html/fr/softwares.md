@@ -5,18 +5,18 @@ noSubMenu: true
 hidden: false
 -----
 <%= block( %{YPassword}, 
-    %{/Scratch/en/softwares/ypassword}, 
-    %{YPassword is a password manager that make your web life more secure} 
+    %{/Scratch/fr/softwares/ypassword}, 
+    %{YPassword est un outil de gestion de mots de passe pour rendre votre vie en ligne plus sûre.} 
 ) %>
 
 <%= block( %{YAquaBubbles}, 
-    %{/Scratch/en/softwares/yaquabubbles}, 
-    %{Nice underwater floating bubbles}
+   %{/Scratch/fr/softwares/yaquabubbles}, 
+   %{Des bulles se déplaçant sous l'eau}
     ) %>
 
 <%= block( %{YClock}, 
-    %{/Scratch/en/softwares/yclock}, 
-    %{Biohazard logo inspired clock},
+   %{/Scratch/fr/softwares/yclock}, 
+   %{Une horloge inspirée par le symbole "biohazard"},
     "right"
     ) %>
 
