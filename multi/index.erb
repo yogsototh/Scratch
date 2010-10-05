@@ -1,0 +1,56 @@
+-----
+fr: title: Accueil
+en: title: Homepage
+noSubMenu: true
+-----
+<% 
+    number_of_articles=5
+    number_of_char_for_resume=800
+    language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
+    last_articles = @items.select do |a| 
+            a.reps[0].path =~ /\/#{language}\// && a[:kind] == 'article'
+    end
+    last_articles=last_articles.sort { |x,y| y[:created_at] <=> x[:created_at] }[0..(number_of_articles-1)]
+%>
+
+fr: <p>Bonjour et bienvenue sur mon site personnel.</p>
+fr: 
+fr: <p>Voici l'<i>incipit</i><sup><a href="#footnote1">&dagger;</a></sup> de mes <%= number_of_articles %> derniers articles.</p>
+fr: <p>Vous pouvez aussi chercher des entrées en utilisant le <a href="#tagcloud">nuage de mots clés (tag cloud)</a></p>
+en: <p>Welcome on my personnal website.</p>
+en: 
+en: <p>Here are the begining<sup><a href="#footnote1">&dagger;</a></sup> of my <%= number_of_articles %> last blog posts.</p>
+en: <p> You can also search the entries with <a href="#tagcloud">tag cloud</a></p>
+
+fr: Vous pouvez aussi vous abonner au flux RSS pour être certain d'être prévenu quand un nouvel article est posté. Pour plus d'explications vous pouvez vous référer à cette <a href="/Scratch/fr/rss">page</a>.
+en: You can subscribe to my RSS feed. You'll never miss a post. <a href="/Scratch/en/rss">Click here</a> if you don't know what RSS feeds are.
+
+<hr/>
+fr: <p class="small"><span id="footnote1">&dagger;</span> approximativement les <%= number_of_char_for_resume %> premiers caractères.</p>
+en: <p class="small"><span id="footnote1">&dagger;</span> approximatively the <%= number_of_char_for_resume %> first characters.</p>
+
+<% last_articles.each do |a| %>
+    </div>
+    <h1>
+        <%= calendar_for( a[:created_at], language ) %>
+        <%= link_to(a[:title]+%{ <span class="nicer">»</span>}, a) %>
+    </h1>
+    <div class="corps">
+    <%= repair_html ( excerptize( a.reps[0].compiled_content, {:length => number_of_char_for_resume} ) ) %>
+    <p>
+fr:        <%= link_to(%{en lire plus <span class="nicer">»</span>}, a) %>
+en:        <%= link_to(%{Read more <span class="nicer">»</span>}, a) %>
+    </p>
+<% end %>
+</div>
+fr: <a href="#titre">&uarr; back to top &uarr;</a>
+<div class="corps">
+fr:    <h2>tag cloud (2 articles au moins)</h2>
+en:    <h2>tag cloud (2 or more posts only)</h2>
+    <%= tagCloud(2) %>
+</div>
+
+newcorps
+
+fr: Le bouton en bas à gauche sert à revenir en haut de la page et à afficher le menu.
+en: This left bottom button get you on the top of page and open the menu.

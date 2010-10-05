@@ -1,6 +1,7 @@
 *.swp
 .DS_Store
-output/Scratch/en
-output/Scratch/fr
-output/Scratch/multi
+output.diff
 output/Scratch/map.yrf
+tmp/
+recupen.pl
+recupfr.pl
