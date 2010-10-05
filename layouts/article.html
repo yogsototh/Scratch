@@ -1,0 +1,219 @@
+-----
+-----
+<%
+# -- init variables --
+class LocalConf
+    attr_accessor :blog, :article, :languages, :language, :indent, :containMaths
+    def to_s
+        instance_variables.map{ |x| 
+            if instance_variable_get(x).class == Array
+                %{#{x.intern}=  [#{instance_variable_get(x).join(', ')}]} 
+            else
+                %{#{x.intern}=  #{instance_variable_get(x)}} 
+            end
+        }
+    end
+end
+
+conf=LocalConf.new
+
+language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'')
+conf.language=language
+
+containMaths=yield.match(/<p>([^<]|\n)*\$([^<]|\n)*\$/)
+conf.containMaths=containMaths
+
+# the current item is an article
+article=( ( not @item[:kind].nil? ) && @item[:kind] == 'article' )
+conf.article=article
+
+# the current item is a blog entry page
+blog=( ( not @item[:kind].nil? ) && @item[:kind] == 'blog' )
+conf.blog=blog
+
+# all supported languages
+languages=@config[:languages]
+conf.languages=languages
+
+self.instance_variable_set(:@conf, conf)
+
+# puts '--- conf ---'
+# puts conf.to_s
+
+    %><?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <% t=tags %>
+        <% if t.length > 0 %>
+        <meta name="keywords" content="<%= t %>">
+        <% end %>
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocom<%= language %>"/>
+        <% 
+        languages.each do |lang|
+        item_for_lang=item_of_language(lang)
+        if not item_for_lang.nil? %>
+        <link rel="alternate" lang="<%= lang %>" xml:lang="<%= lang %>" title="<%= item_for_lang[:title] %>" type="text/html" hreflang="<%= lang %>" href="<%= item_for_lang.reps[0].path %>" /> <% 
+        end
+        end %>
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <% if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        <% end %>
+        <title><%= @item[:title] %></title>
+    </head>
+    <body lang="<%= language %>">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="<%= tradOf(:loading) %>"/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <%= languages.map do |l|
+                    dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/}) 
+                    if @item_rep.path != dest
+                    %{<a href="#{dest}" onclick="setLanguage('#{l}')">#{ tradOfKeywordIn(:switchTo,l)}</a>}
+                    else
+                    nil
+                    end
+                    end.join() %>
+                </div>
+            </div>
+            <img src="/Scratch/img/presentation.png" alt="Presentation drawing"/>
+            <div id="titre">
+                <h1>
+                    <%= @item[:title] %>
+                </h1>
+                <% unless @item[:subtitle].nil? %> 
+                <h2>
+                    <%= @item[:subtitle] %> 
+                </h2>
+                <% end %>
+            </div>
+
+            <div class="flush"></div>
+
+            <% if @item[:content_for_summary] %>
+            <div class="corps summary">
+                <% @item[:content_for_summary] %>
+            </div>
+            <% end %>
+
+            <%= generateSubMenu %>
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <%= yield %>
+                </div>
+            <% depth = depthOf(@item) %>
+                <% if depth > 2 or ( depth == 2 and @item.children.length > 0 ) %>
+                    <div class="navigation">
+                        <div class="navigationprev"><%= previousFor(@item) %></div>
+                        <div class="navigationnext"><%= nextFor(@item) %></div>
+                    </div>
+                    <div class="flush"></div>
+                <% end %>
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocom<%= language %>">
+                        <%= tradOf(:subscribe) %>
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment"><%= tradOf(:clickForComment) %></div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first"><%= tradOf(:comment) %></h2>
+                    <noscript>
+                        <%= tradOf(:enableJavascriptToComment) %>
+                    </noscript>
+                    <%= generateIntenseDebateThread %>
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <%= generateMenu %>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        <%= tradOf(:previousArticles) %>
+                        <% 
+                        (1..3).each do |n|
+                        a=article_brother(-n)
+                        if not a.nil?
+                        %>
+                        <div class="previous_article">
+                            <%= link_to( %{<span class="nicer">«</span>&nbsp;}+ a[:title], a)  %>
+                        </div>
+                        <% end %>
+                        <% end %>
+                    </div>
+                    <div id="next_articles">
+                        <%= tradOf(:nextArticles) %>
+                        <% 
+                        (1..3).each do |n|
+                        a=article_brother(n)
+                        if not a.nil?
+                        %>
+                        <div class="next_article">
+                            <%= link_to(a[:title] + %{&nbsp;<span class="nicer">»</span>}, a)  %>
+                        </div>
+                        <% end %>
+                        <% end %>
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <%=tradOf(:copyright) %>
+                </div>
+                <div id="lastmod">
+                    <%=tradOf(:created_at)%>: <%= @item[:created_at].strftime(@config[:dateFormat][language.intern]) %>
+                    <%=tradOf(:last_modified)%>: <%= gitmtime.strftime(@config[:dateFormat][language.intern]) %> 
+                </div>
+                <div>
+                    <%= tradOf(:entirely_done_with) %>
+                    <a href="http://www.vim.org">Vim</a>
+                    <%= tradOf(:and) %> 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/<%=language%>/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/<%=language%>/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

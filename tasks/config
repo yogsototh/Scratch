@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+
+# Configuration
+mobileMeUser="yann.esposito"
+webroot=$HOME/Sites/blog/output
+siteName="Scratch"
+
+export PATH="$PATH:$HOME/Sites/blog/tasks"
+
+# Récupération des fichiers
+if [[ $(hostname) == 'ubuntu' ]]; then
+    iDisk='/mnt/iDisk'
+else
+    iDisk="/Volumes/$mobileMeUser"
+fi
+
+srcRep="$webroot/$siteName"
+destRep="$iDisk/Web/Sites/$siteName"
+
+[[ ! -d $webroot ]] && { 
+    print -- "$webroot n'existe pas ; vérifiez la conf" >&2; 
+    exit 1 
+}
+
+[[ ! -d $destRep ]] && { 
+    print -- "$destRep n'existe pas, veuillez remonter le FS" >&2; 
+    exit 1 
+}
+

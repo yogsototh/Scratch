@@ -1,0 +1,96 @@
+#!/usr/bin/env zsh
+
+# Script synchronisant le site sur me.com
+# normalement, le site est indisponible le moins de temps possible
+# le temps de deux renommages de répertoire
+
+# configuration
+mobileMeUser="yann.esposito"
+webroot=$HOME/Sites/webroot/output
+siteName="Scratch"
+
+# Get Environment
+if [[ $(hostname) == 'ubuntu' ]]; then
+    iDisk='/mnt/iDisk'
+else
+    iDisk="/Volumes/$mobileMeUser"
+fi
+
+srcRep="$webroot/$siteName"
+destRep="$iDisk/Web/Sites/$siteName"
+
+# print error and exit
+function err { print -P -- "$*" >&2; exit 1 ; }
+
+[[ ! -d $webroot ]] && err "$webroot n'existe pas ; vérifiez la conf"
+[[ ! -d $destRep ]] && err "$destRep n'existe pas, veuillez remonter le FS"
+
+if [[ $1 == '-h' ]]; then
+    print -- "usage : $0:h [-h|-a|-s|-t]"
+    print -- "  -h affiche l'aide"
+    exit 0
+fi
+
+function trymkdir {
+    target="$1"
+    print -- mkdir $target
+    local essai=1
+    if ((!testmode)); then
+        while mkdir $target; do
+            print -- "Echec: essai n°$essai"
+            ((essai++))
+        done
+    fi
+}
+
+function trycp {
+    element="$1"
+    target="$2"
+    if [[ ! -d ${target:h} ]]; then
+        trymkdir ${target:h}
+    fi
+    local essai=1
+    print -- cp $element $target
+    if ((!testmode)); then
+        while cp $element $target; do
+            print -- "Echec: essai n°$essai"
+            ((essai++))
+        done
+    fi
+}
+
+function createReferenceFile {
+    for element in $srcRep/**/*(.); do
+        print -n "${element#${srcRep}} "
+        perl -pe 's%<a href="(&#x6d;|&#109;|m)[^>]*>[^>]*</a>%%gim' $element | openssl sha1 
+    done
+}
+
+localRefFile="$srcRep/reference.yrf"
+remoteRefFile="/tmp/remoteRefFile.yrf"
+
+function incrementalPublish {
+    # -- get server Reference File
+    if [[ -e $destRep/reference.yrf ]]; then
+    trycp $destRep/reference.yrf $remoteRefFile
+    else
+        err "Utilisez le mode rsync ; impossible de trouver $destRep/reference.yrf"
+    fi
+    # -- make local Reference File
+    createReferenceFile > $localRefFile
+    # -- use the diff between them to update
+
+    # get the list of files to update
+    set -a filesToUpdate
+    filesToUpdate=( $( diff -y $localRefFile $remoteRefFile | perl -ne 'if (m/([^ ]*) ([0-9a-f])*[ ]*\|/) { print "$1\n"; }elsif (m/([^ ]*) ([0-9a-f]*)[ ]*</) { print "$1\n"; }elsif(m/>\s*([^\s]*) /) { print "$1\n"; }' ) )
+
+    # get 
+    for fic in $filesToUpdate; do
+        print trycp $srcRep/$fic $destRep/$fic
+    done
+}
+
+print -- "Root = $webroot"
+print -- "Dest = $destRep"
+
+incrementalPublish

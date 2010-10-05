@@ -1,0 +1,42 @@
+#!/usr/bin/env zsh
+
+source ~/.zshrc
+
+languages=( fr en )
+typeset -a exclu
+
+function join {
+  char=$1
+  shift
+  res=$1
+  shift
+  for arg in $@; do
+      res=$res$char$arg
+  done
+  print $res
+}
+
+typeset -a priority_list
+for fic in multi/**/*(.); do
+    for language in $languages; do
+        dest=content/html/$language/${fic#multi/}
+        exclu=()
+        if [[ ! -e $dest || $fic -nt $dest ]]; then
+            print $dest
+            [[ ! -d ${dest:h} ]] && mkdir ${dest:h}
+            for l in $languages; do
+                case $l in
+                    $language) continue ;;
+                esac
+                exclu=( $exclu $l )
+            done
+            awk '! /^('$exclu'): / { sub(/^'$language': /,""); print $0 }' < $fic > $dest
+            priority_list=( $priority_list ${${dest#content/}:r} )
+        fi
+    done
+done
+
+cmd="nanoc co $priority_list"
+print -- '==='
+print -- $cmd
+eval $cmd

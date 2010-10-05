@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+
+source ~/.zshrc
+
+publishdir="$HOME/Sites/blog"
+publisherhost="YiMac.local"
+
+if [[ $HOST != "YiMac.local" ]]; then
+    print -- "You're Not on '$publisherhost' host"
+    exit 1
+fi
+if [[ ! -d $publishdir ]]; then
+    print -- "Directory '$publishdir' not found"
+    exit 1
+fi
+
+# actions are:
+# go to the directory containing the webroot project
+# pull updates from webroot
+# regen all website
+# publish to mobile me
+cd $publishdir && git pull && touch layouts/default.html && ./tasks/recompile && ./tasks/publish

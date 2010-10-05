@@ -1,0 +1,116 @@
+#!/usr/bin/env ruby
+
+# engendrement des fichiers html
+
+# page d'Accueil
+#route '/' do
+#    '/index.html'
+#end
+
+# CSS
+compile '/css/*' do
+    filter :no_custom_css
+    filter :sass
+    filter :rainpress
+end
+route '/css/*' do
+    '/Scratch/assets' + item.identifier.chop + '.css'
+end
+# compile '/css/*', :rep => :mozilla do
+#     filter :mozilla
+#     filter :sass
+#     filter :rainpress
+# end
+# route '/css/*', :rep => :mozilla do
+#     '/Scratch/assets' + item.identifier.chop + '_mozilla.css'
+# end
+# compile '/css/*', :rep => :webkit do
+#     filter :webkit
+#     filter :sass
+#     filter :rainpress
+# end
+# route '/css/*', :rep => :webkit do
+#     '/Scratch/assets' + item.identifier.chop + '_webkit.css'
+# end
+
+compile '/img/*' do
+end
+route '/img/*' do
+    '/Scratch/assets' + item.identifier.chop + '.png'
+end
+
+compile '/css/raw/*' do
+end
+route '/css/raw/*' do
+    '/Scratch' + item.identifier.sub(/raw\//,'').chop + '.css'
+end
+
+# JS
+compile '/js/*' do
+end
+route '/js/*' do
+    '/Scratch/assets' + item.identifier.chop + '.js'
+end
+
+
+compile '/html/*' do
+    # item[:extension] returns 'html.erb' for multi-dotted filename
+    ext = item[:extension].nil? ? nil : item[:extension].split('.').last
+
+    filter :ultraviolet # must be before kramdown
+    filter :graph
+    filter :description
+
+    if ext == 'erb'
+        filter :erb
+    elsif ext == 'haml' || ext.nil?
+        filter :haml
+    elsif ext == 'md' || ext == 'markdown'
+        filter :erb
+        filter :kramdown
+        filter :math_repair # after kramdown
+    else
+        raise "Filter is not configured for #{item.identifier} in Rules file."
+    end
+
+    filter :multicorps # must be before firsthi
+    filter :firsthi # must be after multicorps
+    filter :frenchspace
+    filter :ytypo
+    # filter :yabbreviations
+    filter :footnotes
+
+    if item[:kind] == 'article'
+        layout 'article'
+    elsif not item[:layout].nil?
+        layout item[:layout]
+    else
+        layout 'default' unless item[:layout] == "none"
+    end
+end
+
+route '/html/*' do
+  '/Scratch' + item.identifier.sub('/html','') + 'index.html'
+end
+
+# feed
+compile '/xml/*' do
+    layout 'feed'
+end
+
+route '/xml/en/*' do
+    '/Scratch/en/blog/feed/feed.xml'
+end
+route '/xml/fr/*' do
+    '/Scratch/fr/blog/feed/feed.xml'
+end
+
+compile '/sitemap/*' do
+    layout 'sitemap'
+end
+route '/sitemap/*' do
+    '/Scratch/sitemap.xml'
+end
+
+layout '*', :erb
+

@@ -1,0 +1,88 @@
+--- 
+data_sources: 
+- items_root: /
+  layouts_root: /
+  type: filesystem_unified
+output_dir: output
+ultraviolet_theme: "twilight"
+base_url: "http://yannesposito.com"
+author_uri: "http://yannesposito.com"
+
+# les langues
+languages:
+    - fr
+    - en
+
+# les formats de date en fonction de la langue
+dateFormat:
+    fr: "%d/%m/%Y"
+    en: "%m/%d/%Y"
+
+# le dictionnaire pour les mots communs
+translations:
+    author: 
+        fr: "auteur"
+        en: "author"
+    langue: 
+        fr: "langue"
+        en: "language"
+    switchTo: 
+        fr: "en Français"
+        en: "in English"
+    clickForComment:
+        fr: "Commentaires"
+        en: "Comments"
+    liens:
+        fr: "liens"
+        en: "links"
+    telecharger:
+        fr: "télécharger"
+        en: "download"
+    nojsclickme:
+        fr: "Javascript semble désactivé ;<br/> cliquez ici"
+        en: "Javascript seems disabled <br/> click on me"
+    nextArticles:
+        fr: "articles suivants"
+        en: "next entries"
+    next:
+        fr: "suivant"
+        en: "next"
+    previousArticles:
+        fr: "articles précédents"
+        en: "previous entries"
+    previous:
+        fr: "précédent"
+        en: "previous"
+    comment:
+        fr: "commentaires"
+        en: "comments"
+    onlyin:
+        fr: "Seulement en"
+        en: "Only in"
+    whatsthis:
+        fr: "Qu'est-ce que c'est ?"
+        en: "What's this?"
+    loading:
+        fr: "Chargement en cours..."
+        en: "loading..."
+    entirely_done_with:
+        en: "Entirely done with"
+        fr: "Site entièrement réalisé avec"
+    and:
+        en: "and"
+        fr: "et"
+    created_at:
+        en: "Created"
+        fr: "Écrit le "
+    last_modified:
+        en: "Modified"
+        fr: "modifié le "
+    copyright:
+        en: "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\">Copyright ©, Yann Esposito</a>"
+        fr: "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.fr\">Droits de reproduction ©, Yann Esposito</a>"
+    subscribe:
+        en: "Subscribe"
+        fr: "s'abonner"
+    enableJavascriptToComment:
+        en: "You must enable javascript to comment."
+        en: "Vous devez activer javascript pour commenter."
