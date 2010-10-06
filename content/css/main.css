@@ -576,17 +576,19 @@ table.impact tr td
 #choixrss
   float: right
   width: 25%
+  line-height: 2em
+#choixlang
+  line-height: 2em
 
-#entete
-  #choixrss,
-  #choixlang a
-    margin-top: 0.3em
-    height: 4em
-    line-height: 4em
+#choix a
+  color: $highlightColor
+#choix  a:hover
+  color: $revealColor
 
 #choixlang a
   display: block
   width: 25%
+  line-height: 4em
   text-align: center
 
 .date
@@ -623,13 +625,6 @@ table.impact tr td
   margin-right: 1em
   text-align: right
 
-#choixlang
-  padding-top: 0.1em
-
-#choixlang a,
-#clickcomment
-  padding: 0.1em 1em
-
 #clickcomment
   margin-left: 0
   width: 25%
@@ -640,13 +635,12 @@ table.impact tr td
   display: block
   width: 100%
   float: right
-  padding: 0.1em 1em
+  padding: 1em 0.1em
 
 .return a
   text-align: center
   float: right
   width: 25%
-  padding: 0.1em 1em
 
 .corps .return a
   color: $lighterColor
@@ -720,7 +714,8 @@ a:hover .nicer
 .right
   float: right
 
-p a
-  color: $textLinkColor
-p a:hover
-  color: $revealColor
+.corps 
+  p a, ul a
+    color: $textLinkColor
+  p a:hover, ul a:hover
+    color: $revealColor

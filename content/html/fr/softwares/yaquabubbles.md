@@ -1,6 +1,6 @@
 ----- 
 title: YAquaBubbles
-title: bubble in the ocean
+subtitle: Des bulles flottantes
 menupriority: 2
 noSubMenu: true
 hidden: false
