@@ -42,3 +42,5 @@ Beaucoup d'utilisateurs mon dit d'utiliser text-shadows avec parcimonie. Mais je
 
 ## en conclusion
 
+N'utilisez pas **`-webkit-gradient`** avec google Chrome pour l'instant.
+Utilisez **`-moz-box-shadow`** avec parcimonie.
