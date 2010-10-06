@@ -23,8 +23,8 @@ en:  - A [command line tool](/Scratch/files/getpass).
 
 fr:  - Un [widget](/Scratch/files/YPassword-1.6.zip) ;
 fr:  - un [Applescript](/Scratch/files/forcePaste.app.zip) pour simuler la copie dans les champs textes protégés ;
-fr:  - une [application web](/Scratch/en/softwares/ypassword/web/) écrite avec [Cappuccino](http://cappuccino.org),
-fr:  - une [application web](/Scratch/en/softwares/ypassword/iphoneweb/) pour iPhone ;
+fr:  - une [application web](/Scratch/fr/softwares/ypassword/web/) écrite avec [Cappuccino](http://cappuccino.org),
+fr:  - une [application web](/Scratch/fr/softwares/ypassword/iphoneweb/) pour iPhone ;
 fr:  - un [script utilisable en ligne de commande](/Scratch/files/getpass).
 
 en: I'll soon release an iPhone application.
