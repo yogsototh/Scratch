@@ -22,90 +22,7 @@ function initCode() {
 }
 // --- end of popin code ---
 
-// -- multilanguage handling --
-
-// show a message to user
-function message(msg) {
-    $('#blackpage').css({cursor: 'auto'});
-    $('#blackpage').show().html(msg);
-}
-
-// from cookie first if not, from Navigator
-function getUserLanguage() {
-    var language = $.cookie('language');
-    if (! language) {
-        if ( (navigator) && 
-                (navigator.language) && 
-                (navigator.language.substring(0,2) == 'fr' ) ) {
-            language='fr';
-        } else {
-            language='en';
-        }
-    }
-    return language;
-}
-
-// return the path of the equivalent page in another language
-function pathToLanguage(lang) {
-    return window.location.pathname.replace(/(.*\/Scratch\/)(..)(\/.*$)/,'$1'+lang+'$3');
-}
-
-// return the link to the equivalent page in another language
-function linkToLang(lang, msg) {
-    return '<a href="'+pathToLanguage(lang)+'">'+msg+'</a>';
-}
-
-// return a link that will hide the message
-function hideClickMessage(msg) {
-    return '<div><a onclick="hideMessage()">'+msg+'</a></div>';
-}
-
-// put the selected language in the cookie
-function setLanguage(lang) {
-    $.cookie('language',lang, { path: '/Scratch'});
-}
-
-// select the good language and hide the message
-function hideMessage() {
-    setLanguage(getPageLanguage());
-    $('#blackpage').fadeOut();
-}
-
-// get the language of the current page
-function getPageLanguage() {
-    var lang=window.location.pathname.replace(/.*\/Scratch\/(..).*$/,'$1');
-    if ( lang == window.location.pathname ) {
-        return "";
-    }
-    else {
-        return lang;
-    }
-}
-
-// alert the user if its navigator configuration tell
-// me it should prefer another language
-function alertLanguage() {
-    var language=getUserLanguage();
-    var language_of_current_page=getPageLanguage();
-    if ( language_of_current_page == "" ) {
-        return true;
-    }
-    if (language != language_of_current_page) {
-        if ( language == 'fr' ) {
-            message(linkToLang('fr','Aller sur la Version Française ?') + hideClickMessage('No thanks, I prefer read english.'));
-        } else if (language == 'en') {
-            message(linkToLang('en','Go to English Version?')+ hideClickMessage('Non merci, je préfère le français.'));
-        } else {
-            // don't know which language the user prefer
-            message(linkToLang('en','Go to English Version?')+'<br/>'+linkToLang('fr','Version Française ?') + hideClickMessage('Non merci, je préfère le français.'));
-        }
-        return false;
-    }
-    return true;
-}
-// --- end for language ---
-
-// Google analytics
+// --- Google analytics ---
 function analytics() {
     var admin = $.cookie('admin');
     if (! admin) {
@@ -152,15 +69,9 @@ var userAgent;
 
 function detectClient() {
     userAgent = navigator.userAgent.toLowerCase();
-    // if ( /chrome/.test(userAgent) ) {
-    //     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_chrome.css"/>');
-    // } else if ( /webkit/.test(userAgent) ) {
-    //     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_webkit.css"/>');
-    // } else if ( /mozilla/.test(userAgent) ) {
-    //     $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/gen_mozilla.css"/>');
-    // } else 
-        if (/msie/.test(userAgent) ) {
-        $('head').append('<script type="text/javascript" src="/Scratch/js/ie.js"></script>');
+    if (/msie/.test(userAgent) ) {
+        $('body').prepend('<div id="iemessage"><p><span><em>Avec <a href="http://www.firefox.com"> Firefox </a> et <a href="http://www.apple.com/safari">Safari</a> cette page est bien plus jolie !</em></span><br/><span><em>This page is far nicer with <a href="http://www.firefox.com"> Firefox </a> and <a href="http://www.apple.com/safari">Safari</a>!</em></span></p></div>');
+p
     } else if (/ip(od|hone)/.test(userAgent)) {
         $('head').append('<meta name="viewport" content="width=device-width; initial-scale=0.5; maximum-scale=2.0;">');
         $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/iPhone.css"/>');
@@ -171,10 +82,7 @@ function detectClient() {
 $(document).ready( function() {
     detectClient();
     initCode();
-    // affiche la page une fois propre et la langue choisie
-    if ( alertLanguage() ) {
-        $('#blackpage').fadeOut();
-    }
+    $('#blackpage').fadeOut();
     analytics();
 });
 
