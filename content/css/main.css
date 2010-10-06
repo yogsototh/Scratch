@@ -714,7 +714,8 @@ a:hover .nicer
 .right
   float: right
 
-p a
-  color: $textLinkColor
-p a:hover
-  color: $revealColor
+.corps 
+  p a, ul a
+    color: $textLinkColor
+  p a:hover, ul a:hover
+    color: $revealColor
