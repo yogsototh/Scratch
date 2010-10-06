@@ -47,6 +47,17 @@ author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
 -----
+begindiv(intro)
+
+en: <%= tldr %>
+
+fr: <%= tlal %>
+
+enddiv
+
+newcorps
+
+<%= blogimage("main.png","Title image") %>
 ENDFORMAT
 
 print "imagedir = $dirname"
