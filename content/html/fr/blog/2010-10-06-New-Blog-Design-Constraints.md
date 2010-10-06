@@ -3,7 +3,7 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2010-10-06T11:33:03+02:00
-title: New Blog Design Constraints
+title: Contraintes du design de ce blog
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:

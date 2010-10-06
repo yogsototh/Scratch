@@ -42,5 +42,3 @@ Many tell me to use text-shadows sparingly. But I believe it was not the real re
 
 Do not use **`-webkit-gradient`** on Chrome browser yet.
 Try to use **`-moz-box-shadow`** sparingly.
-N'utilisez pas **`-webkit-gradient`** avec google Chrome pour l'instant.
-Utilisez **`-moz-box-shadow`** avec parcimonie.
