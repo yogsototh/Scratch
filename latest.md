@@ -1,1 +1,1 @@
-./multi/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes.md
+./multi/blog/2010-10-06-New-Blog-Design-Constraints.md
