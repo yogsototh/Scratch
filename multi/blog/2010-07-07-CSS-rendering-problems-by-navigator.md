@@ -59,5 +59,5 @@ fr: ## en conclusion
 
 en: Do not use **`-webkit-gradient`** on Chrome browser yet.
 en: Try to use **`-moz-box-shadow`** sparingly.
-en: N'utilisez pas **`-webkit-gradient`** avec google Chrome pour l'instant.
-en: Utilisez **`-moz-box-shadow`** avec parcimonie.
+fr: N'utilisez pas **`-webkit-gradient`** avec google Chrome pour l'instant.
+fr: Utilisez **`-moz-box-shadow`** avec parcimonie.

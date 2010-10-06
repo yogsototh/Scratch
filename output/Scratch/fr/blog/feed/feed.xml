@@ -2,13 +2,36 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-09-02T13:54:10Z</updated>
+  <updated>2010-10-06T09:33:03Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomfr"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2010-10-06:/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/</id>
+    <title type="html">Contraintes du design de ce blog</title>
+    <published>2010-10-06T09:33:03Z</published>
+    <updated>2010-10-06T09:33:03Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/"/>
+    <content type="html">&lt;p&gt;Vous avez pu constater que j&amp;rsquo;ai modifi&#233; le design de mon blog.
+Maintenant il doit &#234;tre beaucoup plus l&#233;ger qu&amp;rsquo;avant.
+Je n&amp;rsquo;utilise plus de CSS3 et beaucoup moins de javascript.
+Bien entendu, m&#234;me avant, mes pages &#233;taient parfaitement lisibles sans javascript.
+Mais, je me suis aper&#231;u que les syst&#232;mes de CSS3 sont loin d&amp;rsquo;&#234;tre au point.
+J&amp;rsquo;utilisait des gradient en CSS3, ainsi que des ombres sous le texte. &#199;a avait un rendu tr&#232;s sympa. Sauf&amp;hellip;
+Ce n&amp;rsquo;&#233;tait pas compatible ie6, sous Chrome le rendu &#233;tait d&amp;rsquo;une lenteur incroyable.
+J&amp;rsquo;ai donc d&#233;cid&#233; de faire un site &#224; minima. 
+Je voulais qu&amp;rsquo;il soit joli &lt;em&gt;et&lt;/em&gt; le plus simple possible pour assurer sa compatibilit&#233;.
+Les r&#232;gles que je me suis fix&#233;es sont donc:&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2010-09-02:/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/</id>
     <title type="html">Utilisation de git pour calculer les mtimes</title>
@@ -744,32 +767,6 @@ $ sudo port install git-core
 &lt;p&gt;Voici la liste des commandes n&#233;cessaires et suffisantes pour utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. Il y en a tr&#232;s peu. Il est normal de ne pas les comprendre tout de suite mais c&amp;rsquo;est pour vous donner une id&#233;e. Malgr&#233; la longueur de l&amp;rsquo;article, 95% de l&amp;rsquo;utilisation de &lt;/p&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/"/>
-    <content type="html">&lt;h1 class="first" id="gitgit-pour-quoi-faire-"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; pour quoi faire&amp;nbsp;?&lt;/h1&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;Si tout ce qui vous int&#233;resse c&amp;rsquo;est d&amp;rsquo;utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; &lt;strong&gt;tout de suite&lt;/strong&gt;. Lisez simplement les parties sur fond noir. Je vous conseille aussi de revenir relire tout &#231;a un peu plus tard, pour mieux comprendre les fondements des syst&#232;mes de versions et ne pas faire de b&#234;tises quand vous les utilisez.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; est un &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, c&amp;rsquo;est-&#224;-dire un syst&#232;me de versions concurrentes d&#233;centralis&#233;. Analysons chaque partie de cette appellation compliqu&#233;.&lt;/p&gt;
-
-...</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
     <title type="html">Git pour les nuls</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -795,6 +792,32 @@ $ sudo port install git-core
   &lt;li&gt;savoir qui a fait quoi et quand&amp;nbsp;;&lt;/li&gt;
   &lt;li&gt;g&#233;rer des conflits&amp;nbsp;;&lt;/li&gt;
   &lt;li&gt;manipuler facileme...&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/"/>
+    <content type="html">&lt;h1 class="first" id="gitgit-pour-quoi-faire-"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; pour quoi faire&amp;nbsp;?&lt;/h1&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;Si tout ce qui vous int&#233;resse c&amp;rsquo;est d&amp;rsquo;utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; &lt;strong&gt;tout de suite&lt;/strong&gt;. Lisez simplement les parties sur fond noir. Je vous conseille aussi de revenir relire tout &#231;a un peu plus tard, pour mieux comprendre les fondements des syst&#232;mes de versions et ne pas faire de b&#234;tises quand vous les utilisez.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; est un &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, c&amp;rsquo;est-&#224;-dire un syst&#232;me de versions concurrentes d&#233;centralis&#233;. Analysons chaque partie de cette appellation compliqu&#233;.&lt;/p&gt;
+
+...</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-10-30:/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/</id>
@@ -951,20 +974,5 @@ Pour l&amp;rsquo;instant je le cache partout.&lt;/p&gt;
     &lt;div id="todisapear" style="color: #000; position:absolute;top:0;left:0;text-align: center; padding-top: 1em; width: 100%; background-color: #eee; height: 8em;"&gt;
     Loading...
     &lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-09-28:/Scratch/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/</id>
-    <title type="html">Disqus contre Intense Debate (pourquois j'ai chang&#233;)</title>
-    <published>2009-09-28T08:58:20Z</published>
-    <updated>2009-09-28T08:58:20Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/"/>
-    <content type="html">&lt;h1 class="first" id="disqushttpdisquscom-vs-intense-debatehttpintensedebatecom"&gt;&lt;a href="http://disqus.com/"&gt;Disqus&lt;/a&gt; &lt;em&gt;vs.&lt;/em&gt; &lt;a href="http://intensedebate.com/"&gt;Intense Debate&lt;/a&gt;&lt;/h1&gt;
-
-&lt;p&gt;J&amp;rsquo;ai &#233;crit un article sur la fa&#231;on dont j&amp;rsquo;ai essay&#233; d&amp;rsquo;int&#233;grer &lt;a href="http://disqus.com"&gt;Disqus&lt;/a&gt;. Mon probl&#232;me majeur avec &lt;a href="http://disqus.com/"&gt;Disqus&lt;/a&gt; c&amp;rsquo;&#233;tait que ma page ne s&amp;rsquo;affichait pas correctement tant que les commentaire n&amp;rsquo;avait pas fini de s&amp;rsquo;afficher. &#199;a m&amp;rsquo;est arriv&#233; plusieurs fois d&amp;rsquo;avoir ma page compl&#232;tement bloqu&#233;e parce que les serveurs de &lt;a href="http://disqus.com/"&gt;Disqus&lt;/a&gt; ne r&#233;pondait pas.
-C&amp;rsquo;est pourquoi j&amp;rsquo;ai essayer de l&amp;rsquo;inclure de mani&#232;re asynchrone. Cependant j&amp;rsquo;ai e...&lt;/p&gt;</content>
   </entry>
 </feed>

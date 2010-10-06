@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
         
-        <meta name="keywords" content="CSS, web, programming, Chrome, Safari, Firefox">
+        <meta name="keywords" content="programming, blog">
         
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
@@ -14,13 +14,13 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
-        <link rel="alternate" lang="fr" xml:lang="fr" title="N'utilisez pas de gradients avec Chrome" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/" /> 
-        <link rel="alternate" lang="en" xml:lang="en" title="Do not use CSS gradient with Chrome" type="text/html" hreflang="en" href="/Scratch/en/blog/2010-07-07-CSS-rendering-problems-by-navigator/" /> 
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Contraintes du design de ce blog" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="New Blog Design Constraints" type="text/html" hreflang="en" href="/Scratch/en/blog/2010-10-06-New-Blog-Design-Constraints/" /> 
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
         
-        <title>N'utilisez pas de gradients avec Chrome</title>
+        <title>Contraintes du design de ce blog</title>
     </head>
     <body lang="fr">
         <script type="text/javascript">// <![CDATA[
@@ -33,13 +33,13 @@
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
                 <div id="choixlang">
-                    <a href="/Scratch/en/blog/2010-07-07-CSS-rendering-problems-by-navigator/" onclick="setLanguage('en')">in English</a>
+                    <a href="/Scratch/en/blog/2010-10-06-New-Blog-Design-Constraints/" onclick="setLanguage('en')">in English</a>
                 </div>
             </div>
             <img src="/Scratch/img/presentation.png" alt="Presentation drawing"/>
             <div id="titre">
                 <h1>
-                    N'utilisez pas de gradients avec Chrome
+                    Contraintes du design de ce blog
                 </h1>
                 
             </div>
@@ -53,37 +53,24 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>Beaucoup d&rsquo;utilisateurs de <a href="http://reddit.com">Reddit</a> m&rsquo;ont rapporté que mon site était très long à charger et à <em>scroller</em>.
-Ils pensaient qu&rsquo;il s&rsquo;agissait d&rsquo;un problème dû aux ombres que j&rsquo;applique sur le texte.
-J&rsquo;étais un peu surpris puisque je fais mes tests sur une machine vraiment très lente et je n&rsquo;avais jamais détecté ces problèmes.
-En réalité, ce qui ralenti le rendu de ce site est par ordre d&rsquo;importance&nbsp;:</p>
+                    <p>Vous avez pu constater que j&rsquo;ai modifié le design de mon blog.
+Maintenant il doit être beaucoup plus léger qu&rsquo;avant.
+Je n&rsquo;utilise plus de CSS3 et beaucoup moins de javascript.
+Bien entendu, même avant, mes pages étaient parfaitement lisibles sans javascript.
+Mais, je me suis aperçu que les systèmes de CSS3 sont loin d&rsquo;être au point.
+J&rsquo;utilisait des gradient en CSS3, ainsi que des ombres sous le texte. Ça avait un rendu très sympa. Sauf&hellip;
+Ce n&rsquo;était pas compatible ie6, sous Chrome le rendu était d&rsquo;une lenteur incroyable.
+J&rsquo;ai donc décidé de faire un site à minima. 
+Je voulais qu&rsquo;il soit joli <em>et</em> le plus simple possible pour assurer sa compatibilité.
+Les règles que je me suis fixées sont donc:</p>
 
-<ol>
-  <li>Les dégradés sur Chrome (pas dans Safari sur Mac)</li>
-  <li>les <em>box shadows</em> sur Firefox</li>
-</ol>
+<ul>
+  <li>pas d&rsquo;élément CSS qui commence par <code>-moz</code> ou <code>-webkit</code>, etc&hellip;&nbsp;;</li>
+  <li>pas d&rsquo;ombre sous le texte pour donner une impression de profondeur&nbsp;;</li>
+  <li>nettoyer pas mal le code et enlever tout ce que je peux&nbsp;;</li>
+</ul>
 
-<h2 id="les-dgrads">les dégradés</h2>
-
-<p>Sur Safari il n&rsquo;y a absolument aucun problème avec les dégradés. Par contre sur Chrome sous Linux le site devient quasiment inutilisable.</p>
-
-<p>Safari et Chrome utilisent <em>webkit</em> tous les deux. Lorsque vous accéder à ce blog avec javascript activé, un CSS spécifique à votre navigateur est ajouté. Jusqu&rsquo;à maintenant je faisais un tri entre&nbsp;: IE, Mozilla et Webkit. Maintenant j&rsquo;ai rajouté un cas particulier pour Chrome.
-Maintenant j&rsquo;ai supprimé les gradients lorsque vous naviguer sur ce site en utilisant Chrome.</p>
-
-<p>Je n&rsquo;ai pas vérifier la vitesse de rendu de toutes les propriétés de CSS 3. Mais je vous conseille de ne pas utiliser <strong><code>-webkit-gradient</code></strong> avec Chrome. Au moins sous Linux.</p>
-
-<h2 id="les-ombres-box-shadow">Les ombres (box-shadow)</h2>
-
-<p>J&rsquo;ai aussi remarqué que <strong><code>-moz-box-shadow</code></strong> ralenti le rendu sous Firefox (et sous Linux). Alors que l&rsquo;équivalent webkit ne pose aucun problème à Safari sous Mac.</p>
-
-<h2 id="ombres-de-texte">Ombres de texte</h2>
-
-<p>Beaucoup d&rsquo;utilisateurs mon dit d&rsquo;utiliser text-shadows avec parcimonie. Mais je pense qu&rsquo;il ne s&rsquo;agissait pas là du problème du ralentissement du site. C&rsquo;est pourquoi je vais les remettre.</p>
-
-<h2 id="en-conclusion">en conclusion</h2>
-
-<p>N&rsquo;utilisez pas <strong><code>-webkit-gradient</code></strong> avec google Chrome pour l&rsquo;instant.
-Utilisez <strong><code>-moz-box-shadow</code></strong> avec parcimonie.</p>
+<p>J&rsquo;espère que ce nouveau design vous plaît.</p>
 
                 </div>
             
@@ -114,8 +101,8 @@ Utilisez <strong><code>-moz-box-shadow</code></strong> avec parcimonie.</p>
                     
     <script type="text/javascript">
     var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
-    var idcomments_post_id = '/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/';
-    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/';
+    var idcomments_post_id = '/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/';
     </script>
     <span id="IDCommentsPostTitle" style="display:none"></span>
     <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
@@ -136,17 +123,17 @@ Utilisez <strong><code>-moz-box-shadow</code></strong> avec parcimonie.</p>
                         articles précédents
                         
                         <div class="previous_article">
-                            <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/"><span class="nicer">«</span>&nbsp;Cappuccino ou jQuery ?</a>
+                            <a href="/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/"><span class="nicer">«</span>&nbsp;Utilisation de git pour calculer les mtimes</a>
                         </div>
                         
                         
                         <div class="previous_article">
-                            <a href="/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/"><span class="nicer">«</span>&nbsp;Comment faire des popups en jQuery rapidement</a>
+                            <a href="/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/"><span class="nicer">«</span>&nbsp;base64 et sha1 sur iPhone</a>
                         </div>
                         
                         
                         <div class="previous_article">
-                            <a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/"><span class="nicer">«</span>&nbsp;Se cacher de ses statistiques web</a>
+                            <a href="/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/"><span class="nicer">«</span>&nbsp;Envoyer un mail en ligne de commande avec un fichier attaché</a>
                         </div>
                         
                         
@@ -154,19 +141,7 @@ Utilisez <strong><code>-moz-box-shadow</code></strong> avec parcimonie.</p>
                     <div id="next_articles">
                         articles suivants
                         
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/2010-07-31-New-style-after-holidays/">Nouveau style après les vacances&nbsp;<span class="nicer">»</span></a>
-                        </div>
                         
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/2010-07-09-Indecidabilities/">Indécidabilités (partie 1)&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/">Maintenant sur Heroku&nbsp;<span class="nicer">»</span></a>
-                        </div>
                         
                         
                     </div>
@@ -180,8 +155,8 @@ Utilisez <strong><code>-moz-box-shadow</code></strong> avec parcimonie.</p>
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
                 </div>
                 <div id="lastmod">
-                    Écrit le : 07/07/2010
-                    modifié le : 04/10/2010 
+                    Écrit le : 06/10/2010
+                    modifié le : 06/10/2010 
                 </div>
                 <div>
                     Site entièrement réalisé avec
