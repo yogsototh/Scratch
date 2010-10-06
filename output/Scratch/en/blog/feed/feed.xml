@@ -2,13 +2,41 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-09-02T13:54:10Z</updated>
+  <updated>2010-10-06T09:33:03Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2010-10-06:/Scratch/en/blog/2010-10-06-New-Blog-Design-Constraints/</id>
+    <title type="html">Contraintes du design de ce blog</title>
+    <published>2010-10-06T09:33:03Z</published>
+    <updated>2010-10-06T09:33:03Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-10-06-New-Blog-Design-Constraints/"/>
+    <content type="html">&lt;p&gt;I changed the design of my blog.
+Now it should be far cleaner.
+I believe I use no CSS3 feature and far less javascript.
+Of course before my website was perfectly browsable without javascript. 
+Unfortunately some CSS3 feature are not mature enough on some browser.
+For more details you can read my older &lt;a href="/Scratch/en/blog/2010-07-07-CSS-rendering-problems-by-navigator"&gt;blog entry&lt;/a&gt;.
+But the major problem came from, &lt;code&gt;font-shadow&lt;/code&gt; and gradients.
+Then my new design obey to the following rules:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;no CSS element begining by &amp;lsquo;-moz&amp;rsquo; or &amp;lsquo;-webkit&amp;rsquo;, etc&amp;hellip;,&lt;/li&gt;
+  &lt;li&gt;no text shadow,&lt;/li&gt;
+  &lt;li&gt;clean (I mean delete) most javascript.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I hope the new design please you.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2010-09-02:/Scratch/en/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/</id>
     <title type="html">Use git to calculate trusted mtimes</title>
@@ -1033,23 +1061,5 @@ nohup cmd &lt;span class="Keyword"&gt;&amp;amp;&lt;/span&gt;
     &lt;div id="todisapear" style="color: #000; position:absolute;top:0;left:0;text-align: center; padding-top: 1em; width: 100%; background-color: #eee; height: 8em;"&gt;
     Loading...
     &lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-09-28:/Scratch/en/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/</id>
-    <title type="html">Disqus versus Intense Debate (Why I switched)</title>
-    <published>2009-09-28T08:58:20Z</published>
-    <updated>2009-09-28T08:58:20Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/"/>
-    <content type="html">&lt;h1 class="first" id="disqushttpdisquscom-vs-intense-debatehttpintensedebatecom"&gt;&lt;a href="http://disqus.com/"&gt;Disqus&lt;/a&gt; &lt;em&gt;vs.&lt;/em&gt; &lt;a href="http://intensedebate.com/"&gt;Intense Debate&lt;/a&gt;&lt;/h1&gt;
-
-&lt;p&gt;I made a blog entry about how I tried to integrate &lt;a href="http://disqus.com"&gt;Disqus&lt;/a&gt;. I had to wait Disqus comment to be displayed before loading correctly my page. This is why I tried to include it in a &amp;ldquo;non-blocking&amp;rdquo; way. Unfortunately, I had &lt;a href="/Scratch/en/blog/11_Load_Disqus_Asynchronously/"&gt;difficulties to make it works correctly&lt;/a&gt;. &lt;/p&gt;
-
-&lt;p&gt;Furthermore, it was not trivial to make comment to be shared between multiple version of the same page (each page has three differents representations, one for each language and one more for the multi-language version).&lt;/p&gt;
-
-...</content>
   </entry>
 </feed>
