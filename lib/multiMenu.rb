@@ -94,24 +94,21 @@ def generateSubMenu()
 end
 # =======================
 
-def blogimage(val,title="no name")
+def blogimage(val,title="no name", divclass=nil)
     if depthOf( @item ) == 3
         imgpath=@item.parent.path
     else
         imgpath=@item.path
     end
     imgpath=imgpath.sub(%r{/Scratch/../},'/Scratch/img/')+val
-    return %{<img alt="#{title}" src="#{imgpath}"></img>}
+    if not divclass.nil?
+        cls=%{ class="#{divclass}"}
+    end
+    return %{<img alt="#{title}" src="#{imgpath}"#{cls}></img>}
 end
 
 def leftblogimage(val,title="no name")
-    if depthOf( @item ) == 3
-        imgpath=@item.parent.path
-    else
-        imgpath=@item.path
-    end
-    imgpath=imgpath.sub(%r{/Scratch/../},'/Scratch/img/')+val
-    return %{<img class="left" alt="#{title}" src="#{imgpath}"></img>}
+    return blogimage(val, title, "left")
 end
 
 def lnkto(title,item)
