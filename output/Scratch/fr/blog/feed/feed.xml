@@ -2,13 +2,46 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-10-06T09:33:03Z</updated>
+  <updated>2010-10-10T16:39:00Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomfr"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2010-10-10:/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/</id>
+    <title type="html">S&#233;curisez vos emails</title>
+    <published>2010-10-10T16:39:00Z</published>
+    <updated>2010-10-10T16:39:00Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/"/>
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" class="clean" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/main.png" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt; &lt;em&gt;avec un Mac&lt;/em&gt; &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;R&#233;cup&#233;rez un certificat sign&#233; par une AC: &lt;a href="http://www.instantssl.com/ssl-certificate-products/free-email-certificate.html"&gt;cliquez ici pour un certificat gratuit&lt;/a&gt;&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;ouvrez le fichier&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;supprimer le fichier en mode s&#233;curis&#233;&amp;nbsp;;&lt;/li&gt;
+  &lt;li&gt;utilisez Mail plut&#244;t que l&amp;rsquo;interface web de gmail.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;J&amp;rsquo;ai (re)d&#233;couvert comment adoptez la norme S/MIME. 
+J&amp;rsquo;ai &#233;t&#233; surpris de voir &#224; quel point ce fut ais&#233;.
+Il y a seulement quelques ann&#233;es c&amp;rs...&lt;/p&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-06:/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/</id>
     <title type="html">Contraintes du design de ce blog</title>
@@ -661,66 +694,6 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 </content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
-    <content type="html">&lt;h1 class="first" id="et-cest-parti-"&gt;Et c&amp;rsquo;est parti&amp;nbsp;!&lt;/h1&gt;
-
-&lt;p&gt;Voici une parmi de nombreuses autres fa&#231;on d&amp;rsquo;utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. Cette m&#233;thode est n&#233;cessaire et suffisante pour travailler seul ou en collaboration sur un projet commun. Cependant, on peut faire beaucoup mieux avec &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; que ce &lt;em&gt;workflow&lt;/em&gt; (en langage anglo-saxon).&lt;/p&gt;
-
-&lt;h2 id="utilisation-basique"&gt;Utilisation basique&lt;/h2&gt;
-
-&lt;p&gt;La fa&#231;on imm&#233;diate de travailler avec &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;&amp;nbsp;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;r&#233;cup&#233;rer les modifications des autres &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;voir les d&#233;tails de ces modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/"/>
-    <content type="html">&lt;h1 class="first" id="avant-lutilisation-la-configuration"&gt;Avant l&amp;rsquo;utilisation, la configuration&lt;/h1&gt;
-
-&lt;h2 id="installation"&gt;installation&lt;/h2&gt;
-
-&lt;p&gt;Sous Linux Ubuntu ou Debian&amp;nbsp;:&lt;/p&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;$ sudo apt-get install git
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Sous Mac OS X&amp;nbsp;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;installez &lt;a href="http://macports.org/install.php"&gt;MacPorts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;installez &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;
-$ sudo port selfupdate
-
-$ sudo port install git-core
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="configuration-globale"&gt;Configuration globale&lt;/h2&gt;
-
-&lt;p&gt;Enregistrez le fichier suivant comme le fichier &lt;code&gt;~/.gitconfig&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div&gt;&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/</id>
     <title type="html">Git pour les nuls</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -794,6 +767,44 @@ $ sudo port install git-core
   &lt;li&gt;manipuler facileme...&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
   <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/"/>
+    <content type="html">&lt;h1 class="first" id="avant-lutilisation-la-configuration"&gt;Avant l&amp;rsquo;utilisation, la configuration&lt;/h1&gt;
+
+&lt;h2 id="installation"&gt;installation&lt;/h2&gt;
+
+&lt;p&gt;Sous Linux Ubuntu ou Debian&amp;nbsp;:&lt;/p&gt;
+
+&lt;div&gt;&lt;pre class="twilight"&gt;$ sudo apt-get install git
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Sous Mac OS X&amp;nbsp;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;installez &lt;a href="http://macports.org/install.php"&gt;MacPorts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;installez &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div&gt;&lt;pre class="twilight"&gt;
+$ sudo port selfupdate
+
+$ sudo port install git-core
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="configuration-globale"&gt;Configuration globale&lt;/h2&gt;
+
+&lt;p&gt;Enregistrez le fichier suivant comme le fichier &lt;code&gt;~/.gitconfig&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div&gt;&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
     <title type="html">Git pour les nuls</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -818,6 +829,28 @@ $ sudo port install git-core
 &lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; est un &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, c&amp;rsquo;est-&#224;-dire un syst&#232;me de versions concurrentes d&#233;centralis&#233;. Analysons chaque partie de cette appellation compliqu&#233;.&lt;/p&gt;
 
 ...</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
+    <content type="html">&lt;h1 class="first" id="et-cest-parti-"&gt;Et c&amp;rsquo;est parti&amp;nbsp;!&lt;/h1&gt;
+
+&lt;p&gt;Voici une parmi de nombreuses autres fa&#231;on d&amp;rsquo;utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. Cette m&#233;thode est n&#233;cessaire et suffisante pour travailler seul ou en collaboration sur un projet commun. Cependant, on peut faire beaucoup mieux avec &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; que ce &lt;em&gt;workflow&lt;/em&gt; (en langage anglo-saxon).&lt;/p&gt;
+
+&lt;h2 id="utilisation-basique"&gt;Utilisation basique&lt;/h2&gt;
+
+&lt;p&gt;La fa&#231;on imm&#233;diate de travailler avec &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;&amp;nbsp;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;r&#233;cup&#233;rer les modifications des autres &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;voir les d&#233;tails de ces modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-10-30:/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/</id>
@@ -953,26 +986,5 @@ Pour l&amp;rsquo;instant je le cache partout.&lt;/p&gt;
 &lt;h3 id="de-svn--bazaar"&gt;De SVN &#224; Bazaar&lt;/h3&gt;
 
 &lt;p&gt;J&amp;rsquo;&#233;tais un fervent utilisateur de &lt;a href="http://subversion.tigris.org"&gt;subversion (svn)&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-10-03:/Scratch/fr/blog/2009-10-How-to-preload-your-site-with-style/</id>
-    <title type="html">Charger une page web avec style</title>
-    <published>2009-10-03T12:34:11Z</published>
-    <updated>2009-10-03T12:34:11Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-10-How-to-preload-your-site-with-style/"/>
-    <content type="html">&lt;h2 class="first" id="exemple"&gt;Exemple&lt;/h2&gt;
-
-&lt;p&gt;Voici comment apparaissent mes pages pendant leur chargement.&lt;/p&gt;
-
-&lt;div id="demo" style="width:45%; position: relative; height: 8em; background: #333; background-position: 50% 50%; color: #fff; text-align: center; padding-top: 1em; margin-left: auto; margin-right: auto; border: solid 10px rgba(255,255,255,0.7); -webkit-border-radius: 1em; -moz-border-radius: 1em; border-radius: 1em; cursor: pointer; "&gt;
-    &lt;p&gt;Voil&#224;&amp;nbsp;! Je suis charg&#233;e&amp;nbsp;!&lt;/p&gt;
-    &lt;p&gt;Cliquez-moi dessus pour recommencer.&lt;/p&gt;
-    &lt;div id="todisapear" style="color: #000; position:absolute;top:0;left:0;text-align: center; padding-top: 1em; width: 100%; background-color: #eee; height: 8em;"&gt;
-    Loading...
-    &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
 </feed>

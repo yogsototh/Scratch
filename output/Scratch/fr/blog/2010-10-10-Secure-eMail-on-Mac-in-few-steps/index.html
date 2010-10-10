@@ -6,19 +6,21 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
         
+        <meta name="keywords" content="securité, courriel, S/MIME, email, mac">
+        
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
-        <link rel="alternate" lang="fr" xml:lang="fr" title="nanoc" type="text/html" hreflang="fr" href="/Scratch/fr/blog/01_nanoc/" /> 
-        <link rel="alternate" lang="en" xml:lang="en" title="Nanoc" type="text/html" hreflang="en" href="/Scratch/en/blog/01_nanoc/" /> 
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Sécurisez vos emails" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Secure eMail on Mac in few steps" type="text/html" hreflang="en" href="/Scratch/en/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/" /> 
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
         
-        <title>nanoc</title>
+        <title>Sécurisez vos emails</title>
     </head>
     <body lang="fr">
         <script type="text/javascript">// <![CDATA[
@@ -31,13 +33,13 @@
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
                 <div id="choixlang">
-                    <a href="/Scratch/en/blog/01_nanoc/" onclick="setLanguage('en')">in English</a>
+                    <a href="/Scratch/en/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/" onclick="setLanguage('en')">in English</a>
                 </div>
             </div>
             <img src="/Scratch/img/presentation.png" alt="Presentation drawing"/>
             <div id="titre">
                 <h1>
-                    nanoc
+                    Sécurisez vos emails
                 </h1>
                 
             </div>
@@ -51,19 +53,48 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <h1 class="first" id="quest-ce-que-nanoc-">Qu&rsquo;est-ce que nanoc&nbsp;?</h1>
+                    <p><img alt="Title image" class="clean" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/main.png" /></p>
 
-<p>Il ne s&rsquo;agit pas exactement d&rsquo;un 
-<abbr title="Content Management System">CMS</abbr>,
-mais plutôt d&rsquo;un <em>système</em> de gestion de pages statiques. </p>
 
-<p>Il faut programmer sois-même les pages web,
-le code pour engendrer les menus&hellip;</p>
+<div class="intro">
 
-<p>J&rsquo;ai programmé des filtres pour rendre ce site multilangue par exemple</p>
 
-<p>Vous pourrez trouver beaucoup d&rsquo;informations sur
-le <a href="http://nanoc.stoneship.org">site officiel de nanoc</a>.</p>
+<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> <em>avec un Mac</em> </p>
+
+<ul>
+  <li>Récupérez un certificat signé par une AC: <a href="http://www.instantssl.com/ssl-certificate-products/free-email-certificate.html">cliquez ici pour un certificat gratuit</a>&nbsp;;</li>
+  <li>ouvrez le fichier&nbsp;;</li>
+  <li>supprimer le fichier en mode sécurisé&nbsp;;</li>
+  <li>utilisez Mail plutôt que l&rsquo;interface web de gmail.</li>
+</ul>
+
+
+</div>
+
+
+<p>J&rsquo;ai (re)découvert comment adoptez la norme S/MIME. 
+J&rsquo;ai été surpris de voir à quel point ce fut aisé.
+Il y a seulement quelques années c&rsquo;était bien plus difficile à accomplir.
+Maintenant je peux signer et chiffrer mes mails.</p>
+
+<h2 id="pourquoi-est-ce-important-">Pourquoi est-ce important&nbsp;?</h2>
+
+<p>Signer&nbsp;: cela permet de certifier avec une absolue certitude que la personne qui a écrit le mail est <em>vous</em> ou au moins qu&rsquo;elle a utilisé votre ordinateur.</p>
+
+<p>Chiffrer&nbsp;: parce que parfois il est nécessaire d&rsquo;être certain qu&rsquo;une conversation reste privée.</p>
+
+<h2 id="comment-procder-">Comment procéder&nbsp;?</h2>
+
+<ul>
+  <li>Récupérez un certificat signé par une authorité de certification&nbsp;: <a href="http://www.instantssl.com/ssl-certificate-products/free-email-certificate.html">cliquez ici pour récupérer un certificat gratuit</a>&nbsp;;</li>
+  <li>ouvrez le fichier&nbsp;;</li>
+  <li>supprimer le fichier en mode sécurisé&nbsp;;</li>
+  <li>utilisez Mail plutôt que l&rsquo;interface web de gmail.
+Maintenant vous devriez voir ces icônes&nbsp;: 
+<img alt="no name" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/sign_icon.png" /></li>
+</ul>
+
+<p><em>n.b.</em>&nbsp;: si vous utilisez gmail et que vous ne travaillez pas toujours avec un Mac, vous devriez considérer d&rsquo;utiliser le <a href="https://addons.mozilla.org/firefox/addon/592">module gmail S/MIME</a> de firefox.</p>
 
                 </div>
             
@@ -94,8 +125,8 @@ le <a href="http://nanoc.stoneship.org">site officiel de nanoc</a>.</p>
                     
     <script type="text/javascript">
     var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
-    var idcomments_post_id = '/Scratch/fr/blog/01_nanoc/';
-    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/01_nanoc/';
+    var idcomments_post_id = '/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/';
     </script>
     <span id="IDCommentsPostTitle" style="display:none"></span>
     <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
@@ -116,11 +147,6 @@ le <a href="http://nanoc.stoneship.org">site officiel de nanoc</a>.</p>
                         articles précédents
                         
                         <div class="previous_article">
-                            <a href="/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/"><span class="nicer">«</span>&nbsp;Sécurisez vos emails</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
                             <a href="/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/"><span class="nicer">«</span>&nbsp;Contraintes du design de ce blog</a>
                         </div>
                         
@@ -130,23 +156,16 @@ le <a href="http://nanoc.stoneship.org">site officiel de nanoc</a>.</p>
                         </div>
                         
                         
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/"><span class="nicer">«</span>&nbsp;base64 et sha1 sur iPhone</a>
+                        </div>
+                        
+                        
                     </div>
                     <div id="next_articles">
                         articles suivants
                         
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/02_ackgrep/">Mieux que grep&nbsp;<span class="nicer">»</span></a>
-                        </div>
                         
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/03_losthighway/">Lost Highway démystifié (un peu)&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/04_drm/">Les protections anti-copies sont LE MAL&nbsp;<span class="nicer">»</span></a>
-                        </div>
                         
                         
                     </div>
@@ -160,8 +179,8 @@ le <a href="http://nanoc.stoneship.org">site officiel de nanoc</a>.</p>
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
                 </div>
                 <div id="lastmod">
-                    Écrit le : 10/10/2008
-                    modifié le : 09/05/2010 
+                    Écrit le : 10/10/2010
+                    modifié le : 10/10/2010 
                 </div>
                 <div>
                     Site entièrement réalisé avec

@@ -2,13 +2,51 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-10-06T09:33:03Z</updated>
+  <updated>2010-10-10T16:39:00Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2010-10-10:/Scratch/en/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/</id>
+    <title type="html">Secure eMail on Mac in few steps</title>
+    <published>2010-10-10T16:39:00Z</published>
+    <updated>2010-10-10T16:39:00Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/"/>
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" class="clean" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/main.png" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; &lt;em&gt;on Mac&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Get a certificate signed by a CA: &lt;a href="http://www.instantssl.com/ssl-certificate-products/free-email-certificate.html"&gt;click here for a free one&lt;/a&gt;,&lt;/li&gt;
+  &lt;li&gt;open the file,&lt;/li&gt;
+  &lt;li&gt;delete securely the file,&lt;/li&gt;
+  &lt;li&gt;use Mail instead of online gmail.&lt;/li&gt;
+  &lt;li&gt;???&lt;/li&gt;
+  &lt;li&gt;Profit&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;I&amp;rsquo;ve (re)discovered how to become S/MIME compliant. 
+I am now suprised how easy it was. 
+Some years ago it was far more difficult.
+Now I&amp;rsquo;m able to sign and encrypt my emails.&lt;/p&gt;
+
+&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-06:/Scratch/en/blog/2010-10-06-New-Blog-Design-Constraints/</id>
     <title type="html">New Blog Design Constraints</title>
@@ -710,7 +748,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 </content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/</id>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
     <updated>2009-11-12T09:39:54Z</updated>
@@ -718,16 +756,26 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/"/>
-    <content type="html">&lt;h1 class="first" id="why-git-is-cool"&gt;Why Git is cool?&lt;/h1&gt;
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/"/>
+    <content type="html">&lt;h1 class="first" id="gitgit-for-what"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; for what?&lt;/h1&gt;
 
-&lt;p&gt;Because with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; you can work on many part of some project totally independently. This is the true efficiency of decentralisation.&lt;/p&gt;
 
-&lt;p&gt;Each branch use the same directory. Then you can easily change your branch. You can also change branch when some files are modified. You can then dispatch your work on many different branches and merge them on one master branch at will.&lt;/p&gt;
+&lt;div class="intro"&gt;
 
-&lt;p&gt;Using the &lt;code&gt;git rebase&lt;/code&gt; you can decide which modifications should be forget or merged into only one modification.&lt;/p&gt;
 
-&lt;p&gt;What does it mean for real usage? You can focus on coding. For example, you can code, a fix for bug b01 and for bug b02 and code a feature f03. Once finished you can creat...&lt;/p&gt;</content>
+&lt;p&gt;If you just want to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; &lt;strong&gt;immediately&lt;/strong&gt;, just read dark part. You read this part later to understand correctly foundations of version systems and not doing strange things.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; is a &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, which means a Decentralized Concurrent Versions System. Let&amp;rsquo;s analyze each part of this long term:&lt;/p&gt;
+
+&lt;h3 id="versions-system"&gt;Versions System&lt;/h3&gt;
+
+&lt;p&gt;Firstly, versions system manage files.
+When somebody work with files without a versions system, the following happens frequently:&lt;/p&gt;
+...</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
@@ -790,6 +838,26 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 $ g...&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/"/>
+    <content type="html">&lt;h1 class="first" id="why-git-is-cool"&gt;Why Git is cool?&lt;/h1&gt;
+
+&lt;p&gt;Because with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; you can work on many part of some project totally independently. This is the true efficiency of decentralisation.&lt;/p&gt;
+
+&lt;p&gt;Each branch use the same directory. Then you can easily change your branch. You can also change branch when some files are modified. You can then dispatch your work on many different branches and merge them on one master branch at will.&lt;/p&gt;
+
+&lt;p&gt;Using the &lt;code&gt;git rebase&lt;/code&gt; you can decide which modifications should be forget or merged into only one modification.&lt;/p&gt;
+
+&lt;p&gt;What does it mean for real usage? You can focus on coding. For example, you can code, a fix for bug b01 and for bug b02 and code a feature f03. Once finished you can creat...&lt;/p&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -823,36 +891,6 @@ $ g...&lt;/pre&gt;&lt;/div&gt;</content>
 
 &lt;div&gt;&lt;pre class="twilight"&gt;
 git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/"/>
-    <content type="html">&lt;h1 class="first" id="gitgit-for-what"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; for what?&lt;/h1&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;If you just want to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; &lt;strong&gt;immediately&lt;/strong&gt;, just read dark part. You read this part later to understand correctly foundations of version systems and not doing strange things.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; is a &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, which means a Decentralized Concurrent Versions System. Let&amp;rsquo;s analyze each part of this long term:&lt;/p&gt;
-
-&lt;h3 id="versions-system"&gt;Versions System&lt;/h3&gt;
-
-&lt;p&gt;Firstly, versions system manage files.
-When somebody work with files without a versions system, the following happens frequently:&lt;/p&gt;
-...</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
@@ -1040,26 +1078,5 @@ nohup cmd &lt;span class="Keyword"&gt;&amp;amp;&lt;/span&gt;
 &lt;h3 id="from-svn-to-bazaar"&gt;From SVN to Bazaar&lt;/h3&gt;
 
 &lt;p&gt;I was a huge user of &lt;a href="http://subversion.tigris.org"&gt;subversion (svn)&lt;/a&gt;. Until the day I saw this &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-10-03:/Scratch/en/blog/2009-10-How-to-preload-your-site-with-style/</id>
-    <title type="html">How to preload your site with style</title>
-    <published>2009-10-03T12:34:11Z</published>
-    <updated>2009-10-03T12:34:11Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-How-to-preload-your-site-with-style/"/>
-    <content type="html">&lt;h2 class="first" id="example"&gt;Example&lt;/h2&gt;
-
-&lt;p&gt;Here is a live example of what appear while loading my pages.&lt;/p&gt;
-
-&lt;div id="demo" style="width:45%; position: relative; height: 8em; background: #333; background-position: 50% 50%; color: #fff; text-align: center; padding-top: 1em; margin-left: auto; margin-right: auto; border: solid 10px rgba(255,255,255,0.7); -webkit-border-radius: 1em; -moz-border-radius: 1em; border-radius: 1em; cursor: pointer; "&gt;
-    &lt;p&gt;Hello! I've finished loading!&lt;/p&gt;
-    &lt;p&gt;Click me to see me disapear again.&lt;/p&gt;
-    &lt;div id="todisapear" style="color: #000; position:absolute;top:0;left:0;text-align: center; padding-top: 1em; width: 100%; background-color: #eee; height: 8em;"&gt;
-    Loading...
-    &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
 </feed>

@@ -1,1 +1,1 @@
-./multi/blog/2010-10-06-New-Blog-Design-Constraints.md
+./multi/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps.md
