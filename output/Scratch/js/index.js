@@ -71,7 +71,6 @@ function detectClient() {
     userAgent = navigator.userAgent.toLowerCase();
     if (/msie/.test(userAgent) ) {
         $('body').prepend('<div id="iemessage"><p><span><em>Avec <a href="http://www.firefox.com"> Firefox </a> et <a href="http://www.apple.com/safari">Safari</a> cette page est bien plus jolie !</em></span><br/><span><em>This page is far nicer with <a href="http://www.firefox.com"> Firefox </a> and <a href="http://www.apple.com/safari">Safari</a>!</em></span></p></div>');
-p
     } else if (/ip(od|hone)/.test(userAgent)) {
         $('head').append('<meta name="viewport" content="width=device-width; initial-scale=0.5; maximum-scale=2.0;">');
         $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/iPhone.css"/>');
