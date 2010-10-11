@@ -392,6 +392,9 @@ $hpadding: 1
   padding: 0.5em
   box-shadow: 0 10px 15px #CCC
 
+img.clean
+  border: none
+
 //  les clear
 
 #address
@@ -521,9 +524,8 @@ pre
   margin-top: 0
 
 .navigation
-  font-size: 2em
-  height: 2em
-  margin-bottom: $VMarginCorps
+  height: 4em
+  border-bottom: $lighterColorBorderBottom solid 1px
 
 .presarticleleft,
 .presarticleright
@@ -672,6 +674,10 @@ table.impact tr td
 strong, b, i, em
   font-weight: normal
   color: $highlightColor
+  a
+    color: $mainTextColor
+  a:hover
+    color: $revealColor
 
 .corps p
   strong, b, i, em
