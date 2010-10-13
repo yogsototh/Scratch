@@ -68,6 +68,9 @@ self.instance_variable_set(:@conf, conf)
         <% if containMaths %>
         <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
         <% end %>
+        <!-- [if lt IE9 ]>
+        <script type="text/javascript" src="http://stan-js.googlecode.com/hg/version/0.1/stan.min.js"></script>
+        <![endif]-->
         <title><%= @item[:title] %></title>
     </head>
     <body lang="<%= language %>">
