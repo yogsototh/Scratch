@@ -126,7 +126,7 @@ pre, code
     size: .7em
 
 p code
-  font
+  font:
     family: monospace
     size: 1em
 
