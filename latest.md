@@ -1,1 +1,1 @@
-./multi/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps.md
+./multi/blog/2010-10-14-Fun-with-wav.md
