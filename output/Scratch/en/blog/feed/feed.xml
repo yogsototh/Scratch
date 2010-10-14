@@ -2,13 +2,47 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-10-10T16:39:00Z</updated>
+  <updated>2010-10-14T09:04:58Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2010-10-14:/Scratch/en/blog/2010-10-14-Fun-with-wav/</id>
+    <title type="html">Fun with wav</title>
+    <published>2010-10-14T09:04:58Z</published>
+    <updated>2010-10-14T09:04:58Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-10-14-Fun-with-wav/"/>
+    <content type="html">
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; Playing to process a &lt;code&gt;wav&lt;/code&gt; file. &lt;code&gt;C&lt;/code&gt; was easier and cleaner than Ruby.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;I had to calculate the sum of the absolute value of datas of a &lt;code&gt;.wav&lt;/code&gt; file.
+For efficiency (and fun) reasons, I had chosen &lt;code&gt;C&lt;/code&gt; language.&lt;/p&gt;
+
+&lt;p&gt;It was a long time I didn&amp;rsquo;t used &lt;code&gt;C&lt;/code&gt;.
+From my memory it was a pain to read and write to files.
+But I was really impressed by how clean the code is.
+And it is even more impressive knowing I used mostly low level functions.&lt;/p&gt;
+
+&lt;p&gt;A &lt;code&gt;wav&lt;/code&gt; file has an header containing many meta-datas.
+This header was optimized to take the less space possible.
+Therefore, header is thinked with Bytes.&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-10:/Scratch/en/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/</id>
     <title type="html">Secure eMail on Mac in few steps</title>
@@ -301,7 +335,7 @@ I was a bit surprised, because I make some test into a really &lt;em&gt;slow&lt;
 Nonetheless I used these two to make the same web application. This is why I compare the expe...&lt;/p&gt;&lt;/div&gt;&lt;/hr&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2010-06-18:/Scratch/en/blog/2010-06-19-jQuery-popup-the-easy-way/</id>
+    <id>tag:yannesposito.com,2010-06-19:/Scratch/en/blog/2010-06-19-jQuery-popup-the-easy-way/</id>
     <title type="html">jQuery popup the easy way</title>
     <published>2010-06-18T22:44:50Z</published>
     <updated>2010-06-18T22:44:50Z</updated>
@@ -778,66 +812,6 @@ When somebody work with files without a versions system, the following happens f
 ...</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
-    <content type="html">&lt;h1 class="first" id="here-we-go"&gt;Here we go!&lt;/h1&gt;
-
-&lt;p&gt;Here is one from many way to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. This method is sufficient to work on a project. Not there is many other &lt;em&gt;workflows&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id="basic-usage"&gt;Basic usage&lt;/h2&gt;
-
-&lt;p&gt;Work with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; immediately:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Get modification done by others &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-  &lt;li&gt;See details of these modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-  &lt;li&gt;Many times:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
-      &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-      &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
-    <content type="html">&lt;h1 class="first" id="command-list"&gt;Command List&lt;/h1&gt;
-
-&lt;h2 id="command-for-each-functionality"&gt;Command for each functionality&lt;/h2&gt;
-
-&lt;p&gt;In the first part, we saw the list of resolved problem by &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. To resume &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; should do:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;get others modifications,&lt;/li&gt;
-  &lt;li&gt;send modifications to others,&lt;/li&gt;
-  &lt;li&gt;get back in time,&lt;/li&gt;
-  &lt;li&gt;list differences between each version,&lt;/li&gt;
-  &lt;li&gt;name some versions in order to refer easily to them,&lt;/li&gt;
-  &lt;li&gt;write an historic of modifications,&lt;/li&gt;
-  &lt;li&gt;know who did what and when,&lt;/li&gt;
-  &lt;li&gt;manage conflicts,&lt;/li&gt;
-  &lt;li&gt;easily manage branches.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="get-others-modifications"&gt;get others modifications&lt;/h3&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;
-$ g...&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -893,6 +867,33 @@ $ g...&lt;/pre&gt;&lt;/div&gt;</content>
 git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
+    <content type="html">&lt;h1 class="first" id="here-we-go"&gt;Here we go!&lt;/h1&gt;
+
+&lt;p&gt;Here is one from many way to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. This method is sufficient to work on a project. Not there is many other &lt;em&gt;workflows&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id="basic-usage"&gt;Basic usage&lt;/h2&gt;
+
+&lt;p&gt;Work with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; immediately:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Get modification done by others &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+  &lt;li&gt;See details of these modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+  &lt;li&gt;Many times:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+      &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -930,6 +931,39 @@ $ sudo port install git-core
 
 &lt;div&gt;&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/code/gitconfig"&gt; &amp;#x27A5; gitconfig &lt;/a&gt;&lt;/div&gt;&lt;div class="withfile"&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
+    <content type="html">&lt;h1 class="first" id="command-list"&gt;Command List&lt;/h1&gt;
+
+&lt;h2 id="command-for-each-functionality"&gt;Command for each functionality&lt;/h2&gt;
+
+&lt;p&gt;In the first part, we saw the list of resolved problem by &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. To resume &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; should do:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;get others modifications,&lt;/li&gt;
+  &lt;li&gt;send modifications to others,&lt;/li&gt;
+  &lt;li&gt;get back in time,&lt;/li&gt;
+  &lt;li&gt;list differences between each version,&lt;/li&gt;
+  &lt;li&gt;name some versions in order to refer easily to them,&lt;/li&gt;
+  &lt;li&gt;write an historic of modifications,&lt;/li&gt;
+  &lt;li&gt;know who did what and when,&lt;/li&gt;
+  &lt;li&gt;manage conflicts,&lt;/li&gt;
+  &lt;li&gt;easily manage branches.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="get-others-modifications"&gt;get others modifications&lt;/h3&gt;
+
+&lt;div&gt;&lt;pre class="twilight"&gt;
+$ g...&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-10-30:/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/</id>
@@ -1052,31 +1086,5 @@ nohup cmd &lt;span class="Keyword"&gt;&amp;amp;&lt;/span&gt;
 &lt;div&gt;
 &lt;pre class="twilight"&gt;
 &lt;span class="MetaTagAll"&gt;&lt;span class="MetaTagAll"&gt;&amp;lt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-10-13:/Scratch/en/blog/2009-10-untaught-git-usage/</id>
-    <title type="html">Untaught Git usage</title>
-    <published>2009-10-13T11:10:09Z</published>
-    <updated>2009-10-13T11:10:09Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-untaught-git-usage/"/>
-    <content type="html">&lt;p&gt;&lt;small&gt; &lt;em&gt;I explain why I had so much difficulties to use Git. There is an &amp;ldquo;untaught rule&amp;rdquo; that make hard to work without. Until I read the good document. &lt;/em&gt;&lt;/small&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;small&gt; &lt;em&gt; &amp;ldquo;Cheap branches&amp;rdquo; aren&amp;rsquo;t designed to be totally isolated branches but rather should follow a &amp;ldquo;Master Branch&amp;rdquo;. There is a &lt;/em&gt;Standard Workflow&lt;em&gt; to follow. If you don&amp;rsquo;t follow it, you prepare yourself with some hard time with Git.&lt;/em&gt; &lt;/small&gt;&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;h1 class="first" id="my-way-to-decentralisation"&gt;My way to decentralisation&lt;/h1&gt;
-
-&lt;h3 id="from-svn-to-bazaar"&gt;From SVN to Bazaar&lt;/h3&gt;
-
-&lt;p&gt;I was a huge user of &lt;a href="http://subversion.tigris.org"&gt;subversion (svn)&lt;/a&gt;. Until the day I saw this &lt;/p&gt;</content>
   </entry>
 </feed>
