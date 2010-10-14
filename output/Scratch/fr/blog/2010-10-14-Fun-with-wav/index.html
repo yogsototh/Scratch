@@ -82,17 +82,17 @@ La preuve, il m&rsquo;a suffit de chercher sur le net le format complet de l&rsq
 <pre class="twilight">
 <span class="Storage">struct</span> wavfile
 {
-    <span class="Storage">char</span>    id[<span class="Constant">4</span>];          <span class="Comment"><span class="Comment">//</span> should always contain &quot;RIFF&quot;</span>
+    <span class="Storage">char</span>        id[<span class="Constant">4</span>];          <span class="Comment"><span class="Comment">//</span> should always contain &quot;RIFF&quot;</span>
     <span class="Support">int32_t</span>     totallength;    <span class="Comment"><span class="Comment">//</span> total file length minus 8</span>
-    <span class="Storage">char</span>    wavefmt[<span class="Constant">8</span>];     <span class="Comment"><span class="Comment">//</span> should be &quot;WAVEfmt &quot;</span>
+    <span class="Storage">char</span>        wavefmt[<span class="Constant">8</span>];     <span class="Comment"><span class="Comment">//</span> should be &quot;WAVEfmt &quot;</span>
     <span class="Support">int32_t</span>     format;         <span class="Comment"><span class="Comment">//</span> 16 for PCM format</span>
-    <span class="Support">int16_t</span>   pcm;            <span class="Comment"><span class="Comment">//</span> 1 for PCM format</span>
-    <span class="Support">int16_t</span>   channels;       <span class="Comment"><span class="Comment">//</span> channels</span>
+    <span class="Support">int16_t</span>     pcm;            <span class="Comment"><span class="Comment">//</span> 1 for PCM format</span>
+    <span class="Support">int16_t</span>     channels;       <span class="Comment"><span class="Comment">//</span> channels</span>
     <span class="Support">int32_t</span>     frequency;      <span class="Comment"><span class="Comment">//</span> sampling frequency</span>
     <span class="Support">int32_t</span>     bytes_per_second;
-    <span class="Support">int16_t</span>   bytes_by_capture;
-    <span class="Support">int16_t</span>   bits_per_sample;
-    <span class="Storage">char</span>    data[<span class="Constant">4</span>];        <span class="Comment"><span class="Comment">//</span> should always contain &quot;data&quot;</span>
+    <span class="Support">int16_t</span>     bytes_by_capture;
+    <span class="Support">int16_t</span>     bits_per_sample;
+    <span class="Storage">char</span>        data[<span class="Constant">4</span>];        <span class="Comment"><span class="Comment">//</span> should always contain &quot;data&quot;</span>
     <span class="Support">int32_t</span>     bytes_in_data;
 };
 </pre>
@@ -126,17 +126,17 @@ Alors qu&rsquo;en <code>C</code>. Pour récupérer un entier codé sur 16 bits i
 
 <span class="Storage">struct</span> wavfile
 {
-    <span class="Storage">char</span>    id[<span class="Constant">4</span>];          <span class="Comment"><span class="Comment">//</span> should always contain &quot;RIFF&quot;</span>
+    <span class="Storage">char</span>        id[<span class="Constant">4</span>];          <span class="Comment"><span class="Comment">//</span> should always contain &quot;RIFF&quot;</span>
     <span class="Support">int32_t</span>     totallength;    <span class="Comment"><span class="Comment">//</span> total file length minus 8</span>
-    <span class="Storage">char</span>    wavefmt[<span class="Constant">8</span>];     <span class="Comment"><span class="Comment">//</span> should be &quot;WAVEfmt &quot;</span>
+    <span class="Storage">char</span>        wavefmt[<span class="Constant">8</span>];     <span class="Comment"><span class="Comment">//</span> should be &quot;WAVEfmt &quot;</span>
     <span class="Support">int32_t</span>     format;         <span class="Comment"><span class="Comment">//</span> 16 for PCM format</span>
-    <span class="Support">int16_t</span>   pcm;            <span class="Comment"><span class="Comment">//</span> 1 for PCM format</span>
-    <span class="Support">int16_t</span>   channels;       <span class="Comment"><span class="Comment">//</span> channels</span>
+    <span class="Support">int16_t</span>     pcm;            <span class="Comment"><span class="Comment">//</span> 1 for PCM format</span>
+    <span class="Support">int16_t</span>     channels;       <span class="Comment"><span class="Comment">//</span> channels</span>
     <span class="Support">int32_t</span>     frequency;      <span class="Comment"><span class="Comment">//</span> sampling frequency</span>
     <span class="Support">int32_t</span>     bytes_per_second;
-    <span class="Support">int16_t</span>   bytes_by_capture;
-    <span class="Support">int16_t</span>   bits_per_sample;
-    <span class="Storage">char</span>    data[<span class="Constant">4</span>];        <span class="Comment"><span class="Comment">//</span> should always contain &quot;data&quot;</span>
+    <span class="Support">int16_t</span>     bytes_by_capture;
+    <span class="Support">int16_t</span>     bits_per_sample;
+    <span class="Storage">char</span>        data[<span class="Constant">4</span>];        <span class="Comment"><span class="Comment">//</span> should always contain &quot;data&quot;</span>
     <span class="Support">int32_t</span>     bytes_in_data;
 };
 
@@ -275,7 +275,7 @@ Certainement qu&rsquo;en Python ça doit être la cas.</p>
                 </div>
                 <div id="lastmod">
                     Écrit le : 14/10/2010
-                    modifié le : 14/10/2010 
+                    modifié le : 15/10/2010 
                 </div>
                 <div>
                     Site entièrement réalisé avec
