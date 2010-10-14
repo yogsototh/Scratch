@@ -5,17 +5,17 @@
 struct wavfile
 {
     char    id[4];          // should always contain "RIFF"
-    int     totallength;    // total file length minus 8
+    int32_t     totallength;    // total file length minus 8
     char    wavefmt[8];     // should be "WAVEfmt "
-    int     format;         // 16 for PCM format
-    short   pcm;            // 1 for PCM format
-    short   channels;       // channels
-    int     frequency;      // sampling frequency
-    int     bytes_per_second;
-    short   bytes_by_capture;
-    short   bits_per_sample;
+    int32_t     format;         // 16 for PCM format
+    int16_t   pcm;            // 1 for PCM format
+    int16_t   channels;       // channels
+    int32_t     frequency;      // sampling frequency
+    int32_t     bytes_per_second;
+    int16_t   bytes_by_capture;
+    int16_t   bits_per_sample;
     char    data[4];        // should always contain "data"
-    int     bytes_in_data;
+    int32_t     bytes_in_data;
 };
 
 int main(int argc, char *argv[]) {
@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
 
     // read data
     long sum=0;
-    short value=0;
+    int16_t value=0;
     while( fread(&value,sizeof(value),1,wav) ) {
         // fprintf(stderr,"%d\n", value);
         if (value<0) { value=-value; }

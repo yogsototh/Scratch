@@ -41,17 +41,17 @@ La preuve, il m'a suffit de chercher sur le net le format complet de l'entête e
 struct wavfile
 {
     char    id[4];          // should always contain "RIFF"
-    int     totallength;    // total file length minus 8
+    int32_t     totallength;    // total file length minus 8
     char    wavefmt[8];     // should be "WAVEfmt "
-    int     format;         // 16 for PCM format
-    short   pcm;            // 1 for PCM format
-    short   channels;       // channels
-    int     frequency;      // sampling frequency
-    int     bytes_per_second;
-    short   bytes_by_capture;
-    short   bits_per_sample;
+    int32_t     format;         // 16 for PCM format
+    int16_t   pcm;            // 1 for PCM format
+    int16_t   channels;       // channels
+    int32_t     frequency;      // sampling frequency
+    int32_t     bytes_per_second;
+    int16_t   bytes_by_capture;
+    int16_t   bits_per_sample;
     char    data[4];        // should always contain "data"
-    int     bytes_in_data;
+    int32_t     bytes_in_data;
 };
 </code>
 
@@ -71,7 +71,7 @@ Ensuite, récupérer un entier à partir de deux octets n'est pas non plus une o
 Alors qu'en `C`. Pour récupérer un entier codé sur 16 bits il suffit d'écrire :
 
 <code class="c">
-short value=0;
+int16_t value=0;
 while( fread(&value,sizeof(value),1,wav) ) {
     // do something with value
 }
@@ -87,17 +87,17 @@ Finallement je suis arrivé au code suivant, sachant que le format de wav était
 struct wavfile
 {
     char    id[4];          // should always contain "RIFF"
-    int     totallength;    // total file length minus 8
+    int32_t     totallength;    // total file length minus 8
     char    wavefmt[8];     // should be "WAVEfmt "
-    int     format;         // 16 for PCM format
-    short   pcm;            // 1 for PCM format
-    short   channels;       // channels
-    int     frequency;      // sampling frequency
-    int     bytes_per_second;
-    short   bytes_by_capture;
-    short   bits_per_sample;
+    int32_t     format;         // 16 for PCM format
+    int16_t   pcm;            // 1 for PCM format
+    int16_t   channels;       // channels
+    int32_t     frequency;      // sampling frequency
+    int32_t     bytes_per_second;
+    int16_t   bytes_by_capture;
+    int16_t   bits_per_sample;
     char    data[4];        // should always contain "data"
-    int     bytes_in_data;
+    int32_t     bytes_in_data;
 };
 
 int main(int argc, char *argv[]) {
@@ -129,7 +129,7 @@ int main(int argc, char *argv[]) {
 
     // read data
     long sum=0;
-    short value=0;
+    int16_t value=0;
     while( fread(&value,sizeof(value),1,wav) ) {
         // fprintf(stderr,"%d\n", value);
         if (value<0) { value=-value; }
@@ -146,6 +146,8 @@ Mais on voit bien comment on peut facilement améliorer ce code, ajouter des cas
 Comme je dis souvent : le bon outil pour la bonne tâche.
 On voit en effet que pour cette tâche `C` est bien supérieur à Ruby par exemple.
 
+
+_màj: pour des raisons de compatibilité (machines 64 bits) j'ai utilisé `int16_t` au lieu de `short` et `int32_t` au lieu de `int`.
 
 Je serai curieux de savoir s'il existe un manière plus propre en Ruby que je ne connais pas.
 Certainement qu'en Python ça doit être la cas.
