@@ -147,6 +147,5 @@ As I say often: the right tool for your need instead of the same tool for all yo
 Because here `C` is clearly far superior than Ruby to handle this simple tasks.
 
 
-I am Curious to know whether there is a better way to do this in Ruby I don't know.
-I am confident in Python this kind of task should be handled nicely.
+I am curious to know if somebody know a nice way to do this with Ruby or Python.
 

@@ -171,8 +171,7 @@ fr: Mais on voit bien comment on peut facilement améliorer ce code, ajouter des
 fr: Comme je dis souvent : le bon outil pour la bonne tâche.
 fr: On voit en effet que pour cette tâche `C` est bien supérieur à Ruby par exemple.
 
-en: I am Curious to know whether there is a better way to do this in Ruby I don't know.
-en: I am confident in Python this kind of task should be handled nicely.
+en: I am curious to know if somebody know a nice way to do this with Ruby or Python.
 
 fr: Je serai curieux de savoir s'il existe un manière plus propre en Ruby que je ne connais pas.
 fr: Certainement qu'en Python ça doit être la cas.
