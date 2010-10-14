@@ -84,6 +84,7 @@ Finally I ended with the following code. Remark I know the wav format (16 bit / 
 <code class="c" file="wavsum.c">
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 struct wavfile
 {

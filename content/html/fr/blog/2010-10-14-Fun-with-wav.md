@@ -83,6 +83,7 @@ Finallement je suis arrivé au code suivant, sachant que le format de wav était
 <code class="c" file="wavsum.c">
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 struct wavfile
 {
