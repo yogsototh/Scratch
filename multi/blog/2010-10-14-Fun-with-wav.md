@@ -134,7 +134,7 @@ int main(int argc, char *argv[]) {
 
 
     // read header
-    if ( fread(&header,sizeof(header),1,wav) < sizeof(header) )
+    if ( fread(&header,sizeof(header),1,wav) < 1 )
     {
         fprintf(stderr,"Can't read file header\n");
         exit(1);

@@ -152,7 +152,7 @@ Alors qu&rsquo;en <code>C</code>. Pour récupérer un entier codé sur 16 bits i
 
 
     <span class="Comment"><span class="Comment">//</span> read header</span>
-    <span class="Keyword">if</span> ( <span class="SupportFunction">fread</span>(&amp;header,<span class="Keyword">sizeof</span>(header),<span class="Constant">1</span>,wav) &lt; <span class="Keyword">sizeof</span>(header) )
+    <span class="Keyword">if</span> ( <span class="SupportFunction">fread</span>(&amp;header,<span class="Keyword">sizeof</span>(header),<span class="Constant">1</span>,wav) &lt; <span class="Constant">1</span> )
     {
         <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>Can't read file header<span class="StringConstant">\n</span><span class="String">&quot;</span></span>);
         <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
