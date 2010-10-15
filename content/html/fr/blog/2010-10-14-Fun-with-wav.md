@@ -13,6 +13,9 @@ begindiv(intro)
 
 
 <%= tlal %> Je me suis amusé à lire un fichier `wav`. Le `C` fut le langage le mieux adapté à ce traitement. Bien meilleur que Ruby par exemple.
+
+edit: Je voulais que ce programme fonctionne sur une machine spécifique. En aucun cas je ne pensais publier ce code pour une utilisation autre que celle-ci.
+
 enddiv
 
 
@@ -41,17 +44,17 @@ La preuve, il m'a suffit de chercher sur le net le format complet de l'entête e
 struct wavfile
 {
     char        id[4];          // should always contain "RIFF"
-    int32_t     totallength;    // total file length minus 8
+    int     totallength;    // total file length minus 8
     char        wavefmt[8];     // should be "WAVEfmt "
-    int32_t     format;         // 16 for PCM format
-    int16_t     pcm;            // 1 for PCM format
-    int16_t     channels;       // channels
-    int32_t     frequency;      // sampling frequency
-    int32_t     bytes_per_second;
-    int16_t     bytes_by_capture;
-    int16_t     bits_per_sample;
+    int     format;         // 16 for PCM format
+    short     pcm;            // 1 for PCM format
+    short     channels;       // channels
+    int     frequency;      // sampling frequency
+    int     bytes_per_second;
+    short     bytes_by_capture;
+    short     bits_per_sample;
     char        data[4];        // should always contain "data"
-    int32_t     bytes_in_data;
+    int     bytes_in_data;
 };
 </code>
 
@@ -60,7 +63,7 @@ Si j'avais eu à faire ça en Ruby, je pense qu'il m'aurait fallu pour chaque bl
 Alors qu'en `C` il m'a suffit d'écrire: 
 
 <code class="c">
-fread(&header,sizeof(header),1,wav);
+fread(&header,sizeof(header),1,wav)
 </code>
 
 
@@ -71,7 +74,7 @@ Ensuite, récupérer un entier à partir de deux octets n'est pas non plus une o
 Alors qu'en `C`. Pour récupérer un entier codé sur 16 bits il suffit d'écrire :
 
 <code class="c">
-int16_t value=0;
+short value=0;
 while( fread(&value,sizeof(value),1,wav) ) {
     // do something with value
 }
@@ -88,17 +91,17 @@ Finallement je suis arrivé au code suivant, sachant que le format de wav était
 struct wavfile
 {
     char        id[4];          // should always contain "RIFF"
-    int32_t     totallength;    // total file length minus 8
+    int     totallength;    // total file length minus 8
     char        wavefmt[8];     // should be "WAVEfmt "
-    int32_t     format;         // 16 for PCM format
-    int16_t     pcm;            // 1 for PCM format
-    int16_t     channels;       // channels
-    int32_t     frequency;      // sampling frequency
-    int32_t     bytes_per_second;
-    int16_t     bytes_by_capture;
-    int16_t     bits_per_sample;
+    int     format;         // 16 for PCM format
+    short     pcm;            // 1 for PCM format
+    short     channels;       // channels
+    int     frequency;      // sampling frequency
+    int     bytes_per_second;
+    short     bytes_by_capture;
+    short     bits_per_sample;
     char        data[4];        // should always contain "data"
-    int32_t     bytes_in_data;
+    int     bytes_in_data;
 };
 
 int main(int argc, char *argv[]) {
@@ -130,7 +133,7 @@ int main(int argc, char *argv[]) {
 
     // read data
     long sum=0;
-    int16_t value=0;
+    short value=0;
     while( fread(&value,sizeof(value),1,wav) ) {
         // fprintf(stderr,"%d\n", value);
         if (value<0) { value=-value; }
@@ -148,7 +151,134 @@ Comme je dis souvent : le bon outil pour la bonne tâche.
 On voit en effet que pour cette tâche `C` est bien supérieur à Ruby par exemple.
 
 
-_màj: pour des raisons de compatibilité (machines 64 bits) j'ai utilisé `int16_t` au lieu de `short` et `int32_t` au lieu de `int`.
+_màj : pour des raisons de compatibilité (machines 64 bits) j'ai utilisé `int16_t` au lieu de `short` et `int` au lieu de `int`.
 
 Je serai curieux de savoir s'il existe un manière plus propre en Ruby que je ne connais pas.
 Certainement qu'en Python ça doit être la cas.
+
+begindiv(intro)
+
+
+màj (2) : après toutes les remarques concernant la portabilité. 
+J'ai fait une nouvelle version qui devrait être plus portable.
+Elle fait aussi plus de test pour vérifier le fichier.
+Cependant j'utilise une assertion spécifique à `gcc` pour être certain que la structure de donnée n'ai pas de "trou" :
+
+<code class="c">
+__attribute__((__packed__))
+</code>
+
+
+Le nouveau code n'utilise pas mmap et devrait être plus compatible.  
+Voici le dernier résultat :
+
+enddiv
+
+<code class="c" file="wavsum.c">
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h> // for memcmp
+#include <stdint.h> // for int16_t and int32_t
+
+struct wavfile
+{
+    char    id[4];          // should always contain "RIFF"
+    int32_t totallength;    // total file length minus 8
+    char    wavefmt[8];     // should be "WAVEfmt "
+    int32_t format;         // 16 for PCM format
+    int16_t pcm;            // 1 for PCM format
+    int16_t channels;       // channels
+    int32_t frequency;      // sampling frequency
+    int32_t bytes_per_second;
+    int16_t bytes_by_capture;
+    int16_t bits_per_sample;
+    char    data[4];        // should always contain "data"
+    int32_t bytes_in_data;
+} __attribute__((__packed__));
+
+int is_big_endian(void) {
+    union {
+        uint32_t i;
+        char c[4];
+    } bint = {0x01000000};
+    return bint.c[0]==1;
+}
+
+int main(int argc, char *argv[]) {
+    char *filename=argv[1];
+    FILE *wav = fopen(filename,"rb");
+    struct wavfile header;
+
+    if ( wav == NULL ) {
+        fprintf(stderr,"Can't open input file %s\n", filename);
+        exit(1);
+    }
+
+
+    // read header
+    if ( fread(&header,sizeof(header),1,wav) < 1 ) {
+        fprintf(stderr,"Can't read input file header %s\n", filename);
+        exit(1);
+    }
+
+    // if wav file isn't the same endianness than the current environment
+    // we quit
+    if ( is_big_endian() ) {
+        if (   memcmp( header.id,"RIFX", 4) != 0 ) {
+            fprintf(stderr,"ERROR: %s is not a big endian wav file\n", filename); 
+            exit(1);
+        }
+    } else {
+        if (   memcmp( header.id,"RIFF", 4) != 0 ) {
+            fprintf(stderr,"ERROR: %s is not a little endian wav file\n", filename); 
+            exit(1);
+        }
+    }
+
+    if (   memcmp( header.wavefmt, "WAVEfmt ", 8) != 0 
+        || memcmp( header.data, "data", 4) != 0 
+            ) {
+        fprintf(stderr,"ERROR: Not wav format\n"); 
+        exit(1); 
+    }
+    if (header.format != 16) {
+        fprintf(stderr,"\nERROR: not 16 bit wav format.");
+        exit(1);
+    }
+    fprintf(stderr,"format: %d bits", header.format);
+    if (header.format == 16) {
+        fprintf(stderr,", PCM");
+    } else {
+        fprintf(stderr,", not PCM (%d)", header.format);
+    }
+    if (header.pcm == 1) {
+        fprintf(stderr, " uncompressed" );
+    } else {
+        fprintf(stderr, " compressed" );
+    }
+    fprintf(stderr,", channel %d", header.pcm);
+    fprintf(stderr,", freq %d", header.frequency );
+    fprintf(stderr,", %d bytes per sec", header.bytes_per_second );
+    fprintf(stderr,", %d bytes by capture", header.bytes_by_capture );
+    fprintf(stderr,", %d bits per sample", header.bytes_by_capture );
+    fprintf(stderr,"\n" );
+
+    if ( memcmp( header.data, "data", 4) != 0 ) { 
+        fprintf(stderr,"ERROR: Prrroblem?\n"); 
+        exit(1); 
+    }
+    fprintf(stderr,"wav format\n");
+
+    // read data
+    long long sum=0;
+    int16_t value;
+    int i=0;
+    fprintf(stderr,"---\n", value);
+    while( fread(&value,sizeof(value),1,wav) ) {
+        if (value<0) { value=-value; }
+        sum += value;
+    }
+    printf("%lld\n",sum);
+    exit(0);
+}
+</code>
