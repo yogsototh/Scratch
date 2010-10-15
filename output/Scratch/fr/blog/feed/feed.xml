@@ -23,7 +23,10 @@
 &lt;div class="intro"&gt;
 
 
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt; Je me suis amus&#233; &#224; lire un fichier &lt;code&gt;wav&lt;/code&gt;. Le &lt;code&gt;C&lt;/code&gt; fut le langage le mieux adapt&#233; &#224; ce traitement. Bien meilleur que Ruby par exemple.
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt; Je me suis amus&#233; &#224; lire un fichier &lt;code&gt;wav&lt;/code&gt;. Le &lt;code&gt;C&lt;/code&gt; fut le langage le mieux adapt&#233; &#224; ce traitement. Bien meilleur que Ruby par exemple.&lt;/p&gt;
+
+&lt;p&gt;edit: Je voulais que ce programme fonctionne sur une machine sp&#233;cifique. En aucun cas je ne pensais publier ce code pour une utilisation autre que celle-ci.&lt;/p&gt;
+
 
 &lt;/div&gt;
 
@@ -32,10 +35,7 @@
 Pour des raison d&amp;rsquo;efficacit&#233; (et aussi de fun), j&amp;rsquo;ai fait le programme en &lt;code&gt;C&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Cel&#224; faisait longtemps que je n&amp;rsquo;avais pas programm&#233; en &lt;code&gt;C&lt;/code&gt;.
-De m&#233;moire il &#233;tait peu ais&#233; de manipuler des fichiers.
-Mais je dois conc&#233;der que j&amp;rsquo;ai &#233;t&#233; &#233;tonn&#233; de la clart&#233; du code que j&amp;rsquo;ai obtenu.&lt;/p&gt;
-
-&lt;p&gt;Tout d&amp;rsquo;abord, un fichier &lt;code&gt;wav&lt;/code&gt; se comp...&lt;/p&gt;&lt;/div&gt;</content>
+De m&#233;moire il &#233;tait peu ais&#233; de manipuler des ...&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-10:/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/</id>
@@ -302,7 +302,7 @@ En r&#233;alit&#233;, ce qui ralenti le rendu de ce site est par ordre d&amp;rsq
 &lt;p&gt;Avant de commencer, je dois dire que je sais que Cappuccino et jQuery ne sont pas plus comparable que Cocoa et la &lt;em&gt;standard library&lt;/em&gt; en...&lt;/p&gt;&lt;/div&gt;&lt;/hr&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2010-06-19:/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/</id>
+    <id>tag:yannesposito.com,2010-06-18:/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/</id>
     <title type="html">Comment faire des popups en jQuery rapidement</title>
     <published>2010-06-18T22:44:50Z</published>
     <updated>2010-06-18T22:44:50Z</updated>

@@ -55,7 +55,10 @@
 <div class="intro">
 
 
-<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Je me suis amusé à lire un fichier <code>wav</code>. Le <code>C</code> fut le langage le mieux adapté à ce traitement. Bien meilleur que Ruby par exemple.
+<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Je me suis amusé à lire un fichier <code>wav</code>. Le <code>C</code> fut le langage le mieux adapté à ce traitement. Bien meilleur que Ruby par exemple.</p>
+
+<p>edit: Je voulais que ce programme fonctionne sur une machine spécifique. En aucun cas je ne pensais publier ce code pour une utilisation autre que celle-ci.</p>
+
 
 </div>
 
@@ -83,17 +86,17 @@ La preuve, il m&rsquo;a suffit de chercher sur le net le format complet de l&rsq
 <span class="Storage">struct</span> wavfile
 {
     <span class="Storage">char</span>        id[<span class="Constant">4</span>];          <span class="Comment"><span class="Comment">//</span> should always contain &quot;RIFF&quot;</span>
-    <span class="Support">int32_t</span>     totallength;    <span class="Comment"><span class="Comment">//</span> total file length minus 8</span>
+    <span class="Storage">int</span>     totallength;    <span class="Comment"><span class="Comment">//</span> total file length minus 8</span>
     <span class="Storage">char</span>        wavefmt[<span class="Constant">8</span>];     <span class="Comment"><span class="Comment">//</span> should be &quot;WAVEfmt &quot;</span>
-    <span class="Support">int32_t</span>     format;         <span class="Comment"><span class="Comment">//</span> 16 for PCM format</span>
-    <span class="Support">int16_t</span>     pcm;            <span class="Comment"><span class="Comment">//</span> 1 for PCM format</span>
-    <span class="Support">int16_t</span>     channels;       <span class="Comment"><span class="Comment">//</span> channels</span>
-    <span class="Support">int32_t</span>     frequency;      <span class="Comment"><span class="Comment">//</span> sampling frequency</span>
-    <span class="Support">int32_t</span>     bytes_per_second;
-    <span class="Support">int16_t</span>     bytes_by_capture;
-    <span class="Support">int16_t</span>     bits_per_sample;
+    <span class="Storage">int</span>     format;         <span class="Comment"><span class="Comment">//</span> 16 for PCM format</span>
+    <span class="Storage">short</span>     pcm;            <span class="Comment"><span class="Comment">//</span> 1 for PCM format</span>
+    <span class="Storage">short</span>     channels;       <span class="Comment"><span class="Comment">//</span> channels</span>
+    <span class="Storage">int</span>     frequency;      <span class="Comment"><span class="Comment">//</span> sampling frequency</span>
+    <span class="Storage">int</span>     bytes_per_second;
+    <span class="Storage">short</span>     bytes_by_capture;
+    <span class="Storage">short</span>     bits_per_sample;
     <span class="Storage">char</span>        data[<span class="Constant">4</span>];        <span class="Comment"><span class="Comment">//</span> should always contain &quot;data&quot;</span>
-    <span class="Support">int32_t</span>     bytes_in_data;
+    <span class="Storage">int</span>     bytes_in_data;
 };
 </pre>
 
@@ -101,7 +104,7 @@ La preuve, il m&rsquo;a suffit de chercher sur le net le format complet de l&rsq
 Alors qu&rsquo;en <code>C</code> il m&rsquo;a suffit d&rsquo;écrire: </p>
 
 <pre class="twilight">
-<span class="SupportFunction">fread</span>(&amp;header,<span class="Keyword">sizeof</span>(header),<span class="Constant">1</span>,wav);
+<span class="SupportFunction">fread</span>(&amp;header,<span class="Keyword">sizeof</span>(header),<span class="Constant">1</span>,wav)
 </pre>
 
 <p>Et en une seule étape ma structure de donnée a été remplie avec les valeurs souhaitées. Magique&nbsp;!</p>
@@ -110,7 +113,7 @@ Alors qu&rsquo;en <code>C</code> il m&rsquo;a suffit d&rsquo;écrire: </p>
 Alors qu&rsquo;en <code>C</code>. Pour récupérer un entier codé sur 16 bits il suffit d&rsquo;écrire&nbsp;:</p>
 
 <pre class="twilight">
-<span class="Support">int16_t</span> value=<span class="Constant">0</span>;
+<span class="Storage">short</span> value=<span class="Constant">0</span>;
 <span class="Keyword">while</span>( <span class="SupportFunction">fread</span>(&amp;value,<span class="Keyword">sizeof</span>(value),<span class="Constant">1</span>,wav) ) {
     <span class="Comment"><span class="Comment">//</span> do something with value</span>
 }
@@ -127,17 +130,17 @@ Alors qu&rsquo;en <code>C</code>. Pour récupérer un entier codé sur 16 bits i
 <span class="Storage">struct</span> wavfile
 {
     <span class="Storage">char</span>        id[<span class="Constant">4</span>];          <span class="Comment"><span class="Comment">//</span> should always contain &quot;RIFF&quot;</span>
-    <span class="Support">int32_t</span>     totallength;    <span class="Comment"><span class="Comment">//</span> total file length minus 8</span>
+    <span class="Storage">int</span>     totallength;    <span class="Comment"><span class="Comment">//</span> total file length minus 8</span>
     <span class="Storage">char</span>        wavefmt[<span class="Constant">8</span>];     <span class="Comment"><span class="Comment">//</span> should be &quot;WAVEfmt &quot;</span>
-    <span class="Support">int32_t</span>     format;         <span class="Comment"><span class="Comment">//</span> 16 for PCM format</span>
-    <span class="Support">int16_t</span>     pcm;            <span class="Comment"><span class="Comment">//</span> 1 for PCM format</span>
-    <span class="Support">int16_t</span>     channels;       <span class="Comment"><span class="Comment">//</span> channels</span>
-    <span class="Support">int32_t</span>     frequency;      <span class="Comment"><span class="Comment">//</span> sampling frequency</span>
-    <span class="Support">int32_t</span>     bytes_per_second;
-    <span class="Support">int16_t</span>     bytes_by_capture;
-    <span class="Support">int16_t</span>     bits_per_sample;
+    <span class="Storage">int</span>     format;         <span class="Comment"><span class="Comment">//</span> 16 for PCM format</span>
+    <span class="Storage">short</span>     pcm;            <span class="Comment"><span class="Comment">//</span> 1 for PCM format</span>
+    <span class="Storage">short</span>     channels;       <span class="Comment"><span class="Comment">//</span> channels</span>
+    <span class="Storage">int</span>     frequency;      <span class="Comment"><span class="Comment">//</span> sampling frequency</span>
+    <span class="Storage">int</span>     bytes_per_second;
+    <span class="Storage">short</span>     bytes_by_capture;
+    <span class="Storage">short</span>     bits_per_sample;
     <span class="Storage">char</span>        data[<span class="Constant">4</span>];        <span class="Comment"><span class="Comment">//</span> should always contain &quot;data&quot;</span>
-    <span class="Support">int32_t</span>     bytes_in_data;
+    <span class="Storage">int</span>     bytes_in_data;
 };
 
 <span class="Storage">int</span> <span class="Entity">ma<span class="Entity">in</span></span>(<span class="Storage">int</span> argc, <span class="Storage">char</span> *argv[]) {
@@ -169,7 +172,7 @@ Alors qu&rsquo;en <code>C</code>. Pour récupérer un entier codé sur 16 bits i
 
     <span class="Comment"><span class="Comment">//</span> read data</span>
     <span class="Storage">long</span> sum=<span class="Constant">0</span>;
-    <span class="Support">int16_t</span> value=<span class="Constant">0</span>;
+    <span class="Storage">short</span> value=<span class="Constant">0</span>;
     <span class="Keyword">while</span>( <span class="SupportFunction">fread</span>(&amp;value,<span class="Keyword">sizeof</span>(value),<span class="Constant">1</span>,wav) ) {
         <span class="Comment"><span class="Comment">//</span> fprintf(stderr,&quot;%d\n&quot;, value);</span>
         <span class="Keyword">if</span> (value&lt;<span class="Constant">0</span>) { value=-value; }
@@ -186,10 +189,141 @@ Mais on voit bien comment on peut facilement améliorer ce code, ajouter des cas
 Comme je dis souvent&nbsp;: le bon outil pour la bonne tâche.
 On voit en effet que pour cette tâche <code>C</code> est bien supérieur à Ruby par exemple.</p>
 
-<p>_màj: pour des raisons de compatibilité (machines 64 bits) j&rsquo;ai utilisé <code>int16_t</code> au lieu de <code>short</code> et <code>int32_t</code> au lieu de <code>int</code>.</p>
+<p>_màj&nbsp;: pour des raisons de compatibilité (machines 64 bits) j&rsquo;ai utilisé <code>int16_t</code> au lieu de <code>short</code> et <code>int</code> au lieu de <code>int</code>.</p>
 
 <p>Je serai curieux de savoir s&rsquo;il existe un manière plus propre en Ruby que je ne connais pas.
 Certainement qu&rsquo;en Python ça doit être la cas.</p>
+
+
+<div class="intro">
+
+
+<p>màj (2)&nbsp;: après toutes les remarques concernant la portabilité. 
+J&rsquo;ai fait une nouvelle version qui devrait être plus portable.
+Elle fait aussi plus de test pour vérifier le fichier.
+Cependant j&rsquo;utilise une assertion spécifique à <code>gcc</code> pour être certain que la structure de donnée n&rsquo;ai pas de &ldquo;trou&rdquo;&nbsp;:</p>
+
+<pre class="twilight">
+__attribute__((__packed__))
+</pre>
+
+<p>Le nouveau code n&rsquo;utilise pas mmap et devrait être plus compatible.<br />
+Voici le dernier résultat&nbsp;:</p>
+
+
+</div>
+
+
+<div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-10-14-Fun-with-wav/code/wavsum.c"> &#x27A5; wavsum.c </a></div><div class="withfile">
+<pre class="twilight">
+<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>stdio.h<span class="String">&gt;</span></span></span>
+<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>stdlib.h<span class="String">&gt;</span></span></span>
+<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>string.h<span class="String">&gt;</span></span> </span><span class="Comment"><span class="Comment">//</span> for memcmp</span>
+<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>stdint.h<span class="String">&gt;</span></span> </span><span class="Comment"><span class="Comment">//</span> for int16_t and int32_t</span>
+
+<span class="Storage">struct</span> wavfile
+{
+    <span class="Storage">char</span>    id[<span class="Constant">4</span>];          <span class="Comment"><span class="Comment">//</span> should always contain &quot;RIFF&quot;</span>
+    <span class="Support">int32_t</span> totallength;    <span class="Comment"><span class="Comment">//</span> total file length minus 8</span>
+    <span class="Storage">char</span>    wavefmt[<span class="Constant">8</span>];     <span class="Comment"><span class="Comment">//</span> should be &quot;WAVEfmt &quot;</span>
+    <span class="Support">int32_t</span> format;         <span class="Comment"><span class="Comment">//</span> 16 for PCM format</span>
+    <span class="Support">int16_t</span> pcm;            <span class="Comment"><span class="Comment">//</span> 1 for PCM format</span>
+    <span class="Support">int16_t</span> channels;       <span class="Comment"><span class="Comment">//</span> channels</span>
+    <span class="Support">int32_t</span> frequency;      <span class="Comment"><span class="Comment">//</span> sampling frequency</span>
+    <span class="Support">int32_t</span> bytes_per_second;
+    <span class="Support">int16_t</span> bytes_by_capture;
+    <span class="Support">int16_t</span> bits_per_sample;
+    <span class="Storage">char</span>    data[<span class="Constant">4</span>];        <span class="Comment"><span class="Comment">//</span> should always contain &quot;data&quot;</span>
+    <span class="Support">int32_t</span> bytes_in_data;
+} __attribute__((__packed__));
+
+<span class="Storage">int</span> is_big_endian(<span class="Storage">void</span>) {
+    <span class="Storage">union</span> {
+        <span class="Support">uint32_t</span> i;
+        <span class="Storage">char</span> c[<span class="Constant">4</span>];
+    } bint = {<span class="Constant">0x01000000</span>};
+    <span class="Keyword">return</span> bint.c[<span class="Constant">0</span>]==<span class="Constant">1</span>;
+}
+
+<span class="Storage">int</span> <span class="Entity">ma<span class="Entity">in</span></span>(<span class="Storage">int</span> argc, <span class="Storage">char</span> *argv[]) {
+    <span class="Storage">char</span> *filename=argv[<span class="Constant">1</span>];
+    FILE *wav = <span class="SupportFunction">fopen</span>(filename,<span class="String"><span class="String">&quot;</span>rb<span class="String">&quot;</span></span>);
+    <span class="Storage">struct</span> wavfile header;
+
+    <span class="Keyword">if</span> ( wav == <span class="Constant">NULL</span> ) {
+        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>Can't open input file <span class="StringConstant">%s</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>, filename);
+        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
+    }
+
+
+    <span class="Comment"><span class="Comment">//</span> read header</span>
+    <span class="Keyword">if</span> ( <span class="SupportFunction">fread</span>(&amp;header,<span class="Keyword">sizeof</span>(header),<span class="Constant">1</span>,wav) &lt; <span class="Constant">1</span> ) {
+        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>Can't read input file header <span class="StringConstant">%s</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>, filename);
+        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
+    }
+
+    <span class="Comment"><span class="Comment">//</span> if wav file isn't the same endianness than the current environment</span>
+    <span class="Comment"><span class="Comment">//</span> we quit</span>
+    <span class="Keyword">if</span> ( is_big_endian() ) {
+        <span class="Keyword">if</span> (   <span class="SupportFunction">memcmp</span>( header.id,<span class="String"><span class="String">&quot;</span>RIFX<span class="String">&quot;</span></span>, <span class="Constant">4</span>)&nbsp;!= <span class="Constant">0</span> ) {
+            <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>ERROR: <span class="StringConstant">%s</span> is not a big endian wav file<span class="StringConstant">\n</span><span class="String">&quot;</span></span>, filename); 
+            <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
+        }
+    } <span class="Keyword">else</span> {
+        <span class="Keyword">if</span> (   <span class="SupportFunction">memcmp</span>( header.id,<span class="String"><span class="String">&quot;</span>RIFF<span class="String">&quot;</span></span>, <span class="Constant">4</span>)&nbsp;!= <span class="Constant">0</span> ) {
+            <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>ERROR: <span class="StringConstant">%s</span> is not a little endian wav file<span class="StringConstant">\n</span><span class="String">&quot;</span></span>, filename); 
+            <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
+        }
+    }
+
+    <span class="Keyword">if</span> (   <span class="SupportFunction">memcmp</span>( header.wavefmt, <span class="String"><span class="String">&quot;</span>WAVEfmt <span class="String">&quot;</span></span>, <span class="Constant">8</span>)&nbsp;!= <span class="Constant">0</span> 
+        || <span class="SupportFunction">memcmp</span>( header.data, <span class="String"><span class="String">&quot;</span>data<span class="String">&quot;</span></span>, <span class="Constant">4</span>)&nbsp;!= <span class="Constant">0</span> 
+            ) {
+        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>ERROR: Not wav format<span class="StringConstant">\n</span><span class="String">&quot;</span></span>); 
+        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>); 
+    }
+    <span class="Keyword">if</span> (header.format&nbsp;!= <span class="Constant">16</span>) {
+        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span>ERROR: not 16 bit wav format.<span class="String">&quot;</span></span>);
+        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
+    }
+    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>format: <span class="StringConstant">%d</span> bits<span class="String">&quot;</span></span>, header.format);
+    <span class="Keyword">if</span> (header.format == <span class="Constant">16</span>) {
+        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, PCM<span class="String">&quot;</span></span>);
+    } <span class="Keyword">else</span> {
+        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, not PCM (<span class="StringConstant">%d</span>)<span class="String">&quot;</span></span>, header.format);
+    }
+    <span class="Keyword">if</span> (header.pcm == <span class="Constant">1</span>) {
+        <span class="SupportFunction">fprintf</span>(stderr, <span class="String"><span class="String">&quot;</span> uncompressed<span class="String">&quot;</span></span> );
+    } <span class="Keyword">else</span> {
+        <span class="SupportFunction">fprintf</span>(stderr, <span class="String"><span class="String">&quot;</span> compressed<span class="String">&quot;</span></span> );
+    }
+    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, channel <span class="StringConstant">%d</span><span class="String">&quot;</span></span>, header.pcm);
+    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, freq <span class="StringConstant">%d</span><span class="String">&quot;</span></span>, header.frequency );
+    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, <span class="StringConstant">%d</span> bytes per sec<span class="String">&quot;</span></span>, header.bytes_per_second );
+    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, <span class="StringConstant">%d</span> bytes by capture<span class="String">&quot;</span></span>, header.bytes_by_capture );
+    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, <span class="StringConstant">%d</span> bits per sample<span class="String">&quot;</span></span>, header.bytes_by_capture );
+    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span> );
+
+    <span class="Keyword">if</span> ( <span class="SupportFunction">memcmp</span>( header.data, <span class="String"><span class="String">&quot;</span>data<span class="String">&quot;</span></span>, <span class="Constant">4</span>)&nbsp;!= <span class="Constant">0</span> ) { 
+        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>ERROR: Prrroblem?<span class="StringConstant">\n</span><span class="String">&quot;</span></span>); 
+        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>); 
+    }
+    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>wav format<span class="StringConstant">\n</span><span class="String">&quot;</span></span>);
+
+    <span class="Comment"><span class="Comment">//</span> read data</span>
+    <span class="Storage">long</span> <span class="Storage">long</span> sum=<span class="Constant">0</span>;
+    <span class="Support">int16_t</span> value;
+    <span class="Storage">int</span> i=<span class="Constant">0</span>;
+    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>---<span class="StringConstant">\n</span><span class="String">&quot;</span></span>, value);
+    <span class="Keyword">while</span>( <span class="SupportFunction">fread</span>(&amp;value,<span class="Keyword">sizeof</span>(value),<span class="Constant">1</span>,wav) ) {
+        <span class="Keyword">if</span> (value&lt;<span class="Constant">0</span>) { value=-value; }
+        sum += value;
+    }
+    <span class="SupportFunction">printf</span>(<span class="String"><span class="String">&quot;</span><span class="StringConstant">%lld</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>,sum);
+    <span class="SupportFunction">exit</span>(<span class="Constant">0</span>);
+}
+</pre>
+</div></div>
 
                 </div>
             
