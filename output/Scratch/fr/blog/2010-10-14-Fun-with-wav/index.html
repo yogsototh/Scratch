@@ -198,7 +198,7 @@ Certainement qu&rsquo;en Python ça doit être la cas.</p>
 <div class="intro">
 
 
-<p>màj (2)&nbsp;: après toutes les remarques concernant la portabilité. 
+<p>Màj (2)&nbsp;: après toutes les remarques concernant la portabilité. 
 J&rsquo;ai fait une nouvelle version qui devrait être plus portable.
 Elle fait aussi plus de test pour vérifier le fichier.
 Cependant j&rsquo;utilise une assertion spécifique à <code>gcc</code> pour être certain que la structure de donnée n&rsquo;ai pas de &ldquo;trou&rdquo;&nbsp;:</p>
@@ -322,6 +322,61 @@ Voici le dernier résultat&nbsp;:</p>
     <span class="SupportFunction">printf</span>(<span class="String"><span class="String">&quot;</span><span class="StringConstant">%lld</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>,sum);
     <span class="SupportFunction">exit</span>(<span class="Constant">0</span>);
 }
+</pre>
+</div></div>
+
+<p>Màj(3)&nbsp;: 
+Sur <a href="http://reddit.com">reddit</a>
+<a href="http://www.reddit.com/user/Bogdanp">Bogdanp</a>
+a proposé une version en Python&nbsp;:</p>
+
+<div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-10-14-Fun-with-wav/code/wavsum.py"> &#x27A5; wavsum.py </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span>!/usr/bin/env python</span>
+<span class="Keyword">from</span> struct <span class="Keyword">import</span> calcsize, unpack
+<span class="Keyword">from</span> sys <span class="Keyword">import</span> argv, exit
+
+<span class="Storage">def</span> <span class="Entity">word_iter</span>(<span class="Variable">f</span>):
+    <span class="Keyword">while</span> <span class="Constant">True</span>:
+        _bytes <span class="Keyword">=</span> f.read(<span class="Constant">2</span>)
+
+    <span class="Keyword">if</span> <span class="SupportFunction">len</span>(_bytes) <span class="Keyword">!=</span> <span class="Constant">2</span>:
+        <span class="Keyword">raise</span> <span class="Support">StopIteration</span>
+
+    <span class="Keyword">yield</span> unpack(<span class="String"><span class="String">&quot;</span>=h<span class="String">&quot;</span></span>, _bytes)[<span class="Constant">0</span>]
+
+<span class="Keyword">try</span>:
+    <span class="Keyword">with</span> <span class="Support">open</span>(argv[<span class="Constant">1</span>], <span class="String"><span class="String">&quot;</span>rb<span class="String">&quot;</span></span>) <span class="Keyword">as</span> f:
+        wav <span class="Keyword">=</span> <span class="String"><span class="String">&quot;</span>=4ci8cihhiihh4ci<span class="String">&quot;</span></span>
+        wav_size <span class="Keyword">=</span> calcsize(wav)
+        metadata <span class="Keyword">=</span> unpack(wav, f.read(wav_size))
+
+        <span class="Keyword">if</span> <span class="String"><span class="String">&quot;</span><span class="String"><span class="String">&quot;</span></span></span>.join(metadata[:<span class="Constant">4</span>]) <span class="Keyword">!=</span> <span class="String"><span class="String">&quot;</span>RIFF<span class="String">&quot;</span></span>:
+            <span class="Keyword">print</span> <span class="String"><span class="String">&quot;</span>error: not wav file.<span class="String">&quot;</span></span>
+            exit(<span class="Constant">1</span>)
+
+        <span class="Keyword">print</span> <span class="SupportFunction">sum</span>(<span class="SupportFunction">abs</span>(word) <span class="Keyword">for</span> word <span class="Keyword">in</span> word_iter(f))
+<span class="Keyword">except</span> <span class="Support">IOError</span>:
+    <span class="Keyword">print</span> <span class="String"><span class="String">&quot;</span>error: can't open input file '<span class="StringConstant">%s</span>'.<span class="String">&quot;</span></span> <span class="Keyword">%</span> argv[<span class="Constant">1</span>]
+    exit(<span class="Constant">1</span>)
+</pre>
+</div></div>
+
+<p>et <a href="http://www.reddit.com/user/luikore">luikore</a> a proposé une version Ruby assez impressionnante&nbsp;:</p>
+
+<div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-10-14-Fun-with-wav/code/wavsum.rb"> &#x27A5; wavsum.rb </a></div><div class="withfile">
+<pre class="twilight">
+data <span class="Keyword">=</span> <span class="Variable">ARGF</span>.<span class="Entity">read</span>
+ keys <span class="Keyword">=</span> <span class="String"><span class="String">%w[</span>id totallength wavefmt format</span>
+<span class="String">       pcm channels frequency bytes_per_second</span>
+<span class="String">         bytes_by_capture bits_per_sample</span>
+<span class="String">           data bytes_in_data sum</span>
+<span class="String"> <span class="String">]</span></span>
+ values <span class="Keyword">=</span> data.<span class="Entity">unpack</span> <span class="String"><span class="String">'</span>Z4 i Z8 i s s i i s s Z4 i s*<span class="String">'</span></span>
+ sum <span class="Keyword">=</span> values.<span class="Entity">drop</span>(<span class="Constant">12</span>).<span class="Entity">map</span>(<span class="Keyword">&amp;</span><span class="Constant"><span class="Constant">:</span>abs</span>).<span class="Entity">inject</span>(<span class="Constant"><span class="Constant">:</span>+</span>)
+ keys.<span class="Entity">zip</span>(values.<span class="Entity">take</span>(<span class="Constant">12</span>) <span class="Keyword">&lt;&lt;</span> sum) {|<span class="Variable">k</span>, <span class="Variable">v</span>|
+       puts <span class="String"><span class="String">&quot;</span><span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>k<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">.</span><span class="Entity">ljust</span></span> <span class="StringConstant">17</span><span class="StringEmbeddedSource">}</span></span>: <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>v<span class="StringEmbeddedSource">}</span></span><span class="String">&quot;</span></span>
+ }
 </pre>
 </div></div>
 

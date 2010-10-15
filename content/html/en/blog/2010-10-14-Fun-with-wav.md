@@ -159,7 +159,7 @@ _edit: for compatibility reasons (64bit machines) used `int16_t` instead of `sho
 
 begindiv(intro)
 
-edit (2): after most consideration about portability I made an _hopefully_ more portable version. 
+Edit (2): after most consideration about portability I made an _hopefully_ more portable version. 
 But I must confess this task was a bit tedious.
 The code remain as readable as before.
 But I had to use some compiler specific declaration to force the structure to be packed:
@@ -284,4 +284,58 @@ int main(int argc, char *argv[]) {
     printf("%lld\n",sum);
     exit(0);
 }
+</code>
+
+
+_Edit(3)_: 
+On [reddit](http://reddit.com)
+[Bogdanp](http://www.reddit.com/user/Bogdanp)
+proposed a Python version:
+
+<code class="python" file="wavsum.py">
+#!/usr/bin/env python
+from struct import calcsize, unpack
+from sys import argv, exit
+
+def word_iter(f):
+    while True:
+        _bytes = f.read(2)
+
+    if len(_bytes) != 2:
+        raise StopIteration
+
+    yield unpack("=h", _bytes)[0]
+
+try:
+    with open(argv[1], "rb") as f:
+        wav = "=4ci8cihhiihh4ci"
+        wav_size = calcsize(wav)
+        metadata = unpack(wav, f.read(wav_size))
+
+        if "".join(metadata[:4]) != "RIFF":
+            print "error: not wav file."
+            exit(1)
+
+        print sum(abs(word) for word in word_iter(f))
+except IOError:
+    print "error: can't open input file '%s'." % argv[1]
+    exit(1)
+</code>
+
+
+and [luikore](http://www.reddit.com/user/luikore)
+proposed an impressive Ruby version:
+
+<code class="ruby" file="wavsum.rb">
+data = ARGF.read
+ keys = %w[id totallength wavefmt format
+       pcm channels frequency bytes_per_second
+         bytes_by_capture bits_per_sample
+           data bytes_in_data sum
+ ]
+ values = data.unpack 'Z4 i Z8 i s s i i s s Z4 i s*'
+ sum = values.drop(12).map(&:abs).inject(:+)
+ keys.zip(values.take(12) << sum) {|k, v|
+       puts "#{k.ljust 17}: #{v}"
+ }
 </code>
