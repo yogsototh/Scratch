@@ -201,7 +201,8 @@ fr: Cependant j'utilise une assertion spécifique à `gcc` pour être certain qu
 __attribute__((__packed__))
 </code>
 
-en: Therefore this implementation should work on any endianness of any platform but must be compiled using `gcc`.
+en: Therefore this implementation should for big and little endian architecture. 
+en: However, it must be compiled with `gcc`.
 en: The new code make more tests but still don't use `mmap`.
 en: Here it is:
 
