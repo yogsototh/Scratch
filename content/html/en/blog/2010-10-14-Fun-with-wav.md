@@ -169,7 +169,8 @@ But I had to use some compiler specific declaration to force the structure to be
 __attribute__((__packed__))
 </code>
 
-Therefore this implementation should work on any endianness of any platform but must be compiled using `gcc`.
+Therefore this implementation should for big and little endian architecture. 
+However, it must be compiled with `gcc`.
 The new code make more tests but still don't use `mmap`.
 Here it is:
 
