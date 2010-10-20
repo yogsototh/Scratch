@@ -1,3 +1,11 @@
+# usage:
+# <% 
+#   $macros={}
+#   $macros[:test]="passed test"
+# %>
+# ...
+# Here is a %test.
+#
 class Macros < Nanoc3::Filter
     identifier :falacy
     attr_accessor :macro
