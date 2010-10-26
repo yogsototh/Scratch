@@ -1,1 +1,1 @@
-./multi/blog/2010-10-14-Fun-with-wav.md
+multi/blog/2010-10-26-LaTeX-like-macro-and-markdown.md

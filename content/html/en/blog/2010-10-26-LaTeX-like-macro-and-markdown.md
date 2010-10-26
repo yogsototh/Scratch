@@ -30,7 +30,7 @@ macros:
 In the body it will replace every occurrence of:
 
 - %<span></span>test by *%test*,
-- et %<span></span>latex by *%latex*.
+- and %<span></span>latex by *%latex*.
 
 The source code is really simple.
 For `nanoc` user, simply put this file in your `lib` directory.

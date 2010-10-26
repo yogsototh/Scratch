@@ -40,7 +40,7 @@ fr: Pour les utilisateurs de `nanoc` il suffit de copier le fichier suivant dans
 en: In the body it will replace every occurrence of:
 en: 
 en: - %<span></span>test by *%test*,
-en: - et %<span></span>latex by *%latex*.
+en: - and %<span></span>latex by *%latex*.
 en: 
 en: The source code is really simple.
 en: For `nanoc` user, simply put this file in your `lib` directory.
