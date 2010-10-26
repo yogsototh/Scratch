@@ -1,8 +1,9 @@
 # usage:
-# <% 
-#   $macros={}
-#   $macros[:test]="passed test"
-# %>
+# ---
+# ...
+# macros:
+#   test: "passed test"
+# ---
 # ...
 # Here is a %test.
 #
@@ -14,8 +15,14 @@ class Macros < Nanoc3::Filter
         @macro={}
         @macro[:tlal] = %{<span class="sc"><abbr title="Trop long à lire">tlàl</abbr> : </span>}
         @macro[:tldr] = %{<span class="sc"><abbr title="Too long; don't read">tl;dr</abbr>: </span>}
-        if not $macros.nil?
-            @macro.merge!( $macros )
+        if @item.nil?
+            if not arg.nil?
+                @macro.merge!( arg )
+            end
+        else
+            if not @item[:macros].nil?
+                @macro.merge!( @item[:macros] )
+            end
         end
     end
     def macro_value_for(macro_name)
