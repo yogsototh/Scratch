@@ -60,6 +60,7 @@ compile '/html/*' do
     filter :ultraviolet # must be before kramdown
     filter :graph
     filter :description
+    filter :falacy
 
     if ext == 'erb'
         filter :erb
