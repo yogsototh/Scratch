@@ -177,7 +177,7 @@ Here it is:
 
 enddiv
 
-<code class="c" file="wavsum.c">
+<code class="c" file="wavsum2.c">
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h> // for memcmp

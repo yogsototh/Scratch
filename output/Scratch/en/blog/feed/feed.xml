@@ -2,13 +2,39 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-10-14T09:04:58Z</updated>
+  <updated>2010-10-26T12:30:58Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2010-10-26:/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/</id>
+    <title type="html">LaTeX like macro for markdown</title>
+    <published>2010-10-26T12:30:58Z</published>
+    <updated>2010-10-26T12:30:58Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/"/>
+    <content type="html">
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; I made a simple macro system for my blog. Now I juste have to write %&lt;span /&gt;latex and it show as &lt;span style="text-transform: uppercase"&gt;L&lt;sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em"&gt;a&lt;/sup&gt;T&lt;sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em"&gt;e&lt;/sub&gt;X&lt;/span&gt;.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;In the header of my files I simply write:&lt;/p&gt;
+
+&lt;pre class="twilight"&gt;
+&lt;span class="MetaTagAll"&gt;&lt;span class="MetaTagInline"&gt;macros&lt;/span&gt;&lt;span class="MetaTagAll"&gt;:&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="MetaTagAll"&gt;&lt;span class="MetaTagInline"&gt;test&lt;/span&gt;&lt;span class="MetaTagAll"&gt;:&lt;/span&gt; &lt;/span&gt;&lt;span class="String"&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-14:/Scratch/en/blog/2010-10-14-Fun-with-wav/</id>
     <title type="html">Fun with wav</title>
@@ -829,41 +855,6 @@ When somebody work with files without a versions system, the following happens f
 &lt;p&gt;What does it mean for real usage? You can focus on coding. For example, you can code, a fix for bug b01 and for bug b02 and code a feature f03. Once finished you can creat...&lt;/p&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/"/>
-    <content type="html">
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;A detailed tutorial of &lt;a href="http://git-scm.org"&gt;Git&lt;/a&gt; for people knowing very few about versions systems. You&amp;rsquo;ll understand utility of such program and how we use modern version control system. I try to stay as pragmatic as possible.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;h1 class="first" id="begin-with-conclusion"&gt;Begin with conclusion&lt;/h1&gt;
-
-&lt;p&gt;Here is the list of sufficient and necessary command to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. There is very few. It is normal not to understand immediately but it is to gives you an idea. Even if this article is long, 95% of &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; usage is in these 7 commands:&lt;/p&gt;
-
-&lt;p&gt;Get a project from the web: &lt;/p&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;
-git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -889,6 +880,39 @@ git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
       &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
       &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
       &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
+    <content type="html">&lt;h1 class="first" id="command-list"&gt;Command List&lt;/h1&gt;
+
+&lt;h2 id="command-for-each-functionality"&gt;Command for each functionality&lt;/h2&gt;
+
+&lt;p&gt;In the first part, we saw the list of resolved problem by &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. To resume &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; should do:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;get others modifications,&lt;/li&gt;
+  &lt;li&gt;send modifications to others,&lt;/li&gt;
+  &lt;li&gt;get back in time,&lt;/li&gt;
+  &lt;li&gt;list differences between each version,&lt;/li&gt;
+  &lt;li&gt;name some versions in order to refer easily to them,&lt;/li&gt;
+  &lt;li&gt;write an historic of modifications,&lt;/li&gt;
+  &lt;li&gt;know who did what and when,&lt;/li&gt;
+  &lt;li&gt;manage conflicts,&lt;/li&gt;
+  &lt;li&gt;easily manage branches.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="get-others-modifications"&gt;get others modifications&lt;/h3&gt;
+
+&lt;div&gt;&lt;pre class="twilight"&gt;
+$ g...&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
@@ -930,7 +954,7 @@ $ sudo port install git-core
 &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
     <updated>2009-11-12T09:39:54Z</updated>
@@ -938,29 +962,31 @@ $ sudo port install git-core
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
-    <content type="html">&lt;h1 class="first" id="command-list"&gt;Command List&lt;/h1&gt;
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/"/>
+    <content type="html">
+&lt;div class="intro"&gt;
 
-&lt;h2 id="command-for-each-functionality"&gt;Command for each functionality&lt;/h2&gt;
 
-&lt;p&gt;In the first part, we saw the list of resolved problem by &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. To resume &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; should do:&lt;/p&gt;
+&lt;p&gt;A detailed tutorial of &lt;a href="http://git-scm.org"&gt;Git&lt;/a&gt; for people knowing very few about versions systems. You&amp;rsquo;ll understand utility of such program and how we use modern version control system. I try to stay as pragmatic as possible.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;get others modifications,&lt;/li&gt;
-  &lt;li&gt;send modifications to others,&lt;/li&gt;
-  &lt;li&gt;get back in time,&lt;/li&gt;
-  &lt;li&gt;list differences between each version,&lt;/li&gt;
-  &lt;li&gt;name some versions in order to refer easily to them,&lt;/li&gt;
-  &lt;li&gt;write an historic of modifications,&lt;/li&gt;
-  &lt;li&gt;know who did what and when,&lt;/li&gt;
-  &lt;li&gt;manage conflicts,&lt;/li&gt;
-  &lt;li&gt;easily manage branches.&lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;h3 id="get-others-modifications"&gt;get others modifications&lt;/h3&gt;
+&lt;/div&gt;
+
+
+
+&lt;/div&gt;
+
+&lt;div class="corps"&gt;
+
+
+&lt;h1 class="first" id="begin-with-conclusion"&gt;Begin with conclusion&lt;/h1&gt;
+
+&lt;p&gt;Here is the list of sufficient and necessary command to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. There is very few. It is normal not to understand immediately but it is to gives you an idea. Even if this article is long, 95% of &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; usage is in these 7 commands:&lt;/p&gt;
+
+&lt;p&gt;Get a project from the web: &lt;/p&gt;
 
 &lt;div&gt;&lt;pre class="twilight"&gt;
-$ g...&lt;/pre&gt;&lt;/div&gt;</content>
+git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-10-30:/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/</id>
@@ -1053,35 +1079,5 @@ nohup cmd &lt;span class="Keyword"&gt;&amp;amp;&lt;/span&gt;
 
 &lt;p&gt;I let this command here for me and I wish it could also help someone.&lt;/p&gt;
 </content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-10-22:/Scratch/en/blog/2009-10-Focus-vs-Minimalism/</id>
-    <title type="html">Focus &amp;gt; Minimalism</title>
-    <published>2009-10-22T18:45:18Z</published>
-    <updated>2009-10-22T18:45:18Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-Focus-vs-Minimalism/"/>
-    <content type="html">&lt;p&gt;I believe the goal researched by minimalism is &lt;strong&gt;Focus&lt;/strong&gt;.  But I don&amp;rsquo;t believe minimalism should be the goal. Focus should be the goal, and I believe minimalism isn&amp;rsquo;t necessary to reach it.&lt;/p&gt;
-
-&lt;p&gt;This is why my design is not minimalist, but I decided to remove most of the navigation stuff of all pages of my website. May be I&amp;rsquo;ll prefer to hide the menu only when you are on blog article. For now, I hide the menu everywhere on the website.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;h2 class="first" id="technical-details"&gt;technical details&lt;/h2&gt;
-
-&lt;p&gt;For those who want the technical details behind the show/hide menu, here is the simple jQuery code.&lt;/p&gt;
-
-&lt;p&gt;The HTML: &lt;/p&gt;
-
-&lt;div&gt;
-&lt;pre class="twilight"&gt;
-&lt;span class="MetaTagAll"&gt;&lt;span class="MetaTagAll"&gt;&amp;lt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
 </feed>

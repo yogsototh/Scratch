@@ -2,13 +2,39 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-10-14T09:04:58Z</updated>
+  <updated>2010-10-26T12:30:58Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomfr"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2010-10-26:/Scratch/fr/blog/2010-10-26-LaTeX-like-macro-and-markdown/</id>
+    <title type="html">Des macros LaTeX pour markdown</title>
+    <published>2010-10-26T12:30:58Z</published>
+    <updated>2010-10-26T12:30:58Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-10-26-LaTeX-like-macro-and-markdown/"/>
+    <content type="html">
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt; J&amp;rsquo;ai fait un syst&#232;me simple de macros pour mon blog. Par exemple, il me suffit d&amp;rsquo;&#233;crire %&lt;span /&gt;latex et &#231;a affiche &lt;span style="text-transform: uppercase"&gt;L&lt;sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em"&gt;a&lt;/sup&gt;T&lt;sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em"&gt;e&lt;/sub&gt;X&lt;/span&gt;.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Dans l&amp;rsquo;ent&#234;te de mes fichiers j&amp;rsquo;&#233;cris simplement:&lt;/p&gt;
+
+&lt;pre class="twilight"&gt;
+&lt;span class="MetaTagAll"&gt;&lt;span class="MetaTagInline"&gt;macros&lt;/span&gt;&lt;span class="MetaTagAll"&gt;:&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="MetaTagAll"&gt;&lt;span class="MetaTagInline"&gt;test&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-14:/Scratch/fr/blog/2010-10-14-Fun-with-wav/</id>
     <title type="html">S'amuser avec un .wav</title>
@@ -115,7 +141,7 @@ Voici comment je m&amp;rsquo;y prend avec &lt;a href="http://nanoc.stoneship.org
 &lt;div class="code"&gt;&lt;div class="file"&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2010-09-01:/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/</id>
+    <id>tag:yannesposito.com,2010-09-02:/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/</id>
     <title type="html">base64 et sha1 sur iPhone</title>
     <published>2010-09-01T22:02:17Z</published>
     <updated>2010-09-01T22:02:17Z</updated>
@@ -722,6 +748,54 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 </content>
   </entry>
   <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
+    <content type="html">&lt;h1 class="first" id="et-cest-parti-"&gt;Et c&amp;rsquo;est parti&amp;nbsp;!&lt;/h1&gt;
+
+&lt;p&gt;Voici une parmi de nombreuses autres fa&#231;on d&amp;rsquo;utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. Cette m&#233;thode est n&#233;cessaire et suffisante pour travailler seul ou en collaboration sur un projet commun. Cependant, on peut faire beaucoup mieux avec &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; que ce &lt;em&gt;workflow&lt;/em&gt; (en langage anglo-saxon).&lt;/p&gt;
+
+&lt;h2 id="utilisation-basique"&gt;Utilisation basique&lt;/h2&gt;
+
+&lt;p&gt;La fa&#231;on imm&#233;diate de travailler avec &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;&amp;nbsp;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;r&#233;cup&#233;rer les modifications des autres &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;voir les d&#233;tails de ces modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
+    <title type="html">Git pour les nuls</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/"/>
+    <content type="html">&lt;h1 class="first" id="gitgit-pour-quoi-faire-"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; pour quoi faire&amp;nbsp;?&lt;/h1&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;Si tout ce qui vous int&#233;resse c&amp;rsquo;est d&amp;rsquo;utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; &lt;strong&gt;tout de suite&lt;/strong&gt;. Lisez simplement les parties sur fond noir. Je vous conseille aussi de revenir relire tout &#231;a un peu plus tard, pour mieux comprendre les fondements des syst&#232;mes de versions et ne pas faire de b&#234;tises quand vous les utilisez.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; est un &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, c&amp;rsquo;est-&#224;-dire un syst&#232;me de versions concurrentes d&#233;centralis&#233;. Analysons chaque partie de cette appellation compliqu&#233;.&lt;/p&gt;
+
+...</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/</id>
     <title type="html">Git pour les nuls</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -833,54 +907,6 @@ $ sudo port install git-core
 &lt;p&gt;Voici la liste des commandes n&#233;cessaires et suffisantes pour utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. Il y en a tr&#232;s peu. Il est normal de ne pas les comprendre tout de suite mais c&amp;rsquo;est pour vous donner une id&#233;e. Malgr&#233; la longueur de l&amp;rsquo;article, 95% de l&amp;rsquo;utilisation de &lt;/p&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/"/>
-    <content type="html">&lt;h1 class="first" id="gitgit-pour-quoi-faire-"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; pour quoi faire&amp;nbsp;?&lt;/h1&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;Si tout ce qui vous int&#233;resse c&amp;rsquo;est d&amp;rsquo;utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; &lt;strong&gt;tout de suite&lt;/strong&gt;. Lisez simplement les parties sur fond noir. Je vous conseille aussi de revenir relire tout &#231;a un peu plus tard, pour mieux comprendre les fondements des syst&#232;mes de versions et ne pas faire de b&#234;tises quand vous les utilisez.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; est un &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, c&amp;rsquo;est-&#224;-dire un syst&#232;me de versions concurrentes d&#233;centralis&#233;. Analysons chaque partie de cette appellation compliqu&#233;.&lt;/p&gt;
-
-...</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
-    <content type="html">&lt;h1 class="first" id="et-cest-parti-"&gt;Et c&amp;rsquo;est parti&amp;nbsp;!&lt;/h1&gt;
-
-&lt;p&gt;Voici une parmi de nombreuses autres fa&#231;on d&amp;rsquo;utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. Cette m&#233;thode est n&#233;cessaire et suffisante pour travailler seul ou en collaboration sur un projet commun. Cependant, on peut faire beaucoup mieux avec &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; que ce &lt;em&gt;workflow&lt;/em&gt; (en langage anglo-saxon).&lt;/p&gt;
-
-&lt;h2 id="utilisation-basique"&gt;Utilisation basique&lt;/h2&gt;
-
-&lt;p&gt;La fa&#231;on imm&#233;diate de travailler avec &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;&amp;nbsp;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;r&#233;cup&#233;rer les modifications des autres &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;voir les d&#233;tails de ces modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2009-10-30:/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/</id>
     <title type="html">Une CSS pour IE seulement</title>
     <published>2009-10-30T20:34:46Z</published>
@@ -964,29 +990,6 @@ nohup cmd &lt;span class="Keyword"&gt;&amp;amp;&lt;/span&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Je laisse cette astuce ici pour moi et dans l&amp;rsquo;espoir que &#231;a pourra aussi &#234;tre utile &#224; quelqu&amp;rsquo;un d&amp;rsquo;autre.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-10-22:/Scratch/fr/blog/2009-10-Focus-vs-Minimalism/</id>
-    <title type="html">&lt;em&gt;Focus&lt;/em&gt; &amp;gt; Minimalisme</title>
-    <published>2009-10-22T18:45:18Z</published>
-    <updated>2009-10-22T18:45:18Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-10-Focus-vs-Minimalism/"/>
-    <content type="html">&lt;p&gt;Je crois que le but du minimalisme est de facilit&#233; le &lt;em&gt;&lt;strong&gt;Focus&lt;/strong&gt;&lt;/em&gt; c&amp;rsquo;est-&#224;-dire la concentration sur le contenu.   Je crois que le minimalisme doit &#234;tre un moyen et pas une fin. Le &lt;em&gt;Focus&lt;/em&gt; devrait &#234;tre le but, et je pense que le minimalisme n&amp;rsquo;est pas obligatoire pour l&amp;rsquo;atteindre.&lt;/p&gt;
-
-&lt;p&gt;C&amp;rsquo;est pourquoi mon design n&amp;rsquo;est pas minimaliste. Mais j&amp;rsquo;ai d&#233;cid&#233; d&amp;rsquo;enlever la majorit&#233; des objets servant &#224; la navigation pour am&#233;liorer l&amp;rsquo;attention sur l&amp;rsquo;article. Peut-&#234;tre que plus tard, je pr&#233;f&#232;rerai laisser le menu dans les pages normales du site pour ne le cacher que dans les articles de blog.
-Pour l&amp;rsquo;instant je le cache partout.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
 </content>
   </entry>
 </feed>
