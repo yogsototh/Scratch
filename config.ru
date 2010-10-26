@@ -33,6 +33,8 @@ end
 use Rack::Rewrite do
     r302 %r{/(Softwares.*)}, 'http://web.me.com/yann.esposito/$1'
     r302 %r{/(Perso.*)}, 'http://web.me.com/yann.esposito/$1'
+    r302 %r{/YPassword(.*)}, '/Scratch/en/softwares/ypassword/iphoneweb'
+    r302 %r{/(Bastien.*)}, 'http://web.me.com/yann.esposito/$1'
 end
 
 use Rack::TryStatic, 
