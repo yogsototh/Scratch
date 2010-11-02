@@ -37,10 +37,11 @@ Vous pouvez aussi vous abonner au flux RSS pour être certain d'être prévenu q
 </div>
 <a href="#titre">&uarr; back to top &uarr;</a>
 <div class="corps">
-   <h2>tag cloud (2 articles au moins)</h2>
-    <%= tagCloud(2) %>
+<% nbtags=20 %>
+   <h2>tag cloud (moins de <%= nbtags %> mots clés)</h2>
+    <%= tagCloud(nbtags) %>
 </div>
 
 newcorps
 
-Le bouton en bas à gauche sert à revenir en haut de la page et à afficher le menu.
+N'hésitez pas à me contacter.

@@ -45,12 +45,13 @@ en:        <%= link_to(%{Read more <span class="nicer">»</span>}, a) %>
 </div>
 fr: <a href="#titre">&uarr; back to top &uarr;</a>
 <div class="corps">
-fr:    <h2>tag cloud (2 articles au moins)</h2>
-en:    <h2>tag cloud (2 or more posts only)</h2>
-    <%= tagCloud(2) %>
+<% nbtags=20 %>
+fr:    <h2>tag cloud (moins de <%= nbtags %> mots clés)</h2>
+en:    <h2>tag cloud (shorter than <%= nbtags %> words))</h2>
+    <%= tagCloud(nbtags) %>
 </div>
 
 newcorps
 
-fr: Le bouton en bas à gauche sert à revenir en haut de la page et à afficher le menu.
-en: This left bottom button get you on the top of page and open the menu.
+fr: N'hésitez pas à me contacter.
+en: Feel free to contact me.

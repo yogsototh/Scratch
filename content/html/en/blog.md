@@ -18,7 +18,7 @@ def dArr
 end
 %>
 
-* [Last <%= number_of_articles %> articles <%=dArr%>](#last-<%= number_of_articles %>-articles) 
+* [<%= number_of_articles %> latest articles <%=dArr%>](#last-<%= number_of_articles %>-articles) 
 * [Tag Cloud <%=dArr%>](#tagcloud)
 * [Archives <%=dArr%>](#archives)
 * [Two words about the content <%=dArr%>](#two-words-about-the-content)
@@ -27,12 +27,12 @@ newcorps
 
 ## Last <%= number_of_articles %> articles
 
-<ul style="list-style-type: none; margin: 0;">
+<ul class="bloglist">
 <% last_articles.each do |a| %>
-    <li style="line-height: 1em; margin: 0;">
+    <li>
         <%= calendar_for(a[:created_at], language) %>
         <%
-        linktext=%{<span class="sc">#{a[:title]}</span>}
+        linktext=%{<span class="sc">#{a[:title]} <span class="nicer">»</span></span>}
         if a[:subtitle]
             linktext<<=%{ <br> <span class="small" style="margin-left: 5em"><span class="small"><em>#{a[:subtitle]}</em></span></span>}
         end

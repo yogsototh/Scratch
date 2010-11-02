@@ -36,10 +36,11 @@ You can subscribe to my RSS feed. You'll never miss a post. <a href="/Scratch/en
 <% end %>
 </div>
 <div class="corps">
-   <h2>tag cloud (2 or more posts only)</h2>
-    <%= tagCloud(2) %>
+<% nbtags=20 %>
+   <h2>tag cloud (shorter than <%= nbtags %> words))</h2>
+    <%= tagCloud(nbtags) %>
 </div>
 
 newcorps
 
-This left bottom button get you on the top of page and open the menu.
+Feel free to contact me.

@@ -50,9 +50,17 @@
         return tagLinks
     end
     
-    def tagCloud(minval=0)
-        tags=tagNumber.reject { |k,v| v<minval }
+    def tagCloud(maxwords=nil)
+        tags=tagNumber
+        if not maxwords.nil?
+            i=1
+            while tags.count > maxwords
+                tags=tags.reject{ |k,v| v<i }
+                i+=1
+            end
+        end
         tagLinks=tagRefs.reject { |k,v| tags[k].nil? }
+
         max=tags.values.max
         min=tags.values.min
         minSize=1.0
@@ -88,15 +96,15 @@
         language = $1
         tagLinks.sort{|a,b| a[0].downcase <=> b[0].downcase}.each do |t,l|
             protected=t.gsub(/\W/,'_')
-            tagCloud <<= %{<div id="#{protected}" class="list"><h4>#{t} <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">}
+            tagCloud <<= %{<div id="#{protected}" class="list"><h4>#{t}</h4><ul style="list-style-type: none; margin: 0;">}
             l.sort{|x,y| y[:created_at] <=> x[:created_at]}.each do |p|
                 tagCloud <<= %{
                     <li style="line-height: 3em; margin: 0;">
                         #{calendar_for(p[:created_at], language)}
-                        <a href="#{p.path}">#{p[:title]}</a>
+                        <a href="#{p.path}">#{p[:title]} <span class="nicer">»</span></a>
                     </li>\n}
             end
-            tagCloud <<= %{</ul></div>}
+            tagCloud <<= %{</ul><a class="return" href="#tagcloud">&uarr;</a></div>}
         end
         tagCloud <<= %{</div>}
         return tagCloud
