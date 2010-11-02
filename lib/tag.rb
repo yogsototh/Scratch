@@ -96,7 +96,7 @@
         language = $1
         tagLinks.sort{|a,b| a[0].downcase <=> b[0].downcase}.each do |t,l|
             protected=t.gsub(/\W/,'_')
-            tagCloud <<= %{<div id="#{protected}" class="list"><h4>#{t} <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">}
+            tagCloud <<= %{<div id="#{protected}" class="list"><h4>#{t}</h4><ul style="list-style-type: none; margin: 0;">}
             l.sort{|x,y| y[:created_at] <=> x[:created_at]}.each do |p|
                 tagCloud <<= %{
                     <li style="line-height: 3em; margin: 0;">
@@ -104,7 +104,7 @@
                         <a href="#{p.path}">#{p[:title]} <span class="nicer">»</span></a>
                     </li>\n}
             end
-            tagCloud <<= %{</ul></div>}
+            tagCloud <<= %{</ul><a class="return" href="#tagcloud">&uarr;</a></div>}
         end
         tagCloud <<= %{</div>}
         return tagCloud

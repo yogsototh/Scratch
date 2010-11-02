@@ -18,7 +18,7 @@ def dArr
 end
 %>
 
-en: * [Last <%= number_of_articles %> articles <%=dArr%>](#last-<%= number_of_articles %>-articles) 
+en: * [<%= number_of_articles %> latest articles <%=dArr%>](#last-<%= number_of_articles %>-articles) 
 fr: * [Les <%= number_of_articles %> derniers articles <%=dArr%>](#les-<%= number_of_articles %>-derniers-articles)
 en: * [Tag Cloud <%=dArr%>](#tagcloud)
 fr: * [Nuage de mots clés <%=dArr%>](#tagcloud)

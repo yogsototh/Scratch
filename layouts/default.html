@@ -24,26 +24,13 @@
 
         <div id="content">
             <div id="entete">
-            <div id="choix"> 
-                <div id="choixrss">
-                    <a id="rss" href="http://feeds.feedburner.com/yannespositocom<%= language %>">
-                        <%= tradOf(:subscribe) %>
-                    </a>
+                <div id="choix"> 
+                    <div id="choixrss"><%= choixrss %> </div>
+                    <div id="choixlang"><%= choixlang %> </div>
+                    <div id="liens">
+                        <%= generateMenu %>
+                    </div>
                 </div>
-                <div id="choixlang">
-                    <%= languages.map do |l|
-                        dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/}) 
-                        if @item_rep.path != dest
-                            %{<a href="#{dest}" onclick="setLanguage('#{l}')">#{ tradOfKeywordIn(:switchTo,l)}</a>}
-                        else
-                            nil
-                        end
-                    end.join() %>
-                </div>
-                <div id="liens">
-                    <%= generateMenu %>
-                </div>
-            </div>
             </div>
             <img src="/Scratch/img/presentation.png" alt="Presentation drawing"/>
             <div id="titre">

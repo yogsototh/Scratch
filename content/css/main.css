@@ -230,7 +230,7 @@ $content_width: 52em
 
 body
   text-align: center
-  font-size: 1em
+  font-size: .9em
 
 body > #entete
   position: absolute
@@ -360,7 +360,7 @@ $contentMargin: 0em
 
 #afterheader > h1
   width: 100%
-  padding-bottom: 1.5em
+  padding-top: 1.5em
   text-align: left
 
 #afterheader
@@ -659,6 +659,18 @@ table.impact tr td
   margin-top: -0.5em
   margin-left: -2em
   width: 1.5em
+
+a.return
+  color: $lighterColor
+  padding: 0.1em
+  line-height: 1.5em
+  font-size: 1.5em
+  height: 1.5em
+  font-size: 2em
+  width: 1.5em
+  display: block
+  &:hover
+    color: $highlightColor
 
 .corps .return a:hover
   color: $revealColor

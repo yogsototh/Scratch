@@ -16,3 +16,18 @@ def meta_alternate
     return res.join("\n")
 end
 
+def choixrss
+    rssurl=%{http://feeds.feedburner.com/yannespositocom#{ @conf.language }}
+    return %{<a id="rss" href="#{rssurl}">#{ tradOf(:subscribe) }</a>}
+end
+
+def choixlang
+    @conf.languages.map do |l|
+        dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/}) 
+        if @item_rep.path != dest
+            %{<a href="#{dest}" onclick="setLanguage('#{l}')">#{ tradOfKeywordIn(:switchTo,l)}</a>}
+        else
+            nil
+        end
+    end.join()
+end

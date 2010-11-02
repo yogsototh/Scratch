@@ -18,7 +18,7 @@ def dArr
 end
 %>
 
-* [Last <%= number_of_articles %> articles <%=dArr%>](#last-<%= number_of_articles %>-articles) 
+* [<%= number_of_articles %> latest articles <%=dArr%>](#last-<%= number_of_articles %>-articles) 
 * [Tag Cloud <%=dArr%>](#tagcloud)
 * [Archives <%=dArr%>](#archives)
 * [Two words about the content <%=dArr%>](#two-words-about-the-content)
