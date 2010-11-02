@@ -45,10 +45,11 @@ def generateBlogSubMenu(language)
                 res<<=%{</ul><script type="text/javascript">$('#archives_#{year}').hide()</script>}
             end
             year=p[:created_at].strftime("%Y") 
-            res<<=%{<h4 style="cursor: pointer;" onclick="$('#archives_#{year}').slideToggle()">[#{year}]</h4><ul id="archives_#{year}">}
+            res<<=%{<h4 class="button" onclick="$('#archives_#{year}').slideToggle()">[#{year}]</h4><ul id="archives_#{year}">}
         end
         res<<='<li>'
-        res<<=calendar_for(p[:created_at],language)+link_to_unless_current(p[:title],p)
+        res<<=calendar_for(p[:created_at],language)+
+                link_to_unless_current(p[:title]+ %{<span class="nicer">»</span>},p)
         res<<='</li>'
     end
     res<<=%{</ul><script type="text/javascript">$('#archives_#{year}').hide()</script>}

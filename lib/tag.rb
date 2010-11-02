@@ -50,9 +50,17 @@
         return tagLinks
     end
     
-    def tagCloud(minval=0)
-        tags=tagNumber.reject { |k,v| v<minval }
+    def tagCloud(maxwords=nil)
+        tags=tagNumber
+        if not maxwords.nil?
+            i=1
+            while tags.count > maxwords
+                tags=tags.reject{ |k,v| v<i }
+                i+=1
+            end
+        end
         tagLinks=tagRefs.reject { |k,v| tags[k].nil? }
+
         max=tags.values.max
         min=tags.values.min
         minSize=1.0
@@ -93,7 +101,7 @@
                 tagCloud <<= %{
                     <li style="line-height: 3em; margin: 0;">
                         #{calendar_for(p[:created_at], language)}
-                        <a href="#{p.path}">#{p[:title]}</a>
+                        <a href="#{p.path}">#{p[:title]} <span class="nicer">»</span></a>
                     </li>\n}
             end
             tagCloud <<= %{</ul></div>}
