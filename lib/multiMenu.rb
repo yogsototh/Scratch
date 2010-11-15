@@ -77,14 +77,18 @@ def generateSubMenu()
         page=@item
     end
 
-    if @item[:kind].to_s == "article"
+    if @item[:kind] == :article
         key=:subtitle
     else
         key=:title
     end
 
     liste=getSortedChildren(page).collect do |p|
-        link_to_unless_current(p[key]+' <span class="nicer">&raquo;</span>',p)
+        if not p[key].nil?
+            link_to_unless_current(p[key]+' <span class="nicer">&raquo;</span>',p)
+        else
+            puts 'ERROR: key='+key
+        end
     end
     if ! liste.empty?  then
         liste = [ link_to_unless_current(page[key]+' <span class="nicer">&raquo;</span>',page) ].concat( liste )
