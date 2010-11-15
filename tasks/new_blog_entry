@@ -7,7 +7,8 @@ if (($#<1)); then
     exit 1
 fi
 
-root="$HOME/Sites/webroot"
+cd $0:t/..
+root="$PWD"
 
 title="$*"
 
