@@ -160,7 +160,11 @@ def brother_for_at(page,n)
     if i.nil?
         return nil
     end
-    brothers[ brothers.index(page) + n ]
+
+    if i + n < 0
+        return nil
+    end
+    brothers[ i + n ]
 end
 
 def article_brother(n)
