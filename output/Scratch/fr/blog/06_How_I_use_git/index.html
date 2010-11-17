@@ -19,7 +19,10 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
-        
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
         <title>Git en solo</title>
     </head>
     <body lang="fr">
@@ -54,6 +57,16 @@
             <div id="afterheader">
                 <div class="corps">
                     <p><img alt="central architecture" src="/Scratch/img/blog/06_How_I_use_git/central_architecture.png" /></p>
+
+
+<div class="encadre">
+
+
+<p><em>Màj</em>&nbsp;: Actuellement j&rsquo;utilise github avec des repository privés. Je paye une somme très raisonnable pour ce service. Si vous voulez être complètement autonome, je vous conseille d&rsquo;utiliser <a href="https://github.com/sitaramc/gitolite">gitolite</a> sur votre propre serveur accessible sur le web.</p>
+
+
+</div>
+
 
 <p>J&rsquo;utilise <a href="http://www.git-scm.org/">Git</a> pour gérer mes projets personnels.
 J&rsquo;ai un <em>repository</em> centralisé et tous mes ordinateurs se synchronisent avec lui.
@@ -95,19 +108,24 @@ output/Scratch/multi
 </pre>
 </div>
 
-<p>Ensuite, il faut placer ce projet dans un endroit sûr sur Internet.</p>
+<p>Ensuite, il faut placer ce projet dans un répertoire accessible via Internet.</p>
 
 <div>
 <pre class="twilight">
-git clone --bare . protocol://url/of/the/repository
+git clone --bare . /path/to/repository
 </pre>
+</div>
+
+<div class="encadre"><em>
+Màj: La meilleure solution est d'installer <a href="https://github.com/sitaramc/gitolite">gitolite</a> pour installer un serveur git sur sa machine. Gitolite permet de gérer la gestion des droits d'utilisateurs, ceux-ci n'ayant pas accès à un shell sur la machine.
+</em>
 </div>
 
 <p>Maintenant à partir de n&rsquo;importe quel ordinateur, voici ce que vous pouvez faire&nbsp;: </p>
 
 <div>
 <pre class="twilight">
-git clone protocol://url/of/the/repository local_directory
+git clone protocol://path/to/repository local_directory
 </pre>
 </div>
 

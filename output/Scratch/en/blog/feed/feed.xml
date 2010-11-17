@@ -76,7 +76,7 @@ This is even more impressive knowi...&lt;/p&gt;</content>
       <uri>yannesposito.com</uri>
     </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Title image" class="clean" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/main.png" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/main.png" class="clean" /&gt;&lt;/p&gt;
 
 
 &lt;div class="intro"&gt;
@@ -156,7 +156,7 @@ This is how I do this with &lt;a href="http://nanoc.stoneship.org"&gt;nanoc&lt;/
 &lt;span class="Keyword"&gt;def&lt;/span&gt; &lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2010-09-02:/Scratch/en/blog/2010-09-02-base64-and-sha1-on-iPhone/</id>
+    <id>tag:yannesposito.com,2010-09-01:/Scratch/en/blog/2010-09-02-base64-and-sha1-on-iPhone/</id>
     <title type="html">base64 and sha1 on iPhone</title>
     <published>2010-09-01T22:02:17Z</published>
     <updated>2010-09-01T22:02:17Z</updated>
@@ -548,18 +548,14 @@ I entered in the &lt;em&gt;infernal&lt;/em&gt;: ...&lt;/p&gt;</content>
   &lt;p&gt;The more you wait to do something, the more difficult it is to start doing it.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;I had to write another post for this blog. I had added many article idea in my todolist. But, I made many other things, and I&amp;rsquo;ve always said (until now), I&amp;rsquo;ll do this later. What changed my mind is the haunt of this simple remark about how to be productive in programming. &lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Stop write &lt;code&gt;TODO&lt;/code&gt; in your code and make it now!&lt;br /&gt;
-You&amp;rsquo;ll be surprised by the results.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;I had to write another post for this blog. I had added many article idea in my todolist. But, I made many other things, and I&amp;rsquo;ve always said (until now), I&amp;rsquo;ll do this later. What changed my mind is the haunt of this simple remark about how to be productive in programming. 
+&amp;gt; Stop write &lt;code&gt;TODO&lt;/code&gt; in your code and make it now!&lt;br /&gt;
+&amp;gt; You&amp;rsquo;ll be surprised by the results.&lt;/p&gt;
 
-&lt;p&gt;In short:&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Just do it!&lt;/strong&gt; ou &lt;strong&gt;Juste fait le&lt;/strong&gt; comme auraient dit les nuls.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;In short:
+&amp;gt; &lt;strong&gt;Just do it!&lt;/strong&gt; ou &lt;strong&gt;Juste fait le&lt;/strong&gt; comme auraient dit les nuls.&lt;/p&gt;
 
-&lt;p&gt;Final...&lt;/p&gt;&lt;/blockquote&gt;</content>
+&lt;p&gt;Finally I&amp;rsquo;ll certainly write blog post more often for a ...&lt;/p&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-03-23:/Scratch/en/blog/2010-03-23-Encapsulate-git/</id>

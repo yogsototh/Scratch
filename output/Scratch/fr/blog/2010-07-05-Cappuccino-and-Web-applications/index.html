@@ -19,7 +19,10 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
-        
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
         <title>Cappuccino ou jQuery ?</title>
     </head>
     <body lang="fr">
@@ -104,9 +107,9 @@ J&rsquo;ai ensuite fait une version avec <a href="http://cappuccino.org">Cappucc
 
 
 <p>J&rsquo;organise mes mots de passe avec une méthode simple.
-Je mémorise un mot de passe <em>maître</em>. Et mon mot de passe est alors (principalement)&nbsp;: </p>
-<pre class="twilight"><span class="Entity">hash</span>(motDePasseMaitre<span class="Keyword">+</span><span class="Variable">NomDeDomaine</span>)
-</pre>
+Je mémorise un mot de passe <em>maître</em>. Et mon mot de passe est alors (principalement)&nbsp;: 
+&lt;pre class="twilight"&gt;<span class="Entity">hash</span>(motDePasseMaitre<span class="Keyword">+</span><span class="Variable">NomDeDomaine</span>)
+&lt;/pre&gt;</p>
 
 <p>En réalité j&rsquo;ai besoin d&rsquo;un plus d&rsquo;informations pour créer mon mot de passe&nbsp;:</p>
 

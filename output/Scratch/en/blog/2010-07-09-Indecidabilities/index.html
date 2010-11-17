@@ -19,7 +19,10 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
-        
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
         <title>Undecidabilities (part 1)</title>
     </head>
     <body lang="en">
@@ -96,7 +99,7 @@ Here begin the story.</p>
 </div>
 
 
-<p><img alt="no name" class="left" src="/Scratch/img/blog/2010-07-09-Indecidabilities/genesis.png" /></p>
+<p><img alt="no name" src="/Scratch/img/blog/2010-07-09-Indecidabilities/genesis.png" class="left" /></p>
 
 <p>In the beginning there was only void.
 Then a blog post beginning to be written.
@@ -146,7 +149,7 @@ It is certainly a rule of my Universe.
 But how to be certain all triangle in my Universe share this property?</p>
 </blockquote>
 
-<p><img alt="no name" class="left" src="/Scratch/img/blog/2010-07-09-Indecidabilities/triangle_3_angles.png" /></p>
+<p><img alt="no name" src="/Scratch/img/blog/2010-07-09-Indecidabilities/triangle_3_angles.png" class="left" /></p>
 
 <p>Some began to formalize the problem.
 They end by writing a mathematical proof.
@@ -176,7 +179,7 @@ What a good joke!</p>
 
 <h2 id="growing-errors-undecidability">Growing errors Undecidability</h2>
 
-<p><img alt="no name" class="left" src="/Scratch/img/blog/2010-07-09-Indecidabilities/3_corps.png" /></p>
+<p><img alt="no name" src="/Scratch/img/blog/2010-07-09-Indecidabilities/3_corps.png" class="left" /></p>
 
 <p>Unfortunately, the three bodies problem will crush this <em>hope</em>.
 Using Newton&rsquo;s Universal Law of gravitation with two bodies, we can predict with precision what will be their position and speed in the future.
@@ -185,11 +188,9 @@ But now, add another body.
 All errors will grow.
 Errors will grow at a point that any prediction will be unusable.</p>
 
-<p>Even with this bad news there is the <em>hope</em> to <em>control</em> the error.</p>
-<blockquote>
-  <p>May we should know the maximal measure error we can handle to predict something. 
-And we should at least determine what we can predict and what we cannot.</p>
-</blockquote>
+<p>Even with this bad news there is the <em>hope</em> to <em>control</em> the error.
+&gt; May we should know the maximal measure error we can handle to predict something. 
+&gt; And we should at least determine what we can predict and what we cannot.</p>
 
 <p>Once again, this should not terminate has they hope.</p>
 
@@ -197,7 +198,7 @@ And we should at least determine what we can predict and what we cannot.</p>
 
 <p>Consider the following question:</p>
 
-<p><img alt="no name" class="left" src="/Scratch/img/blog/2010-07-09-Indecidabilities/mandelbrot.png" /></p>
+<p><img alt="no name" src="/Scratch/img/blog/2010-07-09-Indecidabilities/mandelbrot.png" class="left" /></p>
 
 <p>Consider some GPS coordinates on a point around the cost of the &ldquo;Bretagne&rdquo; in France.
 The coordinates are 3 feet precise.
@@ -207,11 +208,12 @@ Is the point in the water or on Earth?</p>
 Even if we are authorize to move a bit to dodge the borders.
 Because there are some zone in which all point could be a &ldquo;border&rdquo; for any size of the zone.</p>
 
-<p>We can even imagine some mathematical structure where <em>all</em> points are at the border<sup id="fnref:2"><a href="#fn:2" rel="footnote">1</a></sup>. </p>
+<p>We can even imagine some mathematical structure where <em>all</em> points are at the border[^2]. 
+[^2]: The set R\Q has this property.</p>
 
 <h2 id="logical-undecidability">Logical Undecidability</h2>
 
-<p><img alt="no name" class="left" src="/Scratch/img/blog/2010-07-09-Indecidabilities/stackOverflow.png" /></p>
+<p><img alt="no name" src="/Scratch/img/blog/2010-07-09-Indecidabilities/stackOverflow.png" class="left" /></p>
 
 <p>Until there all problem were undecidable because of measure <em>errors</em>.
 May be in a controlled world without any <em>error</em> we should be able to predict anything.<br />
@@ -231,19 +233,19 @@ More precisely:</p>
   <p>Hypothesis: there exists a program <code>P</code> such that:</p>
 
   <ul>
-    <li><code>P(x,y)</code> return &ldquo;stop&rdquo; in a finite amount of time if <code>x(y)</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">2</a></sup> will stop running.</li>
+    <li><code>P(x,y)</code> return &ldquo;stop&rdquo; in a finite amount of time if <code>x(y)</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> will stop running.</li>
     <li><code>P(x,y)</code> return &ldquo;loop&rdquo; in a finite amount of time if <code>x(y)</code> will never stop running.</li>
   </ul>
 
   <p>Remark: Any program can be represented as a string. Therefore, a program can be used as the input of another program.
 It is authorized to write <code>P(x,x)</code>.</p>
 
-  <p>Let <code>Q</code> be the following program using the return value of <code>P</code>.</p>
-  <pre class="twilight">
+  <p>Let <code>Q</code> be the following program using the return value of <code>P</code>.
+&lt;pre class="twilight"&gt;
 Q(x)&nbsp;:
-    if P(x,x)="stop" then I enter in an infinite loop
-    if P(x,x)="loop" then I stop
-</pre>
+    if P(x,x)=&rdquo;stop&rdquo; then I enter in an infinite loop
+    if P(x,x)=&rdquo;loop&rdquo; then I stop
+&lt;/pre&gt;</p>
 
   <p>Now, what is the value of <code>P(Q,Q)</code>?</p>
 
@@ -270,9 +272,6 @@ But it would be another error to throw away all our knowledge.
 In a future next part, I&rsquo;ll explain what we can hope and what attitude we should have once we&rsquo;ve realized most of truth are unaccessible.</p>
 <hr/><div class="footnotes">
   <ol>
-    <li id="fn:2">
-      <p>The set R\Q has this property.<a href="#fnref:2" rev="footnote">&#8617;</a></p>
-    </li>
     <li id="fn:1">
       <p>Meaning <code>x</code> taking <code>y</code> as input.<a href="#fnref:1" rev="footnote">&#8617;</a></p>
     </li>

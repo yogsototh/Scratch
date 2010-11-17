@@ -19,7 +19,10 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
-        
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
         <title>Git for self</title>
     </head>
     <body lang="en">
@@ -97,11 +100,11 @@ output/Scratch/multi
 </pre>
 </div>
 
-<p>Next, you want to put your project on a safe place on the net.</p>
+<p>Next, you want to put your project on a directory accessible from the web:</p>
 
 <div>
 <pre class="twilight">
-git clone --bare . protocol://url/of/the/repository
+git clone --bare . /path/to/repository
 </pre>
 </div>
 
@@ -109,7 +112,7 @@ git clone --bare . protocol://url/of/the/repository
 
 <div>
 <pre class="twilight">
-git clone protocol://url/of/the/repository local_directory
+git clone protocol://path/to/repository local_directory
 </pre>
 </div>
 

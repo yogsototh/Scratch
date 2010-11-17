@@ -19,7 +19,10 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
-        
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
         <title>Charger une page web avec style</title>
     </head>
     <body lang="fr">
@@ -62,7 +65,7 @@
     <p>Cliquez-moi dessus pour recommencer.</p>
     <div id="todisapear" style="color: #000; position:absolute;top:0;left:0;text-align: center; padding-top: 1em; width: 100%; background-color: #eee; height: 8em;">
     Loading...
-    <img alt="loading logo" src="/Scratch/img/loading.gif" style="border: none; background-color: none; background: none" />
+    <img style="border: none; background-color: none; background: none" src="/Scratch/img/loading.gif" alt="loading logo" />
     </div>
     <script>
     function Rabbit(){

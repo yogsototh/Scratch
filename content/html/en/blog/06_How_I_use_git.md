@@ -54,21 +54,19 @@ output/Scratch/multi
 </code>
 </div>
 
-Next, you want to put your project on a safe place on the net.
-
+Next, you want to put your project on a directory accessible from the web:
 
 <div>
 <code class="zsh">
-git clone --bare . protocol://url/of/the/repository
+git clone --bare . /path/to/repository
 </code>
 </div>
 
 Now on any computer you can do: 
 
-
 <div>
 <code class="zsh">
-git clone protocol://url/of/the/repository local_directory
+git clone protocol://path/to/repository local_directory
 </code>
 </div>
 

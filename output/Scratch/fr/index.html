@@ -5,13 +5,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
-        
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
-        
-        <link rel="alternate" lang="fr" xml:lang="fr" title="Accueil" type="text/html" hreflang="fr" href="/Scratch/fr/" /> 
-        <link rel="alternate" lang="en" xml:lang="en" title="Homepage" type="text/html" hreflang="en" href="/Scratch/en/" /> 
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Accueil" type="text/html" hreflang="fr" href="/Scratch/fr/" />
+<link rel="alternate" lang="en" xml:lang="en" title="Homepage" type="text/html" hreflang="en" href="/Scratch/en/" />
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
@@ -25,22 +23,16 @@
 
         <div id="content">
             <div id="entete">
-            <div id="choix"> 
-                <div id="choixrss">
-                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">
-                        s'abonner
-                    </a>
-                </div>
-                <div id="choixlang">
-                    <a href="/Scratch/en/" onclick="setLanguage('en')">in English</a>
-                </div>
-                <div id="liens">
-                    <ul><li><span class="active" title="You're here.">Accueil</span></li>
+                <div id="choix"> 
+                    <div id="choixrss"><a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">s'abonner</a> </div>
+                    <div id="choixlang"><a href="/Scratch/en/" onclick="setLanguage('en')">in English</a> </div>
+                    <div id="liens">
+                        <ul><li><span class="active" title="You're here.">Accueil</span></li>
 <li><a href="/Scratch/fr/blog/">Blog</a></li>
 <li><a href="/Scratch/fr/softwares/">Softwares</a></li>
 <li><a href="/Scratch/fr/about/">À propos</a></li></ul>
+                    </div>
                 </div>
-            </div>
             </div>
             <img src="/Scratch/img/presentation.png" alt="Presentation drawing"/>
             <div id="titre">
@@ -143,7 +135,7 @@ De mémoire il était peu aisé de manipuler des ...</p>
         <a href="/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/">Sécurisez vos emails <span class="nicer">»</span></a>
     </h1>
     <div class="corps">
-    <p><img alt="Title image" class="clean" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/main.png" /></p>
+    <p><img alt="Title image" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/main.png" class="clean" /></p>
 
 
 <div class="intro">
@@ -222,7 +214,8 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
 </div>
 <a href="#titre">&uarr; back to top &uarr;</a>
 <div class="corps">
-   <h2 class="first">tag cloud (2 articles au moins)</h2>
+
+   <h2 class="first">tag cloud (moins de 20 mots clés)</h2>
     <script type="text/javascript">
             $(document).ready( function(){$('.list').hide();$('#tagcloud a').removeAttr("href")} );
             function tagSelected(id) {
@@ -231,14 +224,14 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
                 $('.tag.selected').removeClass('selected');
                 $('#tag_'+id).addClass('selected');
             }
-        </script><div id="tagcloud"><a href="#analytics" style="font-size: 1.125em;" class="tag" onclick="tagSelected('analytics')" id="tag_analytics">analytics</a> <a href="#Apple" style="font-size: 1.625em;" class="tag" onclick="tagSelected('Apple')" id="tag_Apple">Apple</a> <a href="#arbre" style="font-size: 1.0em;" class="tag" onclick="tagSelected('arbre')" id="tag_arbre">arbre</a> <a href="#blog" style="font-size: 1.875em;" class="tag" onclick="tagSelected('blog')" id="tag_blog">blog</a> <a href="#CSS" style="font-size: 1.0em;" class="tag" onclick="tagSelected('CSS')" id="tag_CSS">CSS</a> <a href="#design" style="font-size: 1.125em;" class="tag" onclick="tagSelected('design')" id="tag_design">design</a> <a href="#disqus" style="font-size: 1.0em;" class="tag" onclick="tagSelected('disqus')" id="tag_disqus">disqus</a> <a href="#email" style="font-size: 1.0em;" class="tag" onclick="tagSelected('email')" id="tag_email">email</a> <a href="#git" style="font-size: 1.75em;" class="tag" onclick="tagSelected('git')" id="tag_git">git</a> <a href="#intense_debate" style="font-size: 1.0em;" class="tag" onclick="tagSelected('intense_debate')" id="tag_intense_debate">intense&nbsp;debate</a> <a href="#iPhone" style="font-size: 1.125em;" class="tag" onclick="tagSelected('iPhone')" id="tag_iPhone">iPhone</a> <a href="#javascript" style="font-size: 1.625em;" class="tag" onclick="tagSelected('javascript')" id="tag_javascript">javascript</a> <a href="#jQuery" style="font-size: 1.875em;" class="tag" onclick="tagSelected('jQuery')" id="tag_jQuery">jQuery</a> <a href="#mac" style="font-size: 1.125em;" class="tag" onclick="tagSelected('mac')" id="tag_mac">mac</a> <a href="#math__matiques" style="font-size: 1.0em;" class="tag" onclick="tagSelected('math__matiques')" id="tag_math__matiques">mathématiques</a> <a href="#mobileme" style="font-size: 1.0em;" class="tag" onclick="tagSelected('mobileme')" id="tag_mobileme">mobileme</a> <a href="#nanoc" style="font-size: 1.0em;" class="tag" onclick="tagSelected('nanoc')" id="tag_nanoc">nanoc</a> <a href="#programming" style="font-size: 1.25em;" class="tag" onclick="tagSelected('programming')" id="tag_programming">programming</a> <a href="#protection" style="font-size: 1.0em;" class="tag" onclick="tagSelected('protection')" id="tag_protection">protection</a> <a href="#regexp" style="font-size: 1.375em;" class="tag" onclick="tagSelected('regexp')" id="tag_regexp">regexp</a> <a href="#regular_expression" style="font-size: 1.125em;" class="tag" onclick="tagSelected('regular_expression')" id="tag_regular_expression">regular&nbsp;expression</a> <a href="#ruby" style="font-size: 1.125em;" class="tag" onclick="tagSelected('ruby')" id="tag_ruby">ruby</a> <a href="#script" style="font-size: 1.5em;" class="tag" onclick="tagSelected('script')" id="tag_script">script</a> <a href="#securit__" style="font-size: 1.0em;" class="tag" onclick="tagSelected('securit__')" id="tag_securit__">securité</a> <a href="#shell" style="font-size: 1.125em;" class="tag" onclick="tagSelected('shell')" id="tag_shell">shell</a> <a href="#synchronisation" style="font-size: 1.0em;" class="tag" onclick="tagSelected('synchronisation')" id="tag_synchronisation">synchronisation</a> <a href="#tip" style="font-size: 1.0em;" class="tag" onclick="tagSelected('tip')" id="tag_tip">tip</a> <a href="#web" style="font-size: 2.5em;" class="tag" onclick="tagSelected('web')" id="tag_web">web</a> <a href="#WebDav" style="font-size: 1.0em;" class="tag" onclick="tagSelected('WebDav')" id="tag_WebDav">WebDav</a> <a href="#webdesign" style="font-size: 1.0em;" class="tag" onclick="tagSelected('webdesign')" id="tag_webdesign">webdesign</a> <a href="#zsh" style="font-size: 1.125em;" class="tag" onclick="tagSelected('zsh')" id="tag_zsh">zsh</a> </div><div id="hiddenDivs" ><div id="analytics" class="list"><h4>analytics <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+        </script><div id="tagcloud"><a href="#analytics" style="font-size: 1.0em;" class="tag" onclick="tagSelected('analytics')" id="tag_analytics">analytics</a> <a href="#Apple" style="font-size: 1.54545454545455em;" class="tag" onclick="tagSelected('Apple')" id="tag_Apple">Apple</a> <a href="#blog" style="font-size: 1.81818181818182em;" class="tag" onclick="tagSelected('blog')" id="tag_blog">blog</a> <a href="#design" style="font-size: 1.0em;" class="tag" onclick="tagSelected('design')" id="tag_design">design</a> <a href="#git" style="font-size: 1.68181818181818em;" class="tag" onclick="tagSelected('git')" id="tag_git">git</a> <a href="#iPhone" style="font-size: 1.0em;" class="tag" onclick="tagSelected('iPhone')" id="tag_iPhone">iPhone</a> <a href="#javascript" style="font-size: 1.54545454545455em;" class="tag" onclick="tagSelected('javascript')" id="tag_javascript">javascript</a> <a href="#jQuery" style="font-size: 1.81818181818182em;" class="tag" onclick="tagSelected('jQuery')" id="tag_jQuery">jQuery</a> <a href="#mac" style="font-size: 1.0em;" class="tag" onclick="tagSelected('mac')" id="tag_mac">mac</a> <a href="#programming" style="font-size: 1.13636363636364em;" class="tag" onclick="tagSelected('programming')" id="tag_programming">programming</a> <a href="#regexp" style="font-size: 1.27272727272727em;" class="tag" onclick="tagSelected('regexp')" id="tag_regexp">regexp</a> <a href="#regular_expression" style="font-size: 1.0em;" class="tag" onclick="tagSelected('regular_expression')" id="tag_regular_expression">regular&nbsp;expression</a> <a href="#ruby" style="font-size: 1.0em;" class="tag" onclick="tagSelected('ruby')" id="tag_ruby">ruby</a> <a href="#script" style="font-size: 1.40909090909091em;" class="tag" onclick="tagSelected('script')" id="tag_script">script</a> <a href="#shell" style="font-size: 1.0em;" class="tag" onclick="tagSelected('shell')" id="tag_shell">shell</a> <a href="#web" style="font-size: 2.5em;" class="tag" onclick="tagSelected('web')" id="tag_web">web</a> <a href="#zsh" style="font-size: 1.0em;" class="tag" onclick="tagSelected('zsh')" id="tag_zsh">zsh</a> </div><div id="hiddenDivs" ><div id="analytics" class="list"><h4>analytics</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">17</span>
         <span class="month">Jui</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web</a>
+                        <a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -247,7 +240,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Jui</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site</a>
+                        <a href="/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -256,16 +249,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/09_Why_I_didn-t_keep_whosamung-us/">Pourquoi je n'ai pas conservé whos.amung.us</a>
+                        <a href="/Scratch/fr/blog/09_Why_I_didn-t_keep_whosamung-us/">Pourquoi je n'ai pas conservé whos.amung.us <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="Apple" class="list"><h4>Apple <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Apple" class="list"><h4>Apple</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">4</span>
         <span class="month">Jan</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-01-04-Change-default-shell-on-Mac-OS-X/">Changer le shell par défaut sous Mac OS X</a>
+                        <a href="/Scratch/fr/blog/2010-01-04-Change-default-shell-on-Mac-OS-X/">Changer le shell par défaut sous Mac OS X <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -274,7 +267,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Déc</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-12-06-iphone-call-filter/">Filtrage d'appel avec l'iPhone</a>
+                        <a href="/Scratch/fr/blog/2009-12-06-iphone-call-filter/">Filtrage d'appel avec l'iPhone <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -283,7 +276,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2)</a>
+                        <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2) <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -292,7 +285,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe</a>
+                        <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -301,7 +294,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh sur le port 443 avec Snow Leopard</a>
+                        <a href="/Scratch/fr/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh sur le port 443 avec Snow Leopard <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -310,7 +303,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/">Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small></a>
+                        <a href="/Scratch/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/">Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small> <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -319,34 +312,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Aoû</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/04_drm/">Les protections anti-copies sont LE MAL</a>
+                        <a href="/Scratch/fr/blog/04_drm/">Les protections anti-copies sont LE MAL <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="arbre" class="list"><h4>arbre <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">24</span>
-        <span class="month">Mai</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/">Arbres&nbsp;; Pragmatisme et Formalisme</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">19</span>
-        <span class="month">Mai</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/">Comment réparer un XML coupé&nbsp;?</a>
-                    </li>
-</ul></div><div id="blog" class="list"><h4>blog <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="blog" class="list"><h4>blog</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">6</span>
         <span class="month">Oct</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/">Contraintes du design de ce blog</a>
+                        <a href="/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/">Contraintes du design de ce blog <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -355,25 +330,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Aoû</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/">Maintenant sur Heroku</a>
+                        <a href="/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/">Maintenant sur Heroku <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
-        <span class="day">19</span>
+        <span class="day">18</span>
         <span class="month">Jui</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">17</span>
-        <span class="month">Jui</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web</a>
+                        <a href="/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -382,7 +348,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Jui</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site</a>
+                        <a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -391,7 +366,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Jui</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-06-15-Get-my-blog-engine/">Récupérez mon système de blog</a>
+                        <a href="/Scratch/fr/blog/2010-06-15-Get-my-blog-engine/">Récupérez mon système de blog <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -400,7 +375,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Jui</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-06-14-multi-language-choices/">choix liés à l'écriture dans plusieurs langues</a>
+                        <a href="/Scratch/fr/blog/2010-06-14-multi-language-choices/">choix liés à l'écriture dans plusieurs langues <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -409,7 +384,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Mai</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-05-17-at-least-this-blog-revive/">Je reviens à la vie&nbsp;!</a>
+                        <a href="/Scratch/fr/blog/2010-05-17-at-least-this-blog-revive/">Je reviens à la vie&nbsp;! <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -418,34 +393,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus contre Intense Debate (pourquois j'ai changé)</a>
+                        <a href="/Scratch/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus contre Intense Debate (pourquois j'ai changé) <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="CSS" class="list"><h4>CSS <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="design" class="list"><h4>design</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">31</span>
         <span class="month">Jul</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-07-31-New-style-after-holidays/">Nouveau style après les vacances</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">7</span>
-        <span class="month">Jul</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">N'utilisez pas de gradients avec Chrome</a>
-                    </li>
-</ul></div><div id="design" class="list"><h4>design <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">31</span>
-        <span class="month">Jul</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-07-31-New-style-after-holidays/">Nouveau style après les vacances</a>
+                        <a href="/Scratch/fr/blog/2010-07-31-New-style-after-holidays/">Nouveau style après les vacances <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -454,7 +411,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher</a>
+                        <a href="/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -463,52 +420,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-Focus-vs-Minimalism/"><em>Focus</em> &gt; Minimalisme</a>
+                        <a href="/Scratch/fr/blog/2009-10-Focus-vs-Minimalism/"><em>Focus</em> &gt; Minimalisme <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="disqus" class="list"><h4>disqus <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">28</span>
-        <span class="month">Sep</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus contre Intense Debate (pourquois j'ai changé)</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">17</span>
-        <span class="month">Sep</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en]</a>
-                    </li>
-</ul></div><div id="email" class="list"><h4>email <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">10</span>
-        <span class="month">Oct</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/">Sécurisez vos emails</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">31</span>
-        <span class="month">Aoû</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché</a>
-                    </li>
-</ul></div><div id="git" class="list"><h4>git <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="git" class="list"><h4>git</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">2</span>
         <span class="month">Sep</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/">Utilisation de git pour calculer les mtimes</a>
+                        <a href="/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/">Utilisation de git pour calculer les mtimes <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -517,7 +438,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Mar</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-03-23-Encapsulate-git/">Encapsuler git</a>
+                        <a href="/Scratch/fr/blog/2010-03-23-Encapsulate-git/">Encapsuler git <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -526,7 +447,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Mar</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-03-22-Git-Tips/">Astuces Git</a>
+                        <a href="/Scratch/fr/blog/2010-03-22-Git-Tips/">Astuces Git <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -535,7 +456,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Déc</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-12-14-Git-vs--Bzr/">Git ou Bazaar&nbsp;?</a>
+                        <a href="/Scratch/fr/blog/2009-12-14-Git-vs--Bzr/">Git ou Bazaar&nbsp;? <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -544,7 +465,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Nov</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-11-12-Git-for-n00b/">Git pour les nuls</a>
+                        <a href="/Scratch/fr/blog/2009-11-12-Git-for-n00b/">Git pour les nuls <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -553,7 +474,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-untaught-git-usage/">Usages non dits de Git</a>
+                        <a href="/Scratch/fr/blog/2009-10-untaught-git-usage/">Usages non dits de Git <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -562,7 +483,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Aoû</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/06_How_I_use_git/">Git en solo</a>
+                        <a href="/Scratch/fr/blog/06_How_I_use_git/">Git en solo <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -571,34 +492,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Aoû</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/05_git_create_remote_branch/">Création de branches externe avec Git</a>
+                        <a href="/Scratch/fr/blog/05_git_create_remote_branch/">Création de branches externe avec Git <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="intense_debate" class="list"><h4>intense debate <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="iPhone" class="list"><h4>iPhone</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
-        <span class="day">28</span>
-        <span class="month">Sep</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus contre Intense Debate (pourquois j'ai changé)</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">17</span>
-        <span class="month">Sep</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en]</a>
-                    </li>
-</ul></div><div id="iPhone" class="list"><h4>iPhone <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">2</span>
+        <span class="day">1</span>
         <span class="month">Sep</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/">base64 et sha1 sur iPhone</a>
+                        <a href="/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/">base64 et sha1 sur iPhone <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -607,7 +510,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Jul</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;?</a>
+                        <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;? <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -616,34 +519,25 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Déc</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-12-06-iphone-call-filter/">Filtrage d'appel avec l'iPhone</a>
+                        <a href="/Scratch/fr/blog/2009-12-06-iphone-call-filter/">Filtrage d'appel avec l'iPhone <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="javascript" class="list"><h4>javascript <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="javascript" class="list"><h4>javascript</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">5</span>
         <span class="month">Jul</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;?</a>
+                        <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;? <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
-        <span class="day">19</span>
+        <span class="day">18</span>
         <span class="month">Jui</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">17</span>
-        <span class="month">Jui</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web</a>
+                        <a href="/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -652,7 +546,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Jui</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site</a>
+                        <a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -661,7 +564,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher</a>
+                        <a href="/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -670,7 +573,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud [en]</a>
+                        <a href="/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud [en] <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -679,34 +582,25 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en]</a>
+                        <a href="/Scratch/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en] <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="jQuery" class="list"><h4>jQuery <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="jQuery" class="list"><h4>jQuery</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">5</span>
         <span class="month">Jul</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;?</a>
+                        <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;? <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
-        <span class="day">19</span>
+        <span class="day">18</span>
         <span class="month">Jui</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">17</span>
-        <span class="month">Jui</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web</a>
+                        <a href="/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -715,7 +609,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Jui</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site</a>
+                        <a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -724,7 +627,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/">Une CSS pour IE seulement</a>
+                        <a href="/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/">Une CSS pour IE seulement <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -733,7 +636,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher</a>
+                        <a href="/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -742,7 +645,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-Focus-vs-Minimalism/"><em>Focus</em> &gt; Minimalisme</a>
+                        <a href="/Scratch/fr/blog/2009-10-Focus-vs-Minimalism/"><em>Focus</em> &gt; Minimalisme <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -751,7 +654,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-How-to-preload-your-site-with-style/">Charger une page web avec style</a>
+                        <a href="/Scratch/fr/blog/2009-10-How-to-preload-your-site-with-style/">Charger une page web avec style <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -760,16 +663,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud [en]</a>
+                        <a href="/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud [en] <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="mac" class="list"><h4>mac <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="mac" class="list"><h4>mac</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">10</span>
         <span class="month">Oct</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/">Sécurisez vos emails</a>
+                        <a href="/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/">Sécurisez vos emails <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -778,7 +681,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh sur le port 443 avec Snow Leopard</a>
+                        <a href="/Scratch/fr/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh sur le port 443 avec Snow Leopard <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -787,70 +690,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/">Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small></a>
+                        <a href="/Scratch/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/">Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small> <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="math__matiques" class="list"><h4>mathématiques <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">11</span>
-        <span class="month">Aoû</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-07-09-Indecidabilities/">Indécidabilités (partie 1)</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">24</span>
-        <span class="month">Mai</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/">Arbres&nbsp;; Pragmatisme et Formalisme</a>
-                    </li>
-</ul></div><div id="mobileme" class="list"><h4>mobileme <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">28</span>
-        <span class="month">Oct</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2)</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">11</span>
-        <span class="month">Sep</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe</a>
-                    </li>
-</ul></div><div id="nanoc" class="list"><h4>nanoc <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">2</span>
-        <span class="month">Sep</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/">Utilisation de git pour calculer les mtimes</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">15</span>
-        <span class="month">Jui</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-06-15-Get-my-blog-engine/">Récupérez mon système de blog</a>
-                    </li>
-</ul></div><div id="programming" class="list"><h4>programming <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="programming" class="list"><h4>programming</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">6</span>
         <span class="month">Oct</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/">Contraintes du design de ce blog</a>
+                        <a href="/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/">Contraintes du design de ce blog <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -859,7 +708,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Jul</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">N'utilisez pas de gradients avec Chrome</a>
+                        <a href="/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">N'utilisez pas de gradients avec Chrome <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -868,7 +717,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Jul</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;?</a>
+                        <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;? <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -877,34 +726,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-untaught-git-usage/">Usages non dits de Git</a>
+                        <a href="/Scratch/fr/blog/2009-10-untaught-git-usage/">Usages non dits de Git <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="protection" class="list"><h4>protection <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">23</span>
-        <span class="month">Mar</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-03-23-Encapsulate-git/">Encapsuler git</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">15</span>
-        <span class="month">Aoû</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/04_drm/">Les protections anti-copies sont LE MAL</a>
-                    </li>
-</ul></div><div id="regexp" class="list"><h4>regexp <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="regexp" class="list"><h4>regexp</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">24</span>
         <span class="month">Mai</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/">Arbres&nbsp;; Pragmatisme et Formalisme</a>
+                        <a href="/Scratch/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/">Arbres&nbsp;; Pragmatisme et Formalisme <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -913,7 +744,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Fév</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/">Quand se passer des expressions régulières&nbsp;?</a>
+                        <a href="/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/">Quand se passer des expressions régulières&nbsp;? <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -922,7 +753,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Fév</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-02-16-All-but-something-regexp--2-/">Tout sauf quelquechose en expression régulière.</a>
+                        <a href="/Scratch/fr/blog/2010-02-16-All-but-something-regexp--2-/">Tout sauf quelquechose en expression régulière. <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -931,7 +762,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Fév</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-02-15-All-but-something-regexp/">Expression régulière pour tout sauf quelquechose</a>
+                        <a href="/Scratch/fr/blog/2010-02-15-All-but-something-regexp/">Expression régulière pour tout sauf quelquechose <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -940,16 +771,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-09-replace-all-except-some-part/">Remplacer tout sauf une partie</a>
+                        <a href="/Scratch/fr/blog/2009-09-replace-all-except-some-part/">Remplacer tout sauf une partie <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="regular_expression" class="list"><h4>regular expression <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="regular_expression" class="list"><h4>regular expression</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">16</span>
         <span class="month">Fév</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-02-16-All-but-something-regexp--2-/">Tout sauf quelquechose en expression régulière.</a>
+                        <a href="/Scratch/fr/blog/2010-02-16-All-but-something-regexp--2-/">Tout sauf quelquechose en expression régulière. <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -958,7 +789,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Fév</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-02-15-All-but-something-regexp/">Expression régulière pour tout sauf quelquechose</a>
+                        <a href="/Scratch/fr/blog/2010-02-15-All-but-something-regexp/">Expression régulière pour tout sauf quelquechose <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -967,16 +798,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-09-replace-all-except-some-part/">Remplacer tout sauf une partie</a>
+                        <a href="/Scratch/fr/blog/2009-09-replace-all-except-some-part/">Remplacer tout sauf une partie <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="ruby" class="list"><h4>ruby <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="ruby" class="list"><h4>ruby</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">19</span>
         <span class="month">Mai</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/">Comment réparer un XML coupé&nbsp;?</a>
+                        <a href="/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/">Comment réparer un XML coupé&nbsp;? <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -985,7 +816,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud [en]</a>
+                        <a href="/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud [en] <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -994,16 +825,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-09-replace-all-except-some-part/">Remplacer tout sauf une partie</a>
+                        <a href="/Scratch/fr/blog/2009-09-replace-all-except-some-part/">Remplacer tout sauf une partie <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="script" class="list"><h4>script <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="script" class="list"><h4>script</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">24</span>
         <span class="month">Mai</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/">Arbres&nbsp;; Pragmatisme et Formalisme</a>
+                        <a href="/Scratch/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/">Arbres&nbsp;; Pragmatisme et Formalisme <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1012,7 +843,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Mai</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/">Comment réparer un XML coupé&nbsp;?</a>
+                        <a href="/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/">Comment réparer un XML coupé&nbsp;? <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1021,7 +852,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Fév</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/">découper un fichier par mots clés</a>
+                        <a href="/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/">découper un fichier par mots clés <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1030,7 +861,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2)</a>
+                        <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2) <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1039,7 +870,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande</a>
+                        <a href="/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1048,34 +879,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe</a>
+                        <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="securit__" class="list"><h4>securité <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">10</span>
-        <span class="month">Oct</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/">Sécurisez vos emails</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">7</span>
-        <span class="month">Sep</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh sur le port 443 avec Snow Leopard</a>
-                    </li>
-</ul></div><div id="shell" class="list"><h4>shell <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="shell" class="list"><h4>shell</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">31</span>
         <span class="month">Aoû</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché</a>
+                        <a href="/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1084,7 +897,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Fév</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/">découper un fichier par mots clés</a>
+                        <a href="/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/">découper un fichier par mots clés <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1093,52 +906,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande</a>
+                        <a href="/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="synchronisation" class="list"><h4>synchronisation <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">28</span>
-        <span class="month">Oct</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2)</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">11</span>
-        <span class="month">Sep</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe</a>
-                    </li>
-</ul></div><div id="tip" class="list"><h4>tip <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">22</span>
-        <span class="month">Mar</span>
-        <span class="year">2010</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2010-03-22-Git-Tips/">Astuces Git</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">23</span>
-        <span class="month">Oct</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande</a>
-                    </li>
-</ul></div><div id="web" class="list"><h4>web <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="web" class="list"><h4>web</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">2</span>
         <span class="month">Sep</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/">Utilisation de git pour calculer les mtimes</a>
+                        <a href="/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/">Utilisation de git pour calculer les mtimes <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1147,7 +924,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Aoû</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché</a>
+                        <a href="/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1156,7 +933,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Jul</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-07-31-New-style-after-holidays/">Nouveau style après les vacances</a>
+                        <a href="/Scratch/fr/blog/2010-07-31-New-style-after-holidays/">Nouveau style après les vacances <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1165,7 +942,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Jul</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">N'utilisez pas de gradients avec Chrome</a>
+                        <a href="/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">N'utilisez pas de gradients avec Chrome <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1174,16 +951,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Jul</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;?</a>
+                        <a href="/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;? <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
-        <span class="day">19</span>
+        <span class="day">18</span>
         <span class="month">Jui</span>
         <span class="year">2010</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement</a>
+                        <a href="/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1192,7 +969,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/">Une CSS pour IE seulement</a>
+                        <a href="/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/">Une CSS pour IE seulement <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1201,7 +978,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher</a>
+                        <a href="/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1210,7 +987,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-Focus-vs-Minimalism/"><em>Focus</em> &gt; Minimalisme</a>
+                        <a href="/Scratch/fr/blog/2009-10-Focus-vs-Minimalism/"><em>Focus</em> &gt; Minimalisme <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1219,7 +996,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-How-to-preload-your-site-with-style/">Charger une page web avec style</a>
+                        <a href="/Scratch/fr/blog/2009-10-How-to-preload-your-site-with-style/">Charger une page web avec style <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1228,7 +1005,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus contre Intense Debate (pourquois j'ai changé)</a>
+                        <a href="/Scratch/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus contre Intense Debate (pourquois j'ai changé) <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1237,7 +1014,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud [en]</a>
+                        <a href="/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud [en] <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1246,7 +1023,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en]</a>
+                        <a href="/Scratch/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en] <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1255,52 +1032,16 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/09_Why_I_didn-t_keep_whosamung-us/">Pourquoi je n'ai pas conservé whos.amung.us</a>
+                        <a href="/Scratch/fr/blog/09_Why_I_didn-t_keep_whosamung-us/">Pourquoi je n'ai pas conservé whos.amung.us <span class="nicer">»</span></a>
                     </li>
-</ul></div><div id="WebDav" class="list"><h4>WebDav <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="zsh" class="list"><h4>zsh</h4><ul style="list-style-type: none; margin: 0;">
                     <li style="line-height: 3em; margin: 0;">
                         <span class="date">
         <span class="day">28</span>
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2)</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">11</span>
-        <span class="month">Sep</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe</a>
-                    </li>
-</ul></div><div id="webdesign" class="list"><h4>webdesign <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">30</span>
-        <span class="month">Oct</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/">Une CSS pour IE seulement</a>
-                    </li>
-
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">3</span>
-        <span class="month">Oct</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2009-10-How-to-preload-your-site-with-style/">Charger une page web avec style</a>
-                    </li>
-</ul></div><div id="zsh" class="list"><h4>zsh <a href="#tagcloud">&uarr;</a></h4><ul style="list-style-type: none; margin: 0;">
-                    <li style="line-height: 3em; margin: 0;">
-                        <span class="date">
-        <span class="day">28</span>
-        <span class="month">Oct</span>
-        <span class="year">2009</span>
-    </span> 
-                        <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2)</a>
+                        <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2) <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1309,7 +1050,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Oct</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande</a>
+                        <a href="/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande <span class="nicer">»</span></a>
                     </li>
 
                     <li style="line-height: 3em; margin: 0;">
@@ -1318,9 +1059,9 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
         <span class="month">Sep</span>
         <span class="year">2009</span>
     </span> 
-                        <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe</a>
+                        <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe <span class="nicer">»</span></a>
                     </li>
-</ul></div></div>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div></div>
 </div>
 
 
@@ -1329,7 +1070,7 @@ Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc
 <div class="corps">
 
 
-Le bouton en bas à gauche sert à revenir en haut de la page et à afficher le menu.
+N'hésitez pas à me contacter.
                     <div class="return"><a href="#entete" onclick="fastShowMenu()">&uarr;</a></div>
                 </div>
             <div id="bottom">
@@ -1337,7 +1078,7 @@ Le bouton en bas à gauche sert à revenir en haut de la page et à afficher le 
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
                 </div>
                 <div id="lastmod">
-                    modifié le : 04/10/2010 
+                    modifié le : 02/11/2010 
                 </div>
                 <div>
                     Site entièrement réalisé avec

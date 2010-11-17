@@ -14,6 +14,12 @@ tags:
 
 <%= blogimage("central_architecture.png","central architecture") %>
 
+begindiv(encadre)
+
+_Màj_ : Actuellement j'utilise github avec des repository privés. Je paye une somme très raisonnable pour ce service. Si vous voulez être complètement autonome, je vous conseille d'utiliser [gitolite](https://github.com/sitaramc/gitolite) sur votre propre serveur accessible sur le web.
+
+enddiv
+
 J'utilise [Git](http://www.git-scm.org/) pour gérer mes projets personnels.
 J'ai un *repository* centralisé et tous mes ordinateurs se synchronisent avec lui.
 Cependant, dans la documentation officielle, je n'ai pas trouvé clairement ce que je souhaitais.
@@ -50,19 +56,24 @@ output/Scratch/multi
 </code>
 </div>
 
-Ensuite, il faut placer ce projet dans un endroit sûr sur Internet.
+Ensuite, il faut placer ce projet dans un répertoire accessible via Internet.
 
 <div>
 <code class="zsh">
-git clone --bare . protocol://url/of/the/repository
+git clone --bare . /path/to/repository
 </code>
+</div>
+
+<div class="encadre"><em>
+Màj: La meilleure solution est d'installer <a href="https://github.com/sitaramc/gitolite">gitolite</a> pour installer un serveur git sur sa machine. Gitolite permet de gérer la gestion des droits d'utilisateurs, ceux-ci n'ayant pas accès à un shell sur la machine.
+</em>
 </div>
 
 Maintenant à partir de n'importe quel ordinateur, voici ce que vous pouvez faire : 
 
 <div>
 <code class="zsh">
-git clone protocol://url/of/the/repository local_directory
+git clone protocol://path/to/repository local_directory
 </code>
 </div>
 
