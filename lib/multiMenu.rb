@@ -109,7 +109,7 @@ def blogimage(val,title="no name", divclass=nil)
     if not divclass.nil?
         cls=%{ class="#{divclass}"}
     end
-    return %{<img alt="#{title}" src="#{imgpath}"#{cls}></img>}
+    return %{<img alt="#{title}" src="#{imgpath}"#{cls}/>}
 end
 
 def leftblogimage(val,title="no name")
