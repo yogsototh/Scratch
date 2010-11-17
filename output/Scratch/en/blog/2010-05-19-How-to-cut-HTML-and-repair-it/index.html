@@ -112,21 +112,21 @@
 []              <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span>
 </pre>
 
-<p>The algorihm, is then really simple: 
-&lt;pre class="twilight"&gt;
+<p>The algorihm, is then really simple: </p>
+<pre class="twilight">
 let res be the XML as a string&nbsp;; 
 read res and each time you encouter a tag: 
     if it is an opening one: 
         push it to the stack
     else if it is a closing one: 
-        pop the stack.</p>
+        pop the stack.
 
-<p>remove any malformed/cutted tag in the end of res
+remove any malformed/cutted tag in the end of res
 for each tag in the stack, pop it, and write:
-    res = res + closed tag</p>
+    res = res + closed tag
 
-<p>return res
-&lt;/pre&gt;</p>
+return res
+</pre>
 
 <p>And <code>res</code> contain the repaired XML.</p>
 
