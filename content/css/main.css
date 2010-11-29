@@ -5,7 +5,7 @@
 $behindColor: #111111
 $mainTextColor: $behindColor
 $mainBackgroundColor: white
-$revealColor: #d53300
+$revealColor: #d50000
 $secondRevealColor: #e25f2f
 $lighterRevealColor: #ffbe96
 $imageBackgroundColor: $mainBackgroundColor
@@ -89,6 +89,9 @@ body
 
 #content
   +mainColor
+
+a:hover
+  text-shadow: 0 0 2px #FAA
 
 a, a:link, a:visited, a:active, a:hover, #clickcomment
   text-decoration: none
