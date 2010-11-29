@@ -73,7 +73,7 @@ De m&#233;moire il &#233;tait peu ais&#233; de manipuler des ...&lt;/p&gt;</cont
       <uri>yannesposito.com</uri>
     </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Title image" class="clean" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/main.png" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/main.png" class="clean" /&gt;&lt;/p&gt;
 
 
 &lt;div class="intro"&gt;
@@ -141,7 +141,7 @@ Voici comment je m&amp;rsquo;y prend avec &lt;a href="http://nanoc.stoneship.org
 &lt;div class="code"&gt;&lt;div class="file"&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2010-09-02:/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/</id>
+    <id>tag:yannesposito.com,2010-09-01:/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/</id>
     <title type="html">base64 et sha1 sur iPhone</title>
     <published>2010-09-01T22:02:17Z</published>
     <updated>2010-09-01T22:02:17Z</updated>
@@ -328,7 +328,7 @@ En r&#233;alit&#233;, ce qui ralenti le rendu de ce site est par ordre d&amp;rsq
 &lt;p&gt;Avant de commencer, je dois dire que je sais que Cappuccino et jQuery ne sont pas plus comparable que Cocoa et la &lt;em&gt;standard library&lt;/em&gt; en...&lt;/p&gt;&lt;/div&gt;&lt;/hr&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2010-06-19:/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/</id>
+    <id>tag:yannesposito.com,2010-06-18:/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/</id>
     <title type="html">Comment faire des popups en jQuery rapidement</title>
     <published>2010-06-18T22:44:50Z</published>
     <updated>2010-06-18T22:44:50Z</updated>
@@ -466,15 +466,15 @@ Lorsque je m&amp;...&lt;/p&gt;</content>
   &lt;li&gt;J&amp;rsquo;ai utilis&#233; un papier et un stylo&amp;nbsp;;&lt;/li&gt;
   &lt;li&gt;J&amp;rsquo;ai fait un peu de maths&amp;nbsp;;&lt;/li&gt;
   &lt;li&gt;J&amp;rsquo;ai r&#233;solu le probl&#232;me en 10 minutes&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;Conclusion: Pragmatisme n&amp;rsquo;est pas&amp;nbsp;: &amp;laquo;n&amp;rsquo;utilisez jamais la th&#233;orie&amp;raquo;.&lt;/li&gt;
-&lt;/ul&gt;
+  &lt;li&gt;Conclusion: Pragmatisme n&amp;rsquo;est pas&amp;nbsp;: &amp;laquo;n&amp;rsquo;utilisez jamais la th&#233;orie&amp;raquo;.
 
 &lt;/div&gt;
 
+&lt;/ul&gt;
 
 &lt;h2 id="rsum-plus-long-que-le--abbr-titletrop-long--liresctllscabbr"&gt;R&#233;sum&#233; (plus long que le  &lt;abbr title="Trop Long &#192; Lire"&gt;&lt;span class="sc"&gt;tl&#224;l&lt;/span&gt;&lt;/abbr&gt;)&lt;/h2&gt;
 
-&lt;p&gt;Je devais r&#233;soud...&lt;/p&gt;</content>
+&lt;p&gt;Je devais r&#233;soudre un...&lt;/p&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-05-19:/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/</id>
@@ -510,13 +510,12 @@ Lorsque je m&amp;...&lt;/p&gt;</content>
   &lt;p&gt;&amp;hellip;plus on retarde quelque chose, plus il devient difficile de s&amp;rsquo;y mettre&amp;hellip;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Je devais &#233;crire d&amp;rsquo;autres articles pour ce blog. J&amp;rsquo;ai not&#233; plein d&amp;rsquo;id&#233;es dans mes &lt;em&gt;todolist&lt;/em&gt;. Mais j&amp;rsquo;avais pas mal d&amp;rsquo;autres choses &#224; faire. Et jusqu&amp;rsquo;ici, j&amp;rsquo;ai toujours dit &amp;laquo;je le ferai plus tard&amp;raquo;. Ce qui m&amp;rsquo;a fait agir, c&amp;rsquo;est la petite r&#233;flexion que j&amp;rsquo;avais lu une fois.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Arr&#233;tez d&amp;rsquo;&#233;crire des &lt;code&gt;TODO&lt;/code&gt; dans votre code est faites le maintenant&amp;nbsp;!&lt;br /&gt;
-Vous serez surpris de l&amp;rsquo;efficacit&#233; de cette mesure.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Je devais &#233;crire d&amp;rsquo;autres articles pour ce blog. J&amp;rsquo;ai not&#233; plein d&amp;rsquo;id&#233;es dans mes &lt;em&gt;todolist&lt;/em&gt;. Mais j&amp;rsquo;avais pas mal d&amp;rsquo;autres choses &#224; faire. Et jusqu&amp;rsquo;ici, j&amp;rsquo;ai toujours dit &amp;laquo;je le ferai plus tard&amp;raquo;. Ce qui m&amp;rsquo;a fait agir, c&amp;rsquo;est la petite r&#233;flexion que j&amp;rsquo;avais lu une fois.
+&amp;gt; Arr&#233;tez d&amp;rsquo;&#233;crire des &lt;code&gt;TODO&lt;/code&gt; dans votre code est faites le maintenant&amp;nbsp;!&lt;br /&gt;
+&amp;gt; Vous serez surpris de l&amp;rsquo;efficacit&#233; de cette mesure.&lt;/p&gt;
 
-&lt;p&gt;E...&lt;/p&gt;&lt;/blockquote&gt;</content>
+&lt;p&gt;En r&#233;sum&#233;&amp;nbsp;:
+&amp;gt; &lt;/p&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-03-23:/Scratch/fr/blog/2010-03-23-Encapsulate-git/</id>
