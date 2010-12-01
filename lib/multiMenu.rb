@@ -1,6 +1,6 @@
 def homepage
     @items.find do |i| 
-        i.reps[0].path == %{/Scratch/#{@conf.language}/}
+        i.reps[0].path == %{#{@config[:webprefix]}/#{@conf.language}/}
     end
 end
 
@@ -11,6 +11,9 @@ end
 
 def generateMenu
     home=homepage
+    if home.nil?
+        return ''
+    end
     liste=[]
     liste<<=link_to_unless_current(home[:title],home.reps[0])
     sortedChildrenByMenuPriority(home).each do |page|
@@ -105,7 +108,7 @@ def blogimage(val,title="no name", divclass=nil)
     else
         imgpath=@item.path
     end
-    imgpath=imgpath.sub(%r{/Scratch/../},'/Scratch/img/')+val
+    imgpath=imgpath.sub(%r{#{@config[:webprefix]}/../},@config[:webprefix]+'/img/')+val
     if not divclass.nil?
         cls=%{ class="#{divclass}"}
     end
@@ -117,8 +120,8 @@ def leftblogimage(val,title="no name")
 end
 
 def lnkto(title,item)
-    language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'')
-    link_to(title, "/Scratch/#{language}"+item)
+    language=@item_rep.path.sub(/#{@config[:webprefix]}\//,'').sub(/\/.*$/,'')
+    link_to(title, "#{@config[:webprefix]}/#{language}"+item)
 end
 
 def nextFor(page)

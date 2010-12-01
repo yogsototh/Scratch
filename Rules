@@ -16,23 +16,6 @@ end
 route '/css/*' do
     '/Scratch/assets' + item.identifier.chop + '.css'
 end
-# compile '/css/*', :rep => :mozilla do
-#     filter :mozilla
-#     filter :sass
-#     filter :rainpress
-# end
-# route '/css/*', :rep => :mozilla do
-#     '/Scratch/assets' + item.identifier.chop + '_mozilla.css'
-# end
-# compile '/css/*', :rep => :webkit do
-#     filter :webkit
-#     filter :sass
-#     filter :rainpress
-# end
-# route '/css/*', :rep => :webkit do
-#     '/Scratch/assets' + item.identifier.chop + '_webkit.css'
-# end
-
 compile '/img/*' do
 end
 route '/img/*' do
@@ -52,6 +35,13 @@ route '/js/*' do
     '/Scratch/assets' + item.identifier.chop + '.js'
 end
 
+compile '/html' do
+    filter :erb
+    layout 'default' unless item[:layout] == "none"
+end
+route '/html' do
+  '/index.html'
+end
 
 compile '/html/*' do
     # item[:extension] returns 'html.erb' for multi-dotted filename
