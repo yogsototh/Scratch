@@ -5,8 +5,12 @@ data_sources:
   type: filesystem_unified
 output_dir: output
 ultraviolet_theme: "twilight"
+webprefix: "/Scratch"
 base_url: "http://yannesposito.com"
 author_uri: "http://yannesposito.com"
+rss_uri:
+  fr: "http://feeds.feedburner.com/yannespositocomfr"
+  en: "http://feeds.feedburner.com/yannespositocomen"
 
 # les langues
 languages:
