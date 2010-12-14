@@ -113,6 +113,12 @@ hr
 
 ul
   list-style: square
+ol,ul
+  padding-left: 0
+ol li, ul li
+  margin: 1em 0
+ol li ul, ol li ol, ul li ol, ul li ul
+  margin: 1em 1em
 
 body, h1, h2, h3, h4, #entete, .tag
   font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
