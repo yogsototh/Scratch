@@ -83,13 +83,13 @@ $ git checkout HEAD~3 file
 
 ### lister les différences entre chaque version
 
-liste les fichier en cours de modifications
+liste les fichiers en cours de modifications
 
 <div><code class="zsh">
 $ git status
 </code></div>
 
-différences entre les fichier de la dernière version et les fichiers locaux.
+différences entre les fichiers de la dernière version et les fichiers locaux.
 
 <div><code class="zsh">
 $ git diff
