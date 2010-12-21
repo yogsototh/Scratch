@@ -17,8 +17,7 @@ def meta_alternate
 end
 
 def choixrss
-    rssurl=%{http://feeds.feedburner.com/yannespositocom#{ @conf.language }}
-    return %{<a id="rss" href="#{rssurl}">#{ tradOf(:subscribe) }</a>}
+    return %{<a id="rss" href="#{@config[:rss_uri][@conf.language.intern]}">#{ tradOf(:subscribe) }</a>}
 end
 
 def choixlang

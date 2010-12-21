@@ -15,7 +15,12 @@ def setItemConf
     # -- init variables --
     conf=LocalConf.new
     language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'')
-    conf.language=language
+    if language != ''
+        conf.language=language
+    else
+        conf.language='en'
+        language=conf.language
+    end
     
     # the current item is an article
     article=( ( not @item[:kind].nil? ) && @item[:kind] == 'article' )

@@ -5,7 +5,7 @@
 $behindColor: #111111
 $mainTextColor: $behindColor
 $mainBackgroundColor: white
-$revealColor: #d53300
+$revealColor: #d50000
 $secondRevealColor: #e25f2f
 $lighterRevealColor: #ffbe96
 $imageBackgroundColor: $mainBackgroundColor
@@ -90,6 +90,9 @@ body
 #content
   +mainColor
 
+a:hover
+  text-shadow: 0 0 2px #FAA
+
 a, a:link, a:visited, a:active, a:hover, #clickcomment
   text-decoration: none
   outline: none
@@ -110,9 +113,13 @@ hr
 
 ul
   list-style: square
+
+ol,ul
   padding-left: 0
-  li
-    margin: 1em 0
+ol li, ul li
+  margin: 1em 0
+ol li ul, ol li ol, ul li ol, ul li ul
+  margin: 1em 1em
 
 body, h1, h2, h3, h4, #entete, .tag
   font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
