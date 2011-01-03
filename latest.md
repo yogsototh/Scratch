@@ -1,1 +1,1 @@
-multi/blog/2010-10-26-LaTeX-like-macro-and-markdown.md
+./multi/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript.md

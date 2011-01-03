@@ -1,0 +1,116 @@
+-----
+isHidden:       false
+menupriority:   1
+kind:           article
+created_at:     2011-01-03T10:37:26+02:00
+title: Why I sadly won't use CoffeeScript
+author_name: Yann Esposito
+author_uri: yannesposito.com
+# tags:
+-----
+<%= blogimage("main.png","Title image") %>
+
+begindiv(intro)
+
+<%= tldr %> I tried [CoffeeScript][cf]. In the end there was more inconvenients than advantages to its use.
+
+
+enddiv
+
+Recently I read [this entry](http://news.ycombinator.com/item?id=2053956) on HackerNews.
+The most upvoted comment praised [CoffeeScript][cf].
+Recently I used _a lot_ of javascript. After trying
+[Sroutcore](http://sproutcore.com),
+[Cappuccino](http://cappuccino.org),
+[backbone.js](documentcloud.github.com/backbone/) _&_
+[javascriptMVC](javascriptmvc.com),
+I've finally decided to make my own minimal javascript MVC framework.[^1]
+
+
+[cf]: http://coffeescript.org
+
+[^1]: I know it may not be the best nor productive decision, but I'd like to start from scratch and understand how things works under the hood.
+
+I had to fight the horrible syntax of javascript. It was like experiencing back-in-time travel: 
+
+- Verbose Java-like syntax, 
+- Strange and insanely Verbose Object Oriented Programming,
+- No easy way to refer to current instance of a class (`this` doesn't work really well),
+- etc... 
+
+I was so annoyed by this that at a point, I had thinked about creating my own CoffeeScript.
+
+I've finished a first draft of my MVC javascript  framework and learn about the existence of CoffeeScript. Praise git I immediately create a new branch with only goal to try CoffeeScript.
+
+Here is my experience:
+
+1. I had to install `node.js` and use `npm` just to use CoffeeScript. It wasn't a big deal but it wasn't as straightfoward as I expected either.
+2. Existing javascript file are not coffee compatible. You _must_ first translate them.
+3. There is no script to help you translate old javascript file to coffee file. Bad news, I had to translate it by hand. 
+    Thanks to [vim][http://vim.org], it wasn't too hard to translate 90% of the javascript using some regexp. 
+    The `--watch` option of coffee was also really helpful to help in the translation. 
+    But I had to write my own shell script in order to follow an entire directory to also accepts the subdirectories.
+4. An unexpected event. I made some meta-programming in javascript using `eval`. But in order to work the string in the eval must be written in pure javascript not in coffee. It was like writing in two different languages. Really not so good.
+
+
+## Conclusion
+
+Advantages:
+
+- Readability: clearly it resolved most of javascript syntax problems
+- Verbosity: I gained 14% line, 22% words, 14% characters
+
+Inconvenients:
+
+- Added another compilation step to see how my code behave on the website.
+- Ease of use: I have to launch some script to generate on change every of my javascript file
+- I have to learn another Ruby-like language,
+- meta-programming become a poor experience,
+- I must convince people working with me to: 
+    - install `node.js`, `npm` and CoffeeScript,
+    - remember to launch a script at each code session,
+    - learn and use another ruby-like language
+
+
+The last one is definitively the biggest problem for me.
+
+But even if I'll have to work alone, I certainly won't use CoffeeScript either. CoffeeScript is a third party and any of their update can break my code. I experienced this kind of situation many times, and it is very annoying. Far more than coding with a bad syntax.
+
+## Digression
+
+I am sad. 
+I wanted so much to program Javascript like Ruby. 
+But in the end I think it is not for me. 
+I have to use the _horrible_ javascript syntax for now. 
+At least I would have preferred a complete Ruby2Js script for example. 
+But I believe it would be a really hard task just to simulate the access of current class for example.
+
+
+Typically `@x` translate into `this.x`. But the following code will not do what I should expect. Call the foo function of the current class.
+
+<code class="ruby">
+-> 
+class MyClass
+  foo: ->
+    alert('ok')
+
+  bar: ->
+    $('#content').load( '/content.html', ( -> @foo(x) ) )
+    # That won't call MyClass.foo
+</code>
+
+The only way to handle this is to make the following code:
+
+
+<code class="ruby">
+-> 
+class MyClass
+  foo: ->
+    alert('ok')
+
+  bar: ->
+    self=this
+    $('#content').load( '/content.html', ( -> self.foo(x) ) )
+</code>
+
+Knowing this, `@` notation lose most of its interrest for me.
