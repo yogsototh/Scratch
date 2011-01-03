@@ -17,7 +17,7 @@ Si tout ce qui vous intéresse c'est d'utiliser [Git][git] **tout de suite**. Li
 
 enddiv
 
-[Git][git] est un <abbr title="Decentralized Concurent Versions System">DCVS</abbr>, c'est-à-dire un système de versions concurrentes décentralisé. Analysons chaque partie de cette appellation compliqué.
+[Git][git] est un <abbr title="Decentralized Concurent Versions System">DCVS</abbr>, c'est-à-dire un système de versions concurrentes décentralisé. Analysons chaque partie de cette appellation compliquée.
 
 ### Système de versions
 
@@ -59,16 +59,16 @@ begindiv(black)
 - backup automatique de tous les fichiers: *Revenir dans le temps.* ;
 - donne la possibilité de voir les différences entre chaque version et les différences entre la version en cours et les modifications locales ;
 - permet de poser un *tag* sur certaines versions et ainsi pouvoir s'y référer facilement ;
-- permet d'avoir un historique des modifications. Car en général il est demandé aux utilisateur d'ajouter un petit commentaire à chaque nouvelle version.
+- permet d’avoir un historique des modifications. Car en général il est demandé aux utilisateurs d’ajouter un petit commentaire à chaque nouvelle version.
 
 enddiv
 
 ### concurrentes
 
-Les systèmes de versions sont déjà intéressants pour gérer ses projets personnels. Car ils permettent de mieux organiser celui-ci. De ne (presque) plus se poser de questions à propos des backups. Je dis presque parce qu'il faut quand même penser à protéger par backup son repository. Mais là où les systèmes de versions deviennent vraiment intéressant, c'est pour la gestion de projets à plusieurs.
+Les systèmes de versions sont déjà intéressants pour gérer ses projets personnels. Car ils permettent de mieux organiser celui-ci. De ne (presque) plus se poser de questions à propos des backups. Je dis presque parce qu'il faut quand même penser à protéger par backup son repository. Mais là où les systèmes de versions deviennent vraiment intéressants, c'est pour la gestion de projets à plusieurs.
 
 Commençons par un exemple avec un projet fait par deux personnes ; Alex et Béatrice.
-Sur un fichier contenant un liste de dieux *Lovecraftiens* :
+Sur un fichier contenant une liste de dieux *Lovecraftiens* :
 
 <div style="width: 10em; margin-left: auto; margin-right: auto">
 <code class="zsh">

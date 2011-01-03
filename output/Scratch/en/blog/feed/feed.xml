@@ -76,7 +76,7 @@ This is even more impressive knowi...&lt;/p&gt;</content>
       <uri>yannesposito.com</uri>
     </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/main.png" class="clean" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/main.png" class="clean" /&gt;&lt;/p&gt;
 
 
 &lt;div class="intro"&gt;
@@ -102,7 +102,9 @@ I am now suprised how easy it was.
 Some years ago it was far more difficult.
 Now I&amp;rsquo;m able to sign and encrypt my emails.&lt;/p&gt;
 
-&lt;/p&gt;</content>
+&lt;h2 id="why-is-it-important"&gt;Why is it important?&lt;/h2&gt;
+
+&lt;p&gt;Signing: it t...&lt;/p&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-06:/Scratch/en/blog/2010-10-06-New-Blog-Design-Constraints/</id>

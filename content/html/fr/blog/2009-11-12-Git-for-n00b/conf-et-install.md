@@ -138,6 +138,6 @@ git clone ssh://server/path/to/project
 
 Vous avez maintenant un répertoire sur votre ordinateur local. Il est versionné. Vous pouvez vous en rendre compte parcequ'à la racine (et à la racine seulement), il y a un répertoire `.git`. Ce répertoire contient tous les fichiers nécessaires au bon fonctionnement de [Git][git].
 
-Il ne reste plus qu'à savoir comment s'en servir maintenant pour obtenir toutes les jolie promesses faites dans la première partie.
+Il ne reste plus qu'à savoir comment s'en servir maintenant pour obtenir toutes les jolies promesses faites dans la première partie.
 
 [git]: http://git-scm.org "Git"

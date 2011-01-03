@@ -105,6 +105,6 @@ git commit -a -m "conflict resolved"
 </div>
 
 Maintenant vous êtes fin prêt pour utiliser [Git][git].
-Sauf que [Git][git], c'est un outil qui permet de faire beaucoup plus que juste ça. Alors nous allons maintenant voir des façon d'utiliser git qui étaient avant lui interdite d'utilisation pour les autres CVS.
+Sauf que [Git][git], c'est un outil qui permet de faire beaucoup plus que juste ça. Nous allons maintenant voir comment utiliser les fonctionnalités de Git qui n'étaient pas disponibles avec CVS et consorts.
 
 [git]: http://git-scm.org "Git"

@@ -80,7 +80,7 @@
                     <%= yield %>
                 </div>
             <% depth = depthOf(@item) %>
-                <% if depth > 2 or ( depth == 2 and @item.children.length > 0 ) %>
+                <% if depth > 3 or ( depth == 3 and @item.children.length > 0 ) %>
                     <div class="navigation">
                         <div class="navigationprev"><%= previousFor(@item) %></div>
                         <div class="navigationnext"><%= nextFor(@item) %></div>
