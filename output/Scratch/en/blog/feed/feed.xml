@@ -2,13 +2,72 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2010-10-26T12:30:58Z</updated>
+  <updated>2011-01-03T08:37:26Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2011-01-03:/Scratch/en/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/</id>
+    <title type="html">Why I sadly won't use CoffeeScript</title>
+    <published>2011-01-03T08:37:26Z</published>
+    <updated>2011-01-03T08:37:26Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/"/>
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/main.png" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; I tried &lt;a href="http://coffeescript.org"&gt;CoffeeScript&lt;/a&gt;. In the end there was more inconvenients than advantages to its use.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Recently I read &lt;a href="http://news.ycombinator.com/item?id=2053956"&gt;this entry&lt;/a&gt; on HackerNews.
+The most upvoted comment praised &lt;a href="http://coffeescript.org"&gt;CoffeeScript&lt;/a&gt;.
+Recently I used &lt;em&gt;a lot&lt;/em&gt; of javascript. After trying
+&lt;a href="http://sproutcore.com"&gt;Sroutcore&lt;/a&gt;,
+&lt;a href="http://cappuccino.org"&gt;Cappuccino&lt;/a&gt;,
+&lt;a href="documentcloud.github.com/backbone/"&gt;backbone.js&lt;/a&gt; &lt;em&gt;&amp;amp;&lt;/em&gt;
+&lt;/p&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2011-01-01:/Scratch/en/blog/2011-01-03-Happy-New-Year/</id>
+    <title type="html">Happy New Year</title>
+    <published>2011-01-01T06:55:54Z</published>
+    <updated>2011-01-01T06:55:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2011-01-03-Happy-New-Year/"/>
+    <content type="html">&lt;p&gt;Happy New Year!&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;01.01.11&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I was busy during the last months. 
+But I will revive a bit this blog.&lt;/p&gt;
+
+&lt;p&gt;I made a project to write book in markdown syntax and generating HTML and high quality PDF. I am not finished with this.&lt;/p&gt;
+
+&lt;p&gt;I had written an efficient &lt;em&gt;&amp;amp;&lt;/em&gt; simplistic MVC javascript framework.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Have a safe &lt;em&gt;&amp;amp;&lt;/em&gt; productive Year.&lt;br /&gt;
+May be in the end you should get the cake.  &lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;Blackmesa&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-26:/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/</id>
     <title type="html">LaTeX like macro for markdown</title>
@@ -76,7 +135,7 @@ This is even more impressive knowi...&lt;/p&gt;</content>
       <uri>yannesposito.com</uri>
     </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/main.png" class="clean" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/main.png" class="clean" /&gt;&lt;/p&gt;
 
 
 &lt;div class="intro"&gt;
@@ -102,9 +161,7 @@ I am now suprised how easy it was.
 Some years ago it was far more difficult.
 Now I&amp;rsquo;m able to sign and encrypt my emails.&lt;/p&gt;
 
-&lt;h2 id="why-is-it-important"&gt;Why is it important?&lt;/h2&gt;
-
-&lt;p&gt;Signing: it t...&lt;/p&gt;&lt;/p&gt;</content>
+&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-06:/Scratch/en/blog/2010-10-06-New-Blog-Design-Constraints/</id>
@@ -833,86 +890,6 @@ When somebody work with files without a versions system, the following happens f
 ...</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/"/>
-    <content type="html">&lt;h1 class="first" id="why-git-is-cool"&gt;Why Git is cool?&lt;/h1&gt;
-
-&lt;p&gt;Because with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; you can work on many part of some project totally independently. This is the true efficiency of decentralisation.&lt;/p&gt;
-
-&lt;p&gt;Each branch use the same directory. Then you can easily change your branch. You can also change branch when some files are modified. You can then dispatch your work on many different branches and merge them on one master branch at will.&lt;/p&gt;
-
-&lt;p&gt;Using the &lt;code&gt;git rebase&lt;/code&gt; you can decide which modifications should be forget or merged into only one modification.&lt;/p&gt;
-
-&lt;p&gt;What does it mean for real usage? You can focus on coding. For example, you can code, a fix for bug b01 and for bug b02 and code a feature f03. Once finished you can creat...&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
-    <content type="html">&lt;h1 class="first" id="here-we-go"&gt;Here we go!&lt;/h1&gt;
-
-&lt;p&gt;Here is one from many way to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. This method is sufficient to work on a project. Not there is many other &lt;em&gt;workflows&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id="basic-usage"&gt;Basic usage&lt;/h2&gt;
-
-&lt;p&gt;Work with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; immediately:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Get modification done by others &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-  &lt;li&gt;See details of these modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-  &lt;li&gt;Many times:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
-      &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-      &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
-    <content type="html">&lt;h1 class="first" id="command-list"&gt;Command List&lt;/h1&gt;
-
-&lt;h2 id="command-for-each-functionality"&gt;Command for each functionality&lt;/h2&gt;
-
-&lt;p&gt;In the first part, we saw the list of resolved problem by &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. To resume &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; should do:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;get others modifications,&lt;/li&gt;
-  &lt;li&gt;send modifications to others,&lt;/li&gt;
-  &lt;li&gt;get back in time,&lt;/li&gt;
-  &lt;li&gt;list differences between each version,&lt;/li&gt;
-  &lt;li&gt;name some versions in order to refer easily to them,&lt;/li&gt;
-  &lt;li&gt;write an historic of modifications,&lt;/li&gt;
-  &lt;li&gt;know who did what and when,&lt;/li&gt;
-  &lt;li&gt;manage conflicts,&lt;/li&gt;
-  &lt;li&gt;easily manage branches.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="get-others-modifications"&gt;get others modifications&lt;/h3&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;
-$ g...&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -987,6 +964,86 @@ $ sudo port install git-core
 git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
+    <content type="html">&lt;h1 class="first" id="here-we-go"&gt;Here we go!&lt;/h1&gt;
+
+&lt;p&gt;Here is one from many way to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. This method is sufficient to work on a project. Not there is many other &lt;em&gt;workflows&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id="basic-usage"&gt;Basic usage&lt;/h2&gt;
+
+&lt;p&gt;Work with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; immediately:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Get modification done by others &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+  &lt;li&gt;See details of these modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+  &lt;li&gt;Many times:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+      &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
+    <content type="html">&lt;h1 class="first" id="command-list"&gt;Command List&lt;/h1&gt;
+
+&lt;h2 id="command-for-each-functionality"&gt;Command for each functionality&lt;/h2&gt;
+
+&lt;p&gt;In the first part, we saw the list of resolved problem by &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. To resume &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; should do:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;get others modifications,&lt;/li&gt;
+  &lt;li&gt;send modifications to others,&lt;/li&gt;
+  &lt;li&gt;get back in time,&lt;/li&gt;
+  &lt;li&gt;list differences between each version,&lt;/li&gt;
+  &lt;li&gt;name some versions in order to refer easily to them,&lt;/li&gt;
+  &lt;li&gt;write an historic of modifications,&lt;/li&gt;
+  &lt;li&gt;know who did what and when,&lt;/li&gt;
+  &lt;li&gt;manage conflicts,&lt;/li&gt;
+  &lt;li&gt;easily manage branches.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="get-others-modifications"&gt;get others modifications&lt;/h3&gt;
+
+&lt;div&gt;&lt;pre class="twilight"&gt;
+$ g...&lt;/pre&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/"/>
+    <content type="html">&lt;h1 class="first" id="why-git-is-cool"&gt;Why Git is cool?&lt;/h1&gt;
+
+&lt;p&gt;Because with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; you can work on many part of some project totally independently. This is the true efficiency of decentralisation.&lt;/p&gt;
+
+&lt;p&gt;Each branch use the same directory. Then you can easily change your branch. You can also change branch when some files are modified. You can then dispatch your work on many different branches and merge them on one master branch at will.&lt;/p&gt;
+
+&lt;p&gt;Using the &lt;code&gt;git rebase&lt;/code&gt; you can decide which modifications should be forget or merged into only one modification.&lt;/p&gt;
+
+&lt;p&gt;What does it mean for real usage? You can focus on coding. For example, you can code, a fix for bug b01 and for bug b02 and code a feature f03. Once finished you can creat...&lt;/p&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2009-10-30:/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/</id>
     <title type="html">How to handle evil IE</title>
     <published>2009-10-30T20:34:46Z</published>
@@ -1034,48 +1091,5 @@ folder folder2
 &lt;p&gt;Booh&amp;hellip;.&lt;/p&gt;
 
 &lt;p&gt;In or...&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-10-26:/Scratch/en/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/</id>
-    <title type="html">Menu waiting to hide himself</title>
-    <published>2009-10-26T19:56:09Z</published>
-    <updated>2009-10-26T19:56:09Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/"/>
-    <content type="html">&lt;p&gt;I discussed &lt;a href="/Scratch/en/blog/2009-10-Focus-vs-Minimalism"&gt;earlier why I prefer to hide my navigation menu&lt;/a&gt;. I finally decided to hide it only after a short time. Just the time needed for a user to see it. But how make it disappear only when it is not used for some time?&lt;/p&gt;
-
-&lt;p&gt;Here is how to accomplish that easily.&lt;/p&gt;
-
-&lt;p&gt;HTML: &lt;/p&gt;
-
-&lt;div&gt;
-&lt;pre class="twilight"&gt;
-    &lt;span class="MetaTagAll"&gt;&lt;span class="MetaTagAll"&gt;&amp;lt;&lt;/span&gt;&lt;span class="MetaTagAll"&gt;div&lt;/span&gt; &lt;span class="MetaTagAll"&gt;&lt;span class="MetaTagAll"&gt;id&lt;/span&gt;&lt;span class="MetaTagAll"&gt;=&lt;/span&gt;&lt;span class="String"&gt;&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;&lt;span class="String"&gt;menuButton&lt;/span&gt;&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="MetaTagAll"&gt;&amp;gt;&lt;span class="MetaTagAll"&gt;&amp;lt;&lt;/span&gt;/&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-10-23:/Scratch/en/blog/2009-10-launch-daemon-from-command-line/</id>
-    <title type="html">launch daemon from command line</title>
-    <published>2009-10-23T08:53:16Z</published>
-    <updated>2009-10-23T08:53:16Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-launch-daemon-from-command-line/"/>
-    <content type="html">&lt;p&gt;Here is a tip, I don&amp;rsquo;t know why, but I almost always forgot how to do that.&lt;/p&gt;
-
-&lt;p&gt;When you want to launch a command and this command should not be killed after you close your terminal. Here is how to accomplish that from command line: &lt;/p&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;
-nohup cmd &lt;span class="Keyword"&gt;&amp;amp;&lt;/span&gt;
-&lt;/pre&gt;
-&lt;small&gt;where &lt;code&gt;cmd&lt;/code&gt; is your command.&lt;/small&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I let this command here for me and I wish it could also help someone.&lt;/p&gt;
-</content>
   </entry>
 </feed>
