@@ -103,7 +103,7 @@ end
 # =======================
 
 def blogimage(val,title="no name", divclass=nil)
-    if depthOf( @item ) == 3
+    if depthOf( @item ) == 4
         imgpath=@item.parent.path
     else
         imgpath=@item.path
@@ -134,26 +134,25 @@ def nextFor(page)
         sorted_children=getSortedChildren(page.parent)
         index=sorted_children.index(page)
         target=sorted_children[ index + 1]
-        if target.nil?
-            return nil
-        end
     end
+    return nil if target.nil?
     link_to(tradOf(:next)+%{&nbsp;<span class="nicer">»</span>}, target)
 end
 
 # return the previous page of a post containing many
 def previousFor(page)
-    if depthOf(page) < 3
-        return nil
+    case depthOf(page)
+    when 0..3 then return nil
+    when 4 then 
+        sorted_children=getSortedChildren(page.parent)
+        index=sorted_children.index(page)
+        if index==0
+            target=page.parent
+        else
+            target=sorted_children[ index - 1 ]
+        end
     end
-
-    sorted_children=getSortedChildren(page.parent)
-    index=sorted_children.index(page)
-    if index==0
-        target=page.parent
-    else
-        target=sorted_children[ index - 1 ]
-    end
+    return nil if target.nil?
     link_to(%{<span class="nicer">«</span>&nbsp;}+tradOf(:previous), target)
 end
 
