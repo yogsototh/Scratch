@@ -1,47 +1,98 @@
------
-title: Accueil
+---
+title: Bienvenue
 noSubMenu: true
------
-<% 
-    number_of_articles=5
-    number_of_char_for_resume=800
-    language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
-    last_articles = @items.select do |a| 
-            a.reps[0].path =~ /\/#{language}\// && a[:kind] == 'article'
-    end
-    last_articles=last_articles.sort { |x,y| y[:created_at] <=> x[:created_at] }[0..(number_of_articles-1)]
-%>
-
-<p>Bonjour et bienvenue sur mon site personnel.</p>
-
-<p>Voici l'<i>incipit</i><sup><a href="#footnote1">&dagger;</a></sup> de mes <%= number_of_articles %> derniers articles.</p>
-<p>Vous pouvez aussi chercher des entrées en utilisant le <a href="#tagcloud">nuage de mots clés (tag cloud)</a></p>
-
-Vous pouvez aussi vous abonner au flux RSS pour être certain d'être prévenu quand un nouvel article est posté. Pour plus d'explications vous pouvez vous référer à cette <a href="/Scratch/fr/rss">page</a>.
-
-<hr/>
-<p class="small"><span id="footnote1">&dagger;</span> approximativement les <%= number_of_char_for_resume %> premiers caractères.</p>
-
-<% last_articles.each do |a| %>
-    </div>
-    <h1>
-        <%= calendar_for( a[:created_at], language ) %>
-        <%= link_to(a[:title]+%{ <span class="nicer">»</span>}, a) %>
-    </h1>
-    <div class="corps">
-    <%= repair_html ( excerptize( a.reps[0].compiled_content, {:length => number_of_char_for_resume} ) ) %>
-    <p>
-       <%= link_to(%{en lire plus <span class="nicer">»</span>}, a) %>
-    </p>
+no_entete: true
+---
+<% content_for :title do %>
+<span style="font-weight: normal; font-size: 2.5em; margin-top: 0; line-height: 1ex">
+            <span style="letter-spacing:-.20em">Ya</span><span style="display:inline-block; width:.1em;"></span><span style="letter-spacing: -.12em">nn</span> 
+            <span style="letter-spacing: -.10em">Esposito</span> 
+        </span>
 <% end %>
-</div>
-<a href="#titre">&uarr; back to top &uarr;</a>
-<div class="corps">
-<% nbtags=20 %>
-   <h2>tag cloud (moins de <%= nbtags %> mots clés)</h2>
-    <%= tagCloud(nbtags) %>
-</div>
+<% content_for :subtitle do %>
+    <span style="letter-spacing: 2.7em; color: #111;">Yogsototh</span>
+<% end %>
 
-newcorps
+            <div class="flush"></div>
 
-N'hésitez pas à me contacter.
+        <div class="block left">
+            <h3>
+                <a href="/Scratch/fr/blog/" onclick="setLanguage('fr')">
+                    Blog
+                    <span class="nicer">»</span>
+                </a>
+            </h3>
+            <p>
+            Ordinateurs, philosophie <i>&amp;</i> des choses de la vie. 
+            </p>
+        </div>
+        <div class="block left">
+            <h3>
+                <a href="/Scratch/fr/softwares" onclick="setLanguage('fr')">
+                    Logiciels
+                    <span class="nicer">»</span>
+                </a>
+            </h3>
+            <p>
+            Des économiseurs d'écran,
+            un gestionnaire de mots de passe <i>&amp;</i>
+            des applications scientifiques.
+            </p>
+        </div>
+        <div class="block right">
+            <h3>
+                <a href="/Scratch/fr/about/contact" onclick="setLanguage('fr')">
+                    Contact
+                    <span class="nicer">»</span>
+                </a>
+            </h3>
+            <p>
+            Au diable la timidité, n'hésitez pas à me contacter, je serai ravi de <i>vous</i> parler.
+            </p>
+        </div>
+        <div class="flush"></div>
+        <div class="block left">
+            <h3>
+                <a href="http://j.mp/btfRJ2">
+                    Curriculum Vitæ
+                    <span class="nicer">»</span>
+                </a>
+            </h3>
+            <p>
+            Doctorat &rarr; Post Doc &rarr; Consultant<br/>
+            <i>Geek &rarr; G33K &rarr; G33|&lt;
+            </i>
+            </p>
+        </h4>
+        </div>
+        <div class="block left">
+            <h3>
+                <a href="http://yann.esposito.free.fr/enseignement/enseignement.php">
+                    Enseignement
+                    <span class="nicer">»</span>
+                </a>
+            </h3>
+            <p>
+            Informatique:<br/>
+            TD, TD <i>&amp;</i> solutions<br/>
+            BAC+1 à BAC+5<br/>
+            <i><a href="http://yann.esposito.free.fr/enseignement/projetrez0/projetrez0.html">Projet réseau anonyme
+                        <span class="nicer">»</span></a>
+            </i>
+             </p>
+        </div>
+        <div class="block right">
+            <h3>
+                <a href="http://web.me.com/yann.esposito/Perso/Welcome.html">
+                    Photos
+                    <span class="nicer">»</span>
+                </a>
+            </h3>
+            <p>
+            <a href="mailto:yannesposito@gmail.com?Subject=Permission%20site%20famille" >
+            Cliquez ici pour avoir le mot de passe.
+                    <span class="nicer">»</span>
+            </a>
+            </p>
+        </div>
+        <div class="flush"></div>
