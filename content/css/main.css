@@ -52,9 +52,6 @@ $codeBlockBackgroundColor: $behindColor
   color: $behindColor
   background:
     color: $lighterColor
-  border:
-    top: 1px solid $lighterColorBorderTop
-    bottom: 1px solid $lighterColorBorderBottom
   a
     color: $secondTextColor
   a:hover
