@@ -5,7 +5,7 @@ menupriority: 2
 noSubMenu: true
 -----
 <% 
-    number_of_articles=20
+    number_of_articles=5
     number_of_char_for_resume=800
     language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
     last_articles = @items.select do |a| 
@@ -23,26 +23,24 @@ end
 * [Archives <%=dArr%>](#archives)
 * [Two words about the content <%=dArr%>](#two-words-about-the-content)
 
-newcorps
+## Last <%= number_of_articles %> Articles
 
-## Last <%= number_of_articles %> articles
+enddiv
 
-<ul class="bloglist">
 <% last_articles.each do |a| %>
-    <li>
-        <%= calendar_for(a[:created_at], language) %>
-        <%
-        linktext=%{<span class="sc">#{a[:title]} <span class="nicer">»</span></span>}
-        if a[:subtitle]
-            linktext<<=%{ <br> <span class="small" style="margin-left: 5em"><span class="small"><em>#{a[:subtitle]}</em></span></span>}
-        end
-        %>
-        <%= link_to(linktext, a) %>
-    </li>
-<% end %>
-</ul>
+<h1> 
+    <%= calendar_for( a[:created_at], language ) %> 
+    <%= link_to(a[:title]+%{ <span class="nicer">»</span>}, a) %> 
+</h1>
 
-<a href="#archives">Archives <%=dArr%></a>
+<div class="corps">
+    <%= repair_html ( excerptize( a.reps[0].compiled_content, {:length => number_of_char_for_resume} ) ) %>
+    <div class="flush"></div>
+    <p>
+       <%= link_to(%{Read more <span class="nicer">»</span>}, a) %>
+    </p>
+</div>
+<% end %>
 
 newcorps
 
