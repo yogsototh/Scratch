@@ -11,8 +11,6 @@ author_uri: yannesposito.com
 
 Happy New Year!
 
-`01.01.11`
-
 I was busy during the last months. 
 But I will revive a bit this blog.
 
@@ -20,7 +18,4 @@ I made a project to write book in markdown syntax and generating HTML and high q
 
 I had written an efficient _&_ simplistic MVC javascript framework.
 
-> Have a safe _&_ productive Year.  
-> May be in the end you should get the cake.  
->  
-> _Blackmesa_
+Best wishes for _2011_!

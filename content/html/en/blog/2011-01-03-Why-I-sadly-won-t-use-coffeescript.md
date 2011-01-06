@@ -3,7 +3,7 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2011-01-03T10:37:26+02:00
-title: Why I sadly won't use CoffeeScript
+title: Why I won't use CoffeeScript (sadly)
 author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
@@ -18,10 +18,10 @@ begindiv(intro)
 enddiv
 
 Recently I read [this entry](http://news.ycombinator.com/item?id=2053956) on HackerNews.
-The most upvoted comment praised [CoffeeScript][cf].
+The most upvoted comment praised (within other things) [CoffeeScript][cf].
 Recently I used _a lot_ of javascript. After trying
-[Sroutcore](http://sproutcore.com),
-[Cappuccino](http://cappuccino.org),
+[Sproutcore](http://sproutcore.com),
+[Cappuccino](http://cappuccino.org), looking at
 [backbone.js](documentcloud.github.com/backbone/) _&_
 [javascriptMVC](javascriptmvc.com),
 I've finally decided to make my own minimal javascript MVC framework.[^1]
@@ -31,7 +31,7 @@ I've finally decided to make my own minimal javascript MVC framework.[^1]
 
 [^1]: I know it may not be the best nor productive decision, but I'd like to start from scratch and understand how things works under the hood.
 
-I had to fight the horrible syntax of javascript. It was like experiencing back-in-time travel: 
+I had to fight the horrible syntax of javascript. It was like experiencing a back-in-time travel: 
 
 - Verbose Java-like syntax, 
 - Strange and insanely Verbose Object Oriented Programming,
@@ -47,10 +47,10 @@ Here is my experience:
 1. I had to install `node.js` and use `npm` just to use CoffeeScript. It wasn't a big deal but it wasn't as straightfoward as I expected either.
 2. Existing javascript file are not coffee compatible. You _must_ first translate them.
 3. There is no script to help you translate old javascript file to coffee file. Bad news, I had to translate it by hand. 
-    Thanks to [vim][http://vim.org], it wasn't too hard to translate 90% of the javascript using some regexp. 
+    Thanks to [vim](http://vim.org), it wasn't too hard to translate 90% of the javascript using some regexp. 
     The `--watch` option of coffee was also really helpful to help in the translation. 
     But I had to write my own shell script in order to follow an entire directory to also accepts the subdirectories.
-4. An unexpected event. I made some meta-programming in javascript using `eval`. But in order to work the string in the eval must be written in pure javascript not in coffee. It was like writing in two different languages. Really not so good.
+4. An unexpected event. I made some meta-programming in javascript using `eval`. But in order to work, the string in the eval must be written in pure javascript not in coffee. It was like writing in two different languages. Really not so good.
 
 
 ## Conclusion
@@ -82,8 +82,10 @@ I am sad.
 I wanted so much to program Javascript like Ruby. 
 But in the end I think it is not for me. 
 I have to use the _horrible_ javascript syntax for now. 
-At least I would have preferred a complete Ruby2Js script for example. 
+At least I would have preferred a complete `ruby2js` script for example[^2]. 
 But I believe it would be a really hard task just to simulate the access of current class for example.
+
+[^2]: I know there is `rb2js`, but it doesn't handle the problem I talk about.
 
 
 Typically `@x` translate into `this.x`. But the following code will not do what I should expect. Call the foo function of the current class.

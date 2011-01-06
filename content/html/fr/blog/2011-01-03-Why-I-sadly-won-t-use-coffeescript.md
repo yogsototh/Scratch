@@ -31,7 +31,7 @@ Je me suis décidé à créer mon propre framework MVC minimal pour client javas
 
 [^1]: Je sais que ce n'est certainement ni la meilleure ni la plus productive des décisions. Mais j'aime bien fabriquer les choses pour savoir comment tout fonctionne dans le détail.
 
-Je me suis battu avec l'horrible syntaxe de javascript. C'était comme un voyage dans le temps:
+Je me suis battu avec l'horrible syntaxe de javascript. C'était comme revenir des années dans le passé :
 
 - une syntaxe à la Java très verbeuse ;
 - une syntaxe follement verbeuse et étrange pour la programmation orientée objet ;
@@ -48,7 +48,7 @@ Voici mon expérience :
 1. J'ai dû installer `node.js` et utiliser `npm` simplement pour utiliser CoffeeScript. Ce n'était pas très difficile, mais pas aussi facile que ce que j'aurai aimé.
 2. Les fichier javascript existants ne sont pas compatible avec coffee.
 3. Il n'y a pas script pour aider à transformer les anciens fichiers javascripts en fichier coffee. Du coups j'ai dû faire ça manuellement.
-    Merci à [vim][http://vim.org], il ne fut pas très difficile de transformer 90% des fichiers avec des expressions régulières.
+    Merci à [vim](http://vim.org), il ne fut pas très difficile de transformer 90% des fichiers avec des expressions régulières.
     L'option `--watch` de coffee était très utile pour debugger cette transformation.
     Cependant, il m'a fallu écrire mon propre script pour que tous mes fichiers soient _watchés_ dans tous les sous-répertoires.
 4. Quelque chose à laquelle je n'avais pas pensé. J'ai fait un peu de meta-programmation en javascript en utilisant `eval`. Mais pour que celà fonctionne correctement, il faut que la chaîne de caractère que je passe à `eval` soit codée en javascript et pas en coffee. C'est un peu comme écrire dans deux langages différents au même endroit. Ça ne me parraissait vraiment pas agréable.
@@ -79,12 +79,15 @@ Mais même si j'avais à travailler seul, je n'utiliserai certainement pas Coffe
 ## Digression
 
 
+
 Je suis attristé.
-Après avoir tant espérer pouvoir programmer Javascript comme avec Ruby.
+J'espérais tant pouvoir programmer Javascript avec une touche de Ruby.
 En fin de compte, cette solution n'est pas pour moi.
 Je vais devoir utiliser l'_horrible_ syntaxe javascript pour l'instant.
-À la limite j'aurai préféré un script Ruby2Js par exemple. 
-Mais il me semble que ça serait un travail très difficile rien que pour simuler l'accès à la classe courante.
+À la limite j'aurai préféré un script Ruby2Js par exemple[^2]. 
+Mais il me semble que ça serait un travail très difficile rien que pour simuler l'accès à la classe courante. 
+
+[^2]: Je sais qu'il existe un projet `rb2js`, mais il ne résoud pas le problème dont je parle.
 
 Typiquement `@x` est transformé en `this.x`. Mais le code suivant ne fait pas ce que j'attendrai de lui.
 

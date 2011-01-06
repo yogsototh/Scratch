@@ -11,7 +11,7 @@
   </author>
   <entry>
     <id>tag:yannesposito.com,2011-01-03:/Scratch/en/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/</id>
-    <title type="html">Why I sadly won't use CoffeeScript</title>
+    <title type="html">Why I won't use CoffeeScript (sadly)</title>
     <published>2011-01-03T08:37:26Z</published>
     <updated>2011-01-03T08:37:26Z</updated>
     <author>
@@ -32,12 +32,11 @@
 
 
 &lt;p&gt;Recently I read &lt;a href="http://news.ycombinator.com/item?id=2053956"&gt;this entry&lt;/a&gt; on HackerNews.
-The most upvoted comment praised &lt;a href="http://coffeescript.org"&gt;CoffeeScript&lt;/a&gt;.
+The most upvoted comment praised (within other things) &lt;a href="http://coffeescript.org"&gt;CoffeeScript&lt;/a&gt;.
 Recently I used &lt;em&gt;a lot&lt;/em&gt; of javascript. After trying
-&lt;a href="http://sproutcore.com"&gt;Sroutcore&lt;/a&gt;,
-&lt;a href="http://cappuccino.org"&gt;Cappuccino&lt;/a&gt;,
-&lt;a href="documentcloud.github.com/backbone/"&gt;backbone.js&lt;/a&gt; &lt;em&gt;&amp;amp;&lt;/em&gt;
-&lt;/p&gt;&lt;/p&gt;</content>
+&lt;a href="http://sproutcore.com"&gt;Sproutcore&lt;/a&gt;,
+&lt;a href="http://cappuccino.org"&gt;Cappuccino&lt;/a&gt;, looking at
+&lt;a href="documentcloud.github.com/backbone/"&gt;backbone.js&lt;/a&gt; &lt;em&gt;...&lt;/em&gt;&lt;/p&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-01-01:/Scratch/en/blog/2011-01-03-Happy-New-Year/</id>
@@ -51,8 +50,6 @@ Recently I used &lt;em&gt;a lot&lt;/em&gt; of javascript. After trying
     <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2011-01-03-Happy-New-Year/"/>
     <content type="html">&lt;p&gt;Happy New Year!&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;01.01.11&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;I was busy during the last months. 
 But I will revive a bit this blog.&lt;/p&gt;
 
@@ -60,13 +57,8 @@ But I will revive a bit this blog.&lt;/p&gt;
 
 &lt;p&gt;I had written an efficient &lt;em&gt;&amp;amp;&lt;/em&gt; simplistic MVC javascript framework.&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Have a safe &lt;em&gt;&amp;amp;&lt;/em&gt; productive Year.&lt;br /&gt;
-May be in the end you should get the cake.  &lt;/p&gt;
-
-  &lt;p&gt;&lt;em&gt;Blackmesa&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;</content>
+&lt;p&gt;Best wishes for &lt;em&gt;2011&lt;/em&gt;!&lt;/p&gt;
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-26:/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/</id>

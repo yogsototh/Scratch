@@ -13,8 +13,6 @@ author_uri: yannesposito.com
 en: Happy New Year!
 fr: Bonne et heureuse année !
 
-`01.01.11`
-
 en: I was busy during the last months. 
 en: But I will revive a bit this blog.
 fr: J'étais très occupé ces derniers mois.
@@ -29,9 +27,5 @@ fr: Je n'en ai pas encore terminé avec ça. Mais si je tarde trop, je communiqu
 en: I had written an efficient _&_ simplistic MVC javascript framework.
 fr: J'ai écrit un framework MVC pour application javascript simple mais néanmoins très rapide.
 
-en: > Have a safe _&_ productive Year.  
-en: > May be in the end you should get the cake.  
-fr: > Je vous souhaite une année saine et productive.  
-fr: > Si vous maintenez vos efforts vous aurez certainement droit au gâteau.  
->  
-> _Blackmesa_
+en: Best wishes for _2011_!
+fr: Meilleurs vœux à tous !
