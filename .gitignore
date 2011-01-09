@@ -2,10 +2,6 @@
 .DS_Store
 output.diff
 output/Scratch/map.yrf
-output/Scratch/fr
-output/Scratch/en
-output/Scratch/assets
-output/Scratch/sitemap.xml
 output/index.html
 tmp/
 recupen.pl
