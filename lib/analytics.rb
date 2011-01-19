@@ -14,9 +14,10 @@ def genAnalytics
 end
 
 def clicky_analytics
+    clickyid=66374971
 %{<script type="text/javascript">
         var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374905;
+        var clicky_site_id = #{clickyid};
         (function() {
               var s = document.createElement('script');
               s.type = 'text/javascript';
@@ -25,6 +26,6 @@ def clicky_analytics
               ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
         })();
 </script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374905ns.gif" /></p></noscript>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/#{clickyid}ns.gif" /></p></noscript>
     }
 end
