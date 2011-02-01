@@ -1,9 +1,9 @@
 
 def getMainpage
-    if @item.parent.nil? or @item.parent.parent.nil?
+    if @item.parent.nil? or @item.parent.parent.nil? or @item.parent.parent.parent.nil?
         return
     end
-    if @item.parent.parent.parent.nil?
+    if @item.parent.parent.parent.parent.nil?
         return @item
     else
         return @item.parent
