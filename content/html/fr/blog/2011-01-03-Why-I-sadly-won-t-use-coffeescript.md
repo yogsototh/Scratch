@@ -13,7 +13,7 @@ author_uri: yannesposito.com
 begindiv(intro)
 
 
-<%= tlal %> J'ai essayé [CoffeeScript][cf]. Au final j'ai trouvé que ses inconvénients étaient supérieurs à ses avantages. 
+<%= tlal %> Qu'est-ce qui n'allait pas avec Coffeescript? La meta-programmation, il faut le "vendre" aux autres, une nouvelle étape de compilation intermédiaire sans fournir les avantages de Cappuccino, la sensation que c'est un peu instable.
 
 enddiv
 
@@ -39,6 +39,7 @@ Je me suis battu avec l'horrible syntaxe de javascript. C'était comme revenir d
 - etc... 
 
 J'étais tellement ennuyé par tous ces point qu'il était arrivé un moment où je commençais à vouloir faire mon propre CoffeeScript.
+
 
 J'ai fini une première version de mon framework MVC en javascript et j'ai appris l'existence de CoffeeScript. Merci à git, j'ai immédiatement créé une nouvelle branche dans le seul but d'essayer CoffeeScript.
 
@@ -72,9 +73,12 @@ Inconvénients :
     - de se souvenir de lancer un script à chaque session de codage ;
     - d'apprendre un autre language proche de ruby.
 
-Le dernier point étant de mon point de vue le plus gros problème.
+Les deux derniers points étant de mon point de vue les plus problématiques.
 
-Mais même si j'avais à travailler seul, je n'utiliserai certainement pas CoffeeScript. Il s'agit d'un tier dont la moindre mise à jour pourrait rendre mon code inutilisable. Cette situation m'est déjà arrivée plusieurs fois et c'est très désagrable. Beaucoup plus que coder avec une mauvaise syntaxe.
+Mais même si j'avais à travailler seul, je n'utiliserai certainement pas CoffeeScript. 
+Il s'agit d'un tier dont la moindre mise à jour pourrait rendre mon code inutilisable. 
+Cette situation m'est déjà arrivée plusieurs fois et c'est très désagrable. 
+Beaucoup plus que coder avec une mauvaise syntaxe.
 
 ## Digression
 

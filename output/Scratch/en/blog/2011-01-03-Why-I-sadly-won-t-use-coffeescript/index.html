@@ -63,14 +63,14 @@
 <div class="intro">
 
 
-<p><span class="sc"><abbr title="Too long; don't read">tl;dr</abbr>: </span> I tried <a href="http://coffeescript.org">CoffeeScript</a>. In the end there was more inconvenients than advantages to its use.</p>
+<p><span class="sc"><abbr title="Too long; don't read">tl;dr</abbr>: </span> I would have loved to program client side using a Ruby-like syntax. But in the end, CoffeScript raised more disavantages than advantages.</p>
 
 
 </div>
 
 
 <p>Recently I read <a href="http://news.ycombinator.com/item?id=2053956">this entry</a> on HackerNews.
-The most upvoted comment praised (within other things) <a href="http://coffeescript.org">CoffeeScript</a>.
+The most upvoted comment praised (within other) <a href="http://coffeescript.org">CoffeeScript</a>.
 Recently I used <em>a lot</em> of javascript. After trying
 <a href="http://sproutcore.com">Sproutcore</a>,
 <a href="http://cappuccino.org">Cappuccino</a>, looking at
@@ -87,19 +87,21 @@ I&rsquo;ve finally decided to make my own minimal javascript MVC framework.<sup 
   <li>etc&hellip; </li>
 </ul>
 
-<p>I was so annoyed by this that at a point, I had thinked about creating my own CoffeeScript.</p>
+<p>It was so annoying at a point, I had thinked about creating my <em>own</em> CoffeeScript.</p>
 
-<p>I&rsquo;ve finished a first draft of my MVC javascript  framework and learn about the existence of CoffeeScript. Praise git I immediately create a new branch with only goal to try CoffeeScript.</p>
+<p>I&rsquo;d finished a first draft of my MVC javascript framework. 
+Just after I learned about the existence of CoffeeScript, I immediately created a new git branch to try it.</p>
 
 <p>Here is my experience:</p>
 
 <ol>
   <li>I had to install <code>node.js</code> and use <code>npm</code> just to use CoffeeScript. It wasn&rsquo;t a big deal but it wasn&rsquo;t as straightfoward as I expected either.</li>
-  <li>Existing javascript file are not coffee compatible. You <em>must</em> first translate them.</li>
-  <li>There is no script to help you translate old javascript file to coffee file. Bad news, I had to translate it by hand. 
+  <li>Existing javascript file are not coffee compatible. 
+ I <em>had</em> to translate them by hand. 
+ There were no script to help me in this process.
  Thanks to <a href="http://vim.org">vim</a>, it wasn&rsquo;t too hard to translate 90% of the javascript using some regexp. 
  The <code>--watch</code> option of coffee was also really helpful to help in the translation. 
- But I had to write my own shell script in order to follow an entire directory to also accepts the subdirectories.</li>
+ But I had to write my own shell script in order to follow an entire directory tree.</li>
   <li>An unexpected event. I made some meta-programming in javascript using <code>eval</code>. But in order to work, the string in the eval must be written in pure javascript not in coffee. It was like writing in two different languages. Really not so good.</li>
 </ol>
 
@@ -112,11 +114,11 @@ I&rsquo;ve finally decided to make my own minimal javascript MVC framework.<sup 
   <li>Verbosity: I gained 14% line, 22% words, 14% characters</li>
 </ul>
 
-<p>Inconvenients:</p>
+<p>Disadvantages:</p>
 
 <ul>
   <li>Added another compilation step to see how my code behave on the website.</li>
-  <li>Ease of use: I have to launch some script to generate on change every of my javascript file</li>
+  <li>I had to launch some script to generate on change every of my javascript file</li>
   <li>I have to learn another Ruby-like language,</li>
   <li>meta-programming become a poor experience,</li>
   <li>I must convince people working with me to: 
@@ -128,14 +130,17 @@ I&rsquo;ve finally decided to make my own minimal javascript MVC framework.<sup 
   </li>
 </ul>
 
-<p>The last one is definitively the biggest problem for me.</p>
+<p>The last two point were definitively really problematic for me.</p>
 
-<p>But even if I&rsquo;ll have to work alone, I certainly won&rsquo;t use CoffeeScript either. CoffeeScript is a third party and any of their update can break my code. I experienced this kind of situation many times, and it is very annoying. Far more than coding with a bad syntax.</p>
+<p>But even if I&rsquo;ll have to work alone, I certainly won&rsquo;t use CoffeeScript either. 
+CoffeeScript is a third party and any of their update can break my code. 
+I experienced this kind of situation many times, and it is very annoying. 
+Far more than coding with a bad syntax.</p>
 
 <h2 id="digression">Digression</h2>
 
 <p>I am sad. 
-I wanted so much to program Javascript like Ruby. 
+I wanted so much to program on Web Client with a Ruby-like syntax. 
 But in the end I think it is not for me. 
 I have to use the <em>horrible</em> javascript syntax for now. 
 At least I would have preferred a complete <code>ruby2js</code> script for example<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. 

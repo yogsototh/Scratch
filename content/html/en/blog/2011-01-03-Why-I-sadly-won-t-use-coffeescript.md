@@ -12,13 +12,13 @@ author_uri: yannesposito.com
 
 begindiv(intro)
 
-<%= tldr %> I tried [CoffeeScript][cf]. In the end there was more inconvenients than advantages to its use.
+<%= tldr %> I would have loved to program client side using a Ruby-like syntax. But in the end, CoffeScript raised more disavantages than advantages.
 
 
 enddiv
 
 Recently I read [this entry](http://news.ycombinator.com/item?id=2053956) on HackerNews.
-The most upvoted comment praised (within other things) [CoffeeScript][cf].
+The most upvoted comment praised (within other) [CoffeeScript][cf].
 Recently I used _a lot_ of javascript. After trying
 [Sproutcore](http://sproutcore.com),
 [Cappuccino](http://cappuccino.org), looking at
@@ -38,18 +38,21 @@ I had to fight the horrible syntax of javascript. It was like experiencing a bac
 - No easy way to refer to current instance of a class (`this` doesn't work really well),
 - etc... 
 
-I was so annoyed by this that at a point, I had thinked about creating my own CoffeeScript.
+It was so annoying at a point, I had thinked about creating my _own_ CoffeeScript.
 
-I've finished a first draft of my MVC javascript  framework and learn about the existence of CoffeeScript. Praise git I immediately create a new branch with only goal to try CoffeeScript.
+I'd finished a first draft of my MVC javascript framework. 
+Just after I learned about the existence of CoffeeScript, I immediately created a new git branch to try it.
+
 
 Here is my experience:
 
 1. I had to install `node.js` and use `npm` just to use CoffeeScript. It wasn't a big deal but it wasn't as straightfoward as I expected either.
-2. Existing javascript file are not coffee compatible. You _must_ first translate them.
-3. There is no script to help you translate old javascript file to coffee file. Bad news, I had to translate it by hand. 
+2. Existing javascript file are not coffee compatible. 
+    I _had_ to translate them by hand. 
+    There were no script to help me in this process.
     Thanks to [vim](http://vim.org), it wasn't too hard to translate 90% of the javascript using some regexp. 
     The `--watch` option of coffee was also really helpful to help in the translation. 
-    But I had to write my own shell script in order to follow an entire directory to also accepts the subdirectories.
+    But I had to write my own shell script in order to follow an entire directory tree.
 4. An unexpected event. I made some meta-programming in javascript using `eval`. But in order to work, the string in the eval must be written in pure javascript not in coffee. It was like writing in two different languages. Really not so good.
 
 
@@ -60,10 +63,10 @@ Advantages:
 - Readability: clearly it resolved most of javascript syntax problems
 - Verbosity: I gained 14% line, 22% words, 14% characters
 
-Inconvenients:
+Disadvantages:
 
 - Added another compilation step to see how my code behave on the website.
-- Ease of use: I have to launch some script to generate on change every of my javascript file
+- I had to launch some script to generate on change every of my javascript file
 - I have to learn another Ruby-like language,
 - meta-programming become a poor experience,
 - I must convince people working with me to: 
@@ -72,14 +75,17 @@ Inconvenients:
     - learn and use another ruby-like language
 
 
-The last one is definitively the biggest problem for me.
+The last two point were definitively really problematic for me.
 
-But even if I'll have to work alone, I certainly won't use CoffeeScript either. CoffeeScript is a third party and any of their update can break my code. I experienced this kind of situation many times, and it is very annoying. Far more than coding with a bad syntax.
+But even if I'll have to work alone, I certainly won't use CoffeeScript either. 
+CoffeeScript is a third party and any of their update can break my code. 
+I experienced this kind of situation many times, and it is very annoying. 
+Far more than coding with a bad syntax.
 
 ## Digression
 
 I am sad. 
-I wanted so much to program Javascript like Ruby. 
+I wanted so much to program on Web Client with a Ruby-like syntax. 
 But in the end I think it is not for me. 
 I have to use the _horrible_ javascript syntax for now. 
 At least I would have preferred a complete `ruby2js` script for example[^2]. 
