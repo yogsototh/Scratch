@@ -13,14 +13,14 @@ author_uri: yannesposito.com
 
 begindiv(intro)
 
-en: <%= tldr %> I tried [CoffeeScript][cf]. In the end there was more inconvenients than advantages to its use.
+en: <%= tldr %> I would have loved to program client side using a Ruby-like syntax. But in the end, CoffeScript raised more disavantages than advantages.
 
-fr: <%= tlal %> J'ai essayé [CoffeeScript][cf]. Au final j'ai trouvé que ses inconvénients étaient supérieurs à ses avantages. 
+fr: <%= tlal %> Qu'est-ce qui n'allait pas avec Coffeescript? La meta-programmation, il faut le "vendre" aux autres, une nouvelle étape de compilation intermédiaire sans fournir les avantages de Cappuccino, la sensation que c'est un peu instable.
 
 enddiv
 
 en: Recently I read [this entry](http://news.ycombinator.com/item?id=2053956) on HackerNews.
-en: The most upvoted comment praised (within other things) [CoffeeScript][cf].
+en: The most upvoted comment praised (within other) [CoffeeScript][cf].
 en: Recently I used _a lot_ of javascript. After trying
 en: [Sproutcore](http://sproutcore.com),
 en: [Cappuccino](http://cappuccino.org), looking at
@@ -54,21 +54,24 @@ fr: - une syntaxe follement verbeuse et étrange pour la programmation orientée
 fr: - pas de manière naturelle de se référer à l'instance d'une classe ;
 fr: - etc... 
 
-en: I was so annoyed by this that at a point, I had thinked about creating my own CoffeeScript.
+en: It was so annoying at a point, I had thinked about creating my _own_ CoffeeScript.
 fr: J'étais tellement ennuyé par tous ces point qu'il était arrivé un moment où je commençais à vouloir faire mon propre CoffeeScript.
 
-en: I've finished a first draft of my MVC javascript  framework and learn about the existence of CoffeeScript. Praise git I immediately create a new branch with only goal to try CoffeeScript.
+en: I'd finished a first draft of my MVC javascript framework. 
+en: Just after I learned about the existence of CoffeeScript, I immediately created a new git branch to try it.
+
 fr: J'ai fini une première version de mon framework MVC en javascript et j'ai appris l'existence de CoffeeScript. Merci à git, j'ai immédiatement créé une nouvelle branche dans le seul but d'essayer CoffeeScript.
 
 en: Here is my experience:
 fr: Voici mon expérience :
 
 en: 1. I had to install `node.js` and use `npm` just to use CoffeeScript. It wasn't a big deal but it wasn't as straightfoward as I expected either.
-en: 2. Existing javascript file are not coffee compatible. You _must_ first translate them.
-en: 3. There is no script to help you translate old javascript file to coffee file. Bad news, I had to translate it by hand. 
+en: 2. Existing javascript file are not coffee compatible. 
+en:     I _had_ to translate them by hand. 
+en:     There were no script to help me in this process.
 en:     Thanks to [vim](http://vim.org), it wasn't too hard to translate 90% of the javascript using some regexp. 
 en:     The `--watch` option of coffee was also really helpful to help in the translation. 
-en:     But I had to write my own shell script in order to follow an entire directory to also accepts the subdirectories.
+en:     But I had to write my own shell script in order to follow an entire directory tree.
 en: 4. An unexpected event. I made some meta-programming in javascript using `eval`. But in order to work, the string in the eval must be written in pure javascript not in coffee. It was like writing in two different languages. Really not so good.
 
 fr: 1. J'ai dû installer `node.js` et utiliser `npm` simplement pour utiliser CoffeeScript. Ce n'était pas très difficile, mais pas aussi facile que ce que j'aurai aimé.
@@ -89,11 +92,11 @@ en: - Verbosity: I gained 14% line, 22% words, 14% characters
 fr: - Code plus lisible : CoffeeScript résoud la majorité des problèmes de syntaxes de javascript
 fr: - Concision : j'ai gagné 14% de lignes, 22% de mots et 14% de caractères.
 
-en: Inconvenients:
+en: Disadvantages:
 fr: Inconvénients :
 
 en: - Added another compilation step to see how my code behave on the website.
-en: - Ease of use: I have to launch some script to generate on change every of my javascript file
+en: - I had to launch some script to generate on change every of my javascript file
 en: - I have to learn another Ruby-like language,
 en: - meta-programming become a poor experience,
 en: - I must convince people working with me to: 
@@ -110,16 +113,22 @@ fr:     - d'installer `node.js`, `npm` et CoffeeScript ;
 fr:     - de se souvenir de lancer un script à chaque session de codage ;
 fr:     - d'apprendre un autre language proche de ruby.
 
-en: The last one is definitively the biggest problem for me.
-fr: Le dernier point étant de mon point de vue le plus gros problème.
+en: The last two point were definitively really problematic for me.
+fr: Les deux derniers points étant de mon point de vue les plus problématiques.
 
-en: But even if I'll have to work alone, I certainly won't use CoffeeScript either. CoffeeScript is a third party and any of their update can break my code. I experienced this kind of situation many times, and it is very annoying. Far more than coding with a bad syntax.
-fr: Mais même si j'avais à travailler seul, je n'utiliserai certainement pas CoffeeScript. Il s'agit d'un tier dont la moindre mise à jour pourrait rendre mon code inutilisable. Cette situation m'est déjà arrivée plusieurs fois et c'est très désagrable. Beaucoup plus que coder avec une mauvaise syntaxe.
+en: But even if I'll have to work alone, I certainly won't use CoffeeScript either. 
+en: CoffeeScript is a third party and any of their update can break my code. 
+en: I experienced this kind of situation many times, and it is very annoying. 
+en: Far more than coding with a bad syntax.
+fr: Mais même si j'avais à travailler seul, je n'utiliserai certainement pas CoffeeScript. 
+fr: Il s'agit d'un tier dont la moindre mise à jour pourrait rendre mon code inutilisable. 
+fr: Cette situation m'est déjà arrivée plusieurs fois et c'est très désagrable. 
+fr: Beaucoup plus que coder avec une mauvaise syntaxe.
 
 ## Digression
 
 en: I am sad. 
-en: I wanted so much to program Javascript like Ruby. 
+en: I wanted so much to program on Web Client with a Ruby-like syntax. 
 en: But in the end I think it is not for me. 
 en: I have to use the _horrible_ javascript syntax for now. 
 en: At least I would have preferred a complete `ruby2js` script for example[^2]. 
