@@ -11,6 +11,7 @@ macros:
   latex: '<span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>'
 # tags:
 -----
+
 begindiv(intro)
 
 <%= tldr %> I made a simple macro system for my blog. Now I juste have to write %<span></span>latex and it show as %latex.
@@ -18,6 +19,9 @@ begindiv(intro)
 
 enddiv
 
+I added a macro system for my blog system.
+When we are used to %latex this lack can be hard to handle.
+Particularly when using mathematical notations.
 In the header of my files I simply write:
 
 <code class="yaml">

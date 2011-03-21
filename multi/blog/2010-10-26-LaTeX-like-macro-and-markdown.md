@@ -12,6 +12,7 @@ macros:
   latex: '<span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>'
 # tags:
 -----
+
 begindiv(intro)
 
 en: <%= tldr %> I made a simple macro system for my blog. Now I juste have to write %<span></span>latex and it show as %latex.
@@ -20,7 +21,15 @@ fr: <%= tlal %> J'ai fait un système simple de macros pour mon blog. Par exempl
 
 enddiv
 
+fr: J'ai ajouter un système de macro pour mon système de blog.
+fr: Lorsqu'on est habitué à %latex et que l'on commence à écrire des articles
+fr: un peu conséquent avec des notations mathématiques,
+fr: les macros deviennent vite quelque chose d'indispensable.
+fr: 
 fr: Dans l'entête de mes fichiers j'écris simplement:
+en: I added a macro system for my blog system.
+en: When we are used to %latex this lack can be hard to handle.
+en: Particularly when using mathematical notations.
 en: In the header of my files I simply write:
 
 <code class="yaml">
