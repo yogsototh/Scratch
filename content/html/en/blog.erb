@@ -19,13 +19,13 @@ end
 %>
 
 <ul>
-    en: <li> <a href="#last-<%= number_of_articles %>-articles"><%= number_of_articles %> latest articles <%=dArr%></a> </li>
+<li> <a href="#last-articles"><%= number_of_articles %> latest articles <%=dArr%></a> </li>
 <li> <a href="#tagcloud">Tag Cloud <%=dArr%></a></li>
-* <a href="#archives">A<li>chives <%=dArr%></a></li>
+<li> <a href="#archives">Achives <%=dArr%></a></li>
 <li> <a href="#two-words-about-the-content">Two words about the content <%=dArr%></a></li>
 </ul>
 
-<h2>
+<h2 id="last-articles">
 Last <%= number_of_articles %> Articles
 </h2>
 
@@ -39,6 +39,11 @@ Last <%= number_of_articles %> Articles
 
 <div class="corps">
 
+    <% 
+        puts "%%%"
+        puts excerptize( a.reps[0].compiled_content, {:length => number_of_char_for_resume}) 
+        puts "%%%"
+    %>
     <%= repair_html ( excerptize( a.reps[0].compiled_content, {:length => number_of_char_for_resume} ) ) %>
 
     <div class="flush"></div>
@@ -57,11 +62,11 @@ Last <%= number_of_articles %> Articles
 </div>
 </div>
 
-<h2>Archives</h2>
+<h2 id="archives">Archives</h2>
 
 <%= generateBlogSubMenu(language) %>
 
-<h2> 
+<h2 id="two-words-about-the-content"> 
 Two words about the content
 </h2>
 

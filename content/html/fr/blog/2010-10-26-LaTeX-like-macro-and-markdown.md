@@ -14,7 +14,6 @@ macros:
 
 begindiv(intro)
 
-
 <%= tlal %> J'ai fait un système simple de macros pour mon blog. Par exemple, il me suffit d'écrire %<span></span>latex et ça affiche %latex.
 
 enddiv

@@ -19,16 +19,16 @@ end
 %>
 
 <ul>
-    en: <li> <a href="#last-<%= number_of_articles %>-articles"><%= number_of_articles %> latest articles <%=dArr%></a> </li>
-fr: <li> <a href="#les-<%= number_of_articles %>-derniers-articles">Les <%= number_of_articles %> derniers articles <%=dArr%></a></li>
+en: <li> <a href="#last-articles"><%= number_of_articles %> latest articles <%=dArr%></a> </li>
+fr: <li> <a href="#last-articles">Les <%= number_of_articles %> derniers articles <%=dArr%></a></li>
 en: <li> <a href="#tagcloud">Tag Cloud <%=dArr%></a></li>
 fr: <li> <a href="#tagcloud">Nuage de mots clés <%=dArr%></a></li>
-* <a href="#archives">A<li>chives <%=dArr%></a></li>
+<li> <a href="#archives">Achives <%=dArr%></a></li>
 en: <li> <a href="#two-words-about-the-content">Two words about the content <%=dArr%></a></li>
 fr: <li> <a href="#un-petit-mot-sur-le-contenu">Un petit mot sur le contenu <%=dArr%></a></li>
 </ul>
 
-<h2>
+<h2 id="last-articles">
 en: Last <%= number_of_articles %> Articles
 fr: Les <%= number_of_articles %> derniers articles
 </h2>
@@ -43,6 +43,11 @@ fr: Les <%= number_of_articles %> derniers articles
 
 <div class="corps">
 
+    <% 
+        puts "%%%"
+        puts excerptize( a.reps[0].compiled_content, {:length => number_of_char_for_resume}) 
+        puts "%%%"
+    %>
     <%= repair_html ( excerptize( a.reps[0].compiled_content, {:length => number_of_char_for_resume} ) ) %>
 
     <div class="flush"></div>
@@ -62,12 +67,13 @@ en:         <%= link_to(%{Read more <span class="nicer">»</span>}, a) %>
 </div>
 </div>
 
-<h2>Archives</h2>
+<h2 id="archives">Archives</h2>
 
 <%= generateBlogSubMenu(language) %>
 
-<h2> 
+en: <h2 id="two-words-about-the-content"> 
 en: Two words about the content
+fr: <h2 id="un-petit-mot-sur-le-contenu"> 
 fr: Un petit mot sur le contenu
 </h2>
 
