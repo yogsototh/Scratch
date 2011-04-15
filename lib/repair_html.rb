@@ -24,7 +24,26 @@ def repair_html( html )
         end
     end
     res=html.sub(/<[^>]*$/m,'')
-    depth-=1
+    depth -= 1
+    if (depth < 0) 
+        parents=[]
+        depth=0
+        html.scan( %r{<(/?)(\w*)[^>]*(/?)>} ).each do |m|
+            if m[2] == "/"
+                puts 'IGNORE: <'+m[0]+m[1]+m[2]+'> ' + depth.to_s
+                next
+            end
+            if m[0] == "" 
+                parents[depth]=m[1]
+                depth+=1
+                puts '<'+m[0]+m[1]+'> ' + depth.to_s
+                puts 'parents='+parents.join('; ')
+            else
+                depth-=1
+                puts '<'+m[0]+m[1]+'> ' + depth.to_s
+            end
+        end
+    end
     depth.downto(0).each { |x| res<<= %{</#{parents[x]}>} }
     res
 end
