@@ -80,7 +80,7 @@ def generateSubMenu()
         page=@item
     end
 
-    if @item[:kind] == :article
+    if @item[:kind].to_s == "article"
         key=:subtitle
     else
         key=:title
