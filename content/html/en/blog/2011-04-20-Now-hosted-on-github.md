@@ -2,17 +2,13 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2011-04-20T15:50:49+02:00
-title: Now hosted on github
+created_at:     2011-04-20T17:22:15+02:00
+title: Hébergement github
 author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
 -----
 <%= blogimage("main.png","Title image") %>
 
-begindiv(intro)
+tldr %> I am now hosted on github.
 
-<%= tldr %>
-
-
-enddiv
