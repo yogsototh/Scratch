@@ -2,6 +2,11 @@
 
 rootdir=$HOME/Sites/webroot
 
+function debug {
+    print -- $*
+    eval $*
+}
+
 cd $rootdir || { print -- "Unable to go to $HOME/Sites/webroot"; exit 1 }
 git co master || { exit 1 }
 git pull || { exit 1 }
@@ -16,26 +21,25 @@ else
 fi
 
 # update & push gh-pages
-git co gh-pages
+debug git co gh-pages
 (( $? == 0 )) || { exit 1 }
-\rm -rf *(N)
+debug \rm -rf *(N)
 (( $? == 0 )) || { exit 1 }
-git co master output
+debug git co master output
 (( $? == 0 )) || { exit 1 }
-git unstage output
+debug git unstage output
+debug mv output/index.html .
 (( $? == 0 )) || { exit 1 }
-mv output/index.html .
+debug mv output/n3blog/* .
 (( $? == 0 )) || { exit 1 }
-mv output/n3blog/* .
+debug \rm -rf output
 (( $? == 0 )) || { exit 1 }
-\rm -rf output
+debug cp en/error/404-not_found/index.html 404.html
 (( $? == 0 )) || { exit 1 }
-cp en/error/404-not_found/index.html 404.html
+debug echo "yannesposito.com" > CNAME
 (( $? == 0 )) || { exit 1 }
-echo "yannesposito.com" > CNAME
+debug git add .
 (( $? == 0 )) || { exit 1 }
-git add .
+debug git commit -m '"updated website"'
 (( $? == 0 )) || { exit 1 }
-git commit -m 'updated website'
-(( $? == 0 )) || { exit 1 }
-git push
+debug git push
