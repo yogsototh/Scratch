@@ -7,6 +7,8 @@ function debug {
     eval $*
 }
 
+current_branch=$(git branch | egrep '^\*' | awk '{print $2}')
+
 cd $rootdir || { print -- "Unable to go to $HOME/Sites/webroot"; exit 1 }
 git co master || { exit 1 }
 git pull || { exit 1 }
@@ -43,3 +45,5 @@ debug git add .
 debug git commit -m '"updated website"'
 (( $? == 0 )) || { exit 1 }
 debug git push origin gh-pages:gh-pages
+(( $? == 0 )) || { exit 1 }
+debug git co $current_branch
