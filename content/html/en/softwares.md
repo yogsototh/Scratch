@@ -5,17 +5,17 @@ noSubMenu: true
 hidden: false
 -----
 <%= block( %{YPassword}, 
-    %{/n3blog/en/softwares/ypassword}, 
+    %{/Scratch/en/softwares/ypassword}, 
     %{YPassword is a password manager that make your web life more secure} 
 ) %>
 
 <%= block( %{YAquaBubbles}, 
-   %{/n3blog/en/softwares/yaquabubbles}, 
+   %{/Scratch/en/softwares/yaquabubbles}, 
    %{Nice underwater floating bubbles}
     ) %>
 
 <%= block( %{YClock}, 
-   %{/n3blog/en/softwares/yclock}, 
+   %{/Scratch/en/softwares/yclock}, 
    %{Biohazard logo inspired clock},
     "right"
     ) %>

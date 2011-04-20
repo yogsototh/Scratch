@@ -16,7 +16,7 @@ tags:
 -----
 
 Voici un moyen très simple de ne plus être comptabilisé dans les visites de son propre site.
-Tout d'abord, vous devriez jeter un coup d'œil sur comment [je gère les systèmes de récupération de statistiques](/n3blog/fr/blog/2010-06-17-track-events-with-google-analytics). 
+Tout d'abord, vous devriez jeter un coup d'œil sur comment [je gère les systèmes de récupération de statistiques](/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics). 
 Je centralise tout dans un seul fichier javascript ce qui facilite le travail.
 
 Cette méthode nécessite l'utilisation de `jquery-cookie`.

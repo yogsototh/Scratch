@@ -111,7 +111,7 @@ use <span class="Support">Rack</span>::<span class="Entity">TryStatic</span>,
     <span class="Constant"><span class="Constant">:</span>urls</span> =&gt; <span class="String"><span class="String">%w[</span>/<span class="String">]</span></span>,                                 <span class="Comment"><span class="Comment">#</span> match all requests </span>
     <span class="Constant"><span class="Constant">:</span>try</span> =&gt; [<span class="String"><span class="String">'</span>.html<span class="String">'</span></span>, <span class="String"><span class="String">'</span>index.html<span class="String">'</span></span>, <span class="String"><span class="String">'</span>/index.html<span class="String">'</span></span>]  <span class="Comment"><span class="Comment">#</span> try these postfixes sequentially</span>
 
-errorFile<span class="Keyword">=</span><span class="String"><span class="String">'</span>output/n3blog/en/error/404-not_found/index.html<span class="String">'</span></span>
+errorFile<span class="Keyword">=</span><span class="String"><span class="String">'</span>output/Scratch/en/error/404-not_found/index.html<span class="String">'</span></span>
 run lambda { [<span class="Constant">404</span>, {
                 <span class="String"><span class="String">&quot;</span>Last-Modified<span class="String">&quot;</span></span>  =&gt; <span class="Support">File</span>.<span class="Entity">mtime</span>(errorFile).<span class="Entity">httpdate</span>,
                 <span class="String"><span class="String">&quot;</span>Content-Type<span class="String">&quot;</span></span>   =&gt; <span class="String"><span class="String">&quot;</span>text/html<span class="String">&quot;</span></span>,

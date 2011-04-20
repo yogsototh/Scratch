@@ -19,10 +19,10 @@ fr:   - cacher
 -----
 
 fr: Voici un moyen très simple de ne plus être comptabilisé dans les visites de son propre site.
-fr: Tout d'abord, vous devriez jeter un coup d'œil sur comment [je gère les systèmes de récupération de statistiques](/n3blog/fr/blog/2010-06-17-track-events-with-google-analytics). 
+fr: Tout d'abord, vous devriez jeter un coup d'œil sur comment [je gère les systèmes de récupération de statistiques](/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics). 
 fr: Je centralise tout dans un seul fichier javascript ce qui facilite le travail.
 en: This is a way not to count your own visits to your blog.
-en: First you should look on how [I handle analytics](/n3blog/en/blog/2010-06-17-track-events-with-google-analytics). All analytics are handled in one javascript file, this make things really convenient.
+en: First you should look on how [I handle analytics](/Scratch/en/blog/2010-06-17-track-events-with-google-analytics). All analytics are handled in one javascript file, this make things really convenient.
 
 fr: Cette méthode nécessite l'utilisation de `jquery-cookie`.
 en: Then you need to know my method use the `jquery-cookie`.

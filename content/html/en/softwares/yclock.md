@@ -6,7 +6,7 @@ hidden: false
 -----
 
 
-[ ![Screenshot](/n3blog/img/softwares/yclock/screenshot1.png 'screenshot') ][yclock]
+[ ![Screenshot](/Scratch/img/softwares/yclock/screenshot1.png 'screenshot') ][yclock]
 
 YClock is a nice clock screensaver. 
 It has three themes: white, black and red. 
@@ -14,4 +14,4 @@ It is based on a QuartzComposition and with some little Objective-C code to hand
 
 [<span class="nicer">&#x27A5;</span> YClock.dmg][yclock]
 
-[yclock]: /n3blog/files/YClock.dmg
+[yclock]: /Scratch/files/YClock.dmg

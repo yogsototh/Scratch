@@ -33,7 +33,7 @@ end
 use Rack::Rewrite do
     r302 %r{/(Softwares.*)}, 'http://web.me.com/yann.esposito/$1'
     r302 %r{/(Perso.*)}, 'http://web.me.com/yann.esposito/$1'
-    r302 %r{/YPassword(.*)}, '/n3blog/en/softwares/ypassword/iphoneweb'
+    r302 %r{/YPassword(.*)}, '/Scratch/en/softwares/ypassword/iphoneweb'
     r302 %r{/(Bastien.*)}, 'http://web.me.com/yann.esposito/$1'
 end
 
@@ -42,7 +42,7 @@ use Rack::TryStatic,
     :urls => %w[/],                                 # match all requests 
     :try => ['.html', 'index.html', '/index.html']  # try these postfixes sequentially
 
-errorFile='output/n3blog/en/error/404-not_found/index.html'
+errorFile='output/Scratch/en/error/404-not_found/index.html'
 run lambda { [404, {
                 "Last-Modified"  => File.mtime(errorFile).httpdate,
                 "Content-Type"   => "text/html",

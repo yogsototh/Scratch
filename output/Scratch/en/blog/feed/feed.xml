@@ -190,7 +190,7 @@ Now it should be far cleaner.
 I believe I use no CSS3 feature and far less javascript.
 Of course before my website was perfectly browsable without javascript. 
 Unfortunately some CSS3 feature are not mature enough on some browser.
-For more details you can read my older &lt;a href="/n3blog/en/blog/2010-07-07-CSS-rendering-problems-by-navigator"&gt;blog entry&lt;/a&gt;.
+For more details you can read my older &lt;a href="/Scratch/en/blog/2010-07-07-CSS-rendering-problems-by-navigator"&gt;blog entry&lt;/a&gt;.
 But the major problem came from, &lt;code&gt;font-shadow&lt;/code&gt; and gradients.
 Then my new design obey to the following rules:&lt;/p&gt;
 
@@ -227,7 +227,7 @@ This is how I do this with &lt;a href="http://nanoc.stoneship.org"&gt;nanoc&lt;/
 &lt;span class="Keyword"&gt;def&lt;/span&gt; &lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2010-09-02:/Scratch/en/blog/2010-09-02-base64-and-sha1-on-iPhone/</id>
+    <id>tag:yannesposito.com,2010-09-01:/Scratch/en/blog/2010-09-02-base64-and-sha1-on-iPhone/</id>
     <title type="html">base64 and sha1 on iPhone</title>
     <published>2010-09-01T22:02:17Z</published>
     <updated>2010-09-01T22:02:17Z</updated>
@@ -429,7 +429,7 @@ I was a bit surprised, because I make some test into a really &lt;em&gt;slow&lt;
 Nonetheless I used these two to make the same web application. This is why I compare the expe...&lt;/p&gt;&lt;/div&gt;&lt;/hr&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2010-06-19:/Scratch/en/blog/2010-06-19-jQuery-popup-the-easy-way/</id>
+    <id>tag:yannesposito.com,2010-06-18:/Scratch/en/blog/2010-06-19-jQuery-popup-the-easy-way/</id>
     <title type="html">jQuery popup the easy way</title>
     <published>2010-06-18T22:44:50Z</published>
     <updated>2010-06-18T22:44:50Z</updated>
@@ -461,7 +461,7 @@ This is why I use a method to show this code in a large jQuery popup. &lt;/p&gt;
     </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-06-17-hide-yourself-to-analytics/"/>
     <content type="html">&lt;p&gt;This is a way not to count your own visits to your blog.
-First you should look on how &lt;a href="/n3blog/en/blog/2010-06-17-track-events-with-google-analytics"&gt;I handle analytics&lt;/a&gt;. All analytics are handled in one javascript file, this make things really convenient.&lt;/p&gt;
+First you should look on how &lt;a href="/Scratch/en/blog/2010-06-17-track-events-with-google-analytics"&gt;I handle analytics&lt;/a&gt;. All analytics are handled in one javascript file, this make things really convenient.&lt;/p&gt;
 
 &lt;p&gt;Then you need to know my method use the &lt;code&gt;jquery-cookie&lt;/code&gt;.&lt;/p&gt;
 
@@ -470,7 +470,7 @@ First you should look on how &lt;a href="/n3blog/en/blog/2010-06-17-track-events
 &lt;pre class="twilight"&gt;
     &lt;span class="Storage"&gt;var&lt;/span&gt; admin &lt;span class="Keyword"&gt;=&lt;/span&gt; &lt;span class="Keyword"&gt;$&lt;/span&gt;.&lt;span class="SupportConstant"&gt;cookie&lt;/span&gt;(&lt;span class="String"&gt;&lt;span class="String"&gt;'&lt;/span&gt;admin&lt;span class="String"&gt;'&lt;/span&gt;&lt;/span&gt;);
     &lt;span class="Keyword"&gt;if&lt;/span&gt; (&lt;span class="Keyword"&gt;!&lt;/span&gt; admin) {
-      ...&lt;/pre&gt;</content>
+     ...&lt;/pre&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-06-17:/Scratch/en/blog/2010-06-17-track-events-with-google-analytics/</id>

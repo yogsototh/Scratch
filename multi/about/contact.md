@@ -6,8 +6,8 @@ menupriority: 1
 en: # How to contact me
 fr: # Comment me contacter
 
-en: <img src="/n3blog/img/about/avatar.png" alt="Avatar" class="left"/>
-fr: <img src="/n3blog/img/about/avatar.png" alt="Avatar" class="left"/>
+en: <img src="/Scratch/img/about/avatar.png" alt="Avatar" class="left"/>
+fr: <img src="/Scratch/img/about/avatar.png" alt="Avatar" class="left"/>
 
 <%= mail_perso %>  
 en:   Follow me on [twitter](http://twitter.com/yogsototh)  

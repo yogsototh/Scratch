@@ -105,7 +105,7 @@ multi/blog/2010-06-01-the-title/third_part.md
 
 ### mobileme
 
-All files are intended to be generated into the `output/n3blog` directory.
+All files are intended to be generated into the `output/Scratch` directory.
 This was made like that to work nicely with iWeb organisation of websites.
 
 ### menu

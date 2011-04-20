@@ -31,7 +31,7 @@ fr: Voici comment je m'y prend avec [nanoc](http://nanoc.stoneship.org) :
 
 <code class="ruby" file="gitmtime.rb">
 def gitmtime
-    filepath=@item.path.sub('/n3blog/','content/html/').sub(/\/$/,'')
+    filepath=@item.path.sub('/Scratch/','content/html/').sub(/\/$/,'')
     ext=%{.#{@item[:extension]}}
     filepath<<=ext
     if not FileTest.exists?(filepath)

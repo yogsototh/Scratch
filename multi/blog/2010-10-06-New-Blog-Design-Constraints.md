@@ -27,7 +27,7 @@ en: Now it should be far cleaner.
 en: I believe I use no CSS3 feature and far less javascript.
 en: Of course before my website was perfectly browsable without javascript. 
 en: Unfortunately some CSS3 feature are not mature enough on some browser.
-en: For more details you can read my older [blog entry](/n3blog/en/blog/2010-07-07-CSS-rendering-problems-by-navigator).
+en: For more details you can read my older [blog entry](/Scratch/en/blog/2010-07-07-CSS-rendering-problems-by-navigator).
 en: But the major problem came from, `font-shadow` and gradients.
 en: Then my new design obey to the following rules:
 
