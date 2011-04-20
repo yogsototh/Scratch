@@ -14,7 +14,7 @@ end
 def setItemConf
     # -- init variables --
     conf=LocalConf.new
-    language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'')
+    language=@item_rep.path.sub(%r{#{@config[:webprefix]}/},'').sub(/\/.*$/,'')
     if language != ''
         conf.language=language
     else

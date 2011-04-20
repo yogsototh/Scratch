@@ -5,17 +5,17 @@ noSubMenu: true
 hidden: false
 -----
 <%= block( %{YPassword}, 
-    %{/Scratch/fr/softwares/ypassword}, 
+    %{/n3blog/fr/softwares/ypassword}, 
     %{YPassword est un outil de gestion de mots de passe pour rendre votre vie en ligne plus sûre.} 
 ) %>
 
 <%= block( %{YAquaBubbles}, 
-   %{/Scratch/fr/softwares/yaquabubbles}, 
+   %{/n3blog/fr/softwares/yaquabubbles}, 
    %{Des bulles se déplaçant sous l'eau}
     ) %>
 
 <%= block( %{YClock}, 
-   %{/Scratch/fr/softwares/yclock}, 
+   %{/n3blog/fr/softwares/yclock}, 
    %{Une horloge inspirée par le symbole "biohazard"},
     "right"
     ) %>

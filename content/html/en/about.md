@@ -5,7 +5,7 @@ menupriority: 4
 
 ## To better know me
 
-![Une photo de moi](/Scratch/img/about/yann1.jpg)
+![Une photo de moi](/n3blog/img/about/yann1.jpg)
 
 <div class="en">
     <desc miscellanious informations>

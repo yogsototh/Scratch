@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="arbre, théorie, mathématiques, regexp, script">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/n3blog/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Arbres ; Pragmatisme et Formalisme" type="text/html" hreflang="fr" href="/n3blog/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Trees; Pragmatism and Formalism" type="text/html" hreflang="en" href="/n3blog/en/blog/2010-05-24-Trees--Pragmatism-and-Formalism/" /> 
+        <script type="text/javascript" src="/n3blog/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/n3blog/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/n3blog/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/n3blog/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>Arbres ; Pragmatisme et Formalisme</title>
+    </head>
+    <body lang="fr">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/n3blog/img/loading.gif" alt="Chargement en cours..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/n3blog/en/blog/2010-05-24-Trees--Pragmatism-and-Formalism/" onclick="setLanguage('en')">in English</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    Arbres ; Pragmatisme et Formalisme
+                </h1>
+                 
+                <h2>
+                    Quand la théorie est plus pratique que la pratique 
+                </h2>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    
+<div class="intro">
+
+
+<p><abbr title="Trop Long À Lire"><span class="sc">tlàl</span></abbr>&nbsp;:</p>
+
+<ul>
+  <li>J&rsquo;ai essayé de programmer un simple filtre&nbsp;;</li>
+  <li>J&rsquo;ai été bloqué pendant deux jours&nbsp;;</li>
+  <li>J&rsquo;ai arrêté de penser comme un robot&nbsp;;</li>
+  <li>J&rsquo;ai utilisé un papier et un stylo&nbsp;;</li>
+  <li>J&rsquo;ai fait un peu de maths&nbsp;;</li>
+  <li>J&rsquo;ai résolu le problème en 10 minutes&nbsp;;</li>
+  <li>Conclusion: Pragmatisme n&rsquo;est pas&nbsp;: &laquo;n&rsquo;utilisez jamais la théorie&raquo;.
+
+</div>
+
+</ul>
+
+<h2 id="rsum-plus-long-que-le--abbr-titletrop-long--liresctllscabbr">Résumé (plus long que le  <abbr title="Trop Long À Lire"><span class="sc">tlàl</span></abbr>)</h2>
+
+<p>Je devais résoudre un problème à mon travail. Au début cela
+semblait assez facile. J&rsquo;ai donc commencé à programmer
+tout de suite. Je suis alors entré dans un cercle infernal d&rsquo;essais
+et de réparations. Voilà à quoi ressemblait cet étrange état
+de boucle infini&nbsp;:</p>
+
+<blockquote>
+  <p>&ndash; Plus que ça a réparer et ça devrait être bon.<br />
+  &ndash; Très bien, maintenant ça doit marcher.<br />
+  &ndash; Oui&nbsp;!!<br />
+  &ndash; Ah mince! J&rsquo;ai oublié ce détail&hellip;<br />
+  <code>répéter jusqu'à la mort</code></p>
+</blockquote>
+
+<p>Après deux jours à me prendre pour <a href="http://fr.wikipedia.org/wiki/Sisyphe">Sisyphe</a>, je me suis arrêté pour repenser le problème.
+J&rsquo;ai pris un stylo et une feuille de papier. Je me suis souvenu de de ce que j&rsquo;avais appris sur les arbres pendant mon doctorat.
+Finalement, le problème fut résolu en moins de 20 minutes.</p>
+
+<p>Je pense que la leçon à retenir de cette expérience est de se souvenir que la méthodologie la plus efficace pour résoudre ce problème <em>pragamtique</em> était la méthode <em>théorique</em>. 
+Ça ne signifie pas que la méthode théorique est toujours la meilleure, mais en tout cas, il ne faut pas l&rsquo;écarter.</p>
+
+
+</div>
+
+<div class="corps">
+
+
+<h1 class="first" id="lanecdote">L&rsquo;anecdote</h1>
+
+<p>Apparemment 90% des programmeurs sont incapable de programmer une recherche binaire sans faire de bug.
+L&rsquo;algorithme est pourtant connu et facile à comprendre.
+Cependant, il est difficile à programmer sans bug.
+J&rsquo;ai participé à <a href="http://reprog.wordpress.com/2010/04/19/are-you-one-of-the-10-percent/">ce concours</a>.
+Vous pouvez voir les <a href="http://reprog.wordpress.com/2010/04/21/binary-search-redux-part-1/">résultats ici</a><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.
+J&rsquo;ai dû faire face à un problème similaire à mon travail.
+Il paraissait simple au départ.
+Transformer un <span class="sc">xml</span> d&rsquo;un format à un autre.</p>
+
+<p>Voici le format général du <span class="sc">xml</span> source&nbsp;:</p>
+
+<pre class="twilight">
+<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">rubrique</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">contenu</span><span class="MetaTagAll">&gt;</span></span>
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">tag1</span><span class="MetaTagAll">&gt;</span></span>value1<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">tag1</span><span class="MetaTagAll">&gt;</span></span>
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">tag2</span><span class="MetaTagAll">&gt;</span></span>value2<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">tag2</span><span class="MetaTagAll">&gt;</span></span>
+        ...
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">contenu</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">enfant</span><span class="MetaTagAll">&gt;</span></span>
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">rubrique</span><span class="MetaTagAll">&gt;</span></span>
+            ...
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">rubrique</span><span class="MetaTagAll">&gt;</span></span>
+        ...
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">rubrique</span><span class="MetaTagAll">&gt;</span></span>
+            ...
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">rubrique</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">enfant</span><span class="MetaTagAll">&gt;</span></span>
+<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">menu</span><span class="MetaTagAll">&gt;</span></span>
+</pre>
+
+<p>et le format d&rsquo;arrivé est celui-ci&nbsp;:</p>
+
+<pre class="twilight">
+<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">item</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>Menu0<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">item</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>menu<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
+            <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
+                <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">item</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>tag1<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
+                    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>value1<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
+                <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">item</span><span class="MetaTagAll">&gt;</span></span>
+                <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">item</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>tag2<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
+                    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>value2<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
+                <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">item</span><span class="MetaTagAll">&gt;</span></span>
+                ...
+                <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">item</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>menu<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
+                    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
+                        ...
+                    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
+                    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
+                        ...
+                    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
+                <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">item</span><span class="MetaTagAll">&gt;</span></span>
+            <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">item</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
+<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">item</span><span class="MetaTagAll">&gt;</span></span>
+</pre>
+
+<p>À première vue, cela m&rsquo;a paru simple. J&rsquo;étais certain de pouvoir y arriver en me fixant les règles suivantes&nbsp;:</p>
+
+<ol>
+  <li>ne pas utiliser <span class="sc">xslt</span>&nbsp;;</li>
+  <li>ne pas utiliser de parseur <span class="sc">xml</span>&nbsp;;</li>
+  <li>résoudre le problème en utilisant un simple script perl</li>
+</ol>
+
+<p>Vous pouvez essayer si vous le souhaitez. Si vous attaquez ce problème directement en écrivant le programme, ce ne sera certainement pas si simple.
+Je peux le dire, parce que c&rsquo;est ce que j&rsquo;ai fait.
+Et je dois dire que j&rsquo;ai perdu une journée de travail complète en m&rsquo;y prenant de la sorte.
+En réalité, il y avait pas mal de petits détails dont je ne parle pas qui m&rsquo;ont induis en erreur et qui m&rsquo;ont fait perdre encore plus de temps.</p>
+
+<p>Pourquoi étais-je incapable de résoudre ce problème si simple en aparence&nbsp;?</p>
+
+<p>Voici comment je m&rsquo;y suis pris&nbsp;:</p>
+
+<ol>
+  <li>Réfléchir</li>
+  <li>Écrire le programme</li>
+  <li>Essayer le programme</li>
+  <li>Vérifier les résultats</li>
+  <li>Trouver un bug</li>
+  <li>Résoudre le bug</li>
+  <li>Reprendre à l&rsquo;étape 3</li>
+</ol>
+
+<p>Il s&rsquo;agissait d&rsquo;une méthode de travail standard pour un ingénieur en informatique. L&rsquo;erreur venait de la première étape.
+J&rsquo;ai d&rsquo;abord pensé à comment résoudre le problème mais avec des yeux d&rsquo;<em>ingéinieur pragmatique</em>. Je me suis simplement dit&nbsp;:</p>
+
+<blockquote>
+  <p>Ça à l&rsquo;air de pouvoir se résouvre avec un petit script de <em>search&amp;replace</em> en perl
+Commençons à écrire le code maintenant.</p>
+</blockquote>
+
+<p>C&rsquo;est la deuxième phrase qui est complètement fausse. Parce que j&rsquo;avais mal commencé et que cette méthodologie de travail ne fonctionne pas lorsque l&rsquo;on part vraiment mal.</p>
+
+<h2 id="rflchir">Réfléchir</h2>
+
+<p>Après un certain temps, j&rsquo;ai arrêté de programmer et je me suis dit&nbsp;: &laquo;Maintenant, ça suffit&nbsp;!&raquo;.
+J&rsquo;ai pris une feuille et un stylo et j&rsquo;ai commencé à dessiner des arbres.</p>
+
+<p>J&rsquo;ai commencer par simplifier un peu en enlevant le maximum de verbiage.
+Tout d&rsquo;abord en renommant <code>&lt;item name="Menu"&gt;</code> par un simple <code>M</code> par exemple.
+J&rsquo;ai obtenu quelque chose comme&nbsp;:</p>
+
+<p><img alt="The source tree" src="/n3blog/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/graph/The_source_tree.png" /></p>
+
+<p>et</p>
+
+<p><img alt="The destination tree" src="/n3blog/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/graph/The_destination_tree.png" /></p>
+
+<p>Puis, je me suis fait la réflexion suivante&nbsp;:</p>
+
+<p>Dans les distances d&rsquo;éditions sur les arbres, chaque opération atomique correspond à un simple <em>search and replace</em> sur mon fichier <span class="sc">xml</span> source<sup id="fnref:nb"><a href="#fn:nb" rel="footnote">2</a></sup>.
+On considère trois opérations atomiques sur les arbres&nbsp;:</p>
+
+<ul>
+  <li><em>substitution</em>: renommer un nœud</li>
+  <li><em>insertion</em>: ajouter un nœud</li>
+  <li><em>délétion</em>: supprimer un nœud</li>
+</ul>
+
+<p>Une des particularité avec les transformations sur les arbres est celle-ci&nbsp;: 
+supprimer un nœud et tous ses enfants deviendront les enfants du père de ce nœud.</p>
+
+<p>Un exemple:</p>
+
+<pre class="twilight">
+r - x - a
+  \   \
+   \    b
+    y - c   
+</pre>
+
+<p>Si vous supprimez le nœud <code>x</code>, vous obtenez</p>
+
+<pre class="twilight">
+    a
+  /
+r - b
+  \
+    y - c   
+</pre>
+
+<p>Et regardez ce que ça implique quand on l&rsquo;écrit en <span class="sc">xml</span>&nbsp;:</p>
+
+<pre class="twilight">
+<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">r</span><span class="MetaTagAll">&gt;</span></span>
+  <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">x</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">a</span><span class="MetaTagAll">&gt;</span></span>value for a<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">a</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">b</span><span class="MetaTagAll">&gt;</span></span>value for b<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">b</span><span class="MetaTagAll">&gt;</span></span>
+  <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">x</span><span class="MetaTagAll">&gt;</span></span>
+  <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">y</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">c</span><span class="MetaTagAll">&gt;</span></span>value for c<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">c</span><span class="MetaTagAll">&gt;</span></span>
+  <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">y</span><span class="MetaTagAll">&gt;</span></span>
+<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">r</span><span class="MetaTagAll">&gt;</span></span>
+</pre>
+
+<p>Alors supprimer tous les nœuds <code>x</code> revient à faire passer le <span class="sc">xml</span> à travers le filtre suivant&nbsp;:</p>
+
+<pre class="twilight">
+<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>&lt;<span class="StringRegexpSpecial">\/</span>?x&gt;</span><span class="StringRegexp"><span class="StringRegexp">/</span><span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+</pre>
+
+<p>Par conséquent, s&rsquo;il existe un transducteur déterministe à un état qui permet de transformer mes arbres&nbsp;; 
+je suis capable de transformer le <span class="sc">xml</span> d&rsquo;un format à l&rsquo;autre en utilisant une simple liste de <em>search and replace</em>.</p>
+
+<h1 id="solution">Solution</h1>
+
+<p>Transformer cet arbre&nbsp;:</p>
+
+<pre class="twilight">
+R - C - tag1
+  \   \
+   \    tag2
+    E -- R - C - tag1
+      \   \    \
+       \   \     tag2
+        \    E ...
+         R - C - tag1 
+           \    \
+            \     tag2
+             E ...
+</pre>
+
+<p>en celui-ci&nbsp;:</p>
+
+<pre class="twilight">
+                tag1
+              /
+M - V - M - V - tag2      tag1
+              \         / 
+                M --- V - tag2
+                  \     \ 
+                   \      M
+                    \     tag1
+                     \  / 
+                      V - tag2
+                        \ 
+                          M
+</pre>
+
+<p>peut-être fait en utilisant le transducteur déterministe à un état suivant: </p>
+
+<blockquote>
+  <p>C &rarr; &epsilon;<br />
+   E &rarr; M<br />
+   R &rarr; V  </p>
+</blockquote>
+
+<p>Ce qui peut-être traduit par les simples directives Perl suivantes&nbsp;:</p>
+
+<pre class="twilight">
+<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>C</span><span class="StringRegexp"><span class="StringRegexp">/</span><span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>E</span><span class="StringRegexp"><span class="StringRegexp">/</span>M<span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>R</span><span class="StringRegexp"><span class="StringRegexp">/</span>V<span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+</pre>
+
+<p>Une fois adapté au <span class="sc">xml</span> cela devient&nbsp;:</p>
+
+<pre class="twilight">
+<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>%</span>&lt;/?contenu&gt;</span><span class="StringRegexp"><span class="StringRegexp">%</span><span class="StringRegexp">%</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>%</span>&lt;enfant&gt;</span><span class="StringRegexp"><span class="StringRegexp">%</span>&lt;item name=&quot;menu&quot;&gt;<span class="StringRegexp">%</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>%</span>&lt;/enfant&gt;</span><span class="StringRegexp"><span class="StringRegexp">%</span>&lt;/item&gt;<span class="StringRegexp">%</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>%</span>&lt;rubrique&gt;</span><span class="StringRegexp"><span class="StringRegexp">%</span>&lt;value&gt;<span class="StringRegexp">%</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>%</span>&lt;/rubrique&gt;</span><span class="StringRegexp"><span class="StringRegexp">%</span>&lt;/value&gt;<span class="StringRegexp">%</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+</pre>
+
+<p>Et c&rsquo;est tout.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Même si cela peut sembler paradoxal, parfois la solution la plus efficace à un problème pragmatique est d&rsquo;utiliser une méthodologie théorique.</p>
+<hr/><div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Normalement, je fais parti des 10% qui ont fourni une implémentation sans bug.<a href="#fnref:1" rev="footnote">&#8617;</a></p>
+    </li>
+    <li id="fn:nb">
+      <p>J&rsquo;ai programmé un outil qui calcule automatiquement le poids de chaque élément des matrices d&rsquo;édition à partir de données.<a href="#fnref:nb" rev="footnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">
+                        s'abonner
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Commentaires</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">commentaires</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/n3blog/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/';
+    var idcomments_post_url = 'http://yannesposito.com/n3blog/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/n3blog/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/n3blog/fr/">Bienvenue</a></li>
+<li><a href="/n3blog/fr/blog/">Blog</a></li>
+<li><a href="/n3blog/fr/softwares/">Softwares</a></li>
+<li><a href="/n3blog/fr/about/">À propos</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        articles précédents
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/"><span class="nicer">«</span>&nbsp;Comment réparer un XML coupé ?</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/fr/blog/2010-05-17-at-least-this-blog-revive/"><span class="nicer">«</span>&nbsp;Je reviens à la vie !</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/fr/blog/2010-03-23-Encapsulate-git/"><span class="nicer">«</span>&nbsp;Encapsuler git</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        articles suivants
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/fr/blog/2010-06-14-multi-language-choices/">choix liés à l'écriture dans plusieurs langues&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/fr/blog/2010-06-15-Get-my-blog-engine/">Récupérez mon système de blog&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Écrit le : 24/05/2010
+                    modifié le : 21/09/2010 
+                </div>
+                <div>
+                    Site entièrement réalisé avec
+                    <a href="http://www.vim.org">Vim</a>
+                    et 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/n3blog/fr/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/n3blog/fr/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>

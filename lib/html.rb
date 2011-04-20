@@ -22,7 +22,7 @@ end
 
 def choixlang
     @conf.languages.map do |l|
-        dest=@item_rep.path.sub(/^\/Scratch\/..\//, %{/Scratch/#{l}/}) 
+        dest=@item_rep.path.sub(%r{#{@config[:webprefix]}/../}, %{#{@config[:webprefix]}/#{l}/}) 
         if @item_rep.path != dest
             %{<a href="#{dest}" onclick="setLanguage('#{l}')">#{ tradOfKeywordIn(:switchTo,l)}</a>}
         else

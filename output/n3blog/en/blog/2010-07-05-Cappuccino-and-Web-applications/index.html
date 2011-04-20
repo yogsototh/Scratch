@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="Cappuccino, iPhone, web, javascript, jQuery, Cocoa, programming">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/n3blog/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Cappuccino ou jQuery ?" type="text/html" hreflang="fr" href="/n3blog/fr/blog/2010-07-05-Cappuccino-and-Web-applications/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Cappuccino vs jQuery" type="text/html" hreflang="en" href="/n3blog/en/blog/2010-07-05-Cappuccino-and-Web-applications/" /> 
+        <script type="text/javascript" src="/n3blog/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/n3blog/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/n3blog/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/n3blog/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>Cappuccino vs jQuery</title>
+    </head>
+    <body lang="en">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/n3blog/img/loading.gif" alt="loading..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/n3blog/fr/blog/2010-07-05-Cappuccino-and-Web-applications/" onclick="setLanguage('fr')">en Français</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    Cappuccino vs jQuery
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    
+<div class="intro">
+
+
+<p><abbr class="sc" title="Too long; don't read">tl;dr</abbr>:</p>
+
+<ul>
+  <li>Tried to make <a href="http://yannesposito.com/Softwares/YPassword.html">YPassword</a> in jQuery and with Cappuccino.</li>
+  <li>Cappuccino nice in desktop browser but 1.4MB, not compatible with iPhone.</li>
+  <li>jQuery not as nice as the Cappuccino version but 106KB. iPhone compatible.</li>
+  <li>I&rsquo;ll give a try to Dashcode 3.</li>
+</ul>
+
+
+</div>
+
+
+<hr />
+
+<div class="intro">
+
+
+<p>Before start, I must say I know Cappuccino and jQuery are no more comparable than Cocoa and the C++ standard library. One is oriented for user interface while the other is and helper for low level programming.
+Nonetheless I used these two to make the same web application. This is why I compare the experience I had with each of them for this specific task.</p>
+
+
+</div>
+
+
+<p>I made a web version of my dashboard widget <a href="http://yannesposito.com/Softwares/YPassword.html">YPassword</a>.
+It is a simple widget to manage your online password with a <em>strong</em> security and with a totally portable way. It is not intended to replace a <em>keychain</em>.
+It is more a password generator.</p>
+
+<p>The first was made from the code of my dashboard widget and with some jQuery.
+You can try it <a href="http://yannesposito.com/YPassword.old">here</a>.
+I then made a second version with the <a href="http://cappuccino.org">Cappuccino</a>. You can try it <a href="http://yannesposito.com/YPassword">here</a>.</p>
+
+<h2 id="what-this-widget-do">What this widget do?</h2>
+
+
+<div class="intro">
+
+
+<p>If you don&rsquo;t mind about what does my widget and just want to know how the two frameworkcompare, you should go
+directly to the <a href="#cappuccino">next part</a>.</p>
+
+
+</div>
+
+
+<p>I manage my password on many site with a simple method. 
+I remember a strong master password. And my password is mainly
+&lt;pre class="twilight"&gt;<span class="Entity">hash</span>(masterPassword<span class="Keyword">+</span>domainName)
+&lt;/pre&gt;</p>
+
+<p>In reality I need a bit more informations to create a password:</p>
+
+<ul>
+  <li>A master password,</li>
+  <li>an URL,</li>
+  <li>a maximal password length,</li>
+  <li>the kind of output base64 or hexadecimal,</li>
+  <li>how many times my password could have leaked.</li>
+</ul>
+
+<p>The result password is this:</p>
+
+<pre class="twilight">
+domainName<span class="Keyword">=</span><span class="Entity">domaine_Name_Of_URL</span>(url)
+hash<span class="Keyword">=</span><span class="Entity">sha1</span>( masterPassword <span class="Keyword">+</span> leakedTimes <span class="Keyword">+</span> domainName )
+<span class="Keyword">if</span> ( kind <span class="Keyword">==</span> <span class="String"><span class="String">'</span>base64<span class="String">'</span></span> )
+    hash<span class="Keyword">=</span><span class="Entity">base64</span>(hash)
+<span class="Keyword">end</span>
+<span class="Keyword">return</span> hash[<span class="Constant">0</span>..maxlength]
+</pre>
+
+<p>In fact depending of websites, some give some strange constraint to your password: </p>
+
+<ul>
+  <li>minimal length, </li>
+  <li>maximal length,</li>
+  <li>must not contain a special character, </li>
+  <li>must contain a special character, </li>
+  <li>etc&hellip;</li>
+</ul>
+
+<p>And if you want to change your password the <em>leak number</em> is here for that.
+All informations such as user name, maximal length can be stored in a public file. The only real secret is the master password.</p>
+
+<p>If you want to know even more details you can always look at some of my old blog entries: </p>
+
+<ul>
+  <li><a href="http://yannesposito.com/YBlog/Computer/Entr%C3%A9es/2008/7/30_Easy%2C_secure_and_portable_password_management_system.html">simple portable password management</a></li>
+  <li><a href="http://yannesposito.com/YBlog/Computer/Entrées/2009/3/15_Shorter_Password_with_the_same_efficiency.html">base64</a></li>
+  <li><a href="http://yannesposito.com/YBlog/Computer/Entr%C3%A9es/2009/4/11_Be_able_to_change_your_password.html">change your password</a></li>
+</ul>
+
+<h2 id="cappuccino">Cappuccino</h2>
+
+<p>First, I&rsquo;d like to say Cappuccino applications look simply awesome. 
+It is like having a Cocoa application in your web browser. 
+And this is <em>great</em>.</p>
+
+<p>I also must admit I enjoyed making my application with Cappuccino. 
+It is like programming for an iPhone application. 
+If you are a bit familiar with Cocoa, you feel at home. 
+If you don&rsquo;t know anything about Cocoa, I suggest you to look at it. 
+This is a really <em>great</em> framework to make User Interface.
+I am not a specialist, but I have done some MFC, java Swing<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> and WXWindows User Interfaces (some years ago).
+And I must say, Cocoa is far better than those.</p>
+
+<p>Cappuccino is a great web application oriented development.
+But there was also some drawbacks</p>
+
+<p>Things I liked:</p>
+
+<ul>
+  <li>It looks great</li>
+  <li>It was fun to program</li>
+  <li>It was like programming a Mac application</li>
+  <li>I could have done the User Interface using <a href="http://developer.apple.com/technologies/tools/xcode.html">Interface Builder</a>.</li>
+</ul>
+
+<p>Some things I didn&rsquo;t like:</p>
+
+<ul>
+  <li>I made some time to understand how to handle the <code>onChange</code> on the text fields.</li>
+  <li>Documentation lacked a bit of organisation.</li>
+  <li>It doesn&rsquo;t work on iPhone.</li>
+  <li>It weighted 11MB to deploy.</li>
+  <li>It weight 1.3MB to load.</li>
+</ul>
+
+<p>I didn&rsquo;t use bindings because I believe they are not ready by now.</p>
+
+<h2 id="jquery">jQuery</h2>
+
+<p>The jQuery version of YPassword is not as finished as the Cappuccino one. Because, there is no <em>slider</em> directly with jQuery. I&rsquo;d have to use jQueryUI. And I believe, using it will make the application weight far more than the today 106KB.</p>
+
+<p>To make this version I simply copied my widget source code and adapted it. It was straightforward. But jQuery is not an <em>application oriented framework</em>. It is more a &ldquo;<em>dark side</em> javascript animation framework&rdquo;<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
+
+<p>I don&rsquo;t have too much to say about the jQuery version. But this was way more <em>low level</em> programming than Cappuccino.</p>
+
+<h2 id="my-conclusion">My conclusion</h2>
+
+<p>If you want to make an iPhone compatible web application just don&rsquo;t use Cappuccino yet.
+If you want to make <em>simple</em> application like mine, I also believe, Cappuccino is a bit too much.</p>
+
+<p>If you want to make a complex web oriented application, Cappuccino is a great choice. 
+But you may have some difficulties to begin programming with it.</p>
+
+<p>Finally, to terminate my web version of my widget, I&rsquo;ll give a try to Dashcode 3. 
+It seems to be a good alternative to create web widgets.
+I don&rsquo;t know if Dashcode 3 is portable on non webkit browser.
+But if it is, it could be the end of projects like Cappuccino and Sproutcore.</p>
+<hr/><div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>If you are interested you can take a look at <a href="http://labh-curien.univ-st-etienne.fr/informatique/SEDiL/">SEDiL</a>. I am proud of the tree drawing view made from scratch.<a href="#fnref:1" rev="footnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>I don&rsquo;t want to feel like a <em>troll</em> I use jQuery to make some <em>dark side</em> animation on this blog. But the javascript on my blog is not needed except for commenting.<a href="#fnref:2" rev="footnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomen">
+                        Subscribe
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Comments</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">comments</h2>
+                    <noscript>
+                        You must enable javascript to comment.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/n3blog/en/blog/2010-07-05-Cappuccino-and-Web-applications/';
+    var idcomments_post_url = 'http://yannesposito.com/n3blog/en/blog/2010-07-05-Cappuccino-and-Web-applications/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/n3blog/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/n3blog/en/">Home</a></li>
+<li><a href="/n3blog/en/blog/">Blog</a></li>
+<li><a href="/n3blog/en/softwares/">Softwares</a></li>
+<li><a href="/n3blog/en/about/">About</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        previous entries
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/en/blog/2010-06-19-jQuery-popup-the-easy-way/"><span class="nicer">«</span>&nbsp;jQuery popup the easy way</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/en/blog/2010-06-17-hide-yourself-to-analytics/"><span class="nicer">«</span>&nbsp;Hide Yourself to your Analytics</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/en/blog/2010-06-17-track-events-with-google-analytics/"><span class="nicer">«</span>&nbsp;Track Events with Google Analytics</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        next entries
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/en/blog/2010-07-07-CSS-rendering-problems-by-navigator/">Do not use CSS gradient with Chrome&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/en/blog/2010-07-31-New-style-after-holidays/">New style after holidays&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/en/blog/2010-07-09-Indecidabilities/">Undecidabilities (part 1)&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Created: 07/05/2010
+                    Modified: 08/01/2010 
+                </div>
+                <div>
+                    Entirely done with
+                    <a href="http://www.vim.org">Vim</a>
+                    and 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/n3blog/en/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/n3blog/en/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>

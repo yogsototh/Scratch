@@ -16,7 +16,7 @@ tags:
 
 # mise à jour du <small>28/10/2009</small>
 
-J'ai mis à jour mon script [avec une version incrémentale](/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-) bien plus pratique.
+J'ai mis à jour mon script [avec une version incrémentale](/n3blog/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-) bien plus pratique.
 En plus depuis l'écriture de cet article Apple(c) semble avoir nettement amélioré la vitesse de ses serveurs en Europe.
 
 newcorps
@@ -98,7 +98,7 @@ if [[ ! $1 = '-s' ]]; then
     result=1
     essai=1
     while (( $result > 0 )); do
-        rsync -arv $root/Scratch/ $destRep.tmp
+        rsync -arv $root/n3blog/ $destRep.tmp
         result=$?
         if (( $result > 0 )); then
             print -P -- "%BEchec du rsync%b (essai n°$essai)" >&2
@@ -204,7 +204,7 @@ if [[ ! $1 = '-s' ]]; then
     result=1
     essai=1
     while (( $result > 0 )); do
-        rsync -arv $root/Scratch/ $destRep.tmp
+        rsync -arv $root/n3blog/ $destRep.tmp
         result=$?
         if (( $result > 0 )); then
             print -P -- "%Brsync failed%b (try n°$essai)" >&2

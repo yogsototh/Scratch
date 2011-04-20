@@ -7,7 +7,7 @@ noSubMenu: true
 <% 
     number_of_articles=5
     number_of_char_for_resume=800
-    language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
+    language=@item_rep.path.sub(/\/n3blog\//,'').sub(/\/.*$/,'') 
     last_articles = @items.select do |a| 
             a.reps[0].path =~ /\/#{language}\//  && a[:kind] == 'article'
     end

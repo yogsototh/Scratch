@@ -11,9 +11,9 @@
    
     def alltags
         language=@item.path
-        language =~ %r{/Scratch/([^/]*)/}
+        language =~ %r{#{@config[:webprefix]}/([^/]*)/}
         language = $1
-        @items.select {|p| p.path =~ %r{/Scratch/#{language}/} and p[:kind].to_s == "article" and p.parent[:kind].to_s == 'blog'}
+        @items.select {|p| p.path =~ %r{#{@config[:webprefix]}/#{language}/} and p[:kind].to_s == "article" and p.parent[:kind].to_s == 'blog'}
     end
 
     def tagNumber
@@ -92,7 +92,7 @@
         end
         tagCloud <<= %{</div><div id="hiddenDivs" >}
         language=@item.path
-        language =~ %r{/Scratch/([^/]*)/}
+        language =~ %r{#{@config[:webprefix]}/([^/]*)/}
         language = $1
         tagLinks.sort{|a,b| a[0].downcase <=> b[0].downcase}.each do |t,l|
             protected=t.gsub(/\W/,'_')

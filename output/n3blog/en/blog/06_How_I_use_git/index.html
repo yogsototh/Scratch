@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="git, svn, workflow">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/n3blog/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Git en solo" type="text/html" hreflang="fr" href="/n3blog/fr/blog/06_How_I_use_git/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Git for self" type="text/html" hreflang="en" href="/n3blog/en/blog/06_How_I_use_git/" /> 
+        <script type="text/javascript" src="/n3blog/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/n3blog/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/n3blog/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/n3blog/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>Git for self</title>
+    </head>
+    <body lang="en">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/n3blog/img/loading.gif" alt="loading..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/n3blog/fr/blog/06_How_I_use_git/" onclick="setLanguage('fr')">en Français</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    Git for self
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p><img alt="central architecture" src="/n3blog/img/blog/06_How_I_use_git/central_architecture.png" /></p>
+
+<p>I use <a href="http://www.git-scm.org/">Git</a> to manage my personnal projects.
+I have a centralized repository which all my computer should synchronize with.
+Unfortunately I didn&rsquo;t find clearly what I needed on the official Git documentation.</p>
+
+<p>In two words, if you want to use an SVN workflow with Git (and all its advantages) here is how to proceed.</p>
+
+
+</div>
+
+<div class="corps">
+
+
+<h2 class="first" id="initialisation">Initialisation</h2>
+
+<p>Suppose I&rsquo;ve got a directory on my local computer containing a project I want to manage via Git. Here what to do: </p>
+
+<div>
+<pre class="twilight">
+cd to/project/directory/
+git init
+git add
+git commit
+</pre>
+</div>
+
+<p>Now all files in the <code>to/project/directory/</code> are versionned.
+If you want not to follow some just edit the file <code>.gitignore</code></p>
+
+<p>for example mine is: </p>
+
+<div>
+<pre class="twilight">
+*.swp
+.DS_Store
+ikog.py.bak
+output/n3blog/assets
+output/n3blog/en
+output/n3blog/fr
+output/n3blog/multi
+</pre>
+</div>
+
+<p>Next, you want to put your project on a directory accessible from the web:</p>
+
+<div>
+<pre class="twilight">
+git clone --bare . /path/to/repository
+</pre>
+</div>
+
+<p>Now on any computer you can do: </p>
+
+<div>
+<pre class="twilight">
+git clone protocol://path/to/repository local_directory
+</pre>
+</div>
+
+<p>and <code>local_directory</code> will contain an up-to-date project.</p>
+
+<div class="encadre"><em>
+You should make this operation also on the computer used to create the repository. Just to verify all will be okay.
+
+</em>
+</div>
+
+
+</div>
+
+<div class="corps">
+
+
+<h2 class="first" id="the-workflow">The workflow</h2>
+
+<p>To resume you now have one repository on the Internet, and one or many computer associated with it. Now, what you want is to synchronize everything.</p>
+
+<p>Before begining your work, the first thing to do is to get all modification from the Internet to your local host: </p>
+
+<div>
+<pre class="twilight">
+git pull
+</pre>
+</div>
+
+<p>After that you can do (many times): </p>
+
+<div>
+<pre class="twilight">
+hack, hack, hack...
+git add some files
+git commit
+</pre>
+</div>
+
+<p>When you want your local modification to be on the Internet just do a simple:</p>
+
+<div>
+<pre class="twilight">
+git push
+</pre>
+</div>
+
+<p>All should be ok.</p>
+
+<p>If you have some trouble with the <code>push</code> and <code>pull</code> verify your <code>.git/config</code> file&nbsp;; it should contain the following lines:</p>
+
+<div>
+<pre class="twilight">
+...
+[remote <span class="String"><span class="String">&quot;</span>origin<span class="String">&quot;</span></span>]
+	url = protocol://url/of/the/repository
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch <span class="String"><span class="String">&quot;</span>master<span class="String">&quot;</span></span>]
+	remote = origin
+	merge = refs/heads/master
+...
+</pre>
+</div>
+
+<h2 id="branches-synchronisation">Branches Synchronisation</h2>
+
+<p>Well, now, all seems ok, but you have to worry about two little things. Git is all about decentralisation and branches. It is very easy to manage one branch, or many branches on the same host. But synchronize branches on many hosts is not a natural operation.</p>
+
+<p>This is why I created two simple scripts to automate this. One for creating a branch locally and remotely. And one to get remotely created branched on your local host.</p>
+
+<p>Then when you want to create a new branch (locally and remotely)&nbsp;; you simply have to do a: </p>
+
+<div><pre class="twilight">git-create-new-branch branch_name
+</pre></div>
+
+<p>and when you are on another computer and want to get locally all the remote branches you execute: </p>
+
+<div><pre class="twilight">git-get-remote-branches
+</pre></div>
+
+<p>Here are the code of theese two scripts: </p>
+
+<div>
+<div class="code"><div class="file"><a href="/n3blog/en/blog/06_How_I_use_git/code/git-create-new-branch"> &#x27A5; git-create-new-branch </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
+
+<span class="Keyword">if</span> ((<span class="Variable"><span class="Variable">$</span>#</span><span class="Keyword">&lt;</span>1))<span class="Keyword">;</span> <span class="Keyword">then</span>
+    print -- <span class="String"><span class="String">&quot;</span>usage: <span class="StringVariable"><span class="StringVariable">$</span>0</span>:t branch_name<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
+    exit 1
+<span class="Keyword">fi</span>
+
+branch=<span class="Variable"><span class="Variable">$</span>1</span>
+git br <span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
+git co <span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
+git config branch.<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>.remote origin
+git config branch.<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>.merge refs/heads/<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
+</pre>
+</div></div>
+</div>
+
+<div>
+<div class="code"><div class="file"><a href="/n3blog/en/blog/06_How_I_use_git/code/git-get-remote-branches"> &#x27A5; git-get-remote-branches </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
+
+<span class="Comment"><span class="Comment">#</span> recup branches not on local</span>
+localbranches=( <span class="String"><span class="String">$(</span>git br <span class="Keyword">|</span> sed <span class="String"><span class="String">'</span>s/\*/ /<span class="String">'</span></span><span class="String">)</span></span> )
+remoteMissingBranches=( <span class="String"><span class="String">$(</span>git br -r <span class="Keyword">|</span> \</span>
+<span class="String">    egrep -v <span class="String"><span class="String">&quot;</span>origin/HEAD|(<span class="StringVariable"><span class="StringVariable">${</span>(j:|:)localbranches<span class="StringVariable">}</span></span>)<span class="String">&quot;</span></span> <span class="String">)</span></span> )
+<span class="Keyword">for</span> br <span class="Keyword">in</span> <span class="Variable"><span class="Variable">$</span>remoteMissingBranches</span><span class="Keyword">;</span> <span class="Keyword">do</span>
+  branch=<span class="Variable"><span class="Variable">${</span>br#origin/<span class="Variable">}</span></span>
+  print <span class="String"><span class="String">&quot;</span>get remote branch <span class="StringVariable"><span class="StringVariable">$</span>branch</span><span class="String">&quot;</span></span>
+  git br <span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
+  git config branch.<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>.remote origin
+  git config branch.<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>.merge refs/heads/<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
+<span class="Keyword">done</span>
+</pre>
+</div></div>
+</div>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomen">
+                        Subscribe
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Comments</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">comments</h2>
+                    <noscript>
+                        You must enable javascript to comment.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/n3blog/en/blog/06_How_I_use_git/';
+    var idcomments_post_url = 'http://yannesposito.com/n3blog/en/blog/06_How_I_use_git/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/n3blog/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/n3blog/en/">Home</a></li>
+<li><a href="/n3blog/en/blog/">Blog</a></li>
+<li><a href="/n3blog/en/softwares/">Softwares</a></li>
+<li><a href="/n3blog/en/about/">About</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        previous entries
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/en/blog/05_git_create_remote_branch/"><span class="nicer">«</span>&nbsp;Git remote branch creation</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/en/blog/04_drm/"><span class="nicer">«</span>&nbsp;DRM are EVIL</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/en/blog/03_losthighway/"><span class="nicer">«</span>&nbsp;A try to demystify 'Lost Highway'</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        next entries
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/en/blog/07_Screensaver_compilation_option_for_Snow_Leopard/">Screensaver compilation option for Snow Leopard<sub>&copy;</sub>&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/en/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh to Listen 443 on Snow Leopard&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/en/blog/09_Why_I_didn-t_keep_whosamung-us/">Why I didn't keep whos.amung.us&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Created: 08/18/2009
+                    Modified: 11/17/2010 
+                </div>
+                <div>
+                    Entirely done with
+                    <a href="http://www.vim.org">Vim</a>
+                    and 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/n3blog/en/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/n3blog/en/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>

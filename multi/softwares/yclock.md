@@ -6,7 +6,7 @@ hidden: false
 -----
 
 
-[ ![Screenshot](/Scratch/img/softwares/yclock/screenshot1.png 'screenshot') ][yclock]
+[ ![Screenshot](/n3blog/img/softwares/yclock/screenshot1.png 'screenshot') ][yclock]
 
 fr: YClock est un économiseur d'écran qui vous donne l'heure.i
 fr: Il a trois thèmes clair, rouge et noir.
@@ -17,4 +17,4 @@ en: It is based on a QuartzComposition and with some little Objective-C code to 
 
 [<span class="nicer">&#x27A5;</span> YClock.dmg][yclock]
 
-[yclock]: /Scratch/files/YClock.dmg
+[yclock]: /n3blog/files/YClock.dmg

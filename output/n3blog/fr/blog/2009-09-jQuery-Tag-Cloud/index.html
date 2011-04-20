@@ -1,0 +1,2027 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="jQuery, javascript, web, ruby">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/n3blog/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="jQuery Tag Cloud [en]" type="text/html" hreflang="fr" href="/n3blog/fr/blog/2009-09-jQuery-Tag-Cloud/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="jQuery Tag Cloud" type="text/html" hreflang="en" href="/n3blog/en/blog/2009-09-jQuery-Tag-Cloud/" /> 
+        <script type="text/javascript" src="/n3blog/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/n3blog/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/n3blog/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/n3blog/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>jQuery Tag Cloud [en]</title>
+    </head>
+    <body lang="fr">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/n3blog/img/loading.gif" alt="Chargement en cours..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/n3blog/en/blog/2009-09-jQuery-Tag-Cloud/" onclick="setLanguage('en')">in English</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    jQuery Tag Cloud [en]
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p>Here is how I done the tag cloud of my blog. It is done mostly in jQuery.
+All my site is static and pages are generated with <a href="nanoc.stoneship.org">nanoc</a>.
+It is (in my humble opinion) the modern geek way to make a website.</p>
+
+<p>This is why I&rsquo;ll give only a Ruby Generator, not a full javascript generator. 
+But you can easily translate from Ruby to Javascript.</p>
+
+<p>Here is what you should obtain:</p>
+
+
+</div>
+
+<div class="corps">
+
+
+<div>
+<script type="text/javascript">
+            $(document).ready( function(){$('.list').hide();$('#tagcloud a').removeAttr("href")} );
+            function tagSelected(id) {
+                $('.list').hide();
+                $('#'+id).fadeIn();
+                $('.tag.selected').removeClass('selected');
+                $('#tag_'+id).addClass('selected');
+            }
+        </script><div id="tagcloud"><a href="#analyser" style="font-size: 1.0em;" class="tag" onclick="tagSelected('analyser')" id="tag_analyser">analyser</a> <a href="#analytics" style="font-size: 1.23076923076923em;" class="tag" onclick="tagSelected('analytics')" id="tag_analytics">analytics</a> <a href="#Apple" style="font-size: 1.69230769230769em;" class="tag" onclick="tagSelected('Apple')" id="tag_Apple">Apple</a> <a href="#arbre" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('arbre')" id="tag_arbre">arbre</a> <a href="#asynchrone" style="font-size: 1.0em;" class="tag" onclick="tagSelected('asynchrone')" id="tag_asynchrone">asynchrone</a> <a href="#awk" style="font-size: 1.0em;" class="tag" onclick="tagSelected('awk')" id="tag_awk">awk</a> <a href="#Bazaar" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Bazaar')" id="tag_Bazaar">Bazaar</a> <a href="#blacklist" style="font-size: 1.0em;" class="tag" onclick="tagSelected('blacklist')" id="tag_blacklist">blacklist</a> <a href="#blog" style="font-size: 1.92307692307692em;" class="tag" onclick="tagSelected('blog')" id="tag_blog">blog</a> <a href="#branch" style="font-size: 1.0em;" class="tag" onclick="tagSelected('branch')" id="tag_branch">branch</a> <a href="#branches" style="font-size: 1.0em;" class="tag" onclick="tagSelected('branches')" id="tag_branches">branches</a> <a href="#bzr" style="font-size: 1.0em;" class="tag" onclick="tagSelected('bzr')" id="tag_bzr">bzr</a> <a href="#cacher" style="font-size: 1.0em;" class="tag" onclick="tagSelected('cacher')" id="tag_cacher">cacher</a> <a href="#Cappuccino" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Cappuccino')" id="tag_Cappuccino">Cappuccino</a> <a href="#Chrome" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Chrome')" id="tag_Chrome">Chrome</a> <a href="#Cocoa" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Cocoa')" id="tag_Cocoa">Cocoa</a> <a href="#commentaires" style="font-size: 1.0em;" class="tag" onclick="tagSelected('commentaires')" id="tag_commentaires">commentaires</a> <a href="#courriel" style="font-size: 1.0em;" class="tag" onclick="tagSelected('courriel')" id="tag_courriel">courriel</a> <a href="#CSS" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('CSS')" id="tag_CSS">CSS</a> <a href="#David_Lynch" style="font-size: 1.0em;" class="tag" onclick="tagSelected('David_Lynch')" id="tag_David_Lynch">David&nbsp;Lynch</a> <a href="#DCVS" style="font-size: 1.0em;" class="tag" onclick="tagSelected('DCVS')" id="tag_DCVS">DCVS</a> <a href="#dcvs" style="font-size: 1.0em;" class="tag" onclick="tagSelected('dcvs')" id="tag_dcvs">dcvs</a> <a href="#design" style="font-size: 1.23076923076923em;" class="tag" onclick="tagSelected('design')" id="tag_design">design</a> <a href="#disqus" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('disqus')" id="tag_disqus">disqus</a> <a href="#drm" style="font-size: 1.0em;" class="tag" onclick="tagSelected('drm')" id="tag_drm">drm</a> <a href="#email" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('email')" id="tag_email">email</a> <a href="#expressions_r__guli__res" style="font-size: 1.0em;" class="tag" onclick="tagSelected('expressions_r__guli__res')" id="tag_expressions_r__guli__res">expressions&nbsp;régulières</a> <a href="#extension" style="font-size: 1.0em;" class="tag" onclick="tagSelected('extension')" id="tag_extension">extension</a> <a href="#fichier" style="font-size: 1.0em;" class="tag" onclick="tagSelected('fichier')" id="tag_fichier">fichier</a> <a href="#film" style="font-size: 1.0em;" class="tag" onclick="tagSelected('film')" id="tag_film">film</a> <a href="#filter" style="font-size: 1.0em;" class="tag" onclick="tagSelected('filter')" id="tag_filter">filter</a> <a href="#Firefox" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Firefox')" id="tag_Firefox">Firefox</a> <a href="#Fonts" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Fonts')" id="tag_Fonts">Fonts</a> <a href="#git" style="font-size: 1.80769230769231em;" class="tag" onclick="tagSelected('git')" id="tag_git">git</a> <a href="#Google" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Google')" id="tag_Google">Google</a> <a href="#HTML" style="font-size: 1.0em;" class="tag" onclick="tagSelected('HTML')" id="tag_HTML">HTML</a> <a href="#indecidability" style="font-size: 1.0em;" class="tag" onclick="tagSelected('indecidability')" id="tag_indecidability">indecidability</a> <a href="#intense_debate" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('intense_debate')" id="tag_intense_debate">intense&nbsp;debate</a> <a href="#iPhone" style="font-size: 1.23076923076923em;" class="tag" onclick="tagSelected('iPhone')" id="tag_iPhone">iPhone</a> <a href="#iTunes" style="font-size: 1.0em;" class="tag" onclick="tagSelected('iTunes')" id="tag_iTunes">iTunes</a> <a href="#javascript" style="font-size: 1.69230769230769em;" class="tag" onclick="tagSelected('javascript')" id="tag_javascript">javascript</a> <a href="#jQuery" style="font-size: 1.92307692307692em;" class="tag" onclick="tagSelected('jQuery')" id="tag_jQuery">jQuery</a> <a href="#langues" style="font-size: 1.0em;" class="tag" onclick="tagSelected('langues')" id="tag_langues">langues</a> <a href="#Linux" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Linux')" id="tag_Linux">Linux</a> <a href="#local" style="font-size: 1.0em;" class="tag" onclick="tagSelected('local')" id="tag_local">local</a> <a href="#Lost_Highway" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Lost_Highway')" id="tag_Lost_Highway">Lost&nbsp;Highway</a> <a href="#Mac" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Mac')" id="tag_Mac">Mac</a> <a href="#mac" style="font-size: 1.23076923076923em;" class="tag" onclick="tagSelected('mac')" id="tag_mac">mac</a> <a href="#math__matiques" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('math__matiques')" id="tag_math__matiques">mathématiques</a> <a href="#mobileme" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('mobileme')" id="tag_mobileme">mobileme</a> <a href="#nanoc" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('nanoc')" id="tag_nanoc">nanoc</a> <a href="#Objective_C" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Objective_C')" id="tag_Objective_C">Objective-C</a> <a href="#OS_X" style="font-size: 1.0em;" class="tag" onclick="tagSelected('OS_X')" id="tag_OS_X">OS&nbsp;X</a> <a href="#philosophy" style="font-size: 1.0em;" class="tag" onclick="tagSelected('philosophy')" id="tag_philosophy">philosophy</a> <a href="#popup" style="font-size: 1.0em;" class="tag" onclick="tagSelected('popup')" id="tag_popup">popup</a> <a href="#programmation" style="font-size: 1.0em;" class="tag" onclick="tagSelected('programmation')" id="tag_programmation">programmation</a> <a href="#Programmation" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Programmation')" id="tag_Programmation">Programmation</a> <a href="#programming" style="font-size: 1.34615384615385em;" class="tag" onclick="tagSelected('programming')" id="tag_programming">programming</a> <a href="#protection" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('protection')" id="tag_protection">protection</a> <a href="#regexp" style="font-size: 1.46153846153846em;" class="tag" onclick="tagSelected('regexp')" id="tag_regexp">regexp</a> <a href="#regular_expression" style="font-size: 1.23076923076923em;" class="tag" onclick="tagSelected('regular_expression')" id="tag_regular_expression">regular&nbsp;expression</a> <a href="#remote" style="font-size: 1.0em;" class="tag" onclick="tagSelected('remote')" id="tag_remote">remote</a> <a href="#ruby" style="font-size: 1.23076923076923em;" class="tag" onclick="tagSelected('ruby')" id="tag_ruby">ruby</a> <a href="#R__alit___altern__e" style="font-size: 1.0em;" class="tag" onclick="tagSelected('R__alit___altern__e')" id="tag_R__alit___altern__e">Réalité&nbsp;alternée</a> <a href="#S_MIME" style="font-size: 1.0em;" class="tag" onclick="tagSelected('S_MIME')" id="tag_S_MIME">S/MIME</a> <a href="#Safari" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Safari')" id="tag_Safari">Safari</a> <a href="#science" style="font-size: 1.0em;" class="tag" onclick="tagSelected('science')" id="tag_science">science</a> <a href="#screensaver" style="font-size: 1.0em;" class="tag" onclick="tagSelected('screensaver')" id="tag_screensaver">screensaver</a> <a href="#script" style="font-size: 1.57692307692308em;" class="tag" onclick="tagSelected('script')" id="tag_script">script</a> <a href="#securit__" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('securit__')" id="tag_securit__">securité</a> <a href="#shell" style="font-size: 1.23076923076923em;" class="tag" onclick="tagSelected('shell')" id="tag_shell">shell</a> <a href="#ssh" style="font-size: 1.0em;" class="tag" onclick="tagSelected('ssh')" id="tag_ssh">ssh</a> <a href="#statistiques" style="font-size: 1.0em;" class="tag" onclick="tagSelected('statistiques')" id="tag_statistiques">statistiques</a> <a href="#svn" style="font-size: 1.0em;" class="tag" onclick="tagSelected('svn')" id="tag_svn">svn</a> <a href="#synchronisation" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('synchronisation')" id="tag_synchronisation">synchronisation</a> <a href="#th__orie" style="font-size: 1.0em;" class="tag" onclick="tagSelected('th__orie')" id="tag_th__orie">théorie</a> <a href="#tip" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('tip')" id="tag_tip">tip</a> <a href="#Ubuntu" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Ubuntu')" id="tag_Ubuntu">Ubuntu</a> <a href="#utilisateur" style="font-size: 1.0em;" class="tag" onclick="tagSelected('utilisateur')" id="tag_utilisateur">utilisateur</a> <a href="#web" style="font-size: 2.5em;" class="tag" onclick="tagSelected('web')" id="tag_web">web</a> <a href="#WebDav" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('WebDav')" id="tag_WebDav">WebDav</a> <a href="#webdesign" style="font-size: 1.11538461538462em;" class="tag" onclick="tagSelected('webdesign')" id="tag_webdesign">webdesign</a> <a href="#workflow" style="font-size: 1.0em;" class="tag" onclick="tagSelected('workflow')" id="tag_workflow">workflow</a> <a href="#Xcode" style="font-size: 1.0em;" class="tag" onclick="tagSelected('Xcode')" id="tag_Xcode">Xcode</a> <a href="#zsh" style="font-size: 1.23076923076923em;" class="tag" onclick="tagSelected('zsh')" id="tag_zsh">zsh</a> </div><div id="hiddenDivs"><div id="analyser" class="list"><h4>analyser</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="analytics" class="list"><h4>analytics</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">11</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/09_Why_I_didn-t_keep_whosamung-us/">Pourquoi je n'ai pas conservé whos.amung.us <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Apple" class="list"><h4>Apple</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">4</span>
+        <span class="month">Jan</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-01-04-Change-default-shell-on-Mac-OS-X/">Changer le shell par défaut sous Mac OS X <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">6</span>
+        <span class="month">Déc</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-12-06-iphone-call-filter/">Filtrage d'appel avec l'iPhone <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">28</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2) <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">11</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">7</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh sur le port 443 avec Snow Leopard <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">6</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/">Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small> <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">15</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/04_drm/">Les protections anti-copies sont LE MAL <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="arbre" class="list"><h4>arbre</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">24</span>
+        <span class="month">Mai</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/">Arbres&nbsp;; Pragmatisme et Formalisme <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">19</span>
+        <span class="month">Mai</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/">Comment réparer un XML coupé&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="asynchrone" class="list"><h4>asynchrone</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="awk" class="list"><h4>awk</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">18</span>
+        <span class="month">Fév</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-02-18-split-a-file-by-keyword/">découper un fichier par mots clés <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Bazaar" class="list"><h4>Bazaar</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">14</span>
+        <span class="month">Déc</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-12-14-Git-vs--Bzr/">Git ou Bazaar&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="blacklist" class="list"><h4>blacklist</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">6</span>
+        <span class="month">Déc</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-12-06-iphone-call-filter/">Filtrage d'appel avec l'iPhone <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="blog" class="list"><h4>blog</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">6</span>
+        <span class="month">Oct</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-10-06-New-Blog-Design-Constraints/">Contraintes du design de ce blog <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Aoû</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-08-23-Now-heberged-on-heroku/">Maintenant sur Heroku <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">19</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">15</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-15-Get-my-blog-engine/">Récupérez mon système de blog <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">14</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-14-multi-language-choices/">choix liés à l'écriture dans plusieurs langues <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Mai</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-05-17-at-least-this-blog-revive/">Je reviens à la vie&nbsp;! <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">28</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus contre Intense Debate (pourquois j'ai changé) <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="branch" class="list"><h4>branch</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/05_git_create_remote_branch/">Création de branches externe avec Git <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="branches" class="list"><h4>branches</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Mar</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-03-23-Encapsulate-git/">Encapsuler git <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="bzr" class="list"><h4>bzr</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">14</span>
+        <span class="month">Déc</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-12-14-Git-vs--Bzr/">Git ou Bazaar&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="cacher" class="list"><h4>cacher</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Cappuccino" class="list"><h4>Cappuccino</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">5</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Chrome" class="list"><h4>Chrome</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">7</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">N'utilisez pas de gradients avec Chrome <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Cocoa" class="list"><h4>Cocoa</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">5</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="commentaires" class="list"><h4>commentaires</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en] <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="courriel" class="list"><h4>courriel</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">10</span>
+        <span class="month">Oct</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/">Sécurisez vos emails <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="CSS" class="list"><h4>CSS</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">31</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-31-New-style-after-holidays/">Nouveau style après les vacances <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">7</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">N'utilisez pas de gradients avec Chrome <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="David_Lynch" class="list"><h4>David Lynch</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">4</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/03_losthighway/">Lost Highway démystifié (un peu) <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="DCVS" class="list"><h4>DCVS</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">14</span>
+        <span class="month">Déc</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-12-14-Git-vs--Bzr/">Git ou Bazaar&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="dcvs" class="list"><h4>dcvs</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">13</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-untaught-git-usage/">Usages non dits de Git <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="design" class="list"><h4>design</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">31</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-31-New-style-after-holidays/">Nouveau style après les vacances <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">26</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">22</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-Focus-vs-Minimalism/"><em>Focus</em> &gt; Minimalisme <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="disqus" class="list"><h4>disqus</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">28</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus contre Intense Debate (pourquois j'ai changé) <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en] <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="drm" class="list"><h4>drm</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">15</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/04_drm/">Les protections anti-copies sont LE MAL <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="email" class="list"><h4>email</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">10</span>
+        <span class="month">Oct</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/">Sécurisez vos emails <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">31</span>
+        <span class="month">Aoû</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="expressions_r__guli__res" class="list"><h4>expressions régulières</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Fév</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/">Quand se passer des expressions régulières&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="extension" class="list"><h4>extension</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Fév</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/">Quand se passer des expressions régulières&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="fichier" class="list"><h4>fichier</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Fév</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/">Quand se passer des expressions régulières&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="film" class="list"><h4>film</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">4</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/03_losthighway/">Lost Highway démystifié (un peu) <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="filter" class="list"><h4>filter</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">6</span>
+        <span class="month">Déc</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-12-06-iphone-call-filter/">Filtrage d'appel avec l'iPhone <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Firefox" class="list"><h4>Firefox</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">7</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">N'utilisez pas de gradients avec Chrome <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Fonts" class="list"><h4>Fonts</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">12</span>
+        <span class="month">Jan</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/">Fontes adoucies sous Ubuntu Firefox <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="git" class="list"><h4>git</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">2</span>
+        <span class="month">Sep</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/">Utilisation de git pour calculer les mtimes <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Mar</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-03-23-Encapsulate-git/">Encapsuler git <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">22</span>
+        <span class="month">Mar</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-03-22-Git-Tips/">Astuces Git <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">14</span>
+        <span class="month">Déc</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-12-14-Git-vs--Bzr/">Git ou Bazaar&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">12</span>
+        <span class="month">Nov</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-11-12-Git-for-n00b/">Git pour les nuls <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">13</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-untaught-git-usage/">Usages non dits de Git <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">18</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/06_How_I_use_git/">Git en solo <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/05_git_create_remote_branch/">Création de branches externe avec Git <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Google" class="list"><h4>Google</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="HTML" class="list"><h4>HTML</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">19</span>
+        <span class="month">Mai</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/">Comment réparer un XML coupé&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="indecidability" class="list"><h4>indecidability</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">11</span>
+        <span class="month">Aoû</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-09-Indecidabilities/">Indécidabilités (partie 1) <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="intense_debate" class="list"><h4>intense debate</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">28</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus contre Intense Debate (pourquois j'ai changé) <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en] <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="iPhone" class="list"><h4>iPhone</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">2</span>
+        <span class="month">Sep</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/">base64 et sha1 sur iPhone <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">5</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">6</span>
+        <span class="month">Déc</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-12-06-iphone-call-filter/">Filtrage d'appel avec l'iPhone <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="iTunes" class="list"><h4>iTunes</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">15</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/04_drm/">Les protections anti-copies sont LE MAL <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="javascript" class="list"><h4>javascript</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">5</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">19</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">26</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud [en] <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en] <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="jQuery" class="list"><h4>jQuery</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">5</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">19</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">30</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-30-How-to-handle-evil-IE/">Une CSS pour IE seulement <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">26</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">22</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-Focus-vs-Minimalism/"><em>Focus</em> &gt; Minimalisme <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">3</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-How-to-preload-your-site-with-style/">Charger une page web avec style <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud [en] <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="langues" class="list"><h4>langues</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">14</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-14-multi-language-choices/">choix liés à l'écriture dans plusieurs langues <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Linux" class="list"><h4>Linux</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">12</span>
+        <span class="month">Jan</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/">Fontes adoucies sous Ubuntu Firefox <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="local" class="list"><h4>local</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/05_git_create_remote_branch/">Création de branches externe avec Git <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Lost_Highway" class="list"><h4>Lost Highway</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">4</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/03_losthighway/">Lost Highway démystifié (un peu) <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Mac" class="list"><h4>Mac</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">4</span>
+        <span class="month">Jan</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-01-04-Change-default-shell-on-Mac-OS-X/">Changer le shell par défaut sous Mac OS X <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="mac" class="list"><h4>mac</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">10</span>
+        <span class="month">Oct</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/">Sécurisez vos emails <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">7</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh sur le port 443 avec Snow Leopard <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">6</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/">Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small> <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="math__matiques" class="list"><h4>mathématiques</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">11</span>
+        <span class="month">Aoû</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-09-Indecidabilities/">Indécidabilités (partie 1) <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">24</span>
+        <span class="month">Mai</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/">Arbres&nbsp;; Pragmatisme et Formalisme <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="mobileme" class="list"><h4>mobileme</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">28</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2) <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">11</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="nanoc" class="list"><h4>nanoc</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">2</span>
+        <span class="month">Sep</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/">Utilisation de git pour calculer les mtimes <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">15</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-15-Get-my-blog-engine/">Récupérez mon système de blog <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Objective_C" class="list"><h4>Objective-C</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">2</span>
+        <span class="month">Sep</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/">base64 et sha1 sur iPhone <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="OS_X" class="list"><h4>OS X</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">4</span>
+        <span class="month">Jan</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-01-04-Change-default-shell-on-Mac-OS-X/">Changer le shell par défaut sous Mac OS X <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="philosophy" class="list"><h4>philosophy</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">11</span>
+        <span class="month">Aoû</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-09-Indecidabilities/">Indécidabilités (partie 1) <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="popup" class="list"><h4>popup</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">19</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="programmation" class="list"><h4>programmation</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Fév</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/">Quand se passer des expressions régulières&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Programmation" class="list"><h4>Programmation</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">2</span>
+        <span class="month">Sep</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/">base64 et sha1 sur iPhone <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="programming" class="list"><h4>programming</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">6</span>
+        <span class="month">Oct</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-10-06-New-Blog-Design-Constraints/">Contraintes du design de ce blog <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">7</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">N'utilisez pas de gradients avec Chrome <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">5</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">13</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-untaught-git-usage/">Usages non dits de Git <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="protection" class="list"><h4>protection</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Mar</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-03-23-Encapsulate-git/">Encapsuler git <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">15</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/04_drm/">Les protections anti-copies sont LE MAL <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="regexp" class="list"><h4>regexp</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">24</span>
+        <span class="month">Mai</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/">Arbres&nbsp;; Pragmatisme et Formalisme <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Fév</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/">Quand se passer des expressions régulières&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">16</span>
+        <span class="month">Fév</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-02-16-All-but-something-regexp--2-/">Tout sauf quelquechose en expression régulière. <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">15</span>
+        <span class="month">Fév</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-02-15-All-but-something-regexp/">Expression régulière pour tout sauf quelquechose <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">22</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-09-replace-all-except-some-part/">Remplacer tout sauf une partie <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="regular_expression" class="list"><h4>regular expression</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">16</span>
+        <span class="month">Fév</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-02-16-All-but-something-regexp--2-/">Tout sauf quelquechose en expression régulière. <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">15</span>
+        <span class="month">Fév</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-02-15-All-but-something-regexp/">Expression régulière pour tout sauf quelquechose <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">22</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-09-replace-all-except-some-part/">Remplacer tout sauf une partie <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="remote" class="list"><h4>remote</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/05_git_create_remote_branch/">Création de branches externe avec Git <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="ruby" class="list"><h4>ruby</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">19</span>
+        <span class="month">Mai</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/">Comment réparer un XML coupé&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud [en] <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">22</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-09-replace-all-except-some-part/">Remplacer tout sauf une partie <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="R__alit___altern__e" class="list"><h4>Réalité alternée</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">4</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/03_losthighway/">Lost Highway démystifié (un peu) <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="S_MIME" class="list"><h4>S/MIME</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">10</span>
+        <span class="month">Oct</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/">Sécurisez vos emails <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Safari" class="list"><h4>Safari</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">7</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">N'utilisez pas de gradients avec Chrome <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="science" class="list"><h4>science</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">11</span>
+        <span class="month">Aoû</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-09-Indecidabilities/">Indécidabilités (partie 1) <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="screensaver" class="list"><h4>screensaver</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">6</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/">Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small> <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="script" class="list"><h4>script</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">24</span>
+        <span class="month">Mai</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/">Arbres&nbsp;; Pragmatisme et Formalisme <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">19</span>
+        <span class="month">Mai</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/">Comment réparer un XML coupé&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">18</span>
+        <span class="month">Fév</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-02-18-split-a-file-by-keyword/">découper un fichier par mots clés <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">28</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2) <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">11</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="securit__" class="list"><h4>securité</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">10</span>
+        <span class="month">Oct</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/">Sécurisez vos emails <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">7</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh sur le port 443 avec Snow Leopard <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="shell" class="list"><h4>shell</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">31</span>
+        <span class="month">Aoû</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">18</span>
+        <span class="month">Fév</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-02-18-split-a-file-by-keyword/">découper un fichier par mots clés <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="ssh" class="list"><h4>ssh</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">7</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh sur le port 443 avec Snow Leopard <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="statistiques" class="list"><h4>statistiques</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-hide-yourself-to-analytics/">Se cacher de ses statistiques web <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="svn" class="list"><h4>svn</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">18</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/06_How_I_use_git/">Git en solo <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="synchronisation" class="list"><h4>synchronisation</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">28</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2) <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">11</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="th__orie" class="list"><h4>théorie</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">24</span>
+        <span class="month">Mai</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/">Arbres&nbsp;; Pragmatisme et Formalisme <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="tip" class="list"><h4>tip</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">22</span>
+        <span class="month">Mar</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-03-22-Git-Tips/">Astuces Git <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Ubuntu" class="list"><h4>Ubuntu</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">12</span>
+        <span class="month">Jan</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/">Fontes adoucies sous Ubuntu Firefox <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="utilisateur" class="list"><h4>utilisateur</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-17-track-events-with-google-analytics/">Analyser les clicks sur votre Site <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="web" class="list"><h4>web</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">2</span>
+        <span class="month">Sep</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/">Utilisation de git pour calculer les mtimes <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">31</span>
+        <span class="month">Aoû</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">31</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-31-New-style-after-holidays/">Nouveau style après les vacances <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">7</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/">N'utilisez pas de gradients avec Chrome <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">5</span>
+        <span class="month">Jul</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-07-05-Cappuccino-and-Web-applications/">Cappuccino ou jQuery&nbsp;? <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">19</span>
+        <span class="month">Jui</span>
+        <span class="year">2010</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2010-06-19-jQuery-popup-the-easy-way/">Comment faire des popups en jQuery rapidement <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">30</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-30-How-to-handle-evil-IE/">Une CSS pour IE seulement <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">26</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">22</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-Focus-vs-Minimalism/"><em>Focus</em> &gt; Minimalisme <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">3</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-How-to-preload-your-site-with-style/">Charger une page web avec style <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">28</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus contre Intense Debate (pourquois j'ai changé) <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud [en] <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">17</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en] <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">11</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/09_Why_I_didn-t_keep_whosamung-us/">Pourquoi je n'ai pas conservé whos.amung.us <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="WebDav" class="list"><h4>WebDav</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">28</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2) <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">11</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="webdesign" class="list"><h4>webdesign</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">30</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-30-How-to-handle-evil-IE/">Une CSS pour IE seulement <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">3</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-How-to-preload-your-site-with-style/">Charger une page web avec style <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="workflow" class="list"><h4>workflow</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">18</span>
+        <span class="month">Aoû</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/06_How_I_use_git/">Git en solo <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="Xcode" class="list"><h4>Xcode</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">6</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/">Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small> <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div><div id="zsh" class="list"><h4>zsh</h4><ul style="list-style-type: none; margin: 0;">
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">28</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/">Synchronisation avec mobileme (2) <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">23</span>
+        <span class="month">Oct</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande <span class="nicer">»</span></a>
+                    </li>
+
+                    <li style="line-height: 3em; margin: 0;">
+                        <span class="date">
+        <span class="day">11</span>
+        <span class="month">Sep</span>
+        <span class="year">2009</span>
+    </span> 
+                        <a href="/n3blog/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe <span class="nicer">»</span></a>
+                    </li>
+</ul><a class="return" href="#tagcloud">&uarr;</a></div></div>
+</div>
+
+
+</div>
+
+<div class="corps">
+
+
+<h1 class="first" id="jquery">jQuery</h1>
+
+<p>Here is the simple jQuery code:</p>
+
+<div>
+<pre class="twilight">
+    <span class="Keyword">$</span>(<span class="Support">document</span>).ready( <span class="Storage">function</span>(){<span class="Keyword">$</span>(<span class="String"><span class="String">'</span>.list<span class="String">'</span></span>).hide();} );
+    <span class="Storage">function</span> <span class="Entity">tagSelected</span>(<span class="Variable">id</span>) {
+        <span class="Keyword">$</span>(<span class="String"><span class="String">'</span>.list<span class="String">'</span></span>).hide();
+        <span class="Keyword">$</span>(<span class="String"><span class="String">'</span>#<span class="String">'</span></span><span class="Keyword">+</span>id).fadeIn();
+        <span class="Keyword">$</span>(<span class="String"><span class="String">'</span>.tag.selected<span class="String">'</span></span>).removeClass(<span class="String"><span class="String">'</span>selected<span class="String">'</span></span>);
+        <span class="Keyword">$</span>(<span class="String"><span class="String">'</span>#tag_<span class="String">'</span></span><span class="Keyword">+</span>id).addClass(<span class="String"><span class="String">'</span>selected<span class="String">'</span></span>);
+    }
+</pre>
+</div>
+
+<p>This code will hide all the div containing links to articles containing the tag. And create a function do show the div containing the tag.</p>
+
+<p>For each tag I create a span element:</p>
+
+<div>
+<pre class="twilight">
+    <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">span</span>   <span class="MetaTagInline">style</span>=<span class="String"><span class="String">&quot;</span>font-size: 1.0em;<span class="String">&quot;</span></span> </span>
+<span class="MetaTagInline">            <span class="MetaTagInline">class</span>=<span class="String"><span class="String">&quot;</span>tag<span class="String">&quot;</span></span> </span>
+<span class="MetaTagInline">            <span class="MetaTagInline">onClick</span>=<span class="String"><span class="String">&quot;</span>tagSelected('[TAG]')<span class="String">&quot;</span></span> </span>
+<span class="MetaTagInline">            <span class="MetaTagInline"><span class="MetaTagInline">id</span><span class="MetaTagInline">=</span><span class="String"><span class="String">&quot;</span><span class="String">tag_[TAG]</span><span class="String">&quot;</span></span></span><span class="MetaTagInline">&gt;</span></span>
+        [TAG]
+    <span class="MetaTagInline"><span class="MetaTagInline">&lt;/</span><span class="MetaTagInline">span</span><span class="MetaTagInline">&gt;</span></span> 
+</pre>
+</div>
+
+<p>and a div containing links associtated to this tag:</p>
+
+<div>
+<pre class="twilight">
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll"><span class="MetaTagAll">id</span><span class="MetaTagAll">=</span><span class="String"><span class="String">&quot;</span><span class="String">[TAG]</span><span class="String">&quot;</span></span></span><span class="MetaTagAll">&gt;</span></span>
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">h4</span><span class="MetaTagAll">&gt;</span></span>[TAG]<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">h4</span><span class="MetaTagAll">&gt;</span></span>
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">ul</span><span class="MetaTagAll">&gt;</span></span>
+            <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">li</span><span class="MetaTagInline">&gt;</span></span> LINK 1 <span class="MetaTagInline"><span class="MetaTagInline">&lt;/</span><span class="MetaTagInline">li</span><span class="MetaTagInline">&gt;</span></span>
+            <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">li</span><span class="MetaTagInline">&gt;</span></span> LINK 2 <span class="MetaTagInline"><span class="MetaTagInline">&lt;/</span><span class="MetaTagInline">li</span><span class="MetaTagInline">&gt;</span></span>
+        <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">ul</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span> 
+</pre>
+</div>
+
+
+</div>
+
+<div class="corps">
+
+
+<h1 class="first" id="nanoc">nanoc</h1>
+
+<p>Here is how I generate this using nanoc 2.</p>
+
+<p>If you want to make it fully jQuery one, it shouldn&rsquo;t be
+too difficult, to use my ruby code and translate it into javascript.</p>
+
+<p>In a first time <code>tags</code> correpond of the list of all tags.</p>
+
+<div>
+<pre class="twilight">
+<span class="Keyword">def</span> <span class="Entity">tags</span>
+    <span class="Keyword">return</span> <span class="Variable"><span class="Variable">@</span>page</span>.<span class="Entity">tags</span>.<span class="Entity">join</span>(<span class="String"><span class="String">'</span>, <span class="String">'</span></span>)
+<span class="Keyword">end</span>
+</pre>
+</div>
+
+<p>A function to create a data structure associating to each 
+tag its occurence. </p>
+
+<div>
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span> generate an hash tag =&gt; number of occurence of tag</span>
+<span class="Keyword">def</span> <span class="Entity">tagNumber</span>
+    tags<span class="Keyword">=</span>{}
+    <span class="Variable"><span class="Variable">@</span>pages</span>.<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">p</span>|
+        <span class="Keyword">if</span> p.<span class="Entity">tags</span>.<span class="Entity">nil?</span>
+            <span class="Keyword">next</span>
+        <span class="Keyword">end</span>
+        p.<span class="Entity">tags</span>.<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">t</span>|
+            <span class="Keyword">if</span> tags[t]
+                tags[t]<span class="Keyword">+=</span><span class="Constant">1</span>
+            <span class="Keyword">else</span>
+                tags[t]<span class="Keyword">=</span><span class="Constant">1</span>
+            <span class="Keyword">end</span>
+        <span class="Keyword">end</span>
+    <span class="Keyword">end</span>
+    <span class="Keyword">return</span> tags
+<span class="Keyword">end</span>
+</pre>
+</div>
+
+<p>I also need a data structure who associate to each
+tag a list of pages (at least url and title).</p>
+
+<div>
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span> generate an hash tag =&gt; [ page1, page2 ... ]</span>
+<span class="Keyword">def</span> <span class="Entity">tagRefs</span>
+    tagLinks<span class="Keyword">=</span>{}
+    <span class="Variable"><span class="Variable">@</span>pages</span>.<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">p</span>|
+        <span class="Keyword">if</span> p.<span class="Entity">tags</span>.<span class="Entity">nil?</span>
+            <span class="Keyword">next</span>
+        <span class="Keyword">end</span>
+        p.<span class="Entity">tags</span>.<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">t</span>|
+            <span class="Keyword">if</span> tagLinks[t].<span class="Entity">nil?</span>
+                tagLinks[t]<span class="Keyword">=</span>[ p ]
+            <span class="Keyword">else</span>
+                tagLinks[t] <span class="Keyword">&lt;&lt;=</span> p
+            <span class="Keyword">end</span>
+        <span class="Keyword">end</span>
+    <span class="Keyword">end</span>
+    <span class="Keyword">return</span> tagLinks
+<span class="Keyword">end</span>
+</pre>
+</div>
+
+<p>Calculate the real size of each tag to be displayed.</p>
+
+<p>I choosen not to use the full range of size for all the tag. Because if no
+tag has more than <code>n</code> (here 10) occurences, then it doesn&rsquo;t deserve to be
+of the maximal size.</p>
+
+<div>
+<pre class="twilight">
+<span class="Keyword">def</span> <span class="Entity">tagRealSize</span>
+    tags<span class="Keyword">=</span>tagNumber
+    max<span class="Keyword">=</span>tags.<span class="Entity">values</span>.<span class="Entity">max</span>
+    min<span class="Keyword">=</span>tags.<span class="Entity">values</span>.<span class="Entity">min</span>
+<span class="Comment">    <span class="Comment">#</span> size in CSS em.</span>
+    minSize<span class="Keyword">=</span><span class="Constant">1.0</span>
+    maxSize<span class="Keyword">=</span><span class="Constant">2.5</span>
+    tagSize<span class="Keyword">=</span>{}
+    tags.<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">t</span>,<span class="Variable">n</span>|
+        <span class="Keyword">if</span> ( max <span class="Keyword">==</span> min )
+            tagSize[t]<span class="Keyword">=</span>minSize
+        <span class="Keyword">else</span>
+<span class="Comment">            <span class="Comment">#</span> normalized value between 0 and 1</span>
+<span class="Comment">            <span class="Comment">#</span> if not tag appear more than 10 times, </span>
+<span class="Comment">            <span class="Comment">#</span> then it cannot have the maximal size</span>
+            tagSize[t]<span class="Keyword">=</span>[ ( n <span class="Keyword">-</span> min <span class="Keyword">+</span> <span class="Constant">0.0</span> ) <span class="Keyword">/</span> ( max <span class="Keyword">-</span> min ) , 
+                         (n <span class="Keyword">-</span> min) <span class="Keyword">/</span> <span class="Constant">10.0</span> ].<span class="Entity">min</span>
+<span class="Comment">            <span class="Comment">#</span> from normalized size to real size</span>
+            tagSize[t]<span class="Keyword">=</span>( tagSize[t] ) <span class="Keyword">*</span> (maxSize <span class="Keyword">-</span> minSize) <span class="Keyword">+</span> minSize
+        <span class="Keyword">end</span>
+    <span class="Keyword">end</span>
+    <span class="Keyword">return</span> tagSize
+<span class="Keyword">end</span>
+</pre>
+</div>
+
+<p>Finaly a function to generate the XHTML/jQuery code</p>
+
+<div>
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span> generate an XHTML/jQuery code for tag cloud</span>
+<span class="Keyword">def</span> <span class="Entity">tagCloud</span>
+    tagLinks<span class="Keyword">=</span>tagRefs
+    tagSize<span class="Keyword">=</span>tagRealSize
+
+<span class="Comment">    <span class="Comment">#</span> begin to write the code</span>
+    tagCloud<span class="Keyword">=</span><span class="String"><span class="String">%{</span>&lt;script type=&quot;text/javascript&quot;&gt;</span>
+<span class="String">        $(document).ready( function()<span class="String">{</span>$('.list').hide();<span class="String">}</span> );</span>
+<span class="String">        function tagSelected(id) <span class="String">{</span></span>
+<span class="String">            $('.list').hide();</span>
+<span class="String">            $('#'+id).fadeIn();</span>
+<span class="String">            $('.tag.selected').removeClass('selected');</span>
+<span class="String">            $('#tag_'+id).addClass('selected');</span>
+<span class="String">        <span class="String">}</span></span>
+<span class="String">    &lt;/script&gt;&lt;div id=&quot;tagcloud&quot;&gt;<span class="String">}</span></span>
+<span class="Comment">    <span class="Comment">#</span> Creation of the tags &lt;span&gt;</span>
+    tagSize.<span class="Entity">sort</span>{|<span class="Variable">a</span>,<span class="Variable">b</span>| a[<span class="Constant">0</span>].<span class="Entity">downcase</span> <span class="Keyword">&lt;=&gt;</span> b[<span class="Constant">0</span>].<span class="Entity">downcase</span>}.<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">t</span>,<span class="Variable">s</span>|
+        tag_in_id<span class="Keyword">=</span>t.<span class="Entity">gsub</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexpSpecial">\W</span></span><span class="StringRegexp"><span class="StringRegexp">/</span></span>,<span class="String"><span class="String">'</span>_<span class="String">'</span></span>)
+<span class="Comment">        <span class="Comment">#</span> HTML protected version of the tag</span>
+<span class="Comment">        <span class="Comment">#</span> for example, replace ' ' by '&amp;nbsp;'</span>
+        <span class="Keyword">protected</span><span class="Keyword">=</span>t.<span class="Entity">gsub</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp">&amp;</span><span class="StringRegexp"><span class="StringRegexp">/</span></span>,<span class="String"><span class="String">'</span>&amp;amp;<span class="String">'</span></span>).<span class="Entity">gsub</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp"> </span><span class="StringRegexp"><span class="StringRegexp">/</span></span>,<span class="String"><span class="String">'</span>&amp;nbsp;<span class="String">'</span></span>).<span class="Entity">gsub</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp">&lt;</span><span class="StringRegexp"><span class="StringRegexp">/</span></span>,<span class="String"><span class="String">'</span>&amp;lt;<span class="String">'</span></span>).<span class="Entity">gsub</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp">&gt;</span><span class="StringRegexp"><span class="StringRegexp">/</span></span>,<span class="String"><span class="String">'</span>&amp;gt;<span class="String">'</span></span>)
+        tagCloud <span class="Keyword">&lt;&lt;=</span> <span class="String"><span class="String">%{</span></span>
+<span class="String">            &lt;span style=&quot;font-size: <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>s<span class="StringEmbeddedSource">}</span></span>em;&quot; </span>
+<span class="String">                  class=&quot;tag&quot; </span>
+<span class="String">                  onClick=&quot;tagSelected('<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>tag_in_id<span class="StringEmbeddedSource">}</span></span>')&quot; </span>
+<span class="String">                  id=&quot;tag_<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>tag_in_id<span class="StringEmbeddedSource">}</span></span>&quot;&gt;</span>
+<span class="String">                <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span><span class="Keyword">protected</span><span class="StringEmbeddedSource">}</span></span></span>
+<span class="String">            &lt;/span&gt; <span class="String">}</span></span>
+    <span class="Keyword">end</span>
+    tagCloud <span class="Keyword">&lt;&lt;=</span> <span class="String"><span class="String">%{</span>&lt;/div&gt;&lt;div id=&quot;hiddenDivs&quot; &gt;<span class="String">}</span></span>
+<span class="Comment">    <span class="Comment">#</span> Creation of the divs containing links associated to a tag.</span>
+    tagLinks.<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">t</span>,<span class="Variable">l</span>|
+        tag_in_id<span class="Keyword">=</span>t.<span class="Entity">gsub</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexpSpecial">\W</span></span><span class="StringRegexp"><span class="StringRegexp">/</span></span>,<span class="String"><span class="String">'</span>_<span class="String">'</span></span>)
+        tagCloud <span class="Keyword">&lt;&lt;=</span> <span class="String"><span class="String">%{</span></span>
+<span class="String">            &lt;div id=&quot;<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>tag_in_id<span class="StringEmbeddedSource">}</span></span>&quot; class=&quot;list&quot;&gt;</span>
+<span class="String">                &lt;h4&gt;<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>t<span class="StringEmbeddedSource">}</span></span>&lt;/h4&gt;&lt;ul&gt;<span class="String">}</span></span>
+<span class="Comment">        <span class="Comment">#</span> generate the link list</span>
+        l.<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">p</span>|
+            tagCloud <span class="Keyword">&lt;&lt;=</span> <span class="String"><span class="String">%{</span>&lt;li&gt;&lt;a href=&quot;<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>p<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">.</span><span class="Entity">path</span></span><span class="StringEmbeddedSource">}</span></span>&quot;&gt;<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>p<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">.</span><span class="Entity">title</span></span><span class="StringEmbeddedSource">}</span></span>&lt;/a&gt;&lt;/li&gt;<span class="String">}</span></span>
+        <span class="Keyword">end</span>
+        tagCloud <span class="Keyword">&lt;&lt;=</span> <span class="String"><span class="String">%{</span>&lt;/ul&gt;&lt;/div&gt;<span class="String">}</span></span>
+    <span class="Keyword">end</span>
+    tagCloud <span class="Keyword">&lt;&lt;=</span> <span class="String"><span class="String">%{</span>&lt;/div&gt;<span class="String">}</span></span>
+    <span class="Keyword">return</span> tagCloud <span class="Comment"><span class="Comment">#</span> yeah I know it is not necessary</span>
+<span class="Keyword">end</span>
+</pre>
+</div>
+
+<p>You can <a href="/n3blog/en/blog/2009-09-jQuery-Tag-Cloud/code/tag.rb">download the complete file</a> to put in your &lsquo;lib&rsquo; directory. <strong>Beware, it is a nanoc 2 version, you&rsquo;ll have to make some small changes like replace <code>@pages</code> by <code>@items</code> to be nanoc3 compatible.</strong></p>
+
+<p>Of course to be nice you need the associated CSS</p>
+
+<div>
+<pre class="twilight">
+
+// Change the color when mouse over
+<span class="CssClass"><span class="CssClass">.</span>tag</span><span class="MetaTagInline"><span class="MetaTagInline">:</span>hover</span> {
+  <span class="CssPropertyName">color</span>: <span class="CssAdditionalConstants"><span class="CssAdditionalConstants">#</span>cc0000</span>; }
+
+// Change the color when tag selected
+<span class="CssClass"><span class="CssClass">.</span>tag</span><span class="CssClass"><span class="CssClass">.</span>selected</span> {
+  <span class="CssPropertyName">color</span>: <span class="CssAdditionalConstants"><span class="CssAdditionalConstants">#</span>6c0000</span>; }
+
+// a bit of space and pointer cursor
+<span class="CssClass"><span class="CssClass">.</span>tag</span> {
+  <span class="CssPropertyName">cursor</span>: <span class="CssPropertyValue">pointer</span>;
+  <span class="CssPropertyName">margin-left</span>: .<span class="CssAdditionalConstants">5</span><span class="Keyword">em</span>;
+  <span class="CssPropertyName">margin-right</span>: .<span class="CssAdditionalConstants">5</span><span class="Keyword">em</span>; }
+</pre>
+</div>
+
+<p>That&rsquo;s all folks.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">
+                        s'abonner
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Commentaires</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">commentaires</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/n3blog/fr/blog/2009-09-jQuery-Tag-Cloud/';
+    var idcomments_post_url = 'http://yannesposito.com/n3blog/fr/blog/2009-09-jQuery-Tag-Cloud/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/n3blog/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/n3blog/fr/">Bienvenue</a></li>
+<li><a href="/n3blog/fr/blog/">Blog</a></li>
+<li><a href="/n3blog/fr/softwares/">Softwares</a></li>
+<li><a href="/n3blog/fr/about/">À propos</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        articles précédents
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/fr/blog/2009-09-replace-all-except-some-part/"><span class="nicer">«</span>&nbsp;Remplacer tout sauf une partie</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/fr/blog/11_Load_Disqus_Asynchronously/"><span class="nicer">«</span>&nbsp;Load Disqus Asynchronously [en]</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/"><span class="nicer">«</span>&nbsp;Héberger son site personnel sur le site mobileMe</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        articles suivants
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus contre Intense Debate (pourquois j'ai changé)&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/fr/blog/2009-10-How-to-preload-your-site-with-style/">Charger une page web avec style&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/fr/blog/2009-10-untaught-git-usage/">Usages non dits de Git&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Écrit le : 23/09/2009
+                    modifié le : 17/06/2010 
+                </div>
+                <div>
+                    Site entièrement réalisé avec
+                    <a href="http://www.vim.org">Vim</a>
+                    et 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/n3blog/fr/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/n3blog/fr/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="CSS, web, programming, Chrome, Safari, Firefox">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/n3blog/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/n3blog/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="N'utilisez pas de gradients avec Chrome" type="text/html" hreflang="fr" href="/n3blog/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Do not use CSS gradient with Chrome" type="text/html" hreflang="en" href="/n3blog/en/blog/2010-07-07-CSS-rendering-problems-by-navigator/" /> 
+        <script type="text/javascript" src="/n3blog/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/n3blog/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/n3blog/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/n3blog/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>N'utilisez pas de gradients avec Chrome</title>
+    </head>
+    <body lang="fr">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/n3blog/img/loading.gif" alt="Chargement en cours..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/n3blog/en/blog/2010-07-07-CSS-rendering-problems-by-navigator/" onclick="setLanguage('en')">in English</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    N'utilisez pas de gradients avec Chrome
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p>Beaucoup d&rsquo;utilisateurs de <a href="http://reddit.com">Reddit</a> m&rsquo;ont rapporté que mon site était très long à charger et à <em>scroller</em>.
+Ils pensaient qu&rsquo;il s&rsquo;agissait d&rsquo;un problème dû aux ombres que j&rsquo;applique sur le texte.
+J&rsquo;étais un peu surpris puisque je fais mes tests sur une machine vraiment très lente et je n&rsquo;avais jamais détecté ces problèmes.
+En réalité, ce qui ralenti le rendu de ce site est par ordre d&rsquo;importance&nbsp;:</p>
+
+<ol>
+  <li>Les dégradés sur Chrome (pas dans Safari sur Mac)</li>
+  <li>les <em>box shadows</em> sur Firefox</li>
+</ol>
+
+<h2 id="les-dgrads">les dégradés</h2>
+
+<p>Sur Safari il n&rsquo;y a absolument aucun problème avec les dégradés. Par contre sur Chrome sous Linux le site devient quasiment inutilisable.</p>
+
+<p>Safari et Chrome utilisent <em>webkit</em> tous les deux. Lorsque vous accéder à ce blog avec javascript activé, un CSS spécifique à votre navigateur est ajouté. Jusqu&rsquo;à maintenant je faisais un tri entre&nbsp;: IE, Mozilla et Webkit. Maintenant j&rsquo;ai rajouté un cas particulier pour Chrome.
+Maintenant j&rsquo;ai supprimé les gradients lorsque vous naviguer sur ce site en utilisant Chrome.</p>
+
+<p>Je n&rsquo;ai pas vérifier la vitesse de rendu de toutes les propriétés de CSS 3. Mais je vous conseille de ne pas utiliser <strong><code>-webkit-gradient</code></strong> avec Chrome. Au moins sous Linux.</p>
+
+<h2 id="les-ombres-box-shadow">Les ombres (box-shadow)</h2>
+
+<p>J&rsquo;ai aussi remarqué que <strong><code>-moz-box-shadow</code></strong> ralenti le rendu sous Firefox (et sous Linux). Alors que l&rsquo;équivalent webkit ne pose aucun problème à Safari sous Mac.</p>
+
+<h2 id="ombres-de-texte">Ombres de texte</h2>
+
+<p>Beaucoup d&rsquo;utilisateurs mon dit d&rsquo;utiliser text-shadows avec parcimonie. Mais je pense qu&rsquo;il ne s&rsquo;agissait pas là du problème du ralentissement du site. C&rsquo;est pourquoi je vais les remettre.</p>
+
+<h2 id="en-conclusion">en conclusion</h2>
+
+<p>N&rsquo;utilisez pas <strong><code>-webkit-gradient</code></strong> avec google Chrome pour l&rsquo;instant.
+Utilisez <strong><code>-moz-box-shadow</code></strong> avec parcimonie.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">
+                        s'abonner
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Commentaires</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">commentaires</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/n3blog/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/';
+    var idcomments_post_url = 'http://yannesposito.com/n3blog/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/n3blog/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/n3blog/fr/">Bienvenue</a></li>
+<li><a href="/n3blog/fr/blog/">Blog</a></li>
+<li><a href="/n3blog/fr/softwares/">Softwares</a></li>
+<li><a href="/n3blog/fr/about/">À propos</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        articles précédents
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/fr/blog/2010-07-05-Cappuccino-and-Web-applications/"><span class="nicer">«</span>&nbsp;Cappuccino ou jQuery ?</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/fr/blog/2010-06-19-jQuery-popup-the-easy-way/"><span class="nicer">«</span>&nbsp;Comment faire des popups en jQuery rapidement</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/n3blog/fr/blog/2010-06-17-hide-yourself-to-analytics/"><span class="nicer">«</span>&nbsp;Se cacher de ses statistiques web</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        articles suivants
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/fr/blog/2010-07-31-New-style-after-holidays/">Nouveau style après les vacances&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/fr/blog/2010-07-09-Indecidabilities/">Indécidabilités (partie 1)&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/n3blog/fr/blog/2010-08-23-Now-heberged-on-heroku/">Maintenant sur Heroku&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Écrit le : 07/07/2010
+                    modifié le : 07/10/2010 
+                </div>
+                <div>
+                    Site entièrement réalisé avec
+                    <a href="http://www.vim.org">Vim</a>
+                    et 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/n3blog/fr/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/n3blog/fr/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>

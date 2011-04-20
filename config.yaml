@@ -5,7 +5,7 @@ data_sources:
   type: filesystem_unified
 output_dir: output
 ultraviolet_theme: "twilight"
-webprefix: "/Scratch"
+webprefix: "/n3blog"
 base_url: "http://yannesposito.com"
 author_uri: "http://yannesposito.com"
 rss_uri:

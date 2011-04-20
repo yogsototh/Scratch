@@ -16,7 +16,7 @@ tags:
 
 # [Disqus](http://disqus.com/) *vs.* [Intense Debate](http://intensedebate.com/)
 
-I made a blog entry about how I tried to integrate [Disqus](http://disqus.com). I had to wait Disqus comment to be displayed before loading correctly my page. This is why I tried to include it in a "non-blocking" way. Unfortunately, I had [difficulties to make it works correctly](/Scratch/en/blog/11_Load_Disqus_Asynchronously/). 
+I made a blog entry about how I tried to integrate [Disqus](http://disqus.com). I had to wait Disqus comment to be displayed before loading correctly my page. This is why I tried to include it in a "non-blocking" way. Unfortunately, I had [difficulties to make it works correctly](/n3blog/en/blog/11_Load_Disqus_Asynchronously/). 
 
 Furthermore, it was not trivial to make comment to be shared between multiple version of the same page (each page has three differents representations, one for each language and one more for the multi-language version).
 

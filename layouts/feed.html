@@ -1,7 +1,7 @@
 -----
 -----
 <% 
-language=@item_rep.path.sub(/\/Scratch\//,'').sub(/\/.*$/,'') 
+language=@item_rep.path.sub(%r{#{@config[:webprefix]}/},'').sub(/\/.*$/,'') 
 number_of_char_for_resume=800
 
 %><%= atom_feed( {
