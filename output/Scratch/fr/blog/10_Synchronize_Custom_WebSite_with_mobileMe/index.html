@@ -60,7 +60,7 @@
                 <div class="corps">
                     <h1 class="first" id="mise--jour-du-small28102009small">mise à jour du <small>28/10/2009</small></h1>
 
-<p>J&rsquo;ai mis à jour mon script <a href="/n3blog/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-">avec une version incrémentale</a> bien plus pratique.
+<p>J&rsquo;ai mis à jour mon script <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-">avec une version incrémentale</a> bien plus pratique.
 En plus depuis l&rsquo;écriture de cet article Apple<small>&copy;</small> semble avoir nettement amélioré la vitesse de ses serveurs en Europe.</p>
 
 
@@ -149,7 +149,7 @@ print -- <span class="String"><span class="String">&quot;</span>Dest = <span cla
     result=1
     essai=1
     <span class="Keyword">while</span> (( <span class="Variable"><span class="Variable">$</span>result</span> <span class="Keyword">&gt;</span> 0 ))<span class="Keyword">;</span> <span class="Keyword">do</span>
-        rsync -arv <span class="Variable"><span class="Variable">$</span>root</span>/n3blog/ <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
+        rsync -arv <span class="Variable"><span class="Variable">$</span>root</span>/Scratch/ <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
         result=<span class="Variable"><span class="Variable">$</span>?</span>
         <span class="Keyword">if</span> (( <span class="Variable"><span class="Variable">$</span>result</span> <span class="Keyword">&gt;</span> 0 ))<span class="Keyword">;</span> <span class="Keyword">then</span>
             print -P -- <span class="String"><span class="String">&quot;</span>%BEchec du rsync%b (essai n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span>)<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
@@ -257,7 +257,7 @@ print -- <span class="String"><span class="String">&quot;</span>Dest = <span cla
     result=1
     essai=1
     <span class="Keyword">while</span> (( <span class="Variable"><span class="Variable">$</span>result</span> <span class="Keyword">&gt;</span> 0 ))<span class="Keyword">;</span> <span class="Keyword">do</span>
-        rsync -arv <span class="Variable"><span class="Variable">$</span>root</span>/n3blog/ <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
+        rsync -arv <span class="Variable"><span class="Variable">$</span>root</span>/Scratch/ <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
         result=<span class="Variable"><span class="Variable">$</span>?</span>
         <span class="Keyword">if</span> (( <span class="Variable"><span class="Variable">$</span>result</span> <span class="Keyword">&gt;</span> 0 ))<span class="Keyword">;</span> <span class="Keyword">then</span>
             print -P -- <span class="String"><span class="String">&quot;</span>%Brsync failed%b (try n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span>)<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
