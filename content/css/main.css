@@ -759,3 +759,6 @@ ul.bloglist, .archive ul
 .button
   cursor: pointer
   text-align: center
+
+#tagcloud
+  font-size: .8em
