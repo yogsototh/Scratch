@@ -7,7 +7,7 @@ isHidden: true
 
 When you click on this logo: 
 
-<img src="/n3blog/img/menu/rss-128.png" alt="rss"/>
+<img src="/Scratch/img/menu/rss-128.png" alt="rss"/>
 
 You have the capability to subscribe to my RSS flux. But what it is all about?
 

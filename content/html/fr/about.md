@@ -5,7 +5,7 @@ menupriority: 4
 
 ## Pour faire connaissance
 
-![Une photo de moi](/n3blog/img/about/yann1.jpg)
+![Une photo de moi](/Scratch/img/about/yann1.jpg)
 
 <div class="fr">
     <desc informations générales>

@@ -49,10 +49,10 @@ Par exemple voici le mien :
 *.swp
 .DS_Store
 ikog.py.bak
-output/n3blog/assets
-output/n3blog/en
-output/n3blog/fr
-output/n3blog/multi
+output/Scratch/assets
+output/Scratch/en
+output/Scratch/fr
+output/Scratch/multi
 </code>
 </div>
 

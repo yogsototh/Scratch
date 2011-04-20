@@ -229,7 +229,7 @@ end
 </code>
 </div>
 
-You can [download the complete file](/n3blog/en/blog/2009-09-jQuery-Tag-Cloud/code/tag.rb) to put in your 'lib' directory. **Beware, it is a nanoc 2 version, you'll have to make some small changes like replace `@pages` by `@items` to be nanoc3 compatible.**
+You can [download the complete file](/Scratch/en/blog/2009-09-jQuery-Tag-Cloud/code/tag.rb) to put in your 'lib' directory. **Beware, it is a nanoc 2 version, you'll have to make some small changes like replace `@pages` by `@items` to be nanoc3 compatible.**
 
 Of course to be nice you need the associated CSS
 

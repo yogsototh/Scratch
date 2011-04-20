@@ -19,7 +19,7 @@ tags:
 # Update <small>(2009/10/28)</small>
 
 
-I [updated my script](/n3blog/en/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-) which is now incremental. Since the writing of this article, Apple(c) had made many efforts about the bandwith of its European servers.
+I [updated my script](/Scratch/en/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-) which is now incremental. Since the writing of this article, Apple(c) had made many efforts about the bandwith of its European servers.
 
 
 newcorps
@@ -116,7 +116,7 @@ if [[ ! $1 = '-s' ]]; then
     result=1
     essai=1
     while (( $result > 0 )); do
-        rsync -arv $root/n3blog/ $destRep.tmp
+        rsync -arv $root/Scratch/ $destRep.tmp
         result=$?
         if (( $result > 0 )); then
             print -P -- "%BEchec du rsync%b (essai n°$essai)" >&2
@@ -222,7 +222,7 @@ if [[ ! $1 = '-s' ]]; then
     result=1
     essai=1
     while (( $result > 0 )); do
-        rsync -arv $root/n3blog/ $destRep.tmp
+        rsync -arv $root/Scratch/ $destRep.tmp
         result=$?
         if (( $result > 0 )); then
             print -P -- "%Brsync failed%b (try n°$essai)" >&2

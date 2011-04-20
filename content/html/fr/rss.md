@@ -9,7 +9,7 @@ isHidden: true
 
 Lorsque vous cliquez sur ce logo : 
 
-<img src="/n3blog/img/menu/rss-128.png" alt="rss"/>
+<img src="/Scratch/img/menu/rss-128.png" alt="rss"/>
 
 On vous propose de vous abonner au flux RSS. Mais de quoi s'agit il ?
 
