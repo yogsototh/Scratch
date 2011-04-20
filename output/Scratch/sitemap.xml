@@ -19,13 +19,7 @@
     <loc>http://yannesposito.com/Scratch/en/softwares/ypassword/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/about/</loc>
-  </url>
-  <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-05-19-How-to-cut-HTML-and-repair-it/</loc>
@@ -37,16 +31,22 @@
     <loc>http://yannesposito.com/Scratch/en/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/</loc>
   </url>
   <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/about/</loc>
+  </url>
+  <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-10-26-LaTeX-like-macro-and-markdown/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/softwares/ypassword/iphoneweb/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-02-18-split-a-file-by-keyword/</loc>
@@ -67,10 +67,10 @@
     <loc>http://yannesposito.com/Scratch/fr/blog/2009-09-replace-all-except-some-part/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/09_Why_I_didn-t_keep_whosamung-us/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/09_Why_I_didn-t_keep_whosamung-us/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/03_losthighway/03_losthighway_2/</loc>
@@ -91,10 +91,10 @@
     <loc>http://yannesposito.com/Scratch/en/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/en/blog/2010-03-22-Git-Tips/</loc>
+    <loc>http://yannesposito.com/Scratch/en/blog/2010-06-19-jQuery-popup-the-easy-way/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/en/blog/2010-06-19-jQuery-popup-the-easy-way/</loc>
+    <loc>http://yannesposito.com/Scratch/en/blog/2010-03-22-Git-Tips/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-07-09-Indecidabilities/</loc>
@@ -106,22 +106,22 @@
     <loc>http://yannesposito.com/Scratch/en/blog/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/01_nanoc/</loc>
-  </url>
-  <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2009-12-06-iphone-call-filter/</loc>
   </url>
   <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/01_nanoc/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/en/blog/2010-02-15-All-but-something-regexp/</loc>
+  </url>
+  <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_1/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/11_Load_Disqus_Asynchronously/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/en/blog/2010-02-15-All-but-something-regexp/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-07-05-Cappuccino-and-Web-applications/</loc>
@@ -142,34 +142,31 @@
     <loc>http://yannesposito.com/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/about/cv/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/fr/about/technical_details/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_2/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/</loc>
+    <loc>http://yannesposito.com/Scratch/en/blog/2010-07-07-CSS-rendering-problems-by-navigator/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/en/blog/2010-07-07-CSS-rendering-problems-by-navigator/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/about/cv/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-06-15-Get-my-blog-engine/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/mvc/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/about/technical_details/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_3/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/mvc/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/validation/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_4/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_3/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2009-10-untaught-git-usage/</loc>
@@ -187,7 +184,7 @@
     <loc>http://yannesposito.com/Scratch/en/blog/2011-01-03-Happy-New-Year/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/about/old/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/03_losthighway_4/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-05-17-at-least-this-blog-revive/</loc>
@@ -202,10 +199,25 @@
     <loc>http://yannesposito.com/Scratch/en/blog/03_losthighway/</loc>
   </url>
   <url>
+    <loc>http://yannesposito.com/Scratch/fr/about/old/</loc>
+  </url>
+  <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-08-31-send-mail-from-command-line-with-attached-file/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2009-12-06-iphone-call-filter/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2009-10-Focus-vs-Minimalism/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/en/blog/07_Screensaver_compilation_option_for_Snow_Leopard/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/about/contact/</loc>
@@ -214,19 +226,7 @@
     <loc>http://yannesposito.com/Scratch/fr/blog/2009-10-How-to-preload-your-site-with-style/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2009-10-Focus-vs-Minimalism/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/en/blog/07_Screensaver_compilation_option_for_Snow_Leopard/</loc>
-  </url>
-  <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-07-31-New-style-after-holidays/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2009-12-06-iphone-call-filter/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/</loc>
@@ -238,25 +238,25 @@
     <loc>http://yannesposito.com/Scratch/en/blog/2010-09-02-base64-and-sha1-on-iPhone/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/</loc>
-  </url>
-  <url>
     <loc>http://yannesposito.com/Scratch/fr/softwares/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/en/blog/02_ackgrep/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-10-14-Fun-with-wav/</loc>
   </url>
   <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/en/blog/02_ackgrep/</loc>
+  </url>
+  <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/06_How_I_use_git/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2010-02-15-All-but-something-regexp/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2009-09-replace-all-except-some-part/</loc>
@@ -265,10 +265,10 @@
     <loc>http://yannesposito.com/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2010-02-15-All-but-something-regexp/</loc>
+    <loc>http://yannesposito.com/Scratch/en/about/old/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/en/about/old/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/06_How_I_use_git/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/about/cv/</loc>
@@ -292,16 +292,13 @@
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/en/blog/2010-10-14-Fun-with-wav/</loc>
-  </url>
-  <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-06-14-multi-language-choices/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/</loc>
+    <loc>http://yannesposito.com/Scratch/en/blog/2010-10-14-Fun-with-wav/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2011-01-03-Happy-New-Year/</loc>
@@ -310,16 +307,19 @@
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/</loc>
   </url>
   <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</loc>
+  </url>
+  <url>
     <loc>http://yannesposito.com/Scratch/en/blog/10_Synchronize_Custom_WebSite_with_mobileMe/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-02-16-All-but-something-regexp--2-/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2010-07-31-New-style-after-holidays/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/softwares/yaquabubbles/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/softwares/yaquabubbles/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2010-07-31-New-style-after-holidays/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2009-12-14-Git-vs--Bzr/</loc>
@@ -328,10 +328,10 @@
     <loc>http://yannesposito.com/Scratch/en/blog/06_How_I_use_git/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/</loc>
+    <loc>http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/03_losthighway/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/rss/</loc>
@@ -346,22 +346,22 @@
     <loc>http://yannesposito.com/Scratch/en/blog/2009-10-launch-daemon-from-command-line/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/en/blog/2010-03-23-Encapsulate-git/</loc>
-  </url>
-  <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-06-15-Get-my-blog-engine/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-03-22-Git-Tips/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</loc>
+    <loc>http://yannesposito.com/Scratch/en/blog/2010-03-23-Encapsulate-git/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-02-16-All-but-something-regexp--2-/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/</loc>
+    <loc>http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-02-23-When-regexp-is-not-the-best-solution/</loc>
@@ -379,16 +379,16 @@
     <loc>http://yannesposito.com/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/softwares/ypassword/web/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-03-23-Encapsulate-git/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/softwares/ypassword/web/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/conf-et-install/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/2010-06-17-track-events-with-google-analytics/</loc>
@@ -412,10 +412,10 @@
     <loc>http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/04_drm/</loc>
+    <loc>http://yannesposito.com/Scratch/en/about/technical_details/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/en/about/technical_details/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/04_drm/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/</loc>
@@ -427,9 +427,6 @@
     <loc>http://yannesposito.com/Scratch/en/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/</loc>
-  </url>
-  <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/</loc>
   </url>
   <url>
@@ -439,25 +436,31 @@
     <loc>http://yannesposito.com/Scratch/en/blog/01_nanoc/</loc>
   </url>
   <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/</loc>
+  </url>
+  <url>
     <loc>http://yannesposito.com/Scratch/en/about/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/softwares/ypassword/iphoneweb/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2010-01-04-Change-default-shell-on-Mac-OS-X/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/softwares/ypassword/iphoneweb/</loc>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2010-01-04-Change-default-shell-on-Mac-OS-X/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/softwares/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/comprendre/</loc>
@@ -475,19 +478,16 @@
     <loc>http://yannesposito.com/Scratch/en/blog/05_git_create_remote_branch/</loc>
   </url>
   <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/</loc>
-  </url>
-  <url>
     <loc>http://yannesposito.com/Scratch/en/blog/feed/feed.xml</loc>
-  </url>
-  <url>
-    <loc>http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/sitemap.xml</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/fr/softwares/yclock/</loc>
+  </url>
+  <url>
+    <loc>http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</loc>
   </url>
   <url>
     <loc>http://yannesposito.com/Scratch/en/blog/04_drm/</loc>
