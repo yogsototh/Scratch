@@ -25,6 +25,8 @@ fi
 # update & push gh-pages
 debug git co gh-pages
 (( $? == 0 )) || { exit 1 }
+debug git pull
+(( $? == 0 )) || { exit 1 }
 debug \rm -rf *(N)
 (( $? == 0 )) || { exit 1 }
 debug git co master output
