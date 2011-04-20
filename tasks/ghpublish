@@ -1,0 +1,33 @@
+#!/usr/bin/env zsh
+
+rootdir=$HOME/Sites/webroot
+
+cd $rootdir || { print -- "Unable to go to $HOME/Sites/webroot"; exit 1 }
+git co master || { exit 1 }
+git pull || { exit 1 }
+# empty regen depencies cache because of a bug
+\rm -f ./tmp/*
+./tasks/recompile
+
+if git status | grep 'nothing to commit'>/dev/null 2>&1; then 
+else
+    git add .
+    git commit -m "regeneration" 
+fi
+
+# update & push gh-pages
+git co gh-pages
+(( $? == 0 )) || { exit 1 }
+\rm -rf *(N)
+(( $? == 0 )) || { exit 1 }
+git co master output
+(( $? == 0 )) || { exit 1 }
+mv output/index.html .
+(( $? == 0 )) || { exit 1 }
+mv output/n3blog/* .
+(( $? == 0 )) || { exit 1 }
+git add .
+(( $? == 0 )) || { exit 1 }
+git commit -m 'updated website'
+(( $? == 0 )) || { exit 1 }
+# git push
