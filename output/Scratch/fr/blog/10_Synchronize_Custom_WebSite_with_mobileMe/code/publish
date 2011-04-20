@@ -49,7 +49,7 @@ if [[ ! $1 = '-s' ]]; then
     result=1
     essai=1
     while (( $result > 0 )); do
-        rsync -arv $root/n3blog/ $destRep.tmp
+        rsync -arv $root/Scratch/ $destRep.tmp
         result=$?
         if (( $result > 0 )); then
             print -P -- "%Brsync failed%b (try n°$essai)" >&2
