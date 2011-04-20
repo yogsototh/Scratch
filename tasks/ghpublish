@@ -42,4 +42,4 @@ debug git add .
 (( $? == 0 )) || { exit 1 }
 debug git commit -m '"updated website"'
 (( $? == 0 )) || { exit 1 }
-debug git push
+debug git push origin gh-pages:gh-pages
