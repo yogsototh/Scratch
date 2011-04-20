@@ -22,12 +22,16 @@ git co gh-pages
 (( $? == 0 )) || { exit 1 }
 git co master output
 (( $? == 0 )) || { exit 1 }
+git unstage output
+(( $? == 0 )) || { exit 1 }
 mv output/index.html .
 (( $? == 0 )) || { exit 1 }
 mv output/n3blog/* .
 (( $? == 0 )) || { exit 1 }
+\rm -rf output
 git add .
+cp en/error/404-not_found/index.html 404.html
 (( $? == 0 )) || { exit 1 }
 git commit -m 'updated website'
 (( $? == 0 )) || { exit 1 }
-# git push
+git push
