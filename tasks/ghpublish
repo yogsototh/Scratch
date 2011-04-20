@@ -2,8 +2,11 @@
 
 rootdir=$HOME/Sites/webroot
 
+function log {
+    print -P -- $*
+}
 function debug {
-    print -- $*
+    # print -- $*
     eval $*
 }
 
@@ -13,7 +16,7 @@ cd $rootdir || { print -- "Unable to go to $HOME/Sites/webroot"; exit 1 }
 git co master || { exit 1 }
 git pull || { exit 1 }
 # empty regen depencies cache because of a bug
-\rm -f ./tmp/*
+\rm -f ./tmp/*(N)
 ./tasks/recompile
 
 if git status | grep 'nothing to commit'>/dev/null 2>&1; then 
@@ -23,6 +26,7 @@ else
 fi
 
 # update & push gh-pages
+log "Update and push gh-pages"
 debug git co gh-pages
 (( $? == 0 )) || { exit 1 }
 debug git pull
