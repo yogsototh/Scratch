@@ -29,8 +29,12 @@ mv output/index.html .
 mv output/n3blog/* .
 (( $? == 0 )) || { exit 1 }
 \rm -rf output
-git add .
+(( $? == 0 )) || { exit 1 }
 cp en/error/404-not_found/index.html 404.html
+(( $? == 0 )) || { exit 1 }
+echo "yannesposito.com" > CNAME
+(( $? == 0 )) || { exit 1 }
+git add .
 (( $? == 0 )) || { exit 1 }
 git commit -m 'updated website'
 (( $? == 0 )) || { exit 1 }
