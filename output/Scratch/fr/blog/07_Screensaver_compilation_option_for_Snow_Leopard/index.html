@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="screensaver, Apple, mac, Xcode">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small>" type="text/html" hreflang="fr" href="/Scratch/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Screensaver compilation option for Snow Leopard<sub>&copy;</sub>" type="text/html" hreflang="en" href="/Scratch/en/blog/07_Screensaver_compilation_option_for_Snow_Leopard/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small></title>
+    </head>
+    <body lang="fr">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="Chargement en cours..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/en/blog/07_Screensaver_compilation_option_for_Snow_Leopard/" onclick="setLanguage('en')">in English</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small>
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <h1 class="first" id="comment-recompiler-un-conomiseur-dcran-sous-snow-leopardc">Comment recompiler un économiseur d&rsquo;écran sous Snow Leopard<small>&copy;</small></h1>
+
+<p>Mon économiseur d&rsquo;écran ne fonctionnait plus sous Mac OS X 10.6 Snow Leopard<small>&copy;</small>. Après un peu de recherche sous google, le problème semblait pouvoir être réglé avec une recompilation.
+Cependant, même en recomilant en 64 bits ça ne fonctionnait toujours pas.
+Après un peu plus de recherches (merci à <a href="http://community.electricsheep.org/node/236">ElectricSheep</a> ),
+j&rsquo;ai découvert les bons paramètres.</p>
+
+<p><img alt="XCode configuration" src="/Scratch/img/blog/07_Screensaver_compilation_option_for_Snow_Leopard/xcodeConfig.png" /></p>
+
+<p>Pour l&rsquo;instant je ne l&rsquo;ai pas compilé pour être compatible Tiger et Leopard. Je ne connais pas assez bien XCode pour savoir comment désactiver le garbage collector sur la version 32 bits et l&rsquo;activer sur la version 64 bits.</p>
+
+<p>Il a été assez difficile de découvrir toutes ces informations. J&rsquo;espère que cet article aura pu aider quelqu&rsquo;un.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">
+                        s'abonner
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Commentaires</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">commentaires</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/fr/">Bienvenue</a></li>
+<li><a href="/Scratch/fr/blog/">Blog</a></li>
+<li><a href="/Scratch/fr/softwares/">Softwares</a></li>
+<li><a href="/Scratch/fr/about/">À propos</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        articles précédents
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/06_How_I_use_git/"><span class="nicer">«</span>&nbsp;Git en solo</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/05_git_create_remote_branch/"><span class="nicer">«</span>&nbsp;Création de branches externe avec Git</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/04_drm/"><span class="nicer">«</span>&nbsp;Les protections anti-copies sont LE MAL</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        articles suivants
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh sur le port 443 avec Snow Leopard&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/09_Why_I_didn-t_keep_whosamung-us/">Pourquoi je n'ai pas conservé whos.amung.us&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Écrit le : 06/09/2009
+                    modifié le : 09/05/2010 
+                </div>
+                <div>
+                    Site entièrement réalisé avec
+                    <a href="http://www.vim.org">Vim</a>
+                    et 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/fr/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>

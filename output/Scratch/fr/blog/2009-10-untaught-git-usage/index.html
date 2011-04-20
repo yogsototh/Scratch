@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="git, dcvs, programming">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Usages non dits de Git" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2009-10-untaught-git-usage/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Untaught Git usage" type="text/html" hreflang="en" href="/Scratch/en/blog/2009-10-untaught-git-usage/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>Usages non dits de Git</title>
+    </head>
+    <body lang="fr">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="Chargement en cours..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/en/blog/2009-10-untaught-git-usage/" onclick="setLanguage('en')">in English</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    Usages non dits de Git
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p><small> <em>Je décris pourquoi j&rsquo;ai eu tant de mal à me faire à Git. Il y a en effet une partie &ldquo;non dite&rdquo; qui m&rsquo;a bloqué pendant un bon moment. Jusqu&rsquo;à ce que je découvre le bon document. </em></small></p>
+
+<p><small> <em> Le fait est que les <em>branches légères</em> ne sont pas destinée à être des branches isolées. Ainsi, il y a un </em>&ldquo;workflow standard&rdquo;<em> qui s&rsquo;il n&rsquo;est pas suivi rend l&rsquo;utilisation de Git inappropriée.  </em> </small></p>
+
+
+</div>
+
+<div class="corps">
+
+
+<h1 class="first" id="la-dcentralisation-en-action">La décentralisation en action</h1>
+
+<h3 id="de-svn--bazaar">De SVN à Bazaar</h3>
+
+<p>J&rsquo;étais un fervent utilisateur de <a href="http://subversion.tigris.org">subversion (svn)</a>. Lorsqu&rsquo;un jour, comme beaucoup de gens je découvris ce qu&rsquo;en pensais <a href="http://www.youtube.com/watch?v=4XpnKHJAok8">Linus Torvald sur une vidéo</a>. Ventant les mérites d&rsquo;un <em>système de versions concurrentes décentralisé</em>.</p>
+
+<p>En effet une fois qu&rsquo;on s&rsquo;y intéresse un peu, on voit tous les avantages pratiques qu&rsquo;apporteraient en théorie un tel système.</p>
+
+<p>J&rsquo;ai alors eu besoin d&rsquo;un système de version dans mon équipe.
+Ils n&rsquo;étaient pas familier avec les systèmes de versions. À par ceux possédant une <abbr title="Interface Utilisateur">GUI</abbr>, qui sont lourds et administrés par un responsable<sup><a href="#note1">&dagger;</a></sup>.</p>
+
+<p>Après quelques recherches trois choix se dessinent&nbsp;: </p>
+
+<ul>
+  <li><a href="http://git-scm.com">Git</a></li>
+  <li><a href="http://bazaar-vcs.org">Bazaar</a></li>
+  <li><a href="http://selenic.com/mercurial">Mercurial</a></li>
+</ul>
+
+<p>En me renseignant un peu sur les forums et en essayant les trois, je me suis vite rendu compte que celui possédant l&rsquo;interface utilisateur la plus simple était Bazaar<sup><a href="#note2">&#42;</a></sup>. Mon choix était fait.</p>
+
+<h3 id="de-bazaar--git">De bazaar à Git</h3>
+
+<p>Je me suis alors familiarisé avec Bazaar. Et je dois dire que c&rsquo;était vraiment naturel en venant de subversion. La commande <code>pull</code> correspond au <code>update</code>, la commande <code>push</code> correspond au <code>commit</code>. Puis les commandes <code>commit</code> et <code>update</code> existent toujours si on en a besoin et qu&rsquo;on veut utiliser un <em>workflow</em> identique à celui de subversion. </p>
+
+<p>Mais plus le temps passe et plus de partout sur les blog, c&rsquo;est surtout Git qui a le vent en poupe.</p>
+
+<p>Je décide alors d&rsquo;utiliser Git en particulier pour <em>versionner</em> le site que vous êtes en train de lire. Sauf que je le trouve vraiment difficile d&rsquo;utilisation et surtout complètement contre intuitif (j&rsquo;y reviendrai plus tard).</p>
+
+<p>Alors que j&rsquo;essaye de trouver de l&rsquo;aide et que je dis qu&rsquo;il est plus difficile à utiliser que Bazaar, beaucoup me répliquent que c&rsquo;est&nbsp;: </p>
+
+<blockquote>
+  <p>&mdash; <em>Super-tellement-trop-simple que même ma fille de 12 ans qui n&rsquo;y comprend rien en informatique l&rsquo;utilise pour versionner ses documents. Elle s&rsquo;en sert très facilement en créant des branches et tout et tout&hellip;</em></p>
+</blockquote>
+
+<p>Bon alors si une gamine 12 ans trouve ça très naturel et que moi (avec mon Doctorat en informatique) j&rsquo;ai du mal à faire ce que je veux, c&rsquo;est un peu frustrant et humiliant. Mais qu&rsquo;est-ce qui fait que Git est naturel aux uns (comme pour <a href="http://cocoasamurai.blogspot.com">CocoaSamurai</a> ) et très confus pour moi&nbsp;?</p>
+
+<p>C&rsquo;est en lisant un article j&rsquo;ai enfin compris ce qu&rsquo;il me manquait. C&rsquo;est la partie <strong>non dite</strong> de la conception. Celle que tous les développeurs et les concepteurs trouvaient comme <em>aller de soi</em>. Sauf que pour moi, ce n&rsquo;était pas du tout le cas.</p>
+
+<p><small><a name="note1">&dagger;</a> - Je parle de <em>ClearCase<small>&copy;</small></em>. Et oui, je sais qu&rsquo;il existe des commandes en lignes pour ClearCase<small>&copy;</small>, mais ce n&rsquo;est pas comme ça qu&rsquo;ils étaient habitués à travailler avec des systèmes de &ldquo;versionning&rdquo;.</small></p>
+
+<p><small><a name="note2">&#42;</a> - Je n&rsquo;ai pas vraiment donné sa chance à Mercurial, la terminologie qu&rsquo;ils utilisaient était trop éloignée de celle de svn à laquelle je m&rsquo;étais habituée.</small></p>
+
+
+</div>
+
+<div class="corps">
+
+
+<p>Lorsqu&rsquo;on voit les présentations autour de la notion de <em>branche</em> et de <abbr title="Système de Version Concurentes Décentralisé"><span class="sc">dcvs</span></abbr>, on s&rsquo;imagine dans un monde où chaque branche est totalement isolée des autres sauf au moment de &ldquo;merger&rdquo; les différences les unes des autres. 
+Tout est magique. C&rsquo;est la façon de voir &ldquo;<em>Mondes Parallèles</em>&rdquo;. Cette façon de voir est expliquée dans le <a href="http://betterexplained.com/articles/a-visual-guide-to-version-control/">très bon article sur les branches</a> sur betterexplained.</p>
+
+<p>Sauf que les concepteurs de Git (conçu pour le noyau Linux) ont plutôt imaginé un système basé non pas autour des mondes parallèles, mais sur la notion de <em>Patch</em>.</p>
+
+<p>D&rsquo;un côté <em>Mondes Parallèles</em>, de l&rsquo;autre <em>Patchs</em>. Il y a beaucoup de notions équivalentes dans les deux cas, mais aussi quelques différences. </p>
+
+<ul>
+  <li>Bazaar est complètement basé sur la notion de <em>Mondes Parallèles</em> qui va impliquer un phénomène de <em>Patch</em>. </li>
+  <li>Alors que Git est basé sur la notion de <em>Patch</em> qui va impliquer la création de <em>Mondes Parallèles</em>.</li>
+</ul>
+
+<p>Je ne vais pas argumenté pour savoir si une façon de voir est meilleure que l&rsquo;autre. Disons simplement que ma façon d&rsquo;entrer dans l&rsquo;explication des DCVS était par le biais des <em>Mondes Parallèles</em> alors que Git est conçut selon l&rsquo;autre notion<sup><a href="#note3">&Dagger;</a></sup>.</p>
+
+<h2 id="de-la-thorie--la-pratique">De la théorie à la pratique</h2>
+
+<p>Bien que je pense avoir bien compris les mécanismes conceptuels de Git, la mise en pratique posait problème. Et le point noir, celui qui m&rsquo;empêchait de comprendre Git comme je le souhaitais était dû à la notion de <em>branche légère</em>.</p>
+
+<p>Une <em>branche légère</em> qu&rsquo;est-ce que c&rsquo;est me demanderez-vous&nbsp;? Si comme moi on vient de Bazaar, c&rsquo;est une notion complètement nouvelle. Il s&rsquo;agit simplement de la capacité de créer une nouvelle branche en réutilisant le répertoire dans lequel on se trouve.</p>
+
+<p>En pratique pour changer de branche, il faut lancer une commande. Tous les fichiers locaux non modifiés depuis le dernier commit seront alors modifiés pour correspondre à la version de la branche.</p>
+
+<p>En théorie, les <em>branches légères</em> sont des branches tout comme avec bazaar. D&rsquo;ailleurs le mot utilisé n&rsquo;est pas <em>branche légère</em> mais <em>branche</em> tout court.</p>
+
+<p>Sauf que contrairement à une branche standard résidant dans son propre répertoire, une branche légère est destinée à n&rsquo;être qu&rsquo;un <strong>patch</strong> de la branche principale du répertoire dans lequel elle réside.</p>
+
+<p>Bien entendu on pourra m&rsquo;objecter que l&rsquo;on peut tout à fait utiliser ces branches légères comme des branches normales. Mais elles n&rsquo;ont pas été conçues pour ça. Et donc, en pratique, c&rsquo;est gênant de les utiliser de la sorte.</p>
+
+<p>Voici comment Git est censé être utilisé (pour plus de détails vous pouvez lire <a href="http://hoth.entp.com/output/git_for_designers.html">Git for Designers</a> en anglais)&nbsp;:</p>
+
+<ul>
+  <li>récupération ou création d&rsquo;un &ldquo;repository&rdquo; central <strong><span class="sc">Le Grand Repository</span></strong></li>
+  <li>Création d&rsquo;un <em>branche légère</em> locale qui contient les différences qui vont devoir être &ldquo;patché&rdquo; dans <strong><span class="sc">LE GRAND REPOSITORY</span></strong>.</li>
+</ul>
+
+<p>Voici comment n&rsquo;est <strong><span class="sc">pas</span></strong> censé être utilisé Git&nbsp;: </p>
+
+<ul>
+  <li>Récupération ou création d&rsquo;un &ldquo;repository&rdquo; quelconque</li>
+  <li>Création d&rsquo;un <em>branche légère</em> locale qui n&rsquo;a pas pour vocation de mettre à jour le &ldquo;repository&rdquo; d&rsquo;origine, mais de vivre sa vie de façon autonome et de récupérer les mises à jour des autres du &ldquo;repository&rdquo; d&rsquo;origine.</li>
+</ul>
+
+<p>En effet cette petite notion m&rsquo;a empêché de fonctionner correctement.</p>
+
+<h3 id="en-pratique">En pratique</h3>
+
+<p>Maintenant que j&rsquo;ai compris ça, je peux enfin comprendre pourquoi Git a tant de défenseurs qui continue de trouver que Git est meilleur que les autres.</p>
+
+<p>La notion de branche légère est essentielle à Git et vraiment utile en pratique. Notamment pour la gestion de ce site. Par contre, elle m&rsquo;empêche d&rsquo;utiliser les branches comme je le souhaiterai.</p>
+
+<p>Mais dans ce cas-là, je n&rsquo;ai qu&rsquo;à utiliser des <em>clônes</em> et pas des <em>branches légères</em>.</p>
+
+<h3 id="des-exemples">Des exemples</h3>
+
+<p>Je trouve toujours que les terminologies de bazaar sont plus claires et plus concises.</p>
+
+<div><pre class="twilight">bzr revert
+</pre></div>
+
+<p>est quand même plus clair que</p>
+
+<div><pre class="twilight">git reset --hard HEAD
+</pre></div>
+
+<p>De la même façon</p>
+
+<div><pre class="twilight">bzr revert -r -3
+</pre></div>
+
+<p>je trouve ça mieux que</p>
+
+<div><pre class="twilight">git reset --hard HEAD~3
+</pre></div>
+
+<p>Là ça va commencer à se compliquer. Si on veut revenir dans le temps sur toute l&rsquo;arborescence, avec Git on utilise <code>reset</code>. </p>
+
+<center>OK</center>
+
+<p>Maintenant si je veux revenir dans le temps sur un seul fichier. Naturellement on se dit&nbsp;:</p>
+
+<div><pre class="twilight">git reset --hard FILE
+</pre></div>
+
+<center>**ET BIEN NON&nbsp;!**</center>
+
+<p>La solution c&rsquo;est&nbsp;:</p>
+
+<div><pre class="twilight">git checkout FILE
+</pre></div>
+
+<p>Quoi&nbsp;? <strong><code>checkout</code></strong>&nbsp;!? Bon, d&rsquo;accord, j&rsquo;accepte, pourquoi pas après tout&nbsp;?
+En plus quand on est habitué à Bazaar c&rsquo;est&nbsp;:</p>
+
+<div><pre class="twilight">git revert FILE
+</pre></div>
+
+<p>Ce que je trouve quand même bien plus naturel.</p>
+
+<p>Mais là où ça devient vraiment difficile de s&rsquo;y faire c&rsquo;est pour changer de branche.<br />
+Avec Bazaar ça donne&nbsp;: </p>
+
+<div><pre class="twilight">cd ../branch
+</pre></div>
+
+<p>Bon ok, il faut changer de répertoire, un répertoire par branche. Ça consomme de l&rsquo;espace disque mais au moins on voit où on est. Avec Git voilà comment on change de branche (<em>branche légère</em>)&nbsp;:</p>
+
+<div><pre class="twilight">git checkout branch
+</pre></div>
+
+<p>Alors là, on se dit &ldquo;<abbr title="What the Fuck?">WTF?</abbr>&rdquo;&nbsp;; en français&nbsp;: mais qu&rsquo;est-ce que c&rsquo;est que ça&nbsp;? Je croyais que <code>checkout</code> c&rsquo;était pour récupérer l&rsquo;état d&rsquo;un fichier&nbsp;?</p>
+
+<p>En fait le mot <code>checkout</code> sert à la fois à revenir en arrière sur un fichier (MAIS PAS TOUTE UNE ARBORESCENCE où là ça sera <code>reset --hard</code>) et à <strong>changer de branche</strong>&nbsp;!</p>
+
+<p>Je trouve ça carrément contre nature.  Même si c&rsquo;est totalement justifié du point de vue théorique voir le très bon article (en anglais) <a href="http://eagain.net/articles/git-for-computer-scientists/">Git for Computer Scientist</a>. Du point de vue interface utilisateur, on peut difficilement faire pire. On dirait que les mots clés sont utilisés pour piéger l&rsquo;utilisateur.</p>
+
+<blockquote>
+  <ul>
+    <li>&mdash; Alors, essaye de deviner ce qu&rsquo;il va falloir écrire pour faire cette opération&nbsp;? </li>
+    <li>&mdash; Perdu. Essaye encore, cherche sur Internet (blaireau).</li>
+    <li>&mdash; Non, c&rsquo;est toujours pas bon, recommence (sale nul).</li>
+  </ul>
+</blockquote>
+
+<p>Bon alors, voilà, les défauts de Git. Mais, il a par contre beaucoup d&rsquo;avantages. Une fois qu&rsquo;on a compris le principe des branches légères. Tout devient plus clair. Même si en pratique, l&rsquo;édition du fichier <code>.git/config</code> peut s&rsquo;avérer un peu fastidieuse et surtout contre intuitive.</p>
+
+<p><small><a name="note3">&Dagger;</a> - Il faut aussi préciser qu&rsquo;ayant travaillé sur les logiques multi-modales et en particulier sur les logiques temporelles (linéaires ou non), j&rsquo;étais plus enclin à adhérer à cette vision des choses. &ldquo;Ah mes premiers amours dans la recherche scientifique&nbsp;!&rdquo;</small></p>
+
+
+</div>
+
+<div class="corps">
+
+
+<h1 class="first" id="conclusion">Conclusion</h1>
+
+<h3 id="dcvs-vs-cvs-">DCVS vs. CVS&nbsp;?</h3>
+
+<p>Est-ce que ça valait la peine d&rsquo;utiliser un système de &ldquo;versionning&rdquo; décentralisé&nbsp;? Indéniablement la réponse est oui. On peut très bien vivre avec des systèmes de versions centralisés, mais la souplesse apportée par la facilité de &ldquo;merger&rdquo; différentes branches. De travailler de façon autonomes sur différentes parties d&rsquo;un projets sont vraiment des plus appréciables. J&rsquo;aurai vraiment du mal à revenir en arrière.</p>
+
+<h3 id="est-ce-que-git-est-meilleurs-que-bazaar-">Est-ce que Git est meilleurs que Bazaar&nbsp;?</h3>
+
+<p>En terme de <em>fonctionnalités</em> je dirai que Git est meilleurs. 
+Par contre, je dois avouer qu&rsquo;il s&rsquo;agit d&rsquo;un CVS qui s&rsquo;est mis dans mes pattes. Or c&rsquo;est exactement ce que je ne souhaitait pas lors de mon premier choix.</p>
+
+<p>Je n&rsquo;aurai pas dû avoir du mal à comprendre cette notion de <em>branche légère</em> qui doit être un patch sinon tu reçois des messages t&rsquo;expliquant que tu es en retard. En réalité, Git différencie la notion d&rsquo;arbre de la notion de branche. Ce qui n&rsquo;est pas le cas dans Bazaar. Conceptuellement, c&rsquo;est beaucoup plus simple de comprendre avec Bazaar.</p>
+
+<h3 id="finalement-">Finalement&nbsp;?</h3>
+
+<p>Pour conclure, j&rsquo;utilise plus souvent Git que Bazaar et je dois dire que je préfère utiliser Git. Cependant, les commandes comme <code>revert</code> manquent cruellement avec Git. Pour l&rsquo;instant je n&rsquo;ai pas encore fait d&rsquo;alias pour renommer les commandes Git comme je le souhaite.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">
+                        s'abonner
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Commentaires</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">commentaires</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/fr/blog/2009-10-untaught-git-usage/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/2009-10-untaught-git-usage/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/fr/">Bienvenue</a></li>
+<li><a href="/Scratch/fr/blog/">Blog</a></li>
+<li><a href="/Scratch/fr/softwares/">Softwares</a></li>
+<li><a href="/Scratch/fr/about/">À propos</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        articles précédents
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2009-10-How-to-preload-your-site-with-style/"><span class="nicer">«</span>&nbsp;Charger une page web avec style</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/"><span class="nicer">«</span>&nbsp;Disqus contre Intense Debate (pourquois j'ai changé)</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2009-09-jQuery-Tag-Cloud/"><span class="nicer">«</span>&nbsp;jQuery Tag Cloud [en]</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        articles suivants
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/2009-10-Focus-vs-Minimalism/"><em>Focus</em> &gt; Minimalisme&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/2009-10-launch-daemon-from-command-line/">lancer un démon en ligne de commande&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/">Un menu qui attends avant de se cacher&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Écrit le : 13/10/2009
+                    modifié le : 09/05/2010 
+                </div>
+                <div>
+                    Site entièrement réalisé avec
+                    <a href="http://www.vim.org">Vim</a>
+                    et 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/fr/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>

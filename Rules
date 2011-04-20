@@ -14,25 +14,25 @@ compile '/css/*' do
     filter :rainpress
 end
 route '/css/*' do
-    '/n3blog/assets' + item.identifier.chop + '.css'
+    '/Scratch/assets' + item.identifier.chop + '.css'
 end
 compile '/img/*' do
 end
 route '/img/*' do
-    '/n3blog/assets' + item.identifier.chop + '.png'
+    '/Scratch/assets' + item.identifier.chop + '.png'
 end
 
 compile '/css/raw/*' do
 end
 route '/css/raw/*' do
-    '/n3blog' + item.identifier.sub(/raw\//,'').chop + '.css'
+    '/Scratch' + item.identifier.sub(/raw\//,'').chop + '.css'
 end
 
 # JS
 compile '/js/*' do
 end
 route '/js/*' do
-    '/n3blog/assets' + item.identifier.chop + '.js'
+    '/Scratch/assets' + item.identifier.chop + '.js'
 end
 
 compile '/html' do
@@ -81,7 +81,7 @@ compile '/html/*' do
 end
 
 route '/html/*' do
-  '/n3blog' + item.identifier.sub('/html','') + 'index.html'
+  '/Scratch' + item.identifier.sub('/html','') + 'index.html'
 end
 
 # feed
@@ -90,17 +90,17 @@ compile '/xml/*' do
 end
 
 route '/xml/en/*' do
-    '/n3blog/en/blog/feed/feed.xml'
+    '/Scratch/en/blog/feed/feed.xml'
 end
 route '/xml/fr/*' do
-    '/n3blog/fr/blog/feed/feed.xml'
+    '/Scratch/fr/blog/feed/feed.xml'
 end
 
 compile '/sitemap/*' do
     layout 'sitemap'
 end
 route '/sitemap/*' do
-    '/n3blog/sitemap.xml'
+    '/Scratch/sitemap.xml'
 end
 
 layout '*', :erb

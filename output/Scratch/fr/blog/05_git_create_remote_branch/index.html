@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="git, branch, local, remote">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Création de branches externe avec Git" type="text/html" hreflang="fr" href="/Scratch/fr/blog/05_git_create_remote_branch/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Git remote branch creation" type="text/html" hreflang="en" href="/Scratch/en/blog/05_git_create_remote_branch/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>Création de branches externe avec Git</title>
+    </head>
+    <body lang="fr">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="Chargement en cours..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/en/blog/05_git_create_remote_branch/" onclick="setLanguage('en')">in English</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    Création de branches externe avec Git
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <h2 class="first" id="crer-une-branche-git-externe-facilement">Créer une branche Git externe facilement</h2>
+
+<p>J&rsquo;utilise Git pour synchroniser des projets personnels. 
+C&rsquo;est pourquoi quand je crée une branche locale je souhaite quasiment toujours qu&rsquo;elle soit aussi créée en <em>externe</em> (remote).</p>
+
+<p>Voici le script que j&rsquo;utilise pour accomplir cette tâche&nbsp;: </p>
+
+<div>
+    <div class="code"><div class="file"><a href="/Scratch/fr/blog/05_git_create_remote_branch/code/git-create-new-branch.sh"> &#x27A5; git-create-new-branch.sh </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
+
+<span class="Keyword">if</span> ((<span class="Variable"><span class="Variable">$</span>#</span><span class="Keyword">&lt;</span>1))<span class="Keyword">;</span> <span class="Keyword">then</span>
+    print -- <span class="String"><span class="String">&quot;</span>usage: <span class="StringVariable"><span class="StringVariable">$</span>0</span>:t branch_name<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
+    exit 1
+<span class="Keyword">fi</span>
+
+branch=<span class="Variable"><span class="Variable">$</span>1</span>
+git br <span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
+git co <span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
+git config branch.<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>.remote origin
+git config branch.<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>.merge refs/heads/<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
+    
+</pre>
+</div></div>
+</div>
+
+<p>Bien sûr, je suppose qu&rsquo;<code>origin</code> est déjà configurée.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">
+                        s'abonner
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Commentaires</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">commentaires</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/fr/blog/05_git_create_remote_branch/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/05_git_create_remote_branch/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/fr/">Bienvenue</a></li>
+<li><a href="/Scratch/fr/blog/">Blog</a></li>
+<li><a href="/Scratch/fr/softwares/">Softwares</a></li>
+<li><a href="/Scratch/fr/about/">À propos</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        articles précédents
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/04_drm/"><span class="nicer">«</span>&nbsp;Les protections anti-copies sont LE MAL</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/03_losthighway/"><span class="nicer">«</span>&nbsp;Lost Highway démystifié (un peu)</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/02_ackgrep/"><span class="nicer">«</span>&nbsp;Mieux que grep</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        articles suivants
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/06_How_I_use_git/">Git en solo&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/">Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small>&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh sur le port 443 avec Snow Leopard&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Écrit le : 17/08/2009
+                    modifié le : 09/05/2010 
+                </div>
+                <div>
+                    Site entièrement réalisé avec
+                    <a href="http://www.vim.org">Vim</a>
+                    et 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/fr/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>

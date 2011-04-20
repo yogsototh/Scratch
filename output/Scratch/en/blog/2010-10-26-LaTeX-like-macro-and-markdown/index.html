@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Des macros LaTeX pour markdown" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-10-26-LaTeX-like-macro-and-markdown/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="LaTeX like macro for markdown" type="text/html" hreflang="en" href="/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>LaTeX like macro for markdown</title>
+    </head>
+    <body lang="en">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="loading..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/fr/blog/2010-10-26-LaTeX-like-macro-and-markdown/" onclick="setLanguage('fr')">en Français</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    LaTeX like macro for markdown
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    
+<div class="intro">
+
+
+<p><span class="sc"><abbr title="Too long; don't read">tl;dr</abbr>: </span> I made a simple macro system for my blog. Now I juste have to write %<span />latex and it show as <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>.</p>
+
+
+</div>
+
+
+<p>I added a macro system for my blog system.
+When we are used to <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span> this lack can be hard to handle.
+Particularly when using mathematical notations.
+In the header of my files I simply write:</p>
+
+<pre class="twilight">
+<span class="MetaTagAll"><span class="MetaTagInline">macros</span><span class="MetaTagAll">:</span></span>
+  <span class="MetaTagAll"><span class="MetaTagInline">test</span><span class="MetaTagAll">:</span> </span><span class="String"><span class="String">&quot;</span>This is a macro test<span class="String">&quot;</span></span>
+  <span class="MetaTagAll"><span class="MetaTagInline">latex</span><span class="MetaTagAll">:</span> </span><span class="String"><span class="String">'</span>&lt;span style=&quot;text-transform: uppercase&quot;&gt;L&lt;sup style=&quot;vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em&quot;&gt;a&lt;/sup&gt;T&lt;sub style=&quot;vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em&quot;&gt;e&lt;/sub&gt;X&lt;/span&gt;<span class="String">'</span></span>
+</pre>
+
+<p>In the body it will replace every occurrence of:</p>
+
+<ul>
+  <li>%<span />test by <em>This is a macro test</em>,</li>
+  <li>and %<span />latex by <em><span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span></em>.</li>
+</ul>
+
+<p>The source code is really simple.
+For <code>nanoc</code> user, simply put this file in your <code>lib</code> directory.</p>
+
+<div class="code"><div class="file"><a href="/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/code/macros.rb"> &#x27A5; macros.rb </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span> usage:</span>
+<span class="Comment"><span class="Comment">#</span> ---</span>
+<span class="Comment"><span class="Comment">#</span> ...</span>
+<span class="Comment"><span class="Comment">#</span> macros:</span>
+<span class="Comment"><span class="Comment">#</span>   test: &quot;passed test&quot;</span>
+<span class="Comment"><span class="Comment">#</span> ---</span>
+<span class="Comment"><span class="Comment">#</span> ...</span>
+<span class="Comment"><span class="Comment">#</span> Here is a This is a macro test.</span>
+<span class="Comment"><span class="Comment">#</span></span>
+<span class="Keyword">class</span> <span class="Entity">Macros<span class="EntityInheritedClass"> <span class="EntityInheritedClass">&lt;</span> Nanoc3::Filter</span></span>
+    identifier <span class="Constant"><span class="Constant">:</span>falacy</span>
+    <span class="Keyword">attr_accessor</span> <span class="Constant"><span class="Constant">:</span>macro</span>
+    <span class="Keyword">def</span> <span class="Entity">initialize</span>(<span class="Variable">arg</span>)
+        <span class="Keyword">super</span>
+        <span class="Variable"><span class="Variable">@</span>macro</span><span class="Keyword">=</span>{}
+        <span class="Variable"><span class="Variable">@</span>macro</span>[<span class="Constant"><span class="Constant">:</span>tlal</span>] <span class="Keyword">=</span> <span class="String"><span class="String">%{</span>&lt;span class=&quot;sc&quot;&gt;&lt;abbr title=&quot;Trop long à lire&quot;&gt;tlàl&lt;/abbr&gt;&nbsp;: &lt;/span&gt;<span class="String">}</span></span>
+        <span class="Variable"><span class="Variable">@</span>macro</span>[<span class="Constant"><span class="Constant">:</span>tldr</span>] <span class="Keyword">=</span> <span class="String"><span class="String">%{</span>&lt;span class=&quot;sc&quot;&gt;&lt;abbr title=&quot;Too long; don't read&quot;&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt;<span class="String">}</span></span>
+        <span class="Keyword">if</span> <span class="Variable"><span class="Variable">@</span>item</span>.<span class="Entity">nil?</span>
+            <span class="Keyword">if</span> <span class="Keyword">not</span> arg.<span class="Entity">nil?</span>
+                <span class="Variable"><span class="Variable">@</span>macro</span>.<span class="Entity">merge!</span>( arg )
+            <span class="Keyword">end</span>
+        <span class="Keyword">else</span>
+            <span class="Keyword">if</span> <span class="Keyword">not</span> <span class="Variable"><span class="Variable">@</span>item</span>[<span class="Constant"><span class="Constant">:</span>macros</span>].<span class="Entity">nil?</span>
+                <span class="Variable"><span class="Variable">@</span>macro</span>.<span class="Entity">merge!</span>( <span class="Variable"><span class="Variable">@</span>item</span>[<span class="Constant"><span class="Constant">:</span>macros</span>] )
+            <span class="Keyword">end</span>
+        <span class="Keyword">end</span>
+    <span class="Keyword">end</span>
+    <span class="Keyword">def</span> <span class="Entity">macro_value_for</span>(<span class="Variable">macro_name</span>)
+        <span class="Keyword">if</span> macro_name.<span class="Entity">nil?</span> <span class="Keyword">or</span> macro_name<span class="Keyword">==</span><span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span> <span class="Keyword">or</span> <span class="Variable"><span class="Variable">@</span>macro</span>[macro_name.<span class="Entity">intern</span>].<span class="Entity">nil?</span>
+            <span class="Keyword">return</span> <span class="String"><span class="String">%{</span>%<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>macro_name<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span> 
+        <span class="Keyword">end</span>
+        <span class="Keyword">return</span> <span class="Variable"><span class="Variable">@</span>macro</span>[macro_name.<span class="Entity">intern</span>]
+    <span class="Keyword">end</span>
+    <span class="Keyword">def</span> <span class="Entity">run</span>(<span class="Variable">content<span class="Variable">,</span> params<span class="Keyword">=</span><span class="Variable">{</span><span class="Variable">}</span></span>)
+        content.<span class="Entity">gsub</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp">%<span class="StringRegexp"><span class="StringRegexp">(</span><span class="StringRegexpSpecial">\w</span>*<span class="StringRegexp">)</span></span></span><span class="StringRegexp"><span class="StringRegexp">/</span></span>) <span class="Keyword">do </span>|<span class="Variable">m</span>| 
+            <span class="Keyword">if</span> m <span class="Keyword">!=</span> <span class="String"><span class="String">'</span>%<span class="String">'</span></span>
+                <span class="Entity">macro_value_for</span>(<span class="Variable"><span class="Variable">$</span>1</span>)
+            <span class="Keyword">else</span>
+                m
+            <span class="Keyword">end</span>
+        <span class="Keyword">end</span>
+    <span class="Keyword">end</span>
+<span class="Keyword">end</span>
+</pre>
+</div></div>
+
+<p>Macros could be very useful, read <a href="http://adam.gomaa.us/blog/2007/oct/22/markdown-doesnt-scale/index.html">this article</a> for example.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomen">
+                        Subscribe
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Comments</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">comments</h2>
+                    <noscript>
+                        You must enable javascript to comment.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/en/">Home</a></li>
+<li><a href="/Scratch/en/blog/">Blog</a></li>
+<li><a href="/Scratch/en/softwares/">Softwares</a></li>
+<li><a href="/Scratch/en/about/">About</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        previous entries
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2010-10-14-Fun-with-wav/"><span class="nicer">«</span>&nbsp;Fun with wav</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/"><span class="nicer">«</span>&nbsp;Secure eMail on Mac in few steps</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2010-10-06-New-Blog-Design-Constraints/"><span class="nicer">«</span>&nbsp;New Blog Design Constraints</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        next entries
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2011-01-03-Happy-New-Year/">Happy New Year&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/">Why I won't use CoffeeScript (sadly)&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/2011-04-20-Now-hosted-on-github/">Now hosted on github&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Created: 10/26/2010
+                    Modified: 04/07/2011 
+                </div>
+                <div>
+                    Entirely done with
+                    <a href="http://www.vim.org">Vim</a>
+                    and 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/en/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>

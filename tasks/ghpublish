@@ -30,7 +30,7 @@ debug git co master output
 debug git unstage output
 debug mv output/index.html .
 (( $? == 0 )) || { exit 1 }
-debug mv output/n3blog/* .
+debug mv output/Scratch/* .
 (( $? == 0 )) || { exit 1 }
 debug \rm -rf output
 (( $? == 0 )) || { exit 1 }

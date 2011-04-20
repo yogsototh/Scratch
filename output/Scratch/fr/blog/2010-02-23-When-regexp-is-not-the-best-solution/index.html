@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="programmation, regexp, expressions régulières, extension, fichier">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Quand se passer des expressions régulières ?" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="When regexp is not the best solution" type="text/html" hreflang="en" href="/Scratch/en/blog/2010-02-23-When-regexp-is-not-the-best-solution/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>Quand se passer des expressions régulières ?</title>
+    </head>
+    <body lang="fr">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="Chargement en cours..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/en/blog/2010-02-23-When-regexp-is-not-the-best-solution/" onclick="setLanguage('en')">in English</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    Quand se passer des expressions régulières ?
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p>Les expressions régulières sont très utiles. Cependant, elles ne sont pas toujours la meilleure manière d&rsquo;aborder certain problème autour des chaines de caractères.
+Et surtout quand les transformations que vous voulez accomplir sont simples.</p>
+
+<p>Je voulais savoir comment récupérer le plus vite possible l&rsquo;extension d&rsquo;un nom de fichier. Il y a trois manière naturelle d&rsquo;accomplir celà&nbsp;:</p>
+
+<div><pre class="twilight">
+<span class="Comment"><span class="Comment">#</span> regexp</span>
+str.<span class="Entity">match</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="StringRegexp">[</span>^.<span class="StringRegexp">]</span></span>*$</span><span class="StringRegexp"><span class="StringRegexp">/</span></span>); 
+ext<span class="Keyword">=</span><span class="Variable"><span class="Variable">$</span>&amp;</span>
+
+<span class="Comment"><span class="Comment">#</span> split</span>
+ext<span class="Keyword">=</span>str.<span class="Entity">split</span>(<span class="String"><span class="String">'</span>.<span class="String">'</span></span>)[<span class="Keyword">-</span><span class="Constant">1</span>]
+
+<span class="Comment"><span class="Comment">#</span> File module</span>
+ext<span class="Keyword">=</span><span class="Support">File</span>.<span class="Entity">extname</span>(str)
+</pre></div>
+
+<p>A première vue, je pensais que l&rsquo;expression régulière serait plus rapide que le <code>split</code> parce qu&rsquo;il pouvait y avoir plusieurs de <code>.</code> dans un nom de fichier. Mais la majorité du temps il n&rsquo;y a qu&rsquo;un seul point par nom de fichier. C&rsquo;est pourquoi j&rsquo;ai réalisé que le <code>split</code> serait plus rapide. Mais pas le plus rapide possible. Il y a une fonction qui est dédiée à faire ce travail dans un module standard de ruby&nbsp;; le module <code>File</code>.</p>
+
+<p>Voici le code pour faire un benchmark&nbsp;:</p>
+
+<div><div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/code/regex_benchmark_ext.rb"> &#x27A5; regex_benchmark_ext.rb </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span>!/usr/bin/env ruby</span>
+<span class="Keyword">require</span> <span class="String"><span class="String">'</span>benchmark<span class="String">'</span></span>
+n<span class="Keyword">=</span><span class="Constant">80000</span>
+tab<span class="Keyword">=</span>[ <span class="String"><span class="String">'</span>/accounts/user.json<span class="String">'</span></span>,
+      <span class="String"><span class="String">'</span>/accounts/user.xml<span class="String">'</span></span>,
+      <span class="String"><span class="String">'</span>/user/titi/blog/toto.json<span class="String">'</span></span>,
+      <span class="String"><span class="String">'</span>/user/titi/blog/toto.xml<span class="String">'</span></span> ]
+
+puts <span class="String"><span class="String">&quot;</span>Get extname<span class="String">&quot;</span></span>
+<span class="Support">Benchmark</span>.<span class="Entity">bm</span> <span class="Keyword">do </span>|<span class="Variable">x</span>|
+    x.<span class="Entity">report</span>(<span class="String"><span class="String">&quot;</span>regexp:<span class="String">&quot;</span></span>) { n.<span class="Entity">times</span> <span class="Keyword">do </span>
+        str<span class="Keyword">=</span>tab[<span class="Entity">rand</span>(<span class="Constant">4</span>)]; 
+        str.<span class="Entity">match</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="StringRegexp">[</span>^.<span class="StringRegexp">]</span></span>*$</span><span class="StringRegexp"><span class="StringRegexp">/</span></span>); 
+        ext<span class="Keyword">=</span><span class="Variable"><span class="Variable">$</span>&amp;</span>; 
+    <span class="Keyword">end</span>  }
+    x.<span class="Entity">report</span>(<span class="String"><span class="String">&quot;</span> split:<span class="String">&quot;</span></span>) { n.<span class="Entity">times</span> <span class="Keyword">do </span>
+        str<span class="Keyword">=</span>tab[<span class="Entity">rand</span>(<span class="Constant">4</span>)]; 
+        ext<span class="Keyword">=</span>str.<span class="Entity">split</span>(<span class="String"><span class="String">'</span>.<span class="String">'</span></span>)[<span class="Keyword">-</span><span class="Constant">1</span>]&nbsp;; 
+    <span class="Keyword">end</span> }
+    x.<span class="Entity">report</span>(<span class="String"><span class="String">&quot;</span>  File:<span class="String">&quot;</span></span>) { n.<span class="Entity">times</span> <span class="Keyword">do </span>
+        str<span class="Keyword">=</span>tab[<span class="Entity">rand</span>(<span class="Constant">4</span>)]; 
+        ext<span class="Keyword">=</span><span class="Support">File</span>.<span class="Entity">extname</span>(str); 
+    <span class="Keyword">end</span>  }
+<span class="Keyword">end</span>
+</pre>
+</div></div></div>
+
+<p>Et voici les résultats&nbsp;:</p>
+
+<pre class="twilight">
+Get extname
+            user     system      total        real
+regexp:  2.550000   0.020000   2.570000 (  2.693407)
+ split:  1.080000   0.050000   1.130000 (  1.190408)
+  File:  0.640000   0.030000   0.670000 (  0.717748)
+</pre>
+
+<p>En conclusion, les fonction dédiées sont meilleures que votre façon de faire (la plupart du temps).</p>
+
+<h2 id="chemin-complet-dun-fichier-sans-lextension">Chemin complet d&rsquo;un fichier sans l&rsquo;extension</h2>
+
+<div><div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/code/regex_benchmark_strip.rb"> &#x27A5; regex_benchmark_strip.rb </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span>!/usr/bin/env ruby</span>
+<span class="Keyword">require</span> <span class="String"><span class="String">'</span>benchmark<span class="String">'</span></span>
+n<span class="Keyword">=</span><span class="Constant">80000</span>
+tab<span class="Keyword">=</span>[ <span class="String"><span class="String">'</span>/accounts/user.json<span class="String">'</span></span>,
+      <span class="String"><span class="String">'</span>/accounts/user.xml<span class="String">'</span></span>,
+      <span class="String"><span class="String">'</span>/user/titi/blog/toto.json<span class="String">'</span></span>,
+      <span class="String"><span class="String">'</span>/user/titi/blog/toto.xml<span class="String">'</span></span> ]
+
+puts <span class="String"><span class="String">&quot;</span>remove extension<span class="String">&quot;</span></span>
+<span class="Support">Benchmark</span>.<span class="Entity">bm</span> <span class="Keyword">do </span>|<span class="Variable">x</span>|
+    x.<span class="Entity">report</span>(<span class="String"><span class="String">&quot;</span> File:<span class="String">&quot;</span></span>) { n.<span class="Entity">times</span> <span class="Keyword">do </span>
+        str<span class="Keyword">=</span>tab[<span class="Entity">rand</span>(<span class="Constant">4</span>)]; 
+        path<span class="Keyword">=</span><span class="Support">File</span>.<span class="Entity">expand_path</span>(str,<span class="Support">File</span>.<span class="Entity">basename</span>(str,<span class="Support">File</span>.<span class="Entity">extname</span>(str))); 
+    <span class="Keyword">end</span> }
+    x.<span class="Entity">report</span>(<span class="String"><span class="String">&quot;</span>chomp:<span class="String">&quot;</span></span>) { n.<span class="Entity">times</span> <span class="Keyword">do </span>
+        str<span class="Keyword">=</span>tab[<span class="Entity">rand</span>(<span class="Constant">4</span>)]; 
+        ext<span class="Keyword">=</span><span class="Support">File</span>.<span class="Entity">extname</span>(str); 
+        path<span class="Keyword">=</span>str.<span class="Entity">chomp</span>(ext); 
+    <span class="Keyword">end</span> }
+<span class="Keyword">end</span>
+</pre>
+</div></div></div>
+
+<p>et voici les résultats&nbsp;:</p>
+
+<pre class="twilight">
+remove extension
+          user     system      total        real
+ File:  0.970000   0.060000   1.030000 (  1.081398)
+chomp:  0.820000   0.040000   0.860000 (  0.947432)
+</pre>
+
+<p>En conclusion du ce second benchmark. Un fonction simple est meilleure que trois fonctions dédiées. Pas de surprise, mais c&rsquo;est toujours bien de savoir.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">
+                        s'abonner
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Commentaires</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">commentaires</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/fr/">Bienvenue</a></li>
+<li><a href="/Scratch/fr/blog/">Blog</a></li>
+<li><a href="/Scratch/fr/softwares/">Softwares</a></li>
+<li><a href="/Scratch/fr/about/">À propos</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        articles précédents
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/"><span class="nicer">«</span>&nbsp;découper un fichier par mots clés</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2010-02-16-All-but-something-regexp--2-/"><span class="nicer">«</span>&nbsp;Tout sauf quelquechose en expression régulière.</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2010-02-15-All-but-something-regexp/"><span class="nicer">«</span>&nbsp;Expression régulière pour tout sauf quelquechose</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        articles suivants
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/2010-03-22-Git-Tips/">Astuces Git&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/2010-03-23-Encapsulate-git/">Encapsuler git&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/2010-05-17-at-least-this-blog-revive/">Je reviens à la vie !&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Écrit le : 23/02/2010
+                    modifié le : 09/05/2010 
+                </div>
+                <div>
+                    Site entièrement réalisé avec
+                    <a href="http://www.vim.org">Vim</a>
+                    et 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/fr/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>
