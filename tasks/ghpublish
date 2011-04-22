@@ -38,11 +38,11 @@ debug git co master output
 debug git unstage output
 debug mv output/index.html .
 (( $? == 0 )) || { exit 1 }
-debug mv output/Scratch/* .
+debug mv output/* .
 (( $? == 0 )) || { exit 1 }
 debug \rm -rf output
 (( $? == 0 )) || { exit 1 }
-debug cp en/error/404-not_found/index.html 404.html
+debug cp Scratch/en/error/404-not_found/index.html 404.html
 (( $? == 0 )) || { exit 1 }
 debug echo "yannesposito.com" > CNAME
 (( $? == 0 )) || { exit 1 }
