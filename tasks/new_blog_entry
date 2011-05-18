@@ -23,6 +23,7 @@ basefilename="$( print $title | perl -pe 'chomp(); s#ç#c#g; s#àâ#a#g; s#éè�
 
 # construct the final filename
 linkname="$root/latest.md"
+imglinkname="$root/img_latest_blog_dir"
 blogname="$basefilename"
 # Uncomment if you prefer use date-title name for url
 # yearmonthday=$( date "+%Y-%m-%d" )
@@ -51,8 +52,8 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     $now
-fr: title: $title
 en: title: $title
+fr: title: $title
 author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
@@ -71,4 +72,5 @@ ENDFORMAT
 print "imagedir = $imgdirname"
 mkdir $imgdirname
 ln -sf ./multi/${filename#*/multi/} $linkname
+ln -sf ./multi/${imgdirname#*/multi/} $imglinkname
 vim $linkname
