@@ -2,13 +2,46 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2011-04-20T15:22:15Z</updated>
+  <updated>2011-05-18T11:14:28Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2011-05-18:/Scratch/en/blog/Password-Management/</id>
+    <title type="html">40 character's passwords</title>
+    <published>2011-05-18T11:14:28Z</published>
+    <updated>2011-05-18T11:14:28Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/Password-Management/"/>
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Password-Management/main.png" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; How I manage safely my password with success for some years now.&lt;br /&gt;
+&lt;strong&gt;&lt;code&gt;sha1( password + domain_name )&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+I memorize only one password.
+I use a different password on all website.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Disclamer, this is an unashamed attempt to make you download my iPhone app&amp;nbsp;;-). 
+You&amp;rsquo;re always here?
+Even if you won&amp;rsquo;t download my app, you should read more.
+My method doesn&amp;rsquo;t necessitate my app.
+It is both safe and easy to use everyday.&lt;/p&gt;
+
+&lt;p&gt;If you just want to &lt;em&gt;use&lt;/em&gt; the tools without searching to understand why it is safe, just jump at the &lt;/p&gt;&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2011-04-20:/Scratch/en/blog/2011-04-20-Now-hosted-on-github/</id>
     <title type="html">Now hosted on github</title>
@@ -864,6 +897,41 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 &lt;/p&gt;</content>
   </entry>
   <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/"/>
+    <content type="html">
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;A detailed tutorial of &lt;a href="http://git-scm.org"&gt;Git&lt;/a&gt; for people knowing very few about versions systems. You&amp;rsquo;ll understand utility of such program and how we use modern version control system. I try to stay as pragmatic as possible.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+
+&lt;/div&gt;
+
+&lt;div class="corps"&gt;
+
+
+&lt;h1 class="first" id="begin-with-conclusion"&gt;Begin with conclusion&lt;/h1&gt;
+
+&lt;p&gt;Here is the list of sufficient and necessary command to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. There is very few. It is normal not to understand immediately but it is to gives you an idea. Even if this article is long, 95% of &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; usage is in these 7 commands:&lt;/p&gt;
+
+&lt;p&gt;Get a project from the web: &lt;/p&gt;
+
+&lt;div&gt;&lt;pre class="twilight"&gt;
+git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -922,41 +990,6 @@ $ g...&lt;/pre&gt;&lt;/div&gt;</content>
       &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
       &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
       &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/"/>
-    <content type="html">
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;A detailed tutorial of &lt;a href="http://git-scm.org"&gt;Git&lt;/a&gt; for people knowing very few about versions systems. You&amp;rsquo;ll understand utility of such program and how we use modern version control system. I try to stay as pragmatic as possible.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;h1 class="first" id="begin-with-conclusion"&gt;Begin with conclusion&lt;/h1&gt;
-
-&lt;p&gt;Here is the list of sufficient and necessary command to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. There is very few. It is normal not to understand immediately but it is to gives you an idea. Even if this article is long, 95% of &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; usage is in these 7 commands:&lt;/p&gt;
-
-&lt;p&gt;Get a project from the web: &lt;/p&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;
-git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
@@ -1046,23 +1079,5 @@ $ sudo port install git-core
 &lt;p&gt;Using the &lt;code&gt;git rebase&lt;/code&gt; you can decide which modifications should be forget or merged into only one modification.&lt;/p&gt;
 
 &lt;p&gt;What does it mean for real usage? You can focus on coding. For example, you can code, a fix for bug b01 and for bug b02 and code a feature f03. Once finished you can creat...&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-10-30:/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/</id>
-    <title type="html">How to handle evil IE</title>
-    <published>2009-10-30T20:34:46Z</published>
-    <updated>2009-10-30T20:34:46Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-10-30-How-to-handle-evil-IE/"/>
-    <content type="html">&lt;p&gt;For developer IE is a nightmare. This is why, I use a method to disable my standard CSS and enable a IE only CSS. I use jQuery to accomplish that.&lt;/p&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;
-&lt;span class="Keyword"&gt;$&lt;/span&gt;(&lt;span class="Support"&gt;document&lt;/span&gt;).ready( &lt;span class="Storage"&gt;function&lt;/span&gt;() {
-    &lt;span class="Keyword"&gt;if&lt;/span&gt; (&lt;span class="Keyword"&gt;$&lt;/span&gt;.browser[&lt;span class="String"&gt;&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;msie&lt;span class="String"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;]) {
-        &lt;span class="Comment"&gt;&lt;span class="Comment"&gt;//&lt;/span&gt; include the ie.js file&lt;/span&gt;
-        &lt;span class="Keyword"&gt;$&lt;/span&gt;(&lt;span class="String"&gt;&lt;span class="String"&gt;'&lt;/span&gt;head&lt;span class="String"&gt;'&lt;/span&gt;&lt;/span&gt;).append(&lt;span class="String"&gt;&lt;span class="String"&gt;'&lt;/span&gt;&amp;lt;script type=&amp;quot;text/javascr...&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
 </feed>

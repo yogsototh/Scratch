@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Password Management" type="text/html" hreflang="fr" href="/Scratch/fr/blog/Password-Management/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="40 character's passwords" type="text/html" hreflang="en" href="/Scratch/en/blog/Password-Management/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>Password Management</title>
+    </head>
+    <body lang="fr">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="Chargement en cours..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/en/blog/Password-Management/" onclick="setLanguage('en')">in English</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    Password Management
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p><img alt="Title image" src="/Scratch/img/blog/Password-Management/main.png" /></p>
+
+
+<div class="intro">
+
+
+<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Une méthode de gestion des mots de passes que j&rsquo;utilise avec succès depuis quelques années.<br />
+<strong><code>sha1( mot_de_passe + nom_de_domaine )</code></strong><br />
+Je ne mémorise qu&rsquo;un seul mot de passe de très bonne qualité.
+J&rsquo;utilise des mots de passe différents sur tous les sites.</p>
+
+
+</div>
+
+
+<blockquote>
+  <p>Pour l&rsquo;instant il n&rsquo;y a que la version anglaise.
+J&rsquo;en suis désolé et j&rsquo;espère avoir le courage de le traduire le plus vite possible.</p>
+</blockquote>
+
+<p>Disclamer, this is an unashamed attempt to make you download my iPhone app&nbsp;;-). 
+You&rsquo;re always here?
+Even if you won&rsquo;t download my app, you should read more.
+My method doesn&rsquo;t necessitate my app.
+It is both safe and easy to use everyday.</p>
+
+<p>If you just want to <em>use</em> the tools without searching to understand why it is safe, just jump at the <a href="#in-practice">end of this article by clicking here</a>.</p>
+
+<h2 id="why-you-should-use-a-password-manager">Why you should use a Password Manager?</h2>
+
+<blockquote>
+  <p>Even paranoid have ennemies.</p>
+</blockquote>
+
+<p>Imagine you find a really good password. You use it on GMail, Amazon, PayPal, Twitter, Facebook&hellip;
+One day you see a nice online game you want to try. 
+They ask you your email and a password.
+Some week passes, and the host machine of this online game is hacked.
+Your mail and password is now in bad hands.
+Unfortunately for you, you use the same password everywhere. 
+Then, the attacker can simply try your password everywhere. 
+On PayPal for example.</p>
+
+<p>Well now, how could we fix that?</p>
+
+<h2 id="which-methodology">Which methodology?</h2>
+
+<blockquote>
+  <p>the good, the bad <em>&amp;</em> the ugly</p>
+</blockquote>
+
+<p>The mostly used method is to remember a subset of different passwords.
+In the best cases, your remember about 13 password.
+Some strong, some weak.</p>
+
+<p>What to do if you use more online services 
+than your memory can handle?</p>
+
+<p>A <em>bad</em> solution would be to
+chose passwords like this:</p>
+
+<ul>
+  <li>twitter: <code>P45sW0r|)Twitter</code></li>
+  <li>gmail: <code>P45sW0r|)gmail</code></li>
+  <li>badonlinegame: <code>P45sW0r|)badonlinegame</code></li>
+</ul>
+
+<p>Unfortunately, if someone get your password on 
+badonlinegame, he could easily find your other passwords.
+Of course you can imagine some better transformation. But it is hard to find a very good one.</p>
+
+<p>Fortunately, there exists functions which handle exactly this problem. 
+<em>Hash Function</em>.
+Knowing the result of a hash function, it is difficult to know what was their input.
+For example:</p>
+
+<pre class="twilight">
+hash(<span class="String"><span class="String">&quot;</span>P45sW0r|)<span class="String">&quot;</span></span>) = 9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63
+</pre>
+
+<p>If someone has <code>9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63</code>,
+he will have hard time to recover <code>P45sW0r|)</code>.</p>
+
+<p>Let choose SHA1 as hash function. 
+Now the password for any website should 
+of the form:</p>
+
+<p><code lang="zsh">
+sha1( master_password + domain_name )
+</code></p>
+
+<p>Where:</p>
+
+<ul>
+  <li><code>master_password</code> is your unique master password,</li>
+  <li><code>domain_name</code> is the domain name of the website you want the password for,</li>
+</ul>
+
+<hr />
+<p>But what about some website constraint?
+For example regarding the length of the password?
+What to do if you want to change your password?
+What to do if you want number or special characters?
+This is why, for each website I need some other parameters:</p>
+
+<ul>
+  <li>the login name</li>
+  <li>the password&rsquo;s length,</li>
+  <li>the password number (in order to change it),</li>
+  <li>The output format: hexadecimal or base64.</li>
+</ul>
+
+<h2 id="in-practice">In practice?</h2>
+
+<p>Depending on my situation here are the tools I made <em>&amp;</em> use:</p>
+
+<ul>
+  <li>On my Mac: 
+    <ul>
+      <li>I use the dashboard widget <a href="http://yannesposito.com/Scratch/files/YPassword-1.6.zip">YPassword</a></li>
+      <li>Sometimes, some password field are forbidden to paste into. For time like this, I use this AppleScript made tool: <a href="http://yannesposito.com/Scratch/files/forcePaste.app.zip">ForcePaste</a>. </li>
+    </ul>
+  </li>
+  <li>On my Linux Box: I use the script <a href="http://github.com/yogsototh/getpass">ypassword</a></li>
+  <li>On my iPhone: I use the <a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=436268354&amp;mt=8">YPassword app</a></li>
+  <li>On any other computer:
+    <ul>
+      <li><a href="http://yannesposito.com/Scratch/en/softwares/ypassword/web/">Cappuccino Made YPassword</a> Web application</li>
+      <li><a href="http://yannesposito.com/Scratch/en/softwares/ypassword/iphoneweb/">jQuery Made YPassword</a> Web application</li>
+    </ul>
+  </li>
+</ul>
+
+<p>My password are at a copy/paste on all environment I use. I have some services for which I have password of 40 characters. 
+Now I use 10 character for most of my passwords.
+Further more using shorter password make it even harder for an attaquer to retrieve my master password.</p>
+
+<p>I would be happy to hear your thoughts on using this methodology.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">
+                        s'abonner
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Commentaires</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">commentaires</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/fr/blog/Password-Management/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/Password-Management/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/fr/">Bienvenue</a></li>
+<li><a href="/Scratch/fr/blog/">Blog</a></li>
+<li><a href="/Scratch/fr/softwares/">Softwares</a></li>
+<li><a href="/Scratch/fr/about/">À propos</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        articles précédents
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2011-04-20-Now-hosted-on-github/"><span class="nicer">«</span>&nbsp;Hébergement github</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/"><span class="nicer">«</span>&nbsp;Pourquoi je n'utiliserai pas CoffeeScript (malheureusement)</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2011-01-03-Happy-New-Year/"><span class="nicer">«</span>&nbsp;Bonne et heureuse année</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        articles suivants
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Écrit le : 18/05/2011
+                    modifié le : 18/05/2011 
+                </div>
+                <div>
+                    Site entièrement réalisé avec
+                    <a href="http://www.vim.org">Vim</a>
+                    et 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/fr/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>
