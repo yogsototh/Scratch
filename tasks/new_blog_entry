@@ -12,21 +12,30 @@ root="$PWD"
 
 title="$*"
 
+# CONFIG
+blog_dir="$root/multi/blog"
+image_blog_dir="$root/output/Scratch/img/blog"
+
 # basefilename is the filename where all spaces
 # were replaced by '-'
 # and all accentued letter by corresponding ASCII one
 basefilename="$( print $title | perl -pe 'chomp(); s#ç#c#g; s#àâ#a#g; s#éèê#e#g; s#ô#o#g; s#û#u#g; s#\W#-#g')"
 
 # construct the final filename
-yearmonthday=$( date "+%Y-%m-%d" )
 linkname="$root/latest.md"
-filename="$root/multi/blog/${yearmonthday}-$basefilename.md"
+blogname="$basefilename"
+# Uncomment if you prefer use date-title name for url
+# yearmonthday=$( date "+%Y-%m-%d" )
+#
+# blogname="${yearmonthday}-$basefilename"
+filename="$blog_dir/$blogname.md"
+
+# create directory if doesn't exists
 [[ ! -d ${filename:h} ]] && mkdir -p ${filename:h}
-dirname="$root/output/Scratch/img/blog/${yearmonthday}-${basefilename}"
+imgdirname="$image_blog_dir/$blogname"
 
 [[ -e $filename ]] && {
-    print -P -- "%BAttention%b : $filename existe déjà."
-    print -P -- "%BError try with a new name%b"
+    print -P -- "%BError%b $filename already exists. Try with another name."
     exit 3
 }
 
@@ -59,7 +68,7 @@ fr: <%= tlal %>
 enddiv
 ENDFORMAT
 
-print "imagedir = $dirname"
-mkdir $dirname
+print "imagedir = $imgdirname"
+mkdir $imgdirname
 ln -sf ./multi/${filename#*/multi/} $linkname
 vim $linkname
