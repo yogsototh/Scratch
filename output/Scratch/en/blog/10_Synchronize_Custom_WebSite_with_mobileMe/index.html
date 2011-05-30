@@ -83,8 +83,8 @@
 <p>The idea are: </p>
 
 <ul>
-  <li>Synchroniser vers un répertoire temporaire sur le serveur distant, puis &ldquo;swapper&rdquo; les noms des répertoires. Ainsi le site ne reste indisponible que le temps du &ldquo;swap&rdquo; du nom des deux répertoires.</li>
-  <li>Réitérer toutes les opérations jusqu&rsquo;à ce qu&rsquo;elle aient réussi (par exemple pour le renommage)</li>
+  <li>synchronize to a temporary folder then swap the name therefore the website isn&rsquo;t accessible only during the swap time. It takes only the time of two rename.</li>
+  <li>reiterate all operations until they work (for example, renaming).</li>
 </ul>
 
 <p>For now I use <code>rsync</code> which in fact is no more efficient than a simple <code>cp</code> with WebDav. And I should use a method to keep track of elements who have changed. before the publication.</p>

@@ -47,8 +47,8 @@ Here is the script I use in order to synchronize my website with maximum safety.
 The idea are: 
 
 
-  - Synchroniser vers un répertoire temporaire sur le serveur distant, puis "swapper" les noms des répertoires. Ainsi le site ne reste indisponible que le temps du "swap" du nom des deux répertoires.
-  - Réitérer toutes les opérations jusqu'à ce qu'elle aient réussi (par exemple pour le renommage)
+  - synchronize to a temporary folder then swap the name therefore the website isn't accessible only during the swap time. It takes only the time of two rename.
+  - reiterate all operations until they work (for example, renaming).
 
 For now I use `rsync` which in fact is no more efficient than a simple `cp` with WebDav. And I should use a method to keep track of elements who have changed. before the publication.
 

@@ -20,9 +20,9 @@ class Graph < Nanoc3::Filter
             FileUtils.mkdir_p('output'+@item.path+'graph')
             webpath=@item.path + 'graph/' + filename + '.png'
             path='output'+webpath
-            puts  "dot -Tpng -o #{path} /tmp/graphtemp.dot"
+            # puts  "dot -Tpng -o #{path} /tmp/graphtemp.dot"
             system("dot -Tpng -o #{path} /tmp/graphtemp.dot")
-            puts %{<img alt="#{title}" src="#{webpath}"/>}
+            # puts %{<img alt="#{title}" src="#{webpath}"/>}
             %{<img alt="#{title}" src="#{webpath}"/>}
         end
     end

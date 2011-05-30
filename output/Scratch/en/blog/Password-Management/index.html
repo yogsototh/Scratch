@@ -12,8 +12,8 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
-        <link rel="alternate" lang="fr" xml:lang="fr" title="Hébergement github" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2011-04-20-Now-hosted-on-github/" /> 
-        <link rel="alternate" lang="en" xml:lang="en" title="Now hosted on github" type="text/html" hreflang="en" href="/Scratch/en/blog/2011-04-20-Now-hosted-on-github/" /> 
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Password Management" type="text/html" hreflang="fr" href="/Scratch/fr/blog/Password-Management/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="40 character's passwords" type="text/html" hreflang="en" href="/Scratch/en/blog/Password-Management/" /> 
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
@@ -24,7 +24,7 @@
         <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
         < % end %>
         -->
-        <title>Now hosted on github</title>
+        <title>40 character's passwords</title>
     </head>
     <body lang="en">
         <script type="text/javascript">// <![CDATA[
@@ -37,12 +37,12 @@
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
                 <div id="choixlang">
-                    <a href="/Scratch/fr/blog/2011-04-20-Now-hosted-on-github/" onclick="setLanguage('fr')">en Français</a>
+                    <a href="/Scratch/fr/blog/Password-Management/" onclick="setLanguage('fr')">en Français</a>
                 </div>
             </div>
             <div id="titre">
                 <h1>
-                    Now hosted on github
+                    40 character's passwords
                 </h1>
                 
             </div>
@@ -56,9 +56,139 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p><img alt="Title image" src="/Scratch/img/blog/2011-04-20-Now-hosted-on-github/main.png" /></p>
+                    <p><img alt="Title image" src="/Scratch/img/blog/Password-Management/main.png" /></p>
 
-<p>I am now hosted on github.</p>
+
+<div class="intro">
+
+
+<p><span class="sc"><abbr title="Too long; don't read">tl;dr</abbr>: </span> How I manage safely my password with success for some years now.<br />
+<strong><code>sha1( password + domain_name )</code></strong><br />
+I memorize only one password.
+I use a different password on all website.</p>
+
+
+</div>
+
+
+<p>Disclamer, this is an unashamed attempt to make you download my iPhone app&nbsp;;-). 
+You&rsquo;re always here?
+Even if you won&rsquo;t download my app, you should read more.
+My method doesn&rsquo;t necessitate my app.
+It is both safe and easy to use everyday.</p>
+
+<p>If you just want to <em>use</em> the tools without searching to understand why it is safe, just jump at the <a href="#in-practice">end of this article by clicking here</a>.</p>
+
+<h2 id="why-you-should-use-a-password-manager">Why you should use a Password Manager?</h2>
+
+<blockquote>
+  <p>Even paranoid have ennemies.</p>
+</blockquote>
+
+<p>Imagine you find a really good password. You use it on GMail, Amazon, PayPal, Twitter, Facebook&hellip;
+One day you see a nice online game you want to try. 
+They ask you your email and a password.
+Some week passes, and the host machine of this online game is hacked.
+Your mail and password is now in bad hands.
+Unfortunately for you, you use the same password everywhere. 
+Then, the attacker can simply try your password everywhere. 
+On PayPal for example.</p>
+
+<p>Well now, how could we fix that?</p>
+
+<h2 id="which-methodology">Which methodology?</h2>
+
+<blockquote>
+  <p>the good, the bad <em>&amp;</em> the ugly</p>
+</blockquote>
+
+<p>The mostly used method is to remember a subset of different passwords.
+In the best cases, your remember about 13 password.
+Some strong, some weak.</p>
+
+<p>What to do if you use more online services 
+than your memory can handle?</p>
+
+<p>A <em>bad</em> solution would be to
+chose passwords like this:</p>
+
+<ul>
+  <li>twitter: <code>P45sW0r|)Twitter</code></li>
+  <li>gmail: <code>P45sW0r|)gmail</code></li>
+  <li>badonlinegame: <code>P45sW0r|)badonlinegame</code></li>
+</ul>
+
+<p>Unfortunately, if someone get your password on 
+badonlinegame, he could easily find your other passwords.
+Of course you can imagine some better transformation. But it is hard to find a very good one.</p>
+
+<p>Fortunately, there exists functions which handle exactly this problem. 
+<em>Hash Function</em>.
+Knowing the result of a hash function, it is difficult to know what was their input.
+For example:</p>
+
+<pre class="twilight">
+hash(<span class="String"><span class="String">&quot;</span>P45sW0r|)<span class="String">&quot;</span></span>) = 9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63
+</pre>
+
+<p>If someone has <code>9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63</code>,
+he will have hard time to recover <code>P45sW0r|)</code>.</p>
+
+<p>Let choose SHA1 as hash function. 
+Now the password for any website should 
+of the form:</p>
+
+<p><code lang="zsh">
+sha1( master_password + domain_name )
+</code></p>
+
+<p>Where:</p>
+
+<ul>
+  <li><code>master_password</code> is your unique master password,</li>
+  <li><code>domain_name</code> is the domain name of the website you want the password for,</li>
+</ul>
+
+<hr />
+<p>But what about some website constraint?
+For example regarding the length of the password?
+What to do if you want to change your password?
+What to do if you want number or special characters?
+This is why, for each website I need some other parameters:</p>
+
+<ul>
+  <li>the login name</li>
+  <li>the password&rsquo;s length,</li>
+  <li>the password number (in order to change it),</li>
+  <li>The output format: hexadecimal or base64.</li>
+</ul>
+
+<h2 id="in-practice">In practice?</h2>
+
+<p>Depending on my situation here are the tools I made <em>&amp;</em> use:</p>
+
+<ul>
+  <li>On my Mac: 
+    <ul>
+      <li>I use the dashboard widget <a href="http://yannesposito.com/Scratch/files/YPassword-1.6.zip">YPassword</a></li>
+      <li>Sometimes, some password field are forbidden to paste into. For time like this, I use this AppleScript made tool: <a href="http://yannesposito.com/Scratch/files/forcePaste.app.zip">ForcePaste</a>. </li>
+    </ul>
+  </li>
+  <li>On my Linux Box: I use the script <a href="http://github.com/yogsototh/getpass">ypassword</a></li>
+  <li>On my iPhone: I use the <a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=436268354&amp;mt=8">YPassword app</a></li>
+  <li>On any other computer:
+    <ul>
+      <li><a href="http://yannesposito.com/Scratch/en/softwares/ypassword/web/">Cappuccino Made YPassword</a> Web application</li>
+      <li><a href="http://yannesposito.com/Scratch/en/softwares/ypassword/iphoneweb/">jQuery Made YPassword</a> Web application</li>
+    </ul>
+  </li>
+</ul>
+
+<p>My password are at a copy/paste on all environment I use. I have some services for which I have password of 40 characters. 
+Now I use 10 character for most of my passwords.
+Further more using shorter password make it even harder for an attaquer to retrieve my master password.</p>
+
+<p>I would be happy to hear your thoughts on using this methodology.</p>
 
                 </div>
             
@@ -89,8 +219,8 @@
                     
     <script type="text/javascript">
     var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
-    var idcomments_post_id = '/Scratch/en/blog/2011-04-20-Now-hosted-on-github/';
-    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/2011-04-20-Now-hosted-on-github/';
+    var idcomments_post_id = '/Scratch/en/blog/Password-Management/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/Password-Management/';
     </script>
     <span id="IDCommentsPostTitle" style="display:none"></span>
     <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
@@ -111,6 +241,11 @@
                         previous entries
                         
                         <div class="previous_article">
+                            <a href="/Scratch/en/blog/2011-04-20-Now-hosted-on-github/"><span class="nicer">«</span>&nbsp;Now hosted on github</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
                             <a href="/Scratch/en/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/"><span class="nicer">«</span>&nbsp;Why I won't use CoffeeScript (sadly)</a>
                         </div>
                         
@@ -120,18 +255,9 @@
                         </div>
                         
                         
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/"><span class="nicer">«</span>&nbsp;LaTeX like macro for markdown</a>
-                        </div>
-                        
-                        
                     </div>
                     <div id="next_articles">
                         next entries
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/Password-Management/">40 character's passwords&nbsp;<span class="nicer">»</span></a>
-                        </div>
                         
                         
                         
@@ -147,8 +273,8 @@
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
                 </div>
                 <div id="lastmod">
-                    Created: 04/20/2011
-                    Modified: 04/20/2011 
+                    Created: 05/18/2011
+                    Modified: 05/30/2011 
                 </div>
                 <div>
                     Entirely done with

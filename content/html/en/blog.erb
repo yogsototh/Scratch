@@ -39,11 +39,6 @@ Last <%= number_of_articles %> Articles
 
 <div class="corps">
 
-    <% 
-        puts "%%%"
-        puts excerptize( a.reps[0].compiled_content, {:length => number_of_char_for_resume}) 
-        puts "%%%"
-    %>
     <%= repair_html ( excerptize( a.reps[0].compiled_content, {:length => number_of_char_for_resume} ) ) %>
 
     <div class="flush"></div>
