@@ -10,6 +10,15 @@ author_uri: yannesposito.com
 -----
 <%= blogimage("main.png","Title image") %>
 
+begindiv(encadre)
+
+
+*Mise à jour :* Je pense que je vais finallement changer d'avis.
+Pourquoi ?
+Tout d'abord, je viens de découvrir un convertisseur javascript vers coffeescript, ensuite Denis Knauf m'a laissé un commentaire et m'a appris l'existence d'une fonction `CoffeeScript.eval`. De plus, il faut voir CoffeeScript comme javascript avec une syntaxe similaire à Ruby et pas comme un langage similaire à Ruby.
+
+enddiv
+
 begindiv(intro)
 
 
