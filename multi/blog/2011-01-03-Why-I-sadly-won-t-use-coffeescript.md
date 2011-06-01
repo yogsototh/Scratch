@@ -11,6 +11,18 @@ author_uri: yannesposito.com
 -----
 <%= blogimage("main.png","Title image") %>
 
+begindiv(encadre)
+
+en: *Update*: I might change my mind now. Why?
+en: I just discovered a [js2coffee converter](https://github.com/rstacruz/js2coffee). Furthermore Denis Knauf told me about a `CoffeeScript.eval` function. 
+en: And as Denis said: "it is time to use Coffeescript as a javascript with Ruby-like syntax not a Ruby-like programming language".
+
+fr: *Mise à jour :* Je pense que je vais finallement changer d'avis.
+fr: Pourquoi ?
+fr: Tout d'abord, je viens de découvrir un convertisseur javascript vers coffeescript, ensuite Denis Knauf m'a laissé un commentaire et m'a appris l'existence d'une fonction `CoffeeScript.eval`. De plus, il faut voir CoffeeScript comme javascript avec une syntaxe similaire à Ruby et pas comme un langage similaire à Ruby.
+
+enddiv
+
 begindiv(intro)
 
 en: <%= tldr %> I would have loved to program client side using a Ruby-like syntax. But in the end, CoffeScript raised more disavantages than advantages.

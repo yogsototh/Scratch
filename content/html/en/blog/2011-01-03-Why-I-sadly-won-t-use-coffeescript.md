@@ -10,6 +10,15 @@ author_uri: yannesposito.com
 -----
 <%= blogimage("main.png","Title image") %>
 
+begindiv(encadre)
+
+*Update*: I might change my mind now. Why?
+I just discovered a [js2coffee converter](https://github.com/rstacruz/js2coffee). Furthermore Denis Knauf told me about a `CoffeeScript.eval` function. 
+And as Denis said: "it is time to use Coffeescript as a javascript with Ruby-like syntax not a Ruby-like programming language".
+
+
+enddiv
+
 begindiv(intro)
 
 <%= tldr %> I would have loved to program client side using a Ruby-like syntax. But in the end, CoffeScript raised more disavantages than advantages.

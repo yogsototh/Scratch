@@ -70,6 +70,18 @@ It is both safe and easy to use everyday.&lt;/p&gt;
     <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/main.png" /&gt;&lt;/p&gt;
 
 
+&lt;div class="encadre"&gt;
+
+
+&lt;p&gt;&lt;em&gt;Update&lt;/em&gt;: I might change my mind now. Why?
+I just discovered a &lt;a href="https://github.com/rstacruz/js2coffee"&gt;js2coffee converter&lt;/a&gt;. Furthermore Denis Knauf told me about a &lt;code&gt;CoffeeScript.eval&lt;/code&gt; function. 
+And as Denis said: &amp;ldquo;it is time to use Coffeescript as a javascript with Ruby-like syntax not a Ruby-like programming language&amp;rdquo;.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+
 &lt;div class="intro"&gt;
 
 
@@ -79,12 +91,7 @@ It is both safe and easy to use everyday.&lt;/p&gt;
 &lt;/div&gt;
 
 
-&lt;p&gt;Recently I read &lt;a href="http://news.ycombinator.com/item?id=2053956"&gt;this entry&lt;/a&gt; on HackerNews.
-The most upvoted comment praised (within other) &lt;a href="http://coffeescript.org"&gt;CoffeeScript&lt;/a&gt;.
-Recently I used &lt;em&gt;a lot&lt;/em&gt; of javascript. After trying
-&lt;a href="http://sproutcore.com"&gt;Sproutcore&lt;/a&gt;,
-&lt;a href="http://cappuccino.org"&gt;Cappuccino&lt;/a&gt;, looking at
-&lt;a href="documentcloud.github.com/backbone/"&gt;backbone.js&lt;/a&gt; &lt;/p&gt;&lt;/p&gt;</content>
+&lt;p&gt;Recently I read &lt;/p&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-01-01:/Scratch/en/blog/2011-01-03-Happy-New-Year/</id>
