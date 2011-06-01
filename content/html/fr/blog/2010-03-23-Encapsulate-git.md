@@ -26,11 +26,11 @@ J'utilise aussi certaines branches qui contiennent la partie commune de ces proj
 
 Disons que j'ai les branches :
 
-master: commune à toutes les branches
-dev:    branche instable pour le développement
-client: Branche commune à plusieurs clients
-clientA: le projet spécialisé pour le client A
-clientB: le projet spécialisé pour le client B
+- master: commune à toutes les branches
+- dev:    branche instable pour le développement
+- client: Branche commune à plusieurs clients
+- clientA: le projet spécialisé pour le client A
+- clientB: le projet spécialisé pour le client B
 
 Voilà comment je souhaiterai que ça fonctionne
 

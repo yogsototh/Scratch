@@ -27,11 +27,11 @@ def repair_html( html, debug=false )
         else
             depth-=1
             if (not debug) and (depth <0) 
-                puts 'ERROR repair_html: '
-                puts 'HTML: ' + html
-                puts '---'
-                repair_html(html,true)
-                puts 'END_ERROR'
+                puts 'ERROR repair_html !'
+                # puts 'HTML: ' + html
+                # puts '---'
+                # repair_html(html,true)
+                # puts 'END_ERROR'
             end
             if debug
                 puts '<'+m[0]+m[1]+'> ' + depth.to_s

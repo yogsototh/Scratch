@@ -35,8 +35,8 @@ Voici le script que j'utilise pour synchroniser mon site web (non créé avec iW
 
 Les idées sont : 
 
-  - synchronize to a temporary folder then swap the name therefore the website isn't accessible only during the swap time. It takes only the time of two rename.
-  - reiterate all operations until they work (for example, renaming).
+  - Synchroniser vers un répertoire temporaire sur le serveur distant, puis "swapper" les noms des répertoires. Ainsi le site ne reste indisponible que le temps du "swap" du nom des deux répertoires.
+  - Réitérer toutes les opérations jusqu'à ce qu'elle aient réussi (par exemple pour le renommage)
 
 Jusqu'ici j'utilise `rsync` qui n'est en fait pas plus efficace qu'une simple copie `cp` avec WebDav. Je devrais utiliser une méthode pour mémoriser les changements entre chaque publication.
 
