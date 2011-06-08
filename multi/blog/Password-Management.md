@@ -41,7 +41,7 @@ fr: Elle est à la fois très sûre et simple à utiliser.
 
 en: If you just want to _use_ the tools without searching to understand why it is safe, just jump at the [end of this article by clicking here](#in-practice).
 
-fr: Si vous souhaitez simplement _utiliser_ le système sans essayer de comprendre comment ça marche derrière vous pouvez [aller à la fin de cet article en cliquant ici](#en-pratique).
+fr: Si vous souhaitez simplement _utiliser_ le système sans essayer de comprendre comment ça marche derrière vous pouvez [aller à la fin de cet article en cliquant ici](#en-pratique-).
 
 en: ## Why you should use a Password Manager?
 fr: ## Pourquoi devriez-vous utiliser un gestionnaire de mot de passe ?

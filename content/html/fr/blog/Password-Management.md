@@ -30,7 +30,7 @@ Bon, d'accord, même si vous ne téléchargez pas mon application vous pouvez qu
 Elle est à la fois très sûre et simple à utiliser.
 
 
-Si vous souhaitez simplement _utiliser_ le système sans essayer de comprendre comment ça marche derrière vous pouvez [aller à la fin de cet article en cliquant ici](#en-pratique).
+Si vous souhaitez simplement _utiliser_ le système sans essayer de comprendre comment ça marche derrière vous pouvez [aller à la fin de cet article en cliquant ici](#en-pratique-).
 
 ## Pourquoi devriez-vous utiliser un gestionnaire de mot de passe ?
 
