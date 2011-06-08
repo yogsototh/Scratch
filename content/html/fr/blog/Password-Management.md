@@ -22,107 +22,112 @@ J'utilise des mots de passe différents sur tous les sites.
 
 enddiv
 
-> Pour l'instant il n'y a que la version anglaise.
-> J'en suis désolé et j'espère avoir le courage de le traduire le plus vite possible.
 
-Disclamer, this is an unashamed attempt to make you download my iPhone app ;-). 
-You're always here?
-Even if you won't download my app, you should read more.
-My method doesn't necessitate my app.
-It is both safe and easy to use everyday.
+Avant de commencer, je tiens à préciser qu'il s'agit d'une tentative de vous vendre mon appli iPhone ;-).
 
-If you just want to _use_ the tools without searching to understand why it is safe, just jump at the [end of this article by clicking here](#in-practice).
+Vous êtes toujours là ?
+Bon, d'accord, même si vous ne téléchargez pas mon application vous pouvez quand même utiliser ma méthode.
+Elle est à la fois très sûre et simple à utiliser.
 
-## Why you should use a Password Manager?
 
-> Even paranoid have ennemies.
+Si vous souhaitez simplement _utiliser_ le système sans essayer de comprendre comment ça marche derrière vous pouvez [aller à la fin de cet article en cliquant ici](#en-pratique).
 
-Imagine you find a really good password. You use it on GMail, Amazon, PayPal, Twitter, Facebook...
-One day you see a nice online game you want to try. 
-They ask you your email and a password.
-Some week passes, and the host machine of this online game is hacked.
-Your mail and password is now in bad hands.
-Unfortunately for you, you use the same password everywhere. 
-Then, the attacker can simply try your password everywhere. 
-On PayPal for example.
+## Pourquoi devriez-vous utiliser un gestionnaire de mot de passe ?
 
-Well now, how could we fix that?
+> Même les paranoïaques peuvent avoir des ennemis.
 
-## Which methodology?
 
-> the good, the bad _&_ the ugly
+Imagniez que vous trouviez un très bon mot de passe. Vous l'utilisez sur gmail, amazon, PayPal, twitter, facebook...
+Un jour vous découvrez un super petit jeu en ligne très sympa.
+Cependant pour y jouer vous devez vous enregistrer.
+Le site vous demande votre email et un mot de passe.
+Quelques semaines/mois se passent.
+La machine qui héberge le jeu en ligne se fait attaquée.
+Maintenant, l'attaquant du site web possède votre email avec ce mot de passe.
+Il peut donc essayer votre mot de passe un peu partout. Sur PayPal par exemple.
 
-The mostly used method is to remember a subset of different passwords.
-In the best cases, your remember about 13 password.
-Some strong, some weak.
+Bien, maintenant comment pouvons nous régler ce problèmes ?
 
-What to do if you use more online services 
-than your memory can handle?
+## Quelle méthodologie ?
 
-A _bad_ solution would be to
-chose passwords like this:
+> Le bon, la brute et le truand
+
+
+La méthode la plus courante est de se souvenir de plusieurs mot de passes différents. 
+En général, si vous avez bonne mémoire vous pouvez mémoriser jusqu'à 13 mots de passes. Certain de bonne qualité, d'autre moins.
+
+
+Que faire si vous utilisez plus de services que vous pouvez mémoriser de mots de passe ?
+
+
+Un _mauvaise_ solution peut être de choisir ses 
+mots de passes de la façon suivante :
+
 
 - twitter: `<%=password%>Twitter`
 - gmail: `<%=password%>gmail`
 - badonlinegame: `<%=password%>badonlinegame`
 
-Unfortunately, if someone get your password on 
-badonlinegame, he could easily find your other passwords.
-Of course you can imagine some better transformation. But it is hard to find a very good one.
 
-Fortunately, there exists functions which handle exactly this problem. 
-_Hash Function_.
-Knowing the result of a hash function, it is difficult to know what was their input.
-For example:
+Malheureusement, si quelqu'un récupère votre mot de passe sur 
+`badonlinegame`, il peut facilement retrouvez vos autres mots de passe.
+Bien sûr, on peut imaginer des transformation de mots de passe de meilleure qualité. 
+Mais il est très difficile d'en trouver une suffisamment bonne.
 
-<code class="zsh">
-hash("P45sW0r|)") = 9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63
-</code>
 
-If someone has `9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63`,
-he will have hard time to recover `<%=password%>`.
+Fort heureusement, il existe une des fonctions bien connues dans le milieu de la sécurité informatique et qui résolvent précisément ce problème.
+Il s'agit des _fontions de hachages_.
+Il est difficile de retrouver le paramètre d'entrée d'une fonction de hachage à partir de son résultat.
+Prenons un exemple : 
 
-Let choose SHA1 as hash function. 
-Now the password for any website should 
-of the form:
 
-<code lang="zsh">
-sha1( master_password + domain_name )
-</code>
 
-Where:
+Si quelqu'un possède `9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63`,
+il va avoir de grande difficulté pour retrouver `<%=password%>`.
 
-- `master_password` is your unique master password,
-- `domain_name` is the domain name of the website you want the password for,
+
+Choisisson la fonction de hashage `sha1`.
+Connaissant celà, le mot de passe d'un site donné doit avoir la forme :
+
+
+Où :
+
+
+- `master_password` est votre unique mot de passe _maître_ ;
+- `domain_name` est le nom de domaine du site pour lequel vous voulez le mot de passe.
 
 ---
 
-But what about some website constraint?
-For example regarding the length of the password?
-What to do if you want to change your password?
-What to do if you want number or special characters?
-This is why, for each website I need some other parameters:
 
-- the login name
-- the password's length,
-- the password number (in order to change it),
-- The output format: hexadecimal or base64.
+Il faut aussi penser à certaines contraintes. 
+Certains site web veulent des mots de passe d'une certaine longueur, ni trop longs ni trop courts.
+Que faire si vous voulez changez votre mot de passe ? Soit parce qu'il est compromis ou simplement parce qu'on vous impose de le changer.
+C'est pouquoi pour chaque site on a besoin de quelques paramètres supplémentaires.
 
-## In practice?
 
-Depending on my situation here are the tools I made _&_ use:
+- le nom de login ;
+- la longueur du mot de passe ;
+- le numéro du mot de passe (pour le changer au cas où) ;
+- le format du mot de passe : hexadécimal ou base64.
 
-- On my Mac: 
-  - I use the dashboard widget [YPassword](http://yannesposito.com/Scratch/files/YPassword-1.6.zip)
-  - Sometimes, some password field are forbidden to paste into. For time like this, I use this AppleScript made tool: [ForcePaste](http://yannesposito.com/Scratch/files/forcePaste.app.zip). 
-- On my Linux Box: I use the script [ypassword](http://github.com/yogsototh/getpass)
-- On my iPhone: I use the [YPassword app](http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=436268354&mt=8)
-- On any other computer:
-  - [Cappuccino Made YPassword](http://yannesposito.com/Scratch/en/softwares/ypassword/web/) Web application
-  - [jQuery Made YPassword](http://yannesposito.com/Scratch/en/softwares/ypassword/iphoneweb/) Web application
+## En pratique ?
 
-My password are at a copy/paste on all environment I use. I have some services for which I have password of 40 characters. 
-Now I use 10 character for most of my passwords.
-Further more using shorter password make it even harder for an attaquer to retrieve my master password.
+Selon ma situation, voici les outils que j'ai fait et que j'utilise :
 
-I would be happy to hear your thoughts on using this methodology.
+
+- Sur mon Mac : 
+  - J'utilise le widget [YPassword](http://yannesposito.com/Scratch/files/YPassword-1.6.zip)
+  - Parfois, certains champs de mots passe interdisent la copie.  Dans ce cas, j'utilise un petit utilitaire en AppleScript : [ForcePaste](http://yannesposito.com/Scratch/files/forcePaste.app.zip). 
+- Sous mon Linux : J'utilise le script [ypassword](http://github.com/yogsototh/getpass)
+- Sur mon iPhone : J'utilise l'application [YPassword](http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=436268354&mt=8)
+- Sur tous les autres ordinateurs :
+  - L'application Web Cappuccino [YPassword](http://yannesposito.com/Scratch/en/softwares/ypassword/web/)
+  - L'application Web jQuery [YPassword](http://yannesposito.com/Scratch/en/softwares/ypassword/iphoneweb/)
+
+
+Quelquesoit mon environnement de travail, tous mes mots de passes sont à un copier/coller.
+Pour certain services, j'utilise des mots de passe de 40 caractères.
+Actuellement j'utilise plutôt des mots de passes de 10 caractères.
+Avec des mots de passes plus petit, il est encore plus difficile pour un attaquant de retrouver mon mot de passe principal.
+
+Je serai heureux de savoir ce que vous pensez de cette méthode. Alors n'hésitez pas à laisser un commentaire ou à m'envoyer un mail.
