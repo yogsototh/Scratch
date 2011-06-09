@@ -58,14 +58,15 @@ en: Unfortunately for you, you use the same password everywhere.
 en: Then, the attacker can simply try your password everywhere. 
 en: On PayPal for example.
 
-fr: Imagniez que vous trouviez un très bon mot de passe. Vous l'utilisez sur gmail, amazon, PayPal, twitter, facebook...
-fr: Un jour vous découvrez un super petit jeu en ligne très sympa.
-fr: Cependant pour y jouer vous devez vous enregistrer.
+fr: Imaginez que vous trouviez un très bon mot de passe. Vous l'utilisez sur gmail, amazon, PayPal, twitter, facebook...
+fr: Plus tard, vous découvrez un super petit jeu en ligne très sympa.
+fr: Vous devez vous enregistrer pour y jouer.
 fr: Le site vous demande votre email et un mot de passe.
 fr: Quelques semaines/mois se passent.
-fr: La machine qui héberge le jeu en ligne se fait attaquée.
+fr: La machine qui héberge le jeu en ligne se fait attaquer.
 fr: Maintenant, l'attaquant du site web possède votre email avec ce mot de passe.
-fr: Il peut donc essayer votre mot de passe un peu partout. Sur PayPal par exemple.
+fr: Il peut donc essayer votre mot de passe un peu partout. 
+fr: Sur PayPal par exemple.
 
 en: Well now, how could we fix that?
 fr: Bien, maintenant comment pouvons nous régler ce problèmes ?
