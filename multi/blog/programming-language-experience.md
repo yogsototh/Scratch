@@ -11,17 +11,85 @@ author_uri: yannesposito.com
 -----
 <%= blogimage("main.png","Title image") %>
 
-Je me rend compte que j'ai utilisé vraiment beaucoup de langages de programmation. Et pour permettre à ceux qui voudraient les essayer, voici un résumé rapide des expérience avec.
+begindiv(intro)
+<%=tldr%> My feelings about programming languages I used.
+<%=tlal%> Mon avis sur les différents languages de programmations que j'ai utilisé.
+enddiv
 
-BASIC : à mes premiers programmes, je devais avoir 10-11 ans. Sous MO5, Amstrad CPC 6128.
-Le langage des GOTO. Je suis empleint de nostalgie rien que d'y penser. 
+### BASIC
+
+Ah ! Le language de mes premiers programmes ! 
+Je devais avoir 10-11 ans. 
+Sous `MO5`, `Amstrad CPC 6128` et même `Atari STe`.
+Le langage des `GOTO`. 
+Je suis empleint de nostalgie rien que d'y penser. 
 C'est à peu prêt le seul intérêt de ce langage.
-Ce n'est ni un bon langage pour apprendre, ni un bon langage pour faire de vrai programmes. Même si quelques années plus tard, je me remettais à programmer dans un basic avec un compilateur qui pourrait lui redonner vie. Je m'en était servi pour faire un livre dont vous êtes le héro :-).
 
-Logo : Toujours lors que j'avais 10 ans, on pouvait faire de petits programmes sympathiques.
-        Je l'avais utilisé sans les boucles.
-        Des années plus tard, je le réutiliser pour faire de l'initiation à l'informatique à mes étudiants de DEUG MIAS première année. Il s'est en fait révélé très utile. Grace à lui, faire des fractales se révèle être un jeu d'enfant, au sens litéral.
-        Je ne peux que conseiller ce langage pour apprendre à programmer et aussi pour le fun.
+Aujourd'hui ce langage est tombé en désuétude.
+Ce n'est ni un bon langage pour apprendre, ni un bon langage pour faire de vrai programmes. 
+Même si quelques années plus tard, je me remettais à programmer dans un basic avec un compilateur qui pourrait lui redonner vie. 
+Je m'en était servi pour faire un livre dont vous êtes le héro :-).
+
+<code class="basic">
+READY
+10 PRINT "HELLO WORLD!"
+20 GOTO 10
+RUN
+</code>
+
+Je m'en souviens aussi pour avoir copier des codes de jeux vidéo à partir de magasines.
+La plupart des lignes ressemblaient à 
+
+<code class="basic">
+3110 DATA FA,01,FF,FF,FF,FF,00,23,22,43,DA,DE,EE,FF,FF,FF,00,03,4A,F2
+</code>
+
+Quel plaisir c'était !
+
+### Logo
+
+<%=leftblogimage("dragon.jpg","Dragon fractal")%>
+Toujours lors que j'avais 10 ans, on pouvait faire de petits programmes sympathiques.
+
+Je me souviens que lors du chargement de l'application logo on avait droit à de la musique de Bach.
+
+Oui, il fallait charger le programme en mémoire avec une cassette. Et elle ne faisait pas les 'Krrrkrr csssss krrrr'.
+
+Je l'avais utilisé sans les boucles.
+Des années plus tard, je le réutiliser pour faire de l'initiation à l'informatique à mes étudiants de DEUG MIAS première année. 
+Il s'est en fait révélé très utile. 
+Grace à lui, faire des fractales se révèle être un jeu d'enfant, au sens litéral. 
+Je ne peux que conseiller ce langage pour apprendre à programmer et aussi pour le fun.
+
+Voici un exemple de code et le résultat est la jolie fractale 'dragon'.
+
+<code class="logo">
+HIDETURTLE
+
+PENUP
+SETXY -200 0
+RIGHT 90
+PENDOWN
+
+to dragon :degree :size
+    setpensize 1
+    if :size>5 [setpensize 2]
+    if :size>10 [setpensize 3]
+    if :size>20 [setpensize 4]
+    if :size>40 [setpensize 5]
+    ifelse :degree=0 [ 
+        fd :size 
+    ] 
+    [
+        lt 45 dragon (:degree-1) (size/4)
+        rt 90 dragon (:degree-1) (size/2)
+        lt 90 dragon (:degree-1) (size/4)
+        rt 45
+    ]
+end
+
+dragon 6 3000
+</code>
 
 Pascal : J'ai dû apprendre à programmer en Pascal aux alentour de 15 ans et je l'ai aussi réutiliser en FAC. Je dois avouer, que je le trouve inférieur aux C en tous points.
 Passez donc votre chemin pour aller voir vers le C.
