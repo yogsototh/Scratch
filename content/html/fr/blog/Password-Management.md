@@ -30,21 +30,22 @@ Bon, d'accord, même si vous ne téléchargez pas mon application vous pouvez qu
 Elle est à la fois très sûre et simple à utiliser.
 
 
-Si vous souhaitez simplement _utiliser_ le système sans essayer de comprendre comment ça marche derrière vous pouvez [aller à la fin de cet article en cliquant ici](#en-pratique).
+Si vous souhaitez simplement _utiliser_ le système sans essayer de comprendre comment ça marche derrière vous pouvez [aller à la fin de cet article en cliquant ici](#en-pratique-).
 
 ## Pourquoi devriez-vous utiliser un gestionnaire de mot de passe ?
 
 > Même les paranoïaques peuvent avoir des ennemis.
 
 
-Imagniez que vous trouviez un très bon mot de passe. Vous l'utilisez sur gmail, amazon, PayPal, twitter, facebook...
-Un jour vous découvrez un super petit jeu en ligne très sympa.
-Cependant pour y jouer vous devez vous enregistrer.
+Imaginez que vous trouviez un très bon mot de passe. Vous l'utilisez sur gmail, amazon, PayPal, twitter, facebook...
+Plus tard, vous découvrez un super petit jeu en ligne très sympa.
+Vous devez vous enregistrer pour y jouer.
 Le site vous demande votre email et un mot de passe.
 Quelques semaines/mois se passent.
-La machine qui héberge le jeu en ligne se fait attaquée.
+La machine qui héberge le jeu en ligne se fait attaquer.
 Maintenant, l'attaquant du site web possède votre email avec ce mot de passe.
-Il peut donc essayer votre mot de passe un peu partout. Sur PayPal par exemple.
+Il peut donc essayer votre mot de passe un peu partout. 
+Sur PayPal par exemple.
 
 Bien, maintenant comment pouvons nous régler ce problèmes ?
 
