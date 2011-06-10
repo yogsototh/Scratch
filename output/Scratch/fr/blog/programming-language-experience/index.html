@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="programming language experience" type="text/html" hreflang="fr" href="/Scratch/fr/blog/programming-language-experience/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="programming language experience" type="text/html" hreflang="en" href="/Scratch/en/blog/programming-language-experience/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>programming language experience</title>
+    </head>
+    <body lang="fr">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="Chargement en cours..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/en/blog/programming-language-experience/" onclick="setLanguage('en')">in English</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    programming language experience
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p><img alt="Title image" src="/Scratch/img/blog/programming-language-experience/main.png" /></p>
+
+
+<div class="intro">
+
+<span class="sc"><abbr title="Too long; don't read">tl;dr</abbr>: </span> My feelings about programming languages I used.
+<span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Mon avis sur les différents languages de programmations que j&rsquo;ai utilisé.
+
+</div>
+
+
+<h3 id="basic">BASIC</h3>
+
+<p>Ah&nbsp;! Le language de mes premiers programmes&nbsp;! 
+Je devais avoir 10-11 ans. 
+Sous <code>MO5</code>, <code>Amstrad CPC 6128</code> et même <code>Atari STe</code>.
+Le langage des <code>GOTO</code>. 
+Je suis empleint de nostalgie rien que d&rsquo;y penser. 
+C&rsquo;est à peu prêt le seul intérêt de ce langage.</p>
+
+<p>Aujourd&rsquo;hui ce langage est tombé en désuétude.
+Ce n&rsquo;est ni un bon langage pour apprendre, ni un bon langage pour faire de vrai programmes. 
+Même si quelques années plus tard, je me remettais à programmer dans un basic avec un compilateur qui pourrait lui redonner vie. 
+Je m&rsquo;en était servi pour faire un livre dont vous êtes le héro&nbsp;:-).</p>
+
+<pre class="twilight">
+READY
+10 PRINT <span class="String"><span class="String">&quot;</span>HELLO WORLD!<span class="String">&quot;</span></span>
+20 GOTO 10
+RUN
+</pre>
+
+<p>Je m&rsquo;en souviens aussi pour avoir copier des codes de jeux vidéo à partir de magasines.
+La plupart des lignes ressemblaient à </p>
+
+<pre class="twilight">
+3110 DATA FA,01,FF,FF,FF,FF,00,23,22,43,DA,DE,EE,FF,FF,FF,00,03,4A,F2
+</pre>
+
+<p>Quel plaisir c&rsquo;était&nbsp;!</p>
+
+<h3 id="logo">Logo</h3>
+
+<p><img alt="Dragon fractal" src="/Scratch/img/blog/programming-language-experience/dragon.jpg" class="left" />
+Toujours lors que j&rsquo;avais 10 ans, on pouvait faire de petits programmes sympathiques.</p>
+
+<p>Je me souviens que lors du chargement de l&rsquo;application logo on avait droit à de la musique de Bach.</p>
+
+<p>Oui, il fallait charger le programme en mémoire avec une cassette. Et elle ne faisait pas les &lsquo;Krrrkrr csssss krrrr&rsquo;.</p>
+
+<p>Je l&rsquo;avais utilisé sans les boucles.
+Des années plus tard, je le réutiliser pour faire de l&rsquo;initiation à l&rsquo;informatique à mes étudiants de DEUG MIAS première année. 
+Il s&rsquo;est en fait révélé très utile. 
+Grace à lui, faire des fractales se révèle être un jeu d&rsquo;enfant, au sens litéral. 
+Je ne peux que conseiller ce langage pour apprendre à programmer et aussi pour le fun.</p>
+
+<p>Voici un exemple de code et le résultat est la jolie fractale &lsquo;dragon&rsquo;.</p>
+
+<pre class="twilight">
+HIDETURTLE
+
+PENUP
+SETXY -200 0
+RIGHT 90
+PENDOWN
+
+to dragon&nbsp;:degree&nbsp;:size
+    setpensize 1
+    <span class="Keyword">if</span>&nbsp;:size<span class="Keyword">&gt;</span>5 [setpensize 2]
+    <span class="Keyword">if</span>&nbsp;:size<span class="Keyword">&gt;</span>10 [setpensize 3]
+    <span class="Keyword">if</span>&nbsp;:size<span class="Keyword">&gt;</span>20 [setpensize 4]
+    <span class="Keyword">if</span>&nbsp;:size<span class="Keyword">&gt;</span>40 [setpensize 5]
+    ifelse&nbsp;:degree=0 [ 
+        fd&nbsp;:size 
+    ] 
+    [
+        lt 45 dragon (:degree-1) (size/4)
+        rt 90 dragon (:degree-1) (size/2)
+        lt 90 dragon (:degree-1) (size/4)
+        rt 45
+    ]
+end
+
+dragon 6 3000
+</pre>
+
+<dl>
+  <dt>Pascal&nbsp;: J&rsquo;ai dû apprendre à programmer en Pascal aux alentour de 15 ans et je l&rsquo;ai aussi réutiliser en FAC. Je dois avouer, que je le trouve inférieur aux C en tous points.</dt>
+  <dt>Passez donc votre chemin pour aller voir vers le C.</dt>
+  <dd>
+    <p>C
+Ah, le langage de programmation par excellence. Il n&rsquo;est pas prêt d&rsquo;être détronné. Il est très proche de la machine tout en ayant une abstraction suffisante pour ne pas être &ldquo;trop&rdquo; ésagréable.
+Avec, j&rsquo;ai fait beaucoup de choses. Tous les algorithmes de tri, des algorithmes d&rsquo;intelligence artificielle (résolution de SAT3), du système, du réseau etc&hellip;
+Bref il est versatile, et on ne peut pas dire que l&rsquo;on sait programmer si on ne s&rsquo;est jamais mis à programmer sérieusement en <code>C</code>.</p>
+  </dd>
+  <dd>
+    <p>ADA
+Le langage super-propre. J&rsquo;avais bien aimé ADA, mais j&rsquo;avoue que ça n&rsquo;a duré que le temps d&rsquo;un semestre de cours. Peut-être qu&rsquo;un jour je m&rsquo;y remettrai. Disons qu&rsquo;il est assez vieux et qu&rsquo;il a inspiré la plupart des concepts objets.</p>
+  </dd>
+</dl>
+
+<h2 id="les-langages-orients-objets">Les langages orientés objets</h2>
+
+<p>: C++
+Et oui l&rsquo;industrie voulait un langage objet, mais elle n&rsquo;était pas prête à mettre à la poubelle tout ses codes en C. La solution, prendre C et lui rajouter une couche objet.
+Le problème avec C++ c&rsquo;est qu&rsquo;il fait trop de choses. L&rsquo;héritage multiple, des templates, etc&hellip;
+Bon, je l&rsquo;ai quand même choisi pour faire le plus gros programme que j&rsquo;ai jamais fais lors de ma thèse. Et je dois avouer que l&rsquo;expérience m&rsquo;a plûe. Le seul reproche que j&rsquo;ai à faire, c&rsquo;est que la STL n&rsquo;était pas aussi complète que l&rsquo;on aurait pû l&rsquo;espérer pour un détail. On ne peut pas faire de String<X> pour autre chose que des Char16. Du coup, mon alphabet était limité à 2^16 lettres. Hors, pour certaines application, l'alphabet doit être gigantesque. </X></p>
+
+<dl>
+  <dt>:Eiffel</dt>
+  <dt>Bon, ok c&rsquo;est un très beau langage objet. Bien plus propre que C++. Mais, à moins que les choses aient changées, il n&rsquo;est pas très populaire. Derrière lui il n&rsquo;a pas la communauté de C++.</dt>
+  <dt>Pour être franc, j&rsquo;ai préféré travailler en C++. Lorsqu&rsquo;on viens du C, il est désagréable de changer ses habitudes.</dt>
+  <dd>
+    <p>Java
+On continue vers les langages objets. Alors, à une époque où j&rsquo;en ai entendu parler, c&rsquo;était le Graal&nbsp;! Oui, la portabilité, votre programme marchera partout. Il était orienté objet. Incrusté à l&rsquo;intérieur il y avait des concepts d&rsquo;architecture qui empêchent de faire n&rsquo;importe quoi&hellip; Sauf que.
+Sauf qu&rsquo;il est incroyablement verbeux.
+Et que les limitations sont très désagréables si on sait ce que l&rsquo;on fait.
+Par exemple, il n&rsquo;y a pas d&rsquo;héritage multiple en Java. 
+Ce qui est en général un choix que je trouve cohérent s&rsquo;il est bien appuyé par des système qui compensent ce manque. En java, il existe les interfaces. Hors, les interfaces sont un moyen d&rsquo;ajouter simplement des méthodes à une classe. En aucun cas on ne peut rajouter un attribut. Ce qui m&rsquo;a vraiment géner pour faire une interface graphique par exemple.
+Typiquement je faisais une GUI en Java Swing, et j&rsquo;avais créé mon propre système de notification entre objets de GUI. Alors, au début je considérais qu&rsquo;un objet ne devais envoyer des notifications qu&rsquo;à un seul objet. Ô quelle erreur lorsque je réalisais qu&rsquo;il fallait non plus gérer un seul objet mais parfois plusieurs. Je changeais mon implémentation d&rsquo;interface partout, conséquence, des copier/coller dans tous les sens pour mes classes. Les copier/coller qui sont justement un problème censé être évité par les langages orientés objets.</p>
+  </dd>
+</dl>
+
+<p>De plus toujours pour ma GUI, je devais évidemment gérer des threads. Hors, il m&rsquo;a fallu faire mon propre système de gestion de threads pour éviter les locks, pour les notifications (ce thread à fini, etc&hellip;). À l&rsquo;époque j&rsquo;utilisais Java 1.5. normallement ce problème devait être réglé sur Java 1.6. J&rsquo;espère que c&rsquo;est le cas, mais avoir ce type de &ldquo;feature&rdquo; essentielles oubliées par le langage était assez grave. </p>
+
+<p>De même, il a fallu attendre très longtemps avant d&rsquo;avoir des boucles foreach qui rende le code bien plus lisible.</p>
+
+<p>Bon, après cette expérience je déconseillerai Java.
+La portabilité, n&rsquo;est pas si intéressante que ce qu&rsquo;on pourrait croire.</p>
+
+<p>En ce qui concerne les GUI, portable signifie interface fonctionnelles mais médiocre sur toutes les plateformes. Quelquesoit le système d&rsquo;ailleurs (wxWidget, QT, etc&hellip;). Donc, pour des applications à distribuer à des tiers, c&rsquo;est à éviter.</p>
+
+<dl>
+  <dt>Le système de Java est très clos. Par contre il résoud un très bon problème. Il permet à des développeurs médiocre de travailler en groupe sans faire trop de mal. Et un bon programmeur sera tout de même capable d&rsquo;y faire des choses très intéressantes.</dt>
+  <dd>
+    <p>Objective-C
+Le langage que je n&rsquo;ai appris et utilisé que pour faire des applications sur les plateformes d&rsquo;Apple<small>&copy;</small>. J&rsquo;ai appris Objective-C après Python. Et je dois avouer que j&rsquo;ai eu du mal à m&rsquo;y mettre. Je n&rsquo;ai pas du tout aimé la syntaxe et pas mal d&rsquo;autres détails. Mais ça fait parti de ces langages que plus on utilise, plus on aime.
+En réalité, il y a quelque chose dans ce langage qui fait que tout est bien pensé.
+Mais surtout, ici, ce n&rsquo;est pas le langage qui est la meilleure partie, c&rsquo;est plutôt le framework Cocoa qui lui est le plus souvent associé qui est une merveille. Par rapport à tous les autres framework permettant de fabriquer des GUI, Cocoa est de très loin supérieur. Même si ça semble être des détails sur le papier, en pratique cela fait une grande différence.
+Vraiment jusqu&rsquo;ici, même si Objective-C reste assez bas niveau, le fait que le typage de ce langage soit dynamique est un vrai plus pour l&rsquo;interface graphique.
+Je ne peux que vous encourager à vous accrocher à ce langage et de faire un vrai programme avec. Vous en serez certainement plus ravi qu&rsquo;il n&rsquo;y parrait eu début.</p>
+  </dd>
+</dl>
+
+<h2 id="les-langages-de-scripts">Les langages de scripts</h2>
+
+<dl>
+  <dt>: PHP</dt>
+  <dt>Le petit langage de script que nous utilisions tous pour faire des sites web à l&rsquo;époque des gifs animées&nbsp;!</dt>
+  <dt>Sympatique, mais sans plus. Apparemment il y a eu pas mal de progrès depuis PHP5, un jour peut-être que j&rsquo;y reviendrai.</dt>
+  <dd>
+    <p>Python
+Alors là, attention&nbsp;! Révélation&nbsp;! Lorsqu&rsquo;on avait l&rsquo;habitude de travailler avec des langages compilé, type C++, Java et qu&rsquo;on passe à Python, on se prend une claque magistrale dans la gueule. La programmation comme elle doit être faite. Tout est si naturel, c&rsquo;est <em>magique</em>.
+Oui, c&rsquo;est si bien que ça.
+Mais quelque chose d&rsquo;aussi incroyablement bien doit avoir des inconvénients me dirais-vous.
+Et bien, oui, comme tous les langages de scripts, Python est <em>lent</em>. Attention pas juste un peu lent, comme 2 fois plus lent que du C. Non, de l&rsquo;ordre de 10 à 20 fois plus lent que le C.
+Argh&hellip; Bon ça reste utilisable pour beaucoup de choses. Mais certaines application lui sont donc interdites.</p>
+  </dd>
+  <dd>
+    <p>Awk
+Des filtres de fichiers à faire. Si ce n&rsquo;est pas trop compliqué, c&rsquo;est le langage idéal. Vous avez un fichier et vous voulez savoir quels sont les mots les plus utilisés. Savoir combien de fois un mot est utilisé. Filtrer sous des condition un peu plus compliquées qu&rsquo;un grep.
+Super outils. Je l&rsquo;ai utilisé pour modifier en masse des centaines de fichier XML plus facilement qu&rsquo;avec du XSLT.</p>
+  </dd>
+  <dd>
+    <p>Perl
+Perl c&rsquo;est assez magique, mais la syntaxe est tellement désagréable à lire que personne ne peut vraiment aimer programmer dans un environnement de plusieurs personnes en Perl. A moins que tous les autres soient des cadors du Perl. Mais la feature qui tue, les expressions régulières&nbsp;:</p>
+  </dd>
+</dl>
+
+<pre class="twilight">
+<span class="Variable"><span class="Variable">$</span>var</span> =~ <span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>toto</span><span class="StringRegexp"><span class="StringRegexp">/</span>titi<span class="StringRegexp">/</span></span>
+</pre>
+
+<dl>
+  <dt>Va remplacer toto par titi dans la valeur de la variable $var. Et oui, les expressions régulière y sont intégrées directement comme avec <code>sed</code> et <code>awk</code>. Et ça rend le code beacoup plus compact (et parfois illisible). Mais c&rsquo;est vraiment pas mal. C&rsquo;est une sorte de <code>awk</code> sous stéroides.</dt>
+  <dd>
+    <p>Ruby
+C&rsquo;est une sorte de Perl en plus propre. 
+Un mélange de Perl et de Python. 
+Les notion objets y sont plus fortes qu&rsquo;en Python. 
+Je l&rsquo;ai beaucoup utilisé, je reste quand même un Pythoniste de préférence.
+Mais Ruby est vraiment très bien.
+Par contre en terme d&rsquo;efficacité, c&rsquo;est le pire langage utilisé par beaucoup de monde de ce point de vue.
+C&rsquo;est le langage qui perd quasiment tous les benchmarks.
+Par contre c&rsquo;est un outil parfait pour faire des prototypes.
+Et si vous voulez faire un prototype de site web, RoR est ce qui se fait de mieux.
+De l&rsquo;idée au site, il ne se passera que peu de temps.</p>
+  </dd>
+  <dd>
+    <p>Javascript</p>
+  </dd>
+</dl>
+
+<p>C&rsquo;est la bonne surprise. 
+Pendant des années, javascript était considéré comme un langage tout bon à vous embété dans votre navigation web. En réalité, javascript possède beaucoup de qualité des langages de haut niveau. En particulier, il est facille de passer une fonction en paramèter ou de créer des fonctions anonymes (closures). Récemment, il est devenu très rapide et beaucoup de frameworks naissent un peu partout.</p>
+
+<pre><code>- Il y a Cappuccino, Objecte-J (comme de l'objective-C mais avec du javascript)
+- Sproutcore
+- Spine.js
+- Backbone.js
+- jQuery
+- prototype.js
+
+En particulier avec jQuery, on peut faire des appels chainés, très agréables à utiliser.
+Comme je le disais, c'est une bonne surprise, javascript a été choisi un peu au hasard lors de la création des navigateurs web comme langage de script. Et il s'avère qu'à part sa syntaxe, tout le reste est bien. Heureusement, en ce qui concerne la syntaxe, on peu pallier à ce problème en utilisant CoffeeScript.
+</code></pre>
+
+<h2 id="les-langages-fonctionnels">Les langages fonctionnels</h2>
+
+<p>: CamL</p>
+
+<dl>
+  <dt>J&rsquo;ai appris CamL à la fac, j&rsquo;avais trouvé cette expérience très interressante. J&rsquo;étais plutôt bon, et j&rsquo;avais les bonnes intuitions mathématiques qui vont avec la programmation fonctionnelle. Mais je dois avouer que je ne l&rsquo;ai plus jamais utilisé. Simplement, ce type de langage semble si loin de ce qui se fait pour fabriquer des produits que ça me donnais vraiment l&rsquo;impression d&rsquo;être un langage pour chercheurs.</dt>
+  <dd>
+    <p>Haskell</p>
+  </dd>
+</dl>
+
+<p>Je suis en train d&rsquo;apprendre ce langage. Et je dois dire que c&rsquo;est un vrai plaisir. En général les concepts derrière tous les langages de programmation  sont assez limités. Chaque langage y va de son petit lot de nouveau concepts, et en général en une après-midi, c&rsquo;est appris.
+Pour haskell, c&rsquo;est très différent. Je sens bien qu&rsquo;il va me falloir plusieurs semaines pour maîtriser la bête. Ça doit faire quatre semaines que j&rsquo;apprend haskell un peut tous les jours et je sais qu&rsquo;il y a des notions que j&rsquo;ai juste survollées et qui sont assez incroyables.
+Les Monades par exemple, est un concept que je n&rsquo;avais jamais rencontré ailleurs. C&rsquo;est un super concept. De plus le design du langage en fait un parfait système pour paralléliser les calculs naturellement. haskell sépare la partie &ldquo;pure&rdquo; de la partie &ldquo;impure&rdquo; de la programmation. À ma connaissance, c&rsquo;est le seul langage de programmation qui fait ça. Enfin, je prend beaucoup de plaisir à apprendre ce langage. La communauté est aussi très acceuillante. Pas de &ldquo;L0L! URAN00B!&rdquo;. Et aussi pas de concession du langage pour devenir populaire. Le langage est bon, voilà tout. Alors qu&rsquo;en Java et C++, typiquement certain choix ont été fait en dépis du bon sens pour &ldquo;faire plaisir&rdquo;. </p>
+
+<h2 id="langages-originaux">Langages originaux</h2>
+
+<dl>
+  <dt>En plus des langages de programmation proprement dit, il existe des langages dont le seul but et de créer des documents.</dt>
+  <dd>
+    <p>MetaPost
+Metapost est un langage qui permet de programmer des dessins.
+Le gros plus de metapost, c&rsquo;est qu&rsquo;il y a un solveur d&rsquo;équations linéaires. Ainsi on peut faire des choses assez impressionnantes, comme laisser une petite distance entre les flèches et les bords. Ou encore les têtes des flèches se courbent.
+Très sympatique à utiliser.</p>
+  </dd>
+  <dd>
+    <p>zsh 
+Oui, zsh est un shell. Mais c&rsquo;est aussi un langage de script très bien adapté aux traitement de fichiers. Je le recommande chaudement. C&rsquo;est pour l&rsquo;instant le meilleur shell que j&rsquo;ai utilisé. Je le préfère au bash.</p>
+  </dd>
+  <dd>
+    <p>Prolog
+Je n&rsquo;ai jamais rien fait de conséquent avec Prolog, mais j&rsquo;ai adoré l&rsquo;utiliser. C&rsquo;est un langage qui essaye de résoudre les contraintes autant qu&rsquo;il le peut pour vous. C&rsquo;est assez magique. On ne fait que décrire ce qu&rsquo;il faut et on ne donne pas d&rsquo;ordre. Un peu comme la programmation fonctionnelle mais en beaucoup plus puissant.</p>
+  </dd>
+</dl>
+
+<h2 id="les-langages--dcouvrir">Les langages à découvrir</h2>
+
+<p>Il reste encore pas mal de langages et de framework à essayer. Actuellement je pense que je vais passer un moment avec haskell. Peut-être demain que j&rsquo;irai voir du LISP, Scala ou Erlang. Comme je suis plus dans la création de site web, j&rsquo;irai certainement jeter un coup d&rsquo;oeil à clojure aussi. Et certainement beaucoup d&rsquo;autres choses.</p>
+
+<p>Dites-moi si vous avez une autre expérience avec ces langages de programmation. Je ne donne que mes impressions. En tout cas je les ai tous utilisés.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomfr">
+                        s'abonner
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Commentaires</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">commentaires</h2>
+                    <noscript>
+                        Vous devez activer javascript pour commenter.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/fr/blog/programming-language-experience/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/programming-language-experience/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/fr/">Bienvenue</a></li>
+<li><a href="/Scratch/fr/blog/">Blog</a></li>
+<li><a href="/Scratch/fr/softwares/">Softwares</a></li>
+<li><a href="/Scratch/fr/about/">À propos</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        articles précédents
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/Password-Management/"><span class="nicer">«</span>&nbsp;Password Management</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2011-04-20-Now-hosted-on-github/"><span class="nicer">«</span>&nbsp;Hébergement github</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/fr/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/"><span class="nicer">«</span>&nbsp;Pourquoi je n'utiliserai pas CoffeeScript (malheureusement)</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        articles suivants
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Écrit le : 07/06/2011
+                    modifié le : 10/06/2011 
+                </div>
+                <div>
+                    Site entièrement réalisé avec
+                    <a href="http://www.vim.org">Vim</a>
+                    et 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/fr/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/fr/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>

@@ -2,13 +2,45 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2011-05-18T11:14:28Z</updated>
+  <updated>2011-06-07T10:21:41Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2011-06-07:/Scratch/en/blog/programming-language-experience/</id>
+    <title type="html">programming language experience</title>
+    <published>2011-06-07T10:21:41Z</published>
+    <updated>2011-06-07T10:21:41Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/programming-language-experience/"/>
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/programming-language-experience/main.png" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; My feelings about programming languages I used.
+&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt; Mon avis sur les diff&#233;rents languages de programmations que j&amp;rsquo;ai utilis&#233;.
+
+&lt;/div&gt;
+
+
+&lt;h3 id="basic"&gt;BASIC&lt;/h3&gt;
+
+&lt;p&gt;Ah&amp;nbsp;! Le language de mes premiers programmes&amp;nbsp;! 
+Je devais avoir 10-11 ans. 
+Sous &lt;code&gt;MO5&lt;/code&gt;, &lt;code&gt;Amstrad CPC 6128&lt;/code&gt; et m&#234;me &lt;code&gt;Atari STe&lt;/code&gt;.
+Le langage des &lt;code&gt;GOTO&lt;/code&gt;. 
+Je suis empleint de nostalgie rien que d&amp;rsquo;y penser. 
+C&amp;rsquo;est &#224; peu pr&#234;t le seul int&#233;r&#234;t de ce langage.&lt;/p&gt;
+
+&lt;p&gt;Aujourd&amp;rsquo;hui ce lang...&lt;/p&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2011-05-18:/Scratch/en/blog/Password-Management/</id>
     <title type="html">40 character's passwords</title>
@@ -939,6 +971,63 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/"/>
+    <content type="html">&lt;h1 class="first" id="gitgit-for-what"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; for what?&lt;/h1&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;If you just want to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; &lt;strong&gt;immediately&lt;/strong&gt;, just read dark part. You read this part later to understand correctly foundations of version systems and not doing strange things.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; is a &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, which means a Decentralized Concurrent Versions System. Let&amp;rsquo;s analyze each part of this long term:&lt;/p&gt;
+
+&lt;h3 id="versions-system"&gt;Versions System&lt;/h3&gt;
+
+&lt;p&gt;Firstly, versions system manage files.
+When somebody work with files without a versions system, the following happens frequently:&lt;/p&gt;
+...&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
+    <content type="html">&lt;h1 class="first" id="here-we-go"&gt;Here we go!&lt;/h1&gt;
+
+&lt;p&gt;Here is one from many way to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. This method is sufficient to work on a project. Not there is many other &lt;em&gt;workflows&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id="basic-usage"&gt;Basic usage&lt;/h2&gt;
+
+&lt;p&gt;Work with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; immediately:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Get modification done by others &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+  &lt;li&gt;See details of these modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+  &lt;li&gt;Many times:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+      &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -970,63 +1059,6 @@ git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
 
 &lt;div&gt;&lt;pre class="twilight"&gt;
 $ g...&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/"/>
-    <content type="html">&lt;h1 class="first" id="here-we-go"&gt;Here we go!&lt;/h1&gt;
-
-&lt;p&gt;Here is one from many way to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. This method is sufficient to work on a project. Not there is many other &lt;em&gt;workflows&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id="basic-usage"&gt;Basic usage&lt;/h2&gt;
-
-&lt;p&gt;Work with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; immediately:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Get modification done by others &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-  &lt;li&gt;See details of these modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-  &lt;li&gt;Many times:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
-      &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
-      &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/"/>
-    <content type="html">&lt;h1 class="first" id="gitgit-for-what"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; for what?&lt;/h1&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;If you just want to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; &lt;strong&gt;immediately&lt;/strong&gt;, just read dark part. You read this part later to understand correctly foundations of version systems and not doing strange things.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; is a &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, which means a Decentralized Concurrent Versions System. Let&amp;rsquo;s analyze each part of this long term:&lt;/p&gt;
-
-&lt;h3 id="versions-system"&gt;Versions System&lt;/h3&gt;
-
-&lt;p&gt;Firstly, versions system manage files.
-When somebody work with files without a versions system, the following happens frequently:&lt;/p&gt;
-...&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
@@ -1066,25 +1098,5 @@ $ sudo port install git-core
 
 &lt;div&gt;&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/code/gitconfig"&gt; &amp;#x27A5; gitconfig &lt;/a&gt;&lt;/div&gt;&lt;div class="withfile"&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/"/>
-    <content type="html">&lt;h1 class="first" id="why-git-is-cool"&gt;Why Git is cool?&lt;/h1&gt;
-
-&lt;p&gt;Because with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; you can work on many part of some project totally independently. This is the true efficiency of decentralisation.&lt;/p&gt;
-
-&lt;p&gt;Each branch use the same directory. Then you can easily change your branch. You can also change branch when some files are modified. You can then dispatch your work on many different branches and merge them on one master branch at will.&lt;/p&gt;
-
-&lt;p&gt;Using the &lt;code&gt;git rebase&lt;/code&gt; you can decide which modifications should be forget or merged into only one modification.&lt;/p&gt;
-
-&lt;p&gt;What does it mean for real usage? You can focus on coding. For example, you can code, a fix for bug b01 and for bug b02 and code a feature f03. Once finished you can creat...&lt;/p&gt;</content>
   </entry>
 </feed>
