@@ -12,23 +12,34 @@ author_uri: yannesposito.com
 <%= blogimage("main.png","Title image") %>
 
 begindiv(intro)
-<%=tldr%> My feelings about programming languages I used.
-<%=tlal%> Mon avis sur les différents languages de programmations que j'ai utilisé.
+en: <%=tldr%> My feelings about programming languages I used.
+fr: <%=tlal%> Mon avis sur les différents languages de programmations que j'ai utilisé.
 enddiv
 
 ### BASIC
 
-Ah ! Le language de mes premiers programmes ! 
-Je devais avoir 10-11 ans. 
-Sous `MO5`, `Amstrad CPC 6128` et même `Atari STe`.
-Le langage des `GOTO`. 
-Je suis empleint de nostalgie rien que d'y penser. 
-C'est à peu prêt le seul intérêt de ce langage.
+en: The language of my firsts programs!
+en: I was about 10, with an `MO5` and `Amstrad CPC 6128` and even with my `Atari STe`.
+en: This is the language of `GOTO`s.
+en: Ô nostalgia.
+en: Unfortunately this might be the only intersting part of this language.
 
-Aujourd'hui ce langage est tombé en désuétude.
-Ce n'est ni un bon langage pour apprendre, ni un bon langage pour faire de vrai programmes. 
-Même si quelques années plus tard, je me remettais à programmer dans un basic avec un compilateur qui pourrait lui redonner vie. 
-Je m'en était servi pour faire un livre dont vous êtes le héro :-).
+fr: Ah ! Le language de mes premiers programmes ! 
+fr: Je devais avoir 10-11 ans. 
+fr: Sous `MO5`, `Amstrad CPC 6128` et même `Atari STe`.
+fr: Le langage des `GOTO`s. 
+fr: Je suis empleint de nostalgie rien que d'y penser. 
+fr: C'est à peu prêt le seul intérêt de ce langage.
+
+en: Today this language is obsolescent.
+en: It not even a good language to learn programming.
+en: I know there exist some compiler now.
+en: But this is not enough to try to learn it.
+
+fr: Aujourd'hui ce langage est tombé en désuétude.
+fr: Ce n'est ni un bon langage pour apprendre, ni un bon langage pour faire de vrai programmes. 
+fr: Même si quelques années plus tard, je me remettais à programmer dans un basic avec un compilateur qui pourrait lui redonner vie. 
+fr: Je m'en était servi pour faire un livre dont vous êtes le héro :-).
 
 <code class="zsh">
 READY
@@ -37,31 +48,46 @@ READY
 RUN
 </code>
 
-Je m'en souviens aussi pour avoir copier des codes de jeux vidéo à partir de magasines.
-La plupart des lignes ressemblaient à 
+en: I remember also to had copyied some game source code from some magazine.
+en: Most lines were like:
+fr: Je m'en souviens aussi pour avoir copier des codes de jeux vidéo à partir de magasines.
+fr: La plupart des lignes ressemblaient à 
 
 <code class="zsh">
 3110 DATA FA,01,FF,FF,FF,FF,00,23,22,43,DA,DE,EE,FF,FF,FF,00,03,4A,F2
 </code>
 
-Quel plaisir c'était !
+en: What a pleasure!
+fr: Quel plaisir c'était !
 
 ### Logo
 
 <%=leftblogimage("dragon.jpg","Dragon fractal")%>
-Toujours lors que j'avais 10 ans, on pouvait faire de petits programmes sympathiques.
+en: Also when I was about 10. 
+en: I played with logo to draw on the computer.
+fr: Toujours lors que j'avais 10 ans, on pouvait faire de petits programmes sympathiques.
 
-Je me souviens que lors du chargement de l'application logo on avait droit à de la musique de Bach.
+en: I remember the Bach's music while the program loaded.
+fr: Je me souviens que lors du chargement de l'application logo on avait droit à de la musique de Bach.
 
-Oui, il fallait charger le programme en mémoire avec une cassette. Et elle ne faisait pas les 'Krrrkrr csssss krrrr'.
+en: Yes, at that time we had to load the program into the memory using tapes. 
+en: This one was a rare one that didn't made an awfull 'Krrrkrr cssssss krrr' noise.
+fr: Oui, il fallait charger le programme en mémoire avec une cassette. 
+fr: Et elle ne faisait pas les 'Krrrkrr csssss krrrr'.
 
-Je l'avais utilisé sans les boucles.
-Des années plus tard, je le réutiliser pour faire de l'initiation à l'informatique à mes étudiants de DEUG MIAS première année. 
-Il s'est en fait révélé très utile. 
-Grace à lui, faire des fractales se révèle être un jeu d'enfant, au sens litéral. 
-Je ne peux que conseiller ce langage pour apprendre à programmer et aussi pour le fun.
+en: I used them without any loop.
+en: Some years after, I had used it to learn programming to my college students.
+en: In fact it was really good as first language.
+en: Making fractals is like a game for children.
 
-Voici un exemple de code et le résultat est la jolie fractale 'dragon'.
+fr: Je l'avais utilisé sans les boucles.
+fr: Des années plus tard, je le réutiliser pour faire de l'initiation à l'informatique à mes étudiants de DEUG MIAS première année. 
+fr: Il s'est en fait révélé très utile. 
+fr: Grace à lui, faire des fractales se révèle être un jeu d'enfant, au sens litéral. 
+fr: Je ne peux que conseiller ce langage pour apprendre à programmer et aussi pour le fun.
+
+en: Here is an example of code that results in the dragoon fractal.
+fr: Voici un exemple de code et le résultat est la jolie fractale 'dragon'.
 
 <code class="zsh">
 HIDETURTLE
@@ -92,58 +118,109 @@ dragon 6 3000
 
 ### Pascal
 
-l'éternel numéro 2.
+en: The always second.
+fr: L'éternel numéro 2.
 
-J'ai dû apprendre à programmer en Pascal aux alentour de 15 ans et je l'ai aussi réutiliser un peit peu en faculté. 
-Je dois avouer, que je le trouve inférieur au C en tous points.
-J'ai fait pas mal de chose avec ça, comme des algorithmes de graphes. Mais je préfère largement le C.
+en: I made my firsts real serious program with Pascal.
+en: I must confess I found it inferior to C.
+en: I made graph algorithms, sort algorithms even some IA like genetic algorithms.
+en: In the end I prefer C.
+
+fr: J'ai dû apprendre à programmer en Pascal aux alentour de 15 ans et je l'ai aussi réutiliser un peit peu en faculté. 
+fr: Je dois avouer, que je le trouve inférieur au C en tous points.
+fr: J'ai fait pas mal de chose avec ça, comme des algorithmes de graphes, des algorithmes de tri, et même un peu d'intelligence artificielle comme des algorithmes génétiques. 
+fr: Mais je préfère largement le C.
 
 ### C
 
-Le langage des pointeurs
+en: The language of pointers.
+fr: Le langage des pointeurs
 
-Ah, _le_ langage de programmation par excellence. 
+en: _Le_ programming language.
+fr: Ah, _le_ langage de programmation par excellence. 
 
-Une fois que vous avez compris les boucles et la récursivité. 
-Il est temps de passer aux choses sérieuses.
-Si vous voulez avoir du code de bonne qualité, alors apprendre le C est quasi-obligatoire.
+en: Once you understand loops and recursivity.
+en: It is time to make things serious.
+en: If you want to have good quality code, knowing C is almost mandatory.
+fr: Une fois que vous avez compris les boucles et la récursivité. 
+fr: Il est temps de passer aux choses sérieuses.
+fr: Si vous voulez avoir du code de bonne qualité, alors apprendre le C est quasi-obligatoire.
 
-Ce langage est très proche du langage machine. En particulier, (la majorité du temps). Il y a une relation linéaire entre la taille du code en C et de son résultat compilé en assembleur.
+en: This language is close to machine language.
+en: So much, there is (mostly) a linear relation between the size of your code and the size of the compiled one.
+fr: Ce langage est très proche du langage machine. 
+fr: En particulier, (la majorité du temps). 
+fr: Il y a une relation linéaire entre la taille du code en C et de son résultat compilé en assembleur.
 
-Ça signifie qu'à chaque fois que vous écrivez une ligne de C, il ne va pas se passer de choses toutes bizarres comme lancer un algorithme qui va prendre deux plombes.
+en: In short, each time you write a C instruction there won't be anything strange that will occurs, like starting a long algorithm behind the scene.
+fr: Ça signifie qu'à chaque fois que vous écrivez une ligne de C, il ne va pas se passer de choses toutes bizarres comme lancer un algorithme qui va prendre deux plombes.
 
-Il est très proche de la machine tout en ayant une abstraction suffisante pour ne pas être "trop"  désagréable.
+en: It is very close to the machine while keeping a sufficient abstraction to be fun.
+fr: Il est très proche de la machine tout en ayant une abstraction suffisante pour ne pas être "trop"  désagréable.
 
-J'ai fait beaucoup de choses avec. 
-Tous les algorithmes de tri, des algorithmes d'intelligence artificielle (résolution de SAT3), du système, du réseau etc...
-Bref il est versatile, et on ne peut pas dire que l'on sait programmer si on ne s'est jamais mis à programmer sérieusement en `C`.
+en: I made a lot of program with it.
+en: From sort algorithms to AI ones (SAT3), system, network prgramming, etc...
+en: It is a very useful language that will help you understand how things works on your computer. 
+en: Most modern computer language hide a lot of informations. 
+en: This is not the case with C.
+fr: J'ai fait beaucoup de choses avec. 
+fr: Tous les algorithmes de tri, des algorithmes d'intelligence artificielle (résolution de SAT3), du système, du réseau etc...
+fr: Bref il est versatile, et on ne peut pas dire que l'on sait programmer si on ne s'est jamais mis à programmer sérieusement en `C`.
 
 ### ADA
 
-Le langage super-propre. 
+en: The super-clean one.
+fr: Le langage super-propre. 
 
-J'avais bien aimé ADA, mais j'avoue que ça n'a duré que le temps d'un semestre de cours. Peut-être qu'un jour je m'y remettrai. Disons qu'il est assez vieux et qu'il a inspiré la plupart des concepts objets.
+en: I liked ADA. I must confess I didn't used it a lot.
+en: May be one day I will try it again.
+en: I was impressed by asynchronous programming with it.
+en: What you need to know is this old language had certainly inspired most new object oriented languages.
+fr: J'avais bien aimé ADA, mais j'avoue que ça n'a duré que le temps d'un semestre de cours. 
+fr: Peut-être qu'un jour je m'y remettrai. 
+fr: Disons qu'il est assez vieux et qu'il a inspiré la plupart des concepts objets.
 
-## Les langages orientés objets
+en: ## Object Oriented Languages
+fr: ## Les langages orientés objets
 
-Bon, oui, le Pascal, le C, le Basic (fortran, Cobol et autres) étaient tous des langages impératifs, sans notion d'objets.
+en: Until here I just described imperatives languages without any object notion.
+fr: Bon, oui, le Pascal, le C, le Basic (fortran, Cobol et autres) étaient tous des langages impératifs, sans notion d'objets.
 
-En gros, il n'y avait pas d'aide pour structurer votre code.
+en: More clearly, the language didn't helped you to structure your program.
+fr: En gros, il n'y avait pas d'aide pour structurer votre code.
 
-Alors, pour aider à limiter le nombre de bug, en particulier pour la création de très gros programmes.
-On s'est mis à réfléchir à la meilleure façon d'organiser du code d'ordinateur.
-À la fin, ça à donné la programmation orienté objet. Et donc les langages comme le C manquaient de système pour aider au développement orienté objet.
+en: In order to limit the number of bugs, particularly for huge programs, we started to thing about how to best organize computer programs.
+en: In the end, from the imperatives language culture, it produced the Object Oriented programming (OOP).
+en: Beware, the Object Oriented programming isn't a miracle. Proof? How many bug-free software do you use?
+en: Furthermore, OOP doesn't fit all problems.
+en: But to make a bank application, an application which help to manage stock, clients or text archives.
+en: I mean an information system, the OOP is not so bad.
 
-Attention, la programmaiton orienté objet n'est pas la panacée. Combien de programme utilisez-vous qui n'ont pas de bug ?
-Et ça ne convient pas à tous les type de problème. Mais pour faire une application banquaire, un système de gestion des stocks, des clients ou des archives. C'est-à-dire un système d'information, c'est pas trop mal.
+fr: Alors, pour aider à limiter le nombre de bug, en particulier pour la création de très gros programmes, on s'est mis à réfléchir à la meilleure façon d'organiser du code d'ordinateur.
+fr: À la fin, ça à donné la programmation orienté objet. Et donc les langages comme le C manquaient de système pour aider au développement orienté objet.
+fr: Attention, la programmaiton orienté objet n'est pas la panacée. Combien de programme utilisez-vous qui n'ont pas de bug ?
+fr: Et ça ne convient pas à tous les type de problème. 
+fr: Mais pour faire une application banquaire, un système de gestion des stocks, des clients ou des archives. 
+fr: C'est-à-dire un système d'information, c'est pas trop mal.
 
-Donc les langages orientés objets se sont mis à fleurir.
+en: Then Object Oriented Languages appeared everywhere.
+fr: Donc les langages orientés objets se sont mis à fleurir.
 
 ### C++
 
-Et oui l'industrie voulait un langage objet, mais elle n'était pas prête à mettre à la poubelle tout ses codes en C. La solution, prendre C et lui rajouter une couche objet.
-Le problème avec C++ c'est qu'il fait trop de choses. L'héritage multiple, des templates, etc...
-Bon, je l'ai quand même choisi pour faire le plus gros programme que j'ai jamais fais lors de ma thèse. Et je dois avouer que l'expérience m'a plûe. Le seul reproche que j'ai à faire, c'est que la STL n'était pas aussi complète que l'on aurait pû l'espérer pour un détail. On ne peut pas faire de String<X> pour autre chose que des Char16. Du coup, mon alphabet était limité à 2^16 lettres. Hors, pour certaines application, l'alphabet doit être gigantesque. 
+fr: Le malpropre
+en: The ugly
+
+Et oui l'industrie voulait un langage objet, mais elle n'était pas prête à mettre à la poubelle tout ses codes en C. 
+La solution, prendre C et lui rajouter une couche objet.
+Le problème avec C++ c'est qu'il fait trop de choses. 
+L'héritage multiple, des templates, etc...
+Bon, je l'ai quand même choisi pour faire le plus gros programme que j'ai jamais fais lors de ma thèse. 
+Et je dois avouer que l'expérience m'a plûe. 
+Le seul reproche que j'ai à faire, c'est que la STL n'était pas aussi complète que l'on aurait pû l'espérer pour un détail. 
+On ne peut pas faire de String<X> pour autre chose que des Char16. 
+Du coup, mon alphabet était limité à 2^16 lettres. 
+Hors, pour certaines application, l'alphabet doit être gigantesque. 
 
 ### Eiffel
 
