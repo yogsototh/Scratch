@@ -493,8 +493,9 @@ img.inside {
   display: inline;
   vertical-align: middle; }
 
-pre {
-  overflow: auto; }
+pre overflow {
+  y: hidden;
+  x: auto; }
 
 .withfile pre {
   margin-top: 0;

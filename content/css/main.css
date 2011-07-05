@@ -557,7 +557,9 @@ img.inside
   vertical-align: middle
 
 pre
-  overflow: auto
+  overflow
+    y: hidden
+    x: auto
 
 .withfile pre
   margin-top: 0
