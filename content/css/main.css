@@ -2,7 +2,7 @@
 
 -----
 
-$behindColor: #111111
+$behindColor: #333
 $mainTextColor: $behindColor
 $mainBackgroundColor: white
 $revealColor: #d50000
@@ -125,6 +125,7 @@ body, h1, h2, h3, h4, #entete, .tag
 
 pre
   +codeColor
+  box-shadow: 0 0 1em #000 inset
   padding: 1em
   line-height: 1.2em
 
@@ -524,7 +525,7 @@ img.inside
   vertical-align: middle
 
 pre
-  overflow: hidden
+  overflow: auto
 
 .withfile pre
   margin-top: 0
