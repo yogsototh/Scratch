@@ -4,10 +4,10 @@
 
 $behindColor: #333
 $mainTextColor: $behindColor
-$mainBackgroundColor: white
-$revealColor: #d50000
-$secondRevealColor: #e25f2f
-$lighterRevealColor: #ffbe96
+$mainBackgroundColor: #FAFAFA
+$revealColor: #A53
+$secondRevealColor: #AA5533
+$lighterRevealColor: $revealColor + #666
 $imageBackgroundColor: $mainBackgroundColor
 $imageBorderColor: #cccccc
 $mainLinkColor: $mainTextColor
@@ -22,6 +22,17 @@ $lighterColorBorderBottom: $lighterText
 $secondTextColor: #666666
 $codeBlockColor: $mainBackgroundColor
 $codeBlockBackgroundColor: $behindColor
+
+
+* 
+  transition-property: all
+  transition-duration: 0.5s
+  -moz-transition-property: all
+  -moz-transition-duration: 0.5s
+  -webkit-transition-property: all
+  -webkit-transition-duration: 0.5s
+  -o-transition-property: all
+  -o-transition-duration: 0.5s
 
 =mainColor
   color: $behindColor
@@ -126,6 +137,7 @@ body, h1, h2, h3, h4, #entete, .tag
 pre
   +codeColor
   box-shadow: 0 0 1em #000 inset
+  border-radius: 3px
   padding: 1em
   line-height: 1.2em
 
@@ -166,6 +178,22 @@ acronym
 
 #liens .active, #sousliens
   +secondColor
+
+#liens a
+  border: 1px solid #EEE
+  background: rgba(#000,.05)
+  box-shadow: 0 0 2px #FFF, 0 0 3px #CCC inset
+  border-radius: 3px
+  &:hover
+    background: rgba(#000,.1)
+    box-shadow: 0 0 6px #555 inset
+
+#liens .active
+  text-shadow: 0 0 2px rgba(#000,.5)
+  background-color: $mainBackgroundColor - #030303
+  border: 1px solid $mainBackgroundColor - #111111
+  box-shadow: 0 0 3px ($mainBackgroundColor - #333333) inset
+  border-radius: 3px
   border-top: none
 
 // -- FOOTER --
@@ -290,6 +318,9 @@ body > #content > #entete > #choix > #choixrss > #rss
 #sousliens
   padding: 1em 0
   line-height: 2em
+  box-shadow: 0 0 6px #CCC inset
+  border-radius: 3px
+  border: 1px solid #DDD
 
 #sousliens ul
   list-style: none
@@ -412,6 +443,7 @@ $hpadding: 1
   background-color: $imageBackgroundColor
   padding: 0.5em
   box-shadow: 0 10px 15px #CCC
+  border-radius: 3px
 
 img.clean
   border: none
@@ -765,3 +797,8 @@ ul.bloglist, .archive ul
 
 #tagcloud
   font-size: .8em
+  background: #EEE
+  box-shadow: 0 0 6px #CCC
+  border-radius: 3px
+  line-height: 2.5em
+  padding: 2em
