@@ -153,186 +153,233 @@ Then Object Oriented Languages appeared everywhere.
 
 The ugly
 
-Et oui l'industrie voulait un langage objet, mais elle n'était pas prête à mettre à la poubelle tout ses codes en C. 
-La solution, prendre C et lui rajouter une couche objet.
-Le problème avec C++ c'est qu'il fait trop de choses. 
-L'héritage multiple, des templates, etc...
-Bon, je l'ai quand même choisi pour faire le plus gros programme que j'ai jamais fais lors de ma thèse. 
-Et je dois avouer que l'expérience m'a plûe. 
-Le seul reproche que j'ai à faire, c'est que la STL n'était pas aussi complète que l'on aurait pû l'espérer pour un détail. 
-On ne peut pas faire de String<X> pour autre chose que des Char16. 
-Du coup, mon alphabet était limité à 2^16 lettres. 
-Hors, pour certaines application, l'alphabet doit être gigantesque. 
+Industry wanted an Object Oriented Language without loosing all their old C code.
+Solution, keep C and add an Object layer on it.
+The main concern about C++ is it do too many things.
+I particularly appreciated multiple inheritage and templates.
+In reality I liked a lot C++ while I was working alone. 
+I used it to write `DEES` my main thesis software.
+My only concern was about a lack in the STL.
+In the doc, one could use `String<T>`. 
+But in reality, T have to be only `char` or `char16`.
+Then I had to reduce my alphabet to $2^16$ letters.
+Except for some application, the alphabet must be far larger than that.
 
 ### Eiffel
 
-Bon, ok c'est un très beau langage objet. 
-Bien plus propre que C++. 
-Mais, à moins que les choses aient changées, il n'est pas très populaire. 
-Derrière lui il n'a pas la communauté de C++.
-Pour être franc, j'ai préféré travailler en C++. 
-J'ai menti à mes profs de l'époque pour leur faire plaisir.
-Lorsqu'on viens du C, il est désagréable de changer ses habitudes.
+Yes, it is a really nice language. 
+Full object in mind. Far cleaner than C++.
+But it isn't so popular.
+Behind C++ there is a large community to help new users and to write libraries.
+Furthermore, I preferred working with C++.
 
 ### Java
 
-On continue vers les langages objets. Alors, à une époque où j'en ai entendu parler, c'était _le Graal_ ! 
+The first time I heard about Java it was _le Grail_!
 
-La portabilité, votre programme marchera partout. Il était orienté objet. Incrusté à l'intérieur il y avait des concepts d'architecture qui empêchent de faire n'importe quoi... Sauf que.
+Perfect portability, your program will work on all platform. 
+There was incrusted inside the language architecture concepts to help limit mistakes, and force you to use good programming habits... But.
 
-Sauf qu'il est incroyablement verbeux.
-Et que les limitations sont très désagréables si on sait ce que l'on fait.
+But It is extremely verbose. 
+And limitations are quite boring if you know what you're doing.
 
-Par exemple, il n'y a pas d'héritage multiple en Java. 
-Ce qui est en général un choix que je trouve cohérent s'il est bien appuyé par des système qui compensent ce manque. 
-En java, il existe les interfaces. 
-Hors, les interfaces sont un moyen d'ajouter simplement des méthodes à une classe. 
-En aucun cas on ne peut rajouter un attribut. 
-Ce qui m'a vraiment géner pour faire une interface graphique par exemple.
-Typiquement je faisais une GUI en Java Swing, et j'avais créé mon propre système de notification entre objets de GUI. 
-Alors, au début je considérais qu'un objet ne devais envoyer des notifications qu'à un seul objet. 
-Ô quelle erreur lorsque je réalisais qu'il fallait non plus gérer un seul objet mais parfois plusieurs. 
-Je changeais mon implémentation d'interface partout, conséquence, des copier/coller dans tous les sens pour mes classes. 
-Les copier/coller qui sont justement un problème censé être évité par les langages orientés objets.
+For example, there is no multiple inheritance. 
+Generally it is a coherent choice if it is compensated by something else.
+In Java, there are interfaces.
+Except, interfaces are a way to add only methods to classes.
+In no way, you can add any attribute.
+It was really a lack to make a graphic interface.
+I made a GUI using Java Swing and I created my own notification system between different element of the GUI.
+Then, at the begining I only needed to send notification 1 to 1.
+After some times, I needed to make 1 to many notifications.
+And I add to make a bunch of copy/paste inside all my subclasses!
+Copy/paste are exactly what should be avoided the most by Object oriented languages.
 
-De plus toujours pour ma GUI, je devais évidemment gérer des threads. 
-Hors, il m'a fallu faire mon propre système de gestion de threads pour éviter les locks, pour les notifications (ce thread à fini, etc...). 
-À l'époque j'utilisais Java 1.5. 
-Normallement ce problème devait être réglé sur Java 1.6. 
-J'espère que c'est le cas, mais avoir ce type de "feature" essentielles oubliées par le langage était assez grave. 
+Another thing, I had to handle threads.
+Except I had to make my own thread gestion system to avoid locks and notifications between threads (this thread ended, ...).
+At that time I used Java 1.5.
+Normally this problem should have been solved with Java 1.6.
+I wish it is the case, but lacking such an essential feature for a language was very bad.
 
-De même, il a fallu attendre très longtemps avant d'avoir des boucles foreach qui rende le code bien plus lisible.
+In the same idea, it was very long to wait for the foreach loops.
 
-Bon, après cette expérience je déconseillerai Java.
-La portabilité, n'est pas si intéressante que ce qu'on pourrait croire.
+After my experience, I don't recommend Java.
+Portability does not worth this price.
 
-En ce qui concerne les GUI, portable signifie interface fonctionnelle mais médiocre sur toutes les plateformes. 
-Quelquesoit le système d'ailleurs (wxWidget, QT, etc...).
-Donc, pour des applications à distribuer à des tiers, c'est à éviter.
+GUI protability mean, mediocre experience on all platforms.
+Any system it might be (wxWidget, QT, etc...)
+Then for applications that might be distributed it is a bad idea.
 
-Le système de Java est très clos. 
-Par contre il résoud un très bon problème. 
-Il permet à des développeurs médiocre de travailler en groupe sans faire trop de mal.
-Et un bon programmeur sera tout de même capable d'y faire des choses très intéressantes.
+The Java ideology is "closed". But it resolve a big problem.
+It helps medium to low quality developper to work in team without the ability to make too much harm to the product.
+A good programmer will be able to make very interresting with it thought.
 
 ### Objective-C
 
-Le langage que je n'ai appris et utilisé que pour faire des applications sur les plateformes d'Apple(c). 
-J'ai appris Objective-C après Python. 
-Et je dois avouer que j'ai eu du mal à m'y mettre. 
-Je n'ai pas du tout aimé la syntaxe et pas mal d'autres détails. 
-Mais ça fait parti de ces langages que plus on utilise, plus on aime.
-En réalité, il y a quelque chose dans ce langage qui fait que tout est bien pensé.
-Mais surtout, ici, ce n'est pas le langage qui est la meilleure partie, c'est plutôt le framework Cocoa qui lui est le plus souvent associé qui est une merveille.
-Par rapport à tous les autres framework permettant de fabriquer des GUI, Cocoa est de très loin supérieur.
-Même si ça semble être des détails sur le papier, en pratique cela fait une grande différence.
+The language I learned and used only to make application on Apple(c) platform.
+I learned Objective-C just after Python.
+It was hard to do it.
+At first I didn't liked the syntax and many other details.
+But it is this kind of language you like more and more you use it.
+In fact, Objective-C is a simple language, but associated with the Cocoa framework it is a really good tool.
+Cocoa is very different to other framework I used before. 
+I find many of its idea extermely good. 
+Both simple and efficient.
+It might seems like small details on paper, but once you start using it, it make all the difference.
 
-Vraiment jusqu'ici, même si Objective-C reste assez bas niveau, le fait que le typage de ce langage soit dynamique est un vrai plus pour l'interface graphique.
-Je ne peux que vous encourager à vous accrocher à ce langage et de faire un vrai programme avec. Vous en serez certainement plus ravi qu'il n'y parrait eu début.
+Even if Objective-C is a relatively low level language. 
+Its dynamic typing ability make it very good for GUI programming.
+I recommand to continue working with this language. 
+In the end you'll certainely find it better than expected.
 
-## Les langages de scripts
+## Modern Scripting Languages
 
 ### PHP
 
-Le petit langage de script que nous utilisions tous pour faire des sites web à l'époque des gifs animées !
+This small script language that we used all to make our website in the time of animated gifs.
 
-Sympatique, mais sans plus. Apparemment il y a eu pas mal de progrès depuis PHP5, un jour peut-être que j'y reviendrai. Mais, il a derrière lui une réputation de langage pour les "scripts kiddies". 
-En gros ceux qui ne savent pas coder. 
-Des trous de sécurité de tous les cotés, etc...
+Nice but no more. Apparently there were a lot of progress since PHP5. Maybe one day I'll use it again. But behind it, this language has a "script kiddies only" reputation.
+A long history of security holes easy to make, low level community, etc...
 
-En réalité, PHP est au niveau d'abstration à peine supérieur au C. Et donc, il est beaucoup moins bien organisé que des langages objets, favorisant ainsi la création de bug. Pour les applications web, c'est un vrai problème.
+In reality PHP is just behind C for the abstraction level. 
+Therefore it has a lot of organisation problems and make it easier to create bugs.
+For web applications it is a real problem.
 
-PHP, reste pour moi le langage de l'injection SQL. J'en fait encore un peu de temps en temps. Et j'ai moi-même dû protéger les accès au SQL pour éviter les injections. Oui, je n'ai pas trouvé de librairie toute prête pour protéger les entrées SQL. Je n'ai pas beaucoup cherché non plus.
+PHP remains for me the SQL injection language.
+I make a bit of PHP not so long ago, and it was a pain to protect my application to SQL injection. Yep, I didn't found any standard library to make this, but I didn't searched a lot.
 
 ### Python
 
-Alors là, attention ! Révélation ! 
-Lorsqu'on avait l'habitude de travailler avec des langages compilé, type C++, Java et qu'on passe à Python, on se prend une claque magistrale. 
-La programmation comme elle doit être faite. 
-Tout est si naturel, c'est _magique_.
-Oui, c'est si bien que ça.
-Mais quelque chose d'aussi incroyablement bien doit avoir des inconvénients me dirais-vous.
+Revelation!
 
-Et bien, oui, comme tous les langages de scripts de haut niveau, Python est _lent_. 
-Attention pas juste un peu lent, comme 2 fois plus lent que du C. 
-Non, de l'ordre de 10 à 20 fois plus lent que le C.
-Argh... Bon ça reste utilisable pour beaucoup de choses.
-Mais certaines application lui sont donc interdites.
+When you were used to work with compiled languages (C++, Java) and you start learning Python, it's like a punch in the face.
+Programming like it always should have been.
+Everything is natural, it's _magic_.
+Yes, as good as this.
+But something so good must have some drawback.
+
+And yes, an all interpreted languages, Python is _slow_.
+Beware, no just a bit slow like 2 or 3 times slower than C. (like Java for example).
+No, really slow, about 10 to 20 times slower than C.
+Argh... But it is completely usable for many things.
+But some application are just forbidden to it.
 
 ### Awk
 
-Des filtres de fichiers à faire.
-Si ce n'est pas trop compliqué, c'est le langage idéal.
-Vous avez un fichier et vous voulez savoir quels sont les mots les plus utilisés.
-Savoir combien de fois un mot est utilisé.
-Filtrer sous des condition un peu plus compliquées qu'un grep.
-Super outils. Je l'ai utilisé pour modifier en masse des centaines de fichier XML plus facilement qu'avec du XSLT.
+If you have to "filter" some files and the filter is not too complicated awk is the ideal language to do this.
+For example, if you want to know which words in a text file are most used. 
+I used it to modify hundred of XML files in an easier manner than XSLT.
 
-: Perl
-Perl c'est assez magique, mais la syntaxe est tellement désagréable à lire que personne ne peut vraiment aimer programmer dans un environnement de plusieurs personnes en Perl. A moins que tous les autres soient des cadors du Perl. Mais la feature qui tue, les expressions régulières :
+
+### Perl
+
+Perl is magic, but the syntax is so hideous nobody can like to work in an environment with many different person in Perl.
+Or at least, all other collaboratos must be excellent programmers.
+But the very good feature is the integration of some perl syntax.
+
 
 <code class="perl">
 $var =~ s/toto/titi/
 </code>
 
-Va remplacer toto par titi dans la valeur de la variable $var. Et oui, les expressions régulière y sont intégrées directement comme avec `sed` et `awk`. Et ça rend le code beacoup plus compact (et parfois illisible). Mais c'est vraiment pas mal. C'est une sorte de `awk` sous stéroides.
+This program will replace every toto by titi inside the `$var` variable.
+The Perl code is often very compact and usally unreadable.
+But it is a language good to know.
+It is a kind of `awk` under steroids.
 
-: Ruby
-C'est une sorte de Perl en plus propre. 
-Un mélange de Perl et de Python. 
-Les notion objets y sont plus fortes qu'en Python. 
-Je l'ai beaucoup utilisé, je reste quand même un Pythoniste de préférence.
-Mais Ruby est vraiment très bien.
-Par contre en terme d'efficacité, c'est le pire langage utilisé par beaucoup de monde de ce point de vue.
-C'est le langage qui perd quasiment tous les benchmarks.
-Par contre c'est un outil parfait pour faire des prototypes.
-Et si vous voulez faire un prototype de site web, RoR est ce qui se fait de mieux.
-De l'idée au site, il ne se passera que peu de temps.
+### Ruby
 
-: Javascript
+Ruby is a very good language. It is often compared (opposed ?) to Python.
+There are the regular expression operators Perl inside the langage.
+But the syntax is extremely clear, like in Python.
+Many feature were inspired by functionnal programming (as in Python).
+I used it a lot.
+It is the worst language I know in term of efficiency.
+This is the language that lose almost all benchmarks.
+But it is the perfect tool for prototypes.
+If you want to make a website prototype, RoR (Ruby on Rails) is certainly one of the best system known to mankind.
+From idea to realisation, few time will occur. Make this site work for thousand of people, will, on the other hand, certainly require a lot of optimisations.
 
-C'est la bonne surprise. 
-Pendant des années, javascript était considéré comme un langage tout bon à vous embété dans votre navigation web. En réalité, javascript possède beaucoup de qualité des langages de haut niveau. En particulier, il est facille de passer une fonction en paramèter ou de créer des fonctions anonymes (closures). Récemment, il est devenu très rapide et beaucoup de frameworks naissent un peu partout.
+### Javascript
 
-    - Il y a Cappuccino, Objecte-J (comme de l'objective-C mais avec du javascript)
-    - Sproutcore
-    - Spine.js
-    - Backbone.js
-    - jQuery
-    - prototype.js
+It is the good surprise.
+During years, javascript was considered as an annoying web experience language. 
+In reality, javascript has many really good qualities.
+Particularly, it is easy to pass a function in parameter and to create anonymous functions (closures).
+Recently, javascript became far faster than before and many frameworks and libraries appears:
 
-    En particulier avec jQuery, on peut faire des appels chainés, très agréables à utiliser.
-    Comme je le disais, c'est une bonne surprise, javascript a été choisi un peu au hasard lors de la création des navigateurs web comme langage de script. Et il s'avère qu'à part sa syntaxe, tout le reste est bien. Heureusement, en ce qui concerne la syntaxe, on peu pallier à ce problème en utilisant CoffeeScript.
+- Cappuccino, Objective-J (as in objective-C but with javascript)
+- Sproutcore
+- Spine.js
+- Backbone.js
+- jQuery
+- prototype.js
 
-## Les langages fonctionnels
+Particularly with jQuery we can chain functions.
+It is very nice to use.
+As I said, this is a good surprise.
+Javascript was chosen by chance as the script inside your navigator.
+Instead of the java inspired syntax, everything else is very good.
+In order to compensate the syntax, you can use CoffeScript.
 
-: CamL
+## Functional Languages
 
-J'ai appris CamL à la fac, j'avais trouvé cette expérience très interressante. J'étais plutôt bon, et j'avais les bonnes intuitions mathématiques qui vont avec la programmation fonctionnelle. Mais je dois avouer que je ne l'ai plus jamais utilisé. Simplement, ce type de langage semble si loin de ce qui se fait pour fabriquer des produits que ça me donnais vraiment l'impression d'être un langage pour chercheurs.
+### CamL
 
-: Haskell
+I learned CamL during the college. I founded this really interresting. Functional programming is very different to imperative one. I had good mathematic intuitions to use this language. But I must confess I never used it for something serious.
 
-Je suis en train d'apprendre ce langage. Et je dois dire que c'est un vrai plaisir. En général les concepts derrière tous les langages de programmation  sont assez limités. Chaque langage y va de son petit lot de nouveau concepts, et en général en une après-midi, c'est appris.
-Pour haskell, c'est très différent. Je sens bien qu'il va me falloir plusieurs semaines pour maîtriser la bête. Ça doit faire quatre semaines que j'apprend haskell un peut tous les jours et je sais qu'il y a des notions que j'ai juste survollées et qui sont assez incroyables.
-Les Monades par exemple, est un concept que je n'avais jamais rencontré ailleurs. C'est un super concept. De plus le design du langage en fait un parfait système pour paralléliser les calculs naturellement. haskell sépare la partie "pure" de la partie "impure" de la programmation. À ma connaissance, c'est le seul langage de programmation qui fait ça. Enfin, je prend beaucoup de plaisir à apprendre ce langage. La communauté est aussi très acceuillante. Pas de "L0L! URAN00B!". Et aussi pas de concession du langage pour devenir populaire. Le langage est bon, voilà tout. Alors qu'en Java et C++, typiquement certain choix ont été fait en dépis du bon sens pour "faire plaisir". 
+### Haskell
 
-## Langages originaux
+I am still learning this language.
+I must say it is a pleasure.
+Generally it tooks me only some hours to some days to learn a new programming language.
+Each language has his new concepts to grab.
+Concerning haskell, this is very different.
+The concepts behind haskell are really deep.
+I feel many weeks will be necessary to understand it correctly.
+The community behind haskell is very friendly and nice. There is no "LOL! URAN00B! RTFM!"
+And no concession on the language as been made to make it more popular. Therefore this langage remain pure (I know there is two meaning).
 
-En plus des langages de programmation proprement dit, il existe des langages dont le seul but et de créer des documents.
+## Unpopular Languages
 
-: MetaPost
-Metapost est un langage qui permet de programmer des dessins.
-Le gros plus de metapost, c'est qu'il y a un solveur d'équations linéaires. Ainsi on peut faire des choses assez impressionnantes, comme laisser une petite distance entre les flèches et les bords. Ou encore les têtes des flèches se courbent.
-Très sympatique à utiliser.
+Some languages are designated to create documents.
 
-: zsh 
-Oui, zsh est un shell. Mais c'est aussi un langage de script très bien adapté aux traitement de fichiers. Je le recommande chaudement. C'est pour l'instant le meilleur shell que j'ai utilisé. Je le préfère au bash.
+### MetaPost
 
-: Prolog
-Je n'ai jamais rien fait de conséquent avec Prolog, mais j'ai adoré l'utiliser. C'est un langage qui essaye de résoudre les contraintes autant qu'il le peut pour vous. C'est assez magique. On ne fait que décrire ce qu'il faut et on ne donne pas d'ordre. Un peu comme la programmation fonctionnelle mais en beaucoup plus puissant.
+Metapost is a language to program drawings.
+What make metapost very good? 
+It contains a linear solver.
+This is really usefull to draw things.
+For example if you write:
 
-## Les langages à découvrir
+<code class="ruby">
+x=(2*y+z)/2
+</code>
 
-Il reste encore pas mal de langages et de framework à essayer. Actuellement je pense que je vais passer un moment avec haskell. Peut-être demain que j'irai voir du LISP, Scala ou Erlang. Comme je suis plus dans la création de site web, j'irai certainement jeter un coup d'oeil à clojure aussi. Et certainement beaucoup d'autres choses.
+It will place the point x at 2/3 of y and 1/3 to z.
+This feature is very nice. Most programming language should think about adding it.
 
-Dites-moi si vous avez une autre expérience avec ces langages de programmation. Je ne donne que mes impressions. En tout cas je les ai tous utilisés.
+### zsh 
+
+Yes, zsh is a shell.
+But it is also a script language extremly well suited to file traitment.
+For now, it is the best shell I used. I prefer zsh to bash.
+
+### Prolog
+
+I never made somthing serious with Prolog, but I really loved to use and learn it.
+This language try to resolve constraints as much as it can.
+It is kind of magic.
+We only write constraints, we never put order.
+A bit like functionnal programming but far more powerful.
+
+## Languages to discover
+
+It remains many language and framework to try.
+Actually I believe I will stay a while with haskell.
+Maybe tomorrow I will see LISP, Scala or Erlang.
+I also certainly look at clojure to make web application.
+
+Tell me if you have any other experience with these programming languages.
+I had only given my impressions.
+But I used them all.

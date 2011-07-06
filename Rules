@@ -9,7 +9,7 @@
 
 # CSS
 compile '/css/*' do
-    filter :no_custom_css
+    # filter :no_custom_css
     filter :sass
     filter :rainpress
 end

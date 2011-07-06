@@ -137,7 +137,10 @@ body, h1, h2, h3, h4, #entete, .tag
 pre
   +codeColor
   box-shadow: 0 0 1em #000 inset
+  -webkit-box-shadow: 0 0 1em #000 inset
   border-radius: 3px
+  -moz,-webkit
+    border-radius: 3px
   padding: 1em
   line-height: 1.2em
 
@@ -179,20 +182,27 @@ acronym
 #liens .active, #sousliens
   +secondColor
 
-#liens a
-  border: 1px solid #EEE
+=insetbox
   background: rgba(#000,.05)
   box-shadow: 0 0 2px #FFF, 0 0 3px #CCC inset
+  -webkit-box-shadow: 0 0 2px #FFF, 0 0 3px #CCC inset
+  border: 1px solid rgba(#000,.1)
   border-radius: 3px
   &:hover
     background: rgba(#000,.1)
     box-shadow: 0 0 6px #555 inset
+    -webkit-box-shadow: 0 0 6px #555 inset
+
+#liens a
+  border: 1px solid #EEE
+  +insetbox
 
 #liens .active
   text-shadow: 0 0 2px rgba(#000,.5)
   background-color: $mainBackgroundColor - #030303
   border: 1px solid $mainBackgroundColor - #111111
   box-shadow: 0 0 3px ($mainBackgroundColor - #333333) inset
+  -webkit-box-shadow: 0 0 3px ($mainBackgroundColor - #333333) inset
   border-radius: 3px
   border-top: none
 
@@ -207,6 +217,9 @@ acronym
 #clickcomment
   cursor: pointer
   font-size: 1.2em
+  line-height: 4em
+  margin: 1em
+  +insetbox
 
 // -- TYPOGRAPHY --
 .small
@@ -318,9 +331,6 @@ body > #content > #entete > #choix > #choixrss > #rss
 #sousliens
   padding: 1em 0
   line-height: 2em
-  box-shadow: 0 0 6px #CCC inset
-  border-radius: 3px
-  border: 1px solid #DDD
 
 #sousliens ul
   list-style: none
@@ -443,6 +453,7 @@ $hpadding: 1
   background-color: $imageBackgroundColor
   padding: 0.5em
   box-shadow: 0 10px 15px #CCC
+  -webkit-box-shadow: 0 10px 15px #CCC
   border-radius: 3px
 
 img.clean
@@ -634,8 +645,10 @@ table.impact tr td
   float: right
   width: 25%
   line-height: 2em
+  margin: 1em
 #choixlang
   line-height: 2em
+  margin: 1em
 
 #choix a
   color: $highlightColor
@@ -647,6 +660,10 @@ table.impact tr td
   width: 25%
   line-height: 4em
   text-align: center
+  +insetbox
+
+#choix a
+  +insetbox
 
 #next_before_articles
   clear: both
@@ -801,6 +818,7 @@ ul.bloglist, .archive ul
   font-size: .8em
   background: #EEE
   box-shadow: 0 0 6px #CCC
+  -webkit-box-shadow: 0 0 6px #CCC
   border-radius: 3px
   line-height: 2.5em
   padding: 2em

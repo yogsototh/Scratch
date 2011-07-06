@@ -206,9 +206,9 @@ L&rsquo;héritage multiple, des templates, etc&hellip;
 Bon, je l&rsquo;ai quand même choisi pour faire le plus gros programme que j&rsquo;ai jamais fais lors de ma thèse. 
 Et je dois avouer que l&rsquo;expérience m&rsquo;a plûe. 
 Le seul reproche que j&rsquo;ai à faire, c&rsquo;est que la STL n&rsquo;était pas aussi complète que l&rsquo;on aurait pû l&rsquo;espérer pour un détail. 
-On ne peut pas faire de String<X> pour autre chose que des Char16. 
-Du coup, mon alphabet était limité à 2^16 lettres. 
-Hors, pour certaines application, l'alphabet doit être gigantesque. </X></p>
+On ne peut pas faire de <code>String&lt;T&gt;</code> pour autre chose que des <code>char16</code>. 
+Du coup, mon alphabet était limité à $2^16$ lettres. 
+Hors, pour certaines application, l&rsquo;alphabet doit être gigantesque. </p>
 
 <h3 id="eiffel">Eiffel</h3>
 
@@ -276,7 +276,7 @@ Même si ça semble être des détails sur le papier, en pratique cela fait une 
 <p>Vraiment jusqu&rsquo;ici, même si Objective-C reste assez bas niveau, le fait que le typage de ce langage soit dynamique est un vrai plus pour l&rsquo;interface graphique.
 Je ne peux que vous encourager à vous accrocher à ce langage et de faire un vrai programme avec. Vous en serez certainement plus ravi qu&rsquo;il n&rsquo;y parrait eu début.</p>
 
-<h2 id="les-langages-de-scripts">Les langages de scripts</h2>
+<h2 id="les-langages-interprts-modernes">Les langages interprétés modernes</h2>
 
 <h3 id="php">PHP</h3>
 
@@ -307,28 +307,32 @@ Mais certaines application lui sont donc interdites.</p>
 
 <h3 id="awk">Awk</h3>
 
-<dl>
-  <dt>Des filtres de fichiers à faire.</dt>
-  <dt>Si ce n&rsquo;est pas trop compliqué, c&rsquo;est le langage idéal.</dt>
-  <dt>Vous avez un fichier et vous voulez savoir quels sont les mots les plus utilisés.</dt>
-  <dt>Savoir combien de fois un mot est utilisé.</dt>
-  <dt>Filtrer sous des condition un peu plus compliquées qu&rsquo;un grep.</dt>
-  <dt>Super outils. Je l&rsquo;ai utilisé pour modifier en masse des centaines de fichier XML plus facilement qu&rsquo;avec du XSLT.</dt>
-  <dd>
-    <p>Perl
-Perl c&rsquo;est assez magique, mais la syntaxe est tellement désagréable à lire que personne ne peut vraiment aimer programmer dans un environnement de plusieurs personnes en Perl. A moins que tous les autres soient des cadors du Perl. Mais la feature qui tue, les expressions régulières&nbsp;:</p>
-  </dd>
-</dl>
+<p>Des filtres de fichiers à faire.
+Si ce n&rsquo;est pas trop compliqué, c&rsquo;est le langage idéal.
+Vous avez un fichier et vous voulez savoir quels sont les mots les plus utilisés.
+Savoir combien de fois un mot est utilisé.
+Filtrer sous des condition un peu plus compliquées qu&rsquo;un grep.
+Super outils. Je l&rsquo;ai utilisé pour modifier en masse des centaines de fichier XML plus facilement qu&rsquo;avec du XSLT.</p>
+
+<h3 id="perl">Perl</h3>
+
+<p>Perl c&rsquo;est assez magique, mais la syntaxe est tellement désagréable à lire que personne ne peut vraiment aimer programmer dans un environnement de plusieurs personnes en Perl. 
+A moins que tous les autres soient des cadors du Perl. 
+Mais la feature qui tue, les expressions régulières&nbsp;:</p>
 
 <pre class="twilight">
 <span class="Variable"><span class="Variable">$</span>var</span> =~ <span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>toto</span><span class="StringRegexp"><span class="StringRegexp">/</span>titi<span class="StringRegexp">/</span></span>
 </pre>
 
-<dl>
-  <dt>Va remplacer toto par titi dans la valeur de la variable $var. Et oui, les expressions régulière y sont intégrées directement comme avec <code>sed</code> et <code>awk</code>. Et ça rend le code beacoup plus compact (et parfois illisible). Mais c&rsquo;est vraiment pas mal. C&rsquo;est une sorte de <code>awk</code> sous stéroides.</dt>
-  <dd>
-    <p>Ruby
-C&rsquo;est une sorte de Perl en plus propre. 
+<p>Va remplacer toto par titi dans la valeur de la variable <code>$var</code>.
+Et oui, les expressions régulière y sont intégrées directement comme avec <code>sed</code> et <code>awk</code>.
+Et ça rend le code beacoup plus compact (et parfois illisible). 
+Mais c&rsquo;est vraiment pas mal.
+C&rsquo;est une sorte de <code>awk</code> sous stéroides.</p>
+
+<h3 id="ruby">Ruby</h3>
+
+<p>C&rsquo;est une sorte de Perl en plus propre. 
 Un mélange de Perl et de Python. 
 Les notion objets y sont plus fortes qu&rsquo;en Python. 
 Je l&rsquo;ai beaucoup utilisé, je reste quand même un Pythoniste de préférence.
@@ -338,66 +342,98 @@ C&rsquo;est le langage qui perd quasiment tous les benchmarks.
 Par contre c&rsquo;est un outil parfait pour faire des prototypes.
 Et si vous voulez faire un prototype de site web, RoR est ce qui se fait de mieux.
 De l&rsquo;idée au site, il ne se passera que peu de temps.</p>
-  </dd>
-  <dd>
-    <p>Javascript</p>
-  </dd>
-</dl>
+
+<h3 id="javascript">Javascript</h3>
 
 <p>C&rsquo;est la bonne surprise. 
-Pendant des années, javascript était considéré comme un langage tout bon à vous embété dans votre navigation web. En réalité, javascript possède beaucoup de qualité des langages de haut niveau. En particulier, il est facille de passer une fonction en paramèter ou de créer des fonctions anonymes (closures). Récemment, il est devenu très rapide et beaucoup de frameworks naissent un peu partout.</p>
+Pendant des années, javascript était considéré comme un langage tout bon à vous embéter dans votre navigation web. 
+En réalité, javascript possède beaucoup de qualité des langages de haut niveau.
+En particulier, il est facille de passer une fonction en paramèter ou de créer des fonctions anonymes (closures). 
+Récemment, il est devenu très rapide et beaucoup de frameworks et de librairies naissent un peu partout.</p>
 
-<pre><code>- Il y a Cappuccino, Objecte-J (comme de l'objective-C mais avec du javascript)
-- Sproutcore
-- Spine.js
-- Backbone.js
-- jQuery
-- prototype.js
+<ul>
+  <li>Il y a Cappuccino, Objective-J (comme de l&rsquo;objective-C mais avec du javascript)</li>
+  <li>Sproutcore</li>
+  <li>Spine.js</li>
+  <li>Backbone.js</li>
+  <li>jQuery</li>
+  <li>prototype.js</li>
+</ul>
 
-En particulier avec jQuery, on peut faire des appels chainés, très agréables à utiliser.
-Comme je le disais, c'est une bonne surprise, javascript a été choisi un peu au hasard lors de la création des navigateurs web comme langage de script. Et il s'avère qu'à part sa syntaxe, tout le reste est bien. Heureusement, en ce qui concerne la syntaxe, on peu pallier à ce problème en utilisant CoffeeScript.
-</code></pre>
+<p>En particulier avec jQuery, on peut faire des appels chainés, très agréables à utiliser.
+Comme je le disais, c&rsquo;est une bonne surprise, javascript a été choisi un peu au hasard lors de la création des navigateurs web comme langage de script. 
+Et il s&rsquo;avère qu&rsquo;à part sa syntaxe, tout le reste est bien. 
+Heureusement, en ce qui concerne la syntaxe, on peu pallier à ce problème en utilisant CoffeeScript.</p>
 
 <h2 id="les-langages-fonctionnels">Les langages fonctionnels</h2>
 
-<p>: CamL</p>
+<h3 id="caml">CamL</h3>
 
-<dl>
-  <dt>J&rsquo;ai appris CamL à la fac, j&rsquo;avais trouvé cette expérience très interressante. J&rsquo;étais plutôt bon, et j&rsquo;avais les bonnes intuitions mathématiques qui vont avec la programmation fonctionnelle. Mais je dois avouer que je ne l&rsquo;ai plus jamais utilisé. Simplement, ce type de langage semble si loin de ce qui se fait pour fabriquer des produits que ça me donnais vraiment l&rsquo;impression d&rsquo;être un langage pour chercheurs.</dt>
-  <dd>
-    <p>Haskell</p>
-  </dd>
-</dl>
+<p>J&rsquo;ai appris CamL à la fac, j&rsquo;avais trouvé cette expérience très interressante. J&rsquo;étais plutôt bon, et j&rsquo;avais les bonnes intuitions mathématiques qui vont avec la programmation fonctionnelle. Mais je dois avouer que je ne l&rsquo;ai plus jamais utilisé. Simplement, ce type de langage semble si loin de ce qui se fait pour fabriquer des produits que ça me donnais vraiment l&rsquo;impression d&rsquo;être un langage pour chercheurs.</p>
 
-<p>Je suis en train d&rsquo;apprendre ce langage. Et je dois dire que c&rsquo;est un vrai plaisir. En général les concepts derrière tous les langages de programmation  sont assez limités. Chaque langage y va de son petit lot de nouveau concepts, et en général en une après-midi, c&rsquo;est appris.
-Pour haskell, c&rsquo;est très différent. Je sens bien qu&rsquo;il va me falloir plusieurs semaines pour maîtriser la bête. Ça doit faire quatre semaines que j&rsquo;apprend haskell un peut tous les jours et je sais qu&rsquo;il y a des notions que j&rsquo;ai juste survollées et qui sont assez incroyables.
-Les Monades par exemple, est un concept que je n&rsquo;avais jamais rencontré ailleurs. C&rsquo;est un super concept. De plus le design du langage en fait un parfait système pour paralléliser les calculs naturellement. haskell sépare la partie &ldquo;pure&rdquo; de la partie &ldquo;impure&rdquo; de la programmation. À ma connaissance, c&rsquo;est le seul langage de programmation qui fait ça. Enfin, je prend beaucoup de plaisir à apprendre ce langage. La communauté est aussi très acceuillante. Pas de &ldquo;L0L! URAN00B!&rdquo;. Et aussi pas de concession du langage pour devenir populaire. Le langage est bon, voilà tout. Alors qu&rsquo;en Java et C++, typiquement certain choix ont été fait en dépis du bon sens pour &ldquo;faire plaisir&rdquo;. </p>
+<h3 id="haskell">Haskell</h3>
+
+<p>Je suis en train d&rsquo;apprendre ce langage.
+Et je dois dire que c&rsquo;est un vrai plaisir.
+En général les concepts derrière tous les langages de programmation  sont assez limités.
+Chaque langage y va de son petit lot de nouveau concepts, et en général en une après-midi, c&rsquo;est appris.
+Pour haskell, c&rsquo;est très différent.
+Je sens bien qu&rsquo;il va me falloir plusieurs semaines pour maîtriser la bête.
+Ça doit faire quatre semaines que j&rsquo;apprend haskell un peut tous les jours et je sais qu&rsquo;il y a des notions que j&rsquo;ai juste survollées et qui sont assez incroyables.
+Les Monades par exemple, est un concept que je n&rsquo;avais jamais rencontré ailleurs.
+C&rsquo;est un super concept.
+De plus le design du langage en fait un parfait système pour paralléliser les calculs naturellement.
+haskell sépare la partie &ldquo;pure&rdquo; de la partie &ldquo;impure&rdquo; de la programmation.
+À ma connaissance, c&rsquo;est le seul langage de programmation qui fait ça.
+Enfin, je prend beaucoup de plaisir à apprendre ce langage.
+La communauté est aussi très acceuillante.
+Pas de &ldquo;L0L! URAN00B!&rdquo;.
+Et aussi pas de concession du langage pour devenir populaire.
+Le langage est bon, voilà tout.
+Alors qu&rsquo;en Java et C++, typiquement certain choix ont été fait en dépis du bon sens pour &ldquo;faire plaisir&rdquo;.</p>
 
 <h2 id="langages-originaux">Langages originaux</h2>
 
-<dl>
-  <dt>En plus des langages de programmation proprement dit, il existe des langages dont le seul but et de créer des documents.</dt>
-  <dd>
-    <p>MetaPost
-Metapost est un langage qui permet de programmer des dessins.
-Le gros plus de metapost, c&rsquo;est qu&rsquo;il y a un solveur d&rsquo;équations linéaires. Ainsi on peut faire des choses assez impressionnantes, comme laisser une petite distance entre les flèches et les bords. Ou encore les têtes des flèches se courbent.
+<p>En plus des langages de programmation proprement dit, il existe des langages dont le seul but et de créer des documents.</p>
+
+<h3 id="metapost">MetaPost</h3>
+
+<p>Metapost est un langage qui permet de programmer des dessins.
+Le gros plus de metapost, c&rsquo;est qu&rsquo;il y a un solveur d&rsquo;équations linéaires.
+Ainsi on peut faire des choses assez impressionnantes, comme laisser une petite distance entre les flèches et les bords.
+Ou encore les têtes des flèches se courbent.
 Très sympatique à utiliser.</p>
-  </dd>
-  <dd>
-    <p>zsh 
-Oui, zsh est un shell. Mais c&rsquo;est aussi un langage de script très bien adapté aux traitement de fichiers. Je le recommande chaudement. C&rsquo;est pour l&rsquo;instant le meilleur shell que j&rsquo;ai utilisé. Je le préfère au bash.</p>
-  </dd>
-  <dd>
-    <p>Prolog
-Je n&rsquo;ai jamais rien fait de conséquent avec Prolog, mais j&rsquo;ai adoré l&rsquo;utiliser. C&rsquo;est un langage qui essaye de résoudre les contraintes autant qu&rsquo;il le peut pour vous. C&rsquo;est assez magique. On ne fait que décrire ce qu&rsquo;il faut et on ne donne pas d&rsquo;ordre. Un peu comme la programmation fonctionnelle mais en beaucoup plus puissant.</p>
-  </dd>
-</dl>
+
+<pre class="twilight">
+x<span class="Keyword">=</span>(<span class="Constant">2</span><span class="Keyword">*</span>y<span class="Keyword">+</span>z)<span class="Keyword">/</span><span class="Constant">2</span>
+</pre>
+
+<h3 id="zsh">zsh</h3>
+
+<p>Oui, zsh est un shell.
+Mais c&rsquo;est aussi un langage de script très bien adapté aux traitement de fichiers.
+Je le recommande chaudement.
+C&rsquo;est pour l&rsquo;instant le meilleur shell que j&rsquo;ai utilisé. Je le préfère au bash.</p>
+
+<h3 id="prolog">Prolog</h3>
+
+<p>Je n&rsquo;ai jamais rien fait de conséquent avec Prolog, mais j&rsquo;ai adoré l&rsquo;utiliser.
+C&rsquo;est un langage qui essaye de résoudre les contraintes autant qu&rsquo;il le peut pour vous.
+C&rsquo;est assez magique.
+On ne fait que décrire ce qu&rsquo;il faut et on ne donne pas d&rsquo;ordre.
+Un peu comme la programmation fonctionnelle mais en beaucoup plus puissant.</p>
 
 <h2 id="les-langages--dcouvrir">Les langages à découvrir</h2>
 
-<p>Il reste encore pas mal de langages et de framework à essayer. Actuellement je pense que je vais passer un moment avec haskell. Peut-être demain que j&rsquo;irai voir du LISP, Scala ou Erlang. Comme je suis plus dans la création de site web, j&rsquo;irai certainement jeter un coup d&rsquo;oeil à clojure aussi. Et certainement beaucoup d&rsquo;autres choses.</p>
+<p>Il reste encore pas mal de langages et de framework à essayer.
+Actuellement je pense que je vais passer un moment avec haskell.
+Peut-être demain que j&rsquo;irai voir du LISP, Scala ou Erlang.
+Comme je suis plus dans la création de site web, j&rsquo;irai certainement jeter un coup d&rsquo;oeil à clojure aussi.
+Et certainement beaucoup d&rsquo;autres choses.</p>
 
-<p>Dites-moi si vous avez une autre expérience avec ces langages de programmation. Je ne donne que mes impressions. En tout cas je les ai tous utilisés.</p>
+<p>Dites-moi si vous avez une autre expérience avec ces langages de programmation.
+Je ne donne que mes impressions.
+En tout cas je les ai tous utilisés.</p>
 
                 </div>
             

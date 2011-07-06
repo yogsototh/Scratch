@@ -63,9 +63,12 @@ pre {
   background-color: #333333;
   color: #fafafa;
   box-shadow: 0 0 1em black inset;
+  -webkit-box-shadow: 0 0 1em black inset;
   border-radius: 3px;
   padding: 1em;
   line-height: 1.2em; }
+  pre -moz, pre -webkit {
+    border-radius: 3px; }
 
 pre, code {
   font-family: monaco, monospace;
@@ -121,16 +124,20 @@ acronym {
   border: 1px solid #eeeeee;
   background: rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 2px white, 0 0 3px #cccccc inset;
+  -webkit-box-shadow: 0 0 2px white, 0 0 3px #cccccc inset;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 3px; }
   #liens a:hover {
     background: rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 6px #555555 inset; }
+    box-shadow: 0 0 6px #555555 inset;
+    -webkit-box-shadow: 0 0 6px #555555 inset; }
 
 #liens .active {
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   background-color: #f7f7f7;
   border: 1px solid #e9e9e9;
   box-shadow: 0 0 3px #c7c7c7 inset;
+  -webkit-box-shadow: 0 0 3px #c7c7c7 inset;
   border-radius: 3px;
   border-top: none; }
 
@@ -142,7 +149,18 @@ acronym {
 
 #clickcomment {
   cursor: pointer;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  line-height: 4em;
+  margin: 1em;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 2px white, 0 0 3px #cccccc inset;
+  -webkit-box-shadow: 0 0 2px white, 0 0 3px #cccccc inset;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px; }
+  #clickcomment:hover {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 6px #555555 inset;
+    -webkit-box-shadow: 0 0 6px #555555 inset; }
 
 .small {
   font-size: 0.8em; }
@@ -251,10 +269,7 @@ body > #content > #entete > #choix > #choixrss > #rss {
 
 #sousliens {
   padding: 1em 0;
-  line-height: 2em;
-  box-shadow: 0 0 6px #cccccc inset;
-  border-radius: 3px;
-  border: 1px solid #dddddd; }
+  line-height: 2em; }
 
 #sousliens ul {
   list-style: none;
@@ -383,6 +398,7 @@ ul.horizontal {
   background-color: #fafafa;
   padding: 0.5em;
   box-shadow: 0 10px 15px #cccccc;
+  -webkit-box-shadow: 0 10px 15px #cccccc;
   border-radius: 3px; }
 
 img.clean {
@@ -567,10 +583,12 @@ table.impact tr td {
 #choixrss {
   float: right;
   width: 25%;
-  line-height: 2em; }
+  line-height: 2em;
+  margin: 1em; }
 
 #choixlang {
-  line-height: 2em; }
+  line-height: 2em;
+  margin: 1em; }
 
 #choix a {
   color: #888888; }
@@ -582,7 +600,27 @@ table.impact tr td {
   display: block;
   width: 25%;
   line-height: 4em;
-  text-align: center; }
+  text-align: center;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 2px white, 0 0 3px #cccccc inset;
+  -webkit-box-shadow: 0 0 2px white, 0 0 3px #cccccc inset;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px; }
+  #choixlang a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 6px #555555 inset;
+    -webkit-box-shadow: 0 0 6px #555555 inset; }
+
+#choix a {
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 2px white, 0 0 3px #cccccc inset;
+  -webkit-box-shadow: 0 0 2px white, 0 0 3px #cccccc inset;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px; }
+  #choix a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 6px #555555 inset;
+    -webkit-box-shadow: 0 0 6px #555555 inset; }
 
 #next_before_articles {
   clear: both;
@@ -732,6 +770,7 @@ ul.bloglist, .archive ul {
   font-size: 0.8em;
   background: #eeeeee;
   box-shadow: 0 0 6px #cccccc;
+  -webkit-box-shadow: 0 0 6px #cccccc;
   border-radius: 3px;
   line-height: 2.5em;
   padding: 2em; }
