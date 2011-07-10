@@ -2,13 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2011-05-18T11:14:28Z</updated>
+  <updated>2011-07-10T10:41:26Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomfr"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2011-07-10:/Scratch/fr/blog/Haskell-Mandelbrot/</id>
+    <title type="html">Mandelbrot avec haskell</title>
+    <published>2011-07-10T10:41:26Z</published>
+    <updated>2011-07-10T10:41:26Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Haskell-Mandelbrot/"/>
+    <content type="html">&lt;p&gt;Voici le code &amp;ldquo;obfusqu&#233;&amp;rdquo;&amp;nbsp;:&lt;/p&gt;
+
+&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;a href="/Scratch/fr/blog/Haskell-Mandelbrot/code/animandel.hs"&gt; &amp;#x27A5; animandel.hs &lt;/a&gt;&lt;/div&gt;&lt;div class="withfile"&gt;
+&lt;pre class="twilight"&gt;
+a=27&lt;span class="Keyword"&gt;;&lt;/span&gt;b=79&lt;span class="Keyword"&gt;;&lt;/span&gt;c=C(-2.0,-1.0)&lt;span class="Keyword"&gt;;&lt;/span&gt;d=C(1.0,1.0)&lt;span class="Keyword"&gt;;&lt;/span&gt;e=C(-2.501,-1.003)
+newtype C = C (Double,Double) deriving (Show,Eq)
+instance Num C where C(x,y)*C(z,t)=C(z*x-y*t,y*z+x*t)&lt;span class="Keyword"&gt;;&lt;/span&gt;C(x,y)+C(z,t)=C(x+z,y+t)&lt;span class="Keyword"&gt;;&lt;/span&gt;abs(C(x,y))=C(sqrt(x*x+y*y),0.0)
+r(C(x,y))=x&lt;span class="Keyword"&gt;;&lt;/span&gt;i(C(x,y))=y
+f&amp;nbsp;:: C -&lt;span class="Keyword"&gt;&amp;gt;&lt;/span&gt; C -&lt;span class="Keyword"&gt;&amp;gt;&lt;/span&gt; Int -&lt;span class="Keyword"&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2011-05-18:/Scratch/fr/blog/Password-Management/</id>
     <title type="html">Password Management</title>
@@ -973,32 +993,5 @@ $ sudo port install git-core
 &lt;p&gt;Parce que grace &#224; &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; vous pouvez travailler sur plusieurs partie du projet de fa&#231;on compl&#232;tement isol&#233;e les unes des autres. &#199;a c&amp;rsquo;est la partie d&#233;centralis&#233;e de &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Toutes les branches locales utilisent le m&#234;me r&#233;pertoire. Ainsi on peu changer de branche tr&#232;s ais&#233;ment et rapidement. On peut aussi changer de branche alors que certains fichier sont en cours de modifications. On peut m&#234;me pousser le vice jusqu&amp;rsquo;&#224; modifier un fichier, changer de branche, commiter une partie seulement des modifications de ce fichier dans la branche courante. Revenir dans l&amp;rsquo;ancienne branche et commi...&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/"/>
-    <content type="html">&lt;h1 class="first" id="liste-de-commandes"&gt;Liste de commandes&lt;/h1&gt;
-
-&lt;h2 id="les-commandes-pour-chaque-choses"&gt;Les commandes pour chaque choses&lt;/h2&gt;
-
-&lt;p&gt;Dans la premi&#232;re partie, nous avons vu la liste des probl&#232;mes r&#233;solus par &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. En r&#233;sum&#233; Git doit pouvoir&amp;nbsp;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;r&#233;cup&#233;rer les modifications des autres&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;envoyer ses modifications aux autres&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;revenir dans le temps&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;lister les diff&#233;rences entre chaque version&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;nommer certaines versions pour s&amp;rsquo;y r&#233;f&#233;rer facilement&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;afficher l&amp;rsquo;historique des modifications&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;savoir qui a fait quoi et quand&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;g&#233;rer des conflits&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;manipuler facileme...&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>

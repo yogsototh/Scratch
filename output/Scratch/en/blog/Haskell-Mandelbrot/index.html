@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Mandelbrot avec haskell" type="text/html" hreflang="fr" href="/Scratch/fr/blog/Haskell-Mandelbrot/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="ASCII Haskell Mandelbrot" type="text/html" hreflang="en" href="/Scratch/en/blog/Haskell-Mandelbrot/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>ASCII Haskell Mandelbrot</title>
+    </head>
+    <body lang="en">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="loading..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/fr/blog/Haskell-Mandelbrot/" onclick="setLanguage('fr')">en Français</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    ASCII Haskell Mandelbrot
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p>Here is the obfuscated code:</p>
+
+<div class="code"><div class="file"><a href="/Scratch/en/blog/Haskell-Mandelbrot/code/animandel.hs"> &#x27A5; animandel.hs </a></div><div class="withfile">
+<pre class="twilight">
+a=27<span class="Keyword">;</span>b=79<span class="Keyword">;</span>c=C(-2.0,-1.0)<span class="Keyword">;</span>d=C(1.0,1.0)<span class="Keyword">;</span>e=C(-2.501,-1.003)
+newtype C = C (Double,Double) deriving (Show,Eq)
+instance Num C where C(x,y)*C(z,t)=C(z*x-y*t,y*z+x*t)<span class="Keyword">;</span>C(x,y)+C(z,t)=C(x+z,y+t)<span class="Keyword">;</span>abs(C(x,y))=C(sqrt(x*x+y*y),0.0)
+r(C(x,y))=x<span class="Keyword">;</span>i(C(x,y))=y
+f&nbsp;:: C -<span class="Keyword">&gt;</span> C -<span class="Keyword">&gt;</span> Int -<span class="Keyword">&gt;</span> Int
+f c z 0=0<span class="Keyword">;</span>f c z n=<span class="Keyword">if</span>(r(abs(z))<span class="Keyword">&gt;</span>2)<span class="Keyword">then</span> n <span class="Keyword">else</span> f c ((z*z)+c) (n-1)
+h j k = map (<span class="Constant">\z</span>-<span class="String"><span class="String">&gt;(</span>f (C z<span class="String">)</span></span> (C(0,0)) 32,(fst z<span class="Keyword">&gt;</span>l - q/2))) [(x,y)<span class="Keyword">|</span>y<span class="Keyword">&lt;</span>-[p,(p+((o-p)/a))..o],x<span class="Keyword">&lt;</span>-[m,(m + q)..l]] where o=i k<span class="Keyword">;</span>p=i j<span class="Keyword">;</span>m=r j<span class="Keyword">;</span>l=r k<span class="Keyword">;</span>q=(l-m)/b
+u j k = concat $ map v $ h j k where v (i,p)=(<span class="String"><span class="String">&quot;</span> .,<span class="String"><span class="String">`</span>'°\&quot;:;-+oO0123456789=!%*§&amp;$@#&quot;!!i):rst p;rst True=&quot;\n&quot;;rst False=&quot;&quot;</span></span>
+<span class="String"><span class="String">main = putStrLn $ im 0 where cl n (C (x,y))=let cs=(1.1**n-1) in C ((x+cs*(r e))/cs+1,(y+cs*(i e))/cs+1);bl n=cl n c;tr n=cl n d;im n=u (bl n) (tr n)++&quot;\x1b[H\x1b[25A&quot;++im (n+1)</span></span>
+</pre>
+</div></div>
+
+<p>To launch it, you&rsquo;ll need to have <a href="http://haskell.org">haskell</a> installed and to run:</p>
+
+<pre class="twilight">ghc --make animandel.hs <span class="Keyword">&amp;&amp;</span> animandel
+</pre>
+
+<p>Here is some image after 50 iterations:</p>
+
+<pre class="twilight">
+5555666666666666666666666666666655555555554O+++&nbsp;:o022334444444444444444444444444
+5555556666666666666666666666665555555555543210O-+O112333344444444444444444444444
+55555555666666666666666666665555555555444333210o<span class="String"><span class="String">`</span>O012333333444444444444444444444</span>
+<span class="String">4555555555566666666666666555555555544444333331O+°°,'0233333334444444444444444433</span>
+<span class="String">44444445555555556666555555555444444444433333210o-:O01122333333334444444444443333</span>
+<span class="String">44444444444444445555444444444444444444333332211O+ -o1112222223333333344433333222</span>
+<span class="String">444444444444433331133334444444444444433332221110o&quot;+O0111222222222222222222222222</span>
+<span class="String">34444444443333330OO03333334444444443332222221100O+-oO001122222222221110-O1111122</span>
+<span class="String">22333333333332210--01223333333333322222222211000o-°+o00000122222111110o°;o001111</span>
+<span class="String">11OO112222222111O;;O111222222211OO111122211000Oo-&quot;&nbsp;:+ooOOOO.O0000000OOo'°oOO0000</span>
+<span class="String">0O;+O01122211000O--O00011221110O+;O00000OO +oooo-:&nbsp;:-+oo++&quot;;oOO0000Ooo+;;+oooO00</span>
+<span class="String">o+&quot;+oO00OO OOOOoo::ooOOOO°OO00Oo+&quot;+ooOooo+;°---&quot;,' ,,&quot;;--:&nbsp;;-+oo+ +++;;°°;;-++:;</span>
+<span class="String">,° °':°: <span class="String">`</span></span> <span class="String"><span class="String">&quot;</span><span class="String"><span class="String">`</span>&quot;.°°  °° &quot;°&quot;. &nbsp;:'&quot;,  '°<span class="String">`</span></span>°<span class="String">&quot;</span></span>:<span class="String"><span class="String">`</span>°<span class="String">`</span></span> ,,<span class="String"><span class="String">`</span><span class="String">`</span></span>     .   . .°°<span class="String"><span class="String">'</span>°° ` ..     `<span class="String">'</span></span>°. 
++-<span class="String"><span class="String">`</span>-oo+oo+'+o+<span class="String">`</span></span>--°°<span class="Keyword">;</span>-<span class="String"><span class="String">`</span>+o+&quot;+oo+oo-'-++;+++-:,:::&quot;<span class="String">`</span></span>    °::°°&nbsp;:-<span class="Keyword">;</span><span class="Keyword">;</span>--,<span class="Keyword">;</span>-<span class="Keyword">;</span> <span class="String"><span class="String">&quot;</span>  <span class="String">&quot;</span></span> <span class="Keyword">;</span>-<span class="Keyword">;</span><span class="String"><span class="String">&quot;</span>:</span>
+<span class="String">OO<span class="String">&quot;</span></span>-O0000000000Oo--oO0000000000O-:oO0000Oo::+++<span class="Keyword">;</span><span class="Keyword">;</span>: <span class="String"><span class="String">&quot;</span>:<span class="String">&quot;</span></span>-++-<span class="String"><span class="String">'</span>;+oooOOoooo-::-oooo++</span>
+<span class="String">10;-111222222110O--O011222222111- 01111110oOOOoo-:&nbsp;:-ooooo`:OO000000OO+;;+OOO000</span>
+<span class="String">22122222222222110++0112222222222111222222221000O+:,;.O000001111111100Oo:-OO00000</span>
+<span class="String">3344444433333332-,°-2333333344444433322222221100o-;oO00011222222221111O<span class="String">'</span></span>+0111111
+444444444444333320023333444444444444433322221110O.:O0011222222222222211-01112222
+44444444444444443333444444444444444444333332211O. -o1112222222223333333333322222
+44444444445555555555555555444444444444433333210O-<span class="String"><span class="String">&quot;</span>oO1122223333333444444444433333</span>
+<span class="String">444555555555666666666666555555555444444433333' '<span class="String"><span class="String">`</span>:+O0233333333444444444444444433</span></span>
+</pre>
+
+<p>Here is the more readable version. I believe with this far more readable version, no more explanation is needed.</p>
+
+<pre class="twilight">
+-- Screen size
+nbvert = 27
+nbhor = 79
+init_bottom_left = C (-2.0,-1.0)
+init_top_right   = C (1.0,1.0)
+interrest        = C (-2.5,-1.0)
+
+newtype Complex = C (Float,Float) deriving (Show,Eq)
+instance Num Complex where
+    fromInteger n     = C (fromIntegral n,0.0)
+    C (x,y) * C (z,t) = C (z*x - y*t, y*z + x*t)
+    C (x,y) + C (z,t) = C (x+z, y+t)
+    abs (C (x,y))     = C (sqrt (x*x + y*y),0.0)
+    signum (C (x,y))  = C (signum x , 0.0)
+
+real&nbsp;:: Complex -<span class="Keyword">&gt;</span> Float
+real (C (x,y))    = x
+im&nbsp;:: Complex -<span class="Keyword">&gt;</span> Float
+im   (C (x,y))    = y
+
+f&nbsp;:: Complex -<span class="Keyword">&gt;</span> Complex -<span class="Keyword">&gt;</span> Int -<span class="Keyword">&gt;</span> Complex
+f c z 0 = z
+f c z n = f c ((z*z)+c) (n-1) 
+
+cabs&nbsp;:: Complex -<span class="Keyword">&gt;</span> Float
+cabs = real.abs
+
+tst&nbsp;:: Complex -<span class="Keyword">&gt;</span> Bool
+tst c = (cabs (f c (C(0.0,0.0)) 32)) <span class="Keyword">&lt;</span> 2
+
+bmandel bottomleft topright = map (<span class="Constant">\z</span> -<span class="Keyword">&gt;</span> (tst (C z), (fst z <span class="Keyword">&gt;</span> right - hstep/2 ))) [(x,y) <span class="Keyword">|</span> y <span class="Keyword">&lt;</span>- [bottom,(bottom + vstep)..top], x<span class="Keyword">&lt;</span>-[left,(left + hstep)..right]]
+    where
+        top = im topright
+        bottom = im bottomleft
+        left = real bottomleft
+        right = real topright
+        vstep=(top-bottom)/nbvert
+        hstep=(right-left)/nbhor
+
+mandel&nbsp;:: Complex -<span class="Keyword">&gt;</span> Complex -<span class="Keyword">&gt;</span> String
+mandel bottomleft topright = concat $ map treat $ bmandel bottomleft topright
+    where
+        treat (True,jump) = <span class="String"><span class="String">&quot;</span> <span class="String">&quot;</span></span> ++ rst jump
+        treat (False,jump) = <span class="String"><span class="String">&quot;</span>@<span class="String">&quot;</span></span> ++ rst  jump
+        rst True = <span class="String"><span class="String">&quot;</span>\n<span class="String">&quot;</span></span>
+        rst False = <span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
+
+main = <span class="Keyword">do</span>
+    x <span class="Keyword">&lt;</span>- getContents
+    putStrLn $ infinitemandel 0
+    where
+        closer n (C (x,y)) = 
+            let cst = (1.1**n - 1) <span class="Keyword">in</span>
+                C ( (x + cst*(real interrest))/cst+1,
+                    (y + cst*(im   interrest))/cst+1 )
+        bottomleftn n = closer n init_bottom_left
+        toprightn n   = closer n init_top_right
+        infinitemandel n = mandel (bottomleftn n) (toprightn n) ++ <span class="String"><span class="String">&quot;</span>\x1b[H\x1b[25A<span class="String">&quot;</span></span> ++ infinitemandel (n+1)
+</pre>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomen">
+                        Subscribe
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Comments</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">comments</h2>
+                    <noscript>
+                        You must enable javascript to comment.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/en/blog/Haskell-Mandelbrot/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/Haskell-Mandelbrot/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/en/">Home</a></li>
+<li><a href="/Scratch/en/blog/">Blog</a></li>
+<li><a href="/Scratch/en/softwares/">Softwares</a></li>
+<li><a href="/Scratch/en/about/">About</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        previous entries
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/Password-Management/"><span class="nicer">«</span>&nbsp;40 character's passwords</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2011-04-20-Now-hosted-on-github/"><span class="nicer">«</span>&nbsp;Now hosted on github</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/"><span class="nicer">«</span>&nbsp;Why I won't use CoffeeScript (sadly)</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        next entries
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Created: 07/10/2011
+                    Modified: 07/10/2011 
+                </div>
+                <div>
+                    Entirely done with
+                    <a href="http://www.vim.org">Vim</a>
+                    and 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/en/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>

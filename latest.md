@@ -1,1 +1,1 @@
-./multi/blog/Password-Management.md
+./multi/blog/Haskell-Mandelbrot.md
