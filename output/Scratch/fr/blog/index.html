@@ -92,7 +92,7 @@ a=27<span class="Keyword">;</span>b=79<span class="Keyword">;</span>c=C(-2.0,-1.
 newtype C = C (Double,Double) deriving (Show,Eq)
 instance Num C where C(x,y)*C(z,t)=C(z*x-y*t,y*z+x*t)<span class="Keyword">;</span>C(x,y)+C(z,t)=C(x+z,y+t)<span class="Keyword">;</span>abs(C(x,y))=C(sqrt(x*x+y*y),0.0)
 r(C(x,y))=x<span class="Keyword">;</span>i(C(x,y))=y
-f&nbsp;:: C -<span class="Keyword">&gt;</span> C -<span class="Keyword">&gt;</span> Int -<span class="Keyword">&gt;</span></pre></div></div>
+f c z 0=0<span class="Keyword">;</span>f c z n=<span class="Keyword">if</span>(r(abs(z))<span class="Keyword">&gt;</span></pre></div></div>
 
     <div class="flush"></div>
     <div>
