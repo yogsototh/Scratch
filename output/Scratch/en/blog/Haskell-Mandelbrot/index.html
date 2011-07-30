@@ -60,14 +60,14 @@
 
 <div class="code"><div class="file"><a href="/Scratch/en/blog/Haskell-Mandelbrot/code/animandel.hs"> &#x27A5; animandel.hs </a></div><div class="withfile">
 <pre class="twilight">
-a=27<span class="Keyword">;</span>b=79<span class="Keyword">;</span>c=C(-2.0,-1.0)<span class="Keyword">;</span>d=C(1.0,1.0)<span class="Keyword">;</span>e=C(-2.501,-1.003)
-newtype C = C (Double,Double) deriving (Show,Eq)
-instance Num C where C(x,y)*C(z,t)=C(z*x-y*t,y*z+x*t)<span class="Keyword">;</span>C(x,y)+C(z,t)=C(x+z,y+t)<span class="Keyword">;</span>abs(C(x,y))=C(sqrt(x*x+y*y),0.0)
-r(C(x,y))=x<span class="Keyword">;</span>i(C(x,y))=y
-f c z 0=0<span class="Keyword">;</span>f c z n=<span class="Keyword">if</span>(r(abs(z))<span class="Keyword">&gt;</span>2)<span class="Keyword">then</span> n <span class="Keyword">else</span> f c ((z*z)+c) (n-1)
-h j k = map (<span class="Constant">\z</span>-<span class="String"><span class="String">&gt;(</span>f (C z<span class="String">)</span></span> (C(0,0)) 32,(fst z<span class="Keyword">&gt;</span>l - q/2))) [(x,y)<span class="Keyword">|</span>y<span class="Keyword">&lt;</span>-[p,(p+((o-p)/a))..o],x<span class="Keyword">&lt;</span>-[m,(m + q)..l]] where o=i k<span class="Keyword">;</span>p=i j<span class="Keyword">;</span>m=r j<span class="Keyword">;</span>l=r k<span class="Keyword">;</span>q=(l-m)/b
-u j k = concat $ map v $ h j k where v (i,p)=(<span class="String"><span class="String">&quot;</span> .,<span class="String"><span class="String">`</span>'°\&quot;:;-+oO0123456789=!%*§&amp;$@#&quot;!!i):rst p;rst True=&quot;\n&quot;;rst False=&quot;&quot;</span></span>
-<span class="String"><span class="String">main = putStrLn $ im 0 where cl n (C (x,y))=let cs=(1.1**n-1) in C ((x+cs*(r e))/cs+1,(y+cs*(i e))/cs+1);bl n=cl n c;tr n=cl n d;im n=u (bl n) (tr n)++&quot;\x1b[H\x1b[25A&quot;++im (n+1)</span></span>
+a=27;b=79;c=<span class="Constant">C</span>(-2.0,-1.0);d=<span class="Constant">C</span>(1.0,1.0);e=<span class="Constant">C</span>(-2.501,-1.003)
+<span class="Keyword">newtype</span> <span class="Constant">C</span> = <span class="Constant">C</span> (<span class="Constant">Double</span>,<span class="Constant">Double</span>) <span class="Keyword">deriving</span> (<span class="Constant">Show</span>,<span class="Constant">Eq</span>)
+<span class="Keyword">instance</span> <span class="Constant">Num</span> <span class="Constant">C</span> <span class="Keyword">where</span> <span class="Constant">C</span>(x,y)*<span class="Constant">C</span>(z,t)=<span class="Constant">C</span>(z*x-y*t,y*z+x*t);<span class="Constant">C</span>(x,y)+<span class="Constant">C</span>(z,t)=<span class="Constant">C</span>(x+z,y+t);<span class="Entity">abs</span>(<span class="Constant">C</span>(x,y))=<span class="Constant">C</span>(<span class="Entity">sqrt</span>(x*x+y*y),0.0)
+r(<span class="Constant">C</span>(x,y))=x;i(<span class="Constant">C</span>(x,y))=y
+f c z 0=0;f c z n=<span class="Keyword">if</span>(r(<span class="Entity">abs</span>(z))&gt;2)<span class="Keyword">then</span> n <span class="Keyword">else</span> f c ((z*z)+c) (n-1)
+h j k = <span class="Entity">map</span> (\z&rarr;(f (<span class="Constant">C</span> z) (<span class="Constant">C</span>(0,0)) 32,(<span class="Entity">fst</span> z&gt;l - q/2))) [(x,y)|y&larr;[p,(p+((o-p)/a))..o],x&larr;[m,(m + q)..l]] <span class="Keyword">where</span> o=i k;p=i j;m=r j;l=r k;q=(l-m)/b
+u j k = <span class="Entity">concat</span> $ <span class="Entity">map</span> v $ h j k <span class="Keyword">where</span> v (i,p)=(<span class="String"><span class="String">&quot;</span> .,`'°<span class="StringConstant">\&quot;</span>:;-+oO0123456789=!%*§&amp;$@#<span class="String">&quot;</span></span>!!i):rst p;rst <span class="Constant">True</span>=<span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>;rst <span class="Constant">False</span>=<span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
+main = <span class="Entity">putStrLn</span> $ im 0 <span class="Keyword">where</span> cl n (<span class="Constant">C</span> (x,y))=<span class="Keyword">let</span> cs=(1.1**n-1) <span class="Keyword">in</span> <span class="Constant">C</span> ((x+cs*(r e))/cs+1,(y+cs*(i e))/cs+1);bl n=cl n c;tr n=cl n d;im n=u (bl n) (tr n)++<span class="String"><span class="String">&quot;</span><span class="StringConstant">\x</span>1b[H<span class="StringConstant">\x</span>1b[25A<span class="String">&quot;</span></span>++im (n+1)
 </pre>
 </div></div>
 
@@ -78,33 +78,33 @@ u j k = concat $ map v $ h j k where v (i,p)=(<span class="String"><span class="
 
 <p>Here is some image after 50 iterations:</p>
 
-<pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>##@@@@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;&amp;&amp;WWOOClbUOWW&amp;&amp;$$$$$$$$$$$$$$</span>
-<span class="Comment"><span class="Comment">#</span>#@@@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;&amp;&amp;WWUCUb; ,jUOWW&amp;&amp;&amp;$$$$$$$$$$$$</span>
-<span class="Comment"><span class="Comment">#</span>@@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;WWWWWUb       ooCWW&amp;&amp;&amp;&amp;&amp;&amp;$$$$$$$$</span>
-@@@@<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span>WWWWWWWWOU         uUOWWWW<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$
-@@@<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;</span>WOUObUOOOUUUCbi      rbCUUUOWWWWWOUW<span class="Keyword">&amp;</span><span class="Variable"><span class="Variable">$</span>$</span>$
-@<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span>WWWUcr,iiCb                o wUUUUUC<span class="Keyword">;</span>OW<span class="Keyword">&amp;</span><span class="Variable"><span class="Variable">$</span>$</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span>WWWWOUC,                         j    llW<span class="Keyword">&amp;&amp;</span>$
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span>WWWWWWOCCbi                              bWWW<span class="Keyword">&amp;&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span>WWWWWWW<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;</span>WWWWWWWWOUo                                 jUOWW<span class="Keyword">&amp;&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;</span>WWOwOOWWWOUUOWWWWWOOUbw                                  j.blW<span class="Keyword">&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;</span>WWWObiijbUCl bCiUUUUUCj,                                    bOW<span class="Keyword">&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;</span>WWWOUbw  <span class="Keyword">;</span>      oobCbl                                     jUWW<span class="Keyword">&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;</span>WWWWOcbi             ij                                      jUW<span class="Keyword">&amp;&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span>WWWWWWWOwUUCbw                                                       WW<span class="Keyword">&amp;&amp;</span>
-WWWOWWWWWWWWWUUbo                                                         UWWW<span class="Keyword">&amp;&amp;</span>
-:                                                                      wbUOWW<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;</span>
-WWWOWWWWWWWWWUUbo                                                         UWWW<span class="Keyword">&amp;&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span>WWWWWWWOwUUCbw                                                       WW<span class="Keyword">&amp;&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;</span>WWWWOcbi             ij                                      jUW<span class="Keyword">&amp;&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;</span>WWWOUbw  <span class="Keyword">;</span>      oobCbl                                     jUWW<span class="Keyword">&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;</span>WWWObiijbUCl bCiUUUUUCj,                                    bOW<span class="Keyword">&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;</span>WWOwOOWWWOUUOWWWWWOOUbw                                  j.blW<span class="Keyword">&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span>WWWWWWW<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;</span>WWWWWWWWOUo                                 jUOWW<span class="Keyword">&amp;&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span>WWWWWWOCCbi                              bWWW<span class="Keyword">&amp;&amp;</span>
-<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span>WWWWOUC,                         j    llW<span class="Keyword">&amp;&amp;</span>$
-@<span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span><span class="Variable"><span class="Variable">$</span>$</span>$<span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span><span class="Keyword">&amp;&amp;</span>WWWUcr,iiCb                o wUUUUUC<span class="Keyword">;</span>OW<span class="Keyword">&amp;</span><span class="Variable"><span class="Variable">$</span>$</span>
+<pre>
+###@@@@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;&amp;&amp;WWOOClbUOWW&amp;&amp;$$$$$$$$$$$$$$
+##@@@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;&amp;&WWUCUb; ,jUOWW&amp;&amp;&amp;$$$$$$$$$$$$
+#@@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;WWWWWUb       ooCWW&amp;&amp;&amp;&amp;&amp;&amp;$$$$$$$$
+@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;WWWWWWWWOU         uUOWWWW&amp;&amp;&amp;&amp;&amp;&amp;$$$$$
+@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;WOUObUOOOUUUCbi      rbCUUUOWWWWWOUW&amp;$$$
+@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;&amp;&amp;&amp;WWWUcr,iiCb                o wUUUUUC;OW&amp;$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;WWWWOUC,                         j    llW&amp;&amp;$
+$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;WWWWWWOCCbi                              bWWW&amp;&amp;
+$$$$$$$$$$$$$$$$$&amp;&amp;WWWWWWW&amp;&amp;&amp;WWWWWWWWOUo                                 jUOWW&amp;&amp;
+$$$$$$$$$$$$$$&amp;&amp;&amp;WWOwOOWWWOUUOWWWWWOOUbw                                  j.blW&amp;
+$$$$$$$$$$$&amp;&amp;&amp;&amp;&amp;WWWObiijbUCl bCiUUUUUCj,                                    bOW&amp;
+$$$$$$$$$&amp;&amp;&amp;&amp;&amp;&amp;&amp;WWWOUbw &nbsp;;      oobCbl                                     jUWW&amp;
+$$$$$$$&amp;&amp;&amp;&amp;&amp;&amp;&amp;WWWWOcbi             ij                                      jUW&amp;&amp;
+$$$$$&amp;&amp;WWWWWWWOwUUCbw                                                       WW&amp;&amp;
+WWWOWWWWWWWWWUUbo                                                         UWWW&amp;&amp;
+:                                                                      wbUOWW&amp;&amp;&amp;
+WWWOWWWWWWWWWUUbo                                                         UWWW&amp;&amp;
+$$$$$&amp;&amp;WWWWWWWOwUUCbw                                                       WW&amp;&amp;
+$$$$$$$&amp;&amp;&amp;&amp;&amp;&amp;&amp;WWWWOcbi             ij                                      jUW&amp;&amp;
+$$$$$$$$$&amp;&amp;&amp;&amp;&amp;&amp;&amp;WWWOUbw &nbsp;;      oobCbl                                     jUWW&amp;
+$$$$$$$$$$$&amp;&amp;&amp;&amp;&amp;WWWObiijbUCl bCiUUUUUCj,                                    bOW&amp;
+$$$$$$$$$$$$$$&amp;&amp;&amp;WWOwOOWWWOUUOWWWWWOOUbw                                  j.blW&amp;
+$$$$$$$$$$$$$$$$$&amp;&amp;WWWWWWW&amp;&amp;&amp;WWWWWWWWOUo                                 jUOWW&amp;&amp;
+$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;WWWWWWOCCbi                              bWWW&amp;&amp;
+$$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;WWWWOUC,                         j    llW&amp;&amp;$
+@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;&amp;&amp;&amp;WWWUcr,iiCb                o wUUUUUC;OW&amp;$$
 </pre>
 
 <p>Here is the more readable version. I believe with this far more readable version, no more explanation is needed.</p>
@@ -113,33 +113,33 @@ WWWOWWWWWWWWWUUbo                                                         UWWW<s
 nbvert = 30
 nbhor = 79
 zoomfactor = 1.01
-init_bottom_left = C (-2.0,-2.0)
-init_top_right   = C (3.0,2.0)
-interrest        = C (-1.713,-0.000)
+init_bottom_left = <span class="Constant">C</span> (-2.0,-2.0)
+init_top_right   = <span class="Constant">C</span> (3.0,2.0)
+interrest        = <span class="Constant">C</span> (-1.713,-0.000)
 
-newtype Complex = C (Float,Float) deriving (Show,Eq)
-instance Num Complex where
-    fromInteger n     = C (fromIntegral n,0.0)
-    C (x,y) * C (z,t) = C (z*x - y*t, y*z + x*t)
-    C (x,y) + C (z,t) = C (x+z, y+t)
-    abs (C (x,y))     = C (sqrt (x*x + y*y),0.0)
-    signum (C (x,y))  = C (signum x , 0.0)
+<span class="Keyword">newtype</span> <span class="Constant">Complex</span> = <span class="Constant">C</span> (<span class="Constant">Float</span>,<span class="Constant">Float</span>) <span class="Keyword">deriving</span> (<span class="Constant">Show</span>,<span class="Constant">Eq</span>)
+<span class="Keyword">instance</span> <span class="Constant">Num</span> <span class="Constant">Complex</span> <span class="Keyword">where</span>
+    <span class="Entity">fromInteger</span> n     = <span class="Constant">C</span> (<span class="Entity">fromIntegral</span> n,0.0)
+    <span class="Constant">C</span> (x,y) * <span class="Constant">C</span> (z,t) = <span class="Constant">C</span> (z*x - y*t, y*z + x*t)
+    <span class="Constant">C</span> (x,y) + <span class="Constant">C</span> (z,t) = <span class="Constant">C</span> (x+z, y+t)
+    <span class="Entity">abs</span> (<span class="Constant">C</span> (x,y))     = <span class="Constant">C</span> (<span class="Entity">sqrt</span> (x*x + y*y),0.0)
+    <span class="Entity">signum</span> (<span class="Constant">C</span> (x,y))  = <span class="Constant">C</span> (<span class="Entity">signum</span> x , 0.0)
 
-real&nbsp;:: Complex -<span class="Keyword">&gt;</span> Float
-real (C (x,y))    = x
-im&nbsp;:: Complex -<span class="Keyword">&gt;</span> Float
-im   (C (x,y))    = y
+<span class="Entity">real</span>&nbsp;:: <span class="Constant">Complex</span> &rarr; <span class="Constant">Float</span>
+real (<span class="Constant">C</span> (x,y))    = x
+<span class="Entity">im</span>&nbsp;:: <span class="Constant">Complex</span> &rarr; <span class="Constant">Float</span>
+im   (<span class="Constant">C</span> (x,y))    = y
 
-cabs&nbsp;:: Complex -<span class="Keyword">&gt;</span> Float
-cabs = real.abs
+<span class="Entity">cabs</span>&nbsp;:: <span class="Constant">Complex</span> &rarr; <span class="Constant">Float</span>
+cabs = real.<span class="Entity">abs</span>
 
-f&nbsp;:: Complex -<span class="Keyword">&gt;</span> Complex -<span class="Keyword">&gt;</span> Int -<span class="Keyword">&gt;</span> Int
+<span class="Entity">f</span>&nbsp;:: <span class="Constant">Complex</span> &rarr; <span class="Constant">Complex</span> &rarr; <span class="Constant">Int</span> &rarr; <span class="Constant">Int</span>
 f c z 0 = 0
-f c z n = <span class="Keyword">if</span> (cabs z <span class="Keyword">&gt;</span> 2) <span class="Keyword">then</span> n <span class="Keyword">else</span> f c ((z*z)+c) (n-1) 
+f c z n = <span class="Keyword">if</span> (cabs z &gt; 2) <span class="Keyword">then</span> n <span class="Keyword">else</span> f c ((z*z)+c) (n-1) 
 
 
-bmandel bottomleft topright = map (<span class="Constant">\z</span> -<span class="Keyword">&gt;</span> (f (C z) (C(0,0)) 32, (fst z <span class="Keyword">&gt;</span> right - hstep/2 ))) [(x,y) <span class="Keyword">|</span> y <span class="Keyword">&lt;</span>- [bottom,(bottom + vstep)..top], x<span class="Keyword">&lt;</span>-[left,(left + hstep)..right]]
-    where
+bmandel bottomleft topright = <span class="Entity">map</span> (\z &rarr; (f (<span class="Constant">C</span> z) (<span class="Constant">C</span>(0,0)) 32, (<span class="Entity">fst</span> z &gt; right - hstep/2 ))) [(x,y) | y &larr; [bottom,(bottom + vstep)..top], x&larr;[left,(left + hstep)..right]]
+    <span class="Keyword">where</span>
         top = im topright
         bottom = im bottomleft
         left = real bottomleft
@@ -147,30 +147,30 @@ bmandel bottomleft topright = map (<span class="Constant">\z</span> -<span class
         vstep=(top-bottom)/nbvert
         hstep=(right-left)/nbhor
 
-mandel&nbsp;:: (Complex,Complex) -<span class="Keyword">&gt;</span> String
-mandel (bottomleft,topright) = concat $ map treat $ bmandel bottomleft topright
-    where
-        treat (i,jump) = <span class="String"><span class="String">&quot;</span> .,:;rcuowijlbCUOW&amp;<span class="StringVariable"><span class="StringVariable">$</span>@</span>#<span class="String">&quot;</span></span> <span class="Keyword">!</span><span class="Keyword">!</span> (div (i*22) 32):rst jump
-        rst True = <span class="String"><span class="String">&quot;</span>\n<span class="String">&quot;</span></span>
-        rst False = <span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
+<span class="Entity">mandel</span>&nbsp;:: (<span class="Constant">Complex,Complex</span>) &rarr; <span class="Constant">String</span>
+mandel (bottomleft,topright) = <span class="Entity">concat</span> $ <span class="Entity">map</span> treat $ bmandel bottomleft topright
+    <span class="Keyword">where</span>
+        treat (i,jump) = <span class="String"><span class="String">&quot;</span> .,:;rcuowijlbCUOW&amp;$@#<span class="String">&quot;</span></span>&nbsp;!! (<span class="Entity">div</span> (i*22) 32):rst jump
+        rst <span class="Constant">True</span> = <span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>
+        rst <span class="Constant">False</span> = <span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
 
-cdiv&nbsp;:: Complex -<span class="Keyword">&gt;</span> Float -<span class="Keyword">&gt;</span> Complex
-cdiv (C(x,y)) r = C(x/r, y/r) 
-cmul&nbsp;:: Complex -<span class="Keyword">&gt;</span> Float -<span class="Keyword">&gt;</span> Complex
-cmul (C(x,y)) r = C(x*r, y*r) 
+<span class="Entity">cdiv</span>&nbsp;:: <span class="Constant">Complex</span> &rarr; <span class="Constant">Float</span> &rarr; <span class="Constant">Complex</span>
+cdiv (<span class="Constant">C</span>(x,y)) r = <span class="Constant">C</span>(x/r, y/r) 
+<span class="Entity">cmul</span>&nbsp;:: <span class="Constant">Complex</span> &rarr; <span class="Constant">Float</span> &rarr; <span class="Constant">Complex</span>
+cmul (<span class="Constant">C</span>(x,y)) r = <span class="Constant">C</span>(x*r, y*r) 
 
-zoom&nbsp;:: Complex -<span class="Keyword">&gt;</span> Complex -<span class="Keyword">&gt;</span> Complex -<span class="Keyword">&gt;</span> Float -<span class="Keyword">&gt;</span> (Complex,Complex)
+<span class="Entity">zoom</span>&nbsp;:: <span class="Constant">Complex</span> &rarr; <span class="Constant">Complex</span> &rarr; <span class="Constant">Complex</span> &rarr; <span class="Constant">Float</span> &rarr; (<span class="Constant">Complex,Complex</span>)
 zoom bl tr center magn = (f bl, f tr)
-    where
-        f point = ((center <span class="String"><span class="String">`</span>cmul<span class="String">`</span></span> magn) + point ) <span class="String"><span class="String">`</span>cdiv<span class="String">`</span></span> (magn + 1)
+    <span class="Keyword">where</span>
+        f point = ((center <span class="Entity"><span class="Entity">`</span>cmul` magn) + point ) `cdiv<span class="Entity">`</span></span> (magn + 1)
     
 
 main = <span class="Keyword">do</span>
-    x <span class="Keyword">&lt;</span>- getContents
-    putStrLn $ infinitemandel 0
-    where
+    x &larr; <span class="Entity">getContents</span>
+    <span class="Entity">putStrLn</span> $ infinitemandel 0
+    <span class="Keyword">where</span>
         window n = zoom init_bottom_left init_top_right interrest (zoomfactor**n) 
-        infinitemandel n = mandel (window n) ++ <span class="String"><span class="String">&quot;</span>\x1b[H\x1b[25A<span class="String">&quot;</span></span> ++ infinitemandel (n+1)
+        infinitemandel n = mandel (window n) ++ <span class="String"><span class="String">&quot;</span><span class="StringConstant">\x</span>1b[H<span class="StringConstant">\x</span>1b[25A<span class="String">&quot;</span></span> ++ infinitemandel (n+1)
 </pre>
 
                 </div>

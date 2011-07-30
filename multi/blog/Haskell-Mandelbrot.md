@@ -12,7 +12,7 @@ author_uri: yannesposito.com
 en: Here is the obfuscated code:
 fr: Voici le code "obfusqué" :
 
-<code class="zsh" file="animandel.hs">
+<code class="haskell" file="animandel.hs">
 a=27;b=79;c=C(-2.0,-1.0);d=C(1.0,1.0);e=C(-2.501,-1.003)
 newtype C = C (Double,Double) deriving (Show,Eq)
 instance Num C where C(x,y)*C(z,t)=C(z*x-y*t,y*z+x*t);C(x,y)+C(z,t)=C(x+z,y+t);abs(C(x,y))=C(sqrt(x*x+y*y),0.0)
@@ -31,7 +31,7 @@ fr: Pour le lancer, [haskell](http://haskell.org) doit être installé. Puis vou
 en: Here is some image after 50 iterations:
 fr: Voici le résultat après 50 itérations.
 
-<code class="zsh">
+<pre>
 ###@@@@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&&&&&WWOOClbUOWW&&$$$$$$$$$$$$$$
 ##@@@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&&&&&WWUCUb; ,jUOWW&&&$$$$$$$$$$$$
 #@@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&&&WWWWWUb       ooCWW&&&&&&$$$$$$$$
@@ -58,11 +58,11 @@ $$$$$$$$$$$$$$$$$&&WWWWWWW&&&WWWWWWWWOUo                                 jUOWW&&
 $$$$$$$$$$$$$$$$$$$$$&&&&&&&&&&&&WWWWWWOCCbi                              bWWW&&
 $$$$$$$$$$$$$$$$$$$$$$$$$$&&&&&&&&&&WWWWOUC,                         j    llW&&$
 @$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&&&&&&WWWUcr,iiCb                o wUUUUUC;OW&$$
-</code>
+</pre>
 
 Here is the more readable version. I believe with this far more readable version, no more explanation is needed.
 
-<code class="zsh">
+<code class="haskell">
 nbvert = 30
 nbhor = 79
 zoomfactor = 1.01

@@ -88,11 +88,9 @@ Last 5 Articles
 
 <div class="code"><div class="file"><a href="/Scratch/en/blog/Haskell-Mandelbrot/code/animandel.hs"> &#x27A5; animandel.hs </a></div><div class="withfile">
 <pre class="twilight">
-a=27<span class="Keyword">;</span>b=79<span class="Keyword">;</span>c=C(-2.0,-1.0)<span class="Keyword">;</span>d=C(1.0,1.0)<span class="Keyword">;</span>e=C(-2.501,-1.003)
-newtype C = C (Double,Double) deriving (Show,Eq)
-instance Num C where C(x,y)*C(z,t)=C(z*x-y*t,y*z+x*t)<span class="Keyword">;</span>C(x,y)+C(z,t)=C(x+z,y+t)<span class="Keyword">;</span>abs(C(x,y))=C(sqrt(x*x+y*y),0.0)
-r(C(x,y))=x<span class="Keyword">;</span>i(C(x,y))=y
-f c z 0=0<span class="Keyword">;</span>f c z n=<span class="Keyword">if</span>(r(abs(z))<span class="Keyword">&gt;</span>2)</pre></div></div>
+a=27;b=79;c=<span class="Constant">C</span>(-2.0,-1.0);d=<span class="Constant">C</span>(1.0,1.0);e=<span class="Constant">C</span>(-2.501,-1.003)
+<span class="Keyword">newtype</span> <span class="Constant">C</span> = <span class="Constant">C</span> (<span class="Constant">Double</span>,<span class="Constant">Double</span>) <span class="Keyword">deriving</span> (<span class="Constant">Show</span>,<span class="Constant">Eq</span>)
+<span class="Keyword">instance</span> <span class="Constant">Num</span> <span class="Constant">C</span> <span class="Keyword">where</span> </pre></div></div>
 
     <div class="flush"></div>
     <div>

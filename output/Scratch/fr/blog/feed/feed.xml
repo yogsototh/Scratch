@@ -23,11 +23,9 @@
 
 &lt;div class="code"&gt;&lt;div class="file"&gt;&lt;a href="/Scratch/fr/blog/Haskell-Mandelbrot/code/animandel.hs"&gt; &amp;#x27A5; animandel.hs &lt;/a&gt;&lt;/div&gt;&lt;div class="withfile"&gt;
 &lt;pre class="twilight"&gt;
-a=27&lt;span class="Keyword"&gt;;&lt;/span&gt;b=79&lt;span class="Keyword"&gt;;&lt;/span&gt;c=C(-2.0,-1.0)&lt;span class="Keyword"&gt;;&lt;/span&gt;d=C(1.0,1.0)&lt;span class="Keyword"&gt;;&lt;/span&gt;e=C(-2.501,-1.003)
-newtype C = C (Double,Double) deriving (Show,Eq)
-instance Num C where C(x,y)*C(z,t)=C(z*x-y*t,y*z+x*t)&lt;span class="Keyword"&gt;;&lt;/span&gt;C(x,y)+C(z,t)=C(x+z,y+t)&lt;span class="Keyword"&gt;;&lt;/span&gt;abs(C(x,y))=C(sqrt(x*x+y*y),0.0)
-r(C(x,y))=x&lt;span class="Keyword"&gt;;&lt;/span&gt;i(C(x,y))=y
-f c z 0=0&lt;span class="Keyword"&gt;;&lt;/span&gt;f c z n=&lt;span class="Keyword"&gt;if&lt;/span&gt;(r(abs(z))&lt;span class="Keyword"&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+a=27;b=79;c=&lt;span class="Constant"&gt;C&lt;/span&gt;(-2.0,-1.0);d=&lt;span class="Constant"&gt;C&lt;/span&gt;(1.0,1.0);e=&lt;span class="Constant"&gt;C&lt;/span&gt;(-2.501,-1.003)
+&lt;span class="Keyword"&gt;newtype&lt;/span&gt; &lt;span class="Constant"&gt;C&lt;/span&gt; = &lt;span class="Constant"&gt;C&lt;/span&gt; (&lt;span class="Constant"&gt;Double&lt;/span&gt;,&lt;span class="Constant"&gt;Double&lt;/span&gt;) &lt;span class="Keyword"&gt;deriving&lt;/span&gt; (&lt;span class="Constant"&gt;Show&lt;/span&gt;,&lt;span class="Constant"&gt;Eq&lt;/span&gt;)
+&lt;span class="Keyword"&gt;instance&lt;/span&gt; &lt;span class="Constant"&gt;Num&lt;/span&gt; &lt;span class="Constant"&gt;C&lt;/span&gt; &lt;span class="Keyword"&gt;where...&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-05-18:/Scratch/fr/blog/Password-Management/</id>
