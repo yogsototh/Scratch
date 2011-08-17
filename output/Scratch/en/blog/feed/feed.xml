@@ -2,13 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2011-07-10T10:41:26Z</updated>
+  <updated>2011-08-17T09:33:30Z</updated>
   <link href="http://yannesposito.com/" rel="alternate"/>
   <link href="http://feeds.feedburner.com/yannespositocomen" rel="self"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2011-08-17:/Scratch/en/blog/A-more-convenient-diff/</id>
+    <title type="html">A more convenient diff</title>
+    <published>2011-08-17T09:33:30Z</published>
+    <updated>2011-08-17T09:33:30Z</updated>
+    <link href="http://yannesposito.com/Scratch/en/blog/A-more-convenient-diff/" rel="alternate"/>
+    <content type="html">&lt;p&gt;Diff is a very useful tool. But it is not so easy to read for us, simple mortal.&lt;/p&gt;
+
+&lt;p&gt;This is why, when you use &lt;code&gt;git&lt;/code&gt; it will use a better formatting and colorize it.&lt;/p&gt;
+
+&lt;p&gt;Here is the script I use when I want to use human readable &lt;code&gt;diff&lt;/code&gt; &#224; la git.  &lt;/p&gt;
+
+&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;a href="/Scratch/en/blog/A-more-convenient-diff/code/ydiff"&gt; &amp;#x27A5; ydiff &lt;/a&gt;&lt;/div&gt;&lt;div class="withfile"&gt;
+&lt;pre class="twilight"&gt;
+&lt;span class="Comment"&gt;&lt;span class="Comment"&gt;#&lt;/span&gt;!/usr/bin/env zsh&lt;/span&gt;
+
+&lt;span class="Comment"&gt;&lt;span class="Comment"&gt;#&lt;/span&gt; Load colors helpers&lt;/span&gt;
+autoload -U colors &lt;span class="Keyword"&gt;&amp;amp;&amp;amp;&lt;/span&gt; colors
+
+function colorize_diff {
+    &lt;span class="Keyword"&gt;while&lt;/span&gt; read line&lt;span class="Keyword"&gt;;&lt;/span&gt; &lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2011-07-10:/Scratch/en/blog/Haskell-Mandelbrot/</id>
     <title type="html">ASCII Haskell Mandelbrot</title>
@@ -782,6 +804,35 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 &lt;/p&gt;</content>
   </entry>
   <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/" rel="alternate"/>
+    <content type="html">&lt;h1 class="first" id="command-list"&gt;Command List&lt;/h1&gt;
+
+&lt;h2 id="command-for-each-functionality"&gt;Command for each functionality&lt;/h2&gt;
+
+&lt;p&gt;In the first part, we saw the list of resolved problem by &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. To resume &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; should do:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;get others modifications,&lt;/li&gt;
+  &lt;li&gt;send modifications to others,&lt;/li&gt;
+  &lt;li&gt;get back in time,&lt;/li&gt;
+  &lt;li&gt;list differences between each version,&lt;/li&gt;
+  &lt;li&gt;name some versions in order to refer easily to them,&lt;/li&gt;
+  &lt;li&gt;write an historic of modifications,&lt;/li&gt;
+  &lt;li&gt;know who did what and when,&lt;/li&gt;
+  &lt;li&gt;manage conflicts,&lt;/li&gt;
+  &lt;li&gt;easily manage branches.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="get-others-modifications"&gt;get others modifications&lt;/h3&gt;
+
+&lt;div&gt;&lt;pre class="twilight"&gt;
+$ g...&lt;/pre&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -813,32 +864,6 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/" rel="alternate"/>
-    <content type="html">&lt;h1 class="first" id="gitgit-for-what"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; for what?&lt;/h1&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;If you just want to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; &lt;strong&gt;immediately&lt;/strong&gt;, just read dark part. You read this part later to understand correctly foundations of version systems and not doing strange things.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; is a &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, which means a Decentralized Concurrent Versions System. Let&amp;rsquo;s analyze each part of this long term:&lt;/p&gt;
-
-&lt;h3 id="versions-system"&gt;Versions System&lt;/h3&gt;
-
-&lt;p&gt;Firstly, versions system manage files.
-When somebody work with files without a versions system, the following happens frequently:&lt;/p&gt;
-...&lt;/p&gt;</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
@@ -862,67 +887,19 @@ When somebody work with files without a versions system, the following happens f
       &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
     <updated>2009-11-12T09:39:54Z</updated>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/" rel="alternate"/>
-    <content type="html">&lt;h1 class="first" id="command-list"&gt;Command List&lt;/h1&gt;
+    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/" rel="alternate"/>
+    <content type="html">&lt;h1 class="first" id="why-git-is-cool"&gt;Why Git is cool?&lt;/h1&gt;
 
-&lt;h2 id="command-for-each-functionality"&gt;Command for each functionality&lt;/h2&gt;
+&lt;p&gt;Because with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; you can work on many part of some project totally independently. This is the true efficiency of decentralisation.&lt;/p&gt;
 
-&lt;p&gt;In the first part, we saw the list of resolved problem by &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. To resume &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; should do:&lt;/p&gt;
+&lt;p&gt;Each branch use the same directory. Then you can easily change your branch. You can also change branch when some files are modified. You can then dispatch your work on many different branches and merge them on one master branch at will.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;get others modifications,&lt;/li&gt;
-  &lt;li&gt;send modifications to others,&lt;/li&gt;
-  &lt;li&gt;get back in time,&lt;/li&gt;
-  &lt;li&gt;list differences between each version,&lt;/li&gt;
-  &lt;li&gt;name some versions in order to refer easily to them,&lt;/li&gt;
-  &lt;li&gt;write an historic of modifications,&lt;/li&gt;
-  &lt;li&gt;know who did what and when,&lt;/li&gt;
-  &lt;li&gt;manage conflicts,&lt;/li&gt;
-  &lt;li&gt;easily manage branches.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Using the &lt;code&gt;git rebase&lt;/code&gt; you can decide which modifications should be forget or merged into only one modification.&lt;/p&gt;
 
-&lt;h3 id="get-others-modifications"&gt;get others modifications&lt;/h3&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;
-$ g...&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/</id>
-    <title type="html">Git for n00b</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/" rel="alternate"/>
-    <content type="html">&lt;h1 class="first" id="before-usage-configuration"&gt;Before usage, configuration&lt;/h1&gt;
-
-&lt;h2 id="install"&gt;install&lt;/h2&gt;
-
-&lt;p&gt;Under Linux Ubuntu or Debian:&lt;/p&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;$ sudo apt-get install git
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Under Mac OS X:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;install &lt;a href="http://macports.org/install.php"&gt;MacPorts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;install &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div&gt;&lt;pre class="twilight"&gt;
-$ sudo port selfupdate
-
-$ sudo port install git-core
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="global-configuration"&gt;Global configuration&lt;/h2&gt;
-
-&lt;p&gt;Save the following file as your &lt;code&gt;~/.gitconfig&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div&gt;&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;a href="/Scratch/en/blog/2009-11-12-Git-for-n00b/conf-et-install/code/gitconfig"&gt; &amp;#x27A5; gitconfig &lt;/a&gt;&lt;/div&gt;&lt;div class="withfile"&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
+&lt;p&gt;What does it mean for real usage? You can focus on coding. For example, you can code, a fix for bug b01 and for bug b02 and code a feature f03. Once finished you can creat...&lt;/p&gt;</content>
   </entry>
 </feed>

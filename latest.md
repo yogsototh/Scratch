@@ -1,1 +1,1 @@
-./multi/blog/Haskell-Mandelbrot.md
+./multi/blog/A-more-convenient-diff.md

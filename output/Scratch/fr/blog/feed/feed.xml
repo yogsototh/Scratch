@@ -2,13 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2011-07-10T10:41:26Z</updated>
+  <updated>2011-08-17T09:33:30Z</updated>
   <link href="http://yannesposito.com/" rel="alternate"/>
   <link href="http://feeds.feedburner.com/yannespositocomfr" rel="self"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2011-08-17:/Scratch/fr/blog/A-more-convenient-diff/</id>
+    <title type="html">Un diff plus pratique</title>
+    <published>2011-08-17T09:33:30Z</published>
+    <updated>2011-08-17T09:33:30Z</updated>
+    <link href="http://yannesposito.com/Scratch/fr/blog/A-more-convenient-diff/" rel="alternate"/>
+    <content type="html">&lt;p&gt;&lt;code&gt;diff&lt;/code&gt; est un utilitaire tr&#232;s pratique, mais il n&amp;rsquo;est pas facile &#224; lire pour nous, les Hommes.&lt;/p&gt;
+
+&lt;p&gt;C&amp;rsquo;est pourquoi, lorsque vous utilisez &lt;code&gt;git&lt;/code&gt;, il vous montre un formatage plus agr&#233;able avec des couleurs.&lt;/p&gt;
+
+&lt;p&gt;Voici le script que j&amp;rsquo;utilise lorsque je veux avoir un &lt;code&gt;diff&lt;/code&gt; &#224; la git.&lt;/p&gt;
+
+&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;a href="/Scratch/fr/blog/A-more-convenient-diff/code/ydiff"&gt; &amp;#x27A5; ydiff &lt;/a&gt;&lt;/div&gt;&lt;div class="withfile"&gt;
+&lt;pre class="twilight"&gt;
+&lt;span class="Comment"&gt;&lt;span class="Comment"&gt;#&lt;/span&gt;!/usr/bin/env zsh&lt;/span&gt;
+
+&lt;span class="Comment"&gt;&lt;span class="Comment"&gt;#&lt;/span&gt; Load colors helpers&lt;/span&gt;
+autoload -U colors &lt;span class="Keyword"&gt;&amp;amp;&amp;amp;&lt;/span&gt; colors
+
+function colorize_diff {
+    &lt;span class="Keyword"&gt;...&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2011-07-10:/Scratch/fr/blog/Haskell-Mandelbrot/</id>
     <title type="html">Mandelbrot avec haskell</title>
@@ -799,26 +821,5 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
   &lt;li&gt;savoir qui a fait quoi et quand&amp;nbsp;;&lt;/li&gt;
   &lt;li&gt;g&#233;rer des conflits&amp;nbsp;;&lt;/li&gt;
   &lt;li&gt;manipuler facileme...&lt;/li&gt;&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/</id>
-    <title type="html">Git pour les nuls</title>
-    <published>2009-11-12T09:39:54Z</published>
-    <updated>2009-11-12T09:39:54Z</updated>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2009-11-12-Git-for-n00b/Git-pour-quoi-faire/" rel="alternate"/>
-    <content type="html">&lt;h1 class="first" id="gitgit-pour-quoi-faire-"&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; pour quoi faire&amp;nbsp;?&lt;/h1&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;Si tout ce qui vous int&#233;resse c&amp;rsquo;est d&amp;rsquo;utiliser &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; &lt;strong&gt;tout de suite&lt;/strong&gt;. Lisez simplement les parties sur fond noir. Je vous conseille aussi de revenir relire tout &#231;a un peu plus tard, pour mieux comprendre les fondements des syst&#232;mes de versions et ne pas faire de b&#234;tises quand vous les utilisez.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; est un &lt;abbr title="Decentralized Concurent Versions System"&gt;DCVS&lt;/abbr&gt;, c&amp;rsquo;est-&#224;-dire un syst&#232;me de versions concurrentes d&#233;centralis&#233;. Analysons chaque partie de cette appellation compliqu&#233;e.&lt;/p&gt;
-...&lt;/p&gt;</content>
   </entry>
 </feed>

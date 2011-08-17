@@ -6,14 +6,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
         
+        <meta name="keywords" content="diff, git, colors">
+        
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
-        <link rel="alternate" lang="fr" xml:lang="fr" title="Hébergement github" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2011-04-20-Now-hosted-on-github/" /> 
-        <link rel="alternate" lang="en" xml:lang="en" title="Now hosted on github" type="text/html" hreflang="en" href="/Scratch/en/blog/2011-04-20-Now-hosted-on-github/" /> 
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Un diff plus pratique" type="text/html" hreflang="fr" href="/Scratch/fr/blog/A-more-convenient-diff/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="A more convenient diff" type="text/html" hreflang="en" href="/Scratch/en/blog/A-more-convenient-diff/" /> 
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
@@ -24,7 +26,7 @@
         <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
         < % end %>
         -->
-        <title>Now hosted on github</title>
+        <title>A more convenient diff</title>
     </head>
     <body lang="en">
         <script type="text/javascript">// <![CDATA[
@@ -37,12 +39,12 @@
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
                 <div id="choixlang">
-                    <a href="/Scratch/fr/blog/2011-04-20-Now-hosted-on-github/" onclick="setLanguage('fr')">en Français</a>
+                    <a href="/Scratch/fr/blog/A-more-convenient-diff/" onclick="setLanguage('fr')">en Français</a>
                 </div>
             </div>
             <div id="titre">
                 <h1>
-                    Now hosted on github
+                    A more convenient diff
                 </h1>
                 
             </div>
@@ -56,9 +58,38 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p><img alt="Title image" src="/Scratch/img/blog/2011-04-20-Now-hosted-on-github/main.png" /></p>
+                    <p>Diff is a very useful tool. But it is not so easy to read for us, simple mortal.</p>
 
-<p>I am now hosted on github.</p>
+<p>This is why, when you use <code>git</code> it will use a better formatting and colorize it.</p>
+
+<p>Here is the script I use when I want to use human readable <code>diff</code> à la git.  </p>
+
+<div class="code"><div class="file"><a href="/Scratch/en/blog/A-more-convenient-diff/code/ydiff"> &#x27A5; ydiff </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
+
+<span class="Comment"><span class="Comment">#</span> Load colors helpers</span>
+autoload -U colors <span class="Keyword">&amp;&amp;</span> colors
+
+function colorize_diff {
+    <span class="Keyword">while</span> read line<span class="Keyword">;</span> <span class="Keyword">do</span>
+    <span class="Keyword">case</span> <span class="Variable"><span class="Variable">${</span>line[0]<span class="Variable">}</span></span> <span class="Keyword">in</span>
+    +) print -n <span class="Variable"><span class="Variable">$</span>fg</span>[green]<span class="Keyword">;</span><span class="Keyword">;</span>
+    -) print -n <span class="Variable"><span class="Variable">$</span>fg</span>[red]<span class="Keyword">;</span><span class="Keyword">;</span>
+    @) <span class="Comment"><span class="Comment">#</span> Display in cyan the @@ positions @@</span>
+       <span class="Keyword">if</span> [[ <span class="Variable"><span class="Variable">${</span>line[1]<span class="Variable">}</span></span> = <span class="String"><span class="String">'</span>@<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
+           line=<span class="String"><span class="String">$(</span>print <span class="StringVariable"><span class="StringVariable">$</span>line</span> <span class="Keyword">|</span> perl -pe <span class="String"><span class="String">'</span>s#(\@\@[^\@]*\@\@)(.*)$#<span class="String">'</span></span><span class="StringVariable"><span class="StringVariable">$</span>fg</span>[cyan]<span class="String"><span class="String">'</span>$1<span class="String">'</span></span><span class="StringVariable"><span class="StringVariable">$</span>reset_color</span><span class="String"><span class="String">'</span>$2#<span class="String">'</span></span><span class="String">)</span></span>
+       <span class="Keyword">fi</span><span class="Keyword">;</span><span class="Keyword">;</span>
+
+    <span class="Keyword">esac</span>
+        print -- <span class="Variable"><span class="Variable">$</span>line</span>
+        print -n <span class="Variable"><span class="Variable">$</span>reset_color</span>
+        <span class="Keyword">done</span>
+}
+
+diff -u <span class="Variable"><span class="Variable">$</span>*</span> <span class="Keyword">|</span> colorize_diff
+</pre>
+</div></div>
 
                 </div>
             
@@ -89,8 +120,8 @@
                     
     <script type="text/javascript">
     var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
-    var idcomments_post_id = '/Scratch/en/blog/2011-04-20-Now-hosted-on-github/';
-    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/2011-04-20-Now-hosted-on-github/';
+    var idcomments_post_id = '/Scratch/en/blog/A-more-convenient-diff/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/A-more-convenient-diff/';
     </script>
     <span id="IDCommentsPostTitle" style="display:none"></span>
     <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
@@ -111,17 +142,17 @@
                         previous entries
                         
                         <div class="previous_article">
-                            <a href="/Scratch/en/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/"><span class="nicer">«</span>&nbsp;Why I won't use CoffeeScript (sadly)</a>
+                            <a href="/Scratch/en/blog/Haskell-Mandelbrot/"><span class="nicer">«</span>&nbsp;ASCII Haskell Mandelbrot</a>
                         </div>
                         
                         
                         <div class="previous_article">
-                            <a href="/Scratch/en/blog/2011-01-03-Happy-New-Year/"><span class="nicer">«</span>&nbsp;Happy New Year</a>
+                            <a href="/Scratch/en/blog/Password-Management/"><span class="nicer">«</span>&nbsp;40 character's passwords</a>
                         </div>
                         
                         
                         <div class="previous_article">
-                            <a href="/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/"><span class="nicer">«</span>&nbsp;LaTeX like macro for markdown</a>
+                            <a href="/Scratch/en/blog/2011-04-20-Now-hosted-on-github/"><span class="nicer">«</span>&nbsp;Now hosted on github</a>
                         </div>
                         
                         
@@ -129,19 +160,7 @@
                     <div id="next_articles">
                         next entries
                         
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/Password-Management/">40 character's passwords&nbsp;<span class="nicer">»</span></a>
-                        </div>
                         
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/Haskell-Mandelbrot/">ASCII Haskell Mandelbrot&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/A-more-convenient-diff/">A more convenient diff&nbsp;<span class="nicer">»</span></a>
-                        </div>
                         
                         
                     </div>
@@ -155,8 +174,8 @@
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
                 </div>
                 <div id="lastmod">
-                    Created: 04/20/2011
-                    Modified: 04/20/2011 
+                    Created: 08/17/2011
+                    Modified: 08/17/2011 
                 </div>
                 <div>
                     Entirely done with
