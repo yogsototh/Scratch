@@ -1,1 +1,1 @@
-./multi/blog/A-more-convenient-diff.md
+./multi/blog/Efficient-Vim-knowledge.md
