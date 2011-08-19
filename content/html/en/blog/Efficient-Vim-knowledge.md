@@ -3,8 +3,7 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2011-08-18T00:28:20+02:00
-en: title: Efficient Vim knowledge
-fr: title: Vim efficace avec peu d'efforts
+title: Efficient Vim knowledge
 author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
@@ -13,36 +12,25 @@ author_uri: yannesposito.com
 
 begindiv(intro)
 
-en: <%= tldr %> Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way.
+<%= tldr %> Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way.
 
-fr: <%= tlal %> Vous désirez apprendre vim (le meilleur editeur de texte connu à ce jour) le plus rapidement possible. Voici mes conseils pour vous aider.
 
 enddiv
 
-en: [Vim] the Six Billion Dollar editor
-fr: [Vim] ou l'éditeur qui vallait 3 milliards :
+[Vim] the Six Billion Dollar editor
 
-en: > Better, Stronger, Faster.
-fr: > Meilleur, plus fort, plus rapide.
+> Better, Stronger, Faster.
 
-en: Learn [vim] and it will be your last text editor.
-en: There isn't any better text editor I know.
-en: Hard to learn, but it will pay a billion times.
-fr: Apprenez [vim] et ce sera votre dernier éditeur.
-fr: Aucun éditeur que je connaise ne le surpasse.
-fr: Sa prise en mais est difficile, mais payante.
+Learn [vim] and it will be your last text editor.
+There isn't any better text editor I know.
+Hard to learn, but it will pay a billion times.
 
-en: I suggest you to learn it in 5 steps:
-fr: Je vous conseille de l'apprendre en 5 étapes :
+I suggest you to learn it in 5 steps:
 
-en: 1. Survive
-en: 2. Start to feel comfortable
-en: 3. Feel Better, Stronger, Faster
-en: 4. Super powers
-fr: 1. La survie
-fr: 2. Commencer à être à l'aise
-fr: 3. Se sentir meilleur, plus fort et plus rapide
-fr: 4. Les super-pouvoirs
+1. Survive
+2. Start to feel comfortable
+3. Feel Better, Stronger, Faster
+4. Super powers
 
 [Vim]: http://www.vim.org
 [vim]: http://www.vim.org
