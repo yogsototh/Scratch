@@ -35,17 +35,11 @@ Je vous conseille de l'apprendre en 5 étapes :
 [Vim]: http://www.vim.org
 [vim]: http://www.vim.org
 
-## 1st Level: Survive
 ## 1er Niveau: survivre
 
-
-Lorsque vous lancez vim pour la première fois, cela peut sembler très déconcertant. Il y a plusieurs modes dans vim. Un mode d'insertion qui correspond au mode normal dans la plupart des autres éditeurs et un mode d'édition ou le fait d'appuyer sur une touche va lancer des fonctions et ne rien écrire du tout.
-Evidemment vous commencez dans le mode édition totalement contre intuitif.
-
-
-1. Installez vim (normallement votre système d'exploitation doit l'avoir).
-2. Lancez vim.
-3. NE TOUCHEZ A RIEN! Lisez
+0. Installez [vim]
+1. Lancez vim.
+2. NE TOUCHEZ A RIEN! Lisez
 
 Dans un éditeur normal, il suffit de taper sur une touche du clavier et la lettre s'affiche à l'écran.
 Pas ici.

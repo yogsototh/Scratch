@@ -32,32 +32,33 @@ fr: Apprenez [vim] et ce sera votre dernier éditeur.
 fr: Aucun éditeur que je connaise ne le surpasse.
 fr: Sa prise en mais est difficile, mais payante.
 
-en: I suggest you to learn it in 5 steps:
-fr: Je vous conseille de l'apprendre en 5 étapes :
+en: I suggest you to learn it in 4 steps:
+fr: Je vous conseille de l'apprendre en 4 étapes :
 
 en: 1. Survive
-en: 2. Start to feel comfortable
+en: 2. Feel comfortable
 en: 3. Feel Better, Stronger, Faster
 en: 4. Super powers
 fr: 1. La survie
-fr: 2. Commencer à être à l'aise
+fr: 2. Se sentir à son aise
 fr: 3. Se sentir meilleur, plus fort et plus rapide
 fr: 4. Les super-pouvoirs
+
+en: By the end of this journey, you'll become a vim superstar. 
+fr: Après ces leçons, vous serez une super star de l'édition de texte.
 
 [Vim]: http://www.vim.org
 [vim]: http://www.vim.org
 
-## 1st Level: Survive
-## 1er Niveau: survivre
+en: ## 1st Level: Survive
+fr: ## 1er Niveau: survivre
 
-
-Lorsque vous lancez vim pour la première fois, cela peut sembler très déconcertant. Il y a plusieurs modes dans vim. Un mode d'insertion qui correspond au mode normal dans la plupart des autres éditeurs et un mode d'édition ou le fait d'appuyer sur une touche va lancer des fonctions et ne rien écrire du tout.
-Evidemment vous commencez dans le mode édition totalement contre intuitif.
-
-
-1. Installez vim (normallement votre système d'exploitation doit l'avoir).
-2. Lancez vim.
-3. NE TOUCHEZ A RIEN! Lisez
+en: 0. Install [vim]
+en: 1. Launch vim
+en: 2. DO NOTHING! Read.
+fr: 0. Installez [vim]
+fr: 1. Lancez vim
+fr: 2. NE TOUCHEZ A RIEN! Lisez
 
 Dans un éditeur normal, il suffit de taper sur une touche du clavier et la lettre s'affiche à l'écran.
 Pas ici.
@@ -67,27 +68,38 @@ Tapez sur la touche `i`.
 
 Voilà, c'est magique. 
 Vous pouvez tapez comme dans un éditeur standard.
-Mais attention, il y a une touche interdite ; Echap.
-
-Si vous tapez sur Echap, vim repasse en mode _edition_.
+Pour repasser en mode édition tapez sur la touche `Echap`.
 
 Maintenant que vous savez passer du mode edition au mode insertion. Voici les commandes de survie (toutes en mode edition) :
 
-- `i` : Passer en mode insértion. Taper Echap pour repasser en mode edition.
-- `x` : Supprimer le caractère sous le curseur
-- `dd` : Supprimer la ligne courante (et la copier)
-- `p` : Coller
-- `:wq` : Sauvegarder et quitter
-- `hjkl` (optionnel) : se déplacer (<-&darr;&uarr;->). Souvenez vous `j` ressemble à une flèche vers le bas.
+> - `i` : Passer en mode insértion. Taper Echap pour repasser en mode edition.
+> - `x` : Supprimer le caractère sous le curseur
+> - `:wq` : Sauvegarder et quitter (`:w` sauvegarde, `:q` quitte)
+> - `dd` : Supprimer la ligne courante (et la copier)
+> - `p` : Coller
+> - `hjkl` (optionnel) : se déplacer (<-&darr;&uarr;->). Souvenez vous `j` ressemble à une flèche vers le bas.
 
-## Niveau 2 - Débutant
+Seulement 5 commandes. Voilà, c'est tout pour un début. 
+Essayez d'éditer vos fichier comme ça pendant une petite journée. 
+Ça va être assez pénible, mais vous pouvez écrire, effacer, copier/coller et sauvegarder.
+Lorsque ces commandes vous seront devenues naturelle. 
+Vous pouvez passer à l'étape d'après. 
+Pour se sentir à son aise avec vim. 
+Disons autant qu'avec un éditeur standard.
+
+en: ## 2nd Level - Feel comfortable
+fr: ## 2ème Niveau - Se sentir à son aise
 
 Vous connaissez les commandes de survie. Passons à des commandes pour être un peu plus à notre aise. Je vous suggère :
 
-- `a` : comme `i`, mais après la position du curseur.
-- `o` : comme `i`, mais à la ligne suivante
-- `O` : comme `o` mais ajoute la ligne avant.
-- `/pattern` : rechercher `pattern` dans le fichier.
+1. Les variantes de l'insertion
+    > - `a` : comme `i`, mais après la position du curseur.
+    > - `o` : comme `i`, mais à la ligne suivante
+    > - `O` : comme `o` mais ajoute la ligne avant.
+    > - `cw` : remplacer le mot sous le curseur.
+
+2. Rechercher
+    > - `/pattern` : rechercher `pattern` dans le fichier.
 
 ## Niveau 3 - Débutant supérieur
 

@@ -111,6 +111,16 @@ module Nanoc3::Filters
                 %{&rarr;}
             end.gsub(/(&lt;|<)-/) do
                 %{&larr;}
+            end.gsub(/1st/) do
+                %{1<sup>st</sup>}
+            end.gsub(/1(ere?)/) do
+                %{1<sup>#{$1}</sup>}
+            end.gsub(/2nd/) do
+                %{2<sup>nd</sup>}
+            end.gsub(/3rd/) do
+                %{3<sup>rd</sup>}
+            end.gsub(/([2-9])ème/) do
+                %{#{$1}<sup>ème</sup>}
             end
         end
         def run(content, params={})
