@@ -78,70 +78,159 @@
 Aucun éditeur que je connaise ne le surpasse.
 Sa prise en mais est difficile, mais payante.</p>
 
-<p>Je vous conseille de l&rsquo;apprendre en 5 étapes&nbsp;:</p>
+<p>Je vous conseille de l&rsquo;apprendre en 4 étapes&nbsp;:</p>
 
 <ol>
   <li>La survie</li>
-  <li>Commencer à être à l&rsquo;aise</li>
+  <li>Se sentir à son aise</li>
   <li>Se sentir meilleur, plus fort et plus rapide</li>
   <li>Les super-pouvoirs</li>
 </ol>
+
+<p>Après ces leçons, vous serez une super star de l&rsquo;édition de texte.</p>
 
 <h2 id="er-niveau-survivre">1<sup>er</sup> Niveau: survivre</h2>
 
 <ol>
   <li>Installez <a href="http://www.vim.org">vim</a></li>
-  <li>Lancez vim.</li>
+  <li>Lancez vim</li>
   <li>NE TOUCHEZ A RIEN! Lisez</li>
 </ol>
 
 <p>Dans un éditeur normal, il suffit de taper sur une touche du clavier et la lettre s&rsquo;affiche à l&rsquo;écran.
 Pas ici.
 Vim est en mode <em>edition</em>.
-Commençon par placer vim en mode <em>insertion</em>.
+Commençons par placer vim en mode <em>insertion</em>.
 Tapez sur la touche <code>i</code>.</p>
 
 <p>Voilà, c&rsquo;est magique. 
 Vous pouvez tapez comme dans un éditeur standard.
-Mais attention, il y a une touche interdite&nbsp;; Echap.</p>
-
-<p>Si vous tapez sur Echap, vim repasse en mode <em>edition</em>.</p>
+Pour repasser en mode édition tapez sur la touche <code>Echap</code>.</p>
 
 <p>Maintenant que vous savez passer du mode edition au mode insertion. Voici les commandes de survie (toutes en mode edition)&nbsp;:</p>
 
-<ul>
-  <li><code>i</code>&nbsp;: Passer en mode insértion. Taper Echap pour repasser en mode edition.</li>
-  <li><code>x</code>&nbsp;: Supprimer le caractère sous le curseur</li>
-  <li><code>dd</code>&nbsp;: Supprimer la ligne courante (et la copier)</li>
-  <li><code>p</code>&nbsp;: Coller</li>
-  <li><code>:wq</code>&nbsp;: Sauvegarder et quitter</li>
-  <li><code>hjkl</code> (optionnel)&nbsp;: se déplacer (&larr;&darr;&uarr;&rarr;). Souvenez vous <code>j</code> ressemble à une flèche vers le bas.</li>
-</ul>
+<blockquote>
+  <ul>
+    <li><code>i</code>&nbsp;: Passer en mode insértion. Taper Echap pour repasser en mode edition.</li>
+    <li><code>x</code>&nbsp;: Supprimer le caractère sous le curseur</li>
+    <li><code>:wq</code>&nbsp;: Sauvegarder et quitter (<code>:w</code> sauvegarde, <code>:q</code> quitter)</li>
+    <li><code>dd</code>&nbsp;: Supprimer (et copier) la ligne courante</li>
+    <li><code>p</code>&nbsp;: Coller</li>
+    <li><code>hjkl</code> (optionnel)&nbsp;: se déplacer (&larr;&darr;&uarr;&rarr;). Souvenez vous <code>j</code> ressemble à une flèche vers le bas.</li>
+  </ul>
+</blockquote>
 
-<h2 id="niveau-2---dbutant">Niveau 2 - Débutant</h2>
+<p>Seulement 5 commandes. Voilà, c&rsquo;est tout pour un début. 
+Essayez d&rsquo;éditer vos fichier comme ça pendant une petite journée. 
+Lorsque ces commandes vous seront devenues naturelle. 
+Vous pouvez passer à l&rsquo;étape d&rsquo;après. </p>
+
+<h2 id="me-niveau---se-sentir--son-aise">2<sup>ème</sup> Niveau - Se sentir à son aise</h2>
 
 <p>Vous connaissez les commandes de survie. Passons à des commandes pour être un peu plus à notre aise. Je vous suggère&nbsp;:</p>
 
-<ul>
-  <li><code>a</code>&nbsp;: comme <code>i</code>, mais après la position du curseur.</li>
-  <li><code>o</code>&nbsp;: comme <code>i</code>, mais à la ligne suivante</li>
-  <li><code>O</code>&nbsp;: comme <code>o</code> mais ajoute la ligne avant.</li>
-  <li><code>/pattern</code>&nbsp;: rechercher <code>pattern</code> dans le fichier.</li>
-</ul>
-
-<h2 id="niveau-3---dbutant-suprieur">Niveau 3 - Débutant supérieur</h2>
-
-<p>Vous savez utiliser <code>i</code>, <code>a</code>, <code>o</code> et <code>O</code>. Mais vous n&rsquo;êtes toujours pas à l&rsquo;aise. Vous avez lancé vimtutor plusieurs fois. Il est temps de gagner un peu de vitesse.
-Voici les nouvelles commandes à apprendre. Une par jour sera déjà bien.</p>
-
 <ol>
-  <li><code>gg</code>  &rarr; Aller en début de page</li>
-  <li>N<code>g</code> &rarr; Aller à la ligne N</li>
+  <li>
+    <p>Les variantes de l&rsquo;insertion</p>
+
+    <blockquote>
+      <ul>
+        <li><code>a</code>&nbsp;: comme <code>i</code>, mais après la position du curseur.</li>
+        <li><code>o</code>&nbsp;: comme <code>i</code>, mais à la ligne suivante</li>
+        <li><code>O</code>&nbsp;: comme <code>o</code> mais ajoute la ligne avant.</li>
+        <li><code>cw</code>&nbsp;: remplacer le mot sous le curseur.</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>
+    <p>Déplacements basiques</p>
+
+    <blockquote>
+      <ul>
+        <li><code>0</code>&nbsp;: aller à la première colonne</li>
+        <li><code>^</code>&nbsp;: aller au premier caratère de la ligne</li>
+        <li><code>$</code>&nbsp;: aller à la fin de la ligne</li>
+        <li><code>/pattern</code>&nbsp;: rechercher <code>pattern</code> dans le fichier.</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>
+    <p>Copier/Coller</p>
+
+    <blockquote>
+      <ul>
+        <li><code>P</code>&nbsp;: Coller avant, souvenez-vous que <code>p</code> collait après la position du curseur.</li>
+        <li><code>yy</code>&nbsp;: copier la ligne courante. C&rsquo;est plus simple et équivalent à <code>ddP</code></li>
+      </ul>
+    </blockquote>
+  </li>
 </ol>
 
-<p><code>cw</code>&nbsp;: remplacer le mot sous le curseur
-<code>dw</code>&nbsp;: supprimer le mot sous le curseur
-<code>%</code>&nbsp;: Aller à la parenthèse opposée.</p>
+<h2 id="niveau-3---meilleur-plus-fort-plus-rapide">Niveau 3 - Meilleur. Plus fort. Plus rapide.</h2>
+
+<p>À partir de maintenant nous allons commencer à faire des choses difficile à faire dans les autres éditeurs. 
+N&rsquo;oubliez pas qu&rsquo;à la fin de cet article vous n&rsquo;aurez touché du doigt que la partie émerger du continent iceberg qu&rsquo;est vim. 
+Pour l&rsquo;instant la seule commande qui vous donne un avant goût de ce qu&rsquo;est la puissance de vim était <code>cw</code>. Qui permet de remplacer un mot.
+Nous allons maintenant nous intéresser à des commandes qui vont vous donner plus de pouvoir et d&rsquo;efficacité.
+Pour cette section, je vais seulement parler de choses qui était aussi disponible dans <code>vi</code>. Vim peut faire beaucoup d&rsquo;autres choses.</p>
+
+<p>Commençons par le premier super pouvoir de <code>vi</code>, éviter les répétitions (niveau 1):</p>
+
+<ol>
+  <li><code>.</code>&nbsp;: Le caractère point répètera la dernière commande.</li>
+  <li>N<commande>&nbsp;: répètera la commande N fois. </commande></li>
+</ol>
+
+<p>Quelques examples, ouvrez un fichier avec vim et tapez:</p>
+
+<blockquote>
+  <ul>
+    <li><code>2dd</code> &rarr; Supprimera 2 lignes</li>
+    <li><code>3p</code> &rarr; copiera 3 fois d&rsquo;affiler le texte copié</li>
+    <li><code>100idesu [ESC]</code> &rarr; écrira &ldquo;desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu &ldquo;</li>
+    <li><code>.</code> &rarr; Juste après la dernière commande  réécrira les 100 &ldquo;desu &ldquo;. </li>
+    <li><code>3.</code> &rarr; Écrira 3 &ldquo;desu&rdquo;.</li>
+  </ul>
+</blockquote>
+
+<p>Second super pouvoir de vim, les déplacements (niveau 1):
+Savoir se déplacer efficacement avec vim est <em>très</em> important, ne sautez pas cette section.</p>
+
+<ol>
+  <li>N<code>G</code> &rarr; Aller à la ligne N</li>
+  <li><code>gg</code> &rarr; raccourci pour <code>1G</code>, retourner au début du fichier</li>
+  <li><code>G</code>  &rarr; Aller à la dernière ligne.</li>
+  <li>
+    <p>Déplacement autour des mots:</p>
+
+    <blockquote>
+      <ol>
+        <li><code>w</code> &rarr; aller au début du mot suivant</li>
+        <li><code>e</code> &rarr; aller à la fin du mot courant</li>
+      </ol>
+
+      <p>Par défaut les mots sont seulement composés de lettres (et du caractère souligné <code>_</code>).
+Si vous voulez considérer les mots au sens &ldquo;jusqu&rsquo;au prochain espace&rdquo;, alors il suffit d&rsquo;utiliser les majuscules.</p>
+
+      <ol>
+        <li><code>W</code> &rarr; aller au début du mot &ldquo;étendu&rdquo; suivant</li>
+        <li><code>E</code> &rarr; aller à la fin du mot &ldquo;étendu&rdquo; courant</li>
+      </ol>
+    </blockquote>
+  </li>
+</ol>
+
+<p>Maintenant passons aux déplacement qui vont vous faire sentir vraiment meilleur&nbsp;:</p>
+
+<blockquote>
+  <ul>
+    <li><code>%</code>&nbsp;: Aller à la parenthèse, accolade, crochet correspondante.</li>
+    <li><code>*</code> (resp. <code>#</code>)&nbsp;: Aller à la prochaine (resp. précédente) occurrence du mot sous le curseur</li>
+  </ul>
+</blockquote>
+
+<p>Croyez moi, ces trois dernières commandes valent de l&rsquo;or.
+Retenez les, et vous gagnerez beaucoup de temps.</p>
 
 <h2 id="niveau-3---intermdiaire">Niveau 3 - Intermédiaire</h2>
 
