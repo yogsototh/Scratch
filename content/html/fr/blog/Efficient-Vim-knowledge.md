@@ -150,7 +150,7 @@ Déplacement sur la ligne : `0^$fFtT,;`
 > - `F` et `T` -> comme `f` et `t` mais en arrière.
 
 Sélection de blocs rectangulaires : `C-V`.
-
+s
 
 Les blocs rectangulaires sont très commodes pour commenter plusieurs lignes de codes.
 Typiquement: `^C-VC-dI// [ESC]`
@@ -159,6 +159,8 @@ Typiquement: `^C-VC-dI// [ESC]`
 - `C-V` -> Commencer la sélection du bloc
 - `C-d` -> se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
 - `I// [ESC]` -> écrit `// ` pour commenter le reste de la ligne.
+
+<%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
 
 Complétion : `C-n` et `C-p`.
 

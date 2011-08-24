@@ -237,7 +237,7 @@ en: > - `^` -> go to first character on the line
 en: > - `$` -> go to the last character on the line
 en: > - `fa` -> go to next occurrence of the letter `a` on the line. `,` will seek next occurrence.
 en: > - `t,` -> go just after the character `,`.
-en: > - `3fa` -> recherche la 3rd occurrence de `a`.
+en: > - `3fa` -> search the 3rd occurrence of `a` on this line.
 en: > - `F` and `T` -> like `f` and `t` but backward.
 fr: > - `0` -> aller à la colonne 0,
 fr: > - `^` -> aller au premier caractère de la ligne
@@ -249,7 +249,7 @@ fr: > - `F` et `T` -> comme `f` et `t` mais en arrière.
 
 en: Select rectangular blocs: `C-V`. 
 fr: Sélection de blocs rectangulaires : `C-V`.
-
+s
 en: Rectangular blocks are very useful to comment many lines of code.
 en: Typically: `0C-VC-dI// [ESC]`
 en: 
@@ -265,6 +265,8 @@ fr: - `^` -> aller en début de ligne
 fr: - `C-V` -> Commencer la sélection du bloc
 fr: - `C-d` -> se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
 fr: - `I// [ESC]` -> écrit `// ` pour commenter le reste de la ligne.
+
+<%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
 
 en: Completion: `C-n` and `C-p`.
 fr: Complétion : `C-n` et `C-p`.

@@ -146,11 +146,11 @@ Move on current line, any of: `0^$fFtT,;`
 > - `$` -> go to the last character on the line
 > - `fa` -> go to next occurrence of the letter `a` on the line. `,` will seek next occurrence.
 > - `t,` -> go just after the character `,`.
-> - `3fa` -> recherche la 3rd occurrence de `a`.
+> - `3fa` -> search the 3rd occurrence of `a` on this line.
 > - `F` and `T` -> like `f` and `t` but backward.
 
 Select rectangular blocs: `C-V`. 
-
+s
 Rectangular blocks are very useful to comment many lines of code.
 Typically: `0C-VC-dI// [ESC]`
 
@@ -159,6 +159,8 @@ Typically: `0C-VC-dI// [ESC]`
 - `C-d` -> move down (could also be `jjj` or `%`, etc...)
 - `I// [ESC]` -> write `// ` to comment each line
 
+
+<%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
 
 Completion: `C-n` and `C-p`.
 
