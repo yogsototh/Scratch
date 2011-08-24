@@ -90,6 +90,11 @@ Vous connaissez les commandes de survie. Passons à des commandes pour être un 
     > - `P`  -> Coller avant, souvenez-vous que `p` collait après la position du curseur.
     > - `yy` -> copier la ligne courante. C'est plus simple et équivalent à `ddP`
 
+4. Annuler/Refaire
+
+> - `u` -> Annuler (undo)
+> - `C-r` -> Refaire
+
 ## Niveau 3 - Meilleur. Plus fort. Plus rapide.
 
 Bravo ! Si vous êtes arrivé jusqu'ici nous allons pouvoir commencer à apprendre les choses vraiment intéressantes.

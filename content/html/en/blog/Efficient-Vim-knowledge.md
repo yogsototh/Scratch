@@ -91,6 +91,11 @@ I suggest:
     > - `P`  -> copy before, remember `p` is copy after current position.
     > - `yy` -> copy current line, easier but equivalent to `ddP`
 
+4. Undo/Redo
+
+> - `u` -> undo
+> - `C-r` -> redo
+
 ## Level 3 - Better. Stronger. Faster.
 
 Congratulation! If you managed to go until here, we can start the interresting stuff.

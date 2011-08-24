@@ -145,6 +145,15 @@ fr:
 fr:     > - `P`  -> Coller avant, souvenez-vous que `p` collait après la position du curseur.
 fr:     > - `yy` -> copier la ligne courante. C'est plus simple et équivalent à `ddP`
 
+en: 4. Undo/Redo
+en: 
+en: > - `u` -> undo
+en: > - `C-r` -> redo
+fr: 4. Annuler/Refaire
+fr: 
+fr: > - `u` -> Annuler (undo)
+fr: > - `C-r` -> Refaire
+
 en: ## Level 3 - Better. Stronger. Faster.
 fr: ## Niveau 3 - Meilleur. Plus fort. Plus rapide.
 
