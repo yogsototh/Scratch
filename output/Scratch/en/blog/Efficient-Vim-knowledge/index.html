@@ -136,10 +136,10 @@ I suggest:</p>
 
     <blockquote>
       <ul>
-        <li><code>a</code>: insert <em>after</em> the cursor</li>
-        <li><code>o</code>: insert a new line after the current one</li>
-        <li><code>O</code>: insert a new line before the current one</li>
-        <li><code>cw</code>: replace the word under the cursor</li>
+        <li><code>a</code>     &rarr; insert <em>after</em> the cursor</li>
+        <li><code>o</code>     &rarr; insert a new line after the current one</li>
+        <li><code>O</code>     &rarr; insert a new line before the current one</li>
+        <li><code>cw</code>    &rarr; replace the word under the cursor</li>
       </ul>
     </blockquote>
   </li>
@@ -148,10 +148,10 @@ I suggest:</p>
 
     <blockquote>
       <ul>
-        <li><code>0</code>&nbsp;: go to first column</li>
-        <li><code>^</code>&nbsp;: go to first character of the line</li>
-        <li><code>$</code>&nbsp;: go to the end of line</li>
-        <li><code>/pattern</code>&nbsp;: search for <code>pattern</code> </li>
+        <li><code>0</code>         &rarr; go to first column</li>
+        <li><code>^</code>         &rarr; go to first character of the line</li>
+        <li><code>$</code>         &rarr; go to the end of line</li>
+        <li><code>/pattern</code>  &rarr; search for <code>pattern</code> </li>
       </ul>
     </blockquote>
   </li>
@@ -160,8 +160,8 @@ I suggest:</p>
 
     <blockquote>
       <ul>
-        <li><code>P</code>: copy before, remember <code>p</code> is copy after current position.</li>
-        <li><code>yy</code>: copy current line, easier but equivalent to <code>ddP</code></li>
+        <li><code>P</code>  &rarr; copy before, remember <code>p</code> is copy after current position.</li>
+        <li><code>yy</code> &rarr; copy current line, easier but equivalent to <code>ddP</code></li>
       </ul>
     </blockquote>
   </li>
@@ -169,86 +169,147 @@ I suggest:</p>
 
 <h2 id="level-3---better-stronger-faster">Level 3 - Better. Stronger. Faster.</h2>
 
-<p>À partir de maintenant nous allons commencer à faire des choses difficile à faire dans les autres éditeurs. 
-N&rsquo;oubliez pas qu&rsquo;à la fin de cet article vous n&rsquo;aurez touché du doigt que la partie émerger du continent iceberg qu&rsquo;est vim. 
-Pour l&rsquo;instant la seule commande qui vous donne un avant goût de ce qu&rsquo;est la puissance de vim était <code>cw</code>. Qui permet de remplacer un mot.
-Nous allons maintenant nous intéresser à des commandes qui vont vous donner plus de pouvoir et d&rsquo;efficacité.
-Pour cette section, je vais seulement parler de choses qui était aussi disponible dans <code>vi</code>. Vim peut faire beaucoup d&rsquo;autres choses.</p>
+<p>Congratulation! If you managed to go until here, we can start the interresting stuff.
+At level 3, we&rsquo;ll only talk about command which are compatible in the old <code>vi</code>.</p>
 
-<p>Commençons par le premier super pouvoir de <code>vi</code>, éviter les répétitions (niveau 1):</p>
+<p>Lets start by the first <code>vi</code> super-power. Limit to repeat yourself (basic):</p>
 
 <ol>
-  <li><code>.</code>&nbsp;: Le caractère point répètera la dernière commande.</li>
-  <li>N<commande>&nbsp;: répètera la commande N fois. </commande></li>
+  <li><code>.</code> &rarr; (dot) will repeat the last command,</li>
+  <li>N&lt;command&gt; &rarr; will do the command N times.</li>
 </ol>
 
-<p>Quelques examples, ouvrez un fichier avec vim et tapez:</p>
+<p>Some examples, open a file and type:</p>
 
 <blockquote>
   <ul>
-    <li><code>2dd</code> &rarr; Supprimera 2 lignes</li>
-    <li><code>3p</code> &rarr; copiera 3 fois d&rsquo;affiler le texte copié</li>
-    <li><code>100idesu [ESC]</code> &rarr; écrira &ldquo;desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu &ldquo;</li>
-    <li><code>.</code> &rarr; Juste après la dernière commande  réécrira les 100 &ldquo;desu &ldquo;. </li>
-    <li><code>3.</code> &rarr; Écrira 3 &ldquo;desu&rdquo;.</li>
+    <li><code>2dd</code> &rarr; will delete 2 lines</li>
+    <li><code>3p</code> &rarr; will paste the text 3 times</li>
+    <li><code>100idesu [ESC]</code> &rarr; will write &ldquo;desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu &ldquo;</li>
+    <li><code>.</code> &rarr; Just after the last command  will write again the 100 &ldquo;desu &ldquo;. </li>
+    <li><code>3.</code> &rarr; Will write 3 &ldquo;desu&rdquo; (and not 300, how clever).</li>
   </ul>
 </blockquote>
 
-<p>Second super pouvoir de vim, les déplacements (niveau 1):
-Savoir se déplacer efficacement avec vim est <em>très</em> important, ne sautez pas cette section.</p>
+<p>Second vi super power, moving (basic):
+Knowing how to move efficiently with vim is <em>very</em> important. Do not jump this section.</p>
 
 <ol>
-  <li>N<code>G</code> &rarr; Aller à la ligne N</li>
-  <li><code>gg</code> &rarr; raccourci pour <code>1G</code>, retourner au début du fichier</li>
-  <li><code>G</code>  &rarr; Aller à la dernière ligne.</li>
+  <li>N<code>G</code> &rarr; Go to line N</li>
+  <li><code>gg</code> &rarr; shortcut for <code>1G</code>, go to the start of the file</li>
+  <li><code>G</code>  &rarr; Go to last line</li>
   <li>
-    <p>Déplacement autour des mots:</p>
+    <p>Word moves:</p>
 
     <blockquote>
       <ol>
-        <li><code>w</code> &rarr; aller au début du mot suivant</li>
-        <li><code>e</code> &rarr; aller à la fin du mot courant</li>
+        <li><code>w</code> &rarr; go to the start of the following word,</li>
+        <li><code>e</code> &rarr; go to the end of this word.</li>
       </ol>
 
-      <p>Par défaut les mots sont seulement composés de lettres (et du caractère souligné <code>_</code>).
-Si vous voulez considérer les mots au sens &ldquo;jusqu&rsquo;au prochain espace&rdquo;, alors il suffit d&rsquo;utiliser les majuscules.</p>
+      <p>By default, word are composed of letter and the underscore character.
+If you want to use word in the meaning of group of letter separated by spaces, just use uppercases:</p>
 
       <ol>
-        <li><code>W</code> &rarr; aller au début du mot &ldquo;étendu&rdquo; suivant</li>
-        <li><code>E</code> &rarr; aller à la fin du mot &ldquo;étendu&rdquo; courant</li>
+        <li><code>W</code> &rarr; go to the start of the following &ldquo;extended&rdquo; word,</li>
+        <li><code>E</code> &rarr; go to the end of this &ldquo;extended&rdquo; word.</li>
       </ol>
     </blockquote>
   </li>
 </ol>
 
-<p>Maintenant passons aux déplacement qui vont vous faire sentir vraiment meilleur&nbsp;:</p>
+<p>Now lets talk about very efficient moves:</p>
 
 <blockquote>
   <ul>
-    <li><code>%</code>&nbsp;: Aller à la parenthèse, accolade, crochet correspondante.</li>
-    <li><code>*</code> (resp. <code>#</code>)&nbsp;: Aller à la prochaine (resp. précédente) occurrence du mot sous le curseur</li>
+    <li><code>%</code>&nbsp;: Go to corresponding <code>(</code>, <code>{</code>, <code>[</code>.</li>
+    <li><code>*</code> (resp. <code>#</code>)&nbsp;: go to next (resp. previous) occurrence of the word under the cursor</li>
   </ul>
 </blockquote>
 
-<p>Croyez moi, ces trois dernières commandes valent de l&rsquo;or.
-Retenez les, et vous gagnerez beaucoup de temps.</p>
+<p>Believe me, these last three command are gold.</p>
 
-<h2 id="niveau-3---intermdiaire">Niveau 3 - Intermédiaire</h2>
+<h2 id="level-4---power-overwhelming">Level 4 - Power Overwhelming</h2>
 
-<p>À partir de maintenant, je vais vous donner les commandes que j&rsquo;utilise le plus souvent et qui vont vous faire gagner beaucoup de temps.</p>
+<p>With all preceding commands you should be comfortable to use vim.
+But now, here are the killer features.
+Some of these features were the reason I started to use vim.</p>
 
-<p><code>S-V</code>&nbsp;: Sélectionner des lignes
-    &rarr; d les supprimer + copier
-    &rarr; </p>
+<p>Move on current line, any of: <code>0^$fFtT,;</code></p>
 
-<p><code>C-t</code>&nbsp;: Ajoute une tabulation
-<code>C-d</code>&nbsp;: Supprime une tabulation</p>
+<blockquote>
+  <ul>
+    <li><code>0</code> &rarr; go to column 0</li>
+    <li><code>^</code> &rarr; go to first character on the line</li>
+    <li><code>$</code> &rarr; go to the last character on the line</li>
+    <li><code>fa</code> &rarr; go to next occurrence of the letter <code>a</code> on the line. <code>,</code> will seek next occurrence.</li>
+    <li><code>t,</code> &rarr; go just after the character <code>,</code>.</li>
+    <li><code>3fa</code> &rarr; recherche la 3<sup>rd</sup> occurrence de <code>a</code>.</li>
+    <li><code>F</code> and <code>T</code> &rarr; like <code>f</code> and <code>t</code> but backward.</li>
+  </ul>
+</blockquote>
 
-<p><code>C-v I</code>&nbsp;: Ajoute du texte à toutes les lignes sélectionnées
-<code>C-v c</code>&nbsp;: Remplace le bloc et répètera le contenu sur toutes les lignes.</p>
+<p>Select rectangular blocs: <code>C-V</code>. </p>
 
-<p><code>*</code>&nbsp;: Chercher la prochaine occurence du mot sous le curseur
-<code>#</code>&nbsp;: comme <code>*</code> mais dans le sens contraire</p>
+<p>Rectangular blocks are very useful to comment many lines of code.
+Typically: <code>0C-VC-dI// [ESC]</code></p>
+
+<ul>
+  <li><code>^</code> &rarr; go to start of the line</li>
+  <li><code>C-V</code> &rarr; Start block selection</li>
+  <li><code>C-d</code> &rarr; move down (could also be <code>jjj</code> or <code>%</code>, etc&hellip;)</li>
+  <li><code>I// [ESC]</code> &rarr; write <code>// </code> to comment each line</li>
+</ul>
+
+<p>Completion: <code>C-n</code> and <code>C-p</code>.</p>
+
+<p>In insertion mode, just type the start of a word, then type <code>C-p</code>, magic&hellip;</p>
+
+<p>Macros&nbsp;: <code>qa</code> do something <code>qq</code>, then <code>@a</code> (also <code>@@</code>, repeat the last <code>@x</code>).</p>
+
+<p><code>qa</code> record your actions in the <em>register</em> <code>a</code>. Then <code>@a</code> will replay the macro saved into the register <code>a</code> as if you typed it.</p>
+
+<blockquote>
+  <p>Example:
+On a line containing only a number type this:
+<code>qaYpC-aqq</code> &rarr; <code>qa</code> start recording. <code>Yp</code> duplicate this line. <code>C-a</code> increment the number. <code>qq</code> stop recording.</p>
+
+  <p>Now a <code>10@a</code> will create a list of increasing numbers.</p>
+</blockquote>
+
+<p>But also,</p>
+
+<p>Visual selection</p>
+
+<p>We saw an example with <code>C-V</code>. 
+There is also <code>v</code> and <code>V</code>.
+Once the selection made, you can:</p>
+
+<ul>
+  <li><code>=</code> &rarr; auto indent</li>
+  <li><code>&lt;</code> (resp. <code>&gt;</code>) &rarr; indent to the left (resp. to the right).</li>
+  <li><code>J</code> &rarr; join all lines together.</li>
+</ul>
+
+<p>Add something at the end of all visually selected lignes:</p>
+
+<ul>
+  <li><code>S-V</code> </li>
+  <li>go to desired line (<code>jjj</code> or <code>C-d</code> or <code>/pattern</code> or <code>%</code> etc&hellip;)</li>
+  <li><code>$</code> go to the end of line</li>
+  <li><code>A</code>, write texte, <code>ESC</code>.</li>
+</ul>
+
+<p>Splits&nbsp;: <code>:split</code> and <code>vsplit</code>. You should look at <code>:help split</code></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Voilà, je vous ai donné 90% des commandes que j&rsquo;utilise tous les jours.
+N&rsquo;essayez pas de tout apprendre en une journée. 
+Il faut le temps de s&rsquo;habituer à chaque nouvelle commande. 
+Ajouter une ou deux commande par jour tous les jours est un bon exercice.
+Dans 1 mois vous en connaitrez au moins autant que moi.
+And keep in mind I am not a vim master, just a regular user.</p>
 
                 </div>
             
@@ -322,7 +383,7 @@ Retenez les, et vous gagnerez beaucoup de temps.</p>
                 </div>
                 <div id="lastmod">
                     Created: 08/18/2011
-                    Modified: 08/19/2011 
+                    Modified: 08/22/2011 
                 </div>
                 <div>
                     Entirely done with

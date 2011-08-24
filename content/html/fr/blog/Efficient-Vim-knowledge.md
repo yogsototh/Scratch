@@ -73,45 +73,42 @@ Vous connaissez les commandes de survie. Passons à des commandes pour être un 
 
 1. Les variantes de l'insertion
 
-    > - `a` : comme `i`, mais après la position du curseur.
-    > - `o` : comme `i`, mais à la ligne suivante
-    > - `O` : comme `o` mais ajoute la ligne avant.
-    > - `cw` : remplacer le mot sous le curseur.
+    > - `a`     -> comme `i`, mais après la position du curseur.
+    > - `o`     -> comme `i`, mais à la ligne suivante
+    > - `O`     -> comme `o` mais ajoute la ligne avant.
+    > - `cw`    -> remplacer le mot sous le curseur.
 
 2. Déplacements basiques
 
-    > - `0` : aller à la première colonne
-    > - `^` : aller au premier caratère de la ligne
-    > - `$` : aller à la fin de la ligne
-    > - `/pattern` : rechercher `pattern` dans le fichier.
+    > - `0`         -> aller à la première colonne
+    > - `^`         -> aller au premier caratère de la ligne
+    > - `$`         -> aller à la fin de la ligne
+    > - `/pattern`  -> rechercher `pattern` dans le fichier.
 
 3. Copier/Coller
 
-    > - `P` : Coller avant, souvenez-vous que `p` collait après la position du curseur.
-    > - `yy` : copier la ligne courante. C'est plus simple et équivalent à `ddP`
+    > - `P`  -> Coller avant, souvenez-vous que `p` collait après la position du curseur.
+    > - `yy` -> copier la ligne courante. C'est plus simple et équivalent à `ddP`
 
 ## Niveau 3 - Meilleur. Plus fort. Plus rapide.
 
-À partir de maintenant nous allons commencer à faire des choses difficile à faire dans les autres éditeurs. 
-N'oubliez pas qu'à la fin de cet article vous n'aurez touché du doigt que la partie émerger du continent iceberg qu'est vim. 
-Pour l'instant la seule commande qui vous donne un avant goût de ce qu'est la puissance de vim était `cw`. Qui permet de remplacer un mot.
-Nous allons maintenant nous intéresser à des commandes qui vont vous donner plus de pouvoir et d'efficacité.
-Pour cette section, je vais seulement parler de choses qui était aussi disponible dans `vi`. Vim peut faire beaucoup d'autres choses.
+Bravo ! Si vous êtes arrivé jusqu'ici nous allons pouvoir commencer à apprendre les choses vraiment intéressantes.
+Pour cette section, je vais seulement parler de choses qui sont aussi disponible dans le vieux `vi`. 
 
 Commençons par le premier super pouvoir de `vi`, éviter les répétitions (niveau 1):
 
-1. `.` : Le caractère point répètera la dernière commande.
-2. N<commande> : répètera la commande N fois. 
+1. `.` -> Le caractère point répètera la dernière commande.
+2. N&lt;commande&gt; -> répètera la commande N fois. 
 
-Quelques examples, ouvrez un fichier avec vim et tapez:
+Quelques exemples, ouvrez un fichier avec vim et tapez :
 
 > - `2dd` -> Supprimera 2 lignes
 > - `3p` -> copiera 3 fois d'affiler le texte copié
 > - `100idesu [ESC]` -> écrira "desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu "
 > - `.` -> Juste après la dernière commande  réécrira les 100 "desu ". 
-> - `3.` -> Écrira 3 "desu".
+> - `3.` -> Écrira 3 "desu" et non pas 300.
 
-Second super pouvoir de vim, les déplacements (niveau 1):
+Second super pouvoir de vim, les déplacements (niveau 1) :
 Savoir se déplacer efficacement avec vim est _très_ important, ne sautez pas cette section.
 
 1. N`G` -> Aller à la ligne N
@@ -136,20 +133,68 @@ Maintenant passons aux déplacement qui vont vous faire sentir vraiment meilleur
 Croyez moi, ces trois dernières commandes valent de l'or.
 Retenez les, et vous gagnerez beaucoup de temps.
 
-## Niveau 3 - Intermédiaire 
+## Niveau 4 - Power Overwhelming
 
-À partir de maintenant, je vais vous donner les commandes que j'utilise le plus souvent et qui vont vous faire gagner beaucoup de temps.
+Avec toutes les commandes précédentes vous avez presque toutes les commandes que j'utilise tous les jours. 
+Mais voici les killer features de vim. 
+Celles que je n'ai retrouvé que dans vim (ou presque).
 
-`S-V` : Sélectionner des lignes
-    -> d les supprimer + copier
-    -> 
+Déplacement sur la ligne : `0^$fFtT,;`
 
-`C-t` : Ajoute une tabulation
-`C-d` : Supprime une tabulation
+> - `0` -> aller à la colonne 0,
+> - `^` -> aller au premier caractère de la ligne
+> - `$` -> aller au dernier caractère de la ligne
+> - `fa` -> vous amène à la prochaine occurrence de a sur la ligne courante. `,` recherche l'occurrence suivante.
+> - `t,` -> vous amène juste après le `,`.
+> - `3fa` -> recherche la 3ième occurrence de `a`.
+> - `F` et `T` -> comme `f` et `t` mais en arrière.
 
-`C-v I` : Ajoute du texte à toutes les lignes sélectionnées
-`C-v c` : Remplace le bloc et répètera le contenu sur toutes les lignes.
+Sélection de blocs rectangulaires : `C-V`.
 
-`*` : Chercher la prochaine occurence du mot sous le curseur
-`#` : comme `*` mais dans le sens contraire
+
+Les blocs rectangulaires sont très commodes pour commenter plusieurs lignes de codes.
+Typiquement: `^C-VC-dI// [ESC]`
+
+- `^` -> aller en début de ligne
+- `C-V` -> Commencer la sélection du bloc
+- `C-d` -> se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
+- `I// [ESC]` -> écrit `// ` pour commenter le reste de la ligne.
+
+Complétion : `C-n` et `C-p`.
+
+En mode insertion, commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `C-p`. Magique.
+
+Macros : `qa` faire quelque chose `qq`. `@a`, puis `@@`.
+
+`qa` enregistre tout ce que vous faite et enregistre le tout dans le _registre_ `a`. Ensuite `@a` va rejouer la macro enregistrée dans le registre `a` comme si c'est vous qui tapiez au clavier.
+
+> Exemple :
+> Sur une ligne contenant seulement un nombre tapez :
+> `qaYpC-aqq` -> `qa` début de l'enregistrement. `Yp` copier cette ligne. `C-a` incrémente le nombre. `qq` arrête d'enregistrer.
+> 
+> Maintenant essayez `10@a`. Cela va créer une liste de nombre croissants.
+
+Mais aussi,
+
+Sélection visuelle.
+
+On a déjà vu un exemple avec `C-V`. 
+Mais il y a aussi, `v` et `V`.
+Et une fois la sélection visuelle faite vous pouvez par exemple:
+
+- `=` -> auto indenter
+- `<` (resp. `>`) -> indenter à gauche (resp. à droite).
+- `J` -> joindre toutes les lignes pour en faire une seule
+
+Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellement : 
+
+- `S-V` 
+- aller jusqu'à la ligne désirée (`jjj` ou `C-d` ou `/pattern` ou `%` etc...)
+- `$` aller à la fin 
+- `A`, écrire le texte, `Echap`.
+
+Splits : `:split` et `vsplit`. Pour en savoir plus faite un `:help split`
+
+## Conclusion
+
 

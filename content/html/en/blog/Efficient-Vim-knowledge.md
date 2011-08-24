@@ -74,83 +74,133 @@ I suggest:
 
 1. Insertion mode variations:
 
-    > - `a`: insert _after_ the cursor
-    > - `o`: insert a new line after the current one
-    > - `O`: insert a new line before the current one
-    > - `cw`: replace the word under the cursor
+    > - `a`     -> insert _after_ the cursor
+    > - `o`     -> insert a new line after the current one
+    > - `O`     -> insert a new line before the current one
+    > - `cw`    -> replace the word under the cursor
 
 2. Basic moves
 
-    > - `0` : go to first column
-    > - `^` : go to first character of the line
-    > - `$` : go to the end of line
-    > - `/pattern` : search for `pattern` 
+    > - `0`         -> go to first column
+    > - `^`         -> go to first character of the line
+    > - `$`         -> go to the end of line
+    > - `/pattern`  -> search for `pattern` 
 
 3. Copy/Paste
 
-    > - `P`: copy before, remember `p` is copy after current position.
-    > - `yy`: copy current line, easier but equivalent to `ddP`
+    > - `P`  -> copy before, remember `p` is copy after current position.
+    > - `yy` -> copy current line, easier but equivalent to `ddP`
 
 ## Level 3 - Better. Stronger. Faster.
 
-À partir de maintenant nous allons commencer à faire des choses difficile à faire dans les autres éditeurs. 
-N'oubliez pas qu'à la fin de cet article vous n'aurez touché du doigt que la partie émerger du continent iceberg qu'est vim. 
-Pour l'instant la seule commande qui vous donne un avant goût de ce qu'est la puissance de vim était `cw`. Qui permet de remplacer un mot.
-Nous allons maintenant nous intéresser à des commandes qui vont vous donner plus de pouvoir et d'efficacité.
-Pour cette section, je vais seulement parler de choses qui était aussi disponible dans `vi`. Vim peut faire beaucoup d'autres choses.
+Congratulation! If you managed to go until here, we can start the interresting stuff.
+At level 3, we'll only talk about command which are compatible in the old `vi`.
 
-Commençons par le premier super pouvoir de `vi`, éviter les répétitions (niveau 1):
+Lets start by the first `vi` super-power. Limit to repeat yourself (basic):
 
-1. `.` : Le caractère point répètera la dernière commande.
-2. N<commande> : répètera la commande N fois. 
+1. `.` -> (dot) will repeat the last command,
+2. N&lt;command&gt; -> will do the command N times.
 
-Quelques examples, ouvrez un fichier avec vim et tapez:
+Some examples, open a file and type:
 
-> - `2dd` -> Supprimera 2 lignes
-> - `3p` -> copiera 3 fois d'affiler le texte copié
-> - `100idesu [ESC]` -> écrira "desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu "
-> - `.` -> Juste après la dernière commande  réécrira les 100 "desu ". 
-> - `3.` -> Écrira 3 "desu".
+> - `2dd` -> will delete 2 lines
+> - `3p` -> will paste the text 3 times
+> - `100idesu [ESC]` -> will write "desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu "
+> - `.` -> Just after the last command  will write again the 100 "desu ". 
+> - `3.` -> Will write 3 "desu" (and not 300, how clever).
 
-Second super pouvoir de vim, les déplacements (niveau 1):
-Savoir se déplacer efficacement avec vim est _très_ important, ne sautez pas cette section.
+Second vi super power, moving (basic):
+Knowing how to move efficiently with vim is _very_ important. Do not jump this section.
 
-1. N`G` -> Aller à la ligne N
-2. `gg` -> raccourci pour `1G`, retourner au début du fichier
-3. `G`  -> Aller à la dernière ligne.
-4. Déplacement autour des mots:
+1. N`G` -> Go to line N
+2. `gg` -> shortcut for `1G`, go to the start of the file
+3. `G`  -> Go to last line
+4. Word moves:
 
-    > 1. `w` -> aller au début du mot suivant
-    > 2. `e` -> aller à la fin du mot courant
+    > 1. `w` -> go to the start of the following word,
+    > 2. `e` -> go to the end of this word.
     >
-    > Par défaut les mots sont seulement composés de lettres (et du caractère souligné `_`).
-    > Si vous voulez considérer les mots au sens "jusqu'au prochain espace", alors il suffit d'utiliser les majuscules.
+    > By default, word are composed of letter and the underscore character.
+    > If you want to use word in the meaning of group of letter separated by spaces, just use uppercases:
     >
-    > 1. `W` -> aller au début du mot "étendu" suivant
-    > 2. `E` -> aller à la fin du mot "étendu" courant
+    > 1. `W` -> go to the start of the following "extended" word,
+    > 2. `E` -> go to the end of this "extended" word.
 
-Maintenant passons aux déplacement qui vont vous faire sentir vraiment meilleur :
+Now lets talk about very efficient moves:
 
-> - `%` : Aller à la parenthèse, accolade, crochet correspondante.
-> - `*` (resp. `#`) : Aller à la prochaine (resp. précédente) occurrence du mot sous le curseur
+> - `%` : Go to corresponding `(`, `{`, `[`.
+> - `*` (resp. `#`) : go to next (resp. previous) occurrence of the word under the cursor
 
-Croyez moi, ces trois dernières commandes valent de l'or.
-Retenez les, et vous gagnerez beaucoup de temps.
+Believe me, these last three command are gold.
 
-## Niveau 3 - Intermédiaire 
+## Level 4 - Power Overwhelming
 
-À partir de maintenant, je vais vous donner les commandes que j'utilise le plus souvent et qui vont vous faire gagner beaucoup de temps.
+With all preceding commands you should be comfortable to use vim.
+But now, here are the killer features.
+Some of these features were the reason I started to use vim.
 
-`S-V` : Sélectionner des lignes
-    -> d les supprimer + copier
-    -> 
+Move on current line, any of: `0^$fFtT,;`
 
-`C-t` : Ajoute une tabulation
-`C-d` : Supprime une tabulation
+> - `0` -> go to column 0
+> - `^` -> go to first character on the line
+> - `$` -> go to the last character on the line
+> - `fa` -> go to next occurrence of the letter `a` on the line. `,` will seek next occurrence.
+> - `t,` -> go just after the character `,`.
+> - `3fa` -> recherche la 3rd occurrence de `a`.
+> - `F` and `T` -> like `f` and `t` but backward.
 
-`C-v I` : Ajoute du texte à toutes les lignes sélectionnées
-`C-v c` : Remplace le bloc et répètera le contenu sur toutes les lignes.
+Select rectangular blocs: `C-V`. 
 
-`*` : Chercher la prochaine occurence du mot sous le curseur
-`#` : comme `*` mais dans le sens contraire
+Rectangular blocks are very useful to comment many lines of code.
+Typically: `0C-VC-dI// [ESC]`
+
+- `^` -> go to start of the line
+- `C-V` -> Start block selection
+- `C-d` -> move down (could also be `jjj` or `%`, etc...)
+- `I// [ESC]` -> write `// ` to comment each line
+
+
+Completion: `C-n` and `C-p`.
+
+In insertion mode, just type the start of a word, then type `C-p`, magic...
+
+Macros : `qa` do something `qq`, then `@a` (also `@@`, repeat the last `@x`).
+
+`qa` record your actions in the _register_ `a`. Then `@a` will replay the macro saved into the register `a` as if you typed it.
+
+> Example:
+> On a line containing only a number type this:
+> `qaYpC-aqq` -> `qa` start recording. `Yp` duplicate this line. `C-a` increment the number. `qq` stop recording.
+> 
+> Now a `10@a` will create a list of increasing numbers.
+
+But also,
+
+Visual selection
+
+We saw an example with `C-V`. 
+There is also `v` and `V`.
+Once the selection made, you can:
+
+- `=` -> auto indent
+- `<` (resp. `>`) -> indent to the left (resp. to the right).
+- `J` -> join all lines together.
+
+Add something at the end of all visually selected lignes:
+
+- `S-V` 
+- go to desired line (`jjj` or `C-d` or `/pattern` or `%` etc...)
+- `$` go to the end of line
+- `A`, write texte, `ESC`.
+
+Splits : `:split` and `vsplit`. You should look at `:help split`
+
+## Conclusion
+
+Voilà, je vous ai donné 90% des commandes que j'utilise tous les jours.
+N'essayez pas de tout apprendre en une journée. 
+Il faut le temps de s'habituer à chaque nouvelle commande. 
+Ajouter une ou deux commande par jour tous les jours est un bon exercice.
+Dans 1 mois vous en connaitrez au moins autant que moi.
+And keep in mind I am not a vim master, just a regular user.
 

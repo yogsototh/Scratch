@@ -135,10 +135,10 @@ Vous pouvez passer à l&rsquo;étape d&rsquo;après. </p>
 
     <blockquote>
       <ul>
-        <li><code>a</code>&nbsp;: comme <code>i</code>, mais après la position du curseur.</li>
-        <li><code>o</code>&nbsp;: comme <code>i</code>, mais à la ligne suivante</li>
-        <li><code>O</code>&nbsp;: comme <code>o</code> mais ajoute la ligne avant.</li>
-        <li><code>cw</code>&nbsp;: remplacer le mot sous le curseur.</li>
+        <li><code>a</code>     &rarr; comme <code>i</code>, mais après la position du curseur.</li>
+        <li><code>o</code>     &rarr; comme <code>i</code>, mais à la ligne suivante</li>
+        <li><code>O</code>     &rarr; comme <code>o</code> mais ajoute la ligne avant.</li>
+        <li><code>cw</code>    &rarr; remplacer le mot sous le curseur.</li>
       </ul>
     </blockquote>
   </li>
@@ -147,10 +147,10 @@ Vous pouvez passer à l&rsquo;étape d&rsquo;après. </p>
 
     <blockquote>
       <ul>
-        <li><code>0</code>&nbsp;: aller à la première colonne</li>
-        <li><code>^</code>&nbsp;: aller au premier caratère de la ligne</li>
-        <li><code>$</code>&nbsp;: aller à la fin de la ligne</li>
-        <li><code>/pattern</code>&nbsp;: rechercher <code>pattern</code> dans le fichier.</li>
+        <li><code>0</code>         &rarr; aller à la première colonne</li>
+        <li><code>^</code>         &rarr; aller au premier caratère de la ligne</li>
+        <li><code>$</code>         &rarr; aller à la fin de la ligne</li>
+        <li><code>/pattern</code>  &rarr; rechercher <code>pattern</code> dans le fichier.</li>
       </ul>
     </blockquote>
   </li>
@@ -159,8 +159,8 @@ Vous pouvez passer à l&rsquo;étape d&rsquo;après. </p>
 
     <blockquote>
       <ul>
-        <li><code>P</code>&nbsp;: Coller avant, souvenez-vous que <code>p</code> collait après la position du curseur.</li>
-        <li><code>yy</code>&nbsp;: copier la ligne courante. C&rsquo;est plus simple et équivalent à <code>ddP</code></li>
+        <li><code>P</code>  &rarr; Coller avant, souvenez-vous que <code>p</code> collait après la position du curseur.</li>
+        <li><code>yy</code> &rarr; copier la ligne courante. C&rsquo;est plus simple et équivalent à <code>ddP</code></li>
       </ul>
     </blockquote>
   </li>
@@ -168,20 +168,17 @@ Vous pouvez passer à l&rsquo;étape d&rsquo;après. </p>
 
 <h2 id="niveau-3---meilleur-plus-fort-plus-rapide">Niveau 3 - Meilleur. Plus fort. Plus rapide.</h2>
 
-<p>À partir de maintenant nous allons commencer à faire des choses difficile à faire dans les autres éditeurs. 
-N&rsquo;oubliez pas qu&rsquo;à la fin de cet article vous n&rsquo;aurez touché du doigt que la partie émerger du continent iceberg qu&rsquo;est vim. 
-Pour l&rsquo;instant la seule commande qui vous donne un avant goût de ce qu&rsquo;est la puissance de vim était <code>cw</code>. Qui permet de remplacer un mot.
-Nous allons maintenant nous intéresser à des commandes qui vont vous donner plus de pouvoir et d&rsquo;efficacité.
-Pour cette section, je vais seulement parler de choses qui était aussi disponible dans <code>vi</code>. Vim peut faire beaucoup d&rsquo;autres choses.</p>
+<p>Bravo&nbsp;! Si vous êtes arrivé jusqu&rsquo;ici nous allons pouvoir commencer à apprendre les choses vraiment intéressantes.
+Pour cette section, je vais seulement parler de choses qui sont aussi disponible dans le vieux <code>vi</code>. </p>
 
 <p>Commençons par le premier super pouvoir de <code>vi</code>, éviter les répétitions (niveau 1):</p>
 
 <ol>
-  <li><code>.</code>&nbsp;: Le caractère point répètera la dernière commande.</li>
-  <li>N<commande>&nbsp;: répètera la commande N fois. </commande></li>
+  <li><code>.</code> &rarr; Le caractère point répètera la dernière commande.</li>
+  <li>N&lt;commande&gt; &rarr; répètera la commande N fois. </li>
 </ol>
 
-<p>Quelques examples, ouvrez un fichier avec vim et tapez:</p>
+<p>Quelques exemples, ouvrez un fichier avec vim et tapez&nbsp;:</p>
 
 <blockquote>
   <ul>
@@ -189,11 +186,11 @@ Pour cette section, je vais seulement parler de choses qui était aussi disponib
     <li><code>3p</code> &rarr; copiera 3 fois d&rsquo;affiler le texte copié</li>
     <li><code>100idesu [ESC]</code> &rarr; écrira &ldquo;desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu &ldquo;</li>
     <li><code>.</code> &rarr; Juste après la dernière commande  réécrira les 100 &ldquo;desu &ldquo;. </li>
-    <li><code>3.</code> &rarr; Écrira 3 &ldquo;desu&rdquo;.</li>
+    <li><code>3.</code> &rarr; Écrira 3 &ldquo;desu&rdquo; et non pas 300.</li>
   </ul>
 </blockquote>
 
-<p>Second super pouvoir de vim, les déplacements (niveau 1):
+<p>Second super pouvoir de vim, les déplacements (niveau 1)&nbsp;:
 Savoir se déplacer efficacement avec vim est <em>très</em> important, ne sautez pas cette section.</p>
 
 <ol>
@@ -232,22 +229,80 @@ Si vous voulez considérer les mots au sens &ldquo;jusqu&rsquo;au prochain espac
 <p>Croyez moi, ces trois dernières commandes valent de l&rsquo;or.
 Retenez les, et vous gagnerez beaucoup de temps.</p>
 
-<h2 id="niveau-3---intermdiaire">Niveau 3 - Intermédiaire</h2>
+<h2 id="niveau-4---power-overwhelming">Niveau 4 - Power Overwhelming</h2>
 
-<p>À partir de maintenant, je vais vous donner les commandes que j&rsquo;utilise le plus souvent et qui vont vous faire gagner beaucoup de temps.</p>
+<p>Avec toutes les commandes précédentes vous avez presque toutes les commandes que j&rsquo;utilise tous les jours. 
+Mais voici les killer features de vim. 
+Celles que je n&rsquo;ai retrouvé que dans vim (ou presque).</p>
 
-<p><code>S-V</code>&nbsp;: Sélectionner des lignes
-    &rarr; d les supprimer + copier
-    &rarr; </p>
+<p>Déplacement sur la ligne&nbsp;: <code>0^$fFtT,;</code></p>
 
-<p><code>C-t</code>&nbsp;: Ajoute une tabulation
-<code>C-d</code>&nbsp;: Supprime une tabulation</p>
+<blockquote>
+  <ul>
+    <li><code>0</code> &rarr; aller à la colonne 0,</li>
+    <li><code>^</code> &rarr; aller au premier caractère de la ligne</li>
+    <li><code>$</code> &rarr; aller au dernier caractère de la ligne</li>
+    <li><code>fa</code> &rarr; vous amène à la prochaine occurrence de a sur la ligne courante. <code>,</code> recherche l&rsquo;occurrence suivante.</li>
+    <li><code>t,</code> &rarr; vous amène juste après le <code>,</code>.</li>
+    <li><code>3fa</code> &rarr; recherche la 3ième occurrence de <code>a</code>.</li>
+    <li><code>F</code> et <code>T</code> &rarr; comme <code>f</code> et <code>t</code> mais en arrière.</li>
+  </ul>
+</blockquote>
 
-<p><code>C-v I</code>&nbsp;: Ajoute du texte à toutes les lignes sélectionnées
-<code>C-v c</code>&nbsp;: Remplace le bloc et répètera le contenu sur toutes les lignes.</p>
+<p>Sélection de blocs rectangulaires&nbsp;: <code>C-V</code>.</p>
 
-<p><code>*</code>&nbsp;: Chercher la prochaine occurence du mot sous le curseur
-<code>#</code>&nbsp;: comme <code>*</code> mais dans le sens contraire</p>
+<p>Les blocs rectangulaires sont très commodes pour commenter plusieurs lignes de codes.
+Typiquement: <code>^C-VC-dI// [ESC]</code></p>
+
+<ul>
+  <li><code>^</code> &rarr; aller en début de ligne</li>
+  <li><code>C-V</code> &rarr; Commencer la sélection du bloc</li>
+  <li><code>C-d</code> &rarr; se déplacer vers le bas (pourrait être <code>jjj</code> ou <code>%</code> etc&hellip;)</li>
+  <li><code>I// [ESC]</code> &rarr; écrit <code>// </code> pour commenter le reste de la ligne.</li>
+</ul>
+
+<p>Complétion&nbsp;: <code>C-n</code> et <code>C-p</code>.</p>
+
+<p>En mode insertion, commencez à écrire le début d&rsquo;un mot déjà présent dans l&rsquo;un des buffers (fichers) ouvert et tapes <code>C-p</code>. Magique.</p>
+
+<p>Macros&nbsp;: <code>qa</code> faire quelque chose <code>qq</code>. <code>@a</code>, puis <code>@@</code>.</p>
+
+<p><code>qa</code> enregistre tout ce que vous faite et enregistre le tout dans le <em>registre</em> <code>a</code>. Ensuite <code>@a</code> va rejouer la macro enregistrée dans le registre <code>a</code> comme si c&rsquo;est vous qui tapiez au clavier.</p>
+
+<blockquote>
+  <p>Exemple&nbsp;:
+Sur une ligne contenant seulement un nombre tapez&nbsp;:
+<code>qaYpC-aqq</code> &rarr; <code>qa</code> début de l&rsquo;enregistrement. <code>Yp</code> copier cette ligne. <code>C-a</code> incrémente le nombre. <code>qq</code> arrête d&rsquo;enregistrer.</p>
+
+  <p>Maintenant essayez <code>10@a</code>. Cela va créer une liste de nombre croissants.</p>
+</blockquote>
+
+<p>Mais aussi,</p>
+
+<p>Sélection visuelle.</p>
+
+<p>On a déjà vu un exemple avec <code>C-V</code>. 
+Mais il y a aussi, <code>v</code> et <code>V</code>.
+Et une fois la sélection visuelle faite vous pouvez par exemple:</p>
+
+<ul>
+  <li><code>=</code> &rarr; auto indenter</li>
+  <li><code>&lt;</code> (resp. <code>&gt;</code>) &rarr; indenter à gauche (resp. à droite).</li>
+  <li><code>J</code> &rarr; joindre toutes les lignes pour en faire une seule</li>
+</ul>
+
+<p>Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellement&nbsp;: </p>
+
+<ul>
+  <li><code>S-V</code> </li>
+  <li>aller jusqu&rsquo;à la ligne désirée (<code>jjj</code> ou <code>C-d</code> ou <code>/pattern</code> ou <code>%</code> etc&hellip;)</li>
+  <li><code>$</code> aller à la fin </li>
+  <li><code>A</code>, écrire le texte, <code>Echap</code>.</li>
+</ul>
+
+<p>Splits&nbsp;: <code>:split</code> et <code>vsplit</code>. Pour en savoir plus faite un <code>:help split</code></p>
+
+<h2 id="conclusion">Conclusion</h2>
 
                 </div>
             
@@ -321,7 +376,7 @@ Retenez les, et vous gagnerez beaucoup de temps.</p>
                 </div>
                 <div id="lastmod">
                     Écrit le : 17/08/2011
-                    modifié le : 19/08/2011 
+                    modifié le : 22/08/2011 
                 </div>
                 <div>
                     Site entièrement réalisé avec
