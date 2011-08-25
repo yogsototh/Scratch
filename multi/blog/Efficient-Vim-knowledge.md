@@ -246,17 +246,26 @@ fr: Déplacement sur la ligne : `0^$fFtT,;`
 en: > - `0` -> go to column 0
 en: > - `^` -> go to first character on the line
 en: > - `$` -> go to the last character on the line
-en: > - `fa` -> go to next occurrence of the letter `a` on the line. `,` will seek next occurrence.
+en: > - `fa` -> go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will seek for the next (resp. previous) occurrence.
 en: > - `t,` -> go just after the character `,`.
 en: > - `3fa` -> search the 3rd occurrence of `a` on this line.
 en: > - `F` and `T` -> like `f` and `t` but backward.
 fr: > - `0` -> aller à la colonne 0,
 fr: > - `^` -> aller au premier caractère de la ligne
 fr: > - `$` -> aller au dernier caractère de la ligne
-fr: > - `fa` -> vous amène à la prochaine occurrence de a sur la ligne courante. `,` recherche l'occurrence suivante.
+fr: > - `fa` -> vous amène à la prochaine occurrence de a sur la ligne courante. `,` (resp. `;`) recherche l'occurrence suivante (resp. précédente).
 fr: > - `t,` -> vous amène juste après le `,`.
 fr: > - `3fa` -> recherche la 3ième occurrence de `a`.
 fr: > - `F` et `T` -> comme `f` et `t` mais en arrière.
+
+en: _Some Useful Tips_
+en: >
+en: > - `dt"` -> remove everything until the `"`.
+en: > - `vi"` -> select everthing inside two `"`.
+fr: _Quelques trucs utiles_
+fr: >
+fr: > - `dt"` -> supprime tout jusqu'au `"`.
+fr: > - `vi"` -> selectionne tout ce qui se trouve entre les deux `"`.
 
 en: Select rectangular blocs: `C-V`. 
 fr: Sélection de blocs rectangulaires : `C-V`.
@@ -284,25 +293,28 @@ fr: Complétion : `C-n` et `C-p`.
 
 en: In insertion mode, just type the start of a word, then type `C-p`, magic...
 fr: En mode insertion, commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `C-p`. Magique.
-
-<%= blogimage("completion.gif","Rectangular blocks") %>
-
-en: Macros : `qa` do something `q`, then `@a` (also `@@`, repeat the last `@x`).
+<%= blogimage("completion.gif","Completion") %> en: Macros : `qa` do something `q`, then `@a` (also `@@`, repeat the last `@x`).
 fr: Macros : `qa` faire quelque chose `q`. `@a`, puis `@@`.
 
 en: `qa` record your actions in the _register_ `a`. Then `@a` will replay the macro saved into the register `a` as if you typed it.
 fr: `qa` enregistre tout ce que vous faite et enregistre le tout dans le _registre_ `a`. Ensuite `@a` va rejouer la macro enregistrée dans le registre `a` comme si c'est vous qui tapiez au clavier.
 
 en: > Example:
-en: > On a line containing only a number type this:
+en: > On a line containing only the number 1, type this:
 en: > `qaYpC-aq` -> `qa` start recording. `Yp` duplicate this line. `C-a` increment the number. `q` stop recording.
 en: > 
-en: > Now a `100@a` will create a list of increasing numbers.
+en: > `@a` -> write 2 under the 1
+en: > `@@` -> write 3 under the 2
+en: > Now do `100@@` will create a list of increasing numbers until 103.
 fr: > Exemple :
-fr: > Sur une ligne contenant seulement un nombre tapez :
+fr: > Sur une ligne contenant seulement un 1 tapez :
 fr: > `qaYpC-aq` -> `qa` début de l'enregistrement. `Yp` copier cette ligne. `C-a` incrémente le nombre. `q` arrête d'enregistrer.
 fr: > 
-fr: > Maintenant essayez `100@a`. Cela va créer une liste de nombre croissants.
+fr: > `@a` -> écrit un 2 sous le 1.
+fr: > `@@` -> écrit un 3 sous le 2.
+fr: > Écrivez `100@a`. Cela va créer une liste de nombre croissants.
+
+<%= blogimage("macros.gif","Macros") %>
 
 fr: Mais aussi,
 en: But also,
@@ -314,16 +326,18 @@ en: We saw an example with `C-V`.
 en: There is also `v` and `V`.
 en: Once the selection made, you can:
 en: 
-en: - `=` -> auto indent
-en: - `<` (resp. `>`) -> indent to the left (resp. to the right).
 en: - `J` -> join all lines together.
+en: - `<` (resp. `>`) -> indent to the left (resp. to the right).
+en: - `=` -> auto indent
 fr: On a déjà vu un exemple avec `C-V`. 
 fr: Mais il y a aussi, `v` et `V`.
 fr: Et une fois la sélection visuelle faite vous pouvez par exemple:
 fr: 
-fr: - `=` -> auto indenter
-fr: - `<` (resp. `>`) -> indenter à gauche (resp. à droite).
 fr: - `J` -> joindre toutes les lignes pour en faire une seule
+fr: - `<` (resp. `>`) -> indenter à gauche (resp. à droite).
+fr: - `=` -> auto indenter
+
+<%= blogimage("autoindent.gif","Autoindent") %>
 
 en: Add something at the end of all visually selected lignes:
 en: 
@@ -338,17 +352,44 @@ fr: - aller jusqu'à la ligne désirée (`jjj` ou `C-d` ou `/pattern` ou `%` etc
 fr: - `$` aller à la fin 
 fr: - `A`, écrire le texte, `Echap`.
 
-en: Splits : `:split` and `vsplit`. You should look at `:help split`
-fr: Splits : `:split` et `vsplit`. Pour en savoir plus faite un `:help split`
+en: <%= blogimage("append-to-many-lines.gif","Append to many lines") %>
+fr: <%= blogimage("append-to-many-lines.gif","Ajouter à la fin de plusieurs lignes") %>
+
+en: Splits : `:split` and `vsplit`. You should look at `:help split`.
+en: But main commands are:
+en: 
+en: > - `:split` -> create a split (`:vsplit` create a vertical split)
+en: > - `C-w&lt;dir&gt;` : where dir is any of `hjkl` or <-&darr;&uarr;-> to change split.
+en: > - `C-w_` (resp. `C-w|`) : maximise size of split (resp. vertical split)
+en: > - `C-w+` (resp. `C-w-`) : Grow (resp. shrink) split
+fr: Splits : `:split` et `vsplit`. Je vous conseille de faire un `:help split`. Celà permet de manipuler plusieurs buffer sur la même fenêtre.
+fr: Voici les commandes principales :
+fr: 
+fr: > - `:split` -> crée un split (`:vsplit` crée un split vertical)
+fr: > - `C-w&lt;dir&gt;` : où dir est l'un de `hjkl` ou <-&darr;&uarr;-> permet de changer de split.
+fr: > - `C-w_` (resp. `C-w|`) : Maximise la taille du split (resp. split vertical)
+fr: > - `C-w+` (resp. `C-w-`) : Agrandi (resp. diminue) le split
+
+<%= blogimage("split.gif","Split") %>
 
 ## Conclusion
 
-en: Voilà, je vous ai donné 90% des commandes que j'utilise tous les jours.
-en: N'essayez pas de tout apprendre en une journée. 
-en: Il faut le temps de s'habituer à chaque nouvelle commande. 
-en: Ajouter une ou deux commande par jour tous les jours est un bon exercice.
-en: Dans 1 mois vous en connaitrez au moins autant que moi.
+en: You now have 90% of all command I use every day.
+en: Take the time to be used for each command you integrate.
+en: Do not try to know too much on one time.
+en: Just try to use one or two new command per day.
+en: After two to three weeks you'll start to feel very comfortable.
+en: Vim will be your last editor.
+en: You will learn about NERDTree, folds and many other features.
 en: And keep in mind I am not a vim master, just a regular user.
+fr: Voilà, je vous ai donné 90% des commandes que j'utilise tous les jours.
+fr: N'essayez pas de tout apprendre en une journée. 
+fr: Il faut le temps de s'habituer à chaque nouvelle commande. 
+fr: Ajouter une ou deux commande par jour tous les jours est un bon exercice.
+fr: Dans 1 mois vous en connaitrez au moins autant que moi.
+fr: Vous apprendrez à utiliser NERDTree, les folds et tout un tas d'autres choses.
+fr: Souvenez-vous que je ne suis pas un "vim master", seulement un utilisateur régulier.
+
 
 <script>
 // Style the keywords

@@ -151,10 +151,15 @@ Déplacement sur la ligne : `0^$fFtT,;`
 > - `0` -> aller à la colonne 0,
 > - `^` -> aller au premier caractère de la ligne
 > - `$` -> aller au dernier caractère de la ligne
-> - `fa` -> vous amène à la prochaine occurrence de a sur la ligne courante. `,` recherche l'occurrence suivante.
+> - `fa` -> vous amène à la prochaine occurrence de a sur la ligne courante. `,` (resp. `;`) recherche l'occurrence suivante (resp. précédente).
 > - `t,` -> vous amène juste après le `,`.
 > - `3fa` -> recherche la 3ième occurrence de `a`.
 > - `F` et `T` -> comme `f` et `t` mais en arrière.
+
+_Quelques trucs utiles_
+>
+> - `dt"` -> supprime tout jusqu'au `"`.
+> - `vi"` -> selectionne tout ce qui se trouve entre les deux `"`.
 
 Sélection de blocs rectangulaires : `C-V`.
 s
@@ -172,18 +177,20 @@ Typiquement: `^C-VC-dI// [ESC]`
 Complétion : `C-n` et `C-p`.
 
 En mode insertion, commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `C-p`. Magique.
-
-<%= blogimage("completion.gif","Rectangular blocks") %>
-
+<%= blogimage("completion.gif","Completion") %> en: Macros : `qa` do something `q`, then `@a` (also `@@`, repeat the last `@x`).
 Macros : `qa` faire quelque chose `q`. `@a`, puis `@@`.
 
 `qa` enregistre tout ce que vous faite et enregistre le tout dans le _registre_ `a`. Ensuite `@a` va rejouer la macro enregistrée dans le registre `a` comme si c'est vous qui tapiez au clavier.
 
 > Exemple :
-> Sur une ligne contenant seulement un nombre tapez :
+> Sur une ligne contenant seulement un 1 tapez :
 > `qaYpC-aq` -> `qa` début de l'enregistrement. `Yp` copier cette ligne. `C-a` incrémente le nombre. `q` arrête d'enregistrer.
 > 
-> Maintenant essayez `100@a`. Cela va créer une liste de nombre croissants.
+> `@a` -> écrit un 2 sous le 1.
+> `@@` -> écrit un 3 sous le 2.
+> Écrivez `100@a`. Cela va créer une liste de nombre croissants.
+
+<%= blogimage("macros.gif","Macros") %>
 
 Mais aussi,
 
@@ -193,9 +200,11 @@ On a déjà vu un exemple avec `C-V`.
 Mais il y a aussi, `v` et `V`.
 Et une fois la sélection visuelle faite vous pouvez par exemple:
 
-- `=` -> auto indenter
-- `<` (resp. `>`) -> indenter à gauche (resp. à droite).
 - `J` -> joindre toutes les lignes pour en faire une seule
+- `<` (resp. `>`) -> indenter à gauche (resp. à droite).
+- `=` -> auto indenter
+
+<%= blogimage("autoindent.gif","Autoindent") %>
 
 Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellement : 
 
@@ -204,9 +213,27 @@ Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellemen
 - `$` aller à la fin 
 - `A`, écrire le texte, `Echap`.
 
-Splits : `:split` et `vsplit`. Pour en savoir plus faite un `:help split`
+<%= blogimage("append-to-many-lines.gif","Ajouter à la fin de plusieurs lignes") %>
+
+Splits : `:split` et `vsplit`. Je vous conseille de faire un `:help split`. Celà permet de manipuler plusieurs buffer sur la même fenêtre.
+Voici les commandes principales :
+
+> - `:split` -> crée un split (`:vsplit` crée un split vertical)
+> - `C-w&lt;dir&gt;` : où dir est l'un de `hjkl` ou <-&darr;&uarr;-> permet de changer de split.
+> - `C-w_` (resp. `C-w|`) : Maximise la taille du split (resp. split vertical)
+> - `C-w+` (resp. `C-w-`) : Agrandi (resp. diminue) le split
+
+<%= blogimage("split.gif","Split") %>
 
 ## Conclusion
+
+Voilà, je vous ai donné 90% des commandes que j'utilise tous les jours.
+N'essayez pas de tout apprendre en une journée. 
+Il faut le temps de s'habituer à chaque nouvelle commande. 
+Ajouter une ou deux commande par jour tous les jours est un bon exercice.
+Dans 1 mois vous en connaitrez au moins autant que moi.
+Vous apprendrez à utiliser NERDTree, les folds et tout un tas d'autres choses.
+Souvenez-vous que je ne suis pas un "vim master", seulement un utilisateur régulier.
 
 
 <script>

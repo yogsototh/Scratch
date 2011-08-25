@@ -252,12 +252,17 @@ Some of these features were the reason I started to use vim.</p>
     <li><code>0</code> &rarr; go to column 0</li>
     <li><code>^</code> &rarr; go to first character on the line</li>
     <li><code>$</code> &rarr; go to the last character on the line</li>
-    <li><code>fa</code> &rarr; go to next occurrence of the letter <code>a</code> on the line. <code>,</code> will seek next occurrence.</li>
+    <li><code>fa</code> &rarr; go to next occurrence of the letter <code>a</code> on the line. <code>,</code> (resp. <code>;</code>) will seek for the next (resp. previous) occurrence.</li>
     <li><code>t,</code> &rarr; go just after the character <code>,</code>.</li>
     <li><code>3fa</code> &rarr; search the 3<sup>rd</sup> occurrence of <code>a</code> on this line.</li>
     <li><code>F</code> and <code>T</code> &rarr; like <code>f</code> and <code>t</code> but backward.</li>
   </ul>
 </blockquote>
+
+<p><em>Some Useful Tips</em>
+&gt;
+&gt; - <code>dt"</code> &rarr; remove everything until the <code>"</code>.
+&gt; - <code>vi"</code> &rarr; select everthing inside two <code>"</code>.</p>
 
 <p>Select rectangular blocs: <code>C-V</code>. 
 s
@@ -275,21 +280,22 @@ Typically: <code>0C-VC-dI// [ESC]</code></p>
 
 <p>Completion: <code>C-n</code> and <code>C-p</code>.</p>
 
-<p>In insertion mode, just type the start of a word, then type <code>C-p</code>, magic&hellip;</p>
-
-<p><img alt="Rectangular blocks" src="/Scratch/img/blog/Efficient-Vim-knowledge/completion.gif" /></p>
-
-<p>Macros&nbsp;: <code>qa</code> do something <code>q</code>, then <code>@a</code> (also <code>@@</code>, repeat the last <code>@x</code>).</p>
+<p>In insertion mode, just type the start of a word, then type <code>C-p</code>, magic&hellip;
+<img alt="Completion" src="/Scratch/img/blog/Efficient-Vim-knowledge/completion.gif" /> en: Macros&nbsp;: <code>qa</code> do something <code>q</code>, then <code>@a</code> (also <code>@@</code>, repeat the last <code>@x</code>).</p>
 
 <p><code>qa</code> record your actions in the <em>register</em> <code>a</code>. Then <code>@a</code> will replay the macro saved into the register <code>a</code> as if you typed it.</p>
 
 <blockquote>
   <p>Example:
-On a line containing only a number type this:
+On a line containing only the number 1, type this:
 <code>qaYpC-aq</code> &rarr; <code>qa</code> start recording. <code>Yp</code> duplicate this line. <code>C-a</code> increment the number. <code>q</code> stop recording.</p>
 
-  <p>Now a <code>100@a</code> will create a list of increasing numbers.</p>
+  <p><code>@a</code> &rarr; write 2 under the 1
+<code>@@</code> &rarr; write 3 under the 2
+Now do <code>100@@</code> will create a list of increasing numbers until 103.</p>
 </blockquote>
+
+<p><img alt="Macros" src="/Scratch/img/blog/Efficient-Vim-knowledge/macros.gif" /></p>
 
 <p>But also,</p>
 
@@ -300,10 +306,12 @@ There is also <code>v</code> and <code>V</code>.
 Once the selection made, you can:</p>
 
 <ul>
-  <li><code>=</code> &rarr; auto indent</li>
-  <li><code>&lt;</code> (resp. <code>&gt;</code>) &rarr; indent to the left (resp. to the right).</li>
   <li><code>J</code> &rarr; join all lines together.</li>
+  <li><code>&lt;</code> (resp. <code>&gt;</code>) &rarr; indent to the left (resp. to the right).</li>
+  <li><code>=</code> &rarr; auto indent</li>
 </ul>
+
+<p><img alt="Autoindent" src="/Scratch/img/blog/Efficient-Vim-knowledge/autoindent.gif" /></p>
 
 <p>Add something at the end of all visually selected lignes:</p>
 
@@ -314,15 +322,31 @@ Once the selection made, you can:</p>
   <li><code>A</code>, write texte, <code>ESC</code>.</li>
 </ul>
 
-<p>Splits&nbsp;: <code>:split</code> and <code>vsplit</code>. You should look at <code>:help split</code></p>
+<p><img alt="Append to many lines" src="/Scratch/img/blog/Efficient-Vim-knowledge/append-to-many-lines.gif" /></p>
+
+<p>Splits&nbsp;: <code>:split</code> and <code>vsplit</code>. You should look at <code>:help split</code>.
+But main commands are:</p>
+
+<blockquote>
+  <ul>
+    <li><code>:split</code> &rarr; create a split (<code>:vsplit</code> create a vertical split)</li>
+    <li><code>C-w&amp;lt;dir&amp;gt;</code>&nbsp;: where dir is any of <code>hjkl</code> or &larr;&darr;&uarr;&rarr; to change split.</li>
+    <li><code>C-w_</code> (resp. <code>C-w|</code>)&nbsp;: maximise size of split (resp. vertical split)</li>
+    <li><code>C-w+</code> (resp. <code>C-w-</code>)&nbsp;: Grow (resp. shrink) split</li>
+  </ul>
+</blockquote>
+
+<p><img alt="Split" src="/Scratch/img/blog/Efficient-Vim-knowledge/split.gif" /></p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Voilà, je vous ai donné 90% des commandes que j&rsquo;utilise tous les jours.
-N&rsquo;essayez pas de tout apprendre en une journée. 
-Il faut le temps de s&rsquo;habituer à chaque nouvelle commande. 
-Ajouter une ou deux commande par jour tous les jours est un bon exercice.
-Dans 1 mois vous en connaitrez au moins autant que moi.
+<p>You now have 90% of all command I use every day.
+Take the time to be used for each command you integrate.
+Do not try to know too much on one time.
+Just try to use one or two new command per day.
+After two to three weeks you&rsquo;ll start to feel very comfortable.
+Vim will be your last editor.
+You will learn about NERDTree, folds and many other features.
 And keep in mind I am not a vim master, just a regular user.</p>
 
 <script>

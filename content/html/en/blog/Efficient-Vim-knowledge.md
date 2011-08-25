@@ -151,10 +151,15 @@ Move on current line, any of: `0^$fFtT,;`
 > - `0` -> go to column 0
 > - `^` -> go to first character on the line
 > - `$` -> go to the last character on the line
-> - `fa` -> go to next occurrence of the letter `a` on the line. `,` will seek next occurrence.
+> - `fa` -> go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will seek for the next (resp. previous) occurrence.
 > - `t,` -> go just after the character `,`.
 > - `3fa` -> search the 3rd occurrence of `a` on this line.
 > - `F` and `T` -> like `f` and `t` but backward.
+
+_Some Useful Tips_
+>
+> - `dt"` -> remove everything until the `"`.
+> - `vi"` -> select everthing inside two `"`.
 
 Select rectangular blocs: `C-V`. 
 s
@@ -172,18 +177,19 @@ Typically: `0C-VC-dI// [ESC]`
 Completion: `C-n` and `C-p`.
 
 In insertion mode, just type the start of a word, then type `C-p`, magic...
-
-<%= blogimage("completion.gif","Rectangular blocks") %>
-
-Macros : `qa` do something `q`, then `@a` (also `@@`, repeat the last `@x`).
+<%= blogimage("completion.gif","Completion") %> en: Macros : `qa` do something `q`, then `@a` (also `@@`, repeat the last `@x`).
 
 `qa` record your actions in the _register_ `a`. Then `@a` will replay the macro saved into the register `a` as if you typed it.
 
 > Example:
-> On a line containing only a number type this:
+> On a line containing only the number 1, type this:
 > `qaYpC-aq` -> `qa` start recording. `Yp` duplicate this line. `C-a` increment the number. `q` stop recording.
 > 
-> Now a `100@a` will create a list of increasing numbers.
+> `@a` -> write 2 under the 1
+> `@@` -> write 3 under the 2
+> Now do `100@@` will create a list of increasing numbers until 103.
+
+<%= blogimage("macros.gif","Macros") %>
 
 But also,
 
@@ -193,9 +199,11 @@ We saw an example with `C-V`.
 There is also `v` and `V`.
 Once the selection made, you can:
 
-- `=` -> auto indent
-- `<` (resp. `>`) -> indent to the left (resp. to the right).
 - `J` -> join all lines together.
+- `<` (resp. `>`) -> indent to the left (resp. to the right).
+- `=` -> auto indent
+
+<%= blogimage("autoindent.gif","Autoindent") %>
 
 Add something at the end of all visually selected lignes:
 
@@ -204,16 +212,29 @@ Add something at the end of all visually selected lignes:
 - `$` go to the end of line
 - `A`, write texte, `ESC`.
 
-Splits : `:split` and `vsplit`. You should look at `:help split`
+<%= blogimage("append-to-many-lines.gif","Append to many lines") %>
+
+Splits : `:split` and `vsplit`. You should look at `:help split`.
+But main commands are:
+
+> - `:split` -> create a split (`:vsplit` create a vertical split)
+> - `C-w&lt;dir&gt;` : where dir is any of `hjkl` or <-&darr;&uarr;-> to change split.
+> - `C-w_` (resp. `C-w|`) : maximise size of split (resp. vertical split)
+> - `C-w+` (resp. `C-w-`) : Grow (resp. shrink) split
+
+<%= blogimage("split.gif","Split") %>
 
 ## Conclusion
 
-Voilà, je vous ai donné 90% des commandes que j'utilise tous les jours.
-N'essayez pas de tout apprendre en une journée. 
-Il faut le temps de s'habituer à chaque nouvelle commande. 
-Ajouter une ou deux commande par jour tous les jours est un bon exercice.
-Dans 1 mois vous en connaitrez au moins autant que moi.
+You now have 90% of all command I use every day.
+Take the time to be used for each command you integrate.
+Do not try to know too much on one time.
+Just try to use one or two new command per day.
+After two to three weeks you'll start to feel very comfortable.
+Vim will be your last editor.
+You will learn about NERDTree, folds and many other features.
 And keep in mind I am not a vim master, just a regular user.
+
 
 <script>
 // Style the keywords
