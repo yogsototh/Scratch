@@ -1,1 +1,1 @@
-./multi/blog/Efficient-Vim-knowledge.md
+./multi/blog/Learn-Vim-Progressively.md

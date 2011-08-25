@@ -3,8 +3,8 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2011-08-18T00:28:20+02:00
-en: title: Efficient Vim knowledge
-fr: title: Vim efficace avec peu d'efforts
+en: title: Learn Vim Progressively
+fr: title: Apprenez Vim Progressivement
 author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
@@ -13,9 +13,9 @@ author_uri: yannesposito.com
 
 begindiv(intro)
 
-en: <%= tldr %> Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way.
+en: <%= tldr %> Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way. Start by learning the minimal to survive, then integrate slowly all tricks.
 
-fr: <%= tlal %> Vous désirez apprendre vim (le meilleur editeur de texte connu à ce jour) le plus rapidement possible. Voici mes conseils pour vous aider.
+fr: <%= tlal %> Vous désirez apprendre vim (le meilleur editeur de texte connu à ce jour) le plus rapidement possible. Voici mes conseils pour vous aider. Commencez à apprendre le minimum vital, puis apprenez doucement de nouvelles commandes.
 
 enddiv
 
@@ -359,14 +359,14 @@ en: Splits : `:split` and `vsplit`. You should look at `:help split`.
 en: But main commands are:
 en: 
 en: > - `:split` -> create a split (`:vsplit` create a vertical split)
-en: > - `C-w&lt;dir&gt;` : where dir is any of `hjkl` or <-&darr;&uarr;-> to change split.
+en: > - `C-w<dir>` : where dir is any of `hjkl` or <-&darr;&uarr;-> to change split.
 en: > - `C-w_` (resp. `C-w|`) : maximise size of split (resp. vertical split)
 en: > - `C-w+` (resp. `C-w-`) : Grow (resp. shrink) split
 fr: Splits : `:split` et `vsplit`. Je vous conseille de faire un `:help split`. Celà permet de manipuler plusieurs buffer sur la même fenêtre.
 fr: Voici les commandes principales :
 fr: 
 fr: > - `:split` -> crée un split (`:vsplit` crée un split vertical)
-fr: > - `C-w&lt;dir&gt;` : où dir est l'un de `hjkl` ou <-&darr;&uarr;-> permet de changer de split.
+fr: > - `C-w<dir>` : où dir est l'un de `hjkl` ou <-&darr;&uarr;-> permet de changer de split.
 fr: > - `C-w_` (resp. `C-w|`) : Maximise la taille du split (resp. split vertical)
 fr: > - `C-w+` (resp. `C-w-`) : Agrandi (resp. diminue) le split
 
@@ -374,21 +374,22 @@ fr: > - `C-w+` (resp. `C-w-`) : Agrandi (resp. diminue) le split
 
 ## Conclusion
 
-en: You now have 90% of all command I use every day.
-en: Take the time to be used for each command you integrate.
-en: Do not try to know too much on one time.
-en: Just try to use one or two new command per day.
-en: After two to three weeks you'll start to feel very comfortable.
-en: Vim will be your last editor.
-en: You will learn about NERDTree, folds and many other features.
-en: And keep in mind I am not a vim master, just a regular user.
+en: That was 90% of commands I use every day.
+en: I suggest you to learn no more than one or two new command per day.
+en: After two to three weeks you'll start to feel the power of vim in your hands.
+en: 
+en: After some time, you will learn about NERDTree, folds and many other features.
+en: Also keep in mind I am not a vim master, just a regular user.
+en: The power to become a "vim ninja" is inside.
 fr: Voilà, je vous ai donné 90% des commandes que j'utilise tous les jours.
 fr: N'essayez pas de tout apprendre en une journée. 
 fr: Il faut le temps de s'habituer à chaque nouvelle commande. 
-fr: Ajouter une ou deux commande par jour tous les jours est un bon exercice.
+fr: Je vous conseille de ne pas apprendre plus d'une ou deux commandes par jour.
+fr: 
 fr: Dans 1 mois vous en connaitrez au moins autant que moi.
-fr: Vous apprendrez à utiliser NERDTree, les folds et tout un tas d'autres choses.
-fr: Souvenez-vous que je ne suis pas un "vim master", seulement un utilisateur régulier.
+fr: Vous découvrirez NERDTree, les folds et tout un tas d'autres choses.
+fr: Et n'oubliez pas que je ne suis pas un "vim master", seulement un utilisateur régulier.
+fr: Le pouvoir de devenir un "vim ninja" est en vous.
 
 
 <script>
