@@ -37,6 +37,8 @@ Après ces leçons, vous serez une super star de l'édition de texte.
 [Vim]: http://www.vim.org
 [vim]: http://www.vim.org
 
+
+
 ## 1er Niveau: survivre
 
 0. Installez [vim]
@@ -98,9 +100,9 @@ Vous connaissez les commandes de survie. Passons à des commandes pour être un 
 ## Niveau 3 - Meilleur. Plus fort. Plus rapide.
 
 Bravo ! Si vous êtes arrivé jusqu'ici nous allons pouvoir commencer à apprendre les choses vraiment intéressantes.
-Pour cette section, je vais seulement parler de choses qui sont aussi disponible dans le vieux `vi`. 
+Pour cette section, je vais seulement parler de choses qui sont aussi disponible dans le vieux vi. 
 
-Commençons par le premier super pouvoir de `vi`, éviter les répétitions (niveau 1):
+Commençons par le premier super pouvoir de vi, éviter les répétitions (niveau 1):
 
 1. `.` -> Le caractère point répètera la dernière commande.
 2. N&lt;commande&gt; -> répètera la commande N fois. 
@@ -171,15 +173,17 @@ Complétion : `C-n` et `C-p`.
 
 En mode insertion, commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `C-p`. Magique.
 
-Macros : `qa` faire quelque chose `qq`. `@a`, puis `@@`.
+<%= blogimage("completion.gif","Rectangular blocks") %>
+
+Macros : `qa` faire quelque chose `q`. `@a`, puis `@@`.
 
 `qa` enregistre tout ce que vous faite et enregistre le tout dans le _registre_ `a`. Ensuite `@a` va rejouer la macro enregistrée dans le registre `a` comme si c'est vous qui tapiez au clavier.
 
 > Exemple :
 > Sur une ligne contenant seulement un nombre tapez :
-> `qaYpC-aqq` -> `qa` début de l'enregistrement. `Yp` copier cette ligne. `C-a` incrémente le nombre. `qq` arrête d'enregistrer.
+> `qaYpC-aq` -> `qa` début de l'enregistrement. `Yp` copier cette ligne. `C-a` incrémente le nombre. `q` arrête d'enregistrer.
 > 
-> Maintenant essayez `10@a`. Cela va créer une liste de nombre croissants.
+> Maintenant essayez `100@a`. Cela va créer une liste de nombre croissants.
 
 Mais aussi,
 
@@ -205,3 +209,9 @@ Splits : `:split` et `vsplit`. Pour en savoir plus faite un `:help split`
 ## Conclusion
 
 
+<script>
+// Style the keywords
+$(document).ready(function() {
+    $('code').css({ 'border': 'solid 1px #CCC', 'padding':'3px'});
+});
+</script>

@@ -37,6 +37,8 @@ By the end of this journey, you'll become a vim superstar.
 [Vim]: http://www.vim.org
 [vim]: http://www.vim.org
 
+
+
 ## 1st Level: Survive
 
 0. Install [vim]
@@ -99,9 +101,9 @@ I suggest:
 ## Level 3 - Better. Stronger. Faster.
 
 Congratulation! If you managed to go until here, we can start the interresting stuff.
-At level 3, we'll only talk about command which are compatible in the old `vi`.
+At level 3, we'll only talk about command which are compatible in the old vi.
 
-Lets start by the first `vi` super-power. Limit to repeat yourself (basic):
+Lets start by the first vi super-power. Limit to repeat yourself (basic):
 
 1. `.` -> (dot) will repeat the last command,
 2. N&lt;command&gt; -> will do the command N times.
@@ -171,15 +173,17 @@ Completion: `C-n` and `C-p`.
 
 In insertion mode, just type the start of a word, then type `C-p`, magic...
 
-Macros : `qa` do something `qq`, then `@a` (also `@@`, repeat the last `@x`).
+<%= blogimage("completion.gif","Rectangular blocks") %>
+
+Macros : `qa` do something `q`, then `@a` (also `@@`, repeat the last `@x`).
 
 `qa` record your actions in the _register_ `a`. Then `@a` will replay the macro saved into the register `a` as if you typed it.
 
 > Example:
 > On a line containing only a number type this:
-> `qaYpC-aqq` -> `qa` start recording. `Yp` duplicate this line. `C-a` increment the number. `qq` stop recording.
+> `qaYpC-aq` -> `qa` start recording. `Yp` duplicate this line. `C-a` increment the number. `q` stop recording.
 > 
-> Now a `10@a` will create a list of increasing numbers.
+> Now a `100@a` will create a list of increasing numbers.
 
 But also,
 
@@ -211,3 +215,9 @@ Ajouter une ou deux commande par jour tous les jours est un bon exercice.
 Dans 1 mois vous en connaitrez au moins autant que moi.
 And keep in mind I am not a vim master, just a regular user.
 
+<script>
+// Style the keywords
+$(document).ready(function() {
+    $('code').css({ 'border': 'solid 1px #CCC', 'padding':'3px'});
+});
+</script>

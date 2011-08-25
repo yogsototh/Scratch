@@ -179,9 +179,9 @@ Vous pouvez passer à l&rsquo;étape d&rsquo;après. </p>
 <h2 id="niveau-3---meilleur-plus-fort-plus-rapide">Niveau 3 - Meilleur. Plus fort. Plus rapide.</h2>
 
 <p>Bravo&nbsp;! Si vous êtes arrivé jusqu&rsquo;ici nous allons pouvoir commencer à apprendre les choses vraiment intéressantes.
-Pour cette section, je vais seulement parler de choses qui sont aussi disponible dans le vieux <code>vi</code>. </p>
+Pour cette section, je vais seulement parler de choses qui sont aussi disponible dans le vieux vi. </p>
 
-<p>Commençons par le premier super pouvoir de <code>vi</code>, éviter les répétitions (niveau 1):</p>
+<p>Commençons par le premier super pouvoir de vi, éviter les répétitions (niveau 1):</p>
 
 <ol>
   <li><code>.</code> &rarr; Le caractère point répètera la dernière commande.</li>
@@ -278,16 +278,18 @@ Typiquement: <code>^C-VC-dI// [ESC]</code></p>
 
 <p>En mode insertion, commencez à écrire le début d&rsquo;un mot déjà présent dans l&rsquo;un des buffers (fichers) ouvert et tapes <code>C-p</code>. Magique.</p>
 
-<p>Macros&nbsp;: <code>qa</code> faire quelque chose <code>qq</code>. <code>@a</code>, puis <code>@@</code>.</p>
+<p><img alt="Rectangular blocks" src="/Scratch/img/blog/Efficient-Vim-knowledge/completion.gif" /></p>
+
+<p>Macros&nbsp;: <code>qa</code> faire quelque chose <code>q</code>. <code>@a</code>, puis <code>@@</code>.</p>
 
 <p><code>qa</code> enregistre tout ce que vous faite et enregistre le tout dans le <em>registre</em> <code>a</code>. Ensuite <code>@a</code> va rejouer la macro enregistrée dans le registre <code>a</code> comme si c&rsquo;est vous qui tapiez au clavier.</p>
 
 <blockquote>
   <p>Exemple&nbsp;:
 Sur une ligne contenant seulement un nombre tapez&nbsp;:
-<code>qaYpC-aqq</code> &rarr; <code>qa</code> début de l&rsquo;enregistrement. <code>Yp</code> copier cette ligne. <code>C-a</code> incrémente le nombre. <code>qq</code> arrête d&rsquo;enregistrer.</p>
+<code>qaYpC-aq</code> &rarr; <code>qa</code> début de l&rsquo;enregistrement. <code>Yp</code> copier cette ligne. <code>C-a</code> incrémente le nombre. <code>q</code> arrête d&rsquo;enregistrer.</p>
 
-  <p>Maintenant essayez <code>10@a</code>. Cela va créer une liste de nombre croissants.</p>
+  <p>Maintenant essayez <code>100@a</code>. Cela va créer une liste de nombre croissants.</p>
 </blockquote>
 
 <p>Mais aussi,</p>
@@ -316,6 +318,14 @@ Et une fois la sélection visuelle faite vous pouvez par exemple:</p>
 <p>Splits&nbsp;: <code>:split</code> et <code>vsplit</code>. Pour en savoir plus faite un <code>:help split</code></p>
 
 <h2 id="conclusion">Conclusion</h2>
+
+<script>
+// Style the keywords
+$(document).ready(function() {
+    $('code').css({ 'border': 'solid 1px #CCC', 'padding':'3px'});
+});
+</script>
+
 
                 </div>
             
@@ -367,19 +377,7 @@ Et une fois la sélection visuelle faite vous pouvez par exemple:</p>
                     <div id="previous_articles">
                         articles précédents
                         
-                        <div class="previous_article">
-                            <a href="/Scratch/fr/blog/A-more-convenient-diff/"><span class="nicer">«</span>&nbsp;Un diff plus pratique</a>
-                        </div>
                         
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/fr/blog/Haskell-Mandelbrot/"><span class="nicer">«</span>&nbsp;Mandelbrot avec haskell</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/fr/blog/Password-Management/"><span class="nicer">«</span>&nbsp;Password Management</a>
-                        </div>
                         
                         
                     </div>
@@ -400,8 +398,8 @@ Et une fois la sélection visuelle faite vous pouvez par exemple:</p>
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
                 </div>
                 <div id="lastmod">
-                    Écrit le : 18/08/2011
-                    modifié le : 24/08/2011 
+                    Écrit le : 17/08/2011
+                    modifié le : 25/08/2011 
                 </div>
                 <div>
                     Site entièrement réalisé avec

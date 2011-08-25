@@ -50,6 +50,8 @@ fr: Après ces leçons, vous serez une super star de l'édition de texte.
 [Vim]: http://www.vim.org
 [vim]: http://www.vim.org
 
+
+
 en: ## 1st Level: Survive
 fr: ## 1er Niveau: survivre
 
@@ -158,12 +160,12 @@ en: ## Level 3 - Better. Stronger. Faster.
 fr: ## Niveau 3 - Meilleur. Plus fort. Plus rapide.
 
 en: Congratulation! If you managed to go until here, we can start the interresting stuff.
-en: At level 3, we'll only talk about command which are compatible in the old `vi`.
+en: At level 3, we'll only talk about command which are compatible in the old vi.
 fr: Bravo ! Si vous êtes arrivé jusqu'ici nous allons pouvoir commencer à apprendre les choses vraiment intéressantes.
-fr: Pour cette section, je vais seulement parler de choses qui sont aussi disponible dans le vieux `vi`. 
+fr: Pour cette section, je vais seulement parler de choses qui sont aussi disponible dans le vieux vi. 
 
-en: Lets start by the first `vi` super-power. Limit to repeat yourself (basic):
-fr: Commençons par le premier super pouvoir de `vi`, éviter les répétitions (niveau 1):
+en: Lets start by the first vi super-power. Limit to repeat yourself (basic):
+fr: Commençons par le premier super pouvoir de vi, éviter les répétitions (niveau 1):
 
 en: 1. `.` -> (dot) will repeat the last command,
 en: 2. N&lt;command&gt; -> will do the command N times.
@@ -283,22 +285,24 @@ fr: Complétion : `C-n` et `C-p`.
 en: In insertion mode, just type the start of a word, then type `C-p`, magic...
 fr: En mode insertion, commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `C-p`. Magique.
 
-en: Macros : `qa` do something `qq`, then `@a` (also `@@`, repeat the last `@x`).
-fr: Macros : `qa` faire quelque chose `qq`. `@a`, puis `@@`.
+<%= blogimage("completion.gif","Rectangular blocks") %>
+
+en: Macros : `qa` do something `q`, then `@a` (also `@@`, repeat the last `@x`).
+fr: Macros : `qa` faire quelque chose `q`. `@a`, puis `@@`.
 
 en: `qa` record your actions in the _register_ `a`. Then `@a` will replay the macro saved into the register `a` as if you typed it.
 fr: `qa` enregistre tout ce que vous faite et enregistre le tout dans le _registre_ `a`. Ensuite `@a` va rejouer la macro enregistrée dans le registre `a` comme si c'est vous qui tapiez au clavier.
 
 en: > Example:
 en: > On a line containing only a number type this:
-en: > `qaYpC-aqq` -> `qa` start recording. `Yp` duplicate this line. `C-a` increment the number. `qq` stop recording.
+en: > `qaYpC-aq` -> `qa` start recording. `Yp` duplicate this line. `C-a` increment the number. `q` stop recording.
 en: > 
-en: > Now a `10@a` will create a list of increasing numbers.
+en: > Now a `100@a` will create a list of increasing numbers.
 fr: > Exemple :
 fr: > Sur une ligne contenant seulement un nombre tapez :
-fr: > `qaYpC-aqq` -> `qa` début de l'enregistrement. `Yp` copier cette ligne. `C-a` incrémente le nombre. `qq` arrête d'enregistrer.
+fr: > `qaYpC-aq` -> `qa` début de l'enregistrement. `Yp` copier cette ligne. `C-a` incrémente le nombre. `q` arrête d'enregistrer.
 fr: > 
-fr: > Maintenant essayez `10@a`. Cela va créer une liste de nombre croissants.
+fr: > Maintenant essayez `100@a`. Cela va créer une liste de nombre croissants.
 
 fr: Mais aussi,
 en: But also,
@@ -346,3 +350,9 @@ en: Ajouter une ou deux commande par jour tous les jours est un bon exercice.
 en: Dans 1 mois vous en connaitrez au moins autant que moi.
 en: And keep in mind I am not a vim master, just a regular user.
 
+<script>
+// Style the keywords
+$(document).ready(function() {
+    $('code').css({ 'border': 'solid 1px #CCC', 'padding':'3px'});
+});
+</script>

@@ -180,9 +180,9 @@ I suggest:</p>
 <h2 id="level-3---better-stronger-faster">Level 3 - Better. Stronger. Faster.</h2>
 
 <p>Congratulation! If you managed to go until here, we can start the interresting stuff.
-At level 3, we&rsquo;ll only talk about command which are compatible in the old <code>vi</code>.</p>
+At level 3, we&rsquo;ll only talk about command which are compatible in the old vi.</p>
 
-<p>Lets start by the first <code>vi</code> super-power. Limit to repeat yourself (basic):</p>
+<p>Lets start by the first vi super-power. Limit to repeat yourself (basic):</p>
 
 <ol>
   <li><code>.</code> &rarr; (dot) will repeat the last command,</li>
@@ -277,16 +277,18 @@ Typically: <code>0C-VC-dI// [ESC]</code></p>
 
 <p>In insertion mode, just type the start of a word, then type <code>C-p</code>, magic&hellip;</p>
 
-<p>Macros&nbsp;: <code>qa</code> do something <code>qq</code>, then <code>@a</code> (also <code>@@</code>, repeat the last <code>@x</code>).</p>
+<p><img alt="Rectangular blocks" src="/Scratch/img/blog/Efficient-Vim-knowledge/completion.gif" /></p>
+
+<p>Macros&nbsp;: <code>qa</code> do something <code>q</code>, then <code>@a</code> (also <code>@@</code>, repeat the last <code>@x</code>).</p>
 
 <p><code>qa</code> record your actions in the <em>register</em> <code>a</code>. Then <code>@a</code> will replay the macro saved into the register <code>a</code> as if you typed it.</p>
 
 <blockquote>
   <p>Example:
 On a line containing only a number type this:
-<code>qaYpC-aqq</code> &rarr; <code>qa</code> start recording. <code>Yp</code> duplicate this line. <code>C-a</code> increment the number. <code>qq</code> stop recording.</p>
+<code>qaYpC-aq</code> &rarr; <code>qa</code> start recording. <code>Yp</code> duplicate this line. <code>C-a</code> increment the number. <code>q</code> stop recording.</p>
 
-  <p>Now a <code>10@a</code> will create a list of increasing numbers.</p>
+  <p>Now a <code>100@a</code> will create a list of increasing numbers.</p>
 </blockquote>
 
 <p>But also,</p>
@@ -322,6 +324,14 @@ Il faut le temps de s&rsquo;habituer à chaque nouvelle commande.
 Ajouter une ou deux commande par jour tous les jours est un bon exercice.
 Dans 1 mois vous en connaitrez au moins autant que moi.
 And keep in mind I am not a vim master, just a regular user.</p>
+
+<script>
+// Style the keywords
+$(document).ready(function() {
+    $('code').css({ 'border': 'solid 1px #CCC', 'padding':'3px'});
+});
+</script>
+
 
                 </div>
             
@@ -373,19 +383,7 @@ And keep in mind I am not a vim master, just a regular user.</p>
                     <div id="previous_articles">
                         previous entries
                         
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/A-more-convenient-diff/"><span class="nicer">«</span>&nbsp;A more convenient diff</a>
-                        </div>
                         
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/Haskell-Mandelbrot/"><span class="nicer">«</span>&nbsp;ASCII Haskell Mandelbrot</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/Password-Management/"><span class="nicer">«</span>&nbsp;40 character's passwords</a>
-                        </div>
                         
                         
                     </div>
@@ -407,7 +405,7 @@ And keep in mind I am not a vim master, just a regular user.</p>
                 </div>
                 <div id="lastmod">
                     Created: 08/18/2011
-                    Modified: 08/24/2011 
+                    Modified: 08/25/2011 
                 </div>
                 <div>
                     Entirely done with
