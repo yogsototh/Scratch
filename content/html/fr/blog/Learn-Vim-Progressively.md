@@ -46,7 +46,6 @@ Apprendre vim ressemble beaucoup à apprendre un instrument de musique.
 N'espérez pas être plus efficace avec vim qu'avec un autre éditeur avant au moins trois jours.
 En fait ça sera certainement plus 2 semaines que 3 jours.
 
-
 [Vim]: http://www.vim.org
 [vim]: http://www.vim.org
 
@@ -76,7 +75,11 @@ Voici les commandes de survie (toutes en mode edition) :
 > - `:wq` : Sauvegarder et quitter (`:w` sauvegarde, `:q` quitter)
 > - `dd` : Supprimer (et copier) la ligne courante
 > - `p` : Coller
+> 
+> Récommandées :
+> 
 > - `hjkl` (optionnel) : se déplacer (<-&darr;&uarr;→). Souvenez vous `j` ressemble à une flèche vers le bas.
+> - `:help <commande>` : Affiche l'aide pour `<commande>`. Vous pouvez aussi écrire `:help` pour atterir sur l'aide générale.
 
 Seulement 5 commandes. 
 Voilà, c'est tout pour un début. 
@@ -289,7 +292,7 @@ Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellemen
 
 <%= blogimage("append-to-many-lines.gif","Ajouter à la fin de plusieurs lignes") %>
 
-Splits : `:split` et `vsplit`.
+### Splits : `:split` et `vsplit`.
 
 Je vous conseille de faire un `:help split`. 
 Celà permet de manipuler plusieurs buffer sur la même fenêtre.

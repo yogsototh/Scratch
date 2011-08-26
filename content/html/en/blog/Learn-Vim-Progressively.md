@@ -40,13 +40,10 @@ By the end of this journey, you'll become a vim superstar.
 
 But before we start, just a warning.
 Learning vim will be painful at first.
-You can't learn simply by reading article such as this one.
-It takes time.
-You'll have to train yourself.
-It is a lot like playing a music instrument.
+It will take time.
+It will be a lot like playing a music instrument.
 Don't expect to be more efficient with vim than with another editor in less than 3 days.
 In fact it will certainly take 2 weeks instead of 3 days.
-
 
 [Vim]: http://www.vim.org
 [vim]: http://www.vim.org
@@ -65,11 +62,11 @@ Vim is in _edition_ mode.
 Lets get in _insertion_ mode.
 Type on the letter `i`.
 
-Now you should feel a bit better.
+You should feel a bit better.
 You can type letters like in a standard notepad.
 To get back in _edition_ mode just tap the `ESC` key.
 
-Now you know how to switch between insertion and edition mode.
+You know how to switch between insertion and edition mode.
 And now, the list of command you can use in edition mode to survive:
 
 > - `i`: Insertion mode. Type `ESC` to return to edition mode.
@@ -77,17 +74,19 @@ And now, the list of command you can use in edition mode to survive:
 > - `:wq`: Save and Quit (`:w` save, `:q` quit)
 > - `dd`: Delete (and copy) current line
 > - `p`: Paste current line
-> - `hjkl` (recommended but not mandatory): basic cursor move (<-&darr;&uarr;→). Hint `j` look like a down arrow.
+> 
+> Recommended:
+> 
+> - `hjkl` (recommended but not mandatory): basic cursor move (<-&darr;&uarr;→). Hint: `j` look like a down arrow.
 > - `:help <command>`: Show help about <command>, you can start using `:help` without anything else.
 
 Only 5 commands. This is very few to start.
 Once these command start to become natural (may be after a complete day), you should go on level 2.
 
-Just a little remark on edition mode before.
-In standard editors, to make a special thing (copy for example), you
-have to use a combination using `Ctrl` (for example `Ctrl-C`).
+But before, just a little remark on _edition mode_.
+In standard editors, to copy you have to use the `Ctrl` key (`Ctrl-c` generally).
 In fact, when you press `Ctrl`, it is a bit like if all your key change meaning.
-In vim, when you are in edition mode, it is like if your `Ctrl` key is always pushed down.
+With vim in edition mode, it is a bit like if your `Ctrl` key is always pushed down.
 
 A last word about notation: instead of writing `Ctrl-λ`, I'll write `C-λ`.
 

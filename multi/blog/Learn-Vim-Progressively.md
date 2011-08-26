@@ -54,10 +54,8 @@ fr: À la fin de ces leçons vous serez transformé.
 
 en: But before we start, just a warning.
 en: Learning vim will be painful at first.
-en: You can't learn simply by reading article such as this one.
-en: It takes time.
-en: You'll have to train yourself.
-en: It is a lot like playing a music instrument.
+en: It will take time.
+en: It will be a lot like playing a music instrument.
 en: Don't expect to be more efficient with vim than with another editor in less than 3 days.
 en: In fact it will certainly take 2 weeks instead of 3 days.
 fr: Avant de commencer, un message pour vous prévenir.
@@ -67,7 +65,6 @@ fr: Vous devrez vous entraîner.
 fr: Apprendre vim ressemble beaucoup à apprendre un instrument de musique.
 fr: N'espérez pas être plus efficace avec vim qu'avec un autre éditeur avant au moins trois jours.
 fr: En fait ça sera certainement plus 2 semaines que 3 jours.
-
 
 [Vim]: http://www.vim.org
 [vim]: http://www.vim.org
@@ -95,14 +92,14 @@ fr: Vim est en mode _edition_.
 fr: Commençons par placer vim en mode _insertion_.
 fr: Tapez sur la touche `i`.
 
-en: Now you should feel a bit better.
+en: You should feel a bit better.
 en: You can type letters like in a standard notepad.
 en: To get back in _edition_ mode just tap the `ESC` key.
 fr: Voilà, c'est magique. 
 fr: Vous pouvez tapez comme dans un éditeur standard.
 fr: Pour repasser en mode édition tapez sur la touche `Echap`.
 
-en: Now you know how to switch between insertion and edition mode.
+en: You know how to switch between insertion and edition mode.
 en: And now, the list of command you can use in edition mode to survive:
 fr: Maintenant que vous savez passer du mode edition au mode insertion.
 fr: Voici les commandes de survie (toutes en mode edition) :
@@ -112,14 +109,21 @@ en: > - `x`: Delete the char under the cursor
 en: > - `:wq`: Save and Quit (`:w` save, `:q` quit)
 en: > - `dd`: Delete (and copy) current line
 en: > - `p`: Paste current line
-en: > - `hjkl` (recommended but not mandatory): basic cursor move (<-&darr;&uarr;→). Hint `j` look like a down arrow.
+en: > 
+en: > Recommended:
+en: > 
+en: > - `hjkl` (recommended but not mandatory): basic cursor move (<-&darr;&uarr;→). Hint: `j` look like a down arrow.
 en: > - `:help <command>`: Show help about <command>, you can start using `:help` without anything else.
 fr: > - `i` : Passer en mode insértion. Taper `Echap` pour repasser en mode edition.
 fr: > - `x` : Supprimer le caractère sous le curseur
 fr: > - `:wq` : Sauvegarder et quitter (`:w` sauvegarde, `:q` quitter)
 fr: > - `dd` : Supprimer (et copier) la ligne courante
 fr: > - `p` : Coller
+fr: > 
+fr: > Récommandées :
+fr: > 
 fr: > - `hjkl` (optionnel) : se déplacer (<-&darr;&uarr;→). Souvenez vous `j` ressemble à une flèche vers le bas.
+fr: > - `:help <commande>` : Affiche l'aide pour `<commande>`. Vous pouvez aussi écrire `:help` pour atterir sur l'aide générale.
 
 en: Only 5 commands. This is very few to start.
 en: Once these command start to become natural (may be after a complete day), you should go on level 2.
@@ -129,11 +133,10 @@ fr: Essayez d'éditer vos fichiers comme ça pendant une petite journée.
 fr: Lorsque ces commandes vous sembleront naturelles, 
 fr: vous pourrez passer à l'étape d'après. 
 
-en: Just a little remark on edition mode before.
-en: In standard editors, to make a special thing (copy for example), you
-en: have to use a combination using `Ctrl` (for example `Ctrl-C`).
+en: But before, just a little remark on _edition mode_.
+en: In standard editors, to copy you have to use the `Ctrl` key (`Ctrl-c` generally).
 en: In fact, when you press `Ctrl`, it is a bit like if all your key change meaning.
-en: In vim, when you are in edition mode, it is like if your `Ctrl` key is always pushed down.
+en: With vim in edition mode, it is a bit like if your `Ctrl` key is always pushed down.
 fr: Mais avant un petit mot sur le mode édition.
 fr: Dans un éditeur normal pour copier il faut utiliser une combinaison de touches (`Ctrl-c`). 
 fr: En fait, lorsque vous appuyez sur la touche `Ctrl`, c'est un peu comme si toutes les touches du clavier avaient un autre usage.
@@ -155,7 +158,7 @@ fr: Je vous suggère :
 
 en: 1. Insertion mode variations:
 en: 
-en:     > - `a`     → insert _after_ the cursor
+en:     > - `a`     → insert after the cursor
 en:     > - `o`     → insert a new line after the current one
 en:     > - `O`     → insert a new line before the current one
 en:     > - `cw`    → replace the word under the cursor
@@ -483,7 +486,7 @@ en: <%= blogimage("append-to-many-lines.gif","Append to many lines") %>
 fr: <%= blogimage("append-to-many-lines.gif","Ajouter à la fin de plusieurs lignes") %>
 
 en: ### Splits : `:split` and `vsplit`.
-fr: Splits : `:split` et `vsplit`.
+fr: ### Splits : `:split` et `vsplit`.
 
 en: Here are the main commands, but you should look at `:help split`.
 en: 
