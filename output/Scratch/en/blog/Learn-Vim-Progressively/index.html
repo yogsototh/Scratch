@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="vi, vim, editor, tutorial">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Apprenez Vim Progressivement" type="text/html" hreflang="fr" href="/Scratch/fr/blog/Learn-Vim-Progressively/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Learn Vim Progressively" type="text/html" hreflang="en" href="/Scratch/en/blog/Learn-Vim-Progressively/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>Learn Vim Progressively</title>
+    </head>
+    <body lang="en">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="loading..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/fr/blog/Learn-Vim-Progressively/" onclick="setLanguage('fr')">en Français</a>
+                </div>
+            </div>
+            <div id="titre">
+                <h1>
+                    Learn Vim Progressively
+                </h1>
+                
+            </div>
+
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p><img alt="Über leet use vim!" src="/Scratch/img/blog/Learn-Vim-Progressively/uber_leet_use_vim.jpg" /></p>
+
+
+<div class="intro">
+
+
+<p><span class="sc"><abbr title="Too long; don't read">tl;dr</abbr>: </span> Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way. Start by learning the minimal to survive, then integrate slowly all tricks.</p>
+
+
+</div>
+
+
+<p><a href="http://www.vim.org">Vim</a> the Six Billion Dollar editor</p>
+
+<blockquote>
+  <p>Better, Stronger, Faster.</p>
+</blockquote>
+
+<p>Learn <a href="http://www.vim.org">vim</a> and it will be your last text editor.
+There isn&rsquo;t any better text editor I know.
+Hard to learn, but incredible to use.</p>
+
+<p>I suggest you to learn it in 4 steps:</p>
+
+<ol>
+  <li>Survive</li>
+  <li>Feel comfortable</li>
+  <li>Feel Better, Stronger, Faster</li>
+  <li>Use vim superpowers</li>
+</ol>
+
+<p>By the end of this journey, you&rsquo;ll become a vim superstar. </p>
+
+<p>But before we start, just a warning.
+Learning vim will be painful at first.
+You can&rsquo;t learn simply by reading article such as this one.
+It takes time.
+You&rsquo;ll have to train yourself.
+It is a lot like playing a music instrument.
+Don&rsquo;t expect to be more efficient with vim than with another editor in less than 3 days.
+In fact it will certainly take 2 weeks instead of 3 days.</p>
+
+<h2 id="st-level----survive">1<sup>st</sup> Level &ndash; Survive</h2>
+
+<ol>
+  <li>Install <a href="http://www.vim.org">vim</a></li>
+  <li>Launch vim</li>
+  <li>DO NOTHING! Read.</li>
+</ol>
+
+<p>In a standard editor, typing on the keyboard is enough to write something and see it on the screen.
+Not this time.
+Vim is in <em>edition</em> mode.
+Lets get in <em>insertion</em> mode.
+Type on the letter <code>i</code>.</p>
+
+<p>Now you should feel a bit better.
+You can type letters like in a standard notepad.
+To get back in <em>edition</em> mode just tap the <code>ESC</code> key.</p>
+
+<p>Now you know how to switch between insertion and edition mode.
+And now, the list of command you can use in edition mode to survive:</p>
+
+<blockquote>
+  <ul>
+    <li><code>i</code>: Insertion mode. Type <code>ESC</code> to return to edition mode.</li>
+    <li><code>x</code>: Delete the char under the cursor</li>
+    <li><code>:wq</code>: Save and Quit (<code>:w</code> save, <code>:q</code> quit)</li>
+    <li><code>dd</code>: Delete (and copy) current line</li>
+    <li><code>p</code>: Paste current line</li>
+    <li><code>hjkl</code> (recommended but not mandatory): basic cursor move (&larr;&darr;&uarr;→). Hint <code>j</code> look like a down arrow.</li>
+    <li><code>:help &lt;command&gt;</code>: Show help about <command />, you can start using <code>:help</code> without anything else.</li>
+  </ul>
+</blockquote>
+
+<p>Only 5 commands. This is very few to start.
+Once these command start to become natural (may be after a complete day), you should go on level 2.</p>
+
+<p>Just a little remark on edition mode before.
+In standard editors, to make a special thing (copy for example), you
+have to use a combination using <code>Ctrl</code> (for example <code>Ctrl-C</code>).
+In fact, when you press <code>Ctrl</code>, it is a bit like if all your key change meaning.
+In vim, when you are in edition mode, it is like if your <code>Ctrl</code> key is always pushed down.</p>
+
+<p>A last word about notation: instead of writing <code>Ctrl-λ</code>, I&rsquo;ll write <code>C-λ</code>.</p>
+
+<h2 id="nd-level----feel-comfortable">2<sup>nd</sup> Level &ndash; Feel comfortable</h2>
+
+<p>You know the survivor commands. 
+Now, it is time to learn just a bit more commands to use.
+I suggest:</p>
+
+<ol>
+  <li>
+    <p>Insertion mode variations:</p>
+
+    <blockquote>
+      <ul>
+        <li><code>a</code>     → insert <em>after</em> the cursor</li>
+        <li><code>o</code>     → insert a new line after the current one</li>
+        <li><code>O</code>     → insert a new line before the current one</li>
+        <li><code>cw</code>    → replace the word under the cursor</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>
+    <p>Basic moves</p>
+
+    <blockquote>
+      <ul>
+        <li><code>0</code>         → go to first column</li>
+        <li><code>^</code>         → go to first character of the line</li>
+        <li><code>$</code>         → go to the end of line</li>
+        <li><code>/pattern</code>  → search for <code>pattern</code> </li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>
+    <p>Copy/Paste</p>
+
+    <blockquote>
+      <ul>
+        <li><code>P</code>  → copy before, remember <code>p</code> is copy after current position.</li>
+        <li><code>yy</code> → copy current line, easier but equivalent to <code>ddP</code></li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>
+    <p>Undo/Redo</p>
+  </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li><code>u</code> → undo</li>
+    <li><code>C-r</code> → redo</li>
+  </ul>
+</blockquote>
+
+<ol>
+  <li>Load/Save/Quit/Change File (Buffer)</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li><code>:e &lt;path/to/file&gt;</code> → open</li>
+    <li><code>:w</code> → save</li>
+    <li><code>:saveas &lt;path/to/file&gt;</code> → save to <code>&lt;filename&gt;</code></li>
+    <li><code>ZZ</code> or <code>:wq</code> → save and quit</li>
+    <li><code>:q!</code> → quit without saving, also <code>:qa!</code> to even if there are  some modified hidden buffers.</li>
+    <li><code>:bn</code> (resp. <code>:bp</code>) → show next (resp. previous) file (buffer)</li>
+  </ul>
+</blockquote>
+
+<p>Take the time to integrate all of these command.
+Once done, you should be able to do every thing you are able to do on other editors.
+But until now, it is a bit awkward. But follow me to the next level and you&rsquo;ll see why.</p>
+
+<h2 id="rd-level----better-stronger-faster">3<sup>rd</sup> Level &ndash; Better. Stronger. Faster.</h2>
+
+<p>Congratulation! If you managed to go until here, we can start the interresting stuff.
+At level 3, we&rsquo;ll only talk about command which are compatible with the old vi.</p>
+
+<h3 id="better">Better</h3>
+
+<p>Lets look at how vim could help you to repeat yourself: </p>
+
+<ol>
+  <li><code>.</code> → (dot) will repeat the last command,</li>
+  <li>N&lt;command&gt; → will do the command N times.</li>
+</ol>
+
+<p>Some examples, open a file and type:</p>
+
+<blockquote>
+  <ul>
+    <li><code>2dd</code> → will delete 2 lines</li>
+    <li><code>3p</code> → will paste the text 3 times</li>
+    <li><code>100idesu [ESC]</code> → will write &ldquo;desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu &ldquo;</li>
+    <li><code>.</code> → Just after the last command  will write again the 100 &ldquo;desu &ldquo;. </li>
+    <li><code>3.</code> → Will write 3 &ldquo;desu&rdquo; (and not 300, how clever).</li>
+  </ul>
+</blockquote>
+
+<h3 id="stronger">Stronger</h3>
+
+<p>Knowing how to move efficiently with vim is <em>very</em> important. 
+Don&rsquo;t skip this section.</p>
+
+<ol>
+  <li>N<code>G</code> → Go to line N</li>
+  <li><code>gg</code> → shortcut for <code>1G</code>, go to the start of the file</li>
+  <li><code>G</code>  → Go to last line</li>
+  <li>
+    <p>Word moves:</p>
+
+    <blockquote>
+      <ol>
+        <li><code>w</code> → go to the start of the following word,</li>
+        <li><code>e</code> → go to the end of this word.</li>
+      </ol>
+
+      <p>By default, word are composed of letter and the underscore character.
+If you want to use word in the meaning of group of letter separated by spaces, just use uppercases:</p>
+
+      <ol>
+        <li><code>W</code> → go to the start of the following &ldquo;extended&rdquo; word,</li>
+        <li><code>E</code> → go to the end of this &ldquo;extended&rdquo; word.</li>
+      </ol>
+
+      <p><img alt="Word moves example" src="/Scratch/img/blog/Learn-Vim-Progressively/word_moves.jpg" /></p>
+    </blockquote>
+  </li>
+</ol>
+
+<p>Now lets talk about very efficient moves:</p>
+
+<blockquote>
+  <ul>
+    <li><code>%</code>&nbsp;: Go to corresponding <code>(</code>, <code>{</code>, <code>[</code>.</li>
+    <li><code>*</code> (resp. <code>#</code>)&nbsp;: go to next (resp. previous) occurrence of the word under the cursor</li>
+  </ul>
+</blockquote>
+
+<p>Believe me, these three last commands are gold.</p>
+
+<h3 id="faster">Faster</h3>
+
+<p>Remember about the importance of vi moves?
+Here is the reason.
+Most commands can be used using the following general format:</p>
+
+<p><code>&lt;start position&gt;&lt;command&gt;&lt;end position&gt;</code></p>
+
+<p>For example&nbsp;: <code>0y$</code> means</p>
+
+<ul>
+  <li><code>0</code> → go to the beginning of this line</li>
+  <li><code>y</code> → yank from here</li>
+  <li><code>$</code> → up to the end of this line</li>
+</ul>
+
+<p>Of course, there is a shortcut for this: <code>yy</code> or <code>Y</code>.
+We also can do things like <code>ye</code>, yank from here to the end of the word.
+But also <code>y2/foo</code> yank up to the second occurrence of &ldquo;foo&rdquo;.</p>
+
+<p>But what was true for <code>y</code> (yank), 
+is also true for <code>d</code> (delete), <code>v</code> (visual select), <code>gU</code> (uppercase), <code>gu</code> (lowercase), etc&hellip;</p>
+
+<h2 id="th-level----vim-superpowers">4th Level &ndash; Vim Superpowers</h2>
+
+<p>With all preceding commands you should be comfortable to use vim.
+But now, here are the killer features.
+Some of these features were the reason I started to use vim.</p>
+
+<h3 id="move-on-current-line-0---f-f-t-t--">Move on current line: <code>0</code> <code>^</code> <code>$</code> <code>f</code> <code>F</code> <code>t</code> <code>T</code> <code>,</code> <code>;</code></h3>
+
+<blockquote>
+  <ul>
+    <li><code>0</code> → go to column 0</li>
+    <li><code>^</code> → go to first character on the line</li>
+    <li><code>$</code> → go to the last character on the line</li>
+    <li><code>fa</code> → go to next occurrence of the letter <code>a</code> on the line. <code>,</code> (resp. <code>;</code>) will seek for the next (resp. previous) occurrence.</li>
+    <li><code>t,</code> → go just after the character <code>,</code>.</li>
+    <li><code>3fa</code> → search the 3<sup>rd</sup> occurrence of <code>a</code> on this line.</li>
+    <li><code>F</code> and <code>T</code> → like <code>f</code> and <code>t</code> but backward.
+<img alt="Line moves" src="/Scratch/img/blog/Learn-Vim-Progressively/line_moves.jpg" /></li>
+  </ul>
+</blockquote>
+
+<p><em>Some Useful Tips</em></p>
+
+<blockquote>
+  <ul>
+    <li><code>dt"</code> → remove everything until the <code>"</code>.</li>
+    <li><code>vi"</code> → select everything inside two <code>"</code>.</li>
+  </ul>
+</blockquote>
+
+<h3 id="select-rectangular-blocs-c-v">Select rectangular blocs: <code>C-V</code>.</h3>
+
+<p>Rectangular blocks are very useful to comment many lines of code.
+Typically: <code>0C-VC-dI// [ESC]</code></p>
+
+<ul>
+  <li><code>^</code> → go to start of the line</li>
+  <li><code>C-V</code> → Start block selection</li>
+  <li><code>C-d</code> → move down (could also be <code>jjj</code> or <code>%</code>, etc&hellip;)</li>
+  <li><code>I// [ESC]</code> → write <code>// </code> to comment each line</li>
+</ul>
+
+<p><img alt="Rectangular blocks" src="/Scratch/img/blog/Learn-Vim-Progressively/rectangular-blocks.gif" /></p>
+
+<h3 id="completion-c-n-and-c-p">Completion: <code>C-n</code> and <code>C-p</code>.</h3>
+
+<p>In insertion mode, just type the start of a word, then type <code>C-p</code>, magic&hellip;
+<img alt="Completion" src="/Scratch/img/blog/Learn-Vim-Progressively/completion.gif" /> </p>
+
+<h3 id="macros--qa-do-something-q-a-">Macros&nbsp;: <code>qa</code> do something <code>q</code>, <code>@a</code>, <code>@@</code></h3>
+
+<p><code>qa</code> record your actions in the <em>register</em> <code>a</code>. 
+Then <code>@a</code> will replay the macro saved into the register <code>a</code> as if you typed it.
+<code>@@</code> is a shortcut to replay the last executed macro.</p>
+
+<blockquote>
+  <p><em>Example</em></p>
+
+  <p>On a line containing only the number 1, type this:</p>
+
+  <ul>
+    <li>
+      <p><code>qaYpC-aq</code> → </p>
+
+      <ul>
+        <li><code>qa</code> start recording. </li>
+        <li><code>Yp</code> duplicate this line.</li>
+        <li><code>C-a</code> increment the number.</li>
+        <li><code>q</code> stop recording.</li>
+      </ul>
+    </li>
+    <li><code>@a</code> → write 2 under the 1</li>
+    <li><code>@@</code> → write 3 under the 2</li>
+    <li>Now do <code>100@@</code> will create a list of increasing numbers until 103.</li>
+  </ul>
+</blockquote>
+
+<p><img alt="Macros" src="/Scratch/img/blog/Learn-Vim-Progressively/macros.gif" /></p>
+
+<h3 id="visual-selection-vvc-v">Visual selection: <code>v</code>,<code>V</code>,<code>C-v</code></h3>
+
+<p>We saw an example with <code>C-V</code>. 
+There is also <code>v</code> and <code>V</code>.
+Once the selection made, you can:</p>
+
+<ul>
+  <li><code>J</code> → join all lines together.</li>
+  <li><code>&lt;</code> (resp. <code>&gt;</code>) → indent to the left (resp. to the right).</li>
+  <li><code>=</code> → auto indent</li>
+</ul>
+
+<p><img alt="Autoindent" src="/Scratch/img/blog/Learn-Vim-Progressively/autoindent.gif" /></p>
+
+<p>Add something at the end of all visually selected lignes:</p>
+
+<ul>
+  <li><code>S-V</code> </li>
+  <li>go to desired line (<code>jjj</code> or <code>C-d</code> or <code>/pattern</code> or <code>%</code> etc&hellip;)</li>
+  <li><code>$</code> go to the end of line</li>
+  <li><code>A</code>, write texte, <code>ESC</code>.</li>
+</ul>
+
+<p><img alt="Append to many lines" src="/Scratch/img/blog/Learn-Vim-Progressively/append-to-many-lines.gif" /></p>
+
+<h3 id="splits--split-and-vsplit">Splits&nbsp;: <code>:split</code> and <code>vsplit</code>.</h3>
+
+<p>Here are the main commands, but you should look at <code>:help split</code>.</p>
+
+<blockquote>
+  <ul>
+    <li><code>:split</code> → create a split (<code>:vsplit</code> create a vertical split)</li>
+    <li><code>C-w&lt;dir&gt;</code>&nbsp;: where dir is any of <code>hjkl</code> or &larr;&darr;&uarr;→ to change split.</li>
+    <li><code>C-w_</code> (resp. <code>C-w|</code>)&nbsp;: maximise size of split (resp. vertical split)</li>
+    <li><code>C-w+</code> (resp. <code>C-w-</code>)&nbsp;: Grow (resp. shrink) split</li>
+  </ul>
+</blockquote>
+
+<p><img alt="Split" src="/Scratch/img/blog/Learn-Vim-Progressively/split.gif" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>That was 90% of commands I use every day.
+I suggest you to learn no more than one or two new command per day.
+After two to three weeks you&rsquo;ll start to feel the power of vim in your hands.</p>
+
+<p>After some time, you will learn about <code>!</code>, folds, registers, the plugins and many other features.
+Also keep in mind I am not a vim master, just a regular user.
+The power to become a &ldquo;vim ninja&rdquo; is inside.</p>
+
+<script>
+// Style the keywords
+$(document).ready(function() {
+    $('code').css({ 'border': 'solid 1px #CCC', 'padding':'3px'});
+});
+</script>
+
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomen">
+                        Subscribe
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Comments</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">comments</h2>
+                    <noscript>
+                        You must enable javascript to comment.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/en/blog/Learn-Vim-Progressively/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/en/">Home</a></li>
+<li><a href="/Scratch/en/blog/">Blog</a></li>
+<li><a href="/Scratch/en/softwares/">Softwares</a></li>
+<li><a href="/Scratch/en/about/">About</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        previous entries
+                        
+                        
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        next entries
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Created: 08/25/2011
+                    Modified: 08/26/2011 
+                </div>
+                <div>
+                    Entirely done with
+                    <a href="http://www.vim.org">Vim</a>
+                    and 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/en/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>
