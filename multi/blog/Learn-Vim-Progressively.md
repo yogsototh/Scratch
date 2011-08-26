@@ -485,7 +485,7 @@ fr: - `A`, écrire le texte, `Echap`.
 en: <%= blogimage("append-to-many-lines.gif","Append to many lines") %>
 fr: <%= blogimage("append-to-many-lines.gif","Ajouter à la fin de plusieurs lignes") %>
 
-en: ### Splits : `:split` and `vsplit`.
+en: ### Splits: `:split` and `vsplit`.
 fr: ### Splits : `:split` et `vsplit`.
 
 en: Here are the main commands, but you should look at `:help split`.
@@ -511,17 +511,15 @@ en: That was 90% of commands I use every day.
 en: I suggest you to learn no more than one or two new command per day.
 en: After two to three weeks you'll start to feel the power of vim in your hands.
 en: 
-en: After some time, you will learn about `!`, folds, registers, the plugins and many other features.
-en: Also keep in mind I am not a vim master, just a regular user.
-en: The power to become a "vim ninja" is inside.
+en: Then, you will learn about `!`, folds, registers, the plugins and many other features.
+en: Learn vim like you'd learn piano and all should be fine.
 fr: Voilà, je vous ai donné 90% des commandes que j'utilise tous les jours.
 fr: N'essayez pas de toutes les apprendre en une journée. 
 fr: Il faut le temps de s'habituer à chaque nouvelle commande. 
 fr: Je vous conseille de ne pas apprendre plus d'une ou deux commandes par jour.
 fr: 
 fr: Ensuite vous découvrirez `!`, les folds, les registres, les plugins et tout un tas d'autres choses.
-fr: Et n'oubliez pas que je ne suis pas un "vim master", seulement un utilisateur régulier.
-fr: Le pouvoir de devenir un "vim ninja" est en vous.
+fr: Apprenez vim comme vous apprendriez le piano et vous devriez très bien vous en sortir.
 
 
 <script>

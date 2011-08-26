@@ -98,7 +98,7 @@ I suggest:
 
 1. Insertion mode variations:
 
-    > - `a`     → insert _after_ the cursor
+    > - `a`     → insert after the cursor
     > - `o`     → insert a new line after the current one
     > - `O`     → insert a new line before the current one
     > - `cw`    → replace the word under the cursor
@@ -286,7 +286,7 @@ Add something at the end of all visually selected lignes:
 
 <%= blogimage("append-to-many-lines.gif","Append to many lines") %>
 
-### Splits : `:split` and `vsplit`.
+### Splits: `:split` and `vsplit`.
 
 Here are the main commands, but you should look at `:help split`.
 
@@ -303,9 +303,8 @@ That was 90% of commands I use every day.
 I suggest you to learn no more than one or two new command per day.
 After two to three weeks you'll start to feel the power of vim in your hands.
 
-After some time, you will learn about `!`, folds, registers, the plugins and many other features.
-Also keep in mind I am not a vim master, just a regular user.
-The power to become a "vim ninja" is inside.
+Then, you will learn about `!`, folds, registers, the plugins and many other features.
+Learn vim like you'd learn piano and all should be fine.
 
 
 <script>

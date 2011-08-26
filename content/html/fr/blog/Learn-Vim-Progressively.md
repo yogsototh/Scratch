@@ -313,8 +313,7 @@ Il faut le temps de s'habituer à chaque nouvelle commande.
 Je vous conseille de ne pas apprendre plus d'une ou deux commandes par jour.
 
 Ensuite vous découvrirez `!`, les folds, les registres, les plugins et tout un tas d'autres choses.
-Et n'oubliez pas que je ne suis pas un "vim master", seulement un utilisateur régulier.
-Le pouvoir de devenir un "vim ninja" est en vous.
+Apprenez vim comme vous apprendriez le piano et vous devriez très bien vous en sortir.
 
 
 <script>
