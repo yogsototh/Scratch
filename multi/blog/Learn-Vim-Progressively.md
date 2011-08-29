@@ -149,8 +149,8 @@ fr: C'est l'usage avec vim.
 en: ## 2nd Level -- Feel comfortable
 fr: ## 2ème Niveau -- Se sentir à son aise
 
-en: You know the survivor commands. 
-en: Now, it is time to learn just a bit more commands to use.
+en: You know the commands required for survival. 
+en: It's time to learn a few more commands.
 en: I suggest:
 fr: Vous connaissez les commandes de survie.
 fr: Passons à des commandes pour être un peu plus à notre aise.
@@ -226,7 +226,8 @@ fr: Une fois fait, vous devriez être capable de faire tout ce qu'on peut attend
 en: ## 3rd Level -- Better. Stronger. Faster.
 fr: ## 3ième Niveau -- Meilleur. Plus fort. Plus rapide.
 
-en: Congratulation! If you managed to go until here, we can start the interresting stuff.
+en: Congratulation reaching this far!
+en: We can start the interesting stuff.
 en: At level 3, we'll only talk about command which are compatible with the old vi.
 fr: Bravo ! Si vous êtes arrivé jusqu'ici nous allons pouvoir commencer à apprendre les choses vraiment intéressantes.
 fr: Pour cette section, je vais seulement parler de commandes disponible dans vi et vim. 
@@ -302,7 +303,7 @@ en: > - `*` (resp. `#`) : go to next (resp. previous) occurrence of the word und
 fr: > - `%` : Aller à la parenthèse, accolade, crochet correspondante.
 fr: > - `*` (resp. `#`) : Aller à la prochaine (resp. précédente) occurrence du mot sous le curseur
 
-en: Believe me, these three last commands are gold.
+en: Believe me, the last three commands are gold.
 fr: Croyez moi, ces trois dernières commandes valent de l'or.
 fr: Retenez les et vous gagnerez beaucoup de temps.
 
@@ -467,12 +468,12 @@ fr: - `=` → auto indenter
 
 <%= blogimage("autoindent.gif","Autoindent") %>
 
-en: Add something at the end of all visually selected lignes:
+en: Add something at the end of all visually selected lines:
 en: 
 en: - `<C-v>` 
 en: - go to desired line (`jjj` or `<C-d>` or `/pattern` or `%` etc...)
 en: - `$` go to the end of line
-en: - `A`, write texte, `ESC`.
+en: - `A`, write text, `ESC`.
 fr: Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellement : 
 fr: 
 fr: - `<C-v>` 

@@ -92,8 +92,8 @@ A last word about notation: instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
 
 ## 2nd Level -- Feel comfortable
 
-You know the survivor commands. 
-Now, it is time to learn just a bit more commands to use.
+You know the commands required for survival. 
+It's time to learn a few more commands.
 I suggest:
 
 1. Insert mode variations:
@@ -135,7 +135,8 @@ But until now, it is a bit awkward. But follow me to the next level and you'll s
 
 ## 3rd Level -- Better. Stronger. Faster.
 
-Congratulation! If you managed to go until here, we can start the interresting stuff.
+Congratulation reaching this far!
+We can start the interesting stuff.
 At level 3, we'll only talk about command which are compatible with the old vi.
 
 ### Better
@@ -179,7 +180,7 @@ Now lets talk about very efficient moves:
 > - `%` : Go to corresponding `(`, `{`, `[`.
 > - `*` (resp. `#`) : go to next (resp. previous) occurrence of the word under the cursor
 
-Believe me, these three last commands are gold.
+Believe me, the last three commands are gold.
 
 ### Faster
 
@@ -276,12 +277,12 @@ Once the selection made, you can:
 
 <%= blogimage("autoindent.gif","Autoindent") %>
 
-Add something at the end of all visually selected lignes:
+Add something at the end of all visually selected lines:
 
 - `<C-v>` 
 - go to desired line (`jjj` or `<C-d>` or `/pattern` or `%` etc...)
 - `$` go to the end of line
-- `A`, write texte, `ESC`.
+- `A`, write text, `ESC`.
 
 <%= blogimage("append-to-many-lines.gif","Append to many lines") %>
 
