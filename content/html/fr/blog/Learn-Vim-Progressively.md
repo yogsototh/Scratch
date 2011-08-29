@@ -113,6 +113,7 @@ Je vous suggère :
     > - `0`         → Aller à la première colonne.
     > - `^`         → Aller au premier caractère de la ligne.
     > - `$`         → Aller à la fin de la ligne.
+    > - `g_`         → Aller au dernier caractère de la ligne.
     > - `/pattern`  → Rechercher `pattern` dans le fichier.
 
 3. Copier/Coller
@@ -235,12 +236,12 @@ _Quelques trucs utiles_
 
 
 Les blocs rectangulaires sont très commodes pour commenter plusieurs lignes de codes.
-Typiquement: `^<C-V><C-d>I// [ESC]`
+Typiquement: `^<C-V><C-d>I-- [ESC]`
 
 - `^` → aller en début de ligne
 - `<C-V>` → Commencer la sélection du bloc
 - `<C-d>` → se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
-- `I// [ESC]` → écrit `// ` pour commenter le reste de la ligne.
+- `I-- [ESC]` → écrit `-- ` pour commenter le reste de la ligne.
 
 <%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
 

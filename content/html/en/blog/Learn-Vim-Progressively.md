@@ -106,8 +106,9 @@ I suggest:
 2. Basic moves
 
     > - `0`         → go to first column
-    > - `^`         → go to first character of the line
+    > - `^`         → go to first non-blank character of the line
     > - `$`         → go to the end of line
+    > - `g_`         → go to the last non-blank character of line
     > - `/pattern`  → search for `pattern` 
 
 3. Copy/Paste
@@ -175,7 +176,7 @@ Don't skip this section.
     >
     > <%= blogimage("word_moves.jpg","Word moves example") %>
 
-Now lets talk about very efficient moves:
+Now let's talk about very efficient moves:
 
 > - `%` : Go to corresponding `(`, `{`, `[`.
 > - `*` (resp. `#`) : go to next (resp. previous) occurrence of the word under the cursor
@@ -224,15 +225,15 @@ _Some Useful Tips_
 > - `dt"` → remove everything until the `"`.
 > - `vi"` → select everything inside two `"`.
 
-### Select rectangular blocs: `<C-v>`. 
+### Select rectangular blocks: `<C-v>`. 
 
 Rectangular blocks are very useful to comment many lines of code.
-Typically: `0<C-v><C-d>I// [ESC]`
+Typically: `0<C-v><C-d>I-- [ESC]`
 
 - `^` → go to start of the line
 - `<C-v>` → Start block selection
 - `<C-d>` → move down (could also be `jjj` or `%`, etc...)
-- `I// [ESC]` → write `// ` to comment each line
+- `I-- [ESC]` → write `-- ` to comment each line
 
 
 <%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>

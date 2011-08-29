@@ -171,8 +171,9 @@ I suggest:</p>
     <blockquote>
       <ul>
         <li><code>0</code>         → go to first column</li>
-        <li><code>^</code>         → go to first character of the line</li>
+        <li><code>^</code>         → go to first non-blank character of the line</li>
         <li><code>$</code>         → go to the end of line</li>
+        <li><code>g_</code>         → go to the last non-blank character of line</li>
         <li><code>/pattern</code>  → search for <code>pattern</code> </li>
       </ul>
     </blockquote>
@@ -275,7 +276,7 @@ If you want to use word in the meaning of group of letter separated by spaces, j
   </li>
 </ol>
 
-<p>Now lets talk about very efficient moves:</p>
+<p>Now let&rsquo;s talk about very efficient moves:</p>
 
 <blockquote>
   <ul>
@@ -338,16 +339,16 @@ Some of these features were the reason I started to use vim.</p>
   </ul>
 </blockquote>
 
-<h3 id="select-rectangular-blocs-c-v">Select rectangular blocs: <code>&lt;C-v&gt;</code>.</h3>
+<h3 id="select-rectangular-blocks-c-v">Select rectangular blocks: <code>&lt;C-v&gt;</code>.</h3>
 
 <p>Rectangular blocks are very useful to comment many lines of code.
-Typically: <code>0&lt;C-v&gt;&lt;C-d&gt;I// [ESC]</code></p>
+Typically: <code>0&lt;C-v&gt;&lt;C-d&gt;I-- [ESC]</code></p>
 
 <ul>
   <li><code>^</code> → go to start of the line</li>
   <li><code>&lt;C-v&gt;</code> → Start block selection</li>
   <li><code>&lt;C-d&gt;</code> → move down (could also be <code>jjj</code> or <code>%</code>, etc&hellip;)</li>
-  <li><code>I// [ESC]</code> → write <code>// </code> to comment each line</li>
+  <li><code>I-- [ESC]</code> → write <code>-- </code> to comment each line</li>
 </ul>
 
 <p><img alt="Rectangular blocks" src="/Scratch/img/blog/Learn-Vim-Progressively/rectangular-blocks.gif" /></p>

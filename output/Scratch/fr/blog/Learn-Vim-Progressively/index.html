@@ -178,6 +178,7 @@ Je vous suggère&nbsp;:</p>
         <li><code>0</code>         → Aller à la première colonne.</li>
         <li><code>^</code>         → Aller au premier caractère de la ligne.</li>
         <li><code>$</code>         → Aller à la fin de la ligne.</li>
+        <li><code>g_</code>         → Aller au dernier caractère de la ligne.</li>
         <li><code>/pattern</code>  → Rechercher <code>pattern</code> dans le fichier.</li>
       </ul>
     </blockquote>
@@ -348,13 +349,13 @@ Celles que je n&rsquo;ai retrouvé que dans vim (ou presque).</p>
 <h3 id="slection-de-blocs-rectangulaires--c-v">Sélection de blocs rectangulaires&nbsp;: <code>&lt;C-V&gt;</code>.</h3>
 
 <p>Les blocs rectangulaires sont très commodes pour commenter plusieurs lignes de codes.
-Typiquement: <code>^&lt;C-V&gt;&lt;C-d&gt;I// [ESC]</code></p>
+Typiquement: <code>^&lt;C-V&gt;&lt;C-d&gt;I-- [ESC]</code></p>
 
 <ul>
   <li><code>^</code> → aller en début de ligne</li>
   <li><code>&lt;C-V&gt;</code> → Commencer la sélection du bloc</li>
   <li><code>&lt;C-d&gt;</code> → se déplacer vers le bas (pourrait être <code>jjj</code> ou <code>%</code> etc&hellip;)</li>
-  <li><code>I// [ESC]</code> → écrit <code>// </code> pour commenter le reste de la ligne.</li>
+  <li><code>I-- [ESC]</code> → écrit <code>-- </code> pour commenter le reste de la ligne.</li>
 </ul>
 
 <p><img alt="Rectangular blocks" src="/Scratch/img/blog/Learn-Vim-Progressively/rectangular-blocks.gif" /></p>
