@@ -104,26 +104,26 @@ en: And now, the list of command you can use in _Normal_ mode to survive:
 fr: Maintenant que vous savez passer du mode _Normal_ au mode _Insert_.
 fr: Voici les commandes de survie (toutes en mode _Normal_) :
 
-en: > - `i`: _Insert_ mode. Type `ESC` to return to Normal mode.
-en: > - `x`: Delete the char under the cursor
-en: > - `:wq`: Save and Quit (`:w` save, `:q` quit)
-en: > - `dd`: Delete (and copy) current line
-en: > - `p`: Paste
+en: > - `i` → _Insert_ mode. Type `ESC` to return to Normal mode.
+en: > - `x` → Delete the char under the cursor
+en: > - `:wq` → Save and Quit (`:w` save, `:q` quit)
+en: > - `dd` → Delete (and copy) current line
+en: > - `p` → Paste
 en: > 
 en: > Recommended:
 en: > 
-en: > - `hjkl` (recommended but not mandatory): basic cursor move (<-&darr;&uarr;→). Hint: `j` look like a down arrow.
-en: > - `:help <command>`: Show help about <command>, you can start using `:help` without anything else.
-fr: > - `i` : Passer en mode insértion. Taper `Echap` pour repasser en mode Normal.
-fr: > - `x` : Supprimer le caractère sous le curseur
-fr: > - `:wq` : Sauvegarder et quitter (`:w` sauvegarde, `:q` quitter)
-fr: > - `dd` : Supprimer (et copier) la ligne courante
-fr: > - `p` : Coller
+en: > - `hjkl` (highly recommended but not mandatory) →  basic cursor move (<-&darr;&uarr;→). Hint: `j` look like a down arrow.
+en: > - `:help <command>` → Show help about <command>, you can start using `:help` without anything else.
+fr: > - `i` → Passer en mode insértion. Taper `Echap` pour repasser en mode Normal.
+fr: > - `x` → Supprimer le caractère sous le curseur
+fr: > - `:wq<enter>` → Sauvegarder et quitter (`:w<enter>` sauvegarde, `:q<enter>` quitter)
+fr: > - `dd` → Supprimer (et copier) la ligne courante
+fr: > - `p` → Coller
 fr: > 
 fr: > Récommandées :
 fr: > 
-fr: > - `hjkl` (optionnel) : se déplacer (<-&darr;&uarr;→). Souvenez vous `j` ressemble à une flèche vers le bas.
-fr: > - `:help <commande>` : Affiche l'aide pour `<commande>`. Vous pouvez aussi écrire `:help` pour atterir sur l'aide générale.
+fr: > - `hjkl` (optionnel) → se déplacer (<-&darr;&uarr;→). Souvenez vous `j` ressemble à une flèche vers le bas.
+fr: > - `:help <commande>` → Affiche l'aide pour `<commande>`. Vous pouvez aussi écrire `:help` pour atterir sur l'aide générale.
 
 en: Only 5 commands. This is very few to start.
 en: Once these command start to become natural (may be after a complete day), you should go on level 2.
@@ -142,9 +142,14 @@ fr: Dans un éditeur normal pour copier il faut utiliser une combinaison de touc
 fr: En fait, lorsque vous appuyez sur la touche `Ctrl`, c'est un peu comme si toutes les touches du clavier avaient un autre usage.
 fr: Dans vim, lorsque vous êtes en mode Normal, c'est comme si vous mainteniez `Ctrl` enfoncé.
 
-en: A last word about notation: instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
-fr: Notez aussi qu'au lieu d'écrire `Ctrl-λ`, j'écrirais `<C-λ>`. 
-fr: C'est l'usage avec vim.
+en: A last word about notations: 
+en: 
+en: - instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
+en: - command staring by `:` will must end by `<enter>`. For example, when I write `:q` it means `:q<enter>`.
+fr: Quelques mots concernant les notations :
+fr: 
+fr: - Au lieu d'écrire `Ctrl-λ`, j'écrirai `<C-λ>`. 
+fr: - Les commandes qui commencent par `:` ont un retour à la ligne implicite à la fin. Par exemple lorsque que j'écris, `:q` celà signifi qu'il faut taper `:`, suivi de `q`, suivi de `<Return>`.
 
 en: ## 2nd Level -- Feel comfortable
 fr: ## 2ème Niveau -- Se sentir à son aise
@@ -277,10 +282,11 @@ en:     > 1. `w` → go to the start of the following word,
 en:     > 2. `e` → go to the end of this word.
 en:     >
 en:     > By default, word are composed of letter and the underscore character.
-en:     > If you want to use word in the meaning of group of letter separated by spaces, just use uppercases:
+en:     > Let's call a WORD a group of letter separated by blank characters. 
+en:     > If you want to consider WORDS, then just use uppercases:
 en:     >
-en:     > 1. `W` → go to the start of the following "extended" word,
-en:     > 2. `E` → go to the end of this "extended" word.
+en:     > 1. `W` → go to the start of the following WORD,
+en:     > 2. `E` → go to the end of this WORD.
 fr: 1. N`G` → Aller à la ligne N
 fr: 2. `gg` → raccourci pour `1G`, retourner au début du fichier
 fr: 3. `G`  → Aller à la dernière ligne.
@@ -290,10 +296,11 @@ fr:     > 1. `w` → aller au début du mot suivant
 fr:     > 2. `e` → aller à la fin du mot courant
 fr:     >
 fr:     > Par défaut les mots sont seulement composés de lettres (et du caractère souligné `_`).
-fr:     > Si vous voulez considérer les mots au sens "jusqu'au prochain espace", alors il suffit d'utiliser les majuscules.
+fr:     > Appelons un MOT un ensemble de lettre séparé par des caractères blancs (espaces, tabulation).
+fr:     > Si vous voulez considérer des MOTS alors il suffit d'utiliser les majuscules.
 fr:     >
-fr:     > 1. `W` → aller au début du mot "étendu" suivant
-fr:     > 2. `E` → aller à la fin du mot "étendu" courant
+fr:     > 1. `W` → aller au début du MOT suivant
+fr:     > 2. `E` → aller à la fin du MOT courant
     >
     > <%= blogimage("word_moves.jpg","Word moves example") %>
 
@@ -374,14 +381,42 @@ fr: > - `3fa` → recherche la 3ième occurrence de `a`.
 fr: > - `F` et `T` → comme `f` et `t` mais en arrière.
 > <%= blogimage("line_moves.jpg","Line moves") %>
 
-en: _Some Useful Tips_
-en: 
-en: > - `dt"` → remove everything until the `"`.
-en: > - `vi"` → select everything inside two `"`.
-fr: _Quelques trucs utiles_
-fr: 
-fr: > - `dt"` → supprime tout jusqu'au `"`.
-fr: > - `vi"` → sélectionne tout ce qui se trouve entre les deux `"`.
+en: A useful tip is: `dt"` → remove everything until the `"`.
+fr: Un truc pratique : `dt"` → supprime tout jusqu'au prochain `"`.
+
+en: ### Zone selection `<action>a<object>` or `<action>i<object>`
+fr: ### Selection de zone `<action>a<object>` ou `<action>i<object>`
+
+en: These command can only be used after an operator of in visual mode.
+en: But they are very powerful. Their main pattern is:
+fr: Ces commandes sont utilisable seulement en mode visuel ou après un "opérateur".
+fr: Mais elles sont très puissantes. Leur forme générale est:
+
+en: `<action>a<object>` and `<action>i<object>`
+fr: `<action>a<objet>` et `<action>i<objet>`
+
+en: Where action can be any action, for example, `d` (delete), `y` (yank), `v` (select in visual mode).
+en: And object can be: `w` a word, `W` a WORD (extended word), `s` a sentence, `p` a paragraph. But also, natural character such as `"`, `'`, `)`, `}`, `]`.
+fr: Où action peut être par exemple `d` (delete), `y` (yank), `v` (select in visual mode), etc...
+fr: Un objet peut être: `w` un mot, `W` un MOT (mot étendu), `s` une phrase, `p` un paragraphe. Mais aussi des caractère plus naturels comme `"`, `'`, `)`, `}`, `]`.
+
+en: Suppose the cursor is on the first `o` of `(map (+) ("foo"))`.
+fr: Supposons que le curseur soit positionné sur le premier `o` dans `(map (+) ("foo"))`.
+
+en: > - `vi"` → will select `foo`.
+en: > - `va"` → will select `"foo"`.
+en: > - `vi)` → will select `"foo"`.
+en: > - `va)` → will select `("foo")`.
+en: > - `v2i)` → will select `map (+) ("foo")`
+en: > - `v2a)` → will select `(map (+) ("foo"))`
+fr: > - `vi"` → sélectionnera `foo`.
+fr: > - `va"` → sélectionnera `"foo"`.
+fr: > - `vi)` → sélectionnera `"foo"`.
+fr: > - `va)` → sélectionnera `("foo")`.
+fr: > - `v2i)` → sélectionnera `map (+) ("foo")`
+fr: > - `v2a)` → sélectionnera `(map (+) ("foo"))`
+
+<%= blogimage("textobjects.png","Text objects selection") %>
 
 en: ### Select rectangular blocks: `<C-v>`. 
 fr: ### Sélection de blocs rectangulaires : `<C-V>`.
@@ -514,16 +549,26 @@ fr: > - `<C-w>+` (resp. `<C-w>-`) →  Agrandi (resp. diminue) le split
 en: That was 90% of commands I use every day.
 en: I suggest you to learn no more than one or two new command per day.
 en: After two to three weeks you'll start to feel the power of vim in your hands.
-en: 
-en: Then, you will learn about `!`, folds, registers, the plugins and many other features.
-en: Learn vim like you'd learn piano and all should be fine.
 fr: Voilà, je vous ai donné 90% des commandes que j'utilise tous les jours.
 fr: N'essayez pas de toutes les apprendre en une journée. 
 fr: Il faut le temps de s'habituer à chaque nouvelle commande. 
 fr: Je vous conseille de ne pas apprendre plus d'une ou deux commandes par jour.
-fr: 
+
+en: Learning Vim is more a matter of training than plain memorization.
+en: Fortunately vim comes with some very good tools and an excellent documentation.
+en: Run vimtutor until you are familiar with most basic commands.
+en: Also, you should read carefully this page: `:help usr_02.txt`.
+fr: Apprendre Vim est plus une question d'entraînement que de mémorisation.
+fr: Heureusement vim est founi avec un très bon tutoriel et une excellente documentation.
+fr: Lancez vimtutor jusqu'à ce que vous vous sentiez à l'aise avec les commandes basiques.
+fr: De plus, vous devriez aussi lire en détail la page suivate : `:help usr_02.txt`.
+
+en: Then, you will learn about `!`, folds, registers, the plugins and many other features.
+en: Learn vim like you'd learn piano and all should be fine.
 fr: Ensuite vous découvrirez `!`, les folds, les registres, les plugins et tout un tas d'autres choses.
 fr: Apprenez vim comme vous apprendriez le piano et vous devriez très bien vous en sortir.
+
+
 
 
 <script>

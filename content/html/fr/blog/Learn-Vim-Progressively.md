@@ -70,16 +70,16 @@ Pour repasser en mode Normal tapez sur la touche `Echap`.
 Maintenant que vous savez passer du mode _Normal_ au mode _Insert_.
 Voici les commandes de survie (toutes en mode _Normal_) :
 
-> - `i` : Passer en mode insértion. Taper `Echap` pour repasser en mode Normal.
-> - `x` : Supprimer le caractère sous le curseur
-> - `:wq` : Sauvegarder et quitter (`:w` sauvegarde, `:q` quitter)
-> - `dd` : Supprimer (et copier) la ligne courante
-> - `p` : Coller
+> - `i` → Passer en mode insértion. Taper `Echap` pour repasser en mode Normal.
+> - `x` → Supprimer le caractère sous le curseur
+> - `:wq<enter>` → Sauvegarder et quitter (`:w<enter>` sauvegarde, `:q<enter>` quitter)
+> - `dd` → Supprimer (et copier) la ligne courante
+> - `p` → Coller
 > 
 > Récommandées :
 > 
-> - `hjkl` (optionnel) : se déplacer (<-&darr;&uarr;→). Souvenez vous `j` ressemble à une flèche vers le bas.
-> - `:help <commande>` : Affiche l'aide pour `<commande>`. Vous pouvez aussi écrire `:help` pour atterir sur l'aide générale.
+> - `hjkl` (optionnel) → se déplacer (<-&darr;&uarr;→). Souvenez vous `j` ressemble à une flèche vers le bas.
+> - `:help <commande>` → Affiche l'aide pour `<commande>`. Vous pouvez aussi écrire `:help` pour atterir sur l'aide générale.
 
 Seulement 5 commandes. 
 Voilà, c'est tout pour un début. 
@@ -92,8 +92,10 @@ Dans un éditeur normal pour copier il faut utiliser une combinaison de touches 
 En fait, lorsque vous appuyez sur la touche `Ctrl`, c'est un peu comme si toutes les touches du clavier avaient un autre usage.
 Dans vim, lorsque vous êtes en mode Normal, c'est comme si vous mainteniez `Ctrl` enfoncé.
 
-Notez aussi qu'au lieu d'écrire `Ctrl-λ`, j'écrirais `<C-λ>`. 
-C'est l'usage avec vim.
+Quelques mots concernant les notations :
+
+- Au lieu d'écrire `Ctrl-λ`, j'écrirai `<C-λ>`. 
+- Les commandes qui commencent par `:` ont un retour à la ligne implicite à la fin. Par exemple lorsque que j'écris, `:q` celà signifi qu'il faut taper `:`, suivi de `q`, suivi de `<Return>`.
 
 ## 2ème Niveau -- Se sentir à son aise
 
@@ -173,10 +175,11 @@ Ne sautez pas cette section.
     > 2. `e` → aller à la fin du mot courant
     >
     > Par défaut les mots sont seulement composés de lettres (et du caractère souligné `_`).
-    > Si vous voulez considérer les mots au sens "jusqu'au prochain espace", alors il suffit d'utiliser les majuscules.
+    > Appelons un MOT un ensemble de lettre séparé par des caractères blancs (espaces, tabulation).
+    > Si vous voulez considérer des MOTS alors il suffit d'utiliser les majuscules.
     >
-    > 1. `W` → aller au début du mot "étendu" suivant
-    > 2. `E` → aller à la fin du mot "étendu" courant
+    > 1. `W` → aller au début du MOT suivant
+    > 2. `E` → aller à la fin du MOT courant
     >
     > <%= blogimage("word_moves.jpg","Word moves example") %>
 
@@ -227,10 +230,28 @@ Celles que je n'ai retrouvé que dans vim (ou presque).
 > - `F` et `T` → comme `f` et `t` mais en arrière.
 > <%= blogimage("line_moves.jpg","Line moves") %>
 
-_Quelques trucs utiles_
+Un truc pratique : `dt"` → supprime tout jusqu'au prochain `"`.
 
-> - `dt"` → supprime tout jusqu'au `"`.
-> - `vi"` → sélectionne tout ce qui se trouve entre les deux `"`.
+### Selection de zone `<action>a<object>` ou `<action>i<object>`
+
+Ces commandes sont utilisable seulement en mode visuel ou après un "opérateur".
+Mais elles sont très puissantes. Leur forme générale est:
+
+`<action>a<objet>` et `<action>i<objet>`
+
+Où action peut être par exemple `d` (delete), `y` (yank), `v` (select in visual mode), etc...
+Un objet peut être: `w` un mot, `W` un MOT (mot étendu), `s` une phrase, `p` un paragraphe. Mais aussi des caractère plus naturels comme `"`, `'`, `)`, `}`, `]`.
+
+Supposons que le curseur soit positionné sur le premier `o` dans `(map (+) ("foo"))`.
+
+> - `vi"` → sélectionnera `foo`.
+> - `va"` → sélectionnera `"foo"`.
+> - `vi)` → sélectionnera `"foo"`.
+> - `va)` → sélectionnera `("foo")`.
+> - `v2i)` → sélectionnera `map (+) ("foo")`
+> - `v2a)` → sélectionnera `(map (+) ("foo"))`
+
+<%= blogimage("textobjects.png","Text objects selection") %>
 
 ### Sélection de blocs rectangulaires : `<C-V>`.
 
@@ -314,8 +335,15 @@ N'essayez pas de toutes les apprendre en une journée.
 Il faut le temps de s'habituer à chaque nouvelle commande. 
 Je vous conseille de ne pas apprendre plus d'une ou deux commandes par jour.
 
+Apprendre Vim est plus une question d'entraînement que de mémorisation.
+Heureusement vim est founi avec un très bon tutoriel et une excellente documentation.
+Lancez vimtutor jusqu'à ce que vous vous sentiez à l'aise avec les commandes basiques.
+De plus, vous devriez aussi lire en détail la page suivate : `:help usr_02.txt`.
+
 Ensuite vous découvrirez `!`, les folds, les registres, les plugins et tout un tas d'autres choses.
 Apprenez vim comme vous apprendriez le piano et vous devriez très bien vous en sortir.
+
+
 
 
 <script>

@@ -69,16 +69,16 @@ To get back in _Normal_ mode just tap the `ESC` key.
 You know how to switch between _Insert_ and _Normal_ mode.
 And now, the list of command you can use in _Normal_ mode to survive:
 
-> - `i`: _Insert_ mode. Type `ESC` to return to Normal mode.
-> - `x`: Delete the char under the cursor
-> - `:wq`: Save and Quit (`:w` save, `:q` quit)
-> - `dd`: Delete (and copy) current line
-> - `p`: Paste
+> - `i` → _Insert_ mode. Type `ESC` to return to Normal mode.
+> - `x` → Delete the char under the cursor
+> - `:wq` → Save and Quit (`:w` save, `:q` quit)
+> - `dd` → Delete (and copy) current line
+> - `p` → Paste
 > 
 > Recommended:
 > 
-> - `hjkl` (recommended but not mandatory): basic cursor move (<-&darr;&uarr;→). Hint: `j` look like a down arrow.
-> - `:help <command>`: Show help about <command>, you can start using `:help` without anything else.
+> - `hjkl` (highly recommended but not mandatory) →  basic cursor move (<-&darr;&uarr;→). Hint: `j` look like a down arrow.
+> - `:help <command>` → Show help about <command>, you can start using `:help` without anything else.
 
 Only 5 commands. This is very few to start.
 Once these command start to become natural (may be after a complete day), you should go on level 2.
@@ -88,7 +88,10 @@ In standard editors, to copy you have to use the `Ctrl` key (`Ctrl-c` generally)
 In fact, when you press `Ctrl`, it is a bit like if all your key change meaning.
 With vim in Normal mode, it is a bit like if your `Ctrl` key is always pushed down.
 
-A last word about notation: instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
+A last word about notations: 
+
+- instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
+- command staring by `:` will must end by `<enter>`. For example, when I write `:q` it means `:q<enter>`.
 
 ## 2nd Level -- Feel comfortable
 
@@ -169,10 +172,11 @@ Don't skip this section.
     > 2. `e` → go to the end of this word.
     >
     > By default, word are composed of letter and the underscore character.
-    > If you want to use word in the meaning of group of letter separated by spaces, just use uppercases:
+    > Let's call a WORD a group of letter separated by blank characters. 
+    > If you want to consider WORDS, then just use uppercases:
     >
-    > 1. `W` → go to the start of the following "extended" word,
-    > 2. `E` → go to the end of this "extended" word.
+    > 1. `W` → go to the start of the following WORD,
+    > 2. `E` → go to the end of this WORD.
     >
     > <%= blogimage("word_moves.jpg","Word moves example") %>
 
@@ -220,10 +224,28 @@ Some of these features were the reason I started to use vim.
 > - `F` and `T` → like `f` and `t` but backward.
 > <%= blogimage("line_moves.jpg","Line moves") %>
 
-_Some Useful Tips_
+A useful tip is: `dt"` → remove everything until the `"`.
 
-> - `dt"` → remove everything until the `"`.
-> - `vi"` → select everything inside two `"`.
+### Zone selection `<action>a<object>` or `<action>i<object>`
+
+These command can only be used after an operator of in visual mode.
+But they are very powerful. Their main pattern is:
+
+`<action>a<object>` and `<action>i<object>`
+
+Where action can be any action, for example, `d` (delete), `y` (yank), `v` (select in visual mode).
+And object can be: `w` a word, `W` a WORD (extended word), `s` a sentence, `p` a paragraph. But also, natural character such as `"`, `'`, `)`, `}`, `]`.
+
+Suppose the cursor is on the first `o` of `(map (+) ("foo"))`.
+
+> - `vi"` → will select `foo`.
+> - `va"` → will select `"foo"`.
+> - `vi)` → will select `"foo"`.
+> - `va)` → will select `("foo")`.
+> - `v2i)` → will select `map (+) ("foo")`
+> - `v2a)` → will select `(map (+) ("foo"))`
+
+<%= blogimage("textobjects.png","Text objects selection") %>
 
 ### Select rectangular blocks: `<C-v>`. 
 
@@ -306,8 +328,15 @@ That was 90% of commands I use every day.
 I suggest you to learn no more than one or two new command per day.
 After two to three weeks you'll start to feel the power of vim in your hands.
 
+Learning Vim is more a matter of training than plain memorization.
+Fortunately vim comes with some very good tools and an excellent documentation.
+Run vimtutor until you are familiar with most basic commands.
+Also, you should read carefully this page: `:help usr_02.txt`.
+
 Then, you will learn about `!`, folds, registers, the plugins and many other features.
 Learn vim like you'd learn piano and all should be fine.
+
+
 
 
 <script>

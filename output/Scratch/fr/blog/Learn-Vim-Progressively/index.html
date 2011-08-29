@@ -122,18 +122,18 @@ Voici les commandes de survie (toutes en mode <em>Normal</em>)&nbsp;:</p>
 
 <blockquote>
   <ul>
-    <li><code>i</code>&nbsp;: Passer en mode insértion. Taper <code>Echap</code> pour repasser en mode Normal.</li>
-    <li><code>x</code>&nbsp;: Supprimer le caractère sous le curseur</li>
-    <li><code>:wq</code>&nbsp;: Sauvegarder et quitter (<code>:w</code> sauvegarde, <code>:q</code> quitter)</li>
-    <li><code>dd</code>&nbsp;: Supprimer (et copier) la ligne courante</li>
-    <li><code>p</code>&nbsp;: Coller</li>
+    <li><code>i</code> → Passer en mode insértion. Taper <code>Echap</code> pour repasser en mode Normal.</li>
+    <li><code>x</code> → Supprimer le caractère sous le curseur</li>
+    <li><code>:wq&lt;enter&gt;</code> → Sauvegarder et quitter (<code>:w&lt;enter&gt;</code> sauvegarde, <code>:q&lt;enter&gt;</code> quitter)</li>
+    <li><code>dd</code> → Supprimer (et copier) la ligne courante</li>
+    <li><code>p</code> → Coller</li>
   </ul>
 
   <p>Récommandées&nbsp;:</p>
 
   <ul>
-    <li><code>hjkl</code> (optionnel)&nbsp;: se déplacer (&larr;&darr;&uarr;→). Souvenez vous <code>j</code> ressemble à une flèche vers le bas.</li>
-    <li><code>:help &lt;commande&gt;</code>&nbsp;: Affiche l&rsquo;aide pour <code>&lt;commande&gt;</code>. Vous pouvez aussi écrire <code>:help</code> pour atterir sur l&rsquo;aide générale.</li>
+    <li><code>hjkl</code> (optionnel) → se déplacer (&larr;&darr;&uarr;→). Souvenez vous <code>j</code> ressemble à une flèche vers le bas.</li>
+    <li><code>:help &lt;commande&gt;</code> → Affiche l&rsquo;aide pour <code>&lt;commande&gt;</code>. Vous pouvez aussi écrire <code>:help</code> pour atterir sur l&rsquo;aide générale.</li>
   </ul>
 </blockquote>
 
@@ -148,8 +148,12 @@ Dans un éditeur normal pour copier il faut utiliser une combinaison de touches 
 En fait, lorsque vous appuyez sur la touche <code>Ctrl</code>, c&rsquo;est un peu comme si toutes les touches du clavier avaient un autre usage.
 Dans vim, lorsque vous êtes en mode Normal, c&rsquo;est comme si vous mainteniez <code>Ctrl</code> enfoncé.</p>
 
-<p>Notez aussi qu&rsquo;au lieu d&rsquo;écrire <code>Ctrl-λ</code>, j&rsquo;écrirais <code>&lt;C-λ&gt;</code>. 
-C&rsquo;est l&rsquo;usage avec vim.</p>
+<p>Quelques mots concernant les notations&nbsp;:</p>
+
+<ul>
+  <li>Au lieu d&rsquo;écrire <code>Ctrl-λ</code>, j&rsquo;écrirai <code>&lt;C-λ&gt;</code>. </li>
+  <li>Les commandes qui commencent par <code>:</code> ont un retour à la ligne implicite à la fin. Par exemple lorsque que j&rsquo;écris, <code>:q</code> celà signifi qu&rsquo;il faut taper <code>:</code>, suivi de <code>q</code>, suivi de <code>&lt;Return&gt;</code>.</li>
+</ul>
 
 <h2 id="me-niveau----se-sentir--son-aise">2<sup>ème</sup> Niveau &ndash; Se sentir à son aise</h2>
 
@@ -268,11 +272,12 @@ Ne sautez pas cette section.</p>
       </ol>
 
       <p>Par défaut les mots sont seulement composés de lettres (et du caractère souligné <code>_</code>).
-Si vous voulez considérer les mots au sens &ldquo;jusqu&rsquo;au prochain espace&rdquo;, alors il suffit d&rsquo;utiliser les majuscules.</p>
+Appelons un MOT un ensemble de lettre séparé par des caractères blancs (espaces, tabulation).
+Si vous voulez considérer des MOTS alors il suffit d&rsquo;utiliser les majuscules.</p>
 
       <ol>
-        <li><code>W</code> → aller au début du mot &ldquo;étendu&rdquo; suivant</li>
-        <li><code>E</code> → aller à la fin du mot &ldquo;étendu&rdquo; courant</li>
+        <li><code>W</code> → aller au début du MOT suivant</li>
+        <li><code>E</code> → aller à la fin du MOT courant</li>
       </ol>
 
       <p><img alt="Word moves example" src="/Scratch/img/blog/Learn-Vim-Progressively/word_moves.jpg" /></p>
@@ -337,14 +342,32 @@ Celles que je n&rsquo;ai retrouvé que dans vim (ou presque).</p>
   </ul>
 </blockquote>
 
-<p><em>Quelques trucs utiles</em></p>
+<p>Un truc pratique&nbsp;: <code>dt"</code> → supprime tout jusqu&rsquo;au prochain <code>"</code>.</p>
+
+<h3 id="selection-de-zone-actionaobject-ou-actioniobject">Selection de zone <code>&lt;action&gt;a&lt;object&gt;</code> ou <code>&lt;action&gt;i&lt;object&gt;</code></h3>
+
+<p>Ces commandes sont utilisable seulement en mode visuel ou après un &ldquo;opérateur&rdquo;.
+Mais elles sont très puissantes. Leur forme générale est:</p>
+
+<p><code>&lt;action&gt;a&lt;objet&gt;</code> et <code>&lt;action&gt;i&lt;objet&gt;</code></p>
+
+<p>Où action peut être par exemple <code>d</code> (delete), <code>y</code> (yank), <code>v</code> (select in visual mode), etc&hellip;
+Un objet peut être: <code>w</code> un mot, <code>W</code> un MOT (mot étendu), <code>s</code> une phrase, <code>p</code> un paragraphe. Mais aussi des caractère plus naturels comme <code>"</code>, <code>'</code>, <code>)</code>, <code>}</code>, <code>]</code>.</p>
+
+<p>Supposons que le curseur soit positionné sur le premier <code>o</code> dans <code>(map (+) ("foo"))</code>.</p>
 
 <blockquote>
   <ul>
-    <li><code>dt"</code> → supprime tout jusqu&rsquo;au <code>"</code>.</li>
-    <li><code>vi"</code> → sélectionne tout ce qui se trouve entre les deux <code>"</code>.</li>
+    <li><code>vi"</code> → sélectionnera <code>foo</code>.</li>
+    <li><code>va"</code> → sélectionnera <code>"foo"</code>.</li>
+    <li><code>vi)</code> → sélectionnera <code>"foo"</code>.</li>
+    <li><code>va)</code> → sélectionnera <code>("foo")</code>.</li>
+    <li><code>v2i)</code> → sélectionnera <code>map (+) ("foo")</code></li>
+    <li><code>v2a)</code> → sélectionnera <code>(map (+) ("foo"))</code></li>
   </ul>
 </blockquote>
+
+<p><img alt="Text objects selection" src="/Scratch/img/blog/Learn-Vim-Progressively/textobjects.png" /></p>
 
 <h3 id="slection-de-blocs-rectangulaires--c-v">Sélection de blocs rectangulaires&nbsp;: <code>&lt;C-V&gt;</code>.</h3>
 
@@ -443,6 +466,11 @@ Voici les commandes principales&nbsp;:</p>
 N&rsquo;essayez pas de toutes les apprendre en une journée. 
 Il faut le temps de s&rsquo;habituer à chaque nouvelle commande. 
 Je vous conseille de ne pas apprendre plus d&rsquo;une ou deux commandes par jour.</p>
+
+<p>Apprendre Vim est plus une question d&rsquo;entraînement que de mémorisation.
+Heureusement vim est founi avec un très bon tutoriel et une excellente documentation.
+Lancez vimtutor jusqu&rsquo;à ce que vous vous sentiez à l&rsquo;aise avec les commandes basiques.
+De plus, vous devriez aussi lire en détail la page suivate&nbsp;: <code>:help usr_02.txt</code>.</p>
 
 <p>Ensuite vous découvrirez <code>!</code>, les folds, les registres, les plugins et tout un tas d&rsquo;autres choses.
 Apprenez vim comme vous apprendriez le piano et vous devriez très bien vous en sortir.</p>

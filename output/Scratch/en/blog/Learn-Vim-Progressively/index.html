@@ -121,18 +121,18 @@ And now, the list of command you can use in <em>Normal</em> mode to survive:</p>
 
 <blockquote>
   <ul>
-    <li><code>i</code>: <em>Insert</em> mode. Type <code>ESC</code> to return to Normal mode.</li>
-    <li><code>x</code>: Delete the char under the cursor</li>
-    <li><code>:wq</code>: Save and Quit (<code>:w</code> save, <code>:q</code> quit)</li>
-    <li><code>dd</code>: Delete (and copy) current line</li>
-    <li><code>p</code>: Paste</li>
+    <li><code>i</code> → <em>Insert</em> mode. Type <code>ESC</code> to return to Normal mode.</li>
+    <li><code>x</code> → Delete the char under the cursor</li>
+    <li><code>:wq</code> → Save and Quit (<code>:w</code> save, <code>:q</code> quit)</li>
+    <li><code>dd</code> → Delete (and copy) current line</li>
+    <li><code>p</code> → Paste</li>
   </ul>
 
   <p>Recommended:</p>
 
   <ul>
-    <li><code>hjkl</code> (recommended but not mandatory): basic cursor move (&larr;&darr;&uarr;→). Hint: <code>j</code> look like a down arrow.</li>
-    <li><code>:help &lt;command&gt;</code>: Show help about <command />, you can start using <code>:help</code> without anything else.</li>
+    <li><code>hjkl</code> (highly recommended but not mandatory) →  basic cursor move (&larr;&darr;&uarr;→). Hint: <code>j</code> look like a down arrow.</li>
+    <li><code>:help &lt;command&gt;</code> → Show help about <command />, you can start using <code>:help</code> without anything else.</li>
   </ul>
 </blockquote>
 
@@ -144,7 +144,12 @@ In standard editors, to copy you have to use the <code>Ctrl</code> key (<code>Ct
 In fact, when you press <code>Ctrl</code>, it is a bit like if all your key change meaning.
 With vim in Normal mode, it is a bit like if your <code>Ctrl</code> key is always pushed down.</p>
 
-<p>A last word about notation: instead of writing <code>Ctrl-λ</code>, I&rsquo;ll write <code>&lt;C-λ&gt;</code>.</p>
+<p>A last word about notations: </p>
+
+<ul>
+  <li>instead of writing <code>Ctrl-λ</code>, I&rsquo;ll write <code>&lt;C-λ&gt;</code>.</li>
+  <li>command staring by <code>:</code> will must end by <code>&lt;enter&gt;</code>. For example, when I write <code>:q</code> it means <code>:q&lt;enter&gt;</code>.</li>
+</ul>
 
 <h2 id="nd-level----feel-comfortable">2<sup>nd</sup> Level &ndash; Feel comfortable</h2>
 
@@ -264,11 +269,12 @@ Don&rsquo;t skip this section.</p>
       </ol>
 
       <p>By default, word are composed of letter and the underscore character.
-If you want to use word in the meaning of group of letter separated by spaces, just use uppercases:</p>
+Let&rsquo;s call a WORD a group of letter separated by blank characters. 
+If you want to consider WORDS, then just use uppercases:</p>
 
       <ol>
-        <li><code>W</code> → go to the start of the following &ldquo;extended&rdquo; word,</li>
-        <li><code>E</code> → go to the end of this &ldquo;extended&rdquo; word.</li>
+        <li><code>W</code> → go to the start of the following WORD,</li>
+        <li><code>E</code> → go to the end of this WORD.</li>
       </ol>
 
       <p><img alt="Word moves example" src="/Scratch/img/blog/Learn-Vim-Progressively/word_moves.jpg" /></p>
@@ -330,14 +336,32 @@ Some of these features were the reason I started to use vim.</p>
   </ul>
 </blockquote>
 
-<p><em>Some Useful Tips</em></p>
+<p>A useful tip is: <code>dt"</code> → remove everything until the <code>"</code>.</p>
+
+<h3 id="zone-selection-actionaobject-or-actioniobject">Zone selection <code>&lt;action&gt;a&lt;object&gt;</code> or <code>&lt;action&gt;i&lt;object&gt;</code></h3>
+
+<p>These command can only be used after an operator of in visual mode.
+But they are very powerful. Their main pattern is:</p>
+
+<p><code>&lt;action&gt;a&lt;object&gt;</code> and <code>&lt;action&gt;i&lt;object&gt;</code></p>
+
+<p>Where action can be any action, for example, <code>d</code> (delete), <code>y</code> (yank), <code>v</code> (select in visual mode).
+And object can be: <code>w</code> a word, <code>W</code> a WORD (extended word), <code>s</code> a sentence, <code>p</code> a paragraph. But also, natural character such as <code>"</code>, <code>'</code>, <code>)</code>, <code>}</code>, <code>]</code>.</p>
+
+<p>Suppose the cursor is on the first <code>o</code> of <code>(map (+) ("foo"))</code>.</p>
 
 <blockquote>
   <ul>
-    <li><code>dt"</code> → remove everything until the <code>"</code>.</li>
-    <li><code>vi"</code> → select everything inside two <code>"</code>.</li>
+    <li><code>vi"</code> → will select <code>foo</code>.</li>
+    <li><code>va"</code> → will select <code>"foo"</code>.</li>
+    <li><code>vi)</code> → will select <code>"foo"</code>.</li>
+    <li><code>va)</code> → will select <code>("foo")</code>.</li>
+    <li><code>v2i)</code> → will select <code>map (+) ("foo")</code></li>
+    <li><code>v2a)</code> → will select <code>(map (+) ("foo"))</code></li>
   </ul>
 </blockquote>
+
+<p><img alt="Text objects selection" src="/Scratch/img/blog/Learn-Vim-Progressively/textobjects.png" /></p>
 
 <h3 id="select-rectangular-blocks-c-v">Select rectangular blocks: <code>&lt;C-v&gt;</code>.</h3>
 
@@ -435,6 +459,11 @@ Once the selection made, you can:</p>
 <p>That was 90% of commands I use every day.
 I suggest you to learn no more than one or two new command per day.
 After two to three weeks you&rsquo;ll start to feel the power of vim in your hands.</p>
+
+<p>Learning Vim is more a matter of training than plain memorization.
+Fortunately vim comes with some very good tools and an excellent documentation.
+Run vimtutor until you are familiar with most basic commands.
+Also, you should read carefully this page: <code>:help usr_02.txt</code>.</p>
 
 <p>Then, you will learn about <code>!</code>, folds, registers, the plugins and many other features.
 Learn vim like you&rsquo;d learn piano and all should be fine.</p>
