@@ -112,7 +112,7 @@ I suggest:
 
 3. Copy/Paste
 
-    > - `P`  → copy before, remember `p` is copy after current position.
+    > - `P`  → paste before, remember `p` is paste after current position.
     > - `yy` → copy current line, easier but equivalent to `ddP`
 
 4. Undo/Redo

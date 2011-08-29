@@ -184,7 +184,7 @@ fr:     > - `/pattern`  → Rechercher `pattern` dans le fichier.
 
 en: 3. Copy/Paste
 en: 
-en:     > - `P`  → copy before, remember `p` is copy after current position.
+en:     > - `P`  → paste before, remember `p` is paste after current position.
 en:     > - `yy` → copy current line, easier but equivalent to `ddP`
 fr: 3. Copier/Coller
 fr: 
