@@ -361,14 +361,14 @@ en: > - `0` → go to column 0
 en: > - `^` → go to first character on the line
 en: > - `$` → go to the last character on the line
 en: > - `fa` → go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will seek for the next (resp. previous) occurrence.
-en: > - `t,` → go just after the character `,`.
+en: > - `t,` → go just before the character `,`.
 en: > - `3fa` → search the 3rd occurrence of `a` on this line.
 en: > - `F` and `T` → like `f` and `t` but backward.
 fr: > - `0` → aller à la colonne 0,
 fr: > - `^` → aller au premier caractère de la ligne
 fr: > - `$` → aller au dernier caractère de la ligne
 fr: > - `fa` → vous amène à la prochaine occurrence de a sur la ligne courante. `,` (resp. `;`) recherche l'occurrence suivante (resp. précédente).
-fr: > - `t,` → vous amène juste après le `,`.
+fr: > - `t,` → vous amène juste avant le `,`.
 fr: > - `3fa` → recherche la 3ième occurrence de `a`.
 fr: > - `F` et `T` → comme `f` et `t` mais en arrière.
 > <%= blogimage("line_moves.jpg","Line moves") %>
