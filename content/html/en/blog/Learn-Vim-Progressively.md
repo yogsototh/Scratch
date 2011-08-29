@@ -214,7 +214,7 @@ Some of these features were the reason I started to use vim.
 > - `^` → go to first character on the line
 > - `$` → go to the last character on the line
 > - `fa` → go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will seek for the next (resp. previous) occurrence.
-> - `t,` → go just after the character `,`.
+> - `t,` → go just before the character `,`.
 > - `3fa` → search the 3rd occurrence of `a` on this line.
 > - `F` and `T` → like `f` and `t` but backward.
 > <%= blogimage("line_moves.jpg","Line moves") %>
