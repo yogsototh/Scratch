@@ -381,14 +381,14 @@ fr:
 fr: > - `dt"` → supprime tout jusqu'au `"`.
 fr: > - `vi"` → sélectionne tout ce qui se trouve entre les deux `"`.
 
-en: ### Select rectangular blocs: `<C-V>`. 
+en: ### Select rectangular blocs: `<C-v>`. 
 fr: ### Sélection de blocs rectangulaires : `<C-V>`.
 
 en: Rectangular blocks are very useful to comment many lines of code.
-en: Typically: `0<C-V><C-d>I// [ESC]`
+en: Typically: `0<C-v><C-d>I// [ESC]`
 en: 
 en: - `^` → go to start of the line
-en: - `<C-V>` → Start block selection
+en: - `<C-v>` → Start block selection
 en: - `<C-d>` → move down (could also be `jjj` or `%`, etc...)
 en: - `I// [ESC]` → write `// ` to comment each line
 
@@ -401,6 +401,9 @@ fr: - `<C-d>` → se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
 fr: - `I// [ESC]` → écrit `// ` pour commenter le reste de la ligne.
 
 <%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
+
+en: Not on windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
+fr: Remarquez que sous windows, vous devez utiliser `<C-q>` plutôt que `<C-v>` si votre "presse papier" n'est pas vide.
 
 en: ### Completion: `<C-n>` and `<C-p>`.
 fr: ### Complétion : `<C-n>` et `<C-p>`.
@@ -451,7 +454,7 @@ fr: > - Écrivez `100@@`. Cela va créer une liste de nombre croissants jusqu'à
 en: ### Visual selection: `v`,`V`,`<C-v>`
 fr: ### Sélection visuelle : `v`,`V`,`<C-v>`
 
-en: We saw an example with `<C-V>`. 
+en: We saw an example with `<C-v>`. 
 en: There is also `v` and `V`.
 en: Once the selection made, you can:
 en: 

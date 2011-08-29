@@ -338,19 +338,21 @@ Some of these features were the reason I started to use vim.</p>
   </ul>
 </blockquote>
 
-<h3 id="select-rectangular-blocs-c-v">Select rectangular blocs: <code>&lt;C-V&gt;</code>.</h3>
+<h3 id="select-rectangular-blocs-c-v">Select rectangular blocs: <code>&lt;C-v&gt;</code>.</h3>
 
 <p>Rectangular blocks are very useful to comment many lines of code.
-Typically: <code>0&lt;C-V&gt;&lt;C-d&gt;I// [ESC]</code></p>
+Typically: <code>0&lt;C-v&gt;&lt;C-d&gt;I// [ESC]</code></p>
 
 <ul>
   <li><code>^</code> → go to start of the line</li>
-  <li><code>&lt;C-V&gt;</code> → Start block selection</li>
+  <li><code>&lt;C-v&gt;</code> → Start block selection</li>
   <li><code>&lt;C-d&gt;</code> → move down (could also be <code>jjj</code> or <code>%</code>, etc&hellip;)</li>
   <li><code>I// [ESC]</code> → write <code>// </code> to comment each line</li>
 </ul>
 
 <p><img alt="Rectangular blocks" src="/Scratch/img/blog/Learn-Vim-Progressively/rectangular-blocks.gif" /></p>
+
+<p>Not on windows you might have to use <code>&lt;C-q&gt;</code> instead of <code>&lt;C-v&gt;</code> if your clipboard is not empty.</p>
 
 <h3 id="completion-c-n-and-c-p">Completion: <code>&lt;C-n&gt;</code> and <code>&lt;C-p&gt;</code>.</h3>
 
@@ -389,7 +391,7 @@ Then <code>@a</code> will replay the macro saved into the register <code>a</code
 
 <h3 id="visual-selection-vvc-v">Visual selection: <code>v</code>,<code>V</code>,<code>&lt;C-v&gt;</code></h3>
 
-<p>We saw an example with <code>&lt;C-V&gt;</code>. 
+<p>We saw an example with <code>&lt;C-v&gt;</code>. 
 There is also <code>v</code> and <code>V</code>.
 Once the selection made, you can:</p>
 

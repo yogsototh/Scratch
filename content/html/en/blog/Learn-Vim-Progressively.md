@@ -224,18 +224,20 @@ _Some Useful Tips_
 > - `dt"` → remove everything until the `"`.
 > - `vi"` → select everything inside two `"`.
 
-### Select rectangular blocs: `<C-V>`. 
+### Select rectangular blocs: `<C-v>`. 
 
 Rectangular blocks are very useful to comment many lines of code.
-Typically: `0<C-V><C-d>I// [ESC]`
+Typically: `0<C-v><C-d>I// [ESC]`
 
 - `^` → go to start of the line
-- `<C-V>` → Start block selection
+- `<C-v>` → Start block selection
 - `<C-d>` → move down (could also be `jjj` or `%`, etc...)
 - `I// [ESC]` → write `// ` to comment each line
 
 
 <%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
+
+Not on windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
 
 ### Completion: `<C-n>` and `<C-p>`.
 
@@ -267,7 +269,7 @@ Then `@a` will replay the macro saved into the register `a` as if you typed it.
 
 ### Visual selection: `v`,`V`,`<C-v>`
 
-We saw an example with `<C-V>`. 
+We saw an example with `<C-v>`. 
 There is also `v` and `V`.
 Once the selection made, you can:
 
