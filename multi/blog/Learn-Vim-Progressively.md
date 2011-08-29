@@ -172,14 +172,16 @@ fr:     > - `cw`    → Remplacer la fin du mot.
 en: 2. Basic moves
 en: 
 en:     > - `0`         → go to first column
-en:     > - `^`         → go to first character of the line
+en:     > - `^`         → go to first non-blank character of the line
 en:     > - `$`         → go to the end of line
+en:     > - `g_`         → go to the last non-blank character of line
 en:     > - `/pattern`  → search for `pattern` 
 fr: 2. Déplacements basiques
 fr: 
 fr:     > - `0`         → Aller à la première colonne.
 fr:     > - `^`         → Aller au premier caractère de la ligne.
 fr:     > - `$`         → Aller à la fin de la ligne.
+fr:     > - `g_`         → Aller au dernier caractère de la ligne.
 fr:     > - `/pattern`  → Rechercher `pattern` dans le fichier.
 
 en: 3. Copy/Paste
@@ -295,7 +297,7 @@ fr:     > 2. `E` → aller à la fin du mot "étendu" courant
     >
     > <%= blogimage("word_moves.jpg","Word moves example") %>
 
-en: Now lets talk about very efficient moves:
+en: Now let's talk about very efficient moves:
 fr: Passons aux commandes de déplacement les plus efficaces :
 
 en: > - `%` : Go to corresponding `(`, `{`, `[`.
@@ -381,24 +383,24 @@ fr:
 fr: > - `dt"` → supprime tout jusqu'au `"`.
 fr: > - `vi"` → sélectionne tout ce qui se trouve entre les deux `"`.
 
-en: ### Select rectangular blocs: `<C-v>`. 
+en: ### Select rectangular blocks: `<C-v>`. 
 fr: ### Sélection de blocs rectangulaires : `<C-V>`.
 
 en: Rectangular blocks are very useful to comment many lines of code.
-en: Typically: `0<C-v><C-d>I// [ESC]`
+en: Typically: `0<C-v><C-d>I-- [ESC]`
 en: 
 en: - `^` → go to start of the line
 en: - `<C-v>` → Start block selection
 en: - `<C-d>` → move down (could also be `jjj` or `%`, etc...)
-en: - `I// [ESC]` → write `// ` to comment each line
+en: - `I-- [ESC]` → write `-- ` to comment each line
 
 fr: Les blocs rectangulaires sont très commodes pour commenter plusieurs lignes de codes.
-fr: Typiquement: `^<C-V><C-d>I// [ESC]`
+fr: Typiquement: `^<C-V><C-d>I-- [ESC]`
 fr: 
 fr: - `^` → aller en début de ligne
 fr: - `<C-V>` → Commencer la sélection du bloc
 fr: - `<C-d>` → se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
-fr: - `I// [ESC]` → écrit `// ` pour commenter le reste de la ligne.
+fr: - `I-- [ESC]` → écrit `-- ` pour commenter le reste de la ligne.
 
 <%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
 
