@@ -83,38 +83,38 @@ fr: 2. NE TOUCHEZ A RIEN! Lisez
 
 en: In a standard editor, typing on the keyboard is enough to write something and see it on the screen.
 en: Not this time.
-en: Vim is in _edition_ mode.
-en: Lets get in _insertion_ mode.
+en: Vim is in _"Normal"_ mode.
+en: Lets get in _Insert_ mode.
 en: Type on the letter `i`.
 fr: Dans un éditeur normal, il suffit de taper sur une touche du clavier et la lettre s'affiche à l'écran.
 fr: Pas ici.
-fr: Vim est en mode _edition_.
-fr: Commençons par placer vim en mode _insertion_.
+fr: Vim est en mode _"Normal"_.
+fr: Commençons par placer vim en mode _Insert_.
 fr: Tapez sur la touche `i`.
 
 en: You should feel a bit better.
 en: You can type letters like in a standard notepad.
-en: To get back in _edition_ mode just tap the `ESC` key.
+en: To get back in _"Normal"_ mode just tap the `ESC` key.
 fr: Voilà, c'est magique. 
 fr: Vous pouvez tapez comme dans un éditeur standard.
-fr: Pour repasser en mode édition tapez sur la touche `Echap`.
+fr: Pour repasser en mode "Normal" tapez sur la touche `Echap`.
 
-en: You know how to switch between insertion and edition mode.
-en: And now, the list of command you can use in edition mode to survive:
-fr: Maintenant que vous savez passer du mode edition au mode insertion.
-fr: Voici les commandes de survie (toutes en mode edition) :
+en: You know how to switch between Insert and _"Normal"_ mode.
+en: And now, the list of command you can use in _"Normal"_ mode to survive:
+fr: Maintenant que vous savez passer du mode _"Normal"_ au mode _"Insert"_.
+fr: Voici les commandes de survie (toutes en mode _"Normal"_) :
 
-en: > - `i`: Insertion mode. Type `ESC` to return to edition mode.
+en: > - `i`: Insertion mode. Type `ESC` to return to "Normal" mode.
 en: > - `x`: Delete the char under the cursor
 en: > - `:wq`: Save and Quit (`:w` save, `:q` quit)
 en: > - `dd`: Delete (and copy) current line
-en: > - `p`: Paste current line
+en: > - `p`: Paste
 en: > 
 en: > Recommended:
 en: > 
 en: > - `hjkl` (recommended but not mandatory): basic cursor move (<-&darr;&uarr;→). Hint: `j` look like a down arrow.
 en: > - `:help <command>`: Show help about <command>, you can start using `:help` without anything else.
-fr: > - `i` : Passer en mode insértion. Taper `Echap` pour repasser en mode edition.
+fr: > - `i` : Passer en mode insértion. Taper `Echap` pour repasser en mode "Normal".
 fr: > - `x` : Supprimer le caractère sous le curseur
 fr: > - `:wq` : Sauvegarder et quitter (`:w` sauvegarde, `:q` quitter)
 fr: > - `dd` : Supprimer (et copier) la ligne courante
@@ -133,17 +133,17 @@ fr: Essayez d'éditer vos fichiers comme ça pendant une petite journée.
 fr: Lorsque ces commandes vous sembleront naturelles, 
 fr: vous pourrez passer à l'étape d'après. 
 
-en: But before, just a little remark on _edition mode_.
+en: But before, just a little remark on _"Normal" mode_.
 en: In standard editors, to copy you have to use the `Ctrl` key (`Ctrl-c` generally).
 en: In fact, when you press `Ctrl`, it is a bit like if all your key change meaning.
-en: With vim in edition mode, it is a bit like if your `Ctrl` key is always pushed down.
-fr: Mais avant un petit mot sur le mode édition.
+en: With vim in "Normal" mode, it is a bit like if your `Ctrl` key is always pushed down.
+fr: Mais avant un petit mot sur le mode "Normal".
 fr: Dans un éditeur normal pour copier il faut utiliser une combinaison de touches (`Ctrl-c`). 
 fr: En fait, lorsque vous appuyez sur la touche `Ctrl`, c'est un peu comme si toutes les touches du clavier avaient un autre usage.
-fr: Dans vim, lorsque vous êtes en mode édition, c'est comme si vous mainteniez `Ctrl` enfoncé.
+fr: Dans vim, lorsque vous êtes en mode "Normal", c'est comme si vous mainteniez `Ctrl` enfoncé.
 
-en: A last word about notation: instead of writing `Ctrl-λ`, I'll write `C-λ`.
-fr: Notez aussi qu'au lieu d'écrire `Ctrl-λ`, j'écrirais `C-λ`. 
+en: A last word about notation: instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
+fr: Notez aussi qu'au lieu d'écrire `Ctrl-λ`, j'écrirais `<C-λ>`. 
 fr: C'est l'usage avec vim.
 
 en: ## 2nd Level -- Feel comfortable
@@ -161,13 +161,13 @@ en:
 en:     > - `a`     → insert after the cursor
 en:     > - `o`     → insert a new line after the current one
 en:     > - `O`     → insert a new line before the current one
-en:     > - `cw`    → replace the word under the cursor
+en:     > - `cw`    → replace the end of the word under the cursor
 fr: 1. Les variantes de l'insertion
 fr: 
 fr:     > - `a`     → Comme `i`, mais après la position du curseur.
 fr:     > - `o`     → Comme `i`, mais à la ligne suivante.
 fr:     > - `O`     → Comme `o` mais ajoute la ligne avant.
-fr:     > - `cw`    → Remplacer le mot sous le curseur.
+fr:     > - `cw`    → Remplacer la find du mot sous le curseur.
 
 en: 2. Basic moves
 en: 
@@ -194,11 +194,11 @@ fr:     > - `yy` → Copier la ligne courante. C'est plus simple et équivalent 
 en: 4. Undo/Redo
 en: 
 en:     > - `u` → undo
-en:     > - `C-r` → redo
+en:     > - `<C-r>` → redo
 fr: 4. Annuler/Refaire
 fr: 
 fr:     > - `u` → Annuler (undo)
-fr:     > - `C-r` → Refaire
+fr:     > - `<C-r>` → Refaire
 
 en: 5. Load/Save/Quit/Change File (Buffer)
 en: 
@@ -332,10 +332,8 @@ fr: - `0` → Aller au début de la ligne,
 fr: - `y` → copie à partir d'ici,
 fr: - `$` → jusqu'à la fin de cette ligne.
 
-en: Of course, there is a shortcut for this: `yy` or `Y`.
 en: We also can do things like `ye`, yank from here to the end of the word.
 en: But also `y2/foo` yank up to the second occurrence of "foo".
-fr: Bien sûr, il y a un raccourci pour ça: `yy` ou `Y`.
 fr: On peut donc faire des choses comme `ye`, copie à partir de la position courante du curseur jusqu'à là fin du mot.
 fr: Mais aussi: `y2/toto` copie jusqu'à la seconde prochaine occurrence de "toto".
 
@@ -382,32 +380,32 @@ fr:
 fr: > - `dt"` → supprime tout jusqu'au `"`.
 fr: > - `vi"` → sélectionne tout ce qui se trouve entre les deux `"`.
 
-en: ### Select rectangular blocs: `C-V`. 
-fr: ### Sélection de blocs rectangulaires : `C-V`.
+en: ### Select rectangular blocs: `<C-V>`. 
+fr: ### Sélection de blocs rectangulaires : `<C-V>`.
 
 en: Rectangular blocks are very useful to comment many lines of code.
-en: Typically: `0C-VC-dI// [ESC]`
+en: Typically: `0<C-V><C-d>I// [ESC]`
 en: 
 en: - `^` → go to start of the line
-en: - `C-V` → Start block selection
-en: - `C-d` → move down (could also be `jjj` or `%`, etc...)
+en: - `<C-V>` → Start block selection
+en: - `<C-d>` → move down (could also be `jjj` or `%`, etc...)
 en: - `I// [ESC]` → write `// ` to comment each line
 
 fr: Les blocs rectangulaires sont très commodes pour commenter plusieurs lignes de codes.
-fr: Typiquement: `^C-VC-dI// [ESC]`
+fr: Typiquement: `^<C-V><C-d>I// [ESC]`
 fr: 
 fr: - `^` → aller en début de ligne
-fr: - `C-V` → Commencer la sélection du bloc
-fr: - `C-d` → se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
+fr: - `<C-V>` → Commencer la sélection du bloc
+fr: - `<C-d>` → se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
 fr: - `I// [ESC]` → écrit `// ` pour commenter le reste de la ligne.
 
 <%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
 
-en: ### Completion: `C-n` and `C-p`.
-fr: ### Complétion : `C-n` et `C-p`.
+en: ### Completion: `<C-n>` and `<C-p>`.
+fr: ### Complétion : `<C-n>` et `<C-p>`.
 
-en: In insertion mode, just type the start of a word, then type `C-p`, magic...
-fr: En mode insertion, commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `C-p`. Magique.
+en: In Insert mode, just type the start of a word, then type `<C-p>`, magic...
+fr: En mode "Insert", commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `<C-p>`. Magique.
 <%= blogimage("completion.gif","Completion") %> 
 
 en: ### Macros : `qa` do something `q`, `@a`, `@@`
@@ -424,11 +422,11 @@ en: > *Example*
 en: >
 en: > On a line containing only the number 1, type this:
 en: >
-en: > - `qaYpC-aq` → 
+en: > - `qaYp<C-a>q` → 
 en: >   
 en: >   - `qa` start recording. 
 en: >   - `Yp` duplicate this line.
-en: >   - `C-a` increment the number.
+en: >   - `<C-a>` increment the number.
 en: >   - `q` stop recording.
 en: > 
 en: > - `@a` → write 2 under the 1
@@ -437,11 +435,11 @@ en: > - Now do `100@@` will create a list of increasing numbers until 103.
 fr: > Exemple :
 fr: > Sur une ligne contenant seulement un 1 tapez :
 fr: >
-fr: > - `qaYpC-aq` → 
+fr: > - `qaYp<C-a>q` → 
 fr: > 
 fr: >   - `qa` → début de l'enregistrement.
 fr: >   - `Yp` → copier cette ligne.
-fr: >   - `C-a` → incrémente le nombre.
+fr: >   - `<C-a>` → incrémente le nombre.
 fr: >   - `q` → arrête d'enregistrer.
 fr: > 
 fr: > - `@a` → écrit un 2 sous le 1.
@@ -449,17 +447,17 @@ fr: > - Écrivez `100@@`. Cela va créer une liste de nombre croissants jusqu'à
 
 <%= blogimage("macros.gif","Macros") %>
 
-en: ### Visual selection: `v`,`V`,`C-v`
-fr: ### Sélection visuelle : `v`,`V`,`C-v`
+en: ### Visual selection: `v`,`V`,`<C-v>`
+fr: ### Sélection visuelle : `v`,`V`,`<C-v>`
 
-en: We saw an example with `C-V`. 
+en: We saw an example with `<C-V>`. 
 en: There is also `v` and `V`.
 en: Once the selection made, you can:
 en: 
 en: - `J` → join all lines together.
 en: - `<` (resp. `>`) → indent to the left (resp. to the right).
 en: - `=` → auto indent
-fr: On a déjà vu un exemple avec `C-V`. 
+fr: On a déjà vu un exemple avec `<C-V>`. 
 fr: Mais il y a aussi, `v` et `V`.
 fr: Et une fois la sélection visuelle faite vous pouvez par exemple:
 fr: 
@@ -471,14 +469,14 @@ fr: - `=` → auto indenter
 
 en: Add something at the end of all visually selected lignes:
 en: 
-en: - `S-V` 
-en: - go to desired line (`jjj` or `C-d` or `/pattern` or `%` etc...)
+en: - `<C-v>` 
+en: - go to desired line (`jjj` or `<C-d>` or `/pattern` or `%` etc...)
 en: - `$` go to the end of line
 en: - `A`, write texte, `ESC`.
 fr: Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellement : 
 fr: 
-fr: - `S-V` 
-fr: - aller jusqu'à la ligne désirée (`jjj` ou `C-d` ou `/pattern` ou `%` etc...)
+fr: - `<C-v>` 
+fr: - aller jusqu'à la ligne désirée (`jjj` ou `<C-d>` ou `/pattern` ou `%` etc...)
 fr: - `$` aller à la fin 
 fr: - `A`, écrire le texte, `Echap`.
 
@@ -491,17 +489,17 @@ fr: ### Splits : `:split` et `vsplit`.
 en: Here are the main commands, but you should look at `:help split`.
 en: 
 en: > - `:split` → create a split (`:vsplit` create a vertical split)
-en: > - `C-w<dir>` : where dir is any of `hjkl` or <-&darr;&uarr;→ to change split.
-en: > - `C-w_` (resp. `C-w|`) : maximise size of split (resp. vertical split)
-en: > - `C-w+` (resp. `C-w-`) : Grow (resp. shrink) split
+en: > - `<C-w><dir>` : where dir is any of `hjkl` or <-&darr;&uarr;→ to change split.
+en: > - `<C-w>_` (resp. `<C-w>|`) : maximise size of split (resp. vertical split)
+en: > - `<C-w>+` (resp. `<C-w>-`) : Grow (resp. shrink) split
 fr: Je vous conseille de faire un `:help split`. 
 fr: Celà permet de manipuler plusieurs buffer sur la même fenêtre.
 fr: Voici les commandes principales :
 fr: 
 fr: > - `:split` →  crée un split (`:vsplit` crée un split vertical)
-fr: > - `C-w<dir>` →  où dir est l'un de `hjkl` ou <-&darr;&uarr;→ permet de changer de split.
-fr: > - `C-w_` (resp. `C-w|`) →  Maximise la taille du split (resp. split vertical)
-fr: > - `C-w+` (resp. `C-w-`) →  Agrandi (resp. diminue) le split
+fr: > - `<C-w><dir>` →  où dir est l'un de `hjkl` ou <-&darr;&uarr;→ permet de changer de split.
+fr: > - `<C-w>_` (resp. `<C-w>|`) →  Maximise la taille du split (resp. split vertical)
+fr: > - `<C-w>+` (resp. `<C-w>-`) →  Agrandi (resp. diminue) le split
 
 <%= blogimage("split.gif","Split") %>
 

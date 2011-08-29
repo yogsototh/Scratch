@@ -58,22 +58,22 @@ In fact it will certainly take 2 weeks instead of 3 days.
 
 In a standard editor, typing on the keyboard is enough to write something and see it on the screen.
 Not this time.
-Vim is in _edition_ mode.
-Lets get in _insertion_ mode.
+Vim is in _"Normal"_ mode.
+Lets get in _Insert_ mode.
 Type on the letter `i`.
 
 You should feel a bit better.
 You can type letters like in a standard notepad.
-To get back in _edition_ mode just tap the `ESC` key.
+To get back in _"Normal"_ mode just tap the `ESC` key.
 
-You know how to switch between insertion and edition mode.
-And now, the list of command you can use in edition mode to survive:
+You know how to switch between Insert and _"Normal"_ mode.
+And now, the list of command you can use in _"Normal"_ mode to survive:
 
-> - `i`: Insertion mode. Type `ESC` to return to edition mode.
+> - `i`: Insertion mode. Type `ESC` to return to "Normal" mode.
 > - `x`: Delete the char under the cursor
 > - `:wq`: Save and Quit (`:w` save, `:q` quit)
 > - `dd`: Delete (and copy) current line
-> - `p`: Paste current line
+> - `p`: Paste
 > 
 > Recommended:
 > 
@@ -83,12 +83,12 @@ And now, the list of command you can use in edition mode to survive:
 Only 5 commands. This is very few to start.
 Once these command start to become natural (may be after a complete day), you should go on level 2.
 
-But before, just a little remark on _edition mode_.
+But before, just a little remark on _"Normal" mode_.
 In standard editors, to copy you have to use the `Ctrl` key (`Ctrl-c` generally).
 In fact, when you press `Ctrl`, it is a bit like if all your key change meaning.
-With vim in edition mode, it is a bit like if your `Ctrl` key is always pushed down.
+With vim in "Normal" mode, it is a bit like if your `Ctrl` key is always pushed down.
 
-A last word about notation: instead of writing `Ctrl-λ`, I'll write `C-λ`.
+A last word about notation: instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
 
 ## 2nd Level -- Feel comfortable
 
@@ -101,7 +101,7 @@ I suggest:
     > - `a`     → insert after the cursor
     > - `o`     → insert a new line after the current one
     > - `O`     → insert a new line before the current one
-    > - `cw`    → replace the word under the cursor
+    > - `cw`    → replace the end of the word under the cursor
 
 2. Basic moves
 
@@ -118,7 +118,7 @@ I suggest:
 4. Undo/Redo
 
     > - `u` → undo
-    > - `C-r` → redo
+    > - `<C-r>` → redo
 
 5. Load/Save/Quit/Change File (Buffer)
 
@@ -195,7 +195,6 @@ For example : `0y$` means
 - `y` → yank from here
 - `$` → up to the end of this line
 
-Of course, there is a shortcut for this: `yy` or `Y`.
 We also can do things like `ye`, yank from here to the end of the word.
 But also `y2/foo` yank up to the second occurrence of "foo".
 
@@ -214,7 +213,7 @@ Some of these features were the reason I started to use vim.
 > - `^` → go to first character on the line
 > - `$` → go to the last character on the line
 > - `fa` → go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will seek for the next (resp. previous) occurrence.
-> - `t,` → go just after the character `,`.
+> - `t,` → go just before the character `,`.
 > - `3fa` → search the 3rd occurrence of `a` on this line.
 > - `F` and `T` → like `f` and `t` but backward.
 > <%= blogimage("line_moves.jpg","Line moves") %>
@@ -224,22 +223,22 @@ _Some Useful Tips_
 > - `dt"` → remove everything until the `"`.
 > - `vi"` → select everything inside two `"`.
 
-### Select rectangular blocs: `C-V`. 
+### Select rectangular blocs: `<C-V>`. 
 
 Rectangular blocks are very useful to comment many lines of code.
-Typically: `0C-VC-dI// [ESC]`
+Typically: `0<C-V><C-d>I// [ESC]`
 
 - `^` → go to start of the line
-- `C-V` → Start block selection
-- `C-d` → move down (could also be `jjj` or `%`, etc...)
+- `<C-V>` → Start block selection
+- `<C-d>` → move down (could also be `jjj` or `%`, etc...)
 - `I// [ESC]` → write `// ` to comment each line
 
 
 <%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
 
-### Completion: `C-n` and `C-p`.
+### Completion: `<C-n>` and `<C-p>`.
 
-In insertion mode, just type the start of a word, then type `C-p`, magic...
+In Insert mode, just type the start of a word, then type `<C-p>`, magic...
 <%= blogimage("completion.gif","Completion") %> 
 
 ### Macros : `qa` do something `q`, `@a`, `@@`
@@ -252,11 +251,11 @@ Then `@a` will replay the macro saved into the register `a` as if you typed it.
 >
 > On a line containing only the number 1, type this:
 >
-> - `qaYpC-aq` → 
+> - `qaYp<C-a>q` → 
 >   
 >   - `qa` start recording. 
 >   - `Yp` duplicate this line.
->   - `C-a` increment the number.
+>   - `<C-a>` increment the number.
 >   - `q` stop recording.
 > 
 > - `@a` → write 2 under the 1
@@ -265,9 +264,9 @@ Then `@a` will replay the macro saved into the register `a` as if you typed it.
 
 <%= blogimage("macros.gif","Macros") %>
 
-### Visual selection: `v`,`V`,`C-v`
+### Visual selection: `v`,`V`,`<C-v>`
 
-We saw an example with `C-V`. 
+We saw an example with `<C-V>`. 
 There is also `v` and `V`.
 Once the selection made, you can:
 
@@ -279,8 +278,8 @@ Once the selection made, you can:
 
 Add something at the end of all visually selected lignes:
 
-- `S-V` 
-- go to desired line (`jjj` or `C-d` or `/pattern` or `%` etc...)
+- `<C-v>` 
+- go to desired line (`jjj` or `<C-d>` or `/pattern` or `%` etc...)
 - `$` go to the end of line
 - `A`, write texte, `ESC`.
 
@@ -291,9 +290,9 @@ Add something at the end of all visually selected lignes:
 Here are the main commands, but you should look at `:help split`.
 
 > - `:split` → create a split (`:vsplit` create a vertical split)
-> - `C-w<dir>` : where dir is any of `hjkl` or <-&darr;&uarr;→ to change split.
-> - `C-w_` (resp. `C-w|`) : maximise size of split (resp. vertical split)
-> - `C-w+` (resp. `C-w-`) : Grow (resp. shrink) split
+> - `<C-w><dir>` : where dir is any of `hjkl` or <-&darr;&uarr;→ to change split.
+> - `<C-w>_` (resp. `<C-w>|`) : maximise size of split (resp. vertical split)
+> - `<C-w>+` (resp. `<C-w>-`) : Grow (resp. shrink) split
 
 <%= blogimage("split.gif","Split") %>
 

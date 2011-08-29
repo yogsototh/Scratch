@@ -59,18 +59,18 @@ En fait ça sera certainement plus 2 semaines que 3 jours.
 
 Dans un éditeur normal, il suffit de taper sur une touche du clavier et la lettre s'affiche à l'écran.
 Pas ici.
-Vim est en mode _edition_.
-Commençons par placer vim en mode _insertion_.
+Vim est en mode _"Normal"_.
+Commençons par placer vim en mode _Insert_.
 Tapez sur la touche `i`.
 
 Voilà, c'est magique. 
 Vous pouvez tapez comme dans un éditeur standard.
-Pour repasser en mode édition tapez sur la touche `Echap`.
+Pour repasser en mode "Normal" tapez sur la touche `Echap`.
 
-Maintenant que vous savez passer du mode edition au mode insertion.
-Voici les commandes de survie (toutes en mode edition) :
+Maintenant que vous savez passer du mode _"Normal"_ au mode _"Insert"_.
+Voici les commandes de survie (toutes en mode _"Normal"_) :
 
-> - `i` : Passer en mode insértion. Taper `Echap` pour repasser en mode edition.
+> - `i` : Passer en mode insértion. Taper `Echap` pour repasser en mode "Normal".
 > - `x` : Supprimer le caractère sous le curseur
 > - `:wq` : Sauvegarder et quitter (`:w` sauvegarde, `:q` quitter)
 > - `dd` : Supprimer (et copier) la ligne courante
@@ -87,12 +87,12 @@ Essayez d'éditer vos fichiers comme ça pendant une petite journée.
 Lorsque ces commandes vous sembleront naturelles, 
 vous pourrez passer à l'étape d'après. 
 
-Mais avant un petit mot sur le mode édition.
+Mais avant un petit mot sur le mode "Normal".
 Dans un éditeur normal pour copier il faut utiliser une combinaison de touches (`Ctrl-c`). 
 En fait, lorsque vous appuyez sur la touche `Ctrl`, c'est un peu comme si toutes les touches du clavier avaient un autre usage.
-Dans vim, lorsque vous êtes en mode édition, c'est comme si vous mainteniez `Ctrl` enfoncé.
+Dans vim, lorsque vous êtes en mode "Normal", c'est comme si vous mainteniez `Ctrl` enfoncé.
 
-Notez aussi qu'au lieu d'écrire `Ctrl-λ`, j'écrirais `C-λ`. 
+Notez aussi qu'au lieu d'écrire `Ctrl-λ`, j'écrirais `<C-λ>`. 
 C'est l'usage avec vim.
 
 ## 2ème Niveau -- Se sentir à son aise
@@ -106,7 +106,7 @@ Je vous suggère :
     > - `a`     → Comme `i`, mais après la position du curseur.
     > - `o`     → Comme `i`, mais à la ligne suivante.
     > - `O`     → Comme `o` mais ajoute la ligne avant.
-    > - `cw`    → Remplacer le mot sous le curseur.
+    > - `cw`    → Remplacer la find du mot sous le curseur.
 
 2. Déplacements basiques
 
@@ -123,7 +123,7 @@ Je vous suggère :
 4. Annuler/Refaire
 
     > - `u` → Annuler (undo)
-    > - `C-r` → Refaire
+    > - `<C-r>` → Refaire
 
 5. Ouvrir/Sauvegarder/Quitter/Changer de fichier (buffer)
 
@@ -203,7 +203,6 @@ Par exemple : `0y$` signifie :
 - `y` → copie à partir d'ici,
 - `$` → jusqu'à la fin de cette ligne.
 
-Bien sûr, il y a un raccourci pour ça: `yy` ou `Y`.
 On peut donc faire des choses comme `ye`, copie à partir de la position courante du curseur jusqu'à là fin du mot.
 Mais aussi: `y2/toto` copie jusqu'à la seconde prochaine occurrence de "toto".
 
@@ -222,7 +221,7 @@ Celles que je n'ai retrouvé que dans vim (ou presque).
 > - `^` → aller au premier caractère de la ligne
 > - `$` → aller au dernier caractère de la ligne
 > - `fa` → vous amène à la prochaine occurrence de a sur la ligne courante. `,` (resp. `;`) recherche l'occurrence suivante (resp. précédente).
-> - `t,` → vous amène juste après le `,`.
+> - `t,` → vous amène juste avant le `,`.
 > - `3fa` → recherche la 3ième occurrence de `a`.
 > - `F` et `T` → comme `f` et `t` mais en arrière.
 > <%= blogimage("line_moves.jpg","Line moves") %>
@@ -232,22 +231,22 @@ _Quelques trucs utiles_
 > - `dt"` → supprime tout jusqu'au `"`.
 > - `vi"` → sélectionne tout ce qui se trouve entre les deux `"`.
 
-### Sélection de blocs rectangulaires : `C-V`.
+### Sélection de blocs rectangulaires : `<C-V>`.
 
 
 Les blocs rectangulaires sont très commodes pour commenter plusieurs lignes de codes.
-Typiquement: `^C-VC-dI// [ESC]`
+Typiquement: `^<C-V><C-d>I// [ESC]`
 
 - `^` → aller en début de ligne
-- `C-V` → Commencer la sélection du bloc
-- `C-d` → se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
+- `<C-V>` → Commencer la sélection du bloc
+- `<C-d>` → se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
 - `I// [ESC]` → écrit `// ` pour commenter le reste de la ligne.
 
 <%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
 
-### Complétion : `C-n` et `C-p`.
+### Complétion : `<C-n>` et `<C-p>`.
 
-En mode insertion, commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `C-p`. Magique.
+En mode "Insert", commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `<C-p>`. Magique.
 <%= blogimage("completion.gif","Completion") %> 
 
 ### Macros : `qa` faire quelque chose `q`, `@a`, `@@`
@@ -259,11 +258,11 @@ Ensuite `@a` va rejouer la macro enregistrée dans le registre `a` comme si c'es
 > Exemple :
 > Sur une ligne contenant seulement un 1 tapez :
 >
-> - `qaYpC-aq` → 
+> - `qaYp<C-a>q` → 
 > 
 >   - `qa` → début de l'enregistrement.
 >   - `Yp` → copier cette ligne.
->   - `C-a` → incrémente le nombre.
+>   - `<C-a>` → incrémente le nombre.
 >   - `q` → arrête d'enregistrer.
 > 
 > - `@a` → écrit un 2 sous le 1.
@@ -271,9 +270,9 @@ Ensuite `@a` va rejouer la macro enregistrée dans le registre `a` comme si c'es
 
 <%= blogimage("macros.gif","Macros") %>
 
-### Sélection visuelle : `v`,`V`,`C-v`
+### Sélection visuelle : `v`,`V`,`<C-v>`
 
-On a déjà vu un exemple avec `C-V`. 
+On a déjà vu un exemple avec `<C-V>`. 
 Mais il y a aussi, `v` et `V`.
 Et une fois la sélection visuelle faite vous pouvez par exemple:
 
@@ -285,8 +284,8 @@ Et une fois la sélection visuelle faite vous pouvez par exemple:
 
 Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellement : 
 
-- `S-V` 
-- aller jusqu'à la ligne désirée (`jjj` ou `C-d` ou `/pattern` ou `%` etc...)
+- `<C-v>` 
+- aller jusqu'à la ligne désirée (`jjj` ou `<C-d>` ou `/pattern` ou `%` etc...)
 - `$` aller à la fin 
 - `A`, écrire le texte, `Echap`.
 
@@ -299,9 +298,9 @@ Celà permet de manipuler plusieurs buffer sur la même fenêtre.
 Voici les commandes principales :
 
 > - `:split` →  crée un split (`:vsplit` crée un split vertical)
-> - `C-w<dir>` →  où dir est l'un de `hjkl` ou <-&darr;&uarr;→ permet de changer de split.
-> - `C-w_` (resp. `C-w|`) →  Maximise la taille du split (resp. split vertical)
-> - `C-w+` (resp. `C-w-`) →  Agrandi (resp. diminue) le split
+> - `<C-w><dir>` →  où dir est l'un de `hjkl` ou <-&darr;&uarr;→ permet de changer de split.
+> - `<C-w>_` (resp. `<C-w>|`) →  Maximise la taille du split (resp. split vertical)
+> - `<C-w>+` (resp. `<C-w>-`) →  Agrandi (resp. diminue) le split
 
 <%= blogimage("split.gif","Split") %>
 

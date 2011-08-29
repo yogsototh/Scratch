@@ -148,7 +148,7 @@ Dans un éditeur normal pour copier il faut utiliser une combinaison de touches 
 En fait, lorsque vous appuyez sur la touche <code>Ctrl</code>, c&rsquo;est un peu comme si toutes les touches du clavier avaient un autre usage.
 Dans vim, lorsque vous êtes en mode édition, c&rsquo;est comme si vous mainteniez <code>Ctrl</code> enfoncé.</p>
 
-<p>Notez aussi qu&rsquo;au lieu d&rsquo;écrire <code>Ctrl-λ</code>, j&rsquo;écrirais <code>C-λ</code>. 
+<p>Notez aussi qu&rsquo;au lieu d&rsquo;écrire <code>Ctrl-λ</code>, j&rsquo;écrirais <code>&lt;C-λ&gt;</code>. 
 C&rsquo;est l&rsquo;usage avec vim.</p>
 
 <h2 id="me-niveau----se-sentir--son-aise">2<sup>ème</sup> Niveau &ndash; Se sentir à son aise</h2>
@@ -166,7 +166,7 @@ Je vous suggère&nbsp;:</p>
         <li><code>a</code>     → Comme <code>i</code>, mais après la position du curseur.</li>
         <li><code>o</code>     → Comme <code>i</code>, mais à la ligne suivante.</li>
         <li><code>O</code>     → Comme <code>o</code> mais ajoute la ligne avant.</li>
-        <li><code>cw</code>    → Remplacer le mot sous le curseur.</li>
+        <li><code>cw</code>    → Remplacer la find du mot sous le curseur.</li>
       </ul>
     </blockquote>
   </li>
@@ -198,7 +198,7 @@ Je vous suggère&nbsp;:</p>
     <blockquote>
       <ul>
         <li><code>u</code> → Annuler (undo)</li>
-        <li><code>C-r</code> → Refaire</li>
+        <li><code>&lt;C-r&gt;</code> → Refaire</li>
       </ul>
     </blockquote>
   </li>
@@ -309,8 +309,7 @@ De façon générale&nbsp;:</p>
   <li><code>$</code> → jusqu&rsquo;à la fin de cette ligne.</li>
 </ul>
 
-<p>Bien sûr, il y a un raccourci pour ça: <code>yy</code> ou <code>Y</code>.
-On peut donc faire des choses comme <code>ye</code>, copie à partir de la position courante du curseur jusqu&rsquo;à là fin du mot.
+<p>On peut donc faire des choses comme <code>ye</code>, copie à partir de la position courante du curseur jusqu&rsquo;à là fin du mot.
 Mais aussi: <code>y2/toto</code> copie jusqu&rsquo;à la seconde prochaine occurrence de &ldquo;toto&rdquo;.</p>
 
 <p>Ce qui est vrai pour <code>y</code> (yank → copier),
@@ -330,7 +329,7 @@ Celles que je n&rsquo;ai retrouvé que dans vim (ou presque).</p>
     <li><code>^</code> → aller au premier caractère de la ligne</li>
     <li><code>$</code> → aller au dernier caractère de la ligne</li>
     <li><code>fa</code> → vous amène à la prochaine occurrence de a sur la ligne courante. <code>,</code> (resp. <code>;</code>) recherche l&rsquo;occurrence suivante (resp. précédente).</li>
-    <li><code>t,</code> → vous amène juste après le <code>,</code>.</li>
+    <li><code>t,</code> → vous amène juste avant le <code>,</code>.</li>
     <li><code>3fa</code> → recherche la 3ième occurrence de <code>a</code>.</li>
     <li><code>F</code> et <code>T</code> → comme <code>f</code> et <code>t</code> mais en arrière.
 <img alt="Line moves" src="/Scratch/img/blog/Learn-Vim-Progressively/line_moves.jpg" /></li>
@@ -346,23 +345,23 @@ Celles que je n&rsquo;ai retrouvé que dans vim (ou presque).</p>
   </ul>
 </blockquote>
 
-<h3 id="slection-de-blocs-rectangulaires--c-v">Sélection de blocs rectangulaires&nbsp;: <code>C-V</code>.</h3>
+<h3 id="slection-de-blocs-rectangulaires--c-v">Sélection de blocs rectangulaires&nbsp;: <code>&lt;C-V&gt;</code>.</h3>
 
 <p>Les blocs rectangulaires sont très commodes pour commenter plusieurs lignes de codes.
-Typiquement: <code>^C-VC-dI// [ESC]</code></p>
+Typiquement: <code>^&lt;C-V&gt;&lt;C-d&gt;I// [ESC]</code></p>
 
 <ul>
   <li><code>^</code> → aller en début de ligne</li>
-  <li><code>C-V</code> → Commencer la sélection du bloc</li>
-  <li><code>C-d</code> → se déplacer vers le bas (pourrait être <code>jjj</code> ou <code>%</code> etc&hellip;)</li>
+  <li><code>&lt;C-V&gt;</code> → Commencer la sélection du bloc</li>
+  <li><code>&lt;C-d&gt;</code> → se déplacer vers le bas (pourrait être <code>jjj</code> ou <code>%</code> etc&hellip;)</li>
   <li><code>I// [ESC]</code> → écrit <code>// </code> pour commenter le reste de la ligne.</li>
 </ul>
 
 <p><img alt="Rectangular blocks" src="/Scratch/img/blog/Learn-Vim-Progressively/rectangular-blocks.gif" /></p>
 
-<h3 id="compltion--c-n-et-c-p">Complétion&nbsp;: <code>C-n</code> et <code>C-p</code>.</h3>
+<h3 id="compltion--c-n-et-c-p">Complétion&nbsp;: <code>&lt;C-n&gt;</code> et <code>&lt;C-p&gt;</code>.</h3>
 
-<p>En mode insertion, commencez à écrire le début d&rsquo;un mot déjà présent dans l&rsquo;un des buffers (fichers) ouvert et tapes <code>C-p</code>. Magique.
+<p>En mode insertion, commencez à écrire le début d&rsquo;un mot déjà présent dans l&rsquo;un des buffers (fichers) ouvert et tapes <code>&lt;C-p&gt;</code>. Magique.
 <img alt="Completion" src="/Scratch/img/blog/Learn-Vim-Progressively/completion.gif" /> </p>
 
 <h3 id="macros--qa-faire-quelque-chose-q-a-">Macros&nbsp;: <code>qa</code> faire quelque chose <code>q</code>, <code>@a</code>, <code>@@</code></h3>
@@ -377,12 +376,12 @@ Sur une ligne contenant seulement un 1 tapez&nbsp;:</p>
 
   <ul>
     <li>
-      <p><code>qaYpC-aq</code> → </p>
+      <p><code>qaYp&lt;C-a&gt;q</code> → </p>
 
       <ul>
         <li><code>qa</code> → début de l&rsquo;enregistrement.</li>
         <li><code>Yp</code> → copier cette ligne.</li>
-        <li><code>C-a</code> → incrémente le nombre.</li>
+        <li><code>&lt;C-a&gt;</code> → incrémente le nombre.</li>
         <li><code>q</code> → arrête d&rsquo;enregistrer.</li>
       </ul>
     </li>
@@ -393,9 +392,9 @@ Sur une ligne contenant seulement un 1 tapez&nbsp;:</p>
 
 <p><img alt="Macros" src="/Scratch/img/blog/Learn-Vim-Progressively/macros.gif" /></p>
 
-<h3 id="slection-visuelle--vvc-v">Sélection visuelle&nbsp;: <code>v</code>,<code>V</code>,<code>C-v</code></h3>
+<h3 id="slection-visuelle--vvc-v">Sélection visuelle&nbsp;: <code>v</code>,<code>V</code>,<code>&lt;C-v&gt;</code></h3>
 
-<p>On a déjà vu un exemple avec <code>C-V</code>. 
+<p>On a déjà vu un exemple avec <code>&lt;C-V&gt;</code>. 
 Mais il y a aussi, <code>v</code> et <code>V</code>.
 Et une fois la sélection visuelle faite vous pouvez par exemple:</p>
 
@@ -410,8 +409,8 @@ Et une fois la sélection visuelle faite vous pouvez par exemple:</p>
 <p>Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellement&nbsp;: </p>
 
 <ul>
-  <li><code>S-V</code> </li>
-  <li>aller jusqu&rsquo;à la ligne désirée (<code>jjj</code> ou <code>C-d</code> ou <code>/pattern</code> ou <code>%</code> etc&hellip;)</li>
+  <li><code>&lt;C-v&gt;</code> </li>
+  <li>aller jusqu&rsquo;à la ligne désirée (<code>jjj</code> ou <code>&lt;C-d&gt;</code> ou <code>/pattern</code> ou <code>%</code> etc&hellip;)</li>
   <li><code>$</code> aller à la fin </li>
   <li><code>A</code>, écrire le texte, <code>Echap</code>.</li>
 </ul>
@@ -427,9 +426,9 @@ Voici les commandes principales&nbsp;:</p>
 <blockquote>
   <ul>
     <li><code>:split</code> →  crée un split (<code>:vsplit</code> crée un split vertical)</li>
-    <li><code>C-w&lt;dir&gt;</code> →  où dir est l&rsquo;un de <code>hjkl</code> ou &larr;&darr;&uarr;→ permet de changer de split.</li>
-    <li><code>C-w_</code> (resp. <code>C-w|</code>) →  Maximise la taille du split (resp. split vertical)</li>
-    <li><code>C-w+</code> (resp. <code>C-w-</code>) →  Agrandi (resp. diminue) le split</li>
+    <li><code>&lt;C-w&gt;&lt;dir&gt;</code> →  où dir est l&rsquo;un de <code>hjkl</code> ou &larr;&darr;&uarr;→ permet de changer de split.</li>
+    <li><code>&lt;C-w&gt;_</code> (resp. <code>&lt;C-w&gt;|</code>) →  Maximise la taille du split (resp. split vertical)</li>
+    <li><code>&lt;C-w&gt;+</code> (resp. <code>&lt;C-w&gt;-</code>) →  Agrandi (resp. diminue) le split</li>
   </ul>
 </blockquote>
 
@@ -537,7 +536,7 @@ $(document).ready(function() {
                 </div>
                 <div id="lastmod">
                     Écrit le : 25/08/2011
-                    modifié le : 26/08/2011 
+                    modifié le : 29/08/2011 
                 </div>
                 <div>
                     Site entièrement réalisé avec
