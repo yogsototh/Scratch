@@ -122,17 +122,17 @@ Je vous suggère :
 
 4. Annuler/Refaire
 
-> - `u` → Annuler (undo)
-> - `C-r` → Refaire
+    > - `u` → Annuler (undo)
+    > - `C-r` → Refaire
 
 5. Ouvrir/Sauvegarder/Quitter/Changer de fichier (buffer)
 
-> - `:e <path/to/file>` → Ouvrir.
-> - `:w` → Sauvegarder.
-> - `:saveas <path/to/file>` → Sauvegarder sous ...
-> - `ZZ` or `:wq` → Sauvegarder et quitter.
-> - `:q!` → Quitter sans sauvegarder. De même `:qa!` quitte même si d'autres fichiers (buffers) ont des modifications non sauvegardées.
-> - `:bn` (resp. `:bp`) → Affiche le fichier suivant (resp. précédent).
+    > - `:e <path/to/file>` → Ouvrir.
+    > - `:w` → Sauvegarder.
+    > - `:saveas <path/to/file>` → Sauvegarder sous ...
+    > - `ZZ` or `:wq` → Sauvegarder et quitter.
+    > - `:q!` → Quitter sans sauvegarder. De même `:qa!` quitte même si d'autres fichiers (buffers) ont des modifications non sauvegardées.
+    > - `:bn` (resp. `:bp`) → Affiche le fichier suivant (resp. précédent).
 
 Prenez le temps de bien intégrer ces commandes.
 Une fois fait, vous devriez être capable de faire tout ce qu'on peut attendre d'un éditeur de texte classique.

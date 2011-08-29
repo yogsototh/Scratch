@@ -189,30 +189,29 @@ I suggest:</p>
   </li>
   <li>
     <p>Undo/Redo</p>
+
+    <blockquote>
+      <ul>
+        <li><code>u</code> → undo</li>
+        <li><code>C-r</code> → redo</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>
+    <p>Load/Save/Quit/Change File (Buffer)</p>
+
+    <blockquote>
+      <ul>
+        <li><code>:e &lt;path/to/file&gt;</code> →  open</li>
+        <li><code>:w</code> → save</li>
+        <li><code>:saveas &lt;path/to/file&gt;</code> → save to <code>&lt;path/to/file&gt;</code></li>
+        <li><code>ZZ</code> or <code>:wq</code> → save and quit</li>
+        <li><code>:q!</code> → quit without saving, also <code>:qa!</code> to even if there are  some modified hidden buffers.</li>
+        <li><code>:bn</code> (resp. <code>:bp</code>) → show next (resp. previous) file (buffer)</li>
+      </ul>
+    </blockquote>
   </li>
 </ol>
-
-<blockquote>
-  <ul>
-    <li><code>u</code> → undo</li>
-    <li><code>C-r</code> → redo</li>
-  </ul>
-</blockquote>
-
-<ol>
-  <li>Load/Save/Quit/Change File (Buffer)</li>
-</ol>
-
-<blockquote>
-  <ul>
-    <li><code>:e &lt;path/to/file&gt;</code> → open</li>
-    <li><code>:w</code> → save</li>
-    <li><code>:saveas &lt;path/to/file&gt;</code> → save to <code>&lt;filename&gt;</code></li>
-    <li><code>ZZ</code> or <code>:wq</code> → save and quit</li>
-    <li><code>:q!</code> → quit without saving, also <code>:qa!</code> to even if there are  some modified hidden buffers.</li>
-    <li><code>:bn</code> (resp. <code>:bp</code>) → show next (resp. previous) file (buffer)</li>
-  </ul>
-</blockquote>
 
 <p>Take the time to integrate all of these command.
 Once done, you should be able to do every thing you are able to do on other editors.

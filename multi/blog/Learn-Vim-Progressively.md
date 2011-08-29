@@ -193,29 +193,29 @@ fr:     > - `yy` → Copier la ligne courante. C'est plus simple et équivalent 
 
 en: 4. Undo/Redo
 en: 
-en: > - `u` → undo
-en: > - `C-r` → redo
+en:     > - `u` → undo
+en:     > - `C-r` → redo
 fr: 4. Annuler/Refaire
 fr: 
-fr: > - `u` → Annuler (undo)
-fr: > - `C-r` → Refaire
+fr:     > - `u` → Annuler (undo)
+fr:     > - `C-r` → Refaire
 
 en: 5. Load/Save/Quit/Change File (Buffer)
 en: 
-en: > - `:e <path/to/file>` → open
-en: > - `:w` → save
-en: > - `:saveas <path/to/file>` → save to `<filename>`
-en: > - `ZZ` or `:wq` → save and quit
-en: > - `:q!` → quit without saving, also `:qa!` to even if there are  some modified hidden buffers.
-en: > - `:bn` (resp. `:bp`) → show next (resp. previous) file (buffer)
+en:     > - `:e <path/to/file>` →  open
+en:     > - `:w` → save
+en:     > - `:saveas <path/to/file>` → save to `<path/to/file>`
+en:     > - `ZZ` or `:wq` → save and quit
+en:     > - `:q!` → quit without saving, also `:qa!` to even if there are  some modified hidden buffers.
+en:     > - `:bn` (resp. `:bp`) → show next (resp. previous) file (buffer)
 fr: 5. Ouvrir/Sauvegarder/Quitter/Changer de fichier (buffer)
 fr: 
-fr: > - `:e <path/to/file>` → Ouvrir.
-fr: > - `:w` → Sauvegarder.
-fr: > - `:saveas <path/to/file>` → Sauvegarder sous ...
-fr: > - `ZZ` or `:wq` → Sauvegarder et quitter.
-fr: > - `:q!` → Quitter sans sauvegarder. De même `:qa!` quitte même si d'autres fichiers (buffers) ont des modifications non sauvegardées.
-fr: > - `:bn` (resp. `:bp`) → Affiche le fichier suivant (resp. précédent).
+fr:     > - `:e <path/to/file>` → Ouvrir.
+fr:     > - `:w` → Sauvegarder.
+fr:     > - `:saveas <path/to/file>` → Sauvegarder sous ...
+fr:     > - `ZZ` or `:wq` → Sauvegarder et quitter.
+fr:     > - `:q!` → Quitter sans sauvegarder. De même `:qa!` quitte même si d'autres fichiers (buffers) ont des modifications non sauvegardées.
+fr:     > - `:bn` (resp. `:bp`) → Affiche le fichier suivant (resp. précédent).
 
 en: Take the time to integrate all of these command.
 en: Once done, you should be able to do every thing you are able to do on other editors.

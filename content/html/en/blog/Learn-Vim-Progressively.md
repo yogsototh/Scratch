@@ -117,17 +117,17 @@ I suggest:
 
 4. Undo/Redo
 
-> - `u` → undo
-> - `C-r` → redo
+    > - `u` → undo
+    > - `C-r` → redo
 
 5. Load/Save/Quit/Change File (Buffer)
 
-> - `:e <path/to/file>` → open
-> - `:w` → save
-> - `:saveas <path/to/file>` → save to `<filename>`
-> - `ZZ` or `:wq` → save and quit
-> - `:q!` → quit without saving, also `:qa!` to even if there are  some modified hidden buffers.
-> - `:bn` (resp. `:bp`) → show next (resp. previous) file (buffer)
+    > - `:e <path/to/file>` →  open
+    > - `:w` → save
+    > - `:saveas <path/to/file>` → save to `<path/to/file>`
+    > - `ZZ` or `:wq` → save and quit
+    > - `:q!` → quit without saving, also `:qa!` to even if there are  some modified hidden buffers.
+    > - `:bn` (resp. `:bp`) → show next (resp. previous) file (buffer)
 
 Take the time to integrate all of these command.
 Once done, you should be able to do every thing you are able to do on other editors.
