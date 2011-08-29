@@ -108,24 +108,24 @@ In fact it will certainly take 2 weeks instead of 3 days.</p>
 
 <p>In a standard editor, typing on the keyboard is enough to write something and see it on the screen.
 Not this time.
-Vim is in <em>edition</em> mode.
-Lets get in <em>insertion</em> mode.
+Vim is in <em>&ldquo;Normal&rdquo;</em> mode.
+Lets get in <em>Insert</em> mode.
 Type on the letter <code>i</code>.</p>
 
 <p>You should feel a bit better.
 You can type letters like in a standard notepad.
-To get back in <em>edition</em> mode just tap the <code>ESC</code> key.</p>
+To get back in <em>&ldquo;Normal&rdquo;</em> mode just tap the <code>ESC</code> key.</p>
 
-<p>You know how to switch between insertion and edition mode.
-And now, the list of command you can use in edition mode to survive:</p>
+<p>You know how to switch between Insert and <em>&ldquo;Normal&rdquo;</em> mode.
+And now, the list of command you can use in <em>&ldquo;Normal&rdquo;</em> mode to survive:</p>
 
 <blockquote>
   <ul>
-    <li><code>i</code>: Insertion mode. Type <code>ESC</code> to return to edition mode.</li>
+    <li><code>i</code>: Insertion mode. Type <code>ESC</code> to return to &ldquo;Normal&rdquo; mode.</li>
     <li><code>x</code>: Delete the char under the cursor</li>
     <li><code>:wq</code>: Save and Quit (<code>:w</code> save, <code>:q</code> quit)</li>
     <li><code>dd</code>: Delete (and copy) current line</li>
-    <li><code>p</code>: Paste current line</li>
+    <li><code>p</code>: Paste</li>
   </ul>
 
   <p>Recommended:</p>
@@ -139,12 +139,12 @@ And now, the list of command you can use in edition mode to survive:</p>
 <p>Only 5 commands. This is very few to start.
 Once these command start to become natural (may be after a complete day), you should go on level 2.</p>
 
-<p>But before, just a little remark on <em>edition mode</em>.
+<p>But before, just a little remark on <em>&ldquo;Normal&rdquo; mode</em>.
 In standard editors, to copy you have to use the <code>Ctrl</code> key (<code>Ctrl-c</code> generally).
 In fact, when you press <code>Ctrl</code>, it is a bit like if all your key change meaning.
-With vim in edition mode, it is a bit like if your <code>Ctrl</code> key is always pushed down.</p>
+With vim in &ldquo;Normal&rdquo; mode, it is a bit like if your <code>Ctrl</code> key is always pushed down.</p>
 
-<p>A last word about notation: instead of writing <code>Ctrl-λ</code>, I&rsquo;ll write <code>C-λ</code>.</p>
+<p>A last word about notation: instead of writing <code>Ctrl-λ</code>, I&rsquo;ll write <code>&lt;C-λ&gt;</code>.</p>
 
 <h2 id="nd-level----feel-comfortable">2<sup>nd</sup> Level &ndash; Feel comfortable</h2>
 
@@ -161,7 +161,7 @@ I suggest:</p>
         <li><code>a</code>     → insert after the cursor</li>
         <li><code>o</code>     → insert a new line after the current one</li>
         <li><code>O</code>     → insert a new line before the current one</li>
-        <li><code>cw</code>    → replace the word under the cursor</li>
+        <li><code>cw</code>    → replace the end of the word under the cursor</li>
       </ul>
     </blockquote>
   </li>
@@ -193,7 +193,7 @@ I suggest:</p>
     <blockquote>
       <ul>
         <li><code>u</code> → undo</li>
-        <li><code>C-r</code> → redo</li>
+        <li><code>&lt;C-r&gt;</code> → redo</li>
       </ul>
     </blockquote>
   </li>
@@ -301,8 +301,7 @@ Most commands can be used using the following general format:</p>
   <li><code>$</code> → up to the end of this line</li>
 </ul>
 
-<p>Of course, there is a shortcut for this: <code>yy</code> or <code>Y</code>.
-We also can do things like <code>ye</code>, yank from here to the end of the word.
+<p>We also can do things like <code>ye</code>, yank from here to the end of the word.
 But also <code>y2/foo</code> yank up to the second occurrence of &ldquo;foo&rdquo;.</p>
 
 <p>But what was true for <code>y</code> (yank), 
@@ -338,23 +337,23 @@ Some of these features were the reason I started to use vim.</p>
   </ul>
 </blockquote>
 
-<h3 id="select-rectangular-blocs-c-v">Select rectangular blocs: <code>C-V</code>.</h3>
+<h3 id="select-rectangular-blocs-c-v">Select rectangular blocs: <code>&lt;C-V&gt;</code>.</h3>
 
 <p>Rectangular blocks are very useful to comment many lines of code.
-Typically: <code>0C-VC-dI// [ESC]</code></p>
+Typically: <code>0&lt;C-V&gt;&lt;C-d&gt;I// [ESC]</code></p>
 
 <ul>
   <li><code>^</code> → go to start of the line</li>
-  <li><code>C-V</code> → Start block selection</li>
-  <li><code>C-d</code> → move down (could also be <code>jjj</code> or <code>%</code>, etc&hellip;)</li>
+  <li><code>&lt;C-V&gt;</code> → Start block selection</li>
+  <li><code>&lt;C-d&gt;</code> → move down (could also be <code>jjj</code> or <code>%</code>, etc&hellip;)</li>
   <li><code>I// [ESC]</code> → write <code>// </code> to comment each line</li>
 </ul>
 
 <p><img alt="Rectangular blocks" src="/Scratch/img/blog/Learn-Vim-Progressively/rectangular-blocks.gif" /></p>
 
-<h3 id="completion-c-n-and-c-p">Completion: <code>C-n</code> and <code>C-p</code>.</h3>
+<h3 id="completion-c-n-and-c-p">Completion: <code>&lt;C-n&gt;</code> and <code>&lt;C-p&gt;</code>.</h3>
 
-<p>In insertion mode, just type the start of a word, then type <code>C-p</code>, magic&hellip;
+<p>In Insert mode, just type the start of a word, then type <code>&lt;C-p&gt;</code>, magic&hellip;
 <img alt="Completion" src="/Scratch/img/blog/Learn-Vim-Progressively/completion.gif" /> </p>
 
 <h3 id="macros--qa-do-something-q-a-">Macros&nbsp;: <code>qa</code> do something <code>q</code>, <code>@a</code>, <code>@@</code></h3>
@@ -370,12 +369,12 @@ Then <code>@a</code> will replay the macro saved into the register <code>a</code
 
   <ul>
     <li>
-      <p><code>qaYpC-aq</code> → </p>
+      <p><code>qaYp&lt;C-a&gt;q</code> → </p>
 
       <ul>
         <li><code>qa</code> start recording. </li>
         <li><code>Yp</code> duplicate this line.</li>
-        <li><code>C-a</code> increment the number.</li>
+        <li><code>&lt;C-a&gt;</code> increment the number.</li>
         <li><code>q</code> stop recording.</li>
       </ul>
     </li>
@@ -387,9 +386,9 @@ Then <code>@a</code> will replay the macro saved into the register <code>a</code
 
 <p><img alt="Macros" src="/Scratch/img/blog/Learn-Vim-Progressively/macros.gif" /></p>
 
-<h3 id="visual-selection-vvc-v">Visual selection: <code>v</code>,<code>V</code>,<code>C-v</code></h3>
+<h3 id="visual-selection-vvc-v">Visual selection: <code>v</code>,<code>V</code>,<code>&lt;C-v&gt;</code></h3>
 
-<p>We saw an example with <code>C-V</code>. 
+<p>We saw an example with <code>&lt;C-V&gt;</code>. 
 There is also <code>v</code> and <code>V</code>.
 Once the selection made, you can:</p>
 
@@ -404,8 +403,8 @@ Once the selection made, you can:</p>
 <p>Add something at the end of all visually selected lignes:</p>
 
 <ul>
-  <li><code>S-V</code> </li>
-  <li>go to desired line (<code>jjj</code> or <code>C-d</code> or <code>/pattern</code> or <code>%</code> etc&hellip;)</li>
+  <li><code>&lt;C-v&gt;</code> </li>
+  <li>go to desired line (<code>jjj</code> or <code>&lt;C-d&gt;</code> or <code>/pattern</code> or <code>%</code> etc&hellip;)</li>
   <li><code>$</code> go to the end of line</li>
   <li><code>A</code>, write texte, <code>ESC</code>.</li>
 </ul>
@@ -419,9 +418,9 @@ Once the selection made, you can:</p>
 <blockquote>
   <ul>
     <li><code>:split</code> → create a split (<code>:vsplit</code> create a vertical split)</li>
-    <li><code>C-w&lt;dir&gt;</code>&nbsp;: where dir is any of <code>hjkl</code> or &larr;&darr;&uarr;→ to change split.</li>
-    <li><code>C-w_</code> (resp. <code>C-w|</code>)&nbsp;: maximise size of split (resp. vertical split)</li>
-    <li><code>C-w+</code> (resp. <code>C-w-</code>)&nbsp;: Grow (resp. shrink) split</li>
+    <li><code>&lt;C-w&gt;&lt;dir&gt;</code>&nbsp;: where dir is any of <code>hjkl</code> or &larr;&darr;&uarr;→ to change split.</li>
+    <li><code>&lt;C-w&gt;_</code> (resp. <code>&lt;C-w&gt;|</code>)&nbsp;: maximise size of split (resp. vertical split)</li>
+    <li><code>&lt;C-w&gt;+</code> (resp. <code>&lt;C-w&gt;-</code>)&nbsp;: Grow (resp. shrink) split</li>
   </ul>
 </blockquote>
 
