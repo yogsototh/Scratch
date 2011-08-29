@@ -59,18 +59,18 @@ En fait ça sera certainement plus 2 semaines que 3 jours.
 
 Dans un éditeur normal, il suffit de taper sur une touche du clavier et la lettre s'affiche à l'écran.
 Pas ici.
-Vim est en mode _"Normal"_.
+Vim est en mode _Normal_.
 Commençons par placer vim en mode _Insert_.
 Tapez sur la touche `i`.
 
 Voilà, c'est magique. 
 Vous pouvez tapez comme dans un éditeur standard.
-Pour repasser en mode "Normal" tapez sur la touche `Echap`.
+Pour repasser en mode Normal tapez sur la touche `Echap`.
 
-Maintenant que vous savez passer du mode _"Normal"_ au mode _"Insert"_.
-Voici les commandes de survie (toutes en mode _"Normal"_) :
+Maintenant que vous savez passer du mode _Normal_ au mode _Insert_.
+Voici les commandes de survie (toutes en mode _Normal_) :
 
-> - `i` : Passer en mode insértion. Taper `Echap` pour repasser en mode "Normal".
+> - `i` : Passer en mode insértion. Taper `Echap` pour repasser en mode Normal.
 > - `x` : Supprimer le caractère sous le curseur
 > - `:wq` : Sauvegarder et quitter (`:w` sauvegarde, `:q` quitter)
 > - `dd` : Supprimer (et copier) la ligne courante
@@ -87,10 +87,10 @@ Essayez d'éditer vos fichiers comme ça pendant une petite journée.
 Lorsque ces commandes vous sembleront naturelles, 
 vous pourrez passer à l'étape d'après. 
 
-Mais avant un petit mot sur le mode "Normal".
+Mais avant un petit mot sur le mode Normal.
 Dans un éditeur normal pour copier il faut utiliser une combinaison de touches (`Ctrl-c`). 
 En fait, lorsque vous appuyez sur la touche `Ctrl`, c'est un peu comme si toutes les touches du clavier avaient un autre usage.
-Dans vim, lorsque vous êtes en mode "Normal", c'est comme si vous mainteniez `Ctrl` enfoncé.
+Dans vim, lorsque vous êtes en mode Normal, c'est comme si vous mainteniez `Ctrl` enfoncé.
 
 Notez aussi qu'au lieu d'écrire `Ctrl-λ`, j'écrirais `<C-λ>`. 
 C'est l'usage avec vim.
@@ -106,7 +106,7 @@ Je vous suggère :
     > - `a`     → Comme `i`, mais après la position du curseur.
     > - `o`     → Comme `i`, mais à la ligne suivante.
     > - `O`     → Comme `o` mais ajoute la ligne avant.
-    > - `cw`    → Remplacer la find du mot sous le curseur.
+    > - `cw`    → Remplacer la fin du mot.
 
 2. Déplacements basiques
 
@@ -246,7 +246,7 @@ Typiquement: `^<C-V><C-d>I// [ESC]`
 
 ### Complétion : `<C-n>` et `<C-p>`.
 
-En mode "Insert", commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `<C-p>`. Magique.
+En mode Insert, commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `<C-p>`. Magique.
 <%= blogimage("completion.gif","Completion") %> 
 
 ### Macros : `qa` faire quelque chose `q`, `@a`, `@@`

@@ -83,28 +83,28 @@ fr: 2. NE TOUCHEZ A RIEN! Lisez
 
 en: In a standard editor, typing on the keyboard is enough to write something and see it on the screen.
 en: Not this time.
-en: Vim is in _"Normal"_ mode.
+en: Vim is in _Normal_ mode.
 en: Lets get in _Insert_ mode.
 en: Type on the letter `i`.
 fr: Dans un éditeur normal, il suffit de taper sur une touche du clavier et la lettre s'affiche à l'écran.
 fr: Pas ici.
-fr: Vim est en mode _"Normal"_.
+fr: Vim est en mode _Normal_.
 fr: Commençons par placer vim en mode _Insert_.
 fr: Tapez sur la touche `i`.
 
 en: You should feel a bit better.
 en: You can type letters like in a standard notepad.
-en: To get back in _"Normal"_ mode just tap the `ESC` key.
+en: To get back in _Normal_ mode just tap the `ESC` key.
 fr: Voilà, c'est magique. 
 fr: Vous pouvez tapez comme dans un éditeur standard.
-fr: Pour repasser en mode "Normal" tapez sur la touche `Echap`.
+fr: Pour repasser en mode Normal tapez sur la touche `Echap`.
 
-en: You know how to switch between Insert and _"Normal"_ mode.
-en: And now, the list of command you can use in _"Normal"_ mode to survive:
-fr: Maintenant que vous savez passer du mode _"Normal"_ au mode _"Insert"_.
-fr: Voici les commandes de survie (toutes en mode _"Normal"_) :
+en: You know how to switch between _Insert_ and _Normal_ mode.
+en: And now, the list of command you can use in _Normal_ mode to survive:
+fr: Maintenant que vous savez passer du mode _Normal_ au mode _Insert_.
+fr: Voici les commandes de survie (toutes en mode _Normal_) :
 
-en: > - `i`: Insertion mode. Type `ESC` to return to "Normal" mode.
+en: > - `i`: _Insert_ mode. Type `ESC` to return to Normal mode.
 en: > - `x`: Delete the char under the cursor
 en: > - `:wq`: Save and Quit (`:w` save, `:q` quit)
 en: > - `dd`: Delete (and copy) current line
@@ -114,7 +114,7 @@ en: > Recommended:
 en: > 
 en: > - `hjkl` (recommended but not mandatory): basic cursor move (<-&darr;&uarr;→). Hint: `j` look like a down arrow.
 en: > - `:help <command>`: Show help about <command>, you can start using `:help` without anything else.
-fr: > - `i` : Passer en mode insértion. Taper `Echap` pour repasser en mode "Normal".
+fr: > - `i` : Passer en mode insértion. Taper `Echap` pour repasser en mode Normal.
 fr: > - `x` : Supprimer le caractère sous le curseur
 fr: > - `:wq` : Sauvegarder et quitter (`:w` sauvegarde, `:q` quitter)
 fr: > - `dd` : Supprimer (et copier) la ligne courante
@@ -133,14 +133,14 @@ fr: Essayez d'éditer vos fichiers comme ça pendant une petite journée.
 fr: Lorsque ces commandes vous sembleront naturelles, 
 fr: vous pourrez passer à l'étape d'après. 
 
-en: But before, just a little remark on _"Normal" mode_.
+en: But before, just a little remark on _Normal mode_.
 en: In standard editors, to copy you have to use the `Ctrl` key (`Ctrl-c` generally).
 en: In fact, when you press `Ctrl`, it is a bit like if all your key change meaning.
-en: With vim in "Normal" mode, it is a bit like if your `Ctrl` key is always pushed down.
-fr: Mais avant un petit mot sur le mode "Normal".
+en: With vim in Normal mode, it is a bit like if your `Ctrl` key is always pushed down.
+fr: Mais avant un petit mot sur le mode Normal.
 fr: Dans un éditeur normal pour copier il faut utiliser une combinaison de touches (`Ctrl-c`). 
 fr: En fait, lorsque vous appuyez sur la touche `Ctrl`, c'est un peu comme si toutes les touches du clavier avaient un autre usage.
-fr: Dans vim, lorsque vous êtes en mode "Normal", c'est comme si vous mainteniez `Ctrl` enfoncé.
+fr: Dans vim, lorsque vous êtes en mode Normal, c'est comme si vous mainteniez `Ctrl` enfoncé.
 
 en: A last word about notation: instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
 fr: Notez aussi qu'au lieu d'écrire `Ctrl-λ`, j'écrirais `<C-λ>`. 
@@ -156,18 +156,18 @@ fr: Vous connaissez les commandes de survie.
 fr: Passons à des commandes pour être un peu plus à notre aise.
 fr: Je vous suggère :
 
-en: 1. Insertion mode variations:
+en: 1. Insert mode variations:
 en: 
 en:     > - `a`     → insert after the cursor
 en:     > - `o`     → insert a new line after the current one
 en:     > - `O`     → insert a new line before the current one
-en:     > - `cw`    → replace the end of the word under the cursor
+en:     > - `cw`    → replace from the cursor to the end the word
 fr: 1. Les variantes de l'insertion
 fr: 
 fr:     > - `a`     → Comme `i`, mais après la position du curseur.
 fr:     > - `o`     → Comme `i`, mais à la ligne suivante.
 fr:     > - `O`     → Comme `o` mais ajoute la ligne avant.
-fr:     > - `cw`    → Remplacer la find du mot sous le curseur.
+fr:     > - `cw`    → Remplacer la fin du mot.
 
 en: 2. Basic moves
 en: 
@@ -405,7 +405,7 @@ en: ### Completion: `<C-n>` and `<C-p>`.
 fr: ### Complétion : `<C-n>` et `<C-p>`.
 
 en: In Insert mode, just type the start of a word, then type `<C-p>`, magic...
-fr: En mode "Insert", commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `<C-p>`. Magique.
+fr: En mode Insert, commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `<C-p>`. Magique.
 <%= blogimage("completion.gif","Completion") %> 
 
 en: ### Macros : `qa` do something `q`, `@a`, `@@`

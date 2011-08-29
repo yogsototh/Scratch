@@ -58,18 +58,18 @@ In fact it will certainly take 2 weeks instead of 3 days.
 
 In a standard editor, typing on the keyboard is enough to write something and see it on the screen.
 Not this time.
-Vim is in _"Normal"_ mode.
+Vim is in _Normal_ mode.
 Lets get in _Insert_ mode.
 Type on the letter `i`.
 
 You should feel a bit better.
 You can type letters like in a standard notepad.
-To get back in _"Normal"_ mode just tap the `ESC` key.
+To get back in _Normal_ mode just tap the `ESC` key.
 
-You know how to switch between Insert and _"Normal"_ mode.
-And now, the list of command you can use in _"Normal"_ mode to survive:
+You know how to switch between _Insert_ and _Normal_ mode.
+And now, the list of command you can use in _Normal_ mode to survive:
 
-> - `i`: Insertion mode. Type `ESC` to return to "Normal" mode.
+> - `i`: _Insert_ mode. Type `ESC` to return to Normal mode.
 > - `x`: Delete the char under the cursor
 > - `:wq`: Save and Quit (`:w` save, `:q` quit)
 > - `dd`: Delete (and copy) current line
@@ -83,10 +83,10 @@ And now, the list of command you can use in _"Normal"_ mode to survive:
 Only 5 commands. This is very few to start.
 Once these command start to become natural (may be after a complete day), you should go on level 2.
 
-But before, just a little remark on _"Normal" mode_.
+But before, just a little remark on _Normal mode_.
 In standard editors, to copy you have to use the `Ctrl` key (`Ctrl-c` generally).
 In fact, when you press `Ctrl`, it is a bit like if all your key change meaning.
-With vim in "Normal" mode, it is a bit like if your `Ctrl` key is always pushed down.
+With vim in Normal mode, it is a bit like if your `Ctrl` key is always pushed down.
 
 A last word about notation: instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
 
@@ -96,12 +96,12 @@ You know the survivor commands.
 Now, it is time to learn just a bit more commands to use.
 I suggest:
 
-1. Insertion mode variations:
+1. Insert mode variations:
 
     > - `a`     → insert after the cursor
     > - `o`     → insert a new line after the current one
     > - `O`     → insert a new line before the current one
-    > - `cw`    → replace the end of the word under the cursor
+    > - `cw`    → replace from the cursor to the end the word
 
 2. Basic moves
 
