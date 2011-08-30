@@ -84,7 +84,7 @@ fr: 2. NE TOUCHEZ A RIEN! Lisez
 en: In a standard editor, typing on the keyboard is enough to write something and see it on the screen.
 en: Not this time.
 en: Vim is in _Normal_ mode.
-en: Lets get in _Insert_ mode.
+en: Let's get in _Insert_ mode.
 en: Type on the letter `i`.
 fr: Dans un éditeur normal, il suffit de taper sur une touche du clavier et la lettre s'affiche à l'écran.
 fr: Pas ici.
@@ -113,7 +113,7 @@ en: >
 en: > Recommended:
 en: > 
 en: > - `hjkl` (highly recommended but not mandatory) →  basic cursor move (<-&darr;&uarr;→). Hint: `j` look like a down arrow.
-en: > - `:help <command>` → Show help about <command>, you can start using `:help` without anything else.
+en: > - `:help <command>` → Show help about `<command>`, you can start using `:help` without anything else.
 fr: > - `i` → Passer en mode insértion. Taper `Echap` pour repasser en mode Normal.
 fr: > - `x` → Supprimer le caractère sous le curseur
 fr: > - `:wq<enter>` → Sauvegarder et quitter (`:w<enter>` sauvegarde, `:q<enter>` quitter)
@@ -243,7 +243,7 @@ fr: Vim est la contraction de "vi improved", ou en Français, "vi amélioré".
 en: ### Better
 fr: ### Meilleur
 
-en: Lets look at how vim could help you to repeat yourself: 
+en: Let's look at how vim could help you to repeat yourself: 
 fr: Voyons comment nous pouvons éviter les répétitions avec vi :
 
 en: 1. `.` → (dot) will repeat the last command,

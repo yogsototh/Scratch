@@ -59,7 +59,7 @@ In fact it will certainly take 2 weeks instead of 3 days.
 In a standard editor, typing on the keyboard is enough to write something and see it on the screen.
 Not this time.
 Vim is in _Normal_ mode.
-Lets get in _Insert_ mode.
+Let's get in _Insert_ mode.
 Type on the letter `i`.
 
 You should feel a bit better.
@@ -78,7 +78,7 @@ And now, the list of command you can use in _Normal_ mode to survive:
 > Recommended:
 > 
 > - `hjkl` (highly recommended but not mandatory) →  basic cursor move (<-&darr;&uarr;→). Hint: `j` look like a down arrow.
-> - `:help <command>` → Show help about <command>, you can start using `:help` without anything else.
+> - `:help <command>` → Show help about `<command>`, you can start using `:help` without anything else.
 
 Only 5 commands. This is very few to start.
 Once these command start to become natural (may be after a complete day), you should go on level 2.
@@ -145,7 +145,7 @@ At level 3, we'll only talk about command which are compatible with the old vi.
 
 ### Better
 
-Lets look at how vim could help you to repeat yourself: 
+Let's look at how vim could help you to repeat yourself: 
 
 1. `.` → (dot) will repeat the last command,
 2. N&lt;command&gt; → will do the command N times.
