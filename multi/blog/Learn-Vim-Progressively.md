@@ -116,7 +116,7 @@ en: > - `hjkl` (highly recommended but not mandatory) →  basic cursor move (<-
 en: > - `:help <command>` → Show help about `<command>`, you can start using `:help` without anything else.
 fr: > - `i` → Passer en mode insértion. Taper `Echap` pour repasser en mode Normal.
 fr: > - `x` → Supprimer le caractère sous le curseur
-fr: > - `:wq<enter>` → Sauvegarder et quitter (`:w<enter>` sauvegarde, `:q<enter>` quitter)
+fr: > - `:wq` → Sauvegarder et quitter (`:w` sauvegarde, `:q<enter>` quitter)
 fr: > - `dd` → Supprimer (et copier) la ligne courante
 fr: > - `p` → Coller
 fr: > 
@@ -212,7 +212,7 @@ en:
 en:     > - `:e <path/to/file>` →  open
 en:     > - `:w` → save
 en:     > - `:saveas <path/to/file>` → save to `<path/to/file>`
-en:     > - `ZZ` or `:wq` → save and quit
+en:     > - `:x`, `ZZ` or `:wq` → save and quit (`:x` only save if necessary)
 en:     > - `:q!` → quit without saving, also `:qa!` to even if there are  some modified hidden buffers.
 en:     > - `:bn` (resp. `:bp`) → show next (resp. previous) file (buffer)
 fr: 5. Ouvrir/Sauvegarder/Quitter/Changer de fichier (buffer)
@@ -220,7 +220,7 @@ fr:
 fr:     > - `:e <path/to/file>` → Ouvrir.
 fr:     > - `:w` → Sauvegarder.
 fr:     > - `:saveas <path/to/file>` → Sauvegarder sous ...
-fr:     > - `ZZ` or `:wq` → Sauvegarder et quitter.
+fr:     > - `:x`, `ZZ` ou `:wq` → Sauvegarder et quitter (`:x` sauvegarde seulement si nécessaire).
 fr:     > - `:q!` → Quitter sans sauvegarder. De même `:qa!` quitte même si d'autres fichiers (buffers) ont des modifications non sauvegardées.
 fr:     > - `:bn` (resp. `:bp`) → Affiche le fichier suivant (resp. précédent).
 
