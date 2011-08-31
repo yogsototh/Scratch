@@ -72,7 +72,7 @@ Voici les commandes de survie (toutes en mode _Normal_) :
 
 > - `i` → Passer en mode insértion. Taper `Echap` pour repasser en mode Normal.
 > - `x` → Supprimer le caractère sous le curseur
-> - `:wq<enter>` → Sauvegarder et quitter (`:w<enter>` sauvegarde, `:q<enter>` quitter)
+> - `:wq` → Sauvegarder et quitter (`:w` sauvegarde, `:q<enter>` quitter)
 > - `dd` → Supprimer (et copier) la ligne courante
 > - `p` → Coller
 > 
@@ -133,7 +133,7 @@ Je vous suggère :
     > - `:e <path/to/file>` → Ouvrir.
     > - `:w` → Sauvegarder.
     > - `:saveas <path/to/file>` → Sauvegarder sous ...
-    > - `ZZ` or `:wq` → Sauvegarder et quitter.
+    > - `:x`, `ZZ` ou `:wq` → Sauvegarder et quitter (`:x` sauvegarde seulement si nécessaire).
     > - `:q!` → Quitter sans sauvegarder. De même `:qa!` quitte même si d'autres fichiers (buffers) ont des modifications non sauvegardées.
     > - `:bn` (resp. `:bp`) → Affiche le fichier suivant (resp. précédent).
 

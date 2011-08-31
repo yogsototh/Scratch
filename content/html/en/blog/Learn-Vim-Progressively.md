@@ -129,7 +129,7 @@ I suggest:
     > - `:e <path/to/file>` →  open
     > - `:w` → save
     > - `:saveas <path/to/file>` → save to `<path/to/file>`
-    > - `ZZ` or `:wq` → save and quit
+    > - `:x`, `ZZ` or `:wq` → save and quit (`:x` only save if necessary)
     > - `:q!` → quit without saving, also `:qa!` to even if there are  some modified hidden buffers.
     > - `:bn` (resp. `:bp`) → show next (resp. previous) file (buffer)
 

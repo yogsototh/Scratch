@@ -211,7 +211,7 @@ I suggest:</p>
         <li><code>:e &lt;path/to/file&gt;</code> →  open</li>
         <li><code>:w</code> → save</li>
         <li><code>:saveas &lt;path/to/file&gt;</code> → save to <code>&lt;path/to/file&gt;</code></li>
-        <li><code>ZZ</code> or <code>:wq</code> → save and quit</li>
+        <li><code>:x</code>, <code>ZZ</code> or <code>:wq</code> → save and quit (<code>:x</code> only save if necessary)</li>
         <li><code>:q!</code> → quit without saving, also <code>:qa!</code> to even if there are  some modified hidden buffers.</li>
         <li><code>:bn</code> (resp. <code>:bp</code>) → show next (resp. previous) file (buffer)</li>
       </ul>
@@ -560,7 +560,7 @@ $(document).ready(function() {
                 </div>
                 <div id="lastmod">
                     Created: 08/25/2011
-                    Modified: 08/29/2011 
+                    Modified: 08/30/2011 
                 </div>
                 <div>
                     Entirely done with
