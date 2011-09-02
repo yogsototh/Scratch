@@ -25,7 +25,7 @@
 &lt;div class="intro"&gt;
 
 
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way. Start by learning the minimal to survive, then integrate slowly all tricks.&lt;/p&gt;
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way. Start by learning the minimal to survive, then integrate slowly all tricks.&lt;/p&gt;
 
 
 &lt;/div&gt;
@@ -45,7 +45,7 @@ Hard to learn, but incredible to use.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Survive&lt;/li&gt;
-  ...&lt;/ol&gt;&lt;/p&gt;</content>
+ ...&lt;/ol&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-08-17:/Scratch/en/blog/A-more-convenient-diff/</id>
@@ -107,7 +107,7 @@ a=27;b=79;c=&lt;span class="Constant"&gt;C&lt;/span&gt;(-2.0,-1.0);d=&lt;span cl
 &lt;div class="intro"&gt;
 
 
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; How I manage safely my password with success for some years now.&lt;br /&gt;
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; How I manage safely my password with success for some years now.&lt;br /&gt;
 &lt;strong&gt;&lt;code&gt;sha1( password + domain_name )&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
 I memorize only one password.
 I use a different password on all website.&lt;/p&gt;
@@ -167,7 +167,7 @@ And as Denis said: &amp;ldquo;it is time to use Coffeescript as a javascript wit
 &lt;div class="intro"&gt;
 
 
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; I would have loved to program client side using a Ruby-like syntax. But in the end, CoffeScript raised more disavantages than advantages.&lt;/p&gt;
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; I would have loved to program client side using a Ruby-like syntax. But in the end, CoffeScript raised more disavantages than advantages.&lt;/p&gt;
 
 
 &lt;/div&gt;
@@ -211,7 +211,7 @@ But I will revive a bit this blog.&lt;/p&gt;
 &lt;div class="intro"&gt;
 
 
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; I made a simple macro system for my blog. Now I juste have to write %&lt;span /&gt;latex and it show as &lt;span style="text-transform: uppercase"&gt;L&lt;sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em"&gt;a&lt;/sup&gt;T&lt;sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em"&gt;e&lt;/sub&gt;X&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; I made a simple macro system for my blog. Now I juste have to write %&lt;span /&gt;latex and it show as &lt;span style="text-transform: uppercase"&gt;L&lt;sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em"&gt;a&lt;/sup&gt;T&lt;sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em"&gt;e&lt;/sub&gt;X&lt;/span&gt;.&lt;/p&gt;
 
 
 &lt;/div&gt;
@@ -234,7 +234,7 @@ When we are used to &lt;span style="text-transform: uppercase"&gt;L&lt;sup style
 &lt;div class="intro"&gt;
 
 
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; Played to process a &lt;code&gt;wav&lt;/code&gt; file. &lt;code&gt;C&lt;/code&gt; was easier and cleaner than Ruby.&lt;/p&gt;
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; Played to process a &lt;code&gt;wav&lt;/code&gt; file. &lt;code&gt;C&lt;/code&gt; was easier and cleaner than Ruby.&lt;/p&gt;
 
 &lt;p&gt;edit: I wanted this program to work only on one specific machine (a x86 on a 32 bit Ubuntu). Therefore I didn&amp;rsquo;t had any portability consideration. This is only a &lt;em&gt;hack&lt;/em&gt;.&lt;/p&gt;
 
@@ -249,7 +249,7 @@ For efficiency (and fun) reasons, I had chosen &lt;code&gt;C&lt;/code&gt; langua
 From my memory it was a pain to read and write to files.
 But in the end I was really impressed by the code I get. 
 It was really clean.
-This is even more impressive knowi...&lt;/p&gt;</content>
+This is even more impressive know...&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-10:/Scratch/en/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/</id>
@@ -267,7 +267,7 @@ This is even more impressive knowi...&lt;/p&gt;</content>
 &lt;div class="intro"&gt;
 
 
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; &lt;em&gt;on Mac&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; &lt;em&gt;on Mac&lt;/em&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Get a certificate signed by a CA: &lt;a href="http://www.instantssl.com/ssl-certificate-products/free-email-certificate.html"&gt;click here for a free one&lt;/a&gt;,&lt;/li&gt;
@@ -432,7 +432,7 @@ But here is the conf to make it work on heroku.&lt;/p&gt;
 &lt;div class="intro"&gt;
 
 
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; I pretend to create a world to give examples of different meanings behind the word &lt;em&gt;undecidability&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; I pretend to create a world to give examples of different meanings behind the word &lt;em&gt;undecidability&lt;/em&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Undecidability due to measure errors, &lt;/li&gt;
@@ -462,7 +462,7 @@ After this read, you should be convinced.
 I&amp;rsquo;ll pretend to be him.
 I&amp;rsquo;ll create a simplified world.
 A world that obey to simple mathematical rules.
-And I&amp;rsquo;ll ...&lt;/p&gt;&lt;/div&gt;</content>
+And I&amp;rsquo;ll...&lt;/p&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-07-31:/Scratch/en/blog/2010-07-31-New-style-after-holidays/</id>
@@ -521,7 +521,7 @@ I was a bit surprised, because I make some test into a really &lt;em&gt;slow&lt;
 &lt;div class="intro"&gt;
 
 
-&lt;p&gt;&lt;abbr class="sc" title="Too long; don't read"&gt;tl;dr&lt;/abbr&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;abbr class="sc" title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Tried to make &lt;a href="http://yannesposito.com/Softwares/YPassword.html"&gt;YPassword&lt;/a&gt; in jQuery and with Cappuccino.&lt;/li&gt;
@@ -540,7 +540,7 @@ I was a bit surprised, because I make some test into a really &lt;em&gt;slow&lt;
 
 
 &lt;p&gt;Before start, I must say I know Cappuccino and jQuery are no more comparable than Cocoa and the C++ standard library. One is oriented for user interface while the other is and helper for low level programming.
-Nonetheless I used these two to make the same web application. This is why I compare the expe...&lt;/p&gt;&lt;/div&gt;&lt;/hr&gt;</content>
+Nonetheless I used these two to make the same web application. This is why I compare the exp...&lt;/p&gt;&lt;/div&gt;&lt;/hr&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-06-19:/Scratch/en/blog/2010-06-19-jQuery-popup-the-easy-way/</id>

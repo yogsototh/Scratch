@@ -14,7 +14,7 @@ class Macros < Nanoc3::Filter
         super
         @macro={}
         @macro[:tlal] = %{<span class="sc"><abbr title="Trop long à lire">tlàl</abbr> : </span>}
-        @macro[:tldr] = %{<span class="sc"><abbr title="Too long; don't read">tl;dr</abbr>: </span>}
+        @macro[:tldr] = %{<span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span>}
         if @item.nil?
             if not arg.nil?
                 @macro.merge!( arg )
@@ -43,7 +43,7 @@ class Macros < Nanoc3::Filter
 end
 
 def tldr
-    %{<span class="sc"><abbr title="Too long; don't read">tl;dr</abbr>: </span>}
+    %{<span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span>}
 end
 
 def tlal
