@@ -19,7 +19,7 @@ tags:
 
 begindiv(intro)
 
-en: <abbr class="sc" title="Too long; don't read">tl;dr</abbr>:
+en: <abbr class="sc" title="Too long; didn't read">tl;dr</abbr>:
 en: 
 en: * Tried to make [YPassword](http://yannesposito.com/Softwares/YPassword.html) in jQuery and with Cappuccino.
 en: * Cappuccino nice in desktop browser but 1.4MB, not compatible with iPhone.
