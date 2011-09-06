@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2011-06-07T12:21:41+02:00
+created_at:     2011-09-05T12:21:41+02:00
 title: programming language experience
 author_name: Yann Esposito
 author_uri: yannesposito.com
@@ -20,7 +20,7 @@ The language of my firsts programs!
 I was about 10, with an `MO5` and `Amstrad CPC 6128` and even with my `Atari STe`.
 This is the language of `GOTO`s.
 Ô nostalgia.
-Unfortunately this might be the only intersting part of this language.
+Unfortunately this might be the only interesting part of this language.
 
 
 Today this language is obsolescent.

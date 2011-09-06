@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2011-06-07T12:21:41+02:00
+created_at:     2011-09-05T12:21:41+02:00
 en: title: programming language experience
 fr: title: programming language experience
 author_name: Yann Esposito
@@ -22,7 +22,7 @@ en: The language of my firsts programs!
 en: I was about 10, with an `MO5` and `Amstrad CPC 6128` and even with my `Atari STe`.
 en: This is the language of `GOTO`s.
 en: Ô nostalgia.
-en: Unfortunately this might be the only intersting part of this language.
+en: Unfortunately this might be the only interesting part of this language.
 
 fr: Ah ! Le language de mes premiers programmes ! 
 fr: Je devais avoir 10-11 ans. 
