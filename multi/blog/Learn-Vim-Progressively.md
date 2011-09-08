@@ -362,8 +362,8 @@ fr: Jusqu'ici vous avez appris les commandes les plus courantes.
 fr: Mais voici les killer features de vim. 
 fr: Celles que je n'ai retrouvé que dans vim (ou presque).
 
-en: ### Move on current line: `0` `^` `$` `f` `F` `t` `T` `,` `;`
-fr: ### Déplacement sur la ligne : `0` `^` `$` `f` `F` `t` `T` `,` `;`
+en: ### Move on current line: `0` `^` `$` `g_` `f` `F` `t` `T` `,` `;`
+fr: ### Déplacement sur la ligne : `0` `^` `$` `g_` `f` `F` `t` `T` `,` `;`
 
 en: > - `0` → go to column 0
 en: > - `^` → go to first character on the line
