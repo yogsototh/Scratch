@@ -367,8 +367,8 @@ fr: ### Déplacement sur la ligne : `0` `^` `$` `f` `F` `t` `T` `,` `;`
 
 en: > - `0` → go to column 0
 en: > - `^` → go to first character on the line
-en: > - `$` → go to the last character on the line
-en: > - `g_` → go to the last column of the line
+en: > - `$` → go to the last column
+en: > - `g_` → go to the last character on the line
 en: > - `fa` → go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will seek for the next (resp. previous) occurrence.
 en: > - `t,` → go just before the character `,`.
 en: > - `3fa` → search the 3rd occurrence of `a` on this line.
