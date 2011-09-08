@@ -213,7 +213,7 @@ With all preceding commands you should be comfortable to use vim.
 But now, here are the killer features.
 Some of these features were the reason I started to use vim.
 
-### Move on current line: `0` `^` `$` `f` `F` `t` `T` `,` `;`
+### Move on current line: `0` `^` `$` `g_` `f` `F` `t` `T` `,` `;`
 
 > - `0` → go to column 0
 > - `^` → go to first character on the line
