@@ -368,6 +368,7 @@ fr: ### Déplacement sur la ligne : `0` `^` `$` `f` `F` `t` `T` `,` `;`
 en: > - `0` → go to column 0
 en: > - `^` → go to first character on the line
 en: > - `$` → go to the last character on the line
+en: > - `g_` → go to the last column of the line
 en: > - `fa` → go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will seek for the next (resp. previous) occurrence.
 en: > - `t,` → go just before the character `,`.
 en: > - `3fa` → search the 3rd occurrence of `a` on this line.
@@ -439,7 +440,7 @@ fr: - `I-- [ESC]` → écrit `-- ` pour commenter le reste de la ligne.
 
 <%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
 
-en: Not on windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
+en: Note on windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
 fr: Remarquez que sous windows, vous devez utiliser `<C-q>` plutôt que `<C-v>` si votre "presse papier" n'est pas vide.
 
 en: ### Completion: `<C-n>` and `<C-p>`.
