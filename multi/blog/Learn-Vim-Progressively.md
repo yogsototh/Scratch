@@ -375,7 +375,8 @@ en: > - `3fa` → search the 3rd occurrence of `a` on this line.
 en: > - `F` and `T` → like `f` and `t` but backward.
 fr: > - `0` → aller à la colonne 0,
 fr: > - `^` → aller au premier caractère de la ligne
-fr: > - `$` → aller au dernier caractère de la ligne
+fr: > - `$` → aller à la dernière colonne de la ligne
+fr: > - `g_` → aller au dernier caractère de la ligne
 fr: > - `fa` → vous amène à la prochaine occurrence de a sur la ligne courante. `,` (resp. `;`) recherche l'occurrence suivante (resp. précédente).
 fr: > - `t,` → vous amène juste avant le `,`.
 fr: > - `3fa` → recherche la 3ième occurrence de `a`.
