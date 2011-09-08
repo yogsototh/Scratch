@@ -223,7 +223,8 @@ Celles que je n'ai retrouvé que dans vim (ou presque).
 
 > - `0` → aller à la colonne 0,
 > - `^` → aller au premier caractère de la ligne
-> - `$` → aller au dernier caractère de la ligne
+> - `$` → aller à la dernière colonne de la ligne
+> - `g_` → aller au dernier caractère de la ligne
 > - `fa` → vous amène à la prochaine occurrence de a sur la ligne courante. `,` (resp. `;`) recherche l'occurrence suivante (resp. précédente).
 > - `t,` → vous amène juste avant le `,`.
 > - `3fa` → recherche la 3ième occurrence de `a`.
