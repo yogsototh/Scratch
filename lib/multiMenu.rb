@@ -1,14 +1,17 @@
+# give item corresponding to the homepage of the current language
 def homepage
     @items.find do |i| 
         i.reps[0].path == %{#{@config[:webprefix]}/#{@conf.language}/}
     end
 end
 
+# Explicit, give the children of a node in the menu, sorted by menu priority
 def sortedChildrenByMenuPriority(item)
     item.children.reject{|p| p[:isHidden]}.
         sort!{|x,y| x[:menupriority] <=> y[:menupriority]}
 end
 
+# Generate the menu for the current item
 def generateMenu
     home=homepage
     if home.nil?
@@ -22,6 +25,7 @@ def generateMenu
     "<ul><li>"+liste.join("</li>\n<li>")+"</li></ul>"
 end
 
+# get the depth of an item in the menu
 def depthOf(item)
     res=0
     while item.parent != nil
@@ -31,6 +35,8 @@ def depthOf(item)
     return res
 end
 
+# get the list of item children of a node sorted
+# by menupriority or date depending of the kind fo page
 def getSortedChildren(parent)
     if parent[:kind] == "blog"
         return parent.children.reject{|p| p[:isHidden]}.sort!{|x,y| x[:created_at] <=> y[:created_at] }
@@ -39,6 +45,7 @@ def getSortedChildren(parent)
     end
 end
 
+# For the page blog, the submenu is very specific
 def generateBlogSubMenu(language)
     year=0
     res=""
@@ -63,6 +70,7 @@ def generateBlogSubMenu(language)
     end
 end
 
+# Generate a submenu, not always needed
 def generateSubMenu()
     if @item[:noSubMenu]
         return 
@@ -101,23 +109,6 @@ def generateSubMenu()
     end
 end
 # =======================
-
-def blogimage(val,title="no name", divclass=nil)
-    if depthOf( @item ) == 4
-        imgpath=@item.parent.path
-    else
-        imgpath=@item.path
-    end
-    imgpath=imgpath.sub(%r{#{@config[:webprefix]}/../},@config[:webprefix]+'/img/')+val
-    if not divclass.nil?
-        cls=%{ class="#{divclass}"}
-    end
-    return %{<img alt="#{title}" src="#{imgpath}"#{cls}/>}
-end
-
-def leftblogimage(val,title="no name")
-    return blogimage(val, title, "left")
-end
 
 def lnkto(title,item)
     language=@item_rep.path.sub(/#{@config[:webprefix]}\//,'').sub(/\/.*$/,'')

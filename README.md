@@ -43,15 +43,15 @@ Here are features I added:
 
     analytics.rb → Functions to add web analytics code
     calendar.rb  → Function show a date nicely in HTML
-    gitmtime.rb
-    graph.rb
-    helpers.rb
-    html.rb
-    intenseDebate.rb
-    macros.rb
-    mail.rb
-    multiMenu.rb
-    multi.rb
+    gitmtime.rb  → Show time using git last change log
+    graph.rb     → Use graphviz to draw graphs
+    helpers.rb   → Some standard nanoc helpers are added
+    html.rb      → Layout block helper
+    intenseDebate.rb → IntenseDebate integration
+    macros.rb    → Macros system (%latex => LaTeX, etc...)
+    mail.rb      → My uniquely encoded personal email
+    multiMenu.rb → The machinery for the menu
+    multi.rb     → The machinery for helping to be multi-language
     nanoc_item_conf.rb
     repair_html.rb
     syntaxColorize.rb
