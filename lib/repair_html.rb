@@ -11,36 +11,23 @@ def repair_html( html, debug=false )
     depth=0
     html.scan( %r{<(/?)(\w*)([^>]*)>} ).each do |m|
         if m[-1] == "/"
-            if debug
-                puts 'IGNORE: <'+m[0]+m[1]+'/>' + depth.to_s
-                puts 'parents='+parents.join('; ')
-            end
             next
         end
         if m[0] == "" 
             parents[depth]=m[1]
             depth+=1
-            if debug
-                puts '<'+m[0]+m[1]+'> ' + depth.to_s
-                puts 'parents='+parents.join('; ')
-            end
         else
             depth-=1
-            if (not debug) and (depth <0) 
-                puts 'ERROR repair_html !'
-                # puts 'HTML: ' + html
-                # puts '---'
-                # repair_html(html,true)
-                # puts 'END_ERROR'
-            end
-            if debug
-                puts '<'+m[0]+m[1]+'> ' + depth.to_s
+            # -1 is normal for my layout
+            if (depth <= -2)
+                puts "WARNING: Intermiedate Depth <= -2"
             end
         end
     end
     res=html.sub(/<[^>]*$/m,'')
     depth -= 1
-    if (depth < 0) 
+    if (depth < -1) 
+        puts "ERROR: Final Depth < 0" 
         parents=[]
         depth=0
         html.scan( %r{<(/?)(\w*)[^>]*(/?)>} ).each do |m|
