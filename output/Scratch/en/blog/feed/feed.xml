@@ -167,7 +167,7 @@ But I will revive a bit this blog.&lt;/p&gt;
 &lt;p&gt;I had written an efficient &lt;em&gt;&amp;amp;&lt;/em&gt; simplistic MVC javascript framework.&lt;/p&gt;
 
 &lt;p&gt;Best wishes for &lt;em&gt;2011&lt;/em&gt;!&lt;/p&gt;
-&lt;/p&gt;</content>
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-26:/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/</id>
@@ -271,7 +271,7 @@ Then my new design obey to the following rules:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;I hope the new design please you.&lt;/p&gt;
-&lt;/p&gt;</content>
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-09-02:/Scratch/en/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/</id>
@@ -412,7 +412,7 @@ Now all should scroll smoothly on all platforms.
 I was inspired by Readability and iBooks&lt;small&gt;&amp;copy;&lt;/small&gt; (the iPhone&lt;small&gt;&amp;copy;&lt;/small&gt; application).&lt;/p&gt;
 
 &lt;p&gt;Tell me what you think of this new design.&lt;/p&gt;
-&lt;/p&gt;</content>
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-07-07:/Scratch/en/blog/2010-07-07-CSS-rendering-problems-by-navigator/</id>
@@ -772,7 +772,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 
 &lt;p&gt;and you have to make this behaviour with only one regular expression. The problem is the complementary of regular languages is not regular. Then, for some expression it is absolutely not impossible.&lt;/p&gt;
 
-&lt;p&gt;But sometimes with some simple regular expression it should be possible&lt;sup&gt;&lt;a href="#note1"&gt;&amp;dagger;&lt;/a&gt;&lt;/sup&gt;. Say you want to match everything containing the some word say &lt;code&gt;bull&lt;/code&gt; but don&amp;rsquo;t want to match &lt;code&gt;bullshit&lt;/code&gt;. Here is a nice way to do that:&lt;/p&gt;...&lt;/p&gt;</content>
+&lt;p&gt;But sometimes with some simple regular expression it should be possible&lt;sup&gt;&lt;a href="#note1"&gt;&amp;dagger;&lt;/a&gt;&lt;/sup&gt;. Say you want to match everything containing the some word say &lt;code&gt;bull&lt;/code&gt; but don&amp;rsquo;t want to match &lt;code&gt;bullshit&lt;/code&gt;. Here is a nice way to do that:&lt;/p&gt;...</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-01-12:/Scratch/en/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/</id>
@@ -802,7 +802,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 &lt;div&gt;&lt;pre class="twilight"&gt;
 &lt;span class="Keyword"&gt;&amp;gt;&lt;/span&gt; chsh
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;</content>
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-12-14:/Scratch/en/blog/2009-12-14-Git-vs--Bzr/</id>
@@ -835,7 +835,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
     <content type="html">&lt;p&gt;It is unbelievable you cannot filter your call with an iPhone! The only reason I see for that is a negotiation with phone operator to force users to get phone advertising. It is simple unacceptable.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m a &#955; iPhone&amp;rsquo;s user. The only way to filter your call and to manage blacklist is to &lt;em&gt;jailbreak&lt;/em&gt; your iPhone. And I don&amp;rsquo;t want to do that. Then, if like me you find it unacceptable, just write a line to Apple: &lt;a href="http://www.apple.com/feedback/iphone.html"&gt;http://www.apple.com/feedback/iphone.html&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</content>
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>

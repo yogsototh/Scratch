@@ -74,7 +74,7 @@ This is how I do this with <a href="http://nanoc.stoneship.org">nanoc</a>:</p>
     ext<span class="Keyword">=</span><span class="String"><span class="String">%{</span>.<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span><span class="StringVariable"><span class="StringVariable">@</span>item</span><span class="StringEmbeddedSource">[</span><span class="StringConstant"><span class="StringConstant">:</span>extension</span><span class="StringEmbeddedSource">]</span><span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>
     filepath<span class="Keyword">&lt;&lt;=</span>ext
     <span class="Keyword">if</span> <span class="Keyword">not</span> <span class="Support">FileTest</span>.<span class="Entity">exists?</span>(filepath)
-        filepath.<span class="Entity">sub!</span>(ext,<span class="String"><span class="String">%{</span>/index<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>ext<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>)
+        filepath.<span class="Entity">sub!</span>(ext,<span class="String"><span class="String">%{</span><span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span><span class="StringVariable"><span class="StringVariable">@</span>item</span><span class="StringEmbeddedSource"><span class="StringEmbeddedSource">.</span><span class="Entity">raw_filename</span></span><span class="StringEmbeddedSource">}</span></span><span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>ext<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>)
     <span class="Keyword">end</span>
     str<span class="Keyword">=</span><span class="String"><span class="String">`</span>git log -1 --format='%ci' -- <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>filepath<span class="StringEmbeddedSource">}</span></span><span class="String">`</span></span>
     <span class="Keyword">if</span> str.<span class="Entity">nil?</span> <span class="Keyword">or</span> str.<span class="Entity">empty?</span>
@@ -90,7 +90,8 @@ This is how I do this with <a href="http://nanoc.stoneship.org">nanoc</a>:</p>
 But it works as expected.
 Now the date you see at the bottom is exactly the date I modified the <em>content</em> of the page.</p>
 
-<p>Thanks to Eric Sunshine to provide me some hints at cleaning my code.</p>
+<p><em>Edit</em>:
+Thanks to Eric Sunshine and Kris to provide me some hints at cleaning my code.</p>
 
                 </div>
             

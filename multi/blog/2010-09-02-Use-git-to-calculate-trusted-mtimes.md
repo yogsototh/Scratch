@@ -35,7 +35,7 @@ def gitmtime
     ext=%{.#{@item[:extension]}}
     filepath<<=ext
     if not FileTest.exists?(filepath)
-        filepath.sub!(ext,%{/index#{ext}})
+        filepath.sub!(ext,%{#{@item.raw_filename}#{ext}})
     end
     str=`git log -1 --format='%ci' -- #{filepath}`
     if str.nil? or str.empty?
@@ -54,5 +54,7 @@ fr: Bien entendu je sais que c'est très lent et absolument pas optimisé.
 fr: Mais ça fonctionne comme prévu.
 fr: Maintenant la date que vous voyez en bas de la page correspond exactement à la dernière date de modification de son contenu.
 
-en: Thanks to Eric Sunshine to provide me some hints at cleaning my code.
-fr: Je tiens à remercier Eric Sunshine pour ses conseils sur ce problème.
+en: _Edit_:
+en: Thanks to Eric Sunshine and Kris to provide me some hints at cleaning my code.
+fr: _Mise à jour_:
+fr: Je tiens à remercier Eric Sunshine et Kris pour leurs conseils sur ce problème.

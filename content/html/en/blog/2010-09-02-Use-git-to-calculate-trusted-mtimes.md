@@ -27,7 +27,7 @@ def gitmtime
     ext=%{.#{@item[:extension]}}
     filepath<<=ext
     if not FileTest.exists?(filepath)
-        filepath.sub!(ext,%{/index#{ext}})
+        filepath.sub!(ext,%{#{@item.raw_filename}#{ext}})
     end
     str=`git log -1 --format='%ci' -- #{filepath}`
     if str.nil? or str.empty?
@@ -43,4 +43,5 @@ But it works as expected.
 Now the date you see at the bottom is exactly the date I modified the _content_ of the page.
 
 
-Thanks to Eric Sunshine to provide me some hints at cleaning my code.
+_Edit_:
+Thanks to Eric Sunshine and Kris to provide me some hints at cleaning my code.
