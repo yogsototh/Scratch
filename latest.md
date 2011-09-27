@@ -1,1 +1,1 @@
-./multi/blog/Learn-Vim-Progressively.md
+./multi/blog/Higher-order-function-in-zsh.md
