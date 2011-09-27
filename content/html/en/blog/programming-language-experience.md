@@ -3,7 +3,7 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2011-09-05T12:21:41+02:00
-title: programming language experience
+title: Programming Language Experience
 author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
