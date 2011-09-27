@@ -1,3 +1,5 @@
+# This file is needed if you want to host this website
+# using ruby rack. In particular on heroku.
 require 'rubygems'
 require 'rack'
 require 'rack/contrib'

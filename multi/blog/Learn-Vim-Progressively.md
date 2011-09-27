@@ -362,19 +362,21 @@ fr: Jusqu'ici vous avez appris les commandes les plus courantes.
 fr: Mais voici les killer features de vim. 
 fr: Celles que je n'ai retrouvé que dans vim (ou presque).
 
-en: ### Move on current line: `0` `^` `$` `f` `F` `t` `T` `,` `;`
-fr: ### Déplacement sur la ligne : `0` `^` `$` `f` `F` `t` `T` `,` `;`
+en: ### Move on current line: `0` `^` `$` `g_` `f` `F` `t` `T` `,` `;`
+fr: ### Déplacement sur la ligne : `0` `^` `$` `g_` `f` `F` `t` `T` `,` `;`
 
 en: > - `0` → go to column 0
 en: > - `^` → go to first character on the line
-en: > - `$` → go to the last character on the line
+en: > - `$` → go to the last column
+en: > - `g_` → go to the last character on the line
 en: > - `fa` → go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will seek for the next (resp. previous) occurrence.
 en: > - `t,` → go just before the character `,`.
 en: > - `3fa` → search the 3rd occurrence of `a` on this line.
 en: > - `F` and `T` → like `f` and `t` but backward.
 fr: > - `0` → aller à la colonne 0,
 fr: > - `^` → aller au premier caractère de la ligne
-fr: > - `$` → aller au dernier caractère de la ligne
+fr: > - `$` → aller à la dernière colonne de la ligne
+fr: > - `g_` → aller au dernier caractère de la ligne
 fr: > - `fa` → vous amène à la prochaine occurrence de a sur la ligne courante. `,` (resp. `;`) recherche l'occurrence suivante (resp. précédente).
 fr: > - `t,` → vous amène juste avant le `,`.
 fr: > - `3fa` → recherche la 3ième occurrence de `a`.
@@ -439,7 +441,7 @@ fr: - `I-- [ESC]` → écrit `-- ` pour commenter le reste de la ligne.
 
 <%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
 
-en: Not on windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
+en: Note on windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
 fr: Remarquez que sous windows, vous devez utiliser `<C-q>` plutôt que `<C-v>` si votre "presse papier" n'est pas vide.
 
 en: ### Completion: `<C-n>` and `<C-p>`.

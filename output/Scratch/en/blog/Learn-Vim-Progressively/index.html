@@ -321,13 +321,14 @@ is also true for <code>d</code> (delete), <code>v</code> (visual select), <code>
 But now, here are the killer features.
 Some of these features were the reason I started to use vim.</p>
 
-<h3 id="move-on-current-line-0---f-f-t-t--">Move on current line: <code>0</code> <code>^</code> <code>$</code> <code>f</code> <code>F</code> <code>t</code> <code>T</code> <code>,</code> <code>;</code></h3>
+<h3 id="move-on-current-line-0---g-f-f-t-t--">Move on current line: <code>0</code> <code>^</code> <code>$</code> <code>g_</code> <code>f</code> <code>F</code> <code>t</code> <code>T</code> <code>,</code> <code>;</code></h3>
 
 <blockquote>
   <ul>
     <li><code>0</code> → go to column 0</li>
     <li><code>^</code> → go to first character on the line</li>
-    <li><code>$</code> → go to the last character on the line</li>
+    <li><code>$</code> → go to the last column</li>
+    <li><code>g_</code> → go to the last character on the line</li>
     <li><code>fa</code> → go to next occurrence of the letter <code>a</code> on the line. <code>,</code> (resp. <code>;</code>) will seek for the next (resp. previous) occurrence.</li>
     <li><code>t,</code> → go just before the character <code>,</code>.</li>
     <li><code>3fa</code> → search the 3<sup>rd</sup> occurrence of <code>a</code> on this line.</li>
@@ -377,7 +378,7 @@ Typically: <code>0&lt;C-v&gt;&lt;C-d&gt;I-- [ESC]</code></p>
 
 <p><img alt="Rectangular blocks" src="/Scratch/img/blog/Learn-Vim-Progressively/rectangular-blocks.gif" /></p>
 
-<p>Not on windows you might have to use <code>&lt;C-q&gt;</code> instead of <code>&lt;C-v&gt;</code> if your clipboard is not empty.</p>
+<p>Note on windows you might have to use <code>&lt;C-q&gt;</code> instead of <code>&lt;C-v&gt;</code> if your clipboard is not empty.</p>
 
 <h3 id="completion-c-n-and-c-p">Completion: <code>&lt;C-n&gt;</code> and <code>&lt;C-p&gt;</code>.</h3>
 
@@ -564,7 +565,7 @@ $(document).ready(function() {
                 </div>
                 <div id="lastmod">
                     Created: 08/25/2011
-                    Modified: 08/31/2011 
+                    Modified: 09/08/2011 
                 </div>
                 <div>
                     Entirely done with

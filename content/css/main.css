@@ -10,6 +10,7 @@ $secondRevealColor: #AA5533
 $lighterRevealColor: $revealColor + #666
 $imageBackgroundColor: $mainBackgroundColor
 $imageBorderColor: #cccccc
+$borderColor: #cccccc
 $mainLinkColor: $mainTextColor
 $textLinkColor: #555555
 $highlightColor: #888888
@@ -61,6 +62,9 @@ $codeBlockBackgroundColor: $behindColor
 
 =secondColor
   color: $behindColor
+  border: $borderColor solid 1px
+  border-radius: 5px
+  box-shadow: 0 0 2px $borderColor inset
   background:
     color: $lighterColor
   a
@@ -396,9 +400,7 @@ $hauteur_menu: 4em
 $contentMargin: 0em
 
 .encadre, .black, .red, .intro, .resume, .shadow
-  padding:
-    left: 2em
-    right: 2em
+  padding: 2em
   margin:
     top: 2em
     bottom: 2em

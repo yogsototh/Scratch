@@ -219,11 +219,12 @@ Jusqu'ici vous avez appris les commandes les plus courantes.
 Mais voici les killer features de vim. 
 Celles que je n'ai retrouvé que dans vim (ou presque).
 
-### Déplacement sur la ligne : `0` `^` `$` `f` `F` `t` `T` `,` `;`
+### Déplacement sur la ligne : `0` `^` `$` `g_` `f` `F` `t` `T` `,` `;`
 
 > - `0` → aller à la colonne 0,
 > - `^` → aller au premier caractère de la ligne
-> - `$` → aller au dernier caractère de la ligne
+> - `$` → aller à la dernière colonne de la ligne
+> - `g_` → aller au dernier caractère de la ligne
 > - `fa` → vous amène à la prochaine occurrence de a sur la ligne courante. `,` (resp. `;`) recherche l'occurrence suivante (resp. précédente).
 > - `t,` → vous amène juste avant le `,`.
 > - `3fa` → recherche la 3ième occurrence de `a`.

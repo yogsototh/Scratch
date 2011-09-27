@@ -213,11 +213,12 @@ With all preceding commands you should be comfortable to use vim.
 But now, here are the killer features.
 Some of these features were the reason I started to use vim.
 
-### Move on current line: `0` `^` `$` `f` `F` `t` `T` `,` `;`
+### Move on current line: `0` `^` `$` `g_` `f` `F` `t` `T` `,` `;`
 
 > - `0` → go to column 0
 > - `^` → go to first character on the line
-> - `$` → go to the last character on the line
+> - `$` → go to the last column
+> - `g_` → go to the last character on the line
 > - `fa` → go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will seek for the next (resp. previous) occurrence.
 > - `t,` → go just before the character `,`.
 > - `3fa` → search the 3rd occurrence of `a` on this line.
@@ -260,7 +261,7 @@ Typically: `0<C-v><C-d>I-- [ESC]`
 
 <%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
 
-Not on windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
+Note on windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
 
 ### Completion: `<C-n>` and `<C-p>`.
 

@@ -2,46 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2011-09-05T10:21:41Z</updated>
+  <updated>2011-08-25T17:28:20Z</updated>
   <link href="http://yannesposito.com/" rel="alternate"/>
   <link href="http://feeds.feedburner.com/yannespositocomen" rel="self"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
-  <entry>
-    <id>tag:yannesposito.com,2011-09-05:/Scratch/en/blog/programming-language-experience/</id>
-    <title type="html">programming language experience</title>
-    <published>2011-09-05T10:21:41Z</published>
-    <updated>2011-09-05T10:21:41Z</updated>
-    <link href="http://yannesposito.com/Scratch/en/blog/programming-language-experience/" rel="alternate"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/programming-language-experience/main.png" /&gt;&lt;/p&gt;
-
-
-&lt;div class="intro"&gt;
-
-&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; My feelings about programming languages I used.
-
-&lt;/div&gt;
-
-
-&lt;h3 id="basic"&gt;BASIC&lt;/h3&gt;
-
-&lt;p&gt;The language of my firsts programs!
-I was about 10, with an &lt;code&gt;MO5&lt;/code&gt; and &lt;code&gt;Amstrad CPC 6128&lt;/code&gt; and even with my &lt;code&gt;Atari STe&lt;/code&gt;.
-This is the language of &lt;code&gt;GOTO&lt;/code&gt;s.
-&#212; nostalgia.
-Unfortunately this might be the only interesting part of this language.&lt;/p&gt;
-
-&lt;p&gt;Today this language is obsolescent.
-It not even a good language to learn programming.
-I know there exist some compiler now.
-But this is not enough to try to learn it.&lt;/p&gt;
-
-&lt;pre class="twilight"&gt;
-READY
-10 PRINT &lt;/pre&gt;&lt;/p&gt;</content>
-  </entry>
   <entry>
     <id>tag:yannesposito.com,2011-08-25:/Scratch/en/blog/Learn-Vim-Progressively/</id>
     <title type="html">Learn Vim Progressively</title>
@@ -200,7 +167,7 @@ But I will revive a bit this blog.&lt;/p&gt;
 &lt;p&gt;I had written an efficient &lt;em&gt;&amp;amp;&lt;/em&gt; simplistic MVC javascript framework.&lt;/p&gt;
 
 &lt;p&gt;Best wishes for &lt;em&gt;2011&lt;/em&gt;!&lt;/p&gt;
-&lt;/p&gt;</content>
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-10-26:/Scratch/en/blog/2010-10-26-LaTeX-like-macro-and-markdown/</id>
@@ -304,7 +271,7 @@ Then my new design obey to the following rules:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;I hope the new design please you.&lt;/p&gt;
-&lt;/p&gt;</content>
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-09-02:/Scratch/en/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/</id>
@@ -445,7 +412,7 @@ Now all should scroll smoothly on all platforms.
 I was inspired by Readability and iBooks&lt;small&gt;&amp;copy;&lt;/small&gt; (the iPhone&lt;small&gt;&amp;copy;&lt;/small&gt; application).&lt;/p&gt;
 
 &lt;p&gt;Tell me what you think of this new design.&lt;/p&gt;
-&lt;/p&gt;</content>
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-07-07:/Scratch/en/blog/2010-07-07-CSS-rendering-problems-by-navigator/</id>
@@ -805,7 +772,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 
 &lt;p&gt;and you have to make this behaviour with only one regular expression. The problem is the complementary of regular languages is not regular. Then, for some expression it is absolutely not impossible.&lt;/p&gt;
 
-&lt;p&gt;But sometimes with some simple regular expression it should be possible&lt;sup&gt;&lt;a href="#note1"&gt;&amp;dagger;&lt;/a&gt;&lt;/sup&gt;. Say you want to match everything containing the some word say &lt;code&gt;bull&lt;/code&gt; but don&amp;rsquo;t want to match &lt;code&gt;bullshit&lt;/code&gt;. Here is a nice way to do that:&lt;/p&gt;...&lt;/p&gt;</content>
+&lt;p&gt;But sometimes with some simple regular expression it should be possible&lt;sup&gt;&lt;a href="#note1"&gt;&amp;dagger;&lt;/a&gt;&lt;/sup&gt;. Say you want to match everything containing the some word say &lt;code&gt;bull&lt;/code&gt; but don&amp;rsquo;t want to match &lt;code&gt;bullshit&lt;/code&gt;. Here is a nice way to do that:&lt;/p&gt;...</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-01-12:/Scratch/en/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/</id>
@@ -835,7 +802,7 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 &lt;div&gt;&lt;pre class="twilight"&gt;
 &lt;span class="Keyword"&gt;&amp;gt;&lt;/span&gt; chsh
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;</content>
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-12-14:/Scratch/en/blog/2009-12-14-Git-vs--Bzr/</id>
@@ -868,23 +835,36 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
     <content type="html">&lt;p&gt;It is unbelievable you cannot filter your call with an iPhone! The only reason I see for that is a negotiation with phone operator to force users to get phone advertising. It is simple unacceptable.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m a &#955; iPhone&amp;rsquo;s user. The only way to filter your call and to manage blacklist is to &lt;em&gt;jailbreak&lt;/em&gt; your iPhone. And I don&amp;rsquo;t want to do that. Then, if like me you find it unacceptable, just write a line to Apple: &lt;a href="http://www.apple.com/feedback/iphone.html"&gt;http://www.apple.com/feedback/iphone.html&lt;/a&gt;&lt;/p&gt;
-&lt;/p&gt;</content>
+</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/</id>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/</id>
     <title type="html">Git for n00b</title>
     <published>2009-11-12T09:39:54Z</published>
     <updated>2009-11-12T09:39:54Z</updated>
-    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/comprendre/" rel="alternate"/>
-    <content type="html">&lt;h1 class="first" id="why-git-is-cool"&gt;Why Git is cool?&lt;/h1&gt;
+    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/commandes-avancees/" rel="alternate"/>
+    <content type="html">&lt;h1 class="first" id="command-list"&gt;Command List&lt;/h1&gt;
 
-&lt;p&gt;Because with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; you can work on many part of some project totally independently. This is the true efficiency of decentralisation.&lt;/p&gt;
+&lt;h2 id="command-for-each-functionality"&gt;Command for each functionality&lt;/h2&gt;
 
-&lt;p&gt;Each branch use the same directory. Then you can easily change your branch. You can also change branch when some files are modified. You can then dispatch your work on many different branches and merge them on one master branch at will.&lt;/p&gt;
+&lt;p&gt;In the first part, we saw the list of resolved problem by &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. To resume &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; should do:&lt;/p&gt;
 
-&lt;p&gt;Using the &lt;code&gt;git rebase&lt;/code&gt; you can decide which modifications should be forget or merged into only one modification.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;get others modifications,&lt;/li&gt;
+  &lt;li&gt;send modifications to others,&lt;/li&gt;
+  &lt;li&gt;get back in time,&lt;/li&gt;
+  &lt;li&gt;list differences between each version,&lt;/li&gt;
+  &lt;li&gt;name some versions in order to refer easily to them,&lt;/li&gt;
+  &lt;li&gt;write an historic of modifications,&lt;/li&gt;
+  &lt;li&gt;know who did what and when,&lt;/li&gt;
+  &lt;li&gt;manage conflicts,&lt;/li&gt;
+  &lt;li&gt;easily manage branches.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;What does it mean for real usage? You can focus on coding. For example, you can code, a fix for bug b01 and for bug b02 and code a feature f03. Once finished you can creat...&lt;/p&gt;</content>
+&lt;h3 id="get-others-modifications"&gt;get others modifications&lt;/h3&gt;
+
+&lt;div&gt;&lt;pre class="twilight"&gt;
+$ g...&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/</id>
@@ -916,5 +896,28 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 
 &lt;div&gt;&lt;pre class="twilight"&gt;
 git clone ssh...&lt;/pre&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2009-11-12:/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/</id>
+    <title type="html">Git for n00b</title>
+    <published>2009-11-12T09:39:54Z</published>
+    <updated>2009-11-12T09:39:54Z</updated>
+    <link href="http://yannesposito.com/Scratch/en/blog/2009-11-12-Git-for-n00b/c-est-parti-pour-l-aventure/" rel="alternate"/>
+    <content type="html">&lt;h1 class="first" id="here-we-go"&gt;Here we go!&lt;/h1&gt;
+
+&lt;p&gt;Here is one from many way to use &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt;. This method is sufficient to work on a project. Not there is many other &lt;em&gt;workflows&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id="basic-usage"&gt;Basic usage&lt;/h2&gt;
+
+&lt;p&gt;Work with &lt;a href="http://git-scm.org" title="Git"&gt;Git&lt;/a&gt; immediately:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Get modification done by others &lt;span class="black"&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+  &lt;li&gt;See details of these modifications &lt;span class="black"&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+  &lt;li&gt;Many times:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;Make an atomic modification&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;Verify details of this modification: &lt;span class="black"&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/span&gt; and &lt;span class="black"&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/span&gt;,&lt;/li&gt;
+      &lt;li&gt;Add ...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content>
   </entry>
 </feed>

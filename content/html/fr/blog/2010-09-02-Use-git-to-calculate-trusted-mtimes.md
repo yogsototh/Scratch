@@ -27,7 +27,7 @@ def gitmtime
     ext=%{.#{@item[:extension]}}
     filepath<<=ext
     if not FileTest.exists?(filepath)
-        filepath.sub!(ext,%{/index#{ext}})
+        filepath.sub!(ext,%{#{@item.raw_filename}#{ext}})
     end
     str=`git log -1 --format='%ci' -- #{filepath}`
     if str.nil? or str.empty?
@@ -43,4 +43,5 @@ Bien entendu je sais que c'est très lent et absolument pas optimisé.
 Mais ça fonctionne comme prévu.
 Maintenant la date que vous voyez en bas de la page correspond exactement à la dernière date de modification de son contenu.
 
-Je tiens à remercier Eric Sunshine pour ses conseils sur ce problème.
+_Mise à jour_:
+Je tiens à remercier Eric Sunshine et Kris pour leurs conseils sur ce problème.
