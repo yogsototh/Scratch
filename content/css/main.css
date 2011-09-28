@@ -105,14 +105,14 @@ body
 a:hover
   text-shadow: 0 0 2px #FAA
 
-a, a:link, a:visited, a:active, a:hover, #clickcomment
+a, a:link, a:visited, a:active, a:hover
   text-decoration: none
   outline: none
 
-a, a:link, a:visited, a:active, #clickcomment
+a, a:link, a:visited, a:active
   color: $mainLinkColor
 
-a:hover, #clickcomment:hover
+a:hover
   +revealColor
 
 hr
@@ -197,6 +197,23 @@ acronym
     box-shadow: 0 0 6px #555 inset
     -webkit-box-shadow: 0 0 6px #555 inset
 
+=clearbutton
+  display: block
+  width: 25%
+  cursor: pointer
+  margin: 1em 0
+  padding: 1em
+  font-size: 16px
+  line-height: 1.4em
+  border-radius: 1.5em
+  background: rgba(#000,.05)
+  box-shadow: 0 2px 1px rgba(255, 255, 255, 0.5) inset, 0 -2px 1px rgba(0, 0, 0, 0.2) inset, 0 1px 2px rgba(0, 0, 0, .5)
+  &:hover
+    background: rgba(#000,.1)
+    box-shadow: 0 0 6px #555 inset
+    -webkit-box-shadow: 0 0 6px #555 inset
+    box-shadow: 0 2px 1px rgba(255, 255, 255, 0.5) inset, 0 -2px 1px rgba(0, 0, 0, 0.2) inset, 0 1px 5px rgba(60, 30, 0, .8)
+
 #liens a
   border: 1px solid #EEE
   +insetbox
@@ -218,12 +235,15 @@ acronym
 .nojsbutton
   font-size: 2.5em
 
-#clickcomment
-  cursor: pointer
-  font-size: 1.2em
-  line-height: 4em
-  margin: 1em
-  +insetbox
+#clickcomment, #choixlang > a, #choixrss > a, .return > a
+  +clearbutton
+
+.return > a, #choixrss > a
+  float: right
+
+#choix
+  .return > a, #choixrss > a
+    margin-top: 0
 
 // -- TYPOGRAPHY --
 .small
@@ -297,9 +317,6 @@ body > #entete
   z-index: 8000
   padding-bottom: 1em
   margin-bottom: $VMarginCorps
-
-body > #content > #entete > #choix > #choixrss > #rss
-  font-size: 1em
 
 #titre h2
   width: 80%
@@ -393,9 +410,6 @@ $hauteur_menu: 4em
   position: relative
   clear: both
   width: $content_width
-
-#content > #choix
-  margin-top: 1em
 
 $contentMargin: 0em
 
@@ -643,30 +657,6 @@ table.impact tr td
   width: 100%
   text-align: center
 
-#choixrss
-  float: right
-  width: 25%
-  line-height: 2em
-  margin: 1em
-#choixlang
-  line-height: 2em
-  margin: 1em
-
-#choix a
-  color: $highlightColor
-#choix  a:hover
-  color: $revealColor
-
-#choixlang a
-  display: block
-  width: 25%
-  line-height: 4em
-  text-align: center
-  +insetbox
-
-#choix a
-  +insetbox
-
 #next_before_articles
   clear: both
   width: 100%
@@ -695,9 +685,6 @@ table.impact tr td
   margin-right: 1em
   text-align: right
 
-#clickcomment
-  margin-left: 0
-  width: 25%
 
 #rss
   font-size: 1.2em
@@ -706,11 +693,6 @@ table.impact tr td
   width: 100%
   float: right
   padding: 1em 0.1em
-
-.return a
-  text-align: center
-  float: right
-  width: 25%
 
 .corps .return a
   color: $lighterColor
