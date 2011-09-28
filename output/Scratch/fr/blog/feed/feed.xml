@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2011-09-27T13:15:23Z</updated>
+  <updated>2011-09-28T10:21:41Z</updated>
   <link href="http://yannesposito.com/" rel="alternate"/>
   <link href="http://feeds.feedburner.com/yannespositocomfr" rel="self"/>
   <author>
@@ -10,12 +10,39 @@
     <uri>http://yannesposito.com</uri>
   </author>
   <entry>
+    <id>tag:yannesposito.com,2011-09-28:/Scratch/fr/blog/programming-language-experience/</id>
+    <title type="html">programming language experience</title>
+    <published>2011-09-28T10:21:41Z</published>
+    <updated>2011-09-28T10:21:41Z</updated>
+    <link href="http://yannesposito.com/Scratch/fr/blog/programming-language-experience/" rel="alternate"/>
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/programming-language-experience/dragon.jpg" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt; Mon avis court et hautement subjectif concernant les diff&#233;rents languages de programmations que j&amp;rsquo;ai utilis&#233;.
+
+&lt;/div&gt;
+
+
+&lt;h3 id="basic"&gt;&lt;code&gt;BASIC&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/programming-language-experience/basic.gif" class="left" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ah&amp;nbsp;! Le language de mes premiers programmes&amp;nbsp;! 
+Je devais avoir 10-11 ans. 
+Sous &lt;code&gt;MO5&lt;/code&gt;, &lt;code&gt;Amstrad CPC 6128&lt;/code&gt; et m&#234;me &lt;code&gt;Atari STe&lt;/code&gt;.
+Le langage des &lt;code&gt;GOTO&lt;/code&gt;s. 
+Je suis empleint de nostalgie rien que d&amp;rsquo;y penser. 
+C&amp;rsquo;est &#224; peu pr&#234;t le seul int&#233;r&#234;t de ce...&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2011-09-27:/Scratch/fr/blog/Higher-order-function-in-zsh/</id>
     <title type="html">Higher order function in zsh</title>
     <published>2011-09-27T13:15:23Z</published>
     <updated>2011-09-27T13:15:23Z</updated>
     <link href="http://yannesposito.com/Scratch/fr/blog/Higher-order-function-in-zsh/" rel="alternate"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Higher-order-function-in-zsh/main.png" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Higher-order-function-in-zsh/main.jpg" /&gt;&lt;/p&gt;
 
 
 &lt;div class="intro"&gt;
@@ -37,34 +64,6 @@ Commen&#231;ons par un programme qui converti tous les gif en png dans plusieurs
 Avant&amp;nbsp;:&lt;/p&gt;
 
 &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2011-09-05:/Scratch/fr/blog/programming-language-experience/</id>
-    <title type="html">programming language experience</title>
-    <published>2011-09-05T10:21:41Z</published>
-    <updated>2011-09-05T10:21:41Z</updated>
-    <link href="http://yannesposito.com/Scratch/fr/blog/programming-language-experience/" rel="alternate"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/programming-language-experience/main.png" /&gt;&lt;/p&gt;
-
-
-&lt;div class="intro"&gt;
-
-&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt; Mon avis sur les diff&#233;rents languages de programmations que j&amp;rsquo;ai utilis&#233;.
-
-&lt;/div&gt;
-
-
-&lt;h3 id="basic"&gt;BASIC&lt;/h3&gt;
-
-&lt;p&gt;Ah&amp;nbsp;! Le language de mes premiers programmes&amp;nbsp;! 
-Je devais avoir 10-11 ans. 
-Sous &lt;code&gt;MO5&lt;/code&gt;, &lt;code&gt;Amstrad CPC 6128&lt;/code&gt; et m&#234;me &lt;code&gt;Atari STe&lt;/code&gt;.
-Le langage des &lt;code&gt;GOTO&lt;/code&gt;s. 
-Je suis empleint de nostalgie rien que d&amp;rsquo;y penser. 
-C&amp;rsquo;est &#224; peu pr&#234;t le seul int&#233;r&#234;t de ce langage.&lt;/p&gt;
-
-&lt;p&gt;Aujourd&amp;rsquo;hui ce langage est tomb&#233; en d&#233;su&#233;tude.
-Ce n&amp;rsquo;est ni un bon langage pour apprendre, ni un bon langage pour faire de vrai prog...&lt;/p&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-08-25:/Scratch/fr/blog/Learn-Vim-Progressively/</id>

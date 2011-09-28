@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2011-09-27T13:15:23Z</updated>
+  <updated>2011-09-28T10:21:41Z</updated>
   <link href="http://yannesposito.com/" rel="alternate"/>
   <link href="http://feeds.feedburner.com/yannespositocomen" rel="self"/>
   <author>
@@ -10,12 +10,40 @@
     <uri>http://yannesposito.com</uri>
   </author>
   <entry>
+    <id>tag:yannesposito.com,2011-09-28:/Scratch/en/blog/programming-language-experience/</id>
+    <title type="html">Programming Language Experience</title>
+    <published>2011-09-28T10:21:41Z</published>
+    <updated>2011-09-28T10:21:41Z</updated>
+    <link href="http://yannesposito.com/Scratch/en/blog/programming-language-experience/" rel="alternate"/>
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/programming-language-experience/dragon.jpg" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; My short and higly subjective feelings about programming languages I used.
+
+&lt;/div&gt;
+
+
+&lt;h3 id="basic"&gt;&lt;code&gt;BASIC&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/programming-language-experience/basic.gif" class="left" /&gt;
+The language of my firsts programs!
+I was about 10, with an &lt;code&gt;MO5&lt;/code&gt; and &lt;code&gt;Amstrad CPC 6128&lt;/code&gt; and even with my &lt;code&gt;Atari STe&lt;/code&gt;.
+This is the language of &lt;code&gt;GOTO&lt;/code&gt;s.
+&#212; nostalgia.
+Unfortunately this might be the only interesting part of this language.&lt;/p&gt;
+
+&lt;p&gt;Today this language is obsolescent.
+It not even a good language to learn pro...&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
     <id>tag:yannesposito.com,2011-09-27:/Scratch/en/blog/Higher-order-function-in-zsh/</id>
     <title type="html">Higher order function in zsh</title>
     <published>2011-09-27T13:15:23Z</published>
     <updated>2011-09-27T13:15:23Z</updated>
     <link href="http://yannesposito.com/Scratch/en/blog/Higher-order-function-in-zsh/" rel="alternate"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Higher-order-function-in-zsh/main.png" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Higher-order-function-in-zsh/main.jpg" /&gt;&lt;/p&gt;
 
 
 &lt;div class="intro"&gt;
@@ -33,39 +61,6 @@
     &lt;span class="Comment"&gt;&lt;span class="Comment"&gt;#&lt;/span&gt; toProject is /path/to/projects/foo&lt;/span&gt;
     &lt;span class="Comment"&gt;&lt;span class="Comment"&gt;#&lt;/span&gt; project become foo (:t for tail)&lt;/span&gt;
     project=&lt;span class="Variable"&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2011-09-05:/Scratch/en/blog/programming-language-experience/</id>
-    <title type="html">Programming Language Experience</title>
-    <published>2011-09-05T10:21:41Z</published>
-    <updated>2011-09-05T10:21:41Z</updated>
-    <link href="http://yannesposito.com/Scratch/en/blog/programming-language-experience/" rel="alternate"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/programming-language-experience/main.png" /&gt;&lt;/p&gt;
-
-
-&lt;div class="intro"&gt;
-
-&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; My feelings about programming languages I used.
-
-&lt;/div&gt;
-
-
-&lt;h3 id="basic"&gt;BASIC&lt;/h3&gt;
-
-&lt;p&gt;The language of my firsts programs!
-I was about 10, with an &lt;code&gt;MO5&lt;/code&gt; and &lt;code&gt;Amstrad CPC 6128&lt;/code&gt; and even with my &lt;code&gt;Atari STe&lt;/code&gt;.
-This is the language of &lt;code&gt;GOTO&lt;/code&gt;s.
-&#212; nostalgia.
-Unfortunately this might be the only interesting part of this language.&lt;/p&gt;
-
-&lt;p&gt;Today this language is obsolescent.
-It not even a good language to learn programming.
-I know there exist some compiler now.
-But this is not enough to try to learn it.&lt;/p&gt;
-
-&lt;pre class="twilight"&gt;
-READY
-10 PRINT &lt;/pre&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-08-25:/Scratch/en/blog/Learn-Vim-Progressively/</id>

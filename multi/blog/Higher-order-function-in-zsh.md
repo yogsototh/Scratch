@@ -9,7 +9,7 @@ author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
 -----
-<%= blogimage("main.png","Title image") %>
+<%= blogimage("main.jpg","Title image") %>
 
 begindiv(intro)
 
@@ -18,14 +18,22 @@ fr: <%= tlal %> des fonctions d'ordres supérieurs en zsh.
 
 enddiv
 
+en: Why is it important to have these functions?
+en: Simply because, the more I programmed with zsh the more I tended to work using functional programming style.
 fr: Tout d'abord, pourquoi c'est important d'avoir ces fonctions. 
 fr: Plus je programmais avec zsh plus j'essayais d'avoir un style fonctionnel.
 
+en: The minimal to have better code are the functions `map`, `filter` and `fold`.
 fr: Le minimum pour pouvoir avoir du code plus lisible c'est de posséder les fonctions `map`, `filter` et `fold`.
 
+en: Let's compare.
+en: First a program which convert all gif to png in many different directories of different projects.
 fr: Voici pourquoi avec une comparaison.
 fr: Commençons par un programme qui converti tous les gif en png dans plusieurs répertoires projets contenant tous des répertoires resources.
 fr: Avant :
+
+fr: Avant ⇒
+en: Before ⇒
 
 <code class="zsh">
 # for each directory in projects dir
@@ -34,29 +42,41 @@ for toProject in /path/to/projects/*(/N); do
     # project become foo (:t for tail)
     project=${toProject:t}
     for toResource in $toProject/resources/*.gif(.N); do
-        convert $toResource ${toResource:r}.png
+        convert $toResource ${toResource:r}.png && \
         \rm -f $toResource
     done
 done
 </code>
 
+en: The `(/N)` means to select only directory and not to crash if there isn't any.
+en: The `(.N)` means to select only files and not to crash if there isn't any.
+
+en: After ⇒
 fr: Après
 
 <code class="zsh">
 gif_to_png() { convert $1 ${1:r}.png && \rm -f $1 }
+
 handle_resources() { map gif_to_png $1/resources/*.gif(.N) }
+
 map handle_resources /path/to/projects/*(/N)
 </code>
 
+en: No more bloc!
+en: It might be a little bit harder to read if you're not used to functional programming notation.
+en: But it is more concise and robusts.
 fr: Plus de bloc ! 
 fr: Oui, c'est un poil plus difficile à lire pour les non initiés. 
 fr: Mais c'est à la fois plus concis et plus robuste.
 
+en: Another example with some tests.
 fr: Et encore ce code ne possède pas de test.
 fr: Recommençons sur le même principe.
 
+en: Find all files in project not containing an `s` which their name contains their project name:
 fr: Trouver les fichiers des projets qui ne contiennent pas de s dans leur nom qui ont le même nom que leur projet.
 
+Before ⇒
 
 <code class="zsh">
 for toProject in Projects/*; do
@@ -73,18 +93,98 @@ for toProject in Projects/*; do
 done
 </code>
 
-After =>
+After ⇒
 
 <code class="zsh">
 contain_no_s() { print $1 | grep -v s }
+
 function verify_file_name {                               
     local project=$1:t
     contains_project_name() { print $1:t | grep $project }
     map "print -- X" $(filter contains_project_name $1/*(.N))
 }
+
 map show_project_matchin_file $( filter contain_no_s Projects/* )
 </code>
 
-Also, the first verstion is a bit easier to read. 
-But the second one is clearly far superior in architecture.
-Why?
+en: Also, the first verstion is a bit easier to read. 
+en: But the second one is clearly far superior in architecture.
+en: I don't want to argue why here. 
+en: Just believe me that the functional programming approach is superior.
+fr: La première version peu paraître plus facile à lire.
+fr: Mais la seconde est plus bien supérieure en terme d'architecture.
+fr: Je ne veux pas discuster ici pourquoi c'est mieux.
+fr: Je vous demande simplement de me croire quand je dis que l'approche fonctionnelle est supérieure.
+
+fr: Actuellement il me manque une fonction lambda, si quelqu'un à une idée elle serait la bienvenue. 
+fr: Je ne sais pas encore comment créer facilement des fonctions anonymes.
+en: Actually I lack the lambda operator. 
+en: If someone has an idea on how to create anonymous functions, just tell me, thanks.
+
+en: Here is the source code:
+fr: Voici le code source :
+
+<code class="zsh" file="functional.sh">
+#!/usr/bin/env zsh
+
+# Provide higer-order functions 
+
+# usage:
+#
+# $ foo(){print "x: $1"}
+# $ map foo a b c d
+# x: a
+# x: b
+# x: c
+# x: d
+function map {
+    local func_name=$1
+    shift
+    for elem in $@; print -- $(eval $func_name $elem)
+}
+
+# $ bar() { print $(($1 + $2)) }
+# $ fold bar 0 1 2 3 4 5
+# 15
+# -- but also
+# $ fold bar 0 $( seq 1 100 )
+function fold {
+    if (($#<2)) {
+        print -- "ERROR fold use at least 2 arguments" >&2
+        return 1
+    }
+    if (($#<3)) {
+        print -- $2
+        return 0
+    } else {
+        local acc
+        local right
+        local func_name=$1
+        local init_value=$2
+        local first_value=$3
+        shift 3
+        right=$( fold $func_name $init_value $@ )
+        acc=$( eval "$func_name $first_value $right" )
+        print -- $acc
+        return 0
+    }
+}
+
+# usage:
+#
+# $ baz() { print $1 | grep baz }
+# $ filter baz titi bazaar biz
+# bazaar
+function filter {
+    local predicate=$1
+    local result
+    typeset -a result
+    shift
+    for elem in $@; do
+        if eval $predicate $elem >/dev/null; then
+            result=( $result $elem )
+        fi
+    done
+    print $result
+}
+</code>

@@ -29,12 +29,11 @@
             <% unless @item[:no_entete] %>
             <div id="entete">
                 <div id="choix"> 
-                    <div id="choixrss"><%= choixrss %> </div>
-                    <div id="choixlang"><%= choixlang %> </div>
-                    <div id="liens">
-                        <%= generateMenu %>
-                    </div>
+                    <div id="choixrss"><%= choixrss %></div>
+                    <div id="choixlang"><%= choixlang %></div>
+                    <div class="flush"></div>
                 </div>
+                <div id="liens"><%= generateMenu %></div>
             </div>
             <% end %>
             <img src="<%=@config[:webprefix]%>/img/presentation.png" alt="Presentation drawing"/>

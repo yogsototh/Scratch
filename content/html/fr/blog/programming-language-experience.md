@@ -2,20 +2,21 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2011-09-05T12:21:41+02:00
+created_at:     2011-09-28T12:21:41+02:00
 title: programming language experience
 author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
 -----
-<%= blogimage("main.png","Title image") %>
+<%= blogimage("dragon.jpg","Title image") %>
 
 begindiv(intro)
-<%=tlal%> Mon avis sur les différents languages de programmations que j'ai utilisé.
+<%=tlal%> Mon avis court et hautement subjectif concernant les différents languages de programmations que j'ai utilisé.
 enddiv
 
-### BASIC
+### `BASIC`
 
+<%= leftblogimage("basic.gif","Title image") %>
 
 Ah ! Le language de mes premiers programmes ! 
 Je devais avoir 10-11 ans. 
@@ -104,6 +105,8 @@ Mais je préfère largement le C.
 
 ### C
 
+<%=leftblogimage("C.jpg","Pointer representation from Dancing links")%>
+
 Le langage des pointeurs
 
 Ah, _le_ langage de programmation par excellence. 
@@ -150,6 +153,8 @@ Donc les langages orientés objets se sont mis à fleurir.
 
 ### C++
 
+<%=leftblogimage("cplusplus.jpg","Messy router")%>
+
 Le malpropre
 
 Et oui l'industrie voulait un langage objet, mais elle n'était pas prête à mettre à la poubelle tout ses codes en C. 
@@ -157,13 +162,18 @@ La solution, prendre C et lui rajouter une couche objet.
 Le problème avec C++ c'est qu'il fait trop de choses. 
 L'héritage multiple, des templates, etc...
 Bon, je l'ai quand même choisi pour faire le plus gros programme que j'ai jamais fais lors de ma thèse. 
-Et je dois avouer que l'expérience m'a plûe. 
-Le seul reproche que j'ai à faire, c'est que la STL n'était pas aussi complète que l'on aurait pû l'espérer pour un détail. 
+Et je dois avouer que l'expérience m'a plu. 
+Le seul reproche que j'ai à faire, c'est que la STL n'était pas aussi complète que l'on aurait pu l'espérer pour un détail. 
 On ne peut pas faire de `String<T>` pour autre chose que des `char16`. 
-Du coup, mon alphabet était limité à $2^16$ lettres. 
+Du coup, mon alphabet était limité à 2<sup>16</sup> lettres. 
 Hors, pour certaines application, l'alphabet doit être gigantesque. 
 
+En conclusion je dirai que C++ est un très bon langage si vous vous fixez à l'avance un sous ensemble de ses fonctionnalités.
+
+
 ### Eiffel
+
+<%=leftblogimage("eiffel.jpg","Eiffel tower construction")%>
 
 Bon, ok c'est un très beau langage objet. 
 Bien plus propre que C++. 
@@ -175,6 +185,8 @@ Lorsqu'on viens du C, il est désagréable de changer ses habitudes.
 
 ### Java
 
+<%=leftblogimage("grail.jpg","Holy Grail from the Monty Python")%>
+
 On continue vers les langages objets. Alors, à une époque où j'en ai entendu parler, c'était _le Graal_ ! 
 
 La portabilité, votre programme marchera partout. Il était orienté objet. Incrusté à l'intérieur il y avait des concepts d'architecture qui empêchent de faire n'importe quoi... Sauf que.
@@ -183,13 +195,15 @@ Sauf qu'il est incroyablement verbeux.
 Et que les limitations sont très désagréables si on sait ce que l'on fait.
 
 Par exemple, il n'y a pas d'héritage multiple en Java. 
-Ce qui est en général un choix que je trouve cohérent s'il est bien appuyé par des système qui compensent ce manque. 
+Ce qui est en général un choix que je trouve cohérent s'il est bien appuyé par des systèmes qui compensent ce manque. 
 En java, il existe les interfaces. 
-Hors, les interfaces sont un moyen d'ajouter simplement des méthodes à une classe. 
-En aucun cas on ne peut rajouter un attribut. 
-Ce qui m'a vraiment géner pour faire une interface graphique par exemple.
-Typiquement je faisais une GUI en Java Swing, et j'avais créé mon propre système de notification entre objets de GUI. 
-Alors, au début je considérais qu'un objet ne devais envoyer des notifications qu'à un seul objet. 
+Les interfaces permettent d'ajouter des méthodes à une classe. 
+En aucun cas on ne peut rajouter un attribut autrement qu'en héritant. 
+Cet état de fait m'a vraiment géné.
+
+Typiquement je faisais une GUI en Java Swing. 
+J'avais créé mon propre système de notification entre objets. 
+Au début je considérais qu'un objet ne devait envoyer des notifications qu'à un seul objet. 
 Ô quelle erreur lorsque je réalisais qu'il fallait non plus gérer un seul objet mais parfois plusieurs. 
 Je changeais mon implémentation d'interface partout, conséquence, des copier/coller dans tous les sens pour mes classes. 
 Les copier/coller qui sont justement un problème censé être évité par les langages orientés objets.
@@ -211,10 +225,14 @@ Donc, pour des applications à distribuer à des tiers, c'est à éviter.
 
 Le système de Java est très clos. 
 Par contre il résoud un très bon problème. 
-Il permet à des développeurs médiocre de travailler en groupe sans faire trop de mal.
+Il permet à des développeurs médiocres de travailler en groupe sans faire trop de mal.
 Et un bon programmeur sera tout de même capable d'y faire des choses très intéressantes.
+Veuillez noter que je n'ai pas dit que les programmeurs Java sont de mauvais programmeurs, ce n'est pas ce que je pense.
+
 
 ### Objective-C
+
+<%=leftblogimage("xcode_logo.png","Xcode Logo")%>
 
 Le langage que je n'ai appris et utilisé que pour faire des applications sur les plateformes d'Apple(c). 
 J'ai appris Objective-C après Python. 
@@ -233,25 +251,31 @@ Je ne peux que vous encourager à vous accrocher à ce langage et de faire un vr
 
 ### PHP
 
+<%= leftblogimage("php.jpg","A Jacky Touch Car") %>
+
 Le petit langage de script que nous utilisions tous pour faire des sites web à l'époque des gifs animées !
 
 Sympatique, mais sans plus. Apparemment il y a eu pas mal de progrès depuis PHP5, un jour peut-être que j'y reviendrai. Mais, il a derrière lui une réputation de langage pour les "scripts kiddies". 
 En gros ceux qui ne savent pas coder. 
 Des trous de sécurité de tous les cotés, etc...
 
-En réalité, PHP est au niveau d'abstration à peine supérieur au C. Et donc, il est beaucoup moins bien organisé que des langages objets, favorisant ainsi la création de bug. Pour les applications web, c'est un vrai problème.
+En réalité, PHP est au niveau d'abstration à peine supérieur au C. 
+Et donc, il est beaucoup moins bien organisé que des langages objets, favorisant ainsi la création de bug. 
+Pour les applications web, c'est un vrai problème.
 
 PHP, reste pour moi le langage de l'injection SQL. J'en fait encore un peu de temps en temps. Et j'ai moi-même dû protéger les accès au SQL pour éviter les injections. Oui, je n'ai pas trouvé de librairie toute prête pour protéger les entrées SQL. Je n'ai pas beaucoup cherché non plus.
 
 ### Python
 
+<%= leftblogimage("python.jpg","Python. Do you speak it?") %>
+
 Alors là, attention ! Révélation ! 
+
 Lorsqu'on avait l'habitude de travailler avec des langages compilé, type C++, Java et qu'on passe à Python, on se prend une claque magistrale. 
 La programmation comme elle doit être faite. 
 Tout est si naturel, c'est _magique_.
 Oui, c'est si bien que ça.
 Mais quelque chose d'aussi incroyablement bien doit avoir des inconvénients me dirais-vous.
-
 
 Et bien, oui, comme tous les langages de scripts de haut niveau, Python est _lent_. 
 Attention pas juste un peu lent, comme 2 fois plus lent que du C. 
@@ -323,7 +347,10 @@ Heureusement, en ce qui concerne la syntaxe, on peu pallier à ce problème en u
 
 ### CamL
 
-J'ai appris CamL à la fac, j'avais trouvé cette expérience très interressante. J'étais plutôt bon, et j'avais les bonnes intuitions mathématiques qui vont avec la programmation fonctionnelle. Mais je dois avouer que je ne l'ai plus jamais utilisé. Simplement, ce type de langage semble si loin de ce qui se fait pour fabriquer des produits que ça me donnais vraiment l'impression d'être un langage pour chercheurs.
+J'ai appris CamL à la fac, j'avais trouvé cette expérience très interressante.
+J'étais plutôt bon, et j'avais les bonnes intuitions mathématiques qui vont avec la programmation fonctionnelle.
+Mais je dois avouer que je ne l'ai plus jamais utilisé.
+Simplement, ce type de langage semble si loin de ce qui se fait pour fabriquer des produits que ça me donnais vraiment l'impression d'être un langage pour chercheurs.
 
 ### Haskell
 
@@ -348,20 +375,31 @@ Alors qu'en Java et C++, typiquement certain choix ont été fait en dépis du b
 
 ## Langages originaux
 
-En plus des langages de programmation proprement dit, il existe des langages dont le seul but et de créer des documents.
-
-### MetaPost
+### Metapost
 
 Metapost est un langage qui permet de programmer des dessins.
-Le gros plus de metapost, c'est qu'il y a un solveur d'équations linéaires.
-Ainsi on peut faire des choses assez impressionnantes, comme laisser une petite distance entre les flèches et les bords.
-Ou encore les têtes des flèches se courbent.
-Très sympatique à utiliser.
+Le gros plus de metapost, c'est sa capacité de résoudre automatiquement les systèmes d'équations linéaires.
+Par exemple, si vous écrivez :
 
 <code class="ruby">
-x=(2*y+z)/2
+AA=1/3[A,B]
 </code>
 
+Il va position le point `AA` entre `A` et `B`.
+Plus précisément, au barycentre `(2A + B)/3`.
+
+<code class="ruby">
+X=whatever[A,B]
+X=whatever[C,D]
+</code>
+
+Ce deuxième exemple positionne `X` à l'intersection des deux segments `AB` et `CD`.
+Vous pouvez aussi voir pas mal d'[exemples ici](http://tex.loria.fr/prod-graph/zoonekynd/metapost/metapost.html).
+You could see [more example there](http://tex.loria.fr/prod-graph/zoonekynd/metapost/metapost.html).
+
+Cette fonction est très utile. 
+Et à mon avis pas seulement pour afficher des choses.
+De mon point de vue, les autres langages de programmation devraient penser à rajouter les résolutions automatiques simples.
 
 ### zsh 
 
@@ -372,9 +410,10 @@ C'est pour l'instant le meilleur shell que j'ai utilisé. Je le préfère au bas
 
 ### Prolog
 
-Je n'ai jamais rien fait de conséquent avec Prolog, mais j'ai adoré l'utiliser.
+Je n'ai jamais rien fait de conséquent avec Prolog, mais j'ai adoré l'apprendre et l'utiliser.
+J'ai eu la chance d'apprendre Prolog par [Alain Colmerauer](http://alain.colmerauer.free.fr/) lui-même.
 C'est un langage qui essaye de résoudre les contraintes autant qu'il le peut pour vous.
-C'est assez magique.
+Il en ressort un impression de magie.
 On ne fait que décrire ce qu'il faut et on ne donne pas d'ordre.
 Un peu comme la programmation fonctionnelle mais en beaucoup plus puissant.
 
@@ -382,10 +421,14 @@ Un peu comme la programmation fonctionnelle mais en beaucoup plus puissant.
 
 Il reste encore pas mal de langages et de framework à essayer.
 Actuellement je pense que je vais passer un moment avec haskell.
-Peut-être demain que j'irai voir du LISP, Scala ou Erlang.
-Comme je suis plus dans la création de site web, j'irai certainement jeter un coup d'oeil à clojure aussi.
+Peut-être demain que j'irai apprendre LISP, Scala ou Erlang.
+Comme je suis plus dans la création de site web, j'irai certainement jeter un coup d'œil à clojure aussi.
 Et certainement beaucoup d'autres choses.
 
-Dites-moi si vous avez une autre expérience avec ces langages de programmation.
-Je ne donne que mes impressions.
-En tout cas je les ai tous utilisés.
+Dites moi si vous avez une autre expérience avec ces langages de programmation.
+Évidement mes impression sont hautement subjectives. 
+Cependant, j'ai utilisé tous les langages dont j'ai parlé.
+
+
+*[STL]: Standard Tempate Library
+*[GUI]: Graphic User Interface

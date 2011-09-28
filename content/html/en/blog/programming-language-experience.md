@@ -2,20 +2,21 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2011-09-05T12:21:41+02:00
+created_at:     2011-09-28T12:21:41+02:00
 title: Programming Language Experience
 author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
 -----
-<%= blogimage("main.png","Title image") %>
+<%= blogimage("dragon.jpg","Title image") %>
 
 begindiv(intro)
-<%=tldr%> My feelings about programming languages I used.
+<%=tldr%> My short and higly subjective feelings about programming languages I used.
 enddiv
 
-### BASIC
+### `BASIC`
 
+<%= leftblogimage("basic.gif","Title image") %>
 The language of my firsts programs!
 I was about 10, with an `MO5` and `Amstrad CPC 6128` and even with my `Atari STe`.
 This is the language of `GOTO`s.
@@ -103,6 +104,8 @@ In the end I prefer C.
 
 ### C
 
+<%=leftblogimage("C.jpg","Pointer representation from Dancing links")%>
+
 The language of pointers.
 
 _Le_ programming language.
@@ -139,7 +142,7 @@ Until here I just described imperatives languages without any object notion.
 
 More clearly, the language didn't helped you to structure your program.
 
-In order to limit the number of bugs, particularly for huge programs, we started to thing about how to best organize computer programs.
+In order to limit the number of bugs, particularly for huge programs, we started to thin about how to best organize computer programs.
 In the end, from the imperatives language culture, it produced the Object Oriented programming (OOP).
 Beware, the Object Oriented programming isn't a miracle. Proof? How many bug-free software do you use?
 Furthermore, OOP doesn't fit all problems.
@@ -151,52 +154,63 @@ Then Object Oriented Languages appeared everywhere.
 
 ### C++
 
+<%=leftblogimage("cplusplus.jpg","Messy router")%>
+
 The ugly
 
 Industry wanted an Object Oriented Language without loosing all their old C code.
 Solution, keep C and add an Object layer on it.
 The main concern about C++ is it do too many things.
-I particularly appreciated multiple inheritage and templates.
+I particularly appreciated multiple inheritance and templates.
 In reality I liked a lot C++ while I was working alone. 
 I used it to write `DEES` my main thesis software.
 My only concern was about a lack in the STL.
 In the doc, one could use `String<T>`. 
 But in reality, T have to be only `char` or `char16`.
-Then I had to reduce my alphabet to $2^16$ letters.
+Then I had to reduce my alphabet to 2<sup>16</sup> letters.
 Except for some application, the alphabet must be far larger than that.
+ 
+To conclude, I'd say, C++ is very good if you work alone or with a fixed subset of its features.
+
 
 ### Eiffel
+
+<%=leftblogimage("eiffel.jpg","Eiffel tower construction")%>
 
 Yes, it is a really nice language. 
 Full object in mind. Far cleaner than C++.
 But it isn't so popular.
 Behind C++ there is a large community to help new users and to write libraries.
 Furthermore, I preferred working with C++.
+At that time I programmed a lot with C and like its syntax.
 
 ### Java
+
+<%=leftblogimage("grail.jpg","Holy Grail from the Monty Python")%>
 
 The first time I heard about Java it was _le Grail_!
 
 Perfect portability, your program will work on all platform. 
-There was incrusted inside the language architecture concepts to help limit mistakes, and force you to use good programming habits... But.
+There was incrusted inside the language architecture concepts to help limit mistakes, and force you to use good programming habits. But...
 
 But It is extremely verbose. 
 And limitations are quite boring if you know what you're doing.
 
 For example, there is no multiple inheritance. 
-Generally it is a coherent choice if it is compensated by something else.
-In Java, there are interfaces.
-Except, interfaces are a way to add only methods to classes.
-In no way, you can add any attribute.
-It was really a lack to make a graphic interface.
+Generally it is a coherent choice when there are a way to compensate.
+In Java, there are interfaces for this.
+Except, interfaces can only add methods to a class.
+You cannot add any attribute to a class except by subclassing.
+I really lacked this feature.
+
 I made a GUI using Java Swing and I created my own notification system between different element of the GUI.
 Then, at the begining I only needed to send notification 1 to 1.
 After some times, I needed to make 1 to many notifications.
 And I add to make a bunch of copy/paste inside all my subclasses!
-Copy/paste are exactly what should be avoided the most by Object oriented languages.
+Copy/paste are exactly what should be avoided the most by object oriented languages.
 
-Another thing, I had to handle threads.
-Except I had to make my own thread gestion system to avoid locks and notifications between threads (this thread ended, ...).
+Another thing ; I had to handle threads.
+I had to make my own thread gestion system to avoid locks and notifications between threads (this thread ended, ...).
 At that time I used Java 1.5.
 Normally this problem should have been solved with Java 1.6.
 I wish it is the case, but lacking such an essential feature for a language was very bad.
@@ -207,14 +221,17 @@ After my experience, I don't recommend Java.
 Portability does not worth this price.
 
 GUI protability mean, mediocre experience on all platforms.
-Any system it might be (wxWidget, QT, etc...)
-Then for applications that might be distributed it is a bad idea.
+Any system it might be (wxWidget, QT, etc...).
 
 The Java ideology is "closed". But it resolve a big problem.
 It helps medium to low quality developper to work in team without the ability to make too much harm to the product.
 A good programmer will be able to make very interresting with it thought.
+Please note I didn't say Java programmer are bad programmer.
+
 
 ### Objective-C
+
+<%=leftblogimage("xcode_logo.png","Xcode Logo")%>
 
 The language I learned and used only to make application on Apple(c) platform.
 I learned Objective-C just after Python.
@@ -236,10 +253,12 @@ In the end you'll certainely find it better than expected.
 
 ### PHP
 
+<%= leftblogimage("php.jpg","A Jacky Touch Car") %>
+
 This small script language that we used all to make our website in the time of animated gifs.
 
 Nice but no more. Apparently there were a lot of progress since PHP5. Maybe one day I'll use it again. But behind it, this language has a "script kiddies only" reputation.
-A long history of security holes easy to make, low level community, etc...
+Also long history of easy to make security holes.
 
 In reality PHP is just behind C for the abstraction level. 
 Therefore it has a lot of organisation problems and make it easier to create bugs.
@@ -250,6 +269,8 @@ I make a bit of PHP not so long ago, and it was a pain to protect my application
 
 ### Python
 
+<%= leftblogimage("python.jpg","Python. Do you speak it?") %>
+
 Revelation!
 
 When you were used to work with compiled languages (C++, Java) and you start learning Python, it's like a punch in the face.
@@ -258,11 +279,10 @@ Everything is natural, it's _magic_.
 Yes, as good as this.
 But something so good must have some drawback.
 
-And yes, an all interpreted languages, Python is _slow_.
+And yes, like all interpreted languages, Python is _slow_.
 Beware, no just a bit slow like 2 or 3 times slower than C. (like Java for example).
 No, really slow, about 10 to 20 times slower than C.
-Argh... But it is completely usable for many things.
-But some application are just forbidden to it.
+Argh... Note it is completely usable for many things.
 
 ### Awk
 
@@ -326,60 +346,79 @@ In order to compensate the syntax, you can use CoffeScript.
 
 ### CamL
 
-I learned CamL during the college. I founded this really interresting. Functional programming is very different to imperative one. I had good mathematic intuitions to use this language. But I must confess I never used it for something serious.
+I learned CamL during the college.
+It was really interresting.
+Functional programming is very different to imperative programming (most of popular languages).
+I had good mathematic intuitions to use this language.
+But I must confess I never used it for something serious.
 
 ### Haskell
 
 I am still learning this language.
 I must say it is a pleasure.
-Generally it tooks me only some hours to some days to learn a new programming language.
-Each language has his new concepts to grab.
+Generally it takes me no more than some hours to some days to learn a new programming language.
 Concerning haskell, this is very different.
-The concepts behind haskell are really deep.
-I feel many weeks will be necessary to understand it correctly.
-The community behind haskell is very friendly and nice. There is no "LOL! URAN00B! RTFM!"
-And no concession on the language as been made to make it more popular. Therefore this langage remain pure (I know there is two meaning).
+To master haskell you need to understand very hard concepts.
+Monads and Arrows are some of them. 
+I didn't understand them before I read some scientific paper.
+Many week will be necessary to master it perfectly (if someone does).
+Also the community is very friendly and nice. There is no "LOL! URAN00B! RTFM!"
+And no concession as been made to make this language more popular (I'm looking at you C++, Java and Javascript). 
+This langage remain pure (I know there are two meaning).
 
 ## Unpopular Languages
 
-Some languages are designated to create documents.
-
-### MetaPost
+### Metapost
 
 Metapost is a language to program drawings.
 What make metapost very good? 
 It contains a linear solver.
-This is really usefull to draw things.
+This is really useful to draw things.
 For example if you write:
 
 <code class="ruby">
-x=(2*y+z)/2
+AA=1/3[A,B]
 </code>
 
-It will place the point x at 2/3 of y and 1/3 to z.
-This feature is very nice. Most programming language should think about adding it.
+It will place the point `AA` between the point `A` and `B`.
+More precisely at the barycenter `(2xA + B)/3`.
+
+<code class="ruby">
+X=whatever[A,B]
+X=whatever[C,D]
+</code>
+
+This second example, will place the point X at the intersection of the two segments `AB` and `CD`.
+
+This feature is very helpful, and not only to draw things. 
+Most programming language should think about adding it.
 
 ### zsh 
 
 Yes, zsh is a shell.
-But it is also a script language extremly well suited to file traitment.
+But it is also a script language extremly well suited to file management.
 For now, it is the best shell I used. I prefer zsh to bash.
 
 ### Prolog
 
-I never made somthing serious with Prolog, but I really loved to use and learn it.
+I never made something serious with Prolog, but I really loved to use and learn it. 
+I had the chance to learn Prolog with [Alain Colmerauer](http://alain.colmerauer.free.fr/) himself.
 This language try to resolve constraints as much as it can.
-It is kind of magic.
+It has a magic feeling when you use it.
 We only write constraints, we never put order.
-A bit like functionnal programming but far more powerful.
+A bit like functional programming but far more powerful.
 
 ## Languages to discover
 
-It remains many language and framework to try.
+Many languages and framework remains to be learnt and tried.
 Actually I believe I will stay a while with haskell.
-Maybe tomorrow I will see LISP, Scala or Erlang.
+Maybe tomorrow I will look at LISP, Scala or Erlang.
 I also certainly look at clojure to make web application.
 
 Tell me if you have any other experience with these programming languages.
-I had only given my impressions.
-But I used them all.
+Of course, my feelings are highly subjectives.
+But I used all of these languages.
+
+
+*[STL]: Standard Tempate Library
+*[GUI]: Graphic User Interface

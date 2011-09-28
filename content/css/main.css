@@ -141,10 +141,7 @@ body, h1, h2, h3, h4, #entete, .tag
 pre
   +codeColor
   box-shadow: 0 0 1em #000 inset
-  -webkit-box-shadow: 0 0 1em #000 inset
   border-radius: 3px
-  -moz,-webkit
-    border-radius: 3px
   padding: 1em
   line-height: 1.2em
 
@@ -189,13 +186,11 @@ acronym
 =insetbox
   background: rgba(#000,.05)
   box-shadow: 0 0 2px #FFF, 0 0 3px #CCC inset
-  -webkit-box-shadow: 0 0 2px #FFF, 0 0 3px #CCC inset
   border: 1px solid rgba(#000,.1)
   border-radius: 3px
   &:hover
     background: rgba(#000,.1)
     box-shadow: 0 0 6px #555 inset
-    -webkit-box-shadow: 0 0 6px #555 inset
 
 =clearbutton
   display: block
@@ -207,12 +202,13 @@ acronym
   line-height: 1.4em
   border-radius: 1.5em
   background: rgba(#000,.05)
-  box-shadow: 0 2px 1px rgba(255, 255, 255, 0.5) inset, 0 -2px 1px rgba(0, 0, 0, 0.2) inset, 0 1px 2px rgba(0, 0, 0, .5)
+  box-shadow: 0 3px 3px rgba(255, 255, 255, 0.5) inset, 0 -3px 3px rgba(0, 0, 0, 0.2) inset, 0 1px 2px rgba(0, 0, 0, .5)
   &:hover
     background: rgba(#000,.1)
-    box-shadow: 0 0 6px #555 inset
-    -webkit-box-shadow: 0 0 6px #555 inset
-    box-shadow: 0 2px 1px rgba(255, 255, 255, 0.5) inset, 0 -2px 1px rgba(0, 0, 0, 0.2) inset, 0 1px 5px rgba(60, 30, 0, .8)
+    box-shadow: 0 3px 3px rgba(255, 255, 255, 0.5) inset, 0 -3px 3px rgba(0, 0, 0, 0.2) inset, 0 1px 5px rgba(60, 30, 0, .8)
+  &:active
+    background: rgba(#000,.2)
+    box-shadow: 0 3px 3px rgba(255, 255, 255, 0.5) inset, 0 -3px 3px rgba(0, 0, 0, 0.2) inset, 0 1px 5px rgba(60, 30, 0, .8)
 
 #liens a
   border: 1px solid #EEE
@@ -223,7 +219,6 @@ acronym
   background-color: $mainBackgroundColor - #030303
   border: 1px solid $mainBackgroundColor - #111111
   box-shadow: 0 0 3px ($mainBackgroundColor - #333333) inset
-  -webkit-box-shadow: 0 0 3px ($mainBackgroundColor - #333333) inset
   border-radius: 3px
   border-top: none
 
@@ -469,7 +464,6 @@ $hpadding: 1
   background-color: $imageBackgroundColor
   padding: 0.5em
   box-shadow: 0 10px 15px #CCC
-  -webkit-box-shadow: 0 10px 15px #CCC
   border-radius: 3px
 
 img.clean
@@ -802,7 +796,6 @@ ul.bloglist, .archive ul
   font-size: .8em
   background: #EEE
   box-shadow: 0 0 6px #CCC
-  -webkit-box-shadow: 0 0 6px #CCC
   border-radius: 3px
   line-height: 2.5em
   padding: 2em

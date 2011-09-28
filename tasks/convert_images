@@ -1,0 +1,1 @@
+ for fic in src/*; do print $fic:t;  convert -quality 50 -channel RGBA -matte -colorspace gray $fic $fic:t

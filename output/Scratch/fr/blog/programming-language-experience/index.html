@@ -39,6 +39,7 @@
                 <div id="choixlang">
                     <a href="/Scratch/en/blog/programming-language-experience/" onclick="setLanguage('en')">in English</a>
                 </div>
+                <div class="flush"></div>
             </div>
             <div id="titre">
                 <h1>
@@ -46,7 +47,6 @@
                 </h1>
                 
             </div>
-
             <div class="flush"></div>
 
             
@@ -56,17 +56,19 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p><img alt="Title image" src="/Scratch/img/blog/programming-language-experience/main.png" /></p>
+                    <p><img alt="Title image" src="/Scratch/img/blog/programming-language-experience/dragon.jpg" /></p>
 
 
 <div class="intro">
 
-<span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Mon avis sur les différents languages de programmations que j&rsquo;ai utilisé.
+<span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Mon avis court et hautement subjectif concernant les différents languages de programmations que j&rsquo;ai utilisé.
 
 </div>
 
 
-<h3 id="basic">BASIC</h3>
+<h3 id="basic"><code>BASIC</code></h3>
+
+<p><img alt="Title image" src="/Scratch/img/blog/programming-language-experience/basic.gif" class="left" /></p>
 
 <p>Ah&nbsp;! Le language de mes premiers programmes&nbsp;! 
 Je devais avoir 10-11 ans. 
@@ -152,6 +154,8 @@ Mais je préfère largement le C.</p>
 
 <h3 id="c">C</h3>
 
+<p><img alt="Pointer representation from Dancing links" src="/Scratch/img/blog/programming-language-experience/C.jpg" class="left" /></p>
+
 <p>Le langage des pointeurs</p>
 
 <p>Ah, <em>le</em> langage de programmation par excellence. </p>
@@ -197,6 +201,8 @@ C&rsquo;est-à-dire un système d&rsquo;information, c&rsquo;est pas trop mal.</
 
 <h3 id="c-1">C++</h3>
 
+<p><img alt="Messy router" src="/Scratch/img/blog/programming-language-experience/cplusplus.jpg" class="left" /></p>
+
 <p>Le malpropre</p>
 
 <p>Et oui l&rsquo;industrie voulait un langage objet, mais elle n&rsquo;était pas prête à mettre à la poubelle tout ses codes en C. 
@@ -204,13 +210,17 @@ La solution, prendre C et lui rajouter une couche objet.
 Le problème avec C++ c&rsquo;est qu&rsquo;il fait trop de choses. 
 L&rsquo;héritage multiple, des templates, etc&hellip;
 Bon, je l&rsquo;ai quand même choisi pour faire le plus gros programme que j&rsquo;ai jamais fais lors de ma thèse. 
-Et je dois avouer que l&rsquo;expérience m&rsquo;a plûe. 
-Le seul reproche que j&rsquo;ai à faire, c&rsquo;est que la STL n&rsquo;était pas aussi complète que l&rsquo;on aurait pû l&rsquo;espérer pour un détail. 
+Et je dois avouer que l&rsquo;expérience m&rsquo;a plu. 
+Le seul reproche que j&rsquo;ai à faire, c&rsquo;est que la <abbr title="Standard Tempate Library">STL</abbr> n&rsquo;était pas aussi complète que l&rsquo;on aurait pu l&rsquo;espérer pour un détail. 
 On ne peut pas faire de <code>String&lt;T&gt;</code> pour autre chose que des <code>char16</code>. 
-Du coup, mon alphabet était limité à $2^16$ lettres. 
+Du coup, mon alphabet était limité à 2<sup>16</sup> lettres. 
 Hors, pour certaines application, l&rsquo;alphabet doit être gigantesque. </p>
 
+<p>En conclusion je dirai que C++ est un très bon langage si vous vous fixez à l&rsquo;avance un sous ensemble de ses fonctionnalités.</p>
+
 <h3 id="eiffel">Eiffel</h3>
+
+<p><img alt="Eiffel tower construction" src="/Scratch/img/blog/programming-language-experience/eiffel.jpg" class="left" /></p>
 
 <p>Bon, ok c&rsquo;est un très beau langage objet. 
 Bien plus propre que C++. 
@@ -222,6 +232,8 @@ Lorsqu&rsquo;on viens du C, il est désagréable de changer ses habitudes.</p>
 
 <h3 id="java">Java</h3>
 
+<p><img alt="Holy Grail from the Monty Python" src="/Scratch/img/blog/programming-language-experience/grail.jpg" class="left" /></p>
+
 <p>On continue vers les langages objets. Alors, à une époque où j&rsquo;en ai entendu parler, c&rsquo;était <em>le Graal</em>&nbsp;! </p>
 
 <p>La portabilité, votre programme marchera partout. Il était orienté objet. Incrusté à l&rsquo;intérieur il y avait des concepts d&rsquo;architecture qui empêchent de faire n&rsquo;importe quoi&hellip; Sauf que.</p>
@@ -230,18 +242,20 @@ Lorsqu&rsquo;on viens du C, il est désagréable de changer ses habitudes.</p>
 Et que les limitations sont très désagréables si on sait ce que l&rsquo;on fait.</p>
 
 <p>Par exemple, il n&rsquo;y a pas d&rsquo;héritage multiple en Java. 
-Ce qui est en général un choix que je trouve cohérent s&rsquo;il est bien appuyé par des système qui compensent ce manque. 
+Ce qui est en général un choix que je trouve cohérent s&rsquo;il est bien appuyé par des systèmes qui compensent ce manque. 
 En java, il existe les interfaces. 
-Hors, les interfaces sont un moyen d&rsquo;ajouter simplement des méthodes à une classe. 
-En aucun cas on ne peut rajouter un attribut. 
-Ce qui m&rsquo;a vraiment géner pour faire une interface graphique par exemple.
-Typiquement je faisais une GUI en Java Swing, et j&rsquo;avais créé mon propre système de notification entre objets de GUI. 
-Alors, au début je considérais qu&rsquo;un objet ne devais envoyer des notifications qu&rsquo;à un seul objet. 
+Les interfaces permettent d&rsquo;ajouter des méthodes à une classe. 
+En aucun cas on ne peut rajouter un attribut autrement qu&rsquo;en héritant. 
+Cet état de fait m&rsquo;a vraiment géné.</p>
+
+<p>Typiquement je faisais une <abbr title="Graphic User Interface">GUI</abbr> en Java Swing. 
+J&rsquo;avais créé mon propre système de notification entre objets. 
+Au début je considérais qu&rsquo;un objet ne devait envoyer des notifications qu&rsquo;à un seul objet. 
 Ô quelle erreur lorsque je réalisais qu&rsquo;il fallait non plus gérer un seul objet mais parfois plusieurs. 
 Je changeais mon implémentation d&rsquo;interface partout, conséquence, des copier/coller dans tous les sens pour mes classes. 
 Les copier/coller qui sont justement un problème censé être évité par les langages orientés objets.</p>
 
-<p>De plus toujours pour ma GUI, je devais évidemment gérer des threads. 
+<p>De plus toujours pour ma <abbr title="Graphic User Interface">GUI</abbr>, je devais évidemment gérer des threads. 
 Hors, il m&rsquo;a fallu faire mon propre système de gestion de threads pour éviter les locks, pour les notifications (ce thread à fini, etc&hellip;). 
 À l&rsquo;époque j&rsquo;utilisais Java 1.5. 
 Normallement ce problème devait être réglé sur Java 1.6. 
@@ -252,16 +266,19 @@ J&rsquo;espère que c&rsquo;est le cas, mais avoir ce type de &ldquo;feature&rdq
 <p>Bon, après cette expérience je déconseillerai Java.
 La portabilité, n&rsquo;est pas si intéressante que ce qu&rsquo;on pourrait croire.</p>
 
-<p>En ce qui concerne les GUI, portable signifie interface fonctionnelle mais médiocre sur toutes les plateformes. 
+<p>En ce qui concerne les <abbr title="Graphic User Interface">GUI</abbr>, portable signifie interface fonctionnelle mais médiocre sur toutes les plateformes. 
 Quelquesoit le système d&rsquo;ailleurs (wxWidget, QT, etc&hellip;).
 Donc, pour des applications à distribuer à des tiers, c&rsquo;est à éviter.</p>
 
 <p>Le système de Java est très clos. 
 Par contre il résoud un très bon problème. 
-Il permet à des développeurs médiocre de travailler en groupe sans faire trop de mal.
-Et un bon programmeur sera tout de même capable d&rsquo;y faire des choses très intéressantes.</p>
+Il permet à des développeurs médiocres de travailler en groupe sans faire trop de mal.
+Et un bon programmeur sera tout de même capable d&rsquo;y faire des choses très intéressantes.
+Veuillez noter que je n&rsquo;ai pas dit que les programmeurs Java sont de mauvais programmeurs, ce n&rsquo;est pas ce que je pense.</p>
 
 <h3 id="objective-c">Objective-C</h3>
+
+<p><img alt="Xcode Logo" src="/Scratch/img/blog/programming-language-experience/xcode_logo.png" class="left" /></p>
 
 <p>Le langage que je n&rsquo;ai appris et utilisé que pour faire des applications sur les plateformes d&rsquo;Apple<small>&copy;</small>. 
 J&rsquo;ai appris Objective-C après Python. 
@@ -270,7 +287,7 @@ Je n&rsquo;ai pas du tout aimé la syntaxe et pas mal d&rsquo;autres détails.
 Mais ça fait parti de ces langages que plus on utilise, plus on aime.
 En réalité, il y a quelque chose dans ce langage qui fait que tout est bien pensé.
 Mais surtout, ici, ce n&rsquo;est pas le langage qui est la meilleure partie, c&rsquo;est plutôt le framework Cocoa qui lui est le plus souvent associé qui est une merveille.
-Par rapport à tous les autres framework permettant de fabriquer des GUI, Cocoa est de très loin supérieur.
+Par rapport à tous les autres framework permettant de fabriquer des <abbr title="Graphic User Interface">GUI</abbr>, Cocoa est de très loin supérieur.
 Même si ça semble être des détails sur le papier, en pratique cela fait une grande différence.</p>
 
 <p>Vraiment jusqu&rsquo;ici, même si Objective-C reste assez bas niveau, le fait que le typage de ce langage soit dynamique est un vrai plus pour l&rsquo;interface graphique.
@@ -280,20 +297,27 @@ Je ne peux que vous encourager à vous accrocher à ce langage et de faire un vr
 
 <h3 id="php">PHP</h3>
 
+<p><img alt="A Jacky Touch Car" src="/Scratch/img/blog/programming-language-experience/php.jpg" class="left" /></p>
+
 <p>Le petit langage de script que nous utilisions tous pour faire des sites web à l&rsquo;époque des gifs animées&nbsp;!</p>
 
 <p>Sympatique, mais sans plus. Apparemment il y a eu pas mal de progrès depuis PHP5, un jour peut-être que j&rsquo;y reviendrai. Mais, il a derrière lui une réputation de langage pour les &ldquo;scripts kiddies&rdquo;. 
 En gros ceux qui ne savent pas coder. 
 Des trous de sécurité de tous les cotés, etc&hellip;</p>
 
-<p>En réalité, PHP est au niveau d&rsquo;abstration à peine supérieur au C. Et donc, il est beaucoup moins bien organisé que des langages objets, favorisant ainsi la création de bug. Pour les applications web, c&rsquo;est un vrai problème.</p>
+<p>En réalité, PHP est au niveau d&rsquo;abstration à peine supérieur au C. 
+Et donc, il est beaucoup moins bien organisé que des langages objets, favorisant ainsi la création de bug. 
+Pour les applications web, c&rsquo;est un vrai problème.</p>
 
 <p>PHP, reste pour moi le langage de l&rsquo;injection SQL. J&rsquo;en fait encore un peu de temps en temps. Et j&rsquo;ai moi-même dû protéger les accès au SQL pour éviter les injections. Oui, je n&rsquo;ai pas trouvé de librairie toute prête pour protéger les entrées SQL. Je n&rsquo;ai pas beaucoup cherché non plus.</p>
 
 <h3 id="python">Python</h3>
 
-<p>Alors là, attention&nbsp;! Révélation&nbsp;! 
-Lorsqu&rsquo;on avait l&rsquo;habitude de travailler avec des langages compilé, type C++, Java et qu&rsquo;on passe à Python, on se prend une claque magistrale. 
+<p><img alt="Python. Do you speak it?" src="/Scratch/img/blog/programming-language-experience/python.jpg" class="left" /></p>
+
+<p>Alors là, attention&nbsp;! Révélation&nbsp;! </p>
+
+<p>Lorsqu&rsquo;on avait l&rsquo;habitude de travailler avec des langages compilé, type C++, Java et qu&rsquo;on passe à Python, on se prend une claque magistrale. 
 La programmation comme elle doit être faite. 
 Tout est si naturel, c&rsquo;est <em>magique</em>.
 Oui, c&rsquo;est si bien que ça.
@@ -369,7 +393,10 @@ Heureusement, en ce qui concerne la syntaxe, on peu pallier à ce problème en u
 
 <h3 id="caml">CamL</h3>
 
-<p>J&rsquo;ai appris CamL à la fac, j&rsquo;avais trouvé cette expérience très interressante. J&rsquo;étais plutôt bon, et j&rsquo;avais les bonnes intuitions mathématiques qui vont avec la programmation fonctionnelle. Mais je dois avouer que je ne l&rsquo;ai plus jamais utilisé. Simplement, ce type de langage semble si loin de ce qui se fait pour fabriquer des produits que ça me donnais vraiment l&rsquo;impression d&rsquo;être un langage pour chercheurs.</p>
+<p>J&rsquo;ai appris CamL à la fac, j&rsquo;avais trouvé cette expérience très interressante.
+J&rsquo;étais plutôt bon, et j&rsquo;avais les bonnes intuitions mathématiques qui vont avec la programmation fonctionnelle.
+Mais je dois avouer que je ne l&rsquo;ai plus jamais utilisé.
+Simplement, ce type de langage semble si loin de ce qui se fait pour fabriquer des produits que ça me donnais vraiment l&rsquo;impression d&rsquo;être un langage pour chercheurs.</p>
 
 <h3 id="haskell">Haskell</h3>
 
@@ -394,19 +421,31 @@ Alors qu&rsquo;en Java et C++, typiquement certain choix ont été fait en dépi
 
 <h2 id="langages-originaux">Langages originaux</h2>
 
-<p>En plus des langages de programmation proprement dit, il existe des langages dont le seul but et de créer des documents.</p>
-
-<h3 id="metapost">MetaPost</h3>
+<h3 id="metapost">Metapost</h3>
 
 <p>Metapost est un langage qui permet de programmer des dessins.
-Le gros plus de metapost, c&rsquo;est qu&rsquo;il y a un solveur d&rsquo;équations linéaires.
-Ainsi on peut faire des choses assez impressionnantes, comme laisser une petite distance entre les flèches et les bords.
-Ou encore les têtes des flèches se courbent.
-Très sympatique à utiliser.</p>
+Le gros plus de metapost, c&rsquo;est sa capacité de résoudre automatiquement les systèmes d&rsquo;équations linéaires.
+Par exemple, si vous écrivez&nbsp;:</p>
 
 <pre class="twilight">
-x<span class="Keyword">=</span>(<span class="Constant">2</span><span class="Keyword">*</span>y<span class="Keyword">+</span>z)<span class="Keyword">/</span><span class="Constant">2</span>
+<span class="Variable">AA</span><span class="Keyword">=</span><span class="Constant">1</span><span class="Keyword">/</span><span class="Constant">3</span>[<span class="Variable">A</span>,<span class="Variable">B</span>]
 </pre>
+
+<p>Il va position le point <code>AA</code> entre <code>A</code> et <code>B</code>.
+Plus précisément, au barycentre <code>(2A + B)/3</code>.</p>
+
+<pre class="twilight">
+<span class="Variable">X</span><span class="Keyword">=</span>whatever[<span class="Variable">A</span>,<span class="Variable">B</span>]
+<span class="Variable">X</span><span class="Keyword">=</span>whatever[<span class="Variable">C</span>,<span class="Variable">D</span>]
+</pre>
+
+<p>Ce deuxième exemple positionne <code>X</code> à l&rsquo;intersection des deux segments <code>AB</code> et <code>CD</code>.
+Vous pouvez aussi voir pas mal d&rsquo;<a href="http://tex.loria.fr/prod-graph/zoonekynd/metapost/metapost.html">exemples ici</a>.
+You could see <a href="http://tex.loria.fr/prod-graph/zoonekynd/metapost/metapost.html">more example there</a>.</p>
+
+<p>Cette fonction est très utile. 
+Et à mon avis pas seulement pour afficher des choses.
+De mon point de vue, les autres langages de programmation devraient penser à rajouter les résolutions automatiques simples.</p>
 
 <h3 id="zsh">zsh</h3>
 
@@ -417,9 +456,10 @@ C&rsquo;est pour l&rsquo;instant le meilleur shell que j&rsquo;ai utilisé. Je l
 
 <h3 id="prolog">Prolog</h3>
 
-<p>Je n&rsquo;ai jamais rien fait de conséquent avec Prolog, mais j&rsquo;ai adoré l&rsquo;utiliser.
+<p>Je n&rsquo;ai jamais rien fait de conséquent avec Prolog, mais j&rsquo;ai adoré l&rsquo;apprendre et l&rsquo;utiliser.
+J&rsquo;ai eu la chance d&rsquo;apprendre Prolog par <a href="http://alain.colmerauer.free.fr/">Alain Colmerauer</a> lui-même.
 C&rsquo;est un langage qui essaye de résoudre les contraintes autant qu&rsquo;il le peut pour vous.
-C&rsquo;est assez magique.
+Il en ressort un impression de magie.
 On ne fait que décrire ce qu&rsquo;il faut et on ne donne pas d&rsquo;ordre.
 Un peu comme la programmation fonctionnelle mais en beaucoup plus puissant.</p>
 
@@ -427,13 +467,14 @@ Un peu comme la programmation fonctionnelle mais en beaucoup plus puissant.</p>
 
 <p>Il reste encore pas mal de langages et de framework à essayer.
 Actuellement je pense que je vais passer un moment avec haskell.
-Peut-être demain que j&rsquo;irai voir du LISP, Scala ou Erlang.
-Comme je suis plus dans la création de site web, j&rsquo;irai certainement jeter un coup d&rsquo;oeil à clojure aussi.
+Peut-être demain que j&rsquo;irai apprendre LISP, Scala ou Erlang.
+Comme je suis plus dans la création de site web, j&rsquo;irai certainement jeter un coup d&rsquo;œil à clojure aussi.
 Et certainement beaucoup d&rsquo;autres choses.</p>
 
-<p>Dites-moi si vous avez une autre expérience avec ces langages de programmation.
-Je ne donne que mes impressions.
-En tout cas je les ai tous utilisés.</p>
+<p>Dites moi si vous avez une autre expérience avec ces langages de programmation.
+Évidement mes impression sont hautement subjectives. 
+Cependant, j&rsquo;ai utilisé tous les langages dont j&rsquo;ai parlé.</p>
+
 
                 </div>
             
@@ -486,6 +527,11 @@ En tout cas je les ai tous utilisés.</p>
                         articles précédents
                         
                         <div class="previous_article">
+                            <a href="/Scratch/fr/blog/Higher-order-function-in-zsh/"><span class="nicer">«</span>&nbsp;Higher order function in zsh</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
                             <a href="/Scratch/fr/blog/Learn-Vim-Progressively/"><span class="nicer">«</span>&nbsp;Apprenez Vim Progressivement</a>
                         </div>
                         
@@ -495,14 +541,9 @@ En tout cas je les ai tous utilisés.</p>
                         </div>
                         
                         
-                        
                     </div>
                     <div id="next_articles">
                         articles suivants
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/Higher-order-function-in-zsh/">Higher order function in zsh&nbsp;<span class="nicer">»</span></a>
-                        </div>
                         
                         
                         
@@ -518,7 +559,7 @@ En tout cas je les ai tous utilisés.</p>
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
                 </div>
                 <div id="lastmod">
-                    Écrit le : 05/09/2011
+                    Écrit le : 28/09/2011
                     modifié le : 06/09/2011 
                 </div>
                 <div>

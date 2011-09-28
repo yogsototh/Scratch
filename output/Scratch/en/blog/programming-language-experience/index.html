@@ -39,6 +39,7 @@
                 <div id="choixlang">
                     <a href="/Scratch/fr/blog/programming-language-experience/" onclick="setLanguage('fr')">en Français</a>
                 </div>
+                <div class="flush"></div>
             </div>
             <div id="titre">
                 <h1>
@@ -46,7 +47,6 @@
                 </h1>
                 
             </div>
-
             <div class="flush"></div>
 
             
@@ -56,19 +56,20 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p><img alt="Title image" src="/Scratch/img/blog/programming-language-experience/main.png" /></p>
+                    <p><img alt="Title image" src="/Scratch/img/blog/programming-language-experience/dragon.jpg" /></p>
 
 
 <div class="intro">
 
-<span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> My feelings about programming languages I used.
+<span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> My short and higly subjective feelings about programming languages I used.
 
 </div>
 
 
-<h3 id="basic">BASIC</h3>
+<h3 id="basic"><code>BASIC</code></h3>
 
-<p>The language of my firsts programs!
+<p><img alt="Title image" src="/Scratch/img/blog/programming-language-experience/basic.gif" class="left" />
+The language of my firsts programs!
 I was about 10, with an <code>MO5</code> and <code>Amstrad CPC 6128</code> and even with my <code>Atari STe</code>.
 This is the language of <code>GOTO</code>s.
 Ô nostalgia.
@@ -151,6 +152,8 @@ In the end I prefer C.</p>
 
 <h3 id="c">C</h3>
 
+<p><img alt="Pointer representation from Dancing links" src="/Scratch/img/blog/programming-language-experience/C.jpg" class="left" /></p>
+
 <p>The language of pointers.</p>
 
 <p><em>Le</em> programming language.</p>
@@ -187,7 +190,7 @@ What you need to know is this old language had certainly inspired most new objec
 
 <p>More clearly, the language didn&rsquo;t helped you to structure your program.</p>
 
-<p>In order to limit the number of bugs, particularly for huge programs, we started to thing about how to best organize computer programs.
+<p>In order to limit the number of bugs, particularly for huge programs, we started to thin about how to best organize computer programs.
 In the end, from the imperatives language culture, it produced the Object Oriented programming (OOP).
 Beware, the Object Oriented programming isn&rsquo;t a miracle. Proof? How many bug-free software do you use?
 Furthermore, OOP doesn&rsquo;t fit all problems.
@@ -198,52 +201,62 @@ I mean an information system, the OOP is not so bad.</p>
 
 <h3 id="c-1">C++</h3>
 
+<p><img alt="Messy router" src="/Scratch/img/blog/programming-language-experience/cplusplus.jpg" class="left" /></p>
+
 <p>The ugly</p>
 
 <p>Industry wanted an Object Oriented Language without loosing all their old C code.
 Solution, keep C and add an Object layer on it.
 The main concern about C++ is it do too many things.
-I particularly appreciated multiple inheritage and templates.
+I particularly appreciated multiple inheritance and templates.
 In reality I liked a lot C++ while I was working alone. 
 I used it to write <code>DEES</code> my main thesis software.
-My only concern was about a lack in the STL.
+My only concern was about a lack in the <abbr title="Standard Tempate Library">STL</abbr>.
 In the doc, one could use <code>String&lt;T&gt;</code>. 
 But in reality, T have to be only <code>char</code> or <code>char16</code>.
-Then I had to reduce my alphabet to $2^16$ letters.
+Then I had to reduce my alphabet to 2<sup>16</sup> letters.
 Except for some application, the alphabet must be far larger than that.</p>
 
+<p>To conclude, I&rsquo;d say, C++ is very good if you work alone or with a fixed subset of its features.</p>
+
 <h3 id="eiffel">Eiffel</h3>
+
+<p><img alt="Eiffel tower construction" src="/Scratch/img/blog/programming-language-experience/eiffel.jpg" class="left" /></p>
 
 <p>Yes, it is a really nice language. 
 Full object in mind. Far cleaner than C++.
 But it isn&rsquo;t so popular.
 Behind C++ there is a large community to help new users and to write libraries.
-Furthermore, I preferred working with C++.</p>
+Furthermore, I preferred working with C++.
+At that time I programmed a lot with C and like its syntax.</p>
 
 <h3 id="java">Java</h3>
+
+<p><img alt="Holy Grail from the Monty Python" src="/Scratch/img/blog/programming-language-experience/grail.jpg" class="left" /></p>
 
 <p>The first time I heard about Java it was <em>le Grail</em>!</p>
 
 <p>Perfect portability, your program will work on all platform. 
-There was incrusted inside the language architecture concepts to help limit mistakes, and force you to use good programming habits&hellip; But.</p>
+There was incrusted inside the language architecture concepts to help limit mistakes, and force you to use good programming habits. But&hellip;</p>
 
 <p>But It is extremely verbose. 
 And limitations are quite boring if you know what you&rsquo;re doing.</p>
 
 <p>For example, there is no multiple inheritance. 
-Generally it is a coherent choice if it is compensated by something else.
-In Java, there are interfaces.
-Except, interfaces are a way to add only methods to classes.
-In no way, you can add any attribute.
-It was really a lack to make a graphic interface.
-I made a GUI using Java Swing and I created my own notification system between different element of the GUI.
+Generally it is a coherent choice when there are a way to compensate.
+In Java, there are interfaces for this.
+Except, interfaces can only add methods to a class.
+You cannot add any attribute to a class except by subclassing.
+I really lacked this feature.</p>
+
+<p>I made a <abbr title="Graphic User Interface">GUI</abbr> using Java Swing and I created my own notification system between different element of the <abbr title="Graphic User Interface">GUI</abbr>.
 Then, at the begining I only needed to send notification 1 to 1.
 After some times, I needed to make 1 to many notifications.
 And I add to make a bunch of copy/paste inside all my subclasses!
-Copy/paste are exactly what should be avoided the most by Object oriented languages.</p>
+Copy/paste are exactly what should be avoided the most by object oriented languages.</p>
 
-<p>Another thing, I had to handle threads.
-Except I had to make my own thread gestion system to avoid locks and notifications between threads (this thread ended, &hellip;).
+<p>Another thing&nbsp;; I had to handle threads.
+I had to make my own thread gestion system to avoid locks and notifications between threads (this thread ended, &hellip;).
 At that time I used Java 1.5.
 Normally this problem should have been solved with Java 1.6.
 I wish it is the case, but lacking such an essential feature for a language was very bad.</p>
@@ -253,15 +266,17 @@ I wish it is the case, but lacking such an essential feature for a language was 
 <p>After my experience, I don&rsquo;t recommend Java.
 Portability does not worth this price.</p>
 
-<p>GUI protability mean, mediocre experience on all platforms.
-Any system it might be (wxWidget, QT, etc&hellip;)
-Then for applications that might be distributed it is a bad idea.</p>
+<p><abbr title="Graphic User Interface">GUI</abbr> protability mean, mediocre experience on all platforms.
+Any system it might be (wxWidget, QT, etc&hellip;).</p>
 
 <p>The Java ideology is &ldquo;closed&rdquo;. But it resolve a big problem.
 It helps medium to low quality developper to work in team without the ability to make too much harm to the product.
-A good programmer will be able to make very interresting with it thought.</p>
+A good programmer will be able to make very interresting with it thought.
+Please note I didn&rsquo;t say Java programmer are bad programmer.</p>
 
 <h3 id="objective-c">Objective-C</h3>
+
+<p><img alt="Xcode Logo" src="/Scratch/img/blog/programming-language-experience/xcode_logo.png" class="left" /></p>
 
 <p>The language I learned and used only to make application on Apple<small>&copy;</small> platform.
 I learned Objective-C just after Python.
@@ -275,7 +290,7 @@ Both simple and efficient.
 It might seems like small details on paper, but once you start using it, it make all the difference.</p>
 
 <p>Even if Objective-C is a relatively low level language. 
-Its dynamic typing ability make it very good for GUI programming.
+Its dynamic typing ability make it very good for <abbr title="Graphic User Interface">GUI</abbr> programming.
 I recommand to continue working with this language. 
 In the end you&rsquo;ll certainely find it better than expected.</p>
 
@@ -283,10 +298,12 @@ In the end you&rsquo;ll certainely find it better than expected.</p>
 
 <h3 id="php">PHP</h3>
 
+<p><img alt="A Jacky Touch Car" src="/Scratch/img/blog/programming-language-experience/php.jpg" class="left" /></p>
+
 <p>This small script language that we used all to make our website in the time of animated gifs.</p>
 
 <p>Nice but no more. Apparently there were a lot of progress since PHP5. Maybe one day I&rsquo;ll use it again. But behind it, this language has a &ldquo;script kiddies only&rdquo; reputation.
-A long history of security holes easy to make, low level community, etc&hellip;</p>
+Also long history of easy to make security holes.</p>
 
 <p>In reality PHP is just behind C for the abstraction level. 
 Therefore it has a lot of organisation problems and make it easier to create bugs.
@@ -297,6 +314,8 @@ I make a bit of PHP not so long ago, and it was a pain to protect my application
 
 <h3 id="python">Python</h3>
 
+<p><img alt="Python. Do you speak it?" src="/Scratch/img/blog/programming-language-experience/python.jpg" class="left" /></p>
+
 <p>Revelation!</p>
 
 <p>When you were used to work with compiled languages (C++, Java) and you start learning Python, it&rsquo;s like a punch in the face.
@@ -305,11 +324,10 @@ Everything is natural, it&rsquo;s <em>magic</em>.
 Yes, as good as this.
 But something so good must have some drawback.</p>
 
-<p>And yes, an all interpreted languages, Python is <em>slow</em>.
+<p>And yes, like all interpreted languages, Python is <em>slow</em>.
 Beware, no just a bit slow like 2 or 3 times slower than C. (like Java for example).
 No, really slow, about 10 to 20 times slower than C.
-Argh&hellip; But it is completely usable for many things.
-But some application are just forbidden to it.</p>
+Argh&hellip; Note it is completely usable for many things.</p>
 
 <h3 id="awk">Awk</h3>
 
@@ -373,63 +391,79 @@ In order to compensate the syntax, you can use CoffeScript.</p>
 
 <h3 id="caml">CamL</h3>
 
-<p>I learned CamL during the college. I founded this really interresting. Functional programming is very different to imperative one. I had good mathematic intuitions to use this language. But I must confess I never used it for something serious.</p>
+<p>I learned CamL during the college.
+It was really interresting.
+Functional programming is very different to imperative programming (most of popular languages).
+I had good mathematic intuitions to use this language.
+But I must confess I never used it for something serious.</p>
 
 <h3 id="haskell">Haskell</h3>
 
 <p>I am still learning this language.
 I must say it is a pleasure.
-Generally it tooks me only some hours to some days to learn a new programming language.
-Each language has his new concepts to grab.
+Generally it takes me no more than some hours to some days to learn a new programming language.
 Concerning haskell, this is very different.
-The concepts behind haskell are really deep.
-I feel many weeks will be necessary to understand it correctly.
-The community behind haskell is very friendly and nice. There is no &ldquo;LOL! URAN00B! RTFM!&rdquo;
-And no concession on the language as been made to make it more popular. Therefore this langage remain pure (I know there is two meaning).</p>
+To master haskell you need to understand very hard concepts.
+Monads and Arrows are some of them. 
+I didn&rsquo;t understand them before I read some scientific paper.
+Many week will be necessary to master it perfectly (if someone does).
+Also the community is very friendly and nice. There is no &ldquo;LOL! URAN00B! RTFM!&rdquo;
+And no concession as been made to make this language more popular (I&rsquo;m looking at you C++, Java and Javascript). 
+This langage remain pure (I know there are two meaning).</p>
 
 <h2 id="unpopular-languages">Unpopular Languages</h2>
 
-<p>Some languages are designated to create documents.</p>
-
-<h3 id="metapost">MetaPost</h3>
+<h3 id="metapost">Metapost</h3>
 
 <p>Metapost is a language to program drawings.
 What make metapost very good? 
 It contains a linear solver.
-This is really usefull to draw things.
+This is really useful to draw things.
 For example if you write:</p>
 
 <pre class="twilight">
-x<span class="Keyword">=</span>(<span class="Constant">2</span><span class="Keyword">*</span>y<span class="Keyword">+</span>z)<span class="Keyword">/</span><span class="Constant">2</span>
+<span class="Variable">AA</span><span class="Keyword">=</span><span class="Constant">1</span><span class="Keyword">/</span><span class="Constant">3</span>[<span class="Variable">A</span>,<span class="Variable">B</span>]
 </pre>
 
-<p>It will place the point x at 2/3 of y and 1/3 to z.
-This feature is very nice. Most programming language should think about adding it.</p>
+<p>It will place the point <code>AA</code> between the point <code>A</code> and <code>B</code>.
+More precisely at the barycenter <code>(2xA + B)/3</code>.</p>
+
+<pre class="twilight">
+<span class="Variable">X</span><span class="Keyword">=</span>whatever[<span class="Variable">A</span>,<span class="Variable">B</span>]
+<span class="Variable">X</span><span class="Keyword">=</span>whatever[<span class="Variable">C</span>,<span class="Variable">D</span>]
+</pre>
+
+<p>This second example, will place the point X at the intersection of the two segments <code>AB</code> and <code>CD</code>.</p>
+
+<p>This feature is very helpful, and not only to draw things. 
+Most programming language should think about adding it.</p>
 
 <h3 id="zsh">zsh</h3>
 
 <p>Yes, zsh is a shell.
-But it is also a script language extremly well suited to file traitment.
+But it is also a script language extremly well suited to file management.
 For now, it is the best shell I used. I prefer zsh to bash.</p>
 
 <h3 id="prolog">Prolog</h3>
 
-<p>I never made somthing serious with Prolog, but I really loved to use and learn it.
+<p>I never made something serious with Prolog, but I really loved to use and learn it. 
+I had the chance to learn Prolog with <a href="http://alain.colmerauer.free.fr/">Alain Colmerauer</a> himself.
 This language try to resolve constraints as much as it can.
-It is kind of magic.
+It has a magic feeling when you use it.
 We only write constraints, we never put order.
-A bit like functionnal programming but far more powerful.</p>
+A bit like functional programming but far more powerful.</p>
 
 <h2 id="languages-to-discover">Languages to discover</h2>
 
-<p>It remains many language and framework to try.
+<p>Many languages and framework remains to be learnt and tried.
 Actually I believe I will stay a while with haskell.
-Maybe tomorrow I will see LISP, Scala or Erlang.
+Maybe tomorrow I will look at LISP, Scala or Erlang.
 I also certainly look at clojure to make web application.</p>
 
 <p>Tell me if you have any other experience with these programming languages.
-I had only given my impressions.
-But I used them all.</p>
+Of course, my feelings are highly subjectives.
+But I used all of these languages.</p>
+
 
                 </div>
             
@@ -482,6 +516,11 @@ But I used them all.</p>
                         previous entries
                         
                         <div class="previous_article">
+                            <a href="/Scratch/en/blog/Higher-order-function-in-zsh/"><span class="nicer">«</span>&nbsp;Higher order function in zsh</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
                             <a href="/Scratch/en/blog/Learn-Vim-Progressively/"><span class="nicer">«</span>&nbsp;Learn Vim Progressively</a>
                         </div>
                         
@@ -491,14 +530,9 @@ But I used them all.</p>
                         </div>
                         
                         
-                        
                     </div>
                     <div id="next_articles">
                         next entries
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/Higher-order-function-in-zsh/">Higher order function in zsh&nbsp;<span class="nicer">»</span></a>
-                        </div>
                         
                         
                         
@@ -514,8 +548,8 @@ But I used them all.</p>
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
                 </div>
                 <div id="lastmod">
-                    Created: 09/05/2011
-                    Modified: 09/06/2011 
+                    Created: 09/28/2011
+                    Modified: 09/27/2011 
                 </div>
                 <div>
                     Entirely done with

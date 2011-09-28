@@ -39,6 +39,7 @@
                 <div id="choixlang">
                     <a href="/Scratch/fr/blog/Higher-order-function-in-zsh/" onclick="setLanguage('fr')">en Français</a>
                 </div>
+                <div class="flush"></div>
             </div>
             <div id="titre">
                 <h1>
@@ -46,7 +47,6 @@
                 </h1>
                 
             </div>
-
             <div class="flush"></div>
 
             
@@ -56,7 +56,7 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p><img alt="Title image" src="/Scratch/img/blog/Higher-order-function-in-zsh/main.png" /></p>
+                    <p><img alt="Title image" src="/Scratch/img/blog/Higher-order-function-in-zsh/main.jpg" /></p>
 
 
 <div class="intro">
@@ -87,6 +87,8 @@
 map handle_resources /path/to/projects/*(/N)
 </pre>
 
+<p>Before ⇒</p>
+
 <pre class="twilight">
 <span class="Keyword">for</span> toProject <span class="Keyword">in</span> Projects/*<span class="Keyword">;</span> <span class="Keyword">do</span>
     project=<span class="Variable"><span class="Variable">$</span>toProject</span>:t
@@ -102,21 +104,90 @@ map handle_resources /path/to/projects/*(/N)
 <span class="Keyword">done</span>
 </pre>
 
-<p>After =&gt;</p>
+<p>After ⇒</p>
 
 <pre class="twilight">
 <span class="Entity">contain_no_s</span>() { print <span class="Variable"><span class="Variable">$</span>1</span> <span class="Keyword">|</span> grep -v s }
+
 function verify_file_name {                               
     local project=<span class="Variable"><span class="Variable">$</span>1</span>:t
     <span class="Entity">contains_project_name</span>() { print <span class="Variable"><span class="Variable">$</span>1</span>:t <span class="Keyword">|</span> grep <span class="Variable"><span class="Variable">$</span>project</span> }
     map <span class="String"><span class="String">&quot;</span>print -- X<span class="String">&quot;</span></span> <span class="String"><span class="String">$(</span>filter contains_project_name <span class="StringVariable"><span class="StringVariable">$</span>1</span>/*<span class="String"><span class="String">(</span>.N<span class="String">)</span></span><span class="String">)</span></span>
 }
+
 map show_project_matchin_file <span class="String"><span class="String">$(</span> filter contain_no_s Projects/* <span class="String">)</span></span>
 </pre>
 
 <p>Also, the first verstion is a bit easier to read. 
 But the second one is clearly far superior in architecture.
 Why?</p>
+
+<div class="code"><div class="file"><a href="/Scratch/en/blog/Higher-order-function-in-zsh/code/functional.sh"> &#x27A5; functional.sh </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
+
+<span class="Comment"><span class="Comment">#</span> Provide higer-order functions </span>
+
+<span class="Comment"><span class="Comment">#</span> usage:</span>
+<span class="Comment"><span class="Comment">#</span></span>
+<span class="Comment"><span class="Comment">#</span> $ foo(){print &quot;x: $1&quot;}</span>
+<span class="Comment"><span class="Comment">#</span> $ map foo a b c d</span>
+<span class="Comment"><span class="Comment">#</span> x: a</span>
+<span class="Comment"><span class="Comment">#</span> x: b</span>
+<span class="Comment"><span class="Comment">#</span> x: c</span>
+<span class="Comment"><span class="Comment">#</span> x: d</span>
+function map {
+    local func_name=<span class="Variable"><span class="Variable">$</span>1</span>
+    shift
+    <span class="Keyword">for</span> elem <span class="Keyword">in</span> <span class="Variable"><span class="Variable">$</span>@</span><span class="Keyword">;</span> print -- <span class="String"><span class="String">$(</span>eval <span class="StringVariable"><span class="StringVariable">$</span>func_name</span> <span class="StringVariable"><span class="StringVariable">$</span>elem</span><span class="String">)</span></span>
+}
+
+<span class="Comment"><span class="Comment">#</span> $ bar() { print $(($1 + $2)) }</span>
+<span class="Comment"><span class="Comment">#</span> $ fold bar 0 1 2 3 4 5</span>
+<span class="Comment"><span class="Comment">#</span> 15</span>
+<span class="Comment"><span class="Comment">#</span> -- but also</span>
+<span class="Comment"><span class="Comment">#</span> $ fold bar 0 $( seq 1 100 )</span>
+function fold {
+    <span class="Keyword">if</span> ((<span class="Variable"><span class="Variable">$</span>#</span><span class="Keyword">&lt;</span>2)) {
+        print -- <span class="String"><span class="String">&quot;</span>ERROR fold use at least 2 arguments<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
+        return 1
+    }
+    <span class="Keyword">if</span> ((<span class="Variable"><span class="Variable">$</span>#</span><span class="Keyword">&lt;</span>3)) {
+        print -- <span class="Variable"><span class="Variable">$</span>2</span>
+        return 0
+    } <span class="Keyword">else</span> {
+        local acc
+        local right
+        local func_name=<span class="Variable"><span class="Variable">$</span>1</span>
+        local init_value=<span class="Variable"><span class="Variable">$</span>2</span>
+        local first_value=<span class="Variable"><span class="Variable">$</span>3</span>
+        shift 3
+        right=<span class="String"><span class="String">$(</span> fold <span class="StringVariable"><span class="StringVariable">$</span>func_name</span> <span class="StringVariable"><span class="StringVariable">$</span>init_value</span> <span class="StringVariable"><span class="StringVariable">$</span>@</span> <span class="String">)</span></span>
+        acc=<span class="String"><span class="String">$(</span> eval <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>func_name</span> <span class="StringVariable"><span class="StringVariable">$</span>first_value</span> <span class="StringVariable"><span class="StringVariable">$</span>right</span><span class="String">&quot;</span></span> <span class="String">)</span></span>
+        print -- <span class="Variable"><span class="Variable">$</span>acc</span>
+        return 0
+    }
+}
+
+<span class="Comment"><span class="Comment">#</span> usage:</span>
+<span class="Comment"><span class="Comment">#</span></span>
+<span class="Comment"><span class="Comment">#</span> $ baz() { print $1 | grep baz }</span>
+<span class="Comment"><span class="Comment">#</span> $ filter baz titi bazaar biz</span>
+<span class="Comment"><span class="Comment">#</span> bazaar</span>
+function filter {
+    local predicate=<span class="Variable"><span class="Variable">$</span>1</span>
+    local result
+    typeset -a result
+    shift
+    <span class="Keyword">for</span> elem <span class="Keyword">in</span> <span class="Variable"><span class="Variable">$</span>@</span><span class="Keyword">;</span> <span class="Keyword">do</span>
+        <span class="Keyword">if</span> eval <span class="Variable"><span class="Variable">$</span>predicate</span> <span class="Variable"><span class="Variable">$</span>elem</span> <span class="Keyword">&gt;</span>/dev/null<span class="Keyword">;</span> <span class="Keyword">then</span>
+            result=( <span class="Variable"><span class="Variable">$</span>result</span> <span class="Variable"><span class="Variable">$</span>elem</span> )
+        <span class="Keyword">fi</span>
+    <span class="Keyword">done</span>
+    print <span class="Variable"><span class="Variable">$</span>result</span>
+}
+</pre>
+</div></div>
 
                 </div>
             
@@ -169,11 +240,6 @@ Why?</p>
                         previous entries
                         
                         <div class="previous_article">
-                            <a href="/Scratch/en/blog/programming-language-experience/"><span class="nicer">«</span>&nbsp;Programming Language Experience</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
                             <a href="/Scratch/en/blog/Learn-Vim-Progressively/"><span class="nicer">«</span>&nbsp;Learn Vim Progressively</a>
                         </div>
                         
@@ -183,9 +249,14 @@ Why?</p>
                         </div>
                         
                         
+                        
                     </div>
                     <div id="next_articles">
                         next entries
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/programming-language-experience/">Programming Language Experience&nbsp;<span class="nicer">»</span></a>
+                        </div>
                         
                         
                         
