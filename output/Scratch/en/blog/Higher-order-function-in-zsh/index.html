@@ -68,6 +68,16 @@
 </div>
 
 
+<p>Why is it important to have these functions?
+Simply because, the more I programmed with zsh the more I tended to work using functional programming style.</p>
+
+<p>The minimal to have better code are the functions <code>map</code>, <code>filter</code> and <code>fold</code>.</p>
+
+<p>Let&rsquo;s compare.
+First a program which convert all gif to png in many different directories of different projects.</p>
+
+<p>Before ⇒</p>
+
 <pre class="twilight">
 <span class="Comment"><span class="Comment">#</span> for each directory in projects dir</span>
 <span class="Keyword">for</span> toProject <span class="Keyword">in</span> /path/to/projects/*(/N)<span class="Keyword">;</span> <span class="Keyword">do</span>
@@ -75,17 +85,32 @@
     <span class="Comment"><span class="Comment">#</span> project become foo (:t for tail)</span>
     project=<span class="Variable"><span class="Variable">${</span>toProject:t<span class="Variable">}</span></span>
     <span class="Keyword">for</span> toResource <span class="Keyword">in</span> <span class="Variable"><span class="Variable">$</span>toProject</span>/resources/*.gif(.N)<span class="Keyword">;</span> <span class="Keyword">do</span>
-        convert <span class="Variable"><span class="Variable">$</span>toResource</span> <span class="Variable"><span class="Variable">${</span>toResource:r<span class="Variable">}</span></span>.png
+        convert <span class="Variable"><span class="Variable">$</span>toResource</span> <span class="Variable"><span class="Variable">${</span>toResource:r<span class="Variable">}</span></span>.png <span class="Keyword">&amp;&amp;</span> \
         <span class="Constant">\r</span>m -f <span class="Variable"><span class="Variable">$</span>toResource</span>
     <span class="Keyword">done</span>
 <span class="Keyword">done</span>
 </pre>
 
+<p>The <code>(/N)</code> means to select only directory and not to crash if there isn&rsquo;t any.
+The <code>(.N)</code> means to select only files and not to crash if there isn&rsquo;t any.</p>
+
+<p>After ⇒</p>
+
 <pre class="twilight">
 <span class="Entity">gif_to_png</span>() { convert <span class="Variable"><span class="Variable">$</span>1</span> <span class="Variable"><span class="Variable">${</span>1:r<span class="Variable">}</span></span>.png <span class="Keyword">&amp;&amp;</span> <span class="Constant">\r</span>m -f <span class="Variable"><span class="Variable">$</span>1</span> }
+
 <span class="Entity">handle_resources</span>() { map gif_to_png <span class="Variable"><span class="Variable">$</span>1</span>/resources/*.gif(.N) }
+
 map handle_resources /path/to/projects/*(/N)
 </pre>
+
+<p>No more bloc!
+It might be a little bit harder to read if you&rsquo;re not used to functional programming notation.
+But it is more concise and robusts.</p>
+
+<p>Another example with some tests.</p>
+
+<p>Find all files in project not containing an <code>s</code> which their name contains their project name:</p>
 
 <p>Before ⇒</p>
 
@@ -120,7 +145,13 @@ map show_project_matchin_file <span class="String"><span class="String">$(</span
 
 <p>Also, the first verstion is a bit easier to read. 
 But the second one is clearly far superior in architecture.
-Why?</p>
+I don&rsquo;t want to argue why here. 
+Just believe me that the functional programming approach is superior.</p>
+
+<p>Actually I lack the lambda operator. 
+If someone has an idea on how to create anonymous functions, just tell me, thanks.</p>
+
+<p>Here is the source code:</p>
 
 <div class="code"><div class="file"><a href="/Scratch/en/blog/Higher-order-function-in-zsh/code/functional.sh"> &#x27A5; functional.sh </a></div><div class="withfile">
 <pre class="twilight">
@@ -240,6 +271,11 @@ function filter {
                         previous entries
                         
                         <div class="previous_article">
+                            <a href="/Scratch/en/blog/programming-language-experience/"><span class="nicer">«</span>&nbsp;Programming Language Experience</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
                             <a href="/Scratch/en/blog/Learn-Vim-Progressively/"><span class="nicer">«</span>&nbsp;Learn Vim Progressively</a>
                         </div>
                         
@@ -249,14 +285,9 @@ function filter {
                         </div>
                         
                         
-                        
                     </div>
                     <div id="next_articles">
                         next entries
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/programming-language-experience/">Programming Language Experience&nbsp;<span class="nicer">»</span></a>
-                        </div>
                         
                         
                         
@@ -272,8 +303,8 @@ function filter {
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
                 </div>
                 <div id="lastmod">
-                    Created: 09/27/2011
-                    Modified: 09/27/2011 
+                    Created: 09/28/2011
+                    Modified: 09/28/2011 
                 </div>
                 <div>
                     Entirely done with

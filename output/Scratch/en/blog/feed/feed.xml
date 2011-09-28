@@ -2,13 +2,44 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2011-09-28T10:21:41Z</updated>
+  <updated>2011-09-28T13:15:23Z</updated>
   <link href="http://yannesposito.com/" rel="alternate"/>
   <link href="http://feeds.feedburner.com/yannespositocomen" rel="self"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2011-09-28:/Scratch/en/blog/Higher-order-function-in-zsh/</id>
+    <title type="html">Higher order function in zsh</title>
+    <published>2011-09-28T13:15:23Z</published>
+    <updated>2011-09-28T13:15:23Z</updated>
+    <link href="http://yannesposito.com/Scratch/en/blog/Higher-order-function-in-zsh/" rel="alternate"/>
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Higher-order-function-in-zsh/main.jpg" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; some simple implementation of higher order function for zsh.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Why is it important to have these functions?
+Simply because, the more I programmed with zsh the more I tended to work using functional programming style.&lt;/p&gt;
+
+&lt;p&gt;The minimal to have better code are the functions &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;filter&lt;/code&gt; and &lt;code&gt;fold&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s compare.
+First a program which convert all gif to png in many different directories of different projects.&lt;/p&gt;
+
+&lt;p&gt;Before &#8658;&lt;/p&gt;
+
+&lt;pre class="twilight"&gt;
+&lt;span class="Comment"&gt;&lt;span class="Comment"&gt;#&lt;/span&gt; for each directory in...&lt;/span&gt;&lt;/pre&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2011-09-28:/Scratch/en/blog/programming-language-experience/</id>
     <title type="html">Programming Language Experience</title>
@@ -36,31 +67,6 @@ Unfortunately this might be the only interesting part of this language.&lt;/p&gt
 
 &lt;p&gt;Today this language is obsolescent.
 It not even a good language to learn pro...&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2011-09-27:/Scratch/en/blog/Higher-order-function-in-zsh/</id>
-    <title type="html">Higher order function in zsh</title>
-    <published>2011-09-27T13:15:23Z</published>
-    <updated>2011-09-27T13:15:23Z</updated>
-    <link href="http://yannesposito.com/Scratch/en/blog/Higher-order-function-in-zsh/" rel="alternate"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Higher-order-function-in-zsh/main.jpg" /&gt;&lt;/p&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; some simple implementation of higher order function for zsh.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;pre class="twilight"&gt;
-&lt;span class="Comment"&gt;&lt;span class="Comment"&gt;#&lt;/span&gt; for each directory in projects dir&lt;/span&gt;
-&lt;span class="Keyword"&gt;for&lt;/span&gt; toProject &lt;span class="Keyword"&gt;in&lt;/span&gt; /path/to/projects/*(/N)&lt;span class="Keyword"&gt;;&lt;/span&gt; &lt;span class="Keyword"&gt;do&lt;/span&gt;
-    &lt;span class="Comment"&gt;&lt;span class="Comment"&gt;#&lt;/span&gt; toProject is /path/to/projects/foo&lt;/span&gt;
-    &lt;span class="Comment"&gt;&lt;span class="Comment"&gt;#&lt;/span&gt; project become foo (:t for tail)&lt;/span&gt;
-    project=&lt;span class="Variable"&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-08-25:/Scratch/en/blog/Learn-Vim-Progressively/</id>

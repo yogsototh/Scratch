@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2011-09-27T15:15:23+02:00
+created_at:     2011-09-28T15:15:23+02:00
 title: Higher order function in zsh
 author_name: Yann Esposito
 author_uri: yannesposito.com
@@ -25,6 +25,8 @@ Voici pourquoi avec une comparaison.
 Commençons par un programme qui converti tous les gif en png dans plusieurs répertoires projets contenant tous des répertoires resources.
 Avant :
 
+Avant ⇒
+
 <code class="zsh">
 # for each directory in projects dir
 for toProject in /path/to/projects/*(/N); do
@@ -32,17 +34,20 @@ for toProject in /path/to/projects/*(/N); do
     # project become foo (:t for tail)
     project=${toProject:t}
     for toResource in $toProject/resources/*.gif(.N); do
-        convert $toResource ${toResource:r}.png
+        convert $toResource ${toResource:r}.png && \
         \rm -f $toResource
     done
 done
 </code>
 
+
 Après
 
 <code class="zsh">
 gif_to_png() { convert $1 ${1:r}.png && \rm -f $1 }
+
 handle_resources() { map gif_to_png $1/resources/*.gif(.N) }
+
 map handle_resources /path/to/projects/*(/N)
 </code>
 
@@ -86,9 +91,15 @@ function verify_file_name {
 map show_project_matchin_file $( filter contain_no_s Projects/* )
 </code>
 
-Also, the first verstion is a bit easier to read. 
-But the second one is clearly far superior in architecture.
-Why?
+La première version peu paraître plus facile à lire.
+Mais la seconde est plus bien supérieure en terme d'architecture.
+Je ne veux pas discuster ici pourquoi c'est mieux.
+Je vous demande simplement de me croire quand je dis que l'approche fonctionnelle est supérieure.
+
+Actuellement il me manque une fonction lambda, si quelqu'un à une idée elle serait la bienvenue. 
+Je ne sais pas encore comment créer facilement des fonctions anonymes.
+
+Voici le code source :
 
 <code class="zsh" file="functional.sh">
 #!/usr/bin/env zsh

@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2011-09-27T15:15:23+02:00
+created_at:     2011-09-28T15:15:23+02:00
 en: title: Higher order function in zsh
 fr: title: Higher order function in zsh
 author_name: Yann Esposito

@@ -2,13 +2,42 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2011-09-28T10:21:41Z</updated>
+  <updated>2011-09-28T13:15:23Z</updated>
   <link href="http://yannesposito.com/" rel="alternate"/>
   <link href="http://feeds.feedburner.com/yannespositocomfr" rel="self"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2011-09-28:/Scratch/fr/blog/Higher-order-function-in-zsh/</id>
+    <title type="html">Higher order function in zsh</title>
+    <published>2011-09-28T13:15:23Z</published>
+    <updated>2011-09-28T13:15:23Z</updated>
+    <link href="http://yannesposito.com/Scratch/fr/blog/Higher-order-function-in-zsh/" rel="alternate"/>
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Higher-order-function-in-zsh/main.jpg" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt; des fonctions d&amp;rsquo;ordres sup&#233;rieurs en zsh.&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Tout d&amp;rsquo;abord, pourquoi c&amp;rsquo;est important d&amp;rsquo;avoir ces fonctions. 
+Plus je programmais avec zsh plus j&amp;rsquo;essayais d&amp;rsquo;avoir un style fonctionnel.&lt;/p&gt;
+
+&lt;p&gt;Le minimum pour pouvoir avoir du code plus lisible c&amp;rsquo;est de poss&#233;der les fonctions &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;filter&lt;/code&gt; et &lt;code&gt;fold&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Voici pourquoi avec une comparaison.
+Commen&#231;ons par un programme qui converti tous les gif en png dans plusieurs r&#233;pertoires projets contenant tous des r&#233;pertoires resources.
+Avant&amp;nbsp;:&lt;/p&gt;
+
+&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2011-09-28:/Scratch/fr/blog/programming-language-experience/</id>
     <title type="html">programming language experience</title>
@@ -35,35 +64,6 @@ Sous &lt;code&gt;MO5&lt;/code&gt;, &lt;code&gt;Amstrad CPC 6128&lt;/code&gt; et 
 Le langage des &lt;code&gt;GOTO&lt;/code&gt;s. 
 Je suis empleint de nostalgie rien que d&amp;rsquo;y penser. 
 C&amp;rsquo;est &#224; peu pr&#234;t le seul int&#233;r&#234;t de ce...&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2011-09-27:/Scratch/fr/blog/Higher-order-function-in-zsh/</id>
-    <title type="html">Higher order function in zsh</title>
-    <published>2011-09-27T13:15:23Z</published>
-    <updated>2011-09-27T13:15:23Z</updated>
-    <link href="http://yannesposito.com/Scratch/fr/blog/Higher-order-function-in-zsh/" rel="alternate"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Higher-order-function-in-zsh/main.jpg" /&gt;&lt;/p&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt; des fonctions d&amp;rsquo;ordres sup&#233;rieurs en zsh.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;p&gt;Tout d&amp;rsquo;abord, pourquoi c&amp;rsquo;est important d&amp;rsquo;avoir ces fonctions. 
-Plus je programmais avec zsh plus j&amp;rsquo;essayais d&amp;rsquo;avoir un style fonctionnel.&lt;/p&gt;
-
-&lt;p&gt;Le minimum pour pouvoir avoir du code plus lisible c&amp;rsquo;est de poss&#233;der les fonctions &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;filter&lt;/code&gt; et &lt;code&gt;fold&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Voici pourquoi avec une comparaison.
-Commen&#231;ons par un programme qui converti tous les gif en png dans plusieurs r&#233;pertoires projets contenant tous des r&#233;pertoires resources.
-Avant&amp;nbsp;:&lt;/p&gt;
-
-&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-08-25:/Scratch/fr/blog/Learn-Vim-Progressively/</id>

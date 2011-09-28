@@ -77,6 +77,8 @@ Plus je programmais avec zsh plus j&rsquo;essayais d&rsquo;avoir un style foncti
 Commençons par un programme qui converti tous les gif en png dans plusieurs répertoires projets contenant tous des répertoires resources.
 Avant&nbsp;:</p>
 
+<p>Avant ⇒</p>
+
 <pre class="twilight">
 <span class="Comment"><span class="Comment">#</span> for each directory in projects dir</span>
 <span class="Keyword">for</span> toProject <span class="Keyword">in</span> /path/to/projects/*(/N)<span class="Keyword">;</span> <span class="Keyword">do</span>
@@ -84,7 +86,7 @@ Avant&nbsp;:</p>
     <span class="Comment"><span class="Comment">#</span> project become foo (:t for tail)</span>
     project=<span class="Variable"><span class="Variable">${</span>toProject:t<span class="Variable">}</span></span>
     <span class="Keyword">for</span> toResource <span class="Keyword">in</span> <span class="Variable"><span class="Variable">$</span>toProject</span>/resources/*.gif(.N)<span class="Keyword">;</span> <span class="Keyword">do</span>
-        convert <span class="Variable"><span class="Variable">$</span>toResource</span> <span class="Variable"><span class="Variable">${</span>toResource:r<span class="Variable">}</span></span>.png
+        convert <span class="Variable"><span class="Variable">$</span>toResource</span> <span class="Variable"><span class="Variable">${</span>toResource:r<span class="Variable">}</span></span>.png <span class="Keyword">&amp;&amp;</span> \
         <span class="Constant">\r</span>m -f <span class="Variable"><span class="Variable">$</span>toResource</span>
     <span class="Keyword">done</span>
 <span class="Keyword">done</span>
@@ -94,7 +96,9 @@ Avant&nbsp;:</p>
 
 <pre class="twilight">
 <span class="Entity">gif_to_png</span>() { convert <span class="Variable"><span class="Variable">$</span>1</span> <span class="Variable"><span class="Variable">${</span>1:r<span class="Variable">}</span></span>.png <span class="Keyword">&amp;&amp;</span> <span class="Constant">\r</span>m -f <span class="Variable"><span class="Variable">$</span>1</span> }
+
 <span class="Entity">handle_resources</span>() { map gif_to_png <span class="Variable"><span class="Variable">$</span>1</span>/resources/*.gif(.N) }
+
 map handle_resources /path/to/projects/*(/N)
 </pre>
 
@@ -138,9 +142,15 @@ function verify_file_name {
 map show_project_matchin_file <span class="String"><span class="String">$(</span> filter contain_no_s Projects/* <span class="String">)</span></span>
 </pre>
 
-<p>Also, the first verstion is a bit easier to read. 
-But the second one is clearly far superior in architecture.
-Why?</p>
+<p>La première version peu paraître plus facile à lire.
+Mais la seconde est plus bien supérieure en terme d&rsquo;architecture.
+Je ne veux pas discuster ici pourquoi c&rsquo;est mieux.
+Je vous demande simplement de me croire quand je dis que l&rsquo;approche fonctionnelle est supérieure.</p>
+
+<p>Actuellement il me manque une fonction lambda, si quelqu&rsquo;un à une idée elle serait la bienvenue. 
+Je ne sais pas encore comment créer facilement des fonctions anonymes.</p>
+
+<p>Voici le code source&nbsp;:</p>
 
 <div class="code"><div class="file"><a href="/Scratch/fr/blog/Higher-order-function-in-zsh/code/functional.sh"> &#x27A5; functional.sh </a></div><div class="withfile">
 <pre class="twilight">
@@ -260,6 +270,11 @@ function filter {
                         articles précédents
                         
                         <div class="previous_article">
+                            <a href="/Scratch/fr/blog/programming-language-experience/"><span class="nicer">«</span>&nbsp;programming language experience</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
                             <a href="/Scratch/fr/blog/Learn-Vim-Progressively/"><span class="nicer">«</span>&nbsp;Apprenez Vim Progressivement</a>
                         </div>
                         
@@ -269,14 +284,9 @@ function filter {
                         </div>
                         
                         
-                        
                     </div>
                     <div id="next_articles">
                         articles suivants
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/programming-language-experience/">programming language experience&nbsp;<span class="nicer">»</span></a>
-                        </div>
                         
                         
                         
@@ -292,8 +302,8 @@ function filter {
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
                 </div>
                 <div id="lastmod">
-                    Écrit le : 27/09/2011
-                    modifié le : 27/09/2011 
+                    Écrit le : 28/09/2011
+                    modifié le : 28/09/2011 
                 </div>
                 <div>
                     Site entièrement réalisé avec

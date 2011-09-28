@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2011-09-27T15:15:23+02:00
+created_at:     2011-09-28T15:15:23+02:00
 title: Higher order function in zsh
 author_name: Yann Esposito
 author_uri: yannesposito.com
@@ -16,8 +16,15 @@ begindiv(intro)
 
 enddiv
 
+Why is it important to have these functions?
+Simply because, the more I programmed with zsh the more I tended to work using functional programming style.
 
+The minimal to have better code are the functions `map`, `filter` and `fold`.
 
+Let's compare.
+First a program which convert all gif to png in many different directories of different projects.
+
+Before ⇒
 
 <code class="zsh">
 # for each directory in projects dir
@@ -26,21 +33,32 @@ for toProject in /path/to/projects/*(/N); do
     # project become foo (:t for tail)
     project=${toProject:t}
     for toResource in $toProject/resources/*.gif(.N); do
-        convert $toResource ${toResource:r}.png
+        convert $toResource ${toResource:r}.png && \
         \rm -f $toResource
     done
 done
 </code>
 
+The `(/N)` means to select only directory and not to crash if there isn't any.
+The `(.N)` means to select only files and not to crash if there isn't any.
+
+After ⇒
 
 <code class="zsh">
 gif_to_png() { convert $1 ${1:r}.png && \rm -f $1 }
+
 handle_resources() { map gif_to_png $1/resources/*.gif(.N) }
+
 map handle_resources /path/to/projects/*(/N)
 </code>
 
+No more bloc!
+It might be a little bit harder to read if you're not used to functional programming notation.
+But it is more concise and robusts.
 
+Another example with some tests.
 
+Find all files in project not containing an `s` which their name contains their project name:
 
 Before ⇒
 
@@ -75,7 +93,13 @@ map show_project_matchin_file $( filter contain_no_s Projects/* )
 
 Also, the first verstion is a bit easier to read. 
 But the second one is clearly far superior in architecture.
-Why?
+I don't want to argue why here. 
+Just believe me that the functional programming approach is superior.
+
+Actually I lack the lambda operator. 
+If someone has an idea on how to create anonymous functions, just tell me, thanks.
+
+Here is the source code:
 
 <code class="zsh" file="functional.sh">
 #!/usr/bin/env zsh
