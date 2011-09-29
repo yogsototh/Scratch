@@ -91,8 +91,11 @@ First a program which convert all gif to png in many different directories of di
 <span class="Keyword">done</span>
 </pre>
 
-<p>The <code>(/N)</code> means to select only directory and not to crash if there isn&rsquo;t any.
-The <code>(.N)</code> means to select only files and not to crash if there isn&rsquo;t any.</p>
+<ul>
+  <li>The <code>(/N)</code> means to select only directory and not to crash if there isn&rsquo;t any.</li>
+  <li>The <code>(.N)</code> means to select only files and not to crash if there isn&rsquo;t any.</li>
+  <li>The <code>:t</code> means tail; if <code>toto=/path/to/file.ext</code> then <code>${toto:t}=file.ext</code>.</li>
+</ul>
 
 <p>After ⇒</p>
 
@@ -140,7 +143,7 @@ function verify_file_name {
     map <span class="String"><span class="String">&quot;</span>print -- X<span class="String">&quot;</span></span> <span class="String"><span class="String">$(</span>filter contains_project_name <span class="StringVariable"><span class="StringVariable">$</span>1</span>/*<span class="String"><span class="String">(</span>.N<span class="String">)</span></span><span class="String">)</span></span>
 }
 
-map show_project_matchin_file <span class="String"><span class="String">$(</span> filter contain_no_s Projects/* <span class="String">)</span></span>
+map verify_file_name <span class="String"><span class="String">$(</span> filter contain_no_s Projects/* <span class="String">)</span></span>
 </pre>
 
 <p>Also, the first verstion is a bit easier to read. 

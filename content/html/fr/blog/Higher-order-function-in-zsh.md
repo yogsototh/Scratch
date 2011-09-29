@@ -40,6 +40,9 @@ for toProject in /path/to/projects/*(/N); do
 done
 </code>
 
+- Le `(/N)` permet de sélectionner seulement les répertoires sans casser la boucle s'il n'y a pas de "match".
+- Le `(.N)` permet de sélection seulement les fichiers, aussi sans tout arréter s'il ne trouve rien.
+- Le `:t` signfie "tail" ; si `toto=/path/to/file.ext` alors `${toto:t}=file.ext`.
 
 Après
 
@@ -88,7 +91,7 @@ function verify_file_name {
     map "print -- X" $(filter contains_project_name $1/*(.N))
 }
 
-map show_project_matchin_file $( filter contain_no_s Projects/* )
+map verify_file_name $( filter contain_no_s Projects/* )
 </code>
 
 La première version peu paraître plus facile à lire.

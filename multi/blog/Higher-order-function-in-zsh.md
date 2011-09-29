@@ -48,8 +48,12 @@ for toProject in /path/to/projects/*(/N); do
 done
 </code>
 
-en: The `(/N)` means to select only directory and not to crash if there isn't any.
-en: The `(.N)` means to select only files and not to crash if there isn't any.
+en: - The `(/N)` means to select only directory and not to crash if there isn't any.
+en: - The `(.N)` means to select only files and not to crash if there isn't any.
+en: - The `:t` means tail; if `toto=/path/to/file.ext` then `${toto:t}=file.ext`.
+fr: - Le `(/N)` permet de sélectionner seulement les répertoires sans casser la boucle s'il n'y a pas de "match".
+fr: - Le `(.N)` permet de sélection seulement les fichiers, aussi sans tout arréter s'il ne trouve rien.
+fr: - Le `:t` signfie "tail" ; si `toto=/path/to/file.ext` alors `${toto:t}=file.ext`.
 
 en: After ⇒
 fr: Après
@@ -104,7 +108,7 @@ function verify_file_name {
     map "print -- X" $(filter contains_project_name $1/*(.N))
 }
 
-map show_project_matchin_file $( filter contain_no_s Projects/* )
+map verify_file_name $( filter contain_no_s Projects/* )
 </code>
 
 en: Also, the first verstion is a bit easier to read. 

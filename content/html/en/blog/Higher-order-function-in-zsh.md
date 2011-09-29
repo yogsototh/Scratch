@@ -39,8 +39,9 @@ for toProject in /path/to/projects/*(/N); do
 done
 </code>
 
-The `(/N)` means to select only directory and not to crash if there isn't any.
-The `(.N)` means to select only files and not to crash if there isn't any.
+- The `(/N)` means to select only directory and not to crash if there isn't any.
+- The `(.N)` means to select only files and not to crash if there isn't any.
+- The `:t` means tail; if `toto=/path/to/file.ext` then `${toto:t}=file.ext`.
 
 After ⇒
 
@@ -88,7 +89,7 @@ function verify_file_name {
     map "print -- X" $(filter contains_project_name $1/*(.N))
 }
 
-map show_project_matchin_file $( filter contain_no_s Projects/* )
+map verify_file_name $( filter contain_no_s Projects/* )
 </code>
 
 Also, the first verstion is a bit easier to read. 
