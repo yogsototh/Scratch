@@ -445,7 +445,7 @@ en: But the very good feature is the integration of some perl syntax.
 
 
 <code class="perl">
-$var =~ s/toto/titi/
+$var =~ s/toto/titi/g
 </code>
 
 fr: Va remplacer toto par titi dans la valeur de la variable `$var`.
