@@ -4,7 +4,7 @@ menupriority:   1
 kind:           article
 created_at:     2011-09-28T12:21:41+02:00
 en: title: Programming Language Experience
-fr: title: programming language experience
+fr: title: Mon expérience avec les languages de programmation
 author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
