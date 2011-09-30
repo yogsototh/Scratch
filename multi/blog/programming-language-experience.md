@@ -557,7 +557,7 @@ en: Monads and Arrows are some of them.
 en: I didn't understand them before I read some scientific paper.
 en: Many week will be necessary to master it perfectly (if someone does).
 en: Also the community is very friendly and nice. There is no "LOL! URAN00B! RTFM!"
-en: And no concession as been made to make this language more popular (I'm looking at you C++, Java and Javascript). 
+en: And no concession has been made to make this language more popular (I'm looking at you C++, Java and Javascript). 
 en: This langage remain pure (I know there are two meaning).
 
 fr: ## Langages originaux
