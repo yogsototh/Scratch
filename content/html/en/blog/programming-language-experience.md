@@ -25,8 +25,8 @@ Unfortunately this might be the only interesting part of this language.
 
 
 Today this language is obsolescent.
-It not even a good language to learn programming.
-I know there exist some compiler now.
+It is not even good to learn programming.
+I know some compiler exists now.
 But this is not enough to try to learn it.
 
 
@@ -37,7 +37,7 @@ READY
 RUN
 </code>
 
-I remember also to had copyied some game source code from some magazine.
+I also remember I copied some game source code from some magazine.
 Most lines were like:
 
 <code class="zsh">
@@ -49,21 +49,18 @@ What a pleasure!
 ### Logo
 
 <%=leftblogimage("dragon.jpg","Dragon fractal")%>
-Also when I was about 10. 
-I played with logo to draw on the computer.
+I was about 10 when I played with logo to draw on the computer.
 
 I remember the Bach's music while the program loaded.
 
-Yes, at that time we had to load the program into the memory using tapes. 
-This one was a rare one that didn't made an awfull 'Krrrkrr cssssss krrr' noise.
+At that time we had to load the program into the memory using tapes. 
+This one was a rare one. It didn't made an awfull 'Krrrkrr cssssss krrr' noise.
 
-I used them without any loop.
-Some years after, I had used it to learn programming to my college students.
-In fact it was really good as first language.
+Some years after, I used it to learn programming to my college student.
+It was really good as a first language.
 Making fractals is like a game for children.
 
-
-Here is an example of code that results in the dragoon fractal.
+Here is an example of code. It draws the dragon fractal.
 
 <code class="zsh">
 HIDETURTLE
@@ -97,8 +94,8 @@ dragon 6 3000
 The always second.
 
 I made my firsts real serious program with Pascal.
-I must confess I found it inferior to C.
-I made graph algorithms, sort algorithms even some IA like genetic algorithms.
+I must confess I find it inferior to C.
+I made graph algorithms, sort algorithms even some IA (genetic) algorithms.
 In the end I prefer C.
 
 
@@ -106,7 +103,7 @@ In the end I prefer C.
 
 <%=leftblogimage("C.jpg","Pointer representation from Dancing links")%>
 
-The language of pointers.
+The pointer's language.
 
 _Le_ programming language.
 
@@ -119,12 +116,12 @@ So much, there is (mostly) a linear relation between the size of your code and t
 
 In short, each time you write a C instruction there won't be anything strange that will occurs, like starting a long algorithm behind the scene.
 
-It is very close to the machine while keeping a sufficient abstraction to be fun.
+It is very close to the machine while keeping sufficient abstractions to be fun.
 
 I made a lot of program with it.
 From sort algorithms to AI ones (SAT3), system, network prgramming, etc...
 It is a very useful language that will help you understand how things works on your computer. 
-Most modern computer language hide a lot of informations. 
+Most modern computer language hide a lot of informations on what occurs. 
 This is not the case with C.
 
 ### ADA
@@ -138,11 +135,11 @@ What you need to know is this old language had certainly inspired most new objec
 
 ## Object Oriented Languages
 
-Until here I just described imperatives languages without any object notion.
+Until here I just described imperative languages without any object notion.
 
 More clearly, the language didn't helped you to structure your program.
 
-In order to limit the number of bugs, particularly for huge programs, we started to thin about how to best organize computer programs.
+In order to limit the number of bugs, particularly for huge programs, we started to think about how to organize computer programs.
 In the end, from the imperatives language culture, it produced the Object Oriented programming (OOP).
 Beware, the Object Oriented programming isn't a miracle. Proof? How many bug-free software do you use?
 Furthermore, OOP doesn't fit all problems.
@@ -158,10 +155,10 @@ Then Object Oriented Languages appeared everywhere.
 
 The ugly
 
-Industry wanted an Object Oriented Language without loosing all their old C code.
+Industry wanted an Object Oriented Language without losing all their old C code.
 Solution, keep C and add an Object layer on it.
-The main concern about C++ is it do too many things.
-I particularly appreciated multiple inheritance and templates.
+My main concern about C++ is: it do too many things.
+I appreciated multiple inheritance and templates.
 In reality I liked a lot C++ while I was working alone. 
 I used it to write `DEES` my main thesis software.
 My only concern was about a lack in the STL.
@@ -209,10 +206,10 @@ After some times, I needed to make 1 to many notifications.
 And I add to make a bunch of copy/paste inside all my subclasses!
 Copy/paste are exactly what should be avoided the most by object oriented languages.
 
-Another thing ; I had to handle threads.
-I had to make my own thread gestion system to avoid locks and notifications between threads (this thread ended, ...).
+Another thing: threads.
+I was forced to make my own thread management system to avoid locks and notifications between threads (wait the end of this thread, ...).
 At that time I used Java 1.5.
-Normally this problem should have been solved with Java 1.6.
+This problem should have been solved with Java 1.6.
 I wish it is the case, but lacking such an essential feature for a language was very bad.
 
 In the same idea, it was very long to wait for the foreach loops.
@@ -220,12 +217,12 @@ In the same idea, it was very long to wait for the foreach loops.
 After my experience, I don't recommend Java.
 Portability does not worth this price.
 
-GUI protability mean, mediocre experience on all platforms.
+GUI protability means mediocre experience on all platforms.
 Any system it might be (wxWidget, QT, etc...).
 
 The Java ideology is "closed". But it resolve a big problem.
 It helps medium to low quality developper to work in team without the ability to make too much harm to the product.
-A good programmer will be able to make very interresting with it thought.
+A good programmer will be able to make very interresting things with it thought.
 Please note I didn't say Java programmer are bad programmer.
 
 

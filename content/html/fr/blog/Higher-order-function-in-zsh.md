@@ -3,7 +3,7 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2011-09-28T15:15:23+02:00
-title: Higher order function in zsh
+title: Fonctions d'ordre supérieur en zsh
 author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:

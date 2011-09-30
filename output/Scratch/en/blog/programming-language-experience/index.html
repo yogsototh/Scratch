@@ -12,7 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
-        <link rel="alternate" lang="fr" xml:lang="fr" title="programming language experience" type="text/html" hreflang="fr" href="/Scratch/fr/blog/programming-language-experience/" /> 
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Mon expérience avec les languages de programmation" type="text/html" hreflang="fr" href="/Scratch/fr/blog/programming-language-experience/" /> 
         <link rel="alternate" lang="en" xml:lang="en" title="Programming Language Experience" type="text/html" hreflang="en" href="/Scratch/en/blog/programming-language-experience/" /> 
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
@@ -76,8 +76,8 @@ This is the language of <code>GOTO</code>s.
 Unfortunately this might be the only interesting part of this language.</p>
 
 <p>Today this language is obsolescent.
-It not even a good language to learn programming.
-I know there exist some compiler now.
+It is not even good to learn programming.
+I know some compiler exists now.
 But this is not enough to try to learn it.</p>
 
 <pre class="twilight">
@@ -87,7 +87,7 @@ READY
 RUN
 </pre>
 
-<p>I remember also to had copyied some game source code from some magazine.
+<p>I also remember I copied some game source code from some magazine.
 Most lines were like:</p>
 
 <pre class="twilight">
@@ -99,20 +99,18 @@ Most lines were like:</p>
 <h3 id="logo">Logo</h3>
 
 <p><img alt="Dragon fractal" src="/Scratch/img/blog/programming-language-experience/dragon.jpg" class="left" />
-Also when I was about 10. 
-I played with logo to draw on the computer.</p>
+I was about 10 when I played with logo to draw on the computer.</p>
 
 <p>I remember the Bach&rsquo;s music while the program loaded.</p>
 
-<p>Yes, at that time we had to load the program into the memory using tapes. 
-This one was a rare one that didn&rsquo;t made an awfull &lsquo;Krrrkrr cssssss krrr&rsquo; noise.</p>
+<p>At that time we had to load the program into the memory using tapes. 
+This one was a rare one. It didn&rsquo;t made an awfull &lsquo;Krrrkrr cssssss krrr&rsquo; noise.</p>
 
-<p>I used them without any loop.
-Some years after, I had used it to learn programming to my college students.
-In fact it was really good as first language.
+<p>Some years after, I used it to learn programming to my college student.
+It was really good as a first language.
 Making fractals is like a game for children.</p>
 
-<p>Here is an example of code that results in the dragoon fractal.</p>
+<p>Here is an example of code. It draws the dragon fractal.</p>
 
 <pre class="twilight">
 HIDETURTLE
@@ -146,15 +144,15 @@ dragon 6 3000
 <p>The always second.</p>
 
 <p>I made my firsts real serious program with Pascal.
-I must confess I found it inferior to C.
-I made graph algorithms, sort algorithms even some IA like genetic algorithms.
+I must confess I find it inferior to C.
+I made graph algorithms, sort algorithms even some IA (genetic) algorithms.
 In the end I prefer C.</p>
 
 <h3 id="c">C</h3>
 
 <p><img alt="Pointer representation from Dancing links" src="/Scratch/img/blog/programming-language-experience/C.jpg" class="left" /></p>
 
-<p>The language of pointers.</p>
+<p>The pointer&rsquo;s language.</p>
 
 <p><em>Le</em> programming language.</p>
 
@@ -167,12 +165,12 @@ So much, there is (mostly) a linear relation between the size of your code and t
 
 <p>In short, each time you write a C instruction there won&rsquo;t be anything strange that will occurs, like starting a long algorithm behind the scene.</p>
 
-<p>It is very close to the machine while keeping a sufficient abstraction to be fun.</p>
+<p>It is very close to the machine while keeping sufficient abstractions to be fun.</p>
 
 <p>I made a lot of program with it.
 From sort algorithms to AI ones (SAT3), system, network prgramming, etc&hellip;
 It is a very useful language that will help you understand how things works on your computer. 
-Most modern computer language hide a lot of informations. 
+Most modern computer language hide a lot of informations on what occurs. 
 This is not the case with C.</p>
 
 <h3 id="ada">ADA</h3>
@@ -186,11 +184,11 @@ What you need to know is this old language had certainly inspired most new objec
 
 <h2 id="object-oriented-languages">Object Oriented Languages</h2>
 
-<p>Until here I just described imperatives languages without any object notion.</p>
+<p>Until here I just described imperative languages without any object notion.</p>
 
 <p>More clearly, the language didn&rsquo;t helped you to structure your program.</p>
 
-<p>In order to limit the number of bugs, particularly for huge programs, we started to thin about how to best organize computer programs.
+<p>In order to limit the number of bugs, particularly for huge programs, we started to think about how to organize computer programs.
 In the end, from the imperatives language culture, it produced the Object Oriented programming (OOP).
 Beware, the Object Oriented programming isn&rsquo;t a miracle. Proof? How many bug-free software do you use?
 Furthermore, OOP doesn&rsquo;t fit all problems.
@@ -205,10 +203,10 @@ I mean an information system, the OOP is not so bad.</p>
 
 <p>The ugly</p>
 
-<p>Industry wanted an Object Oriented Language without loosing all their old C code.
+<p>Industry wanted an Object Oriented Language without losing all their old C code.
 Solution, keep C and add an Object layer on it.
-The main concern about C++ is it do too many things.
-I particularly appreciated multiple inheritance and templates.
+My main concern about C++ is: it do too many things.
+I appreciated multiple inheritance and templates.
 In reality I liked a lot C++ while I was working alone. 
 I used it to write <code>DEES</code> my main thesis software.
 My only concern was about a lack in the <abbr title="Standard Tempate Library">STL</abbr>.
@@ -255,10 +253,10 @@ After some times, I needed to make 1 to many notifications.
 And I add to make a bunch of copy/paste inside all my subclasses!
 Copy/paste are exactly what should be avoided the most by object oriented languages.</p>
 
-<p>Another thing&nbsp;; I had to handle threads.
-I had to make my own thread gestion system to avoid locks and notifications between threads (this thread ended, &hellip;).
+<p>Another thing: threads.
+I was forced to make my own thread management system to avoid locks and notifications between threads (wait the end of this thread, &hellip;).
 At that time I used Java 1.5.
-Normally this problem should have been solved with Java 1.6.
+This problem should have been solved with Java 1.6.
 I wish it is the case, but lacking such an essential feature for a language was very bad.</p>
 
 <p>In the same idea, it was very long to wait for the foreach loops.</p>
@@ -266,12 +264,12 @@ I wish it is the case, but lacking such an essential feature for a language was 
 <p>After my experience, I don&rsquo;t recommend Java.
 Portability does not worth this price.</p>
 
-<p><abbr title="Graphic User Interface">GUI</abbr> protability mean, mediocre experience on all platforms.
+<p><abbr title="Graphic User Interface">GUI</abbr> protability means mediocre experience on all platforms.
 Any system it might be (wxWidget, QT, etc&hellip;).</p>
 
 <p>The Java ideology is &ldquo;closed&rdquo;. But it resolve a big problem.
 It helps medium to low quality developper to work in team without the ability to make too much harm to the product.
-A good programmer will be able to make very interresting with it thought.
+A good programmer will be able to make very interresting things with it thought.
 Please note I didn&rsquo;t say Java programmer are bad programmer.</p>
 
 <h3 id="objective-c">Objective-C</h3>
