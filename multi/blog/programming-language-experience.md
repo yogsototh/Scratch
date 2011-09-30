@@ -33,8 +33,8 @@ fr: Je suis empleint de nostalgie rien que d'y penser.
 fr: C'est à peu prêt le seul intérêt de ce langage.
 
 en: Today this language is obsolescent.
-en: It not even a good language to learn programming.
-en: I know there exist some compiler now.
+en: It is not even good to learn programming.
+en: I know some compiler exists now.
 en: But this is not enough to try to learn it.
 
 fr: Aujourd'hui ce langage est tombé en désuétude.
@@ -49,7 +49,7 @@ READY
 RUN
 </code>
 
-en: I remember also to had copyied some game source code from some magazine.
+en: I also remember I copied some game source code from some magazine.
 en: Most lines were like:
 fr: Je m'en souviens aussi pour avoir copier des codes de jeux vidéo à partir de magasines.
 fr: La plupart des lignes ressemblaient à 
@@ -64,30 +64,27 @@ fr: Quel plaisir c'était !
 ### Logo
 
 <%=leftblogimage("dragon.jpg","Dragon fractal")%>
-en: Also when I was about 10. 
-en: I played with logo to draw on the computer.
+en: I was about 10 when I played with logo to draw on the computer.
 fr: Toujours lors que j'avais 10 ans, on pouvait faire de petits programmes sympathiques.
 
 en: I remember the Bach's music while the program loaded.
 fr: Je me souviens que lors du chargement de l'application logo on avait droit à de la musique de Bach.
 
-en: Yes, at that time we had to load the program into the memory using tapes. 
-en: This one was a rare one that didn't made an awfull 'Krrrkrr cssssss krrr' noise.
+en: At that time we had to load the program into the memory using tapes. 
+en: This one was a rare one. It didn't made an awfull 'Krrrkrr cssssss krrr' noise.
 fr: Oui, il fallait charger le programme en mémoire avec une cassette. 
 fr: Et elle ne faisait pas les 'Krrrkrr csssss krrrr'.
 
-en: I used them without any loop.
-en: Some years after, I had used it to learn programming to my college students.
-en: In fact it was really good as first language.
+en: Some years after, I used it to learn programming to my college student.
+en: It was really good as a first language.
 en: Making fractals is like a game for children.
-
 fr: Je l'avais utilisé sans les boucles.
 fr: Des années plus tard, je le réutiliser pour faire de l'initiation à l'informatique à mes étudiants de DEUG MIAS première année. 
 fr: Il s'est en fait révélé très utile. 
 fr: Grace à lui, faire des fractales se révèle être un jeu d'enfant, au sens litéral. 
 fr: Je ne peux que conseiller ce langage pour apprendre à programmer et aussi pour le fun.
 
-en: Here is an example of code that results in the dragoon fractal.
+en: Here is an example of code. It draws the dragon fractal.
 fr: Voici un exemple de code et le résultat est la jolie fractale 'dragon'.
 
 <code class="zsh">
@@ -123,8 +120,8 @@ en: The always second.
 fr: L'éternel numéro 2.
 
 en: I made my firsts real serious program with Pascal.
-en: I must confess I found it inferior to C.
-en: I made graph algorithms, sort algorithms even some IA like genetic algorithms.
+en: I must confess I find it inferior to C.
+en: I made graph algorithms, sort algorithms even some IA (genetic) algorithms.
 en: In the end I prefer C.
 
 fr: J'ai dû apprendre à programmer en Pascal aux alentour de 15 ans et je l'ai aussi réutiliser un peit peu en faculté. 
@@ -136,7 +133,7 @@ fr: Mais je préfère largement le C.
 
 <%=leftblogimage("C.jpg","Pointer representation from Dancing links")%>
 
-en: The language of pointers.
+en: The pointer's language.
 fr: Le langage des pointeurs
 
 en: _Le_ programming language.
@@ -158,13 +155,13 @@ fr: Il y a une relation linéaire entre la taille du code en C et de son résult
 en: In short, each time you write a C instruction there won't be anything strange that will occurs, like starting a long algorithm behind the scene.
 fr: Ça signifie qu'à chaque fois que vous écrivez une ligne de C, il ne va pas se passer de choses toutes bizarres comme lancer un algorithme qui va prendre deux plombes.
 
-en: It is very close to the machine while keeping a sufficient abstraction to be fun.
+en: It is very close to the machine while keeping sufficient abstractions to be fun.
 fr: Il est très proche de la machine tout en ayant une abstraction suffisante pour ne pas être "trop"  désagréable.
 
 en: I made a lot of program with it.
 en: From sort algorithms to AI ones (SAT3), system, network prgramming, etc...
 en: It is a very useful language that will help you understand how things works on your computer. 
-en: Most modern computer language hide a lot of informations. 
+en: Most modern computer language hide a lot of informations on what occurs. 
 en: This is not the case with C.
 fr: J'ai fait beaucoup de choses avec. 
 fr: Tous les algorithmes de tri, des algorithmes d'intelligence artificielle (résolution de SAT3), du système, du réseau etc...
@@ -186,13 +183,13 @@ fr: Disons qu'il est assez vieux et qu'il a inspiré la plupart des concepts obj
 en: ## Object Oriented Languages
 fr: ## Les langages orientés objets
 
-en: Until here I just described imperatives languages without any object notion.
+en: Until here I just described imperative languages without any object notion.
 fr: Bon, oui, le Pascal, le C, le Basic (fortran, Cobol et autres) étaient tous des langages impératifs, sans notion d'objets.
 
 en: More clearly, the language didn't helped you to structure your program.
 fr: En gros, il n'y avait pas d'aide pour structurer votre code.
 
-en: In order to limit the number of bugs, particularly for huge programs, we started to thin about how to best organize computer programs.
+en: In order to limit the number of bugs, particularly for huge programs, we started to think about how to organize computer programs.
 en: In the end, from the imperatives language culture, it produced the Object Oriented programming (OOP).
 en: Beware, the Object Oriented programming isn't a miracle. Proof? How many bug-free software do you use?
 en: Furthermore, OOP doesn't fit all problems.
@@ -228,10 +225,10 @@ fr: Du coup, mon alphabet était limité à 2<sup>16</sup> lettres.
 fr: Hors, pour certaines application, l'alphabet doit être gigantesque. 
 fr: 
 fr: En conclusion je dirai que C++ est un très bon langage si vous vous fixez à l'avance un sous ensemble de ses fonctionnalités.
-en: Industry wanted an Object Oriented Language without loosing all their old C code.
+en: Industry wanted an Object Oriented Language without losing all their old C code.
 en: Solution, keep C and add an Object layer on it.
-en: The main concern about C++ is it do too many things.
-en: I particularly appreciated multiple inheritance and templates.
+en: My main concern about C++ is: it do too many things.
+en: I appreciated multiple inheritance and templates.
 en: In reality I liked a lot C++ while I was working alone. 
 en: I used it to write `DEES` my main thesis software.
 en: My only concern was about a lack in the STL.
@@ -306,14 +303,14 @@ fr: De plus toujours pour ma GUI, je devais évidemment gérer des threads.
 fr: Hors, il m'a fallu faire mon propre système de gestion de threads pour éviter les locks, pour les notifications (ce thread à fini, etc...). 
 fr: À l'époque j'utilisais Java 1.5. 
 fr: Normallement ce problème devait être réglé sur Java 1.6. 
-fr: J'espère que c'est le cas, mais avoir ce type de "feature" essentielles oubliées par le langage était assez grave. 
-en: Another thing ; I had to handle threads.
-en: I had to make my own thread gestion system to avoid locks and notifications between threads (this thread ended, ...).
+fr: J'espère que c'est le cas, mais avoir ce type de "feature" essentielle oubliée par le langage était assez grave. 
+en: Another thing: threads.
+en: I was forced to make my own thread management system to avoid locks and notifications between threads (wait the end of this thread, ...).
 en: At that time I used Java 1.5.
-en: Normally this problem should have been solved with Java 1.6.
+en: This problem should have been solved with Java 1.6.
 en: I wish it is the case, but lacking such an essential feature for a language was very bad.
 
-fr: De même, il a fallu attendre très longtemps avant d'avoir des boucles foreach qui rende le code bien plus lisible.
+fr: De même, il a fallu attendre très longtemps avant d'avoir des boucles foreach qui rendent le code bien plus lisible.
 en: In the same idea, it was very long to wait for the foreach loops.
 
 fr: Bon, après cette expérience je déconseillerai Java.
@@ -324,7 +321,7 @@ en: Portability does not worth this price.
 fr: En ce qui concerne les GUI, portable signifie interface fonctionnelle mais médiocre sur toutes les plateformes. 
 fr: Quelquesoit le système d'ailleurs (wxWidget, QT, etc...).
 fr: Donc, pour des applications à distribuer à des tiers, c'est à éviter.
-en: GUI protability mean, mediocre experience on all platforms.
+en: GUI protability means mediocre experience on all platforms.
 en: Any system it might be (wxWidget, QT, etc...).
 
 fr: Le système de Java est très clos. 
@@ -334,7 +331,7 @@ fr: Et un bon programmeur sera tout de même capable d'y faire des choses très 
 fr: Veuillez noter que je n'ai pas dit que les programmeurs Java sont de mauvais programmeurs, ce n'est pas ce que je pense.
 en: The Java ideology is "closed". But it resolve a big problem.
 en: It helps medium to low quality developper to work in team without the ability to make too much harm to the product.
-en: A good programmer will be able to make very interresting with it thought.
+en: A good programmer will be able to make very interresting things with it thought.
 en: Please note I didn't say Java programmer are bad programmer.
 
 
