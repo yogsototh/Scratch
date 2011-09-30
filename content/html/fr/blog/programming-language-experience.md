@@ -3,7 +3,7 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2011-09-28T12:21:41+02:00
-title: programming language experience
+title: Mon expérience avec les languages de programmation
 author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
@@ -56,7 +56,6 @@ Je me souviens que lors du chargement de l'application logo on avait droit à de
 
 Oui, il fallait charger le programme en mémoire avec une cassette. 
 Et elle ne faisait pas les 'Krrrkrr csssss krrrr'.
-
 
 Je l'avais utilisé sans les boucles.
 Des années plus tard, je le réutiliser pour faire de l'initiation à l'informatique à mes étudiants de DEUG MIAS première année. 
@@ -212,9 +211,9 @@ De plus toujours pour ma GUI, je devais évidemment gérer des threads.
 Hors, il m'a fallu faire mon propre système de gestion de threads pour éviter les locks, pour les notifications (ce thread à fini, etc...). 
 À l'époque j'utilisais Java 1.5. 
 Normallement ce problème devait être réglé sur Java 1.6. 
-J'espère que c'est le cas, mais avoir ce type de "feature" essentielles oubliées par le langage était assez grave. 
+J'espère que c'est le cas, mais avoir ce type de "feature" essentielle oubliée par le langage était assez grave. 
 
-De même, il a fallu attendre très longtemps avant d'avoir des boucles foreach qui rende le code bien plus lisible.
+De même, il a fallu attendre très longtemps avant d'avoir des boucles foreach qui rendent le code bien plus lisible.
 
 Bon, après cette expérience je déconseillerai Java.
 La portabilité, n'est pas si intéressante que ce qu'on pourrait croire.
