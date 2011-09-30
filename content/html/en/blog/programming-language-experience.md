@@ -296,7 +296,7 @@ But the very good feature is the integration of some perl syntax.
 
 
 <code class="perl">
-$var =~ s/toto/titi/
+$var =~ s/toto/titi/g
 </code>
 
 This program will replace every toto by titi inside the `$var` variable.

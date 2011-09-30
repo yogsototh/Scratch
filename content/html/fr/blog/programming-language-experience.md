@@ -300,7 +300,7 @@ Mais la feature qui tue, les expressions régulières :
 
 
 <code class="perl">
-$var =~ s/toto/titi/
+$var =~ s/toto/titi/g
 </code>
 
 Va remplacer toto par titi dans la valeur de la variable `$var`.
