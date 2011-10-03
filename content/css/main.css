@@ -202,14 +202,17 @@ acronym
   line-height: 1.4em
   border-radius: 1.5em
   border: 2px solid $mainBackgroundColor
-  background: rgba(#000,.05)
-  box-shadow: 0 3px 3px rgba(255, 255, 255, 0.5) inset, 0 -3px 3px rgba(0, 0, 0, 0.1) inset, 0 1px 2px rgba(0, 0, 0, .5)
+  color: $lighterText
   &:hover
-    background: rgba(#000,.1)
-    box-shadow: 0 3px 3px rgba(255, 255, 255, 0.5) inset, 0 -3px 3px rgba(0, 0, 0, 0.1) inset, 0 1px 5px rgba(60, 30, 0, .8)
+    color: $highlightRevealColor
+    text-shadow: 0 0 2px #FAA
+    background: #ECECEC
+    box-shadow: 0 -1px 8px #CCC inset
   &:active
-    background: rgba(#000,.2)
-    box-shadow: 0 3px 3px rgba(255, 255, 255, 0.5) inset, 0 -3px 3px rgba(0, 0, 0, 0.1) inset, 0 1px 5px rgba(60, 30, 0, .8)
+    color: $highlightRevealColor
+    text-shadow: 0 0 2px #FAA
+    background: #EEE
+    box-shadow: 0 -1px 8px #AAA inset
 
 #liens a
   border: 1px solid #EEE
