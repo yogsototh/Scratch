@@ -70,119 +70,57 @@
 </div>
 
 
-<ol>
-  <li>
-    <p>Type safety</p>
+<p>Commençons par une BD d&rsquo;<a href="http://xkcd.com">xkcd</a>&nbsp;:</p>
 
-    <p>One of the main source of error and time loose with web technologies are all problems linked to cross scripting, sql injection, etc&hellip; 
- A link to an obligatory XKCD:</p>
+<p><img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt="SQL injection by a mom" /></p>
 
-    <p><img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt="MySQL injection by a mom" /></p>
+<p>Avec les technologies web on passe son temps à manipuler des chaînes de caractères. 
+Certaines de ces chaînes sont utilisées pour désigner du HTML, d&rsquo;autre du JavaScript, d&rsquo;autres du CSS, d&rsquo;autre des requêtes SQL, des URL, etc&hellip;
+Il en résulte des problèmes pour éviter qu&rsquo;un petit malin utilise le champs &ldquo;nom d&rsquo;utilisateur&rdquo; et remplace un nom standard par <code>toto&lt;script&gt;alert("This site sucks!")&lt;/script&gt;</code>.
+Sans une protection correcte, le message sera affiché à chaque fois que quelqu&rsquo;un essayera d&rsquo;accéder au nom de cet utilisateur.
+Les &ldquo;types saufs&rdquo; sont le <a href="https://www.youtube.com/watch?v=1IWF3IsEPBE">tonyglandil du web</a>.
+Safe types are the chains around all strings you&rsquo;ll use.</p>
 
-    <p>And if you are not familiar with this issue here is an <a href="http://stackoverflow.com/questions/332365/xkcd-sql-injection-please-explain">explanation</a>.</p>
+<p>Yesod fait de son mieux pour typer les objets manipulés et ainsi il fera ce qu&rsquo;il faut pour ne pas mettre du script dans une URL par exemple.</p>
 
-    <p>Les &ldquo;types saufs&rdquo; sont le (tonyglandil du web)[https://www.youtube.com/watch?v=1IWF3IsEPBE].</p>
+<p><code> 
+    &lt;a href=@[AnotherPageR]&gt;Go to the other page
+</code></p>
 
-    <p>[Client] &lt;&ndash;&gt; [Server] &lt;&ndash;&gt; [DB]</p>
+<pre><code>falselink"&gt;&lt;script&gt; bad_code(); &lt;/script&gt;&lt;a href="pipo
 
-    <p>yesod does its best to handle cross scripting issues. Both between the client and the server and between the server and your DB.</p>
 
-    <p>Furthermore it helps making sure when you need to enter a URL it enter a URL not Javascript for example.</p>
-  </li>
-  <li>
-    <p>Widgets</p>
-  </li>
-</ol>
 
-<p>Yesod widget are different from just JavaScript widget.
-In yesod widget are <em>more</em> in the server side. Even if you can use yesod widget to manage JavaScript widgets.
-Some examples of widgets are:</p>
 
-<pre><code>- the footer of a webpage,
-- the header of a webpage with a menu,
-- a button which appears only when scrolling down, 
-etc...
+
+
+
+
+htmlheader = ...
+cssheader = ...
+javascriptheader = ...
+htmlbody = ...
 </code></pre>
-
-<p>For each of this part, you might need, </p>
-
-<ul>
-  <li>a bit of HTML, </li>
-  <li>a bit of CSS and </li>
-  <li>a bit of Javascript.</li>
-</ul>
-
-<p>Some in the header, some in the body.</p>
-
-<p>You can declare a widget as this (note I use a very high meta-language):</p>
-
-<p>htmlheader = &hellip;
-cssheader = &hellip;
-javascriptheader = &hellip;
-htmlbody = &hellip;</p>
-
-<p>The real syntax is:</p>
 
 <p>toWidgetHeader cassiusFile &ldquo;button.cassius&rdquo;
 toWidgetHeader juliusFile &ldquo;button.julius&rdquo;
 toWidget hamletFile &ldquo;buttonTemplate.hamlet&rdquo;</p>
 
-<p>Note the awesome Shakespearean inspired name convention. Just for these name you should use yesod.</p>
-
-<ul>
-  <li>Cassius <em>&amp;</em> Lucius of CSS (a lot similar to SASS and SCSS)</li>
-  <li>Julius for JavaScript</li>
-  <li>Hamlet for HTML (similar to haml)</li>
-</ul>
-
-<p>And when your page render, yesod make it easy to render everything nicely:</p>
-
 <p><code>
 myBigWidget =  menuWidget &gt;&gt; contentWidget &gt;&gt; footerWidget
 </code></p>
-
-<p>Furthermore, if you use say 10 widgets each with a bit of CSS, yesod will create a unique and compressed CSS file. Except if you expressed a need to change the header by using different CSS. </p>
-
-<p>This is just awesome.</p>
-
-<ol>
-  <li>Optimized routing</li>
-</ol>
-
-<p>In standard routing system you have for each entry a couple: regexp &rarr; handler</p>
-
-<p>The only way to discover the right rules is to match each regexp to the current URL. Then you can see behaviour such as, if you change the order of the rules you can lose or win time.</p>
-
-<p>On the other hand yesod compile the routes. Therefore it can optimize it.
-Of course two routes must not interfere.</p>
 
 <p><code>
 /blog/2003  Date2003R
 /blog/$DATE DateR
 </code></p>
 
-<p>is invalid by default (you can make it valid, but I don&rsquo;t think it is a good idea).</p>
-
-<p>You&rsquo;d better</p>
-
 <p><code>
 /blog/$DATE DateR
 </code></p>
 
-<p>and make the test inside the handler</p>
-
-<p>Why you should use yesod. Just saying from a very subjective point of vue, from what I heard, Haskell is a node.js done as it should be.</p>
-
-<ol>
-  <li>Speed. This is just astounding.</li>
-  <li>Haskell. This is certainly hard to learn but it is just incredibly awesome. If you want to make you a favor. Just learn Haskell. It will be difficult, far more than you can imagine. It is very different from all other languages I used.</li>
-  <li>Good ideas, excellent community. I follow yesod from some month now and the speed at which the project progress is incredible.</li>
-</ol>
-
 <p>If you are a haskeller, I believe you shouldn&rsquo;t fear the special syntax imposed by the standard yesod way of doing things.
 Just try it more than the firsts basic tutorials. </p>
-
-<p>One more thing, if you are a designer, please, help the yesodweb.com website to improve. I am not a designer, but I&rsquo;m interrested in web design and if I cannot necessarily make stunning design I detect <em>errors</em> in design. I pushed some fixes for their website some time ago but it would be better to provide them new colors, etc&hellip; But I also don&rsquo;t want to hurt any sensibility. The work of Michael Snoyman and Greg Weber is just stunning.</p>
 
 <p>Until here I believe it goes in the right direction. Even if I believe the real future is by generating HTML pages from the client (using javascript) and server limited to serve JSON (or XML, or any object representation system).</p>
 

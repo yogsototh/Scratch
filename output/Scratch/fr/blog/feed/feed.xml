@@ -29,14 +29,12 @@
 &lt;/div&gt;
 
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Type safety&lt;/p&gt;
+&lt;p&gt;Commen&#231;ons par une BD d&amp;rsquo;&lt;a href="http://xkcd.com"&gt;xkcd&lt;/a&gt;&amp;nbsp;:&lt;/p&gt;
 
-    &lt;p&gt;One of the main source of error and time loose with web technologies are all problems linked to cross scripting, sql injection, etc&amp;hellip; 
- A link to an obligatory XKCD:&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt="SQL injection by a mom" /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/p&gt;</content>
+&lt;p&gt;Avec les technologies web on passe son temps &#224; manipuler des cha&#238;nes de caract&#232;res. 
+Certaines de ces c...&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-09-28:/Scratch/fr/blog/programming-language-experience/</id>
