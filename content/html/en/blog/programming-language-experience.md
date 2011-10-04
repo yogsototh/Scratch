@@ -360,7 +360,7 @@ Monads and Arrows are some of them.
 I didn't understand them before I read some scientific paper.
 Many week will be necessary to master it perfectly (if someone does).
 Also the community is very friendly and nice. There is no "LOL! URAN00B! RTFM!"
-And no concession as been made to make this language more popular (I'm looking at you C++, Java and Javascript). 
+And no concession has been made to make this language more popular (I'm looking at you C++, Java and Javascript). 
 This langage remain pure (I know there are two meaning).
 
 ## Unpopular Languages
