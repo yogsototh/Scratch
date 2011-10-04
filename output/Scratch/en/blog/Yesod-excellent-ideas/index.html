@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Yesod excellent ideas" type="text/html" hreflang="fr" href="/Scratch/fr/blog/Yesod-excellent-ideas/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Yesod excellent ideas" type="text/html" hreflang="en" href="/Scratch/en/blog/Yesod-excellent-ideas/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <!-- < % if containMaths %>
+        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
+        < % end %>
+        -->
+        <title>Yesod excellent ideas</title>
+    </head>
+    <body lang="en">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="loading..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/fr/blog/Yesod-excellent-ideas/" onclick="setLanguage('fr')">en Français</a>
+                </div>
+                <div class="flush"></div>
+            </div>
+            <div id="titre">
+                <h1>
+                    Yesod excellent ideas
+                </h1>
+                
+            </div>
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p><img alt="Title image" src="/Scratch/img/blog/Yesod-excellent-ideas/main.png" /></p>
+
+
+<div class="intro">
+
+
+<p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span></p>
+
+<p>I follows the yesod web framework for some times now. And I believe it reached the point where you should really consider to use it. But instead of telling you why you should learn Haskell and use yesod, I prefer to talk about new ideas used by yesod I didn&rsquo;t saw in other frameworks.</p>
+
+
+</div>
+
+
+<ol>
+  <li>
+    <p>Type safety</p>
+
+    <p>One of the main source of error and time loose with web technologies are all problems linked to cross scripting, sql injection, etc&hellip; 
+ A link to an obligatory XKCD:</p>
+
+    <p><img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt="MySQL injection by a mom" /></p>
+
+    <p>And if you are not familiar with this issue here is an <a href="http://stackoverflow.com/questions/332365/xkcd-sql-injection-please-explain">explanation</a>.</p>
+
+    <p>Les &ldquo;types saufs&rdquo; sont le (tonyglandil du web)[https://www.youtube.com/watch?v=1IWF3IsEPBE].</p>
+
+    <p>[Client] &lt;&ndash;&gt; [Server] &lt;&ndash;&gt; [DB]</p>
+
+    <p>yesod does its best to handle cross scripting issues. Both between the client and the server and between the server and your DB.</p>
+
+    <p>Furthermore it helps making sure when you need to enter a URL it enter a URL not Javascript for example.</p>
+  </li>
+  <li>
+    <p>Widgets</p>
+  </li>
+</ol>
+
+<p>Yesod widget are different from just JavaScript widget.
+In yesod widget are <em>more</em> in the server side. Even if you can use yesod widget to manage JavaScript widgets.
+Some examples of widgets are:</p>
+
+<pre><code>- the footer of a webpage,
+- the header of a webpage with a menu,
+- a button which appears only when scrolling down, 
+etc...
+</code></pre>
+
+<p>For each of this part, you might need, </p>
+
+<ul>
+  <li>a bit of HTML, </li>
+  <li>a bit of CSS and </li>
+  <li>a bit of Javascript.</li>
+</ul>
+
+<p>Some in the header, some in the body.</p>
+
+<p>You can declare a widget as this (note I use a very high meta-language):</p>
+
+<p>htmlheader = &hellip;
+cssheader = &hellip;
+javascriptheader = &hellip;
+htmlbody = &hellip;</p>
+
+<p>The real syntax is:</p>
+
+<p>toWidgetHeader cassiusFile &ldquo;button.cassius&rdquo;
+toWidgetHeader juliusFile &ldquo;button.julius&rdquo;
+toWidget hamletFile &ldquo;buttonTemplate.hamlet&rdquo;</p>
+
+<p>Note the awesome Shakespearean inspired name convention. Just for these name you should use yesod.</p>
+
+<ul>
+  <li>Cassius <em>&amp;</em> Lucius of CSS (a lot similar to SASS and SCSS)</li>
+  <li>Julius for JavaScript</li>
+  <li>Hamlet for HTML (similar to haml)</li>
+</ul>
+
+<p>And when your page render, yesod make it easy to render everything nicely:</p>
+
+<p><code>
+myBigWidget =  menuWidget &gt;&gt; contentWidget &gt;&gt; footerWidget
+</code></p>
+
+<p>Furthermore, if you use say 10 widgets each with a bit of CSS, yesod will create a unique and compressed CSS file. Except if you expressed a need to change the header by using different CSS. </p>
+
+<p>This is just awesome.</p>
+
+<ol>
+  <li>Optimized routing</li>
+</ol>
+
+<p>In standard routing system you have for each entry a couple: regexp &rarr; handler</p>
+
+<p>The only way to discover the right rules is to match each regexp to the current URL. Then you can see behaviour such as, if you change the order of the rules you can lose or win time.</p>
+
+<p>On the other hand yesod compile the routes. Therefore it can optimize it.
+Of course two routes must not interfere.</p>
+
+<p><code>
+/blog/2003  Date2003R
+/blog/$DATE DateR
+</code></p>
+
+<p>is invalid by default (you can make it valid, but I don&rsquo;t think it is a good idea).</p>
+
+<p>You&rsquo;d better</p>
+
+<p><code>
+/blog/$DATE DateR
+</code></p>
+
+<p>and make the test inside the handler</p>
+
+<p>Why you should use yesod. Just saying from a very subjective point of vue, from what I heard, Haskell is a node.js done as it should be.</p>
+
+<ol>
+  <li>Speed. This is just astounding.</li>
+  <li>Haskell. This is certainly hard to learn but it is just incredibly awesome. If you want to make you a favor. Just learn Haskell. It will be difficult, far more than you can imagine. It is very different from all other languages I used.</li>
+  <li>Good ideas, excellent community. I follow yesod from some month now and the speed at which the project progress is incredible.</li>
+</ol>
+
+<p>If you are a haskeller, I believe you shouldn&rsquo;t fear the special syntax imposed by the standard yesod way of doing things.
+Just try it more than the firsts basic tutorials. </p>
+
+<p>One more thing, if you are a designer, please, help the yesodweb.com website to improve. I am not a designer, but I&rsquo;m interrested in web design and if I cannot necessarily make stunning design I detect <em>errors</em> in design. I pushed some fixes for their website some time ago but it would be better to provide them new colors, etc&hellip; But I also don&rsquo;t want to hurt any sensibility. The work of Michael Snoyman and Greg Weber is just stunning.</p>
+
+<p>Until here I believe it goes in the right direction. Even if I believe the real future is by generating HTML pages from the client (using javascript) and server limited to serve JSON (or XML, or any object representation system).</p>
+
+<p>I cannot stress too much about how I believe Yesod is good.</p>
+
+<p>One of the most important point is the responsiveness of the community. It is very active. It is Greg which the first had given a way to <a href="http://www.yesodweb.com/blog/2011/07/haskell-on-heroku">deploy Haskell code to Heroku</a>.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomen">
+                        Subscribe
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Comments</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">comments</h2>
+                    <noscript>
+                        You must enable javascript to comment.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/en/blog/Yesod-excellent-ideas/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/Yesod-excellent-ideas/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/en/">Home</a></li>
+<li><a href="/Scratch/en/blog/">Blog</a></li>
+<li><a href="/Scratch/en/softwares/">Softwares</a></li>
+<li><a href="/Scratch/en/about/">About</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        previous entries
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/programming-language-experience/"><span class="nicer">«</span>&nbsp;Programming Language Experience</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/Learn-Vim-Progressively/"><span class="nicer">«</span>&nbsp;Learn Vim Progressively</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/Password-Management/"><span class="nicer">«</span>&nbsp;40 character's passwords</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        next entries
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Created: 10/04/2011
+                    Modified: 10/04/2011 
+                </div>
+                <div>
+                    Entirely done with
+                    <a href="http://www.vim.org">Vim</a>
+                    and 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/en/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+        var clicky = { log: function(){ return; }, goal: function(){ return; }};
+        var clicky_site_id = 66374971;
+        (function() {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+        })();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
+    
+    </body>
+</html>
