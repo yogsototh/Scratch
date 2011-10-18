@@ -95,11 +95,6 @@ table.description tr td
   background-color: $lighterColor
 
 body
-  color: $behindColor
-  background:
-    color: $mainBackgroundColor
-
-#content
   +mainColor
 
 a:hover
@@ -800,3 +795,6 @@ ul.bloglist, .archive ul
   border-radius: 3px
   line-height: 2.5em
   padding: 2em
+
+.pala
+  font-family: Palatino

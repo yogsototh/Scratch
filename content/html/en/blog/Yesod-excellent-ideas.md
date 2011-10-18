@@ -15,7 +15,7 @@ begindiv(intro)
 <%= tldr %>
 
 
-I follows the yesod web framework for some times now. And I believe it reached the point where you should really consider to use it. But instead of telling you why you should learn Haskell and use yesod, I prefer to talk about new ideas used by yesod I didn't saw in other frameworks.
+I follows the [yesod web framework](http://www.yesodweb.com) for some times now. And I believe it reached the point where you should really consider to use it. But instead of telling you why you should learn Haskell and use yesod, I prefer to talk about new ideas used by yesod I didn't saw in other frameworks.
 
 enddiv
 
@@ -36,8 +36,9 @@ Newton<script>alert("An apple fall")</script>
 
 You must transform each `<` into `&lt;`.
 Without this transformation alert will appear each time you try to display this user name.
+Safe types are the chains around all strings you'll use.
 
-yesod does its best to handle cross scripting issues. Both between the client and the server and between the server and your DB.
+Yesod does its best to handle cross scripting issues. Both between the client and the server and between the server and your DB.
 Here is an example:
 
 <code class="html"> 
@@ -52,7 +53,9 @@ It will be an URL safe. Not something like:
 ## Widgets
 
 Yesod widget are different from just JavaScript widget.
-In yesod widget are _more_ in the server side. Even if you can use yesod widget to manage JavaScript widgets.
+In yesod widget are a set of small parts of a web application.
+A bit of CSS, a bit of HTML and a bit of JS for example.
+If you want to use many widgets in a same page yesod do the work.
 Some examples of widgets are:
 
 - the footer of a webpage,
@@ -64,9 +67,10 @@ For each of this part, you might need,
 
 - a bit of HTML, 
 - a bit of CSS and 
-- a bit of Javascript.
+- a bit of javascript.
 
 Some in the header, some in the body.
+
 
 You can declare a widget as this (note I use a very high meta-language):
 
@@ -77,14 +81,17 @@ You can declare a widget as this (note I use a very high meta-language):
 
 The real syntax is:
 
+<code class="haskell">
 toWidgetHeader cassiusFile "button.cassius"
 toWidgetHeader juliusFile "button.julius"
-toWidget hamletFile "buttonTemplate.hamlet"
+toWidget       hamletFile "buttonTemplate.hamlet"
+</code>
 
-Note the awesome Shakespearean inspired name convention. Just for these name you should use yesod.
+Note the awesome Shakespearean inspired name convention.
+Another good reason to use yesod.
 
-- Cassius _&_ Lucius of CSS (a lot similar to SASS and SCSS)
-- Julius for JavaScript
+- Cassius _&_ Lucius of CSS (a lot similar to SASS and SCSS),
+- Julius for JavaScript (not a CoffeeScript is somewhere in the source of yesod),
 - Hamlet for HTML (similar to haml)
 
 And when your page render, yesod make it easy to render everything nicely:
@@ -95,11 +102,11 @@ myBigWidget =  menuWidget >> contentWidget >> footerWidget
 
 Furthermore, if you use say 10 widgets each with a bit of CSS, yesod will create a unique and compressed CSS file. Except if you expressed a need to change the header by using different CSS. 
 
-This is just awesome.
+This is just awesome!
 
 ## Optimized routing
 
-In standard routing system you have for each entry a couple: regexp -> handler
+In standard routing system you have for each entry a couple: regexp → handler
 
 The only way to discover the right rules is to match each regexp to the current URL. Then you can see behaviour such as, if you change the order of the rules you can lose or win time.
 
@@ -121,23 +128,18 @@ You'd better
 
 and make the test inside the handler
 
-Why you should use yesod. Just saying from a very subjective point of vue, from what I heard, Haskell is a node.js done as it should be.
+## Why yesod?
 
-1. Speed. This is just astounding.
-2. Haskell. This is certainly hard to learn but it is just incredibly awesome. If you want to make you a favor. Just learn Haskell. It will be difficult, far more than you can imagine. It is very different from all other languages I used.
-3. Good ideas, excellent community. I follow yesod from some month now and the speed at which the project progress is incredible.
+From a very subjective point of vue and from what I heard, Haskell is a node.js done as it should be.
+
+1. _Speed_. This is just astounding.
+2. _Haskell_. This is certainly hard to learn but it is just incredibly awesome. If you want to make you a favor. Just learn Haskell. It will be difficult, far more than you can imagine. It is very different from all other languages I used.
+3. _Good ideas, excellent community_. I follow yesod from some month now and the speed at which the project progress is incredible.
 
 If you are a haskeller, I believe you shouldn't fear the special syntax imposed by the standard yesod way of doing things.
 Just try it more than the firsts basic tutorials. 
 
-One more thing, if you are a designer, please, help the yesodweb.com website to improve. 
-I am not a designer, but I'm interrested in web design and if I cannot necessarily make stunning design I detect _errors_ in design. 
-I pushed some fixes for their website some time ago but it would be better to provide them new colors, etc...
-But I also don't want to hurt any sensibility.
-The work of Michael Snoyman and Greg Weber is just stunning.
+Until here I believe it goes in the right direction. 
+Even if I believe the real future is by generating HTML pages from the client (using javascript) and server limited to serve JSON (or XML, or any object representation system).
 
-  Until here I believe it goes in the right direction. Even if I believe the real future is by generating HTML pages from the client (using javascript) and server limited to serve JSON (or XML, or any object representation system).
-
-  I cannot stress too much about how I believe Yesod is good.
-
-  One of the most important point is the responsiveness of the community. It is very active. It is Greg which the first had given a way to [deploy Haskell code to Heroku](http://www.yesodweb.com/blog/2011/07/haskell-on-heroku).
+I cannot stress too much about how I believe Yesod is good.
