@@ -140,16 +140,6 @@ pre
   padding: 1em
   line-height: 1.2em
 
-pre, code
-  font:
-    family: monaco, monospace
-    size: .7em
-
-p code
-  font:
-    family: monospace
-    size: 1em
-
 p
   margin-bottom: 1.2em
 

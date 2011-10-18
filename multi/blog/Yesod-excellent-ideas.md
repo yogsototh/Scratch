@@ -63,7 +63,9 @@ fr: Yesod fait de son mieux pour typer les objets manipulés et ainsi il fera ce
 en: As `AnotherPageR` is of type URL and it could not contains something nefarious.
 en: It will be an URL safe. Not something like:
 
-    falselink"><script> bad_code(); </script><a href="pipo
+<code class="html">
+falselink"><script> bad_code(); </script><a href="pipo
+</code>
 
 en: Type safety is not magic, but it will help a lot resolving these issues.
 fr: Les types saufs ne sont pas magiques, mais ils aident beaucoup à résoudre ces problèmes.
