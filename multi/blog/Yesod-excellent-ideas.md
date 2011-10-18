@@ -65,6 +65,9 @@ en: It will be an URL safe. Not something like:
 
     falselink"><script> bad_code(); </script><a href="pipo
 
+en: Type safety is not magic, but it will help a lot resolving these issues.
+fr: Les types saufs ne sont pas magiques, mais ils aident beaucoup à résoudre ces problèmes.
+
 en: ## Widgets
 fr: ## Les widgets
 
