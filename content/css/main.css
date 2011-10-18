@@ -139,6 +139,7 @@ pre
   border-radius: 3px
   padding: 1em
   line-height: 1.2em
+  font-size: .9em
 
 p
   margin-bottom: 1.2em
@@ -788,3 +789,11 @@ ul.bloglist, .archive ul
 
 .pala
   font-family: Palatino
+
+.article .corps 
+  p, ul li, ol li
+    a:after
+      content: "☆"
+      vertical-align: super
+      font-size: .5em
+      color: ($mainTextColor/3) + 2*($mainBackgroundColor/3)

@@ -42,12 +42,15 @@ Les "types saufs" sont le [tonyglandil du web](https://www.youtube.com/watch?v=1
 
 Yesod fait de son mieux pour typer les objets manipulés et ainsi il fera ce qu'il faut pour ne pas mettre du script dans une URL par exemple.
 
-<code class="html"> 
-<a href=@[AnotherPageR]>Go to the other page
+<code class="html"><a href=@[AnotherPageR]>Go to the other page
 </code>
 
 
-    falselink"><script> bad_code(); </script><a href="pipo
+<code class="html">
+falselink"><script> bad_code(); </script><a href="pipo
+</code>
+
+Les types saufs ne sont pas magiques, mais ils aident beaucoup à résoudre ces problèmes.
 
 ## Les widgets
 
@@ -132,7 +135,8 @@ et faire le test "est-ce que date = 2003 ?" dans le «handler».
 D'un point de vu très subjectif et de ce que j'ai lu. 
 Haskell est un node.js fait en beaucoup mieux.
 
-1. _La vitesse_. Simplement incroyable, je ne pense pas qu'il existe quelque chose de plus rapide aujourd'hui.
+
+1. _La vitesse_. Simplement incroyable, je ne pense pas qu'il existe quelque chose de plus rapide aujourd'hui. Regardez d'abord cet [article](http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks) puis [celui-ci](http://www.yesodweb.com/blog/2011/02/warp-speed-ahead).
 2. _Haskell_. C'est certainement le langage de programmation le plus difficile à apprendre que j'ai jamais rencontré. Mais aussi l'un des plus incroyables. Si vous voulez rencontrer tout un tas de notions que vous n'avez jamais croisée avant et faire exploser votre cerveau avec de nouvelles idées, alors apprenez Haskell.
 3. _Bonnes idées et communauté excellente_. Cela fait quelques mois que je suis la progression de yesod. Et la vitesse à laquelle ça s'est fait est simplement incroyable. De plus les développeur sont intelligents et super sympa.
 

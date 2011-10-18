@@ -56,8 +56,7 @@ en: Yesod does its best to handle cross scripting issues. Both between the clien
 en: Here is an example:
 fr: Yesod fait de son mieux pour typer les objets manipulés et ainsi il fera ce qu'il faut pour ne pas mettre du script dans une URL par exemple.
 
-<code class="html"> 
-<a href=@[AnotherPageR]>Go to the other page
+<code class="html"><a href=@[AnotherPageR]>Go to the other page
 </code>
 
 en: As `AnotherPageR` is of type URL and it could not contains something nefarious.
@@ -188,10 +187,11 @@ en: From a very subjective point of vue and from what I heard, Haskell is a node
 fr: D'un point de vu très subjectif et de ce que j'ai lu. 
 fr: Haskell est un node.js fait en beaucoup mieux.
 
-en: 1. _Speed_. This is just astounding. Look at ["this"](http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks) and then to ["this"](http://www.yesodweb.com/blog/2011/02/warp-speed-ahead).
+
+en: 1. _Speed_. This is just astounding. Look at [this](http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks) and then to [this](http://www.yesodweb.com/blog/2011/02/warp-speed-ahead).
 en: 2. _Haskell_. This is certainly hard to learn but it is just incredibly awesome. If you want to make you a favor. Just learn Haskell. It will be difficult, far more than you can imagine. It is very different from all other languages I used.
 en: 3. _Good ideas, excellent community_. I follow yesod from some month now and the speed at which the project progress is incredible.
-fr: 1. _La vitesse_. Simplement incroyable, je ne pense pas qu'il existe quelque chose de plus rapide aujourd'hui. Regardez d'abord cet ["article"](http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks) puis ["celui-ci"](http://www.yesodweb.com/blog/2011/02/warp-speed-ahead).
+fr: 1. _La vitesse_. Simplement incroyable, je ne pense pas qu'il existe quelque chose de plus rapide aujourd'hui. Regardez d'abord cet [article](http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks) puis [celui-ci](http://www.yesodweb.com/blog/2011/02/warp-speed-ahead).
 fr: 2. _Haskell_. C'est certainement le langage de programmation le plus difficile à apprendre que j'ai jamais rencontré. Mais aussi l'un des plus incroyables. Si vous voulez rencontrer tout un tas de notions que vous n'avez jamais croisée avant et faire exploser votre cerveau avec de nouvelles idées, alors apprenez Haskell.
 fr: 3. _Bonnes idées et communauté excellente_. Cela fait quelques mois que je suis la progression de yesod. Et la vitesse à laquelle ça s'est fait est simplement incroyable. De plus les développeur sont intelligents et super sympa.
 

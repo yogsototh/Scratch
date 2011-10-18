@@ -41,14 +41,17 @@ Safe types are the chains around all strings you'll use.
 Yesod does its best to handle cross scripting issues. Both between the client and the server and between the server and your DB.
 Here is an example:
 
-<code class="html"> 
-<a href=@[AnotherPageR]>Go to the other page
+<code class="html"><a href=@[AnotherPageR]>Go to the other page
 </code>
 
 As `AnotherPageR` is of type URL and it could not contains something nefarious.
 It will be an URL safe. Not something like:
 
-    falselink"><script> bad_code(); </script><a href="pipo
+<code class="html">
+falselink"><script> bad_code(); </script><a href="pipo
+</code>
+
+Type safety is not magic, but it will help a lot resolving these issues.
 
 ## Widgets
 
@@ -132,7 +135,8 @@ and make the test inside the handler
 
 From a very subjective point of vue and from what I heard, Haskell is a node.js done as it should be.
 
-1. _Speed_. This is just astounding.
+
+1. _Speed_. This is just astounding. Look at [this](http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks) and then to [this](http://www.yesodweb.com/blog/2011/02/warp-speed-ahead).
 2. _Haskell_. This is certainly hard to learn but it is just incredibly awesome. If you want to make you a favor. Just learn Haskell. It will be difficult, far more than you can imagine. It is very different from all other languages I used.
 3. _Good ideas, excellent community_. I follow yesod from some month now and the speed at which the project progress is incredible.
 
