@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!--
+     M4 Macros
+
+
+
+
+ -->
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="-512"
+    y="-512"
+    width="1024"
+    height="1024"
+    id="svg2"
+    version="1.1"
+    >
+    <metadata
+        id="metadata7">
+    </metadata>
+    <path id="triangle" fill="#8888CC" d="M0 0,2 0, 1 1.732,z" />
+    <g id="level_0">
+        <text id="lambda" fill="#000000" style="font-family:Ubuntu; font-size: 100px" transform="rotate(180)">λ</text>
+        <text fill="#000000" style="font-family:Ubuntu; font-size: 30px" transform="tranlate(0,80)">esod</text>
+    </g>
+    <!-- ROOT ELEMENT -->
+    <use transform="translate(200,200) scale(2)" xlink:href="#level_0" />
+
+    
+    <g id="level_1">
+        <use style="opacity:.6" transform="scale(.43) translate(-120,-70) rotate(-10)" xlink:href="#level_0" />
+        <use style="opacity:.6" transform="scale(.43) translate(20,-55) rotate(30)" xlink:href="#level_0" />
+    </g>
+    <use transform="translate(200,200) scale(2)" xlink:href="#level_1" />
+
+    
+    <g id="level_2">
+        <use style="opacity:.6" transform="scale(.43) translate(-120,-70) rotate(-10)" xlink:href="#level_1" />
+        <use style="opacity:.6" transform="scale(.43) translate(20,-55) rotate(30)" xlink:href="#level_1" />
+    </g>
+    <use transform="translate(200,200) scale(2)" xlink:href="#level_2" />
+
+    
+    <g id="level_3">
+        <use style="opacity:.6" transform="scale(.43) translate(-120,-70) rotate(-10)" xlink:href="#level_2" />
+        <use style="opacity:.6" transform="scale(.43) translate(20,-55) rotate(30)" xlink:href="#level_2" />
+    </g>
+    <use transform="translate(200,200) scale(2)" xlink:href="#level_3" />
+
+    
+    <g id="level_4">
+        <use style="opacity:.6" transform="scale(.43) translate(-120,-70) rotate(-10)" xlink:href="#level_3" />
+        <use style="opacity:.6" transform="scale(.43) translate(20,-55) rotate(30)" xlink:href="#level_3" />
+    </g>
+    <use transform="translate(200,200) scale(2)" xlink:href="#level_4" />
+
+</svg>
