@@ -66,8 +66,7 @@
 
 <p>Cela fait un moment que je suis la progression du <a href="http://www.yesodweb.com">framework yesod</a>. 
 À mon humble avis on peut commencer à l&rsquo;utiliser pour des applications sérieuses (comprendre en prod).
-Je pourrai vous dire pourquoi vous devriez considérer d&rsquo;utiliser ce framework.
-Mais je préfère vous parler de deux bonnes idées (parmi d&rsquo;autres) de yesod que je n&rsquo;avais jamais vu ailleurs.</p>
+Avant de vous dire pourquoi vous devriez aussi le considérer, je préfère vous parler de bonnes idées (parmi d&rsquo;autres) introduites par yesod que je n&rsquo;avais jamais vu ailleurs.</p>
 
 
 </div>
@@ -89,24 +88,27 @@ Newton<span class="Keyword">&lt;</span>script<span class="Keyword">&gt;</span><s
 </pre>
 
 <p>Sans une protection correcte, le message &ldquo;An apple fall&rdquo; sera affiché à chaque fois que quelqu&rsquo;un essayera d&rsquo;accéder au nom de cet utilisateur.
-Les &ldquo;types saufs&rdquo; sont le <a href="https://www.youtube.com/watch?v=1IWF3IsEPBE">tonyglandil du web</a>.</p>
+Les &ldquo;types saufs&rdquo; sont le <a href="https://www.youtube.com/watch?v=1IWF3IsEPBE">tonyglandil du web</a>.
+A chaque chaine de caractère, on lui associe un &ldquo;type&rdquo;. 
+A quoi sert cette chaîne de caractère&nbsp;? Est-ce une URL&nbsp;? Du javascript&nbsp;? De l&rsquo;HTML&nbsp;?
+Entre chaque passage d&rsquo;une représentation à une autre, un transformation is faite par défaut.</p>
 
 <p>Yesod fait de son mieux pour typer les objets manipulés et ainsi il fera ce qu&rsquo;il faut pour ne pas mettre du script dans une URL par exemple.</p>
 
 <pre class="twilight"><span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">a</span> <span class="MetaTagInline">href</span>=@[<span class="MetaTagInline">AnotherPageR</span>]<span class="MetaTagInline">&gt;</span></span>Go to the other page
 </pre>
 
+<p>Comme <code>AnotherPageR</code> est une URL elle ne pourra contiendra pas (par défaut) de caractère dangereux comme par exemple&nbsp;:</p>
+
 <pre class="twilight">
 falselink&quot;&gt;<span class="EmbeddedSource"><span class="EmbeddedSource">&lt;</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span> bad_code<span class="EmbeddedSource">(</span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">;</span> <span class="EmbeddedSource">&lt;/</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span></span><span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">a</span> <span class="MetaTagInline">href</span>=<span class="String"><span class="String">&quot;</span>pipo</span></span>
 </pre>
 
-<p>Les types saufs ne sont pas magiques, mais ils aident beaucoup à résoudre ces problèmes.</p>
-
 <h2 id="les-widgets">Les widgets</h2>
 
 <p>Les widgets de yesod sont différents des widgets Javascripts (ou java).
-Pour yesod un widget est un ensemble de morceaux d&rsquo;appli web. Un bout de CSS, un bout de javascript, un bout d&rsquo;HTML.
-Et si dans une page on veut utiliser plusieurs widgets, alors yesod s&rsquo;occupe de les faire fonctionner tous les deux.
+Pour yesod un widget est un ensemble de morceaux d&rsquo;appli web. 
+Et si dans une page on veut utiliser plusieurs widgets, alors yesod s&rsquo;occupe de tout.
 Des exemples de widgets (au sens yesod) sont&nbsp;:</p>
 
 <ul>
@@ -116,15 +118,15 @@ Des exemples de widgets (au sens yesod) sont&nbsp;:</p>
   <li>etc&hellip;</li>
 </ul>
 
-<p>Pour chacun de ces widgets vous pourriez avoir besoin de</p>
+<p>Pour chacun de ces widgets vous pourriez avoir besoin d&rsquo;</p>
 
 <ul>
-  <li>un peu d&rsquo;HTML</li>
+  <li>un peu d&rsquo;HTML,</li>
   <li>un peu de CSS et</li>
-  <li>un peu de javascript</li>
+  <li>un peu de javascript.</li>
 </ul>
 
-<p>Et certain morceau doivent être placés dans le «header» de la page et d&rsquo;autre dans le «body».</p>
+<p>Certain morceau doivent être placés dans le «header» de la page et d&rsquo;autre dans le «body».</p>
 
 <p>Vous pouvez déclarer un widget comme suit (je n&rsquo;utilise pas la vrai syntaxe)&nbsp;:</p>
 
@@ -188,13 +190,10 @@ Si vous voulez vraiment vous pouvez le faire foncionner quand même, mais il me 
 
 <h2 id="pourquoi-yesod">Pourquoi yesod?</h2>
 
-<p>D&rsquo;un point de vu très subjectif et de ce que j&rsquo;ai lu. 
-Haskell est un node.js fait en beaucoup mieux.</p>
-
 <ol>
   <li><em>La vitesse</em>. Simplement incroyable, je ne pense pas qu&rsquo;il existe quelque chose de plus rapide aujourd&rsquo;hui. Regardez d&rsquo;abord cet <a href="http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks">article</a> puis <a href="http://www.yesodweb.com/blog/2011/02/warp-speed-ahead">celui-ci</a>.</li>
-  <li><em>Haskell</em>. C&rsquo;est certainement le langage de programmation le plus difficile à apprendre que j&rsquo;ai jamais rencontré. Mais aussi l&rsquo;un des plus incroyables. Si vous voulez rencontrer tout un tas de notions que vous n&rsquo;avez jamais croisée avant et faire exploser votre cerveau avec de nouvelles idées, alors apprenez Haskell.</li>
-  <li><em>Bonnes idées et communauté excellente</em>. Cela fait quelques mois que je suis la progression de yesod. Et la vitesse à laquelle ça s&rsquo;est fait est simplement incroyable. De plus les développeur sont intelligents et super sympa.</li>
+  <li><em>Haskell</em>. C&rsquo;est certainement le langage de programmation le plus difficile à apprendre que j&rsquo;ai jamais rencontré. Mais aussi l&rsquo;un des plus incroyables. Si vous voulez rencontrer tout un tas de notions que vous n&rsquo;avez jamais croisées avant et faire exploser votre cerveau avec de nouvelles idées, alors apprenez Haskell.</li>
+  <li><em>Bonnes idées et communauté excellente</em>. Cela fait quelques mois que je suis la progression de yesod. Et la vitesse à laquelle tout s&rsquo;est déroulé est simplement incroyable. De plus les développeurs sont intelligents et super sympa.</li>
 </ol>
 
 <p>Si vous êtes un &ldquo;haskeller&rdquo;, je pense que vous ne devriez pas avoir peur de la syntaxe particulière imposée par la façon standard de faire les choses avec yesod.
@@ -202,7 +201,7 @@ Il faut essayer un peu plus loin que les premiers tutoriaux du livre.</p>
 
 <p>Je pense que yesod va dans la bonne direction d&rsquo;un web plus sûr et plus rapide. Même si je pense que l&rsquo;avenir sera que les serveurs devront être limités à faire serveur d&rsquo;API (JSON ou XML ou n&rsquo;importe quel autre mode de représentation d&rsquo;objets).</p>
 
-<p>Yesod est juste incroyable, essayez le.</p>
+<p>Yesod est juste incroyable. Dépassez les difficultés liées à l&rsquo;apprentissage d&rsquo;haskell et essayez le&nbsp;!</p>
 
                 </div>
             

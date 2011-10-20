@@ -27,7 +27,8 @@
 
 &lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;I follows the &lt;a href="http://www.yesodweb.com"&gt;yesod web framework&lt;/a&gt; for some times now. And I believe it reached the point where you should really consider to use it. But instead of telling you why you should learn Haskell and use yesod, I prefer to talk about new ideas used by yesod I didn&amp;rsquo;t saw in other frameworks.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.yesodweb.com"&gt;Yesod&lt;/a&gt; is a web framework which recently reached the maturity for which you should consider to use it.
+Before telling you why you should learn Haskell and use yesod, I will talk about ideas yesod introduced and I didn&amp;rsquo;t saw in other frameworks before.&lt;/p&gt;
 
 
 &lt;/div&gt;
@@ -39,7 +40,7 @@
 
 &lt;p&gt;&lt;img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt="SQL injection by a mom" /&gt;&lt;/p&gt;
 
-&lt;p&gt;When you create a web a...&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</content>
+&lt;p&gt;When you create a web application, a lot of time is spent...&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-09-28:/Scratch/en/blog/Higher-order-function-in-zsh/</id>

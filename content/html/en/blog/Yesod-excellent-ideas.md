@@ -15,7 +15,8 @@ begindiv(intro)
 <%= tldr %>
 
 
-I follows the [yesod web framework](http://www.yesodweb.com) for some times now. And I believe it reached the point where you should really consider to use it. But instead of telling you why you should learn Haskell and use yesod, I prefer to talk about new ideas used by yesod I didn't saw in other frameworks.
+[Yesod](http://www.yesodweb.com) is a web framework which recently reached the maturity for which you should consider to use it.
+Before telling you why you should learn Haskell and use yesod, I will talk about ideas yesod introduced and I didn't saw in other frameworks before.
 
 enddiv
 
@@ -36,7 +37,9 @@ Newton<script>alert("An apple fall")</script>
 
 You must transform each `<` into `&lt;`.
 Without this transformation alert will appear each time you try to display this user name.
-Safe types are the chains around all strings you'll use.
+Safe types associate with each string what kind of string it is.
+Is it a string for URL? For javascript? For HTML?
+And the right protection is made by default to prevent problems.
 
 Yesod does its best to handle cross scripting issues. Both between the client and the server and between the server and your DB.
 Here is an example:
@@ -51,15 +54,12 @@ It will be an URL safe. Not something like:
 falselink"><script> bad_code(); </script><a href="pipo
 </code>
 
-Type safety is not magic, but it will help a lot resolving these issues.
-
 ## Widgets
 
-Yesod widget are different from just JavaScript widget.
-In yesod widget are a set of small parts of a web application.
-A bit of CSS, a bit of HTML and a bit of JS for example.
+Yesod's widgets are different from javascript widget.
+For yesod, widgets are sets of small parts of a web application.
 If you want to use many widgets in a same page yesod do the work.
-Some examples of widgets are:
+Some examples of widget are:
 
 - the footer of a webpage,
 - the header of a webpage with a menu,
@@ -73,7 +73,6 @@ For each of this part, you might need,
 - a bit of javascript.
 
 Some in the header, some in the body.
-
 
 You can declare a widget as this (note I use a very high meta-language):
 
@@ -94,10 +93,10 @@ Note the awesome Shakespearean inspired name convention.
 Another good reason to use yesod.
 
 - Cassius _&_ Lucius of CSS (a lot similar to SASS and SCSS),
-- Julius for JavaScript (not a CoffeeScript is somewhere in the source of yesod),
+- Julius for JavaScript (note a CoffeeScript is somewhere in the source of yesod),
 - Hamlet for HTML (similar to haml)
 
-And when your page render, yesod make it easy to render everything nicely:
+And when your page render, yesod makes it easy to render everything nicely:
 
 <code class="haskell">
 myBigWidget =  menuWidget >> contentWidget >> footerWidget
@@ -113,7 +112,8 @@ In standard routing system you have for each entry a couple: regexp → handler
 
 The only way to discover the right rules is to match each regexp to the current URL. Then you can see behaviour such as, if you change the order of the rules you can lose or win time.
 
-On the other hand yesod compile the routes. Therefore it can optimize it.
+On the other hand yesod compiles the routes. 
+Therefore it can optimize it.
 Of course two routes must not interfere.
 
 <code class="html">
@@ -129,15 +129,12 @@ You'd better
 /blog/$DATE DateR
 </code>
 
-and make the test inside the handler
+and test if `date = 2003` inside the handler.
 
 ## Why yesod?
 
-From a very subjective point of vue and from what I heard, Haskell is a node.js done as it should be.
-
-
 1. _Speed_. This is just astounding. Look at [this](http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks) and then to [this](http://www.yesodweb.com/blog/2011/02/warp-speed-ahead).
-2. _Haskell_. This is certainly hard to learn but it is just incredibly awesome. If you want to make you a favor. Just learn Haskell. It will be difficult, far more than you can imagine. It is very different from all other languages I used.
+2. _Haskell_. This is certainly hard to learn but also incredibly awesome. If you want to make you a favor. Just learn Haskell. It will be difficult, far more than you can imagine. It is very different from all other languages I used. But it will blow your mind and learn you a bunch of new programming concepts.
 3. _Good ideas, excellent community_. I follow yesod from some month now and the speed at which the project progress is incredible.
 
 If you are a haskeller, I believe you shouldn't fear the special syntax imposed by the standard yesod way of doing things.
@@ -146,4 +143,4 @@ Just try it more than the firsts basic tutorials.
 Until here I believe it goes in the right direction. 
 Even if I believe the real future is by generating HTML pages from the client (using javascript) and server limited to serve JSON (or XML, or any object representation system).
 
-I cannot stress too much about how I believe Yesod is good.
+To conclude, Yesod is awesome. Just overcome the difficulties about learning a bit of haskell and try it!
