@@ -795,3 +795,8 @@ ul.bloglist, .archive ul
   vertical-align: super
   font-size: .66em
   color: $highlightColor
+.article .corps 
+  .footnotes, sup 
+    a:after
+      content: ""
+
