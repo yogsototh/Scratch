@@ -29,8 +29,13 @@ define(`YTRANSCOMPLETE', `
     <path id="triangle" fill="#8888CC" d="M0 0,2 0, 1 1.732,z" />
     <g id="level_0">
         <text id="lambda" fill="#000000" style="font-family:Ubuntu; font-size: 100px" transform="rotate(180)">λ</text>
-        <text fill="#000000" style="font-family:Ubuntu; font-size: 30px" transform="tranlate(0,80)">esod</text>
     </g>
+    <text 
+        fill="#000000" 
+        style="font-family:Ubuntu; font-size: 28px" 
+        x="-17" 
+        y="67" 
+        transform="YGENTRANSFORM">esod</text>
     <!-- ROOT ELEMENT -->
     <use transform="YGENTRANSFORM" xlink:href="#level_0" />
 
