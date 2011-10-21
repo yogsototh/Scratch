@@ -17,8 +17,7 @@ begindiv(intro)
 
 Cela fait un moment que je suis la progression du [framework yesod](http://www.yesodweb.com). 
 À mon humble avis on peut commencer à l'utiliser pour des applications sérieuses (comprendre en prod).
-Je pourrai vous dire pourquoi vous devriez considérer d'utiliser ce framework.
-Mais je préfère vous parler de deux bonnes idées (parmi d'autres) de yesod que je n'avais jamais vu ailleurs.
+Avant de vous dire pourquoi vous devriez aussi le considérer, je préfère vous parler de bonnes idées (parmi d'autres) introduites par yesod que je n'avais jamais vu ailleurs.
 
 enddiv
 
@@ -39,24 +38,26 @@ Newton<script>alert("An apple fall")</script>
 
 Sans une protection correcte, le message "An apple fall" sera affiché à chaque fois que quelqu'un essayera d'accéder au nom de cet utilisateur.
 Les "types saufs" sont le [tonyglandil du web](https://www.youtube.com/watch?v=1IWF3IsEPBE).
+A chaque chaine de caractère, on lui associe un "type". 
+A quoi sert cette chaîne de caractère ? Est-ce une URL ? Du javascript ? De l'HTML ?
+Entre chaque passage d'une représentation à une autre, un transformation is faite par défaut.
 
 Yesod fait de son mieux pour typer les objets manipulés et ainsi il fera ce qu'il faut pour ne pas mettre du script dans une URL par exemple.
 
 <code class="html"><a href=@[AnotherPageR]>Go to the other page
 </code>
 
+Comme `AnotherPageR` est une URL elle ne pourra contiendra pas (par défaut) de caractère dangereux comme par exemple :
 
 <code class="html">
 falselink"><script> bad_code(); </script><a href="pipo
 </code>
 
-Les types saufs ne sont pas magiques, mais ils aident beaucoup à résoudre ces problèmes.
-
 ## Les widgets
 
 Les widgets de yesod sont différents des widgets Javascripts (ou java).
-Pour yesod un widget est un ensemble de morceaux d'appli web. Un bout de CSS, un bout de javascript, un bout d'HTML.
-Et si dans une page on veut utiliser plusieurs widgets, alors yesod s'occupe de les faire fonctionner tous les deux.
+Pour yesod un widget est un ensemble de morceaux d'appli web. 
+Et si dans une page on veut utiliser plusieurs widgets, alors yesod s'occupe de tout.
 Des exemples de widgets (au sens yesod) sont :
 
 - Le «footer» d'une page web,
@@ -64,14 +65,13 @@ Des exemples de widgets (au sens yesod) sont :
 - un bouton qui apparaît lorsque l'on «scrolle» vers le bas,
 - etc...
 
-Pour chacun de ces widgets vous pourriez avoir besoin de
+Pour chacun de ces widgets vous pourriez avoir besoin d'
 
-- un peu d'HTML
+- un peu d'HTML,
 - un peu de CSS et
-- un peu de javascript
+- un peu de javascript.
 
-Et certain morceau doivent être placés dans le «header» de la page et d'autre dans le «body».
-
+Certain morceau doivent être placés dans le «header» de la page et d'autre dans le «body».
 
 Vous pouvez déclarer un widget comme suit (je n'utilise pas la vrai syntaxe) :
 
@@ -132,17 +132,13 @@ et faire le test "est-ce que date = 2003 ?" dans le «handler».
 
 ## Pourquoi yesod?
 
-D'un point de vu très subjectif et de ce que j'ai lu. 
-Haskell est un node.js fait en beaucoup mieux.
-
-
 1. _La vitesse_. Simplement incroyable, je ne pense pas qu'il existe quelque chose de plus rapide aujourd'hui. Regardez d'abord cet [article](http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks) puis [celui-ci](http://www.yesodweb.com/blog/2011/02/warp-speed-ahead).
-2. _Haskell_. C'est certainement le langage de programmation le plus difficile à apprendre que j'ai jamais rencontré. Mais aussi l'un des plus incroyables. Si vous voulez rencontrer tout un tas de notions que vous n'avez jamais croisée avant et faire exploser votre cerveau avec de nouvelles idées, alors apprenez Haskell.
-3. _Bonnes idées et communauté excellente_. Cela fait quelques mois que je suis la progression de yesod. Et la vitesse à laquelle ça s'est fait est simplement incroyable. De plus les développeur sont intelligents et super sympa.
+2. _Haskell_. C'est certainement le langage de programmation le plus difficile à apprendre que j'ai jamais rencontré. Mais aussi l'un des plus incroyables. Si vous voulez rencontrer tout un tas de notions que vous n'avez jamais croisées avant et faire exploser votre cerveau avec de nouvelles idées, alors apprenez Haskell.
+3. _Bonnes idées et communauté excellente_. Cela fait quelques mois que je suis la progression de yesod. Et la vitesse à laquelle tout s'est déroulé est simplement incroyable. De plus les développeurs sont intelligents et super sympa.
 
 Si vous êtes un "haskeller", je pense que vous ne devriez pas avoir peur de la syntaxe particulière imposée par la façon standard de faire les choses avec yesod.
 Il faut essayer un peu plus loin que les premiers tutoriaux du livre.
 
 Je pense que yesod va dans la bonne direction d'un web plus sûr et plus rapide. Même si je pense que l'avenir sera que les serveurs devront être limités à faire serveur d'API (JSON ou XML ou n'importe quel autre mode de représentation d'objets).
 
-Yesod est juste incroyable, essayez le.
+Yesod est juste incroyable. Dépassez les difficultés liées à l'apprentissage d'haskell et essayez le !
