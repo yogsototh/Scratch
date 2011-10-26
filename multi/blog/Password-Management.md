@@ -8,8 +8,8 @@ fr: title: Password Management
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
-  - Password
-  - Management
+  - password
+  - security
 -----
 <%= blogimage("main.png","Title image") %>
 

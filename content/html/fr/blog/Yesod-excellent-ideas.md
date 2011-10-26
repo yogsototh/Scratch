@@ -6,7 +6,12 @@ created_at:     2011-10-04T10:18:59+02:00
 title: Les idées de yesod
 author_name: Yann Esposito
 author_uri: yannesposito.com
-# tags:
+tags:
+  - yesod
+  - framework
+  - web
+  - haskell
+  - ideas
 -----
 <%= blogimage("main.png","Title image") %>
 

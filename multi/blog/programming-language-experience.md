@@ -13,7 +13,7 @@ tags:
   - C
   - C++
   - Java
-  - Haskell
+  - haskell
   - Logo
   - Basic
 -----

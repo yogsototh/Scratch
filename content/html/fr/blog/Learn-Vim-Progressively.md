@@ -11,6 +11,7 @@ tags:
   - vim
   - editor
   - tutoriel
+  - apprendre
 -----
 <%= blogimage("uber_leet_use_vim.jpg","Über leet use vim!") %>
 

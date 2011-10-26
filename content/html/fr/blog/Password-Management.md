@@ -6,7 +6,9 @@ created_at:     2011-05-18T13:14:28+02:00
 title: Password Management
 author_name: Yann Esposito
 author_uri: yannesposito.com
-# tags:
+tags:
+  - password
+  - security
 -----
 <%= blogimage("main.png","Title image") %>
 

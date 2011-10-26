@@ -6,7 +6,10 @@ created_at:     2010-10-14T11:04:58+02:00
 title: Fun with wav
 author_name: Yann Esposito
 author_uri: yannesposito.com
-# tags:
+tags:
+  - wav
+  - C
+  - format
 -----
 
 begindiv(intro)
