@@ -7,7 +7,14 @@ en: title: Higher order function in zsh
 fr: title: Fonctions d'ordre supérieur en zsh
 author_name: Yann Esposito
 author_uri: yannesposito.com
-# tags:
+tags:
+  - zsh
+  - map
+  - foldr
+  - filter
+  - functional
+  - programming
+  - higher order functions
 -----
 <%= blogimage("main.jpg","Title image") %>
 

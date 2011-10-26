@@ -7,7 +7,15 @@ en: title: Programming Language Experience
 fr: title: Mon expérience avec les languages de programmation
 author_name: Yann Esposito
 author_uri: yannesposito.com
-# tags:
+tags:
+  - programming
+  - languages
+  - C
+  - C++
+  - Java
+  - Haskell
+  - Logo
+  - Basic
 -----
 <%= blogimage("dragon.jpg","Title image") %>
 

@@ -7,7 +7,12 @@ en: title: Yesod excellent ideas
 fr: title: Les idées de yesod
 author_name: Yann Esposito
 author_uri: yannesposito.com
-# tags:
+tags:
+  - yesod
+  - framework
+  - web
+  - haskell
+  - ideas
 -----
 <%= blogimage("main.png","Title image") %>
 

@@ -7,7 +7,11 @@ en: title: ASCII Haskell Mandelbrot
 fr: title: Mandelbrot avec haskell
 author_name: Yann Esposito
 author_uri: yannesposito.com
-# tags:
+tags:
+  - mandelbrot
+  - haskell
+  - ASCII
+  - golfed
 -----
 en: Here is the obfuscated code:
 fr: Voici le code "obfusqué" :

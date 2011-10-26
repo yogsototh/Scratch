@@ -13,6 +13,8 @@ tags:
   - editor
 en:   - tutorial
 fr:   - tutoriel
+en:   - learn
+fr:   - apprendre
 -----
 <%= blogimage("uber_leet_use_vim.jpg","Über leet use vim!") %>
 
