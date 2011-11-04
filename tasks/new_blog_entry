@@ -13,8 +13,8 @@ root="$PWD"
 title="$*"
 
 # CONFIG
-blog_dir="$root/multi/blog"
-image_blog_dir="$root/output/Scratch/img/blog"
+blog_dir="multi/blog"
+image_blog_dir="./output/Scratch/img/blog"
 
 # basefilename is the filename where all spaces
 # were replaced by '-'
