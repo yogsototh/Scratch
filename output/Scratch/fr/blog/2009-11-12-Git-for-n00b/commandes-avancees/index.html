@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Git pour les nuls</title>
     </head>
     <body lang="fr" class="article">
@@ -73,8 +69,8 @@
   <li>envoyer ses modifications aux autres&nbsp;;</li>
   <li>revenir dans le temps&nbsp;;</li>
   <li>lister les différences entre chaque version&nbsp;;</li>
-  <li>nommer certaines versions pour s&rsquo;y référer facilement&nbsp;;</li>
-  <li>afficher l&rsquo;historique des modifications&nbsp;;</li>
+  <li>nommer certaines versions pour s’y référer facilement&nbsp;;</li>
+  <li>afficher l’historique des modifications&nbsp;;</li>
   <li>savoir qui a fait quoi et quand&nbsp;;</li>
   <li>gérer des conflits&nbsp;;</li>
   <li>manipuler facilement des branches.</li>
@@ -101,7 +97,7 @@ $ git push
 
 <h3 id="revenir-dans-le-temps">revenir dans le temps</h3>
 
-<h4 id="pour-toute-larborescence">Pour toute l&rsquo;arborescence</h4>
+<h4 id="pour-toute-larborescence">Pour toute l’arborescence</h4>
 
 <div><pre class="twilight">
 $ git checkout
@@ -117,7 +113,7 @@ $ git revert
 $ git uncommit 3
 </pre></div>
 
-<p>Revenir avant le dernier merge (s&rsquo;il s&rsquo;est mal passé).</p>
+<p>Revenir avant le dernier merge (s’il s’est mal passé).</p>
 
 <div><pre class="twilight">
 $ git revertbeforemerge
@@ -145,19 +141,19 @@ $ git status
 $ git diff
 </pre></div>
 
-<p>liste les différences entre les fichier d&rsquo;une certaine version et les fichiers locaux.</p>
+<p>liste les différences entre les fichier d’une certaine version et les fichiers locaux.</p>
 
 <div><pre class="twilight">
 $ git diff VersionHash fichier
 </pre></div>
 
-<h3 id="nommer-certaines-versions-pour-sy-rfrer-facilement">nommer certaines versions pour s&rsquo;y référer facilement</h3>
+<h3 id="nommer-certaines-versions-pour-sy-rfrer-facilement">nommer certaines versions pour s’y référer facilement</h3>
 
 <div><pre class="twilight">
 $ git tag <span class="String"><span class="String">'</span>toto<span class="String">'</span></span>
 </pre></div>
 
-<h3 id="afficher-lhistorique-des-modifications">afficher l&rsquo;historique des modifications</h3>
+<h3 id="afficher-lhistorique-des-modifications">afficher l’historique des modifications</h3>
 
 <div><pre class="twilight">
 $ git log
@@ -313,18 +309,5 @@ $ git checkout branch_name
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

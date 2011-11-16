@@ -6,7 +6,8 @@ created_at:     2011-01-03T10:37:26+02:00
 title: Why I won't use CoffeeScript (sadly)
 author_name: Yann Esposito
 author_uri: yannesposito.com
-# tags:
+tags:
+  - Coffeescript
 -----
 <%= blogimage("main.png","Title image") %>
 

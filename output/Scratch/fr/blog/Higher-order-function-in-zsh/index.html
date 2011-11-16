@@ -6,6 +6,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
         
+        <meta name="keywords" content="zsh, map, foldr, filter, functional, programming, higher order functions">
+        
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
@@ -20,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Fonctions d'ordre supérieur en zsh</title>
     </head>
     <body lang="fr" class="article">
@@ -62,16 +60,16 @@
 <div class="intro">
 
 
-<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> des fonctions d&rsquo;ordres supérieurs en zsh.</p>
+<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> des fonctions d’ordres supérieurs en zsh.</p>
 
 
 </div>
 
 
-<p>Tout d&rsquo;abord, pourquoi c&rsquo;est important d&rsquo;avoir ces fonctions. 
-Plus je programmais avec zsh plus j&rsquo;essayais d&rsquo;avoir un style fonctionnel.</p>
+<p>Tout d’abord, pourquoi c’est important d’avoir ces fonctions. 
+Plus je programmais avec zsh plus j’essayais d’avoir un style fonctionnel.</p>
 
-<p>Le minimum pour pouvoir avoir du code plus lisible c&rsquo;est de posséder les fonctions <code>map</code>, <code>filter</code> et <code>fold</code>.</p>
+<p>Le minimum pour pouvoir avoir du code plus lisible c’est de posséder les fonctions <code>map</code>, <code>filter</code> et <code>fold</code>.</p>
 
 <p>Voici pourquoi avec une comparaison.
 Commençons par un programme qui converti tous les gif en png dans plusieurs répertoires projets contenant tous des répertoires resources.
@@ -93,9 +91,9 @@ Avant&nbsp;:</p>
 </pre>
 
 <ul>
-  <li>Le <code>(/N)</code> permet de sélectionner seulement les répertoires sans casser la boucle s&rsquo;il n&rsquo;y a pas de &ldquo;match&rdquo;.</li>
-  <li>Le <code>(.N)</code> permet de sélection seulement les fichiers, aussi sans tout arréter s&rsquo;il ne trouve rien.</li>
-  <li>Le <code>:t</code> signfie &ldquo;tail&rdquo;&nbsp;; si <code>toto=/path/to/file.ext</code> alors <code>${toto:t}=file.ext</code>.</li>
+  <li>Le <code>(/N)</code> permet de sélectionner seulement les répertoires sans casser la boucle s’il n’y a pas de “match”.</li>
+  <li>Le <code>(.N)</code> permet de sélection seulement les fichiers, aussi sans tout arréter s’il ne trouve rien.</li>
+  <li>Le <code>:t</code> signfie “tail”&nbsp;; si <code>toto=/path/to/file.ext</code> alors <code>${toto:t}=file.ext</code>.</li>
 </ul>
 
 <p>Après</p>
@@ -109,8 +107,8 @@ map handle_resources /path/to/projects/*(/N)
 </pre>
 
 <p>Plus de bloc&nbsp;! 
-Oui, c&rsquo;est un poil plus difficile à lire pour les non initiés. 
-Mais c&rsquo;est à la fois plus concis et plus robuste.</p>
+Oui, c’est un poil plus difficile à lire pour les non initiés. 
+Mais c’est à la fois plus concis et plus robuste.</p>
 
 <p>Et encore ce code ne possède pas de test.
 Recommençons sur le même principe.</p>
@@ -149,11 +147,11 @@ map verify_file_name <span class="String"><span class="String">$(</span> filter 
 </pre>
 
 <p>La première version peu paraître plus facile à lire.
-Mais la seconde est plus bien supérieure en terme d&rsquo;architecture.
-Je ne veux pas discuster ici pourquoi c&rsquo;est mieux.
-Je vous demande simplement de me croire quand je dis que l&rsquo;approche fonctionnelle est supérieure.</p>
+Mais la seconde est plus bien supérieure en terme d’architecture.
+Je ne veux pas discuster ici pourquoi c’est mieux.
+Je vous demande simplement de me croire quand je dis que l’approche fonctionnelle est supérieure.</p>
 
-<p>Actuellement il me manque une fonction lambda, si quelqu&rsquo;un à une idée elle serait la bienvenue. 
+<p>Actuellement il me manque une fonction lambda, si quelqu’un à une idée elle serait la bienvenue. 
 Je ne sais pas encore comment créer facilement des fonctions anonymes.</p>
 
 <p>Voici le code source&nbsp;:</p>
@@ -299,6 +297,10 @@ function filter {
                         </div>
                         
                         
+                        <div class="next_article">
+                            <a href="/Scratch/fr/blog/SVG-and-m4-fractals/">des fractales en SVG et m4&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
                         
                         
                     </div>
@@ -332,18 +334,5 @@ function filter {
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

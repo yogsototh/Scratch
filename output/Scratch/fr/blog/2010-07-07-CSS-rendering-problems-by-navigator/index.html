@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>N'utilisez pas de gradients avec Chrome</title>
     </head>
     <body lang="fr" class="article">
@@ -58,10 +54,10 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>Beaucoup d&rsquo;utilisateurs de <a href="http://reddit.com">Reddit</a> m&rsquo;ont rapporté que mon site était très long à charger et à <em>scroller</em>.
-Ils pensaient qu&rsquo;il s&rsquo;agissait d&rsquo;un problème dû aux ombres que j&rsquo;applique sur le texte.
-J&rsquo;étais un peu surpris puisque je fais mes tests sur une machine vraiment très lente et je n&rsquo;avais jamais détecté ces problèmes.
-En réalité, ce qui ralenti le rendu de ce site est par ordre d&rsquo;importance&nbsp;:</p>
+                    <p>Beaucoup d’utilisateurs de <a href="http://reddit.com">Reddit</a> m’ont rapporté que mon site était très long à charger et à <em>scroller</em>.
+Ils pensaient qu’il s’agissait d’un problème dû aux ombres que j’applique sur le texte.
+J’étais un peu surpris puisque je fais mes tests sur une machine vraiment très lente et je n’avais jamais détecté ces problèmes.
+En réalité, ce qui ralenti le rendu de ce site est par ordre d’importance&nbsp;:</p>
 
 <ol>
   <li>Les dégradés sur Chrome (pas dans Safari sur Mac)</li>
@@ -70,24 +66,24 @@ En réalité, ce qui ralenti le rendu de ce site est par ordre d&rsquo;importanc
 
 <h2 id="les-dgrads">les dégradés</h2>
 
-<p>Sur Safari il n&rsquo;y a absolument aucun problème avec les dégradés. Par contre sur Chrome sous Linux le site devient quasiment inutilisable.</p>
+<p>Sur Safari il n’y a absolument aucun problème avec les dégradés. Par contre sur Chrome sous Linux le site devient quasiment inutilisable.</p>
 
-<p>Safari et Chrome utilisent <em>webkit</em> tous les deux. Lorsque vous accéder à ce blog avec javascript activé, un CSS spécifique à votre navigateur est ajouté. Jusqu&rsquo;à maintenant je faisais un tri entre&nbsp;: IE, Mozilla et Webkit. Maintenant j&rsquo;ai rajouté un cas particulier pour Chrome.
-Maintenant j&rsquo;ai supprimé les gradients lorsque vous naviguer sur ce site en utilisant Chrome.</p>
+<p>Safari et Chrome utilisent <em>webkit</em> tous les deux. Lorsque vous accéder à ce blog avec javascript activé, un CSS spécifique à votre navigateur est ajouté. Jusqu’à maintenant je faisais un tri entre&nbsp;: IE, Mozilla et Webkit. Maintenant j’ai rajouté un cas particulier pour Chrome.
+Maintenant j’ai supprimé les gradients lorsque vous naviguer sur ce site en utilisant Chrome.</p>
 
-<p>Je n&rsquo;ai pas vérifier la vitesse de rendu de toutes les propriétés de CSS 3. Mais je vous conseille de ne pas utiliser <strong><code>-webkit-gradient</code></strong> avec Chrome. Au moins sous Linux.</p>
+<p>Je n’ai pas vérifier la vitesse de rendu de toutes les propriétés de CSS 3. Mais je vous conseille de ne pas utiliser <strong><code>-webkit-gradient</code></strong> avec Chrome. Au moins sous Linux.</p>
 
 <h2 id="les-ombres-box-shadow">Les ombres (box-shadow)</h2>
 
-<p>J&rsquo;ai aussi remarqué que <strong><code>-moz-box-shadow</code></strong> ralenti le rendu sous Firefox (et sous Linux). Alors que l&rsquo;équivalent webkit ne pose aucun problème à Safari sous Mac.</p>
+<p>J’ai aussi remarqué que <strong><code>-moz-box-shadow</code></strong> ralenti le rendu sous Firefox (et sous Linux). Alors que l’équivalent webkit ne pose aucun problème à Safari sous Mac.</p>
 
 <h2 id="ombres-de-texte">Ombres de texte</h2>
 
-<p>Beaucoup d&rsquo;utilisateurs mon dit d&rsquo;utiliser text-shadows avec parcimonie. Mais je pense qu&rsquo;il ne s&rsquo;agissait pas là du problème du ralentissement du site. C&rsquo;est pourquoi je vais les remettre.</p>
+<p>Beaucoup d’utilisateurs mon dit d’utiliser text-shadows avec parcimonie. Mais je pense qu’il ne s’agissait pas là du problème du ralentissement du site. C’est pourquoi je vais les remettre.</p>
 
 <h2 id="en-conclusion">en conclusion</h2>
 
-<p>N&rsquo;utilisez pas <strong><code>-webkit-gradient</code></strong> avec google Chrome pour l&rsquo;instant.
+<p>N’utilisez pas <strong><code>-webkit-gradient</code></strong> avec google Chrome pour l’instant.
 Utilisez <strong><code>-moz-box-shadow</code></strong> avec parcimonie.</p>
 
                 </div>
@@ -205,18 +201,5 @@ Utilisez <strong><code>-moz-box-shadow</code></strong> avec parcimonie.</p>
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

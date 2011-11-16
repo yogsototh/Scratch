@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Get my blog engine</title>
     </head>
     <body lang="en" class="article">
@@ -70,7 +66,7 @@ You can get it on <a href="http://github.com/yogsototh/nanoc3_blog">github.com</
   <li><a href="http://intensedebate.org">intenseDebate</a> comments integration (asynchronous)&nbsp;;</li>
   <li>Portable with and without javascript, XHTML Strict 1.0 / CSS3,</li>
   <li>Write in markdown format (no HTML editing needed),</li>
-  <li>Typographic ameliorations (no &lsquo;:&rsquo; starting a line in French for example),</li>
+  <li>Typographic ameliorations (no ‘:’ starting a line in French for example),</li>
   <li><a href="http://graphviz.org">Graphviz</a> graph generation integration.</li>
 </ul>
 
@@ -108,9 +104,9 @@ $ ./task/recompile
 <h3 id="multi-language">Multi-language</h3>
 
 <p>All files in <code>multi</code> are processed and copied in the <code>content</code> directory.
-For each file in multi, each line starting by &lsquo;<code>fr: </code>&rsquo; are copied (without the <code>fr: </code> into the <code>content/html/fr/</code> tree, but not into the <code>content/html/en</code> tree. File not starting by <code>fr: </code> or <code>en: </code> are copied in each destinations.</p>
+For each file in multi, each line starting by ‘<code>fr: </code>’ are copied (without the <code>fr: </code> into the <code>content/html/fr/</code> tree, but not into the <code>content/html/en</code> tree. File not starting by <code>fr: </code> or <code>en: </code> are copied in each destinations.</p>
 
-<p>If you want to add another language, you&rsquo;ll have to modify <code>tasks/config</code>, and <code>config.yaml</code>, create a <code>content/html/xx</code> where <code>xx</code> is the language code.</p>
+<p>If you want to add another language, you’ll have to modify <code>tasks/config</code>, and <code>config.yaml</code>, create a <code>content/html/xx</code> where <code>xx</code> is the language code.</p>
 
 <h3 id="edition--rendering">Edition &amp; Rendering</h3>
 
@@ -124,7 +120,7 @@ For each file in multi, each line starting by &lsquo;<code>fr: </code>&rsquo; ar
 
 <h4 id="typography">Typography</h4>
 
-<p>In French all &lsquo;:&rsquo;, &lsquo;;&rsquo;, &lsquo;!&rsquo; and &lsquo;?&rsquo; are preceded automatically by <code>&amp;nbsp</code>. This enable not to have a line starting by a single special character.</p>
+<p>In French all ‘:’, ‘;’, ‘!’ and ‘?’ are preceded automatically by <code>&amp;nbsp</code>. This enable not to have a line starting by a single special character.</p>
 
 <p>You can use small caps using <code>&lt;sc&gt;</code> tags. </p>
 
@@ -303,18 +299,5 @@ Rakefile    </td><td class="valueCell"> not mandatory for this blog </td></tr>
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

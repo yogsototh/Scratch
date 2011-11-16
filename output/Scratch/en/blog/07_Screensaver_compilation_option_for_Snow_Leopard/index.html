@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Screensaver compilation option for Snow Leopard<sub>&copy;</sub></title>
     </head>
     <body lang="en" class="article">
@@ -60,15 +56,15 @@
                 <div class="corps">
                     <h1 class="first" id="how-to-recompile-your-screensaver-to-be-snow-leopardc-compatible">How to recompile your screensaver to be Snow Leopard<small>&copy;</small> compatible</h1>
 
-<p>I upgraded to Mac OS X 10.6 Snow Leopard<small>&copy;</small>, and my <a href="/YBlog/YClock.html">YClock</a> screensaver didn&rsquo;t work on it. After searching on google, the problem seems to be just a recompilation away.
-Unfortunately, event recompiling it in 64 bit it didn&rsquo;t work either.
+<p>I upgraded to Mac OS X 10.6 Snow Leopard<small>&copy;</small>, and my <a href="/YBlog/YClock.html">YClock</a> screensaver didn’t work on it. After searching on google, the problem seems to be just a recompilation away.
+Unfortunately, event recompiling it in 64 bit it didn’t work either.
 After a bit more research (thanks to <a href="http://community.electricsheep.org/node/236">ElectricSheep</a> ).</p>
 
 <p>I discovered the good parameters for compilation.</p>
 
 <p><img alt="XCode configuration" src="/Scratch/img/blog/07_Screensaver_compilation_option_for_Snow_Leopard/xcodeConfig.png" /></p>
 
-<p>For now I didn&rsquo;t compiled it to work also on Tiger and Leopard. I don&rsquo;t know XCode enought to know how to make the Garbage collector to be disabled on 32 bits version and enabled on 64 bits version.</p>
+<p>For now I didn’t compiled it to work also on Tiger and Leopard. I don’t know XCode enought to know how to make the Garbage collector to be disabled on 32 bits version and enabled on 64 bits version.</p>
 
 <p>It was a bit difficult to discover these informations. Hope this post helped someone.</p>
 
@@ -187,18 +183,5 @@ After a bit more research (thanks to <a href="http://community.electricsheep.org
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

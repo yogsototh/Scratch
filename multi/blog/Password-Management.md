@@ -7,7 +7,9 @@ en: title: 40 character's passwords
 fr: title: Password Management
 author_name: Yann Esposito
 author_uri: yannesposito.com
-# tags:
+tags:
+  - password
+  - security
 -----
 <%= blogimage("main.png","Title image") %>
 

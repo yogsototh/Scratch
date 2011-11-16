@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Load Disqus Asynchronously</title>
     </head>
     <body lang="en" class="article">
@@ -62,7 +58,7 @@
 
 <p>In fact this method works for old threads. But it fails to create new post threads. This is why I tried and be conquered by <a href="http://intensedebate.com">intensedebate</a>, as you can see in the bottom of this page.</p>
 
-<p>Remark I didn&rsquo;t have any comment on my blog when I switched. Therefore my lack of influence was a good thing&nbsp;:-).</p>
+<p>Remark I didn’t have any comment on my blog when I switched. Therefore my lack of influence was a good thing&nbsp;:-).</p>
 
 
 </div>
@@ -76,7 +72,7 @@
 
 <p>I also know there is a jQuery plugin to make just that. Unfortunately I had some issue with CSS.</p>
 
-<p><em>Now let&rsquo;s begin.</em></p>
+<p><em>Now let’s begin.</em></p>
 
 
 </div>
@@ -89,7 +85,7 @@
 <p>Why should I want to load the disqus javascript asynchronously?</p>
 
 <ul>
-  <li>Efficiency: I don&rsquo;t want my page to wait the complete execution of disqus script to load.</li>
+  <li>Efficiency: I don’t want my page to wait the complete execution of disqus script to load.</li>
   <li>More independance: when disqus is down, my page is blocked!</li>
 </ul>
 
@@ -101,7 +97,7 @@
 
 <h1 class="first" id="how">How?</h1>
 
-<p>I give a solution with jQuery, but I&rsquo;m certain it will work with many other js library.</p>
+<p>I give a solution with jQuery, but I’m certain it will work with many other js library.</p>
 
 <h3 id="javascript">Javascript</h3>
 
@@ -131,7 +127,7 @@
 <p>But with this option you still need to provide a CSS. This is why you have to copy the css code from the <code>embed.js</code> file and rewrite it in a CSS file. You can <a href="/Scratch/en/blog/11_Load_Disqus_Asynchronously/code/original_disqus.css">download the CSS</a> I obtained.</p>
 
 <hr />
-<p>Now it&rsquo;s done. I believe all should be fine but I just finished the manip for my own site only 1 hour ago. Therefore there should be some error, tell me if it is the case.</p>
+<p>Now it’s done. I believe all should be fine but I just finished the manip for my own site only 1 hour ago. Therefore there should be some error, tell me if it is the case.</p>
 
                 </div>
             
@@ -248,18 +244,5 @@
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

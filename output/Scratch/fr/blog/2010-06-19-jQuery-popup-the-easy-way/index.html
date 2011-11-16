@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Comment faire des popups en jQuery rapidement</title>
     </head>
     <body lang="fr" class="article">
@@ -61,9 +57,9 @@
                     <p>Sur ce blog, je donne parfois la possibilité de télécharger certaines sources de code. 
 Dans ce cas, le code est souvent plus large que le <code>div</code> qui le contient. 
 Le texte est alors coupé.
-C&rsquo;est pourquoi, j&rsquo;utilise une méthode qui permet d&rsquo;afficher ces sources dans de grandes <em>popups</em> en jQuery.</p>
+C’est pourquoi, j’utilise une méthode qui permet d’afficher ces sources dans de grandes <em>popups</em> en jQuery.</p>
 
-<p>Vous pouvez faire un essai en cliquant le code suivant&nbsp;; remarquez qu&rsquo;un bout du code n&rsquo;est pas visible (après <code>z-index</code> normallement)&nbsp;:</p>
+<p>Vous pouvez faire un essai en cliquant le code suivant&nbsp;; remarquez qu’un bout du code n’est pas visible (après <code>z-index</code> normallement)&nbsp;:</p>
 
 <div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/code/essai.js"> &#x27A5; essai.js </a></div><div class="withfile">
 <pre class="twilight">
@@ -92,17 +88,17 @@ C&rsquo;est pourquoi, j&rsquo;utilise une méthode qui permet d&rsquo;afficher c
 </pre>
 </div></div>
 
-<p>Ce code est celui qui permet d&rsquo;obtenir cet effet.</p>
+<p>Ce code est celui qui permet d’obtenir cet effet.</p>
 
 <p>Que fait-il&nbsp;?</p>
 
 <p>Au chargement de la page je crée un <code>div</code> grand comme toute la page avec un fond légèrement transparent que je cache. 
-Je fais bien attention à son <code>z-index</code> pour qu&rsquo;il soit devant tout le reste.</p>
+Je fais bien attention à son <code>z-index</code> pour qu’il soit devant tout le reste.</p>
 
-<p>Puis lorsque l&rsquo;on clique sur un <code>div</code> de class <code>code</code>, 
+<p>Puis lorsque l’on clique sur un <code>div</code> de class <code>code</code>, 
 je recopie le contenu de celui-ci dans le grand <code>div</code> que je rend visible. 
 Très simple mais très efficace. 
-Pas besoin d&rsquo;utiliser un plugin <code>jQuery</code>.</p>
+Pas besoin d’utiliser un plugin <code>jQuery</code>.</p>
 
                 </div>
             
@@ -219,18 +215,5 @@ Pas besoin d&rsquo;utiliser un plugin <code>jQuery</code>.</p>
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

@@ -6,7 +6,11 @@ created_at:     2011-07-10T12:41:26+02:00
 title: ASCII Haskell Mandelbrot
 author_name: Yann Esposito
 author_uri: yannesposito.com
-# tags:
+tags:
+  - mandelbrot
+  - haskell
+  - ASCII
+  - golfed
 -----
 Here is the obfuscated code:
 

@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>How to repair a cutted XML?</title>
     </head>
     <body lang="en" class="article">
@@ -90,7 +86,7 @@
 
 <p>Argh! In the middle of an <code>&lt;img&gt;</code> tag.</p>
 
-<p>In fact, it is not as difficult as it should sound first. The secret is, you don&rsquo;t need to keep the complete tree structure to repair it, but only the list of not closed parents.</p>
+<p>In fact, it is not as difficult as it should sound first. The secret is, you don’t need to keep the complete tree structure to repair it, but only the list of not closed parents.</p>
 
 <p>Given with our example, when we are after the first paragraph. we only have to close the <code>div</code> for class <code>corps</code> and the XML is repaired. Of course, when you cut inside a tag, you sould go back, as if you where just before it. Delete this tag and all is ok.</p>
 
@@ -163,7 +159,7 @@ for each tag in the stack, pop it, and write:
 </pre>
 </div></div>
 
-<p>I don&rsquo;t know if the code can help you, but the raisonning should definitively be known.</p>
+<p>I don’t know if the code can help you, but the raisonning should definitively be known.</p>
 
                 </div>
             
@@ -280,18 +276,5 @@ for each tag in the stack, pop it, and write:
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

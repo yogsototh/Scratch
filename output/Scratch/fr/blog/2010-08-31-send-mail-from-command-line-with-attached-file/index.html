@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Envoyer un mail en ligne de commande avec un fichier attaché</title>
     </head>
     <body lang="fr" class="article">
@@ -58,23 +54,23 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>J&rsquo;ai dû envoyer un mail en ligne de commande récemment. 
-Quelle ne fût pas ma surprise lorsque je constatais que ce n&rsquo;était vraiment pas évident.
-Je n&rsquo;avais ni <code>pine</code> ni <code>mutt</code>. Seulement <code>mail</code> et <code>mailx</code>.</p>
+                    <p>J’ai dû envoyer un mail en ligne de commande récemment. 
+Quelle ne fût pas ma surprise lorsque je constatais que ce n’était vraiment pas évident.
+Je n’avais ni <code>pine</code> ni <code>mutt</code>. Seulement <code>mail</code> et <code>mailx</code>.</p>
 
-<p>Ce qu&rsquo;on trouve sur internet pour envoyer un mail avec fichier attaché c&rsquo;est ça&nbsp;:</p>
+<p>Ce qu’on trouve sur internet pour envoyer un mail avec fichier attaché c’est ça&nbsp;:</p>
 
 <pre class="twilight">
 uuencode fic.jpg fic.jpg <span class="Keyword">|</span> mail -s <span class="String"><span class="String">'</span>Subject<span class="String">'</span></span>
 </pre>
 
-<p>Bon, alors, bête et discipliné j&rsquo;ai essayé. 
+<p>Bon, alors, bête et discipliné j’ai essayé. 
 Et bien, ça marche <em>presque</em> tout le temps. 
-Pour mon fichier ça n&rsquo;a pas marché du tout. 
-Je l&rsquo;ai compressé au format <code>.gz</code>, <code>.bz2</code> et <code>.zip</code>.
+Pour mon fichier ça n’a pas marché du tout. 
+Je l’ai compressé au format <code>.gz</code>, <code>.bz2</code> et <code>.zip</code>.
 Avec le format <code>.bz2</code> le mail reçu avait bien un fichier attaché. 
 Mais avec les formats <code>.gz</code> et <code>.zip</code>, ça ne fonctionnait pas. 
-Au lieu d&rsquo;avoir un fichier attaché j&rsquo;avais un message qui contenait quelque chose comme&nbsp;:</p>
+Au lieu d’avoir un fichier attaché j’avais un message qui contenait quelque chose comme&nbsp;:</p>
 
 <pre>
 begin 664 fic.jpg
@@ -87,12 +83,12 @@ end
 </pre>
 
 <p>Pas très lisible. 
-Après pas mal de recherche j&rsquo;ai trouvé la solution.
-Le problème c&rsquo;est <code>uuencode</code> qui est une méthode qui devrait devenir obsolète pour envoyer les fichiers. 
+Après pas mal de recherche j’ai trouvé la solution.
+Le problème c’est <code>uuencode</code> qui est une méthode qui devrait devenir obsolète pour envoyer les fichiers. 
 Il vaut mieux utiliser le format MIME pour envoyer des fichiers attachés.</p>
 
-<p>Donc finalement le mieux est de faire ça &ldquo;à la main&rdquo; avec <code>sendmail</code>.
-Je n&rsquo;ai quand même pas utilisé <code>telnet</code>.
+<p>Donc finalement le mieux est de faire ça “à la main” avec <code>sendmail</code>.
+Je n’ai quand même pas utilisé <code>telnet</code>.
 La commande à lancer est&nbsp;:</p>
 
 <pre class="twilight">
@@ -129,8 +125,8 @@ uuencode -m fic.jpg fic.jpg
 </code></p>
 
 <p>Et voilà. 
-Parfois la technique c&rsquo;est tellement simple.
-Si j&rsquo;en ai besoin encore quelques fois, je pense que j&rsquo;écrirai un émetteur de mail en shell.</p>
+Parfois la technique c’est tellement simple.
+Si j’en ai besoin encore quelques fois, je pense que j’écrirai un émetteur de mail en shell.</p>
 
                 </div>
             
@@ -247,18 +243,5 @@ Si j&rsquo;en ai besoin encore quelques fois, je pense que j&rsquo;écrirai un �
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

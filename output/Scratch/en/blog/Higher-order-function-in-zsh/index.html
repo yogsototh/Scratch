@@ -6,6 +6,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
         
+        <meta name="keywords" content="zsh, map, foldr, filter, functional, programming, higher order functions">
+        
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
@@ -20,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Higher order function in zsh</title>
     </head>
     <body lang="en" class="article">
@@ -73,7 +71,7 @@ Simply because, the more I programmed with zsh the more I tended to work using f
 
 <p>The minimal to have better code are the functions <code>map</code>, <code>filter</code> and <code>fold</code>.</p>
 
-<p>Let&rsquo;s compare.
+<p>Let’s compare.
 First a program which convert all gif to png in many different directories of different projects.</p>
 
 <p>Before ⇒</p>
@@ -92,8 +90,8 @@ First a program which convert all gif to png in many different directories of di
 </pre>
 
 <ul>
-  <li>The <code>(/N)</code> means to select only directory and not to crash if there isn&rsquo;t any.</li>
-  <li>The <code>(.N)</code> means to select only files and not to crash if there isn&rsquo;t any.</li>
+  <li>The <code>(/N)</code> means to select only directory and not to crash if there isn’t any.</li>
+  <li>The <code>(.N)</code> means to select only files and not to crash if there isn’t any.</li>
   <li>The <code>:t</code> means tail; if <code>toto=/path/to/file.ext</code> then <code>${toto:t}=file.ext</code>.</li>
 </ul>
 
@@ -108,7 +106,7 @@ map handle_resources /path/to/projects/*(/N)
 </pre>
 
 <p>No more bloc!
-It might be a little bit harder to read if you&rsquo;re not used to functional programming notation.
+It might be a little bit harder to read if you’re not used to functional programming notation.
 But it is more concise and robusts.</p>
 
 <p>Another example with some tests.</p>
@@ -148,7 +146,7 @@ map verify_file_name <span class="String"><span class="String">$(</span> filter 
 
 <p>Also, the first verstion is a bit easier to read. 
 But the second one is clearly far superior in architecture.
-I don&rsquo;t want to argue why here. 
+I don’t want to argue why here. 
 Just believe me that the functional programming approach is superior.</p>
 
 <p>Actually I lack the lambda operator. 
@@ -297,6 +295,10 @@ function filter {
                         </div>
                         
                         
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/SVG-and-m4-fractals/">SVG and m4 fractals&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
                         
                         
                     </div>
@@ -330,18 +332,5 @@ function filter {
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Analyser les clicks sur votre Site</title>
     </head>
     <body lang="fr" class="article">
@@ -64,7 +60,7 @@
                 <div class="corps">
                     <p>Voici comment analyser tous les clics que font vos utilisateurs sur votre blog en incluant google analytics de façon asynchrone.</p>
 
-<p>Dans le html, il faut utiliser <a href="http://jquery.com">jQuery</a> et un fichier que j&rsquo;ai appelé <code>yga.js</code>&nbsp;:</p>
+<p>Dans le html, il faut utiliser <a href="http://jquery.com">jQuery</a> et un fichier que j’ai appelé <code>yga.js</code>&nbsp;:</p>
 
 <pre class="twilight">
 <span class="EmbeddedSource">    <span class="EmbeddedSource">&lt;</span><span class="MetaTagInline">script</span> <span class="MetaTagInline">type</span>=<span class="String"><span class="String">&quot;</span>text/javascript<span class="String">&quot;</span></span> <span class="MetaTagInline">src</span>=<span class="String"><span class="String">&quot;</span>jquery.js<span class="String">&quot;</span></span><span class="EmbeddedSource">&gt;</span><span class="EmbeddedSource">&lt;/</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span></span>
@@ -123,9 +119,9 @@ _gaq.<span class="SupportFunction">push</span>([<span class="String"><span class
 </pre>
 </div></div>
 
-<p>Remplacez le&nbsp;: <code>UA-XXXXXXXX-1</code> par votre code google analytics. Maintenant l&rsquo;installation est finie.</p>
+<p>Remplacez le&nbsp;: <code>UA-XXXXXXXX-1</code> par votre code google analytics. Maintenant l’installation est finie.</p>
 
-<p>Pour l&rsquo;utiliser il suffit de se rendre dans google analytics rubrique <code>Content</code> puis <code>Event Tracking</code> comme sur la capture d&rsquo;écran suivante&nbsp;:</p>
+<p>Pour l’utiliser il suffit de se rendre dans google analytics rubrique <code>Content</code> puis <code>Event Tracking</code> comme sur la capture d’écran suivante&nbsp;:</p>
 
 <p><img alt="Where to find events tracking in google analytics interface" src="/Scratch/img/blog/2010-06-17-track-events-with-google-analytics/GA_events.png" /></p>
 
@@ -246,18 +242,5 @@ _gaq.<span class="SupportFunction">push</span>([<span class="String"><span class
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

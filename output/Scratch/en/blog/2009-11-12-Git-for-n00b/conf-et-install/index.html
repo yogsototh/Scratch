@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Git for n00b</title>
     </head>
     <body lang="en" class="article">
@@ -131,7 +127,7 @@ $ cd <span class="Keyword">~</span>/Projets
 $ git clone git://main.server/path/to/file
 </pre></div>
 
-<p>If there is no git server but you&rsquo;ve got an <code>ssh</code> access. Just replace the <code>git://host</code> by <code>ssh://user@host</code>. In order not to type your password each time, use:</p>
+<p>If there is no git server but you’ve got an <code>ssh</code> access. Just replace the <code>git://host</code> by <code>ssh://user@host</code>. In order not to type your password each time, use:</p>
 
 <div><pre class="twilight">
 $ ssh-keygen -t rsa
@@ -155,7 +151,7 @@ me@main.server$ rm id_rsa.pub
 me@main.server$ logout
 </pre></div>
 
-<p>Now you don&rsquo;t need to write your password to access the <code>main.server</code>.</p>
+<p>Now you don’t need to write your password to access the <code>main.server</code>.</p>
 
 <h2 id="creating-a-new-project">Creating a new project</h2>
 
@@ -168,7 +164,7 @@ $ git add .
 $ git commit -m <span class="String"><span class="String">&quot;</span>Initial commit<span class="String">&quot;</span></span>
 </pre></div>
 
-<p>Let do a small remark. If you don&rsquo;t want to <em>version</em> every file. Typically intermediate compilation file, swap files&hellip; Then you need to exclude them. Just before launching the <code>git add .</code> command. You need to create a <code>.gitignore</code> file in the root directory of your project. This file will contain all exclude <em>pattern</em>. For example:</p>
+<p>Let do a small remark. If you don’t want to <em>version</em> every file. Typically intermediate compilation file, swap files… Then you need to exclude them. Just before launching the <code>git add .</code> command. You need to create a <code>.gitignore</code> file in the root directory of your project. This file will contain all exclude <em>pattern</em>. For example:</p>
 
 <div><pre class="twilight">
 *.o
@@ -318,18 +314,5 @@ git clone ssh://server/path/to/project
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

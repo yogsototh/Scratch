@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Disqus versus Intense Debate (Why I switched)</title>
     </head>
     <body lang="en" class="article">
@@ -60,7 +56,7 @@
                 <div class="corps">
                     <h1 class="first" id="disqushttpdisquscom-vs-intense-debatehttpintensedebatecom"><a href="http://disqus.com/">Disqus</a> <em>vs.</em> <a href="http://intensedebate.com/">Intense Debate</a></h1>
 
-<p>I made a blog entry about how I tried to integrate <a href="http://disqus.com">Disqus</a>. I had to wait Disqus comment to be displayed before loading correctly my page. This is why I tried to include it in a &ldquo;non-blocking&rdquo; way. Unfortunately, I had <a href="/Scratch/en/blog/11_Load_Disqus_Asynchronously/">difficulties to make it works correctly</a>. </p>
+<p>I made a blog entry about how I tried to integrate <a href="http://disqus.com">Disqus</a>. I had to wait Disqus comment to be displayed before loading correctly my page. This is why I tried to include it in a “non-blocking” way. Unfortunately, I had <a href="/Scratch/en/blog/11_Load_Disqus_Asynchronously/">difficulties to make it works correctly</a>. </p>
 
 <p>Furthermore, it was not trivial to make comment to be shared between multiple version of the same page (each page has three differents representations, one for each language and one more for the multi-language version).</p>
 
@@ -68,7 +64,7 @@
 
 <p>During the time I tried to integrate <a href="http://disqus.com/">Disqus</a> I never tried <a href="http://intensedebate.com">Intense Debate</a>. Now that I have tried, i must confess it does exactly what I needed. </p>
 
-<p>In order to make it fully asynchronous, you&rsquo;ve just to download their common js and replace the following line:</p>
+<p>In order to make it fully asynchronous, you’ve just to download their common js and replace the following line:</p>
 
 <div>
 <pre class="twilight">
@@ -91,8 +87,8 @@
 <p>To conclude, main advantages (for me) of <a href="http://intensedebate.com/">Intense Debate</a> over <a href="http://disqus.com/">Disqus</a>: </p>
 
 <ul>
-  <li>Load Asynchronously&nbsp;; don&rsquo;t block my website</li>
-  <li>Add for free buttons like &ldquo;share to any&rdquo; and load them <strong>asynchronously</strong>.</li>
+  <li>Load Asynchronously&nbsp;; don’t block my website</li>
+  <li>Add for free buttons like “share to any” and load them <strong>asynchronously</strong>.</li>
 </ul>
 
 <p>Voilà.</p>
@@ -212,18 +208,5 @@
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

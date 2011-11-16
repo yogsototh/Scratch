@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>multi language choices</title>
     </head>
     <body lang="en" class="article">
@@ -77,7 +73,7 @@ here is an example of english text.
 
 <p>This way of handling translations force you to write completely an article in one language, copy it, and translate it.</p>
 
-<p>However, most of time, there are common parts like images, source code, etc&hellip;
+<p>However, most of time, there are common parts like images, source code, etc…
 When I want to correct some mistake on these parts, I have to make twice the work. With sometimes adding another mistake in only one language.</p>
 
 <p>This is why I preferred to handle it differently.
@@ -93,10 +89,10 @@ Finally my files looks like:</p>
 [image](url)
 </pre>
 
-<p>As I edit my files with <a href="http://vim.org">vim</a>, it is really easy to add <code>fr:</code> or <code>en:</code> at some line&rsquo;s beginning using the useful <code>C-v</code>.
+<p>As I edit my files with <a href="http://vim.org">vim</a>, it is really easy to add <code>fr:</code> or <code>en:</code> at some line’s beginning using the useful <code>C-v</code>.
 However <a href="http://nanoc.stoneship.org">nanoc</a> was conceived to be used for one language only. Or to be used with the first method. I tried to adapt nanoc to my usage. But after a while, I found it easier to pre-filter the nanoc work by a simple script. My script transform my file into two new files. And all work like a charm.</p>
 
-<p>You can get my blog code source (without most of articles) at <a href="http://github.com/yogsototh/nanoc3_blog">github.com/yogsototh/nanoc3_blog</a>. I&rsquo;ll make a new blog entry about how to use it. I added many scripts and libraries to help making nice website.</p>
+<p>You can get my blog code source (without most of articles) at <a href="http://github.com/yogsototh/nanoc3_blog">github.com/yogsototh/nanoc3_blog</a>. I’ll make a new blog entry about how to use it. I added many scripts and libraries to help making nice website.</p>
 
                 </div>
             
@@ -213,18 +209,5 @@ However <a href="http://nanoc.stoneship.org">nanoc</a> was conceived to be used 
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

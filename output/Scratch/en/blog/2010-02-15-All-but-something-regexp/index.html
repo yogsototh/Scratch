@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Pragmatic Regular Expression Exclude</title>
     </head>
     <body lang="en" class="article">
@@ -68,7 +64,7 @@
 
 <p>and you have to make this behaviour with only one regular expression. The problem is the complementary of regular languages is not regular. Then, for some expression it is absolutely not impossible.</p>
 
-<p>But sometimes with some simple regular expression it should be possible<sup><a href="#note1">&dagger;</a></sup>. Say you want to match everything containing the some word say <code>bull</code> but don&rsquo;t want to match <code>bullshit</code>. Here is a nice way to do that:</p>
+<p>But sometimes with some simple regular expression it should be possible<sup><a href="#note1">†</a></sup>. Say you want to match everything containing the some word say <code>bull</code> but don’t want to match <code>bullshit</code>. Here is a nice way to do that:</p>
 
 <div><pre class="twilight">
 <span class="Comment"><span class="Comment">#</span> match all string containing 'bull' (bullshit comprised)</span>
@@ -124,7 +120,7 @@ There certainly exists many other methods. But the important lesson is
 it is not straightforward to exclude something of a regular expression.</p>
 
 <hr />
-<p><small><a name="note1">&dagger;</a>
+<p><small><a name="note1">†</a>
 It can be proved that any regular set minus a finite set is also regular.
 </small></p>
 
@@ -243,18 +239,5 @@ It can be proved that any regular set minus a finite set is also regular.
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

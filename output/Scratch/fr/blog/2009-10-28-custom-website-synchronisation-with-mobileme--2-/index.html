@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Synchronisation avec mobileme (2)</title>
     </head>
     <body lang="fr" class="article">
@@ -58,11 +54,11 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>J&rsquo;ai déjà discuté de la façon dont je <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe">synchronise mon site web sur mobileme</a>. J&rsquo;ai amélioré mon script pour le rendre incrémental.</p>
+                    <p>J’ai déjà discuté de la façon dont je <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe">synchronise mon site web sur mobileme</a>. J’ai amélioré mon script pour le rendre incrémental.</p>
 
-<p>Voici mon script, il créé tout d&rsquo;abord un fichier qui contient la liste des fichiers avec leur <em>hash</em>. Afin de les comparer avec ceux qui sont en ligne sans avoir à les parcourir. Ensuite pour chaque fichier qui semble différent, je met à jour le contenu.</p>
+<p>Voici mon script, il créé tout d’abord un fichier qui contient la liste des fichiers avec leur <em>hash</em>. Afin de les comparer avec ceux qui sont en ligne sans avoir à les parcourir. Ensuite pour chaque fichier qui semble différent, je met à jour le contenu.</p>
 
-<p>Cependant même avec ce script j&rsquo;ai encore des problèmes. Dû à webdav. En particulier le renommage de répertoire. Par exemple&nbsp;:</p>
+<p>Cependant même avec ce script j’ai encore des problèmes. Dû à webdav. En particulier le renommage de répertoire. Par exemple&nbsp;:</p>
 
 <div><pre class="twilight">
 mv folder folder2
@@ -75,9 +71,9 @@ $ ls
 folder folder2
 </pre></div>
 
-<p>Bouuhh&hellip;</p>
+<p>Bouuhh…</p>
 
-<p>Pour résoudre ce type de problèmes j&rsquo;utilise un <em>framework</em> en zsh. Il résout presque tous les problèmes liés à webdav à l&rsquo;exception du renommage de répertoire.</p>
+<p>Pour résoudre ce type de problèmes j’utilise un <em>framework</em> en zsh. Il résout presque tous les problèmes liés à webdav à l’exception du renommage de répertoire.</p>
 
 <div><div class="code"><div class="file"><a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/code/webdav-framework"> &#x27A5; webdav-framework </a></div><div class="withfile">
 <pre class="twilight">
@@ -192,7 +188,7 @@ function trymv {
 </pre>
 </div></div></div>
 
-<p>Et voici le code qui me permet de synchroniser mon site web. Il y a une partie un peu incompréhensible. C&rsquo;est pour enlever les mail réencodés par le filtre bluecloth qui est une implémentation de markdown. Mes mails, sont encodés à chaque fois de façon différente à chaque réengendrement de page html. C&rsquo;est pourquoi je les enlève pour ne pas les <em>uploadés</em> inutilement à chaque fois.</p>
+<p>Et voici le code qui me permet de synchroniser mon site web. Il y a une partie un peu incompréhensible. C’est pour enlever les mail réencodés par le filtre bluecloth qui est une implémentation de markdown. Mes mails, sont encodés à chaque fois de façon différente à chaque réengendrement de page html. C’est pourquoi je les enlève pour ne pas les <em>uploadés</em> inutilement à chaque fois.</p>
 
 <div><div class="code"><div class="file"><a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/code/publish"> &#x27A5; publish </a></div><div class="withfile">
 <pre class="twilight">
@@ -320,7 +316,7 @@ print -- <span class="String"><span class="String">&quot;</span>Dest = <span cla
 </pre>
 </div></div></div>
 
-<p>C&rsquo;est ma façon de remplacer <code>rsync</code> avec des filesystem qui ne permettent pas de l&rsquo;utiliser. J&rsquo;espère que ça pourra vous être utile. Je serai heureux de savoir si quelqu&rsquo;un à une idée sur comment gérer le problème de renommage de répertoire avec webdav.</p>
+<p>C’est ma façon de remplacer <code>rsync</code> avec des filesystem qui ne permettent pas de l’utiliser. J’espère que ça pourra vous être utile. Je serai heureux de savoir si quelqu’un à une idée sur comment gérer le problème de renommage de répertoire avec webdav.</p>
 
                 </div>
             
@@ -437,18 +433,5 @@ print -- <span class="String"><span class="String">&quot;</span>Dest = <span cla
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

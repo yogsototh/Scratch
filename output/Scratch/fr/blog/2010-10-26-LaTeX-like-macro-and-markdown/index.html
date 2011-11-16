@@ -6,6 +6,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
         
+        <meta name="keywords" content="LaTeX, macros, markdown, nanoc, ruby">
+        
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
@@ -20,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Des macros LaTeX pour markdown</title>
     </head>
     <body lang="fr" class="article">
@@ -60,18 +58,18 @@
 <div class="intro">
 
 
-<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> J&rsquo;ai fait un système simple de macros pour mon blog. Par exemple, il me suffit d&rsquo;écrire %<span />latex et ça affiche <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>.</p>
+<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> J’ai fait un système simple de macros pour mon blog. Par exemple, il me suffit d’écrire %<span />latex et ça affiche <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>.</p>
 
 
 </div>
 
 
-<p>J&rsquo;ai ajouter un système de macro pour mon système de blog.
-Lorsqu&rsquo;on est habitué à <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span> et que l&rsquo;on commence à écrire des articles
+<p>J’ai ajouter un système de macro pour mon système de blog.
+Lorsqu’on est habitué à <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span> et que l’on commence à écrire des articles
 un peu conséquent avec des notations mathématiques,
-les macros deviennent vite quelque chose d&rsquo;indispensable.</p>
+les macros deviennent vite quelque chose d’indispensable.</p>
 
-<p>Dans l&rsquo;entête de mes fichiers j&rsquo;écris simplement:</p>
+<p>Dans l’entête de mes fichiers j’écris simplement:</p>
 
 <pre class="twilight">
 <span class="MetaTagAll"><span class="MetaTagInline">macros</span><span class="MetaTagAll">:</span></span>
@@ -254,18 +252,5 @@ Pour les utilisateurs de <code>nanoc</code> il suffit de copier le fichier suiva
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

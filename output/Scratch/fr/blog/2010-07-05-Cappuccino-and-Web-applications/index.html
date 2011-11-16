@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Cappuccino ou jQuery ?</title>
     </head>
     <body lang="fr" class="article">
@@ -65,10 +61,10 @@
 <p><abbr title="Trop long à lire">tlàl</abbr>:</p>
 
 <ul>
-  <li>J&rsquo;ai essayé de faire une version de <a href="http://yannesposito.com/Softwares/YPassword.html">YPassword</a> en jQuery et avec Cappuccino.</li>
-  <li>Cappuccino est très bien sur les navigateurs non mobile mais l&rsquo;application pèse 1.4Mo et n&rsquo;est pas compatible avec l&rsquo;iPhone.</li>
-  <li>la version jQuery n&rsquo;est pas aussi jolie que la version réalisée avec Cappuccino mais elle pèse seulement 106Ko et est compatible avec l&rsquo;iPhone.</li>
-  <li>J&rsquo;essayerai Dashcode 3</li>
+  <li>J’ai essayé de faire une version de <a href="http://yannesposito.com/Softwares/YPassword.html">YPassword</a> en jQuery et avec Cappuccino.</li>
+  <li>Cappuccino est très bien sur les navigateurs non mobile mais l’application pèse 1.4Mo et n’est pas compatible avec l’iPhone.</li>
+  <li>la version jQuery n’est pas aussi jolie que la version réalisée avec Cappuccino mais elle pèse seulement 106Ko et est compatible avec l’iPhone.</li>
+  <li>J’essayerai Dashcode 3</li>
 </ul>
 
 
@@ -80,21 +76,21 @@
 <div class="intro">
 
 
-<p>Avant de commencer, je dois dire que je sais que Cappuccino et jQuery ne sont pas plus comparable que Cocoa et la <em>standard library</em> en C++. L&rsquo;un est fait pour créer des interfaces utilisateurs tandis que l&rsquo;autre est plus une librairie qui aide aux tâches de bas niveaux.
-Par contre je les ai utilisé tous les deux pour faire la même application. C&rsquo;est pourquoi je compare l&rsquo;expérience que j&rsquo;ai retenu de chacun pour cette tâche.</p>
+<p>Avant de commencer, je dois dire que je sais que Cappuccino et jQuery ne sont pas plus comparable que Cocoa et la <em>standard library</em> en C++. L’un est fait pour créer des interfaces utilisateurs tandis que l’autre est plus une librairie qui aide aux tâches de bas niveaux.
+Par contre je les ai utilisé tous les deux pour faire la même application. C’est pourquoi je compare l’expérience que j’ai retenu de chacun pour cette tâche.</p>
 
 
 </div>
 
 
-<p>J&rsquo;ai fait une version web de mon widget <a href="http://yannesposito.com/Softwares/YPassword.html">YPassword</a>.
-C&rsquo;est un simple widget qui permet d&rsquo;organiser ses mots de passes simplement avec une grande sécurité et de façon portable. 
-Ce n&rsquo;est pas un widget créé pour remplacer le <em>trousseau d&rsquo;accès</em>, mais
+<p>J’ai fait une version web de mon widget <a href="http://yannesposito.com/Softwares/YPassword.html">YPassword</a>.
+C’est un simple widget qui permet d’organiser ses mots de passes simplement avec une grande sécurité et de façon portable. 
+Ce n’est pas un widget créé pour remplacer le <em>trousseau d’accès</em>, mais
 plus un générateur de mots de passe.</p>
 
 <p>Le premier a été élaboré à partir du code de mon widget Mac.
-Vous pouvez l&rsquo;essayer <a href="http://yannesposito.com/YPassword.old">ici</a>.
-J&rsquo;ai ensuite fait une version avec <a href="http://cappuccino.org">Cappuccino</a>, que vous pouvez  essayer <a href="http://yannesposito.com/YPassword">ici</a>.</p>
+Vous pouvez l’essayer <a href="http://yannesposito.com/YPassword.old">ici</a>.
+J’ai ensuite fait une version avec <a href="http://cappuccino.org">Cappuccino</a>, que vous pouvez  essayer <a href="http://yannesposito.com/YPassword">ici</a>.</p>
 
 <h2 id="que-fait-ce-widget-">Que fait ce widget&nbsp;?</h2>
 
@@ -108,12 +104,12 @@ J&rsquo;ai ensuite fait une version avec <a href="http://cappuccino.org">Cappucc
 </div>
 
 
-<p>J&rsquo;organise mes mots de passe avec une méthode simple.
+<p>J’organise mes mots de passe avec une méthode simple.
 Je mémorise un mot de passe <em>maître</em>. Et mon mot de passe est alors (principalement)&nbsp;: 
 &lt;pre class="twilight"&gt;<span class="Entity">hash</span>(motDePasseMaitre<span class="Keyword">+</span><span class="Variable">NomDeDomaine</span>)
 &lt;/pre&gt;</p>
 
-<p>En réalité j&rsquo;ai besoin d&rsquo;un plus d&rsquo;informations pour créer mon mot de passe&nbsp;:</p>
+<p>En réalité j’ai besoin d’un plus d’informations pour créer mon mot de passe&nbsp;:</p>
 
 <ul>
   <li>Un mot de passe maître&nbsp;;</li>
@@ -141,11 +137,11 @@ hash<span class="Keyword">=</span><span class="Entity">sha1</span>( masterPasswo
   <li>longueur maximale&nbsp;;</li>
   <li>ne doit pas contenir de caractères spéciaux&nbsp;;</li>
   <li>doit contenir des caractères spéciaux&nbsp;;</li>
-  <li>etc&hellip;</li>
+  <li>etc…</li>
 </ul>
 
 <p>Et si vous souhaitez changer votre mot de passe, le nombre de changement sert à ça.
-Toutes les informations peuvent rester publiques sans trop de danger à l&rsquo;exception du mot de passe principal.</p>
+Toutes les informations peuvent rester publiques sans trop de danger à l’exception du mot de passe principal.</p>
 
 <p>Si vous souhaitez avoir encore plus de détails vous pouvez toujours lire certaines de mes anciens articles de blog (en anglais)&nbsp;:</p>
 
@@ -157,64 +153,64 @@ Toutes les informations peuvent rester publiques sans trop de danger à l&rsquo;
 
 <h2 id="cappuccino">Cappuccino</h2>
 
-<p>Tout d&rsquo;abord je voudrais dire que les applications réalisées avec Cappuccino sont tout simplement incroyables.
-C&rsquo;est comme avoir une application Mac dans son navigateur.</p>
+<p>Tout d’abord je voudrais dire que les applications réalisées avec Cappuccino sont tout simplement incroyables.
+C’est comme avoir une application Mac dans son navigateur.</p>
 
-<p>Je dois aussi admettre que j&rsquo;ai pris du plaisir a écrire mon application avec Cappuccino.
-C&rsquo;est comme programmer une application Mac ou iPhone.
+<p>Je dois aussi admettre que j’ai pris du plaisir a écrire mon application avec Cappuccino.
+C’est comme programmer une application Mac ou iPhone.
 Si vous connaissez bien Cocoa, vous vous sentirez comme <em>à la maison</em>.
 Si vous ne connaissez pas Cocoa, je vous conseille de vous y intéresser.
-Il s&rsquo;agit vraiment d&rsquo;un framework excellent pour faire des interfaces utilisateur.
+Il s’agit vraiment d’un framework excellent pour faire des interfaces utilisateur.
 Je ne suis pas un spécialiste de tous les frameworks.
-Mais j&rsquo;ai réalisé des Interfaces Utilisateurs avec les MFC, Java Swing<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> et WXWindows il y a quelques années.
+Mais j’ai réalisé des Interfaces Utilisateurs avec les MFC, Java Swing<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> et WXWindows il y a quelques années.
 Et je dois dire que Cocoa est bien meilleurs que tous ces framework.</p>
 
-<p>Cappuccino est un framework spécialisé dans le développement d&rsquo;application web vraiment exceptionnel. Mais il a aussi quelques défauts qui ont surgit lors de l&rsquo;écriture de mon widget.</p>
+<p>Cappuccino est un framework spécialisé dans le développement d’application web vraiment exceptionnel. Mais il a aussi quelques défauts qui ont surgit lors de l’écriture de mon widget.</p>
 
-<p>Les choses qui m&rsquo;ont plu&nbsp;:</p>
+<p>Les choses qui m’ont plu&nbsp;:</p>
 
 <ul>
   <li>Le résultat est vraiment très beau</li>
-  <li>C&rsquo;était très agréable de programmer</li>
+  <li>C’était très agréable de programmer</li>
   <li>Comme programmer une application Mac</li>
-  <li>J&rsquo;aurai pu utiliser <a href="http://developer.apple.com/technologies/tools/xcode.html">Interface Builder</a> pour créer l&rsquo;interface.</li>
+  <li>J’aurai pu utiliser <a href="http://developer.apple.com/technologies/tools/xcode.html">Interface Builder</a> pour créer l’interface.</li>
 </ul>
 
-<p>Les choses qui ne m&rsquo;ont pas plu&nbsp;:</p>
+<p>Les choses qui ne m’ont pas plu&nbsp;:</p>
 
 <ul>
-  <li>J&rsquo;ai mis un bon moment avant de comprendre comment récupérer le <code>onChange</code> des champs textuels.</li>
-  <li>La documentation manquait d&rsquo;organisation.</li>
+  <li>J’ai mis un bon moment avant de comprendre comment récupérer le <code>onChange</code> des champs textuels.</li>
+  <li>La documentation manquait d’organisation.</li>
   <li>Ça ne marche pas sous iPhone.</li>
   <li>Il a fallu déployer 11Mo.</li>
-  <li>Il faut télécharger 1,3Mo pour que l&rsquo;application se charge dans le navigateur.</li>
+  <li>Il faut télécharger 1,3Mo pour que l’application se charge dans le navigateur.</li>
 </ul>
 
-<p>Je n&rsquo;ai pas utilisé les <code>bindings</code> parce qu&rsquo;il me semble qu&rsquo;ils ne sont pas prêts.</p>
+<p>Je n’ai pas utilisé les <code>bindings</code> parce qu’il me semble qu’ils ne sont pas prêts.</p>
 
 <h2 id="jquery">jQuery</h2>
 
-<p>La version jQuery de YPassword n&rsquo;est pas aussi bien finie que celle de Cappuccino. Simplement parce qu&rsquo;il n&rsquo;y a pas de <em>slider</em> directement avec jQuery. Il faudrait que j&rsquo;utilise jQueryUI. Et je pense que l&rsquo;application deviendrait beaucoup plus lourde pour le coups. En tout cas largement au dessus des 106Ko actuels.</p>
+<p>La version jQuery de YPassword n’est pas aussi bien finie que celle de Cappuccino. Simplement parce qu’il n’y a pas de <em>slider</em> directement avec jQuery. Il faudrait que j’utilise jQueryUI. Et je pense que l’application deviendrait beaucoup plus lourde pour le coups. En tout cas largement au dessus des 106Ko actuels.</p>
 
-<p>J&rsquo;ai utilisé le code de mon widget mac en l&rsquo;adaptant un peu pour faire cette version. C&rsquo;était relativement facile. Mais jQuery n&rsquo;est pas un <em>framework orienté application</em>. Il s&rsquo;agit plus d&rsquo;un <em>framework pour faire des animations qui la pète</em>.</p>
+<p>J’ai utilisé le code de mon widget mac en l’adaptant un peu pour faire cette version. C’était relativement facile. Mais jQuery n’est pas un <em>framework orienté application</em>. Il s’agit plus d’un <em>framework pour faire des animations qui la pète</em>.</p>
 
-<p>Je n&rsquo;ai pas beaucoup plus à dire sur la version jQuery, sinon que programmer avec jQuery était de la programmation de niveau beaucoup plus bas qu&rsquo;avec Cappuccino.</p>
+<p>Je n’ai pas beaucoup plus à dire sur la version jQuery, sinon que programmer avec jQuery était de la programmation de niveau beaucoup plus bas qu’avec Cappuccino.</p>
 
 <h2 id="en-conclusion">En conclusion</h2>
 
-<p>Si vous voulez faire une application compatible iPhone n&rsquo;utilisez pas Cappuccino. Du moins pas encore.
+<p>Si vous voulez faire une application compatible iPhone n’utilisez pas Cappuccino. Du moins pas encore.
 Si vous souhaitez faire un application très simple (comme la mienne), je pense que Cappuccino est un peu trop lourd pour ça.</p>
 
 <p>Si vous souhaitez faire des applications web complexes qui ressemblent à des applications de bureau alors clairement Cappuccino est un très bon choix.
-Notez cependant qu&rsquo;il peut être un peu difficile de débuter.</p>
+Notez cependant qu’il peut être un peu difficile de débuter.</p>
 
-<p>Finallement, pour terminer la version web de mon widget, j&rsquo;essayerai Dashcode 3.
+<p>Finallement, pour terminer la version web de mon widget, j’essayerai Dashcode 3.
 Il semblerai que ce soit une bonne alternative pour créer des widget sur le web compatible iPhone.
-Je ne sais pas si les applications réalisées avec Dashcode 3 sont compatibles pour les browser n&rsquo;utilisant pas webkit. Mais si c&rsquo;est le cas, alors ça pourrait sonner le glas des projets comme Cappuccino et Sproutcore.</p>
+Je ne sais pas si les applications réalisées avec Dashcode 3 sont compatibles pour les browser n’utilisant pas webkit. Mais si c’est le cas, alors ça pourrait sonner le glas des projets comme Cappuccino et Sproutcore.</p>
 <hr/><div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>Si ça vous intéresse vous pouvez jeter un coup d&rsquo;œil à <a href="http://labh-curien.univ-st-etienne.fr/informatique/SEDiL/">SEDiL</a>. Je suis assez fier de la vue automatique des arbres que j&rsquo;ai programmé sans librairie de départ.<a href="#fnref:1" rev="footnote">&#8617;</a></p>
+      <p>Si ça vous intéresse vous pouvez jeter un coup d’œil à <a href="http://labh-curien.univ-st-etienne.fr/informatique/SEDiL/">SEDiL</a>. Je suis assez fier de la vue automatique des arbres que j’ai programmé sans librairie de départ.<a href="#fnref:1" rev="footnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -334,18 +330,5 @@ Je ne sais pas si les applications réalisées avec Dashcode 3 sont compatibles 
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

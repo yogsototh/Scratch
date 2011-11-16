@@ -7,7 +7,10 @@ fr: title: S'amuser avec un .wav
 en: title: Fun with wav
 author_name: Yann Esposito
 author_uri: yannesposito.com
-# tags:
+tags:
+  - wav
+  - C
+  - format
 -----
 
 begindiv(intro)

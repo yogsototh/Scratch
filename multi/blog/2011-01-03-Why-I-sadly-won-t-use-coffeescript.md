@@ -7,7 +7,8 @@ fr: title: Pourquoi je n'utiliserai pas CoffeeScript (malheureusement)
 en: title: Why I won't use CoffeeScript (sadly)
 author_name: Yann Esposito
 author_uri: yannesposito.com
-# tags:
+tags:
+  - Coffeescript
 -----
 <%= blogimage("main.png","Title image") %>
 

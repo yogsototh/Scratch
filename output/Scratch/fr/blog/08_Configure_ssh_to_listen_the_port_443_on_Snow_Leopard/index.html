@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>ssh sur le port 443 avec Snow Leopard</title>
     </head>
     <body lang="fr" class="article">
@@ -60,7 +56,7 @@
                 <div class="corps">
                     <h1 class="first" id="surfez-partout-comme-si-vous-tiez-chez-vous">Surfez partout comme si vous étiez chez vous</h1>
 
-<p>Que ce soit pour surfer en toute sécurité depuis un accès <span class="sc">wifi</span> non sécurisé ou pour contourner les parefeux diaboliques des entreprises. J&rsquo;ai configuré un serveur ssh écoutant sur le port 443 chez moi.</p>
+<p>Que ce soit pour surfer en toute sécurité depuis un accès <span class="sc">wifi</span> non sécurisé ou pour contourner les parefeux diaboliques des entreprises. J’ai configuré un serveur ssh écoutant sur le port 443 chez moi.</p>
 
 <p>Ensuite de mon portable ou de mon ordinateur local, je dois simplement lancé la merveilleuse commande&nbsp;:</p>
 
@@ -72,16 +68,16 @@ ssh -p 443 -D 9050 username@host
 
 <p>et un proxy <span class="sc">socks</span> écoute sur le port 9050. Ce proxy <span class="sc">socks</span> transférera toutes les requêtes locales via le tunnel ssh. Ainsi je peux surfer en local comme si je naviguais depuis mon ordinateur à la maison. Je peux écrire mon numéro de carte bleu sans avoir peur que le <span class="sc">wifi</span> local soit <em>sniffé</em>. Je dois simplement configurer mon navigateur web pour utiliser le proxy <span class="sc">socks</span> sur  <code>localhost</code> écoutant le port 9050.</p>
 
-<p>J&rsquo;ai eu cette information à partir de <a href="http://dltj.org/article/ssh-as-socks-proxy/">cet article</a>.</p>
+<p>J’ai eu cette information à partir de <a href="http://dltj.org/article/ssh-as-socks-proxy/">cet article</a>.</p>
 
 <h1 id="ssh-et-snow-leopardc">Ssh et Snow Leopard<small>&copy;</small></h1>
 
-<p>J&rsquo;ai un Mac avec Snow Leopard<small>&copy;</small> à la maison. 
-Il ne suffit pas de modifier le fichier <code>/etc/sshd.config</code> pour changer le port d&rsquo;écoute d&rsquo;<code>sshd</code>.
+<p>J’ai un Mac avec Snow Leopard<small>&copy;</small> à la maison. 
+Il ne suffit pas de modifier le fichier <code>/etc/sshd.config</code> pour changer le port d’écoute d’<code>sshd</code>.
 Le système utilise <code>launchd</code> pour lancer les démons.</p>
 
-<p>J&rsquo;ai posé cette question sur <a href="discussions.apple.com">Apple Discussions</a> dans ce <a href="http://discussions.apple.com/thread.jspa?messageID=10141032">fil de discussion</a>. 
-Merci à tous ceux qui m&rsquo;ont aidé. Et la solution est&nbsp;:</p>
+<p>J’ai posé cette question sur <a href="discussions.apple.com">Apple Discussions</a> dans ce <a href="http://discussions.apple.com/thread.jspa?messageID=10141032">fil de discussion</a>. 
+Merci à tous ceux qui m’ont aidé. Et la solution est&nbsp;:</p>
 
 <p>Créer un fichier <tt>/Library/LaunchDaemons/ssh-443.plist</tt> contenant&nbsp;:</p>
 
@@ -126,14 +122,14 @@ Merci à tous ceux qui m&rsquo;ont aidé. Et la solution est&nbsp;:</p>
 </div></div>
 </div>
 
-<p>C&rsquo;est une copie de <code>/System/Library/LaunchDaemons/ssh.plist</code> avec quelques modifications&nbsp;:</p>
+<p>C’est une copie de <code>/System/Library/LaunchDaemons/ssh.plist</code> avec quelques modifications&nbsp;:</p>
 
 <ul>
   <li>le <code>SockServiceName</code> est devenu <code>https</code> au lieu de <code>ssh</code></li>
-  <li>le <code>Label</code> est passé de <code>com.openssh.sshd</code> à quelque chose qui n&rsquo;existait pas comme <code>local.sshd</code></li>
+  <li>le <code>Label</code> est passé de <code>com.openssh.sshd</code> à quelque chose qui n’existait pas comme <code>local.sshd</code></li>
 </ul>
 
-<p>Encore une fois j&rsquo;espère que ça a pu être utile.</p>
+<p>Encore une fois j’espère que ça a pu être utile.</p>
 
                 </div>
             
@@ -250,18 +246,5 @@ Merci à tous ceux qui m&rsquo;ont aidé. Et la solution est&nbsp;:</p>
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

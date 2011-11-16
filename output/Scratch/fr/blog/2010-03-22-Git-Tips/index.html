@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Astuces Git</title>
     </head>
     <body lang="fr" class="article">
@@ -76,7 +72,7 @@ git clone git+ssh://git@github.com:443/yogsototh/project.git
 
 <p><code>git clone</code> peut seulement récuper la branche <code>master</code>.</p>
 
-<p>Si vous n&rsquo;avez pas beaucoup de branches, vous pouvez simplement les clone le project et ensuite pour chacune d&rsquo;entre elle lancer la commande suivante&nbsp;:</p>
+<p>Si vous n’avez pas beaucoup de branches, vous pouvez simplement les clone le project et ensuite pour chacune d’entre elle lancer la commande suivante&nbsp;:</p>
 
 <div><pre class="twilight">
 git branch --track local_branch remote_branch
@@ -97,7 +93,7 @@ master *
 experimental
 </pre></div>
 
-<p>Si vous avez beaucoup de branches il peut être utile d&rsquo;utiliser <em>le script</em>/<em>la longue ligne de commande</em> suivant(e)&nbsp;:</p>
+<p>Si vous avez beaucoup de branches il peut être utile d’utiliser <em>le script</em>/<em>la longue ligne de commande</em> suivant(e)&nbsp;:</p>
 
 <div><pre class="twilight">
 <span class="Comment"><span class="Comment">#</span> first clone your project</span>
@@ -234,18 +230,5 @@ $ <span class="Keyword">for</span> br <span class="Keyword">in</span> <span clas
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

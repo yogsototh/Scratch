@@ -22,10 +22,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Création de branches externe avec Git</title>
     </head>
     <body lang="fr" class="article">
@@ -60,10 +56,10 @@
                 <div class="corps">
                     <h2 class="first" id="crer-une-branche-git-externe-facilement">Créer une branche Git externe facilement</h2>
 
-<p>J&rsquo;utilise Git pour synchroniser des projets personnels. 
-C&rsquo;est pourquoi quand je crée une branche locale je souhaite quasiment toujours qu&rsquo;elle soit aussi créée en <em>externe</em> (remote).</p>
+<p>J’utilise Git pour synchroniser des projets personnels. 
+C’est pourquoi quand je crée une branche locale je souhaite quasiment toujours qu’elle soit aussi créée en <em>externe</em> (remote).</p>
 
-<p>Voici le script que j&rsquo;utilise pour accomplir cette tâche&nbsp;: </p>
+<p>Voici le script que j’utilise pour accomplir cette tâche&nbsp;: </p>
 
 <div>
     <div class="code"><div class="file"><a href="/Scratch/fr/blog/05_git_create_remote_branch/code/git-create-new-branch.sh"> &#x27A5; git-create-new-branch.sh </a></div><div class="withfile">
@@ -85,7 +81,7 @@ git config branch.<span class="Variable"><span class="Variable">${</span>branch<
 </div></div>
 </div>
 
-<p>Bien sûr, je suppose qu&rsquo;<code>origin</code> est déjà configurée.</p>
+<p>Bien sûr, je suppose qu’<code>origin</code> est déjà configurée.</p>
 
                 </div>
             
@@ -202,18 +198,5 @@ git config branch.<span class="Variable"><span class="Variable">${</span>branch<
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>

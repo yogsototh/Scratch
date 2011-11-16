@@ -20,10 +20,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Mieux que grep</title>
     </head>
     <body lang="fr" class="article">
@@ -58,11 +54,11 @@
                 <div class="corps">
                     <h1 class="first" id="mise--jour">Mise à jour</h1>
 
-<p>Comme <a href="http://www.theworkinggeek.com">Andy Lester</a> me l&rsquo;a fait remarqué. <a href="http://betterthangrep.com"><code>ack</code></a> est un simple fichier perl qu&rsquo;il suffit de copier dans son répertoire personnel <code>~/bin</code>. Maintenant j&rsquo;ai <code>ack</code> sur mon serveur professionnel.</p>
+<p>Comme <a href="http://www.theworkinggeek.com">Andy Lester</a> me l’a fait remarqué. <a href="http://betterthangrep.com"><code>ack</code></a> est un simple fichier perl qu’il suffit de copier dans son répertoire personnel <code>~/bin</code>. Maintenant j’ai <code>ack</code> sur mon serveur professionnel.</p>
 
-<p>Il suffit d&rsquo;aller sur <a href="http://betterthangrep.com">http://betterthangrep.com</a> pour le télécharger.</p>
+<p>Il suffit d’aller sur <a href="http://betterthangrep.com">http://betterthangrep.com</a> pour le télécharger.</p>
 
-<p>Sincèrement, je ne comprend pas qu&rsquo;<code>ack</code> ne soit pas une commande implémentée par défaut sur les systèmes UNIX. Je ne peux vraiment plus m&rsquo;en passer, il m&rsquo;est devenu aussi essentiel qu&rsquo;un <code>which</code> ou un <code>find</code>.</p>
+<p>Sincèrement, je ne comprend pas qu’<code>ack</code> ne soit pas une commande implémentée par défaut sur les systèmes UNIX. Je ne peux vraiment plus m’en passer, il m’est devenu aussi essentiel qu’un <code>which</code> ou un <code>find</code>.</p>
 
 
 </div>
@@ -80,11 +76,11 @@ grep <span class="String"><span class="String">'</span>pattern<span class="Strin
 </pre>
 </div>
 
-<p>La plupart du temps c&rsquo;est suffisant, mais ajouter de la coloration
-améliore beaucoup l&rsquo;utilité de cette commande. Il existe déjà un outil
-pour ça&nbsp;: il s&rsquo;appelle <code>ack-grep</code> sous Ubuntu.
-Comme je ne peux pas l&rsquo;installer sur le serveur de mon entreprise,
-j&rsquo;en ai créé un moi-même en quelques lignes&nbsp;:</p>
+<p>La plupart du temps c’est suffisant, mais ajouter de la coloration
+améliore beaucoup l’utilité de cette commande. Il existe déjà un outil
+pour ça&nbsp;: il s’appelle <code>ack-grep</code> sous Ubuntu.
+Comme je ne peux pas l’installer sur le serveur de mon entreprise,
+j’en ai créé un moi-même en quelques lignes&nbsp;:</p>
 
 <div>
     <div class="code"><div class="file"><a href="/Scratch/fr/blog/02_ackgrep/code/ack"> &#x27A5; ack </a></div><div class="withfile">
@@ -107,7 +103,7 @@ zargs -- <span class="Variable"><span class="Variable">$</span>listeFic</span> -
 </div>
 
 <p>Pour mon utilisation personnelle et celle de mon équipe
-c&rsquo;est suffisant. J&rsquo;espère que ça pourra vous aider.</p>
+c’est suffisant. J’espère que ça pourra vous aider.</p>
 
                 </div>
             
@@ -216,18 +212,5 @@ c&rsquo;est suffisant. J&rsquo;espère que ça pourra vous aider.</p>
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-        var clicky = { log: function(){ return; }, goal: function(){ return; }};
-        var clicky_site_id = 66374971;
-        (function() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-              ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-        })();
-</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66374971ns.gif" /></p></noscript>
-    
     </body>
 </html>
