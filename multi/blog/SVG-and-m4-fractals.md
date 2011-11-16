@@ -257,20 +257,22 @@ fr: Une fois fixée chaque transformation peut ensuite être réutilisée pour c
 en: Now it is time to talk about where the magic occurs: `YTRANSCOMPLETE`.
 en: This macro takes two arguments.
 en: The current depth and the preceding one.
-en: It duplicate using the three transformations the preceding level.
+en: It duplicates using the three transformations the preceding level.
 en: 
 en: - At level 0 there is only one λ,
 en: - at level 1 there is 3 λ,
-en: - at level 2 ther is 9 λ
+en: - at level 2 there is 9 λ
 en: - etc... 
 en: 
 en: At the final 5th level there is 3<sup>5</sup>=243 λ.
+en: All level combined have 3<sup>6</sup>-1 / 2 = 364 λ.
 fr: Maintenant `YTRANSCOMPLETE` entre en jeu.
 fr: Cette macro prend deux arguments.
 fr: Le niveau courant et le niveau précédent.
 fr: Cette macro va dupliquer le niveau précédent en lui appliquant chacune des 3 transformations.
 fr: Au niveau 0, le contenu est un seul grand λ, le niveau 1 en contient 3. Le niveau 2 en contient 9, etc...
 fr: Le niveau 5 contient 3<sup>5</sup>=243 λ.
+fr: Tous les niveaux combinés représentent 3<sup>6</sup>-1 / 2 = 364 λ.
 
 en: I could preview the final result easily. 
 en: Without the macro system, I would have to make 5 copy/paste + modifications for each try.
