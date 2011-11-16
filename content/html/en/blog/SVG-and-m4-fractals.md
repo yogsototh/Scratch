@@ -32,11 +32,11 @@ enddiv
 %xml was a very nice idea about structuring data.
 Some people where so enthusiastic about %xml they saw it everywhere.
 The idea was: the future is %xml.
-Then some people believe it would be a good idea to invent many %xml compatible format and also programming languages with %xml syntax.
+Then some believed it would be a good idea to invent many %xml compatible format and even programming languages with %xml syntax.
 
 Happy! Happy! Joy! Joy! 
 
-Unfortunately, %xml was a format mean to transfert structured data.
+Unfortunately, %xml was made to transfert structured data.
 Not a format a human should see or edit directly.
 The sad reality is %xml syntax is simply verbose and ugly.
 Most of the time it shouldn't be a problem, as nobody should see it.
@@ -47,17 +47,16 @@ Our world isn't perfect. Too sad, a bunch of developer have to deal directly wit
 Unfortunately %xml isn't the only case of misused format I know. 
 You have many format for which it would be very nice to add variables, loops, functions...
 
-But I am here to help.
-If like me you hate with passion %xslt or writing %xml.
-I will show you how m4 could help you deal with bad format.
-Or language with too few power.
+If like me you hate with passion %xslt or writing %xml,
+I will show you how you could deal with this bad format
+or language.
 
 ## The %xslt Example
 
 Let's start by the worst case of misused %xml I know: %xslt.
 Any developer who had to deal with %xslt know how horrible it is.
 
-In order to reduce the verbosity of such so bad languages, there is a way.
+In order to reduce the verbosity of such a bad languages, there is a way.
 **`m4`**. Yes, the preprocessor you use when you program in `C` and `C++`.
 
 Here are some example: 
@@ -112,7 +111,7 @@ Now just compile this file:
 m4 myfile.m4 > myfile.xslt
 </code>
 
-And you can profit! Now <sc>xslt</sc> is more readable and easier to edit!
+Profit! Now <sc>xslt</sc> is more readable and easier to edit!
 
 ## The cool part: Fractals!
 
@@ -210,7 +209,8 @@ It duplicate using the three transformations the preceding level.
 
 At the final 5th level there is 3<sup>5</sup>=243 λ.
 
-The main advantage is I could preview the final result easily. Without the macro system, I would have to make 5 copy/paste + modifications for each try.
+I could preview the final result easily. 
+Without the macro system, I would have to make 5 copy/paste + modifications for each try.
 
 ## Conclusion
 
@@ -218,3 +218,6 @@ It was fun to make a fractal in <sc>svg</sc>, but the interesting part is how to
 I used the <sc>xslt</sc> trick at work for example.
 I also used it to make include inside obscure format.
 If all you want is to generate  a minimal static website withou using nanoc, jekyll or hakyll (ther are plenty other alternatives). You can consider using m4 to generate your <sc>html</sc> instead of copy/paste the menu and the footer, or using AJAX.
+
+Another usage I thouhgt about is to use m4
+to organize languages such as brainfuck.

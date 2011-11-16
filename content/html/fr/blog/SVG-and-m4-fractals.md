@@ -219,3 +219,4 @@ On peut aussi utiliser m4 pour faire des includes d'autres fichiers.
 Typiquement je l'ai utiliser pour les includes dans un format obscur.
 Mais vous pouvez aussi le considérer pour des includes dans du HTML.
 Par exemple pour fabriquer un site statique rapidement, m4 peut se révéler utile pour inclure un footer ou un menu sur toutes les pages par exemple.
+J'ai aussi pensé que l'on pouvait utiliser m4 pour structurer des programmes comme brainfuck.

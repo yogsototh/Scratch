@@ -73,11 +73,11 @@
 <p><span class="sc">xml</span> was a very nice idea about structuring data.
 Some people where so enthusiastic about <span class="sc">xml</span> they saw it everywhere.
 The idea was: the future is <span class="sc">xml</span>.
-Then some people believe it would be a good idea to invent many <span class="sc">xml</span> compatible format and also programming languages with <span class="sc">xml</span> syntax.</p>
+Then some believed it would be a good idea to invent many <span class="sc">xml</span> compatible format and even programming languages with <span class="sc">xml</span> syntax.</p>
 
 <p>Happy! Happy! Joy! Joy! </p>
 
-<p>Unfortunately, <span class="sc">xml</span> was a format mean to transfert structured data.
+<p>Unfortunately, <span class="sc">xml</span> was made to transfert structured data.
 Not a format a human should see or edit directly.
 The sad reality is <span class="sc">xml</span> syntax is simply verbose and ugly.
 Most of the time it shouldn&rsquo;t be a problem, as nobody should see it.
@@ -88,17 +88,16 @@ Our world isn&rsquo;t perfect. Too sad, a bunch of developer have to deal direct
 <p>Unfortunately <span class="sc">xml</span> isn&rsquo;t the only case of misused format I know. 
 You have many format for which it would be very nice to add variables, loops, functions&hellip;</p>
 
-<p>But I am here to help.
-If like me you hate with passion <span class="sc">xslt</span> or writing <span class="sc">xml</span>.
-I will show you how m4 could help you deal with bad format.
-Or language with too few power.</p>
+<p>If like me you hate with passion <span class="sc">xslt</span> or writing <span class="sc">xml</span>,
+I will show you how you could deal with this bad format
+or language.</p>
 
 <h2 id="the-span-classscxsltspan-example">The <span class="sc">xslt</span> Example</h2>
 
 <p>Let&rsquo;s start by the worst case of misused <span class="sc">xml</span> I know: <span class="sc">xslt</span>.
 Any developer who had to deal with <span class="sc">xslt</span> know how horrible it is.</p>
 
-<p>In order to reduce the verbosity of such so bad languages, there is a way.
+<p>In order to reduce the verbosity of such a bad languages, there is a way.
 <strong><code>m4</code></strong>. Yes, the preprocessor you use when you program in <code>C</code> and <code>C++</code>.</p>
 
 <p>Here are some example: </p>
@@ -160,7 +159,7 @@ Any developer who had to deal with <span class="sc">xslt</span> know how horribl
 m4 myfile.m4 <span class="Keyword">&gt;</span> myfile.xslt
 </pre>
 
-<p>And you can profit! Now <span class="sc">xslt</span> is more readable and easier to edit!</p>
+<p>Profit! Now <span class="sc">xslt</span> is more readable and easier to edit!</p>
 
 <h2 id="the-cool-part-fractals">The cool part: Fractals!</h2>
 
@@ -264,7 +263,8 @@ It duplicate using the three transformations the preceding level.</p>
 
 <p>At the final 5<sup>th</sup> level there is 3<sup>5</sup>=243 λ.</p>
 
-<p>The main advantage is I could preview the final result easily. Without the macro system, I would have to make 5 copy/paste + modifications for each try.</p>
+<p>I could preview the final result easily. 
+Without the macro system, I would have to make 5 copy/paste + modifications for each try.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
@@ -272,6 +272,9 @@ It duplicate using the three transformations the preceding level.</p>
 I used the <span class="sc">xslt</span> trick at work for example.
 I also used it to make include inside obscure format.
 If all you want is to generate  a minimal static website withou using nanoc, jekyll or hakyll (ther are plenty other alternatives). You can consider using m4 to generate your <span class="sc">html</span> instead of copy/paste the menu and the footer, or using AJAX.</p>
+
+<p>Another usage I thouhgt about is to use m4
+to organize languages such as brainfuck.</p>
 
                 </div>
             

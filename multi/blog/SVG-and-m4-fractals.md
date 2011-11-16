@@ -37,7 +37,7 @@ enddiv
 en: %xml was a very nice idea about structuring data.
 en: Some people where so enthusiastic about %xml they saw it everywhere.
 en: The idea was: the future is %xml.
-en: Then some people believe it would be a good idea to invent many %xml compatible format and also programming languages with %xml syntax.
+en: Then some believed it would be a good idea to invent many %xml compatible format and even programming languages with %xml syntax.
 fr: Lorsqu'%xml fût inventé beaucoup pensaient que c'était l'avenir.
 fr: Passer de fichiers plat à des fichiers structurés standardisés fût un grand progrès dans beaucoup de domaines.
 fr: Cerain se mirent à voir du %xml de partout.
@@ -47,7 +47,7 @@ fr: Non seulement comme format de fichier, mais aussi comme format pour un langa
 en: Happy! Happy! Joy! Joy! 
 fr: Ô joie !
 
-en: Unfortunately, %xml was a format mean to transfert structured data.
+en: Unfortunately, %xml was made to transfert structured data.
 en: Not a format a human should see or edit directly.
 en: The sad reality is %xml syntax is simply verbose and ugly.
 en: Most of the time it shouldn't be a problem, as nobody should see it.
@@ -68,10 +68,9 @@ en: You have many format for which it would be very nice to add variables, loops
 fr: %xml, n'est pas le seul cas de format mal utilisé que je connaisse.
 fr: Vous avez d'autres formats dans lesquels il serait très agréable d'ajouter des variables, des boucles, des fonctions...
 
-en: But I am here to help.
-en: If like me you hate with passion %xslt or writing %xml.
-en: I will show you how m4 could help you deal with bad format.
-en: Or language with too few power.
+en: If like me you hate with passion %xslt or writing %xml,
+en: I will show you how you could deal with this bad format
+en: or language.
 fr: Mais je suis là pour vous aider.
 fr: Si comme moi vous détestez %xslt ou écrire de l'%xml.
 fr: Je vais vous montrer une façon d'améliorer tout ça.
@@ -84,7 +83,7 @@ en: Any developer who had to deal with %xslt know how horrible it is.
 fr: Commençons avec le pire cas de langage %xml que je connaisse : %xslt.
 fr: Tous les développeurs qui ont déjà dû écrire du %xslt savent à quel point ce langage est horrible.
 
-en: In order to reduce the verbosity of such so bad languages, there is a way.
+en: In order to reduce the verbosity of such a bad languages, there is a way.
 en: **`m4`**. Yes, the preprocessor you use when you program in `C` and `C++`.
 fr: Pour réduire la "verbosité" de tels langages, il y a un moyen.
 fr: **`m4`**.
@@ -149,7 +148,7 @@ fr: Maintenant compilons simplement ce fichier :
 m4 myfile.m4 > myfile.xslt
 </code>
 
-en: And you can profit! Now <sc>xslt</sc> is more readable and easier to edit!
+en: Profit! Now <sc>xslt</sc> is more readable and easier to edit!
 fr: Et vous pouvez profitez ! Maintenant <sc>xslt</sc> devient plus lisible et plus facile à éditer.
 
 en: ## The cool part: Fractals!
@@ -273,7 +272,8 @@ fr: Cette macro va dupliquer le niveau précédent en lui appliquant chacune des
 fr: Au niveau 0, le contenu est un seul grand λ, le niveau 1 en contient 3. Le niveau 2 en contient 9, etc...
 fr: Le niveau 5 contient 3<sup>5</sup>=243 λ.
 
-en: The main advantage is I could preview the final result easily. Without the macro system, I would have to make 5 copy/paste + modifications for each try.
+en: I could preview the final result easily. 
+en: Without the macro system, I would have to make 5 copy/paste + modifications for each try.
 fr: L'avantage principal c'est que je pouvais visualiser le résultat final facilement.
 fr: Sans ce système de macro, pour faire une preview il m'aurait fallu faire des copier/coller + quelques modifications à chaque essai.
 
@@ -283,9 +283,13 @@ en: It was fun to make a fractal in <sc>svg</sc>, but the interesting part is ho
 en: I used the <sc>xslt</sc> trick at work for example.
 en: I also used it to make include inside obscure format.
 en: If all you want is to generate  a minimal static website withou using nanoc, jekyll or hakyll (ther are plenty other alternatives). You can consider using m4 to generate your <sc>html</sc> instead of copy/paste the menu and the footer, or using AJAX.
+en: 
+en: Another usage I thouhgt about is to use m4
+en: to organize languages such as brainfuck.
 fr: Ce fut très amusant de faire une fractale en <sc>svg</sc>, mais la partie la plus intéressante était d'augmenter la puissance d'expressivité du langage en utilise un préprocesseur.
 fr: J'ai utilisé cette méthode avec <sc>xslt</sc> pour une vrai application par exemple.
 fr: On peut aussi utiliser m4 pour faire des includes d'autres fichiers.
 fr: Typiquement je l'ai utiliser pour les includes dans un format obscur.
 fr: Mais vous pouvez aussi le considérer pour des includes dans du HTML.
 fr: Par exemple pour fabriquer un site statique rapidement, m4 peut se révéler utile pour inclure un footer ou un menu sur toutes les pages par exemple.
+fr: J'ai aussi pensé que l'on pouvait utiliser m4 pour structurer des programmes comme brainfuck.
