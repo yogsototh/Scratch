@@ -200,14 +200,15 @@ Once fixed, we should now simply copy and repeat for each new level.
 Now it is time to talk about where the magic occurs: `YTRANSCOMPLETE`.
 This macro takes two arguments.
 The current depth and the preceding one.
-It duplicate using the three transformations the preceding level.
+It duplicates using the three transformations the preceding level.
 
 - At level 0 there is only one λ,
 - at level 1 there is 3 λ,
-- at level 2 ther is 9 λ
+- at level 2 there is 9 λ
 - etc... 
 
 At the final 5th level there is 3<sup>5</sup>=243 λ.
+All level combined have 3<sup>6</sup>-1 / 2 = 364 λ.
 
 I could preview the final result easily. 
 Without the macro system, I would have to make 5 copy/paste + modifications for each try.

@@ -207,6 +207,7 @@ Le niveau courant et le niveau précédent.
 Cette macro va dupliquer le niveau précédent en lui appliquant chacune des 3 transformations.
 Au niveau 0, le contenu est un seul grand λ, le niveau 1 en contient 3. Le niveau 2 en contient 9, etc...
 Le niveau 5 contient 3<sup>5</sup>=243 λ.
+Tous les niveaux combinés représentent 3<sup>6</sup>-1 / 2 = 364 λ.
 
 L'avantage principal c'est que je pouvais visualiser le résultat final facilement.
 Sans ce système de macro, pour faire une preview il m'aurait fallu faire des copier/coller + quelques modifications à chaque essai.

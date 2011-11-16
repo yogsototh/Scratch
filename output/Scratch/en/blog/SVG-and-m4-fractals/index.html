@@ -252,16 +252,17 @@ m4 yesodlogo.m4 <span class="Keyword">&gt;</span> yesodlogo.svg <span class="Key
 <p>Now it is time to talk about where the magic occurs: <code>YTRANSCOMPLETE</code>.
 This macro takes two arguments.
 The current depth and the preceding one.
-It duplicate using the three transformations the preceding level.</p>
+It duplicates using the three transformations the preceding level.</p>
 
 <ul>
   <li>At level 0 there is only one λ,</li>
   <li>at level 1 there is 3 λ,</li>
-  <li>at level 2 ther is 9 λ</li>
+  <li>at level 2 there is 9 λ</li>
   <li>etc&hellip; </li>
 </ul>
 
-<p>At the final 5<sup>th</sup> level there is 3<sup>5</sup>=243 λ.</p>
+<p>At the final 5<sup>th</sup> level there is 3<sup>5</sup>=243 λ.
+All level combined have 3<sup>6</sup>-1 / 2 = 364 λ.</p>
 
 <p>I could preview the final result easily. 
 Without the macro system, I would have to make 5 copy/paste + modifications for each try.</p>
