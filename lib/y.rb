@@ -121,6 +121,8 @@ module Nanoc3::Filters
                 %{2<sup>nd</sup>}
             end.gsub(/3rd/) do
                 %{3<sup>rd</sup>}
+            end.gsub(/(\d+)th/) do
+                %{#{$1}<sup>th</sup>}
             end.gsub(/([2-9])ème/) do
                 %{#{$1}<sup>ème</sup>}
             end.gsub(%{<em>&amp;</em>}) do # nicer &
