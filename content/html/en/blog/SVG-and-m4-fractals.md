@@ -3,8 +3,8 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2011-10-20T11:39:36+02:00
-title: SVG and m4 fractals
-subtitle: Increase the power of deficient languages.
+title: Increase the power of deficient languages.
+subtitle: Fractals with SVG and m4
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
@@ -14,6 +14,7 @@ tags:
   - XML
   - design
   - programming
+  - fractal
 macros:
  svg: '<span class="sc">svg</span>' 
  xml: '<span class="sc">xml</span>' 

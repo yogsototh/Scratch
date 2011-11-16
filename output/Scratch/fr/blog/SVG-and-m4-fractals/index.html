@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
         
-        <meta name="keywords" content="m4, SVG, XSLT, XML, design, programming">
+        <meta name="keywords" content="m4, SVG, XSLT, XML, design, programmation, fractales">
         
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
@@ -14,15 +14,15 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
-        <link rel="alternate" lang="fr" xml:lang="fr" title="des fractales en SVG et m4" type="text/html" hreflang="fr" href="/Scratch/fr/blog/SVG-and-m4-fractals/" /> 
-        <link rel="alternate" lang="en" xml:lang="en" title="SVG and m4 fractals" type="text/html" hreflang="en" href="/Scratch/en/blog/SVG-and-m4-fractals/" /> 
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Accroître le pouvoir des languages déficients." type="text/html" hreflang="fr" href="/Scratch/fr/blog/SVG-and-m4-fractals/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Increase the power of deficient languages." type="text/html" hreflang="en" href="/Scratch/en/blog/SVG-and-m4-fractals/" /> 
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <title>des fractales en SVG et m4</title>
+        <title>Accroître le pouvoir des languages déficients.</title>
     </head>
     <body lang="fr" class="article">
         <script type="text/javascript">// <![CDATA[
@@ -41,11 +41,11 @@
             </div>
             <div id="titre">
                 <h1>
-                    des fractales en SVG et m4
+                    Accroître le pouvoir des languages déficients.
                 </h1>
                  
                 <h2>
-                    Accroître le pouvoir des languages déficients. 
+                    Fractales en SVG avec m4 
                 </h2>
                 
             </div>
@@ -64,13 +64,13 @@
 <div class="intro">
 
 
-<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Utiliser m4 pour accroître le pouvoir d’<span class="sc">xslt</span> et d’<span class="sc">svg</span>. Example cool, les fractales.</p>
+<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Utiliser m4 pour accroître le pouvoir d&rsquo;<span class="sc">xslt</span> et d&rsquo;<span class="sc">svg</span>. Example cool, les fractales.</p>
 
 
 </div>
 
 
-<p>Lorsqu’<span class="sc">xml</span> fût inventé beaucoup pensaient que c’était l’avenir.
+<p>Lorsqu&rsquo;<span class="sc">xml</span> fût inventé beaucoup pensaient que c&rsquo;était l&rsquo;avenir.
 Passer de fichiers plat à des fichiers structurés standardisés fût un grand progrès dans beaucoup de domaines.
 Cerain se mirent à voir du <span class="sc">xml</span> de partout.
 À tel point que les les format compatibles <span class="sc">xml</span> naquirent de toute part.
@@ -80,33 +80,33 @@ Non seulement comme format de fichier, mais aussi comme format pour un langage d
 
 <p>Malheureusement, <span class="sc">xml</span> fût fabriquer pour le transfert de données.
 Pas du tout pour être vu ou édité directement.
-La triste vérité est qu’<span class="sc">xml</span> est verbeux et laid.
-Dans un monde parfait, nous ne devrions avoir des programmes qui s’occupent de nous afficher correctement le <span class="sc">xml</span> pour nous épargner la peine de les voir directement.
+La triste vérité est qu&rsquo;<span class="sc">xml</span> est verbeux et laid.
+Dans un monde parfait, nous ne devrions avoir des programmes qui s&rsquo;occupent de nous afficher correctement le <span class="sc">xml</span> pour nous épargner la peine de les voir directement.
 Mais devinez quoi&nbsp;?
-Notre monde n’est pas parfait. 
+Notre monde n&rsquo;est pas parfait. 
 Beaucoup de programmeurs sont ainsi forcé de travailler
-directement avec de l’<span class="sc">xml</span>.</p>
+directement avec de l&rsquo;<span class="sc">xml</span>.</p>
 
-<p><span class="sc">xml</span>, n’est pas le seul cas de format mal utilisé que je connaisse.
-Vous avez d’autres formats dans lesquels il serait très agréable d’ajouter des variables, des boucles, des fonctions…</p>
+<p><span class="sc">xml</span>, n&rsquo;est pas le seul cas de format mal utilisé que je connaisse.
+Vous avez d&rsquo;autres formats dans lesquels il serait très agréable d&rsquo;ajouter des variables, des boucles, des fonctions&hellip;</p>
 
 <p>Mais je suis là pour vous aider.
-Si comme moi vous détestez <span class="sc">xslt</span> ou écrire de l’<span class="sc">xml</span>.
-Je vais vous montrer une façon d’améliorer tout ça.</p>
+Si comme moi vous détestez <span class="sc">xslt</span> ou écrire de l&rsquo;<span class="sc">xml</span>.
+Je vais vous montrer une façon d&rsquo;améliorer tout ça.</p>
 
 <h2 id="un-exemple-avec-span-classscxsltspan">Un exemple avec <span class="sc">xslt</span></h2>
 
 <p>Commençons avec le pire cas de langage <span class="sc">xml</span> que je connaisse&nbsp;: <span class="sc">xslt</span>.
 Tous les développeurs qui ont déjà dû écrire du <span class="sc">xslt</span> savent à quel point ce langage est horrible.</p>
 
-<p>Pour réduire la “verbosité” de tels langages, il y a un moyen.
+<p>Pour réduire la &ldquo;verbosité&rdquo; de tels langages, il y a un moyen.
 <strong><code>m4</code></strong>.
 Oui, le préprocesseur utilisé par <code>C</code> et <code>C++</code>.</p>
 
 <p>Voici certains exemples&nbsp;:</p>
 
 <ul>
-  <li>Les variables, au lieu d’écrire <code>myvar = value</code>, voici la version <span class="sc">xslt</span>&nbsp;:</li>
+  <li>Les variables, au lieu d&rsquo;écrire <code>myvar = value</code>, voici la version <span class="sc">xslt</span>&nbsp;:</li>
 </ul>
 
 <pre class="twilight">
@@ -124,7 +124,7 @@ Oui, le préprocesseur utilisé par <code>C</code> et <code>C++</code>.</p>
 </pre>
 
 <ul>
-  <li>afficher la valeur d’une variable, au lieu de <code>print myvar</code>, nous avons droit à&nbsp;:</li>
+  <li>afficher la valeur d&rsquo;une variable, au lieu de <code>print myvar</code>, nous avons droit à&nbsp;:</li>
 </ul>
 
 <pre class="twilight">
@@ -132,7 +132,7 @@ Oui, le préprocesseur utilisé par <code>C</code> et <code>C++</code>.</p>
 </pre>
 
 <ul>
-  <li>Essayez d’imaginer à quel point il est verbeux de déclarer une fonction dans ce langage.</li>
+  <li>Essayez d&rsquo;imaginer à quel point il est verbeux de déclarer une fonction dans ce langage.</li>
 </ul>
 
 <h2 id="la-solution-m4--la-rescousse">La solution (m4 à la rescousse)</h2>
@@ -168,14 +168,14 @@ m4 myfile.m4 <span class="Keyword">&gt;</span> myfile.xslt
 
 <p>À ses débuts, beaucoup pensaient que ce serait le nouveau Flash. Apparemment, ce devrait plutôt être <code>canvas</code> avec du javascript qui occupera cette place.</p>
 
-<p>Tout d’abord, laissez moi vous montrer le résultat&nbsp;:</p>
+<p>Tout d&rsquo;abord, laissez moi vous montrer le résultat&nbsp;:</p>
 
 <p><a href="/Scratch/img/blog/SVG-and-m4-fractals/main.svg">
 <img alt="Yesod logo made in SVG and m4" src="/Scratch/img/blog/SVG-and-m4-fractals/main.png" />
-Cliquez sur l’image pour voir le <span class="sc">svg</span> directement. Attention, si vous n’avez pas un ordinateur récent, ça risque de ramer.
+Cliquez sur l&rsquo;image pour voir le <span class="sc">svg</span> directement. Attention, si vous n&rsquo;avez pas un ordinateur récent, ça risque de ramer.
 </a></p>
 
-<p>Le positionnement du texte “esod” par rapport au “λ” renversé a été en jouant avec firebug. De cette façon je n’avais pas à regénérer pour tester.</p>
+<p>Le positionnement du texte &ldquo;esod&rdquo; par rapport au &ldquo;λ&rdquo; renversé a été en jouant avec firebug. De cette façon je n&rsquo;avais pas à regénérer pour tester.</p>
 
 <p>Faire une telle fractale revient à&nbsp;:</p>
 
@@ -187,9 +187,9 @@ Cliquez sur l’image pour voir le <span class="sc">svg</span> directement. Atte
   <li>Arréter lorsque la récursion est assez profonde.</li>
 </ol>
 
-<p>Si j’avais dû faire ça manuellement, il m’aurait fallu faire beaucoup de copier/coller dans mon <span class="sc">svg</span>.
-Simplement parce que la transformation est toujours la même, mais je ne pouvais pas dire, utiliser la transformation appelée “titi”.
-Plutôt que copier du <span class="sc">xml</span>, j’ai utilisé m4.</p>
+<p>Si j&rsquo;avais dû faire ça manuellement, il m&rsquo;aurait fallu faire beaucoup de copier/coller dans mon <span class="sc">svg</span>.
+Simplement parce que la transformation est toujours la même, mais je ne pouvais pas dire, utiliser la transformation appelée &ldquo;titi&rdquo;.
+Plutôt que copier du <span class="sc">xml</span>, j&rsquo;ai utilisé m4.</p>
 
 <p>Et voici le code commenté&nbsp;:</p>
 
@@ -241,13 +241,13 @@ Plutôt que copier du <span class="sc">xml</span>, j’ai utilisé m4.</p>
 </pre>
 </div></div>
 
-<p>et je l’ai compile en <span class="sc">svg</span> et ensuite en <span class="sc">png</span> avec&nbsp;:</p>
+<p>et je l&rsquo;ai compile en <span class="sc">svg</span> et ensuite en <span class="sc">png</span> avec&nbsp;:</p>
 
 <pre class="twilight">
 m4 yesodlogo.m4 <span class="Keyword">&gt;</span> yesodlogo.svg <span class="Keyword">&amp;&amp;</span> convert yesodlogo.svg yesodlogo.png
 </pre>
 
-<p>Le λ est dupliqué avec trois “transformations” différentes. Les transformations sont&nbsp;: <code>YTRANSFORMONE</code>, <code>YTRANSFORMTWO</code> et <code>YTRANSFORMTHREE</code>.</p>
+<p>Le λ est dupliqué avec trois &ldquo;transformations&rdquo; différentes. Les transformations sont&nbsp;: <code>YTRANSFORMONE</code>, <code>YTRANSFORMTWO</code> et <code>YTRANSFORMTHREE</code>.</p>
 
 <p>Chaque transformation est une similarité (translation + rotation + zoom, ce qui est équivalent à juste rotation + zoom, mais bon).</p>
 
@@ -257,18 +257,18 @@ m4 yesodlogo.m4 <span class="Keyword">&gt;</span> yesodlogo.svg <span class="Key
 Cette macro prend deux arguments.
 Le niveau courant et le niveau précédent.
 Cette macro va dupliquer le niveau précédent en lui appliquant chacune des 3 transformations.
-Au niveau 0, le contenu est un seul grand λ, le niveau 1 en contient 3. Le niveau 2 en contient 9, etc…
+Au niveau 0, le contenu est un seul grand λ, le niveau 1 en contient 3. Le niveau 2 en contient 9, etc&hellip;
 Le niveau 5 contient 3<sup>5</sup>=243 λ.</p>
 
-<p>L’avantage principal c’est que je pouvais visualiser le résultat final facilement.
-Sans ce système de macro, pour faire une preview il m’aurait fallu faire des copier/coller + quelques modifications à chaque essai.</p>
+<p>L&rsquo;avantage principal c&rsquo;est que je pouvais visualiser le résultat final facilement.
+Sans ce système de macro, pour faire une preview il m&rsquo;aurait fallu faire des copier/coller + quelques modifications à chaque essai.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Ce fut très amusant de faire une fractale en <span class="sc">svg</span>, mais la partie la plus intéressante était d’augmenter la puissance d’expressivité du langage en utilise un préprocesseur.
-J’ai utilisé cette méthode avec <span class="sc">xslt</span> pour une vrai application par exemple.
-On peut aussi utiliser m4 pour faire des includes d’autres fichiers.
-Typiquement je l’ai utiliser pour les includes dans un format obscur.
+<p>Ce fut très amusant de faire une fractale en <span class="sc">svg</span>, mais la partie la plus intéressante était d&rsquo;augmenter la puissance d&rsquo;expressivité du langage en utilise un préprocesseur.
+J&rsquo;ai utilisé cette méthode avec <span class="sc">xslt</span> pour une vrai application par exemple.
+On peut aussi utiliser m4 pour faire des includes d&rsquo;autres fichiers.
+Typiquement je l&rsquo;ai utiliser pour les includes dans un format obscur.
 Mais vous pouvez aussi le considérer pour des includes dans du HTML.
 Par exemple pour fabriquer un site statique rapidement, m4 peut se révéler utile pour inclure un footer ou un menu sur toutes les pages par exemple.</p>
 

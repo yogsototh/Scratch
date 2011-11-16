@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
         
-        <meta name="keywords" content="iPhone, Objective-C, Programming">
+        <meta name="keywords" content="iPhone, Objective-C, programming">
         
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
@@ -60,7 +60,7 @@ here are two functions to add to your code to have <code>base64</code> and <code
 <p>To use it, simply copy the code in your class and use as this:</p>
 
 <pre class="twilight">
-#import &lt;CommonCrypto/CommonDigest.h&gt;
+<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">import</span> <span class="String"><span class="String">&lt;</span>CommonCrypto/CommonDigest.h<span class="String">&gt;</span></span></span>
 ...
 <span class="Support">NSString</span> *b64_hash = [<span class="Variable">self</span> <span class="SupportFunction">b64_sha1<span class="SupportFunction">:</span></span><span class="String"><span class="String">@&quot;</span>some NSString to be sha1'ed<span class="String">&quot;</span></span>];
 ...
@@ -72,46 +72,46 @@ here are two functions to add to your code to have <code>base64</code> and <code
 <div class="code"><div class="file"><a href="/Scratch/en/blog/2010-09-02-base64-and-sha1-on-iPhone/code/iphone_base64_sha1.c"> &#x27A5; iphone_base64_sha1.c </a></div><div class="withfile">
 <pre class="twilight">
 
-- (unsigned char *)sha1:(<span class="Support">NSString</span> *)baseString result:(unsigned char *)result {
-    char *c_baseString=(char *)[baseString <span class="SupportFunction">UTF8String</span>];
-    CC_SHA1(c_baseString, strlen(c_baseString), result);
-    return result;
+- (<span class="Storage">unsigned</span> <span class="Storage">char</span> *)sha1:(NSString *)baseString result:(<span class="Storage">unsigned</span> <span class="Storage">char</span> *)result {
+    <span class="Storage">char</span> *c_baseString=(<span class="Storage">char</span> *)[baseString UTF8String];
+    CC_SHA1(c_baseString, <span class="SupportFunction">strlen</span>(c_baseString), result);
+    <span class="Keyword">return</span> result;
 }
 
-- (<span class="Support">NSString</span> *)base64:(unsigned char *)result {
-    <span class="Support">NSString</span> *password=[[<span class="Support">NSString</span> <span class="SupportFunction">alloc</span>] <span class="SupportFunction">init</span>];
-    static const unsigned char cb64[65]=&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot;;
-    for (int i=0; i&lt;CC_SHA1_DIGEST_LENGTH; i+=3) {
-        password=[password <span class="SupportFunction">stringByAppendingFormat<span class="SupportFunction">:</span></span><span class="String"><span class="String">@&quot;</span>%c%c%c%c<span class="String">&quot;</span></span>,
-            cb64[(result[i] &amp;0xFC)&gt;&gt;2],
-            cb64[((result[i] &amp; 0x03) &lt;&lt; 4)
-                | ((result[i + 1] &amp; 0xF0) &gt;&gt; 4)],
-            cb64[((result[i + 1] &amp; 0x0F) &lt;&lt; 2)
-                | ((result[i + 2] &amp; 0xC0) &gt;&gt; 6)],
-            cb64[result[i+2]&amp;0x3F]
+- (NSString *)base64:(<span class="Storage">unsigned</span> <span class="Storage">char</span> *)result {
+    NSString *password=[[NSString alloc] init];
+    <span class="Storage">static</span> <span class="Storage">const</span> <span class="Storage">unsigned</span> <span class="Storage">char</span> cb64[<span class="Constant">65</span>]=<span class="String"><span class="String">&quot;</span>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/<span class="String">&quot;</span></span>;
+    <span class="Keyword">for</span> (<span class="Storage">int</span> i=<span class="Constant">0</span>; i&lt;CC_SHA1_DIGEST_LENGTH; i+=<span class="Constant">3</span>) {
+        password=[password stringByAppendingFormat:@<span class="String"><span class="String">&quot;</span><span class="StringConstant">%c</span><span class="StringConstant">%c</span><span class="StringConstant">%c</span><span class="StringConstant">%c</span><span class="String">&quot;</span></span>,
+            cb64[(result[i] &amp;<span class="Constant">0xFC</span>)&gt;&gt;<span class="Constant">2</span>],
+            cb64[((result[i] &amp; <span class="Constant">0x03</span>) &lt;&lt; <span class="Constant">4</span>)
+                | ((result[i + <span class="Constant">1</span>] &amp; <span class="Constant">0xF0</span>) &gt;&gt; <span class="Constant">4</span>)],
+            cb64[((result[i + <span class="Constant">1</span>] &amp; <span class="Constant">0x0F</span>) &lt;&lt; <span class="Constant">2</span>)
+                | ((result[i + <span class="Constant">2</span>] &amp; <span class="Constant">0xC0</span>) &gt;&gt; <span class="Constant">6</span>)],
+            cb64[result[i+<span class="Constant">2</span>]&amp;<span class="Constant">0x3F</span>]
                 ];            
     }
-    return password;
+    <span class="Keyword">return</span> password;
 }
 
-- (<span class="Support">NSString</span> *)hexadecimalRepresentation:(unsigned char *)result {
-    <span class="Support">NSString</span> *password=[[<span class="Support">NSString</span> <span class="SupportFunction">alloc</span>] <span class="SupportFunction">init</span>];
-    for (int i=0; i&lt;CC_SHA1_DIGEST_LENGTH; i++) {
-        password=[password <span class="SupportFunction">stringByAppendingFormat<span class="SupportFunction">:</span></span><span class="String"><span class="String">@&quot;</span>%02x<span class="String">&quot;</span></span>, result[i]];
+- (NSString *)hexadecimalRepresentation:(<span class="Storage">unsigned</span> <span class="Storage">char</span> *)result {
+    NSString *password=[[NSString alloc] init];
+    <span class="Keyword">for</span> (<span class="Storage">int</span> i=<span class="Constant">0</span>; i&lt;CC_SHA1_DIGEST_LENGTH; i++) {
+        password=[password stringByAppendingFormat:@<span class="String"><span class="String">&quot;</span><span class="StringConstant">%02x</span><span class="String">&quot;</span></span>, result[i]];
     }
-    return password;
+    <span class="Keyword">return</span> password;
 }
 
-- (<span class="Support">NSString</span> *)b64_sha1:(<span class="Support">NSString</span> *)inputString {
-    unsigned char result[CC_SHA1_DIGEST_LENGTH+1];
-    [<span class="Variable">self</span> <span class="SupportFunction">sha1<span class="SupportFunction">:</span></span>inputString <span class="SupportFunction">result<span class="SupportFunction">:</span></span>result];
-    return [<span class="Variable">self</span> <span class="SupportFunction">base64<span class="SupportFunction">:</span></span>result];
+- (NSString *)b64_sha1:(NSString *)inputString {
+    <span class="Storage">unsigned</span> <span class="Storage">char</span> result[CC_SHA1_DIGEST_LENGTH+<span class="Constant">1</span>];
+    [self sha1:inputString result:result];
+    <span class="Keyword">return</span> [self base64:result];
 }
 
-- (<span class="Support">NSString</span> *)hex_sha1:(<span class="Support">NSString</span> *)inputString {
-    unsigned char result[CC_SHA1_DIGEST_LENGTH+1];
-    [<span class="Variable">self</span> <span class="SupportFunction">sha1<span class="SupportFunction">:</span></span>inputString <span class="SupportFunction">result<span class="SupportFunction">:</span></span>result];
-    return [<span class="Variable">self</span> <span class="SupportFunction">hexadecimalRepresentation<span class="SupportFunction">:</span></span>result];
+- (NSString *)hex_sha1:(NSString *)inputString {
+    <span class="Storage">unsigned</span> <span class="Storage">char</span> result[CC_SHA1_DIGEST_LENGTH+<span class="Constant">1</span>];
+    [self sha1:inputString result:result];
+    <span class="Keyword">return</span> [self hexadecimalRepresentation:result];
 }
 </pre>
 </div></div>

@@ -79,13 +79,13 @@
 <p>The idea are: </p>
 
 <ul>
-  <li>synchronize to a temporary folder then swap the name therefore the website isn’t accessible only during the swap time. It takes only the time of two rename.</li>
+  <li>synchronize to a temporary folder then swap the name therefore the website isn&rsquo;t accessible only during the swap time. It takes only the time of two rename.</li>
   <li>reiterate all operations until they work (for example, renaming).</li>
 </ul>
 
 <p>For now I use <code>rsync</code> which in fact is no more efficient than a simple <code>cp</code> with WebDav. And I should use a method to keep track of elements who have changed. before the publication.</p>
 
-<p>In fact when I’m on a Mac, I use <a href="http://www.panic.com/transmit">Transmit</a> which is very cool and far more efficient than the Finder to synchronize files. After the synchronization, I swap the directories.</p>
+<p>In fact when I&rsquo;m on a Mac, I use <a href="http://www.panic.com/transmit">Transmit</a> which is very cool and far more efficient than the Finder to synchronize files. After the synchronization, I swap the directories.</p>
 
 <p>My script take a <code>-s</code> option in order to make only the swap option. It also take a <code>-a</code> in order to put the new <code>index.html</code> which should point to the new homepage (not the iWeb one).</p>
 

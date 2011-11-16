@@ -9,7 +9,7 @@ author_uri: yannesposito.com
 tags:
   - iPhone
   - Objective-C
-  - Programmation
+  - programmation
 -----
 
 Allons directement à l'essentiel :
