@@ -10,8 +10,8 @@ author_uri: yannesposito.com
 tags:
   - iPhone
   - Objective-C
-en:   - Programming
-fr:   - Programmation
+en:   - programming
+fr:   - programmation
 -----
 
 fr: Allons directement à l'essentiel :

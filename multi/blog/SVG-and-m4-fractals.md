@@ -3,10 +3,10 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2011-10-20T11:39:36+02:00
-en: title: SVG and m4 fractals
-en: subtitle: Increase the power of deficient languages.
-fr: title: des fractales en SVG et m4
-fr: subtitle: Accroître le pouvoir des languages déficients.
+en: title: Increase the power of deficient languages.
+en: subtitle: Fractals with SVG and m4
+fr: title: Accroître le pouvoir des languages déficients.
+fr: subtitle: Fractales en SVG avec m4
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
@@ -15,7 +15,10 @@ tags:
   - XSLT
   - XML
   - design
-  - programming
+en:   - programming
+en:   - fractal
+fr:   - programmation
+fr:   - fractales
 macros:
  svg: '<span class="sc">svg</span>' 
  xml: '<span class="sc">xml</span>' 
