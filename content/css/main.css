@@ -455,6 +455,8 @@ $hpadding: 1
   padding: 0.5em
   box-shadow: 0 10px 15px #CCC
   border-radius: 3px
+.corps a:hover img
+  background-color: $revealColor + #666
 
 img.clean
   border: none

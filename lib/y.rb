@@ -25,7 +25,9 @@ module Nanoc3::Filters
 
         def description(content)
             content.gsub(/<div class="math">(.+?)<\/div>/m) do
-                return %{$$ #{$1} $$}
+                %{$$ #{$1} $$}
+            end.gsub(/<script type="math\/tex">(.+?)<\/script>/m) do
+                %{$$ #{$1} $$}
             end
         end
 

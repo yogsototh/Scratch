@@ -20,10 +20,6 @@
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
-        <!-- < % if containMaths %>
-        <script type="text/javascript" src="/Scratch/js/MathJax/MathJax.js"></script>
-        < % end %>
-        -->
         <title>Les idées de yesod</title>
     </head>
     <body lang="fr" class="article">
@@ -65,8 +61,8 @@
 <p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span></p>
 
 <p>Cela fait un moment que je suis la progression du <a href="http://www.yesodweb.com">framework yesod</a>. 
-À mon humble avis on peut commencer à l&rsquo;utiliser pour des applications sérieuses (comprendre en prod).
-Avant de vous dire pourquoi vous devriez aussi le considérer, je préfère vous parler de bonnes idées (parmi d&rsquo;autres) introduites par yesod que je n&rsquo;avais jamais vu ailleurs.</p>
+À mon humble avis on peut commencer à l’utiliser pour des applications sérieuses (comprendre en prod).
+Avant de vous dire pourquoi vous devriez aussi le considérer, je préfère vous parler de bonnes idées (parmi d’autres) introduites par yesod que je n’avais jamais vu ailleurs.</p>
 
 
 </div>
@@ -74,12 +70,12 @@ Avant de vous dire pourquoi vous devriez aussi le considérer, je préfère vous
 
 <h2 id="types-saufs">Types saufs</h2>
 
-<p>Commençons par une BD d&rsquo;<a href="http://xkcd.com">xkcd</a>&nbsp;:</p>
+<p>Commençons par une BD d’<a href="http://xkcd.com">xkcd</a>&nbsp;:</p>
 
 <p><img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt="SQL injection by a mom" /></p>
 
-<p>Lorsque vous créez une application web, beaucoup de temps est passé à s&rsquo;occuper de chaînes de caractères.
-Des chaînes de caractère pour les URL, le HTML, le Javascript, les CSS, les requêtes SQL, etc&hellip;
+<p>Lorsque vous créez une application web, beaucoup de temps est passé à s’occuper de chaînes de caractères.
+Des chaînes de caractère pour les URL, le HTML, le Javascript, les CSS, les requêtes SQL, etc…
 Pour éviter des utilisation malicieuses vous devez protéger chaque chaîne de caractère entre chaque étape.
 Par exemple supposons que vous entriez comme nom&nbsp;:</p>
 
@@ -87,13 +83,13 @@ Par exemple supposons que vous entriez comme nom&nbsp;:</p>
 Newton<span class="Keyword">&lt;</span>script<span class="Keyword">&gt;</span><span class="SupportFunction">alert</span>(<span class="String"><span class="String">&quot;</span>An apple fall<span class="String">&quot;</span></span>)<span class="Keyword">&lt;</span>/script<span class="Keyword">&gt;</span>
 </pre>
 
-<p>Sans une protection correcte, le message &ldquo;An apple fall&rdquo; sera affiché à chaque fois que quelqu&rsquo;un essayera d&rsquo;accéder au nom de cet utilisateur.
-Les &ldquo;types saufs&rdquo; sont le <a href="https://www.youtube.com/watch?v=1IWF3IsEPBE">tonyglandil du web</a>.
-A chaque chaine de caractère, on lui associe un &ldquo;type&rdquo;. 
-A quoi sert cette chaîne de caractère&nbsp;? Est-ce une URL&nbsp;? Du javascript&nbsp;? De l&rsquo;HTML&nbsp;?
-Entre chaque passage d&rsquo;une représentation à une autre, un transformation is faite par défaut.</p>
+<p>Sans une protection correcte, le message “An apple fall” sera affiché à chaque fois que quelqu’un essayera d’accéder au nom de cet utilisateur.
+Les “types saufs” sont le <a href="https://www.youtube.com/watch?v=1IWF3IsEPBE">tonyglandil du web</a>.
+A chaque chaine de caractère, on lui associe un “type”. 
+A quoi sert cette chaîne de caractère&nbsp;? Est-ce une URL&nbsp;? Du javascript&nbsp;? De l’HTML&nbsp;?
+Entre chaque passage d’une représentation à une autre, un transformation is faite par défaut.</p>
 
-<p>Yesod fait de son mieux pour typer les objets manipulés et ainsi il fera ce qu&rsquo;il faut pour ne pas mettre du script dans une URL par exemple.</p>
+<p>Yesod fait de son mieux pour typer les objets manipulés et ainsi il fera ce qu’il faut pour ne pas mettre du script dans une URL par exemple.</p>
 
 <pre class="twilight"><span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">a</span> <span class="MetaTagInline">href</span>=@[<span class="MetaTagInline">AnotherPageR</span>]<span class="MetaTagInline">&gt;</span></span>Go to the other page
 </pre>
@@ -107,28 +103,28 @@ falselink&quot;&gt;<span class="EmbeddedSource"><span class="EmbeddedSource">&lt
 <h2 id="les-widgets">Les widgets</h2>
 
 <p>Les widgets de yesod sont différents des widgets Javascripts (ou java).
-Pour yesod un widget est un ensemble de morceaux d&rsquo;appli web. 
-Et si dans une page on veut utiliser plusieurs widgets, alors yesod s&rsquo;occupe de tout.
+Pour yesod un widget est un ensemble de morceaux d’appli web. 
+Et si dans une page on veut utiliser plusieurs widgets, alors yesod s’occupe de tout.
 Des exemples de widgets (au sens yesod) sont&nbsp;:</p>
 
 <ul>
-  <li>Le «footer» d&rsquo;une page web,</li>
-  <li>Le «header» d&rsquo;une page web,</li>
-  <li>un bouton qui apparaît lorsque l&rsquo;on «scrolle» vers le bas,</li>
-  <li>etc&hellip;</li>
+  <li>Le «footer» d’une page web,</li>
+  <li>Le «header» d’une page web,</li>
+  <li>un bouton qui apparaît lorsque l’on «scrolle» vers le bas,</li>
+  <li>etc…</li>
 </ul>
 
-<p>Pour chacun de ces widgets vous pourriez avoir besoin d&rsquo;</p>
+<p>Pour chacun de ces widgets vous pourriez avoir besoin d’</p>
 
 <ul>
-  <li>un peu d&rsquo;HTML,</li>
+  <li>un peu d’HTML,</li>
   <li>un peu de CSS et</li>
   <li>un peu de javascript.</li>
 </ul>
 
-<p>Certain morceau doivent être placés dans le «header» de la page et d&rsquo;autre dans le «body».</p>
+<p>Certain morceau doivent être placés dans le «header» de la page et d’autre dans le «body».</p>
 
-<p>Vous pouvez déclarer un widget comme suit (je n&rsquo;utilise pas la vrai syntaxe)&nbsp;:</p>
+<p>Vous pouvez déclarer un widget comme suit (je n’utilise pas la vrai syntaxe)&nbsp;:</p>
 
 <pre><code>htmlheader = ...
 cssheader = ...
@@ -145,12 +141,12 @@ toWidget       hamletFile <span class="String"><span class="String">&quot;</span
 </pre>
 
 <p>Veuillez aussi noté la convention Shakespearienne des noms.
-Encore une bonne raison d&rsquo;utiliser yesod.</p>
+Encore une bonne raison d’utiliser yesod.</p>
 
 <ul>
   <li>Cassius <em class="pala">&amp;</em> Lucius pour le CSS (très similaire à SASS et SCSS)</li>
-  <li>Julius pour le javascript (notons qu&rsquo;il existe aussi un CoffeeScript qui traîne dans les sources de yesod)</li>
-  <li>Hamlet pour l&rsquo;HTML (similaire à haml)</li>
+  <li>Julius pour le javascript (notons qu’il existe aussi un CoffeeScript qui traîne dans les sources de yesod)</li>
+  <li>Hamlet pour l’HTML (similaire à haml)</li>
 </ul>
 
 <p>Lorsque vous générez votre page, yesod se débrouille pour que tout fonctionne ensemble:</p>
@@ -161,15 +157,15 @@ myBigWidget =  menuWidget &gt;&gt; contentWidget &gt;&gt; footerWidget
 
 <p>De plus, si vous utilisez 10 widgets avec un peu de CSS, yesod fabriquera un unique fichier CSS pour vous. Bien entendu si vous préférez avoir une dizaine de fichier CSS vous pouvez aussi le faire.</p>
 
-<p>C&rsquo;est juste génial&nbsp;!</p>
+<p>C’est juste génial&nbsp;!</p>
 
 <h2 id="routage-optimis">Routage optimisé</h2>
 
 <p>Dans un système de routage standard (à la ruby on rails par exemple) vous avez pour chaque entrée un couple: regexp → handler</p>
 
-<p>La seule façon de découvrir la bonne règle est d&rsquo;essayer de matcher l&rsquo;url demandée à chaque expression régulière.</p>
+<p>La seule façon de découvrir la bonne règle est d’essayer de matcher l’url demandée à chaque expression régulière.</p>
 
-<p>Au lieu d&rsquo;essayer chaque expression régulière, yesod regroupe et compile les routes pour les optimiser.
+<p>Au lieu d’essayer chaque expression régulière, yesod regroupe et compile les routes pour les optimiser.
 Bien entendu pour pouvoir profiter de cet avantage au mieux, il ne faut pas que deux routes interfèrent entres elles.</p>
 
 <pre class="twilight">
@@ -186,22 +182,22 @@ Si vous voulez vraiment vous pouvez le faire foncionner quand même, mais il me 
 /blog/$DATE DateR
 </pre>
 
-<p>et faire le test &ldquo;est-ce que date = 2003&nbsp;?&rdquo; dans le «handler».</p>
+<p>et faire le test “est-ce que date = 2003&nbsp;?” dans le «handler».</p>
 
 <h2 id="pourquoi-yesod">Pourquoi yesod?</h2>
 
 <ol>
-  <li><em>La vitesse</em>. Simplement incroyable, je ne pense pas qu&rsquo;il existe quelque chose de plus rapide aujourd&rsquo;hui. Regardez d&rsquo;abord cet <a href="http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks">article</a> puis <a href="http://www.yesodweb.com/blog/2011/02/warp-speed-ahead">celui-ci</a>.</li>
-  <li><em>Haskell</em>. C&rsquo;est certainement le langage de programmation le plus difficile à apprendre que j&rsquo;ai jamais rencontré. Mais aussi l&rsquo;un des plus incroyables. Si vous voulez rencontrer tout un tas de notions que vous n&rsquo;avez jamais croisées avant et faire exploser votre cerveau avec de nouvelles idées, alors apprenez Haskell.</li>
-  <li><em>Bonnes idées et communauté excellente</em>. Cela fait quelques mois que je suis la progression de yesod. Et la vitesse à laquelle tout s&rsquo;est déroulé est simplement incroyable. De plus les développeurs sont intelligents et super sympa.</li>
+  <li><em>La vitesse</em>. Simplement incroyable, je ne pense pas qu’il existe quelque chose de plus rapide aujourd’hui. Regardez d’abord cet <a href="http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks">article</a> puis <a href="http://www.yesodweb.com/blog/2011/02/warp-speed-ahead">celui-ci</a>.</li>
+  <li><em>Haskell</em>. C’est certainement le langage de programmation le plus difficile à apprendre que j’ai jamais rencontré. Mais aussi l’un des plus incroyables. Si vous voulez rencontrer tout un tas de notions que vous n’avez jamais croisées avant et faire exploser votre cerveau avec de nouvelles idées, alors apprenez Haskell.</li>
+  <li><em>Bonnes idées et communauté excellente</em>. Cela fait quelques mois que je suis la progression de yesod. Et la vitesse à laquelle tout s’est déroulé est simplement incroyable. De plus les développeurs sont intelligents et super sympa.</li>
 </ol>
 
-<p>Si vous êtes un &ldquo;haskeller&rdquo;, je pense que vous ne devriez pas avoir peur de la syntaxe particulière imposée par la façon standard de faire les choses avec yesod.
+<p>Si vous êtes un “haskeller”, je pense que vous ne devriez pas avoir peur de la syntaxe particulière imposée par la façon standard de faire les choses avec yesod.
 Il faut essayer un peu plus loin que les premiers tutoriaux du livre.</p>
 
-<p>Je pense que yesod va dans la bonne direction d&rsquo;un web plus sûr et plus rapide. Même si je pense que l&rsquo;avenir sera que les serveurs devront être limités à faire serveur d&rsquo;API (JSON ou XML ou n&rsquo;importe quel autre mode de représentation d&rsquo;objets).</p>
+<p>Je pense que yesod va dans la bonne direction d’un web plus sûr et plus rapide. Même si je pense que l’avenir sera que les serveurs devront être limités à faire serveur d’API (JSON ou XML ou n’importe quel autre mode de représentation d’objets).</p>
 
-<p>Yesod est juste incroyable. Dépassez les difficultés liées à l&rsquo;apprentissage d&rsquo;haskell et essayez le&nbsp;!</p>
+<p>Yesod est juste incroyable. Dépassez les difficultés liées à l’apprentissage d’haskell et essayez le&nbsp;!</p>
 
                 </div>
             
@@ -259,13 +255,9 @@ Il faut essayer un peu plus loin que les premiers tutoriaux du livre.</p>
                         
                         
                         <div class="previous_article">
-                            <a href="/Scratch/fr/blog/Learn-Vim-Progressively/"><span class="nicer">«</span>&nbsp;Apprenez Vim Progressivement</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
                             <a href="/Scratch/fr/blog/Password-Management/"><span class="nicer">«</span>&nbsp;Password Management</a>
                         </div>
+                        
                         
                         
                     </div>
@@ -273,7 +265,7 @@ Il faut essayer un peu plus loin que les premiers tutoriaux du livre.</p>
                         articles suivants
                         
                         <div class="next_article">
-                            <a href="/Scratch/fr/blog/SVG-and-m4-fractals/">SVG and m4 fractals&nbsp;<span class="nicer">»</span></a>
+                            <a href="/Scratch/fr/blog/SVG-and-m4-fractals/">des fractales en SVG et m4&nbsp;<span class="nicer">»</span></a>
                         </div>
                         
                         
@@ -291,7 +283,7 @@ Il faut essayer un peu plus loin que les premiers tutoriaux du livre.</p>
                 </div>
                 <div id="lastmod">
                     Écrit le : 04/10/2011
-                    modifié le : 19/10/2011 
+                    modifié le : 21/10/2011 
                 </div>
                 <div>
                     Site entièrement réalisé avec
