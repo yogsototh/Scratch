@@ -71,6 +71,6 @@ ENDFORMAT
 
 print "imagedir = $imgdirname"
 mkdir $imgdirname
-ln -sf ./multi/${filename#*/multi/} $linkname
+ln -sf $filename $linkname
 ln -sf $imgdirname $imglinkname
 vim $linkname
