@@ -11,9 +11,9 @@ class Graph < Nanoc3::Filter
             f.write %[ digraph Source {
                         fontsize=10;
                         rankdir="LR";
-                        graph [truecolor bgcolor="#ffffff00"];
-                        node [width=0, height=0, fontname="Optima Bold", shape="Mrecord", color="#663300", style="filled" fillcolor="#f9f1dd", fontcolor="#280000"] ;
-                        edge [arrowsize=.5, color="#280000"] ; ]
+                        graph [truecolor bgcolor="#FAFAFA00"];
+                        node [width=0, height=0, fontname="Optima Bold", shape="box", color="#333333", style="filled" fillcolor="#FAFAFA", fontcolor="#333333"] ;
+                        edge [arrowsize=.5, color="#333333"] ; ]
             f.write str
             f.write %[}]
             end

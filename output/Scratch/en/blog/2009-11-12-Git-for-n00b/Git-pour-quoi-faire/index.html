@@ -70,20 +70,20 @@
 </div>
 
 
-<p><a href="http://git-scm.org" title="Git">Git</a> is a <abbr title="Decentralized Concurent Versions System">DCVS</abbr>, which means a Decentralized Concurrent Versions System. Let&rsquo;s analyze each part of this long term:</p>
+<p><a href="http://git-scm.org" title="Git">Git</a> is a <abbr title="Decentralized Concurent Versions System">DCVS</abbr>, which means a Decentralized Concurrent Versions System. Let’s analyze each part of this long term:</p>
 
 <h3 id="versions-system">Versions System</h3>
 
 <p>Firstly, versions system manage files.
 When somebody work with files without a versions system, the following happens frequently:</p>
 
-<p>When you modify a somehow critical file you don&rsquo;t want to loose. You copy naturally this file with another name. For example:</p>
+<p>When you modify a somehow critical file you don’t want to loose. You copy naturally this file with another name. For example:</p>
 
 <div><pre class="twilight">$ cp fichier_important.c fichier_important.c.bak
 </pre></div>
 
 <p>In consequence of what, the new file, play the role of <em>backup</em>. If you break everything, you can always return in the last state by overwriting your modifications.
-Of course, this method is not very professional and is a bit limited. If you make many modifications, you&rsquo;ll end with many files with strange names like:</p>
+Of course, this method is not very professional and is a bit limited. If you make many modifications, you’ll end with many files with strange names like:</p>
 
 <div>
 <pre class="twilight">
@@ -97,7 +97,7 @@ old.fichier_important.c
 </pre>
 </div>
 
-<p>If you want to make it works correctly, you&rsquo;ll have to use naming convention. Files take many place even if you modify most of time only some lines.</p>
+<p>If you want to make it works correctly, you’ll have to use naming convention. Files take many place even if you modify most of time only some lines.</p>
 
 <p><em>Fortunately, versions system are here to help.</em></p>
 
@@ -105,13 +105,13 @@ old.fichier_important.c
 
 <p>Once upon a time versions were managed for each file separately. I think about CVS. Then it naturally appears projects are a coherent set of files. Recover each file separately was a tedious work. This is why versions number passed from files to the entire project.</p>
 
-<p>It is therefore possible to say, &ldquo;I want to get back three days earlier&rdquo;.</p>
+<p>It is therefore possible to say, “I want to get back three days earlier”.</p>
 
 
 <div class="black">
 
 
-<p><em>What gives versions system?</em> (I didn&rsquo;t mention everything at all)</p>
+<p><em>What gives versions system?</em> (I didn’t mention everything at all)</p>
 
 <ul>
   <li>automatic backups: <em>back in time</em>,</li>
@@ -128,7 +128,7 @@ old.fichier_important.c
 
 <p>Version Systems are already useful to manage its own projects. They help to organize and resolve partially backup problems. I say partially because you have to backup your repository on a decent file system. But versions system are really interesting is on projects done by many people.</p>
 
-<p>Let&rsquo;s begin by an example, a two person project&nbsp;; Alex and Beatrice. On a file containing a <em>Lovecraft</em>&rsquo;s gods list:</p>
+<p>Let’s begin by an example, a two person project&nbsp;; Alex and Beatrice. On a file containing a <em>Lovecraft</em>’s gods list:</p>
 
 <div style="width: 10em; margin-left: auto; margin-right: auto">
 <pre class="twilight">
@@ -187,7 +187,7 @@ Yogsototh
 <ul>
   <li>get without any problem others modifications,</li>
   <li>send without any problem its own modifications to others,</li>
-  <li>manage conflicts. I didn&rsquo;t speak about it, but sometimes a conflict can occur (when two different people modify the same line on a file for example). SVC help to resolve such problem. More on that later,</li>
+  <li>manage conflicts. I didn’t speak about it, but sometimes a conflict can occur (when two different people modify the same line on a file for example). SVC help to resolve such problem. More on that later,</li>
   <li>help to know who done what and when.</li>
 </ul>
 
@@ -199,7 +199,7 @@ Yogsototh
 
 <p>This word became popular only recently about CVS. And it mainly means two things:</p>
 
-<p>First, until really recently (SVN), you&rsquo;ll have to be connected to the distant server to get informations about a project. Like get the history. New decentralized systems work with a local <em>REPOSITORY</em> (directory containing backups and many informations linked to the versions system functionalities). Hence, one can view the history of a project without the need of being connected.</p>
+<p>First, until really recently (SVN), you’ll have to be connected to the distant server to get informations about a project. Like get the history. New decentralized systems work with a local <em>REPOSITORY</em> (directory containing backups and many informations linked to the versions system functionalities). Hence, one can view the history of a project without the need of being connected.</p>
 
 <p>All instances of a project can live <em>independently</em>.</p>
 
@@ -212,7 +212,7 @@ Yogsototh
 <p>Typical example:</p>
 
 <blockquote>
-  <p>I develop my project. I&rsquo;m ameliorating something. An urgent bug is reported.</p>
+  <p>I develop my project. I’m ameliorating something. An urgent bug is reported.</p>
 
   <p>With a DCVS I can easily, get back to the version with the bug. Fix it. Send the fix. Get back to my feature work. And even, use the fix for the new version with my new feature.</p>
 
@@ -237,7 +237,7 @@ Yogsototh
 
 <h2 id="to-resume">To resume</h2>
 
-<p>Let&rsquo;s resume what we can easily do with DCVS:</p>
+<p>Let’s resume what we can easily do with DCVS:</p>
 
 <p><strong>Versions Systems</strong></p>
 
@@ -263,7 +263,7 @@ Yogsototh
   <li>Easily manipulate branches</li>
 </ul>
 
-<p>Now let&rsquo;s see how to obtain all these things easily with <a href="http://git-scm.org" title="Git">Git</a>.</p>
+<p>Now let’s see how to obtain all these things easily with <a href="http://git-scm.org" title="Git">Git</a>.</p>
 
 
                 </div>

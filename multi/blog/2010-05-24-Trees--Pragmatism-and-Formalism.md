@@ -10,11 +10,15 @@ en: subtitle: When theory is more efficient than practice
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
+    - XML
+    - Perl
+en:     - programming
 en:     - tree
 en:     - theory
 en:     - mathematics
 en:     - regexp
 en:     - script
+fr:     - programmation
 fr:     - arbre
 fr:     - théorie
 fr:     - mathématiques
@@ -233,7 +237,7 @@ fr: J'ai obtenu quelque chose comme :
         node [label="E"] E_x ;
         node [label="a1"] tag1_x ;
         node [label="a2"] tag2_x ;
-        node [label="R", color="#880000", fillcolor="#880000", fontcolor="white"] R_x ;
+        node [label="R", color="#333333", fillcolor="#333333", fontcolor="white"] R_x ;
         R_x -> C_x;
         C_x -> tag1_x ;
         C_x -> tag2_x ;
@@ -244,7 +248,7 @@ fr: J'ai obtenu quelque chose comme :
         node [label="E"] E_y ;
         node [label="a1"] tag1_y ;
         node [label="a2"] tag2_y ;
-        node [label="R", color="#880000", fillcolor="#880000", fontcolor="white"] R_y ;
+        node [label="R", color="#333333", fillcolor="#333333", fontcolor="white"] R_y ;
         R_y -> C_y;
         C_y -> tag1_y ;
         C_y -> tag2_y ;
@@ -255,7 +259,7 @@ fr: J'ai obtenu quelque chose comme :
         node [label="E"] E_z ;
         node [label="a1"] tag1_z ;
         node [label="a2"] tag2_z ;
-        node [label="R", color="#880000", style="filled", fillcolor="#880000", fontcolor="white"] R_z ;
+        node [label="R", color="#333333", style="filled", fillcolor="#333333", fontcolor="white"] R_z ;
         R_z -> C_z;
         C_z -> tag1_z ;
         C_z -> tag2_z ;
@@ -276,7 +280,7 @@ fr: et
         node [label="V"] value_tag1_x ;
         node [label="a2"] tag2_x ;
         node [label="V"] value_tag2_x ;
-        node [label="V", color="#880000", fillcolor="#880000", fontcolor="white"] R_x ;
+        node [label="V", color="#333333", fillcolor="#333333", fontcolor="white"] R_x ;
         R_x -> value_tag1_x -> tag1_x ;
         R_x -> value_tag2_x -> tag2_x ;
         R_x -> E_x ;
@@ -287,7 +291,7 @@ fr: et
         node [label="V"] value_tag1_y ;
         node [label="a2"] tag2_y ;
         node [label="V"] value_tag2_y ;
-        node [label="V", color="#880000", fillcolor="#880000", fontcolor="white"] R_y ;
+        node [label="V", color="#333333", fillcolor="#333333", fontcolor="white"] R_y ;
         R_y -> value_tag1_y -> tag1_y ;
         R_y -> value_tag2_y -> tag2_y ;
         R_y -> E_y ;
@@ -298,7 +302,7 @@ fr: et
         node [label="V"] value_tag1_z ;
         node [label="a2"] tag2_z ;
         node [label="V"] value_tag2_z ;
-        node [label="V", color="#880000", fillcolor="#880000", fontcolor="white"] R_z ;
+        node [label="V", color="#333333", fillcolor="#333333", fontcolor="white"] R_z ;
         R_z -> value_tag1_z -> tag1_z ;
         R_z -> value_tag2_z -> tag2_z ;
         R_z -> E_z ;
