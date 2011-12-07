@@ -60,19 +60,19 @@
 <div class="intro">
 
 
-<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Une méthode de gestion des mots de passes que j’utilise avec succès depuis quelques années.<br />
+<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Une méthode de gestion des mots de passes que j&rsquo;utilise avec succès depuis quelques années.<br />
 <strong><code>sha1( mot_de_passe + nom_de_domaine )</code></strong><br />
-Je ne mémorise qu’un seul mot de passe de très bonne qualité.
-J’utilise des mots de passe différents sur tous les sites.</p>
+Je ne mémorise qu&rsquo;un seul mot de passe de très bonne qualité.
+J&rsquo;utilise des mots de passe différents sur tous les sites.</p>
 
 
 </div>
 
 
-<p>Avant de commencer, je tiens à préciser qu’il s’agit d’une tentative de vous vendre mon appli iPhone&nbsp;;-).</p>
+<p>Avant de commencer, je tiens à préciser qu&rsquo;il s&rsquo;agit d&rsquo;une tentative de vous vendre mon appli iPhone&nbsp;;-).</p>
 
 <p>Vous êtes toujours là&nbsp;?
-Bon, d’accord, même si vous ne téléchargez pas mon application vous pouvez quand même utiliser ma méthode.
+Bon, d&rsquo;accord, même si vous ne téléchargez pas mon application vous pouvez quand même utiliser ma méthode.
 Elle est à la fois très sûre et simple à utiliser.</p>
 
 <p>Si vous souhaitez simplement <em>utiliser</em> le système sans essayer de comprendre comment ça marche derrière vous pouvez <a href="#en-pratique-">aller à la fin de cet article en cliquant ici</a>.</p>
@@ -83,13 +83,13 @@ Elle est à la fois très sûre et simple à utiliser.</p>
   <p>Même les paranoïaques peuvent avoir des ennemis.</p>
 </blockquote>
 
-<p>Imaginez que vous trouviez un très bon mot de passe. Vous l’utilisez sur gmail, amazon, PayPal, twitter, facebook…
+<p>Imaginez que vous trouviez un très bon mot de passe. Vous l&rsquo;utilisez sur gmail, amazon, PayPal, twitter, facebook&hellip;
 Plus tard, vous découvrez un super petit jeu en ligne très sympa.
 Vous devez vous enregistrer pour y jouer.
 Le site vous demande votre email et un mot de passe.
 Quelques semaines/mois se passent.
 La machine qui héberge le jeu en ligne se fait attaquer.
-Maintenant, l’attaquant du site web possède votre email avec ce mot de passe.
+Maintenant, l&rsquo;attaquant du site web possède votre email avec ce mot de passe.
 Il peut donc essayer votre mot de passe un peu partout. 
 Sur PayPal par exemple.</p>
 
@@ -102,7 +102,7 @@ Sur PayPal par exemple.</p>
 </blockquote>
 
 <p>La méthode la plus courante est de se souvenir de plusieurs mot de passes différents. 
-En général, si vous avez bonne mémoire vous pouvez mémoriser jusqu’à 13 mots de passes. Certain de bonne qualité, d’autre moins.</p>
+En général, si vous avez bonne mémoire vous pouvez mémoriser jusqu&rsquo;à 13 mots de passes. Certain de bonne qualité, d&rsquo;autre moins.</p>
 
 <p>Que faire si vous utilisez plus de services que vous pouvez mémoriser de mots de passe&nbsp;?</p>
 
@@ -115,21 +115,21 @@ mots de passes de la façon suivante&nbsp;:</p>
   <li>badonlinegame: <code>P45sW0r|)badonlinegame</code></li>
 </ul>
 
-<p>Malheureusement, si quelqu’un récupère votre mot de passe sur 
+<p>Malheureusement, si quelqu&rsquo;un récupère votre mot de passe sur 
 <code>badonlinegame</code>, il peut facilement retrouvez vos autres mots de passe.
 Bien sûr, on peut imaginer des transformation de mots de passe de meilleure qualité. 
-Mais il est très difficile d’en trouver une suffisamment bonne.</p>
+Mais il est très difficile d&rsquo;en trouver une suffisamment bonne.</p>
 
 <p>Fort heureusement, il existe une des fonctions bien connues dans le milieu de la sécurité informatique et qui résolvent précisément ce problème.
-Il s’agit des <em>fontions de hachages</em>.
-Il est difficile de retrouver le paramètre d’entrée d’une fonction de hachage à partir de son résultat.
+Il s&rsquo;agit des <em>fontions de hachages</em>.
+Il est difficile de retrouver le paramètre d&rsquo;entrée d&rsquo;une fonction de hachage à partir de son résultat.
 Prenons un exemple&nbsp;: </p>
 
-<p>Si quelqu’un possède <code>9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63</code>,
+<p>Si quelqu&rsquo;un possède <code>9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63</code>,
 il va avoir de grande difficulté pour retrouver <code>P45sW0r|)</code>.</p>
 
 <p>Choisisson la fonction de hashage <code>sha1</code>.
-Connaissant celà, le mot de passe d’un site donné doit avoir la forme&nbsp;:</p>
+Connaissant celà, le mot de passe d&rsquo;un site donné doit avoir la forme&nbsp;:</p>
 
 <p>Où&nbsp;:</p>
 
@@ -140,9 +140,9 @@ Connaissant celà, le mot de passe d’un site donné doit avoir la forme&nbsp;:
 
 <hr />
 <p>Il faut aussi penser à certaines contraintes. 
-Certains site web veulent des mots de passe d’une certaine longueur, ni trop longs ni trop courts.
-Que faire si vous voulez changez votre mot de passe&nbsp;? Soit parce qu’il est compromis ou simplement parce qu’on vous impose de le changer.
-C’est pouquoi pour chaque site on a besoin de quelques paramètres supplémentaires.</p>
+Certains site web veulent des mots de passe d&rsquo;une certaine longueur, ni trop longs ni trop courts.
+Que faire si vous voulez changez votre mot de passe&nbsp;? Soit parce qu&rsquo;il est compromis ou simplement parce qu&rsquo;on vous impose de le changer.
+C&rsquo;est pouquoi pour chaque site on a besoin de quelques paramètres supplémentaires.</p>
 
 <ul>
   <li>le nom de login&nbsp;;</li>
@@ -153,31 +153,31 @@ C’est pouquoi pour chaque site on a besoin de quelques paramètres supplément
 
 <h2 id="en-pratique-">En pratique&nbsp;?</h2>
 
-<p>Selon ma situation, voici les outils que j’ai fait et que j’utilise&nbsp;:</p>
+<p>Selon ma situation, voici les outils que j&rsquo;ai fait et que j&rsquo;utilise&nbsp;:</p>
 
 <ul>
   <li>Sur mon Mac&nbsp;: 
     <ul>
-      <li>J’utilise le widget <a href="http://yannesposito.com/Scratch/files/YPassword-1.6.zip">YPassword</a></li>
-      <li>Parfois, certains champs de mots passe interdisent la copie.  Dans ce cas, j’utilise un petit utilitaire en AppleScript&nbsp;: <a href="http://yannesposito.com/Scratch/files/forcePaste.app.zip">ForcePaste</a>. </li>
+      <li>J&rsquo;utilise le widget <a href="http://yannesposito.com/Scratch/files/YPassword-1.6.zip">YPassword</a></li>
+      <li>Parfois, certains champs de mots passe interdisent la copie.  Dans ce cas, j&rsquo;utilise un petit utilitaire en AppleScript&nbsp;: <a href="http://yannesposito.com/Scratch/files/forcePaste.app.zip">ForcePaste</a>. </li>
     </ul>
   </li>
-  <li>Sous mon Linux&nbsp;: J’utilise le script <a href="http://github.com/yogsototh/getpass">ypassword</a></li>
-  <li>Sur mon iPhone&nbsp;: J’utilise l’application <a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=436268354&amp;mt=8">YPassword</a></li>
+  <li>Sous mon Linux&nbsp;: J&rsquo;utilise le script <a href="http://github.com/yogsototh/getpass">ypassword</a></li>
+  <li>Sur mon iPhone&nbsp;: J&rsquo;utilise l&rsquo;application <a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=436268354&amp;mt=8">YPassword</a></li>
   <li>Sur tous les autres ordinateurs&nbsp;:
     <ul>
-      <li>L’application Web Cappuccino <a href="http://yannesposito.com/Scratch/en/softwares/ypassword/web/">YPassword</a></li>
-      <li>L’application Web jQuery <a href="http://yannesposito.com/Scratch/en/softwares/ypassword/iphoneweb/">YPassword</a></li>
+      <li>L&rsquo;application Web Cappuccino <a href="http://yannesposito.com/Scratch/en/softwares/ypassword/web/">YPassword</a></li>
+      <li>L&rsquo;application Web jQuery <a href="http://yannesposito.com/Scratch/en/softwares/ypassword/iphoneweb/">YPassword</a></li>
     </ul>
   </li>
 </ul>
 
 <p>Quelquesoit mon environnement de travail, tous mes mots de passes sont à un copier/coller.
-Pour certain services, j’utilise des mots de passe de 40 caractères.
-Actuellement j’utilise plutôt des mots de passes de 10 caractères.
+Pour certain services, j&rsquo;utilise des mots de passe de 40 caractères.
+Actuellement j&rsquo;utilise plutôt des mots de passes de 10 caractères.
 Avec des mots de passes plus petit, il est encore plus difficile pour un attaquant de retrouver mon mot de passe principal.</p>
 
-<p>Je serai heureux de savoir ce que vous pensez de cette méthode. Alors n’hésitez pas à laisser un commentaire ou à m’envoyer un mail.</p>
+<p>Je serai heureux de savoir ce que vous pensez de cette méthode. Alors n&rsquo;hésitez pas à laisser un commentaire ou à m&rsquo;envoyer un mail.</p>
 
                 </div>
             
