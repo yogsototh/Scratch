@@ -7,7 +7,6 @@ hidden: false
 _Easy_, _Secure_ and _Portable_ way to manage your web passwords.
 
 Remember only _one_ strong password. And the rest follow.
-See my [blog entry](/Scratch/en/blog/ypassword.html) for the details.
 
 Here you can find:
 
@@ -15,7 +14,7 @@ Here you can find:
  - An [Applescript](/Scratch/files/forcePaste.app.zip) to simulate copy/paste in protected fields,
  - An alpha [Web Application](/Scratch/en/softwares/ypassword/web/) made with [Cappuccino](http://cappuccino.org),
  - An alpha [Web Application](/Scratch/en/softwares/ypassword/iphoneweb/) for iPhone,
- - A [command line tool](/Scratch/files/getpass).
+ - A [command line tool](http://github.com/yogsototh/YPasswordCLI).
 
 
 I'll soon release an iPhone application.
