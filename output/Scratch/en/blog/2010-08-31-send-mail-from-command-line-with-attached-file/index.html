@@ -55,8 +55,8 @@
             <div id="afterheader">
                 <div class="corps">
                     <p>I had to send a mail using only command line. 
-I was surprised it isn&rsquo;t straightforward at all.
-I didn&rsquo;t had <code>pine</code> nor <code>mutt</code> or anything like that.
+I was surprised it isn’t straightforward at all.
+I didn’t had <code>pine</code> nor <code>mutt</code> or anything like that.
 Just <code>mail</code> and <code>mailx</code>.</p>
 
 <p>What Internet say (via google) is</p>
@@ -67,7 +67,7 @@ uuencode fic.jpg fic.jpg <span class="Keyword">|</span> mail -s <span class="Str
 
 <p>I tried it.
 And it works almost each times.
-But for my file, it didn&rsquo;t worked.
+But for my file, it didn’t worked.
 I compressed it to <code>.gz</code>, <code>.bz2</code> and <code>.zip</code>.
 Using <code>.bz2</code> format it worked nicely, but not with other formats.
 Instead of having an attached file I saw this in my email.</p>
@@ -87,7 +87,7 @@ After some research I found the solution.
 Use MIME instead of <code>uuencode</code>.</p>
 
 <p>Finally I made it manually using <code>sendmail</code>.
-I didn&rsquo;t dare to use <code>telnet</code>.
+I didn’t dare to use <code>telnet</code>.
 The command to use is:</p>
 
 <pre class="twilight">
@@ -118,7 +118,7 @@ H4sICB6Ke0wAA2Rjcl93aXRob3V0X2tleXdvcmQuY3N2ANSdW5ubOJPH7/e7
 ...
 </pre>
 
-<p>And to obtain the &ldquo;encoded&rdquo; file in base64 I used:</p>
+<p>And to obtain the “encoded” file in base64 I used:</p>
 
 <p><code classs="zsh">
 uuencode -m fic.jpg fic.jpg
