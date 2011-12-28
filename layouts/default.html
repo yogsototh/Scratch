@@ -39,20 +39,20 @@
             <img src="<%=@config[:webprefix]%>/img/presentation.png" alt="Presentation drawing"/>
             <div id="titre">
                 <h1>
-                    <%= @item[:content_for_title].nil? ? @item[:title] : @item[:content_for_title] %>
+                    <%= content_for(@item, :title).nil? ? @item[:title] : content_for(@item,:title) %>
                 </h1>
-                <% unless @item[:subtitle].nil? and @item[:content_for_subtitle].nil? %> 
+                <% unless @item[:subtitle].nil? and content_for(@item,:subtitle).nil? %> 
                 <h2>
-                    <%= @item[:content_for_subtitle].nil? ? @item[:subtitle] : @item[:content_for_subtitle] %>
+                    <%= content_for(@item,:subtitle).nil? ? @item[:subtitle] : content_for(@item,:subtitle) %>
                 </h2>
                 <% end %>
             </div>
 
             <div class="flush"></div>
 
-            <% if @item[:content_for_summary] %>
+            <% if content_for(@item,:summary) %>
             <div class="corps summary">
-                <% @item[:content_for_summary] %>
+                <% content_for(@item,:summary) %>
             </div>
             <% end %>
 
