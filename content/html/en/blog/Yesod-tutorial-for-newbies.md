@@ -3,8 +3,7 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2011-12-28T15:14:40+02:00
-en: title: Yesod tutorial for newbies
-fr: title: Tutoriel Yesod pour les nuls
+title: Yesod tutorial for newbies
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
@@ -17,9 +16,8 @@ tags:
 
 begindiv(intro)
 
-en: <%= tldr %> A simple yesod tutorial. You shouldn't need to know Haskell very well. 
+<%= tldr %> A simple yesod tutorial. You shouldn't need to know Haskell very well. 
 
-fr: <%= tlal %> Un tutoriel pour yesod.
 
 > * Will be replaced by Table of Content
 > {:toc}
