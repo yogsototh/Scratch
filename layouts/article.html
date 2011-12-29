@@ -64,9 +64,9 @@
             </div>
             <div class="flush"></div>
 
-            <% if @item[:content_for_summary] %>
+            <% if content_for(@item,:summary) %>
             <div class="corps summary">
-                <% @item[:content_for_summary] %>
+                <% content_for(@item,:summary) %>
             </div>
             <% end %>
 
