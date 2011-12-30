@@ -161,7 +161,7 @@ To verify the quality of the security of the yesod framework, let's look at a mi
 
 Our goal:
 
-Accessing [`http://localhost:3000/echo/some%20text`], should display "some text" in an %html web page.
+Accessing [`http://localhost:3000/echo/some%20text`](http://localhost:3000/echo/some%20text), should display "some text" in an %html web page.
 
 Let's take a look at the file `config/routes`:
 
@@ -211,7 +211,7 @@ TADA! It works.
 
 Now, let's try to attack our website by entering name with special characters:
 
-[`http://localhost:3000/echo/<a href="badlink">I'm <script>alert("Bad!");`](http://localhost:3000/echo/<a href="badlink">I'm <script>alert("Bad!");)<% "</script>" %>
+[`http://localhost:3000/echo/<a>I'm <script>alert("Bad!");`](http://localhost:3000/echo/<a>I'm <script>alert("Bad!");)<% "</script>" %>
 
 The special characters are protected for us. 
 If you have a malicious user, he could not hide some bad script inside his name for example.
