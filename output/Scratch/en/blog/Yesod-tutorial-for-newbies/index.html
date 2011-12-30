@@ -69,6 +69,12 @@
   <li><a href="#configure-git">Configure git</a></li>
   <li><a href="#a-last-point">A last point</a></li>
   <li><a href="#protected-echo">Protected echo</a></li>
+  <li><a href="#cleaning-up">Cleaning up</a>    <ul>
+      <li><a href="#separate-handlers">Separate handlers</a></li>
+      <li><a href="#use-datatext-instead-of-string">Use <code>Data.Text</code> instead of <code>String</code></a></li>
+      <li><a href="#use-a-new-template-file">Use a new template file</a></li>
+    </ul>
+  </li>
   <li><a href="#protected-input">Protected input</a></li>
 </ul>
 </blockquote>
@@ -131,7 +137,7 @@ package and then compile them.</p>
 <span class="Keyword">&gt;</span> yesod init
 </pre>
 
-<p>I entered my name, the name of the project was <code>yosog</code> and the name of the Fondation was <code>Yosog</code>, then I chosen <code>sqlite</code>.</p>
+<p>I entered my name, the name of the project was <code>yosog</code> and the name of the Foundation was <code>Yosog</code>, then I chosen <code>sqlite</code>.</p>
 
 <p>Perfect. Now you can start the development cycle:</p>
 
@@ -219,7 +225,7 @@ Also note until here we don’t even typed any line of Haskell.</p>
 
 <p>Our goal:</p>
 
-<p>Accessing [<code>http://localhost:3000/echo/some%20text</code>], should display “some text” in an %html web page.</p>
+<p>Accessing <a href="http://localhost:3000/echo/some%20text"><code>http://localhost:3000/echo/some%20text</code></a>, should display “some text” in an %html web page.</p>
 
 <p>Let’s take a look at the file <code>config/routes</code>:</p>
 
@@ -269,7 +275,7 @@ You can now visit: <a href="http://localhost:3000/echo/Yesod%20rocks!"><code>htt
 
 <p>Now, let’s try to attack our website by entering name with special characters:</p>
 
-<p><a href="http://localhost:3000/echo/&lt;a href=&quot;badlink&quot;&gt;I'm &lt;script&gt;alert(&quot;Bad!&quot;);"><code>http://localhost:3000/echo/&lt;a href="badlink"&gt;I'm &lt;script&gt;alert("Bad!");</code></a></p>
+<p><a href="http://localhost:3000/echo/&lt;a&gt;I'm &lt;script&gt;alert(&quot;Bad!&quot;);"><code>http://localhost:3000/echo/&lt;a&gt;I'm &lt;script&gt;alert("Bad!");</code></a></p>
 
 <p>The special characters are protected for us. 
 If you have a malicious user, he could not hide some bad script inside his name for example.</p>
@@ -291,19 +297,98 @@ Thanks to yesod, most of tedious string transformation job is done for us.</p>
 <p>That was the first very minimal example, and we already 
 verified Yesod protect us from many common errors.</p>
 
-<p>For a first example it is nice, but we should now organize the code in a better way.</p>
+<h2 id="cleaning-up">Cleaning up</h2>
 
-<p>For example, we should have created another file inside the Handler directory. 
-And we also should have created another template file.</p>
+<p>This first example was nice, but for simplicity reason we didn’t used best practices.</p>
 
-<div style="background-color: #800; color: #FFF; font-weight: bold; border: 2px solid #300; box-shadow: 0 0 60px #300 inset;padding-left: 2em;">
-<h2 style="margin: 0 auto; text-align: center">TODO</h2>
+<p>First we will separate the handler code into different files.
+After that we will use <code>Data.Text</code> instead of <code>String</code>. </p>
 
- <ul><li>Explain how to separate the Handler files.
-</li><li>Explain how to use another template.
-</li></ul>
+<h3 id="separate-handlers">Separate handlers</h3>
 
-</div>
+<p>In a first time create a new file <code>Handler/Echo.hs</code> containing:</p>
+
+<pre class="twilight">
+<span class="Keyword">module</span> <span class="Constant">Handler</span>.<span class="Constant">Echo</span> <span class="Keyword">where</span>
+
+<span class="Keyword">import</span> <span class="Constant">Import</span>
+
+<span class="Entity">getEchoR</span>&nbsp;:: <span class="Constant">String</span> &rarr; <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
+getEchoR theText = <span class="Keyword">do</span>
+    defaultLayout $ <span class="Keyword">do</span>
+        [whamlet|&lt;h1&gt;#{theText}|]
+</pre>
+
+<p>Do not forget to remove the getEchoR function inside the <code>Handler/Root.hs</code> file.</p>
+
+<p>We must declare the file inside the cabal configuration file <code>yosog.cabal</code>. Just after <code>Handler.Root</code> add:</p>
+
+<pre>
+    Handler.Echo
+</pre>
+
+<p>We must also declare the new Handler module inside <code>Application.hs</code>.
+Just after the “<code>import Handler.Root</code>”, add:</p>
+
+<pre class="twilight">
+<span class="Keyword">import</span> <span class="Constant">Handler</span>.<span class="Constant">Echo</span>
+</pre>
+
+<h3 id="use-datatext-instead-of-string">Use <code>Data.Text</code> instead of <code>String</code></h3>
+
+<p>Now our handler is separated in another file.</p>
+
+<p>But we used <code>String</code> but it is a good practice to use <code>Data.Text</code> instead.</p>
+
+<p>To declare we will use <code>Data.Text</code> we modify the file <code>Foundation.hs</code>.
+Add an import directive just after the last one:</p>
+
+<pre class="twilight">
+import Data.Text
+</pre>
+
+<p>And also we must modify <code>config/routes</code> and our handler accordingly. Replace <code>#String</code> by <code>#Text</code> in <code>config/routes</code>:</p>
+
+<pre>
+/echo/#Text EchoR GET
+</pre>
+
+<p>And do the same in <code>Handler/Echo.hs</code>:</p>
+
+<div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/Echo.hs"> &#x27A5; Echo.hs </a></div><div class="withfile">
+<pre class="twilight">
+<span class="Keyword">module</span> <span class="Constant">Handler</span>.<span class="Constant">Echo</span> <span class="Keyword">where</span>
+
+<span class="Keyword">import</span> <span class="Constant">Import</span>
+
+<span class="Entity">getEchoR</span>&nbsp;:: <span class="Constant">Text</span> &rarr; <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
+getEchoR theText = <span class="Keyword">do</span>
+    defaultLayout $ <span class="Keyword">do</span>
+        [whamlet|&lt;h1&gt;#{theText}|]
+</pre>
+</div></div>
+
+<h3 id="use-a-new-template-file">Use a new template file</h3>
+
+<p>The last thing to change in order to do things like in 
+a real project is to use another template file.</p>
+
+<p>Just create a new file <code>template/echo.hamlet</code> containing:</p>
+
+<div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/echo.hamlet"> &#x27A5; echo.hamlet </a></div><div class="withfile">
+<pre class="twilight">
+&lt;h1&gt; #{theText}
+</pre>
+</div></div>
+
+<p>and modify the handler <code>Handler/Echo.hs</code>:</p>
+
+<pre class="twilight">
+<span class="Entity">getEchoR</span>&nbsp;:: <span class="Constant">Text</span> &rarr; <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
+getEchoR theText = <span class="Keyword">do</span>
+    defaultLayout $ <span class="Keyword">do</span>
+        $(widgetFile <span class="String"><span class="String">&quot;</span>echo<span class="String">&quot;</span></span>)
+</pre>
 
 <h2 id="protected-input">Protected input</h2>
 

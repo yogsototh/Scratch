@@ -81,7 +81,7 @@ Open a terminal and:
 > yesod init
 </code>
 
-I entered my name, the name of the project was `yosog` and the name of the Fondation was `Yosog`, then I chosen `sqlite`.
+I entered my name, the name of the project was `yosog` and the name of the Foundation was `Yosog`, then I chosen `sqlite`.
 
 Perfect. Now you can start the development cycle:
 
@@ -233,18 +233,95 @@ Thanks to yesod, most of tedious string transformation job is done for us.
 That was the first very minimal example, and we already 
 verified Yesod protect us from many common errors.
 
-For a first example it is nice, but we should now organize the code in a better way.
 
-For example, we should have created another file inside the Handler directory. 
-And we also should have created another template file.
+## Cleaning up
 
-<%= startTodo %>
+This first example was nice, but for simplicity reason we didn't used best practices.
 
- <ul><li>Explain how to separate the Handler files.
-</li><li>Explain how to use another template.
-</li></ul>
+First we will separate the handler code into different files.
+After that we will use `Data.Text` instead of `String`. 
 
-<%= endTodo %>
+### Separate handlers
+
+In a first time create a new file `Handler/Echo.hs` containing:
+
+<code class="haskell">
+module Handler.Echo where
+
+import Import
+
+getEchoR :: String -> Handler RepHtml
+getEchoR theText = do
+    defaultLayout $ do
+        [whamlet|<h1>#{theText}|]
+</code>
+
+Do not forget to remove the getEchoR function inside the `Handler/Root.hs` file.
+
+We must declare the file inside the cabal configuration file `yosog.cabal`. Just after `Handler.Root` add:
+
+<pre>
+    Handler.Echo
+</pre>
+
+We must also declare the new Handler module inside `Application.hs`.
+Just after the "`import Handler.Root`", add:
+
+<code class="haskell">
+import Handler.Echo
+</code>
+
+### Use `Data.Text` instead of `String`
+
+Now our handler is separated in another file.
+
+But we used `String` but it is a good practice to use `Data.Text` instead.
+
+To declare we will use `Data.Text` we modify the file `Foundation.hs`.
+Add an import directive just after the last one:
+
+<code class="diff">
+import Data.Text
+</code>
+
+And also we must modify `config/routes` and our handler accordingly. Replace `#String` by `#Text` in `config/routes`:
+
+<pre>
+/echo/#Text EchoR GET
+</pre>
+
+And do the same in `Handler/Echo.hs`:
+
+<code class="haskell" file="Echo.hs">
+module Handler.Echo where
+
+import Import
+
+getEchoR :: Text -> Handler RepHtml
+getEchoR theText = do
+    defaultLayout $ do
+        [whamlet|<h1>#{theText}|]
+</code>
+
+### Use a new template file
+
+The last thing to change in order to do things like in 
+a real project is to use another template file.
+
+Just create a new file `template/echo.hamlet` containing:
+
+<code class="haskell" file="echo.hamlet">
+<h1> #{theText}
+</code>
+
+and modify the handler `Handler/Echo.hs`:
+
+<code class="haskell">
+getEchoR :: Text -> Handler RepHtml
+getEchoR theText = do
+    defaultLayout $ do
+        $(widgetFile "echo")
+</code>
 
 ## Protected input
 
