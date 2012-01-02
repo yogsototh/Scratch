@@ -33,10 +33,13 @@
   &lt;li&gt;&lt;a href="#initialization"&gt;Initialization&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="#configure-git"&gt;Configure git&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="#a-last-point"&gt;A last point&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="#protected-echo"&gt;Protected echo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#protected-echo"&gt;Protected echo&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#secure"&gt;Secure?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href="#cleaning-up"&gt;Cleaning up&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href="#separate-handlers"&gt;Separate handlers&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href="#use-datatext-instead-of-string"&gt;Use &lt;code&gt;Data.Text&lt;/code&gt; instead of &lt;code&gt;Stri...&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/p&gt;</content>
+      &lt;li&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-10-20:/Scratch/en/blog/SVG-and-m4-fractals/</id>

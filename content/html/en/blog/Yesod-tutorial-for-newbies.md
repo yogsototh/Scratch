@@ -19,48 +19,58 @@ begindiv(intro)
 <%= tldr %> A simple yesod tutorial. You shouldn't need to know Haskell very well. 
 
 
-> * Will be replaced by Table of Content
+> * Table of Content (generated)
 > {:toc}
 
 enddiv
 
-You want the best technology to handle your new web application?
-Me too. After searching a lot, it appears if you focus only on technical aspect, Haskell is the way to go.
+Do you want the best technology to handle your new web application?
+Me too. After searching a lot, it appears you should choose Haskell.
+Why? 
 
-It is [extremely fast][warpbench].
-It is secure by nature. Many typical programming bug are hard to make in Haskell.
-Haskell is also a "high level of abstraction" language. You can organize your code clearly.
+* [Extremely fast][warpbench].
+* Secure by nature. Many typical programming bug are hard to make in Haskell.
+* High abstraction level. 
+* Handle asynchronous request better than any other system (better than node.js for example).
+* Done to be parallelized. Thanks to purity.
 
-Actually there are three web frameworks in Haskell:
+Technically speaking, Haskell seems perfect for web development.
+The only drawback you can found for Haskell certainly won't be technical but social. Like the difficulty to grasp Haskell, the few number of developer, etc...
+
+But if you are here, lets pretend, the most important is the technical aspect.
+You want the best of the best system to make your new web application.
+
+Instead of reinvent the wheel, we should choose a web framework in Haskell.
+Actually there are three choices:
 
 1. [Happstack](http://happstack.com)
 2. [Snap](http://snapframework.com)
 3. [Yesod](http://yesodweb.com)
 
-It is very hard to choose between these three.
-But my feeling goes to Yesod.
-It appears to be the one with most part done for you.
-As a beginner, let's stay away of the detail as most as possible.
+I don't think there is a real winner between these three framework.
+The choice I made for yesod is highly subjective.
+I had the feeling yesod help the newcomers the most.
+It also appears the yesod developer are the most active.
+But as I said before, I might be wrong has it was only feeling.
 
-The following tutorial contains some parts.
+Now, what this article is all about? 
+A missing tutorial in the yesod documentation.
+The goal is to go as straight as possible to the best practice.
 
-- Install → Install haskell and yesod. This can be long, but it is all automatic and this should be straightforward.
-- Initialization → Initialize the project and configure it.
-- Configure git → This is not mandatory, but it is a good practice.
-- Verify the security → A first step to verify the yesod framework protect us from most common errors.
-- Create a minimal blog → This is the "hello world" of web framework.
-- Some tuning → Use html5 boilerplate for example.
+You'll then first install, initialize and configure your first yesod project.
+Then a 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
+Then we clean up the 5 minutes tutorial to use the best practices.
 
 [warpbench]: http://www.yesodweb.com/blog/2011/03/preliminary-warp-cross-language-benchmarks
 
 ## Install
 
-First you need to install [Haskell][haskell]. The recommended way to do this is to use the [Haskell Platform][haskellplatform].
+First you need to install [Haskell][haskell]. The recommended way to do this is to download the [Haskell Platform][haskellplatform].
 
 [haskell]: http://www.haskell.org
 [haskellplatform]: http://www.haskell.org/platform
 
-Secondly you need to install yesod.
+Then you need to install yesod.
 
 <code class="zsh">
 > cabal update
@@ -73,14 +83,13 @@ package and then compile them.
 
 ## Initialization
 
-Open a terminal and:
+Open a terminal and type:
 
 <code class="zsh">
 > yesod init
 </code>
 
-I entered my name, the name of the project was `yosog` and the name of the Foundation was `Yosog`, then I chosen `sqlite`.
-
+Enter your name, name the project `yosog` and the name of the Foundation as `Yosog`, then choose `sqlite`.
 Perfect. Now you can start the development cycle:
 
 <code class="zsh">
@@ -88,19 +97,25 @@ Perfect. Now you can start the development cycle:
 > cabal-dev install && yesod --dev devel
 </code>
 
-This will compile the entire project. 
-In the end you should now be able to see your local website by clicking this link:
+This will compile the entire project. Be patient it could take some time.
+Once finished a server is launched and you could visit it by clicking this link:
 
 [`http://localhost:3000`](http://localhost:3000)
 
-Congratulation! You were able to see your yesod powered website.
-For the rest of the tutorial, use another terminal and let this one open in a corner to see what occurs.
+Congratulation! Yesod works.
+
+> Note: if something is messed up use the following command line:
+> <code class="zsh">
+> \rm -rf dist/* ; cabal-dev install && yesod --dev devel
+> </code>
+
+Until the end of the tutorial, use another terminal and let this one open in a corner to see what occurs.
 
 ## Configure git
 
-It is not mandatory for a tutorial, but it is a good practice to have a CVS.
+This step is not mandatory for a tutorial, but I wanted to jump directly in good practice. There are many different choice of CVS, but for this tutorial I'll use `git`.
 
-To use `git` copy this `.gitignore` file into the `yosog` folder.
+Copy this `.gitignore` file into the `yosog` folder.
 
 <code class="zsh" file=".gitignore">
 cabal-dev
@@ -118,18 +133,18 @@ Then initialize your git repository:
 > git commit -a -m "Initial yesod commit"
 </code>
 
-Now we are ready to modify our web application.
+Now we are almost ready to start.
 
 ## A last point
 
-What did we done:
+Until here it was just an installation, an initialization and a configuration.
 
-1. We have a directory containing a bunch of files
-2. We have a local web server on port 3000
+We have a directory containing a bunch of files and
+we have a local web server that listen the port 3000.
 
 If we modify a file inside this directory, yesod should try
-to recompile as fast as possible the site. This way, you should
-see the modification you done.
+to recompile as fast as possible the site. 
+This way, you should see the modification you do.
 
 Instead of explaining the role of every file,
 let's get straight to the point.
@@ -139,27 +154,29 @@ Inside the `yosog` the important files/directories for this tutorial are:
 1. `config/routes`
 2. `Handler/`
 3. `templates/`
-4. `static/`
-5. `config/models`
+4. `config/models`
 
 Obviously:
 
 - `config/routes`   is where you'll configure the map URL → Code.
 - `Handler/`        contains the files that will contain the code called when a URL is accessed.
 - `templates/`      contains HTML, JS and CSS templates. 
-- `static/`         contains static files.
 - `config/models`   is where you'll configure the persistent objects (database tables).
 
-With these informations we should be able to do a lot.
 Also note until here we don't even typed any line of Haskell.
+It is now time to start the interesting stuff.
 
 ## Protected echo
 
-To verify the quality of the security of the yesod framework, let's look at a minimal echo application.
+To verify the quality of the security of the yesod framework, let's make a minimal echo application.
 
 Our goal:
 
-Accessing [`http://localhost:3000/echo/some%20text`](http://localhost:3000/echo/some%20text), should display "some text" in an %html web page.
+Make a server that when accessed `/echo/`_[some text]_ should return a web page containing "some text" inside an `h1` bloc.
+
+For example, accessing [`http://localhost:3000/echo/some%20text`](http://localhost:3000/echo/some%20text), should display "some text" in an %html web page.
+
+First, we must declare URL of the form /echo/... are meaningful.
 
 Let's take a look at the file `config/routes`:
 
@@ -182,10 +199,9 @@ We add the following:
 
 This line contains three elements: the <sc>url</sc> pattern, a handler name, an HTTP method.
 I am not particularly fan of the big R in the end of handler names. 
-But this is the standard convention, then I use it.
+But this is the standard convention, then let's use it.
 
-If you save `config/routes`, you should see your terminal in which you launched `yesod devel` do things. 
-And certainly break in error.
+If you save `config/routes`, you should see your terminal in which you launched `yesod devel` activate and certainly displaying an error message.
 
 <pre>
 Application.hs:31:1: Not in scope: `getEchoR'
@@ -201,18 +217,29 @@ getEchoR theText = do
         [whamlet|<h1>#{theText}|]
 </code>
 
+Don't worry if you find all of this a bit cryptic. 
+This is normal when learning a new framework.
+In short it just declare a function named getEchoR with one argument (`theText`) of type String.
+When this function is called, it return a "Handler RepHtml" whatever it is. 
+But mainly this will encapsulate our expected result inside an HTML text.
+
 After saving the file, you should see yesod recompile the application.
 When the compilation is finished you'll see the message: `Starting devel application`.
-You can now visit: [`http://localhost:3000/echo/Yesod%20rocks!`](http://localhost:3000/echo/Yesod%20rocks!)
+
+Now you can visit: [`http://localhost:3000/echo/Yesod%20rocks!`](http://localhost:3000/echo/Yesod%20rocks!)
 
 TADA! It works.
 
-Now, let's try to attack our website by entering name with special characters:
+### Secure?
+
+Let's try to attack our website by entering a text with special characters:
 
 [`http://localhost:3000/echo/<a>I'm <script>alert("Bad!");`](http://localhost:3000/echo/<a>I'm <script>alert("Bad!");)<% "</script>" %>
 
+All should work better than expected.
+
 The special characters are protected for us. 
-If you have a malicious user, he could not hide some bad script inside his name for example.
+If you have a malicious user, he could not hide some bad script inside his login name for example.
 
 This is a direct consequence of _type safety_.
 The URL string is put inside a URL type.
@@ -231,6 +258,7 @@ Thanks to yesod, most of tedious string transformation job is done for us.
 That was the first very minimal example, and we already 
 verified Yesod protect us from many common errors.
 
+Then not only Yesod is fast, it is also relatively secure.
 
 ## Cleaning up
 
@@ -238,6 +266,7 @@ This first example was nice, but for simplicity reason we didn't used best pract
 
 First we will separate the handler code into different files.
 After that we will use `Data.Text` instead of `String`. 
+Finally we'll use a template file to better separate our view.
 
 ### Separate handlers
 
@@ -321,7 +350,63 @@ getEchoR theText = do
         $(widgetFile "echo")
 </code>
 
+At this point our code is clean.
+Handler are grouped, we use `Data.Text` and our views are in templates.
+It is now time to make a slightly more complex example.
+
 ## Protected input
+
+Let's make another minimal application.
+You should see a form containing a Text Field and a validation button.
+When you click, the next page present you the content you entered in the field.
+
+First, add a new route:
+
+<code class="zsh">
+/new NewR GET POST
+</code>
+
+This time the path /new will accept GET and POST requests. Add the corresponding new Handler file:
+
+<code class="haskell" file="New.hs">
+module Handler.New where
+
+import Import
+
+getNewR :: Handler RepHtml
+getNewR = do
+    defaultLayout $ do
+        $(widgetFile "new")
+
+postNewR :: Handler RepHtml
+postNewR =  do
+    postedText <- runInputPost $ ireq textField "content"
+    defaultLayout $ do
+        $(widgetFile "posted")
+</code>
+
+Don't forget to declare it inside `yosog.cabal` and `Application.hs`.
+
+The only new thing here is the line that get the POST parameter named "content".
+If you want to know more detail about it and form in general you can take look at [the yesod book](http://www.yesodweb.com/book/forms).
+
+Create the two corresponding templates:
+
+<code class="html" file="new.hamlet">
+<h1> Enter your text
+<form method=post action=@{NewR}>
+    <input type=text name=content>
+    <input type=submit>
+</code>
+
+<code class="html" file="posted.hamlet">
+<h1>You've just posted
+<p>#{postedText}
+<hr>
+<p><a href=@{NewR}>Get back
+</code>
+
+And that is all.
 
 ---
 

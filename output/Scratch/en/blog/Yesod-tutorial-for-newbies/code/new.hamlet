@@ -1,0 +1,5 @@
+
+<h1> Enter your text
+<form method=post action=@{NewR}>
+    <input type=text name=content>
+    <input type=submit>

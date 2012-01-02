@@ -802,3 +802,11 @@ ul.bloglist, .archive ul
     a:after
       content: ""
 
+ul#markdown-toc
+  font-variant: small-caps
+  list-style: none
+  padding-left: 1.5em
+  ul
+    padding-left: 1.5em
+  a:after
+    content: ""

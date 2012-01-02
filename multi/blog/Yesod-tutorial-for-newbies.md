@@ -65,7 +65,9 @@ Then we clean up the 5 minutes tutorial to use the best practices.
 
 [warpbench]: http://www.yesodweb.com/blog/2011/03/preliminary-warp-cross-language-benchmarks
 
-## Install
+## Before the real start
+
+### Install
 
 First you need to install [Haskell][haskell]. The recommended way to do this is to download the [Haskell Platform][haskellplatform].
 
@@ -83,7 +85,7 @@ That is all. It should take some time to
 do this as cabal will download all 
 package and then compile them.
 
-## Initialization
+### Initialize
 
 Open a terminal and type:
 
@@ -106,9 +108,14 @@ Once finished a server is launched and you could visit it by clicking this link:
 
 Congratulation! Yesod works.
 
+> Note: if something is messed up use the following command line:
+> <code class="zsh">
+> \rm -rf dist/* ; cabal-dev install && yesod --dev devel
+> </code>
+
 Until the end of the tutorial, use another terminal and let this one open in a corner to see what occurs.
 
-## Configure git
+### Configure git
 
 This step is not mandatory for a tutorial, but I wanted to jump directly in good practice. There are many different choice of CVS, but for this tutorial I'll use `git`.
 
@@ -132,7 +139,7 @@ Then initialize your git repository:
 
 Now we are almost ready to start.
 
-## A last point
+### A last point
 
 Until here it was just an installation, an initialization and a configuration.
 
@@ -163,7 +170,7 @@ Obviously:
 Also note until here we don't even typed any line of Haskell.
 It is now time to start the interesting stuff.
 
-## Protected echo
+## Echo
 
 To verify the quality of the security of the yesod framework, let's make a minimal echo application.
 
@@ -257,7 +264,7 @@ verified Yesod protect us from many common errors.
 
 Then not only Yesod is fast, it is also relatively secure.
 
-## Cleaning up
+### Cleaning up
 
 This first example was nice, but for simplicity reason we didn't used best practices.
 
@@ -295,13 +302,13 @@ Just after the "`import Handler.Root`", add:
 import Handler.Echo
 </code>
 
-### Use `Data.Text` instead of `String`
+### `Data.Text`
 
 Now our handler is separated in another file.
 
-But we used `String` but it is a good practice to use `Data.Text` instead.
+It is a good practice to use `Data.Text` instead of `String`.
 
-To declare we will use `Data.Text` we modify the file `Foundation.hs`.
+To declare we will use the type `Data.Text` we modify the file `Foundation.hs`.
 Add an import directive just after the last one:
 
 <code class="diff">
@@ -347,14 +354,75 @@ getEchoR theText = do
         $(widgetFile "echo")
 </code>
 
-Now each part of our code is well separated.
-Handler are grouped by the same type.
-We use `Data.Text` which is more adapted to text than the minimal String type.
-We use external files to display our views.
-
+At this point our code is clean.
+Handler are grouped, we use `Data.Text` and our views are in templates.
 It is now time to make a slightly more complex example.
 
-## Protected input
+## Repeat
+
+Let's make another minimal application.
+You should see a form containing a text field and a validation button.
+When you click, the next page present you the content you entered in the field.
+
+First, add a new route:
+
+<code class="zsh">
+/new NewR GET POST
+</code>
+
+This time the path /new will accept GET and POST requests. Add the corresponding new Handler file:
+
+<code class="haskell" file="New.hs">
+module Handler.New where
+
+import Import
+
+getNewR :: Handler RepHtml
+getNewR = do
+    defaultLayout $ do
+        $(widgetFile "new")
+
+postNewR :: Handler RepHtml
+postNewR =  do
+    postedText <- runInputPost $ ireq textField "content"
+    defaultLayout $ do
+        $(widgetFile "posted")
+</code>
+
+Don't forget to declare it inside `yosog.cabal` and `Application.hs`.
+
+The only new thing here is the line that get the POST parameter named "content".
+If you want to know more detail about it and form in general you can take look at [the yesod book](http://www.yesodweb.com/book/forms).
+
+Create the two corresponding templates:
+
+<code class="html" file="new.hamlet">
+<h1> Enter your text
+<form method=post action=@{NewR}>
+    <input type=text name=content>
+    <input type=submit>
+</code>
+
+<code class="html" file="posted.hamlet">
+<h1>You've just posted
+<p>#{postedText}
+<hr>
+<p><a href=@{NewR}>Get back
+</code>
+
+And that is all.
+This time, we used most good practices.
+We may have used another way to generate the form
+but this is beyond the scope of this tutorial.
+
+Just try it by [clicking here](http://localhost:3000/new).
+
+Hey! That was easy!
+
+## Blog
+
+Now it is time to create a minimal blog.
+
 
 ---
 
