@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if [[ $HOST = "YiMac.local" ]]; then
+if [[ $HOST = "iMac-de-Yann.local" ]]; then
     cd $HOME/Sites/webroot
     git co master
     (( $? == 0 )) || { exit 1 }
