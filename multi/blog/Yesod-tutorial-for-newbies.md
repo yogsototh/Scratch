@@ -26,20 +26,36 @@ fr: <%= tlal %> Un tutoriel pour yesod.
 
 enddiv
 
-Do you want the best technology to handle your new web application?
-Me too. After searching a lot, it appears you should choose Haskell.
-Why? 
+Haskell is incredible and you should consider to use it to make your next web application. Why?
 
-* [Extremely fast][warpbench].
-* Secure by nature. Many typical programming bug are hard to make in Haskell.
-* High abstraction level. 
-* Handle asynchronous request better than any other system (better than node.js for example).
-* Done to be parallelized. Thanks to purity.
+My main reason to look at Haskell is its [efficiency][warpbench].
+Haskell is compiled and is incredibly faster than interpreted languages like [Ruby][haskellvsruby] and [Python][haskellvspython].
 
-Technically speaking, Haskell seems perfect for web development.
-The only drawback you can found for Haskell certainly won't be technical but social. Like the difficulty to grasp Haskell, the few number of developer, etc...
+haskellvsruby: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=yarv
+haskellvspython: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=python3
 
-But if you are here, lets pretend, the most important is the technical aspect.
+Haskell remains generally slower than C and C++.
+
+Its type system gives the feeling of using an interpreted language.
+Haskell has many more great properties, one of the best being:
+
+> "If your program compile it is certainly bug free".
+
+The preceding sentence was true 90% of the time for me. And if your program don't compile ghc generally provide great help messages.
+
+From the pure technical point of vue Haskell seems perfect for web development.
+
+The only weaknesses of Haskell aren't technical but Human:
+
+- Hard to grasp Haskell
+- Hard to find Haskell programmer
+- The Haskell community is smaller than the community of X
+
+I don't say these are not important drawbacks.
+But if you want to make a product for you own and want the best of the best system.
+Just trust me when I say that technically this is the best choice taking in balance efficiency/security/quality.
+
+As you are here, let's pretend you give the privilege to the technical aspect of your server.
 You want the best of the best system to make your new web application.
 
 Instead of reinvent the wheel, we should choose a web framework in Haskell.
