@@ -13,7 +13,7 @@ tags:
   - programming
   - web
 -----
-<%= blogimage("warp-benchmark.png","Title image") %>
+<%= blogimage("flying_neo.jpg","Neo Flying at warp speed") %>
 
 begindiv(intro)
 
@@ -28,11 +28,16 @@ enddiv
 
 Haskell is incredible and you should consider to use it to make your next web application. Why?
 
+<%= blogimage("thousands_smiths.jpg","Thousands of Agent Smith") %>
+
 My main reason to look at Haskell is its [efficiency][warpbench].
 Haskell is compiled and is incredibly faster than interpreted languages like [Ruby][haskellvsruby] and [Python][haskellvspython].
+Haskell handle parallel tasks perfectly. For example even better than `node.js`[^nodejstroll].
 
-haskellvsruby: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=yarv
-haskellvspython: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=python3
+[^nodejstroll]: If you are curious, you can search about [the Fibonacci node.js troll](http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html). Without any tweaking, [Haskell handled this problem perfectly](http://mathias-biilmann.net/posts/2011/10/is-haskell-the-cure). I tested it myself using yesod instead of Snap.
+
+[haskellvsruby]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=yarv
+[haskellvspython]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=python3
 
 Haskell remains generally slower than C and C++.
 
@@ -53,7 +58,7 @@ The only weaknesses of Haskell aren't technical but Human:
 
 I don't say these are not important drawbacks.
 But if you want to make a product for you own and want the best of the best system.
-Just trust me when I say that technically this is the best choice taking in balance efficiency/security/quality.
+Just trust me when I say that technically this is the best choice taking in balance efficiency, security and quality.
 
 As you are here, let's pretend you give the privilege to the technical aspect of your server.
 You want the best of the best system to make your new web application.
@@ -71,9 +76,22 @@ I had the feeling yesod help the newcomers the most.
 It also appears the yesod developer are the most active.
 But as I said before, I might be wrong has it was only feeling.
 
+<%= blogimage("owl_draw.png","1. Draw some circles. 2. Draw the rest of the fucking owl") %>
+
 Now, what this article is all about? 
 A missing tutorial in the yesod documentation.
+I lacked an intermediate tutorial level.
+First, use the scaffolding site of yesod directly instead of using
+the framework to make minimal "one file only" tutorial.
 The goal is to go as straight as possible to the best practice.
+I did my best to remove all the hard part. And particularly, I tried
+to forget the Haskell language and focus on the Yesod framework.
+I wanted to make it easier to follow for people not used to Haskell.
+
+If you are not used to Haskell, some syntax details may feel awkward.
+Please, don't try to understand it now.
+Just follow the flow of what you understand in the code and try to forget a bit about the details.
+Haskell is a very complex language and could suck all your energy if you want to dig too early.
 
 You'll then first install, initialize and configure your first yesod project.
 Then a 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
@@ -251,6 +269,8 @@ Now you can visit: [`http://localhost:3000/echo/Yesod%20rocks!`](http://localhos
 TADA! It works.
 
 ### Secure?
+
+<%= blogimage("neo_bullet_proof.jpg","Neo stops a myriad of bullets") %>
 
 Let's try to attack our website by entering a text with special characters:
 
