@@ -144,18 +144,23 @@ Once finished a server is launched and you could visit it by clicking this link:
 
 [`http://localhost:3000`](http://localhost:3000)
 
-Congratulation! Yesod works.
+Congratulation! Yesod works!
 
-> Note: if something is messed up use the following command line:
-> <code class="zsh">
-> \rm -rf dist/* ; cabal-dev install && yesod --dev devel
-> </code>
+<blockquote>
+
+Note: if something is messed up use the following command line:
+
+<code class="zsh">
+\rm -rf dist/* ; cabal-dev install && yesod --dev devel
+</code>
+
+</blockquote>
 
 Until the end of the tutorial, use another terminal and let this one open in a corner to see what occurs.
 
 ### Configure git
 
-This step is not mandatory for a tutorial, but I wanted to jump directly in good practice. There are many different choice of CVS, but for this tutorial I'll use `git`.
+This step is not mandatory for a tutorial, but I wanted to jump directly to good practice. There are many different choice of CVS, but for this tutorial I'll use `git`.
 
 Copy this `.gitignore` file into the `yosog` folder.
 
@@ -179,14 +184,10 @@ Now we are almost ready to start.
 
 ### A last point
 
-Until here it was just an installation, an initialization and a configuration.
-
-We have a directory containing a bunch of files and
-we have a local web server that listen the port 3000.
+Up until here, we have a directory containing a bunch of files and a local web server listening the port 3000.
 
 If we modify a file inside this directory, yesod should try
 to recompile as fast as possible the site. 
-This way, you should see the modification you do.
 
 Instead of explaining the role of every file,
 let's get straight to the point.
@@ -205,8 +206,10 @@ Obviously:
 - `templates/`      contains HTML, JS and CSS templates. 
 - `config/models`   is where you'll configure the persistent objects (database tables).
 
-Also note until here we don't even typed any line of Haskell.
-It is now time to start the interesting stuff.
+During this tutorial we'll modify other files as well,
+but we won't look them in detail.
+Also we didn't even typed any line of Haskell.
+But now, it is the time to start the interesting part.
 
 ## Echo
 
