@@ -5,6 +5,7 @@
 $behindColor: #333
 $mainTextColor: $behindColor
 $mainBackgroundColor: #FAFAFA
+$secondBackgroundColor: #F2F2F2
 $revealColor: #A53
 $secondRevealColor: #AA5533
 $lighterRevealColor: $revealColor + #666
@@ -810,3 +811,13 @@ ul#markdown-toc
     padding-left: 1.5em
   a:after
     content: ""
+
+table
+  border: 1px solid $borderColor
+table tr td
+  padding: 2px .5em
+table tr
+  &:nth-child(odd)
+    background-color: $secondBackgroundColor
+  &:nth-child(even)
+    background-color: $mainBackgroundColor
