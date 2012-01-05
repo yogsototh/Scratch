@@ -201,10 +201,10 @@ Inside the `yosog` the important files/directories for this tutorial are:
 
 Obviously:
 
-- `config/routes`   is where you'll configure the map URL → Code.
-- `Handler/`        contains the files that will contain the code called when a URL is accessed.
-- `templates/`      contains HTML, JS and CSS templates. 
-- `config/models`   is where you'll configure the persistent objects (database tables).
+| `config/routes`   | is where you'll configure the map URL → Code. |
+| `Handler/`        | contains the files that will contain the code called when a URL is accessed. |
+| `templates/`      | contains HTML, JS and CSS templates.  |
+| `config/models`   | is where you'll configure the persistent objects (database tables). |
 
 During this tutorial we'll modify other files as well,
 but we won't look them in detail.
