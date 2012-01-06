@@ -1,0 +1,14 @@
+-----
+
+-----
+* 
+  transition-property: all
+  transition-duration: 0.5s
+  -moz-transition-property: all
+  -moz-transition-duration: 0.5s
+  -webkit-transition-property: all
+  -webkit-transition-duration: 0.5s
+  -o-transition-property: all
+  -o-transition-duration: 0.5s
+
+

@@ -12,7 +12,7 @@ function returnToNormal() {
 
 function initCode() {
     if ( ! /ip(od|hone)/.test(userAgent) ) {
-        $("body").css({'transition-duration': 0});
+    $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/dynamic.css" type="text/css" />');
         $(".code").click(openWide);
         $(".code").css({cursor: "pointer"});
         $('body').append('<div id="_code"></div>');
