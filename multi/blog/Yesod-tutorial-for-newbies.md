@@ -20,10 +20,12 @@ macros:
 
 begindiv(intro)
 
-en: <%= tldr %> A simple yesod tutorial. You shouldn't need to know Haskell very well. 
+en: <%= tldr %> A simple yesod tutorial. Yesod is an Haskell web framework. You shouldn't need to know Haskell. 
 
-fr: <%= tlal %> Un tutoriel pour yesod.
+fr: <%= tlal %> Un tutoriel pour yesod, un framework web Haskell. Vous ne devriez pas avoir besoin de savoir programmer en Haskell. Par contre je suis désolé pour les francophones, mais je n'ai pas eu le courage de traduire cet article en Français.
 
+> <center><sc><b>Table of content</b></sc></center>
+> 
 > * Table of Content (generated)
 > {:toc}
 
@@ -33,9 +35,9 @@ Haskell is incredible and you should consider to use it to make your next web ap
 
 <%= blogimage("haskell-benchmark.png","Impressive Haskell Benchmark") %>
 
-My main reason to look at Haskell is its efficiency (see [Snap Benchmark][snapbench] _&_ [Warp Benchmark][warpbench]).
+My main reason to look at Haskell is its efficiency (see [Snap Benchmark][snapbench] _&_ [Warp Benchmark][warpbench][^benchmarkdigression]).
 Haskell is compiled and is an order of magnitude faster than interpreted languages like [Ruby][haskellvsruby] and [Python][haskellvspython][^speeddigression].
-Haskell handle parallel tasks perfectly. For example even better than `node.js`[^nodejstroll].
+Haskell handle parallel tasks perfectly. For example even better than node.js[^nodejstroll].
 
 
 Its type system gives the feeling of using an interpreted language.
@@ -45,7 +47,7 @@ Haskell has many more great properties, one of the best being:
 
 From the pure technical "point of vue", Haskell seems to be the perfect web development tool.
 
-Weaknesses of Haskell certainly won't be technical but social:
+Weaknesses of Haskell certainly won't be technical but human:
 
 - Hard to grasp Haskell
 - Hard to find a Haskell programmer
@@ -55,17 +57,13 @@ Weaknesses of Haskell certainly won't be technical but social:
 <%= leftblogimage("thousands_smiths.jpg","Thousands of Agent Smith") %>
 
 I don't say these are not important drawbacks.
-But if you want to use the best product which handle thousand of parallel just follow me.
-Haskell is certainly the best technical choice.
-I searched a long time and I considered efficiency, security and quality.
-In my humble opinion Haskell has the best balance.
+But Haskell is certainly the best choice to create your new web application which could handle thousands of connexions in parallel.
+Considering efficiency, security and quality, I believe Haskell is the best choice.
+Furthermore, not only the Haskell community is excellent, but Haskell is a great language and learning it will certainly make you a better programmer.
 
-Furthermore, the Haskell community is just an excellent one. Very helpful and smart.
-
-Instead of going deep inside Haskell, we will simply start as straight as possible toward a real web application.
-
-Instead of reinvent the wheel, we should choose a web framework in Haskell.
-Actually there are three choices:
+Haskell is not the only choice to make.
+The easiest path to create a web application is certainly to choose a web framework which has made a lot of work for us.
+Actually there are three main choices:
 
 1. [Happstack](http://happstack.com)
 2. [Snap](http://snapframework.com)
@@ -73,33 +71,30 @@ Actually there are three choices:
 
 I don't think there is a real winner between these three framework.
 The choice I made for yesod is highly subjective.
-I had the feeling yesod help the newcomers the most.
-It also appears the yesod developer are the most active.
-But as I said before, I might be wrong has it was only feeling.
+I had the feeling yesod make a better job at helping newcomers.
+Furthermore, apparently the yesod team is the most active.
+But as I said before, I might be wrong has it is a matter of feeling.
 
 <%= blogimage("owl_draw.png","1. Draw some circles. 2. Draw the rest of the fucking owl") %>
 
-Now, what this article is all about? 
-A missing tutorial in the yesod documentation.
-I lacked an intermediate tutorial level.
-First, use the scaffolding site of yesod directly instead of using
-the framework to make minimal "one file only" tutorial.
-The goal is to go as straight as possible to the best practice.
-I did my best to remove all the hard part. And particularly, I tried
-to forget the Haskell language and focus on the Yesod framework.
-I wanted to make it easier to follow for people not used to Haskell.
+Why did I write this article?
+The yesod documentation does an excellent job to explain you both some very minimal example and digging into the details. 
+But I missed an intermediate tutorial.
 
-If you are not used to Haskell, some syntax details may feel awkward.
-Please, don't try to understand it now.
-Just follow the flow of what you understand in the code and try to forget a bit about the details.
+I tried to pass on the Haskell language and focus on the Yesod framework.
+If you are not used to Haskell, some syntax details may feel strange.
+Please, don't try to understand the details right now.
 Haskell is a very complex language and could suck all your energy if you want to dig too early.
 
-You'll then first install, initialize and configure your first yesod project.
+During this tutorial you'll install, initialize and configure your first yesod project.
 Then a 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
 Then we clean up the 5 minutes tutorial to use the best practices.
+Just after there will be a more standard real world example. A minimal blog system.
+Good read.
 
 [warpbench]: http://www.yesodweb.com/blog/2011/03/preliminary-warp-cross-language-benchmarks
 [snapbench]: http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks
+[^benchmarkdigression]: There are many to say about these benchmarks. But in the end Haskell should be far faster.
 [^speeddigression]: Generally _high level_ Haskell is slower than C, but _low level_ Haskell is equivalent to C speed. It means that even if you can easily link C code with Haskell, this is not needed to reach the same speed. Nonetheless it is not comparable to Ruby/Python.
 [^nodejstroll]: If you are curious, you can search about [the Fibonacci node.js troll](http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html). Without any tweaking, [Haskell handled this problem perfectly](http://mathias-biilmann.net/posts/2011/10/is-haskell-the-cure). I tested it myself using yesod instead of Snap.
 [haskellvsruby]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=yarv
@@ -150,7 +145,7 @@ Congratulation! Yesod works!
 
 <blockquote>
 
-Note: if something is messed up use the following command line:
+Note: if something is messed up use the following command line inside the project directory.
 
 <code class="zsh">
 \rm -rf dist/* ; cabal-dev install && yesod --dev devel
@@ -192,9 +187,7 @@ If we modify a file inside this directory, yesod should try
 to recompile as fast as possible the site. 
 
 Instead of explaining the role of every file,
-let's get straight to the point.
-
-Inside the `yosog` the important files/directories for this tutorial are:
+let's focus only on the important files/directories for this tutorial:
 
 1. `config/routes`
 2. `Handler/`
@@ -218,11 +211,9 @@ To verify the quality of the security of the yesod framework, let's make a minim
 
 Our goal:
 
-Make a server that when accessed `/echo/`_[some text]_ should return a web page containing "some text" inside an `h1` bloc.
+Make a server that when accessed `/echo/[some text]` should return a web page containing "some text" inside an `h1` bloc.
 
-For example, accessing [`http://localhost:3000/echo/some%20text`](http://localhost:3000/echo/some%20text), should display "some text" in an %html web page.
-
-First, we must declare URL of the form /echo/... are meaningful.
+First, we must declare URL of the form `/echo/...` are meaningful.
 
 Let's take a look at the file `config/routes`:
 

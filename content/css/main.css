@@ -137,8 +137,8 @@ p
 
 blockquote
   +highlight
-  background-color: #F2F2F2
-  border: 1px solid #CCC
+  background-color: $secondBackgroundColor
+  border: 1px solid $borderColor
 
 abbr,
 acronym
@@ -177,7 +177,7 @@ acronym
   padding: 1em
   font-size: 16px
   line-height: 1.4em
-  border-radius: 1.5em
+  border-radius: 5px
   border: 2px solid $mainBackgroundColor
   color: $lighterText
   &:hover
@@ -282,7 +282,7 @@ $content_width: 52em
 
 body
   text-align: center
-  font-size: 1em
+  font-size: .98em
 
 body > #entete
   position: absolute
@@ -447,7 +447,7 @@ $hpadding: 1
   box-shadow: 0 10px 15px #CCC
   border-radius: 3px
 .corps a:hover img
-  background-color: $revealColor + #666
+  background-color: $revealColor + #100 - #011
 
 img.clean
   border: none
@@ -829,3 +829,8 @@ table tr
     background-color: $secondBackgroundColor
   &:nth-child(even)
     background-color: $mainBackgroundColor
+
+p code
+  background: $secondBackgroundColor
+  border: solid 1px $borderColor
+  padding: 2px
