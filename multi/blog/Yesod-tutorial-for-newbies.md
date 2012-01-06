@@ -12,6 +12,9 @@ tags:
   - haskell
   - programming
   - web
+macros:
+ html5: '<span class="sc">html5</span>' 
+ html: '<span class="sc">html</span>' 
 -----
 <%= blogimage("flying_neo.jpg","Neo Flying at warp speed") %>
 
@@ -28,18 +31,12 @@ enddiv
 
 Haskell is incredible and you should consider to use it to make your next web application. Why?
 
-<%= blogimage("warp_benchmark.png","Haskell Benchmark which destroy Ruby and Python") %>
+<%= blogimage("haskell-benchmark.png","Impressive Haskell Benchmark") %>
 
-My main reason to look at Haskell is its [efficiency][warpbench].
-Haskell is compiled and is incredibly faster than interpreted languages like [Ruby][haskellvsruby] and [Python][haskellvspython].
+My main reason to look at Haskell is its efficiency (see [Snap Benchmark][snapbench] _&_ [Warp Benchmark][warpbench]).
+Haskell is compiled and is an order of magnitude faster than interpreted languages like [Ruby][haskellvsruby] and [Python][haskellvspython][^speeddigression].
 Haskell handle parallel tasks perfectly. For example even better than `node.js`[^nodejstroll].
 
-[^nodejstroll]: If you are curious, you can search about [the Fibonacci node.js troll](http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html). Without any tweaking, [Haskell handled this problem perfectly](http://mathias-biilmann.net/posts/2011/10/is-haskell-the-cure). I tested it myself using yesod instead of Snap.
-
-[haskellvsruby]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=yarv
-[haskellvspython]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=python3
-
-Haskell remains generally slower than C and C++.
 
 Its type system gives the feeling of using an interpreted language.
 Haskell has many more great properties, one of the best being:
@@ -102,6 +99,11 @@ Then a 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
 Then we clean up the 5 minutes tutorial to use the best practices.
 
 [warpbench]: http://www.yesodweb.com/blog/2011/03/preliminary-warp-cross-language-benchmarks
+[snapbench]: http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks
+[^speeddigression]: Generally _high level_ Haskell is slower than C, but _low level_ Haskell is equivalent to C speed. It means that even if you can easily link C code with Haskell, this is not needed to reach the same speed. Nonetheless it is not comparable to Ruby/Python.
+[^nodejstroll]: If you are curious, you can search about [the Fibonacci node.js troll](http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html). Without any tweaking, [Haskell handled this problem perfectly](http://mathias-biilmann.net/posts/2011/10/is-haskell-the-cure). I tested it myself using yesod instead of Snap.
+[haskellvsruby]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=yarv
+[haskellvspython]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=python3
 
 ## Before the real start
 
@@ -207,9 +209,8 @@ Obviously:
 | `config/models`   | is where you'll configure the persistent objects (database tables). |
 
 During this tutorial we'll modify other files as well,
-but we won't look them in detail.
-Also we didn't even typed any line of Haskell.
-But now, it is the time to start the interesting part.
+but we won't explore them in detail.
+Now, it is the time to start the interesting part.
 
 ## Echo
 
@@ -475,7 +476,7 @@ Now it is time to create a minimal blog.
   <li>      Display something, show it is protected.
   </li><li> Make the same as before, but with an input.
   </li><li> Create a minimal blog system.
-  </li><li> Change template to html5 boilerplate.
+  </li><li> Change template to %html5 boilerplate.
   </li><li> Use Authentification.
   </li>
 </ul>
