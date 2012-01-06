@@ -94,7 +94,7 @@ Good read.
 
 [warpbench]: http://www.yesodweb.com/blog/2011/03/preliminary-warp-cross-language-benchmarks
 [snapbench]: http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks
-[^benchmarkdigression]: There are many to say about these benchmarks. But in the end Haskell should be far faster.
+[^benchmarkdigression]: One can argue these benchmark contains many problems. But benchmark are just here to give an order of idea. The main result they show Haskell is very fast.
 [^speeddigression]: Generally _high level_ Haskell is slower than C, but _low level_ Haskell is equivalent to C speed. It means that even if you can easily link C code with Haskell, this is not needed to reach the same speed. Nonetheless it is not comparable to Ruby/Python.
 [^nodejstroll]: If you are curious, you can search about [the Fibonacci node.js troll](http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html). Without any tweaking, [Haskell handled this problem perfectly](http://mathias-biilmann.net/posts/2011/10/is-haskell-the-cure). I tested it myself using yesod instead of Snap.
 [haskellvsruby]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=yarv
@@ -267,7 +267,7 @@ Now you can visit: [`http://localhost:3000/echo/Yesod%20rocks!`](http://localhos
 
 TADA! It works.
 
-### Secure?
+### Bulletproof?
 
 <%= blogimage("neo_bullet_proof.jpg","Neo stops a myriad of bullets") %>
 
