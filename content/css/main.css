@@ -542,15 +542,15 @@ ul.long li
 
 img
   display: block
-  margin-left: auto
-  margin-right: auto
+  margin: 1.2em auto
   background: none
   border: none
 
 img.left
   float: left
   max-width: 30%
-  margin:
+  margin: 
+    top: .6em
     right: 1em
 
 img.inside
@@ -697,6 +697,14 @@ a.return
 
 .footnotes
   font-size: 0.8em
+  ol
+    color: #CCC
+    font-weight: bold
+    p
+      color: $behindColor
+      font-weight: normal
+
+    
 
 .fontnotes ol
   margin-left: 0
@@ -792,6 +800,16 @@ ul.bloglist, .archive ul
   .footnotes, sup 
     a:after
       content: ""
+.article .corps sup a
+  font-weight: bold
+  background: #CCC
+  padding: 0 .3em
+  border-radius:  3px
+  -moz-border-radius:  3px
+  -webkit-border-radius:  3px
+  color: $mainBackgroundColor
+  &:hover
+    background: $revealColor
 
 ul#markdown-toc
   font-variant: small-caps
