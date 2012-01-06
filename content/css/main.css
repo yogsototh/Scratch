@@ -282,7 +282,7 @@ $content_width: 52em
 
 body
   text-align: center
-  font-size: .98em
+  font-size: 16px
 
 body > #entete
   position: absolute
@@ -558,9 +558,8 @@ img.inside
   vertical-align: middle
 
 pre
-  overflow
-    y: hidden
-    x: auto
+  overflow-x: auto
+  overflow-y: hidden
 
 .withfile pre
   margin-top: 0
