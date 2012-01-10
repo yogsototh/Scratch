@@ -2,7 +2,7 @@
 # before nanoc starts compiling.
 
 def allExceptCode( f, content )
-    regexp=/<code[^>]*>.*?<\/code>/m
+    regexp=/<code[^>]*>.*?<\/code>|<pre[^>]*>.*?<\/pre>/m
     tmp=""
     mem=[]
     content.scan(regexp).each do |c|
@@ -11,7 +11,7 @@ def allExceptCode( f, content )
     i=0
     content.split(regexp).each do |x|
         tmp <<= send(f,x) 
-        if not mem[i].nil?
+        if not mem[i].nil? 
             tmp <<= mem[i]
             i+=1
         end
