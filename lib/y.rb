@@ -2,6 +2,8 @@
 # before nanoc starts compiling.
 
 def allExceptCode( f, content )
+    # Beware the behaviour will change if you add
+    # parenthesis (groups) to the regexp!
     regexp=/<code[^>]*>.*?<\/code>|<pre[^>]*>.*?<\/pre>/m
     tmp=""
     mem=[]
