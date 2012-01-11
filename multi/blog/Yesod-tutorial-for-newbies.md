@@ -3,8 +3,10 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2011-12-28T15:14:40+02:00
-en: title: Yesod tutorial for newbies
-fr: title: Tutoriel Yesod pour les nuls
+en: title: Haskell web programming
+en: subtitle: A Yesod tutorial
+fr: title: Site en Haskell
+fr: subtitle: Un tutoriel Yesod
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
@@ -94,8 +96,8 @@ Good read.
 
 [warpbench]: http://www.yesodweb.com/blog/2011/03/preliminary-warp-cross-language-benchmarks
 [snapbench]: http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks
-[^benchmarkdigression]: One can argue these benchmark contains many problems. But benchmark are just here to give an order of idea. The main result they show Haskell is very fast.
-[^speeddigression]: Generally _high level_ Haskell is slower than C, but _low level_ Haskell is equivalent to C speed. It means that even if you can easily link C code with Haskell, this is not needed to reach the same speed. Nonetheless it is not comparable to Ruby/Python.
+[^benchmarkdigression]: One can argue these benchmark contains many problems. But benchmark are just here to give an order of idea. Mainly Haskell is very fast.
+[^speeddigression]: Generally _high level_ Haskell is slower than C, but _low level_ Haskell is equivalent to C speed. It means that even if you can easily link C code with Haskell, this is not needed to reach the same speed. Furthermore writing a web service in C/C++ seems to be a very bad idea. You can take a look at a [discussion on HN about this](http://news.ycombinator.com/item?id=3449388). 
 [^nodejstroll]: If you are curious, you can search about [the Fibonacci node.js troll](http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html). Without any tweaking, [Haskell handled this problem perfectly](http://mathias-biilmann.net/posts/2011/10/is-haskell-the-cure). I tested it myself using yesod instead of Snap.
 [haskellvsruby]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=yarv
 [haskellvspython]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=python3
@@ -112,8 +114,8 @@ First you need to install [Haskell][haskell]. The recommended way to do this is 
 Then you need to install yesod.
 
 <code class="zsh">
-> cabal update
-> cabal install yesod cabal-dev
+~ cabal update
+~ cabal install yesod cabal-dev
 </code>
 
 That is all. It should take some time to 
@@ -125,14 +127,14 @@ package and then compile them.
 Open a terminal and type:
 
 <code class="zsh">
-> yesod init
+~ yesod init
 </code>
 
 Enter your name, name the project `yosog` and the name of the Foundation as `Yosog`, then choose `sqlite`.
 Perfect. Now you can start the development cycle:
 
 <code class="zsh">
-> cd yosog
+~ cd yosog
 > cabal-dev install && yesod --dev devel
 </code>
 
@@ -172,9 +174,9 @@ static/tmp
 Then initialize your git repository:
 
 <code class="zsh">
-> git init .
-> git add .
-> git commit -a -m "Initial yesod commit"
+~ git init .
+~ git add .
+~ git commit -a -m "Initial yesod commit"
 </code>
 
 Now we are almost ready to start.
@@ -454,18 +456,19 @@ Just try it by [clicking here](http://localhost:3000/new).
 
 Hey! That was easy!
 
-## Blog
+## End of Part 1
 
-Now it is time to create a minimal blog.
+This was a very minimal introduction.
 
+In my next article, I will show you a closer real life system.
+
+<div style="display:hidden">
 
 ---
 
 <%= startTodo %>
 
 <ul>
-  <li>      Display something, show it is protected.
-  </li><li> Make the same as before, but with an input.
   </li><li> Create a minimal blog system.
   </li><li> Change template to %html5 boilerplate.
   </li><li> Use Authentification.
@@ -473,3 +476,5 @@ Now it is time to create a minimal blog.
 </ul>
 
 <%= endTodo %>
+
+</div>
