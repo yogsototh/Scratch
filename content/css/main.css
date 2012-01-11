@@ -5,6 +5,7 @@
 $behindColor: #333
 $mainTextColor: $behindColor
 $mainBackgroundColor: #FAFAFA
+$mainShadowColor: $mainBackgroundColor - #333
 $secondBackgroundColor: #F2F2F2
 $revealColor: #A53
 $secondRevealColor: #AA5533
@@ -271,6 +272,7 @@ h1 > .date
   line-height: 3ex
   clear: both
   +secondColor
+  border-radius: 0
 
 // --- LAYOUTS --
 $VPadCorps: 3em
@@ -433,7 +435,6 @@ $fontcorps: 1.25
   text-align: left
   padding: $VPadCorps 3em
   margin: 0 $HMarginCorps
-  border-bottom: 1px $lighterColorBorderBottom solid
   clear: both
 
 $corps_width: ($content_width - 2 * $contentMargin) / $fontcorps
@@ -833,3 +834,15 @@ p code
   background: $secondBackgroundColor
   border: solid 1px $borderColor
   padding: 2px
+
+ul.sameline
+  list-style: none
+  li
+    float: left
+    margin-left: .5em
+
+.resumearticle
+  border: solid 3px #FFF
+  border-radius: 7px
+  box-shadow: 0 0 2px $mainShadowColor inset,0 0 2px $mainShadowColor
+  margin: 1em 0

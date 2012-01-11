@@ -18,7 +18,7 @@ def dArr
 end
 %>
 
-<ul>
+<ul class="sameline">
 en: <li> <a href="#last-articles"><%= number_of_articles %> latest articles <%=dArr%></a> </li>
 fr: <li> <a href="#last-articles">Les <%= number_of_articles %> derniers articles <%=dArr%></a></li>
 en: <li> <a href="#tagcloud">Tag Cloud <%=dArr%></a></li>
@@ -27,6 +27,7 @@ fr: <li> <a href="#tagcloud">Nuage de mots clés <%=dArr%></a></li>
 en: <li> <a href="#two-words-about-the-content">Two words about the content <%=dArr%></a></li>
 fr: <li> <a href="#un-petit-mot-sur-le-contenu">Un petit mot sur le contenu <%=dArr%></a></li>
 </ul>
+<div class="flush"></div>
 
 <h2 id="last-articles">
 en: Last <%= number_of_articles %> Articles
@@ -36,6 +37,7 @@ fr: Les <%= number_of_articles %> derniers articles
 </div>
 
 <% last_articles.each do |a| %>
+<div class="resumearticle">
 <h1> 
     <%= calendar_for( a[:created_at], language ) %> 
     <%= link_to(a[:title]+%{ <span class="nicer">»</span>}, a) %> 
@@ -53,6 +55,7 @@ en:         <%= link_to(%{Read more <span class="nicer">»</span>}, a) %>
             </p>
     </div>
 
+</div>
 </div>
 <% end %>
 
