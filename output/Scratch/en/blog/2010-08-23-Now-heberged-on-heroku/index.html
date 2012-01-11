@@ -78,7 +78,7 @@ But here is the conf to make it work on heroku.</p>
 <span class="Keyword">require</span> <span class="String"><span class="String">'</span>mime/types<span class="String">'</span></span>
 
 use <span class="Support">Rack</span>::<span class="Entity">ETag</span>
-<span class="Keyword">module</span>&nbsp;::<span class="Entity">Rack</span>
+<span class="Keyword">module</span> ::<span class="Entity">Rack</span>
     <span class="Keyword">class</span> <span class="Entity">TryStatic<span class="EntityInheritedClass"> <span class="EntityInheritedClass">&lt;</span> Static</span></span>
 
         <span class="Keyword">def</span> <span class="Entity">initialize</span>(<span class="Variable">app<span class="Variable">,</span> options</span>)
@@ -91,7 +91,7 @@ use <span class="Support">Rack</span>::<span class="Entity">ETag</span>
             <span class="Keyword">while</span> <span class="Variable"><span class="Variable">@</span>next</span> <span class="Keyword">&lt;</span> <span class="Variable"><span class="Variable">@</span>try</span>.<span class="Entity">size</span> <span class="Keyword">&amp;&amp;</span> <span class="Constant">404</span> <span class="Keyword">==</span> (resp <span class="Keyword">=</span> <span class="Keyword">super</span>(<span class="Entity">try_next</span>(env)))[<span class="Constant">0</span>] 
                 <span class="Variable"><span class="Variable">@</span>next</span> <span class="Keyword">+=</span> <span class="Constant">1</span>
             <span class="Keyword">end</span>
-            <span class="Constant">404</span> <span class="Keyword">==</span> resp[<span class="Constant">0</span>] <span class="Keyword">?</span> <span class="Variable"><span class="Variable">@</span>app</span>.<span class="Entity">call</span>&nbsp;: resp
+            <span class="Constant">404</span> <span class="Keyword">==</span> resp[<span class="Constant">0</span>] <span class="Keyword">?</span> <span class="Variable"><span class="Variable">@</span>app</span>.<span class="Entity">call</span> : resp
         <span class="Keyword">end</span>
 
         <span class="Keyword">private</span>
@@ -135,12 +135,12 @@ heroku create
 git push heroku master
 </pre>
 
-<p>Now I’ll should be able to redirect properly to my own 404 page for example.
+<p>Now I&rsquo;ll should be able to redirect properly to my own 404 page for example.
 I hope it is helpful.</p>
 <hr/><div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>I was inspired by this <a href="http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free">article</a>. <a href="#fnref:1" rev="footnote">&#8617;</a></p>
+      <p>I was inspired by this <a href="http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free">article</a>. <a href="#fnref:1" rel="reference">&#8617;</a></p>
     </li>
   </ol>
 </div>

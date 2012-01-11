@@ -54,11 +54,11 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>J’ai déjà discuté de la façon dont je <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe">synchronise mon site web sur mobileme</a>. J’ai amélioré mon script pour le rendre incrémental.</p>
+                    <p>J&rsquo;ai déjà discuté de la façon dont je <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe">synchronise mon site web sur mobileme</a>. J&rsquo;ai amélioré mon script pour le rendre incrémental.</p>
 
-<p>Voici mon script, il créé tout d’abord un fichier qui contient la liste des fichiers avec leur <em>hash</em>. Afin de les comparer avec ceux qui sont en ligne sans avoir à les parcourir. Ensuite pour chaque fichier qui semble différent, je met à jour le contenu.</p>
+<p>Voici mon script, il créé tout d&rsquo;abord un fichier qui contient la liste des fichiers avec leur <em>hash</em>. Afin de les comparer avec ceux qui sont en ligne sans avoir à les parcourir. Ensuite pour chaque fichier qui semble différent, je met à jour le contenu.</p>
 
-<p>Cependant même avec ce script j’ai encore des problèmes. Dû à webdav. En particulier le renommage de répertoire. Par exemple&nbsp;:</p>
+<p>Cependant même avec ce script j&rsquo;ai encore des problèmes. Dû à webdav. En particulier le renommage de répertoire. Par exemple&nbsp;:</p>
 
 <div><pre class="twilight">
 mv folder folder2
@@ -71,9 +71,9 @@ $ ls
 folder folder2
 </pre></div>
 
-<p>Bouuhh…</p>
+<p>Bouuhh&hellip;</p>
 
-<p>Pour résoudre ce type de problèmes j’utilise un <em>framework</em> en zsh. Il résout presque tous les problèmes liés à webdav à l’exception du renommage de répertoire.</p>
+<p>Pour résoudre ce type de problèmes j&rsquo;utilise un <em>framework</em> en zsh. Il résout presque tous les problèmes liés à webdav à l&rsquo;exception du renommage de répertoire.</p>
 
 <div><div class="code"><div class="file"><a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/code/webdav-framework"> &#x27A5; webdav-framework </a></div><div class="withfile">
 <pre class="twilight">
@@ -188,7 +188,7 @@ function trymv {
 </pre>
 </div></div></div>
 
-<p>Et voici le code qui me permet de synchroniser mon site web. Il y a une partie un peu incompréhensible. C’est pour enlever les mail réencodés par le filtre bluecloth qui est une implémentation de markdown. Mes mails, sont encodés à chaque fois de façon différente à chaque réengendrement de page html. C’est pourquoi je les enlève pour ne pas les <em>uploadés</em> inutilement à chaque fois.</p>
+<p>Et voici le code qui me permet de synchroniser mon site web. Il y a une partie un peu incompréhensible. C&rsquo;est pour enlever les mail réencodés par le filtre bluecloth qui est une implémentation de markdown. Mes mails, sont encodés à chaque fois de façon différente à chaque réengendrement de page html. C&rsquo;est pourquoi je les enlève pour ne pas les <em>uploadés</em> inutilement à chaque fois.</p>
 
 <div><div class="code"><div class="file"><a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/code/publish"> &#x27A5; publish </a></div><div class="withfile">
 <pre class="twilight">
@@ -206,7 +206,7 @@ source <span class="Variable"><span class="Variable">$</span>0</span>:h/config
 source <span class="Variable"><span class="Variable">$</span>0</span>:h/webdav-framework
 
 <span class="Keyword">if</span> [[ <span class="Variable"><span class="Variable">$</span>1</span> <span class="Keyword">==</span> <span class="String"><span class="String">'</span>-h<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
-    print -- <span class="String"><span class="String">&quot;</span>usage&nbsp;: <span class="StringVariable"><span class="StringVariable">$</span>0</span>:h [-h|-s|-d]<span class="String">&quot;</span></span>
+    print -- <span class="String"><span class="String">&quot;</span>usage : <span class="StringVariable"><span class="StringVariable">$</span>0</span>:h [-h|-s|-d]<span class="String">&quot;</span></span>
     print -- <span class="String"><span class="String">&quot;</span>  -a sychronise aussi l'index<span class="String">&quot;</span></span>
     print -- <span class="String"><span class="String">&quot;</span>  -h affiche l'aide<span class="String">&quot;</span></span>
     print -- <span class="String"><span class="String">&quot;</span>  -d modification directe (pas de swap)<span class="String">&quot;</span></span>
@@ -232,7 +232,7 @@ function incrementalPublish {
         <span class="Keyword">if</span> ((<span class="Variable"><span class="Variable">${</span>#filesToUpdate<span class="Variable">}</span></span> == 1))<span class="Keyword">;</span> <span class="Keyword">then</span>
             print -- <span class="String"><span class="String">&quot;</span>Seul le fichier <span class="StringVariable"><span class="StringVariable">${</span>filesToUpdate<span class="StringVariable">}</span></span> sera téléversé<span class="String">&quot;</span></span>
         <span class="Keyword">elif</span> ((<span class="Variable"><span class="Variable">${</span>#filesToUpdate<span class="Variable">}</span></span><span class="Keyword">&lt;</span>10))<span class="Keyword">;</span> <span class="Keyword">then</span>
-            print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>#filesToUpdate<span class="StringVariable">}</span></span> fichiers seront téléversés&nbsp;:<span class="String">&quot;</span></span>
+            print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>#filesToUpdate<span class="StringVariable">}</span></span> fichiers seront téléversés :<span class="String">&quot;</span></span>
             print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>filesToUpdate<span class="StringVariable">}</span></span><span class="String">&quot;</span></span>
         <span class="Keyword">else</span>
             print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>#filesToUpdate<span class="StringVariable">}</span></span> fichiers seront téléversés<span class="String">&quot;</span></span>
@@ -316,7 +316,7 @@ print -- <span class="String"><span class="String">&quot;</span>Dest = <span cla
 </pre>
 </div></div></div>
 
-<p>C’est ma façon de remplacer <code>rsync</code> avec des filesystem qui ne permettent pas de l’utiliser. J’espère que ça pourra vous être utile. Je serai heureux de savoir si quelqu’un à une idée sur comment gérer le problème de renommage de répertoire avec webdav.</p>
+<p>C&rsquo;est ma façon de remplacer <code>rsync</code> avec des filesystem qui ne permettent pas de l&rsquo;utiliser. J&rsquo;espère que ça pourra vous être utile. Je serai heureux de savoir si quelqu&rsquo;un à une idée sur comment gérer le problème de renommage de répertoire avec webdav.</p>
 
                 </div>
             

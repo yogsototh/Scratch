@@ -54,7 +54,7 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>Strangely enough, I didn’t find any built-in tool to split a file by keyword. I made one myself in <code>awk</code>. I put it here mostly for myself. But it could also helps someone else.
+                    <p>Strangely enough, I didn&rsquo;t find any built-in tool to split a file by keyword. I made one myself in <code>awk</code>. I put it here mostly for myself. But it could also helps someone else.
 The following code split a file for each line containing the word <code>UTC</code>.</p>
 
 <div><pre class="twilight">
@@ -80,7 +80,7 @@ Mon Dec  7 10:32:30 UTC 2009
 <span class="Entity">BEGIN</span>{i=0;}
 <span class="StringRegexp"><span class="StringRegexp">/</span>UTC<span class="StringRegexp">/</span></span> {
     date=<span class="Variable"><span class="Variable">$</span>1</span><span class="Variable"><span class="Variable">$</span>2</span><span class="Variable"><span class="Variable">$</span>3</span>; 
-    <span class="Keyword">if</span> ( date&nbsp;!= olddate ) {
+    <span class="Keyword">if</span> ( date != olddate ) {
         olddate=date;
         i+=1;
         FIC=<span class="SupportFunction">sprintf</span>(<span class="String"><span class="String">&quot;</span>fic.%03d<span class="String">&quot;</span></span>,i); 

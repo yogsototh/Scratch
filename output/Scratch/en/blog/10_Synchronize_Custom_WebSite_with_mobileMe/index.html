@@ -54,7 +54,11 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <h1 class="first" id="update-small20091028small">Update <small>(2009/10/28)</small></h1>
+                    <h1 class="first" id="update-small20120111small">Update <small>(2012/01/11)</small></h1>
+
+<p>iDisk should soon disapear. This entry is mainly obsolescent now.</p>
+
+<h1 id="update-small20091028small">Update <small>(2009/10/28)</small></h1>
 
 <p>I <a href="/Scratch/en/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-">updated my script</a> which is now incremental. Since the writing of this article, Apple<small>&copy;</small> had made many efforts about the bandwith of its European servers.</p>
 
@@ -79,13 +83,13 @@
 <p>The idea are: </p>
 
 <ul>
-  <li>synchronize to a temporary folder then swap the name therefore the website isn’t accessible only during the swap time. It takes only the time of two rename.</li>
+  <li>synchronize to a temporary folder then swap the name therefore the website isn&rsquo;t accessible only during the swap time. It takes only the time of two rename.</li>
   <li>reiterate all operations until they work (for example, renaming).</li>
 </ul>
 
 <p>For now I use <code>rsync</code> which in fact is no more efficient than a simple <code>cp</code> with WebDav. And I should use a method to keep track of elements who have changed. before the publication.</p>
 
-<p>In fact when I’m on a Mac, I use <a href="http://www.panic.com/transmit">Transmit</a> which is very cool and far more efficient than the Finder to synchronize files. After the synchronization, I swap the directories.</p>
+<p>In fact when I&rsquo;m on a Mac, I use <a href="http://www.panic.com/transmit">Transmit</a> which is very cool and far more efficient than the Finder to synchronize files. After the synchronization, I swap the directories.</p>
 
 <p>My script take a <code>-s</code> option in order to make only the swap option. It also take a <code>-a</code> in order to put the new <code>index.html</code> which should point to the new homepage (not the iWeb one).</p>
 
@@ -114,7 +118,7 @@ root=<span class="Variable"><span class="Variable">$</span>HOME</span>/Sites/<sp
 destRep=<span class="Variable"><span class="Variable">$</span>iDisk</span>/Web/Sites/<span class="Variable"><span class="Variable">$</span>siteName</span>
 
 [[ <span class="Keyword">!</span> -d <span class="Variable"><span class="Variable">$</span>root</span> ]] <span class="Keyword">&amp;&amp;</span> { 
-    print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>root</span> n'existe pas&nbsp;; vérifiez la conf<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span><span class="Keyword">;</span> 
+    print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>root</span> n'existe pas ; vérifiez la conf<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span><span class="Keyword">;</span> 
     exit 1 
 }
 
@@ -222,7 +226,7 @@ root=<span class="Variable"><span class="Variable">$</span>HOME</span>/Sites/<sp
 destRep=<span class="Variable"><span class="Variable">$</span>iDisk</span>/Web/Sites/<span class="Variable"><span class="Variable">$</span>siteName</span>
 
 [[ <span class="Keyword">!</span> -d <span class="Variable"><span class="Variable">$</span>root</span> ]] <span class="Keyword">&amp;&amp;</span> { 
-    print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>root</span> does not exist&nbsp;; please verify the configuration (<span class="StringVariable"><span class="StringVariable">$</span>0</span>)<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span><span class="Keyword">;</span> 
+    print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>root</span> does not exist ; please verify the configuration (<span class="StringVariable"><span class="StringVariable">$</span>0</span>)<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span><span class="Keyword">;</span> 
     exit 1 
 }
 

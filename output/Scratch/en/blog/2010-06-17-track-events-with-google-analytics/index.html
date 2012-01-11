@@ -76,7 +76,7 @@
     <span class="Keyword">$</span>(<span class="String"><span class="String">'</span>a<span class="String">'</span></span>).<span class="SupportFunction">click</span>(<span class="Storage">function</span> () {
         <span class="Comment"><span class="Comment">//</span> tell analytics to save event</span>
         <span class="Keyword">try</span> {
-            <span class="Storage">var</span> identifier<span class="Keyword">=</span><span class="Keyword">$</span>(<span class="Variable">this</span>).attr(<span class="String"><span class="String">'</span>id<span class="String">'</span></span>)&nbsp;;
+            <span class="Storage">var</span> identifier<span class="Keyword">=</span><span class="Keyword">$</span>(<span class="Variable">this</span>).attr(<span class="String"><span class="String">'</span>id<span class="String">'</span></span>) ;
             <span class="Storage">var</span> href<span class="Keyword">=</span><span class="Keyword">$</span>(<span class="Variable">this</span>).attr(<span class="String"><span class="String">'</span>href<span class="String">'</span></span>)
             <span class="Storage">var</span> label<span class="Keyword">=</span><span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>;
             <span class="Keyword">if</span> ( <span class="Keyword">typeof</span>( identifier ) <span class="Keyword">!</span><span class="Keyword">=</span> <span class="String"><span class="String">'</span>undefined<span class="String">'</span></span> ) {
@@ -92,7 +92,7 @@
                 }
             }
             _gaq.<span class="SupportFunction">push</span>([<span class="String"><span class="String">'</span>_trackEvent<span class="String">'</span></span>, category, <span class="String"><span class="String">'</span>clicked<span class="String">'</span></span>, label]);
-            <span class="Comment"><span class="Comment">//</span> console.log('[tracked]: ' + category + '&nbsp;; clicked&nbsp;; ' + label );</span>
+            <span class="Comment"><span class="Comment">//</span> console.log('[tracked]: ' + category + ' ; clicked ; ' + label );</span>
         }
         <span class="Keyword">catch</span> (err) {
             <span class="Entity">console</span><span class="SupportFunction">.log</span>(err);
@@ -113,13 +113,13 @@ _gaq.<span class="SupportFunction">push</span>([<span class="String"><span class
 
 (<span class="Storage">function</span>() {
  <span class="Storage">var</span> ga <span class="Keyword">=</span> <span class="Support">document</span>.<span class="SupportFunction">createElement</span>(<span class="String"><span class="String">'</span>script<span class="String">'</span></span>); ga.<span class="SupportConstant">type</span> <span class="Keyword">=</span> <span class="String"><span class="String">'</span>text/javascript<span class="String">'</span></span>; ga.async <span class="Keyword">=</span> <span class="Constant">true</span>;
- ga.<span class="SupportConstant">src</span> <span class="Keyword">=</span> (<span class="String"><span class="String">'</span>https:<span class="String">'</span></span> <span class="Keyword">==</span> <span class="Support">document</span>.<span class="SupportConstant">location</span>.<span class="SupportConstant">protocol</span>&nbsp;? <span class="String"><span class="String">'</span>https://ssl<span class="String">'</span></span>&nbsp;: <span class="String"><span class="String">'</span>http://www<span class="String">'</span></span>) <span class="Keyword">+</span> <span class="String"><span class="String">'</span>.google-analytics.com/ga.js<span class="String">'</span></span>;
+ ga.<span class="SupportConstant">src</span> <span class="Keyword">=</span> (<span class="String"><span class="String">'</span>https:<span class="String">'</span></span> <span class="Keyword">==</span> <span class="Support">document</span>.<span class="SupportConstant">location</span>.<span class="SupportConstant">protocol</span> ? <span class="String"><span class="String">'</span>https://ssl<span class="String">'</span></span> : <span class="String"><span class="String">'</span>http://www<span class="String">'</span></span>) <span class="Keyword">+</span> <span class="String"><span class="String">'</span>.google-analytics.com/ga.js<span class="String">'</span></span>;
  <span class="Storage">var</span> s <span class="Keyword">=</span> <span class="Support">document</span>.<span class="SupportFunction">getElementsByTagName</span>(<span class="String"><span class="String">'</span>script<span class="String">'</span></span>)[<span class="Constant">0</span>]; s.<span class="SupportConstant">parentNode</span>.<span class="SupportFunction">insertBefore</span>(ga, s);
  })();
 </pre>
 </div></div>
 
-<p>Replace the: <code>UA-XXXXXXXX-1</code> by your google analytics code and you’re done.</p>
+<p>Replace the: <code>UA-XXXXXXXX-1</code> by your google analytics code and you&rsquo;re done.</p>
 
 <p>To see what occurs, simply go in <code>Content</code> and <code>Event Tracking</code> as shown in the following screenshot:</p>
 

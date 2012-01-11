@@ -17,8 +17,9 @@ La plupart du temps je préfère ne pas utiliser le même produit que tout le mo
 C'est pourquoi j'utilise maintenant google analytics. Le problème reste entier pour les navigateurs sans javascript.
 
 Donc pour l'instant
+
 <div class="encadre">
-Théoreme :<br/>
+Théorème :<br/>
 <center>
 Google Analytics <big><strong>&gt;</strong></big> Who's Amung Us
 <center></div>

@@ -16,6 +16,10 @@ tags:
 
 -----
 
+# Update <small>(2012/01/11)</small>
+
+iDisk should soon disapear. This entry is mainly obsolescent now.
+
 # Update <small>(2009/10/28)</small>
 
 

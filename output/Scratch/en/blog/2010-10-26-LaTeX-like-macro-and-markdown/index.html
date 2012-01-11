@@ -58,7 +58,7 @@
 <div class="intro">
 
 
-<p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> I made a simple macro system for my blog. Now I juste have to write %<span />latex and it show as <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>.</p>
+<p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> I made a simple macro system for my blog. Now I juste have to write %<span></span>latex and it show as <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>.</p>
 
 
 </div>
@@ -78,8 +78,8 @@ In the header of my files I simply write:</p>
 <p>In the body it will replace every occurrence of:</p>
 
 <ul>
-  <li>%<span />test by <em>This is a macro test</em>,</li>
-  <li>and %<span />latex by <em><span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span></em>.</li>
+  <li>%<span></span>test by <em>This is a macro test</em>,</li>
+  <li>and %<span></span>latex by <em><span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span></em>.</li>
 </ul>
 
 <p>The source code is really simple.
@@ -102,7 +102,7 @@ For <code>nanoc</code> user, simply put this file in your <code>lib</code> direc
     <span class="Keyword">def</span> <span class="Entity">initialize</span>(<span class="Variable">arg</span>)
         <span class="Keyword">super</span>
         <span class="Variable"><span class="Variable">@</span>macro</span><span class="Keyword">=</span>{}
-        <span class="Variable"><span class="Variable">@</span>macro</span>[<span class="Constant"><span class="Constant">:</span>tlal</span>] <span class="Keyword">=</span> <span class="String"><span class="String">%{</span>&lt;span class=&quot;sc&quot;&gt;&lt;abbr title=&quot;Trop long à lire&quot;&gt;tlàl&lt;/abbr&gt;&nbsp;: &lt;/span&gt;<span class="String">}</span></span>
+        <span class="Variable"><span class="Variable">@</span>macro</span>[<span class="Constant"><span class="Constant">:</span>tlal</span>] <span class="Keyword">=</span> <span class="String"><span class="String">%{</span>&lt;span class=&quot;sc&quot;&gt;&lt;abbr title=&quot;Trop long à lire&quot;&gt;tlàl&lt;/abbr&gt; : &lt;/span&gt;<span class="String">}</span></span>
         <span class="Variable"><span class="Variable">@</span>macro</span>[<span class="Constant"><span class="Constant">:</span>tldr</span>] <span class="Keyword">=</span> <span class="String"><span class="String">%{</span>&lt;span class=&quot;sc&quot;&gt;&lt;abbr title=&quot;Too long; didn't read&quot;&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt;<span class="String">}</span></span>
         <span class="Keyword">if</span> <span class="Variable"><span class="Variable">@</span>item</span>.<span class="Entity">nil?</span>
             <span class="Keyword">if</span> <span class="Keyword">not</span> arg.<span class="Entity">nil?</span>

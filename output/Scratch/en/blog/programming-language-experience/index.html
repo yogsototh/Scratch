@@ -99,10 +99,10 @@ Most lines were like:</p>
 <p><img alt="Dragon fractal" src="/Scratch/img/blog/programming-language-experience/dragon.jpg" class="left" />
 I was about 10 when I played with logo to draw on the computer.</p>
 
-<p>I remember the Bach’s music while the program loaded.</p>
+<p>I remember the Bach&rsquo;s music while the program loaded.</p>
 
 <p>At that time we had to load the program into the memory using tapes. 
-This one was a rare one. It didn’t made an awfull ‘Krrrkrr cssssss krrr’ noise.</p>
+This one was a rare one. It didn&rsquo;t made an awfull &lsquo;Krrrkrr cssssss krrr&rsquo; noise.</p>
 
 <p>Some years after, I used it to learn programming to my college student.
 It was really good as a first language.
@@ -118,14 +118,14 @@ SETXY -200 0
 RIGHT 90
 PENDOWN
 
-to dragon&nbsp;:degree&nbsp;:size
+to dragon :degree :size
     setpensize 1
-    <span class="Keyword">if</span>&nbsp;:size<span class="Keyword">&gt;</span>5  [setpensize 2]
-    <span class="Keyword">if</span>&nbsp;:size<span class="Keyword">&gt;</span>10 [setpensize 3]
-    <span class="Keyword">if</span>&nbsp;:size<span class="Keyword">&gt;</span>20 [setpensize 4]
-    <span class="Keyword">if</span>&nbsp;:size<span class="Keyword">&gt;</span>40 [setpensize 5]
-    ifelse&nbsp;:degree=0 [ 
-        fd&nbsp;:size 
+    <span class="Keyword">if</span> :size<span class="Keyword">&gt;</span>5  [setpensize 2]
+    <span class="Keyword">if</span> :size<span class="Keyword">&gt;</span>10 [setpensize 3]
+    <span class="Keyword">if</span> :size<span class="Keyword">&gt;</span>20 [setpensize 4]
+    <span class="Keyword">if</span> :size<span class="Keyword">&gt;</span>40 [setpensize 5]
+    ifelse :degree=0 [ 
+        fd :size 
     ][
         left  45 dragon (:degree-1) (size/4)
         right 90 dragon (:degree-1) (size/2)
@@ -150,7 +150,7 @@ In the end I prefer C.</p>
 
 <p><img alt="Pointer representation from Dancing links" src="/Scratch/img/blog/programming-language-experience/C.jpg" class="left" /></p>
 
-<p>The pointer’s language.</p>
+<p>The pointer&rsquo;s language.</p>
 
 <p><em>Le</em> programming language.</p>
 
@@ -161,12 +161,12 @@ If you want to have good quality code, knowing C is almost mandatory.</p>
 <p>This language is close to machine language.
 So much, there is (mostly) a linear relation between the size of your code and the size of the compiled one.</p>
 
-<p>In short, each time you write a C instruction there won’t be anything strange that will occurs, like starting a long algorithm behind the scene.</p>
+<p>In short, each time you write a C instruction there won&rsquo;t be anything strange that will occurs, like starting a long algorithm behind the scene.</p>
 
 <p>It is very close to the machine while keeping sufficient abstractions to be fun.</p>
 
 <p>I made a lot of program with it.
-From sort algorithms to AI ones (SAT3), system, network prgramming, etc…
+From sort algorithms to AI ones (SAT3), system, network prgramming, etc&hellip;
 It is a very useful language that will help you understand how things works on your computer. 
 Most modern computer language hide a lot of informations on what occurs. 
 This is not the case with C.</p>
@@ -175,7 +175,7 @@ This is not the case with C.</p>
 
 <p>The super-clean one.</p>
 
-<p>I liked ADA. I must confess I didn’t used it a lot.
+<p>I liked ADA. I must confess I didn&rsquo;t used it a lot.
 May be one day I will try it again.
 I was impressed by asynchronous programming with it.
 What you need to know is this old language had certainly inspired most new object oriented languages.</p>
@@ -184,12 +184,12 @@ What you need to know is this old language had certainly inspired most new objec
 
 <p>Until here I just described imperative languages without any object notion.</p>
 
-<p>More clearly, the language didn’t helped you to structure your program.</p>
+<p>More clearly, the language didn&rsquo;t helped you to structure your program.</p>
 
 <p>In order to limit the number of bugs, particularly for huge programs, we started to think about how to organize computer programs.
 In the end, from the imperatives language culture, it produced the Object Oriented programming (OOP).
-Beware, the Object Oriented programming isn’t a miracle. Proof? How many bug-free software do you use?
-Furthermore, OOP doesn’t fit all problems.
+Beware, the Object Oriented programming isn&rsquo;t a miracle. Proof? How many bug-free software do you use?
+Furthermore, OOP doesn&rsquo;t fit all problems.
 But to make a bank application, an application which help to manage stock, clients or text archives.
 I mean an information system, the OOP is not so bad.</p>
 
@@ -213,7 +213,7 @@ But in reality, T have to be only <code>char</code> or <code>char16</code>.
 Then I had to reduce my alphabet to 2<sup>16</sup> letters.
 Except for some application, the alphabet must be far larger than that.</p>
 
-<p>To conclude, I’d say, C++ is very good if you work alone or with a fixed subset of its features.</p>
+<p>To conclude, I&rsquo;d say, C++ is very good if you work alone or with a fixed subset of its features.</p>
 
 <h3 id="eiffel">Eiffel</h3>
 
@@ -221,7 +221,7 @@ Except for some application, the alphabet must be far larger than that.</p>
 
 <p>Yes, it is a really nice language. 
 Full object in mind. Far cleaner than C++.
-But it isn’t so popular.
+But it isn&rsquo;t so popular.
 Behind C++ there is a large community to help new users and to write libraries.
 Furthermore, I preferred working with C++.
 At that time I programmed a lot with C and like its syntax.</p>
@@ -233,10 +233,10 @@ At that time I programmed a lot with C and like its syntax.</p>
 <p>The first time I heard about Java it was <em>le Grail</em>!</p>
 
 <p>Perfect portability, your program will work on all platform. 
-There was incrusted inside the language architecture concepts to help limit mistakes, and force you to use good programming habits. But…</p>
+There was incrusted inside the language architecture concepts to help limit mistakes, and force you to use good programming habits. But&hellip;</p>
 
 <p>But It is extremely verbose. 
-And limitations are quite boring if you know what you’re doing.</p>
+And limitations are quite boring if you know what you&rsquo;re doing.</p>
 
 <p>For example, there is no multiple inheritance. 
 Generally it is a coherent choice when there are a way to compensate.
@@ -252,23 +252,23 @@ And I add to make a bunch of copy/paste inside all my subclasses!
 Copy/paste are exactly what should be avoided the most by object oriented languages.</p>
 
 <p>Another thing: threads.
-I was forced to make my own thread management system to avoid locks and notifications between threads (wait the end of this thread, …).
+I was forced to make my own thread management system to avoid locks and notifications between threads (wait the end of this thread, &hellip;).
 At that time I used Java 1.5.
 This problem should have been solved with Java 1.6.
 I wish it is the case, but lacking such an essential feature for a language was very bad.</p>
 
 <p>In the same idea, it was very long to wait for the foreach loops.</p>
 
-<p>After my experience, I don’t recommend Java.
+<p>After my experience, I don&rsquo;t recommend Java.
 Portability does not worth this price.</p>
 
 <p><abbr title="Graphic User Interface">GUI</abbr> protability means mediocre experience on all platforms.
-Any system it might be (wxWidget, QT, etc…).</p>
+Any system it might be (wxWidget, QT, etc&hellip;).</p>
 
-<p>The Java ideology is “closed”. But it resolve a big problem.
+<p>The Java ideology is &ldquo;closed&rdquo;. But it resolve a big problem.
 It helps medium to low quality developper to work in team without the ability to make too much harm to the product.
 A good programmer will be able to make very interresting things with it thought.
-Please note I didn’t say Java programmer are bad programmer.</p>
+Please note I didn&rsquo;t say Java programmer are bad programmer.</p>
 
 <h3 id="objective-c">Objective-C</h3>
 
@@ -277,7 +277,7 @@ Please note I didn’t say Java programmer are bad programmer.</p>
 <p>The language I learned and used only to make application on Apple<small>&copy;</small> platform.
 I learned Objective-C just after Python.
 It was hard to do it.
-At first I didn’t liked the syntax and many other details.
+At first I didn&rsquo;t liked the syntax and many other details.
 But it is this kind of language you like more and more you use it.
 In fact, Objective-C is a simple language, but associated with the Cocoa framework it is a really good tool.
 Cocoa is very different to other framework I used before. 
@@ -288,7 +288,7 @@ It might seems like small details on paper, but once you start using it, it make
 <p>Even if Objective-C is a relatively low level language. 
 Its dynamic typing ability make it very good for <abbr title="Graphic User Interface">GUI</abbr> programming.
 I recommand to continue working with this language. 
-In the end you’ll certainely find it better than expected.</p>
+In the end you&rsquo;ll certainely find it better than expected.</p>
 
 <h2 id="modern-scripting-languages">Modern Scripting Languages</h2>
 
@@ -298,7 +298,7 @@ In the end you’ll certainely find it better than expected.</p>
 
 <p>This small script language that we used all to make our website in the time of animated gifs.</p>
 
-<p>Nice but no more. Apparently there were a lot of progress since PHP5. Maybe one day I’ll use it again. But behind it, this language has a “script kiddies only” reputation.
+<p>Nice but no more. Apparently there were a lot of progress since PHP5. Maybe one day I&rsquo;ll use it again. But behind it, this language has a &ldquo;script kiddies only&rdquo; reputation.
 Also long history of easy to make security holes.</p>
 
 <p>In reality PHP is just behind C for the abstraction level. 
@@ -306,7 +306,7 @@ Therefore it has a lot of organisation problems and make it easier to create bug
 For web applications it is a real problem.</p>
 
 <p>PHP remains for me the SQL injection language.
-I make a bit of PHP not so long ago, and it was a pain to protect my application to SQL injection. Yep, I didn’t found any standard library to make this, but I didn’t searched a lot.</p>
+I make a bit of PHP not so long ago, and it was a pain to protect my application to SQL injection. Yep, I didn&rsquo;t found any standard library to make this, but I didn&rsquo;t searched a lot.</p>
 
 <h3 id="python">Python</h3>
 
@@ -314,20 +314,20 @@ I make a bit of PHP not so long ago, and it was a pain to protect my application
 
 <p>Revelation!</p>
 
-<p>When you were used to work with compiled languages (C++, Java) and you start learning Python, it’s like a punch in the face.
+<p>When you were used to work with compiled languages (C++, Java) and you start learning Python, it&rsquo;s like a punch in the face.
 Programming like it always should have been.
-Everything is natural, it’s <em>magic</em>.
+Everything is natural, it&rsquo;s <em>magic</em>.
 Yes, as good as this.
 But something so good must have some drawback.</p>
 
 <p>And yes, like all interpreted languages, Python is <em>slow</em>.
 Beware, no just a bit slow like 2 or 3 times slower than C. (like Java for example).
 No, really slow, about 10 to 20 times slower than C.
-Argh… Note it is completely usable for many things.</p>
+Argh&hellip; Note it is completely usable for many things.</p>
 
 <h3 id="awk">Awk</h3>
 
-<p>If you have to “filter” some files and the filter is not too complicated awk is the ideal language to do this.
+<p>If you have to &ldquo;filter&rdquo; some files and the filter is not too complicated awk is the ideal language to do this.
 For example, if you want to know which words in a text file are most used. 
 I used it to modify hundred of XML files in an easier manner than XSLT.</p>
 
@@ -401,10 +401,10 @@ Generally it takes me no more than some hours to some days to learn a new progra
 Concerning haskell, this is very different.
 To master haskell you need to understand very hard concepts.
 Monads and Arrows are some of them. 
-I didn’t understand them before I read some scientific paper.
+I didn&rsquo;t understand them before I read some scientific paper.
 Many week will be necessary to master it perfectly (if someone does).
-Also the community is very friendly and nice. There is no “LOL! URAN00B! RTFM!”
-And no concession has been made to make this language more popular (I’m looking at you C++, Java and Javascript). 
+Also the community is very friendly and nice. There is no &ldquo;LOL! URAN00B! RTFM!&rdquo;
+And no concession has been made to make this language more popular (I&rsquo;m looking at you C++, Java and Javascript). 
 This langage remain pure (I know there are two meaning).</p>
 
 <h2 id="unpopular-languages">Unpopular Languages</h2>
@@ -511,12 +511,29 @@ But I used all of these languages.</p>
                     <div id="previous_articles">
                         previous entries
                         
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/Learn-Vim-Progressively/"><span class="nicer">«</span>&nbsp;Learn Vim Progressively</a>
+                        </div>
                         
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/A-more-convenient-diff/"><span class="nicer">«</span>&nbsp;A more convenient diff</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/Haskell-Mandelbrot/"><span class="nicer">«</span>&nbsp;ASCII Haskell Mandelbrot</a>
+                        </div>
                         
                         
                     </div>
                     <div id="next_articles">
                         next entries
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/Higher-order-function-in-zsh/">Higher order function in zsh&nbsp;<span class="nicer">»</span></a>
+                        </div>
+                        
                         
                         <div class="next_article">
                             <a href="/Scratch/en/blog/Yesod-excellent-ideas/">Yesod excellent ideas&nbsp;<span class="nicer">»</span></a>
@@ -525,11 +542,6 @@ But I used all of these languages.</p>
                         
                         <div class="next_article">
                             <a href="/Scratch/en/blog/SVG-and-m4-fractals/">Increase the power of deficient languages.&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/">Yesod tutorial for newbies&nbsp;<span class="nicer">»</span></a>
                         </div>
                         
                         

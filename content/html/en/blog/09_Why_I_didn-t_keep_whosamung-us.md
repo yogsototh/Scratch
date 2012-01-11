@@ -19,6 +19,7 @@ Most of time I prefer not to use the same product as everybody and try some new.
 This is why I now use google analytics. The only problem, remains for pages with no javascript support.
 
 Then for now: 
+
 <div class="encadre">
 Theorem:<br/>
 <center>

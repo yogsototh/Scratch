@@ -58,18 +58,18 @@
 <div class="intro">
 
 
-<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> J’ai fait un système simple de macros pour mon blog. Par exemple, il me suffit d’écrire %<span />latex et ça affiche <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>.</p>
+<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> J&rsquo;ai fait un système simple de macros pour mon blog. Par exemple, il me suffit d&rsquo;écrire %<span></span>latex et ça affiche <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>.</p>
 
 
 </div>
 
 
-<p>J’ai ajouter un système de macro pour mon système de blog.
-Lorsqu’on est habitué à <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span> et que l’on commence à écrire des articles
+<p>J&rsquo;ai ajouter un système de macro pour mon système de blog.
+Lorsqu&rsquo;on est habitué à <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span> et que l&rsquo;on commence à écrire des articles
 un peu conséquent avec des notations mathématiques,
-les macros deviennent vite quelque chose d’indispensable.</p>
+les macros deviennent vite quelque chose d&rsquo;indispensable.</p>
 
-<p>Dans l’entête de mes fichiers j’écris simplement:</p>
+<p>Dans l&rsquo;entête de mes fichiers j&rsquo;écris simplement:</p>
 
 <pre class="twilight">
 <span class="MetaTagAll"><span class="MetaTagInline">macros</span><span class="MetaTagAll">:</span></span>
@@ -80,8 +80,8 @@ les macros deviennent vite quelque chose d’indispensable.</p>
 <p>Puis dans le corps ça va remplacer&nbsp;:</p>
 
 <ul>
-  <li>%<span />test par <em>This is a macro test</em>&nbsp;;</li>
-  <li>et %<span />latex par <em><span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span></em></li>
+  <li>%<span></span>test par <em>This is a macro test</em>&nbsp;;</li>
+  <li>et %<span></span>latex par <em><span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span></em></li>
 </ul>
 
 <p>Le code est assez simple. 
@@ -104,7 +104,7 @@ Pour les utilisateurs de <code>nanoc</code> il suffit de copier le fichier suiva
     <span class="Keyword">def</span> <span class="Entity">initialize</span>(<span class="Variable">arg</span>)
         <span class="Keyword">super</span>
         <span class="Variable"><span class="Variable">@</span>macro</span><span class="Keyword">=</span>{}
-        <span class="Variable"><span class="Variable">@</span>macro</span>[<span class="Constant"><span class="Constant">:</span>tlal</span>] <span class="Keyword">=</span> <span class="String"><span class="String">%{</span>&lt;span class=&quot;sc&quot;&gt;&lt;abbr title=&quot;Trop long à lire&quot;&gt;tlàl&lt;/abbr&gt;&nbsp;: &lt;/span&gt;<span class="String">}</span></span>
+        <span class="Variable"><span class="Variable">@</span>macro</span>[<span class="Constant"><span class="Constant">:</span>tlal</span>] <span class="Keyword">=</span> <span class="String"><span class="String">%{</span>&lt;span class=&quot;sc&quot;&gt;&lt;abbr title=&quot;Trop long à lire&quot;&gt;tlàl&lt;/abbr&gt; : &lt;/span&gt;<span class="String">}</span></span>
         <span class="Variable"><span class="Variable">@</span>macro</span>[<span class="Constant"><span class="Constant">:</span>tldr</span>] <span class="Keyword">=</span> <span class="String"><span class="String">%{</span>&lt;span class=&quot;sc&quot;&gt;&lt;abbr title=&quot;Too long; didn't read&quot;&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt;<span class="String">}</span></span>
         <span class="Keyword">if</span> <span class="Variable"><span class="Variable">@</span>item</span>.<span class="Entity">nil?</span>
             <span class="Keyword">if</span> <span class="Keyword">not</span> arg.<span class="Entity">nil?</span>

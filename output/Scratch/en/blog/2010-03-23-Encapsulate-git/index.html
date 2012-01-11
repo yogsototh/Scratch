@@ -113,9 +113,9 @@ git co clientB <span class="Keyword">&amp;&amp;</span> git merge client
 
 <span class="Comment"><span class="Comment">#</span> architecture</span>
 <span class="Comment"><span class="Comment">#</span></span>
-<span class="Comment"><span class="Comment">#</span> master &lt;&rarr; dev</span>
-<span class="Comment"><span class="Comment">#</span> master &rarr; client</span>
-<span class="Comment"><span class="Comment">#</span> clien &rarr; clientA | clientB</span>
+<span class="Comment"><span class="Comment">#</span> master &lt;-&gt; dev</span>
+<span class="Comment"><span class="Comment">#</span> master -&gt; client</span>
+<span class="Comment"><span class="Comment">#</span> clien -&gt; clientA | clientB</span>
 <span class="Comment"><span class="Comment">#</span></span>
 <span class="Comment"><span class="Comment">#</span> merge using two of these branches should be </span>
 <span class="Comment"><span class="Comment">#</span>   restricted to these rules</span>
@@ -128,7 +128,7 @@ git co clientB <span class="Keyword">&amp;&amp;</span> git merge client
     <span class="Constant"><span class="Constant">:</span>dev</span> =&gt; [ <span class="Constant"><span class="Constant">:</span>master</span> ],
     <span class="Constant"><span class="Constant">:</span>client</span> =&gt; [ <span class="Constant"><span class="Constant">:</span>clientA</span>, <span class="Constant"><span class="Constant">:</span>clientB</span> ] }
 
-<span class="Keyword">def</span> <span class="Entity">get_current_branch</span>(<span class="Variable" />)
+<span class="Keyword">def</span> <span class="Entity">get_current_branch</span>(<span class="Variable"></span>)
     (<span class="String"><span class="String">`</span>git branch --no-color | awk '$1 == &quot;*&quot; {print $2}'<span class="String">`</span></span>).<span class="Entity">chop</span>.<span class="Entity">intern</span>
 <span class="Keyword">end</span>
 

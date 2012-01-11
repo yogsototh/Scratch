@@ -37,7 +37,9 @@ I searched a better way to do that, but the best I can do is using `split` and `
 <div>
 <code class="ruby">
 def allExceptCode( f, content )
-    regexp=/<code[^>]*>.*?<\/code>/m
+    # Beware the behaviour will change if you add
+    # parenthesis (groups) to the regexp!
+    regexp=/<code[^>]*>.*?<\/code>|<pre[^>]*>.*?<\/pre>/m
     tmp=""
     mem=[]
     content.scan(regexp).each do |c|
@@ -46,7 +48,7 @@ def allExceptCode( f, content )
     i=0
     content.split(regexp).each do |x|
         tmp <<= send(f,x) 
-        if not mem[i].nil?
+        if not mem[i].nil? 
             tmp <<= mem[i]
             i+=1
         end

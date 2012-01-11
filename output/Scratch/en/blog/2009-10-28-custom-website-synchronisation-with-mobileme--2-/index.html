@@ -58,22 +58,22 @@
 
 <p>Here is my new script, it first create a map which associate to each file its hash. After that it compare this file to the remote one. Then for each different file, update the content.</p>
 
-<p>Even with this script I also have some problem. Mostly due to ‘webdav’ issues. For example, renaming a folder work really badly (on Linux at least). I use webdavfs. For example:</p>
+<p>Even with this script I also have some problem. Mostly due to &lsquo;webdav&rsquo; issues. For example, renaming a folder work really badly (on Linux at least). I use webdavfs. For example:</p>
 
 <div><pre class="twilight">
 mv folder folder2
 </pre></div>
 
-<p>It returns OK and I’ve got: </p>
+<p>It returns OK and I&rsquo;ve got: </p>
 
 <div><pre class="twilight">
 $ ls 
 folder folder2
 </pre></div>
 
-<p>Booh….</p>
+<p>Booh&hellip;.</p>
 
-<p>In order to handle most webdav issues I use a <em>framework</em> in zsh. It handle almost all except the correct renaming of folder. Working on it… Anyway here is the code I use.</p>
+<p>In order to handle most webdav issues I use a <em>framework</em> in zsh. It handle almost all except the correct renaming of folder. Working on it&hellip; Anyway here is the code I use.</p>
 
 <div><div class="code"><div class="file"><a href="/Scratch/en/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/code/webdav-framework"> &#x27A5; webdav-framework </a></div><div class="withfile">
 <pre class="twilight">
@@ -206,7 +206,7 @@ source <span class="Variable"><span class="Variable">$</span>0</span>:h/config
 source <span class="Variable"><span class="Variable">$</span>0</span>:h/webdav-framework
 
 <span class="Keyword">if</span> [[ <span class="Variable"><span class="Variable">$</span>1</span> <span class="Keyword">==</span> <span class="String"><span class="String">'</span>-h<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
-    print -- <span class="String"><span class="String">&quot;</span>usage&nbsp;: <span class="StringVariable"><span class="StringVariable">$</span>0</span>:h [-h|-s|-d]<span class="String">&quot;</span></span>
+    print -- <span class="String"><span class="String">&quot;</span>usage : <span class="StringVariable"><span class="StringVariable">$</span>0</span>:h [-h|-s|-d]<span class="String">&quot;</span></span>
     print -- <span class="String"><span class="String">&quot;</span>  -a sychronise aussi l'index<span class="String">&quot;</span></span>
     print -- <span class="String"><span class="String">&quot;</span>  -h affiche l'aide<span class="String">&quot;</span></span>
     print -- <span class="String"><span class="String">&quot;</span>  -d modification directe (pas de swap)<span class="String">&quot;</span></span>
@@ -232,7 +232,7 @@ function incrementalPublish {
         <span class="Keyword">if</span> ((<span class="Variable"><span class="Variable">${</span>#filesToUpdate<span class="Variable">}</span></span> == 1))<span class="Keyword">;</span> <span class="Keyword">then</span>
             print -- <span class="String"><span class="String">&quot;</span>Seul le fichier <span class="StringVariable"><span class="StringVariable">${</span>filesToUpdate<span class="StringVariable">}</span></span> sera téléversé<span class="String">&quot;</span></span>
         <span class="Keyword">elif</span> ((<span class="Variable"><span class="Variable">${</span>#filesToUpdate<span class="Variable">}</span></span><span class="Keyword">&lt;</span>10))<span class="Keyword">;</span> <span class="Keyword">then</span>
-            print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>#filesToUpdate<span class="StringVariable">}</span></span> fichiers seront téléversés&nbsp;:<span class="String">&quot;</span></span>
+            print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>#filesToUpdate<span class="StringVariable">}</span></span> fichiers seront téléversés :<span class="String">&quot;</span></span>
             print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>filesToUpdate<span class="StringVariable">}</span></span><span class="String">&quot;</span></span>
         <span class="Keyword">else</span>
             print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>#filesToUpdate<span class="StringVariable">}</span></span> fichiers seront téléversés<span class="String">&quot;</span></span>
@@ -314,7 +314,7 @@ print -- <span class="String"><span class="String">&quot;</span>Dest = <span cla
 </div></div></div>
 
 <p>This is my way to replace <code>rsync</code> with filesystem not handling it.
-Hope it is usefull. I’ll be happy to hear a way to handle the webdav rename folder problem. This is really annoying.</p>
+Hope it is usefull. I&rsquo;ll be happy to hear a way to handle the webdav rename folder problem. This is really annoying.</p>
 
                 </div>
             

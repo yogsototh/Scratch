@@ -3,7 +3,8 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2011-12-28T15:14:40+02:00
-title: Yesod tutorial for newbies
+title: Haskell web programming
+subtitle: A Yesod tutorial
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
@@ -11,37 +12,57 @@ tags:
   - haskell
   - programming
   - web
+macros:
+ html5: '<span class="sc">html5</span>' 
+ html: '<span class="sc">html</span>' 
 -----
-<%= blogimage("warp-benchmark.png","Title image") %>
+<%= blogimage("flying_neo.jpg","Neo Flying at warp speed") %>
 
 begindiv(intro)
 
-<%= tldr %> A simple yesod tutorial. You shouldn't need to know Haskell very well. 
+<%= tldr %> A simple yesod tutorial. Yesod is an Haskell web framework. You shouldn't need to know Haskell. 
 
 
+> <center><sc><b>Table of content</b></sc></center>
+> 
 > * Table of Content (generated)
 > {:toc}
 
 enddiv
 
-Do you want the best technology to handle your new web application?
-Me too. After searching a lot, it appears you should choose Haskell.
-Why? 
+Haskell is incredible and you should consider to use it to make your next web application. Why?
 
-* [Extremely fast][warpbench].
-* Secure by nature. Many typical programming bug are hard to make in Haskell.
-* High abstraction level. 
-* Handle asynchronous request better than any other system (better than node.js for example).
-* Done to be parallelized. Thanks to purity.
+<%= blogimage("haskell-benchmark.png","Impressive Haskell Benchmark") %>
 
-Technically speaking, Haskell seems perfect for web development.
-The only drawback you can found for Haskell certainly won't be technical but social. Like the difficulty to grasp Haskell, the few number of developer, etc...
+My main reason to look at Haskell is its efficiency (see [Snap Benchmark][snapbench] _&_ [Warp Benchmark][warpbench][^benchmarkdigression]).
+Haskell is compiled and is an order of magnitude faster than interpreted languages like [Ruby][haskellvsruby] and [Python][haskellvspython][^speeddigression].
+Haskell handle parallel tasks perfectly. For example even better than node.js[^nodejstroll].
 
-But if you are here, lets pretend, the most important is the technical aspect.
-You want the best of the best system to make your new web application.
 
-Instead of reinvent the wheel, we should choose a web framework in Haskell.
-Actually there are three choices:
+Its type system gives the feeling of using an interpreted language.
+Haskell has many more great properties, one of the best being:
+
+> "If your program compile it will be very close to what the programmer intended".
+
+From the pure technical "point of vue", Haskell seems to be the perfect web development tool.
+
+Weaknesses of Haskell certainly won't be technical but human:
+
+- Hard to grasp Haskell
+- Hard to find a Haskell programmer
+- The Haskell community is smaller than the community for X
+- There is no [heroku](http://heroku.com) for Haskell (even if [Greg Weber did it](http://www.yesodweb.com/blog/2011/07/haskell-on-heroku), it was more a workaround).
+
+<%= leftblogimage("thousands_smiths.jpg","Thousands of Agent Smith") %>
+
+I don't say these are not important drawbacks.
+But Haskell is certainly the best choice to create your new web application which could handle thousands of connexions in parallel.
+Considering efficiency, security and quality, I believe Haskell is the best choice.
+Furthermore, not only the Haskell community is excellent, but Haskell is a great language and learning it will certainly make you a better programmer.
+
+Haskell is not the only choice to make.
+The easiest path to create a web application is certainly to choose a web framework which has made a lot of work for us.
+Actually there are three main choices:
 
 1. [Happstack](http://happstack.com)
 2. [Snap](http://snapframework.com)
@@ -49,21 +70,38 @@ Actually there are three choices:
 
 I don't think there is a real winner between these three framework.
 The choice I made for yesod is highly subjective.
-I had the feeling yesod help the newcomers the most.
-It also appears the yesod developer are the most active.
-But as I said before, I might be wrong has it was only feeling.
+I had the feeling yesod make a better job at helping newcomers.
+Furthermore, apparently the yesod team is the most active.
+But as I said before, I might be wrong has it is a matter of feeling.
 
-Now, what this article is all about? 
-A missing tutorial in the yesod documentation.
-The goal is to go as straight as possible to the best practice.
+<%= blogimage("owl_draw.png","1. Draw some circles. 2. Draw the rest of the fucking owl") %>
 
-You'll then first install, initialize and configure your first yesod project.
+Why did I write this article?
+The yesod documentation does an excellent job to explain you both some very minimal example and digging into the details. 
+But I missed an intermediate tutorial.
+
+I tried to pass on the Haskell language and focus on the Yesod framework.
+If you are not used to Haskell, some syntax details may feel strange.
+Please, don't try to understand the details right now.
+Haskell is a very complex language and could suck all your energy if you want to dig too early.
+
+During this tutorial you'll install, initialize and configure your first yesod project.
 Then a 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
 Then we clean up the 5 minutes tutorial to use the best practices.
+Just after there will be a more standard real world example. A minimal blog system.
+Good read.
 
 [warpbench]: http://www.yesodweb.com/blog/2011/03/preliminary-warp-cross-language-benchmarks
+[snapbench]: http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks
+[^benchmarkdigression]: One can argue these benchmark contains many problems. But benchmark are just here to give an order of idea. Mainly Haskell is very fast.
+[^speeddigression]: Generally _high level_ Haskell is slower than C, but _low level_ Haskell is equivalent to C speed. It means that even if you can easily link C code with Haskell, this is not needed to reach the same speed. Furthermore writing a web service in C/C++ seems to be a very bad idea. You can take a look at a [discussion on HN about this](http://news.ycombinator.com/item?id=3449388). 
+[^nodejstroll]: If you are curious, you can search about [the Fibonacci node.js troll](http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html). Without any tweaking, [Haskell handled this problem perfectly](http://mathias-biilmann.net/posts/2011/10/is-haskell-the-cure). I tested it myself using yesod instead of Snap.
+[haskellvsruby]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=yarv
+[haskellvspython]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=python3
 
-## Install
+## Before the real start
+
+### Install
 
 First you need to install [Haskell][haskell]. The recommended way to do this is to download the [Haskell Platform][haskellplatform].
 
@@ -73,27 +111,27 @@ First you need to install [Haskell][haskell]. The recommended way to do this is 
 Then you need to install yesod.
 
 <code class="zsh">
-> cabal update
-> cabal install yesod cabal-dev
+~ cabal update
+~ cabal install yesod cabal-dev
 </code>
 
 That is all. It should take some time to 
 do this as cabal will download all 
 package and then compile them.
 
-## Initialization
+### Initialize
 
 Open a terminal and type:
 
 <code class="zsh">
-> yesod init
+~ yesod init
 </code>
 
 Enter your name, name the project `yosog` and the name of the Foundation as `Yosog`, then choose `sqlite`.
 Perfect. Now you can start the development cycle:
 
 <code class="zsh">
-> cd yosog
+~ cd yosog
 > cabal-dev install && yesod --dev devel
 </code>
 
@@ -102,18 +140,23 @@ Once finished a server is launched and you could visit it by clicking this link:
 
 [`http://localhost:3000`](http://localhost:3000)
 
-Congratulation! Yesod works.
+Congratulation! Yesod works!
 
-> Note: if something is messed up use the following command line:
-> <code class="zsh">
-> \rm -rf dist/* ; cabal-dev install && yesod --dev devel
-> </code>
+<blockquote>
+
+Note: if something is messed up use the following command line inside the project directory.
+
+<code class="zsh">
+\rm -rf dist/* ; cabal-dev install && yesod --dev devel
+</code>
+
+</blockquote>
 
 Until the end of the tutorial, use another terminal and let this one open in a corner to see what occurs.
 
-## Configure git
+### Configure git
 
-This step is not mandatory for a tutorial, but I wanted to jump directly in good practice. There are many different choice of CVS, but for this tutorial I'll use `git`.
+This step is not mandatory for a tutorial, but I wanted to jump directly to good practice. There are many different choice of CVS, but for this tutorial I'll use `git`.
 
 Copy this `.gitignore` file into the `yosog` folder.
 
@@ -128,28 +171,22 @@ static/tmp
 Then initialize your git repository:
 
 <code class="zsh">
-> git init .
-> git add .
-> git commit -a -m "Initial yesod commit"
+~ git init .
+~ git add .
+~ git commit -a -m "Initial yesod commit"
 </code>
 
 Now we are almost ready to start.
 
-## A last point
+### A last point
 
-Until here it was just an installation, an initialization and a configuration.
-
-We have a directory containing a bunch of files and
-we have a local web server that listen the port 3000.
+Up until here, we have a directory containing a bunch of files and a local web server listening the port 3000.
 
 If we modify a file inside this directory, yesod should try
 to recompile as fast as possible the site. 
-This way, you should see the modification you do.
 
 Instead of explaining the role of every file,
-let's get straight to the point.
-
-Inside the `yosog` the important files/directories for this tutorial are:
+let's focus only on the important files/directories for this tutorial:
 
 1. `config/routes`
 2. `Handler/`
@@ -158,25 +195,24 @@ Inside the `yosog` the important files/directories for this tutorial are:
 
 Obviously:
 
-- `config/routes`   is where you'll configure the map URL → Code.
-- `Handler/`        contains the files that will contain the code called when a URL is accessed.
-- `templates/`      contains HTML, JS and CSS templates. 
-- `config/models`   is where you'll configure the persistent objects (database tables).
+| `config/routes`   | is where you'll configure the map URL → Code. |
+| `Handler/`        | contains the files that will contain the code called when a URL is accessed. |
+| `templates/`      | contains HTML, JS and CSS templates.  |
+| `config/models`   | is where you'll configure the persistent objects (database tables). |
 
-Also note until here we don't even typed any line of Haskell.
-It is now time to start the interesting stuff.
+During this tutorial we'll modify other files as well,
+but we won't explore them in detail.
+Now, it is the time to start the interesting part.
 
-## Protected echo
+## Echo
 
 To verify the quality of the security of the yesod framework, let's make a minimal echo application.
 
 Our goal:
 
-Make a server that when accessed `/echo/`_[some text]_ should return a web page containing "some text" inside an `h1` bloc.
+Make a server that when accessed `/echo/[some text]` should return a web page containing "some text" inside an `h1` bloc.
 
-For example, accessing [`http://localhost:3000/echo/some%20text`](http://localhost:3000/echo/some%20text), should display "some text" in an %html web page.
-
-First, we must declare URL of the form /echo/... are meaningful.
+First, we must declare URL of the form `/echo/...` are meaningful.
 
 Let's take a look at the file `config/routes`:
 
@@ -230,7 +266,9 @@ Now you can visit: [`http://localhost:3000/echo/Yesod%20rocks!`](http://localhos
 
 TADA! It works.
 
-### Secure?
+### Bulletproof?
+
+<%= blogimage("neo_bullet_proof.jpg","Neo stops a myriad of bullets") %>
 
 Let's try to attack our website by entering a text with special characters:
 
@@ -260,7 +298,7 @@ verified Yesod protect us from many common errors.
 
 Then not only Yesod is fast, it is also relatively secure.
 
-## Cleaning up
+### Cleaning up
 
 This first example was nice, but for simplicity reason we didn't used best practices.
 
@@ -298,13 +336,13 @@ Just after the "`import Handler.Root`", add:
 import Handler.Echo
 </code>
 
-### Use `Data.Text` instead of `String`
+### `Data.Text`
 
 Now our handler is separated in another file.
 
-But we used `String` but it is a good practice to use `Data.Text` instead.
+It is a good practice to use `Data.Text` instead of `String`.
 
-To declare we will use `Data.Text` we modify the file `Foundation.hs`.
+To declare we will use the type `Data.Text` we modify the file `Foundation.hs`.
 Add an import directive just after the last one:
 
 <code class="diff">
@@ -354,10 +392,10 @@ At this point our code is clean.
 Handler are grouped, we use `Data.Text` and our views are in templates.
 It is now time to make a slightly more complex example.
 
-## Protected input
+## Repeat
 
 Let's make another minimal application.
-You should see a form containing a Text Field and a validation button.
+You should see a form containing a text field and a validation button.
 When you click, the next page present you the content you entered in the field.
 
 First, add a new route:
@@ -407,18 +445,33 @@ Create the two corresponding templates:
 </code>
 
 And that is all.
+This time, we used most good practices.
+We may have used another way to generate the form
+but this is beyond the scope of this tutorial.
+
+Just try it by [clicking here](http://localhost:3000/new).
+
+Hey! That was easy!
+
+## End of Part 1
+
+This was a very minimal introduction.
+
+In my next article, I will show you a closer real life system.
+
+<div style="display:hidden">
 
 ---
 
 <%= startTodo %>
 
 <ul>
-  <li>      Display something, show it is protected.
-  </li><li> Make the same as before, but with an input.
   </li><li> Create a minimal blog system.
-  </li><li> Change template to html5 boilerplate.
+  </li><li> Change template to %html5 boilerplate.
   </li><li> Use Authentification.
   </li>
 </ul>
 
 <%= endTodo %>
+
+</div>
