@@ -842,7 +842,8 @@ ul.sameline
     margin-left: .5em
 
 .resumearticle
-  border: solid 3px #FFF
+  background-color: $secondBackgroundColor
   border-radius: 7px
-  box-shadow: 0 0 2px $mainShadowColor inset,0 0 2px $mainShadowColor
+  box-shadow: 0 0 5px $mainShadowColor inset,0 0 5px #FFF
   margin: 1em 0
+  padding: 1em
