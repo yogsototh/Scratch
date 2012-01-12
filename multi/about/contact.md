@@ -11,9 +11,9 @@ fr: <img src="/Scratch/img/about/avatar.png" alt="Avatar" class="left"/>
 
 <%= mail_perso %>  
 en:   Follow me on [twitter](http://twitter.com/yogsototh)  
-en:   My preferred bookmarks [diigo](http://diigo.com/profile/yogsototh)  
+en:   My preferred bookmarks [pinboard](http://pinboard.in/u:yogsototh)  
 en:   Open Source [github](http://github.com/yogsototh)  
 fr:   Suivez moi sur [twitter](http://twitter.com/yogsototh)  
-fr:   Mes "bookmarks" [diigo](http://diigo.com/profile/yogsototh)  
+fr:   Mes "bookmarks" [pinboard](http://pinboard.in/u:yogsototh)  
 fr:   Open Source [github](http://github.com/yogsototh)  
 [stackoverflow](http://stackoverflow.com/users/40569/yogsototh)  
