@@ -220,7 +220,7 @@ First, we must declare URL of the form `/echo/...` are meaningful.
 
 Let's take a look at the file `config/routes`:
 
-<code class="zsh">
+<pre>
 /static StaticR Static getStatic
 /auth   AuthR   Auth   getAuth
 
@@ -228,7 +228,7 @@ Let's take a look at the file `config/routes`:
 /robots.txt RobotsR GET
 
 / RootR GET
-</code>
+</pre>
 
 We want to add a route of the form `/echo/[anything]` somehow and do some action with this.
 We add the following:
@@ -316,7 +316,8 @@ Add a file named `default-layout.lucius` inside the `template/` directory contai
 
 <code class="css">
 body {
-    font-family: Helvetica, sans-serif; }
+    font-family: Helvetica, sans-serif; 
+    font-size: 18px; }
 #content {
     padding: 1em;
     border: #CCC solid 2px;
@@ -328,8 +329,10 @@ body {
     line-height: 1.5em;
     color: #333; }
 .required { margin: 1em 0; }
+.optional { margin: 1em 0; }
 label { width: 8em; display: inline-block; }
-textarea { width: 27em; }
+input, textarea { background: #FAFAFA}
+textarea { width: 27em; height: 9em;}
 ul { list-style: square; }
 a { color: #A56; }
 a:hover { color: #C58; }
@@ -431,9 +434,9 @@ When you click, the next page present you the content you entered in the field.
 
 First, add a new route:
 
-<code class="zsh">
+<pre>
 /new NewR GET POST
-</code>
+</pre>
 
 This time the path /new will accept GET and POST requests. Add the corresponding new Handler file:
 
@@ -478,7 +481,7 @@ Create the two corresponding templates:
 And that is all.
 This time, we used most good practices.
 We may have used another way to generate the form
-but this is beyond the scope of this tutorial.
+but we'll see this in the next section.
 
 Just try it by [clicking here](http://localhost:3000/new).
 
@@ -491,10 +494,10 @@ Now we should save thing inside a database.
 
 Add some routes inside `config/routes`:
 
-<code class="zsh">
+<pre>
 /blog               BlogR       GET POST
 /blog/#ArticleId    ArticleR    GET
-</code>
+</pre>
 
 This example will be very minimal:
 
@@ -504,12 +507,12 @@ This example will be very minimal:
 
 We should also declare some another model object. Add this in the `config/models` file:
 
-<code class="zsh">
+<pre>
 Article
     title   Text
     content Html 
     deriving
-</code>
+</pre>
 
 Why add the `deriving` is not obvious.
 There is a technical reason behind it.
@@ -517,7 +520,7 @@ You have to remember to add it if you use a type which is not an instances of `R
 If you forget it, there will be an error.
 
 Now we have prepared the route and the model, we should write the actual code.
-
+pre
 Let's declare a new Handler module.
 Add `import Handler.Blog` inside `Application.hs` and add it into `yosog.cabal`.
 Now let's write the content of `Handler/Blog.hs`.
@@ -532,36 +535,79 @@ module Handler.Blog
 where
 
 import Import
+</code>
 
--- To use Html in forms
+To use Html in forms
+
+<code class="haskell">
 import Yesod.Form.Nic (YesodNic, nicHtmlField)
 instance YesodNic Yosog
 </code>
 
+Define a form for adding a new article.
+Don't pay attention to all the syntax. 
+If you are curious you can take a look at Applicative Functor.
+You just have to remember `areq` is for required form input.
+Its arguments being: `areq type label default_value`.
+
 <code class="haskell">
--- Define a form for adding new article.
--- Don't pay attention to all the $ <$> and <*>
--- Mainly the syntax is for each line:
---   areq type label default_value
---   and aformM is for setting values
 entryForm :: Form Article
 entryForm = renderDivs $ Article
     <$> areq   textField "Title" Nothing
     <*> areq   nicHtmlField "Content" Nothing
+</code>
 
--- A view showing the list of articles
+<code class="haskell">
+-- The view showing the list of articles
 getBlogR :: Handler RepHtml
 getBlogR = do
-    -- Get the user 
+    -- Get the user. Yes, it's that simple.
     muser <- maybeAuth
-    -- We get the list of articles
-    articles <- runDB $ selectList [] [Desc ArticleTitle, LimitTo 10]
+    -- Get the list of articles inside the database.
+    articles <- runDB $ selectList [] [Desc ArticleTitle]
     -- We'll need the two "objects": entryWidget and enctype
-    -- mainly entryWidget will contain the html for entry
+    -- to construct the form (see template/articles.hamlet).
     ((_,entryWidget), enctype) <- generateFormPost entryForm
     defaultLayout $ do
         $(widgetFile "articles")
+</code>
 
+Just take a look at the content of `template/articles.hamlet`.
+
+<code class="html" file="articles.hamlet">
+<h1> Articles
+$if null articles
+    -- <!-- Show a standard message if there is no article -->
+    <p>There are no article.
+$else
+    -- <!-- Show the list of articles -->
+    <ul>
+        $forall article <- articles
+            <li> 
+                <a href=@{ArticleR (fst article)} > #{articleTitle (snd article)}
+    <hr/>
+
+-- <!-- if the user is logged -->
+$maybe (_, user) <- muser
+    -- <!-- Display a form to add a new article 
+    -- This is here we need the objects entryWidget
+    -- and enctype given in the handler.
+    -- We still need to create the submit button.  -->
+    <h1> Write a new one
+    <form method=post enctype=#{enctype}>
+        ^{entryWidget}
+        <div>
+            <input type=submit value="Post to Blog">
+-- <!-- if the user isn't logged -->
+$nothing
+    -- <!-- Display a link to login -->
+    <p>
+        <a href=@{AuthR LoginR}>Login to Post
+</code>
+
+The syntax is a bit strange, but you get the idea easily.
+
+<code class="haskell">
 postBlogR :: Handler RepHtml
 postBlogR = do
     ((res,entryWidget),enctype) <- runFormPost entryForm
