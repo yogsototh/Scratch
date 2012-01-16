@@ -42,8 +42,8 @@ Haskell is compiled and is an order of magnitude faster than interpreted languag
 Haskell handle parallel tasks perfectly. For example even better than node.js[^nodejstroll].
 
 
-Its type system gives the feeling of using an interpreted language.
-Haskell has many more great properties, one of the best being:
+But contrary to `C` and `C++`, Haskell is a high level language.
+One of the best property of Haskell being:
 
 > "If your program compile it will be very close to what the programmer intended".
 
@@ -75,7 +75,7 @@ I don't think there is a real winner between these three framework.
 The choice I made for yesod is highly subjective.
 I had the feeling yesod make a better job at helping newcomers.
 Furthermore, apparently the yesod team is the most active.
-But as I said before, I might be wrong has it is a matter of feeling.
+But as I said before, I might be wrong since it is a matter of feeling.
 
 <%= blogimage("owl_draw.png","1. Draw some circles. 2. Draw the rest of the fucking owl") %>
 
@@ -91,7 +91,7 @@ Haskell is a very complex language and could suck all your energy if you want to
 During this tutorial you'll install, initialize and configure your first yesod project.
 Then a 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
 Then we clean up the 5 minutes tutorial to use the best practices.
-Just after there will be a more standard real world example. A minimal blog system.
+Just after there will be a more standard real world example; a minimal blog system.
 Good read.
 
 [warpbench]: http://www.yesodweb.com/blog/2011/03/preliminary-warp-cross-language-benchmarks
@@ -205,6 +205,7 @@ Obviously:
 
 During this tutorial we'll modify other files as well,
 but we won't explore them in detail.
+
 Now, it is the time to start the interesting part.
 
 ## Echo
@@ -237,8 +238,7 @@ We add the following:
 </pre>
 
 This line contains three elements: the <sc>url</sc> pattern, a handler name, an HTTP method.
-I am not particularly fan of the big R in the end of handler names. 
-But this is the standard convention, then let's use it.
+I am not particularly fan of the big R notation but this is the standard convention.
 
 If you save `config/routes`, you should see your terminal in which you launched `yesod devel` activate and certainly displaying an error message.
 
@@ -257,9 +257,8 @@ getEchoR theText = do
 </code>
 
 Don't worry if you find all of this a bit cryptic. 
-This is normal when learning a new framework.
-In short it just declare a function named getEchoR with one argument (`theText`) of type String.
-When this function is called, it return a "Handler RepHtml" whatever it is. 
+In short it just declare a function named `getEchoR` with one argument (`theText`) of type String.
+When this function is called, it return a `Handler RepHtml` whatever it is. 
 But mainly this will encapsulate our expected result inside an HTML text.
 
 After saving the file, you should see yesod recompile the application.
@@ -267,7 +266,7 @@ When the compilation is finished you'll see the message: `Starting devel applica
 
 Now you can visit: [`http://localhost:3000/echo/Yesod%20rocks!`](http://localhost:3000/echo/Yesod%20rocks!)
 
-TADA! It works.
+TADA! It works!
 
 ### Bulletproof?
 
@@ -297,9 +296,10 @@ Thanks to yesod, most of tedious string transformation job is done for us.
 </code>
 
 That was the first very minimal example, and we already 
-verified Yesod protect us from many common errors.
+verified Yesod protect us from many common errors in other paradigms.
+I am looking at you PHP!
 
-Then not only Yesod is fast, it is also relatively secure.
+Yesod is not only fast, it helps us to remain secure.
 
 ### Cleaning up
 
@@ -308,6 +308,34 @@ This first example was nice, but for simplicity reason we didn't used best pract
 First we will separate the handler code into different files.
 After that we will use `Data.Text` instead of `String`. 
 Finally we'll use a template file to better separate our view.
+
+### A better CSS
+
+Let's make a better default CSS. 
+Add a file named `default-layout.lucius` inside the `template/` directory containing:
+
+<code class="css">
+body {
+    font-family: Helvetica, sans-serif; }
+#content {
+    padding: 1em;
+    border: #CCC solid 2px;
+    border-radius: 5px;
+    margin: 1em;
+    width: 37em;
+    margin: 1em auto;
+    background: #F2F2F2;
+    line-height: 1.5em;
+    color: #333; }
+.required { margin: 1em 0; }
+label { width: 8em; display: inline-block; }
+textarea { width: 27em; }
+ul { list-style: square; }
+a { color: #A56; }
+a:hover { color: #C58; }
+a:active { color: #C58; }
+a:visited { color: #943; }
+</code>
 
 ### Separate handlers
 
@@ -345,7 +373,7 @@ Now our handler is separated in another file.
 
 It is a good practice to use `Data.Text` instead of `String`.
 
-To declare we will use the type `Data.Text` we modify the file `Foundation.hs`.
+We have to declare we will use `Data.Text` inside the `Foundation.hs` file.
 Add an import directive just after the last one:
 
 <code class="diff">
@@ -456,11 +484,103 @@ Just try it by [clicking here](http://localhost:3000/new).
 
 Hey! That was easy!
 
-## End of Part 1
+## A Blog
 
-This was a very minimal introduction.
+We saw how to retrieve HTTP parameters.
+Now we should save thing inside a database.
 
-In my next article, I will show you a closer real life system.
+Add some routes inside `config/routes`:
+
+<code class="zsh">
+/blog               BlogR       GET POST
+/blog/#ArticleId    ArticleR    GET
+</code>
+
+This example will be very minimal:
+
+`GET` on `/blog` should display the list of articles.
+`POST` on `/blog` should create a new article
+`GET` on `/blog/<article id>` should display the content of the article.
+
+We should also declare some another model object. Add this in the `config/models` file:
+
+<code class="zsh">
+Article
+    title   Text
+    content Html 
+    deriving
+</code>
+
+Why add the `deriving` is not obvious.
+There is a technical reason behind it.
+You have to remember to add it if you use a type which is not an instances of `Read`, `Show` and `Eq` like `Html` in this case.
+If you forget it, there will be an error.
+
+Now we have prepared the route and the model, we should write the actual code.
+
+Let's declare a new Handler module.
+Add `import Handler.Blog` inside `Application.hs` and add it into `yosog.cabal`.
+Now let's write the content of `Handler/Blog.hs`.
+We start by declaring the module and by importing some block necessary to handle Html in forms.
+
+<code class="haskell">
+module Handler.Blog
+    ( getBlogR
+    , postBlogR
+    , getArticleR
+    )
+where
+
+import Import
+
+-- To use Html in forms
+import Yesod.Form.Nic (YesodNic, nicHtmlField)
+instance YesodNic Yosog
+</code>
+
+<code class="haskell">
+-- Define a form for adding new article.
+-- Don't pay attention to all the $ <$> and <*>
+-- Mainly the syntax is for each line:
+--   areq type label default_value
+--   and aformM is for setting values
+entryForm :: Form Article
+entryForm = renderDivs $ Article
+    <$> areq   textField "Title" Nothing
+    <*> areq   nicHtmlField "Content" Nothing
+
+-- A view showing the list of articles
+getBlogR :: Handler RepHtml
+getBlogR = do
+    -- Get the user 
+    muser <- maybeAuth
+    -- We get the list of articles
+    articles <- runDB $ selectList [] [Desc ArticleTitle, LimitTo 10]
+    -- We'll need the two "objects": entryWidget and enctype
+    -- mainly entryWidget will contain the html for entry
+    ((_,entryWidget), enctype) <- generateFormPost entryForm
+    defaultLayout $ do
+        $(widgetFile "articles")
+
+postBlogR :: Handler RepHtml
+postBlogR = do
+    ((res,entryWidget),enctype) <- runFormPost entryForm
+    case res of 
+         FormSuccess article -> do 
+            articleId <- runDB $ insert article
+            setMessageI $ MsgEntryCreated $ articleTitle article
+            redirect RedirectPermanent $ ArticleR articleId 
+         _ -> defaultLayout $ do
+                setTitleI MsgPleaseCorrectEntry
+                $(widgetFile "articleAddError")
+
+getArticleR :: ArticleId -> Handler RepHtml
+getArticleR articleId = do
+    article <- runDB $ get404 articleId
+    muser <- maybeAuth
+    defaultLayout $ do
+        $(widgetFile "article")
+</code>
 
 <div style="display:hidden">
 
