@@ -8,8 +8,14 @@ for fic in $webroot/content/html/??/blog/*(N); do
     \rm -rf $fic
 done
 print -- "Clean multi/blog"
-list=$(ls -lt -- $webroot/multi/blog | awk '{print $9}')
-nb=$(( $( print -l $list | wc -l ) - 4 ))
+if [[ $(uname) = Linux ]]; then
+    column=8
+else
+    column=9
+fi
+list=$(ls -lt -- $webroot/multi/blog | awk '{print $'$column'}')
+nb=$(( $( print -l $list | wc -l ) - 5 ))
+((nb<0)) && exit 0
 res=( $( print -- $list | tail -n -$nb ) )
 for fic in $res; do
     print "[d] $fic"
