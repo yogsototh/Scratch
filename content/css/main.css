@@ -125,6 +125,25 @@ body, h1, h2, h3, h4, #entete, .tag
   font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   line-height: 1.4em
 
+/* Header Numbering */
+#afterheader
+  counter-reset: niv02
+  h2
+    counter-increment: niv02
+    counter-reset: niv03
+    marker-offset: 3em
+    &:before
+      content: counter(niv02) ". "
+  h3
+    counter-increment: niv03
+    counter-reset: niv04
+    &:before 
+      content: counter(niv02) "." counter(niv03) ". "
+  h4
+    counter-increment: niv04
+    &:before 
+      content: counter(niv02) "." counter(niv03) "." counter(niv04) ". "
+
 pre
   +codeColor
   box-shadow: 0 0 1em #000 inset
@@ -787,6 +806,7 @@ ul.bloglist, .archive ul
   border-radius: 3px
   line-height: 2.5em
   padding: 2em
+  text-align: justify
 
 .pala
   font-family: Palatino
