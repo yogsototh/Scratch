@@ -90,7 +90,7 @@ Haskell is a very complex language and could suck all your energy if you want to
 
 During this tutorial you'll install, initialize and configure your first yesod project.
 Then a 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
-Then we clean up the 5 minutes tutorial to use the best practices.
+Then we will clean up the 5 minutes tutorial to use some "best practices".
 Just after there will be a more standard real world example; a minimal blog system.
 Good read.
 
@@ -135,7 +135,7 @@ Perfect. Now you can start the development cycle:
 
 <code class="zsh">
 ~ cd yosog
-> cabal-dev install && yesod --dev devel
+~ cabal-dev install && yesod --dev devel
 </code>
 
 This will compile the entire project. Be patient it could take some time.
@@ -205,6 +205,8 @@ Obviously:
 
 During this tutorial we'll modify other files as well,
 but we won't explore them in detail.
+
+Instead if specified otherwise, shell command are executed in the root directory of you project.
 
 Now, it is the time to start the interesting part.
 
@@ -309,12 +311,19 @@ First we will separate the handler code into different files.
 After that we will use `Data.Text` instead of `String`. 
 Finally we'll use a template file to better separate our view.
 
-### A better CSS
+### %html5 boilerplate and a better CSS
 
-Let's make a better default CSS. 
+Copy the boilerplate template to the default template.
+If you take a look at them, the format is not %html but hamlet.
+
+<code class="zsh">
+~ cp templates/boilerplate-wrapper.hamlet templates/default-layout-wrapper.hamlet
+</code>
+
+Now we'll change the default CSS. 
 Add a file named `default-layout.lucius` inside the `template/` directory containing:
 
-<code class="css">
+<code class="css" file="default-layout.lucius">
 body {
     font-family: Helvetica, sans-serif; 
     font-size: 18px; }
@@ -339,6 +348,8 @@ a:hover { color: #C58; }
 a:active { color: #C58; }
 a:visited { color: #943; }
 </code>
+
+Now pages should look better.
 
 ### Separate handlers
 
@@ -561,8 +572,6 @@ entryForm = renderDivs $ Article
 -- The view showing the list of articles
 getBlogR :: Handler RepHtml
 getBlogR = do
-    -- Get the user. Yes, it's that simple.
-    muser <- maybeAuth
     -- Get the list of articles inside the database.
     articles <- runDB $ selectList [] [Desc ArticleTitle]
     -- We'll need the two "objects": entryWidget and enctype
@@ -587,22 +596,6 @@ $else
                 <a href=@{ArticleR (fst article)} > #{articleTitle (snd article)}
     <hr/>
 
--- <!-- if the user is logged -->
-$maybe (_, user) <- muser
-    -- <!-- Display a form to add a new article 
-    -- This is here we need the objects entryWidget
-    -- and enctype given in the handler.
-    -- We still need to create the submit button.  -->
-    <h1> Write a new one
-    <form method=post enctype=#{enctype}>
-        ^{entryWidget}
-        <div>
-            <input type=submit value="Post to Blog">
--- <!-- if the user isn't logged -->
-$nothing
-    -- <!-- Display a link to login -->
-    <p>
-        <a href=@{AuthR LoginR}>Login to Post
 </code>
 
 The syntax is a bit strange, but you get the idea easily.
