@@ -200,7 +200,7 @@ Obviously:
 
 | `config/routes`   | is where you'll configure the map %url → Code. |
 | `Handler/`        | contains the files that will contain the code called when a %url is accessed. |
-| `templates/`      | contains HTML, JS and %css templates.  |
+| `templates/`      | contains %html, js and %css templates.  |
 | `config/models`   | is where you'll configure the persistent objects (database tables). |
 
 During this tutorial we'll modify other files as well,
@@ -260,7 +260,7 @@ getEchoR theText = do
 Don't worry if you find all of this a bit cryptic. 
 In short it just declare a function named `getEchoR` with one argument (`theText`) of type String.
 When this function is called, it return a `Handler RepHtml` whatever it is. 
-But mainly this will encapsulate our expected result inside an HTML text.
+But mainly this will encapsulate our expected result inside an %html text.
 
 After saving the file, you should see yesod recompile the application.
 When the compilation is finished you'll see the message: `Starting devel application`.
@@ -284,7 +284,7 @@ A malicious user could not hide some bad script inside.
 This behavior is a direct consequence of _type safety_.
 The %url string is put inside a %url type.
 Then the interesting part in the %url is put inside a String type. To pass from %url type to String type some transformation are made. For example, replace all "`%20`" by space characters.
-Then to show the String inside an HTML document, the string is put inside an HTML type. Some transformations occurs like replace "<code><</code>" by "`&lt;`".
+Then to show the String inside an %html document, the string is put inside an %html type. Some transformations occurs like replace "<code><</code>" by "`&lt;`".
 Thanks to yesod, this tedious job is done for us.
 
 <code class="zsh">
@@ -292,7 +292,7 @@ Thanks to yesod, this tedious job is done for us.
                     ↓
               "some text<a>"                :: String
                     ↓
-          "some text &lt;a&gt;"             :: HTML 
+          "some text &lt;a&gt;"             :: Html 
 </code>
 
 Yesod is not only fast, it helps us to remain secure.
@@ -480,10 +480,9 @@ postMirrorR =  do
 
 Don't forget to declare it inside `yosog.cabal` and `Application.hs`.
 
-We will need to use the `reverse` function provided by `Data.Text` which explain the import.
+We will need to use the `reverse` function provided by `Data.Text` which explain the additional import.
 
 The only new thing here is the line that get the POST parameter named "content".
-
 If you want to know more detail about it and form in general you can take look at [the yesod book](http://www.yesodweb.com/book/forms).
 
 Create the two corresponding templates:
@@ -558,20 +557,11 @@ module Handler.Blog
 where
 
 import Import
-</code>
 
-To use Html in forms
-
-<code class="haskell">
+-- to use Html into forms
 import Yesod.Form.Nic (YesodNic, nicHtmlField)
 instance YesodNic Yosog
 </code>
-
-Define a form for adding a new article.
-Don't pay attention to all the syntax. 
-If you are curious you can take a look at Applicative Functor.
-You just have to remember `areq` is for required form input.
-Its arguments being: `areq type label default_value`.
 
 <code class="haskell">
 entryForm :: Form Article
@@ -580,74 +570,98 @@ entryForm = renderDivs $ Article
     <*> areq   nicHtmlField "Content" Nothing
 </code>
 
+This function defines a form for adding a new article.
+Don't pay attention to all the syntax. 
+If you are curious you can take a look at Applicative Functor.
+You just have to remember `areq` is for required form input.
+Its arguments being: `areq type label default_value`.
+
 <code class="haskell">
 -- The view showing the list of articles
 getBlogR :: Handler RepHtml
 getBlogR = do
     -- Get the list of articles inside the database.
     articles <- runDB $ selectList [] [Desc ArticleTitle]
-    -- We'll need the two "objects": entryWidget and enctype
+    -- We'll need the two "objects": articleWidget and enctype
     -- to construct the form (see template/articles.hamlet).
-    ((_,entryWidget), enctype) <- generateFormPost entryForm
+    ((_,articleWidget), enctype) <- generateFormPost entryForm
     defaultLayout $ do
         $(widgetFile "articles")
 </code>
 
-Just take a look at the content of `template/articles.hamlet`.
+This handler should display a list of articles.
+We get the list from the DB and we construct the form.
+Just take a look at the corresponding template:
 
 <code class="html" file="articles.hamlet">
 <h1> Articles
 $if null articles
-    -- <!-- Show a standard message if there is no article -->
-    <p>There are no article.
+    -- Show a standard message if there is no article
+    <p>_{MsgNoEntries}
 $else
-    -- <!-- Show the list of articles -->
+    -- Show the list of articles
     <ul>
         $forall article <- articles
             <li> 
                 <a href=@{ArticleR (fst article)} > #{articleTitle (snd article)}
-    <hr/>
-
+<hr/>
+  <form method=post enctype=#{enctype}>
+    ^{articleWidget}
+    <div>
+        <input type=submit value="Post new article">
 </code>
 
 You should remark we added some logic inside the template.
-Now look at how to handle the creation of a new article.
+There is a test and a "loop".
+
+Another very interesting part is the creation of the form.
+The `articleWidget` was created by yesod.
+We have given him the right parameters (input required or optional, labels, default values).
+And now we have a protected form made for us.
+But we have to create the submit button.
+
+Get back to `Handler/Blog.hs`.
 
 <code class="haskell">
+-- we continue Handler/Blog.hs
 postBlogR :: Handler RepHtml
 postBlogR = do
-    ((res,entryWidget),enctype) <- runFormPost entryForm
+    ((res,articleWidget),enctype) <- runFormPost entryForm
     case res of 
          FormSuccess article -> do 
             articleId <- runDB $ insert article
-            setMessageI $ MsgEntryCreated $ articleTitle article
+            setMessage $ (articleTitle article) ++. " created"
             redirect RedirectPermanent $ ArticleR articleId 
          _ -> defaultLayout $ do
-                setTitleI MsgPleaseCorrectEntry
+                setTitle "Please correct your entry form"
                 $(widgetFile "articleAddError")
+    where
+        (++.) t s = toHtml $ T.append t (T.pack s)
 </code>
+
+This function should be used to create a new article.
+The `++.` is just a trick to make an append occurs within the right type.
+We handle the form response.
+If there is an error we go to an error message.
+For example if we left some required value blank.
+
 
 <code class="haskell">
 getArticleR :: ArticleId -> Handler RepHtml
 getArticleR articleId = do
     article <- runDB $ get404 articleId
-    muser <- maybeAuth
     defaultLayout $ do
+        setTitle $ toHtml $ articleTitle article
         $(widgetFile "article")
 </code>
-
-<div style="display:hidden">
 
 ---
 
 <%= startTodo %>
 
 <ul>
-  </li><li> Create a minimal blog system.
-  </li><li> Use Authentification.
+  <li> Use Authentification.
   </li>
 </ul>
 
 <%= endTodo %>
-
-</div>
