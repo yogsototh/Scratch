@@ -5,6 +5,8 @@
 $behindColor: #333
 $mainTextColor: $behindColor
 $mainBackgroundColor: #FAFAFA
+$mainShadowColor: $mainBackgroundColor - #333
+$secondBackgroundColor: #F2F2F2
 $revealColor: #A53
 $secondRevealColor: #AA5533
 $lighterRevealColor: $revealColor + #666
@@ -24,16 +26,6 @@ $secondTextColor: #666666
 $codeBlockColor: $mainBackgroundColor
 $codeBlockBackgroundColor: $behindColor
 
-
-* 
-  transition-property: all
-  transition-duration: 0.5s
-  -moz-transition-property: all
-  -moz-transition-duration: 0.5s
-  -webkit-transition-property: all
-  -webkit-transition-duration: 0.5s
-  -o-transition-property: all
-  -o-transition-duration: 0.5s
 
 =mainColor
   color: $behindColor
@@ -133,6 +125,25 @@ body, h1, h2, h3, h4, #entete, .tag
   font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   line-height: 1.4em
 
+/* Header Numbering */
+.article #afterheader
+  counter-reset: niv02
+  h2
+    counter-increment: niv02
+    counter-reset: niv03
+    marker-offset: 3em
+    &:before
+      content: counter(niv02) ". "
+  h3
+    counter-increment: niv03
+    counter-reset: niv04
+    &:before 
+      content: counter(niv02) "." counter(niv03) ". "
+  h4
+    counter-increment: niv04
+    &:before 
+      content: counter(niv02) "." counter(niv03) "." counter(niv04) ". "
+
 pre
   +codeColor
   box-shadow: 0 0 1em #000 inset
@@ -146,8 +157,8 @@ p
 
 blockquote
   +highlight
-  background-color: #F2F2F2
-  border: 1px solid #CCC
+  background-color: $secondBackgroundColor
+  border: 1px solid $borderColor
 
 abbr,
 acronym
@@ -186,7 +197,7 @@ acronym
   padding: 1em
   font-size: 16px
   line-height: 1.4em
-  border-radius: 1.5em
+  border-radius: 5px
   border: 2px solid $mainBackgroundColor
   color: $lighterText
   &:hover
@@ -280,6 +291,7 @@ h1 > .date
   line-height: 3ex
   clear: both
   +secondColor
+  border-radius: 0
 
 // --- LAYOUTS --
 $VPadCorps: 3em
@@ -291,7 +303,7 @@ $content_width: 52em
 
 body
   text-align: center
-  font-size: 1em
+  font-size: 16px
 
 body > #entete
   position: absolute
@@ -442,7 +454,6 @@ $fontcorps: 1.25
   text-align: left
   padding: $VPadCorps 3em
   margin: 0 $HMarginCorps
-  border-bottom: 1px $lighterColorBorderBottom solid
   clear: both
 
 $corps_width: ($content_width - 2 * $contentMargin) / $fontcorps
@@ -456,7 +467,7 @@ $hpadding: 1
   box-shadow: 0 10px 15px #CCC
   border-radius: 3px
 .corps a:hover img
-  background-color: $revealColor + #666
+  background-color: $revealColor + #100 - #011
 
 img.clean
   border: none
@@ -551,25 +562,24 @@ ul.long li
 
 img
   display: block
-  margin-left: auto
-  margin-right: auto
+  margin: 1.2em auto
   background: none
   border: none
 
 img.left
   float: left
   max-width: 30%
-  margin:
-    right: 1em
+  margin: 
+    top: .6em
+    right: 2em
 
 img.inside
   display: inline
   vertical-align: middle
 
 pre
-  overflow
-    y: hidden
-    x: auto
+  overflow-x: auto
+  overflow-y: hidden
 
 .withfile pre
   margin-top: 0
@@ -706,6 +716,14 @@ a.return
 
 .footnotes
   font-size: 0.8em
+  ol
+    color: #CCC
+    font-weight: bold
+    p
+      color: $behindColor
+      font-weight: normal
+
+    
 
 .fontnotes ol
   margin-left: 0
@@ -788,6 +806,7 @@ ul.bloglist, .archive ul
   border-radius: 3px
   line-height: 2.5em
   padding: 2em
+  text-align: justify
 
 .pala
   font-family: Palatino
@@ -801,4 +820,50 @@ ul.bloglist, .archive ul
   .footnotes, sup 
     a:after
       content: ""
+.article .corps sup a
+  font-weight: bold
+  background: #CCC
+  padding: 0 .3em
+  border-radius:  3px
+  -moz-border-radius:  3px
+  -webkit-border-radius:  3px
+  color: $mainBackgroundColor
+  &:hover
+    background: $revealColor
 
+ul#markdown-toc
+  font-variant: small-caps
+  list-style: none
+  padding-left: 1.5em
+  ul
+    padding-left: 1.5em
+  a:after
+    content: ""
+
+table
+  border: 1px solid $borderColor
+table tr td
+  padding: 2px .5em
+table tr
+  &:nth-child(odd)
+    background-color: $secondBackgroundColor
+  &:nth-child(even)
+    background-color: $mainBackgroundColor
+
+p code
+  background: $secondBackgroundColor
+  border: solid 1px $borderColor
+  padding: 2px
+
+ul.sameline
+  list-style: none
+  li
+    float: left
+    margin-left: .5em
+
+.resumearticle
+  background-color: $secondBackgroundColor
+  border-radius: 7px
+  box-shadow: 0 0 5px $mainShadowColor inset,0 0 5px #FFF
+  margin: 1em 0
+  padding: 1em

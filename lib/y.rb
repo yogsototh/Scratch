@@ -2,7 +2,9 @@
 # before nanoc starts compiling.
 
 def allExceptCode( f, content )
-    regexp=/<code[^>]*>.*?<\/code>/m
+    # Beware the behaviour will change if you add
+    # parenthesis (groups) to the regexp!
+    regexp=/<code[^>]*>.*?<\/code>|<pre[^>]*>.*?<\/pre>/m
     tmp=""
     mem=[]
     content.scan(regexp).each do |c|
@@ -11,7 +13,7 @@ def allExceptCode( f, content )
     i=0
     content.split(regexp).each do |x|
         tmp <<= send(f,x) 
-        if not mem[i].nil?
+        if not mem[i].nil? 
             tmp <<= mem[i]
             i+=1
         end
@@ -179,4 +181,13 @@ def block(title, url, text, position="left")
         #{text}
         </p>
     </div>}
+end
+
+def startTodo
+%{<div style="background-color: #800; color: #FFF; font-weight: bold; border: 2px solid #300; box-shadow: 0 0 60px #300 inset;padding-left: 2em;">
+<h2 style="margin: 0 auto; text-align: center">TODO</h2>}
+end
+
+def endTodo
+%{</div>}
 end

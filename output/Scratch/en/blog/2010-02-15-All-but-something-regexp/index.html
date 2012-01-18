@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
         
-        <meta name="keywords" content="regexp, regular expression">
+        <meta name="keywords" content="regex, regexp, regular expression, negate">
         
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
@@ -62,7 +62,9 @@
         do_something
 </pre></div>
 
-<p>and you have to make this behaviour with only one regular expression. The problem is the complementary of regular languages is not regular. Then, for some expression it is absolutely not impossible.</p>
+<p>and you have to make this behaviour with only one regular expression.
+But, there exists a major problem: the complementary of a regular language might not be regular.
+Then, for some expression it is absolutely impossible to negate a regular expression.</p>
 
 <p>But sometimes with some simple regular expression it should be possible<sup><a href="#note1">&dagger;</a></sup>. Say you want to match everything containing the some word say <code>bull</code> but don&rsquo;t want to match <code>bullshit</code>. Here is a nice way to do that:</p>
 
@@ -220,7 +222,7 @@ It can be proved that any regular set minus a finite set is also regular.
                 </div>
                 <div id="lastmod">
                     Created: 02/15/2010
-                    Modified: 05/09/2010 
+                    Modified: 01/11/2012 
                 </div>
                 <div>
                     Entirely done with

@@ -122,14 +122,14 @@ SETXY -200 0
 RIGHT 90
 PENDOWN
 
-to dragon&nbsp;:degree&nbsp;:size
+to dragon :degree :size
     setpensize 1
-    <span class="Keyword">if</span>&nbsp;:size<span class="Keyword">&gt;</span>5  [setpensize 2]
-    <span class="Keyword">if</span>&nbsp;:size<span class="Keyword">&gt;</span>10 [setpensize 3]
-    <span class="Keyword">if</span>&nbsp;:size<span class="Keyword">&gt;</span>20 [setpensize 4]
-    <span class="Keyword">if</span>&nbsp;:size<span class="Keyword">&gt;</span>40 [setpensize 5]
-    ifelse&nbsp;:degree=0 [ 
-        fd&nbsp;:size 
+    <span class="Keyword">if</span> :size<span class="Keyword">&gt;</span>5  [setpensize 2]
+    <span class="Keyword">if</span> :size<span class="Keyword">&gt;</span>10 [setpensize 3]
+    <span class="Keyword">if</span> :size<span class="Keyword">&gt;</span>20 [setpensize 4]
+    <span class="Keyword">if</span> :size<span class="Keyword">&gt;</span>40 [setpensize 5]
+    ifelse :degree=0 [ 
+        fd :size 
     ][
         left  45 dragon (:degree-1) (size/4)
         right 90 dragon (:degree-1) (size/2)

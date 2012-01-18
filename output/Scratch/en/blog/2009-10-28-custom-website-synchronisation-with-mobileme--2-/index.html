@@ -206,7 +206,7 @@ source <span class="Variable"><span class="Variable">$</span>0</span>:h/config
 source <span class="Variable"><span class="Variable">$</span>0</span>:h/webdav-framework
 
 <span class="Keyword">if</span> [[ <span class="Variable"><span class="Variable">$</span>1</span> <span class="Keyword">==</span> <span class="String"><span class="String">'</span>-h<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
-    print -- <span class="String"><span class="String">&quot;</span>usage&nbsp;: <span class="StringVariable"><span class="StringVariable">$</span>0</span>:h [-h|-s|-d]<span class="String">&quot;</span></span>
+    print -- <span class="String"><span class="String">&quot;</span>usage : <span class="StringVariable"><span class="StringVariable">$</span>0</span>:h [-h|-s|-d]<span class="String">&quot;</span></span>
     print -- <span class="String"><span class="String">&quot;</span>  -a sychronise aussi l'index<span class="String">&quot;</span></span>
     print -- <span class="String"><span class="String">&quot;</span>  -h affiche l'aide<span class="String">&quot;</span></span>
     print -- <span class="String"><span class="String">&quot;</span>  -d modification directe (pas de swap)<span class="String">&quot;</span></span>
@@ -232,7 +232,7 @@ function incrementalPublish {
         <span class="Keyword">if</span> ((<span class="Variable"><span class="Variable">${</span>#filesToUpdate<span class="Variable">}</span></span> == 1))<span class="Keyword">;</span> <span class="Keyword">then</span>
             print -- <span class="String"><span class="String">&quot;</span>Seul le fichier <span class="StringVariable"><span class="StringVariable">${</span>filesToUpdate<span class="StringVariable">}</span></span> sera téléversé<span class="String">&quot;</span></span>
         <span class="Keyword">elif</span> ((<span class="Variable"><span class="Variable">${</span>#filesToUpdate<span class="Variable">}</span></span><span class="Keyword">&lt;</span>10))<span class="Keyword">;</span> <span class="Keyword">then</span>
-            print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>#filesToUpdate<span class="StringVariable">}</span></span> fichiers seront téléversés&nbsp;:<span class="String">&quot;</span></span>
+            print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>#filesToUpdate<span class="StringVariable">}</span></span> fichiers seront téléversés :<span class="String">&quot;</span></span>
             print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>filesToUpdate<span class="StringVariable">}</span></span><span class="String">&quot;</span></span>
         <span class="Keyword">else</span>
             print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>#filesToUpdate<span class="StringVariable">}</span></span> fichiers seront téléversés<span class="String">&quot;</span></span>

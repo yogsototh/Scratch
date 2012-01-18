@@ -135,17 +135,17 @@ Any developer who had to deal with <span class="sc">xslt</span> know how horribl
 <h2 id="the-cure-m4-to-the-rescue">The cure (m4 to the rescue)</h2>
 
 <pre class="twilight">
-<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&lt;?</span><span class="DoctypeXmlProcessing">xml</span><span class="DoctypeXmlProcessing"> version</span>=<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&quot;</span>1.0<span class="DoctypeXmlProcessing">&quot;</span></span><span class="DoctypeXmlProcessing"> standalone</span>=<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&quot;</span>yes<span class="DoctypeXmlProcessing">&quot;</span></span><span class="DoctypeXmlProcessing">?&gt;</span></span> <span class="Comment"><span class="Comment">&lt;!--</span> YES its <span class="sc">xml</span> <span class="Comment">-&rarr;</span></span>
+<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&lt;?</span><span class="DoctypeXmlProcessing">xml</span><span class="DoctypeXmlProcessing"> version</span>=<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&quot;</span>1.0<span class="DoctypeXmlProcessing">&quot;</span></span><span class="DoctypeXmlProcessing"> standalone</span>=<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&quot;</span>yes<span class="DoctypeXmlProcessing">&quot;</span></span><span class="DoctypeXmlProcessing">?&gt;</span></span> <span class="Comment"><span class="Comment">&lt;!--</span> YES its <span class="sc">xml</span> <span class="Comment">--&gt;</span></span>
 <span class="Comment"><span class="Comment">&lt;!--</span> ← start a comment, then write some m4 directives:</span>
 <span class="Comment" />
 <span class="Comment">define(`ydef',`&lt;xsl:variable name=&quot;$1&quot; select=&quot;$2&quot;/&gt;')</span>
 <span class="Comment">define(`yprint',`&lt;xsl:text disable-output-escaping=&quot;yes&quot;&gt;&lt;![CDATA[$1]]&gt;&lt;/xsl:text&gt;')</span>
 <span class="Comment">define(`yshow',`&lt;xsl:value-of select=&quot;$1&quot;/&gt;')</span>
 <span class="Comment" />
-<span class="Comment"><span class="Comment">-&rarr;</span></span>
-<span class="Comment"><span class="Comment">&lt;!--</span> Yes, <span class="sc">xml</span> sucks to be read <span class="Comment">-&rarr;</span></span>
+<span class="Comment"><span class="Comment">--&gt;</span></span>
+<span class="Comment"><span class="Comment">&lt;!--</span> Yes, <span class="sc">xml</span> sucks to be read <span class="Comment">--&gt;</span></span>
 <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">xsl</span><span class="MetaTagAll"><span class="MetaTagAll">:</span></span><span class="MetaTagAll">stylesheet</span> <span class="MetaTagAll">version</span>=<span class="String"><span class="String">&quot;</span>1.0<span class="String">&quot;</span></span> <span class="MetaTagAll">xmlns</span><span class="MetaTagAll"><span class="MetaTagAll">:</span></span><span class="MetaTagAll">xsl</span>=<span class="String"><span class="String">&quot;</span>http://www.w3.org/1999/XSL/Transform<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
-<span class="Comment"><span class="Comment">&lt;!--</span> And it sucks even more to edit <span class="Comment">-&rarr;</span></span>
+<span class="Comment"><span class="Comment">&lt;!--</span> And it sucks even more to edit <span class="Comment">--&gt;</span></span>
 <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">xsl</span><span class="MetaTagAll"><span class="MetaTagAll">:</span></span><span class="MetaTagAll">template</span> <span class="MetaTagAll">match</span>=<span class="String"><span class="String">&quot;</span>/<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
     ydef(myvar,value)
     yprint(Hello world!)
@@ -206,33 +206,33 @@ Click to view directly the <span class="sc">svg</span>. It might slow down your 
 <span class="Comment">    &lt;/g&gt;</span>
 <span class="Comment">    &lt;use transform=&quot;YGENTRANSFORM&quot; xlink:href=&quot;#level_$1&quot; /&gt;</span>
 <span class="Comment">')</span>
-<span class="Comment"> <span class="Comment">-&rarr;</span></span>
+<span class="Comment"> <span class="Comment">--&gt;</span></span>
 <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">svg</span> </span>
 <span class="MetaTagAll">    <span class="MetaTagAll">xmlns</span>=<span class="String"><span class="String">&quot;</span>http://www.w3.org/2000/svg<span class="String">&quot;</span></span> </span>
 <span class="MetaTagAll">    <span class="MetaTagAll">xmlns</span><span class="MetaTagAll"><span class="MetaTagAll">:</span></span><span class="MetaTagAll">xlink</span>=<span class="String"><span class="String">&quot;</span>http://www.w3.org/1999/xlink<span class="String">&quot;</span></span></span>
 <span class="MetaTagAll">    <span class="MetaTagAll">x</span>=<span class="String"><span class="String">&quot;</span>64<span class="String">&quot;</span></span> <span class="MetaTagAll">y</span>=<span class="String"><span class="String">&quot;</span>64<span class="String">&quot;</span></span> <span class="MetaTagAll">width</span>=<span class="String"><span class="String">&quot;</span>512<span class="String">&quot;</span></span> <span class="MetaTagAll">height</span>=<span class="String"><span class="String">&quot;</span>512<span class="String">&quot;</span></span> <span class="MetaTagAll">viewBox</span>=<span class="String"><span class="String">&quot;</span>64 64 512 512<span class="String">&quot;</span></span></span>
 <span class="MetaTagAll">    <span class="MetaTagAll">id</span>=<span class="String"><span class="String">&quot;</span>svg2<span class="String">&quot;</span></span> <span class="MetaTagAll">version</span>=<span class="String"><span class="String">&quot;</span>1.1<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">g</span> <span class="MetaTagAll">id</span>=<span class="String"><span class="String">&quot;</span>level_0<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span> <span class="Comment"><span class="Comment">&lt;!--</span> some group, if I want to add other elements <span class="Comment">-&rarr;</span></span>
-        <span class="Comment"><span class="Comment">&lt;!--</span> the text &quot;λ&quot; <span class="Comment">-&rarr;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">g</span> <span class="MetaTagAll">id</span>=<span class="String"><span class="String">&quot;</span>level_0<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span> <span class="Comment"><span class="Comment">&lt;!--</span> some group, if I want to add other elements <span class="Comment">--&gt;</span></span>
+        <span class="Comment"><span class="Comment">&lt;!--</span> the text &quot;λ&quot; <span class="Comment">--&gt;</span></span>
         <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">text</span> <span class="MetaTagAll">id</span>=<span class="String"><span class="String">&quot;</span>lambda<span class="String">&quot;</span></span> </span>
 <span class="MetaTagAll">            <span class="MetaTagAll">fill</span>=<span class="String"><span class="String">&quot;</span>#333<span class="String">&quot;</span></span> <span class="MetaTagAll">style</span>=<span class="String"><span class="String">&quot;</span>font-family:Ubuntu; font-size: 100px<span class="String">&quot;</span></span></span>
 <span class="MetaTagAll">            <span class="MetaTagAll">transform</span>=<span class="String"><span class="String">&quot;</span>rotate(180)<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>λ<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">text</span><span class="MetaTagAll">&gt;</span></span>
     <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">g</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="Comment"><span class="Comment">&lt;!--</span> the text &quot;esod&quot; <span class="Comment">-&rarr;</span></span>
+    <span class="Comment"><span class="Comment">&lt;!--</span> the text &quot;esod&quot; <span class="Comment">--&gt;</span></span>
     <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">text</span> </span>
 <span class="MetaTagAll">        <span class="MetaTagAll">fill</span>=<span class="String"><span class="String">&quot;</span>#333<span class="String">&quot;</span></span> </span>
 <span class="MetaTagAll">        <span class="MetaTagAll">style</span>=<span class="String"><span class="String">&quot;</span>font-family:Ubuntu; font-size: 28px; letter-spacing: -0.10em<span class="String">&quot;</span></span> </span>
 <span class="MetaTagAll">        <span class="MetaTagAll">x</span>=<span class="String"><span class="String">&quot;</span>-17.3<span class="String">&quot;</span></span> </span>
 <span class="MetaTagAll">        <span class="MetaTagAll">y</span>=<span class="String"><span class="String">&quot;</span>69<span class="String">&quot;</span></span> </span>
 <span class="MetaTagAll">        <span class="MetaTagAll">transform</span>=<span class="String"><span class="String">&quot;</span>YGENTRANSFORM<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>esod<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">text</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="Comment"><span class="Comment">&lt;!--</span> ROOT ELEMENT <span class="Comment">-&rarr;</span></span>
+    <span class="Comment"><span class="Comment">&lt;!--</span> ROOT ELEMENT <span class="Comment">--&gt;</span></span>
     <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">use</span> <span class="MetaTagAll">transform</span>=<span class="String"><span class="String">&quot;</span>YGENTRANSFORM<span class="String">&quot;</span></span> <span class="MetaTagAll">xlink</span><span class="MetaTagAll"><span class="MetaTagAll">:</span></span><span class="MetaTagAll">href</span>=<span class="String"><span class="String">&quot;</span>#level_0<span class="String">&quot;</span></span> <span class="MetaTagAll">/&gt;</span></span>
 
-    YTRANSCOMPLETE(1,0) <span class="Comment"><span class="Comment">&lt;!--</span> First recursion <span class="Comment">-&rarr;</span></span>
-    YTRANSCOMPLETE(2,1) <span class="Comment"><span class="Comment">&lt;!--</span> deeper <span class="Comment">-&rarr;</span></span>
-    YTRANSCOMPLETE(3,2) <span class="Comment"><span class="Comment">&lt;!--</span> deeper <span class="Comment">-&rarr;</span></span>
-    YTRANSCOMPLETE(4,3) <span class="Comment"><span class="Comment">&lt;!--</span> even deeper <span class="Comment">-&rarr;</span></span>
-    YTRANSCOMPLETE(5,4) <span class="Comment"><span class="Comment">&lt;!--</span> Five level seems enough <span class="Comment">-&rarr;</span></span>
+    YTRANSCOMPLETE(1,0) <span class="Comment"><span class="Comment">&lt;!--</span> First recursion <span class="Comment">--&gt;</span></span>
+    YTRANSCOMPLETE(2,1) <span class="Comment"><span class="Comment">&lt;!--</span> deeper <span class="Comment">--&gt;</span></span>
+    YTRANSCOMPLETE(3,2) <span class="Comment"><span class="Comment">&lt;!--</span> deeper <span class="Comment">--&gt;</span></span>
+    YTRANSCOMPLETE(4,3) <span class="Comment"><span class="Comment">&lt;!--</span> even deeper <span class="Comment">--&gt;</span></span>
+    YTRANSCOMPLETE(5,4) <span class="Comment"><span class="Comment">&lt;!--</span> Five level seems enough <span class="Comment">--&gt;</span></span>
 <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">svg</span><span class="MetaTagAll">&gt;</span></span>
 </pre>
 </div></div>
@@ -345,6 +345,10 @@ to organize languages such as brainfuck.</p>
                     </div>
                     <div id="next_articles">
                         next entries
+                        
+                        <div class="next_article">
+                            <a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/">Haskell web programming&nbsp;<span class="nicer">»</span></a>
+                        </div>
                         
                         
                         

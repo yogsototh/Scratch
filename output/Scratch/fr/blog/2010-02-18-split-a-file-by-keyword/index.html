@@ -81,7 +81,7 @@ Mon Dec  7 10:32:30 UTC 2009
 <span class="Entity">BEGIN</span>{i=0;}
 <span class="StringRegexp"><span class="StringRegexp">/</span>UTC<span class="StringRegexp">/</span></span> {
     date=<span class="Variable"><span class="Variable">$</span>1</span><span class="Variable"><span class="Variable">$</span>2</span><span class="Variable"><span class="Variable">$</span>3</span>; 
-    <span class="Keyword">if</span> ( date&nbsp;!= olddate ) {
+    <span class="Keyword">if</span> ( date != olddate ) {
         olddate=date;
         i+=1;
         FIC=<span class="SupportFunction">sprintf</span>(<span class="String"><span class="String">&quot;</span>fic.%03d<span class="String">&quot;</span></span>,i); 

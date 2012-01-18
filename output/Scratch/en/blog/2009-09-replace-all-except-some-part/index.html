@@ -79,7 +79,9 @@ text
 <div>
 <pre class="twilight">
 <span class="Keyword">def</span> <span class="Entity">allExceptCode</span>(<span class="Variable"> f<span class="Variable">,</span> content </span>)
-    regexp<span class="Keyword">=</span><span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp">&lt;code<span class="StringRegexp"><span class="StringRegexp">[</span>^&gt;<span class="StringRegexp">]</span></span>*&gt;.*?&lt;<span class="StringRegexpSpecial">\/</span>code&gt;</span><span class="StringRegexp"><span class="StringRegexp">/m</span></span>
+<span class="Comment">    <span class="Comment">#</span> Beware the behaviour will change if you add</span>
+<span class="Comment">    <span class="Comment">#</span> parenthesis (groups) to the regexp!</span>
+    regexp<span class="Keyword">=</span><span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp">&lt;code<span class="StringRegexp"><span class="StringRegexp">[</span>^&gt;<span class="StringRegexp">]</span></span>*&gt;.*?&lt;<span class="StringRegexpSpecial">\/</span>code&gt;|&lt;pre<span class="StringRegexp"><span class="StringRegexp">[</span>^&gt;<span class="StringRegexp">]</span></span>*&gt;.*?&lt;<span class="StringRegexpSpecial">\/</span>pre&gt;</span><span class="StringRegexp"><span class="StringRegexp">/m</span></span>
     tmp<span class="Keyword">=</span><span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
     mem<span class="Keyword">=</span>[]
     content.<span class="Entity">scan</span>(regexp).<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">c</span>|
@@ -88,7 +90,7 @@ text
     i<span class="Keyword">=</span><span class="Constant">0</span>
     content.<span class="Entity">split</span>(regexp).<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">x</span>|
         tmp <span class="Keyword">&lt;&lt;=</span> <span class="Entity">send</span>(f,x) 
-        <span class="Keyword">if</span> <span class="Keyword">not</span> mem[i].<span class="Entity">nil?</span>
+        <span class="Keyword">if</span> <span class="Keyword">not</span> mem[i].<span class="Entity">nil?</span> 
             tmp <span class="Keyword">&lt;&lt;=</span> mem[i]
             i<span class="Keyword">+=</span><span class="Constant">1</span>
         <span class="Keyword">end</span>
@@ -115,7 +117,7 @@ text
 
 <div>
 <pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>&nbsp;!!!!!!!!!! THIS SYNTAX DOES NOT WORK&nbsp;!!!!!!! #</span>
+<span class="Comment"><span class="Comment">#</span> !!!!!!!!!! THIS SYNTAX DOES NOT WORK !!!!!!! #</span>
 <span class="Keyword">def</span> <span class="Entity">allExceptCode</span>(<span class="Variable"> f<span class="Variable">,</span> content </span>)
     regexp<span class="Keyword">=</span><span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp">&lt;code<span class="StringRegexp"><span class="StringRegexp">[</span>^&gt;<span class="StringRegexp">]</span></span>*&gt;.*?&lt;<span class="StringRegexpSpecial">\/</span>code&gt;</span><span class="StringRegexp"><span class="StringRegexp">/m</span></span>
     tmp<span class="Keyword">=</span><span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
@@ -231,7 +233,7 @@ text
                 </div>
                 <div id="lastmod">
                     Created: 09/22/2009
-                    Modified: 05/09/2010 
+                    Modified: 01/11/2012 
                 </div>
                 <div>
                     Entirely done with

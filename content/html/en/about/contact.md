@@ -8,6 +8,6 @@ menupriority: 1
 
 <%= mail_perso %>  
   Follow me on [twitter](http://twitter.com/yogsototh)  
-  My preferred bookmarks [diigo](http://diigo.com/profile/yogsototh)  
+  My preferred bookmarks [pinboard](http://pinboard.in/u:yogsototh)  
   Open Source [github](http://github.com/yogsototh)  
 [stackoverflow](http://stackoverflow.com/users/40569/yogsototh)  

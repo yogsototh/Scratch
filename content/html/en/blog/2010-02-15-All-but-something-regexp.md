@@ -7,8 +7,10 @@ title: Pragmatic Regular Expression Exclude
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
+  - regex
   - regexp
   - regular expression
+  - negate
 
 -----
 
@@ -20,7 +22,9 @@ if str.match(regexp) and
         do_something
 </code></div>
 
-and you have to make this behaviour with only one regular expression. The problem is the complementary of regular languages is not regular. Then, for some expression it is absolutely not impossible.
+and you have to make this behaviour with only one regular expression.
+But, there exists a major problem: the complementary of a regular language might not be regular.
+Then, for some expression it is absolutely impossible to negate a regular expression.
 
 But sometimes with some simple regular expression it should be possible<sup><a href="#note1">&dagger;</a></sup>. Say you want to match everything containing the some word say `bull` but don't want to match `bullshit`. Here is a nice way to do that:
 

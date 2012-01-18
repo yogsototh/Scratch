@@ -1,9 +1,6 @@
 
 def getMainpage
-    if @item.parent.nil? or @item.parent.parent.nil? or @item.parent.parent.parent.nil?
-        return
-    end
-    if @item.parent.parent.parent.parent.nil?
+    if depthOf(@item) <= 4 then
         return @item
     else
         return @item.parent
