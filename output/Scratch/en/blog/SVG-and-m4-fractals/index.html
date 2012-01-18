@@ -137,11 +137,11 @@ Any developer who had to deal with <span class="sc">xslt</span> know how horribl
 <pre class="twilight">
 <span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&lt;?</span><span class="DoctypeXmlProcessing">xml</span><span class="DoctypeXmlProcessing"> version</span>=<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&quot;</span>1.0<span class="DoctypeXmlProcessing">&quot;</span></span><span class="DoctypeXmlProcessing"> standalone</span>=<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&quot;</span>yes<span class="DoctypeXmlProcessing">&quot;</span></span><span class="DoctypeXmlProcessing">?&gt;</span></span> <span class="Comment"><span class="Comment">&lt;!--</span> YES its <span class="sc">xml</span> <span class="Comment">--&gt;</span></span>
 <span class="Comment"><span class="Comment">&lt;!--</span> ← start a comment, then write some m4 directives:</span>
-<span class="Comment" />
+<span class="Comment"></span>
 <span class="Comment">define(`ydef',`&lt;xsl:variable name=&quot;$1&quot; select=&quot;$2&quot;/&gt;')</span>
 <span class="Comment">define(`yprint',`&lt;xsl:text disable-output-escaping=&quot;yes&quot;&gt;&lt;![CDATA[$1]]&gt;&lt;/xsl:text&gt;')</span>
 <span class="Comment">define(`yshow',`&lt;xsl:value-of select=&quot;$1&quot;/&gt;')</span>
-<span class="Comment" />
+<span class="Comment"></span>
 <span class="Comment"><span class="Comment">--&gt;</span></span>
 <span class="Comment"><span class="Comment">&lt;!--</span> Yes, <span class="sc">xml</span> sucks to be read <span class="Comment">--&gt;</span></span>
 <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">xsl</span><span class="MetaTagAll"><span class="MetaTagAll">:</span></span><span class="MetaTagAll">stylesheet</span> <span class="MetaTagAll">version</span>=<span class="String"><span class="String">&quot;</span>1.0<span class="String">&quot;</span></span> <span class="MetaTagAll">xmlns</span><span class="MetaTagAll"><span class="MetaTagAll">:</span></span><span class="MetaTagAll">xsl</span>=<span class="String"><span class="String">&quot;</span>http://www.w3.org/1999/XSL/Transform<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
