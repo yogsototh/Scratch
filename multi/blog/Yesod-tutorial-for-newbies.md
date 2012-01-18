@@ -25,9 +25,14 @@ macros:
 
 begindiv(intro)
 
-en: <%= tldr %> A simple yesod tutorial. Yesod is an Haskell web framework. You shouldn't need to know Haskell. 
+en: <%= tldr %> A simple yesod tutorial.
+en: Yesod is an Haskell web framework.
+en: You shouldn't need to know Haskell. 
 
-fr: <%= tlal %> Un tutoriel pour yesod, un framework web Haskell. Vous ne devriez pas avoir besoin de savoir programmer en Haskell. Par contre je suis désolé pour les francophones, mais je n'ai pas eu le courage de traduire cet article en Français.
+fr: <%= tlal %> Un tutoriel pour yesod, un framework web Haskell.
+fr: Vous ne devriez pas avoir besoin de savoir programmer en Haskell. 
+fr: Par contre je suis désolé pour les francophones, 
+fr: mais je n'ai pas eu le courage de traduire cet article en Français.
 
 > <center><sc><b>Table of content</b></sc></center>
 > 
@@ -36,21 +41,27 @@ fr: <%= tlal %> Un tutoriel pour yesod, un framework web Haskell. Vous ne devrie
 
 enddiv
 
-Haskell is incredible and you should consider to use it to make your next web application. Why?
+Why Haskell?
 
 <%= blogimage("haskell-benchmark.png","Impressive Haskell Benchmark") %>
 
-My main reason to look at Haskell is its efficiency (see [Snap Benchmark][snapbench] _&_ [Warp Benchmark][warpbench][^benchmarkdigression]).
-Haskell is compiled and is an order of magnitude faster than interpreted languages like [Ruby][haskellvsruby] and [Python][haskellvspython][^speeddigression].
-Haskell handle parallel tasks perfectly. For example even better than node.js[^nodejstroll].
+Its efficiency (see [Snap Benchmark][snapbench] _&_ 
+[Warp Benchmark][warpbench][^benchmarkdigression]).
+Haskell is an order of magnitude faster than interpreted languages 
+like [Ruby][haskellvsruby] and [Python][haskellvspython][^speeddigression].
 
+Haskell web frameworks handle parallel tasks perfectly. 
+For example even better than node.js[^nodejstroll].
 
-But contrary to `C` and `C++`, Haskell is a high level language.
+Haskell is a high level language and make it harder to shoot you in the foot
+than `C` or `C++` for example.
 One of the best property of Haskell being:
 
-> "If your program compile it will be very close to what the programmer intended".
+> "If your program compile it will be 
+>  very close to what the programmer intended".
 
-From the pure technical "point of vue", Haskell seems to be the perfect web development tool.
+From the pure technical "point of vue",
+Haskell seems to be the perfect web development tool.
 
 Weaknesses of Haskell certainly won't be technical but human:
 
@@ -62,12 +73,15 @@ Weaknesses of Haskell certainly won't be technical but human:
 <%= leftblogimage("thousands_smiths.jpg","Thousands of Agent Smith") %>
 
 I don't say these are not important drawbacks.
-But Haskell is certainly the best choice to create your new web application which could handle thousands of connexions in parallel.
-Considering efficiency, security and quality, I believe Haskell is the best choice.
-Furthermore, not only the Haskell community is excellent, but Haskell is a great language and learning it will certainly make you a better programmer.
+But Haskell is certainly the best technical choice.
+It makes it possible to handle an impressive number of connexions.
+I believe Haskell is the best choice if you efficiency, 
+security and ability to adapt.
+Furthermore, the Haskell community is great and learning Haskell 
+is fun and will make you a better programmer.
 
-Haskell is not the only choice to make.
-The easiest path to create a web application is certainly to choose a web framework which has made a lot of work for us.
+Focusing on Web Application, instead of reinventing the wheel, we should
+choose an existing web framework.
 Actually there are three main choices:
 
 1. [Happstack](http://happstack.com)
@@ -76,23 +90,25 @@ Actually there are three main choices:
 
 I don't think there is a real winner between these three framework.
 The choice I made for yesod is highly subjective.
+I just lurked a bit and tried some tutorials.
 I had the feeling yesod make a better job at helping newcomers.
-Furthermore, apparently the yesod team is the most active.
-But as I said before, I might be wrong since it is a matter of feeling.
+Furthermore, apparently the yesod team seems the most active.
+Of course I might be wrong since it is a matter of feeling.
 
 <%= blogimage("owl_draw.png","1. Draw some circles. 2. Draw the rest of the fucking owl") %>
 
 Why did I write this article?
-The yesod documentation and particularly the book does an excellent job to explain you both some very minimal example and digging into the details. 
+The yesod documentation and particularly the book are excellent.
 But I missed an intermediate tutorial.
 This tutorial won't explain all details.
-I tried to give a step by step of how to start from a five minute tutorial to an almost production ready architecture.
-I must also confess explaining something to others is a great way to learn.
+I tried to give a step by step of how to start from a five minute tutorial 
+to an almost production ready architecture.
+Furthermore explaining something to others is a great way to learn.
 If you are used to Haskell and Yesod, this tutorial won't learn you much.
 If you are completely new to Haskell and Yesod it might hopefully helps you.
 
 During this tutorial you'll install, initialize and configure your first yesod project.
-There will be a 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
+Then there is a very minimal 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
 Then we will clean up the 5 minutes tutorial to use some "best practices".
 Finally there will be a more standard real world example; a minimal blog system.
 
@@ -108,12 +124,14 @@ Finally there will be a more standard real world example; a minimal blog system.
 
 ### Install
 
-The recommended way to install [Haskell][haskell] is to download the [Haskell Platform][haskellplatform].
+The recommended way to install [Haskell][haskell] 
+is to download the [Haskell Platform][haskellplatform].
 
 [haskell]: http://www.haskell.org
 [haskellplatform]: http://www.haskell.org/platform
 
-Once done, you need to install yesod. Open a terminal session and do:
+Once done, you need to install yesod.
+Open a terminal session and do:
 
 <code class="zsh">
 ~ cabal update
@@ -131,7 +149,8 @@ Open a terminal and type:
 ~ yesod init
 </code>
 
-Enter your name, chose `yosog` for the project name and enter `Yosog` for the name of the Foundation. Finally choose `sqlite`.
+Enter your name, choose `yosog` for the project name and enter `Yosog` for the name of the Foundation.
+Finally choose `sqlite`.
 Now, start the development cycle:
 
 <code class="zsh">
@@ -156,12 +175,13 @@ Note: if something is messed up use the following command line inside the projec
 
 </blockquote>
 
-Until the end of the tutorial, use another terminal and let this one open in a corner to see what occurs.
+Until the end of the tutorial, use another terminal and let this one open 
+in a corner to see what occurs.
 
 ### Configure git
 
-> Of course this step is not mandatory for the tutorial but it 
-is a good practice.
+> Of course this step is not mandatory for the tutorial 
+> but it is a good practice.
 
 Copy this `.gitignore` file into the `yosog` folder.
 
@@ -185,7 +205,8 @@ Now we are almost ready to start.
 
 ### Some last minute words
 
-Up until here, we have a directory containing a bunch of files and a local web server listening the port 3000.
+Up until here, we have a directory containing a bunch of files 
+and a local web server listening the port 3000.
 If we modify a file inside this directory, yesod should try
 to recompile as fast as possible the site. 
 Instead of explaining the role of every file,
@@ -212,7 +233,8 @@ We are now ready to start!
 
 ## Echo
 
-To verify the quality of the security of the yesod framework, let's make a minimal echo application.
+To verify the quality of the security of the yesod framework,
+let's make a minimal echo application.
 
 > Goal:
 > 
@@ -283,8 +305,11 @@ A malicious user could not hide some bad script inside.
 
 This behavior is a direct consequence of _type safety_.
 The %url string is put inside a %url type.
-Then the interesting part in the %url is put inside a String type. To pass from %url type to String type some transformation are made. For example, replace all "`%20`" by space characters.
-Then to show the String inside an %html document, the string is put inside an %html type. Some transformations occurs like replace "<code><</code>" by "`&lt;`".
+Then the interesting part in the %url is put inside a String type.
+To pass from %url type to String type some transformation are made.
+For example, replace all "`%20`" by space characters.
+Then to show the String inside an %html document, the string is put inside an %html type.
+Some transformations occurs like replace "<code><</code>" by "`&lt;`".
 Thanks to yesod, this tedious job is done for us.
 
 <code class="zsh">
@@ -350,7 +375,10 @@ a:active { color: #C58; }
 a:visited { color: #943; }
 </code>
 
-Personally I would prefer if such a minimal %css was put with the scaffolding tool. I am sure somebody already made such a minimal %css which give the impression the browser handle correctly %html without any style applied to it. But I digress.
+Personally I would prefer if such a minimal %css was put with the scaffolding tool.
+I am sure somebody already made such a minimal %css which give the impression 
+the browser handle correctly %html without any style applied to it.
+But I digress.
 
 #### Separate Handlers
 
@@ -387,7 +415,8 @@ import Handler.Echo
 
 This is it. 
 
-<small><em>ps:</em> I am sure not so far in the future we could simply write `yesod add-handler Echo` to declare it and create a new handler file.</small>
+<small><em>ps:</em> I am sure not so far in the future we could simply write 
+`yesod add-handler Echo` to declare it and create a new handler file.</small>
 
 #### `Data.Text`
 
@@ -448,7 +477,8 @@ Now it is the time to make a slightly more complex example.
 
 Let's make another minimal application.
 You should see a form containing a text field and a validation button.
-When you enter some text (for example "Jormungad") and validate, the next page present you the content and its reverse appended to it. 
+When you enter some text (for example "Jormungad") and validate,
+the next page present you the content and its reverse appended to it. 
 In our example it should return "JormungaddagnumroJ". 
 
 First, add a new route:
@@ -480,10 +510,12 @@ postMirrorR =  do
 
 Don't forget to declare it inside `yosog.cabal` and `Application.hs`.
 
-We will need to use the `reverse` function provided by `Data.Text` which explain the additional import.
+We will need to use the `reverse` function provided by `Data.Text` 
+which explain the additional import.
 
 The only new thing here is the line that get the POST parameter named "content".
-If you want to know more detail about it and form in general you can take look at [the yesod book](http://www.yesodweb.com/book/forms).
+If you want to know more detail about it and form in general you can take 
+look at [the yesod book](http://www.yesodweb.com/book/forms).
 
 Create the two corresponding templates:
 
@@ -539,14 +571,16 @@ Article
 </pre>
 
 We have to add the `deriving` line.
-You have to remember to add it if you use a type which is not an instances of `Read`, `Show` and `Eq` like `Html` in this case.
+You have to remember to add it if you use a type which is not an instances of 
+`Read`, `Show` and `Eq` like `Html` in this case.
 If you forget it, there will be an error.
 
 After the route and the model, we write the handler.
 First, declare a new Handler module.
 Add `import Handler.Blog` inside `Application.hs` and add it into `yosog.cabal`.
 Now let's write the content of `Handler/Blog.hs`.
-We start by declaring the module and by importing some block necessary to handle Html in forms.
+We start by declaring the module and by importing some block necessary to 
+handle Html in forms.
 
 <code class="haskell">
 module Handler.Blog
@@ -608,7 +642,7 @@ $else
   <form method=post enctype=#{enctype}>
     ^{articleWidget}
     <div>
-        <input type=submit value="Post new article">
+        <input type=submit value="Post New Article">
 </code>
 
 You should remark we added some logic inside the template.
@@ -616,7 +650,8 @@ There is a test and a "loop".
 
 Another very interesting part is the creation of the form.
 The `articleWidget` was created by yesod.
-We have given him the right parameters (input required or optional, labels, default values).
+We have given him the right parameters 
+(input required or optional, labels, default values).
 And now we have a protected form made for us.
 But we have to create the submit button.
 
@@ -640,11 +675,26 @@ postBlogR = do
 </code>
 
 This function should be used to create a new article.
-The `++.` is just a trick to make an append occurs within the right type.
+The `(++.)` local function is just a trick to make an append occurs within the right type.
 We handle the form response.
-If there is an error we go to an error message.
+If there is an error we display an error page.
 For example if we left some required value blank.
+If things goes right: 
 
+- we add the new article inside the DB (`runDB $ insert article`)
+- we add a message to be displayed (`setMessage $ ...`)
+- we are redirected to the article web page.
+
+Here is the content of the error Page:
+
+<code class="haskell">
+<form method=post enctype=#{enctype}>
+    ^{articleWidget}
+    <div>
+        <input type=submit value="Post New Article">
+</code>
+
+Finally we need to display an article:
 
 <code class="haskell">
 getArticleR :: ArticleId -> Handler RepHtml
@@ -655,13 +705,33 @@ getArticleR articleId = do
         $(widgetFile "article")
 </code>
 
----
+The `get404` function try to do a get on the DB. 
+If it fails it return a 404 page.
+The rest should be clear. 
+Here is the content of `template/article.hamlet`:
 
-<%= startTodo %>
+<code class="html" file="article.hamlet">
+<h1> #{articleTitle article}
+<article> #{articleContent article}
+</code>
 
-<ul>
-  <li> Use Authentification.
-  </li>
-</ul>
+This is the end of this tutorial.
+I made it very minimal.
+If you want to go further, you should take a look at the
+recent [i18n blog tutorial](http://yesodweb.com/blog/2012/01/blog-example).
+It will be obvious I inspired my own tutorial on it.
+You'll learn in a very straightforward way how easy it is to use authorizations,
+Time and internationalization.
 
-<%= endTodo %>
+Now, just for fun, try to enter an article with the following content:
+
+<code class="html">
+<p>A last try to <em>cross script</em> and <em>SQL injection</em></p>
+<p>Here is the first try: <script>alert("You loose");</script></p>
+<p> And Here is the last </p>
+"); DROP TABLE ARTICLE;;
+</code>
+
+Another word. If you came from ruby and are used to "syntactical sugar" you
+might not like the Haskell syntax. Just remember this is the price to pay
+to be fast and secure. You have to tell more things to the compiler.
