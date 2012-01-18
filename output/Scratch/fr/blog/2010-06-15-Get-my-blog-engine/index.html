@@ -54,7 +54,7 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>J&rsquo;ai publié une version <em>light</em> de mon système de blog hier soir. Par <em>light</em> il faut comprendre avec un CSS plus épuré et plus portable (sans les bords ronds).
+                    <p>J’ai publié une version <em>light</em> de mon système de blog hier soir. Par <em>light</em> il faut comprendre avec un CSS plus épuré et plus portable (sans les bords ronds).
 Vous pouvez le récupérer sur <a href="http://github.com/yogsototh/nanoc3_blog">github.com</a>.</p>
 
 <p>Que pouvez-vous attendre de ce système de blog&nbsp;?</p>
@@ -66,11 +66,11 @@ Vous pouvez le récupérer sur <a href="http://github.com/yogsototh/nanoc3_blog"
   <li>commentaires gérés avec <a href="http://intensedebate.org">intenseDebate</a> de façon asynchrone&nbsp;;</li>
   <li>très portable avec ou sans javascript, XHTML Strict 1.0 / CSS3&nbsp;;</li>
   <li>écrivez vos entrées au format Markdown (pas de HTML)&nbsp;;</li>
-  <li>des améliorations typographiques (pas de &lsquo;:&rsquo; en début de ligne en Français par exemple),</li>
-  <li>entrez directement le code de graphes qui se génèreront automatiquement en image à l&rsquo;aide de <a href="http://graphviz.org">Graphviz</a>.</li>
+  <li>des améliorations typographiques (pas de ‘:’ en début de ligne en Français par exemple),</li>
+  <li>entrez directement le code de graphes qui se génèreront automatiquement en image à l’aide de <a href="http://graphviz.org">Graphviz</a>.</li>
 </ul>
 
-<p>Pour vous donner une idée plus précise, voici la documentation que j&rsquo;ai faite (en anglais) pour accompagner le code.</p>
+<p>Pour vous donner une idée plus précise, voici la documentation que j’ai faite (en anglais) pour accompagner le code.</p>
 
 
 </div>
@@ -108,9 +108,9 @@ $ ./task/recompile
 <h3 id="multi-language">Multi-language</h3>
 
 <p>All files in <code>multi</code> are processed and copied in the <code>content</code> directory.
-For each file in multi, each line starting by &lsquo;<code>fr: </code>&rsquo; are copied (without the <code>fr: </code> into the <code>content/html/fr/</code> tree, but not into the <code>content/html/en</code> tree. File not starting by <code>fr: </code> or <code>en: </code> are copied in each destinations.</p>
+For each file in multi, each line starting by ‘<code>fr: </code>’ are copied (without the <code>fr: </code> into the <code>content/html/fr/</code> tree, but not into the <code>content/html/en</code> tree. File not starting by <code>fr: </code> or <code>en: </code> are copied in each destinations.</p>
 
-<p>If you want to add another language, you&rsquo;ll have to modify <code>tasks/config</code>, and <code>config.yaml</code>, create a <code>content/html/xx</code> where <code>xx</code> is the language code.</p>
+<p>If you want to add another language, you’ll have to modify <code>tasks/config</code>, and <code>config.yaml</code>, create a <code>content/html/xx</code> where <code>xx</code> is the language code.</p>
 
 <h3 id="edition--rendering">Edition &amp; Rendering</h3>
 
@@ -124,7 +124,7 @@ For each file in multi, each line starting by &lsquo;<code>fr: </code>&rsquo; ar
 
 <h4 id="typography">Typography</h4>
 
-<p>In French all &lsquo;:&rsquo;, &lsquo;;&rsquo;, &lsquo;!&rsquo; and &lsquo;?&rsquo; are preceded automatically by <code>&amp;nbsp</code>. This enable not to have a line starting by a single special character.</p>
+<p>In French all ‘:’, ‘;’, ‘!’ and ‘?’ are preceded automatically by <code>&amp;nbsp</code>. This enable not to have a line starting by a single special character.</p>
 
 <p>You can use small caps using <code>&lt;sc&gt;</code> tags. </p>
 

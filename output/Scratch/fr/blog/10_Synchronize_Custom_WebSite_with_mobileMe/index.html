@@ -60,8 +60,8 @@
 
 <h1 id="mise--jour-du-small28102009small">mise à jour du <small>28/10/2009</small></h1>
 
-<p>J&rsquo;ai mis à jour mon script <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-">avec une version incrémentale</a> bien plus pratique.
-En plus depuis l&rsquo;écriture de cet article Apple<small>&copy;</small> semble avoir nettement amélioré la vitesse de ses serveurs en Europe.</p>
+<p>J’ai mis à jour mon script <a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-">avec une version incrémentale</a> bien plus pratique.
+En plus depuis l’écriture de cet article Apple<small>&copy;</small> semble avoir nettement amélioré la vitesse de ses serveurs en Europe.</p>
 
 
 </div>
@@ -71,30 +71,30 @@ En plus depuis l&rsquo;écriture de cet article Apple<small>&copy;</small> sembl
 
 <h1 class="first" id="webdav-terror">WebDav terror</h1>
 
-<p>En France l&rsquo;iDisk d&rsquo;Apple<small>&copy;</small> est très lent. La vitesse d&rsquo;upload me rapelle l&rsquo;époque des modem 56k, c&rsquo;est dire. La plupart du temps les opérations telles que lister le contenu d&rsquo;un répertoire prennent au moins 30 secondes (pour 15 éléments). Renommer un répertoire échoue presque systématiquement.</p>
+<p>En France l’iDisk d’Apple<small>&copy;</small> est très lent. La vitesse d’upload me rapelle l’époque des modem 56k, c’est dire. La plupart du temps les opérations telles que lister le contenu d’un répertoire prennent au moins 30 secondes (pour 15 éléments). Renommer un répertoire échoue presque systématiquement.</p>
 
-<p>Apple<small>&copy;</small> utilise des serveurs WebDav pour héberger les fichiers. Le protocole fonctionne sur le port 80 (comme http). Je me suis rendu compte qu&rsquo;utiliser WebDav via https fontionne bien mieux (2 à 3 fois plus rapide avec moins d&rsquo;erreurs). Mais, ça reste quand même très lent et insuffisant.</p>
+<p>Apple<small>&copy;</small> utilise des serveurs WebDav pour héberger les fichiers. Le protocole fonctionne sur le port 80 (comme http). Je me suis rendu compte qu’utiliser WebDav via https fontionne bien mieux (2 à 3 fois plus rapide avec moins d’erreurs). Mais, ça reste quand même très lent et insuffisant.</p>
 
-<p>J&rsquo;<em>uploade</em> mes fichiers à partir de mon Mac et de temps en temps à partir d&rsquo;un PC sous Ubuntu (iDisk monté avec webdavfs).</p>
+<p>J’<em>uploade</em> mes fichiers à partir de mon Mac et de temps en temps à partir d’un PC sous Ubuntu (iDisk monté avec webdavfs).</p>
 
 <h1 id="synchroniser-de-faon-sre">Synchroniser de façon sûre</h1>
 
-<p>Voici le script que j&rsquo;utilise pour synchroniser mon site web (non créé avec iWeb<small>&copy;</small>) avec le maximum de sécurité. Chaque opération est répétée jusqu&rsquo;à ce qu&rsquo;elle fonctionne.</p>
+<p>Voici le script que j’utilise pour synchroniser mon site web (non créé avec iWeb<small>&copy;</small>) avec le maximum de sécurité. Chaque opération est répétée jusqu’à ce qu’elle fonctionne.</p>
 
 <p>Les idées sont&nbsp;: </p>
 
 <ul>
-  <li>Synchroniser vers un répertoire temporaire sur le serveur distant, puis &ldquo;swapper&rdquo; les noms des répertoires. Ainsi le site ne reste indisponible que le temps du &ldquo;swap&rdquo; du nom des deux répertoires.</li>
-  <li>Réitérer toutes les opérations jusqu&rsquo;à ce qu&rsquo;elle aient réussi (par exemple pour le renommage)</li>
+  <li>Synchroniser vers un répertoire temporaire sur le serveur distant, puis “swapper” les noms des répertoires. Ainsi le site ne reste indisponible que le temps du “swap” du nom des deux répertoires.</li>
+  <li>Réitérer toutes les opérations jusqu’à ce qu’elle aient réussi (par exemple pour le renommage)</li>
 </ul>
 
-<p>Jusqu&rsquo;ici j&rsquo;utilise <code>rsync</code> qui n&rsquo;est en fait pas plus efficace qu&rsquo;une simple copie <code>cp</code> avec WebDav. Je devrais utiliser une méthode pour mémoriser les changements entre chaque publication.</p>
+<p>Jusqu’ici j’utilise <code>rsync</code> qui n’est en fait pas plus efficace qu’une simple copie <code>cp</code> avec WebDav. Je devrais utiliser une méthode pour mémoriser les changements entre chaque publication.</p>
 
-<p>En réalité quand je suis sur mon Mac j&rsquo;utilise <a href="http://www.panic.com/transmit">Transmit</a> qui est vraiment très bien et surtout beaucoup plus efficace que le finder pour synchroniser des fichiers. Ensuite, je ne fait que le &ldquo;swap&rdquo; des répertoires.</p>
+<p>En réalité quand je suis sur mon Mac j’utilise <a href="http://www.panic.com/transmit">Transmit</a> qui est vraiment très bien et surtout beaucoup plus efficace que le finder pour synchroniser des fichiers. Ensuite, je ne fait que le “swap” des répertoires.</p>
 
-<p>Mon script prend un paramètre <code>-s</code> pour ne faire que le &ldquo;swap&rdquo;. Il prend aussi une option <code>-a</code> pour envoyer le fichier <code>index.html</code> qui va rediriger vers ma nouvelle page principale (iWeb<small>&copy;</small> à la fâcheuse habitude de le remplacer).</p>
+<p>Mon script prend un paramètre <code>-s</code> pour ne faire que le “swap”. Il prend aussi une option <code>-a</code> pour envoyer le fichier <code>index.html</code> qui va rediriger vers ma nouvelle page principale (iWeb<small>&copy;</small> à la fâcheuse habitude de le remplacer).</p>
 
-<p>Pour utiliser le script vous devriez remplacer la valeur de la variable <code>mobileMeUser</code> par votre nom d&rsquo;utilisateur mobileMe<small>&copy;</small>.</p>
+<p>Pour utiliser le script vous devriez remplacer la valeur de la variable <code>mobileMeUser</code> par votre nom d’utilisateur mobileMe<small>&copy;</small>.</p>
 
 <div class="fr">
 <div class="code"><div class="file"><a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/code/publish"> &#x27A5; publish </a></div><div class="withfile">
@@ -408,7 +408,7 @@ print -P -- <span class="String"><span class="String">&quot;</span>  Publish ter
                 </div>
                 <div id="lastmod">
                     Écrit le : 11/09/2009
-                    modifié le : 30/05/2011 
+                    modifié le : 11/01/2012 
                 </div>
                 <div>
                     Site entièrement réalisé avec

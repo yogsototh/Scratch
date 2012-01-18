@@ -1,5 +1,5 @@
 
 <h1>You've just posted
-<p>#{postedText}
+<p>#{postedText}#{T.reverse postedText}
 <hr>
-<p><a href=@{NewR}>Get back
+<p><a href=@{MirrorR}>Get back

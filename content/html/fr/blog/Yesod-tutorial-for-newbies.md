@@ -15,13 +15,19 @@ tags:
 macros:
  html5: '<span class="sc">html5</span>' 
  html: '<span class="sc">html</span>' 
+ http: '<span class="sc">http</span>' 
+ url: '<span class="sc">url</span>' 
+ css: '<span class="sc">css</span>' 
 -----
 <%= blogimage("flying_neo.jpg","Neo Flying at warp speed") %>
 
 begindiv(intro)
 
 
-<%= tlal %> Un tutoriel pour yesod, un framework web Haskell. Vous ne devriez pas avoir besoin de savoir programmer en Haskell. Par contre je suis désolé pour les francophones, mais je n'ai pas eu le courage de traduire cet article en Français.
+<%= tlal %> Un tutoriel pour yesod, un framework web Haskell.
+Vous ne devriez pas avoir besoin de savoir programmer en Haskell. 
+Par contre je suis désolé pour les francophones, 
+mais je n'ai pas eu le courage de traduire cet article en Français.
 
 > <center><sc><b>Table of content</b></sc></center>
 > 
@@ -30,21 +36,27 @@ begindiv(intro)
 
 enddiv
 
-Haskell is incredible and you should consider to use it to make your next web application. Why?
+Why Haskell?
 
 <%= blogimage("haskell-benchmark.png","Impressive Haskell Benchmark") %>
 
-My main reason to look at Haskell is its efficiency (see [Snap Benchmark][snapbench] _&_ [Warp Benchmark][warpbench][^benchmarkdigression]).
-Haskell is compiled and is an order of magnitude faster than interpreted languages like [Ruby][haskellvsruby] and [Python][haskellvspython][^speeddigression].
-Haskell handle parallel tasks perfectly. For example even better than node.js[^nodejstroll].
+Its efficiency (see [Snap Benchmark][snapbench] _&_ 
+[Warp Benchmark][warpbench][^benchmarkdigression]).
+Haskell is an order of magnitude faster than interpreted languages 
+like [Ruby][haskellvsruby] and [Python][haskellvspython][^speeddigression].
 
+Haskell is a high level language and make it harder to shoot you in the foot
+than `C` or `C++` for example.
+One of the best property of Haskell being:
 
-Its type system gives the feeling of using an interpreted language.
-Haskell has many more great properties, one of the best being:
+> "If your program compile it will be 
+>  very close to what the programmer intended".
 
-> "If your program compile it will be very close to what the programmer intended".
+Haskell web frameworks handle parallel tasks perfectly. 
+For example even better than node.js[^nodejstroll].
 
-From the pure technical "point of vue", Haskell seems to be the perfect web development tool.
+From the pure technical "point of vue",
+Haskell seems to be the perfect web development tool.
 
 Weaknesses of Haskell certainly won't be technical but human:
 
@@ -56,12 +68,15 @@ Weaknesses of Haskell certainly won't be technical but human:
 <%= leftblogimage("thousands_smiths.jpg","Thousands of Agent Smith") %>
 
 I don't say these are not important drawbacks.
-But Haskell is certainly the best choice to create your new web application which could handle thousands of connexions in parallel.
-Considering efficiency, security and quality, I believe Haskell is the best choice.
-Furthermore, not only the Haskell community is excellent, but Haskell is a great language and learning it will certainly make you a better programmer.
+But Haskell is certainly the best technical choice.
+It makes it possible to handle an impressive number of connexions.
+I believe Haskell is the best choice if you efficiency, 
+security and ability to adapt.
+Furthermore, the Haskell community is great and learning Haskell 
+is fun and will make you a better programmer.
 
-Haskell is not the only choice to make.
-The easiest path to create a web application is certainly to choose a web framework which has made a lot of work for us.
+Focusing on Web Application, instead of reinventing the wheel, we should
+choose an existing web framework.
 Actually there are three main choices:
 
 1. [Happstack](http://happstack.com)
@@ -70,26 +85,27 @@ Actually there are three main choices:
 
 I don't think there is a real winner between these three framework.
 The choice I made for yesod is highly subjective.
+I just lurked a bit and tried some tutorials.
 I had the feeling yesod make a better job at helping newcomers.
-Furthermore, apparently the yesod team is the most active.
-But as I said before, I might be wrong has it is a matter of feeling.
+Furthermore, apparently the yesod team seems the most active.
+Of course I might be wrong since it is a matter of feeling.
 
 <%= blogimage("owl_draw.png","1. Draw some circles. 2. Draw the rest of the fucking owl") %>
 
 Why did I write this article?
-The yesod documentation does an excellent job to explain you both some very minimal example and digging into the details. 
+The yesod documentation and particularly the book are excellent.
 But I missed an intermediate tutorial.
-
-I tried to pass on the Haskell language and focus on the Yesod framework.
-If you are not used to Haskell, some syntax details may feel strange.
-Please, don't try to understand the details right now.
-Haskell is a very complex language and could suck all your energy if you want to dig too early.
+This tutorial won't explain all details.
+I tried to give a step by step of how to start from a five minute tutorial 
+to an almost production ready architecture.
+Furthermore explaining something to others is a great way to learn.
+If you are used to Haskell and Yesod, this tutorial won't learn you much.
+If you are completely new to Haskell and Yesod it might hopefully helps you.
 
 During this tutorial you'll install, initialize and configure your first yesod project.
-Then a 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
-Then we clean up the 5 minutes tutorial to use the best practices.
-Just after there will be a more standard real world example. A minimal blog system.
-Good read.
+Then there is a very minimal 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
+Then we will clean up the 5 minutes tutorial to use some "best practices".
+Finally there will be a more standard real world example; a minimal blog system.
 
 [warpbench]: http://www.yesodweb.com/blog/2011/03/preliminary-warp-cross-language-benchmarks
 [snapbench]: http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks
@@ -103,39 +119,41 @@ Good read.
 
 ### Install
 
-First you need to install [Haskell][haskell]. The recommended way to do this is to download the [Haskell Platform][haskellplatform].
+The recommended way to install [Haskell][haskell] 
+is to download the [Haskell Platform][haskellplatform].
 
 [haskell]: http://www.haskell.org
 [haskellplatform]: http://www.haskell.org/platform
 
-Then you need to install yesod.
+Once done, you need to install yesod.
+Open a terminal session and do:
 
 <code class="zsh">
 ~ cabal update
 ~ cabal install yesod cabal-dev
 </code>
 
-That is all. It should take some time to 
-do this as cabal will download all 
-package and then compile them.
+There are few steps but it should take some time to finish.
 
 ### Initialize
 
+You are now ready to initialize your first yesod project.
 Open a terminal and type:
 
 <code class="zsh">
 ~ yesod init
 </code>
 
-Enter your name, name the project `yosog` and the name of the Foundation as `Yosog`, then choose `sqlite`.
-Perfect. Now you can start the development cycle:
+Enter your name, choose `yosog` for the project name and enter `Yosog` for the name of the Foundation.
+Finally choose `sqlite`.
+Now, start the development cycle:
 
 <code class="zsh">
 ~ cd yosog
-> cabal-dev install && yesod --dev devel
+~ cabal-dev install && yesod --dev devel
 </code>
 
-This will compile the entire project. Be patient it could take some time.
+This will compile the entire project. Be patient it could take a while the first time.
 Once finished a server is launched and you could visit it by clicking this link:
 
 [`http://localhost:3000`](http://localhost:3000)
@@ -152,11 +170,13 @@ Note: if something is messed up use the following command line inside the projec
 
 </blockquote>
 
-Until the end of the tutorial, use another terminal and let this one open in a corner to see what occurs.
+Until the end of the tutorial, use another terminal and let this one open 
+in a corner to see what occurs.
 
 ### Configure git
 
-This step is not mandatory for a tutorial, but I wanted to jump directly to good practice. There are many different choice of CVS, but for this tutorial I'll use `git`.
+> Of course this step is not mandatory for the tutorial 
+> but it is a good practice.
 
 Copy this `.gitignore` file into the `yosog` folder.
 
@@ -176,15 +196,14 @@ Then initialize your git repository:
 ~ git commit -a -m "Initial yesod commit"
 </code>
 
-Now we are almost ready to start.
+We are almost ready to start.
 
-### A last point
+### Some last minute words
 
-Up until here, we have a directory containing a bunch of files and a local web server listening the port 3000.
-
+Up until here, we have a directory containing a bunch of files 
+and a local web server listening the port 3000.
 If we modify a file inside this directory, yesod should try
 to recompile as fast as possible the site. 
-
 Instead of explaining the role of every file,
 let's focus only on the important files/directories for this tutorial:
 
@@ -195,28 +214,31 @@ let's focus only on the important files/directories for this tutorial:
 
 Obviously:
 
-| `config/routes`   | is where you'll configure the map URL → Code. |
-| `Handler/`        | contains the files that will contain the code called when a URL is accessed. |
-| `templates/`      | contains HTML, JS and CSS templates.  |
+| `config/routes`   | is where you'll configure the map %url → Code. |
+| `Handler/`        | contains the files that will contain the code called when a %url is accessed. |
+| `templates/`      | contains %html, js and %css templates.  |
 | `config/models`   | is where you'll configure the persistent objects (database tables). |
 
 During this tutorial we'll modify other files as well,
 but we won't explore them in detail.
-Now, it is the time to start the interesting part.
+
+Also note, shell command are executed in the root directory of your project instead specified otherwise.
+
+We are now ready to start!
 
 ## Echo
 
-To verify the quality of the security of the yesod framework, let's make a minimal echo application.
+To verify the quality of the security of the yesod framework,
+let's make a minimal echo application.
 
-Our goal:
+> Goal:
+> 
+> Make a server that when accessed `/echo/[some text]` should return a web page containing "some text" inside an `h1` bloc.
 
-Make a server that when accessed `/echo/[some text]` should return a web page containing "some text" inside an `h1` bloc.
-
-First, we must declare URL of the form `/echo/...` are meaningful.
-
+In a first time, we must declare the %url of the form `/echo/...` are meaningful.
 Let's take a look at the file `config/routes`:
 
-<code class="zsh">
+<pre>
 /static StaticR Static getStatic
 /auth   AuthR   Auth   getAuth
 
@@ -224,18 +246,17 @@ Let's take a look at the file `config/routes`:
 /robots.txt RobotsR GET
 
 / RootR GET
-</code>
+</pre>
 
 We want to add a route of the form `/echo/[anything]` somehow and do some action with this.
-We add the following:
+Add the following:
 
 <pre>
 /echo/#String EchoR GET
 </pre>
 
-This line contains three elements: the <sc>url</sc> pattern, a handler name, an HTTP method.
-I am not particularly fan of the big R in the end of handler names. 
-But this is the standard convention, then let's use it.
+This line contains three elements: the %url pattern, a handler name, an %http method.
+I am not particularly fan of the big R notation but this is the standard convention.
 
 If you save `config/routes`, you should see your terminal in which you launched `yesod devel` activate and certainly displaying an error message.
 
@@ -244,7 +265,7 @@ Application.hs:31:1: Not in scope: `getEchoR'
 </pre>
 
 Why? Simply because we didn't written the code for the handler `EchoR`.
-Now, let's do this. Edit the file `Handler/Root.hs` and append this:
+Edit the file `Handler/Root.hs` and append this:
 
 <code class="haskell">
 getEchoR :: String -> Handler RepHtml
@@ -254,60 +275,110 @@ getEchoR theText = do
 </code>
 
 Don't worry if you find all of this a bit cryptic. 
-This is normal when learning a new framework.
-In short it just declare a function named getEchoR with one argument (`theText`) of type String.
-When this function is called, it return a "Handler RepHtml" whatever it is. 
-But mainly this will encapsulate our expected result inside an HTML text.
+In short it just declare a function named `getEchoR` with one argument (`theText`) of type String.
+When this function is called, it return a `Handler RepHtml` whatever it is. 
+But mainly this will encapsulate our expected result inside an %html text.
 
 After saving the file, you should see yesod recompile the application.
 When the compilation is finished you'll see the message: `Starting devel application`.
 
 Now you can visit: [`http://localhost:3000/echo/Yesod%20rocks!`](http://localhost:3000/echo/Yesod%20rocks!)
 
-TADA! It works.
+TADA! It works! 
 
 ### Bulletproof?
 
 <%= blogimage("neo_bullet_proof.jpg","Neo stops a myriad of bullets") %>
 
-Let's try to attack our website by entering a text with special characters:
+Even this extremely minimal web application has some impressive properties.
+For exemple, imagine an attacker entering this %url:
 
 [`http://localhost:3000/echo/<a>I'm <script>alert("Bad!");`](http://localhost:3000/echo/<a>I'm <script>alert("Bad!");)<% "</script>" %>
 
-All should work better than expected.
-
 The special characters are protected for us. 
-If you have a malicious user, he could not hide some bad script inside his login name for example.
+A malicious user could not hide some bad script inside.
 
-This is a direct consequence of _type safety_.
-The URL string is put inside a URL type.
-Then the interesting part in the URL is put inside a String type. To pass from URL type to String type some transformation are made. For example, replace all "`%20`" by space characters.
-Then to show the String inside an HTML document, the string is put inside an HTML type. Some transformations occurs like replace "<code><</code>" by "`&lt;`".
-Thanks to yesod, most of tedious string transformation job is done for us.
+This behavior is a direct consequence of _type safety_.
+The %url string is put inside a %url type.
+Then the interesting part in the %url is put inside a String type.
+To pass from %url type to String type some transformation are made.
+For example, replace all "`%20`" by space characters.
+Then to show the String inside an %html document, the string is put inside an %html type.
+Some transformations occurs like replace "<code><</code>" by "`&lt;`".
+Thanks to yesod, this tedious job is done for us.
 
 <code class="zsh">
 "http://localhost:3000/echo/some%20text<a>" :: URL
                     ↓
               "some text<a>"                :: String
                     ↓
-          "some text &lt;a&gt;"             :: HTML 
+          "some text &lt;a&gt;"             :: Html 
 </code>
 
-That was the first very minimal example, and we already 
-verified Yesod protect us from many common errors.
-
-Then not only Yesod is fast, it is also relatively secure.
+Yesod is not only fast, it helps us to remain secure.
+It protects us from many common errors in other paradigms.
+Yes, I am looking at you PHP!
 
 ### Cleaning up
 
-This first example was nice, but for simplicity reason we didn't used best practices.
+Even this very minimal example should be enhanced.
+We will clean up many details:
 
-First we will separate the handler code into different files.
-After that we will use `Data.Text` instead of `String`. 
-Finally we'll use a template file to better separate our view.
+- Use %html5 boilerplate
+- Use a general %css (cleaner than the empty by default)
+- Dispatch handler code into different files
+- Use `Data.Text` instead of `String`
+- Put our "views"[^explainviewwidget] inside the `template` directory
 
-### Separate handlers
+[^explainviewwidget]: By view I mean yesod widget's hamlet, lucius and julius files. 
 
+#### %html5 boilerplate and a better %css
+
+Copy the boilerplate template to the default template.
+If you take a look at them, the format is not %html but hamlet.
+
+<code class="zsh">
+~ cp templates/boilerplate-wrapper.hamlet templates/default-layout-wrapper.hamlet
+</code>
+
+It is time to change the default %css. 
+Add a file named `default-layout.lucius` inside the `template/` directory containing:
+
+<code class="css" file="default-layout.lucius">
+body {
+    font-family: Helvetica, sans-serif; 
+    font-size: 18px; }
+#content {
+    padding: 1em;
+    border: #CCC solid 2px;
+    border-radius: 5px;
+    margin: 1em;
+    width: 37em;
+    margin: 1em auto;
+    background: #F2F2F2;
+    line-height: 1.5em;
+    color: #333; }
+.required { margin: 1em 0; }
+.optional { margin: 1em 0; }
+label { width: 8em; display: inline-block; }
+input, textarea { background: #FAFAFA}
+textarea { width: 27em; height: 9em;}
+ul { list-style: square; }
+a { color: #A56; }
+a:hover { color: #C58; }
+a:active { color: #C58; }
+a:visited { color: #943; }
+</code>
+
+Personally I would prefer if such a minimal %css was put with the scaffolding tool.
+I am sure somebody already made such a minimal %css which give the impression 
+the browser handle correctly %html without any style applied to it.
+But I digress.
+
+#### Separate Handlers
+
+Generally you don't want to have all your code inside a unique file.
+This is why we will separate our handlers.
 In a first time create a new file `Handler/Echo.hs` containing:
 
 <code class="haskell">
@@ -321,35 +392,39 @@ getEchoR theText = do
         [whamlet|<h1>#{theText}|]
 </code>
 
-Do not forget to remove the getEchoR function inside the `Handler/Root.hs` file.
+Do not forget to remove the getEchoR function inside `Handler/Root.hs`.
 
-We must declare the file inside the cabal configuration file `yosog.cabal`. Just after `Handler.Root` add:
+We must declare this new file into`yosog.cabal`. 
+Just after `Handler.Root`, add:
 
 <pre>
     Handler.Echo
 </pre>
 
-We must also declare the new Handler module inside `Application.hs`.
+We must also declare this new Handler module inside `Application.hs`.
 Just after the "`import Handler.Root`", add:
 
 <code class="haskell">
 import Handler.Echo
 </code>
 
-### `Data.Text`
+This is it. 
 
-Now our handler is separated in another file.
+<small><em>ps:</em> I am sure not so far in the future we could simply write 
+`yesod add-handler Echo` to declare it and create a new handler file.</small>
+
+#### `Data.Text`
 
 It is a good practice to use `Data.Text` instead of `String`.
 
-To declare we will use the type `Data.Text` we modify the file `Foundation.hs`.
-Add an import directive just after the last one:
+To declare it, add this import directive to `Foundation.hs` (just after the last one):
 
 <code class="diff">
 import Data.Text
 </code>
 
-And also we must modify `config/routes` and our handler accordingly. Replace `#String` by `#Text` in `config/routes`:
+We have to modify `config/routes` and our handler accordingly. 
+Replace `#String` by `#Text` in `config/routes`:
 
 <pre>
 /echo/#Text EchoR GET
@@ -368,12 +443,11 @@ getEchoR theText = do
         [whamlet|<h1>#{theText}|]
 </code>
 
-### Use a new template file
+#### Use templates
 
-The last thing to change in order to do things like in 
-a real project is to use another template file.
-
-Just create a new file `template/echo.hamlet` containing:
+Some %html (more precisely hamlet) is written directly inside our handler.
+We should put this part inside another file.
+Create the new file `template/echo.hamlet` containing:
 
 <code class="haskell" file="echo.hamlet">
 <h1> #{theText}
@@ -388,90 +462,269 @@ getEchoR theText = do
         $(widgetFile "echo")
 </code>
 
-At this point our code is clean.
+At this point, our web application is structured between different files.
 Handler are grouped, we use `Data.Text` and our views are in templates.
-It is now time to make a slightly more complex example.
+It is the time to make a slightly more complex example.
 
-## Repeat
+## Mirror
+
+<%= leftblogimage("mirror.jpg","Neo touching a mirror") %>
 
 Let's make another minimal application.
 You should see a form containing a text field and a validation button.
-When you click, the next page present you the content you entered in the field.
+When you enter some text (for example "Jormungad") and validate,
+the next page present you the content and its reverse appended to it. 
+In our example it should return "JormungaddagnumroJ". 
 
 First, add a new route:
 
-<code class="zsh">
-/new NewR GET POST
-</code>
+<pre>
+/mirror MirrorR GET POST
+</pre>
 
-This time the path /new will accept GET and POST requests. Add the corresponding new Handler file:
+This time the path `/mirror` will accept GET and POST requests.
+Add the corresponding new Handler file:
 
-<code class="haskell" file="New.hs">
-module Handler.New where
+<code class="haskell" file="Mirror.hs">
+module Handler.Mirror where
 
 import Import
+import qualified Data.Text as T
 
-getNewR :: Handler RepHtml
-getNewR = do
+getMirrorR :: Handler RepHtml
+getMirrorR = do
     defaultLayout $ do
-        $(widgetFile "new")
+        $(widgetFile "mirror")
 
-postNewR :: Handler RepHtml
-postNewR =  do
-    postedText <- runInputPost $ ireq textField "content"
-    defaultLayout $ do
-        $(widgetFile "posted")
+postMirrorR :: Handler RepHtml
+postMirrorR =  do
+        postedText <- runInputPost $ ireq textField "content"
+        defaultLayout $ do
+            $(widgetFile "posted")
 </code>
 
 Don't forget to declare it inside `yosog.cabal` and `Application.hs`.
 
+We will need to use the `reverse` function provided by `Data.Text` 
+which explain the additional import.
+
 The only new thing here is the line that get the POST parameter named "content".
-If you want to know more detail about it and form in general you can take look at [the yesod book](http://www.yesodweb.com/book/forms).
+If you want to know more detail about it and form in general you can take 
+look at [the yesod book](http://www.yesodweb.com/book/forms).
 
 Create the two corresponding templates:
 
-<code class="html" file="new.hamlet">
+<code class="html" file="mirror.hamlet">
 <h1> Enter your text
-<form method=post action=@{NewR}>
+<form method=post action=@{MirrorR}>
     <input type=text name=content>
     <input type=submit>
 </code>
 
 <code class="html" file="posted.hamlet">
 <h1>You've just posted
-<p>#{postedText}
+<p>#{postedText}#{T.reverse postedText}
 <hr>
-<p><a href=@{NewR}>Get back
+<p><a href=@{MirrorR}>Get back
 </code>
 
 And that is all.
-This time, we used most good practices.
+This time, we won't need to clean up.
 We may have used another way to generate the form
-but this is beyond the scope of this tutorial.
+but we'll see this in the next section.
 
-Just try it by [clicking here](http://localhost:3000/new).
+Just try it by [clicking here](http://localhost:3000/mirror).
 
-Hey! That was easy!
+Also you can try to enter strange values.
+Like before, your application is quite secure.
 
-## End of Part 1
+## A Blog
 
-This was a very minimal introduction.
+We saw how to retrieve %http parameters.
+It is the time to save things into a database.
 
-In my next article, I will show you a closer real life system.
+As before add some routes inside `config/routes`:
 
-<div style="display:hidden">
+<pre>
+/blog               BlogR       GET POST
+/blog/#ArticleId    ArticleR    GET
+</pre>
 
----
+This example will be very minimal:
 
-<%= startTodo %>
+- `GET`  on `/blog` should display the list of articles.
+- `POST` on `/blog` should create a new article
+- `GET`  on `/blog/<article id>` should display the content of the article.
 
-<ul>
-  </li><li> Create a minimal blog system.
-  </li><li> Change template to %html5 boilerplate.
-  </li><li> Use Authentification.
-  </li>
-</ul>
+First we declare another model object.
+Append the following content to `config/models`:
 
-<%= endTodo %>
+<pre>
+Article
+    title   Text
+    content Html 
+    deriving
+</pre>
 
-</div>
+As `Html` is not an instance of `Read`, `Show` and `Eq`,
+we had to add the `deriving` line.
+If you forget it, there will be an error.
+
+After the route and the model, we write the handler.
+First, declare a new Handler module.
+Add `import Handler.Blog` inside `Application.hs` and add it into `yosog.cabal`.
+Let's write the content of `Handler/Blog.hs`.
+We start by declaring the module and by importing some block necessary to 
+handle Html in forms.
+
+<code class="haskell">
+module Handler.Blog
+    ( getBlogR
+    , postBlogR
+    , getArticleR
+    )
+where
+
+import Import
+
+-- to use Html into forms
+import Yesod.Form.Nic (YesodNic, nicHtmlField)
+instance YesodNic Yosog
+</code>
+
+<code class="haskell">
+entryForm :: Form Article
+entryForm = renderDivs $ Article
+    <$> areq   textField "Title" Nothing
+    <*> areq   nicHtmlField "Content" Nothing
+</code>
+
+This function defines a form for adding a new article.
+Don't pay attention to all the syntax. 
+If you are curious you can take a look at Applicative Functor.
+You just have to remember `areq` is for required form input.
+Its arguments being: `areq type label default_value`.
+
+<code class="haskell">
+-- The view showing the list of articles
+getBlogR :: Handler RepHtml
+getBlogR = do
+    -- Get the list of articles inside the database.
+    articles <- runDB $ selectList [] [Desc ArticleTitle]
+    -- We'll need the two "objects": articleWidget and enctype
+    -- to construct the form (see template/articles.hamlet).
+    ((_,articleWidget), enctype) <- generateFormPost entryForm
+    defaultLayout $ do
+        $(widgetFile "articles")
+</code>
+
+This handler should display a list of articles.
+We get the list from the DB and we construct the form.
+Just take a look at the corresponding template:
+
+<code class="html" file="articles.hamlet">
+<h1> Articles
+$if null articles
+    -- Show a standard message if there is no article
+    <p>_{MsgNoEntries}
+$else
+    -- Show the list of articles
+    <ul>
+        $forall article <- articles
+            <li> 
+                <a href=@{ArticleR (fst article)} > #{articleTitle (snd article)}
+<hr/>
+  <form method=post enctype=#{enctype}>
+    ^{articleWidget}
+    <div>
+        <input type=submit value="Post New Article">
+</code>
+
+You should remark we added some logic inside the template.
+There is a test and a "loop".
+
+Another very interesting part is the creation of the form.
+The `articleWidget` was created by yesod.
+We have given him the right parameters 
+(input required or optional, labels, default values).
+And now we have a protected form made for us.
+But we have to create the submit button.
+
+Get back to `Handler/Blog.hs`.
+
+<code class="haskell">
+-- we continue Handler/Blog.hs
+postBlogR :: Handler RepHtml
+postBlogR = do
+    ((res,articleWidget),enctype) <- runFormPost entryForm
+    case res of 
+         FormSuccess article -> do 
+            articleId <- runDB $ insert article
+            setMessage $ (articleTitle article) ++. " created"
+            redirect RedirectPermanent $ ArticleR articleId 
+         _ -> defaultLayout $ do
+                setTitle "Please correct your entry form"
+                $(widgetFile "articleAddError")
+    where
+        (++.) t s = toHtml $ T.append t (T.pack s)
+</code>
+
+This function should be used to create a new article.
+The `(++.)` local function is just a trick to make an append occurs within the right type.
+We handle the form response.
+If there is an error we display an error page.
+For example if we left some required value blank.
+If things goes right: 
+
+- we add the new article inside the DB (`runDB $ insert article`)
+- we add a message to be displayed (`setMessage $ ...`)
+- we are redirected to the article web page.
+
+Here is the content of the error Page:
+
+<code class="haskell">
+<form method=post enctype=#{enctype}>
+    ^{articleWidget}
+    <div>
+        <input type=submit value="Post New Article">
+</code>
+
+Finally we need to display an article:
+
+<code class="haskell">
+getArticleR :: ArticleId -> Handler RepHtml
+getArticleR articleId = do
+    article <- runDB $ get404 articleId
+    defaultLayout $ do
+        setTitle $ toHtml $ articleTitle article
+        $(widgetFile "article")
+</code>
+
+The `get404` function try to do a get on the DB. 
+If it fails it return a 404 page.
+The rest should be clear. 
+Here is the content of `template/article.hamlet`:
+
+<code class="html" file="article.hamlet">
+<h1> #{articleTitle article}
+<article> #{articleContent article}
+</code>
+
+This is the end of this tutorial.
+I made it very minimal.
+If you want to go further, you should take a look at the
+recent [i18n blog tutorial](http://yesodweb.com/blog/2012/01/blog-example).
+It will be obvious I inspired my own tutorial on it.
+You'll learn in a very straightforward way how easy it is to use authorizations,
+Time and internationalization.
+
+Just for fun, try to enter an article with the following content:
+
+<code class="html">
+<p>A last try to <em>cross script</em> 
+   and <em>SQL injection</em></p>
+<p>Here is the first try: 
+   <script>alert("You loose");</script></p>
+<p> And Here is the last </p>
+"); DROP TABLE ARTICLE;;
+</code>

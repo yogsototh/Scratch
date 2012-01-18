@@ -53,4 +53,4 @@ En fin de compte, mes fichiers ressemblent à :
 Comme j'édite mes fichier avec [vim](http://vim.org), il m'est très facile d'ajouter ces `fr:` ou `en:` en début de ligne à l'aide du très utile `C-v`.
 Par contre [nanoc](http://nanoc.stoneship.org) a été conçu pour être utilisé par une seule langue. Précédemment, j'avais utilisé les capacité de nanoc pour séparer les langues. Mais finalement, il s'avère bien plus simple de faire un *pré-traitement* qui nettoie mes fichiers et en fait deux copie qui seront ensuite gérées par [nanoc](http://nanoc.stoneship.org).
 
-Vous pouvez récupérer les sources de mon blog (sans tous les articles) à l'adresse suivante [github.com/yogsototh/nanoc3_blog](http://github.com/yogsototh/nanoc3_blog). J'écrirais un article pour savoir comment l'utiliser facilement. J'ai en effet ajouté beaucoup de scripts et de librairies.
+Vous pouvez récupérer les sources de mon blog (sans tous les articles) à l'adresse suivante [github.com/yogsototh/Scratch](http://github.com/yogsototh/Scratch). J'écrirais un article pour savoir comment l'utiliser facilement. J'ai en effet ajouté beaucoup de scripts et de librairies.
