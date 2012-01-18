@@ -1,0 +1,16 @@
+
+<h1> Articles
+$if null articles
+    -- Show a standard message if there is no article
+    <p>_{MsgNoEntries}
+$else
+    -- Show the list of articles
+    <ul>
+        $forall article <- articles
+            <li> 
+                <a href=@{ArticleR (fst article)} > #{articleTitle (snd article)}
+<hr/>
+  <form method=post enctype=#{enctype}>
+    ^{articleWidget}
+    <div>
+        <input type=submit value="Post New Article">
