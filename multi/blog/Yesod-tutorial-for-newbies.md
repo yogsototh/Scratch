@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2011-12-28T15:14:40+02:00
+created_at:     2012-01-15T19:14:40+02:00
 en: title: Haskell web programming
 en: subtitle: A Yesod tutorial
 fr: title: Site en Haskell
@@ -51,7 +51,7 @@ Haskell is an order of magnitude faster than interpreted languages
 like [Ruby][haskellvsruby] and [Python][haskellvspython][^speeddigression].
 
 Haskell is a high level language and make it harder to shoot you in the foot
-than `C` or `C++` for example.
+than `C`, `C++` or `Java` for example.
 One of the best property of Haskell being:
 
 > "If your program compile it will be 
@@ -60,29 +60,23 @@ One of the best property of Haskell being:
 Haskell web frameworks handle parallel tasks perfectly. 
 For example even better than node.js[^nodejstroll].
 
+<%= leftblogimage("thousands_smiths.jpg","Thousands of Agent Smith") %>
+
 From the pure technical "point of vue",
 Haskell seems to be the perfect web development tool.
-
-Weaknesses of Haskell certainly won't be technical but human:
+Weaknesses of Haskell certainly won't be technical:
 
 - Hard to grasp Haskell
 - Hard to find a Haskell programmer
-- The Haskell community is smaller than the community for X
+- The Haskell community is smaller than the community for `/.*/` 
 - There is no [heroku](http://heroku.com) for Haskell (even if [Greg Weber did it](http://www.yesodweb.com/blog/2011/07/haskell-on-heroku), it was more a workaround).
 
-<%= leftblogimage("thousands_smiths.jpg","Thousands of Agent Smith") %>
+I won't say these are not important drawbacks.
+But, with Haskell your web application will have both properties
+to absorb an impressive number of parallel request securely
+and to adapt to change.
 
-I don't say these are not important drawbacks.
-But Haskell is certainly the best technical choice.
-It makes it possible to handle an impressive number of connexions.
-I believe Haskell is the best choice if you efficiency, 
-security and ability to adapt.
-Furthermore, the Haskell community is great and learning Haskell 
-is fun and will make you a better programmer.
-
-Focusing on Web Application, instead of reinventing the wheel, we should
-choose an existing web framework.
-Actually there are three main choices:
+Actually there are three main Haskell web frameworks:
 
 1. [Happstack](http://happstack.com)
 2. [Snap](http://snapframework.com)
@@ -715,15 +709,8 @@ Here is the content of `template/article.hamlet`:
 <article> #{articleContent article}
 </code>
 
-This is the end of this tutorial.
-I made it very minimal.
-If you want to go further, you should take a look at the
-recent [i18n blog tutorial](http://yesodweb.com/blog/2012/01/blog-example).
-It will be obvious I inspired my own tutorial on it.
-You'll learn in a very straightforward way how easy it is to use authorizations,
-Time and internationalization.
-
-Just for fun, try to enter an article with the following content:
+The blog system is finished.
+Just for fun, you can try to create an article with the following content:
 
 <code class="html">
 <p>A last try to <em>cross script</em> 
@@ -733,3 +720,14 @@ Just for fun, try to enter an article with the following content:
 <p> And Here is the last </p>
 "); DROP TABLE ARTICLE;;
 </code>
+
+## Conclusion
+
+This is the end of this tutorial.
+I made it very minimal.
+If you want to go further, you should take a look at the
+recent [i18n blog tutorial](http://yesodweb.com/blog/2012/01/blog-example).
+It will be obvious I inspired my own tutorial on it.
+You'll learn in a very straightforward way how easy it is to use authorizations,
+Time and internationalization. 
+The example on also add a comment system.
