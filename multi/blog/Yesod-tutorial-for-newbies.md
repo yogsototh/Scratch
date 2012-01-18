@@ -50,15 +50,15 @@ Its efficiency (see [Snap Benchmark][snapbench] _&_
 Haskell is an order of magnitude faster than interpreted languages 
 like [Ruby][haskellvsruby] and [Python][haskellvspython][^speeddigression].
 
-Haskell web frameworks handle parallel tasks perfectly. 
-For example even better than node.js[^nodejstroll].
-
 Haskell is a high level language and make it harder to shoot you in the foot
 than `C` or `C++` for example.
 One of the best property of Haskell being:
 
 > "If your program compile it will be 
 >  very close to what the programmer intended".
+
+Haskell web frameworks handle parallel tasks perfectly. 
+For example even better than node.js[^nodejstroll].
 
 From the pure technical "point of vue",
 Haskell seems to be the perfect web development tool.
@@ -201,7 +201,7 @@ Then initialize your git repository:
 ~ git commit -a -m "Initial yesod commit"
 </code>
 
-Now we are almost ready to start.
+We are almost ready to start.
 
 ### Some last minute words
 
@@ -270,7 +270,7 @@ Application.hs:31:1: Not in scope: `getEchoR'
 </pre>
 
 Why? Simply because we didn't written the code for the handler `EchoR`.
-Now, let's do this. Edit the file `Handler/Root.hs` and append this:
+Edit the file `Handler/Root.hs` and append this:
 
 <code class="haskell">
 getEchoR :: String -> Handler RepHtml
@@ -469,7 +469,7 @@ getEchoR theText = do
 
 At this point, our web application is structured between different files.
 Handler are grouped, we use `Data.Text` and our views are in templates.
-Now it is the time to make a slightly more complex example.
+It is the time to make a slightly more complex example.
 
 ## Mirror
 
@@ -546,9 +546,9 @@ Like before, your application is quite secure.
 ## A Blog
 
 We saw how to retrieve %http parameters.
-Now we should save thing inside a database.
+It is the time to save things into a database.
 
-Add some routes inside `config/routes`:
+As before add some routes inside `config/routes`:
 
 <pre>
 /blog               BlogR       GET POST
@@ -557,11 +557,12 @@ Add some routes inside `config/routes`:
 
 This example will be very minimal:
 
-`GET`  on `/blog` should display the list of articles.
-`POST` on `/blog` should create a new article
-`GET`  on `/blog/<article id>` should display the content of the article.
+- `GET`  on `/blog` should display the list of articles.
+- `POST` on `/blog` should create a new article
+- `GET`  on `/blog/<article id>` should display the content of the article.
 
-Now we declare another model object. Append the following content to `config/models`:
+First we declare another model object.
+Append the following content to `config/models`:
 
 <pre>
 Article
@@ -570,15 +571,14 @@ Article
     deriving
 </pre>
 
-We have to add the `deriving` line.
-You have to remember to add it if you use a type which is not an instances of 
-`Read`, `Show` and `Eq` like `Html` in this case.
+As `Html` is not an instance of `Read`, `Show` and `Eq`,
+we had to add the `deriving` line.
 If you forget it, there will be an error.
 
 After the route and the model, we write the handler.
 First, declare a new Handler module.
 Add `import Handler.Blog` inside `Application.hs` and add it into `yosog.cabal`.
-Now let's write the content of `Handler/Blog.hs`.
+Let's write the content of `Handler/Blog.hs`.
 We start by declaring the module and by importing some block necessary to 
 handle Html in forms.
 
@@ -723,15 +723,13 @@ It will be obvious I inspired my own tutorial on it.
 You'll learn in a very straightforward way how easy it is to use authorizations,
 Time and internationalization.
 
-Now, just for fun, try to enter an article with the following content:
+Just for fun, try to enter an article with the following content:
 
 <code class="html">
-<p>A last try to <em>cross script</em> and <em>SQL injection</em></p>
-<p>Here is the first try: <script>alert("You loose");</script></p>
+<p>A last try to <em>cross script</em> 
+   and <em>SQL injection</em></p>
+<p>Here is the first try: 
+   <script>alert("You loose");</script></p>
 <p> And Here is the last </p>
 "); DROP TABLE ARTICLE;;
 </code>
-
-Another word. If you came from ruby and are used to "syntactical sugar" you
-might not like the Haskell syntax. Just remember this is the price to pay
-to be fast and secure. You have to tell more things to the compiler.
