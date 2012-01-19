@@ -735,3 +735,5 @@ It will be obvious I inspired my own tutorial on it.
 You'll learn in a very straightforward way how easy it is to use authorizations,
 Time and internationalization. 
 The example on also add a comment system.
+
+_ps:_ You can download the source of the blog at [github.com/yogsototh/yosog](http://github.com/yogsototh/yosog). 
