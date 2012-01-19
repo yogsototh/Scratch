@@ -598,6 +598,13 @@ If you are curious you can take a look at Applicative Functor.
 You just have to remember `areq` is for required form input.
 Its arguments being: `areq type label default_value`.
 
+<small>Remark: it is a best practice to add the YesodNic instance inside `Foundation.hs`. 
+I put this definition here to make things easier but you should see a warning about this orphan instance.
+To put the include inside Foundation.hs is left as an exercice to the reader.</small>
+
+<small>_Hint: Do not forget to put `YesodNic` and `nicHtmlField` inside the exported objects of the module._
+</small>
+
 <code class="haskell">
 -- The view showing the list of articles
 getBlogR :: Handler RepHtml
@@ -653,17 +660,14 @@ postBlogR = do
     case res of 
          FormSuccess article -> do 
             articleId <- runDB $ insert article
-            setMessage $ (articleTitle article) ++. " created"
+            setMessage $ toHtml $ (articleTitle article) <> " created"
             redirect RedirectPermanent $ ArticleR articleId 
          _ -> defaultLayout $ do
                 setTitle "Please correct your entry form"
                 $(widgetFile "articleAddError")
-    where
-        (++.) t s = toHtml $ T.append t (T.pack s)
 </code>
 
 This function should be used to create a new article.
-The `(++.)` local function is just a trick to make an append occurs within the right type.
 We handle the form response.
 If there is an error we display an error page.
 For example if we left some required value blank.

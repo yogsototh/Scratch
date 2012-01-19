@@ -696,6 +696,13 @@ If you are curious you can take a look at Applicative Functor.
 You just have to remember <code>areq</code> is for required form input.
 Its arguments being: <code>areq type label default_value</code>.</p>
 
+<p><small>Remark: it is a best practice to add the YesodNic instance inside <code>Foundation.hs</code>. 
+I put this definition here to make things easier but you should see a warning about this orphan instance.
+To put the include inside Foundation.hs is left as an exercice to the reader.</small></p>
+
+<p><small><em>Hint: Do not forget to put <code>YesodNic</code> and <code>nicHtmlField</code> inside the exported objects of the module.</em>
+</small></p>
+
 <pre class="twilight">
 <span class="Comment"><span class="Comment">--</span> The view showing the list of articles</span>
 <span class="Entity">getBlogR</span> :: <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
@@ -753,17 +760,14 @@ postBlogR = <span class="Keyword">do</span>
     <span class="Keyword">case</span> res <span class="Keyword">of</span> 
          <span class="Constant">FormSuccess</span> article -&gt; <span class="Keyword">do</span> 
             articleId &lt;- runDB $ insert article
-            setMessage $ (articleTitle article) ++. <span class="String"><span class="String">&quot;</span> created<span class="String">&quot;</span></span>
+            setMessage $ toHtml $ (articleTitle article) &lt;&gt; <span class="String"><span class="String">&quot;</span> created<span class="String">&quot;</span></span>
             redirect <span class="Constant">RedirectPermanent</span> $ <span class="Constant">ArticleR</span> articleId 
          _ -&gt; defaultLayout $ <span class="Keyword">do</span>
                 setTitle <span class="String"><span class="String">&quot;</span>Please correct your entry form<span class="String">&quot;</span></span>
                 $(widgetFile <span class="String"><span class="String">&quot;</span>articleAddError<span class="String">&quot;</span></span>)
-    <span class="Keyword">where</span>
-        <span class="Entity">(++.)</span> t s = toHtml $ <span class="Constant">T</span>.append t (<span class="Constant">T</span>.pack s)
 </pre>
 
 <p>This function should be used to create a new article.
-The <code>(++.)</code> local function is just a trick to make an append occurs within the right type.
 We handle the form response.
 If there is an error we display an error page.
 For example if we left some required value blank.
