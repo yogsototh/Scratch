@@ -683,6 +683,13 @@ handle Html in forms.</p>
 <span class="Keyword">instance</span> <span class="Constant">YesodNic</span> <span class="Constant">Yosog</span>
 </pre>
 
+<p><small>Remark: it is a best practice to add the YesodNic instance inside <code>Foundation.hs</code>. 
+I put this definition here to make things easier but you should see a warning about this orphan instance.
+To put the include inside Foundation.hs is left as an exercice to the reader.</small></p>
+
+<p><small><em>Hint: Do not forget to put <code>YesodNic</code> and <code>nicHtmlField</code> inside the exported objects of the module.</em>
+</small></p>
+
 <pre class="twilight">
 <span class="Entity">entryForm</span> :: <span class="Constant">Form</span> <span class="Constant">Article</span>
 entryForm = renderDivs $ <span class="Constant">Article</span>
@@ -695,13 +702,6 @@ Don&rsquo;t pay attention to all the syntax.
 If you are curious you can take a look at Applicative Functor.
 You just have to remember <code>areq</code> is for required form input.
 Its arguments being: <code>areq type label default_value</code>.</p>
-
-<p><small>Remark: it is a best practice to add the YesodNic instance inside <code>Foundation.hs</code>. 
-I put this definition here to make things easier but you should see a warning about this orphan instance.
-To put the include inside Foundation.hs is left as an exercice to the reader.</small></p>
-
-<p><small><em>Hint: Do not forget to put <code>YesodNic</code> and <code>nicHtmlField</code> inside the exported objects of the module.</em>
-</small></p>
 
 <pre class="twilight">
 <span class="Comment"><span class="Comment">--</span> The view showing the list of articles</span>
@@ -934,7 +934,7 @@ The example on also add a comment system.</p>
                 </div>
                 <div id="lastmod">
                     Created: 01/15/2012
-                    Modified: 01/18/2012 
+                    Modified: 01/19/2012 
                 </div>
                 <div>
                     Entirely done with

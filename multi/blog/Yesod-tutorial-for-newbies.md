@@ -591,6 +591,13 @@ import Yesod.Form.Nic (YesodNic, nicHtmlField)
 instance YesodNic Yosog
 </code>
 
+<small>Remark: it is a best practice to add the YesodNic instance inside `Foundation.hs`. 
+I put this definition here to make things easier but you should see a warning about this orphan instance.
+To put the include inside Foundation.hs is left as an exercice to the reader.</small>
+
+<small>_Hint: Do not forget to put `YesodNic` and `nicHtmlField` inside the exported objects of the module._
+</small>
+
 <code class="haskell">
 entryForm :: Form Article
 entryForm = renderDivs $ Article
@@ -603,13 +610,6 @@ Don't pay attention to all the syntax.
 If you are curious you can take a look at Applicative Functor.
 You just have to remember `areq` is for required form input.
 Its arguments being: `areq type label default_value`.
-
-<small>Remark: it is a best practice to add the YesodNic instance inside `Foundation.hs`. 
-I put this definition here to make things easier but you should see a warning about this orphan instance.
-To put the include inside Foundation.hs is left as an exercice to the reader.</small>
-
-<small>_Hint: Do not forget to put `YesodNic` and `nicHtmlField` inside the exported objects of the module._
-</small>
 
 <code class="haskell">
 -- The view showing the list of articles

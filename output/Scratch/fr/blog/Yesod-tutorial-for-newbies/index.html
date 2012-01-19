@@ -684,6 +684,13 @@ handle Html in forms.</p>
 <span class="Keyword">instance</span> <span class="Constant">YesodNic</span> <span class="Constant">Yosog</span>
 </pre>
 
+<p><small>Remark: it is a best practice to add the YesodNic instance inside <code>Foundation.hs</code>. 
+I put this definition here to make things easier but you should see a warning about this orphan instance.
+To put the include inside Foundation.hs is left as an exercice to the reader.</small></p>
+
+<p><small><em>Hint: Do not forget to put <code>YesodNic</code> and <code>nicHtmlField</code> inside the exported objects of the module.</em>
+</small></p>
+
 <pre class="twilight">
 <span class="Entity">entryForm</span> :: <span class="Constant">Form</span> <span class="Constant">Article</span>
 entryForm = renderDivs $ <span class="Constant">Article</span>
@@ -754,17 +761,14 @@ postBlogR = <span class="Keyword">do</span>
     <span class="Keyword">case</span> res <span class="Keyword">of</span> 
          <span class="Constant">FormSuccess</span> article -&gt; <span class="Keyword">do</span> 
             articleId &lt;- runDB $ insert article
-            setMessage $ (articleTitle article) ++. <span class="String"><span class="String">&quot;</span> created<span class="String">&quot;</span></span>
+            setMessage $ toHtml $ (articleTitle article) &lt;&gt; <span class="String"><span class="String">&quot;</span> created<span class="String">&quot;</span></span>
             redirect <span class="Constant">RedirectPermanent</span> $ <span class="Constant">ArticleR</span> articleId 
          _ -&gt; defaultLayout $ <span class="Keyword">do</span>
                 setTitle <span class="String"><span class="String">&quot;</span>Please correct your entry form<span class="String">&quot;</span></span>
                 $(widgetFile <span class="String"><span class="String">&quot;</span>articleAddError<span class="String">&quot;</span></span>)
-    <span class="Keyword">where</span>
-        <span class="Entity">(++.)</span> t s = toHtml $ <span class="Constant">T</span>.append t (<span class="Constant">T</span>.pack s)
 </pre>
 
 <p>This function should be used to create a new article.
-The <code>(++.)</code> local function is just a trick to make an append occurs within the right type.
 We handle the form response.
 If there is an error we display an error page.
 For example if we left some required value blank.
