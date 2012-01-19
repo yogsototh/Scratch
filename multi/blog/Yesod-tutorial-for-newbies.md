@@ -605,11 +605,10 @@ You just have to remember `areq` is for required form input.
 Its arguments being: `areq type label default_value`.
 
 <small>Remark: it is a best practice to add the YesodNic instance inside `Foundation.hs`. 
-I put this definition here to make things easier. 
-You should see a warning orphan instance.
-Put the include inside Foundation.hs is left as an exercice to the reader.</small>
+I put this definition here to make things easier but you should see a warning about this orphan instance.
+To put the include inside Foundation.hs is left as an exercice to the reader.</small>
 
-<small>_hint: Do not forget to put `YesodNic` and `nicHtmlField` inside the exported objects of the module._
+<small>_Hint: Do not forget to put `YesodNic` and `nicHtmlField` inside the exported objects of the module._
 </small>
 
 <code class="haskell">
