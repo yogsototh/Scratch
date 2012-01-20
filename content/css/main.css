@@ -814,6 +814,7 @@ ul.bloglist, .archive ul
 .article .corps a:after
   content: "†"
   vertical-align: super
+  line-height: 0
   font-size: .66em
   color: $highlightColor
 .article .corps 
