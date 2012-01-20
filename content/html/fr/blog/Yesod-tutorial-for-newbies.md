@@ -57,7 +57,7 @@ For example even better than node.js[^nodejstroll].
 
 <%= leftblogimage("thousands_smiths.jpg","Thousands of Agent Smith") %>
 
-From the pure technical "point of vue",
+From the pure technical point of view,
 Haskell seems to be the perfect web development tool.
 Weaknesses of Haskell certainly won't be technical:
 
@@ -95,6 +95,8 @@ to an almost production ready architecture.
 Furthermore explaining something to others is a great way to learn.
 If you are used to Haskell and Yesod, this tutorial won't learn you much.
 If you are completely new to Haskell and Yesod it might hopefully helps you.
+Also if you find yourself too confused by the syntax, it might helps to read this 
+[article](http://blog.ezyang.com/2011/11/how-to-read-haskell/)
 
 During this tutorial you'll install, initialize and configure your first yesod project.
 Then there is a very minimal 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
@@ -103,7 +105,7 @@ Finally there will be a more standard real world example; a minimal blog system.
 
 [warpbench]: http://www.yesodweb.com/blog/2011/03/preliminary-warp-cross-language-benchmarks
 [snapbench]: http://snapframework.com/blog/2010/11/17/snap-0.3-benchmarks
-[^benchmarkdigression]: One can argue these benchmark contains many problems. But benchmark are just here to give an order of idea. Mainly Haskell is very fast.
+[^benchmarkdigression]: One can argue these benchmark contains many problems. But the benchmarks are just here to give an order of idea. Mainly Haskell is very fast.
 [^speeddigression]: Generally _high level_ Haskell is slower than C, but _low level_ Haskell is equivalent to C speed. It means that even if you can easily link C code with Haskell, this is not needed to reach the same speed. Furthermore writing a web service in C/C++ seems to be a very bad idea. You can take a look at a [discussion on HN about this](http://news.ycombinator.com/item?id=3449388). 
 [^nodejstroll]: If you are curious, you can search about [the Fibonacci node.js troll](http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html). Without any tweaking, [Haskell handled this problem perfectly](http://mathias-biilmann.net/posts/2011/10/is-haskell-the-cure). I tested it myself using yesod instead of Snap.
 [haskellvsruby]: http://shootout.alioth.debian.org/u64q/benchmark.php?test=all&lang=ghc&lang2=yarv
@@ -216,7 +218,7 @@ Obviously:
 During this tutorial we'll modify other files as well,
 but we won't explore them in detail.
 
-Also note, shell command are executed in the root directory of your project instead specified otherwise.
+Also note, shell commands are executed in the root directory of your project instead specified otherwise.
 
 We are now ready to start!
 
@@ -731,4 +733,5 @@ You'll learn in a very straightforward way how easy it is to use authorizations,
 Time and internationalization. 
 The example on also add a comment system.
 
-_ps:_ You can download the source of the blog at [github.com/yogsototh/yosog](http://github.com/yogsototh/yosog). 
+_ps:_ You can download the source of the blog at 
+[github.com/yogsototh/yosog](http://github.com/yogsototh/yosog). 

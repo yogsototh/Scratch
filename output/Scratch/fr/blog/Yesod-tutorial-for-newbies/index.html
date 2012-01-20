@@ -67,7 +67,7 @@
 <p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Un tutoriel pour yesod, un framework web Haskell.
 Vous ne devriez pas avoir besoin de savoir programmer en Haskell. 
 Par contre je suis désolé pour les francophones, 
-mais je n’ai pas eu le courage de traduire cet article en Français.</p>
+mais je n&rsquo;ai pas eu le courage de traduire cet article en Français.</p>
 
 <blockquote>
   <center><span class="sc"><b>Table of content</b></span></center>
@@ -115,8 +115,8 @@ than <code>C</code>, <code>C++</code> or <code>Java</code> for example.
 One of the best property of Haskell being:</p>
 
 <blockquote>
-  <p>“If your program compile it will be 
- very close to what the programmer intended”.</p>
+  <p>&ldquo;If your program compile it will be 
+ very close to what the programmer intended&rdquo;.</p>
 </blockquote>
 
 <p>Haskell web frameworks handle parallel tasks perfectly. 
@@ -124,9 +124,9 @@ For example even better than node.js<sup id="fnref:nodejstroll"><a href="#fn:nod
 
 <p><img alt="Thousands of Agent Smith" src="/Scratch/img/blog/Yesod-tutorial-for-newbies/thousands_smiths.jpg" class="left" /></p>
 
-<p>From the pure technical “point of vue”,
+<p>From the pure technical point of view,
 Haskell seems to be the perfect web development tool.
-Weaknesses of Haskell certainly won’t be technical:</p>
+Weaknesses of Haskell certainly won&rsquo;t be technical:</p>
 
 <ul>
   <li>Hard to grasp Haskell</li>
@@ -135,7 +135,7 @@ Weaknesses of Haskell certainly won’t be technical:</p>
   <li>There is no <a href="http://heroku.com">heroku</a> for Haskell (even if <a href="http://www.yesodweb.com/blog/2011/07/haskell-on-heroku">Greg Weber did it</a>, it was more a workaround).</li>
 </ul>
 
-<p>I won’t say these are not important drawbacks.
+<p>I won&rsquo;t say these are not important drawbacks.
 But, with Haskell your web application will have both properties
 to absorb an impressive number of parallel request securely
 and to adapt to change.</p>
@@ -148,7 +148,7 @@ and to adapt to change.</p>
   <li><a href="http://yesodweb.com">Yesod</a></li>
 </ol>
 
-<p>I don’t think there is a real winner between these three framework.
+<p>I don&rsquo;t think there is a real winner between these three framework.
 The choice I made for yesod is highly subjective.
 I just lurked a bit and tried some tutorials.
 I had the feeling yesod make a better job at helping newcomers.
@@ -160,16 +160,18 @@ Of course I might be wrong since it is a matter of feeling.</p>
 <p>Why did I write this article?
 The yesod documentation and particularly the book are excellent.
 But I missed an intermediate tutorial.
-This tutorial won’t explain all details.
+This tutorial won&rsquo;t explain all details.
 I tried to give a step by step of how to start from a five minute tutorial 
 to an almost production ready architecture.
 Furthermore explaining something to others is a great way to learn.
-If you are used to Haskell and Yesod, this tutorial won’t learn you much.
-If you are completely new to Haskell and Yesod it might hopefully helps you.</p>
+If you are used to Haskell and Yesod, this tutorial won&rsquo;t learn you much.
+If you are completely new to Haskell and Yesod it might hopefully helps you.
+Also if you find yourself too confused by the syntax, it might helps to read this 
+<a href="http://blog.ezyang.com/2011/11/how-to-read-haskell/">article</a></p>
 
-<p>During this tutorial you’ll install, initialize and configure your first yesod project.
+<p>During this tutorial you&rsquo;ll install, initialize and configure your first yesod project.
 Then there is a very minimal 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
-Then we will clean up the 5 minutes tutorial to use some “best practices”.
+Then we will clean up the 5 minutes tutorial to use some &ldquo;best practices&rdquo;.
 Finally there will be a more standard real world example; a minimal blog system.</p>
 
 <h2 id="before-the-real-start">Before the real start</h2>
@@ -263,7 +265,7 @@ and a local web server listening the port 3000.
 If we modify a file inside this directory, yesod should try
 to recompile as fast as possible the site. 
 Instead of explaining the role of every file,
-let’s focus only on the important files/directories for this tutorial:</p>
+let&rsquo;s focus only on the important files/directories for this tutorial:</p>
 
 <ol>
   <li><code>config/routes</code></li>
@@ -278,7 +280,7 @@ let’s focus only on the important files/directories for this tutorial:</p>
   <tbody>
     <tr>
       <td><code>config/routes</code></td>
-      <td>is where you’ll configure the map <span class="sc">url</span> → Code.</td>
+      <td>is where you&rsquo;ll configure the map <span class="sc">url</span> → Code.</td>
     </tr>
     <tr>
       <td><code>Handler/</code></td>
@@ -290,31 +292,31 @@ let’s focus only on the important files/directories for this tutorial:</p>
     </tr>
     <tr>
       <td><code>config/models</code></td>
-      <td>is where you’ll configure the persistent objects (database tables).</td>
+      <td>is where you&rsquo;ll configure the persistent objects (database tables).</td>
     </tr>
   </tbody>
 </table>
 
-<p>During this tutorial we’ll modify other files as well,
-but we won’t explore them in detail.</p>
+<p>During this tutorial we&rsquo;ll modify other files as well,
+but we won&rsquo;t explore them in detail.</p>
 
-<p>Also note, shell command are executed in the root directory of your project instead specified otherwise.</p>
+<p>Also note, shell commands are executed in the root directory of your project instead specified otherwise.</p>
 
 <p>We are now ready to start!</p>
 
 <h2 id="echo">Echo</h2>
 
 <p>To verify the quality of the security of the yesod framework,
-let’s make a minimal echo application.</p>
+let&rsquo;s make a minimal echo application.</p>
 
 <blockquote>
   <p>Goal:</p>
 
-  <p>Make a server that when accessed <code>/echo/[some text]</code> should return a web page containing “some text” inside an <code>h1</code> bloc.</p>
+  <p>Make a server that when accessed <code>/echo/[some text]</code> should return a web page containing &ldquo;some text&rdquo; inside an <code>h1</code> bloc.</p>
 </blockquote>
 
 <p>In a first time, we must declare the <span class="sc">url</span> of the form <code>/echo/...</code> are meaningful.
-Let’s take a look at the file <code>config/routes</code>:</p>
+Let&rsquo;s take a look at the file <code>config/routes</code>:</p>
 
 <pre>
 /static StaticR Static getStatic
@@ -342,7 +344,7 @@ I am not particularly fan of the big R notation but this is the standard convent
 Application.hs:31:1: Not in scope: `getEchoR'
 </pre>
 
-<p>Why? Simply because we didn’t written the code for the handler <code>EchoR</code>.
+<p>Why? Simply because we didn&rsquo;t written the code for the handler <code>EchoR</code>.
 Edit the file <code>Handler/Root.hs</code> and append this:</p>
 
 <pre class="twilight">
@@ -352,13 +354,13 @@ getEchoR theText = <span class="Keyword">do</span>
         [whamlet|&lt;h1&gt;#{theText}|]
 </pre>
 
-<p>Don’t worry if you find all of this a bit cryptic. 
+<p>Don&rsquo;t worry if you find all of this a bit cryptic. 
 In short it just declare a function named <code>getEchoR</code> with one argument (<code>theText</code>) of type String.
 When this function is called, it return a <code>Handler RepHtml</code> whatever it is. 
 But mainly this will encapsulate our expected result inside an <span class="sc">html</span> text.</p>
 
 <p>After saving the file, you should see yesod recompile the application.
-When the compilation is finished you’ll see the message: <code>Starting devel application</code>.</p>
+When the compilation is finished you&rsquo;ll see the message: <code>Starting devel application</code>.</p>
 
 <p>Now you can visit: <a href="http://localhost:3000/echo/Yesod%20rocks!"><code>http://localhost:3000/echo/Yesod%20rocks!</code></a></p>
 
@@ -380,9 +382,9 @@ A malicious user could not hide some bad script inside.</p>
 The <span class="sc">url</span> string is put inside a <span class="sc">url</span> type.
 Then the interesting part in the <span class="sc">url</span> is put inside a String type.
 To pass from <span class="sc">url</span> type to String type some transformation are made.
-For example, replace all “<code>%20</code>” by space characters.
+For example, replace all &ldquo;<code>%20</code>&rdquo; by space characters.
 Then to show the String inside an <span class="sc">html</span> document, the string is put inside an <span class="sc">html</span> type.
-Some transformations occurs like replace “<code>&lt;</code>” by “<code>&amp;lt;</code>”.
+Some transformations occurs like replace &ldquo;<code>&lt;</code>&rdquo; by &ldquo;<code>&amp;lt;</code>&rdquo;.
 Thanks to yesod, this tedious job is done for us.</p>
 
 <pre class="twilight">
@@ -407,7 +409,7 @@ We will clean up many details:</p>
   <li>Use a general <span class="sc">css</span> (cleaner than the empty by default)</li>
   <li>Dispatch handler code into different files</li>
   <li>Use <code>Data.Text</code> instead of <code>String</code></li>
-  <li>Put our “views”<sup id="fnref:explainviewwidget"><a href="#fn:explainviewwidget" rel="footnote">4</a></sup> inside the <code>template</code> directory</li>
+  <li>Put our &ldquo;views&rdquo;<sup id="fnref:explainviewwidget"><a href="#fn:explainviewwidget" rel="footnote">4</a></sup> inside the <code>template</code> directory</li>
 </ul>
 
 <h4 id="span-classschtml5span-boilerplate-and-a-better-span-classsccssspan"><span class="sc">html5</span> boilerplate and a better <span class="sc">css</span></h4>
@@ -457,7 +459,7 @@ But I digress.</p>
 
 <h4 id="separate-handlers">Separate Handlers</h4>
 
-<p>Generally you don’t want to have all your code inside a unique file.
+<p>Generally you don&rsquo;t want to have all your code inside a unique file.
 This is why we will separate our handlers.
 In a first time create a new file <code>Handler/Echo.hs</code> containing:</p>
 
@@ -482,7 +484,7 @@ Just after <code>Handler.Root</code>, add:</p>
 </pre>
 
 <p>We must also declare this new Handler module inside <code>Application.hs</code>.
-Just after the “<code>import Handler.Root</code>”, add:</p>
+Just after the &ldquo;<code>import Handler.Root</code>&rdquo;, add:</p>
 
 <pre class="twilight">
 <span class="Keyword">import</span> <span class="Constant">Handler</span>.<span class="Constant">Echo</span>
@@ -554,11 +556,11 @@ It is the time to make a slightly more complex example.</p>
 
 <p><img alt="Neo touching a mirror" src="/Scratch/img/blog/Yesod-tutorial-for-newbies/mirror.jpg" class="left" /></p>
 
-<p>Let’s make another minimal application.
+<p>Let&rsquo;s make another minimal application.
 You should see a form containing a text field and a validation button.
-When you enter some text (for example “Jormungad”) and validate,
+When you enter some text (for example &ldquo;Jormungad&rdquo;) and validate,
 the next page present you the content and its reverse appended to it. 
-In our example it should return “JormungaddagnumroJ”. </p>
+In our example it should return &ldquo;JormungaddagnumroJ&rdquo;. </p>
 
 <p>First, add a new route:</p>
 
@@ -589,12 +591,12 @@ postMirrorR =  <span class="Keyword">do</span>
 </pre>
 </div></div>
 
-<p>Don’t forget to declare it inside <code>yosog.cabal</code> and <code>Application.hs</code>.</p>
+<p>Don&rsquo;t forget to declare it inside <code>yosog.cabal</code> and <code>Application.hs</code>.</p>
 
 <p>We will need to use the <code>reverse</code> function provided by <code>Data.Text</code> 
 which explain the additional import.</p>
 
-<p>The only new thing here is the line that get the POST parameter named “content”.
+<p>The only new thing here is the line that get the POST parameter named &ldquo;content&rdquo;.
 If you want to know more detail about it and form in general you can take 
 look at <a href="http://www.yesodweb.com/book/forms">the yesod book</a>.</p>
 
@@ -619,9 +621,9 @@ look at <a href="http://www.yesodweb.com/book/forms">the yesod book</a>.</p>
 </div></div>
 
 <p>And that is all.
-This time, we won’t need to clean up.
+This time, we won&rsquo;t need to clean up.
 We may have used another way to generate the form
-but we’ll see this in the next section.</p>
+but we&rsquo;ll see this in the next section.</p>
 
 <p>Just try it by <a href="http://localhost:3000/mirror">clicking here</a>.</p>
 
@@ -665,7 +667,7 @@ If you forget it, there will be an error.</p>
 <p>After the route and the model, we write the handler.
 First, declare a new Handler module.
 Add <code>import Handler.Blog</code> inside <code>Application.hs</code> and add it into <code>yosog.cabal</code>.
-Let’s write the content of <code>Handler/Blog.hs</code>.
+Let&rsquo;s write the content of <code>Handler/Blog.hs</code>.
 We start by declaring the module and by importing some block necessary to 
 handle Html in forms.</p>
 
@@ -699,7 +701,7 @@ entryForm = renderDivs $ <span class="Constant">Article</span>
 </pre>
 
 <p>This function defines a form for adding a new article.
-Don’t pay attention to all the syntax. 
+Don&rsquo;t pay attention to all the syntax. 
 If you are curious you can take a look at Applicative Functor.
 You just have to remember <code>areq</code> is for required form input.
 Its arguments being: <code>areq type label default_value</code>.</p>
@@ -742,7 +744,7 @@ $else
 </div></div>
 
 <p>You should remark we added some logic inside the template.
-There is a test and a “loop”.</p>
+There is a test and a &ldquo;loop&rdquo;.</p>
 
 <p>Another very interesting part is the creation of the form.
 The <code>articleWidget</code> was created by yesod.
@@ -831,24 +833,25 @@ I made it very minimal.
 If you want to go further, you should take a look at the
 recent <a href="http://yesodweb.com/blog/2012/01/blog-example">i18n blog tutorial</a>.
 It will be obvious I inspired my own tutorial on it.
-You’ll learn in a very straightforward way how easy it is to use authorizations,
+You&rsquo;ll learn in a very straightforward way how easy it is to use authorizations,
 Time and internationalization. 
 The example on also add a comment system.</p>
 
-<p><em>ps:</em> You can download the source of the blog at <a href="http://github.com/yogsototh/yosog">github.com/yogsototh/yosog</a>.</p>
+<p><em>ps:</em> You can download the source of the blog at 
+<a href="http://github.com/yogsototh/yosog">github.com/yogsototh/yosog</a>.</p>
 <hr/><div class="footnotes">
   <ol>
     <li id="fn:benchmarkdigression">
-      <p>One can argue these benchmark contains many problems. But benchmark are just here to give an order of idea. Mainly Haskell is very fast.<a href="#fnref:benchmarkdigression" rev="footnote">&#8617;</a></p>
+      <p>One can argue these benchmark contains many problems. But the benchmarks are just here to give an order of idea. Mainly Haskell is very fast.<a href="#fnref:benchmarkdigression" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:speeddigression">
-      <p>Generally <em>high level</em> Haskell is slower than C, but <em>low level</em> Haskell is equivalent to C speed. It means that even if you can easily link C code with Haskell, this is not needed to reach the same speed. Furthermore writing a web service in C/C++ seems to be a very bad idea. You can take a look at a <a href="http://news.ycombinator.com/item?id=3449388">discussion on HN about this</a>. <a href="#fnref:speeddigression" rev="footnote">&#8617;</a></p>
+      <p>Generally <em>high level</em> Haskell is slower than C, but <em>low level</em> Haskell is equivalent to C speed. It means that even if you can easily link C code with Haskell, this is not needed to reach the same speed. Furthermore writing a web service in C/C++ seems to be a very bad idea. You can take a look at a <a href="http://news.ycombinator.com/item?id=3449388">discussion on HN about this</a>. <a href="#fnref:speeddigression" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:nodejstroll">
-      <p>If you are curious, you can search about <a href="http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html">the Fibonacci node.js troll</a>. Without any tweaking, <a href="http://mathias-biilmann.net/posts/2011/10/is-haskell-the-cure">Haskell handled this problem perfectly</a>. I tested it myself using yesod instead of Snap.<a href="#fnref:nodejstroll" rev="footnote">&#8617;</a></p>
+      <p>If you are curious, you can search about <a href="http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html">the Fibonacci node.js troll</a>. Without any tweaking, <a href="http://mathias-biilmann.net/posts/2011/10/is-haskell-the-cure">Haskell handled this problem perfectly</a>. I tested it myself using yesod instead of Snap.<a href="#fnref:nodejstroll" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:explainviewwidget">
-      <p>By view I mean yesod widget’s hamlet, lucius and julius files. <a href="#fnref:explainviewwidget" rev="footnote">&#8617;</a></p>
+      <p>By view I mean yesod widget&rsquo;s hamlet, lucius and julius files. <a href="#fnref:explainviewwidget" rel="reference">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -54,9 +54,9 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p><small> <em>Je décris pourquoi j’ai eu tant de mal à me faire à Git. Il y a en effet une partie “non dite” qui m’a bloqué pendant un bon moment. Jusqu’à ce que je découvre le bon document. </em></small></p>
+                    <p><small> <em>Je décris pourquoi j&rsquo;ai eu tant de mal à me faire à Git. Il y a en effet une partie &ldquo;non dite&rdquo; qui m&rsquo;a bloqué pendant un bon moment. Jusqu&rsquo;à ce que je découvre le bon document. </em></small></p>
 
-<p><small> <em> Le fait est que les <em>branches légères</em> ne sont pas destinée à être des branches isolées. Ainsi, il y a un </em>“workflow standard”<em> qui s’il n’est pas suivi rend l’utilisation de Git inappropriée.  </em> </small></p>
+<p><small> <em> Le fait est que les <em>branches légères</em> ne sont pas destinée à être des branches isolées. Ainsi, il y a un </em>&ldquo;workflow standard&rdquo;<em> qui s&rsquo;il n&rsquo;est pas suivi rend l&rsquo;utilisation de Git inappropriée.  </em> </small></p>
 
 
 </div>
@@ -68,12 +68,12 @@
 
 <h3 id="de-svn--bazaar">De SVN à Bazaar</h3>
 
-<p>J’étais un fervent utilisateur de <a href="http://subversion.tigris.org">subversion (svn)</a>. Lorsqu’un jour, comme beaucoup de gens je découvris ce qu’en pensais <a href="http://www.youtube.com/watch?v=4XpnKHJAok8">Linus Torvald sur une vidéo</a>. Ventant les mérites d’un <em>système de versions concurrentes décentralisé</em>.</p>
+<p>J&rsquo;étais un fervent utilisateur de <a href="http://subversion.tigris.org">subversion (svn)</a>. Lorsqu&rsquo;un jour, comme beaucoup de gens je découvris ce qu&rsquo;en pensais <a href="http://www.youtube.com/watch?v=4XpnKHJAok8">Linus Torvald sur une vidéo</a>. Ventant les mérites d&rsquo;un <em>système de versions concurrentes décentralisé</em>.</p>
 
-<p>En effet une fois qu’on s’y intéresse un peu, on voit tous les avantages pratiques qu’apporteraient en théorie un tel système.</p>
+<p>En effet une fois qu&rsquo;on s&rsquo;y intéresse un peu, on voit tous les avantages pratiques qu&rsquo;apporteraient en théorie un tel système.</p>
 
-<p>J’ai alors eu besoin d’un système de version dans mon équipe.
-Ils n’étaient pas familier avec les systèmes de versions. À par ceux possédant une <abbr title="Interface Utilisateur">GUI</abbr>, qui sont lourds et administrés par un responsable<sup><a href="#note1">†</a></sup>.</p>
+<p>J&rsquo;ai alors eu besoin d&rsquo;un système de version dans mon équipe.
+Ils n&rsquo;étaient pas familier avec les systèmes de versions. À par ceux possédant une <abbr title="Interface Utilisateur">GUI</abbr>, qui sont lourds et administrés par un responsable<sup><a href="#note1">&dagger;</a></sup>.</p>
 
 <p>Après quelques recherches trois choix se dessinent&nbsp;: </p>
 
@@ -83,29 +83,29 @@ Ils n’étaient pas familier avec les systèmes de versions. À par ceux possé
   <li><a href="http://selenic.com/mercurial">Mercurial</a></li>
 </ul>
 
-<p>En me renseignant un peu sur les forums et en essayant les trois, je me suis vite rendu compte que celui possédant l’interface utilisateur la plus simple était Bazaar<sup><a href="#note2">*</a></sup>. Mon choix était fait.</p>
+<p>En me renseignant un peu sur les forums et en essayant les trois, je me suis vite rendu compte que celui possédant l&rsquo;interface utilisateur la plus simple était Bazaar<sup><a href="#note2">&#42;</a></sup>. Mon choix était fait.</p>
 
 <h3 id="de-bazaar--git">De bazaar à Git</h3>
 
-<p>Je me suis alors familiarisé avec Bazaar. Et je dois dire que c’était vraiment naturel en venant de subversion. La commande <code>pull</code> correspond au <code>update</code>, la commande <code>push</code> correspond au <code>commit</code>. Puis les commandes <code>commit</code> et <code>update</code> existent toujours si on en a besoin et qu’on veut utiliser un <em>workflow</em> identique à celui de subversion. </p>
+<p>Je me suis alors familiarisé avec Bazaar. Et je dois dire que c&rsquo;était vraiment naturel en venant de subversion. La commande <code>pull</code> correspond au <code>update</code>, la commande <code>push</code> correspond au <code>commit</code>. Puis les commandes <code>commit</code> et <code>update</code> existent toujours si on en a besoin et qu&rsquo;on veut utiliser un <em>workflow</em> identique à celui de subversion. </p>
 
-<p>Mais plus le temps passe et plus de partout sur les blog, c’est surtout Git qui a le vent en poupe.</p>
+<p>Mais plus le temps passe et plus de partout sur les blog, c&rsquo;est surtout Git qui a le vent en poupe.</p>
 
-<p>Je décide alors d’utiliser Git en particulier pour <em>versionner</em> le site que vous êtes en train de lire. Sauf que je le trouve vraiment difficile d’utilisation et surtout complètement contre intuitif (j’y reviendrai plus tard).</p>
+<p>Je décide alors d&rsquo;utiliser Git en particulier pour <em>versionner</em> le site que vous êtes en train de lire. Sauf que je le trouve vraiment difficile d&rsquo;utilisation et surtout complètement contre intuitif (j&rsquo;y reviendrai plus tard).</p>
 
-<p>Alors que j’essaye de trouver de l’aide et que je dis qu’il est plus difficile à utiliser que Bazaar, beaucoup me répliquent que c’est&nbsp;: </p>
+<p>Alors que j&rsquo;essaye de trouver de l&rsquo;aide et que je dis qu&rsquo;il est plus difficile à utiliser que Bazaar, beaucoup me répliquent que c&rsquo;est&nbsp;: </p>
 
 <blockquote>
-  <p>— <em>Super-tellement-trop-simple que même ma fille de 12 ans qui n’y comprend rien en informatique l’utilise pour versionner ses documents. Elle s’en sert très facilement en créant des branches et tout et tout…</em></p>
+  <p>&mdash; <em>Super-tellement-trop-simple que même ma fille de 12 ans qui n&rsquo;y comprend rien en informatique l&rsquo;utilise pour versionner ses documents. Elle s&rsquo;en sert très facilement en créant des branches et tout et tout&hellip;</em></p>
 </blockquote>
 
-<p>Bon alors si une gamine 12 ans trouve ça très naturel et que moi (avec mon Doctorat en informatique) j’ai du mal à faire ce que je veux, c’est un peu frustrant et humiliant. Mais qu’est-ce qui fait que Git est naturel aux uns (comme pour <a href="http://cocoasamurai.blogspot.com">CocoaSamurai</a> ) et très confus pour moi&nbsp;?</p>
+<p>Bon alors si une gamine 12 ans trouve ça très naturel et que moi (avec mon Doctorat en informatique) j&rsquo;ai du mal à faire ce que je veux, c&rsquo;est un peu frustrant et humiliant. Mais qu&rsquo;est-ce qui fait que Git est naturel aux uns (comme pour <a href="http://cocoasamurai.blogspot.com">CocoaSamurai</a> ) et très confus pour moi&nbsp;?</p>
 
-<p>C’est en lisant un article j’ai enfin compris ce qu’il me manquait. C’est la partie <strong>non dite</strong> de la conception. Celle que tous les développeurs et les concepteurs trouvaient comme <em>aller de soi</em>. Sauf que pour moi, ce n’était pas du tout le cas.</p>
+<p>C&rsquo;est en lisant un article j&rsquo;ai enfin compris ce qu&rsquo;il me manquait. C&rsquo;est la partie <strong>non dite</strong> de la conception. Celle que tous les développeurs et les concepteurs trouvaient comme <em>aller de soi</em>. Sauf que pour moi, ce n&rsquo;était pas du tout le cas.</p>
 
-<p><small><a name="note1">†</a> - Je parle de <em>ClearCase<small>&copy;</small></em>. Et oui, je sais qu’il existe des commandes en lignes pour ClearCase<small>&copy;</small>, mais ce n’est pas comme ça qu’ils étaient habitués à travailler avec des systèmes de “versionning”.</small></p>
+<p><small><a name="note1">&dagger;</a> - Je parle de <em>ClearCase<small>&copy;</small></em>. Et oui, je sais qu&rsquo;il existe des commandes en lignes pour ClearCase<small>&copy;</small>, mais ce n&rsquo;est pas comme ça qu&rsquo;ils étaient habitués à travailler avec des systèmes de &ldquo;versionning&rdquo;.</small></p>
 
-<p><small><a name="note2">*</a> - Je n’ai pas vraiment donné sa chance à Mercurial, la terminologie qu’ils utilisaient était trop éloignée de celle de svn à laquelle je m’étais habituée.</small></p>
+<p><small><a name="note2">&#42;</a> - Je n&rsquo;ai pas vraiment donné sa chance à Mercurial, la terminologie qu&rsquo;ils utilisaient était trop éloignée de celle de svn à laquelle je m&rsquo;étais habituée.</small></p>
 
 
 </div>
@@ -113,57 +113,57 @@ Ils n’étaient pas familier avec les systèmes de versions. À par ceux possé
 <div class="corps">
 
 
-<p>Lorsqu’on voit les présentations autour de la notion de <em>branche</em> et de <abbr title="Système de Version Concurentes Décentralisé"><span class="sc">dcvs</span></abbr>, on s’imagine dans un monde où chaque branche est totalement isolée des autres sauf au moment de “merger” les différences les unes des autres. 
-Tout est magique. C’est la façon de voir “<em>Mondes Parallèles</em>”. Cette façon de voir est expliquée dans le <a href="http://betterexplained.com/articles/a-visual-guide-to-version-control/">très bon article sur les branches</a> sur betterexplained.</p>
+<p>Lorsqu&rsquo;on voit les présentations autour de la notion de <em>branche</em> et de <abbr title="Système de Version Concurentes Décentralisé"><span class="sc">dcvs</span></abbr>, on s&rsquo;imagine dans un monde où chaque branche est totalement isolée des autres sauf au moment de &ldquo;merger&rdquo; les différences les unes des autres. 
+Tout est magique. C&rsquo;est la façon de voir &ldquo;<em>Mondes Parallèles</em>&rdquo;. Cette façon de voir est expliquée dans le <a href="http://betterexplained.com/articles/a-visual-guide-to-version-control/">très bon article sur les branches</a> sur betterexplained.</p>
 
 <p>Sauf que les concepteurs de Git (conçu pour le noyau Linux) ont plutôt imaginé un système basé non pas autour des mondes parallèles, mais sur la notion de <em>Patch</em>.</p>
 
-<p>D’un côté <em>Mondes Parallèles</em>, de l’autre <em>Patchs</em>. Il y a beaucoup de notions équivalentes dans les deux cas, mais aussi quelques différences. </p>
+<p>D&rsquo;un côté <em>Mondes Parallèles</em>, de l&rsquo;autre <em>Patchs</em>. Il y a beaucoup de notions équivalentes dans les deux cas, mais aussi quelques différences. </p>
 
 <ul>
   <li>Bazaar est complètement basé sur la notion de <em>Mondes Parallèles</em> qui va impliquer un phénomène de <em>Patch</em>. </li>
   <li>Alors que Git est basé sur la notion de <em>Patch</em> qui va impliquer la création de <em>Mondes Parallèles</em>.</li>
 </ul>
 
-<p>Je ne vais pas argumenté pour savoir si une façon de voir est meilleure que l’autre. Disons simplement que ma façon d’entrer dans l’explication des DCVS était par le biais des <em>Mondes Parallèles</em> alors que Git est conçut selon l’autre notion<sup><a href="#note3">‡</a></sup>.</p>
+<p>Je ne vais pas argumenté pour savoir si une façon de voir est meilleure que l&rsquo;autre. Disons simplement que ma façon d&rsquo;entrer dans l&rsquo;explication des DCVS était par le biais des <em>Mondes Parallèles</em> alors que Git est conçut selon l&rsquo;autre notion<sup><a href="#note3">&Dagger;</a></sup>.</p>
 
 <h2 id="de-la-thorie--la-pratique">De la théorie à la pratique</h2>
 
-<p>Bien que je pense avoir bien compris les mécanismes conceptuels de Git, la mise en pratique posait problème. Et le point noir, celui qui m’empêchait de comprendre Git comme je le souhaitais était dû à la notion de <em>branche légère</em>.</p>
+<p>Bien que je pense avoir bien compris les mécanismes conceptuels de Git, la mise en pratique posait problème. Et le point noir, celui qui m&rsquo;empêchait de comprendre Git comme je le souhaitais était dû à la notion de <em>branche légère</em>.</p>
 
-<p>Une <em>branche légère</em> qu’est-ce que c’est me demanderez-vous&nbsp;? Si comme moi on vient de Bazaar, c’est une notion complètement nouvelle. Il s’agit simplement de la capacité de créer une nouvelle branche en réutilisant le répertoire dans lequel on se trouve.</p>
+<p>Une <em>branche légère</em> qu&rsquo;est-ce que c&rsquo;est me demanderez-vous&nbsp;? Si comme moi on vient de Bazaar, c&rsquo;est une notion complètement nouvelle. Il s&rsquo;agit simplement de la capacité de créer une nouvelle branche en réutilisant le répertoire dans lequel on se trouve.</p>
 
 <p>En pratique pour changer de branche, il faut lancer une commande. Tous les fichiers locaux non modifiés depuis le dernier commit seront alors modifiés pour correspondre à la version de la branche.</p>
 
-<p>En théorie, les <em>branches légères</em> sont des branches tout comme avec bazaar. D’ailleurs le mot utilisé n’est pas <em>branche légère</em> mais <em>branche</em> tout court.</p>
+<p>En théorie, les <em>branches légères</em> sont des branches tout comme avec bazaar. D&rsquo;ailleurs le mot utilisé n&rsquo;est pas <em>branche légère</em> mais <em>branche</em> tout court.</p>
 
-<p>Sauf que contrairement à une branche standard résidant dans son propre répertoire, une branche légère est destinée à n’être qu’un <strong>patch</strong> de la branche principale du répertoire dans lequel elle réside.</p>
+<p>Sauf que contrairement à une branche standard résidant dans son propre répertoire, une branche légère est destinée à n&rsquo;être qu&rsquo;un <strong>patch</strong> de la branche principale du répertoire dans lequel elle réside.</p>
 
-<p>Bien entendu on pourra m’objecter que l’on peut tout à fait utiliser ces branches légères comme des branches normales. Mais elles n’ont pas été conçues pour ça. Et donc, en pratique, c’est gênant de les utiliser de la sorte.</p>
+<p>Bien entendu on pourra m&rsquo;objecter que l&rsquo;on peut tout à fait utiliser ces branches légères comme des branches normales. Mais elles n&rsquo;ont pas été conçues pour ça. Et donc, en pratique, c&rsquo;est gênant de les utiliser de la sorte.</p>
 
 <p>Voici comment Git est censé être utilisé (pour plus de détails vous pouvez lire <a href="http://hoth.entp.com/output/git_for_designers.html">Git for Designers</a> en anglais)&nbsp;:</p>
 
 <ul>
-  <li>récupération ou création d’un “repository” central <strong><span class="sc">Le Grand Repository</span></strong></li>
-  <li>Création d’un <em>branche légère</em> locale qui contient les différences qui vont devoir être “patché” dans <strong><span class="sc">LE GRAND REPOSITORY</span></strong>.</li>
+  <li>récupération ou création d&rsquo;un &ldquo;repository&rdquo; central <strong><span class="sc">Le Grand Repository</span></strong></li>
+  <li>Création d&rsquo;un <em>branche légère</em> locale qui contient les différences qui vont devoir être &ldquo;patché&rdquo; dans <strong><span class="sc">LE GRAND REPOSITORY</span></strong>.</li>
 </ul>
 
-<p>Voici comment n’est <strong><span class="sc">pas</span></strong> censé être utilisé Git&nbsp;: </p>
+<p>Voici comment n&rsquo;est <strong><span class="sc">pas</span></strong> censé être utilisé Git&nbsp;: </p>
 
 <ul>
-  <li>Récupération ou création d’un “repository” quelconque</li>
-  <li>Création d’un <em>branche légère</em> locale qui n’a pas pour vocation de mettre à jour le “repository” d’origine, mais de vivre sa vie de façon autonome et de récupérer les mises à jour des autres du “repository” d’origine.</li>
+  <li>Récupération ou création d&rsquo;un &ldquo;repository&rdquo; quelconque</li>
+  <li>Création d&rsquo;un <em>branche légère</em> locale qui n&rsquo;a pas pour vocation de mettre à jour le &ldquo;repository&rdquo; d&rsquo;origine, mais de vivre sa vie de façon autonome et de récupérer les mises à jour des autres du &ldquo;repository&rdquo; d&rsquo;origine.</li>
 </ul>
 
-<p>En effet cette petite notion m’a empêché de fonctionner correctement.</p>
+<p>En effet cette petite notion m&rsquo;a empêché de fonctionner correctement.</p>
 
 <h3 id="en-pratique">En pratique</h3>
 
-<p>Maintenant que j’ai compris ça, je peux enfin comprendre pourquoi Git a tant de défenseurs qui continue de trouver que Git est meilleur que les autres.</p>
+<p>Maintenant que j&rsquo;ai compris ça, je peux enfin comprendre pourquoi Git a tant de défenseurs qui continue de trouver que Git est meilleur que les autres.</p>
 
-<p>La notion de branche légère est essentielle à Git et vraiment utile en pratique. Notamment pour la gestion de ce site. Par contre, elle m’empêche d’utiliser les branches comme je le souhaiterai.</p>
+<p>La notion de branche légère est essentielle à Git et vraiment utile en pratique. Notamment pour la gestion de ce site. Par contre, elle m&rsquo;empêche d&rsquo;utiliser les branches comme je le souhaiterai.</p>
 
-<p>Mais dans ce cas-là, je n’ai qu’à utiliser des <em>clônes</em> et pas des <em>branches légères</em>.</p>
+<p>Mais dans ce cas-là, je n&rsquo;ai qu&rsquo;à utiliser des <em>clônes</em> et pas des <em>branches légères</em>.</p>
 
 <h3 id="des-exemples">Des exemples</h3>
 
@@ -187,7 +187,7 @@ Tout est magique. C’est la façon de voir “<em>Mondes Parallèles</em>”. C
 <div><pre class="twilight">git reset --hard HEAD~3
 </pre></div>
 
-<p>Là ça va commencer à se compliquer. Si on veut revenir dans le temps sur toute l’arborescence, avec Git on utilise <code>reset</code>. </p>
+<p>Là ça va commencer à se compliquer. Si on veut revenir dans le temps sur toute l&rsquo;arborescence, avec Git on utilise <code>reset</code>. </p>
 
 <center>OK</center>
 
@@ -198,47 +198,47 @@ Tout est magique. C’est la façon de voir “<em>Mondes Parallèles</em>”. C
 
 <center>**ET BIEN NON&nbsp;!**</center>
 
-<p>La solution c’est&nbsp;:</p>
+<p>La solution c&rsquo;est&nbsp;:</p>
 
 <div><pre class="twilight">git checkout FILE
 </pre></div>
 
-<p>Quoi&nbsp;? <strong><code>checkout</code></strong>&nbsp;!? Bon, d’accord, j’accepte, pourquoi pas après tout&nbsp;?
-En plus quand on est habitué à Bazaar c’est&nbsp;:</p>
+<p>Quoi&nbsp;? <strong><code>checkout</code></strong>&nbsp;!? Bon, d&rsquo;accord, j&rsquo;accepte, pourquoi pas après tout&nbsp;?
+En plus quand on est habitué à Bazaar c&rsquo;est&nbsp;:</p>
 
 <div><pre class="twilight">git revert FILE
 </pre></div>
 
 <p>Ce que je trouve quand même bien plus naturel.</p>
 
-<p>Mais là où ça devient vraiment difficile de s’y faire c’est pour changer de branche.<br />
+<p>Mais là où ça devient vraiment difficile de s&rsquo;y faire c&rsquo;est pour changer de branche.<br />
 Avec Bazaar ça donne&nbsp;: </p>
 
 <div><pre class="twilight">cd ../branch
 </pre></div>
 
-<p>Bon ok, il faut changer de répertoire, un répertoire par branche. Ça consomme de l’espace disque mais au moins on voit où on est. Avec Git voilà comment on change de branche (<em>branche légère</em>)&nbsp;:</p>
+<p>Bon ok, il faut changer de répertoire, un répertoire par branche. Ça consomme de l&rsquo;espace disque mais au moins on voit où on est. Avec Git voilà comment on change de branche (<em>branche légère</em>)&nbsp;:</p>
 
 <div><pre class="twilight">git checkout branch
 </pre></div>
 
-<p>Alors là, on se dit “<abbr title="What the Fuck?">WTF?</abbr>”&nbsp;; en français&nbsp;: mais qu’est-ce que c’est que ça&nbsp;? Je croyais que <code>checkout</code> c’était pour récupérer l’état d’un fichier&nbsp;?</p>
+<p>Alors là, on se dit &ldquo;<abbr title="What the Fuck?">WTF?</abbr>&rdquo;&nbsp;; en français&nbsp;: mais qu&rsquo;est-ce que c&rsquo;est que ça&nbsp;? Je croyais que <code>checkout</code> c&rsquo;était pour récupérer l&rsquo;état d&rsquo;un fichier&nbsp;?</p>
 
 <p>En fait le mot <code>checkout</code> sert à la fois à revenir en arrière sur un fichier (MAIS PAS TOUTE UNE ARBORESCENCE où là ça sera <code>reset --hard</code>) et à <strong>changer de branche</strong>&nbsp;!</p>
 
-<p>Je trouve ça carrément contre nature.  Même si c’est totalement justifié du point de vue théorique voir le très bon article (en anglais) <a href="http://eagain.net/articles/git-for-computer-scientists/">Git for Computer Scientist</a>. Du point de vue interface utilisateur, on peut difficilement faire pire. On dirait que les mots clés sont utilisés pour piéger l’utilisateur.</p>
+<p>Je trouve ça carrément contre nature.  Même si c&rsquo;est totalement justifié du point de vue théorique voir le très bon article (en anglais) <a href="http://eagain.net/articles/git-for-computer-scientists/">Git for Computer Scientist</a>. Du point de vue interface utilisateur, on peut difficilement faire pire. On dirait que les mots clés sont utilisés pour piéger l&rsquo;utilisateur.</p>
 
 <blockquote>
   <ul>
-    <li>— Alors, essaye de deviner ce qu’il va falloir écrire pour faire cette opération&nbsp;? </li>
-    <li>— Perdu. Essaye encore, cherche sur Internet (blaireau).</li>
-    <li>— Non, c’est toujours pas bon, recommence (sale nul).</li>
+    <li>&mdash; Alors, essaye de deviner ce qu&rsquo;il va falloir écrire pour faire cette opération&nbsp;? </li>
+    <li>&mdash; Perdu. Essaye encore, cherche sur Internet (blaireau).</li>
+    <li>&mdash; Non, c&rsquo;est toujours pas bon, recommence (sale nul).</li>
   </ul>
 </blockquote>
 
-<p>Bon alors, voilà, les défauts de Git. Mais, il a par contre beaucoup d’avantages. Une fois qu’on a compris le principe des branches légères. Tout devient plus clair. Même si en pratique, l’édition du fichier <code>.git/config</code> peut s’avérer un peu fastidieuse et surtout contre intuitive.</p>
+<p>Bon alors, voilà, les défauts de Git. Mais, il a par contre beaucoup d&rsquo;avantages. Une fois qu&rsquo;on a compris le principe des branches légères. Tout devient plus clair. Même si en pratique, l&rsquo;édition du fichier <code>.git/config</code> peut s&rsquo;avérer un peu fastidieuse et surtout contre intuitive.</p>
 
-<p><small><a name="note3">‡</a> - Il faut aussi préciser qu’ayant travaillé sur les logiques multi-modales et en particulier sur les logiques temporelles (linéaires ou non), j’étais plus enclin à adhérer à cette vision des choses. “Ah mes premiers amours dans la recherche scientifique&nbsp;!”</small></p>
+<p><small><a name="note3">&Dagger;</a> - Il faut aussi préciser qu&rsquo;ayant travaillé sur les logiques multi-modales et en particulier sur les logiques temporelles (linéaires ou non), j&rsquo;étais plus enclin à adhérer à cette vision des choses. &ldquo;Ah mes premiers amours dans la recherche scientifique&nbsp;!&rdquo;</small></p>
 
 
 </div>
@@ -250,18 +250,18 @@ Avec Bazaar ça donne&nbsp;: </p>
 
 <h3 id="dcvs-vs-cvs-">DCVS vs. CVS&nbsp;?</h3>
 
-<p>Est-ce que ça valait la peine d’utiliser un système de “versionning” décentralisé&nbsp;? Indéniablement la réponse est oui. On peut très bien vivre avec des systèmes de versions centralisés, mais la souplesse apportée par la facilité de “merger” différentes branches. De travailler de façon autonomes sur différentes parties d’un projets sont vraiment des plus appréciables. J’aurai vraiment du mal à revenir en arrière.</p>
+<p>Est-ce que ça valait la peine d&rsquo;utiliser un système de &ldquo;versionning&rdquo; décentralisé&nbsp;? Indéniablement la réponse est oui. On peut très bien vivre avec des systèmes de versions centralisés, mais la souplesse apportée par la facilité de &ldquo;merger&rdquo; différentes branches. De travailler de façon autonomes sur différentes parties d&rsquo;un projets sont vraiment des plus appréciables. J&rsquo;aurai vraiment du mal à revenir en arrière.</p>
 
 <h3 id="est-ce-que-git-est-meilleurs-que-bazaar-">Est-ce que Git est meilleurs que Bazaar&nbsp;?</h3>
 
 <p>En terme de <em>fonctionnalités</em> je dirai que Git est meilleurs. 
-Par contre, je dois avouer qu’il s’agit d’un CVS qui s’est mis dans mes pattes. Or c’est exactement ce que je ne souhaitait pas lors de mon premier choix.</p>
+Par contre, je dois avouer qu&rsquo;il s&rsquo;agit d&rsquo;un CVS qui s&rsquo;est mis dans mes pattes. Or c&rsquo;est exactement ce que je ne souhaitait pas lors de mon premier choix.</p>
 
-<p>Je n’aurai pas dû avoir du mal à comprendre cette notion de <em>branche légère</em> qui doit être un patch sinon tu reçois des messages t’expliquant que tu es en retard. En réalité, Git différencie la notion d’arbre de la notion de branche. Ce qui n’est pas le cas dans Bazaar. Conceptuellement, c’est beaucoup plus simple de comprendre avec Bazaar.</p>
+<p>Je n&rsquo;aurai pas dû avoir du mal à comprendre cette notion de <em>branche légère</em> qui doit être un patch sinon tu reçois des messages t&rsquo;expliquant que tu es en retard. En réalité, Git différencie la notion d&rsquo;arbre de la notion de branche. Ce qui n&rsquo;est pas le cas dans Bazaar. Conceptuellement, c&rsquo;est beaucoup plus simple de comprendre avec Bazaar.</p>
 
 <h3 id="finalement-">Finalement&nbsp;?</h3>
 
-<p>Pour conclure, j’utilise plus souvent Git que Bazaar et je dois dire que je préfère utiliser Git. Cependant, les commandes comme <code>revert</code> manquent cruellement avec Git. Pour l’instant je n’ai pas encore fait d’alias pour renommer les commandes Git comme je le souhaite.</p>
+<p>Pour conclure, j&rsquo;utilise plus souvent Git que Bazaar et je dois dire que je préfère utiliser Git. Cependant, les commandes comme <code>revert</code> manquent cruellement avec Git. Pour l&rsquo;instant je n&rsquo;ai pas encore fait d&rsquo;alias pour renommer les commandes Git comme je le souhaite.</p>
 
                 </div>
             

@@ -54,7 +54,7 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>In my <a href="previouspost">previous post</a> I had given some trick to match all except something. On the same idea, the trick to match the smallest possible string. Say you want to match the string between ‘a’ and ‘b’, for example, you want to match:</p>
+                    <p>In my <a href="previouspost">previous post</a> I had given some trick to match all except something. On the same idea, the trick to match the smallest possible string. Say you want to match the string between &lsquo;a&rsquo; and &lsquo;b&rsquo;, for example, you want to match:</p>
 
 <pre class="twilight">
 a.....<span class="Constant"><strong>a......b</strong></span>..b..a....<span class="Constant"><strong>a....b</strong></span>...
@@ -75,7 +75,7 @@ a.....<span class="Constant"><strong>a......b</strong></span>..b..a....<span cla
 </pre>
 
 <p>The next natural way, is to change the <em>greediness</em>. But it is not enough as you will match from the first <code>a</code> to the first <code>b</code>.
-Then a simple constatation is that our matching string shouldn’t contain any <code>a</code> nor <code>b</code>. Which lead to the last elegant solution.</p>
+Then a simple constatation is that our matching string shouldn&rsquo;t contain any <code>a</code> nor <code>b</code>. Which lead to the last elegant solution.</p>
 
 <pre class="twilight">
 /a[^ab]*b/
@@ -105,7 +105,7 @@ For example:</p>
 &lt;li&gt;...&lt;li&lt;/li&gt;
 </pre></div>
 
-<p>That string should not match. This is why if we really want to match it correctly<sup><a href="#note1">†</a></sup> we need to add:</p>
+<p>That string should not match. This is why if we really want to match it correctly<sup><a href="#note1">&dagger;</a></sup> we need to add:</p>
 <div><pre class="twilight">
 &lt;li&gt;([^&lt;]|&lt;[^l]|&lt;l[^i]|&lt;li[^&gt;])*(|&lt;|&lt;l|&lt;li)&lt;/li&gt;
 </pre></div>
@@ -142,7 +142,7 @@ For example:</p>
 <p>And it works in only 9 lines for any beginning and ending string. This solution should look less <em>I AM THE GREAT REGEXP M45T3R, URAN00B</em>, but is more convenient in my humble opinion. Further more, using this last solution prove you master regexp, because you know it is difficult to manage such problems with only a regexp.</p>
 
 <hr />
-<p><small><a name="note1"><sup>†</sup></a> I know I used an HTML syntax example, but in my real life usage, I needed to match between <code>en:</code> and <code>::</code>. And sometimes the string could finish with <code>e::</code>.</small></p>
+<p><small><a name="note1"><sup>&dagger;</sup></a> I know I used an HTML syntax example, but in my real life usage, I needed to match between <code>en:</code> and <code>::</code>. And sometimes the string could finish with <code>e::</code>.</small></p>
 
 
                 </div>

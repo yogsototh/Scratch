@@ -62,7 +62,7 @@
 <div class="intro">
 
 
-<p>Why even if I believe <code>git</code> has many bad point I believe it is the best DCVS around to work with. This is why I first tell why I prefer <a href="http://bazaar-vcs.org">Bazaar</a> over <a href="http://git-scm.org">Git</a>. Secondly I’ll talk about the only advantage of git against Bazaar which lead me to prefer it.</p>
+<p>Why even if I believe <code>git</code> has many bad point I believe it is the best DCVS around to work with. This is why I first tell why I prefer <a href="http://bazaar-vcs.org">Bazaar</a> over <a href="http://git-scm.org">Git</a>. Secondly I&rsquo;ll talk about the only advantage of git against Bazaar which lead me to prefer it.</p>
 
 
 </div>
@@ -74,7 +74,7 @@
 
 <p>There is two way of perceive version control system. Either you think in term of branches (see the really good article on <a href="http://betterexplained.com/articles/a-visual-guide-to-version-control/">betterexplained</a>) or think in term of patches. Another way to say that, is weather you concentrate on vertices or on transitions of the graph of possible states of your project.</p>
 
-<p>This is the second approach who was behind <code>git</code> and this is the first behind Bazaar. <code>git</code> was created by Linus Torvald in order to close some gap in the version system used to develop the Linux kernel. And patches is a term which is more present than ‘state’ in the development community.</p>
+<p>This is the second approach who was behind <code>git</code> and this is the first behind Bazaar. <code>git</code> was created by Linus Torvald in order to close some gap in the version system used to develop the Linux kernel. And patches is a term which is more present than &lsquo;state&rsquo; in the development community.</p>
 
 <p>I first was convinced by Bazaar. Why? Argument in favor of Bazaar were: user friendly, terminology close to the subversion one. And I tried a bit the two, and it was clearly more natural for me to use Bazaar. But after seeing so many people using <code>git</code> I decided to give it a serious try.</p>
 
@@ -102,11 +102,11 @@ git checkout pipo
 git checkout ./pipo
 </pre></div>
 
-<p>Yes, hum…</p>
+<p>Yes, hum&hellip;</p>
 
 <p>It works, but it is clearly not really user friendly. Furthermore, checkout had a complete different signification in older CSV like <code>cvs</code> et <code>svn</code>. <code>checkout</code> was used to get a distant project locally.</p>
 
-<p>Bazaar terminology is far more natural, because there is no command to change the current branch as there is only one branch per directory. Changing a branch in Bazaar is changing the current directory. I also believe it is the biggest problem of Bazaar, I’ll tell you why. And to undo things in Bazaar:</p>
+<p>Bazaar terminology is far more natural, because there is no command to change the current branch as there is only one branch per directory. Changing a branch in Bazaar is changing the current directory. I also believe it is the biggest problem of Bazaar, I&rsquo;ll tell you why. And to undo things in Bazaar:</p>
 
 <div><pre class="twilight">
 bzr revert pipo
@@ -159,7 +159,7 @@ git commit -m <span class="String"><span class="String">&quot;</span>reverted 3 
 
 <p>The rule is simple: <em>NEVER use the <code>git reset</code> command on a version somebody else could have <code>fetched</code></em></p>
 
-<p>It was said. Discover the best method took me some time. I’d made many different tries. The safer and best way of reverting back your tree is to use this method. If you want to make it automatic just had the following alias in your <code>~/.gitconfig</code>. Of course this alias will work only on environment having <code>zsh</code> installed. Which is the cas for most UNIX (Ubuntu, Mac OS X…).</p>
+<p>It was said. Discover the best method took me some time. I&rsquo;d made many different tries. The safer and best way of reverting back your tree is to use this method. If you want to make it automatic just had the following alias in your <code>~/.gitconfig</code>. Of course this alias will work only on environment having <code>zsh</code> installed. Which is the cas for most UNIX (Ubuntu, Mac OS X&hellip;).</p>
 
 <div><div class="code"><div class="file"><a href="/Scratch/en/blog/2009-12-14-Git-vs--Bzr/code/gitconfig"> &#x27A5; gitconfig </a></div><div class="withfile">
 <pre class="twilight">
@@ -170,7 +170,7 @@ git commit -m <span class="String"><span class="String">&quot;</span>reverted 3 
 
 <h1 id="what-make-git-by-far-the-best-dcvs-today">What make <code>git</code> by far the best DCVS today</h1>
 
-<p>After talking about the negatives points of <code>git</code>, now it’s time to speak about the very positive feature that make <code>git</code> the best DCVS in my humble opinion.</p>
+<p>After talking about the negatives points of <code>git</code>, now it&rsquo;s time to speak about the very positive feature that make <code>git</code> the best DCVS in my humble opinion.</p>
 
 <h2 id="cheap-branching">Cheap branching</h2>
 
