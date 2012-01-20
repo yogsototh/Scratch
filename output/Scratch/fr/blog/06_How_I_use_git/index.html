@@ -60,17 +60,17 @@
 <div class="encadre">
 
 
-<p><em>Màj</em>&nbsp;: Actuellement j&rsquo;utilise github avec des repository privés. Je paye une somme très raisonnable pour ce service. Si vous voulez être complètement autonome, je vous conseille d&rsquo;utiliser <a href="https://github.com/sitaramc/gitolite">gitolite</a> sur votre propre serveur accessible sur le web.</p>
+<p><em>Màj</em>&nbsp;: Actuellement j’utilise github avec des repository privés. Je paye une somme très raisonnable pour ce service. Si vous voulez être complètement autonome, je vous conseille d’utiliser <a href="https://github.com/sitaramc/gitolite">gitolite</a> sur votre propre serveur accessible sur le web.</p>
 
 
 </div>
 
 
-<p>J&rsquo;utilise <a href="http://www.git-scm.org/">Git</a> pour gérer mes projets personnels.
-J&rsquo;ai un <em>repository</em> centralisé et tous mes ordinateurs se synchronisent avec lui.
-Cependant, dans la documentation officielle, je n&rsquo;ai pas trouvé clairement ce que je souhaitais.</p>
+<p>J’utilise <a href="http://www.git-scm.org/">Git</a> pour gérer mes projets personnels.
+J’ai un <em>repository</em> centralisé et tous mes ordinateurs se synchronisent avec lui.
+Cependant, dans la documentation officielle, je n’ai pas trouvé clairement ce que je souhaitais.</p>
 
-<p>En d&rsquo;autres termes, si vous souhaitez utiliser le type de <em>workflow</em> que SVN proposait avec Git (et ses avantages), voici comment procéder.</p>
+<p>En d’autres termes, si vous souhaitez utiliser le type de <em>workflow</em> que SVN proposait avec Git (et ses avantages), voici comment procéder.</p>
 
 
 </div>
@@ -80,7 +80,7 @@ Cependant, dans la documentation officielle, je n&rsquo;ai pas trouvé clairemen
 
 <h2 class="first" id="initialisation">Initialisation</h2>
 
-<p>Disons que j&rsquo;ai déjà un projet et que je veuille en créer un nouveau.</p>
+<p>Disons que j’ai déjà un projet et que je veuille en créer un nouveau.</p>
 
 <div>
 <pre class="twilight">
@@ -119,7 +119,7 @@ Màj: La meilleure solution est d'installer <a href="https://github.com/sitaramc
 </em>
 </div>
 
-<p>Maintenant à partir de n&rsquo;importe quel ordinateur, voici ce que vous pouvez faire&nbsp;: </p>
+<p>Maintenant à partir de n’importe quel ordinateur, voici ce que vous pouvez faire&nbsp;: </p>
 
 <div>
 <pre class="twilight">
@@ -141,11 +141,11 @@ Je vous conseille de faire la même opération sur l'ordinateur qui à servi à 
 <div class="corps">
 
 
-<h2 class="first" id="lutilisation-courante">L&rsquo;utilisation courante</h2>
+<h2 class="first" id="lutilisation-courante">L’utilisation courante</h2>
 
 <p>Pour résumer vous avez maintenant un repository sur Internet et un ou plusieurs ordinateurs lui sont associés. Maintenant il faut que tout soit toujours synchronisé.</p>
 
-<p>Avant de commencer à travailler, la première chose à faire est de récupérer les modification à partir d&rsquo;Internet vers votre poste local&nbsp;: </p>
+<p>Avant de commencer à travailler, la première chose à faire est de récupérer les modification à partir d’Internet vers votre poste local&nbsp;: </p>
 
 <div>
 <pre class="twilight">
@@ -190,17 +190,17 @@ git push
 
 <h2 id="synchronisation-des-branches">Synchronisation des branches</h2>
 
-<p>Bien, maintenant que tout semble bon, il faut encore s&rsquo;occuper de quelques petites choses (sinon, SVN suffirait).
-Git est complètement orienté sur la décentralisation et la création de nouvelles branches sur le même poste. Synchroniser des branches sur plusieurs serveurs différent n&rsquo;est pas une opération naturelle.</p>
+<p>Bien, maintenant que tout semble bon, il faut encore s’occuper de quelques petites choses (sinon, SVN suffirait).
+Git est complètement orienté sur la décentralisation et la création de nouvelles branches sur le même poste. Synchroniser des branches sur plusieurs serveurs différent n’est pas une opération naturelle.</p>
 
-<p>C&rsquo;est pourquoi j&rsquo;ai créé deux simples scripts pour automatiser cette opération. Un script pour créer un branche localement et en ligne. Un autre script pour récupérer les branches en lignes qui ne sont pas présente localement.</p>
+<p>C’est pourquoi j’ai créé deux simples scripts pour automatiser cette opération. Un script pour créer un branche localement et en ligne. Un autre script pour récupérer les branches en lignes qui ne sont pas présente localement.</p>
 
 <p>Ainsi, lorsque je veux créer une nouvelle branche (localement et ligne)&nbsp;; je lance le script&nbsp;:</p>
 
 <div><pre class="twilight">git-create-new-branch branch_name
 </pre></div>
 
-<p>et quand je suis sur un autre ordinateur et que je veux récupérer les branches crées sur un autre poste, j&rsquo;exécute&nbsp;:</p>
+<p>et quand je suis sur un autre ordinateur et que je veux récupérer les branches crées sur un autre poste, j’exécute&nbsp;:</p>
 
 <div><pre class="twilight">git-get-remote-branches
 </pre></div>

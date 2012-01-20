@@ -13,12 +13,8 @@ tags:
   - blog
   - web
 -----
-Sur ce blog, je donne parfois la possibilité de télécharger certaines sources de code. 
-Dans ce cas, le code est souvent plus large que le `div` qui le contient. 
-Le texte est alors coupé.
-C'est pourquoi, j'utilise une méthode qui permet d'afficher ces sources dans de grandes *popups* en jQuery.
 
-Vous pouvez faire un essai en cliquant le code suivant ; remarquez qu'un bout du code n'est pas visible (après `z-index` normallement) :
+Voici une façon simple et rapide pour faire des popups avec jQuery.
 
 <code class="javascript" file="essai.js">
 // --- code popup ---
@@ -45,9 +41,7 @@ function initCode() {
 // --- end of code popup section ---
 </code>
 
-Ce code est celui qui permet d'obtenir cet effet.
-
-Que fait-il ?
+Que fait ce code ?
 
 Au chargement de la page je crée un `div` grand comme toute la page avec un fond légèrement transparent que je cache. 
 Je fais bien attention à son `z-index` pour qu'il soit devant tout le reste.

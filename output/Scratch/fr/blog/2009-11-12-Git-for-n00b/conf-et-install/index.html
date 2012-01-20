@@ -56,7 +56,7 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <h1 class="first" id="avant-lutilisation-la-configuration">Avant l&rsquo;utilisation, la configuration</h1>
+                    <h1 class="first" id="avant-lutilisation-la-configuration">Avant l’utilisation, la configuration</h1>
 
 <h2 id="installation">installation</h2>
 
@@ -115,9 +115,9 @@ $ git config --global user.name John Doe
 $ git config --global user.email john.doe@email.com
 </pre></div>
 
-<p>Voilà, la configuration de base est terminée. J&rsquo;ai créé dans le fichier de configuration global des <em>alias</em> qui vont permettre de taper des commandes un peu plus courtes.</p>
+<p>Voilà, la configuration de base est terminée. J’ai créé dans le fichier de configuration global des <em>alias</em> qui vont permettre de taper des commandes un peu plus courtes.</p>
 
-<h2 id="rcupration-dun-projet-dj-versionn">Récupération d&rsquo;un projet déjà versionné</h2>
+<h2 id="rcupration-dun-projet-dj-versionn">Récupération d’un projet déjà versionné</h2>
 
 <p>Si un projet est déjà versionné avec <a href="http://git-scm.org" title="Git">Git</a> vous devez avoir une <code>URL</code> pointant vers les sources du projet. La commande a exécuter est alors très simple.</p>
 
@@ -126,13 +126,13 @@ $ cd <span class="Keyword">~</span>/Projets
 $ git clone git://main.server/path/to/file
 </pre></div>
 
-<p>S&rsquo;il n&rsquo;y a pas de serveur git sur le serveur distant, mais que vous avez un accès <code>ssh</code>, il suffit de remplacer le <code>git</code> de l&rsquo;url par <code>ssh</code>. Pour ne pas avoir à entrer votre mot de passe à chaque fois le plus simple est de procéder comme suit&nbsp;:</p>
+<p>S’il n’y a pas de serveur git sur le serveur distant, mais que vous avez un accès <code>ssh</code>, il suffit de remplacer le <code>git</code> de l’url par <code>ssh</code>. Pour ne pas avoir à entrer votre mot de passe à chaque fois le plus simple est de procéder comme suit&nbsp;:</p>
 
 <div><pre class="twilight">
 $ ssh-keygen -t rsa
 </pre></div>
 
-<p>Répondez aux question et n&rsquo;entrez <strong>surtout PAS</strong> de mot de passe. Ensuite copiez les clés sur le serveur distant. Ce n&rsquo;est pas la façon la plus sûre de procéder. L&rsquo;idéal étant d&rsquo;écrire quand même un mot de passe et d&rsquo;utiliser <code>ssh-agent</code>.</p>
+<p>Répondez aux question et n’entrez <strong>surtout PAS</strong> de mot de passe. Ensuite copiez les clés sur le serveur distant. Ce n’est pas la façon la plus sûre de procéder. L’idéal étant d’écrire quand même un mot de passe et d’utiliser <code>ssh-agent</code>.</p>
 
 <p>Ensuite le plus simple, si vous possédez <code>ssh-copy-id</code> (sous Ubuntu par exemple)&nbsp;:</p>
 
@@ -151,7 +151,7 @@ me@main.server$ rm id_rsa.pub
 me@main.server$ logout
 </pre></div>
 
-<p>Maintenant vous n&rsquo;avez plus besoin de taper votre mot de passe pour accéder à <code>main.server</code>. Et donc aussi pour les commandes <code>git</code>.</p>
+<p>Maintenant vous n’avez plus besoin de taper votre mot de passe pour accéder à <code>main.server</code>. Et donc aussi pour les commandes <code>git</code>.</p>
 
 <h2 id="crer-un-nouveau-projet">Créer un nouveau projet</h2>
 
@@ -173,7 +173,7 @@ $ git commit -m <span class="String"><span class="String">&quot;</span>Initial c
 *~
 </pre></div>
 
-<p>Maintenant si vous voulez créer un repository sur un serveur distant, il faut absolument qu&rsquo;il soit en  mode <code>bare</code>. C&rsquo;est-à-dire que le repository ne contiendra que la partie contenant les informations utile à la gestion de git, mais pas les fichiers du projet. Sans rentrer dans les détails, il suffit de lancer&nbsp;:</p>
+<p>Maintenant si vous voulez créer un repository sur un serveur distant, il faut absolument qu’il soit en  mode <code>bare</code>. C’est-à-dire que le repository ne contiendra que la partie contenant les informations utile à la gestion de git, mais pas les fichiers du projet. Sans rentrer dans les détails, il suffit de lancer&nbsp;:</p>
 
 <div><pre class="twilight">
 $ cd /path/to/local/project
@@ -188,9 +188,9 @@ git clone ssh://server/path/to/project
 
 <h2 id="rsum-de-la-seconde-tape">Résumé de la seconde étape</h2>
 
-<p>Vous avez maintenant un répertoire sur votre ordinateur local. Il est versionné. Vous pouvez vous en rendre compte parcequ&rsquo;à la racine (et à la racine seulement), il y a un répertoire <code>.git</code>. Ce répertoire contient tous les fichiers nécessaires au bon fonctionnement de <a href="http://git-scm.org" title="Git">Git</a>.</p>
+<p>Vous avez maintenant un répertoire sur votre ordinateur local. Il est versionné. Vous pouvez vous en rendre compte parcequ’à la racine (et à la racine seulement), il y a un répertoire <code>.git</code>. Ce répertoire contient tous les fichiers nécessaires au bon fonctionnement de <a href="http://git-scm.org" title="Git">Git</a>.</p>
 
-<p>Il ne reste plus qu&rsquo;à savoir comment s&rsquo;en servir maintenant pour obtenir toutes les jolies promesses faites dans la première partie.</p>
+<p>Il ne reste plus qu’à savoir comment s’en servir maintenant pour obtenir toutes les jolies promesses faites dans la première partie.</p>
 
 
                 </div>

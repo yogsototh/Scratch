@@ -13,11 +13,8 @@ tags:
   - blog
   - web
 -----
-Some source code on this blog can be downloaded. 
-Most of time, the code is larger than the `div` bloc. 
-This is why I use a method to show this code in a large jQuery popup. 
 
-You can try clicking the following code ; remark that the content is cutted a bit after `z-index`:
+Here is a fast and easy way to create jQuery popup.
 
 <code class="javascript" file="essai.js">
 // --- code popup ---
@@ -44,9 +41,7 @@ function initCode() {
 // --- end of code popup section ---
 </code>
 
-This code is the one I use to obtain this result.
-
-What does it do?
+What does this code do?
 
 At the loading of the page, I create a `div` as wide as the window. 
 This `div` is a bit transparent. Then I hide it. I also take care to its `z-index` value to be sure it is behind all elements.
