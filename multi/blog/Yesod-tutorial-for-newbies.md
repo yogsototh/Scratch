@@ -26,7 +26,7 @@ macros:
 begindiv(intro)
 
 en: <%= tldr %> A simple yesod tutorial.
-en: Yesod is an Haskell web framework.
+en: Yesod is a Haskell web framework.
 en: You shouldn't need to know Haskell. 
 
 fr: <%= tlal %> Un tutoriel pour yesod, un framework web Haskell.
