@@ -100,6 +100,8 @@ to an almost production ready architecture.
 Furthermore explaining something to others is a great way to learn.
 If you are used to Haskell and Yesod, this tutorial won't learn you much.
 If you are completely new to Haskell and Yesod it might hopefully helps you.
+Also if you find yourself too confused by the syntax, it might helps to read this 
+[article](http://blog.ezyang.com/2011/11/how-to-read-haskell/)
 
 During this tutorial you'll install, initialize and configure your first yesod project.
 Then there is a very minimal 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
