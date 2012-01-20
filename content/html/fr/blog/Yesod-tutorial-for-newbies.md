@@ -629,7 +629,7 @@ Just take a look at the corresponding template:
 <h1> Articles
 $if null articles
     -- Show a standard message if there is no article
-    <p>_{MsgNoEntries}
+    <p> There are no articles in the blog
 $else
     -- Show the list of articles
     <ul>
