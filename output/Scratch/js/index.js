@@ -1,27 +1,12 @@
-// --- code popin handling ---
-function openWide() {
-    $(this).clone(false).appendTo($("#_code"));
-    $('#_code a').css({"margin-right":"3em"});
-    $("#_code").show();
-}
-
-function returnToNormal() {
-    $("#_code").html("");
-    $("#_code").hide();
-}
-
 function initCode() {
     if ( ! /ip(od|hone)/.test(userAgent) ) {
-    $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/dynamic.css" type="text/css" />');
-        $(".code").click(openWide);
-        $(".code").css({cursor: "pointer"});
-        $('body').append('<div id="_code"></div>');
-        $('#_code').css( { 'font-size':$('.corps:first').css('font-size'), 'text-align': "justify", position: "fixed", left:0, top:0, width: "100%", height: "100%", "background-color": "rgba(0, 0, 0, 0.8)", 'z-index':2000, 'padding':'3px'} );
-        $('#_code').hide();
-        $('#_code').click(returnToNormal);
+        if (! /chrome/.test(userAgent) ) {
+            // Disable animation in chrome
+            // It seems they have some progress to do :(
+            $('head').append('<link rel="stylesheet" href="/Scratch/assets/css/dynamic.css" type="text/css" />');
+        }
     }
 }
-// --- end of popin code ---
 
 // --- Google analytics ---
 function analytics() {
