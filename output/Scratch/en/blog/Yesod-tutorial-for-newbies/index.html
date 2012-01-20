@@ -421,7 +421,7 @@ If you take a look at them, the format is not <span class="sc">html</span> but h
 </pre>
 
 <p>It is time to change the default <span class="sc">css</span>. 
-Add a file named <code>default-layout.lucius</code> inside the <code>template/</code> directory containing:</p>
+Add a file named <code>default-layout.lucius</code> inside the <code>templates/</code> directory containing:</p>
 
 <div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/default-layout.lucius"> &#x27A5; default-layout.lucius </a></div><div class="withfile">
 <pre class="twilight">
@@ -530,7 +530,7 @@ getEchoR theText = <span class="Keyword">do</span>
 
 <p>Some <span class="sc">html</span> (more precisely hamlet) is written directly inside our handler.
 We should put this part inside another file.
-Create the new file <code>template/echo.hamlet</code> containing:</p>
+Create the new file <code>templates/echo.hamlet</code> containing:</p>
 
 <div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/echo.hamlet"> &#x27A5; echo.hamlet </a></div><div class="withfile">
 <pre class="twilight">
@@ -712,7 +712,7 @@ getBlogR = <span class="Keyword">do</span>
     <span class="Comment"><span class="Comment">--</span> Get the list of articles inside the database.</span>
     articles &lt;- runDB $ selectList [] [<span class="Constant">Desc</span> <span class="Constant">ArticleTitle</span>]
     <span class="Comment"><span class="Comment">--</span> We'll need the two &quot;objects&quot;: articleWidget and enctype</span>
-    <span class="Comment"><span class="Comment">--</span> to construct the form (see template/articles.hamlet).</span>
+    <span class="Comment"><span class="Comment">--</span> to construct the form (see templates/articles.hamlet).</span>
     ((_,articleWidget), enctype) &lt;- generateFormPost entryForm
     defaultLayout $ <span class="Keyword">do</span>
         $(widgetFile <span class="String"><span class="String">&quot;</span>articles<span class="String">&quot;</span></span>)
@@ -804,7 +804,7 @@ getArticleR articleId = <span class="Keyword">do</span>
 <p>The <code>get404</code> function try to do a get on the DB. 
 If it fails it return a 404 page.
 The rest should be clear. 
-Here is the content of <code>template/article.hamlet</code>:</p>
+Here is the content of <code>templates/article.hamlet</code>:</p>
 
 <div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/article.hamlet"> &#x27A5; article.hamlet </a></div><div class="withfile">
 <pre class="twilight">
