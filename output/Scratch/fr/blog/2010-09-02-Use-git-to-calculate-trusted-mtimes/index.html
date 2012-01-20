@@ -54,14 +54,14 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>Vous pouvez remarquer qu’à la fin de chaque page je donne une date de dernière modification.
+                    <p>Vous pouvez remarquer qu&rsquo;à la fin de chaque page je donne une date de dernière modification.
 Précédemment cette date était calculée en utilisant la date du fichier.
-Mais il arrive fréquemment que je fasse un <code>touch</code> d’un fichier pour engendrer tout le site de nouveau.
-Donc la date n’est pas nécessairement la <em>vraie</em> de modification du contenue.</p>
+Mais il arrive fréquemment que je fasse un <code>touch</code> d&rsquo;un fichier pour engendrer tout le site de nouveau.
+Donc la date n&rsquo;est pas nécessairement la <em>vraie</em> de modification du contenue.</p>
 
-<p>J’utilise <a href="http://git-scm.org">git</a> pour <em>versionner</em> mon site web.
-Et cet outil me permet de récupérer la dernière date de <em>vraie</em> modification d’un fichier.
-Voici comment je m’y prend avec <a href="http://nanoc.stoneship.org">nanoc</a>&nbsp;:</p>
+<p>J&rsquo;utilise <a href="http://git-scm.org">git</a> pour <em>versionner</em> mon site web.
+Et cet outil me permet de récupérer la dernière date de <em>vraie</em> modification d&rsquo;un fichier.
+Voici comment je m&rsquo;y prend avec <a href="http://nanoc.stoneship.org">nanoc</a>&nbsp;:</p>
 
 <div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/code/gitmtime.rb"> &#x27A5; gitmtime.rb </a></div><div class="withfile">
 <pre class="twilight">
@@ -82,7 +82,7 @@ Voici comment je m’y prend avec <a href="http://nanoc.stoneship.org">nanoc</a>
 </pre>
 </div></div>
 
-<p>Bien entendu je sais que c’est très lent et absolument pas optimisé.
+<p>Bien entendu je sais que c&rsquo;est très lent et absolument pas optimisé.
 Mais ça fonctionne comme prévu.
 Maintenant la date que vous voyez en bas de la page correspond exactement à la dernière date de modification de son contenu.</p>
 

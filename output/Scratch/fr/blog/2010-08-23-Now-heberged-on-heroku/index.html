@@ -60,14 +60,14 @@
                 <div class="corps">
                     <h1 class="first" id="maintenant-sur-herokuhttpherokucom">Maintenant sur <a href="http://heroku.com">Heroku</a></h1>
 
-<p>J’ai changé mon hébergeur. Mobileme n’est absolument pas adapté à la diffusion de mon blog. C’est pourquoi je suis passé à <a href="http://heroku.com">Heroku</a>.</p>
+<p>J&rsquo;ai changé mon hébergeur. Mobileme n&rsquo;est absolument pas adapté à la diffusion de mon blog. C&rsquo;est pourquoi je suis passé à <a href="http://heroku.com">Heroku</a>.</p>
 
 <p>Mais comme vous devez le savoir mon blog est un site complètement statique.
-J’utilise <a href="http://nanoc.stoneship.org/">nanoc</a> pour l’engendrer.
-Avoir un site statique amène beaucoup d’avantages par rapport à un site dynamique. Surtout en terme de sécurité.
+J&rsquo;utilise <a href="http://nanoc.stoneship.org/">nanoc</a> pour l&rsquo;engendrer.
+Avoir un site statique amène beaucoup d&rsquo;avantages par rapport à un site dynamique. Surtout en terme de sécurité.
 Voici comment configurer un site statique sur heroku.</p>
 
-<p>La racine de mes fichiers est ‘/output’. Vous devez simplement créer deux fichiers. Un fichier <code>config.ru</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>&nbsp;:</p>
+<p>La racine de mes fichiers est &lsquo;/output&rsquo;. Vous devez simplement créer deux fichiers. Un fichier <code>config.ru</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>&nbsp;:</p>
 
 <div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/code/config.ru"> &#x27A5; config.ru </a></div><div class="withfile">
 <pre class="twilight">
@@ -126,7 +126,7 @@ rack<span class="Keyword">-</span>contrib
 </pre>
 </div></div>
 
-<p>Maintenant il suffit de suivre l’introduction rapide d’heroku pour créer une nouvelle application&nbsp;:</p>
+<p>Maintenant il suffit de suivre l&rsquo;introduction rapide d&rsquo;heroku pour créer une nouvelle application&nbsp;:</p>
 
 <pre class="twilight">
 git init
@@ -136,11 +136,11 @@ git push heroku master
 </pre>
 
 <p>Maintenant je peux rediriger correctement mes erreurs 404.
-J’espère que ça a pu vous être utile.</p>
+J&rsquo;espère que ça a pu vous être utile.</p>
 <hr/><div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>Je me suis complètement inspiré de cet <a href="http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free">article</a>.<a href="#fnref:1" rev="footnote">&#8617;</a></p>
+      <p>Je me suis complètement inspiré de cet <a href="http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free">article</a>.<a href="#fnref:1" rel="reference">&#8617;</a></p>
     </li>
   </ol>
 </div>
