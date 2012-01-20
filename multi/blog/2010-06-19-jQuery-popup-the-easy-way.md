@@ -14,16 +14,9 @@ tags:
   - blog
   - web
 -----
-fr: Sur ce blog, je donne parfois la possibilité de télécharger certaines sources de code. 
-fr: Dans ce cas, le code est souvent plus large que le `div` qui le contient. 
-fr: Le texte est alors coupé.
-fr: C'est pourquoi, j'utilise une méthode qui permet d'afficher ces sources dans de grandes *popups* en jQuery.
-en: Some source code on this blog can be downloaded. 
-en: Most of time, the code is larger than the `div` bloc. 
-en: This is why I use a method to show this code in a large jQuery popup. 
 
-fr: Vous pouvez faire un essai en cliquant le code suivant ; remarquez qu'un bout du code n'est pas visible (après `z-index` normallement) :
-en: You can try clicking the following code ; remark that the content is cutted a bit after `z-index`:
+fr: Voici une façon simple et rapide pour faire des popups avec jQuery.
+en: Here is a fast and easy way to create jQuery popup.
 
 <code class="javascript" file="essai.js">
 // --- code popup ---
@@ -50,11 +43,8 @@ function initCode() {
 // --- end of code popup section ---
 </code>
 
-fr: Ce code est celui qui permet d'obtenir cet effet.
-en: This code is the one I use to obtain this result.
-
-fr: Que fait-il ?
-en: What does it do?
+fr: Que fait ce code ?
+en: What does this code do?
 
 fr: Au chargement de la page je crée un `div` grand comme toute la page avec un fond légèrement transparent que je cache. 
 fr: Je fais bien attention à son `z-index` pour qu'il soit devant tout le reste.
