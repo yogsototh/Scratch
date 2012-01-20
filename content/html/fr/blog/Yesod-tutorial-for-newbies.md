@@ -338,7 +338,7 @@ If you take a look at them, the format is not %html but hamlet.
 </code>
 
 It is time to change the default %css. 
-Add a file named `default-layout.lucius` inside the `template/` directory containing:
+Add a file named `default-layout.lucius` inside the `templates/` directory containing:
 
 <code class="css" file="default-layout.lucius">
 body {
@@ -443,7 +443,7 @@ getEchoR theText = do
 
 Some %html (more precisely hamlet) is written directly inside our handler.
 We should put this part inside another file.
-Create the new file `template/echo.hamlet` containing:
+Create the new file `templates/echo.hamlet` containing:
 
 <code class="haskell" file="echo.hamlet">
 <h1> #{theText}
@@ -615,7 +615,7 @@ getBlogR = do
     -- Get the list of articles inside the database.
     articles <- runDB $ selectList [] [Desc ArticleTitle]
     -- We'll need the two "objects": articleWidget and enctype
-    -- to construct the form (see template/articles.hamlet).
+    -- to construct the form (see templates/articles.hamlet).
     ((_,articleWidget), enctype) <- generateFormPost entryForm
     defaultLayout $ do
         $(widgetFile "articles")
@@ -703,7 +703,7 @@ getArticleR articleId = do
 The `get404` function try to do a get on the DB. 
 If it fails it return a 404 page.
 The rest should be clear. 
-Here is the content of `template/article.hamlet`:
+Here is the content of `templates/article.hamlet`:
 
 <code class="html" file="article.hamlet">
 <h1> #{articleTitle article}
