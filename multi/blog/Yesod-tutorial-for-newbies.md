@@ -731,12 +731,34 @@ Just for fun, you can try to create an article with the following content:
 
 This is the end of this tutorial.
 I made it very minimal.
-If you want to go further, you should take a look at the
+
+If you already know Haskell and you want to go further, 
+you should take a look at the
 recent [i18n blog tutorial](http://yesodweb.com/blog/2012/01/blog-example).
 It will be obvious I inspired my own tutorial on it.
 You'll learn in a very straightforward way how easy it is to use authorizations,
 Time and internationalization. 
 The example on also add a comment system.
 
-_ps:_ You can download the source of the blog at 
+If, on the other hand you don't know Haskell.
+Then you shouldn't jump directly to web programming.
+Haskell is a very complex and unusual language.
+My advice to go as fast as possible in using Haskell for web programming is:
+
+1. Start by [try Haskell in your browser](http://tryhaskell.org)
+2. Then read the excellent [Learn you a Haskell for Great Good](http://learnyouahaskell.com)
+3. If you have difficulties in understanding concepts like monads, you should really read [these articles](http://homepages.inf.ed.ac.uk/wadler/topics/monads.html). For me they were enlightening.
+4. If you feel confident, you should be able to follows the [yesod book](http://yesodweb.com/book) and if you find difficult to follows the yesod book, you should read [real world Haskell](book.realworldhaskell.org) first (it is a must read).
+
+Also, note that:
+
+- [haskell.org](http://haskell.org) is full of excellent resources.
+- [hoogle](http://www.haskell.org/hoogle/) will be very useful
+- Use [hlint](http://community.haskell.org/~ndm/hlint/) as soon as possible to get good habits.
+
+As you should see, if you don't already know Haskell,
+the path is long but I guaranty you it will be very rewarding!
+
+_ps:_ You can download the source of this yesod blog tutorial at 
 [github.com/yogsototh/yosog](http://github.com/yogsototh/yosog). 
+
