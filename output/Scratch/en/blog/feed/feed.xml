@@ -26,7 +26,7 @@
 
 
 &lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; A simple yesod tutorial.
-Yesod is an Haskell web framework.
+Yesod is a Haskell web framework.
 You shouldn&amp;rsquo;t need to know Haskell. &lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -41,7 +41,7 @@ You shouldn&amp;rsquo;t need to know Haskell. &lt;/p&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href="#echo"&gt;Echo&lt;/a&gt;    &lt;ul&gt;
-      &lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/p&gt;</content>
+      &lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-10-20:/Scratch/en/blog/SVG-and-m4-fractals/</id>
