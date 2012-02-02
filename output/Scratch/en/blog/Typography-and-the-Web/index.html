@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
+        <meta name="keywords" content="web, design, typography">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/twilight.css" />
+        <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
+        
+        <link rel="alternate" lang="fr" xml:lang="fr" title="La typography et le Web" type="text/html" hreflang="fr" href="/Scratch/fr/blog/Typography-and-the-Web/" /> 
+        <link rel="alternate" lang="en" xml:lang="en" title="Typography and the Web" type="text/html" hreflang="en" href="/Scratch/en/blog/Typography-and-the-Web/" /> 
+        <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
+        <title>Typography and the Web</title>
+    </head>
+    <body lang="en" class="article">
+        <script type="text/javascript">// <![CDATA[
+            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="loading..."/></div>');
+            // ]]>
+        </script>
+
+        <div id="content">
+
+            <div id="choix"> 
+                <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
+                <div id="choixlang">
+                    <a href="/Scratch/fr/blog/Typography-and-the-Web/" onclick="setLanguage('fr')">en Français</a>
+                </div>
+                <div class="flush"></div>
+            </div>
+            <div id="titre">
+                <h1>
+                    Typography and the Web
+                </h1>
+                
+            </div>
+            <div class="flush"></div>
+
+            
+
+            
+
+            <div class="flush"></div>
+            <div id="afterheader">
+                <div class="corps">
+                    <p><img alt="Screenshot of first in small caps with and without ligatures." src="/Scratch/img/blog/Typography-and-the-Web/first_sc_screenshot.png" /></p>
+
+
+<div class="intro">
+
+
+<p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> Web typography sucks and we’ll have to wait forever before it will be fixed.</p>
+
+
+</div>
+
+
+<p>I stumbled upon <a href="http://opentypography.org/">open typography</a>. Their main message is:</p>
+
+<blockquote>
+  <p>«There is no reason to wait for browser development to catch up.
+We can all create better web typography ourselves, today.»</p>
+</blockquote>
+
+<p>As somebody who tried to make my website using some nice typography features and in particular <em>ligatures</em>, I believe this is wrong.</p>
+
+<p>I already made an automatic system which will detect and replace text by their ligatures in my blog. But this I never published this on the web and this is why.</p>
+
+<p>First, what is a ligatures?</p>
+
+<p><img alt="A ligature example" src="/Scratch/img/blog/Typography-and-the-Web/ligatures.png" /></p>
+
+<p>What is the problem between the Web and ligatures?
+The first one is: you cannot search them. For example, try to search the word “first”:</p>
+
+<ul>
+  <li>first ← No ligature, no problem</li>
+  <li><span style="color: #800">ﬁ</span>r<span style="color: #800">ﬆ </span> ← ligature nice but unsearchable</li>
+</ul>
+
+<p>The second one is the rendering, for example, try to use a ligature character with small caps:</p>
+
+<ul>
+  <li>
+    <span class="sc">first</span>
+  </li>
+  <li>
+    <span class="sc"><span style="color:#800">ﬁ</span>r<span style="color:#800">ﬆ</span></span>
+  </li>
+</ul>
+
+<p>Here is a screenshot of what I see:</p>
+
+<p><img alt="Screenshot of first in small caps with and without ligatures." src="/Scratch/img/blog/Typography-and-the-Web/first_sc_screenshot.png" /></p>
+
+<p>The browser isn’t able to understand that the ligature character “<span style="color:#800">ﬁ</span>” should render as <span class="sc">fi</span> when rendered in small caps. And one part of the problem is you should choose to display a character in small caps using <span class="sc">css</span>.</p>
+
+<p>This way, how could you use a ligature Unicode character on a site on which you could change the <span class="sc">css</span>?</p>
+
+<p>Let’s compare to <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>.</p>
+
+<p><img alt="LaTeX screenshot" src="/Scratch/img/blog/Typography-and-the-Web/first_latex_screenshot.png" /></p>
+
+<p>If you take attention to detail, you’ll see the first “first” contains a ligature. Of course the second render nicely. The code I used were:</p>
+
+<pre class="twilight">
+<span class="Keyword"><span class="Keyword">\</span>item</span> first
+<span class="Keyword"><span class="Keyword">\</span>item</span> {\sc first}
+</pre>
+
+<p><span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span> was intelligent enough to create himself the ligatures when needed.</p>
+
+<p>The “<span style="color:#800">ﬆ</span>” ligature is rare and not rendered in <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span> by default. But if you want you could also render rare ligature using <span style="text-transform: uppercase">X<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">Ǝ</sub>L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>:</p>
+
+<p><img alt="XeLaTeX ligatures" src="/Scratch/img/blog/Typography-and-the-Web/xelatex_ligatures.jpg" /></p>
+
+<p>I took this image from the excellent article of <a href="http://nitens.org/taraborelli/latex#rare">Dario Taraborelli</a>.</p>
+
+<p>Clearly fix the rendering of ligature in a browser is a difficult task.
+Simply imagine the number of strange little exceptions:</p>
+
+<ul>
+  <li>The text is rendered in small caps, I cannot use ligature.</li>
+  <li>The current word contains a ligature unicode character, I should search for ligature in this one.</li>
+  <li>The current font does not defined the ligature unicode character, we shouldn’t use it, etc</li>
+  <li>A javascript command changed the CSS, I should verify if I had to revert the insertion of ligatures characters</li>
+  <li>etc…</li>
+</ul>
+
+<p>Nonetheless if someone has a solution, I would be happy to hear about it.</p>
+
+                </div>
+            
+                
+
+                <div id="choixrss">
+                    <a id="rss" href="http://feeds.feedburner.com/yannespositocomen">
+                        Subscribe
+                    </a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){ 
+                            $('#comment').hide(); 
+                            $('#clickcomment').click(showComments); 
+                        });
+                    function showComments() {
+                        $('#comment').show();
+                        $('#clickcomment').fadeOut();
+                    }
+                    document.write('<div id="clickcomment">Comments</div>');
+                </script>
+                <div class="flush"></div>
+                <div class="corps" id="comment">
+                    <h2 class="first">comments</h2>
+                    <noscript>
+                        You must enable javascript to comment.
+                    </noscript>
+                    
+    <script type="text/javascript">
+    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
+    var idcomments_post_id = '/Scratch/en/blog/Typography-and-the-Web/';
+    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/Typography-and-the-Web/';
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
+    
+                </div>
+
+            <div id="entete" class="corps_spaced">
+                <div id="liens">
+                    <ul><li><a href="/Scratch/en/">Home</a></li>
+<li><a href="/Scratch/en/blog/">Blog</a></li>
+<li><a href="/Scratch/en/softwares/">Softwares</a></li>
+<li><a href="/Scratch/en/about/">About</a></li></ul>
+                </div>
+                <div class="flush"></div>
+                <hr/>
+                <div id="next_before_articles">
+                    <div id="previous_articles">
+                        previous entries
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/"><span class="nicer">«</span>&nbsp;Haskell web programming</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/SVG-and-m4-fractals/"><span class="nicer">«</span>&nbsp;Increase the power of deficient languages.</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/Yesod-excellent-ideas/"><span class="nicer">«</span>&nbsp;Yesod excellent ideas</a>
+                        </div>
+                        
+                        
+                    </div>
+                    <div id="next_articles">
+                        next entries
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="flush"></div>
+                </div>
+            </div>
+
+
+            <div id="bottom">
+                <div>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                </div>
+                <div id="lastmod">
+                    Created: 02/02/2012
+                    Modified: 02/02/2012 
+                </div>
+                <div>
+                    Entirely done with
+                    <a href="http://www.vim.org">Vim</a>
+                    and 
+                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                </div>
+                <div>
+                    <a href="/Scratch/en/validation/">Validation</a> 
+                    <a href="http://validator.w3.org/check?uri=referer"> [xhtml] </a>
+                    .
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"> [css] </a>
+                    .
+                    <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//yannesposito.com/Scratch/en/blog/feed/feed.xml">[rss]</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>
