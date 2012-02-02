@@ -59,7 +59,7 @@ We can all create better web typography ourselves, today.»&lt;/p&gt;
 
 
 &lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; A simple yesod tutorial.
-Yesod is an Haskell web framework.
+Yesod is a Haskell web framework.
 You shouldn’t need to know Haskell. &lt;/p&gt;
 
 &lt;blockquote&gt;

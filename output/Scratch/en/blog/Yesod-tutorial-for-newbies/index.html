@@ -65,7 +65,7 @@
 
 
 <p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> A simple yesod tutorial.
-Yesod is an Haskell web framework.
+Yesod is a Haskell web framework.
 You shouldn’t need to know Haskell. </p>
 
 <blockquote>
@@ -727,7 +727,7 @@ Just take a look at the corresponding template:</p>
 <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">h1</span><span class="MetaTagAll">&gt;</span></span> Articles
 $if null articles
     -- Show a standard message if there is no article
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>_<span class="EmbeddedSource">{MsgNoEntries}</span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span> There are no articles in the blog
 $else
     -- Show the list of articles
     <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">ul</span><span class="MetaTagAll">&gt;</span></span>
@@ -828,15 +828,39 @@ Just for fun, you can try to create an article with the following content:</p>
 <h2 id="conclusion">Conclusion</h2>
 
 <p>This is the end of this tutorial.
-I made it very minimal.
-If you want to go further, you should take a look at the
+I made it very minimal.</p>
+
+<p>If you already know Haskell and you want to go further, 
+you should take a look at the
 recent <a href="http://yesodweb.com/blog/2012/01/blog-example">i18n blog tutorial</a>.
 It will be obvious I inspired my own tutorial on it.
 You’ll learn in a very straightforward way how easy it is to use authorizations,
-Time and internationalization. 
-The example on also add a comment system.</p>
+Time and internationalization. </p>
 
-<p><em>ps:</em> You can download the source of the blog at 
+<p>If, on the other hand you don’t know Haskell.
+Then you shouldn’t jump directly to web programming.
+Haskell is a very complex and unusual language.
+My advice to go as fast as possible in using Haskell for web programming is:</p>
+
+<ol>
+  <li>Start by <a href="http://tryhaskell.org">try Haskell in your browser</a></li>
+  <li>Then read the excellent <a href="http://learnyouahaskell.com">Learn you a Haskell for Great Good</a></li>
+  <li>If you have difficulties in understanding concepts like monads, you should really read <a href="http://homepages.inf.ed.ac.uk/wadler/topics/monads.html">these articles</a>. For me they were enlightening.</li>
+  <li>If you feel confident, you should be able to follows the <a href="http://yesodweb.com/book">yesod book</a> and if you find difficult to follows the yesod book, you should read <a href="http://book.realworldhaskell.org">real world Haskell</a> first (it is a must read).</li>
+</ol>
+
+<p>Also, note that:</p>
+
+<ul>
+  <li><a href="http://haskell.org">haskell.org</a> is full of excellent resources.</li>
+  <li><a href="http://www.haskell.org/hoogle/">hoogle</a> will be very useful</li>
+  <li>Use <a href="http://community.haskell.org/~ndm/hlint/">hlint</a> as soon as possible to get good habits.</li>
+</ul>
+
+<p>As you should see, if you don’t already know Haskell,
+the path is long but I guaranty you it will be very rewarding!</p>
+
+<p><em>ps:</em> You can download the source of this yesod blog tutorial at 
 <a href="http://github.com/yogsototh/yosog">github.com/yogsototh/yosog</a>.</p>
 <hr/><div class="footnotes">
   <ol>
