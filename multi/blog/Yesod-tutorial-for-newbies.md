@@ -25,6 +25,9 @@ macros:
 
 begindiv(intro)
 
+en: _update_: updated for yesod 0.10
+fr: _mise à jour_: mise à jour pour la version 0.10 de yesod.
+
 en: <%= tldr %> A simple yesod tutorial.
 en: Yesod is a Haskell web framework.
 en: You shouldn't need to know Haskell. 
@@ -325,7 +328,6 @@ Yes, I am looking at you PHP!
 Even this very minimal example should be enhanced.
 We will clean up many details:
 
-- Use %html5 boilerplate
 - Use a general %css (cleaner than the empty by default)
 - Dispatch handler code into different files
 - Use `Data.Text` instead of `String`
@@ -333,23 +335,17 @@ We will clean up many details:
 
 [^explainviewwidget]: By view I mean yesod widget's hamlet, lucius and julius files. 
 
-#### %html5 boilerplate and a better %css
+#### Use a better %css
 
-Copy the boilerplate template to the default template.
-If you take a look at them, the format is not %html but hamlet.
-
-<code class="zsh">
-~ cp templates/boilerplate-wrapper.hamlet templates/default-layout-wrapper.hamlet
-</code>
-
-It is time to change the default %css. 
+It is nice to note, the default template is based on %html5 boilerplate.
+Let's change the default %css. 
 Add a file named `default-layout.lucius` inside the `templates/` directory containing:
 
 <code class="css" file="default-layout.lucius">
 body {
     font-family: Helvetica, sans-serif; 
     font-size: 18px; }
-#content {
+#main {
     padding: 1em;
     border: #CCC solid 2px;
     border-radius: 5px;
@@ -638,9 +634,9 @@ $if null articles
 $else
     -- Show the list of articles
     <ul>
-        $forall article <- articles
+        $forall Entity articleId article <- articles
             <li> 
-                <a href=@{ArticleR (fst article)} > #{articleTitle (snd article)}
+                <a href=@{ArticleR articleId} > #{articleTitle article}
 <hr/>
   <form method=post enctype=#{enctype}>
     ^{articleWidget}
