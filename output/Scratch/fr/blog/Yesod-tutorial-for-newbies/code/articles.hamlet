@@ -6,9 +6,9 @@ $if null articles
 $else
     -- Show the list of articles
     <ul>
-        $forall article <- articles
+        $forall Entity articleId article <- articles
             <li> 
-                <a href=@{ArticleR (fst article)} > #{articleTitle (snd article)}
+                <a href=@{ArticleR articleId} > #{articleTitle article}
 <hr/>
   <form method=post enctype=#{enctype}>
     ^{articleWidget}
