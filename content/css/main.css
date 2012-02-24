@@ -867,3 +867,20 @@ ul.sameline
   box-shadow: 0 0 5px $mainShadowColor inset,0 0 5px #FFF
   margin: 1em 0
   padding: 1em
+
+a.cut
+  font-size: 12px
+  font-family: Monaco, monospace
+  text-align: right
+  display: block
+  width: 100%
+  opacity: .5
+  border: 1px solid $mainBackgroundColor 
+  border-radius: 3px
+  &:hover
+    opacity: 1
+    background-color: $secondBackgroundColor
+    border-color: $borderColor 
+    box-shadow: 0 0 3px $borderColor inset
+  strong
+    font-weight: bold
