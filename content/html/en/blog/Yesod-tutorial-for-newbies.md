@@ -630,7 +630,7 @@ $else
         $forall Entity articleId article <- articles
             <li> 
                 <a href=@{ArticleR articleId} > #{articleTitle article}
-<hr/>
+<hr>
   <form method=post enctype=#{enctype}>
     ^{articleWidget}
     <div>
@@ -658,7 +658,7 @@ postBlogR = do
          FormSuccess article -> do 
             articleId <- runDB $ insert article
             setMessage $ toHtml $ (articleTitle article) <> " created"
-            redirect RedirectPermanent $ ArticleR articleId 
+            redirect $ ArticleR articleId 
          _ -> defaultLayout $ do
                 setTitle "Please correct your entry form"
                 $(widgetFile "articleAddError")

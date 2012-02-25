@@ -9,7 +9,7 @@ $else
         $forall Entity articleId article <- articles
             <li> 
                 <a href=@{ArticleR articleId} > #{articleTitle article}
-<hr/>
+<hr>
   <form method=post enctype=#{enctype}>
     ^{articleWidget}
     <div>

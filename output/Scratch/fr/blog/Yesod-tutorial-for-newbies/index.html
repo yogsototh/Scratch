@@ -730,7 +730,7 @@ $else
         $forall Entity articleId article <span class="InvalidIllegal">&lt;</span>- articles
             <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">li</span><span class="MetaTagInline">&gt;</span></span> 
                 <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">a</span> <span class="MetaTagInline">href</span>=@<span class="EmbeddedSource">{ArticleR articleId}</span> <span class="MetaTagInline">&gt;</span></span> #<span class="EmbeddedSource">{articleTitle article}</span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">hr</span>/<span class="MetaTagAll">&gt;</span></span>
+<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">hr</span><span class="MetaTagAll">&gt;</span></span>
   <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">form</span> <span class="MetaTagAll">method</span>=<span class="MetaTagAll">post</span> <span class="MetaTagAll">enctype</span>=#<span class="EmbeddedSource">{enctype}</span><span class="MetaTagAll">&gt;</span></span>
     ^<span class="EmbeddedSource">{articleWidget}</span>
     <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span>
@@ -759,7 +759,7 @@ postBlogR = <span class="Keyword">do</span>
          <span class="Constant">FormSuccess</span> article -&gt; <span class="Keyword">do</span> 
             articleId &lt;- runDB $ insert article
             setMessage $ toHtml $ (articleTitle article) &lt;&gt; <span class="String"><span class="String">&quot;</span> created<span class="String">&quot;</span></span>
-            redirect <span class="Constant">RedirectPermanent</span> $ <span class="Constant">ArticleR</span> articleId 
+            redirect $ <span class="Constant">ArticleR</span> articleId 
          _ -&gt; defaultLayout $ <span class="Keyword">do</span>
                 setTitle <span class="String"><span class="String">&quot;</span>Please correct your entry form<span class="String">&quot;</span></span>
                 $(widgetFile <span class="String"><span class="String">&quot;</span>articleAddError<span class="String">&quot;</span></span>)
@@ -963,7 +963,7 @@ the path is long but I guaranty you it will be very rewarding!</p>
                 </div>
                 <div id="lastmod">
                     Écrit le : 15/01/2012
-                    modifié le : 20/01/2012 
+                    modifié le : 20/02/2012 
                 </div>
                 <div>
                     Site entièrement réalisé avec
