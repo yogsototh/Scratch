@@ -66,6 +66,37 @@
 
 <p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span></p>
 
+<blockquote>
+  <center><span class="sc"><b>Table of Content</b></span></center>
+
+<ul id="markdown-toc">
+  <li><a href="#introduction">Introduction</a>    <ul>
+      <li><a href="#install">Install</a></li>
+      <li><a href="#dont-be-afraid">Don&rsquo;t be afraid</a></li>
+    </ul>
+  </li>
+  <li><a href="#essential-haskell">Essential Haskell</a>    <ul>
+      <li><a href="#notations">Notations</a></li>
+      <li><a href="#useful-notations-for-functions">Useful notations for functions</a></li>
+    </ul>
+  </li>
+  <li><a href="#hard-part">Hard Part</a>    <ul>
+      <li><a href="#functional-style">Functional style</a></li>
+    </ul>
+  </li>
+  <li><a href="#types">Types</a>    <ul>
+      <li><a href="#type-inference">Type inference</a></li>
+      <li><a href="#recursive-type">Recursive type</a></li>
+      <li><a href="#trees">Trees</a></li>
+    </ul>
+  </li>
+  <li><a href="#hell-difficulty-part">Hell Difficulty Part</a>    <ul>
+      <li><a href="#io-trick-explained"><code>IO</code> trick explained.</a></li>
+    </ul>
+  </li>
+</ul>
+</blockquote>
+
 
 </div>
 
@@ -113,7 +144,8 @@ Hopefully, you&rsquo;ll be rewarded by having learned a lot of new concepts.</p>
 runhaskell filename.lhs
 </pre>
 
-  <p>You should see a link just below the line.</p>
+  <p>Some might not work, but most will.
+You should see a link just below.</p>
 </blockquote>
 
 
@@ -139,7 +171,7 @@ runhaskell filename.lhs
   <li><code>runhaskell</code>: Execute a program without compiling it. Convenient but very slow compared to compiled program.</li>
 </ul>
 
-<h3 id="that-was-easy">That was easy!</h3>
+<h3 id="dont-be-afraid">Don&rsquo;t be afraid</h3>
 
 <p>At first I won&rsquo;t show you any Haskell super power.
 I will show you similarities between Haskell and other programming languages.
@@ -150,7 +182,7 @@ We&rsquo;ll just start with the obligatory &ldquo;Hello World&rdquo;.</p>
 main = <span class="Entity">print</span> <span class="String"><span class="String">&quot;</span>Hello World!<span class="String">&quot;</span></span>
 </pre>
 </div>
-<p>To run it, save this code in a <code>hello.hs</code> and:</p>
+<p>To run it, you can save this code in a <code>hello.hs</code> and:</p>
 
 <pre class="twilight">
 <span class="Keyword">~</span> runhaskell ./hello.hs
@@ -226,7 +258,7 @@ For now, I won&rsquo;t talk about what <code>IO</code> really is.</p>
 <hr />
 <p><a href="code/01_basic/10_Introduction/20_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>20_very_basic.lhs</strong></a></p>
 
-<h3 id="very-basic-haskell">Very basic Haskell</h3>
+<h3>Very basic Haskell</h3>
 
 <p>Before continuing you need be warned.
 You have to know some essential properties of Haskell. </p>
@@ -234,8 +266,8 @@ You have to know some essential properties of Haskell. </p>
 <p><em>Functional</em></p>
 
 <p>Haskell is a functional language.
-If you come from imperative language, you&rsquo;ll have to re-learn everything.
-But you will discover a lot of new concepts!</p>
+If you come from imperative language, you&rsquo;ll have to re-learn a lot.
+But you will discover many new concepts!</p>
 
 <p><em>Smart Static Typing</em></p>
 
@@ -263,10 +295,10 @@ Inifinte lists, infinite trees etc&hellip;</p>
 <p>A last warning on how you should read Haskell code.
 For me, it is like reading scientific paper.
 Some part are very clear, but when you see a formula, just focus and read slower.
-Also, while learning Haskell, it <em>really</em> doesn&rsquo;t matter much if you don&rsquo;t understand syntax details. If you cross a <code>&gt;&gt;=</code>, <code>&lt;$&gt;</code>, <code>&lt;-</code> or any other bararish symbol, just ignore them and follows the flow of the code.
+Also, while learning Haskell, it <em>really</em> doesn&rsquo;t matter much if you don&rsquo;t understand syntax details. If you cross a <code>&gt;&gt;=</code>, <code>&lt;$&gt;</code>, <code>&lt;-</code> or any other weird symbol, just ignore them and follows the flow of the code.
 I&rsquo;ll do my best to help you thought.</p>
 
-<h3 id="function-declaration">Function declaration</h3>
+<h4>Function declaration</h4>
 
 <p>You might be used to declare functions like this:</p>
 
@@ -324,11 +356,6 @@ The syntax was particularly well thought for these objects.</p>
 This is not mandatory.
 The compiler is smart enough to discover it for you.</p>
 
-<pre class="twilight">
-<span class="Entity">f</span> :: <span class="Constant">Int</span> -&gt; <span class="Constant">Int</span> -&gt; <span class="Constant">Int</span>
-f x y = x*x + y*y
-</pre>
-
 <p>Let&rsquo;s play a little.</p>
 
 <div class="codehighlight">
@@ -339,6 +366,10 @@ f x y = x*x + y*y
 main = <span class="Entity">print</span> (f 2 3)
 </pre>
 </div>
+<pre><code>~ runhaskell 20_very_basic.lhs
+13
+</code></pre>
+
 <hr />
 <p><a href="code/01_basic/10_Introduction/21_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>21_very_basic.lhs</strong></a></p>
 
@@ -505,19 +536,23 @@ Many informations are missing here.
 I suggest you to read this part as fast as possible. 
 You could get back if notation seems strange for you.</p>
 
+<p>I use the <code>⇔</code> symbol to state that two expression are equivalent.
+It is a meta notation, <code>⇔</code> does not exists in Haskell.
+I will also use <code>⇒</code> to show what is the return of an expression.</p>
+
 <h3 id="notations">Notations</h3>
 
 <h5>Arithmetic</h5>
 
-<pre><code>3 + 2 * 6 / 3 &lt;=&gt; 3 + ((2*6)/3)
+<pre><code>3 + 2 * 6 / 3 ⇔ 3 + ((2*6)/3)
 </code></pre>
 
 <h5>Logic</h5>
 
-<pre><code>True || False =&gt; True
-True &amp;&amp; False =&gt; False
-True == False =&gt; False
-True /= False =&gt; True  (/=) is the operator for different
+<pre><code>True || False ⇒ True
+True &amp;&amp; False ⇒ False
+True == False ⇒ False
+True /= False ⇒ True  (/=) is the operator for different
 </code></pre>
 
 <h5>Powers</h5>
@@ -533,7 +568,8 @@ x**y    for y any kind of number (Float for example)
 </code></pre>
 
 <p>Yeah!
-And also rational numbers FTW!</p>
+And also rational numbers FTW!
+But you need to import the module <code>Data.Ratio</code>:</p>
 
 <pre><code>$ ghci
 ....
@@ -2177,17 +2213,17 @@ Easy, just write a simple function return</p>
                         previous entries
                         
                         <div class="previous_article">
-                            <a href="/Scratch/en/blog/Typography-and-the-Web/"><span class="nicer">«</span>&nbsp;Typography and the Web</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
                             <a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/"><span class="nicer">«</span>&nbsp;Haskell web programming</a>
                         </div>
                         
                         
                         <div class="previous_article">
-                            <a href="/Scratch/en/blog/SVG-and-m4-fractals/"><span class="nicer">«</span>&nbsp;Increase the power of deficient languages.</a>
+                            <a href="/Scratch/en/blog/2010-05-19-How-to-cut-HTML-and-repair-it/"><span class="nicer">«</span>&nbsp;How to repair a cutted XML?</a>
+                        </div>
+                        
+                        
+                        <div class="previous_article">
+                            <a href="/Scratch/en/blog/2010-05-17-at-least-this-blog-revive/"><span class="nicer">«</span>&nbsp;I live again!</a>
                         </div>
                         
                         

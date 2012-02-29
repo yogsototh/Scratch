@@ -18,6 +18,11 @@ begindiv(intro)
 <%= tldr %>
 
 
+> <center><sc><b>Table of Content</b></sc></center>
+> 
+> * Table of Content (generated)
+> {:toc}
+
 enddiv
 
 <hr/><a href="code/00_preamble.lhs" class="cut">./<strong>00_preamble.lhs</strong></a>
@@ -53,8 +58,9 @@ This actual article contains three parts.
  > <pre>
  > runhaskell filename.lhs
  > </pre>
- > 
- > You should see a link just below the line.
+ >
+ > Some might not work, but most will.
+ > You should see a link just below.
 
 enddiv
 
@@ -72,7 +78,7 @@ Tools:
 - `ghci`: Interactive Haskell (REPL)
 - `runhaskell`: Execute a program without compiling it. Convenient but very slow compared to compiled program.
 
-### That was easy!
+### Don't be afraid
 
 At first I won't show you any Haskell super power.
 I will show you similarities between Haskell and other programming languages.
@@ -83,7 +89,7 @@ We'll just start with the obligatory "Hello World".
 main = print "Hello World!"
 </code>
 </div>
-To run it, save this code in a `hello.hs` and:
+To run it, you can save this code in a `hello.hs` and:
 
 <code class="zsh">
 ~ runhaskell ./hello.hs
@@ -157,7 +163,7 @@ Just remember, Haskell can look a lot like other imperative languages.
 
 <hr/><a href="code/01_basic/10_Introduction/20_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>20_very_basic.lhs</strong></a>
 
-### Very basic Haskell
+<h3>Very basic Haskell</h3>
 
 Before continuing you need be warned.
 You have to know some essential properties of Haskell. 
@@ -165,8 +171,8 @@ You have to know some essential properties of Haskell.
 _Functional_
 
 Haskell is a functional language.
-If you come from imperative language, you'll have to re-learn everything.
-But you will discover a lot of new concepts!
+If you come from imperative language, you'll have to re-learn a lot.
+But you will discover many new concepts!
 
 _Smart Static Typing_
 
@@ -192,10 +198,10 @@ Inifinte lists, infinite trees etc...
 A last warning on how you should read Haskell code.
 For me, it is like reading scientific paper.
 Some part are very clear, but when you see a formula, just focus and read slower.
-Also, while learning Haskell, it _really_ doesn't matter much if you don't understand syntax details. If you cross a `>>=`, `<$>`, `<-` or any other bararish symbol, just ignore them and follows the flow of the code.
+Also, while learning Haskell, it _really_ doesn't matter much if you don't understand syntax details. If you cross a `>>=`, `<$>`, `<-` or any other weird symbol, just ignore them and follows the flow of the code.
 I'll do my best to help you thought.
 
-### Function declaration
+<h4>Function declaration</h4>
 
 You might be used to declare functions like this:
 
@@ -253,11 +259,6 @@ The common usage is to declare the type of your function.
 This is not mandatory.
 The compiler is smart enough to discover it for you.
 
-<code class="haskell">
-f :: Int -> Int -> Int
-f x y = x*x + y*y
-</code>
-
 Let's play a little.
 
 <div class="codehighlight">
@@ -268,6 +269,11 @@ f x y = x*x + y*y
 main = print (f 2 3)
 </code>
 </div>
+~~~
+~ runhaskell 20_very_basic.lhs
+13
+~~~
+
 <hr/><a href="code/01_basic/10_Introduction/21_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>21_very_basic.lhs</strong></a>
 
 Now try
@@ -433,21 +439,25 @@ Many informations are missing here.
 I suggest you to read this part as fast as possible. 
 You could get back if notation seems strange for you.
 
+I use the `⇔` symbol to state that two expression are equivalent.
+It is a meta notation, `⇔` does not exists in Haskell.
+I will also use `⇒` to show what is the return of an expression.
+
 ### Notations
 
 <h5>Arithmetic</h5>
 
 ~~~
-3 + 2 * 6 / 3 <=> 3 + ((2*6)/3)
+3 + 2 * 6 / 3 ⇔ 3 + ((2*6)/3)
 ~~~
 
 <h5>Logic</h5>
 
 ~~~
-True || False => True
-True && False => False
-True == False => False
-True /= False => True  (/=) is the operator for different
+True || False ⇒ True
+True && False ⇒ False
+True == False ⇒ False
+True /= False ⇒ True  (/=) is the operator for different
 ~~~
 
 <h5>Powers</h5>
@@ -466,6 +476,7 @@ Integer have no limit except the capacity of your machine:
 
 Yeah!
 And also rational numbers FTW!
+But you need to import the module `Data.Ratio`:
 
 ~~~
 $ ghci
