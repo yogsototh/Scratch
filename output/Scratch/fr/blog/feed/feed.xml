@@ -2,13 +2,54 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2012-02-02T09:53:00Z</updated>
+  <updated>2012-02-08T13:17:53Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomfr"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2012-02-08:/Scratch/fr/blog/Haskell-the-Hard-Way/</id>
+    <title type="html">Haskell comme un vrai!</title>
+    <published>2012-02-08T13:17:53Z</published>
+    <updated>2012-02-08T13:17:53Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Haskell-the-Hard-Way/"/>
+    <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Haskell-the-Hard-Way/main.png" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt;&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href="code/00_preamble.lhs" class="cut"&gt;./&lt;strong&gt;00_preamble.lhs&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;Bend his mind to Haskell can be hard.
+It was for me.
+In this article I will try to provide you what I lacked to learn Haskell.&lt;/p&gt;
+
+&lt;p&gt;Why should you care about learning Haskell?
+You will learn far more than just a new language.
+By learning Haskell you will learn a lot of new concept you certainly never heard about.&lt;/p&gt;
+
+&lt;p&gt;This article is not intented to be easy.
+It will certainly be a bit hard to follow.
+If you can&amp;rsquo;t follow me you&amp;rsquo;ll certainly have a...&lt;/p&gt;&lt;/div&gt;&lt;/hr&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2012-02-02:/Scratch/fr/blog/Typography-and-the-Web/</id>
     <title type="html">La typography et le Web</title>
@@ -1027,25 +1068,5 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 &lt;p&gt;et vous devez obtenir le m&#234;me comportement avec seulement une expression r&#233;guli&#232;re. Le probl&#232;me c&amp;rsquo;est que le compl&#233;mentaire des r&#233;gulier n&amp;rsquo;est pas r&#233;gulier. Cel&#224; peut s&amp;rsquo;av&#233;rer impossible.&lt;/p&gt;
 
 &lt;p&gt;Cependant, pour certaines expressions ce peut &#234;tre possible&lt;sup&gt;&lt;a href="#note1"&gt;&amp;dagger;&lt;/a&gt;&lt;/sup&gt;. Disons que vous souhaitez &lt;em&gt;matcher&lt;/em&gt; toutes les lignes contenant le mot &lt;code&gt;bull&lt;/code&gt;, mais que vous ne souhaitez pas matcher &lt;code&gt;bu...&lt;/code&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2010-01-12:/Scratch/fr/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/</id>
-    <title type="html">Fontes adoucies sous Ubuntu Firefox</title>
-    <published>2010-01-12T14:36:40Z</published>
-    <updated>2010-01-12T14:36:40Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/"/>
-    <content type="html">&lt;p&gt;Voici comment faire pour ne plus utiliser les fontes Microsoft&#169; sous Linux Ubuntu pour avoir de belles fontes adoucies (anti aliased) qui ne font pas mal aux yeux sous Firefox.&lt;/p&gt;
-
-&lt;p&gt;modifiez le fichier &lt;code&gt;/etc/fonts/local.conf&lt;/code&gt; en y incluant le contenu suivant&amp;nbsp;: &lt;/p&gt;
-
-&lt;div&gt;
-&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;a href="/Scratch/fr/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/code/local.conf"&gt; &amp;#x27A5; local.conf &lt;/a&gt;&lt;/div&gt;&lt;div class="withfile"&gt;
-&lt;pre class="twilight"&gt;
-
-&lt;span class="DoctypeXmlProcessing"&gt;&lt;span class="DoctypeXmlProcessing"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="DoctypeXmlProcessing"&gt;xml&lt;/span&gt;&lt;span class="DoctypeXmlProcessing"&gt; version&lt;/span&gt;=&lt;span class="DoctypeXmlProcessing"&gt;&lt;span class="DoctypeXmlProcessing"&gt;&amp;quot;&lt;/span&gt;1.0&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
 </feed>
