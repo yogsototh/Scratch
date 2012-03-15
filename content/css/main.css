@@ -884,3 +884,5 @@ a.cut
     box-shadow: 0 0 3px $borderColor inset
   strong
     font-weight: bold
+.codehighlight pre
+  border: 4px solid #CCC
