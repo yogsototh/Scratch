@@ -850,10 +850,11 @@ table tr
   &:nth-child(even)
     background-color: $mainBackgroundColor
 
-p code
-  background: $secondBackgroundColor
-  border: solid 1px $borderColor
-  padding: 2px
+p, ul li, ol li
+  code
+    background: $secondBackgroundColor
+    border: solid 1px $borderColor
+    padding: 2px
 
 ul.sameline
   list-style: none
