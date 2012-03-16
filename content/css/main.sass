@@ -1,7 +1,6 @@
 -----
 
 -----
-
 $behindColor: #333
 $mainTextColor: $behindColor
 $mainBackgroundColor: #FAFAFA
@@ -121,6 +120,7 @@ ol li ul, ol li ol, ul li ol, ul li ul
   margin: .5em 1.5em
   list-style: circle
 
+
 body, h1, h2, h3, h4, #entete, .tag
   font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   line-height: 1.4em
@@ -203,13 +203,12 @@ acronym
   &:hover
     color: $highlightRevealColor
     text-shadow: 0 0 2px #FAA
-    background: #ECECEC
-    box-shadow: 0 -1px 8px #CCC inset
+    box-shadow: 0 0 4px #CCC inset
   &:active
     color: $highlightRevealColor
     text-shadow: 0 0 2px #FAA
     background: #EEE
-    box-shadow: 0 -1px 8px #AAA inset
+    box-shadow: 0 0 4px #AAA inset
 
 #liens a
   border: 1px solid #EEE
@@ -447,7 +446,6 @@ $contentMargin: 0em
 $fontcorps: 1.25
 
 .corps
-  font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   font-size: #{$fontcorps}em
   line-height: 1.6em
   text-align: justify
@@ -631,6 +629,14 @@ table.impact tr td
 
 #iemessage
   font-size: 1.2em
+  color: #CCC
+  margin: -10px
+  padding: 1px 0
+  background: #333
+  strong, b, i, em
+    color: #CCC
+  a, a:visited
+    color: #ECA
 
 .tag
   display: inline
