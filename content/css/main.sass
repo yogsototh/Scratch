@@ -837,12 +837,16 @@ ul.bloglist, .archive ul
   &:hover
     background: $revealColor
 
-ul#markdown-toc
+ul#markdown-toc, .toc ul
   font-variant: small-caps
   list-style: none
   padding-left: 1.5em
   ul
     padding-left: 1.5em
+    ul
+      font-variant: normal
+      line-height: 1em
+      margin-bottom: 1em
   a:after
     content: ""
 
