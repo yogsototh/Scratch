@@ -1,6 +1,5 @@
 /*
- * SOLARIZED HEX     
- * --------- ------- 
+ * http://ethanschoonover.com/solarized
  * base03    #002b36 
  * base02    #073642 
  * base01    #586e75 
@@ -18,9 +17,11 @@
  * cyan      #2aa198 
  * green     #859900 
  */
+
+/* base03 */
 pre.twilight {
     padding: .8em;
-    background-color: #002b36; /* base03 */
+    background-color: #002b36;
 }
 
 /* default text color */
@@ -31,7 +32,7 @@ pre.twilight .DiffHeader,
 pre.twilight .DiffDeleted,
 pre.twilight .EmbeddedSource,
 pre.twilight .EmbeddedSourceBright {
-   color: #839496; /* base0 */
+   color: #839496;
 }
 pre.twilight .DiffHeader { font-style: italic; }
 
