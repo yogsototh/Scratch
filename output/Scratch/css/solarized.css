@@ -1,0 +1,109 @@
+/*
+ * SOLARIZED HEX     
+ * --------- ------- 
+ * base03    #002b36 
+ * base02    #073642 
+ * base01    #586e75 
+ * base00    #657b83 
+ * base0     #839496 
+ * base1     #93a1a1 
+ * base2     #eee8d5 
+ * base3     #fdf6e3 
+ * yellow    #b58900 
+ * orange    #cb4b16 
+ * red       #dc322f 
+ * magenta   #d33682 
+ * violet    #6c71c4 
+ * blue      #268bd2 
+ * cyan      #2aa198 
+ * green     #859900 
+ */
+pre.twilight {
+    padding: .8em;
+    background-color: #002b36; /* base03 */
+}
+
+/* default text color */
+pre.twilight, 
+pre.twilight .DiffInserted,
+pre.twilight .DiffChanged,
+pre.twilight .DiffHeader,
+pre.twilight .DiffDeleted,
+pre.twilight .EmbeddedSource,
+pre.twilight .EmbeddedSourceBright {
+   color: #839496; /* base0 */
+}
+pre.twilight .DiffHeader { font-style: italic; }
+
+/* Highlighted background */
+pre.twilight .EmbeddedSource,
+pre.twilight .EmbeddedSourceBright {
+    background-color: #073642;
+}
+
+/* Present but not intrusive */
+pre.twilight .line-numbers,
+pre.twilight .DoctypeXmlProcessing,
+pre.twilight .Comment {
+   color: #586e75;
+}
+pre.twilight .Comment {
+   font-style: italic;
+}
+
+/* Red */
+pre.twilight .InvalidIllegal,
+pre.twilight .CssAtRule,
+pre.twilight .InvalidDeprecated {
+   color: #dc322f ;
+   font-style: italic;
+}
+/* Orange */
+pre.twilight .String,
+pre.twilight .StringRegexp,
+pre.twilight .StringEmbeddedSource,
+pre.twilight .StringConstant,
+pre.twilight .MetaTagAll,
+pre.twilight .CCCPreprocessorDirective {
+    color: #cb4b16;
+}
+/* Yellow */
+pre.twilight .Constant,
+pre.twilight .CssClass,
+pre.twilight .CssPropertyName,
+pre.twilight .Entity,
+pre.twilight .MarkupList,
+pre.twilight .EntityInheritedClass,
+pre.twilight .Storage {
+   color: #b58900;
+}
+pre.twilight .EntityInheritedClass {
+   font-style: italic;
+}
+
+/* Blue */
+pre.twilight .Variable,
+pre.twilight .CssId,
+pre.twilight .SupportFunction,
+pre.twilight .MetaTagInline,
+pre.twilight .CCCPreprocessorLine,
+pre.twilight .StringRegexpSpecial,
+pre.twilight .CssTagName,
+pre.twilight .StringVariable,
+pre.twilight .Support {
+    color: #268bd2 ;
+}
+/* Cyan */
+pre.twilight .MarkupHeading,
+pre.twilight .CssAdditionalConstants,
+pre.twilight .CssPropertyValue,
+pre.twilight .SupportConstant {
+   color: #2aa198;
+}
+
+/* Green */
+pre.twilight .CssPseudoClass,
+pre.twilight .Keyword,
+pre.twilight .CssConstructorArgument {
+   color: #859900;
+}
