@@ -65,8 +65,7 @@ pre .CssClass,
 pre .CssPropertyName,
 pre .Entity,
 pre .MarkupList,
-pre .EntityInheritedClass,
-pre .Storage {
+pre .EntityInheritedClass {
    color: #b58900;
 }
 pre .EntityInheritedClass {
@@ -96,6 +95,7 @@ pre .violet  { color: #6c71c4; }
 
 /* Blue */
 pre .blue,
+pre .Storage,
 pre .Variable,
 pre .CssId,
 pre .SupportFunction,
