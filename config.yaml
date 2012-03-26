@@ -84,6 +84,9 @@ translations:
     copyright:
         en: "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/\">Copyright ©, Yann Esposito</a>"
         fr: "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/deed.fr\">Droits de reproduction ©, Yann Esposito</a>"
+    followme:
+        en: "Follow me"
+        fr: "Suivez-moi"
     subscribe:
         en: "Subscribe"
         fr: "s'abonner"
