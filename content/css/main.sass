@@ -1,27 +1,46 @@
 -----
 
 -----
-$behindColor: #333
+/* Solarized palette */
+$base03 : #002b36 
+$base02 : #073642 
+$base01 : #586e75 
+$base00 : #657b83 
+$base0  : #839496 
+$base1  : #93a1a1 
+$base2  : #eee8d5 
+$base3  : #fdf6e3 
+$yellow : #b58900 
+$orange : #cb4b16 
+$red    : #dc322f 
+$magenta: #d33682 
+$violet : #6c71c4 
+$blue   : #268bd2 
+$cyan   : #2aa198 
+$green  : #859900 
+/* I won't use completely */
+
+$behindColor: $base03
 $mainTextColor: $behindColor
-$mainBackgroundColor: #FAFAFA
-$mainShadowColor: $mainBackgroundColor - #333
-$secondBackgroundColor: #F2F2F2
-$revealColor: #A53
-$secondRevealColor: #AA5533
+$mainBackgroundColor: #FAFAFC
+$mainShadowColor: $mainBackgroundColor - #334
+$secondBackgroundColor: #F2F2F4
+$revealColor: #cb4b16
+$secondRevealColor: $revealColor
 $lighterRevealColor: $revealColor + #666
 $imageBackgroundColor: $mainBackgroundColor
-$imageBorderColor: #cccccc
-$borderColor: #cccccc
+$borderColor: #ccccd0
+$imageBorderColor: $borderColor
 $mainLinkColor: $mainTextColor
-$textLinkColor: #555555
-$highlightColor: #888888
-$highlightBlockColor: #555555
-$highlightRevealColor: #e25f2f
-$lighterText: #cccccc
-$lighterColor: #eeeeee
+$textLinkColor: #555566
+$highlightColor: #888899
+$highlightBlockColor: #555566
+$highlightRevealColor: $revealColor + #111
+$lighterText: #ccccd0
+$lighterColor: #eeeef1
 $lighterColorBorderTop: $lighterText
 $lighterColorBorderBottom: $lighterText
-$secondTextColor: #666666
+$secondTextColor: #666677
 // solarized dark background color
 $codeBlockColor: #839496
 $codeBlockBackgroundColor: #002b36
@@ -88,6 +107,30 @@ table.description tr td
 
 body
   +mainColor
+
+=selected
+  background: $base03
+  color: $base3
+
+::selection
+  +selected
+::-moz-selection
+  +selected
+
+=darkselected
+  background: $base3
+  color: $base03
+
+pre
+  &::selection 
+    +darkselected
+  *::selection 
+    +darkselected
+pre
+  &::-moz-selection
+    +darkselected
+  *::-moz-selection
+    +darkselected
 
 a:hover
   text-shadow: 0 0 2px #FAA
