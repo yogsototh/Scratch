@@ -58,6 +58,12 @@ $codeBlockBackgroundColor: #002b36
   a:hover
     color: $lighterRevealColor
 
+=innerblock
+  border: solid 1px $borderColor
+  border-radius: 2px
+  box-shadow: 0 0 4px $secondBackgroundColor inset
+  background-color: $mainBackgroundColor - #020202
+
 =highlight
   font:
     style: italic
@@ -200,9 +206,8 @@ p
   margin-bottom: 1.2em
 
 blockquote
+  +innerblock
   +highlight
-  background-color: $secondBackgroundColor
-  border: 1px solid $borderColor
 
 abbr,
 acronym
@@ -241,18 +246,17 @@ acronym
   padding: 1em
   font-size: 16px
   line-height: 1.4em
-  border-radius: 5px
-  border: 2px solid $mainBackgroundColor
+  border: 1px solid $mainBackgroundColor
   color: $lighterText
   &:hover
+    +innerblock
     color: $highlightRevealColor
     text-shadow: 0 0 2px #FAA
-    box-shadow: 0 0 4px #CCC inset
   &:active
+    +innerblock
     color: $highlightRevealColor
     text-shadow: 0 0 2px #FAA
-    background: #EEE
-    box-shadow: 0 0 4px #AAA inset
+    background: $mainBackgroundColor - #060606
 
 #liens a
   border: 1px solid #EEE
@@ -268,7 +272,7 @@ acronym
 
 // -- FOOTER --
 #lastmod
-  font-size: 0.8em
+  font-size: 0.9em
 
 // --- DYNAMICS --
 .nojsbutton
@@ -815,13 +819,18 @@ a:hover .nicer
   font-family: "Lucida Grande", Tahoma
 
 
+
 .block
-  width: 31%
+  +innerblock
+  width: 26.5%
+  padding: 1em
+  border-radius: 2px
   text-align: left
   line-height: 1em
   margin-left: 1%
   margin-right: 1%
   font-size: 0.8em
+  height: 9em
   a
     color: $mainTextColor
   a:hover
@@ -948,4 +957,4 @@ a.cut
   strong
     font-weight: bold
 .codehighlight pre
-  border: 4px solid #CCC
+  border: 4px solid $borderColor
