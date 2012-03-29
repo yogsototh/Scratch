@@ -60,7 +60,6 @@ pre .Comment {
 
 /* Yellow */
 pre .yellow,
-pre .Constant,
 pre .CssClass,
 pre .CssPropertyName,
 pre .Entity,
@@ -77,8 +76,7 @@ pre .String,
 pre .StringRegexp,
 pre .StringEmbeddedSource,
 pre .StringConstant,
-pre .MetaTagAll,
-pre .CCCPreprocessorDirective {
+pre .MetaTagAll {
     color: #cb4b16;
 }
 /* Red */
@@ -90,8 +88,14 @@ pre .InvalidDeprecated {
    font-style: italic;
 }
 
-pre .magenta { color: #d33682; }
-pre .violet  { color: #6c71c4; }
+pre .magenta, 
+pre .CCCPreprocessorLine,
+pre .CCCPreprocessorDirective 
+{ color: #d33682; }
+
+pre .violet, 
+pre .Constant 
+{ color: #6c71c4; }
 
 /* Blue */
 pre .blue,
@@ -100,7 +104,6 @@ pre .Variable,
 pre .CssId,
 pre .SupportFunction,
 pre .MetaTagInline,
-pre .CCCPreprocessorLine,
 pre .StringRegexpSpecial,
 pre .CssTagName,
 pre .StringVariable,
