@@ -127,6 +127,9 @@ body
   background: $base3
   color: $base01
 
+pre, code
+  font-family: Monaco, monospace
+
 pre
   &::selection 
     +darkselected
@@ -778,7 +781,7 @@ a.return
 .footnotes
   font-size: 0.8em
   ol
-    color: #CCC
+    color: $base0
     font-weight: bold
     p
       color: $behindColor
@@ -867,8 +870,8 @@ ul.bloglist, .archive ul
 
 #tagcloud
   font-size: .8em
-  background: #EEE
-  box-shadow: 0 0 6px #CCC
+  background: $secondBackgroundColor
+  box-shadow: 0 0 6px $borderColor
   border-radius: 3px
   line-height: 2.5em
   padding: 2em
@@ -889,7 +892,7 @@ ul.bloglist, .archive ul
       content: ""
 .article .corps sup a
   font-weight: bold
-  background: #CCC
+  background: $base0
   padding: 0 .3em
   border-radius:  3px
   -moz-border-radius:  3px
