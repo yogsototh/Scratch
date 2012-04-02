@@ -1,25 +1,26 @@
-## Essential Haskell
+<h2 id="essential-haskell">Essential Haskell</h2>
 
-This is the part that certainly will be the most boring.
+<%= blogimage("kandinsky_gugg.jpg","Kandinsky Gugg") %>
+
+I suggest you to skim this part. 
 Think of it like a reference.
 Haskell has a lot of features. 
 Many informations are missing here.
-I suggest you to read this part as fast as possible. 
-You could get back if notation seems strange for you.
+Get back here if notation feels strange.
 
 I use the `⇔` symbol to state that two expression are equivalent.
 It is a meta notation, `⇔` does not exists in Haskell.
 I will also use `⇒` to show what is the return of an expression.
 
-### Notations
+<h3 id="notations">Notations</h3>
 
-<h5>Arithmetic</h5>
+<h5 id="arithmetic">Arithmetic</h5>
 
 ~~~
 3 + 2 * 6 / 3 ⇔ 3 + ((2*6)/3)
 ~~~
 
-<h5>Logic</h5>
+<h5 id="logic">Logic</h5>
 
 ~~~
 True || False ⇒ True
@@ -28,14 +29,14 @@ True == False ⇒ False
 True /= False ⇒ True  (/=) is the operator for different
 ~~~
 
-<h5>Powers</h5>
+<h5 id="powers">Powers</h5>
 
 ~~~
 x^n     for n an integral
 x**y    for y any kind of number (Float for example)
 ~~~
 
-Integer have no limit except the capacity of your machine:
+`Integer` have no limit except the capacity of your machine:
 
 ~~~
 4^103   
@@ -50,11 +51,11 @@ But you need to import the module `Data.Ratio`:
 $ ghci
 ....
 Prelude> :m Data.Ratio
-Data.Ratio> (11%15) * (5%3)
+Data.Ratio> (11 % 15) * (5 % 3)
 11 % 9
 ~~~
 
-<h5>Lists</h5>
+<h5 id="lists">Lists</h5>
 
 ~~~
 []                      ⇔ empty list
@@ -70,7 +71,7 @@ Data.Ratio> (11%15) * (5%3)
 [10,9..1]               ⇔ [10,9,8,7,6,5,4,3,2,1]
 ~~~
 
-<h5>Strings</h5>
+<h5 id="strings">Strings</h5>
 
 In Haskell strings are list of `Char`.
 
@@ -82,10 +83,12 @@ In Haskell strings are list of `Char`.
 "abc" ⇔ "ab"++"c"
 ~~~
 
-In real code you shouldn't use list of char to represent text.
-You should mostly use `Data.Text` instead.
+ > _Remark_:
+ > In real code you shouldn't use list of char to represent text.
+ > You should mostly use `Data.Text` instead.
+ > If you want to represent stream of ASCII char, you should use `Data.ByteString`.
 
-<h5>Tuples</h5>
+<h5 id="tuples">Tuples</h5>
 
 The type of couple is `(a,b)`. 
 Elements in a tuple can have different type.
@@ -103,3 +106,21 @@ fst (x,y,z)     ⇒  ERROR: fst :: (a,b) -> a
 snd (x,y,z)     ⇒  ERROR: snd :: (a,b) -> b
 ~~~
 
+<h5 id="deal-with-parenthesis">Deal with parenthesis</h5>
+
+To remove some parenthesis you can use two functions: `($)` and `(.)`.
+
+~~~
+-- By default:
+f g h x         ⇔  (((f g) h) x)
+
+-- the $ replace parenthesis from the $
+-- to the end of the expression 
+f g $ h x       ⇔  f g (h x) ⇔ (f g) (h x)
+f $ g h x       ⇔  f (g h x) ⇔ f ((g h) x)
+f $ g $ h x     ⇔  f (g (h x))
+
+-- (.) the composition function
+(f . g) x       ⇔  f (g x)
+(f . g . h) x   ⇔  f (g (h x))
+~~~

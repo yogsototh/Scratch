@@ -1,15 +1,20 @@
-<h3> Higher Level Functions </h3>
+<h4 id="higher-level-functions">Higher Level Functions</h4>
+
+<%= blogimage("escher_polygon.png","Escher") %>
 
 To make things even better we should use higher level functions.
 What are these beast?
-Higher level functions are functions taking another functions as parameters.
+Higher level functions are functions taking function as parameter.
 
 Here are some examples:
 
-> import Data.List
+<div style="display:none">
+> import Data.List (foldl')
+</div>
+
 > filter :: (a -> Bool) -> [a] -> [a]
 > map :: (a -> b) -> [a] -> [b]
-> foldl' :: (a -> b -> a) -> a -> [b] -> a
+> foldl :: (a -> b -> a) -> a -> [b] -> a
 
 Let's proceed by small steps.
 
@@ -19,30 +24,27 @@ Let's proceed by small steps.
 >       mysum n [] = n
 >       mysum n (x:xs) = mysum xs (n+x) 
 
+where
+
 > filter even [1..10] ⇔  [2,4,6,8,10]
 
-Now you can use the `foldl'` to accumulate a value.
+The function `filter` takes a function of type (`a -> Bool`) and a list of type `[a]`. It returns a list containing only elements for which the function returned `true`.
+
+Our next step is to use another way to simulate loop. 
+We will use the `foldl` to accumulate a value.
 The function `foldl` capture a general coding pattern:
 
-<code class="haskell">
-myfunc list = foo initialValue list
+<pre>
+myfunc list = foo <span class="blue">initialValue</span> <span class="green">list</span>
     foo accumulated []     = accumulated
-    foo tmpValue    (x:xs) = foo (bar tmpValue x) xs
-</code>
+    foo tmpValue    (x:xs) = foo (<span class="yellow">bar</span> tmpValue x) xs
+</pre>
 
 Which can be replaced by:
 
-<code class="haskell">
-myfunc list = foldl bar initialValue list
-</code>
-
-> -- Version 6
-> import Data.List
-> evenSum l = foldl' mysum 0 (filter even l)
->   where mysum acc value = acc + value
-
-For each element of the list, `foldl'` will add it to the next.
-And finally add 0.
+<pre>
+myfunc list = foldl <span class="yellow">bar</span> <span class="blue">initialValue</span> <span class="green">list</span>
+</pre>
 
 If you really want to know how the magic works.
 Here is the definition of `foldl`.
@@ -50,33 +52,33 @@ Here is the definition of `foldl`.
 > foldl f z [] = z
 > foldl f z (x:xs) = foldl f (f z x) xs
 
-But as Haskell is lazy, it doesn't evaluate `(f z x)` and push this in the stack.
-`foldl'` is a strict version of `foldl`.
-If you don't understand what "lazy" and "strict" means,
-don't worry, just follow the code as if `fold` and `foldl'` where identical.
-
-Here is what occurs:
-
 ~~~
-evenSum [1,2,3,4]
-⇒ foldl' mysum 0 (filter even [1,2,3,4])
-⇒ foldl' mysum 0 [2,4]
-⇒ foldl' mysum (mysum 0 2) [4]
-⇒ foldl' mysum (0+2) [4]
-⇒ foldl' mysum 2 [4]
-⇒ foldl' mysum (mysum 2 4) []
-⇒ foldl' mysum (2+4) []
-⇒ foldl' mysum 6 []
-⇒ 6
+foldl f z [x1,...xn]
+⇔  f (... (f (f z x1) x2) ...) xn
 ~~~
 
-Beware! 
-Most of the time you want to use `foldl'` and not `foldl`.
+But as Haskell is lazy, it doesn't evaluate `(f z x)` and push this to the stack.
+This is why we generally use `foldl'` instead of `foldl`;
+`foldl'` is a _strict_ version of `foldl`.
+If you don't understand what lazy and strict means,
+don't worry, just follow the code as if `foldl` and `foldl'` where identical.
 
-This is nice, but as `mysum` is a very simple function, giving it a name is a burden.
-We can use anonymous functions or lambdas.
+Now our new version of `evenSum` become:
+
+> -- Version 6
+> -- foldl' isn't accessible by default
+> -- we need to import it from the module Data.List
+> import Data.List
+> evenSum l = foldl' mysum 0 (filter even l)
+>   where mysum acc value = acc + value
+
+Version we can simplify by using directly a lambda notation.
+This way we don't have to create the temporary name `mysum`.
 
 > -- Version 7
+> -- Generaly it is considered a good practice
+> -- to import only the necessary function(s)
+> import Data.List (foldl')
 > evenSum l = foldl' (\x y -> x+y) (filter even l)
 
 And of course, we remark 

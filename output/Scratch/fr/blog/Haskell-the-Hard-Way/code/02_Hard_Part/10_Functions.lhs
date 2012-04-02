@@ -1,11 +1,13 @@
-## Hard Part
+<h2 id="hard-part">Hard Part</h2>
 
 The hard part could now begins.
 
-### Functional style
+<h3 id="functional-style">Functional style</h3>
+
+<%= blogimage("hr_giger_biomechanicallandscape_500.jpg","Biomechanical Landscape by H.R. Giger") %>
 
 In this section, I give a short example of the impressive refactoring ability provided by Haskell.
-We will choose a problem and resolve it the standard way. 
+We will choose a problem and resolve it using a standard imperative way. 
 Then I will make the code evolve.
 The end result will be both more elegant and easier to adapt. 
 
@@ -18,20 +20,26 @@ I'll start by providing an imperative solution (in javascript):
 
 <code class="javascript">
 function evenSum(list) {
-    var result = 0
-    for (i=0; i< length(list) ; i++) {
-        result += list[i];
+    var result = 0;
+    for (var i=0; i< list.length ; i++) {
+        if (list[i] % 2 ==0) {
+            result += list[i];
+        }
     }
     return result;
 }
 </code>
 
-But, in Haskell we don't have variables, nor for or while loop.
-This is why we will use recursion[^0120101].
-Here is a `C` version of the recursive function.
-Note, for simplicity, I assume the int list should end with the first `null` value (`0`):
+But, in Haskell we don't have variable, nor for loop.
+One solution to achieve the same result without loop is to use recursion.
 
-[^0120101]: Don't worry if you comme from imperative programming. Generally Haskell handles recursion efficiently.
+ > _Remark_:  
+ > Recursion is generally perceived as slow in imperative language.
+ > But it is generally not the case in functional programming.
+ > Most of the time Haskell will handle recursive function efficiently.
+
+Here is a `C` version of the recursive function.
+Note, for simplicity, I assume the int list should end with the first `0` value.
 
 
 <code class="c">
@@ -39,15 +47,14 @@ int evenSum(int *list) {
     return accumSum(0,list);
 }
 
-// In C I should have declared this 
-// function before evenSum, but
-// I find it easier this way
 int accumSum(int n, int *list) {
-    if (list == nil) { // if the list is empty
+    int x;
+    int *xs;
+    if (*list == NULL) { // if the list is empty
         return n;
     } else {
         x = list[0]; // let x be the first element of the list
-        xs = list+1; // let xs be the list without its head
+        xs = list+1; // let xs be the list without x
         if ( 0 == (x%2) ) { // if x is even
             return accumSum(n+x, xs);
         } else {
@@ -89,5 +96,5 @@ tail [3]     ⇒ []
 tail []      ⇒ ERROR
 ~~~
 
-Remark that for any list `l`, 
+Remark that for any non empty list `l`, 
 `l ⇔ (head l):(tail l)`

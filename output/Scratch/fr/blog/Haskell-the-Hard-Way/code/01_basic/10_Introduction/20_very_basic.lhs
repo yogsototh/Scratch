@@ -1,18 +1,18 @@
-<h3>Very basic Haskell</h3>
+<h3 id="very-basic-haskell">Very basic Haskell</h3>
 
-Before continuing you need be warned.
-You have to know some essential properties of Haskell. 
+<%= blogimage("picasso_owl.jpg","Picasso minimal owl") %>
+
+Before continuing you need to be warned about some essential properties of Haskell. 
 
 _Functional_
 
 Haskell is a functional language.
-If you come from imperative language, you'll have to re-learn a lot.
-But you will discover many new concepts!
+If you come from imperative language, you'll have to learn a lot of new things.
+Hopefully many of these new concepts will help you to program even in imperative languages.
 
 _Smart Static Typing_
 
-Instead of being in your way like in `C`, `C++` or `Java`.
-The type system is here to help you.
+Instead of being in your way like in `C`, `C++` or `Java`, the type system is here to help you.
 
 _Purity_
 
@@ -27,16 +27,17 @@ Furthermore there is an essential respected law in Haskell:
 
 _Lazyness_
 
-You can manipulate infinite structures. 
-Inifinte lists, infinite trees etc...
+This is a very uncommon feature.
+By default, Haskell evaluate something only when it is needed.
+As consequence, it provides a very elegant way to manipulate infinite structures for example. 
 
 A last warning on how you should read Haskell code.
-For me, it is like reading scientific paper.
+For me, it is like reading scientific papers.
 Some part are very clear, but when you see a formula, just focus and read slower.
-Also, while learning Haskell, it _really_ doesn't matter much if you don't understand syntax details. If you cross a `>>=`, `<$>`, `<-` or any other weird symbol, just ignore them and follows the flow of the code.
-I'll do my best to help you thought.
+Also, while learning Haskell, it _really_ doesn't matter much if you don't understand syntax details.
+If you cross a `>>=`, `<$>`, `<-` or any other weird symbol, just ignore them and follows the flow of the code.
 
-<h4>Function declaration</h4>
+<h4 id="function-declaration">Function declaration</h4>
 
 You might be used to declare functions like this:
 
@@ -86,9 +87,11 @@ f x y = x*x + y*y
 
 Very clean. No parenthesis, no `def`.
 
-Don't forget, Haskell is mainly built on function and types.
-It is thus very easy to define functions and types.
+Don't forget, Haskell use functions and types a lot.
+It is thus very easy to define them.
 The syntax was particularly well thought for these objects.
+
+<h4 id="a-type-example">A Type Example</h4>
 
 The common usage is to declare the type of your function.
 This is not mandatory.
@@ -96,6 +99,7 @@ The compiler is smart enough to discover it for you.
 
 Let's play a little.
 
+> -- We declare the type using ::
 > f :: Int -> Int -> Int
 > f x y = x*x + y*y
 >

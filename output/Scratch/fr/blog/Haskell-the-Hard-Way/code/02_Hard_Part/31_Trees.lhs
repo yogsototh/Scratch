@@ -2,25 +2,20 @@ Just for fun, let's code a better display for our trees.
 I simply had fun into making a nice function to display tree in a general way.
 You can safely pass this part if you find it too difficult to follow.
 
-We have few to change to make. 
-First, as we will play a bit with string, we import the function `replace`
-from `Data.String.Utils`.
-
-> import Data.List
-
+We have few changes to make.
 We remove the `deriving (Show)` in the declaration of our `BinTree` type.
-And it also might be useful to make our BinTree an instance of (Eq and Ord).
-Now we can test equality and compare trees.
+And it also might be useful to make our BinTree an instance of (`Eq` and `Ord`).
+We will be able to test equality and compare trees.
 
 > data BinTree a = Empty 
 >                  | Node a (BinTree a) (BinTree a) 
 >                   deriving (Eq,Ord)
 
-Without the `deriving (Show)`, Haskell doesn't create a show method for us.
-Now, we will create our version of show.
-For this, we want our newly created type `BinTree a` to be an instance of
-the type class `Show`.
-To achieve this, the general syntax is:
+Without the `deriving (Show)`, Haskell doesn't create a `show` method for us.
+We will create our own version of show.
+To achieve this, we must declare that our newly created type `BinTree a` 
+is an instance of the type class `Show`.
+The general syntax is:
 
 <code class="haskell">
 instance Show (BinTree a) where
@@ -37,18 +32,25 @@ I made a lot of improvement in order to display even strange objects.
 >   -- and put a : a begining of line
 >   show t = "< " ++ replace '\n' "\n: " (treeshow "" t)
 >     where
+>     -- treeshow pref Tree 
+>     --   show a tree and start each line with pref
+>     -- We don't display Empty tree
 >     treeshow pref Empty = ""
+>     -- Leaf
 >     treeshow pref (Node x Empty Empty) = 
 >                   (pshow pref x)
 >
+>     -- Right branch is empty
 >     treeshow pref (Node x left Empty) = 
 >                   (pshow pref x) ++ "\n" ++
 >                   (showSon pref "`--" "   " left)
 >
+>     -- Left branch is empty
 >     treeshow pref (Node x Empty right) = 
 >                   (pshow pref x) ++ "\n" ++
 >                   (showSon pref "`--" "   " right)
 >
+>     -- Tree with left and right sons non empty
 >     treeshow pref (Node x left right) = 
 >                   (pshow pref x) ++ "\n" ++
 >                   (showSon pref "|--" "|  " left) ++ "\n" ++
@@ -70,19 +72,12 @@ I made a lot of improvement in order to display even strange objects.
 >               | otherwise = x:[] -- "x"
 
 
+The `treeFromList` method remain identical.
 
-The `treeInsert` method remain identical.
-
-> treeInsert :: (Ord a) => BinTree a -> a -> BinTree a
-> treeInsert Empty x    = Node x Empty Empty
-> treeInsert (Node y left right) x
->           | x == y    = (Node y left right)
->           | x < y     = (Node y (treeInsert left x) right)
->           | otherwise = (Node y left (treeInsert right x))
-
-To help creating tree, we define:
-
-> treeFromList list = foldl' treeInsert Empty list
+> treeFromList :: (Ord a) => [a] -> BinTree a
+> treeFromList [] = Empty
+> treeFromList (x:xs) = Node x (treeFromList (filter (<x) xs))
+>                              (treeFromList (filter (>x) xs))
 
 And now, we can play:
 
@@ -146,36 +141,56 @@ This is why I chosen to prefix each line of tree display by `:` (except for the 
 <%= blogimage("yo_dawg_tree.jpg","Yo Dawg Tree") %>
 
 >   putStrLn "\nTree of Binary trees of Char binary trees:"
->   print $ treeFromList 
->             (map treeFromList 
->                [ map treeFromList ["Ia!","Ia!"]
->                , map treeFromList ["cthul","hu"]
->                , map treeFromList ["Fhtagn!"] ])
+>   print $ (treeFromList . map (treeFromList . map treeFromList))
+>              [ ["YO","DAWG"]
+>              , ["I","HEARD"]
+>              , ["I","HEARD"]
+>              , ["YOU","LIKE","TREES"] ]
+
+Which is equivalent to
+
+<code class="haskell">
+print ( treeFromList (
+          map treeFromList 
+             [ map treeFromList ["YO","DAWG"]
+             , map treeFromList ["I","HEARD"]
+             , map treeFromList ["I","HEARD"]
+             , map treeFromList ["YOU","LIKE","TREES"] ]))
+</code>
+
+and gives:
 
 ~~~
 Binary tree of Binary trees of Char binary trees:
-< < < 'I'
-: : : |--'!'
-: : : `--'a'
-: |--< < 'F'
-: |  : : |--'!'
-: |  : : `--'h'
-: |  : :    |--'a'
-: |  : :    |  `--'g'
-: |  : :    `--'t'
-: |  : :       `--'n'
-: `--< < 'c'
-:    : : `--'t'
-:    : :    |--'h'
-:    : :    |  `--'l'
-:    : :    `--'u'
-:    : `--< 'h'
-:    :    : `--'u'
+< < < 'Y'
+: : : `--'O'
+: : `--< 'D'
+: :    : |--'A'
+: :    : `--'W'
+: :    :    `--'G'
+: |--< < 'I'
+: |  : `--< 'H'
+: |  :    : |--'E'
+: |  :    : |  `--'A'
+: |  :    : |     `--'D'
+: |  :    : `--'R'
+: `--< < 'Y'
+:    : : `--'O'
+:    : :    `--'U'
+:    : `--< 'L'
+:    :    : `--'I'
+:    :    :    |--'E'
+:    :    :    `--'K'
+:    :    `--< 'T'
+:    :       : `--'R'
+:    :       :    |--'E'
+:    :       :    `--'S'
 ~~~
 
-Remark how you can't insert two identical tree;
-there is only one tree corresponding to "Ia!".
+Remark how duplicate trees aren't inserted;
+there is only one tree corresponding to `"I","HEARD"`.
+We have this for (almost) free, because we have declared Tree to be an instance of `Eq`.
 
-Note how awesome this structure is.
+See how awesome this structure is.
 We can make tree containing not only integer, string and char, but also other trees.
 And we can even make a tree containing a tree of trees!

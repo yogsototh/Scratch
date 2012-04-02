@@ -1,6 +1,8 @@
-### Trees
+<h4 id="trees">Trees</h4>
 
-Now we'll just give another typical example, binary trees.
+<%= blogimage("magritte-l-arbre.jpg","Magritte, l'Arbre") %>
+
+We'll just give another standard example: binary trees.
 
 > import Data.List
 >
@@ -8,18 +10,23 @@ Now we'll just give another typical example, binary trees.
 >                  | Node a (BinTree a) (BinTree a) 
 >                               deriving (Show)
 
-To generate tree easily, we create a function who add an element to a `BinTree`.
+Also we create a function which transform a list into an ordered binary tree.
 
-> treeInsert :: (Ord a) => BinTree a -> a -> BinTree a
-> treeInsert Empty x    = Node x Empty Empty
-> treeInsert (Node y left right) x
->           | x == y    = (Node y left right)
->           | x < y     = (Node y (treeInsert left x) right)
->           | otherwise = (Node y left (treeInsert right x))
+> treeFromList :: (Ord a) => [a] -> BinTree a
+> treeFromList [] = Empty
+> treeFromList (x:xs) = Node x (treeFromList (filter (<x) xs))
+>                              (treeFromList (filter (>x) xs))
 
-Now try this:
+Look at how elegant this function is.
+In plain English: 
 
-> main = print $ foldl' treeInsert Empty [7,2,4,8]
+- an empty list will be converted to an empty tree.
+- a list `(x:xs)` will be converted to the tree where:
+  - The root is `x`
+  - Its left subtree is the tree created from the list of the remaining element of `xs` which are strictly inferior to `x` and 
+  - the right subtree is the tree created from the elements strictly superior to `x` of the list `xs`.
+
+> main = print $ treeFromList [7,2,4,8]
 
 You should obtain the following:
 

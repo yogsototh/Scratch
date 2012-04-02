@@ -18,12 +18,12 @@ To test a function you can use `ghci`:
 
 <pre>
 % ghci
-<span style="color: #AAA">GHCi, version 7.0.3: http://www.haskell.org/ghc/  :? for help
+<span class="low">GHCi, version 7.0.3: http://www.haskell.org/ghc/  :? for help
 Loading package ghc-prim ... linking ... done.
 Loading package integer-gmp ... linking ... done.
 Loading package base ... linking ... done.
-Prelude&gt;</span> :l 11_Functions.lhs 
-<span style="color: #AAA">[1 of 1] Compiling Main             ( 11_Functions.lhs, interpreted )
+Prelude&gt;</span> :load 11_Functions.lhs 
+<span class="low">[1 of 1] Compiling Main             ( 11_Functions.lhs, interpreted )
 Ok, modules loaded: Main.
 *Main&gt;</span> evenSum [1..5]
 6
@@ -33,24 +33,26 @@ Here is an example of execution[^2]:
 
 [^2]: I know I cheat. But I will talk about non-strict later.
 
-~~~
+<pre>
 *Main> evenSum [1..5]
 accumSum 0 [1,2,3,4,5]
-1 is odd 
+<span class="yellow">1 is odd</span>
 accumSum 0 [2,3,4,5]
-2 is even
-accumSum 2 [3,4,5]
-3 is odd 
-accumSum 2 [4,5]
-4 is even
-accumSum 6 [5]
-5 is odd 
-accumSum 6 []
-l == []
+<span class="yellow">2 is even</span>
+accumSum (0+2) [3,4,5]
+<span class="yellow">3 is odd</span>
+accumSum (0+2) [4,5]
+<span class="yellow">4 is even</span>
+accumSum (0+2+4) [5]
+<span class="yellow">5 is odd</span>
+accumSum (0+2+4) []
+<span class="yellow">l == []</span>
+0+2+4
+0+6
 6
-~~~
+</pre>
 
-Comming from an imperative language all should seems right.
+Coming from an imperative language all should seems right.
 In reality many things can be improved.
 First, we can generalize the type.
 
