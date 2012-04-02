@@ -105,7 +105,7 @@ This actual (long) article contains four parts:
     - Deal with IO; A very minimal example
     - IO trick explained; the hidden detail I lacked to understand IO
     - Monads; incredible how we can generalize
-    - More on infinite tree; a discussion on infinite tree manipulation.
+    - More on infinite tree; a more math oriented discussion about infinite trees
 
 
  > Note: Each time you'll see a separator with a filename ending in `.lhs`, you could click the filename to get this file. If you save the file as `filename.lhs`, you can run it with 

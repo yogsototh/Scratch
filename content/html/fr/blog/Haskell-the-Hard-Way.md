@@ -108,7 +108,7 @@ Cet article contient quatres parties :
     - Utiliser les IO : un exemple très minimal ;
     - Le truc des IO révélé : les détails cachés d'IO qui m'ont manqués
     - Les monades : incroyable à quel point on peut généraliser
-    - Revenons sur les arbres infinis : un discussion sur les arbres infinis
+    - Revenons sur les arbres infinis : une discussion plus mathématique sur la manipulation d'arbres infinis.
 
 
  > Note: Chaque fois que vous voyez un séparateur avec un nom de fichier se terminant par `lhs`, vous pouvez cliquer sur le nom de fichier et télécharger le fichier. 
