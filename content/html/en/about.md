@@ -29,7 +29,7 @@ Movies I like:
   - Naked Lunch *[Cronenberg]*
   - eXistenZ *[Cronenberg]*
 
-[My online bookmarks](http://diigo.com/profile/yogsototh)
+[My online bookmarks](http://pinboard.in/u:yogsototh)
 
 newcorps
 

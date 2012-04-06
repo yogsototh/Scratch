@@ -8,6 +8,14 @@ def blogimage(filename,title="no name", divclass=nil)
     return %{<img alt="#{title}" src="#{imgpath}"#{cls}/>}
 end
 
+def blogfigure(filename,title="no name", divclass=nil)
+    imgpath=blogimagedir + filename
+    if not divclass.nil?
+        cls=%{ class="#{divclass}"}
+    end
+    return %{<figure><img alt="#{title}" src="#{imgpath}"#{cls}/><figcaption>#{title}</figcaption></figure>}
+end
+
 # Return a blog image with class left added
 def leftblogimage(filename,title="no name")
     return blogimage(filename, title, "left")

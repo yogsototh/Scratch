@@ -21,7 +21,9 @@ module ::Rack
             while @next < @try.size && 404 == (resp = super(try_next(env)))[0] 
                 @next += 1
             end
-            404 == resp[0] ? @app.call : resp
+            tmp=(404 == resp[0] ? @app.call : resp)
+            tmp[1]["Content-Type"]=tmp[1]["Content-Type"] + "; charset=utf-8"
+            return tmp
         end
 
         private
@@ -47,6 +49,6 @@ use Rack::TryStatic,
 errorFile='output/Scratch/en/error/404-not_found/index.html'
 run lambda { [404, {
                 "Last-Modified"  => File.mtime(errorFile).httpdate,
-                "Content-Type"   => "text/html",
+                "Content-Type"   => "text/html; charset=utf-8",
                 "Content-Length" => File.size(errorFile).to_s
             }, File.read(errorFile)] }

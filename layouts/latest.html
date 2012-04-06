@@ -6,6 +6,7 @@ last_article = @items.select do |a|
             a.reps[0].path =~ /\/#{language}\//  && a[:kind] == 'article'
 end.sort { |x,y| y[:created_at] <=> x[:created_at] }[0]
 targetUrl = last_article.path
+targetTitle = last_article[:title]
 %>
 <html>
     <head>
@@ -15,6 +16,6 @@ targetUrl = last_article.path
     </head>
     <body>
         <p>You should be redirected to</p>
-        <div><a href="<%= targetUrl %>"><%= targetUrl %></a></div>
+        <div><a href="<%= targetUrl %>"><%= targetTitle %></a></div>
     </body>
 </HTML>

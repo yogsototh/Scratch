@@ -1,30 +1,49 @@
 -----
 
 -----
+/* Solarized palette */
+$base03 : #002b36 
+$base02 : #073642 
+$base01 : #586e75 
+$base00 : #657b83 
+$base0  : #839496 
+$base1  : #93a1a1 
+$base2  : #eee8d5 
+$base3  : #fdf6e3 
+$yellow : #b58900 
+$orange : #cb4b16 
+$red    : #dc322f 
+$magenta: #d33682 
+$violet : #6c71c4 
+$blue   : #268bd2 
+$cyan   : #2aa198 
+$green  : #859900 
+/* I won't use completely */
 
-$behindColor: #333
+$behindColor: $base03
 $mainTextColor: $behindColor
-$mainBackgroundColor: #FAFAFA
-$mainShadowColor: $mainBackgroundColor - #333
-$secondBackgroundColor: #F2F2F2
-$revealColor: #A53
-$secondRevealColor: #AA5533
+$mainBackgroundColor: #FAFAFC
+$mainShadowColor: $mainBackgroundColor - #334
+$secondBackgroundColor: #F2F2F4
+$revealColor: #cb4b16
+$secondRevealColor: $revealColor
 $lighterRevealColor: $revealColor + #666
 $imageBackgroundColor: $mainBackgroundColor
-$imageBorderColor: #cccccc
-$borderColor: #cccccc
+$borderColor: #ccccd0
+$imageBorderColor: $borderColor
 $mainLinkColor: $mainTextColor
-$textLinkColor: #555555
-$highlightColor: #888888
-$highlightBlockColor: #555555
-$highlightRevealColor: #e25f2f
-$lighterText: #cccccc
-$lighterColor: #eeeeee
+$textLinkColor: #555566
+$highlightColor: #888899
+$highlightBlockColor: #555566
+$highlightRevealColor: $revealColor + #111
+$lighterText: #ccccd0
+$lighterColor: #eeeef1
 $lighterColorBorderTop: $lighterText
 $lighterColorBorderBottom: $lighterText
-$secondTextColor: #666666
-$codeBlockColor: $mainBackgroundColor
-$codeBlockBackgroundColor: $behindColor
+$secondTextColor: #666677
+// solarized dark background color
+$codeBlockColor: #839496
+$codeBlockBackgroundColor: #002b36
 
 
 =mainColor
@@ -38,6 +57,12 @@ $codeBlockBackgroundColor: $behindColor
     color: $lighterText
   a:hover
     color: $lighterRevealColor
+
+=innerblock
+  border: solid 1px $borderColor
+  border-radius: 2px
+  box-shadow: 0 0 4px $secondBackgroundColor inset
+  background-color: $mainBackgroundColor - #020202
 
 =highlight
   font:
@@ -89,6 +114,33 @@ table.description tr td
 body
   +mainColor
 
+=selected
+  background: $base03
+  color: $base1
+
+::selection
+  +selected
+::-moz-selection
+  +selected
+
+=darkselected
+  background: $base3
+  color: $base01
+
+pre, code
+  font-family: Monaco, monospace
+
+pre
+  &::selection 
+    +darkselected
+  *::selection 
+    +darkselected
+pre
+  &::-moz-selection
+    +darkselected
+  *::-moz-selection
+    +darkselected
+
 a:hover
   text-shadow: 0 0 2px #FAA
 
@@ -121,6 +173,7 @@ ol li ul, ol li ol, ul li ol, ul li ul
   margin: .5em 1.5em
   list-style: circle
 
+
 body, h1, h2, h3, h4, #entete, .tag
   font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   line-height: 1.4em
@@ -146,7 +199,7 @@ body, h1, h2, h3, h4, #entete, .tag
 
 pre
   +codeColor
-  box-shadow: 0 0 1em #000 inset
+  box-shadow: 0 0 1em #001 inset
   border-radius: 3px
   padding: 1em
   line-height: 1.2em
@@ -156,9 +209,10 @@ p
   margin-bottom: 1.2em
 
 blockquote
+  +innerblock
   +highlight
-  background-color: $secondBackgroundColor
-  border: 1px solid $borderColor
+  ul
+    padding-left: 1.5em
 
 abbr,
 acronym
@@ -197,19 +251,17 @@ acronym
   padding: 1em
   font-size: 16px
   line-height: 1.4em
-  border-radius: 5px
-  border: 2px solid $mainBackgroundColor
+  border: 1px solid $mainBackgroundColor
   color: $lighterText
   &:hover
+    +innerblock
     color: $highlightRevealColor
     text-shadow: 0 0 2px #FAA
-    background: #ECECEC
-    box-shadow: 0 -1px 8px #CCC inset
   &:active
+    +innerblock
     color: $highlightRevealColor
     text-shadow: 0 0 2px #FAA
-    background: #EEE
-    box-shadow: 0 -1px 8px #AAA inset
+    background: $mainBackgroundColor - #060606
 
 #liens a
   border: 1px solid #EEE
@@ -225,7 +277,7 @@ acronym
 
 // -- FOOTER --
 #lastmod
-  font-size: 0.8em
+  font-size: 0.9em
 
 // --- DYNAMICS --
 .nojsbutton
@@ -336,11 +388,11 @@ body > #entete
   margin-right: 0px
   padding: 1.5em
   line-height: 1.5em
-  color: $lighterText
+  color: $mainTextColor + #222
   margin-top: 2em
   text-align: center
   a
-    color: $lighterText
+    color: $mainTextColor + #111
   a:hover
     +revealColor
 
@@ -416,8 +468,16 @@ $contentMargin: 0em
     top: 2em
     bottom: 2em
 
+
 .encadre, .black, .red, .shadow
   +secondColor
+
+pre .red
+  background: none
+  padding: 0
+  margin: auto
+  border: none
+  box-shadow: none
 
 .intro, .resume
   font-size: 0.9em
@@ -447,7 +507,6 @@ $contentMargin: 0em
 $fontcorps: 1.25
 
 .corps
-  font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   font-size: #{$fontcorps}em
   line-height: 1.6em
   text-align: justify
@@ -468,6 +527,14 @@ $hpadding: 1
   border-radius: 3px
 .corps a:hover img
   background-color: $revealColor + #100 - #011
+
+figure
+  margin: 3em 0
+  img
+    box-shadow: 0 10px 15px #CCC inset
+  figcaption
+    text-align: center
+    margin: .5em 0
 
 img.clean
   border: none
@@ -631,6 +698,14 @@ table.impact tr td
 
 #iemessage
   font-size: 1.2em
+  color: #CCC
+  margin: -10px
+  padding: 1px 0
+  background: #333
+  strong, b, i, em
+    color: #CCC
+  a, a:visited
+    color: #ECA
 
 .tag
   display: inline
@@ -716,7 +791,7 @@ a.return
 .footnotes
   font-size: 0.8em
   ol
-    color: #CCC
+    color: $base0
     font-weight: bold
     p
       color: $behindColor
@@ -757,13 +832,18 @@ a:hover .nicer
   font-family: "Lucida Grande", Tahoma
 
 
+
 .block
-  width: 31%
+  +innerblock
+  width: 26.5%
+  padding: 1em
+  border-radius: 2px
   text-align: left
   line-height: 1em
   margin-left: 1%
   margin-right: 1%
   font-size: 0.8em
+  height: 9em
   a
     color: $mainTextColor
   a:hover
@@ -800,8 +880,8 @@ ul.bloglist, .archive ul
 
 #tagcloud
   font-size: .8em
-  background: #EEE
-  box-shadow: 0 0 6px #CCC
+  background: $secondBackgroundColor
+  box-shadow: 0 0 6px $borderColor
   border-radius: 3px
   line-height: 2.5em
   padding: 2em
@@ -822,7 +902,7 @@ ul.bloglist, .archive ul
       content: ""
 .article .corps sup a
   font-weight: bold
-  background: #CCC
+  background: $base0
   padding: 0 .3em
   border-radius:  3px
   -moz-border-radius:  3px
@@ -831,14 +911,16 @@ ul.bloglist, .archive ul
   &:hover
     background: $revealColor
 
-ul#markdown-toc
+ul#markdown-toc, .intro .toc ul
   font-variant: small-caps
   list-style: none
   padding-left: 1.5em
-  ul
-    padding-left: 1.5em
   a:after
     content: ""
+  ul ul
+    font-variant: normal
+    line-height: 1em
+    margin-bottom: 1em
 
 table
   border: 1px solid $borderColor
@@ -850,10 +932,15 @@ table tr
   &:nth-child(even)
     background-color: $mainBackgroundColor
 
-p code
-  background: $secondBackgroundColor
-  border: solid 1px $borderColor
-  padding: 2px
+p, ul li, ol li
+  pre code
+    background: none
+    border: none
+    padding: 0
+  code
+    background: $secondBackgroundColor
+    border: solid 1px $borderColor
+    padding: 2px
 
 ul.sameline
   list-style: none
@@ -867,3 +954,23 @@ ul.sameline
   box-shadow: 0 0 5px $mainShadowColor inset,0 0 5px #FFF
   margin: 1em 0
   padding: 1em
+
+a.cut
+  font-size: 12px
+  font-family: Monaco, monospace
+  text-align: right
+  display: block
+  width: 100%
+  opacity: .5
+  border: 1px solid $mainBackgroundColor 
+  border-radius: 3px
+  &:hover
+    opacity: 1
+    background-color: $secondBackgroundColor
+    border-color: $borderColor 
+    box-shadow: 0 0 3px $borderColor inset
+  strong
+    font-weight: bold
+.codehighlight pre
+  border: 4px solid $borderColor
+

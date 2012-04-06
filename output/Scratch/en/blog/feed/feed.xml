@@ -2,13 +2,47 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2012-02-02T09:53:00Z</updated>
+  <updated>2012-02-08T13:17:53Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2012-02-08:/Scratch/en/blog/Haskell-the-Hard-Way/</id>
+    <title type="html">Learn Haskell Fast and Hard</title>
+    <published>2012-02-08T13:17:53Z</published>
+    <updated>2012-02-08T13:17:53Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/Haskell-the-Hard-Way/"/>
+    <content type="html">&lt;p&gt;&lt;img alt="Magritte pleasure principle" src="/Scratch/img/blog/Haskell-the-Hard-Way/magritte_pleasure_principle.jpg" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; A very short and dense tutorial for learning Haskell.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;center&gt;&lt;hr style="width:30%;float:left;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;span class="sc"&gt;&lt;b&gt;Table of Content&lt;/b&gt;&lt;/span&gt;&lt;hr style="width:30%;float:right;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;/center&gt;
+
+
+&lt;div class="toc"&gt;
+
+
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#install"&gt;Install&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#don-t-be-afraid"&gt;Don&amp;rsquo;t be afraid&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#very-basic-haskell"&gt;Very basic Haskell&lt;/a&gt;
+          &lt;ul&gt;
+...&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/hr&gt;&lt;/center&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2012-02-02:/Scratch/en/blog/Typography-and-the-Web/</id>
     <title type="html">Typography and the Web</title>
@@ -1101,26 +1135,5 @@ But, there exists a major problem: the complementary of a regular language might
 Then, for some expression it is absolutely impossible to negate a regular expression.&lt;/p&gt;
 
 &lt;p&gt;But sometimes with some simple regular expression it should be possible&lt;sup&gt;&lt;a href="#note1"&gt;&amp;dagger;&lt;/a&gt;&lt;/sup&gt;. Say you want to match everything containing the some word say &lt;code&gt;bull&lt;/code&gt; but don&amp;rsquo;t want to match &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2010-01-12:/Scratch/en/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/</id>
-    <title type="html">antialias font in Firefox under Ubuntu</title>
-    <published>2010-01-12T14:36:40Z</published>
-    <updated>2010-01-12T14:36:40Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/"/>
-    <content type="html">&lt;p&gt;How to stop using bad Microsoft&#169; font under Ubuntu Linux in order to user nice anti aliased font under Firefox.&lt;/p&gt;
-
-&lt;p&gt;Just modify the &lt;code&gt;/etc/fonts/local.conf&lt;/code&gt; with the following code: &lt;/p&gt;
-
-&lt;div&gt;
-&lt;div class="code"&gt;&lt;div class="file"&gt;&lt;a href="/Scratch/en/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/code/local.conf"&gt; &amp;#x27A5; local.conf &lt;/a&gt;&lt;/div&gt;&lt;div class="withfile"&gt;
-&lt;pre class="twilight"&gt;
-
-&lt;span class="DoctypeXmlProcessing"&gt;&lt;span class="DoctypeXmlProcessing"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="DoctypeXmlProcessing"&gt;xml&lt;/span&gt;&lt;span class="DoctypeXmlProcessing"&gt; version&lt;/span&gt;=&lt;span class="DoctypeXmlProcessing"&gt;&lt;span class="DoctypeXmlProcessing"&gt;&amp;quot;&lt;/span&gt;1.0&lt;span class="DoctypeXmlProcessing"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class="DoctypeXmlProcessing"&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
 </feed>

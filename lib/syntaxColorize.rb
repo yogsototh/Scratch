@@ -29,7 +29,7 @@ module Nanoc3::Helpers
           if lang =~ /^(zsh|bash|sh|csh|shell)$/
             lang='shell-unix-generic'
           end
-          filtered_data = Uv.parse(data, 'xhtml', lang, false, 'twilight')
+          filtered_data = Uv.parse(data, 'xhtml', lang, false, 'solarized')
         rescue LoadError
           unless $_WARNED_ABOUT_ULTRAVIOLET
             warn "WARNING: Couldn't load uv; please install the ultraviolet gem. This message will not appear again."

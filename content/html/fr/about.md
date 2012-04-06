@@ -29,7 +29,7 @@ Films que j'aime :
   - Le festin nu *[Cronenberg]*
   - eXistenZ *[Cronenberg]*
 
-[Mes sites préférés](http://diigo.com/profile/yogsototh)
+[Mes sites préférés](http://pinboard.in/u:yogsototh)
 
 newcorps
 
