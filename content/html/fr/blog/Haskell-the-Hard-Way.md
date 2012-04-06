@@ -42,7 +42,7 @@ begindiv(intro)
 >   * <a href="#useful-notations-for-functions">Useful notations for functions</a>
 > * <a href="#hard-part">Hard Part</a>
 >   * <a href="#functional-style">Functional style</a>
->     * <a href="#higher-level-functions">Higher Level Functions</a>
+>     * <a href="#higher-order-functions">Higher Order Functions</a>
 >   * <a href="#types">Types</a>
 >     * <a href="#type-inference">Type inference</a>
 >     * <a href="#type-construction">Type construction</a>
@@ -387,7 +387,7 @@ You get this error:
     In the expression: print (f 2.3 4.2)
 ~~~
 
-The problem: `2.3` isn't an Int.
+The problem: `4.2` isn't an Int.
 
 <a href="code/01_basic/10_Introduction/21_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>21_very_basic.lhs</strong> </a>
 
@@ -434,11 +434,11 @@ To understand it, just look at a list of progressive examples:
 
 | The&nbsp;written&nbsp;type | It's meaning |
 | `Int`            | the type `Int`                              |
-| `Int -> Int`     | the type function from `Int` to `Int`.      |
-| `Float -> Int`   | the type function from `Float` to `Int`.    |
-| `a -> Int`       | the type function from any type to `Int`.   |
-| `a -> a`         | the type function from any type `a` to the same type `a`.  |
-| `a -> a -> a`    | the type function of two arguments of any type `a` to the same type `a`.  |
+| `Int -> Int`     | the type function from `Int` to `Int`       |
+| `Float -> Int`   | the type function from `Float` to `Int`     |
+| `a -> Int`       | the type function from any type to `Int`    |
+| `a -> a`         | the type function from any type `a` to the same type `a`  |
+| `a -> a -> a`    | the type function of two arguments of any type `a` to the same type `a`  |
 
 In the type `a -> a -> a`, the letter `a` is a _type variable_. 
 It means `f` is a function with two argument and both argument and the result have the same type.
@@ -469,6 +469,7 @@ This is a function from type `a` to (`a -> a`).
 Yes, strange. 
 In fact, in Haskell no function really have two arguments.
 Instead all functions have only one argument.
+But we remark that taking two argument is equivalent to taking one argument and returning a function taking the second argument as parameter.
 
 More precisely `f 3 4` is equivalent to `(f 3) 4`. 
 Note `f 3` is a function:
@@ -574,7 +575,7 @@ True /= False ⇒ True  (/=) is the operator for different
 <h5 id="powers">Powers</h5>
 
 ~~~
-x^n     for n an integral
+x^n     for n an integral (understand Int or Integer)
 x**y    for y any kind of number (Float for example)
 ~~~
 
@@ -1041,7 +1042,20 @@ main = print $ evenSum [1..10]
 
 <hr/><a href="code/02_Hard_Part/14_Functions.lhs" class="cut">02_Hard_Part/<strong>14_Functions.lhs</strong></a>
 
-We also can curry a bit our definition by removing the `l`:
+In haskell you can simplify function definition by curry them.
+For example,  instead of writing:
+
+<code class="haskell">
+f x = (some expresion) x
+</code>
+
+you can simply write
+
+<code class="haskell">
+f x = some expression
+</code>
+
+We use this method to remove the `l`:
 
 <div class="codehighlight">
 <code class="haskell">
@@ -1070,13 +1084,13 @@ main = print $ evenSum [1..10]
 
 <hr/><a href="code/02_Hard_Part/15_Functions.lhs" class="cut">02_Hard_Part/<strong>15_Functions.lhs</strong></a>
 
-<h4 id="higher-level-functions">Higher Level Functions</h4>
+<h4 id="higher-order-functions">Higher Order Functions</h4>
 
 <%= blogimage("escher_polygon.png","Escher") %>
 
-To make things even better we should use higher level functions.
+To make things even better we should use higher order functions.
 What are these beast?
-Higher level functions are functions taking function as parameter.
+Higher order functions are functions taking function as parameter.
 
 Here are some examples:
 

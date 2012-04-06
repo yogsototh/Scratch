@@ -106,7 +106,7 @@
       <ul>
         <li><a href="#functional-style">Functional style</a>
           <ul>
-            <li><a href="#higher-level-functions">Higher Level Functions</a></li>
+            <li><a href="#higher-order-functions">Higher Order Functions</a></li>
           </ul>
         </li>
         <li><a href="#types">Types</a>
@@ -496,7 +496,7 @@ main = <span class="Entity">print</span> (f 2.3 4.2)
     In the expression: print (f 2.3 4.2)
 </code></pre>
 
-<p>The problem: <code>2.3</code> isn&rsquo;t an Int.</p>
+<p>The problem: <code>4.2</code> isn&rsquo;t an Int.</p>
 
 <p><a href="code/01_basic/10_Introduction/21_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>21_very_basic.lhs</strong> </a></p>
 
@@ -553,23 +553,23 @@ To understand it, just look at a list of progressive examples: </p>
     </tr>
     <tr>
       <td><code>Int -&gt; Int</code></td>
-      <td>the type function from <code>Int</code> to <code>Int</code>.</td>
+      <td>the type function from <code>Int</code> to <code>Int</code></td>
     </tr>
     <tr>
       <td><code>Float -&gt; Int</code></td>
-      <td>the type function from <code>Float</code> to <code>Int</code>.</td>
+      <td>the type function from <code>Float</code> to <code>Int</code></td>
     </tr>
     <tr>
       <td><code>a -&gt; Int</code></td>
-      <td>the type function from any type to <code>Int</code>.</td>
+      <td>the type function from any type to <code>Int</code></td>
     </tr>
     <tr>
       <td><code>a -&gt; a</code></td>
-      <td>the type function from any type <code>a</code> to the same type <code>a</code>.</td>
+      <td>the type function from any type <code>a</code> to the same type <code>a</code></td>
     </tr>
     <tr>
       <td><code>a -&gt; a -&gt; a</code></td>
-      <td>the type function of two arguments of any type <code>a</code> to the same type <code>a</code>.</td>
+      <td>the type function of two arguments of any type <code>a</code> to the same type <code>a</code></td>
     </tr>
   </tbody>
 </table>
@@ -602,7 +602,8 @@ This is a function from type <code>a</code> to (<code>a -&gt; a</code>).</p>
 
 <p>Yes, strange. 
 In fact, in Haskell no function really have two arguments.
-Instead all functions have only one argument.</p>
+Instead all functions have only one argument.
+But we remark that taking two argument is equivalent to taking one argument and returning a function taking the second argument as parameter.</p>
 
 <p>More precisely <code>f 3 4</code> is equivalent to <code>(f 3) 4</code>. 
 Note <code>f 3</code> is a function:</p>
@@ -705,7 +706,7 @@ True /= False ⇒ True  (/=) is the operator for different
 
 <h5 id="powers">Powers</h5>
 
-<pre><code>x^n     for n an integral
+<pre><code>x^n     for n an integral (understand Int or Integer)
 x**y    for y any kind of number (Float for example)
 </code></pre>
 
@@ -1178,7 +1179,20 @@ main = <span class="Entity">print</span> $ evenSum [1..10]
 <hr />
 <p><a href="code/02_Hard_Part/14_Functions.lhs" class="cut">02_Hard_Part/<strong>14_Functions.lhs</strong></a></p>
 
-<p>We also can curry a bit our definition by removing the <code>l</code>:</p>
+<p>In haskell you can simplify function definition by curry them.
+For example,  instead of writing:</p>
+
+<pre class="twilight">
+f x = (some expresion) x
+</pre>
+
+<p>you can simply write</p>
+
+<pre class="twilight">
+f x = some expression
+</pre>
+
+<p>We use this method to remove the <code>l</code>:</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -1208,13 +1222,13 @@ main = <span class="Entity">print</span> $ evenSum [1..10]
 <hr />
 <p><a href="code/02_Hard_Part/15_Functions.lhs" class="cut">02_Hard_Part/<strong>15_Functions.lhs</strong></a></p>
 
-<h4 id="higher-level-functions">Higher Level Functions</h4>
+<h4 id="higher-order-functions">Higher Order Functions</h4>
 
 <p><img alt="Escher" src="/Scratch/img/blog/Haskell-the-Hard-Way/escher_polygon.png" /></p>
 
-<p>To make things even better we should use higher level functions.
+<p>To make things even better we should use higher order functions.
 What are these beast?
-Higher level functions are functions taking function as parameter.</p>
+Higher order functions are functions taking function as parameter.</p>
 
 <p>Here are some examples:</p>
 
