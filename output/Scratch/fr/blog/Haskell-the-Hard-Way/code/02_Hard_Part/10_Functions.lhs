@@ -14,6 +14,9 @@ The end result will be both more elegant and easier to adapt.
 Let's resolve the following problem:
 
  > Given a list of integer, return the sum of its even numbers.
+ > 
+ > example:
+ > `[1,2,3,4,5] ⇒  2 + 4 ⇒  6`
 
 To show differences between functional and imperative approach, 
 I'll start by providing an imperative solution (in javascript):
@@ -67,34 +70,36 @@ int accumSum(int n, int *list) {
 Keep this code in mind. We will translate it in Haskell.
 But before, I need to introduce three simple but useful function we will use:
 
-> even :: Integral a => a -> Bool
-> head :: [a] -> a
-> tail :: [a] -> [a]
+<code class="haskell">
+even :: Integral a => a -> Bool
+head :: [a] -> a
+tail :: [a] -> [a]
+</code>
 
 `even` verify if a number is even.
 
-~~~
+<code class="haskell">
 even :: Integral a => a -> Bool
 even 3  ⇒ False
 even 2  ⇒ True
-~~~
+</code>
 
 `head` returns the first element of a list:
 
-~~~
+<code class="haskell">
 head :: [a] -> a
 head [1,2,3] ⇒ 1
 head []      ⇒ ERROR
-~~~
+</code>
 
 `tail`, returns all element except the first of a list:
 
-~~~
+<code class="haskell">
 tail :: [a] -> [a]
 tail [1,2,3] ⇒ [2,3]
 tail [3]     ⇒ []
 tail []      ⇒ ERROR
-~~~
+</code>
 
 Remark that for any non empty list `l`, 
 `l ⇔ (head l):(tail l)`

@@ -1,4 +1,4 @@
-We also can currify a bit our definition by removing the `l`:
+We also can curry a bit our definition by removing the `l`:
 
 > -- Version 4
 > evenSum :: Integral a => [a] -> a
@@ -11,3 +11,8 @@ We also can currify a bit our definition by removing the `l`:
 >                 then accumSum (n+x) xs
 >                 else accumSum n xs
 
+<div style="display:none">
+
+> main = print $ evenSum [1..10]
+
+</div>

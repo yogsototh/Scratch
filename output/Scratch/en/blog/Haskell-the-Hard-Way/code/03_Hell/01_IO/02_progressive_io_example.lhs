@@ -3,13 +3,13 @@ For example, what occur if the user enter something strange?
 Let's try:
 
 ~~~
-% runghc 02_progressive_io_example.lhs
-Enter a list of numbers (separated by comma):
-foo
-Prelude.read: no parse
+    % runghc 02_progressive_io_example.lhs
+    Enter a list of numbers (separated by comma):
+    foo
+    Prelude.read: no parse
 ~~~
 
-Argh, an evil error message and a crash! 
+Argh! An evil error message and a crash! 
 The first evolution will be to answer with a more friendly message.
 
 For this, we must detect, something went wrong.
@@ -52,7 +52,7 @@ Otherwise, for example for "1,2,3", it will return `Just [1,2,3]`.
 
 We simply have to test the value in our main function.
 
-> main = IO ()
+> main :: IO ()
 > main = do
 >   putStrLn "Enter a list of numbers (separated by comma):"
 >   input <- getLine

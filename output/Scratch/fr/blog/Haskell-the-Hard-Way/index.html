@@ -130,6 +130,10 @@
             <li><a href="#the-list-monad">The list monad</a></li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li><a href="#appendix">Appendix</a>
+      <ul>
         <li><a href="#more-on-infinite-tree">More on Infinite Tree</a></li>
       </ul>
     </li>
@@ -143,41 +147,56 @@
 
 </div>
 
-<hr />
-<p><a href="code/00_preamble.lhs" class="cut">./<strong>00_preamble.lhs</strong></a></p>
-
 
 <div class="intro">
 
 
-<p>Adapter son esprit à Haskell peut être difficile.
-Ce le fût pour moi.
-Dans cet article, j&rsquo;essaye de fournir les informations qui m&rsquo;ont manquées quand j&rsquo;essayais d&rsquo;apprendre Haskell.</p>
+<p>Je pense vraiment que
+tous les développeurs devraient apprendre Haskell.
+Peut-être pas devenir des ninjas d&rsquo;Haskell, 
+mais au moins savoir ce que ce langage a de particulier.
+Son apprentissage ouvre énormément l&rsquo;esprit.</p>
 
-<p>Apprendre Haskell ce n&rsquo;est pas simplement apprendre un nouveau langage de programmation.
-Il faut y associer un tas de notions que je n&rsquo;avais jamais vues avant.
-Beaucoup de concepts servent aussi dans la programmation de langages plus communs.</p>
+<p>La plupart des langages partagent les mêmes fondamentaux&nbsp;:</p>
+
+<ul>
+  <li>les variables</li>
+  <li>les boucles</li>
+  <li>les pointeurs<sup id="fnref:0001"><a href="#fn:0001" rel="footnote">1</a></sup></li>
+  <li>les structures de données, les objets et les classes</li>
+</ul>
+
+<p>Haskell est très différent.
+Ce langage utilise des concepts dont je n&rsquo;avais jamais entendu parlé avant.
+Beaucoup de ces concepts pourront vous aider à devenir un meilleur développeur.</p>
+
+<p>Plier son esprit à Haskell peut être difficile.
+Ce le fût pour moi.
+Dans cet article, j&rsquo;essaye de fournir les informations qui m&rsquo;ont manquées lors de mon apprentissage.</p>
 
 <p>Cet article sera certainement difficile à suivre.
 Mais c&rsquo;est voulu.
 Il n&rsquo;y a pas de raccourci pour apprendre Haskell.
 C&rsquo;est difficile.
-Mais je pense que c&rsquo;est une bonne chose.</p>
+Mais je pense que c&rsquo;est une bonne chose.
+C&rsquo;est parce qu&rsquo;Haskell est difficile qu&rsquo;il est intéressant.</p>
 
-<p>Cet article peut être vu comme une introduction très dense d&rsquo;Haskell.
-La manière conventionnelle d&rsquo;apprendre Haskell est de lire deux livres.
+<p>La manière conventionnelle d&rsquo;apprendre Haskell est de lire deux livres.
 En premier <a href="http://learnyouahaskell.com">&ldquo;Learn You a Haskell&rdquo;</a> 
 et ensuite <a href="http://www.realworldhaskell.org">&ldquo;Real World Haskell&rdquo;</a>.
 Je pense aussi que c&rsquo;est la bonne manière de s&rsquo;y prendre.
-Mais apprendre même un tout petit peu d&rsquo;Haskell est presque impossible sans se plonger réellement dans ces livres.
-C&rsquo;est pourquoi je pense qu&rsquo;un article plus court comme celui-ci peut avoir son utilité.
-De plus, un tel article m&rsquo;a manqué au début de mon apprentissage.</p>
+Mais apprendre même un tout petit peu d&rsquo;Haskell est presque impossible sans se plonger réellement dans ces livres.</p>
+
+<p>Cet article fait un résumé très dense et rapide des aspect majeurs d&rsquo;Haskell.
+J&rsquo;y ai aussi rajouté des informations qui m&rsquo;ont manqué pendant l&rsquo;apprentissage de ce langage.</p>
 
 <p>Pour les francophones&nbsp;; je suis désolé. 
 Je n&rsquo;ai pas eu le courage de tout retraduire en français.
-Sachez cependant que si vous êtes plusieurs à insister, je ferai certainement l&rsquo;effort.</p>
+Sachez cependant que si vous êtes plusieurs à insister, je ferai certainement l&rsquo;effort de traduire l&rsquo;article en entier.
+Et si vous vous sentez d&rsquo;avoir une bonne âme je ne suis pas contre un peu d&rsquo;aide.
+Les sources de cet article sont sur <a href="http://github.com/yogsototh/learn_haskell.git">gihub</a>.</p>
 
-<p>Cet article contient quatres parties&nbsp;:</p>
+<p>Cet article contient cinq parties&nbsp;:</p>
 
 <ul>
   <li>Introduction&nbsp;: un exemple rapide pour montrer qu&rsquo;Haskell peut être facile.</li>
@@ -194,6 +213,10 @@ Sachez cependant que si vous êtes plusieurs à insister, je ferai certainement 
       <li>Utiliser les IO&nbsp;: un exemple très minimal&nbsp;;</li>
       <li>Le truc des IO révélé&nbsp;: les détails cachés d&rsquo;IO qui m&rsquo;ont manqués</li>
       <li>Les monades&nbsp;: incroyable à quel point on peut généraliser</li>
+    </ul>
+  </li>
+  <li>Appendice&nbsp;:
+    <ul>
       <li>Revenons sur les arbres infinis&nbsp;: une discussion plus mathématique sur la manipulation d&rsquo;arbres infinis.</li>
     </ul>
   </li>
@@ -213,8 +236,6 @@ Vous devriez voir un lien juste en dessous.</p>
 
 </div>
 
-
-<p><a href="code/00_preamble.lhs" class="cut">./<strong>00_preamble.lhs</strong> </a></p>
 
 <hr />
 <p><a href="code/01_basic/10_Introduction/00_hello_world.lhs" class="cut">01_basic/10_Introduction/<strong>00_hello_world.lhs</strong></a></p>
@@ -241,7 +262,7 @@ Vous devriez voir un lien juste en dessous.</p>
 
 <p><img alt="The Scream" src="/Scratch/img/blog/Haskell-the-Hard-Way/munch_TheScream.jpg" /></p>
 
-<p>Many book/articles about Haskell start by introducing some esoteric formula (quicksort, fibonacci serie, etc&hellip;).
+<p>Many book/articles about Haskell start by introducing some esoteric formula (quick sort, Fibonacci, etc&hellip;).
 I will make the exact opposite.
 At first I won&rsquo;t show you any Haskell super power.
 I will start with similarities between Haskell and other programming languages.
@@ -273,7 +294,7 @@ Hello World<span class="Keyword">!</span>
 <hr />
 <p><a href="code/01_basic/10_Introduction/10_hello_you.lhs" class="cut">01_basic/10_Introduction/<strong>10_hello_you.lhs</strong></a></p>
 
-<p>Now, a program that ask your name and display <code>Hello &lt;your name&gt;!</code>.</p>
+<p>Now, a program asking your name and reply &ldquo;Hello&rdquo; using the name you entered:</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -352,7 +373,9 @@ Hopefully many of these new concepts will help you to program even in imperative
 <p>Generally your function won&rsquo;t modify anything of the outside world.
 This means, it can&rsquo;t modify the value of a variable, can&rsquo;t get user input, can&rsquo;t write on the screen, can&rsquo;t launch a missile.
 On the other hand, parallelism will be very easy to achieve.
-Haskell makes it clear where effects occurs and where you are pure.</p>
+Haskell makes it clear where effects occurs and where you are pure.
+Also, it will be far easier to reason about your program.
+Most bug will be prevented in pure part of your program.</p>
 
 <p>Furthermore there is an essential respected law in Haskell:</p>
 
@@ -482,7 +505,7 @@ main = <span class="Entity">print</span> (f 2.3 4.2)
 
 <p>The solution, 
 don&rsquo;t declare the type for <code>f</code>.
-Haskell will infere the most general type for us:</p>
+Haskell will infer the most general type for us:</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -563,18 +586,18 @@ We declare only one function like in a dynamic typed language.</p>
 For example a <code>String</code>, an <code>Int</code>, but also more complex types, like <code>Trees</code>, other functions, etc&hellip;
 But here our type is prefixed with <code>Num a =&gt; </code>. </p>
 
-<p><code>Num</code> is a <em>typeclass</em>.
-A typeclass can be understood as a set of types.
+<p><code>Num</code> is a <em>type class</em>.
+A type class can be understood as a set of types.
 <code>Num</code> contains only types which behave like numbers.
 More precisely, <code>Num</code> is class containing types who implement a specific list of functions, and in particular <code>(+)</code> and <code>(*)</code>.</p>
 
-<p>Typeclass is a very powerful language construction.
+<p>Type class is a very powerful language construction.
 We can do some incredibly powerful stuff with this.
 More on this later.</p>
 
 <p>Finally, <code>Num a =&gt; a -&gt; a -&gt; a</code> means:</p>
 
-<p>Let <code>a</code> be a type belonging to the <code>Num</code> typeclass.
+<p>Let <code>a</code> be a type belonging to the <code>Num</code> type class.
 This is a function from type <code>a</code> to (<code>a -&gt; a</code>).</p>
 
 <p>Yes, strange. 
@@ -620,7 +643,7 @@ f x y = x*x + y*y
 main = <span class="Entity">print</span> (f 3 2.4)
 </pre>
 </div>
-<p>It works, because, <code>3</code> is a valid reprensation for both Frational numbers like Float and for Integer.
+<p>It works, because, <code>3</code> is a valid representation for both Fractional numbers like Float and for Integer.
 As <code>2.4</code> is a Fractional number, <code>3</code> is then interpreted as being also a Fractional number.</p>
 
 <p><a href="code/01_basic/10_Introduction/23_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>23_very_basic.lhs</strong> </a></p>
@@ -642,7 +665,7 @@ y = 2.4
 main = <span class="Entity">print</span> (f x y) <span class="Comment"><span class="Comment">--</span> won't work because type x ‡ type y</span>
 </pre>
 </div>
-<p>The comiler complains. 
+<p>The compiler complains. 
 The two parameter must have the same type.</p>
 
 <p>If you believe it is a bad idea, and the compiler should make the transformation 
@@ -650,9 +673,6 @@ from a type to another for you, you should really watch this great (and funny) v
 <a href="https://www.destroyallsoftware.com/talks/wat">WAT</a></p>
 
 <p><a href="code/01_basic/10_Introduction/24_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>24_very_basic.lhs</strong> </a></p>
-
-<hr />
-<p><a href="code/01_basic/20_Essential_Haskell/00_notations.lhs" class="cut">01_basic/20_Essential_Haskell/<strong>00_notations.lhs</strong></a></p>
 
 <h2 id="essential-haskell">Essential Haskell</h2>
 
@@ -774,8 +794,6 @@ f $ g $ h x     ⇔  f (g (h x))
 (f . g . h) x   ⇔  f (g (h x))
 </code></pre>
 
-<p><a href="code/01_basic/20_Essential_Haskell/00_notations.lhs" class="cut">01_basic/20_Essential_Haskell/<strong>00_notations.lhs</strong> </a></p>
-
 <hr />
 <p><a href="code/01_basic/20_Essential_Haskell/10a_Functions.lhs" class="cut">01_basic/20_Essential_Haskell/<strong>10a_Functions.lhs</strong></a></p>
 
@@ -806,7 +824,7 @@ square x = x^2
 </div>
 <p>Note <code>^</code> use infix notation. 
 For each infix operator there its associated prefix notation.
-You just have to put it inside parathesis.</p>
+You just have to put it inside parenthesis.</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -836,8 +854,8 @@ Here:</p>
 
 <div class="codehighlight">
 <pre class="twilight">
-<span class="Entity">abs</span> x :: <span class="Constant">Num</span> a =&gt; a -&gt; a
-<span class="Entity">abs</span> = <span class="Keyword">if</span> x &gt;= 0 <span class="Keyword">then</span> x <span class="Keyword">else</span> -x
+<span class="Entity">absolute</span> :: (<span class="Constant">Ord</span> <span class="Variable">a</span>, <span class="Constant">Num</span> <span class="Variable">a</span>) =&gt; <span class="Variable">a</span> -&gt; <span class="Variable">a</span>
+absolute x = <span class="Keyword">if</span> x &gt;= 0 <span class="Keyword">then</span> x <span class="Keyword">else</span> -x
 </pre>
 </div>
 <p>Note: the <code>if .. then .. else</code> Haskell notation is more like the
@@ -847,20 +865,34 @@ Here:</p>
 
 <div class="codehighlight">
 <pre class="twilight">
-<span class="Entity">abs</span>' x
-     | x &gt;= 0 = x
-     | <span class="Keyword">otherwise</span> = -x
+absolute' x
+    | x &gt;= 0 = x
+    | <span class="Keyword">otherwise</span> = -x
 </pre>
 </div>
 <blockquote>
   <p>Notation warning: indentation is <em>important</em> in Haskell.
-Like in Python, a bad indendation could break your code!</p>
+Like in Python, a bad indentation could break your code!</p>
 </blockquote>
 
-<p><a href="code/01_basic/20_Essential_Haskell/10a_Functions.lhs" class="cut">01_basic/20_Essential_Haskell/<strong>10a_Functions.lhs</strong> </a></p>
+<div style="display:none">
 
-<hr />
-<p><a href="code/02_Hard_Part/10_Functions.lhs" class="cut">02_Hard_Part/<strong>10_Functions.lhs</strong></a></p>
+<div class="codehighlight">
+<pre class="twilight">
+main = <span class="Keyword">do</span>
+      <span class="Entity">print</span> $ square 10
+      <span class="Entity">print</span> $ square' 10
+      <span class="Entity">print</span> $ square'' 10
+      <span class="Entity">print</span> $ square''' 10
+      <span class="Entity">print</span> $ absolute 10
+      <span class="Entity">print</span> $ absolute (-10)
+      <span class="Entity">print</span> $ absolute' 10
+      <span class="Entity">print</span> $ absolute' (-10)
+</pre>
+</div>
+</div>
+
+<p><a href="code/01_basic/20_Essential_Haskell/10a_Functions.lhs" class="cut">01_basic/20_Essential_Haskell/<strong>10a_Functions.lhs</strong> </a></p>
 
 <h2 id="hard-part">Hard Part</h2>
 
@@ -879,6 +911,9 @@ The end result will be both more elegant and easier to adapt. </p>
 
 <blockquote>
   <p>Given a list of integer, return the sum of its even numbers.</p>
+
+  <p>example:
+<code>[1,2,3,4,5] ⇒  2 + 4 ⇒  6</code></p>
 </blockquote>
 
 <p>To show differences between functional and imperative approach, 
@@ -934,39 +969,39 @@ Note, for simplicity, I assume the int list should end with the first <code>0</c
 <p>Keep this code in mind. We will translate it in Haskell.
 But before, I need to introduce three simple but useful function we will use:</p>
 
-<div class="codehighlight">
 <pre class="twilight">
 <span class="Entity">even</span> :: <span class="Constant">Integral</span> <span class="Variable">a</span> =&gt; <span class="Variable">a</span> -&gt; <span class="Constant">Bool</span>
 <span class="Entity">head</span> :: [<span class="Variable">a</span>] -&gt; <span class="Variable">a</span>
 <span class="Entity">tail</span> :: [<span class="Variable">a</span>] -&gt; [<span class="Variable">a</span>]
 </pre>
-</div>
+
 <p><code>even</code> verify if a number is even.</p>
 
-<pre><code>even :: Integral a =&gt; a -&gt; Bool
-even 3  ⇒ False
-even 2  ⇒ True
-</code></pre>
+<pre class="twilight">
+<span class="Entity">even</span> :: <span class="Constant">Integral</span> <span class="Variable">a</span> =&gt; <span class="Variable">a</span> -&gt; <span class="Constant">Bool</span>
+<span class="Entity">even</span> 3  ⇒ <span class="Constant">False</span>
+<span class="Entity">even</span> 2  ⇒ <span class="Constant">True</span>
+</pre>
 
 <p><code>head</code> returns the first element of a list:</p>
 
-<pre><code>head :: [a] -&gt; a
-head [1,2,3] ⇒ 1
-head []      ⇒ ERROR
-</code></pre>
+<pre class="twilight">
+<span class="Entity">head</span> :: [<span class="Variable">a</span>] -&gt; <span class="Variable">a</span>
+<span class="Entity">head</span> [1,2,3] ⇒ 1
+<span class="Entity">head</span> []      ⇒ <span class="Constant">ERROR</span>
+</pre>
 
 <p><code>tail</code>, returns all element except the first of a list:</p>
 
-<pre><code>tail :: [a] -&gt; [a]
-tail [1,2,3] ⇒ [2,3]
-tail [3]     ⇒ []
-tail []      ⇒ ERROR
-</code></pre>
+<pre class="twilight">
+<span class="Entity">tail</span> :: [<span class="Variable">a</span>] -&gt; [<span class="Variable">a</span>]
+<span class="Entity">tail</span> [1,2,3] ⇒ [2,3]
+<span class="Entity">tail</span> [3]     ⇒ []
+<span class="Entity">tail</span> []      ⇒ <span class="Constant">ERROR</span>
+</pre>
 
 <p>Remark that for any non empty list <code>l</code>, 
 <code>l ⇔ (head l):(tail l)</code></p>
-
-<p><a href="code/02_Hard_Part/10_Functions.lhs" class="cut">02_Hard_Part/<strong>10_Functions.lhs</strong> </a></p>
 
 <hr />
 <p><a href="code/02_Hard_Part/11_Functions.lhs" class="cut">02_Hard_Part/<strong>11_Functions.lhs</strong></a></p>
@@ -1005,7 +1040,7 @@ Ok, modules loaded: Main.
 6
 </pre>
 
-<p>Here is an example of execution<sup id="fnref:2"><a href="#fn:2" rel="footnote">1</a></sup>: </p>
+<p>Here is an example of execution<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>: </p>
 
 <pre>
 *Main&gt; evenSum [1..5]
@@ -1034,13 +1069,22 @@ First, we can generalize the type.</p>
 <span class="Entity">evenSum</span> :: <span class="Constant">Integral</span> <span class="Variable">a</span> =&gt; [<span class="Variable">a</span>] -&gt; <span class="Variable">a</span>
 </pre>
 
+<div style="display:none">
+
+<div class="codehighlight">
+<pre class="twilight">
+main = <span class="Keyword">do</span> <span class="Entity">print</span> $ evenSum [1..10]
+</pre>
+</div>
+</div>
+
 <p><a href="code/02_Hard_Part/11_Functions.lhs" class="cut">02_Hard_Part/<strong>11_Functions.lhs</strong> </a></p>
 
 <hr />
 <p><a href="code/02_Hard_Part/12_Functions.lhs" class="cut">02_Hard_Part/<strong>12_Functions.lhs</strong></a></p>
 
 <p>Next, we can use sub functions using <code>where</code> or <code>let</code>.
-This way our <code>accumSum</code> function won&rsquo;t polute the global name space.</p>
+This way our <code>accumSum</code> function won&rsquo;t pollute the global name space.</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -1058,6 +1102,15 @@ evenSum l = accumSum 0 l
                             <span class="Keyword">else</span> accumSum n xs
 </pre>
 </div>
+<div style="display:none">
+
+<div class="codehighlight">
+<pre class="twilight">
+main = <span class="Entity">print</span> $ evenSum [1..10]
+</pre>
+</div>
+</div>
+
 <p><a href="code/02_Hard_Part/12_Functions.lhs" class="cut">02_Hard_Part/<strong>12_Functions.lhs</strong> </a></p>
 
 <hr />
@@ -1083,43 +1136,49 @@ Use value instead of general parameter name.</p>
 <p>Instead of saying: <code>foo l = if l == [] then &lt;x&gt; else &lt;y&gt;</code>
 You simply state:  </p>
 
-<div class="codehighlight">
 <pre class="twilight">
 foo [] =  &lt;x&gt;
 foo l  =  &lt;y&gt;
 </pre>
-</div>
+
 <p>But pattern matching go even further. 
-It is also able to inspect inside datas. 
+It is also able to inspect inside data. 
 We can replace</p>
 
-<div class="codehighlight">
 <pre class="twilight">
- foo l =  <span class="Keyword">let</span> x  = <span class="Entity">head</span> l 
-              xs = <span class="Entity">tail</span> l
-          <span class="Keyword">in</span> <span class="Keyword">if</span> <span class="Entity">even</span> x 
-              <span class="Keyword">then</span> foo (n+x) xs
-              <span class="Keyword">else</span> foo n xs
+foo l =  <span class="Keyword">let</span> x  = <span class="Entity">head</span> l 
+             xs = <span class="Entity">tail</span> l
+         <span class="Keyword">in</span> <span class="Keyword">if</span> <span class="Entity">even</span> x 
+             <span class="Keyword">then</span> foo (n+x) xs
+             <span class="Keyword">else</span> foo n xs
 </pre>
-</div>
+
 <p>by</p>
+
+<pre class="twilight">
+foo (x:xs) = <span class="Keyword">if</span> <span class="Entity">even</span> x 
+                 <span class="Keyword">then</span> foo (n+x) xs
+                 <span class="Keyword">else</span> foo n xs
+</pre>
+
+<p>This is a very useful feature.
+It makes our code both terser and easier to read.</p>
+
+<div style="display:none">
 
 <div class="codehighlight">
 <pre class="twilight">
- foo (x:xs) = <span class="Keyword">if</span> <span class="Entity">even</span> x 
-                  <span class="Keyword">then</span> foo (n+x) xs
-                  <span class="Keyword">else</span> foo n xs
+main = <span class="Entity">print</span> $ evenSum [1..10]
 </pre>
 </div>
-<p>This is a very useful feature.
-It makes our code both tersier and easier to read.</p>
+</div>
 
 <p><a href="code/02_Hard_Part/13_Functions.lhs" class="cut">02_Hard_Part/<strong>13_Functions.lhs</strong> </a></p>
 
 <hr />
 <p><a href="code/02_Hard_Part/14_Functions.lhs" class="cut">02_Hard_Part/<strong>14_Functions.lhs</strong></a></p>
 
-<p>We also can currify a bit our definition by removing the <code>l</code>:</p>
+<p>We also can curry a bit our definition by removing the <code>l</code>:</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -1135,6 +1194,15 @@ evenSum = accumSum 0
                 <span class="Keyword">else</span> accumSum n xs
 </pre>
 </div>
+<div style="display:none">
+
+<div class="codehighlight">
+<pre class="twilight">
+main = <span class="Entity">print</span> $ evenSum [1..10]
+</pre>
+</div>
+</div>
+
 <p><a href="code/02_Hard_Part/14_Functions.lhs" class="cut">02_Hard_Part/<strong>14_Functions.lhs</strong> </a></p>
 
 <hr />
@@ -1150,23 +1218,14 @@ Higher level functions are functions taking function as parameter.</p>
 
 <p>Here are some examples:</p>
 
-<div style="display:none">
-<div class="codehighlight">
-<pre class="twilight">
-<span class="Keyword">import</span> <span class="Constant">Data</span>.<span class="Constant">List</span> (<span class="Entity">foldl</span>')
-</pre>
-</div></div>
-
-<div class="codehighlight">
 <pre class="twilight">
 <span class="Entity">filter</span> :: (<span class="Variable">a</span> -&gt; <span class="Constant">Bool</span>) -&gt; [<span class="Variable">a</span>] -&gt; [<span class="Variable">a</span>]
 <span class="Entity">map</span> :: (<span class="Variable">a</span> -&gt; <span class="Variable">b</span>) -&gt; [<span class="Variable">a</span>] -&gt; [<span class="Variable">b</span>]
 <span class="Entity">foldl</span> :: (<span class="Variable">a</span> -&gt; <span class="Variable">b</span> -&gt; <span class="Variable">a</span>) -&gt; <span class="Variable">a</span> -&gt; [<span class="Variable">b</span>] -&gt; <span class="Variable">a</span>
 </pre>
-</div>
+
 <p>Let&rsquo;s proceed by small steps.</p>
 
-<div class="codehighlight">
 <pre class="twilight">
 <span class="Comment"><span class="Comment">--</span> Version 5</span>
 evenSum l = mysum 0 (<span class="Entity">filter</span> <span class="Entity">even</span> l)
@@ -1174,14 +1233,13 @@ evenSum l = mysum 0 (<span class="Entity">filter</span> <span class="Entity">eve
       mysum n [] = n
       mysum n (x:xs) = mysum xs (n+x) 
 </pre>
-</div>
+
 <p>where</p>
 
-<div class="codehighlight">
 <pre class="twilight">
 <span class="Entity">filter</span> <span class="Entity">even</span> [1..10] ⇔  [2,4,6,8,10]
 </pre>
-</div>
+
 <p>The function <code>filter</code> takes a function of type (<code>a -&gt; Bool</code>) and a list of type <code>[a]</code>. It returns a list containing only elements for which the function returned <code>true</code>.</p>
 
 <p>Our next step is to use another way to simulate loop. 
@@ -1203,15 +1261,15 @@ myfunc list = foldl <span class="yellow">bar</span> <span class="blue">initialVa
 <p>If you really want to know how the magic works.
 Here is the definition of <code>foldl</code>.</p>
 
-<div class="codehighlight">
 <pre class="twilight">
 <span class="Entity">foldl</span> f z [] = z
 <span class="Entity">foldl</span> f z (x:xs) = <span class="Entity">foldl</span> f (f z x) xs
 </pre>
-</div>
-<pre><code>foldl f z [x1,...xn]
+
+<pre class="twilight">
+<span class="Entity">foldl</span> f z [x1,...xn]
 ⇔  f (... (f (f z x1) x2) ...) xn
-</code></pre>
+</pre>
 
 <p>But as Haskell is lazy, it doesn&rsquo;t evaluate <code>(f z x)</code> and push this to the stack.
 This is why we generally use <code>foldl'</code> instead of <code>foldl</code>;
@@ -1221,7 +1279,6 @@ don&rsquo;t worry, just follow the code as if <code>foldl</code> and <code>foldl
 
 <p>Now our new version of <code>evenSum</code> become:</p>
 
-<div class="codehighlight">
 <pre class="twilight">
 <span class="Comment"><span class="Comment">--</span> Version 6</span>
 <span class="Comment"><span class="Comment">--</span> foldl' isn't accessible by default</span>
@@ -1230,41 +1287,48 @@ don&rsquo;t worry, just follow the code as if <code>foldl</code> and <code>foldl
 evenSum l = <span class="Entity">foldl</span>' mysum 0 (<span class="Entity">filter</span> <span class="Entity">even</span> l)
   <span class="Keyword">where</span> mysum acc value = acc + value
 </pre>
-</div>
+
 <p>Version we can simplify by using directly a lambda notation.
 This way we don&rsquo;t have to create the temporary name <code>mysum</code>.</p>
 
 <div class="codehighlight">
 <pre class="twilight">
 <span class="Comment"><span class="Comment">--</span> Version 7</span>
-<span class="Comment"><span class="Comment">--</span> Generaly it is considered a good practice</span>
+<span class="Comment"><span class="Comment">--</span> Generally it is considered a good practice</span>
 <span class="Comment"><span class="Comment">--</span> to import only the necessary function(s)</span>
 <span class="Keyword">import</span> <span class="Constant">Data</span>.<span class="Constant">List</span> (<span class="Entity">foldl</span>')
-evenSum l = <span class="Entity">foldl</span>' (\x y -&gt; x+y) (<span class="Entity">filter</span> <span class="Entity">even</span> l)
+evenSum l = <span class="Entity">foldl</span>' (\x y -&gt; x+y) 0 (<span class="Entity">filter</span> <span class="Entity">even</span> l)
 </pre>
 </div>
 <p>And of course, we remark </p>
 
-<div class="codehighlight">
 <pre class="twilight">
 (\x y -&gt; x+y) ⇔ <span class="Entity">(+)</span>
 </pre>
+
+<div style="display:none">
+
+<div class="codehighlight">
+<pre class="twilight">
+main = <span class="Entity">print</span> $ evenSum [1..10]
+</pre>
 </div>
+</div>
+
 <p><a href="code/02_Hard_Part/15_Functions.lhs" class="cut">02_Hard_Part/<strong>15_Functions.lhs</strong> </a></p>
 
 <hr />
 <p><a href="code/02_Hard_Part/16_Functions.lhs" class="cut">02_Hard_Part/<strong>16_Functions.lhs</strong></a></p>
 
-<p>Finaly</p>
+<p>Finally</p>
 
-<div class="codehighlight">
 <pre class="twilight">
 <span class="Comment"><span class="Comment">--</span> Version 8</span>
 <span class="Keyword">import</span> <span class="Constant">Data</span>.<span class="Constant">List</span> (<span class="Entity">foldl</span>')
 <span class="Entity">evenSum</span> :: <span class="Constant">Integral</span> <span class="Variable">a</span> =&gt; [<span class="Variable">a</span>] -&gt; <span class="Variable">a</span>
 evenSum l = <span class="Entity">foldl</span>' <span class="Entity">(+)</span> 0 (<span class="Entity">filter</span> <span class="Entity">even</span> l)
 </pre>
-</div>
+
 <p><code>foldl'</code> isn&rsquo;t the easiest function to intuit.
 If you are not used to it, you should exercise a bit.</p>
 
@@ -1284,21 +1348,19 @@ If you are not used to it, you should exercise a bit.</p>
 <p>Another useful higher order function is <code>(.)</code>.
 The <code>(.)</code> function correspond to the mathematical composition.</p>
 
-<div class="codehighlight">
 <pre class="twilight">
 (f . g . h) x ⇔  f ( g (h x))
 </pre>
-</div>
+
 <p>We can take advantage of this operator to curry a bit more our function:</p>
 
-<div class="codehighlight">
 <pre class="twilight">
 <span class="Comment"><span class="Comment">--</span> Version 9</span>
 <span class="Keyword">import</span> <span class="Constant">Data</span>.<span class="Constant">List</span> (<span class="Entity">foldl</span>')
 <span class="Entity">evenSum</span> :: <span class="Constant">Integral</span> <span class="Variable">a</span> =&gt; [<span class="Variable">a</span>] -&gt; <span class="Variable">a</span>
 evenSum = (<span class="Entity">foldl</span>' <span class="Entity">(+)</span> 0) . (<span class="Entity">filter</span> <span class="Entity">even</span>)
 </pre>
-</div>
+
 <p>Also, we could rename a bit some part to make it clearer:</p>
 
 <div class="codehighlight">
@@ -1332,7 +1394,7 @@ squareEvenSum' = evenSum . (<span class="Entity">map</span> (^2))
 squareEvenSum'' = <span class="Entity">sum</span>' . (<span class="Entity">map</span> (^2)) . (<span class="Entity">filter</span> <span class="Entity">even</span>)
 </pre>
 </div>
-<p>We just had to add another &ldquo;transformation function&rdquo;<sup id="fnref:0216"><a href="#fn:0216" rel="footnote">2</a></sup>.</p>
+<p>We just had to add another &ldquo;transformation function&rdquo;<sup id="fnref:0216"><a href="#fn:0216" rel="footnote">3</a></sup>.</p>
 
 <pre><code>map (^2) [1,2,3,4] ⇔ [1,4,9,16]
 </code></pre>
@@ -1368,10 +1430,16 @@ Then when you attack the imperative style of Haskell, it is hard to understand w
 <p>But before talking about this Haskell super-power, we must talk about another
 essential aspect of Haskell: <em>Types</em>.</p>
 
-<p><a href="code/02_Hard_Part/16_Functions.lhs" class="cut">02_Hard_Part/<strong>16_Functions.lhs</strong> </a></p>
+<div style="display:none">
 
-<hr />
-<p><a href="code/02_Hard_Part/20_Types.lhs" class="cut">02_Hard_Part/<strong>20_Types.lhs</strong></a></p>
+<div class="codehighlight">
+<pre class="twilight">
+main = <span class="Entity">print</span> $ evenSum [1..10]
+</pre>
+</div>
+</div>
+
+<p><a href="code/02_Hard_Part/16_Functions.lhs" class="cut">02_Hard_Part/<strong>16_Functions.lhs</strong> </a></p>
 
 <h3 id="types">Types</h3>
 
@@ -1391,7 +1459,7 @@ essential aspect of Haskell: <em>Types</em>.</p>
 <p>In Haskell, types are strong and static.</p>
 
 <p>Why is this important? It will help you <em>a lot</em> not to make some mistake.
-In Haskell, most bugs are catched during the compilation of your program.
+In Haskell, most bugs are caught during the compilation of your program.
 And the main reason is because of the type inference during compilation.
 It will be easy to detect where you used the bad parameter at the wrong place for example.</p>
 
@@ -1404,11 +1472,10 @@ What saves Haskell is that it can <em>infere</em> types.</p>
 <p>Here is a simple example. 
 The <code>square</code> function in Haskell:</p>
 
-<div class="codehighlight">
 <pre class="twilight">
 square x = x * x
 </pre>
-</div>
+
 <p>This function can <code>square</code> any Numeral type.
 You can provide <code>square</code> an <code>Int</code>, an <code>Integer</code>, a <code>Float</code> a <code>Fractional</code> and even <code>Complex</code>. Proof by example:</p>
 
@@ -1494,14 +1561,12 @@ Somewhere in the source of the module <code>Data.Complex</code>:</p>
 
 <p>The inference of type gives Haskell a feeling of the freedom that dynamic 
 typed languages provide. 
-But unlike dynamic typed languages, most error are catched before the execution.
+But unlike dynamic typed languages, most error are caught before the execution.
 Generally, in Haskell:</p>
 
 <blockquote>
   <p>&ldquo;if it compiles it certainly does what you intended&rdquo; </p>
 </blockquote>
-
-<p><a href="code/02_Hard_Part/20_Types.lhs" class="cut">02_Hard_Part/<strong>20_Types.lhs</strong> </a></p>
 
 <hr />
 <p><a href="code/02_Hard_Part/21_Types.lhs" class="cut">02_Hard_Part/<strong>21_Types.lhs</strong></a></p>
@@ -1596,7 +1661,7 @@ DataTypeName and DataTypeConstructor.</p>
                     , fieldn :: [<span class="Keyword">type</span> <span class="Keyword">of</span> fieldn] }
 </pre>
 
-<p>And many accessor are made for you.
+<p>And many accessors are made for you.
 Furthermore you can use another order when setting values.</p>
 
 <p>Example:</p>
@@ -1949,7 +2014,7 @@ And we can even make a tree containing a tree of trees!</p>
 <p>It is often stated that Haskell is <em>lazy</em>.</p>
 
 <p>In fact, if you are a bit pedantic, you should state that <a href="http://www.haskell.org/haskellwiki/Lazy_vs._non-strict">Haskell is <em>non-strict</em></a>.
-Lazyness is just a common implementation for non-strict languages.</p>
+Laziness is just a common implementation for non-strict languages.</p>
 
 <p>Then what does not-strict means? From the Haskell wiki:</p>
 
@@ -1997,7 +2062,7 @@ Also there exists the function <code>take</code> equivalent to our <code>take'</
 
 <div style="display:none">
 
-This code is mostly the same as the preceeding one.
+This code is mostly the same as the preceding one.
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -2102,7 +2167,7 @@ main = <span class="Entity">print</span> $ treeTakeDepth 4 nullTree
 </code></pre>
 
 <p>Just to heat your neurones a bit more,
-let&rsquo;s make a slightly more interresting tree:</p>
+let&rsquo;s make a slightly more interesting tree:</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -2127,7 +2192,7 @@ treeMap f (<span class="Constant">Node</span> x left right) = <span class="Const
 </pre>
 </div>
 <p><em>Hint</em>: I won&rsquo;t talk more about this here. 
-If you are interrested of the generalization of <code>map</code> to other data structure,
+If you are interested of the generalization of <code>map</code> to other data structure,
 search for functor and <code>fmap</code>.</p>
 
 <p>Our definition is now:</p>
@@ -2175,16 +2240,13 @@ main = <span class="Keyword">do</span>
 
 <p><a href="code/02_Hard_Part/41_Infinites_Structures.lhs" class="cut">02_Hard_Part/<strong>41_Infinites_Structures.lhs</strong> </a></p>
 
-<hr />
-<p><a href="code/03_Hell/00_Introduction.lhs" class="cut">03_Hell/<strong>00_Introduction.lhs</strong></a></p>
-
 <h2 id="hell-difficulty-part">Hell Difficulty Part</h2>
 
 <p>Congratulation to get so far!
 Now, some of the really hardcore stuff could start.</p>
 
 <p>If you are like me, you should get the functional style.
-You should also understand a bit more the advantages of lazyness by default.
+You should also understand a bit more the advantages of laziness by default.
 But you also don&rsquo;t really understand were to start to make a real program.
 And in particular:</p>
 
@@ -2196,12 +2258,12 @@ And in particular:</p>
 <p>Be prepared, answer might be difficult to get.
 But they all be very rewarding.</p>
 
-<p><a href="code/03_Hell/00_Introduction.lhs" class="cut">03_Hell/<strong>00_Introduction.lhs</strong> </a></p>
-
 <hr />
 <p><a href="code/03_Hell/01_IO/01_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>01_progressive_io_example.lhs</strong></a></p>
 
 <h3 id="deal-with-io">Deal With IO</h3>
+
+<p><img alt="Magritte, Carte blanche" src="/Scratch/img/blog/Haskell-the-Hard-Way/magritte_carte_blanche.jpg" /></p>
 
 <blockquote>
   <p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span></p>
@@ -2266,7 +2328,7 @@ getLine  :: IO String
 print    :: Show a =&gt; a -&gt; IO ()
 </code></pre>
 
-<p>Or more interrestingly, we remark each expression in the <code>do</code> block has a type of <code>IO a</code>.</p>
+<p>Or more interestingly, we remark each expression in the <code>do</code> block has a type of <code>IO a</code>.</p>
 
 <pre>
 main = do
@@ -2309,13 +2371,13 @@ The meaning of this sentence should be clearer at the end of the next section.</
 For example, what occur if the user enter something strange?
 Let&rsquo;s try:</p>
 
-<pre><code>% runghc 02_progressive_io_example.lhs
-Enter a list of numbers (separated by comma):
-foo
-Prelude.read: no parse
+<pre><code>    % runghc 02_progressive_io_example.lhs
+    Enter a list of numbers (separated by comma):
+    foo
+    Prelude.read: no parse
 </code></pre>
 
-<p>Argh, an evil error message and a crash! 
+<p>Argh! An evil error message and a crash! 
 The first evolution will be to answer with a more friendly message.</p>
 
 <p>For this, we must detect, something went wrong.
@@ -2338,7 +2400,7 @@ Its definition is:</p>
 <p>This is a nice way to tell there was an error while trying to create/compute
 a value.
 The <code>maybeRead</code> function is a great example of this. 
-This is a function similar to the function <code>read</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">3</a></sup>,
+This is a function similar to the function <code>read</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">4</a></sup>,
 but if something goes wrong the returned value is <code>Nothing</code>.
 If the value is right, it returns <code>Just &lt;the value&gt;</code>.
 Don&rsquo;t try to understand too much of this function. 
@@ -2366,7 +2428,7 @@ getListFromString str = maybeRead $ <span class="String"><span class="String">&q
 
 <div class="codehighlight">
 <pre class="twilight">
-main = <span class="Constant">IO</span> ()
+<span class="Entity">main</span> :: <span class="Constant">IO</span> ()
 main = <span class="Keyword">do</span>
   <span class="Entity">putStrLn</span> <span class="String"><span class="String">&quot;</span>Enter a list of numbers (separated by comma):<span class="String">&quot;</span></span>
   input &lt;- <span class="Entity">getLine</span>
@@ -2404,7 +2466,7 @@ I certainly forget many advantages, but the three main reason are:</p>
 <hr />
 <p><a href="code/03_Hell/01_IO/03_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>03_progressive_io_example.lhs</strong></a></p>
 
-<p>Our next evolution will be to ask the user again and again util it enters a valid answer.</p>
+<p>Our next evolution will be to ask the user again and again until it enters a valid answer.</p>
 
 <p>We keep the first part:</p>
 
@@ -2444,8 +2506,8 @@ Some people might explain while waving their hands: </p>
 </blockquote>
 
 <p>If you want to understand the details behind all of this, you&rsquo;ll have to read the next section.
-But sincerly, if you just want to <em>use</em> IO.
-Just exercise a litlle and remember to think about the type.</p>
+But sincerely, if you just want to <em>use</em> IO.
+Just exercise a little and remember to think about the type.</p>
 
 <p>Finally our main function is quite simpler:</p>
 
@@ -2482,10 +2544,9 @@ Read the next section if you are curious.</li>
 
 <p><a href="code/03_Hell/01_IO/03_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>03_progressive_io_example.lhs</strong> </a></p>
 
-<hr />
-<p><a href="code/03_Hell/01_IO/20_Detailled_IO.lhs" class="cut">03_Hell/01_IO/<strong>20_Detailled_IO.lhs</strong></a></p>
-
 <h3 id="io-trick-explained">IO trick explained</h3>
+
+<p><img alt="Magritte, ceci n'est pas une pipe" src="/Scratch/img/blog/Haskell-the-Hard-Way/magritte_pipe.jpg" /></p>
 
 <blockquote>
   <p>Here is a <span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> for this section.</p>
@@ -2533,7 +2594,6 @@ It looks a bit like magic.</p>
 <p>For now let&rsquo;s just forget about all the pure part of our program, and focus
 on the impure part:</p>
 
-<div class="codehighlight">
 <pre class="twilight">
 <span class="Entity">askUser</span> :: <span class="Constant">IO</span> [<span class="Constant">Integer</span>]
 askUser = <span class="Keyword">do</span>
@@ -2549,7 +2609,7 @@ main = <span class="Keyword">do</span>
   list &lt;- askUser
   <span class="Entity">print</span> $ <span class="Entity">sum</span> list
 </pre>
-</div>
+
 <p>First remark; it looks like an imperative structure.
 Haskell is powerful enough to make some pure code to look imperative.
 For example, if you wish you could create a <code>while</code> in Haskell.
@@ -2564,7 +2624,7 @@ For example, you can read and write a file in any function.
 The fact a file exists or not, can be seen as different state of the world.</p>
 
 <p>For Haskell this state is not hidden.
-It is explicitely said <code>main</code> is a function that <em>potentially</em> change the state of the world.
+It is explicitly said <code>main</code> is a function that <em>potentially</em> change the state of the world.
 It&rsquo;s type is then something like:</p>
 
 <pre class="twilight">
@@ -2572,11 +2632,11 @@ It&rsquo;s type is then something like:</p>
 </pre>
 
 <p>Not all function could have access to this variable.
-Those who have access to this variable can potentienly be impure.
-Functions whose the world variable isn&rsquo;t provided to should be pure<sup id="fnref:032001"><a href="#fn:032001" rel="footnote">4</a></sup>.</p>
+Those who have access to this variable can potentially be impure.
+Functions whose the world variable isn&rsquo;t provided to should be pure<sup id="fnref:032001"><a href="#fn:032001" rel="footnote">5</a></sup>.</p>
 
 <p>Haskell consider the state of the world is an input variable for <code>main</code>.
-But the real type of main is closer to this one<sup id="fnref:032002"><a href="#fn:032002" rel="footnote">5</a></sup>:</p>
+But the real type of main is closer to this one<sup id="fnref:032002"><a href="#fn:032002" rel="footnote">6</a></sup>:</p>
 
 <pre class="twilight">
 <span class="Entity">main</span> :: <span class="Constant">World</span> -&gt; ((),<span class="Constant">World</span>)
@@ -2637,7 +2697,6 @@ Let&rsquo;s try to make the same to the askUser function:</p>
 
 <p>Before:</p>
 
-<div class="codehighlight">
 <pre class="twilight">
 <span class="Entity">askUser</span> :: <span class="Constant">IO</span> [<span class="Constant">Integer</span>]
 askUser = <span class="Keyword">do</span>
@@ -2648,10 +2707,9 @@ askUser = <span class="Keyword">do</span>
           <span class="Constant">Just</span> l  -&gt; <span class="Entity">return</span> l
           <span class="Constant">Nothing</span> -&gt; askUser
 </pre>
-</div>
+
 <p>After:</p>
 
-<div class="codehighlight">
 <pre class="twilight">
 askUser w0 =
     <span class="Keyword">let</span> (_,w1)     = <span class="Entity">putStrLn</span> <span class="String"><span class="String">&quot;</span>Enter a list of numbers:<span class="String">&quot;</span></span> <span class="Keyword">in</span>
@@ -2662,7 +2720,7 @@ askUser w0 =
     <span class="Keyword">in</span>
         (l,w3)
 </pre>
-</div>
+
 <p>This is similar, but awkward.
 Look at all these temporary <code>w?</code> names.</p>
 
@@ -2905,8 +2963,6 @@ putInIO x = <span class="Constant">IO</span> (\w -&gt; (x,w))
 The general name for <code>putInIO</code> is <code>return</code>.
 This is quite a bad name when you learn Haskell. <code>return</code> is very different from what you might be used to. </p>
 
-<p><a href="code/03_Hell/01_IO/20_Detailled_IO.lhs" class="cut">03_Hell/01_IO/<strong>20_Detailled_IO.lhs</strong> </a></p>
-
 <hr />
 <p><a href="code/03_Hell/01_IO/21_Detailled_IO.lhs" class="cut">03_Hell/01_IO/<strong>21_Detailled_IO.lhs</strong></a></p>
 
@@ -2957,11 +3013,7 @@ main = askUser &gt;&gt;=
 </div>
 <p>You can compile this code to verify it continues to work.</p>
 
-<p>Left as an exercise to the masochistic reader:</p>
-
-<ul>
-  <li>rewrite everything without using <code>(&gt;&gt;)</code>, <code>(&gt;&gt;=)</code> and <code>return</code>.</li>
-</ul>
+<p>Imagine what it would look like without the <code>(&gt;&gt;)</code> and <code>(&gt;&gt;=)</code>.</p>
 
 <p><a href="code/03_Hell/01_IO/21_Detailled_IO.lhs" class="cut">03_Hell/01_IO/<strong>21_Detailled_IO.lhs</strong> </a></p>
 
@@ -2969,6 +3021,8 @@ main = askUser &gt;&gt;=
 <p><a href="code/03_Hell/02_Monads/10_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>10_Monads.lhs</strong></a></p>
 
 <h3 id="monads">Monads</h3>
+
+<p><img alt="Dali, reve. It represent a weapon out of the mouth of a tiger, itself out of the mouth of another tiger, itself out of the mouth of a fish itsleft out of a grenade. I could have choosen a picture of the Human centipede as it is a very good representation of what a monad really is. But just to thing about it, I find this disgusting and that wasn't the purpose of this document." src="/Scratch/img/blog/Haskell-the-Hard-Way/dali_reve.jpg" /></p>
 
 <p>Now the secret can be revealed: <code>IO</code> is a <em>monad</em>.
 Being a monad means you have access to some syntactical sugar with the <code>do</code> notation.
@@ -2984,10 +3038,10 @@ There are a lot of <em>pure</em> monads.</li>
   </ul>
 </blockquote>
 
-<p>For the Haskell language <code>Monad</code> is a typeclass.
-To be an instance of this typeclass, you must provide the functions <code>(&gt;&gt;=)</code> and <code>return</code>.
+<p>For the Haskell language <code>Monad</code> is a type class.
+To be an instance of this type class, you must provide the functions <code>(&gt;&gt;=)</code> and <code>return</code>.
 The function <code>(&gt;&gt;)</code> will be derived from <code>(&gt;&gt;=)</code>.
-Here is how the typeclass <code>Monad</code> is declared (mostly):</p>
+Here is how the type class <code>Monad</code> is declared (mostly):</p>
 
 <pre class="twilight">
 <span class="Keyword">class</span> <span class="Constant">Monad</span> m  <span class="Keyword">where</span>
@@ -3013,7 +3067,7 @@ A Haskell class has a lot similarities with Java interfaces.
 A better word should have been <code>typeclass</code>.
 That means a set of types.
 For a type to belong to a class, all function of the class must be provided for this type.</li>
-    <li>In this particular example of typeclass, the type <code>m</code> must be a type that take an argument. 
+    <li>In this particular example of type class, the type <code>m</code> must be a type that take an argument. 
 for example <code>IO a</code>, but also <code>Maybe a</code>, <code>[a]</code>, etc&hellip;</li>
     <li>
       <p>To be a useful monad, your function must obey some rule.
@@ -3034,7 +3088,7 @@ One of the easiest to describe is <code>Maybe</code>.
 If you have a sequence of <code>Maybe</code> values, you could use monad to manipulate them.
 It is particularly useful to remove very deep <code>if..then..else..</code> constructions.</p>
 
-<p>Imagine a complex bank operation. You are elligible to gain about 700€ only
+<p>Imagine a complex bank operation. You are eligible to gain about 700€ only
 if you can afford to follow a list of operation without being negative.</p>
 
 <div class="codehighlight">
@@ -3042,8 +3096,8 @@ if you can afford to follow a list of operation without being negative.</p>
 deposit  value account = account + value
 withdraw value account = account - value
 
-<span class="Entity">elligible</span> :: (<span class="Constant">Num</span> <span class="Variable">a,Ord</span> <span class="Variable">a</span>) =&gt; <span class="Variable">a</span> -&gt; <span class="Constant">Bool</span>
-elligible account = 
+<span class="Entity">eligible</span> :: (<span class="Constant">Num</span> <span class="Variable">a,Ord</span> <span class="Variable">a</span>) =&gt; <span class="Variable">a</span> -&gt; <span class="Constant">Bool</span>
+eligible account = 
   <span class="Keyword">let</span> account1 = deposit 100 account <span class="Keyword">in</span>
     <span class="Keyword">if</span> (account1 &lt; 0) 
     <span class="Keyword">then</span> <span class="Constant">False</span>
@@ -3067,8 +3121,8 @@ elligible account =
               <span class="Constant">True</span>
 
 main = <span class="Keyword">do</span>
-  <span class="Entity">print</span> $ elligible 300 <span class="Comment"><span class="Comment">--</span> True</span>
-  <span class="Entity">print</span> $ elligible 299 <span class="Comment"><span class="Comment">--</span> False</span>
+  <span class="Entity">print</span> $ eligible 300 <span class="Comment"><span class="Comment">--</span> True</span>
+  <span class="Entity">print</span> $ eligible 299 <span class="Comment"><span class="Comment">--</span> False</span>
 </pre>
 </div>
 <p><a href="code/03_Hell/02_Monads/10_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>10_Monads.lhs</strong> </a></p>
@@ -3088,8 +3142,8 @@ withdraw value account = <span class="Keyword">if</span> (account &lt; value)
                          <span class="Keyword">then</span> <span class="Constant">Nothing</span> 
                          <span class="Keyword">else</span> <span class="Constant">Just</span> (account - value)
 
-<span class="Entity">elligible</span> :: (<span class="Constant">Num</span> <span class="Variable">a</span>, <span class="Constant">Ord</span> <span class="Variable">a</span>) =&gt; <span class="Variable">a</span> -&gt; <span class="Constant">Maybe</span> <span class="Constant">Bool</span>
-elligible account = <span class="Keyword">do</span>
+<span class="Entity">eligible</span> :: (<span class="Constant">Num</span> <span class="Variable">a</span>, <span class="Constant">Ord</span> <span class="Variable">a</span>) =&gt; <span class="Variable">a</span> -&gt; <span class="Constant">Maybe</span> <span class="Constant">Bool</span>
+eligible account = <span class="Keyword">do</span>
   account1 &lt;- deposit 100 account 
   account2 &lt;- withdraw 200 account1 
   account3 &lt;- deposit 100 account2 
@@ -3098,8 +3152,8 @@ elligible account = <span class="Keyword">do</span>
   <span class="Constant">Just</span> <span class="Constant">True</span>
 
 main = <span class="Keyword">do</span>
-  <span class="Entity">print</span> $ elligible 300 <span class="Comment"><span class="Comment">--</span> Just True</span>
-  <span class="Entity">print</span> $ elligible 299 <span class="Comment"><span class="Comment">--</span> Nothing</span>
+  <span class="Entity">print</span> $ eligible 300 <span class="Comment"><span class="Comment">--</span> Just True</span>
+  <span class="Entity">print</span> $ eligible 299 <span class="Comment"><span class="Comment">--</span> Nothing</span>
 </pre>
 </div>
 <p><a href="code/03_Hell/02_Monads/11_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>11_Monads.lhs</strong> </a></p>
@@ -3119,8 +3173,8 @@ withdraw value account = <span class="Keyword">if</span> (account &lt; value)
                          <span class="Keyword">then</span> <span class="Constant">Nothing</span> 
                          <span class="Keyword">else</span> <span class="Constant">Just</span> (account - value)
 
-<span class="Entity">elligible</span> :: (<span class="Constant">Num</span> <span class="Variable">a</span>, <span class="Constant">Ord</span> <span class="Variable">a</span>) =&gt; <span class="Variable">a</span> -&gt; <span class="Constant">Maybe</span> <span class="Constant">Bool</span>
-elligible account =
+<span class="Entity">eligible</span> :: (<span class="Constant">Num</span> <span class="Variable">a</span>, <span class="Constant">Ord</span> <span class="Variable">a</span>) =&gt; <span class="Variable">a</span> -&gt; <span class="Constant">Maybe</span> <span class="Constant">Bool</span>
+eligible account =
   deposit 100 account &gt;&gt;=
   withdraw 200 &gt;&gt;=
   deposit 100  &gt;&gt;=
@@ -3129,8 +3183,8 @@ elligible account =
   <span class="Entity">return</span> <span class="Constant">True</span>
 
 main = <span class="Keyword">do</span>
-  <span class="Entity">print</span> $ elligible 300 <span class="Comment"><span class="Comment">--</span> Just True</span>
-  <span class="Entity">print</span> $ elligible 299 <span class="Comment"><span class="Comment">--</span> Nothing</span>
+  <span class="Entity">print</span> $ eligible 300 <span class="Comment"><span class="Comment">--</span> Just True</span>
+  <span class="Entity">print</span> $ eligible 299 <span class="Comment"><span class="Comment">--</span> Nothing</span>
 </pre>
 </div>
 <p>We have proved Monad are nice to make our code more elegant.
@@ -3144,7 +3198,7 @@ In fact, this is the kind of construction we make naturally.</p>
   <p>The first element in the sequence being evaluated to <code>Nothing</code> will stop
 the complete evaluation. 
 That means, you don&rsquo;t execute all lines. 
-You have this for free, thanks to lazyness.</p>
+You have this for free, thanks to laziness.</p>
 </blockquote>
 
 <p>The <code>Maybe</code> monad proved to be useful while being a very simple example.
@@ -3210,12 +3264,17 @@ In particular, monad are very useful for: </p>
 </ul>
 
 <p>If you have followed me until here, then you&rsquo;ve done it! 
-You know monads<sup id="fnref:03021301"><a href="#fn:03021301" rel="footnote">6</a></sup>!</p>
+You know monads<sup id="fnref:03021301"><a href="#fn:03021301" rel="footnote">7</a></sup>!</p>
 
 <p><a href="code/03_Hell/02_Monads/13_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>13_Monads.lhs</strong> </a></p>
 
+<h2 id="appendix">Appendix</h2>
+
+<p>This section is not so much about learning Haskell.
+It is just here to discuss some details further.</p>
+
 <hr />
-<p><a href="code/03_Hell/03_More_on_infinite_trees/10_Infinite_Trees.lhs" class="cut">03_Hell/03_More_on_infinite_trees/<strong>10_Infinite_Trees.lhs</strong></a></p>
+<p><a href="code/04_Appendice/01_More_on_infinite_trees/10_Infinite_Trees.lhs" class="cut">04_Appendice/01_More_on_infinite_trees/<strong>10_Infinite_Trees.lhs</strong></a></p>
 
 <h3 id="more-on-infinite-tree">More on Infinite Tree</h3>
 
@@ -3281,7 +3340,8 @@ This code is mostly the same as the one in the [tree section](#trees).
               | <span class="Keyword">otherwise</span> = x:[] <span class="Comment"><span class="Comment">--</span> &quot;x&quot;</span>
 
 </pre>
-</div></div>
+</div>
+</div>
 
 <p>Our first step is to create some pseudo-random number list:</p>
 
@@ -3369,14 +3429,14 @@ But filter is not smart enought to understand that the result is the empty list.
   <li>Prove there is no <code>shuffle</code> list such that, for any depth, the program ends.</li>
 </ul>
 
-<p><a href="code/03_Hell/03_More_on_infinite_trees/10_Infinite_Trees.lhs" class="cut">03_Hell/03_More_on_infinite_trees/<strong>10_Infinite_Trees.lhs</strong> </a></p>
+<p><a href="code/04_Appendice/01_More_on_infinite_trees/10_Infinite_Trees.lhs" class="cut">04_Appendice/01_More_on_infinite_trees/<strong>10_Infinite_Trees.lhs</strong> </a></p>
 
 <hr />
-<p><a href="code/03_Hell/03_More_on_infinite_trees/11_Infinite_Trees.lhs" class="cut">03_Hell/03_More_on_infinite_trees/<strong>11_Infinite_Trees.lhs</strong></a></p>
+<p><a href="code/04_Appendice/01_More_on_infinite_trees/11_Infinite_Trees.lhs" class="cut">04_Appendice/01_More_on_infinite_trees/<strong>11_Infinite_Trees.lhs</strong></a></p>
 
 <div style="display:none">
 
-This code is mostly the same as the preceeding one.
+This code is mostly the same as the preceding one.
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -3540,7 +3600,7 @@ Using the following code
 (suppose we could use <code>safefilter'</code> directly as if was not in the where of safefilter)
 find a definition of <code>f</code> such that with probability <code>1</code>, 
 treeFromList&rsquo; shuffle is infinite. And prove it.
-Disclamer, this is only a conjecture.</li>
+Disclaimer, this is only a conjecture.</li>
 </ul>
 
 <pre class="twilight">
@@ -3552,9 +3612,12 @@ treeFromList' (x:xs) n = <span class="Constant">Node</span> x left right
         f = ???
 </pre>
 
-<p><a href="code/03_Hell/03_More_on_infinite_trees/11_Infinite_Trees.lhs" class="cut">03_Hell/03_More_on_infinite_trees/<strong>11_Infinite_Trees.lhs</strong> </a></p>
+<p><a href="code/04_Appendice/01_More_on_infinite_trees/11_Infinite_Trees.lhs" class="cut">04_Appendice/01_More_on_infinite_trees/<strong>11_Infinite_Trees.lhs</strong> </a></p>
 <hr/><div class="footnotes">
   <ol>
+    <li id="fn:0001">
+      <p>Même si tous les langages récent essayent de les cachés, ils restent présents.<a href="#fnref:0001" rel="reference">&#8617;</a></p>
+    </li>
     <li id="fn:2">
       <p>I know I cheat. But I will talk about non-strict later.<a href="#fnref:2" rel="reference">&#8617;</a></p>
     </li>
