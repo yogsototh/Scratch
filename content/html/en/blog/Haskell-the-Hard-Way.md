@@ -191,7 +191,7 @@ main = do
     print ("Hello " ++ name ++ "!")
 </code>
 </div>
-First, let us compare with a similar program in other imperative languages:
+First, let us compare with a similar program in some imperative languages:
 
 <code class="python">
  # Python
@@ -227,7 +227,7 @@ In Haskell, there is a `main` function and every object has a type.
 The type of `main` is `IO ()`.
 This means, `main` will cause side effects.
 
-Just remember that Haskell can look a lot like other imperative languages.
+Just remember that Haskell can look a lot like mainstream imperative languages.
 
 <a href="code/01_basic/10_Introduction/10_hello_you.lhs" class="cut">01_basic/10_Introduction/<strong>10_hello_you.lhs</strong> </a>
 
@@ -264,7 +264,7 @@ Furthermore there is an essential respected law in Haskell:
 
 _Laziness_
 
-This is a very uncommon feature.
+Laziness by default is a very uncommon language design.
 By default, Haskell evaluate something only when it is needed.
 As consequence, it provides a very elegant way to manipulate infinite structures for example. 
 
