@@ -217,7 +217,7 @@ Let's jump in the obligatory "Hello World".
 
 <div class="codehighlight">
 <code class="haskell">
-main = print "Hello World!"
+main = putStrLn "Hello World!"
 </code>
 </div>
 To run it, you can save this code in a `hello.hs` and:
@@ -361,7 +361,7 @@ function f(x,y) {
 in Python:
 
 <code class="python">
-def f(x,y) =
+def f(x,y):
     return x*x + y*y;
 </code>
 
