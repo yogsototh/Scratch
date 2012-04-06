@@ -285,11 +285,6 @@ A major part of this tutorial will explain why.
 In Haskell, there is a `main` function and every object has a type.
 The type of `main` is `IO ()`.
 This means, `main` will cause side effects.
-`IO` is a ... . 
-Wait! No! I won't say it now!
-I am afraid to terrify you.
-You might run away crying.
-For now, I won't talk about what `IO` really is.
 
 Just remember that Haskell can look a lot like other imperative languages.
 
@@ -761,7 +756,7 @@ square'' x = (^2) x
 </code>
 </div>
 We can remove `x` in the left and right side!
-It's called currying.
+It's called η-reduction.
 
 <div class="codehighlight">
 <code class="haskell">
@@ -871,7 +866,7 @@ int evenSum(int *list) {
 int accumSum(int n, int *list) {
     int x;
     int *xs;
-    if (*list == NULL) { // if the list is empty
+    if (*list == 0) { // if the list is empty
         return n;
     } else {
         x = list[0]; // let x be the first element of the list
@@ -1049,7 +1044,9 @@ evenSum l = accumSum 0 l
 </code>
 </div>
 What is pattern matching? 
-Use value instead of general parameter name.
+Use value instead of general parameter name[^021301].
+
+[^021301]: For the brave, a more complete explanation of pattern matching can be found [here](http://www.cs.auckland.ac.nz/references/haskell/haskell-intro-html/patterns.html).
 
 Instead of saying: `foo l = if l == [] then <x> else <y>`
 You simply state:  
@@ -1095,7 +1092,7 @@ main = print $ evenSum [1..10]
 
 <hr/><a href="code/02_Hard_Part/14_Functions.lhs" class="cut">02_Hard_Part/<strong>14_Functions.lhs</strong></a>
 
-In Haskell you can simplify function definition by curry them.
+In Haskell you can simplify function definition by η-reducing them.
 For example,  instead of writing:
 
 <code class="haskell">
@@ -1280,7 +1277,7 @@ The `(.)` function correspond to the mathematical composition.
 (f . g . h) x ⇔  f ( g (h x))
 </code>
 
-We can take advantage of this operator to curry a bit more our function:
+We can take advantage of this operator to η-reduce our function:
 
 <code class="haskell">
 -- Version 9
@@ -2644,7 +2641,7 @@ let (y,w') = action x w in
 
 Even if for some line the first `x` argument isn't needed.
 The output type is a couple, `(answer, newWorldValue)`.
-Each function `f` must have a type of kind:
+Each function `f` must have a type similar to:
 
 <code class="haskell">
 f :: World -> (a,World)
@@ -2678,7 +2675,7 @@ And of course `actionN w :: (World) -> (a,World)`.
  > 
  > ~~~
  > let (x,w1) = action1 w0 in
- > let (y,w2) - action2 w1 in
+ > let (y,w2) = action2 w1 in
  > ~~~
  > 
  > and
@@ -2815,9 +2812,9 @@ Haskell has made a syntactical sugar for us:
 
 <code class="haskell">
 do
-  y <- action1
-  z <- action2
-  t <- action3
+  x <- action1
+  y <- action2
+  z <- action3
   ...
 </code>
 
@@ -2841,7 +2838,8 @@ blindBind action1 action2 w0 =
     bind action (\_ -> action2) w0
 </code>
 
-I didn't curried this definition for clarity purpose. Of course we can use a better notation, we'll use the `(>>)` operator.
+I didn't simplified this definition for clarity purpose.
+Of course we can use a better notation, we'll use the `(>>)` operator.
 
 And
 

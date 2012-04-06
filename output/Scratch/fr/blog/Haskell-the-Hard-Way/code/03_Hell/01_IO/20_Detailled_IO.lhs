@@ -193,7 +193,7 @@ let (y,w') = action x w in
 
 Even if for some line the first `x` argument isn't needed.
 The output type is a couple, `(answer, newWorldValue)`.
-Each function `f` must have a type of kind:
+Each function `f` must have a type similar to:
 
 <code class="haskell">
 f :: World -> (a,World)
@@ -227,7 +227,7 @@ And of course `actionN w :: (World) -> (a,World)`.
  > 
  > ~~~
  > let (x,w1) = action1 w0 in
- > let (y,w2) - action2 w1 in
+ > let (y,w2) = action2 w1 in
  > ~~~
  > 
  > and
@@ -365,9 +365,9 @@ Haskell has made a syntactical sugar for us:
 
 <code class="haskell">
 do
-  y <- action1
-  z <- action2
-  t <- action3
+  x <- action1
+  y <- action2
+  z <- action3
   ...
 </code>
 
@@ -391,7 +391,8 @@ blindBind action1 action2 w0 =
     bind action (\_ -> action2) w0
 </code>
 
-I didn't curried this definition for clarity purpose. Of course we can use a better notation, we'll use the `(>>)` operator.
+I didn't simplified this definition for clarity purpose.
+Of course we can use a better notation, we'll use the `(>>)` operator.
 
 And
 

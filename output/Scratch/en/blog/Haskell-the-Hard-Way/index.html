@@ -331,12 +331,7 @@ A major part of this tutorial will explain why.</p>
 
 <p>In Haskell, there is a <code>main</code> function and every object has a type.
 The type of <code>main</code> is <code>IO ()</code>.
-This means, <code>main</code> will cause side effects.
-<code>IO</code> is a &hellip; . 
-Wait! No! I won&rsquo;t say it now!
-I am afraid to terrify you.
-You might run away crying.
-For now, I won&rsquo;t talk about what <code>IO</code> really is.</p>
+This means, <code>main</code> will cause side effects.</p>
 
 <p>Just remember that Haskell can look a lot like other imperative languages.</p>
 
@@ -828,7 +823,7 @@ square'' x = (^2) x
 </pre>
 </div>
 <p>We can remove <code>x</code> in the left and right side!
-It&rsquo;s called currying.</p>
+It&rsquo;s called η-reduction.</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -946,7 +941,7 @@ Note, for simplicity, I assume the int list should end with the first <code>0</c
 <span class="Storage">int</span> <span class="Entity">accumS<span class="Entity">um</span></span>(<span class="Storage">int</span> n, <span class="Storage">int</span> *list) {
     <span class="Storage">int</span> x;
     <span class="Storage">int</span> *xs;
-    <span class="Keyword">if</span> (*list == <span class="Constant">NULL</span>) { <span class="Comment"><span class="Comment">//</span> if the list is empty</span>
+    <span class="Keyword">if</span> (*list == <span class="Constant">0</span>) { <span class="Comment"><span class="Comment">//</span> if the list is empty</span>
         <span class="Keyword">return</span> n;
     } <span class="Keyword">else</span> {
         x = list[<span class="Constant">0</span>]; <span class="Comment"><span class="Comment">//</span> let x be the first element of the list</span>
@@ -1125,7 +1120,7 @@ evenSum l = accumSum 0 l
 </pre>
 </div>
 <p>What is pattern matching? 
-Use value instead of general parameter name.</p>
+Use value instead of general parameter name<sup id="fnref:021301"><a href="#fn:021301" rel="footnote">3</a></sup>.</p>
 
 <p>Instead of saying: <code>foo l = if l == [] then &lt;x&gt; else &lt;y&gt;</code>
 You simply state:  </p>
@@ -1172,7 +1167,7 @@ main = <span class="Entity">print</span> $ evenSum [1..10]
 <hr />
 <p><a href="code/02_Hard_Part/14_Functions.lhs" class="cut">02_Hard_Part/<strong>14_Functions.lhs</strong></a></p>
 
-<p>In Haskell you can simplify function definition by curry them.
+<p>In Haskell you can simplify function definition by η-reducing them.
 For example,  instead of writing:</p>
 
 <pre class="twilight">
@@ -1359,7 +1354,7 @@ The <code>(.)</code> function correspond to the mathematical composition.</p>
 (f . g . h) x ⇔  f ( g (h x))
 </pre>
 
-<p>We can take advantage of this operator to curry a bit more our function:</p>
+<p>We can take advantage of this operator to η-reduce our function:</p>
 
 <pre class="twilight">
 <span class="Comment"><span class="Comment">--</span> Version 9</span>
@@ -1401,7 +1396,7 @@ squareEvenSum' = evenSum . (<span class="Entity">map</span> (^2))
 squareEvenSum'' = <span class="Entity">sum</span>' . (<span class="Entity">map</span> (^2)) . (<span class="Entity">filter</span> <span class="Entity">even</span>)
 </pre>
 </div>
-<p>We just had to add another &ldquo;transformation function&rdquo;<sup id="fnref:0216"><a href="#fn:0216" rel="footnote">3</a></sup>.</p>
+<p>We just had to add another &ldquo;transformation function&rdquo;<sup id="fnref:0216"><a href="#fn:0216" rel="footnote">4</a></sup>.</p>
 
 <pre><code>map (^2) [1,2,3,4] ⇔ [1,4,9,16]
 </code></pre>
@@ -2407,7 +2402,7 @@ Its definition is:</p>
 <p>This is a nice way to tell there was an error while trying to create/compute
 a value.
 The <code>maybeRead</code> function is a great example of this. 
-This is a function similar to the function <code>read</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">4</a></sup>,
+This is a function similar to the function <code>read</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">5</a></sup>,
 but if something goes wrong the returned value is <code>Nothing</code>.
 If the value is right, it returns <code>Just &lt;the value&gt;</code>.
 Don&rsquo;t try to understand too much of this function. 
@@ -2640,10 +2635,10 @@ It&rsquo;s type is then something like:</p>
 
 <p>Not all function could have access to this variable.
 Those who have access to this variable can potentially be impure.
-Functions whose the world variable isn&rsquo;t provided to should be pure<sup id="fnref:032001"><a href="#fn:032001" rel="footnote">5</a></sup>.</p>
+Functions whose the world variable isn&rsquo;t provided to should be pure<sup id="fnref:032001"><a href="#fn:032001" rel="footnote">6</a></sup>.</p>
 
 <p>Haskell consider the state of the world is an input variable for <code>main</code>.
-But the real type of main is closer to this one<sup id="fnref:032002"><a href="#fn:032002" rel="footnote">6</a></sup>:</p>
+But the real type of main is closer to this one<sup id="fnref:032002"><a href="#fn:032002" rel="footnote">7</a></sup>:</p>
 
 <pre class="twilight">
 <span class="Entity">main</span> :: <span class="Constant">World</span> -&gt; ((),<span class="Constant">World</span>)
@@ -2743,7 +2738,7 @@ Each line is of the form:</p>
 
 <p>Even if for some line the first <code>x</code> argument isn&rsquo;t needed.
 The output type is a couple, <code>(answer, newWorldValue)</code>.
-Each function <code>f</code> must have a type of kind:</p>
+Each function <code>f</code> must have a type similar to:</p>
 
 <pre class="twilight">
 <span class="Entity">f</span> :: <span class="Constant">World</span> -&gt; (<span class="Variable">a,World</span>)
@@ -2777,7 +2772,7 @@ And in particular, each action can take a parameter from the result of a line ab
   <p>IMPORTANT, there are only two important pattern for us:</p>
 
   <pre><code>let (x,w1) = action1 w0 in
-let (y,w2) - action2 w1 in
+let (y,w2) = action2 w1 in
 </code></pre>
 
   <p>and</p>
@@ -2914,9 +2909,9 @@ Haskell has made a syntactical sugar for us:</p>
 
 <pre class="twilight">
 <span class="Keyword">do</span>
-  y &lt;- action1
-  z &lt;- action2
-  t &lt;- action3
+  x &lt;- action1
+  y &lt;- action2
+  z &lt;- action3
   ...
 </pre>
 
@@ -2940,7 +2935,8 @@ blindBind action1 action2 w0 =
     bind action (\_ -&gt; action2) w0
 </pre>
 
-<p>I didn&rsquo;t curried this definition for clarity purpose. Of course we can use a better notation, we&rsquo;ll use the <code>(&gt;&gt;)</code> operator.</p>
+<p>I didn&rsquo;t simplified this definition for clarity purpose.
+Of course we can use a better notation, we&rsquo;ll use the <code>(&gt;&gt;)</code> operator.</p>
 
 <p>And</p>
 
@@ -3271,7 +3267,7 @@ In particular, monad are very useful for: </p>
 </ul>
 
 <p>If you have followed me until here, then you&rsquo;ve done it! 
-You know monads<sup id="fnref:03021301"><a href="#fn:03021301" rel="footnote">7</a></sup>!</p>
+You know monads<sup id="fnref:03021301"><a href="#fn:03021301" rel="footnote">8</a></sup>!</p>
 
 <p><a href="code/03_Hell/02_Monads/13_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>13_Monads.lhs</strong> </a></p>
 
@@ -3627,6 +3623,9 @@ treeFromList' (x:xs) n = <span class="Constant">Node</span> x left right
     </li>
     <li id="fn:2">
       <p>I know I cheat. But I will talk about non-strict later.<a href="#fnref:2" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:021301">
+      <p>For the brave, a more complete explanation of pattern matching can be found <a href="http://www.cs.auckland.ac.nz/references/haskell/haskell-intro-html/patterns.html">here</a>.<a href="#fnref:021301" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:0216">
       <p>You should remark <code>squareEvenSum''</code> is more efficient that the two other versions. The order of <code>(.)</code> is important.<a href="#fnref:0216" rel="reference">&#8617;</a></p>
