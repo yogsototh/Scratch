@@ -518,7 +518,7 @@ x :: Int
 x = 3
 y :: Float
 y = 2.4
-main = print (f x y) -- won't work because type x ‡ type y
+main = print (f x y) -- won't work because type x ≠ type y
 </code>
 </div>
 The compiler complains. 
