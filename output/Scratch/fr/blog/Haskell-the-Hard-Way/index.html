@@ -1240,7 +1240,7 @@ Higher order functions are functions taking function as parameter.</p>
 evenSum l = mysum 0 (<span class="Entity">filter</span> <span class="Entity">even</span> l)
     <span class="Keyword">where</span> 
       mysum n [] = n
-      mysum n (x:xs) = mysum xs (n+x) 
+      mysum n (x:xs) = mysum (n+x) xs 
 </pre>
 
 <p>where</p>
