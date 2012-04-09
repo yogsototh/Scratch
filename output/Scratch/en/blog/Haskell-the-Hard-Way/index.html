@@ -166,36 +166,36 @@ Learning Haskell open your mind.</p>
 </ul>
 
 <p>Haskell is very different.
-This language use a lot of concepts I&rsquo;ve never heard about before.
-Many of those concept will help you become a better programmer.</p>
+This language uses a lot of concepts I had never heard about before.
+Many of those concepts will help you become a better programmer.</p>
 
 <p>But, learning Haskell can be hard.
 It was for me.
 In this article I try to provide what I lacked during my learning.</p>
 
 <p>This article will certainly be hard to follow.
-This is done on purpose.
-There is no shortcut to learn Haskell.
+This is on purpose.
+There is no shortcut to learning Haskell.
 It is hard and challenging. 
 But I believe this is a good thing.
-This is because it is hard that Haskell is interesting.</p>
+It is because it is hard that Haskell is interesting.</p>
 
-<p>The conventional method to learn Haskell is to read two books. 
+<p>The conventional method to learning Haskell is to read two books. 
 First <a href="http://learnyouahaskell.com">&ldquo;Learn You a Haskell&rdquo;</a> and just after <a href="http://www.realworldhaskell.org">&ldquo;Real World Haskell&rdquo;</a>.
 I also believe this is the right way to go.
 But, to learn what Haskell is all about, you&rsquo;ll have to read them in detail.</p>
 
-<p>On the other hand, this article is a very hard and dense overview of all major aspects of Haskell.
+<p>On the other hand, this article is a very brief and dense overview of all major aspects of Haskell.
 I also added some informations I lacked while I learned Haskell.</p>
 
 <p>The article contains five parts:</p>
 
 <ul>
-  <li>Introduction: a fast short example to show Haskell can be friendly.</li>
+  <li>Introduction: a short example to show Haskell can be friendly.</li>
   <li>Basic Haskell: Haskell syntax, and some essential notions.</li>
   <li>Hard Difficulty Part:
     <ul>
-      <li>Functional style; an example from imperative to functional style</li>
+      <li>Functional style; a progressive example, from imperative to functional style</li>
       <li>Types; types and a standard binary tree example</li>
       <li>Infinite Structure; manipulate an infinite binary tree!</li>
     </ul>
@@ -248,7 +248,7 @@ You should see a link just below.</p>
 <ul>
   <li><code>ghc</code>: Compiler similar to gcc for <code>C</code>.</li>
   <li><code>ghci</code>: Interactive Haskell (REPL)</li>
-  <li><code>runhaskell</code>: Execute a program without compiling it. Convenient but very slow compared to compiled program.</li>
+  <li><code>runhaskell</code>: Execute a program without compiling it. Convenient but very slow compared to compiled programs.</li>
 </ul>
 
 <h3 id="don-t-be-afraid">Don't be afraid</h3>
@@ -256,10 +256,10 @@ You should see a link just below.</p>
 <p><img alt="The Scream" src="/Scratch/img/blog/Haskell-the-Hard-Way/munch_TheScream.jpg" /></p>
 
 <p>Many book/articles about Haskell start by introducing some esoteric formula (quick sort, Fibonacci, etc&hellip;).
-I will make the exact opposite.
+I will do the exact opposite.
 At first I won&rsquo;t show you any Haskell super power.
 I will start with similarities between Haskell and other programming languages.
-Let&rsquo;s jump in the obligatory &ldquo;Hello World&rdquo;.</p>
+Let&rsquo;s jump to the mandatory &ldquo;Hello World&rdquo;.</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -287,7 +287,7 @@ Hello World<span class="Keyword">!</span>
 <hr />
 <p><a href="code/01_basic/10_Introduction/10_hello_you.lhs" class="cut">01_basic/10_Introduction/<strong>10_hello_you.lhs</strong></a></p>
 
-<p>Now, a program asking your name and reply &ldquo;Hello&rdquo; using the name you entered:</p>
+<p>Now, a program asking your name and replying &ldquo;Hello&rdquo; using the name you entered:</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -327,7 +327,7 @@ puts <span class="String"><span class="String">&quot;</span>Hello <span class="S
 </pre>
 
 <p>The structure is the same, but there are some syntax differences.
-A major part of this tutorial will explain why.</p>
+A major part of this tutorial will be dedicated to explaining why.</p>
 
 <p>In Haskell, there is a <code>main</code> function and every object has a type.
 The type of <code>main</code> is <code>IO ()</code>.
@@ -344,12 +344,12 @@ This means, <code>main</code> will cause side effects.</p>
 
 <p><img alt="Picasso minimal owl" src="/Scratch/img/blog/Haskell-the-Hard-Way/picasso_owl.jpg" /></p>
 
-<p>Before continuing you need to be warned about some essential properties of Haskell. </p>
+<p>Before continuing you need to be warned about some essential properties of Haskell.</p>
 
 <p><em>Functional</em></p>
 
 <p>Haskell is a functional language.
-If you come from imperative language, you&rsquo;ll have to learn a lot of new things.
+If you have an imperative language background, you&rsquo;ll have to learn a lot of new things.
 Hopefully many of these new concepts will help you to program even in imperative languages.</p>
 
 <p><em>Smart Static Typing</em></p>
@@ -358,30 +358,30 @@ Hopefully many of these new concepts will help you to program even in imperative
 
 <p><em>Purity</em></p>
 
-<p>Generally your function won&rsquo;t modify anything of the outside world.
+<p>Generally your functions won&rsquo;t modify anything in the outside world.
 This means, it can&rsquo;t modify the value of a variable, can&rsquo;t get user input, can&rsquo;t write on the screen, can&rsquo;t launch a missile.
 On the other hand, parallelism will be very easy to achieve.
-Haskell makes it clear where effects occurs and where you are pure.
+Haskell makes it clear where effects occur and where you are pure.
 Also, it will be far easier to reason about your program.
-Most bug will be prevented in pure part of your program.</p>
+Most bugs will be prevented in the pure parts of your program.</p>
 
-<p>Furthermore there is an essential respected law in Haskell:</p>
+<p>Furthermore pure functions follow a fundamental law in Haskell:</p>
 
 <blockquote>
-  <p>Applying a function with the same parameter always return the same value.</p>
+  <p>Applying a function with the same parameters always returns the same value.</p>
 </blockquote>
 
 <p><em>Laziness</em></p>
 
 <p>Laziness by default is a very uncommon language design.
-By default, Haskell evaluate something only when it is needed.
-As consequence, it provides a very elegant way to manipulate infinite structures for example. </p>
+By default, Haskell evaluates something only when it is needed.
+In consequence, it provides a very elegant way to manipulate infinite structures for example.</p>
 
 <p>A last warning on how you should read Haskell code.
 For me, it is like reading scientific papers.
-Some part are very clear, but when you see a formula, just focus and read slower.
+Some parts are very clear, but when you see a formula, just focus and read slower.
 Also, while learning Haskell, it <em>really</em> doesn&rsquo;t matter much if you don&rsquo;t understand syntax details.
-If you cross a <code>&gt;&gt;=</code>, <code>&lt;$&gt;</code>, <code>&lt;-</code> or any other weird symbol, just ignore them and follows the flow of the code.</p>
+If you meet a <code>&gt;&gt;=</code>, <code>&lt;$&gt;</code>, <code>&lt;-</code> or any other weird symbol, just ignore them and follows the flow of the code.</p>
 
 <h4 id="function-declaration">Function declaration</h4>
 
@@ -395,7 +395,7 @@ If you cross a <code>&gt;&gt;=</code>, <code>&lt;$&gt;</code>, <code>&lt;-</code
 }
 </pre>
 
-<p>In javascript:</p>
+<p>In Javascript:</p>
 
 <pre class="twilight">
 <span class="Storage">function</span> <span class="Entity">f</span>(<span class="Variable">x,y</span>) {
@@ -425,7 +425,7 @@ If you cross a <code>&gt;&gt;=</code>, <code>&lt;$&gt;</code>, <code>&lt;-</code
     (<span class="SupportFunction">+</span> (<span class="SupportFunction">*</span> x x) (<span class="SupportFunction">*</span> y y)))
 </pre>
 
-<p>Finaly, the Haskell way is:</p>
+<p>Finally, the Haskell way is:</p>
 
 <pre class="twilight">
 f x y = x*x + y*y
@@ -433,13 +433,13 @@ f x y = x*x + y*y
 
 <p>Very clean. No parenthesis, no <code>def</code>.</p>
 
-<p>Don&rsquo;t forget, Haskell use functions and types a lot.
+<p>Don&rsquo;t forget, Haskell uses functions and types a lot.
 It is thus very easy to define them.
 The syntax was particularly well thought for these objects.</p>
 
 <h4 id="a-type-example">A Type Example</h4>
 
-<p>The common usage is to declare the type of your function.
+<p>The usual way is to declare the type of your function.
 This is not mandatory.
 The compiler is smart enough to discover it for you.</p>
 
@@ -503,11 +503,11 @@ main = <span class="Entity">print</span> (f 2.3 4.2)
 </pre>
 </div>
 <p>It works! 
-Great, we don&rsquo;t have to declare a new function for each different type.
+Great, we don&rsquo;t have to declare a new function for every single type.
 For example, in <code>C</code>, you&rsquo;ll have to declare a function for <code>int</code>, for <code>float</code>, for <code>long</code>, for <code>double</code>, etc&hellip;</p>
 
 <p>But, what type should we declare?
-To discover the type Haskell as found for us, just launch ghci:</p>
+To discover the type Haskell has found for us, just launch ghci:</p>
 
 <pre><span class="low">
 %</span> ghci<span class="low"><code>
@@ -521,7 +521,7 @@ Prelude&gt;</code></span> let f x y = x*x + y*y
 <code>f :: Num a =&gt; a -&gt; a -&gt; a</code>
 </pre>
 
-<p>Hey? What is this strange type?</p>
+<p>Uh? What is this strange type?</p>
 
 <pre><code>Num a =&gt; a -&gt; a -&gt; a
 </code></pre>
@@ -533,7 +533,7 @@ To understand it, just look at a list of progressive examples: </p>
   <tbody>
     <tr>
       <td>The&nbsp;written&nbsp;type</td>
-      <td>It&rsquo;s meaning</td>
+      <td>Its meaning</td>
     </tr>
     <tr>
       <td><code>Int</code></td>
@@ -563,12 +563,12 @@ To understand it, just look at a list of progressive examples: </p>
 </table>
 
 <p>In the type <code>a -&gt; a -&gt; a</code>, the letter <code>a</code> is a <em>type variable</em>. 
-It means <code>f</code> is a function with two argument and both argument and the result have the same type.
+It means <code>f</code> is a function with two arguments and both arguments and the result have the same type.
 The type variable <code>a</code> could take many different type value.
 For example <code>Int</code>, <code>Integer</code>, <code>Float</code>&hellip;</p>
 
 <p>So instead of having a forced type like in <code>C</code> with declaring the function for <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, etc&hellip; 
-We declare only one function like in a dynamic typed language.</p>
+We declare only one function like in a dynamically typed language.</p>
 
 <p>Generally <code>a</code> can be any type. 
 For example a <code>String</code>, an <code>Int</code>, but also more complex types, like <code>Trees</code>, other functions, etc&hellip;
@@ -579,7 +579,7 @@ A type class can be understood as a set of types.
 <code>Num</code> contains only types which behave like numbers.
 More precisely, <code>Num</code> is class containing types who implement a specific list of functions, and in particular <code>(+)</code> and <code>(*)</code>.</p>
 
-<p>Type class is a very powerful language construction.
+<p>Type classes are a very powerful language construct.
 We can do some incredibly powerful stuff with this.
 More on this later.</p>
 
@@ -589,9 +589,9 @@ More on this later.</p>
 This is a function from type <code>a</code> to (<code>a -&gt; a</code>).</p>
 
 <p>Yes, strange. 
-In fact, in Haskell no function really have two arguments.
+In fact, in Haskell no function really has two arguments.
 Instead all functions have only one argument.
-But we remark that taking two argument is equivalent to taking one argument and returning a function taking the second argument as parameter.</p>
+But we will note that taking two arguments is equivalent to taking one argument and returning a function taking the second argument as parameter.</p>
 
 <p>More precisely <code>f 3 4</code> is equivalent to <code>(f 3) 4</code>. 
 Note <code>f 3</code> is a function:</p>
@@ -604,8 +604,8 @@ g = f 3
 g y ⇔ 3*3 + y*y
 </code></pre>
 
-<p>Another notation exists for function. 
-The lambda notation permit us to create function without assigning them a name.
+<p>Another notation exists for functions. 
+The lambda notation allows us to create functions without assigning them a name.
 We call them anonymous function.
 We could have written:</p>
 
@@ -615,7 +615,7 @@ We could have written:</p>
 <p>The <code>\</code> is used because it looks like <code>λ</code> and is ASCII.</p>
 
 <p>If you are not used to functional programming your brain should start to heat up.
-It is time to make some real application.</p>
+It is time to make a real application.</p>
 
 <p><a href="code/01_basic/10_Introduction/22_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>22_very_basic.lhs</strong> </a></p>
 
@@ -632,7 +632,7 @@ f x y = x*x + y*y
 main = <span class="Entity">print</span> (f 3 2.4)
 </pre>
 </div>
-<p>It works, because, <code>3</code> is a valid representation for both Fractional numbers like Float and for Integer.
+<p>It works, because, <code>3</code> is a valid representation both for Fractional numbers like Float and for Integer.
 As <code>2.4</code> is a Fractional number, <code>3</code> is then interpreted as being also a Fractional number.</p>
 
 <p><a href="code/01_basic/10_Introduction/23_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>23_very_basic.lhs</strong> </a></p>
@@ -640,7 +640,7 @@ As <code>2.4</code> is a Fractional number, <code>3</code> is then interpreted a
 <hr />
 <p><a href="code/01_basic/10_Introduction/24_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>24_very_basic.lhs</strong></a></p>
 
-<p>If we force our function to work with different type, it will fail:</p>
+<p>If we force our function to work with different types, it will fail:</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -655,7 +655,7 @@ main = <span class="Entity">print</span> (f x y) <span class="Comment"><span cla
 </pre>
 </div>
 <p>The compiler complains. 
-The two parameter must have the same type.</p>
+The two parameters must have the same type.</p>
 
 <p>If you believe it is a bad idea, and the compiler should make the transformation 
 from a type to another for you, you should really watch this great (and funny) video:

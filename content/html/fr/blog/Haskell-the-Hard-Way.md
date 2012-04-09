@@ -76,7 +76,7 @@ La plupart des langages partagent les mêmes fondamentaux :
 - les pointeurs[^0001]
 - les structures de données, les objets et les classes
 
-[^0001]: Même si tous les langages récent essayent de les cachés, ils restent présents.
+[^0001]: Même si tous les langages récents essayent de les cacher, ils restent présents.
 
 Haskell est très différent.
 Ce langage utilise des concepts dont je n'avais jamais entendu parlé avant.
@@ -126,7 +126,7 @@ Cet article contient cinq parties :
 
 
  > Note: Chaque fois que vous voyez un séparateur avec un nom de fichier se terminant par `lhs`, vous pouvez cliquer sur le nom de fichier et télécharger le fichier. 
- > Si vous sauvegarez le fichier sour le nom `filename.lhs`, vous pouvez l'exécuter avec :
+ > Si vous sauvegardez le fichier sour le nom `filename.lhs`, vous pouvez l'exécuter avec :
  > <pre>
  > runhaskell filename.lhs
  > </pre>
@@ -150,17 +150,17 @@ Tools:
 
 - `ghc`: Compiler similar to gcc for `C`.
 - `ghci`: Interactive Haskell (REPL)
-- `runhaskell`: Execute a program without compiling it. Convenient but very slow compared to compiled program.
+- `runhaskell`: Execute a program without compiling it. Convenient but very slow compared to compiled programs.
 
 <h3 id="don-t-be-afraid">Don't be afraid</h3>
 
 <%= blogimage("munch_TheScream.jpg","The Scream") %>
 
 Many book/articles about Haskell start by introducing some esoteric formula (quick sort, Fibonacci, etc...).
-I will make the exact opposite.
+I will do the exact opposite.
 At first I won't show you any Haskell super power.
 I will start with similarities between Haskell and other programming languages.
-Let's jump in the obligatory "Hello World".
+Let's jump to the mandatory "Hello World".
 
 <div class="codehighlight">
 <code class="haskell">
@@ -187,7 +187,7 @@ Hello World!
 
 <hr/><a href="code/01_basic/10_Introduction/10_hello_you.lhs" class="cut">01_basic/10_Introduction/<strong>10_hello_you.lhs</strong></a>
 
-Now, a program asking your name and reply "Hello" using the name you entered:
+Now, a program asking your name and replying "Hello" using the name you entered:
 
 <div class="codehighlight">
 <code class="haskell">
@@ -227,7 +227,7 @@ int main (int argc, char **argv) {
 </code>
 
 The structure is the same, but there are some syntax differences.
-A major part of this tutorial will explain why.
+A major part of this tutorial will be dedicated to explaining why.
 
 In Haskell, there is a `main` function and every object has a type.
 The type of `main` is `IO ()`.
@@ -243,12 +243,12 @@ Just remember that Haskell can look a lot like mainstream imperative languages.
 
 <%= blogimage("picasso_owl.jpg","Picasso minimal owl") %>
 
-Before continuing you need to be warned about some essential properties of Haskell. 
+Before continuing you need to be warned about some essential properties of Haskell.
 
 _Functional_
 
 Haskell is a functional language.
-If you come from imperative language, you'll have to learn a lot of new things.
+If you have an imperative language background, you'll have to learn a lot of new things.
 Hopefully many of these new concepts will help you to program even in imperative languages.
 
 _Smart Static Typing_
@@ -257,28 +257,28 @@ Instead of being in your way like in `C`, `C++` or `Java`, the type system is he
 
 _Purity_
 
-Generally your function won't modify anything of the outside world.
+Generally your functions won't modify anything in the outside world.
 This means, it can't modify the value of a variable, can't get user input, can't write on the screen, can't launch a missile.
 On the other hand, parallelism will be very easy to achieve.
-Haskell makes it clear where effects occurs and where you are pure.
+Haskell makes it clear where effects occur and where you are pure.
 Also, it will be far easier to reason about your program.
-Most bug will be prevented in pure part of your program.
+Most bugs will be prevented in the pure parts of your program.
 
-Furthermore there is an essential respected law in Haskell:
+Furthermore pure functions follow a fundamental law in Haskell:
 
- > Applying a function with the same parameter always return the same value.
+ > Applying a function with the same parameters always returns the same value.
 
 _Laziness_
 
 Laziness by default is a very uncommon language design.
-By default, Haskell evaluate something only when it is needed.
-As consequence, it provides a very elegant way to manipulate infinite structures for example. 
+By default, Haskell evaluates something only when it is needed.
+In consequence, it provides a very elegant way to manipulate infinite structures for example.
 
 A last warning on how you should read Haskell code.
 For me, it is like reading scientific papers.
-Some part are very clear, but when you see a formula, just focus and read slower.
+Some parts are very clear, but when you see a formula, just focus and read slower.
 Also, while learning Haskell, it _really_ doesn't matter much if you don't understand syntax details.
-If you cross a `>>=`, `<$>`, `<-` or any other weird symbol, just ignore them and follows the flow of the code.
+If you meet a `>>=`, `<$>`, `<-` or any other weird symbol, just ignore them and follows the flow of the code.
 
 <h4 id="function-declaration">Function declaration</h4>
 
@@ -292,7 +292,7 @@ int f(int x, int y) {
 }
 </code>
 
-In javascript:
+In Javascript:
 
 <code class="javascript">
 function f(x,y) {
@@ -322,7 +322,7 @@ In Scheme:
     (+ (* x x) (* y y)))
 </code>
 
-Finaly, the Haskell way is:
+Finally, the Haskell way is:
 
 <code class="haskell">
 f x y = x*x + y*y
@@ -330,13 +330,13 @@ f x y = x*x + y*y
 
 Very clean. No parenthesis, no `def`.
 
-Don't forget, Haskell use functions and types a lot.
+Don't forget, Haskell uses functions and types a lot.
 It is thus very easy to define them.
 The syntax was particularly well thought for these objects.
 
 <h4 id="a-type-example">A Type Example</h4>
 
-The common usage is to declare the type of your function.
+The usual way is to declare the type of your function.
 This is not mandatory.
 The compiler is smart enough to discover it for you.
 
@@ -400,11 +400,11 @@ main = print (f 2.3 4.2)
 </code>
 </div>
 It works! 
-Great, we don't have to declare a new function for each different type.
+Great, we don't have to declare a new function for every single type.
 For example, in `C`, you'll have to declare a function for `int`, for `float`, for `long`, for `double`, etc...
 
 But, what type should we declare?
-To discover the type Haskell as found for us, just launch ghci:
+To discover the type Haskell has found for us, just launch ghci:
 
 <pre><span class="low">
 %</span> ghci<span class="low"><code>
@@ -418,7 +418,7 @@ Prelude></code></span> let f x y = x*x + y*y
 <code>f :: Num a => a -> a -> a</code>
 </pre>
 
-Hey? What is this strange type?
+Uh? What is this strange type?
 
 ~~~
 Num a => a -> a -> a
@@ -427,7 +427,7 @@ Num a => a -> a -> a
 First, let's focus on the right part `a -> a -> a`.
 To understand it, just look at a list of progressive examples: 
 
-| The&nbsp;written&nbsp;type | It's meaning |
+| The&nbsp;written&nbsp;type | Its meaning |
 | `Int`            | the type `Int`                              |
 | `Int -> Int`     | the type function from `Int` to `Int`       |
 | `Float -> Int`   | the type function from `Float` to `Int`     |
@@ -436,12 +436,12 @@ To understand it, just look at a list of progressive examples:
 | `a -> a -> a`    | the type function of two arguments of any type `a` to the same type `a`  |
 
 In the type `a -> a -> a`, the letter `a` is a _type variable_. 
-It means `f` is a function with two argument and both argument and the result have the same type.
+It means `f` is a function with two arguments and both arguments and the result have the same type.
 The type variable `a` could take many different type value.
 For example `Int`, `Integer`, `Float`...
 
 So instead of having a forced type like in `C` with declaring the function for `int`, `long`, `float`, `double`, etc... 
-We declare only one function like in a dynamic typed language.
+We declare only one function like in a dynamically typed language.
 
 Generally `a` can be any type. 
 For example a `String`, an `Int`, but also more complex types, like `Trees`, other functions, etc...
@@ -452,7 +452,7 @@ A type class can be understood as a set of types.
 `Num` contains only types which behave like numbers.
 More precisely, `Num` is class containing types who implement a specific list of functions, and in particular `(+)` and `(*)`.
 
-Type class is a very powerful language construction.
+Type classes are a very powerful language construct.
 We can do some incredibly powerful stuff with this.
 More on this later.
 
@@ -462,9 +462,9 @@ Let `a` be a type belonging to the `Num` type class.
 This is a function from type `a` to (`a -> a`).
 
 Yes, strange. 
-In fact, in Haskell no function really have two arguments.
+In fact, in Haskell no function really has two arguments.
 Instead all functions have only one argument.
-But we remark that taking two argument is equivalent to taking one argument and returning a function taking the second argument as parameter.
+But we will note that taking two arguments is equivalent to taking one argument and returning a function taking the second argument as parameter.
 
 More precisely `f 3 4` is equivalent to `(f 3) 4`. 
 Note `f 3` is a function:
@@ -478,8 +478,8 @@ g = f 3
 g y ⇔ 3*3 + y*y
 ~~~
 
-Another notation exists for function. 
-The lambda notation permit us to create function without assigning them a name.
+Another notation exists for functions. 
+The lambda notation allows us to create functions without assigning them a name.
 We call them anonymous function.
 We could have written:
 
@@ -490,7 +490,7 @@ g = \y -> 3*3 + y*y
 The `\` is used because it looks like `λ` and is ASCII.
 
 If you are not used to functional programming your brain should start to heat up.
-It is time to make some real application.
+It is time to make a real application.
 
 <a href="code/01_basic/10_Introduction/22_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>22_very_basic.lhs</strong> </a>
 
@@ -506,14 +506,14 @@ f x y = x*x + y*y
 main = print (f 3 2.4)
 </code>
 </div>
-It works, because, `3` is a valid representation for both Fractional numbers like Float and for Integer.
+It works, because, `3` is a valid representation both for Fractional numbers like Float and for Integer.
 As `2.4` is a Fractional number, `3` is then interpreted as being also a Fractional number.
 
 <a href="code/01_basic/10_Introduction/23_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>23_very_basic.lhs</strong> </a>
 
 <hr/><a href="code/01_basic/10_Introduction/24_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>24_very_basic.lhs</strong></a>
 
-If we force our function to work with different type, it will fail:
+If we force our function to work with different types, it will fail:
 
 <div class="codehighlight">
 <code class="haskell">
@@ -528,7 +528,7 @@ main = print (f x y) -- won't work because type x ≠ type y
 </code>
 </div>
 The compiler complains. 
-The two parameter must have the same type.
+The two parameters must have the same type.
 
 If you believe it is a bad idea, and the compiler should make the transformation 
 from a type to another for you, you should really watch this great (and funny) video:
