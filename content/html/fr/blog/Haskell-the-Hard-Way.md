@@ -38,7 +38,7 @@ begindiv(intro)
 >       * <a href="#lists">Lists</a>
 >       * <a href="#strings">Strings</a>
 >       * <a href="#tuples">Tuples</a>
->       * <a href="#deal-with-parenthesis">Deal with parenthesis</a>
+>       * <a href="#deal-with-parentheses">Deal with parentheses</a>
 >   * <a href="#useful-notations-for-functions">Useful notations for functions</a>
 > * <a href="#hard-part">Hard Part</a>
 >   * <a href="#functional-style">Functional style</a>
@@ -644,9 +644,9 @@ fst (x,y,z)     ⇒  ERROR: fst :: (a,b) -> a
 snd (x,y,z)     ⇒  ERROR: snd :: (a,b) -> b
 ~~~
 
-<h5 id="deal-with-parenthesis">Deal with parenthesis</h5>
+<h5 id="deal-with-parentheses">Deal with parentheses</h5>
 
-To remove some parenthesis you can use two functions: `($)` and `(.)`.
+To remove some parentheses you can use two functions: `($)` and `(.)`.
 
 ~~~
 -- By default:
