@@ -10,6 +10,11 @@ function debug {
     eval $*
 }
 
+if [[ $1 = '--unsafe' ]]; then
+   log "UNSAFE no compilation"
+fi
+
+
 current_branch=$(git branch | egrep '^\*' | awk '{print $2}')
 
 cd $rootdir || { print -- "Unable to go to $HOME/Sites/webroot"; exit 1 }
