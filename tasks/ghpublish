@@ -10,19 +10,19 @@ function debug {
     eval $*
 }
 
-if [[ $1 = '--unsafe' ]]; then
-   log "UNSAFE no compilation"
-fi
-
 
 current_branch=$(git branch | egrep '^\*' | awk '{print $2}')
 
 cd $rootdir || { print -- "Unable to go to $HOME/Sites/webroot"; exit 1 }
 git co master || { exit 1 }
 git pull || { exit 1 }
-# empty regen depencies cache because of a bug
-\rm -f ./tmp/*(N)
-./tasks/recompile
+if [[ $1 = '--unsafe' ]]; then
+   log "UNSAFE no compilation"
+else
+    # empty regen depencies cache because of a bug
+    \rm -f ./tmp/*(N)
+    ./tasks/recompile
+fi
 
 if git status | grep 'nothing to commit'>/dev/null 2>&1; then 
 else
