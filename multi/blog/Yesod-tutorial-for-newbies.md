@@ -586,7 +586,7 @@ import Import
 
 -- to use Html into forms
 import Yesod.Form.Nic (YesodNic, nicHtmlField)
-instance YesodNic Yosog
+instance YesodNic App
 </code>
 
 <small>Remark: it is a best practice to add the YesodNic instance inside `Foundation.hs`. 
@@ -617,7 +617,7 @@ getBlogR = do
     articles <- runDB $ selectList [] [Desc ArticleTitle]
     -- We'll need the two "objects": articleWidget and enctype
     -- to construct the form (see templates/articles.hamlet).
-    ((_,articleWidget), enctype) <- generateFormPost entryForm
+    (articleWidget, enctype) <- generateFormPost entryForm
     defaultLayout $ do
         $(widgetFile "articles")
 </code>
