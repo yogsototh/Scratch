@@ -814,26 +814,26 @@ main = do
 
 <h2 id="hard-part">Hard Part</h2>
 
-The hard part could now begins.
+The hard part can now begin.
 
 <h3 id="functional-style">Functional style</h3>
 
 <%= blogimage("hr_giger_biomechanicallandscape_500.jpg","Biomechanical Landscape by H.R. Giger") %>
 
-In this section, I give a short example of the impressive refactoring ability provided by Haskell.
-We will choose a problem and resolve it using a standard imperative way. 
+In this section, I will give a short example of the impressive refactoring ability provided by Haskell.
+We will select a problem and solve it using a standard imperative way.
 Then I will make the code evolve.
 The end result will be both more elegant and easier to adapt. 
 
-Let's resolve the following problem:
+Let's solve the following problem:
 
- > Given a list of integer, return the sum of its even numbers.
+ > Given a list of integers, return the sum of the even numbers in the list.
  > 
  > example:
  > `[1,2,3,4,5] ⇒  2 + 4 ⇒  6`
 
-To show differences between functional and imperative approach, 
-I'll start by providing an imperative solution (in javascript):
+To show differences between the functional and imperative approach,
+I'll start by providing an imperative solution (in Javascript):
 
 <code class="javascript">
 function evenSum(list) {
@@ -847,16 +847,16 @@ function evenSum(list) {
 }
 </code>
 
-But, in Haskell we don't have variable, nor for loop.
-One solution to achieve the same result without loop is to use recursion.
+But, in Haskell we don't have variables, nor for loop.
+One solution to achieve the same result without loops is to use recursion.
 
  > _Remark_:  
- > Recursion is generally perceived as slow in imperative language.
+ > Recursion is generally perceived as slow in imperative languages.
  > But it is generally not the case in functional programming.
- > Most of the time Haskell will handle recursive function efficiently.
+ > Most of the time Haskell will handle recursive functions efficiently.
 
 Here is a `C` version of the recursive function.
-Note, for simplicity, I assume the int list should end with the first `0` value.
+Note that for simplicity, I assume the int list ends with the first `0` value.
 
 <code class="c">
 int evenSum(int *list) {
@@ -880,8 +880,8 @@ int accumSum(int n, int *list) {
 }
 </code>
 
-Keep this code in mind. We will translate it in Haskell.
-But before, I need to introduce three simple but useful function we will use:
+Keep this code in mind. We will translate it into Haskell.
+But before, I need to introduce three simple but useful functions we will use:
 
 <code class="haskell">
 even :: Integral a => a -> Bool
@@ -889,7 +889,7 @@ head :: [a] -> a
 tail :: [a] -> [a]
 </code>
 
-`even` verify if a number is even.
+`even` verifies if a number is even.
 
 <code class="haskell">
 even :: Integral a => a -> Bool
@@ -905,7 +905,7 @@ head [1,2,3] ⇒ 1
 head []      ⇒ ERROR
 </code>
 
-`tail`, returns all element except the first of a list:
+`tail` returns all elements of a list, except the first:
 
 <code class="haskell">
 tail :: [a] -> [a]
@@ -914,7 +914,7 @@ tail [3]     ⇒ []
 tail []      ⇒ ERROR
 </code>
 
-Remark that for any non empty list `l`, 
+Note that for any non empty list `l`,
 `l ⇔ (head l):(tail l)`
 
 <hr/><a href="code/02_Hard_Part/11_Functions.lhs" class="cut">02_Hard_Part/<strong>11_Functions.lhs</strong></a>
@@ -955,7 +955,7 @@ Ok, modules loaded: Main.
 
 Here is an example of execution[^2]: 
 
-[^2]: I know I cheat. But I will talk about non-strict later.
+[^2]: I know I'm cheating. But I will talk about non-strict later.
 
 <pre>
 *Main> evenSum [1..5]
@@ -976,7 +976,7 @@ accumSum (0+2+4) []
 6
 </pre>
 
-Coming from an imperative language all should seems right.
+Coming from an imperative language all should seem right.
 In reality many things can be improved.
 First, we can generalize the type.
 
@@ -998,7 +998,7 @@ main = do print $ evenSum [1..10]
 <hr/><a href="code/02_Hard_Part/12_Functions.lhs" class="cut">02_Hard_Part/<strong>12_Functions.lhs</strong></a>
 
 Next, we can use sub functions using `where` or `let`.
-This way our `accumSum` function won't pollute the global name space.
+This way our `accumSum` function won't pollute the global namespace.
 
 <div class="codehighlight">
 <code class="haskell">
@@ -1044,7 +1044,7 @@ evenSum l = accumSum 0 l
 </code>
 </div>
 What is pattern matching? 
-Use value instead of general parameter name[^021301].
+Use values instead of general parameter names[^021301].
 
 [^021301]: For the brave, a more complete explanation of pattern matching can be found [here](http://www.cs.auckland.ac.nz/references/haskell/haskell-intro-html/patterns.html).
 
@@ -1056,8 +1056,8 @@ foo [] =  <x>
 foo l  =  <y>
 </code>
 
-But pattern matching go even further. 
-It is also able to inspect inside data. 
+But pattern matching goes even further.
+It is also able to inspect the inner data of a complex value.
 We can replace
 
 <code class="haskell">
@@ -1068,7 +1068,7 @@ foo l =  let x  = head l
              else foo n xs
 </code>
 
-by
+with
 
 <code class="haskell">
 foo (x:xs) = if even x 
@@ -1093,7 +1093,7 @@ main = print $ evenSum [1..10]
 <hr/><a href="code/02_Hard_Part/14_Functions.lhs" class="cut">02_Hard_Part/<strong>14_Functions.lhs</strong></a>
 
 In Haskell you can simplify function definition by η-reducing them.
-For example,  instead of writing:
+For example, instead of writing:
 
 <code class="haskell">
 f x = (some expresion) x
@@ -1139,8 +1139,8 @@ main = print $ evenSum [1..10]
 <%= blogimage("escher_polygon.png","Escher") %>
 
 To make things even better we should use higher order functions.
-What are these beast?
-Higher order functions are functions taking function as parameter.
+What are these beasts?
+Higher order functions are functions taking functions as parameter.
 
 Here are some examples:
 
@@ -1168,9 +1168,9 @@ filter even [1..10] ⇔  [2,4,6,8,10]
 
 The function `filter` takes a function of type (`a -> Bool`) and a list of type `[a]`. It returns a list containing only elements for which the function returned `true`.
 
-Our next step is to use another way to simulate loop. 
-We will use the `foldl` to accumulate a value.
-The function `foldl` capture a general coding pattern:
+Our next step is to use another way to simulate a loop.
+We will use the `foldl` function to accumulate a value.
+The function `foldl` captures a general coding pattern:
 
 <pre>
 myfunc list = foo <span class="blue">initialValue</span> <span class="green">list</span>
@@ -1197,13 +1197,13 @@ foldl f z [x1,...xn]
 ⇔  f (... (f (f z x1) x2) ...) xn
 </code>
 
-But as Haskell is lazy, it doesn't evaluate `(f z x)` and push this to the stack.
+But as Haskell is lazy, it doesn't evaluate `(f z x)` and pushes it to the stack.
 This is why we generally use `foldl'` instead of `foldl`;
 `foldl'` is a _strict_ version of `foldl`.
 If you don't understand what lazy and strict means,
 don't worry, just follow the code as if `foldl` and `foldl'` where identical.
 
-Now our new version of `evenSum` become:
+Now our new version of `evenSum` becomes:
 
 <code class="haskell">
 -- Version 6
@@ -1226,7 +1226,7 @@ import Data.List (foldl')
 evenSum l = foldl' (\x y -> x+y) 0 (filter even l)
 </code>
 </div>
-And of course, we remark 
+And of course, we note that
 
 <code class="haskell">
 (\x y -> x+y) ⇔ (+)
@@ -1255,7 +1255,7 @@ evenSum l = foldl' (+) 0 (filter even l)
 </code>
 
 `foldl'` isn't the easiest function to intuit.
-If you are not used to it, you should exercise a bit.
+If you are not used to it, you should study it a bit.
 
 To help you understand what's going on here, a step by step evaluation:
 
@@ -1271,7 +1271,7 @@ To help you understand what's going on here, a step by step evaluation:
 </pre>
 
 Another useful higher order function is `(.)`.
-The `(.)` function correspond to the mathematical composition.
+The `(.)` function corresponds to the mathematical composition.
 
 <code class="haskell">
 (f . g . h) x ⇔  f ( g (h x))
@@ -1286,7 +1286,7 @@ evenSum :: Integral a => [a] -> a
 evenSum = (foldl' (+) 0) . (filter even)
 </code>
 
-Also, we could rename a bit some part to make it clearer:
+Also, we could rename some parts to make it clearer:
 
 <div class="codehighlight">
 <code class="haskell">
@@ -1330,31 +1330,31 @@ map (^2) [1,2,3,4] ⇔ [1,4,9,16]
 
 The `map` function simply apply a function to all element of a list.
 
-We didn't had to modify _inside_ the function definition.
+We didn't had to modify anything _inside_ the function definition.
 It feels more modular.
-But there is also you can think more mathematically about your function.
-You could then use your function as any other one.
-You could compose, map, fold, filter using your new function.
+But in addition you can think more mathematically about your function.
+You can then use your function as any other one.
+You can compose, map, fold, filter using your new function.
 
 To modify version 1 is left as an exercise to the reader ☺.
 
 If you believe we reached the end of generalization, then know you are very wrong.
-For example, there is a way to not only use this function on list but on any recursive type.
+For example, there is a way to not only use this function on lists but on any recursive type.
 If you want to know how, I suggest you to read this quite fun article: [Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire by Meijer, Fokkinga and Paterson](http://eprints.eemcs.utwente.nl/7281/0
 1/db-utwente-40501F46.pdf).
 
-This example should show you how pure functional programming is great.
-Unfortunately, using pure functional programming isn't well suited for all usages.
-Or at least it isn't found yet.
+This example should show you how great pure functional programming is.
+Unfortunately, using pure functional programming isn't well suited to all usages.
+Or at least such a language hasn't been found yet.
 
-One of the great power of Haskell, is the ability to create DSL 
+One of the great powers of Haskell is the ability to create DSLs
 (Domain Specific Language)
 making it easy to change the programming paradigm.
 
 In fact, Haskell is also great when you want to write imperative style programming.
 Understanding this was really hard for me when learning Haskell.
-A lot of effort is provided to explain you how much functional approach is superior. 
-Then when you attack the imperative style of Haskell, it is hard to understand why and how.
+A lot of effort has been done to explain to you how much functional approach is superior.
+Then when you start the imperative style of Haskell, it is hard to understand why and how.
 
 But before talking about this Haskell super-power, we must talk about another
 essential aspect of Haskell: _Types_.
@@ -1383,16 +1383,16 @@ main = print $ evenSum [1..10]
 
 In Haskell, types are strong and static.
 
-Why is this important? It will help you _a lot_ not to make some mistake.
+Why is this important? It will help you _greatly_ to avoid mistakes.
 In Haskell, most bugs are caught during the compilation of your program.
 And the main reason is because of the type inference during compilation.
-It will be easy to detect where you used the bad parameter at the wrong place for example.
+It will be easy to detect where you used the wrong parameter at the wrong place for example.
 
 <h4 id="type-inference">Type inference</h4>
 
 Static typing is generally essential to reach fast execution time.
-But most static typed language are bad to generalize concepts.
-What saves Haskell is that it can _infere_ types.
+But most statically typed languages are bad at generalizing concepts.
+Haskell's saving grace is that it can _infer_ types.
 
 Here is a simple example. 
 The `square` function in Haskell:
@@ -1402,7 +1402,7 @@ square x = x * x
 </code>
 
 This function can `square` any Numeral type.
-You can provide `square` an `Int`, an `Integer`, a `Float` a `Fractional` and even `Complex`. Proof by example:
+You can provide `square` with an `Int`, an `Integer`, a `Float` a `Fractional` and even `Complex`. Proof by example:
 
 ~~~
 % ghci
@@ -1421,7 +1421,7 @@ Prelude Data.Complex> square (2 :+ 1)
 
 `x :+ y` is the notation for the complex (<i>x + ib</i>).
 
-Now compare with the necessary C code:
+Now compare with the amount of code necessary in C:
 
 <code class="c">
 int     int_square(int x) { return x*x; }
@@ -1477,9 +1477,9 @@ In C++ you must declare that a function can work with different types.
 In Haskell this is the opposite. 
 The function will be as general as possible by default.
 
-The inference of type gives Haskell a feeling of the freedom that dynamic 
+Type inference gives Haskell the feeling of freedom that dynamically
 typed languages provide. 
-But unlike dynamic typed languages, most error are caught before the execution.
+But unlike dynamically typed languages, most errors are caught before the execution.
 Generally, in Haskell:
 
  > "if it compiles it certainly does what you intended" 
@@ -1594,14 +1594,14 @@ img z ⇒ 4
 
 <h4 id="recursive-type">Recursive type</h4>
 
-You already encountered recursive types: lists.
+You already encountered a recursive type: lists.
 You can re-create lists, but with a more verbose syntax:
 
 <code class="haskell">
 data List a = Empty | Cons a (List a)
 </code>
 
-If you really want to use an easier syntax you can use infix name for constructors.
+If you really want to use an easier syntax you can use an infix name for constructors.
 
 <code class="haskell">
 infixr 5 :::
@@ -1610,7 +1610,7 @@ data List a = Nil | a ::: (List a)
 
 The number after `infixr` is the priority.
 
-If you want to be able to print (`Show`), read (`Read`), test equality (`Eq`) and compare (`Ord`) your new data structure you can tell Haskell to derive the appropriate function for you.
+If you want to be able to print (`Show`), read (`Read`), test equality (`Eq`) and compare (`Ord`) your new data structure you can tell Haskell to derive the appropriate functions for you.
 
 <div class="codehighlight">
 <code class="haskell">
@@ -1620,7 +1620,7 @@ data List a = Nil | a ::: (List a)
 </code>
 </div>
 When you add `deriving (Show)` to your data declaration, Haskell create a `show` function for you.
-We'll see soon how you could use your own `show` function.
+We'll see soon how you can use your own `show` function.
 
 <div class="codehighlight">
 <code class="haskell">
@@ -1635,7 +1635,7 @@ main = do
       print (convertList [0,1])
 </code>
 </div>
-This print:
+This prints:
 
 ~~~
 0 ::: (1 ::: Nil)
@@ -1661,7 +1661,7 @@ data BinTree a = Empty
                               deriving (Show)
 </code>
 </div>
-Also we create a function which transform a list into an ordered binary tree.
+We will also create a function which turns a list into an ordered binary tree.
 
 <div class="codehighlight">
 <code class="haskell">
@@ -1675,10 +1675,10 @@ Look at how elegant this function is.
 In plain English: 
 
 - an empty list will be converted to an empty tree.
-- a list `(x:xs)` will be converted to the tree where:
+- a list `(x:xs)` will be converted to a tree where:
   - The root is `x`
-  - Its left subtree is the tree created from the list of the remaining element of `xs` which are strictly inferior to `x` and 
-  - the right subtree is the tree created from the elements strictly superior to `x` of the list `xs`.
+  - Its left subtree is the tree created from members of the list `xs` which are strictly inferior to `x` and
+  - the right subtree is the tree created from members of the list `xs` which are strictly superior to `x`.
 
 <div class="codehighlight">
 <code class="haskell">
@@ -1698,12 +1698,12 @@ This is an informative but quite unpleasant representation of our tree.
 <hr/><a href="code/02_Hard_Part/31_Trees.lhs" class="cut">02_Hard_Part/<strong>31_Trees.lhs</strong></a>
 
 Just for fun, let's code a better display for our trees.
-I simply had fun into making a nice function to display tree in a general way.
-You can safely pass this part if you find it too difficult to follow.
+I simply had fun making a nice function to display trees in a general way.
+You can safely skip this part if you find it too difficult to follow.
 
-We have few changes to make.
-We remove the `deriving (Show)` in the declaration of our `BinTree` type.
-And it also might be useful to make our BinTree an instance of (`Eq` and `Ord`).
+We have a few changes to make.
+We remove the `deriving (Show)` from the declaration of our `BinTree` type.
+And it might also be useful to make our BinTree an instance of (`Eq` and `Ord`).
 We will be able to test equality and compare trees.
 
 <div class="codehighlight">
@@ -1714,7 +1714,7 @@ data BinTree a = Empty
 </code>
 </div>
 Without the `deriving (Show)`, Haskell doesn't create a `show` method for us.
-We will create our own version of show.
+We will create our own version of `show`.
 To achieve this, we must declare that our newly created type `BinTree a` 
 is an instance of the type class `Show`.
 The general syntax is:
@@ -1724,9 +1724,9 @@ instance Show (BinTree a) where
    show t = ... -- You declare your function here
 </code>
 
-Here is my version on how to show a binary tree.
+Here is my version of how to show a binary tree.
 Don't worry about the apparent complexity.
-I made a lot of improvement in order to display even strange objects.
+I made a lot of improvements in order to display even stranger objects.
 
 <div class="codehighlight">
 <code class="haskell">
@@ -1737,8 +1737,8 @@ instance (Show a) => Show (BinTree a) where
   show t = "< " ++ replace '\n' "\n: " (treeshow "" t)
     where
     -- treeshow pref Tree 
-    --   show a tree and start each line with pref
-    -- We don't display Empty tree
+    --   shows a tree and starts each line with pref
+    -- We don't display the Empty tree
     treeshow pref Empty = ""
     -- Leaf
     treeshow pref (Node x Empty Empty) = 
@@ -1754,20 +1754,20 @@ instance (Show a) => Show (BinTree a) where
                   (pshow pref x) ++ "\n" ++
                   (showSon pref "`--" "   " right)
 
-    -- Tree with left and right sons non empty
+    -- Tree with left and right children non empty
     treeshow pref (Node x left right) = 
                   (pshow pref x) ++ "\n" ++
                   (showSon pref "|--" "|  " left) ++ "\n" ++
                   (showSon pref "`--" "   " right)
 
-    -- show a tree using some prefixes to make it nice
+    -- shows a tree using some prefixes to make it nice
     showSon pref before next t = 
                   pref ++ before ++ treeshow (pref ++ next) t
 
-    -- pshow replace "\n" by "\n"++pref
+    -- pshow replaces "\n" by "\n"++pref
     pshow pref x = replace '\n' ("\n"++pref) (show x)
 
-    -- replace on char by another string
+    -- replaces one char by another string
     replace c new string =
       concatMap (change c new) string
       where
@@ -1776,7 +1776,7 @@ instance (Show a) => Show (BinTree a) where
               | otherwise = x:[] -- "x"
 </code>
 </div>
-The `treeFromList` method remain identical.
+The `treeFromList` method remains identical.
 
 <div class="codehighlight">
 <code class="haskell">
@@ -1810,8 +1810,8 @@ Int binary tree:
 ~~~
 
 Now it is far better! 
-The root is shown by starting by the `<` character.
-And each other line start by a `:`.
+The root is shown by starting the line with the `<` character.
+And each following line starts with a `:`.
 But we could also use another type.
 
 <div class="codehighlight">
@@ -1852,7 +1852,7 @@ Binary tree of Char binary trees:
 :    :    `--'r'
 ~~~
 
-This is why I chosen to prefix each line of tree display by `:` (except for the root).
+This is why I chose to prefix each line of tree display by `:` (except for the root).
 
 <%= blogimage("yo_dawg_tree.jpg","Yo Dawg Tree") %>
 
@@ -1906,12 +1906,12 @@ Binary tree of Binary trees of Char binary trees:
 :    :       :    `--'S'
 ~~~
 
-Remark how duplicate trees aren't inserted;
+Notice how duplicate trees aren't inserted;
 there is only one tree corresponding to `"I","HEARD"`.
 We have this for (almost) free, because we have declared Tree to be an instance of `Eq`.
 
 See how awesome this structure is.
-We can make tree containing not only integer, string and char, but also other trees.
+We can make trees containing not only integers, strings and chars, but also other trees.
 And we can even make a tree containing a tree of trees!
 
 <a href="code/02_Hard_Part/31_Trees.lhs" class="cut">02_Hard_Part/<strong>31_Trees.lhs</strong> </a>
@@ -1962,8 +1962,8 @@ Also, note in Haskell there is a notation for infinite lists
 [1,3..] ⇔ [1,3,5,7,9,11...]
 ~~~
 
-And most function will work with them. 
-Also there exists the function `take` equivalent to our `take'`.
+And most functions will work with them.
+Also, there is a built-in function `take` which is equivalent to our `take'`.
 
 <a href="code/02_Hard_Part/40_Infinites_Structures.lhs" class="cut">02_Hard_Part/<strong>40_Infinites_Structures.lhs</strong> </a>
 
@@ -1971,7 +1971,7 @@ Also there exists the function `take` equivalent to our `take'`.
 
 <div style="display:none">
 
-This code is mostly the same as the preceding one.
+This code is mostly the same as the previous one.
 
 <div class="codehighlight">
 <code class="haskell">
@@ -2034,7 +2034,7 @@ Here is an infinite binary tree:
 nullTree = Node 0 nullTree nullTree
 </code>
 </div>
-A complete binary tree were each node is equal to 0.
+A complete binary tree where each node is equal to 0.
 Now I will prove you can manipulate this object using the following function:
 
 <div class="codehighlight">
@@ -2056,7 +2056,7 @@ See what occurs for this program:
 main = print $ treeTakeDepth 4 nullTree
 </code>
 
-This code compile, run and stop giving the following result:
+This code compiles, runs and stops giving the following result:
 
 ~~~
 <  0
@@ -2076,7 +2076,7 @@ This code compile, run and stop giving the following result:
 :       `-- 0
 ~~~
 
-Just to heat your neurones a bit more,
+Just to heat up your neurones a bit more,
 let's make a slightly more interesting tree:
 
 <div class="codehighlight">
@@ -2087,7 +2087,7 @@ iTree = Node 0 (dec iTree) (inc iTree)
            inc (Node x l r) = Node (x+1) (inc l) (inc r) 
 </code>
 </div>
-Another way to create this tree is to use an higher order function.
+Another way to create this tree is to use a higher order function.
 This function should be similar to `map`, but should work on `BinTree` instead of list.
 Here is such a function:
 
@@ -2102,7 +2102,7 @@ treeMap f (Node x left right) = Node (f x)
 </code>
 </div>
 _Hint_: I won't talk more about this here. 
-If you are interested of the generalization of `map` to other data structure,
+If you are interested by the generalization of `map` to other data structures,
 search for functor and `fmap`.
 
 Our definition is now:

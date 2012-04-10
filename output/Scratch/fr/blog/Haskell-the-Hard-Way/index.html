@@ -892,28 +892,28 @@ main = <span class="Keyword">do</span>
 
 <h2 id="hard-part">Hard Part</h2>
 
-<p>The hard part could now begins.</p>
+<p>The hard part can now begin.</p>
 
 <h3 id="functional-style">Functional style</h3>
 
 <p><img alt="Biomechanical Landscape by H.R. Giger" src="/Scratch/img/blog/Haskell-the-Hard-Way/hr_giger_biomechanicallandscape_500.jpg" /></p>
 
-<p>In this section, I give a short example of the impressive refactoring ability provided by Haskell.
-We will choose a problem and resolve it using a standard imperative way. 
+<p>In this section, I will give a short example of the impressive refactoring ability provided by Haskell.
+We will select a problem and solve it using a standard imperative way.
 Then I will make the code evolve.
 The end result will be both more elegant and easier to adapt. </p>
 
-<p>Let&rsquo;s resolve the following problem:</p>
+<p>Let&rsquo;s solve the following problem:</p>
 
 <blockquote>
-  <p>Given a list of integer, return the sum of its even numbers.</p>
+  <p>Given a list of integers, return the sum of the even numbers in the list.</p>
 
   <p>example:
 <code>[1,2,3,4,5] ⇒  2 + 4 ⇒  6</code></p>
 </blockquote>
 
-<p>To show differences between functional and imperative approach, 
-I&rsquo;ll start by providing an imperative solution (in javascript):</p>
+<p>To show differences between the functional and imperative approach,
+I&rsquo;ll start by providing an imperative solution (in Javascript):</p>
 
 <pre class="twilight">
 <span class="Storage">function</span> <span class="Entity">evenSum</span>(<span class="Variable">list</span>) {
@@ -927,18 +927,18 @@ I&rsquo;ll start by providing an imperative solution (in javascript):</p>
 }
 </pre>
 
-<p>But, in Haskell we don&rsquo;t have variable, nor for loop.
-One solution to achieve the same result without loop is to use recursion.</p>
+<p>But, in Haskell we don&rsquo;t have variables, nor for loop.
+One solution to achieve the same result without loops is to use recursion.</p>
 
 <blockquote>
   <p><em>Remark</em>:<br />
-Recursion is generally perceived as slow in imperative language.
+Recursion is generally perceived as slow in imperative languages.
 But it is generally not the case in functional programming.
-Most of the time Haskell will handle recursive function efficiently.</p>
+Most of the time Haskell will handle recursive functions efficiently.</p>
 </blockquote>
 
 <p>Here is a <code>C</code> version of the recursive function.
-Note, for simplicity, I assume the int list should end with the first <code>0</code> value.</p>
+Note that for simplicity, I assume the int list ends with the first <code>0</code> value.</p>
 
 <pre class="twilight">
 <span class="Storage">int</span> evenSum(<span class="Storage">int</span> *list) {
@@ -962,8 +962,8 @@ Note, for simplicity, I assume the int list should end with the first <code>0</c
 }
 </pre>
 
-<p>Keep this code in mind. We will translate it in Haskell.
-But before, I need to introduce three simple but useful function we will use:</p>
+<p>Keep this code in mind. We will translate it into Haskell.
+But before, I need to introduce three simple but useful functions we will use:</p>
 
 <pre class="twilight">
 <span class="Entity">even</span> :: <span class="Constant">Integral</span> <span class="Variable">a</span> =&gt; <span class="Variable">a</span> -&gt; <span class="Constant">Bool</span>
@@ -971,7 +971,7 @@ But before, I need to introduce three simple but useful function we will use:</p
 <span class="Entity">tail</span> :: [<span class="Variable">a</span>] -&gt; [<span class="Variable">a</span>]
 </pre>
 
-<p><code>even</code> verify if a number is even.</p>
+<p><code>even</code> verifies if a number is even.</p>
 
 <pre class="twilight">
 <span class="Entity">even</span> :: <span class="Constant">Integral</span> <span class="Variable">a</span> =&gt; <span class="Variable">a</span> -&gt; <span class="Constant">Bool</span>
@@ -987,7 +987,7 @@ But before, I need to introduce three simple but useful function we will use:</p
 <span class="Entity">head</span> []      ⇒ <span class="Constant">ERROR</span>
 </pre>
 
-<p><code>tail</code>, returns all element except the first of a list:</p>
+<p><code>tail</code> returns all elements of a list, except the first:</p>
 
 <pre class="twilight">
 <span class="Entity">tail</span> :: [<span class="Variable">a</span>] -&gt; [<span class="Variable">a</span>]
@@ -996,7 +996,7 @@ But before, I need to introduce three simple but useful function we will use:</p
 <span class="Entity">tail</span> []      ⇒ <span class="Constant">ERROR</span>
 </pre>
 
-<p>Remark that for any non empty list <code>l</code>, 
+<p>Note that for any non empty list <code>l</code>,
 <code>l ⇔ (head l):(tail l)</code></p>
 
 <hr />
@@ -1057,7 +1057,7 @@ accumSum (0+2+4) []
 6
 </pre>
 
-<p>Coming from an imperative language all should seems right.
+<p>Coming from an imperative language all should seem right.
 In reality many things can be improved.
 First, we can generalize the type.</p>
 
@@ -1080,7 +1080,7 @@ main = <span class="Keyword">do</span> <span class="Entity">print</span> $ evenS
 <p><a href="code/02_Hard_Part/12_Functions.lhs" class="cut">02_Hard_Part/<strong>12_Functions.lhs</strong></a></p>
 
 <p>Next, we can use sub functions using <code>where</code> or <code>let</code>.
-This way our <code>accumSum</code> function won&rsquo;t pollute the global name space.</p>
+This way our <code>accumSum</code> function won&rsquo;t pollute the global namespace.</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -1127,7 +1127,7 @@ evenSum l = accumSum 0 l
 </pre>
 </div>
 <p>What is pattern matching? 
-Use value instead of general parameter name<sup id="fnref:021301"><a href="#fn:021301" rel="footnote">3</a></sup>.</p>
+Use values instead of general parameter names<sup id="fnref:021301"><a href="#fn:021301" rel="footnote">3</a></sup>.</p>
 
 <p>Instead of saying: <code>foo l = if l == [] then &lt;x&gt; else &lt;y&gt;</code>
 You simply state:  </p>
@@ -1137,8 +1137,8 @@ foo [] =  &lt;x&gt;
 foo l  =  &lt;y&gt;
 </pre>
 
-<p>But pattern matching go even further. 
-It is also able to inspect inside data. 
+<p>But pattern matching goes even further.
+It is also able to inspect the inner data of a complex value.
 We can replace</p>
 
 <pre class="twilight">
@@ -1149,7 +1149,7 @@ foo l =  <span class="Keyword">let</span> x  = <span class="Entity">head</span> 
              <span class="Keyword">else</span> foo n xs
 </pre>
 
-<p>by</p>
+<p>with</p>
 
 <pre class="twilight">
 foo (x:xs) = <span class="Keyword">if</span> <span class="Entity">even</span> x 
@@ -1175,7 +1175,7 @@ main = <span class="Entity">print</span> $ evenSum [1..10]
 <p><a href="code/02_Hard_Part/14_Functions.lhs" class="cut">02_Hard_Part/<strong>14_Functions.lhs</strong></a></p>
 
 <p>In Haskell you can simplify function definition by η-reducing them.
-For example,  instead of writing:</p>
+For example, instead of writing:</p>
 
 <pre class="twilight">
 f x = (some expresion) x
@@ -1222,8 +1222,8 @@ main = <span class="Entity">print</span> $ evenSum [1..10]
 <p><img alt="Escher" src="/Scratch/img/blog/Haskell-the-Hard-Way/escher_polygon.png" /></p>
 
 <p>To make things even better we should use higher order functions.
-What are these beast?
-Higher order functions are functions taking function as parameter.</p>
+What are these beasts?
+Higher order functions are functions taking functions as parameter.</p>
 
 <p>Here are some examples:</p>
 
@@ -1251,9 +1251,9 @@ evenSum l = mysum 0 (<span class="Entity">filter</span> <span class="Entity">eve
 
 <p>The function <code>filter</code> takes a function of type (<code>a -&gt; Bool</code>) and a list of type <code>[a]</code>. It returns a list containing only elements for which the function returned <code>true</code>.</p>
 
-<p>Our next step is to use another way to simulate loop. 
-We will use the <code>foldl</code> to accumulate a value.
-The function <code>foldl</code> capture a general coding pattern:</p>
+<p>Our next step is to use another way to simulate a loop.
+We will use the <code>foldl</code> function to accumulate a value.
+The function <code>foldl</code> captures a general coding pattern:</p>
 
 <pre>
 myfunc list = foo <span class="blue">initialValue</span> <span class="green">list</span>
@@ -1280,13 +1280,13 @@ Here is the definition of <code>foldl</code>.</p>
 ⇔  f (... (f (f z x1) x2) ...) xn
 </pre>
 
-<p>But as Haskell is lazy, it doesn&rsquo;t evaluate <code>(f z x)</code> and push this to the stack.
+<p>But as Haskell is lazy, it doesn&rsquo;t evaluate <code>(f z x)</code> and pushes it to the stack.
 This is why we generally use <code>foldl'</code> instead of <code>foldl</code>;
 <code>foldl'</code> is a <em>strict</em> version of <code>foldl</code>.
 If you don&rsquo;t understand what lazy and strict means,
 don&rsquo;t worry, just follow the code as if <code>foldl</code> and <code>foldl'</code> where identical.</p>
 
-<p>Now our new version of <code>evenSum</code> become:</p>
+<p>Now our new version of <code>evenSum</code> becomes:</p>
 
 <pre class="twilight">
 <span class="Comment"><span class="Comment">--</span> Version 6</span>
@@ -1309,7 +1309,7 @@ This way we don&rsquo;t have to create the temporary name <code>mysum</code>.</p
 evenSum l = <span class="Entity">foldl</span>' (\x y -&gt; x+y) 0 (<span class="Entity">filter</span> <span class="Entity">even</span> l)
 </pre>
 </div>
-<p>And of course, we remark </p>
+<p>And of course, we note that</p>
 
 <pre class="twilight">
 (\x y -&gt; x+y) ⇔ <span class="Entity">(+)</span>
@@ -1339,7 +1339,7 @@ evenSum l = <span class="Entity">foldl</span>' <span class="Entity">(+)</span> 0
 </pre>
 
 <p><code>foldl'</code> isn&rsquo;t the easiest function to intuit.
-If you are not used to it, you should exercise a bit.</p>
+If you are not used to it, you should study it a bit.</p>
 
 <p>To help you understand what&rsquo;s going on here, a step by step evaluation:</p>
 
@@ -1355,7 +1355,7 @@ If you are not used to it, you should exercise a bit.</p>
 </pre>
 
 <p>Another useful higher order function is <code>(.)</code>.
-The <code>(.)</code> function correspond to the mathematical composition.</p>
+The <code>(.)</code> function corresponds to the mathematical composition.</p>
 
 <pre class="twilight">
 (f . g . h) x ⇔  f ( g (h x))
@@ -1370,7 +1370,7 @@ The <code>(.)</code> function correspond to the mathematical composition.</p>
 evenSum = (<span class="Entity">foldl</span>' <span class="Entity">(+)</span> 0) . (<span class="Entity">filter</span> <span class="Entity">even</span>)
 </pre>
 
-<p>Also, we could rename a bit some part to make it clearer:</p>
+<p>Also, we could rename some parts to make it clearer:</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -1410,31 +1410,31 @@ squareEvenSum'' = <span class="Entity">sum</span>' . (<span class="Entity">map</
 
 <p>The <code>map</code> function simply apply a function to all element of a list.</p>
 
-<p>We didn&rsquo;t had to modify <em>inside</em> the function definition.
+<p>We didn&rsquo;t had to modify anything <em>inside</em> the function definition.
 It feels more modular.
-But there is also you can think more mathematically about your function.
-You could then use your function as any other one.
-You could compose, map, fold, filter using your new function.</p>
+But in addition you can think more mathematically about your function.
+You can then use your function as any other one.
+You can compose, map, fold, filter using your new function.</p>
 
 <p>To modify version 1 is left as an exercise to the reader ☺.</p>
 
 <p>If you believe we reached the end of generalization, then know you are very wrong.
-For example, there is a way to not only use this function on list but on any recursive type.
+For example, there is a way to not only use this function on lists but on any recursive type.
 If you want to know how, I suggest you to read this quite fun article: <a href="http://eprints.eemcs.utwente.nl/7281/0
 1/db-utwente-40501F46.pdf">Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire by Meijer, Fokkinga and Paterson</a>.</p>
 
-<p>This example should show you how pure functional programming is great.
-Unfortunately, using pure functional programming isn&rsquo;t well suited for all usages.
-Or at least it isn&rsquo;t found yet.</p>
+<p>This example should show you how great pure functional programming is.
+Unfortunately, using pure functional programming isn&rsquo;t well suited to all usages.
+Or at least such a language hasn&rsquo;t been found yet.</p>
 
-<p>One of the great power of Haskell, is the ability to create DSL 
+<p>One of the great powers of Haskell is the ability to create DSLs
 (Domain Specific Language)
 making it easy to change the programming paradigm.</p>
 
 <p>In fact, Haskell is also great when you want to write imperative style programming.
 Understanding this was really hard for me when learning Haskell.
-A lot of effort is provided to explain you how much functional approach is superior. 
-Then when you attack the imperative style of Haskell, it is hard to understand why and how.</p>
+A lot of effort has been done to explain to you how much functional approach is superior.
+Then when you start the imperative style of Haskell, it is hard to understand why and how.</p>
 
 <p>But before talking about this Haskell super-power, we must talk about another
 essential aspect of Haskell: <em>Types</em>.</p>
@@ -1467,16 +1467,16 @@ main = <span class="Entity">print</span> $ evenSum [1..10]
 
 <p>In Haskell, types are strong and static.</p>
 
-<p>Why is this important? It will help you <em>a lot</em> not to make some mistake.
+<p>Why is this important? It will help you <em>greatly</em> to avoid mistakes.
 In Haskell, most bugs are caught during the compilation of your program.
 And the main reason is because of the type inference during compilation.
-It will be easy to detect where you used the bad parameter at the wrong place for example.</p>
+It will be easy to detect where you used the wrong parameter at the wrong place for example.</p>
 
 <h4 id="type-inference">Type inference</h4>
 
 <p>Static typing is generally essential to reach fast execution time.
-But most static typed language are bad to generalize concepts.
-What saves Haskell is that it can <em>infere</em> types.</p>
+But most statically typed languages are bad at generalizing concepts.
+Haskell&rsquo;s saving grace is that it can <em>infer</em> types.</p>
 
 <p>Here is a simple example. 
 The <code>square</code> function in Haskell:</p>
@@ -1486,7 +1486,7 @@ square x = x * x
 </pre>
 
 <p>This function can <code>square</code> any Numeral type.
-You can provide <code>square</code> an <code>Int</code>, an <code>Integer</code>, a <code>Float</code> a <code>Fractional</code> and even <code>Complex</code>. Proof by example:</p>
+You can provide <code>square</code> with an <code>Int</code>, an <code>Integer</code>, a <code>Float</code> a <code>Fractional</code> and even <code>Complex</code>. Proof by example:</p>
 
 <pre><code>% ghci
 GHCi, version 7.0.4:
@@ -1504,7 +1504,7 @@ Prelude Data.Complex&gt; square (2 :+ 1)
 
 <p><code>x :+ y</code> is the notation for the complex (<i>x + ib</i>).</p>
 
-<p>Now compare with the necessary C code:</p>
+<p>Now compare with the amount of code necessary in C:</p>
 
 <pre class="twilight">
 <span class="Storage">int</span>     <span class="Entity">int_squa<span class="Entity">re</span></span>(<span class="Storage">int</span> x) { <span class="Keyword">return</span> x*x; }
@@ -1560,9 +1560,9 @@ for example.</p>
 In Haskell this is the opposite. 
 The function will be as general as possible by default.</p>
 
-<p>The inference of type gives Haskell a feeling of the freedom that dynamic 
+<p>Type inference gives Haskell the feeling of freedom that dynamically
 typed languages provide. 
-But unlike dynamic typed languages, most error are caught before the execution.
+But unlike dynamically typed languages, most errors are caught before the execution.
 Generally, in Haskell:</p>
 
 <blockquote>
@@ -1682,14 +1682,14 @@ img z ⇒ 4
 
 <h4 id="recursive-type">Recursive type</h4>
 
-<p>You already encountered recursive types: lists.
+<p>You already encountered a recursive type: lists.
 You can re-create lists, but with a more verbose syntax:</p>
 
 <pre class="twilight">
 <span class="Keyword">data</span> <span class="Constant">List</span> a = <span class="Constant">Empty</span> | <span class="Constant">Cons</span> a (<span class="Constant">List</span> a)
 </pre>
 
-<p>If you really want to use an easier syntax you can use infix name for constructors.</p>
+<p>If you really want to use an easier syntax you can use an infix name for constructors.</p>
 
 <pre class="twilight">
 <span class="Keyword">infixr</span> 5 :::
@@ -1698,7 +1698,7 @@ You can re-create lists, but with a more verbose syntax:</p>
 
 <p>The number after <code>infixr</code> is the priority.</p>
 
-<p>If you want to be able to print (<code>Show</code>), read (<code>Read</code>), test equality (<code>Eq</code>) and compare (<code>Ord</code>) your new data structure you can tell Haskell to derive the appropriate function for you.</p>
+<p>If you want to be able to print (<code>Show</code>), read (<code>Read</code>), test equality (<code>Eq</code>) and compare (<code>Ord</code>) your new data structure you can tell Haskell to derive the appropriate functions for you.</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -1708,7 +1708,7 @@ You can re-create lists, but with a more verbose syntax:</p>
 </pre>
 </div>
 <p>When you add <code>deriving (Show)</code> to your data declaration, Haskell create a <code>show</code> function for you.
-We&rsquo;ll see soon how you could use your own <code>show</code> function.</p>
+We&rsquo;ll see soon how you can use your own <code>show</code> function.</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -1723,7 +1723,7 @@ main = <span class="Keyword">do</span>
       <span class="Entity">print</span> (convertList [0,1])
 </pre>
 </div>
-<p>This print:</p>
+<p>This prints:</p>
 
 <pre><code>0 ::: (1 ::: Nil)
 0 ::: (1 ::: Nil)
@@ -1749,7 +1749,7 @@ main = <span class="Keyword">do</span>
                               <span class="Keyword">deriving</span> (<span class="Constant">Show</span>)
 </pre>
 </div>
-<p>Also we create a function which transform a list into an ordered binary tree.</p>
+<p>We will also create a function which turns a list into an ordered binary tree.</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -1764,11 +1764,11 @@ In plain English: </p>
 
 <ul>
   <li>an empty list will be converted to an empty tree.</li>
-  <li>a list <code>(x:xs)</code> will be converted to the tree where:
+  <li>a list <code>(x:xs)</code> will be converted to a tree where:
     <ul>
       <li>The root is <code>x</code></li>
-      <li>Its left subtree is the tree created from the list of the remaining element of <code>xs</code> which are strictly inferior to <code>x</code> and </li>
-      <li>the right subtree is the tree created from the elements strictly superior to <code>x</code> of the list <code>xs</code>.</li>
+      <li>Its left subtree is the tree created from members of the list <code>xs</code> which are strictly inferior to <code>x</code> and</li>
+      <li>the right subtree is the tree created from members of the list <code>xs</code> which are strictly superior to <code>x</code>.</li>
     </ul>
   </li>
 </ul>
@@ -1791,12 +1791,12 @@ main = <span class="Entity">print</span> $ treeFromList [7,2,4,8]
 <p><a href="code/02_Hard_Part/31_Trees.lhs" class="cut">02_Hard_Part/<strong>31_Trees.lhs</strong></a></p>
 
 <p>Just for fun, let&rsquo;s code a better display for our trees.
-I simply had fun into making a nice function to display tree in a general way.
-You can safely pass this part if you find it too difficult to follow.</p>
+I simply had fun making a nice function to display trees in a general way.
+You can safely skip this part if you find it too difficult to follow.</p>
 
-<p>We have few changes to make.
-We remove the <code>deriving (Show)</code> in the declaration of our <code>BinTree</code> type.
-And it also might be useful to make our BinTree an instance of (<code>Eq</code> and <code>Ord</code>).
+<p>We have a few changes to make.
+We remove the <code>deriving (Show)</code> from the declaration of our <code>BinTree</code> type.
+And it might also be useful to make our BinTree an instance of (<code>Eq</code> and <code>Ord</code>).
 We will be able to test equality and compare trees.</p>
 
 <div class="codehighlight">
@@ -1807,7 +1807,7 @@ We will be able to test equality and compare trees.</p>
 </pre>
 </div>
 <p>Without the <code>deriving (Show)</code>, Haskell doesn&rsquo;t create a <code>show</code> method for us.
-We will create our own version of show.
+We will create our own version of <code>show</code>.
 To achieve this, we must declare that our newly created type <code>BinTree a</code> 
 is an instance of the type class <code>Show</code>.
 The general syntax is:</p>
@@ -1817,9 +1817,9 @@ The general syntax is:</p>
    <span class="Entity">show</span> t = ... <span class="Comment"><span class="Comment">--</span> You declare your function here</span>
 </pre>
 
-<p>Here is my version on how to show a binary tree.
+<p>Here is my version of how to show a binary tree.
 Don&rsquo;t worry about the apparent complexity.
-I made a lot of improvement in order to display even strange objects.</p>
+I made a lot of improvements in order to display even stranger objects.</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -1830,8 +1830,8 @@ I made a lot of improvement in order to display even strange objects.</p>
   <span class="Entity">show</span> t = <span class="String"><span class="String">&quot;</span>&lt; <span class="String">&quot;</span></span> ++ replace<span class="String"><span class="String"> '</span><span class="StringConstant">\n</span><span class="String">'</span></span> <span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span>: <span class="String">&quot;</span></span> (treeshow <span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span> t)
     <span class="Keyword">where</span>
     <span class="Comment"><span class="Comment">--</span> treeshow pref Tree </span>
-    <span class="Comment"><span class="Comment">--</span>   show a tree and start each line with pref</span>
-    <span class="Comment"><span class="Comment">--</span> We don't display Empty tree</span>
+    <span class="Comment"><span class="Comment">--</span>   shows a tree and starts each line with pref</span>
+    <span class="Comment"><span class="Comment">--</span> We don't display the Empty tree</span>
     treeshow pref <span class="Constant">Empty</span> = <span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
     <span class="Comment"><span class="Comment">--</span> Leaf</span>
     treeshow pref (<span class="Constant">Node</span> x <span class="Constant">Empty</span> <span class="Constant">Empty</span>) = 
@@ -1847,20 +1847,20 @@ I made a lot of improvement in order to display even strange objects.</p>
                   (pshow pref x) ++ <span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span> ++
                   (showSon pref <span class="String"><span class="String">&quot;</span>`--<span class="String">&quot;</span></span> <span class="String"><span class="String">&quot;</span>   <span class="String">&quot;</span></span> right)
 
-    <span class="Comment"><span class="Comment">--</span> Tree with left and right sons non empty</span>
+    <span class="Comment"><span class="Comment">--</span> Tree with left and right children non empty</span>
     treeshow pref (<span class="Constant">Node</span> x left right) = 
                   (pshow pref x) ++ <span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span> ++
                   (showSon pref <span class="String"><span class="String">&quot;</span>|--<span class="String">&quot;</span></span> <span class="String"><span class="String">&quot;</span>|  <span class="String">&quot;</span></span> left) ++ <span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span> ++
                   (showSon pref <span class="String"><span class="String">&quot;</span>`--<span class="String">&quot;</span></span> <span class="String"><span class="String">&quot;</span>   <span class="String">&quot;</span></span> right)
 
-    <span class="Comment"><span class="Comment">--</span> show a tree using some prefixes to make it nice</span>
+    <span class="Comment"><span class="Comment">--</span> shows a tree using some prefixes to make it nice</span>
     showSon pref before next t = 
                   pref ++ before ++ treeshow (pref ++ next) t
 
-    <span class="Comment"><span class="Comment">--</span> pshow replace &quot;\n&quot; by &quot;\n&quot;++pref</span>
+    <span class="Comment"><span class="Comment">--</span> pshow replaces &quot;\n&quot; by &quot;\n&quot;++pref</span>
     pshow pref x = replace<span class="String"><span class="String"> '</span><span class="StringConstant">\n</span><span class="String">'</span></span> (<span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>++pref) (<span class="Entity">show</span> x)
 
-    <span class="Comment"><span class="Comment">--</span> replace on char by another string</span>
+    <span class="Comment"><span class="Comment">--</span> replaces one char by another string</span>
     replace c new string =
       <span class="Entity">concatMap</span> (change c new) string
       <span class="Keyword">where</span>
@@ -1869,7 +1869,7 @@ I made a lot of improvement in order to display even strange objects.</p>
               | <span class="Keyword">otherwise</span> = x:[] <span class="Comment"><span class="Comment">--</span> &quot;x&quot;</span>
 </pre>
 </div>
-<p>The <code>treeFromList</code> method remain identical.</p>
+<p>The <code>treeFromList</code> method remains identical.</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -1902,8 +1902,8 @@ main = <span class="Keyword">do</span>
 </code></pre>
 
 <p>Now it is far better! 
-The root is shown by starting by the <code>&lt;</code> character.
-And each other line start by a <code>:</code>.
+The root is shown by starting the line with the <code>&lt;</code> character.
+And each following line starts with a <code>:</code>.
 But we could also use another type.</p>
 
 <div class="codehighlight">
@@ -1942,7 +1942,7 @@ make tree of trees!</p>
 :    :    `--'r'
 </code></pre>
 
-<p>This is why I chosen to prefix each line of tree display by <code>:</code> (except for the root).</p>
+<p>This is why I chose to prefix each line of tree display by <code>:</code> (except for the root).</p>
 
 <p><img alt="Yo Dawg Tree" src="/Scratch/img/blog/Haskell-the-Hard-Way/yo_dawg_tree.jpg" /></p>
 
@@ -1995,12 +1995,12 @@ make tree of trees!</p>
 :    :       :    `--'S'
 </code></pre>
 
-<p>Remark how duplicate trees aren&rsquo;t inserted;
+<p>Notice how duplicate trees aren&rsquo;t inserted;
 there is only one tree corresponding to <code>"I","HEARD"</code>.
 We have this for (almost) free, because we have declared Tree to be an instance of <code>Eq</code>.</p>
 
 <p>See how awesome this structure is.
-We can make tree containing not only integer, string and char, but also other trees.
+We can make trees containing not only integers, strings and chars, but also other trees.
 And we can even make a tree containing a tree of trees!</p>
 
 <p><a href="code/02_Hard_Part/31_Trees.lhs" class="cut">02_Hard_Part/<strong>31_Trees.lhs</strong> </a></p>
@@ -2053,8 +2053,8 @@ it evaluates elements only when needed.</p>
 [1,3..] ⇔ [1,3,5,7,9,11...]
 </code></pre>
 
-<p>And most function will work with them. 
-Also there exists the function <code>take</code> equivalent to our <code>take'</code>.</p>
+<p>And most functions will work with them.
+Also, there is a built-in function <code>take</code> which is equivalent to our <code>take'</code>.</p>
 
 <p><a href="code/02_Hard_Part/40_Infinites_Structures.lhs" class="cut">02_Hard_Part/<strong>40_Infinites_Structures.lhs</strong> </a></p>
 
@@ -2063,7 +2063,7 @@ Also there exists the function <code>take</code> equivalent to our <code>take'</
 
 <div style="display:none">
 
-This code is mostly the same as the preceding one.
+This code is mostly the same as the previous one.
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -2126,7 +2126,7 @@ Here is an infinite binary tree:</p>
 nullTree = <span class="Constant">Node</span> 0 nullTree nullTree
 </pre>
 </div>
-<p>A complete binary tree were each node is equal to 0.
+<p>A complete binary tree where each node is equal to 0.
 Now I will prove you can manipulate this object using the following function:</p>
 
 <div class="codehighlight">
@@ -2148,7 +2148,7 @@ treeTakeDepth n (<span class="Constant">Node</span> x left right) = <span class=
 main = <span class="Entity">print</span> $ treeTakeDepth 4 nullTree
 </pre>
 
-<p>This code compile, run and stop giving the following result:</p>
+<p>This code compiles, runs and stops giving the following result:</p>
 
 <pre><code>&lt;  0
 : |-- 0
@@ -2167,7 +2167,7 @@ main = <span class="Entity">print</span> $ treeTakeDepth 4 nullTree
 :       `-- 0
 </code></pre>
 
-<p>Just to heat your neurones a bit more,
+<p>Just to heat up your neurones a bit more,
 let&rsquo;s make a slightly more interesting tree:</p>
 
 <div class="codehighlight">
@@ -2178,7 +2178,7 @@ iTree = <span class="Constant">Node</span> 0 (dec iTree) (inc iTree)
            inc (<span class="Constant">Node</span> x l r) = <span class="Constant">Node</span> (x+1) (inc l) (inc r) 
 </pre>
 </div>
-<p>Another way to create this tree is to use an higher order function.
+<p>Another way to create this tree is to use a higher order function.
 This function should be similar to <code>map</code>, but should work on <code>BinTree</code> instead of list.
 Here is such a function:</p>
 
@@ -2193,7 +2193,7 @@ treeMap f (<span class="Constant">Node</span> x left right) = <span class="Const
 </pre>
 </div>
 <p><em>Hint</em>: I won&rsquo;t talk more about this here. 
-If you are interested of the generalization of <code>map</code> to other data structure,
+If you are interested by the generalization of <code>map</code> to other data structures,
 search for functor and <code>fmap</code>.</p>
 
 <p>Our definition is now:</p>
@@ -3621,7 +3621,7 @@ treeFromList' (x:xs) n = <span class="Constant">Node</span> x left right
       <p>Même si tous les langages récents essayent de les cacher, ils restent présents.<a href="#fnref:0001" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>I know I cheat. But I will talk about non-strict later.<a href="#fnref:2" rel="reference">&#8617;</a></p>
+      <p>I know I&rsquo;m cheating. But I will talk about non-strict later.<a href="#fnref:2" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:021301">
       <p>For the brave, a more complete explanation of pattern matching can be found <a href="http://www.cs.auckland.ac.nz/references/haskell/haskell-intro-html/patterns.html">here</a>.<a href="#fnref:021301" rel="reference">&#8617;</a></p>
