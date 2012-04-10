@@ -15,6 +15,8 @@ fr:   - mathématiques
   - indecidability
 -----
 
+<% # toremove_ %>
+
 begindiv(intro)
 
 en: <%= tldr %> I pretend to create a world to give examples of different meanings behind the word _undecidability_:
@@ -220,10 +222,12 @@ en: All errors will grow.
 en: Errors will grow at a point that any prediction will be unusable.
 
 fr: Là encore une voix d'espoir s'élève :
+fr: 
 fr: > Peut-être pouvons nous calculer l'erreur maximale acceptable pour prédire quelque chose.
 fr: > Et nous pourrions au moins savoir ce que nous pouvons prédire ou pas.
 
 en: Even with this bad news there is the _hope_ to _control_ the error.
+en: 
 en: > May we should know the maximal measure error we can handle to predict something. 
 en: > And we should at least determine what we can predict and what we cannot.
 
@@ -256,8 +260,10 @@ en: Even if we are authorize to move a bit to dodge the borders.
 en: Because there are some zone in which all point could be a "border" for any size of the zone.
 
 fr: On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur[^2].
+fr: 
 fr: [^2]: Pensez aux deux ensembles R\Q et Q.
 en: We can even imagine some mathematical structure where _all_ points are at the border[^2]. 
+en: 
 en: [^2]: The set R\Q has this property.
 
 fr: Mais que vois-je ? 
@@ -310,6 +316,7 @@ fr: > Remarque: Tout code de programme est une chaîne de caractère qui peut ê
 fr: > Ainsi écrire `P(x,x)` est autorisé.
 fr: > 
 fr: > Soit le programme Q que j'écris comme suit :
+fr: > 
 fr: > <pre class="twilight">
 fr: > Q(x) :
 fr: >     si P(x,x)="s'arrête" alors je fais une boucle infinie.
@@ -335,6 +342,7 @@ en: > Remark: Any program can be represented as a string. Therefore, a program c
 en: > It is authorized to write `P(x,x)`.
 en: > 
 en: > Let `Q` be the following program using the return value of `P`.
+en: > 
 en: > <pre class="twilight">
 en: > Q(x) :
 en: >     if P(x,x)="stop" then I enter in an infinite loop

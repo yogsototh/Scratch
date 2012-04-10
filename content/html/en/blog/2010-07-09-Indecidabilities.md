@@ -13,6 +13,8 @@ tags:
   - indecidability
 -----
 
+<% # toremove_ %>
+
 begindiv(intro)
 
 <%= tldr %> I pretend to create a world to give examples of different meanings behind the word _undecidability_:
@@ -138,6 +140,7 @@ Errors will grow at a point that any prediction will be unusable.
 
 
 Even with this bad news there is the _hope_ to _control_ the error.
+
 > May we should know the maximal measure error we can handle to predict something. 
 > And we should at least determine what we can predict and what we cannot.
 
@@ -160,6 +163,7 @@ Even if we are authorize to move a bit to dodge the borders.
 Because there are some zone in which all point could be a "border" for any size of the zone.
 
 We can even imagine some mathematical structure where _all_ points are at the border[^2]. 
+
 [^2]: The set R\Q has this property.
 
 
@@ -193,6 +197,7 @@ And this is with pleasure I give you one here.
 > It is authorized to write `P(x,x)`.
 > 
 > Let `Q` be the following program using the return value of `P`.
+> 
 > <pre class="twilight">
 > Q(x) :
 >     if P(x,x)="stop" then I enter in an infinite loop

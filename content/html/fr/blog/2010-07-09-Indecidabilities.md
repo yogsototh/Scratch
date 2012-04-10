@@ -13,6 +13,8 @@ tags:
   - indecidability
 -----
 
+<% # toremove_ %>
+
 begindiv(intro)
 
 <%= tlal %> Je crée un mode mathématique simple pour parler de différents types d'_indécidabilités_ :
@@ -138,6 +140,7 @@ S'amplifier au point de rendre toute prédiction inutilisable.
 
 
 Là encore une voix d'espoir s'élève :
+
 > Peut-être pouvons nous calculer l'erreur maximale acceptable pour prédire quelque chose.
 > Et nous pourrions au moins savoir ce que nous pouvons prédire ou pas.
 
@@ -162,6 +165,7 @@ Et ce quelque soit la taille du voisinage.
 
 
 On peut même imaginer une structure ou *tous* les points sont au bord de celle-ci, on ne peut donc pas se permettre d'erreur[^2].
+
 [^2]: Pensez aux deux ensembles R\Q et Q.
 
 Mais que vois-je ? 
@@ -204,6 +208,7 @@ La preuve est suffisamment simple pour rentrer dans ce post, donc je me fais un 
 > Ainsi écrire `P(x,x)` est autorisé.
 > 
 > Soit le programme Q que j'écris comme suit :
+> 
 > <pre class="twilight">
 > Q(x) :
 >     si P(x,x)="s'arrête" alors je fais une boucle infinie.
