@@ -86,6 +86,11 @@
                     <div class="flush"></div>
                 <% end %>
 
+                <div id="social">
+                    <div class="left"> <%= twitter_share_button %> </div>
+                    <div  class="left"> <%= google_plus_button %> </div>
+                    <div class="flush"></div>
+                </div>
                 <div id="choixrss">
                     <a id="rss" href="http://feeds.feedburner.com/yannespositocom<%= language %>">
                         <%= tradOf(:subscribe) %>
@@ -103,6 +108,7 @@
                     document.write('<div id="clickcomment"><%= tradOf(:clickForComment) %></div>');
                 </script>
                 <div class="flush"></div>
+
                 <div class="corps" id="comment">
                     <h2 class="first"><%= tradOf(:comment) %></h2>
                     <noscript>
@@ -151,7 +157,7 @@
 
             <div id="bottom">
                 <div>
-                    <a href="http://twitter.com/yogsototh"><%=tradOf(:followme)%></a>
+                    <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
                 </div>
                 <div>
                     <%=tradOf(:copyright) %>
