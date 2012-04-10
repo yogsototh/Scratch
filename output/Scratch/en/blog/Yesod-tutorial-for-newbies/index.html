@@ -677,7 +677,7 @@ handle Html in forms.</p>
 
 <span class="Comment"><span class="Comment">--</span> to use Html into forms</span>
 <span class="Keyword">import</span> <span class="Constant">Yesod</span>.<span class="Constant">Form</span>.<span class="Constant">Nic</span> (<span class="Constant">YesodNic</span>, nicHtmlField)
-<span class="Keyword">instance</span> <span class="Constant">YesodNic</span> <span class="Constant">Yosog</span>
+<span class="Keyword">instance</span> <span class="Constant">YesodNic</span> <span class="Constant">App</span>
 </pre>
 
 <p><small>Remark: it is a best practice to add the YesodNic instance inside <code>Foundation.hs</code>. 
@@ -708,7 +708,7 @@ getBlogR = <span class="Keyword">do</span>
     articles &lt;- runDB $ selectList [] [<span class="Constant">Desc</span> <span class="Constant">ArticleTitle</span>]
     <span class="Comment"><span class="Comment">--</span> We'll need the two &quot;objects&quot;: articleWidget and enctype</span>
     <span class="Comment"><span class="Comment">--</span> to construct the form (see templates/articles.hamlet).</span>
-    ((_,articleWidget), enctype) &lt;- generateFormPost entryForm
+    (articleWidget, enctype) &lt;- generateFormPost entryForm
     defaultLayout $ <span class="Keyword">do</span>
         $(widgetFile <span class="String"><span class="String">&quot;</span>articles<span class="String">&quot;</span></span>)
 </pre>
