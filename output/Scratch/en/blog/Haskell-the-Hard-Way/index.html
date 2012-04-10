@@ -1517,10 +1517,11 @@ y = complex_square(x);
 <p>For each type, you need to write a new function.
 The only way to work around this problem is to use some meta-programming trick.
 For example using the pre-processor.
-In C++ there is a better way, the C++ templates<sup id="fnref:022001"><a href="#fn:022001" rel="footnote">5</a></sup>:</p>
+In C++ there is a better way, the C++ templates:</p>
 
 <pre class="twilight">
-<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&quot;</span>Complex.h<span class="String">&quot;</span></span></span>
+<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>iostream<span class="String">&gt;</span></span></span>
+<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>complex<span class="String">&gt;</span></span></span>
 <span class="Keyword">using</span> <span class="Keyword">namespace</span> std;
 
 <span class="Storage">template</span>&lt;<span class="Storage">typename</span> T&gt;
@@ -1529,51 +1530,28 @@ T <span class="Entity">squa<span class="Entity">re</span></span>(T x)
     <span class="Keyword">return</span> x*x;
 }
 
-<span class="Comment"><span class="Comment">//</span> An example of usage:</span>
 <span class="Storage">int</span> <span class="Entity">ma<span class="Entity">in</span></span>() {
-    cout &lt;&lt; square&lt;<span class="Storage">int</span>&gt;(<span class="Constant">5</span>) &lt;&lt; endl;
-    cout &lt;&lt; square&lt;<span class="Storage">double</span>&gt;(<span class="Constant">5.3</span>) &lt;&lt; endl;
-    Complex z=Complex(<span class="Constant">5</span>,<span class="Constant">3</span>);
-    cout &lt;&lt; square&lt;Complex&gt;(z) &lt;&lt; endl;
+    <span class="Comment"><span class="Comment">//</span> int</span>
+    <span class="Storage">int</span> sqr_of_five = square(<span class="Constant">5</span>);
+    cout &lt;&lt; sqr_of_five &lt;&lt; endl;
+    <span class="Comment"><span class="Comment">//</span> double</span>
+    cout &lt;&lt; (<span class="Storage">double</span>)square(<span class="Constant">5.3</span>) &lt;&lt; endl;
+    <span class="Comment"><span class="Comment">//</span> complex</span>
+    cout &lt;&lt; square( complex&lt;<span class="Storage">double</span>&gt;(<span class="Constant">5</span>,<span class="Constant">3</span>) ) 
+         &lt;&lt; endl;
     <span class="Keyword">return</span> <span class="Constant">0</span>;
 }
 </pre>
 
-<p>Even with this example of C++ templates you are forced to write the type on the call of the function.
-Not to mention the definiton of the class Complex</p>
+<p>C++ does a far better job than C. 
+For more complex function the syntax can be hard to follow:
+look at 
+<a href="http://bartoszmilewski.com/2009/10/21/what-does-haskell-have-to-do-with-c/">this article</a> 
+for example.</p>
 
-<pre class="twilight">
-<span class="Comment"><span class="Comment">//</span> Just an example</span>
-<span class="Storage">class</span> Complex
-{
-<span class="Storage">private</span>:
-    <span class="Storage">double</span> real_; 
-    <span class="Storage">double</span> img_; 
-
-<span class="Storage">public</span>:
-    <span class="Entity">Complex</span>(<span class="Storage">double</span> real, <span class="Storage">double</span> img) : real_(real), 
-                                       <span class="Entity">img_</span>(img) {} 
-
-    <span class="Comment"><span class="Comment">//</span> overloaded the multiplication operator</span>
-    Complex <span class="Entity">operat<span class="Entity">or</span>*</span>(Complex z) {
-        <span class="Keyword">return</span> Complex(
-                   real_*z.real_ - img_*z.img_,
-                    img_*z.real_ + real_*z.img_);
-    }
-
-    ...
-</pre>
-
-<p>To be fair, there is also a definition of the multiplication of <code>Complex</code> in Haskell.
-But it takes only one line.
-Somewhere in the source of the module <code>Data.Complex</code>:</p>
-
-<pre class="twilight">
-<span class="Keyword">instance</span> <span class="Constant">Num</span> (<span class="Constant">Complex</span> a) <span class="Keyword">where</span>
-  ...
-  (x:+y) * (x':+y')   =  (x*x'-y*y') :+ (x*y'+y*x')
-  ...
-</pre>
+<p>In C++ you must declare that a function can work with different types.
+In Haskell this is the opposite. 
+The function will be as general as possible by default.</p>
 
 <p>The inference of type gives Haskell a feeling of the freedom that dynamic 
 typed languages provide. 
@@ -2416,7 +2394,7 @@ Its definition is:</p>
 <p>This is a nice way to tell there was an error while trying to create/compute
 a value.
 The <code>maybeRead</code> function is a great example of this. 
-This is a function similar to the function <code>read</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">6</a></sup>,
+This is a function similar to the function <code>read</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">5</a></sup>,
 but if something goes wrong the returned value is <code>Nothing</code>.
 If the value is right, it returns <code>Just &lt;the value&gt;</code>.
 Don&rsquo;t try to understand too much of this function. 
@@ -2649,10 +2627,10 @@ It&rsquo;s type is then something like:</p>
 
 <p>Not all function could have access to this variable.
 Those who have access to this variable can potentially be impure.
-Functions whose the world variable isn&rsquo;t provided to should be pure<sup id="fnref:032001"><a href="#fn:032001" rel="footnote">7</a></sup>.</p>
+Functions whose the world variable isn&rsquo;t provided to should be pure<sup id="fnref:032001"><a href="#fn:032001" rel="footnote">6</a></sup>.</p>
 
 <p>Haskell consider the state of the world is an input variable for <code>main</code>.
-But the real type of main is closer to this one<sup id="fnref:032002"><a href="#fn:032002" rel="footnote">8</a></sup>:</p>
+But the real type of main is closer to this one<sup id="fnref:032002"><a href="#fn:032002" rel="footnote">7</a></sup>:</p>
 
 <pre class="twilight">
 <span class="Entity">main</span> :: <span class="Constant">World</span> -&gt; ((),<span class="Constant">World</span>)
@@ -3281,7 +3259,7 @@ In particular, monad are very useful for: </p>
 </ul>
 
 <p>If you have followed me until here, then you&rsquo;ve done it! 
-You know monads<sup id="fnref:03021301"><a href="#fn:03021301" rel="footnote">9</a></sup>!</p>
+You know monads<sup id="fnref:03021301"><a href="#fn:03021301" rel="footnote">8</a></sup>!</p>
 
 <p><a href="code/03_Hell/02_Monads/13_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>13_Monads.lhs</strong> </a></p>
 
@@ -3643,9 +3621,6 @@ treeFromList' (x:xs) n = <span class="Constant">Node</span> x left right
     </li>
     <li id="fn:0216">
       <p>You should remark <code>squareEvenSum''</code> is more efficient that the two other versions. The order of <code>(.)</code> is important.<a href="#fnref:0216" rel="reference">&#8617;</a></p>
-    </li>
-    <li id="fn:022001">
-      <p>I know there is a cleaner way, to do this in C++. This is only an example.<a href="#fnref:022001" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:1">
       <p>Which itself is very similar to the javascript <code>eval</code> on a string containing JSON).<a href="#fnref:1" rel="reference">&#8617;</a></p>
