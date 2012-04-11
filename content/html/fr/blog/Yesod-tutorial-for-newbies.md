@@ -243,7 +243,7 @@ Let's take a look at the file `config/routes`:
 /favicon.ico FaviconR GET
 /robots.txt RobotsR GET
 
-/ RootR GET
+/ HomeR GET
 </pre>
 
 We want to add a route of the form `/echo/[anything]` somehow and do some action with this.
@@ -263,7 +263,7 @@ Application.hs:31:1: Not in scope: `getEchoR'
 </pre>
 
 Why? Simply because we didn't written the code for the handler `EchoR`.
-Edit the file `Handler/Root.hs` and append this:
+Edit the file `Handler/Home.hs` and append this:
 
 <code class="haskell">
 getEchoR :: String -> Handler RepHtml
@@ -383,17 +383,17 @@ getEchoR theText = do
         [whamlet|<h1>#{theText}|]
 </code>
 
-Do not forget to remove the getEchoR function inside `Handler/Root.hs`.
+Do not forget to remove the getEchoR function inside `Handler/Home.hs`.
 
 We must declare this new file into`yosog.cabal`. 
-Just after `Handler.Root`, add:
+Just after `Handler.Home`, add:
 
 <pre>
     Handler.Echo
 </pre>
 
 We must also declare this new Handler module inside `Application.hs`.
-Just after the "`import Handler.Root`", add:
+Just after the "`import Handler.Home`", add:
 
 <code class="haskell">
 import Handler.Echo
