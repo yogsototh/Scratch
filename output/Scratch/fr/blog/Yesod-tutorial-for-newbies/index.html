@@ -327,7 +327,7 @@ Let&rsquo;s take a look at the file <code>config/routes</code>:</p>
 /favicon.ico FaviconR GET
 /robots.txt RobotsR GET
 
-/ RootR GET
+/ HomeR GET
 </pre>
 
 <p>We want to add a route of the form <code>/echo/[anything]</code> somehow and do some action with this.
@@ -347,7 +347,7 @@ Application.hs:31:1: Not in scope: `getEchoR'
 </pre>
 
 <p>Why? Simply because we didn&rsquo;t written the code for the handler <code>EchoR</code>.
-Edit the file <code>Handler/Root.hs</code> and append this:</p>
+Edit the file <code>Handler/Home.hs</code> and append this:</p>
 
 <pre class="twilight">
 <span class="Entity">getEchoR</span> :: <span class="Constant">String</span> -&gt; <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
@@ -469,17 +469,17 @@ getEchoR theText = <span class="Keyword">do</span>
         [whamlet|&lt;h1&gt;#{theText}|]
 </pre>
 
-<p>Do not forget to remove the getEchoR function inside <code>Handler/Root.hs</code>.</p>
+<p>Do not forget to remove the getEchoR function inside <code>Handler/Home.hs</code>.</p>
 
 <p>We must declare this new file into<code>yosog.cabal</code>. 
-Just after <code>Handler.Root</code>, add:</p>
+Just after <code>Handler.Home</code>, add:</p>
 
 <pre>
     Handler.Echo
 </pre>
 
 <p>We must also declare this new Handler module inside <code>Application.hs</code>.
-Just after the &ldquo;<code>import Handler.Root</code>&rdquo;, add:</p>
+Just after the &ldquo;<code>import Handler.Home</code>&rdquo;, add:</p>
 
 <pre class="twilight">
 <span class="Keyword">import</span> <span class="Constant">Handler</span>.<span class="Constant">Echo</span>
