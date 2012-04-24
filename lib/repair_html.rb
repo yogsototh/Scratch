@@ -49,3 +49,16 @@ def repair_html( html, debug=false )
     depth.downto(0).each { |x| res<<= %{</#{parents[x]}>} }
     res
 end
+
+def showArticle( article, language )
+    if /<img [^>]*>/ =~ article.compiled_content 
+        image=$&
+    else
+        image=%{<img src="/Scratch/img/presentation.png" alt="basic logo"/>}
+    end
+    presentation=%{<figure>#{image}
+        <figcaption> 
+            #{article[:title]} <span class="nicer">»</span>
+        </figcaption></figure>}
+    %{<div class="popularblock">#{link_to(presentation, article)}</div>}
+end
