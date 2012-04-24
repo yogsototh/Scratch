@@ -2236,12 +2236,13 @@ main = <span class="Keyword">do</span>
 
 <h2 id="hell-difficulty-part">Hell Difficulty Part</h2>
 
-<p>Congratulation to get so far!
-Now, some of the really hardcore stuff could start.</p>
+<p>Congratulations for getting so far!
+Now, some of the really hardcore stuff can start.</p>
 
 <p>If you are like me, you should get the functional style.
 You should also understand a bit more the advantages of laziness by default.
-But you also don&rsquo;t really understand were to start to make a real program.
+But you also don&rsquo;t really understand where to start in order to make a real
+program.
 And in particular:</p>
 
 <ul>
@@ -2249,7 +2250,7 @@ And in particular:</p>
   <li>Why is there a strange imperative-like notation for dealing with IO?</li>
 </ul>
 
-<p>Be prepared, answer might be difficult to get.
+<p>Be prepared, the answers might be complex.
 But they all be very rewarding.</p>
 
 <hr />
@@ -2262,7 +2263,7 @@ But they all be very rewarding.</p>
 <blockquote>
   <p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span></p>
 
-  <p>A typical function doing <code>IO</code> look a lot like an imperative language:</p>
+  <p>A typical function doing <code>IO</code> looks a lot like an imperative program:</p>
 
   <pre><code>f :: IO a
 f = do
@@ -2284,17 +2285,17 @@ in this example:
         <li><code>x :: b</code>, <code>y :: c</code></li>
       </ul>
     </li>
-    <li>Few objects have the type <code>IO a</code>, this should help you to choose.
-In particular you cannot use pure function directly here.
-To use pure function you could do <code>action2 (purefunction x)</code> for example.</li>
+    <li>Few objects have the type <code>IO a</code>, this should help you choose.
+In particular you cannot use pure functions directly here.
+To use pure functions you could do <code>action2 (purefunction x)</code> for example.</li>
   </ul>
 </blockquote>
 
-<p>In this section, I will explain how to use IO, not how they work.
-You&rsquo;ll see how Haskell separate pure from impure part of the program.</p>
+<p>In this section, I will explain how to use IO, not how it works.
+You&rsquo;ll see how Haskell separates the pure from the impure parts of the program.</p>
 
 <p>Don&rsquo;t stop because you&rsquo;re trying to understand the details of the syntax.
-Answer will come in the next section.</p>
+Answers will come in the next section.</p>
 
 <p>What to achieve?</p>
 
@@ -2322,7 +2323,7 @@ getLine  :: IO String
 print    :: Show a =&gt; a -&gt; IO ()
 </code></pre>
 
-<p>Or more interestingly, we remark each expression in the <code>do</code> block has a type of <code>IO a</code>.</p>
+<p>Or more interestingly, we note that each expression in the <code>do</code> block has a type of <code>IO a</code>.</p>
 
 <pre>
 main = do
@@ -2331,7 +2332,7 @@ main = do
   print Something       :: <span class="high">IO ()</span>
 </pre>
 
-<p>We should also remark the effect of the <code>&lt;-</code> symbol.</p>
+<p>We should also pay attention to the effect of the <code>&lt;-</code> symbol.</p>
 
 <pre><code>do
  x &lt;- something
@@ -2339,8 +2340,8 @@ main = do
 
 <p>If <code>something :: IO a</code> then <code>x :: a</code>.</p>
 
-<p>Another important remark to use <code>IO</code>.
-All line in a do block must have one of the two forms:</p>
+<p>Another important note about using <code>IO</code>.
+All lines in a do block must be of one of the two forms:</p>
 
 <pre><code>action1             :: IO a
                     -- in this case, generally a = ()
@@ -2353,15 +2354,15 @@ All line in a do block must have one of the two forms:</p>
                     -- value   :: b
 </code></pre>
 
-<p>These two kind of line will correspond to two different way of sequencing actions.
-The meaning of this sentence should be clearer at the end of the next section.</p>
+<p>These two kinds of line will correspond to two different ways of sequencing actions.
+The meaning of this sentence should be clearer by the end of the next section.</p>
 
 <p><a href="code/03_Hell/01_IO/01_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>01_progressive_io_example.lhs</strong> </a></p>
 
 <hr />
 <p><a href="code/03_Hell/01_IO/02_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>02_progressive_io_example.lhs</strong></a></p>
 
-<p>Now let&rsquo;s see how this behave.
+<p>Now let&rsquo;s see how this program behaves.
 For example, what occur if the user enter something strange?
 Let&rsquo;s try:</p>
 
@@ -2374,7 +2375,7 @@ Let&rsquo;s try:</p>
 <p>Argh! An evil error message and a crash! 
 The first evolution will be to answer with a more friendly message.</p>
 
-<p>For this, we must detect, something went wrong.
+<p>In order to do this, we must detect that something went wrong.
 Here is one way to do this.
 Use the type <code>Maybe</code>.
 It is a very common type in Haskell.</p>
@@ -2384,7 +2385,7 @@ It is a very common type in Haskell.</p>
 <span class="Keyword">import</span> <span class="Constant">Data</span>.<span class="Constant">Maybe</span>
 </pre>
 </div>
-<p>What is this thing? Maybe is a type which takes one parameter.
+<p>What is this thing? <code>Maybe</code> is a type which takes one parameter.
 Its definition is:</p>
 
 <pre class="twilight">
@@ -2432,35 +2433,36 @@ main = <span class="Keyword">do</span>
           <span class="Constant">Nothing</span> -&gt; <span class="Entity">error</span> <span class="String"><span class="String">&quot;</span>Bad format. Good Bye.<span class="String">&quot;</span></span>
 </pre>
 </div>
-<p>In case of error, we prompt a nice error message.</p>
+<p>In case of error, we display a nice error message.</p>
 
-<p>Remark the type of each expression in the main&rsquo;s do block remains of the form <code>IO a</code>.
+<p>Note that the type of each expression in the main&rsquo;s do block remains of the form <code>IO a</code>.
 The only strange construction is <code>error</code>. 
 I&rsquo;ll say <code>error msg</code> will simply take the needed type (here <code>IO ()</code>).</p>
 
-<p>One very important thing to note is the type of all the defined function.
+<p>One very important thing to note is the type of all the functions defined so far.
 There is only one function which contains <code>IO</code> in its type: <code>main</code>. 
-That means main is impure. 
-But main use <code>getListFromString</code> which is pure.
-It is then clear just by looking at declared types where are pure and impure functions.</p>
+This means main is impure.
+But main uses <code>getListFromString</code> which is pure.
+It is then clear just by looking at declared types which functions are pure and
+which are impure.</p>
 
-<p>Why purity matters? 
-I certainly forget many advantages, but the three main reason are:</p>
+<p>Why does purity matter?
+I certainly forget many advantages, but the three main reasons are:</p>
 
 <ul>
   <li>It is far easier to think about pure code than impure one.</li>
-  <li>Purity protect you from all hard to reproduce bugs due to border effects.</li>
+  <li>Purity protects you from all the hard to reproduce bugs due to side effects.</li>
   <li>You can evaluate pure functions in any order or in parallel without risk.</li>
 </ul>
 
-<p>This is why, you should generally put as most code as possible in pure functions.</p>
+<p>This is why you should generally put as most code as possible inside pure functions.</p>
 
 <p><a href="code/03_Hell/01_IO/02_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>02_progressive_io_example.lhs</strong> </a></p>
 
 <hr />
 <p><a href="code/03_Hell/01_IO/03_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>03_progressive_io_example.lhs</strong></a></p>
 
-<p>Our next evolution will be to ask the user again and again until it enters a valid answer.</p>
+<p>Our next evolution will be to prompt the user again and again until she enters a valid answer.</p>
 
 <p>We keep the first part:</p>
 
@@ -2476,7 +2478,7 @@ maybeRead s = <span class="Keyword">case</span> <span class="Entity">reads</span
 getListFromString str = maybeRead $ <span class="String"><span class="String">&quot;</span>[<span class="String">&quot;</span></span> ++ str ++ <span class="String"><span class="String">&quot;</span>]<span class="String">&quot;</span></span>
 </pre>
 </div>
-<p>Now, we create a function which will ask the user for an integer list
+<p>Now, we create a function which will ask the user for an list of integers
 until the input is right.</p>
 
 <div class="codehighlight">
@@ -2492,7 +2494,7 @@ askUser = <span class="Keyword">do</span>
 </pre>
 </div>
 <p>This function is of type <code>IO [Integer]</code>. 
-Such a type means, that we retrieved a value of type <code>[Integer]</code> through some IO actions.
+Such a type means that we retrieved a value of type <code>[Integer]</code> through some IO actions.
 Some people might explain while waving their hands: </p>
 
 <blockquote>
@@ -2501,7 +2503,7 @@ Some people might explain while waving their hands: </p>
 
 <p>If you want to understand the details behind all of this, you&rsquo;ll have to read the next section.
 But sincerely, if you just want to <em>use</em> IO.
-Just exercise a little and remember to think about the type.</p>
+Just practice a little and remember to think about the type.</p>
 
 <p>Finally our main function is quite simpler:</p>
 
@@ -2514,25 +2516,25 @@ main = <span class="Keyword">do</span>
 </pre>
 </div>
 <p>We have finished with our introduction to <code>IO</code>.
-This was quite a fast.  Here are the main things to remind:</p>
+This was quite fast. Here are the main things to remember:</p>
 
 <ul>
   <li>in the <code>do</code> bloc, each expression must have the type <code>IO a</code>.
-You are then limited in the number of expression you could use.
+You are then limited in the number of expressions available.
 For example, <code>getLine</code>, <code>print</code>, <code>putStrLn</code>, etc&hellip;</li>
-  <li>Try to externalize the pure function as much as possible.  </li>
-  <li>the <code>IO a</code> type means: an IO <em>action</em> which return an element of type <code>a</code>.
-<code>IO</code> represent action; under the hood, <code>IO a</code> is the type of a function.
+  <li>Try to externalize the pure functions as much as possible.</li>
+  <li>the <code>IO a</code> type means: an IO <em>action</em> which returns an element of type <code>a</code>.
+<code>IO</code> represents actions; under the hood, <code>IO a</code> is the type of a function.
 Read the next section if you are curious.</li>
 </ul>
 
-<p>If you exercise a bit, you should be able to <em>use</em> <code>IO</code>.</p>
+<p>If you practice a bit, you should be able to <em>use</em> <code>IO</code>.</p>
 
 <blockquote>
   <p><em>Exercises</em>:</p>
 
   <ul>
-    <li>Make a program that sum all its argument. Hint: use the function <code>getArgs</code>.</li>
+    <li>Make a program that sums all of its arguments. Hint: use the function <code>getArgs</code>.</li>
   </ul>
 </blockquote>
 
@@ -2545,14 +2547,14 @@ Read the next section if you are curious.</li>
 <blockquote>
   <p>Here is a <span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> for this section.</p>
 
-  <p>To separate pure from impure part, 
-the main is defined as a function
-which modify the state of the world</p>
+  <p>To separate pure and impure parts,
+<code>main</code> is defined as a function
+which modifies the state of the world</p>
 
   <pre><code>main :: World -&gt; World
 </code></pre>
 
-  <p>A function is granted to have side effect only if it gets this value.
+  <p>A function is guaranteed to have side effects only if it has this type.
 But look at a typical main function:</p>
 
   <pre><code>main w0 = 
@@ -2563,16 +2565,16 @@ But look at a typical main function:</p>
 </code></pre>
 
   <p>We have a lot of temporary elements (here <code>w1</code>, <code>w2</code> and <code>w3</code>) 
-which must be passed to the next action.</p>
+which must be passed on to the next action.</p>
 
   <p>We create a function <code>bind</code> or <code>(&gt;&gt;=)</code>. 
-With <code>bind</code> we need no more temporary name.</p>
+With <code>bind</code> we don&rsquo;t need temporary names anymore.</p>
 
   <pre><code>main =
   action1 &gt;&gt;= action2 &gt;&gt;= action3 &gt;&gt;= action4
 </code></pre>
 
-  <p>Bonus: Haskell has a syntactical sugar for us:</p>
+  <p>Bonus: Haskell has syntactical sugar for us:</p>
 
   <pre><code>main = do
   v1 &lt;- action1 
@@ -2582,11 +2584,11 @@ With <code>bind</code> we need no more temporary name.</p>
 </code></pre>
 </blockquote>
 
-<p>Why did we used some strange syntax, and what exactly is this <code>IO</code> type.
+<p>Why did we use this strange syntax, and what exactly is this <code>IO</code> type?
 It looks a bit like magic.</p>
 
-<p>For now let&rsquo;s just forget about all the pure part of our program, and focus
-on the impure part:</p>
+<p>For now let&rsquo;s just forget all about the pure parts of our program, and focus
+on the impure parts:</p>
 
 <pre class="twilight">
 <span class="Entity">askUser</span> :: <span class="Constant">IO</span> [<span class="Constant">Integer</span>]
@@ -2605,31 +2607,31 @@ main = <span class="Keyword">do</span>
 </pre>
 
 <p>First remark; it looks like an imperative structure.
-Haskell is powerful enough to make some pure code to look imperative.
+Haskell is powerful enough to make impure code look imperative.
 For example, if you wish you could create a <code>while</code> in Haskell.
 In fact, for dealing with <code>IO</code>, imperative style is generally more appropriate.</p>
 
-<p>But, you should had remarked the notation is a bit unusual.
+<p>But you should had noticed the notation is a bit unusual.
 Here is why, in detail.</p>
 
 <p>In an impure language, the state of the world can be seen as a huge hidden global variable. 
-This hidden variable is accessible by all function of your language.
+This hidden variable is accessible by all functions of your language.
 For example, you can read and write a file in any function.
-The fact a file exists or not, can be seen as different state of the world.</p>
+The fact that a file exists or not can be seen as different states of the world.</p>
 
 <p>For Haskell this state is not hidden.
-It is explicitly said <code>main</code> is a function that <em>potentially</em> change the state of the world.
-It&rsquo;s type is then something like:</p>
+It is explicitly said <code>main</code> is a function that <em>potentially</em> changes the state of the world.
+Its type is then something like:</p>
 
 <pre class="twilight">
 <span class="Entity">main</span> :: <span class="Constant">World</span> -&gt; <span class="Constant">World</span>
 </pre>
 
-<p>Not all function could have access to this variable.
-Those who have access to this variable can potentially be impure.
-Functions whose the world variable isn&rsquo;t provided to should be pure<sup id="fnref:032001"><a href="#fn:032001" rel="footnote">6</a></sup>.</p>
+<p>Not all functions may have access to this variable.
+Those which have access to this variable are impure.
+Functions to which the world variable isn&rsquo;t provided are pure<sup id="fnref:032001"><a href="#fn:032001" rel="footnote">6</a></sup>.</p>
 
-<p>Haskell consider the state of the world is an input variable for <code>main</code>.
+<p>Haskell considers the state of the world as an input variable to <code>main</code>.
 But the real type of main is closer to this one<sup id="fnref:032002"><a href="#fn:032002" rel="footnote">7</a></sup>:</p>
 
 <pre class="twilight">
@@ -2648,17 +2650,17 @@ main w0 =
     x 
 </pre>
 
-<p>First, we remark, that all function which have side effect must have the type:</p>
+<p>First, we note that all functions which have side effects must have the type:</p>
 
 <pre class="twilight">
 <span class="Constant">World</span> -&gt; (a,<span class="Constant">World</span>)
 </pre>
 
-<p>Where <code>a</code> is the type of result. 
+<p>Where <code>a</code> is the type of the result.
 For example, a <code>getChar</code> function should have the type <code>World -&gt; (Char,World)</code>.</p>
 
-<p>Another thing to remark is the trick to fix the order of evaluation.
-In Haskell to evaluate <code>f a b</code>, you generally have many choices: </p>
+<p>Another thing to note is the trick to fix the order of evaluation.
+In Haskell, in order to evaluate <code>f a b</code>, you have many choices:</p>
 
 <ul>
   <li>first eval <code>a</code> then <code>b</code> then <code>f a b</code></li>
@@ -2683,7 +2685,7 @@ Under the hood, <code>print</code> will evaluate as:</p>
 </ul>
 
 <p>Now, if you look at the style of the main function, it is clearly awkward.
-Let&rsquo;s try to make the same to the askUser function:</p>
+Let&rsquo;s try to do the same to the askUser function:</p>
 
 <pre class="twilight">
 <span class="Entity">askUser</span> :: <span class="Constant">World</span> -&gt; ([<span class="Constant">Integer</span>],<span class="Constant">World</span>)
@@ -2718,9 +2720,9 @@ askUser w0 =
 <p>This is similar, but awkward.
 Look at all these temporary <code>w?</code> names.</p>
 
-<p>The lesson, is, naive IO implementation in Pure functional language is awkward!</p>
+<p>The lesson, is, naive IO implementation in Pure functional languages is awkward!</p>
 
-<p>Fortunately, some have found a better way to handle this problem.
+<p>Fortunately, there is a better way to handle this problem.
 We see a pattern.
 Each line is of the form:</p>
 
@@ -2736,8 +2738,7 @@ Each function <code>f</code> must have a type similar to:</p>
 <span class="Entity">f</span> :: <span class="Constant">World</span> -&gt; (<span class="Variable">a,World</span>)
 </pre>
 
-<p>Not only this, but we can also remark we use them always 
-with the following general pattern:</p>
+<p>Not only this, but we can also note that we always follow the same usage pattern:</p>
 
 <pre class="twilight">
 <span class="Keyword">let</span> (y,w1) = action1 w0 <span class="Keyword">in</span>
@@ -2746,7 +2747,7 @@ with the following general pattern:</p>
 ...
 </pre>
 
-<p>Each action can take 0 to some parameters.
+<p>Each action can take from 0 to n parameters.
 And in particular, each action can take a parameter from the result of a line above.</p>
 
 <p>For example, we could also have:</p>
@@ -2761,7 +2762,7 @@ And in particular, each action can take a parameter from the result of a line ab
 <p>And of course <code>actionN w :: (World) -&gt; (a,World)</code>.</p>
 
 <blockquote>
-  <p>IMPORTANT, there are only two important pattern for us:</p>
+  <p>IMPORTANT, there are only two important patterns to consider:</p>
 
   <pre><code>let (x,w1) = action1 w0 in
 let (y,w2) = action2 x w1 in
@@ -2776,7 +2777,7 @@ let (y,w2) = action2 w1 in
 
 <p><img alt="Jocker pencil trick" src="/Scratch/img/blog/Haskell-the-Hard-Way/jocker_pencil_trick.jpg" class="left" /></p>
 
-<p>Now, we will make a magic trick.
+<p>Now, we will do a magic trick.
 We will make the temporary world symbol &ldquo;disappear&rdquo;.
 We will <code>bind</code> the two lines. 
 Let&rsquo;s define the <code>bind</code> function.
@@ -2802,18 +2803,18 @@ Now let&rsquo;s rename it for clarity:</p>
 <span class="Entity">print</span> :: <span class="Constant">Show</span> <span class="Variable">a</span> =&gt; <span class="Variable">a</span> -&gt; <span class="Constant">IO</span> ()
 </pre>
 
-<p><code>getLine</code> is an IO action which take a world as parameter and return a couple <code>(String,World)</code>.
-Which can be said as: <code>getLine</code> is of type <code>IO String</code>.
+<p><code>getLine</code> is an IO action which takes a world as parameter and returns a couple <code>(String,World)</code>.
+Which can be summarized as: <code>getLine</code> is of type <code>IO String</code>.
 Which we also see as, an IO action which will return a String &ldquo;embeded inside an IO&rdquo;.</p>
 
-<p>The function <code>print</code> is also interresting.
-It takes on argument which can be shown.
+<p>The function <code>print</code> is also interesting.
+It takes one argument which can be shown.
 In fact it takes two arguments.
 The first is the value to print and the other is the state of world.
-It then return a couple of type <code>((),World)</code>. 
-This means it changes the world state, but don&rsquo;t give anymore data.</p>
+It then returns a couple of type <code>((),World)</code>.
+This means it changes the state of the world, but doesn&rsquo;t yield anymore data.</p>
 
-<p>This type help us simplify the type of <code>bind</code>:</p>
+<p>This type helps us simplify the type of <code>bind</code>:</p>
 
 <pre class="twilight">
 <span class="Entity">bind</span> :: <span class="Constant">IO</span> <span class="Variable">a</span> 
@@ -2839,7 +2840,7 @@ This means it changes the world state, but don&rsquo;t give anymore data.</p>
 (y,w2)   :: <span class="Constant">IO</span> b
 </pre>
 
-<p>Doesn&rsquo;t seem familiar?</p>
+<p>Doesn&rsquo;t it seem familiar?</p>
 
 <pre class="twilight">
 (bind action1 action2) w0 =
@@ -2849,7 +2850,7 @@ This means it changes the world state, but don&rsquo;t give anymore data.</p>
 </pre>
 
 <p>The idea is to hide the World argument with this function. Let&rsquo;s go:
-As example imagine if we wanted to simulate:</p>
+As an example imagine if we wanted to simulate:</p>
 
 <pre class="twilight">
 <span class="Keyword">let</span> (line1,w1) = <span class="Entity">getLine</span> w0 <span class="Keyword">in</span>
@@ -2864,7 +2865,7 @@ As example imagine if we wanted to simulate:</p>
 </pre>
 
 <p>As print is of type (World &rarr; ((),World)), we know res = () (null type).
-If you didn&rsquo;t saw what was magic here, let&rsquo;s try with three lines this time.</p>
+If you didn&rsquo;t see what was magic here, let&rsquo;s try with three lines this time.</p>
 
 <pre class="twilight">
 <span class="Keyword">let</span> (line1,w1) = <span class="Entity">getLine</span> w0 <span class="Keyword">in</span>
@@ -2881,8 +2882,8 @@ If you didn&rsquo;t saw what was magic here, let&rsquo;s try with three lines th
                <span class="Entity">print</span> (line1 ++ line2)))
 </pre>
 
-<p>Didn&rsquo;t you remark something?
-Yes, there isn&rsquo;t anymore temporary World variable used anywhere!
+<p>Didn&rsquo;t you notice something?
+Yes, no temporary World variables are used anywhere!
 This is <em>MA</em>. <em>GIC</em>.</p>
 
 <p>We can use a better notation.
@@ -2897,7 +2898,7 @@ Let&rsquo;s use <code>(&gt;&gt;=)</code> instead of <code>bind</code>.
 </pre>
 
 <p>Ho Ho Ho! Happy Christmas Everyone!
-Haskell has made a syntactical sugar for us:</p>
+Haskell has made syntactical sugar for us:</p>
 
 <pre class="twilight">
 <span class="Keyword">do</span>
@@ -2918,8 +2919,8 @@ action3 &gt;&gt;= \z -&gt;
 
 <p>Note you can use <code>x</code> in <code>action2</code> and <code>x</code> and <code>y</code> in <code>action3</code>.</p>
 
-<p>But what for line not using the <code>&lt;-</code>?
-Easy another function <code>blindBind</code>:</p>
+<p>But what about the lines not using the <code>&lt;-</code>?
+Easy, another function <code>blindBind</code>:</p>
 
 <pre class="twilight">
 <span class="Entity">blindBind</span> :: <span class="Constant">IO</span> <span class="Variable">a</span> -&gt; <span class="Constant">IO</span> <span class="Variable">b</span> -&gt; <span class="Constant">IO</span> <span class="Variable">b</span>
@@ -2927,7 +2928,7 @@ blindBind action1 action2 w0 =
     bind action (\_ -&gt; action2) w0
 </pre>
 
-<p>I didn&rsquo;t simplified this definition for clarity purpose.
+<p>I didn&rsquo;t simplify this definition for clarity purpose.
 Of course we can use a better notation, we&rsquo;ll use the <code>(&gt;&gt;)</code> operator.</p>
 
 <p>And</p>
@@ -2954,7 +2955,7 @@ action3
 putInIO x = <span class="Constant">IO</span> (\w -&gt; (x,w))
 </pre>
 
-<p>This is the general way to put pure value inside the &ldquo;IO context&rdquo;.
+<p>This is the general way to put pure values inside the &ldquo;IO context&rdquo;.
 The general name for <code>putInIO</code> is <code>return</code>.
 This is quite a bad name when you learn Haskell. <code>return</code> is very different from what you might be used to. </p>
 
@@ -3006,7 +3007,7 @@ main = askUser &gt;&gt;=
   \list -&gt; <span class="Entity">print</span> $ <span class="Entity">sum</span> list
 </pre>
 </div>
-<p>You can compile this code to verify it continues to work.</p>
+<p>You can compile this code to verify it keeps working.</p>
 
 <p>Imagine what it would look like without the <code>(&gt;&gt;)</code> and <code>(&gt;&gt;=)</code>.</p>
 
@@ -3017,11 +3018,11 @@ main = askUser &gt;&gt;=
 
 <h3 id="monads">Monads</h3>
 
-<p><img alt="Dali, reve. It represent a weapon out of the mouth of a tiger, itself out of the mouth of another tiger, itself out of the mouth of a fish itsleft out of a grenade. I could have choosen a picture of the Human centipede as it is a very good representation of what a monad really is. But just to thing about it, I find this disgusting and that wasn't the purpose of this document." src="/Scratch/img/blog/Haskell-the-Hard-Way/dali_reve.jpg" /></p>
+<p><img alt="Dali, reve. It represents a weapon out of the mouth of a tiger, itself out of the mouth of another tiger, itself out of the mouth of a fish itself out of a grenade. I could have choosen a picture of the Human centipede as it is a very good representation of what a monad really is. But just to thing about it, I find this disgusting and that wasn't the purpose of this document." src="/Scratch/img/blog/Haskell-the-Hard-Way/dali_reve.jpg" /></p>
 
 <p>Now the secret can be revealed: <code>IO</code> is a <em>monad</em>.
 Being a monad means you have access to some syntactical sugar with the <code>do</code> notation.
-But mainly, you have access to some coding pattern which will ease the flow of your code.</p>
+But mainly, you have access to a coding pattern which will ease the flow of your code.</p>
 
 <blockquote>
   <p><strong>Important remarks</strong>:</p>
@@ -3058,14 +3059,14 @@ Here is how the type class <code>Monad</code> is declared (mostly):</p>
   <ul>
     <li>the keyword <code>class</code> is not your friend. 
 A Haskell class is <em>not</em> a class like in object model.
-A Haskell class has a lot similarities with Java interfaces.
+A Haskell class has a lot of similarities with Java interfaces.
 A better word should have been <code>typeclass</code>.
 That means a set of types.
-For a type to belong to a class, all function of the class must be provided for this type.</li>
-    <li>In this particular example of type class, the type <code>m</code> must be a type that take an argument. 
+For a type to belong to a class, all functions of the class must be provided for this type.</li>
+    <li>In this particular example of type class, the type <code>m</code> must be a type that takes an argument. 
 for example <code>IO a</code>, but also <code>Maybe a</code>, <code>[a]</code>, etc&hellip;</li>
     <li>
-      <p>To be a useful monad, your function must obey some rule.
+      <p>To be a useful monad, your function must obey some rules.
 If your construction does not obey these rules strange things might happens:</p>
 
       <pre><code>return a &gt;&gt;= k  ==  k a
@@ -3078,13 +3079,13 @@ m &gt;&gt;= (\x -&gt; k x &gt;&gt;= h)  ==  (m &gt;&gt;= k) &gt;&gt;= h
 
 <h4 id="maybe-monad">Maybe is a monad</h4>
 
-<p>There exists a lot of different type that are instance of <code>Monad</code>.
+<p>There are a lot of different types that are instance of <code>Monad</code>.
 One of the easiest to describe is <code>Maybe</code>.
-If you have a sequence of <code>Maybe</code> values, you could use monad to manipulate them.
+If you have a sequence of <code>Maybe</code> values, you can use monads to manipulate them.
 It is particularly useful to remove very deep <code>if..then..else..</code> constructions.</p>
 
 <p>Imagine a complex bank operation. You are eligible to gain about 700€ only
-if you can afford to follow a list of operation without being negative.</p>
+if you can afford to follow a list of operations without being negative.</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -3125,7 +3126,7 @@ main = <span class="Keyword">do</span>
 <hr />
 <p><a href="code/03_Hell/02_Monads/11_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>11_Monads.lhs</strong></a></p>
 
-<p>Now, let&rsquo;s make it better using Maybe and the fact it is a Monad</p>
+<p>Now, let&rsquo;s make it better using Maybe and the fact that it is a Monad</p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -3182,7 +3183,7 @@ main = <span class="Keyword">do</span>
   <span class="Entity">print</span> $ eligible 299 <span class="Comment"><span class="Comment">--</span> Nothing</span>
 </pre>
 </div>
-<p>We have proved Monad are nice to make our code more elegant.
+<p>We have proven that Monads are a good way to make our code more elegant.
 Note this idea of code organization, in particular for <code>Maybe</code> can be used
 in most imperative language.
 In fact, this is the kind of construction we make naturally.</p>
@@ -3192,7 +3193,7 @@ In fact, this is the kind of construction we make naturally.</p>
 
   <p>The first element in the sequence being evaluated to <code>Nothing</code> will stop
 the complete evaluation. 
-That means, you don&rsquo;t execute all lines. 
+This means you don&rsquo;t execute all lines.
 You have this for free, thanks to laziness.</p>
 </blockquote>
 
@@ -3209,7 +3210,7 @@ But now a cooler example, lists.</p>
 
 <p><img alt="Golconde de Magritte" src="/Scratch/img/blog/Haskell-the-Hard-Way/golconde.jpg" /></p>
 
-<p>The list monad help us to simulate non deterministic computation.
+<p>The list monad helps us to simulate non deterministic computations.
 Here we go:</p>
 
 <div class="codehighlight">
@@ -3245,8 +3246,8 @@ main = <span class="Keyword">do</span>
                       4*x + 2*y &lt; z ]
 </pre>
 </div>
-<p>I won&rsquo;t list all the monads, but there is a lot of monads.
-The usage of monad simplify the manipulation of some notion in pure languages.
+<p>I won&rsquo;t list all the monads, but there are many monads.
+Using monads simplifies the manipulation of several notions in pure languages.
 In particular, monad are very useful for: </p>
 
 <ul>
@@ -3261,6 +3262,9 @@ In particular, monad are very useful for: </p>
 <p>If you have followed me until here, then you&rsquo;ve done it! 
 You know monads<sup id="fnref:03021301"><a href="#fn:03021301" rel="footnote">8</a></sup>!</p>
 
+<p>and to understand when you can use them and create your own. But you already
+made a big step in this direction.</p>
+
 <p><a href="code/03_Hell/02_Monads/13_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>13_Monads.lhs</strong> </a></p>
 
 <h2 id="appendix">Appendix</h2>
@@ -3273,8 +3277,9 @@ It is just here to discuss some details further.</p>
 
 <h3 id="more-on-infinite-tree">More on Infinite Tree</h3>
 
-<p>In the section <a href="#infinite-structures">Infinite Structures</a> we saw some simple construction.
-Unfortunately we removed two properties of our tree:</p>
+<p>In the section <a href="#infinite-structures">Infinite Structures</a> we saw some simple
+constructions.
+Unfortunately we removed two properties from our tree:</p>
 
 <ol>
   <li>no duplicate node value</li>
@@ -3282,7 +3287,7 @@ Unfortunately we removed two properties of our tree:</p>
 </ol>
 
 <p>In this section we will try to keep the first property.
-Concerning the second one, we must relax this one but we&rsquo;ll discuss on how to
+Concerning the second one, we must relax it but we&rsquo;ll discuss how to
 keep it as much as possible.</p>
 
 <div style="display:none">
@@ -3345,7 +3350,7 @@ This code is mostly the same as the one in the [tree section](#trees).
 shuffle = <span class="Entity">map</span> (\x -&gt; (x*3123) <span class="Entity"><span class="Entity">`</span>mod<span class="Entity">`</span></span> 4331) [1..]
 </pre>
 </div>
-<p>Just as reminder here are the definition of <code>treeFromList</code></p>
+<p>Just as a reminder, here is the definition of <code>treeFromList</code></p>
 
 <div class="codehighlight">
 <pre class="twilight">
@@ -3411,17 +3416,17 @@ treeTakeDepth 4 (treeFromList [1..])
 </pre>
 
 <p>will loop forever. 
-Simply because, it will try to access the head of <code>filter (&lt;1) [2..]</code>.
-But filter is not smart enought to understand that the result is the empty list.</p>
+Simply because it will try to access the head of <code>filter (&lt;1) [2..]</code>.
+But <code>filter</code> is not smart enought to understand that the result is the empty list.</p>
 
-<p>Nonetheless, it is still a very cool example of what non strict program has to offer.</p>
+<p>Nonetheless, it is still a very cool example of what non strict programs have to offer.</p>
 
 <p>Left as an exercise to the reader:</p>
 
 <ul>
-  <li>Could you prove that there exists some number <code>n</code> such that <code>treeTakeDepth n (treeFromList shuffle)</code> will enter in an infinite loop.</li>
+  <li>Prove the existence of a number <code>n</code> so that <code>treeTakeDepth n (treeFromList shuffle)</code> will enter an infinite loop.</li>
   <li>Find an upper bound for <code>n</code>.</li>
-  <li>Prove there is no <code>shuffle</code> list such that, for any depth, the program ends.</li>
+  <li>Prove there is no <code>shuffle</code> list so that, for any depth, the program ends.</li>
 </ul>
 
 <p><a href="code/04_Appendice/01_More_on_infinite_trees/10_Infinite_Trees.lhs" class="cut">04_Appendice/01_More_on_infinite_trees/<strong>10_Infinite_Trees.lhs</strong> </a></p>
@@ -3608,6 +3613,16 @@ treeFromList' (x:xs) n = <span class="Constant">Node</span> x left right
 </pre>
 
 <p><a href="code/04_Appendice/01_More_on_infinite_trees/11_Infinite_Trees.lhs" class="cut">04_Appendice/01_More_on_infinite_trees/<strong>11_Infinite_Trees.lhs</strong> </a></p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>Thanks to <a href="http://reddit.com/r/haskell"><code>/r/haskell</code></a> and 
+<a href="http://reddit.com/r/programming"><code>/r/programming</code></a>.
+Your comment were most than welcome.</p>
+
+<p>Particularly, I want to thank <a href="https://github.com/Emm">Emm</a> a thousand times 
+for the time he spent on correcting my English. 
+Thank you man.</p>
 <hr/><div class="footnotes">
   <ol>
     <li id="fn:0001">
@@ -3626,13 +3641,13 @@ treeFromList' (x:xs) n = <span class="Constant">Node</span> x left right
       <p>Which itself is very similar to the javascript <code>eval</code> on a string containing JSON).<a href="#fnref:1" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:032001">
-      <p>There are some <em>unsafe</em> exception to this rule. But you shouldn&rsquo;t see such usage on a real application except might be for some debugging purpose.<a href="#fnref:032001" rel="reference">&#8617;</a></p>
+      <p>There are some <em>unsafe</em> exceptions to this rule. But you shouldn&rsquo;t see such use on a real application except maybe for debugging purpose.<a href="#fnref:032001" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:032002">
       <p>For the curious the real type is <code>data IO a = IO {unIO :: State# RealWorld -&gt; (# State# RealWorld, a #)}</code>. All the <code>#</code> as to do with optimisation and I swapped the fields in my example. But mostly, the idea is exactly the same.<a href="#fnref:032002" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:03021301">
-      <p>Well, you&rsquo;ll certainly need to exercise a bit to be used to them and to understand when you can use them and create your own. But you already made a big step further.<a href="#fnref:03021301" rel="reference">&#8617;</a></p>
+      <p>Well, you&rsquo;ll certainly need to practice a bit to get used to them<a href="#fnref:03021301" rel="reference">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -3740,7 +3755,7 @@ treeFromList' (x:xs) n = <span class="Constant">Node</span> x left right
                 </div>
                 <div id="lastmod">
                     Created: 02/08/2012
-                    Modified: 04/11/2012 
+                    Modified: 04/17/2012 
                 </div>
                 <div>
                     Entirely done with

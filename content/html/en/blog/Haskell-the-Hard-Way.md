@@ -2094,18 +2094,19 @@ main = do
 
 <h2 id="hell-difficulty-part">Hell Difficulty Part</h2>
 
-Congratulation to get so far!
-Now, some of the really hardcore stuff could start.
+Congratulations for getting so far!
+Now, some of the really hardcore stuff can start.
 
 If you are like me, you should get the functional style.
 You should also understand a bit more the advantages of laziness by default.
-But you also don't really understand were to start to make a real program.
+But you also don't really understand where to start in order to make a real
+program.
 And in particular:
 
 - How do you deal with effects?
 - Why is there a strange imperative-like notation for dealing with IO?
 
-Be prepared, answer might be difficult to get.
+Be prepared, the answers might be complex.
 But they all be very rewarding.
 
 <hr/><a href="code/03_Hell/01_IO/01_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>01_progressive_io_example.lhs</strong></a>
@@ -2116,7 +2117,7 @@ But they all be very rewarding.
 
  > <%=tldr%>
  > 
- > A typical function doing `IO` look a lot like an imperative language:
+ > A typical function doing `IO` looks a lot like an imperative program:
  >
  > ~~~
  > f :: IO a
@@ -2135,15 +2136,15 @@ But they all be very rewarding.
  >   - `action3     :: IO c`
  >   - `action4 x y :: IO a`
  >   - `x :: b`, `y :: c`
- > - Few objects have the type `IO a`, this should help you to choose.
- >   In particular you cannot use pure function directly here.
- >   To use pure function you could do `action2 (purefunction x)` for example.
+ > - Few objects have the type `IO a`, this should help you choose.
+ >   In particular you cannot use pure functions directly here.
+ >   To use pure functions you could do `action2 (purefunction x)` for example.
 
-In this section, I will explain how to use IO, not how they work.
-You'll see how Haskell separate pure from impure part of the program.
+In this section, I will explain how to use IO, not how it works.
+You'll see how Haskell separates the pure from the impure parts of the program.
 
 Don't stop because you're trying to understand the details of the syntax.
-Answer will come in the next section.
+Answers will come in the next section.
 
 What to achieve?
 
@@ -2170,7 +2171,7 @@ getLine  :: IO String
 print    :: Show a => a -> IO ()
 ~~~
 
-Or more interestingly, we remark each expression in the `do` block has a type of `IO a`.
+Or more interestingly, we note that each expression in the `do` block has a type of `IO a`.
 
 <pre>
 main = do
@@ -2179,7 +2180,7 @@ main = do
   print Something       :: <span class="high">IO ()</span>
 </pre>
 
-We should also remark the effect of the `<-` symbol.
+We should also pay attention to the effect of the `<-` symbol.
 
 ~~~
 do
@@ -2188,8 +2189,8 @@ do
 
 If `something :: IO a` then `x :: a`.
 
-Another important remark to use `IO`.
-All line in a do block must have one of the two forms:
+Another important note about using `IO`.
+All lines in a do block must be of one of the two forms:
 
 ~~~
 action1             :: IO a
@@ -2204,14 +2205,14 @@ value <- action2    -- where
                     -- value   :: b
 ~~~
 
-These two kind of line will correspond to two different way of sequencing actions.
-The meaning of this sentence should be clearer at the end of the next section.
+These two kinds of line will correspond to two different ways of sequencing actions.
+The meaning of this sentence should be clearer by the end of the next section.
 
 <a href="code/03_Hell/01_IO/01_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>01_progressive_io_example.lhs</strong> </a>
 
 <hr/><a href="code/03_Hell/01_IO/02_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>02_progressive_io_example.lhs</strong></a>
 
-Now let's see how this behave.
+Now let's see how this program behaves.
 For example, what occur if the user enter something strange?
 Let's try:
 
@@ -2225,7 +2226,7 @@ Let's try:
 Argh! An evil error message and a crash! 
 The first evolution will be to answer with a more friendly message.
 
-For this, we must detect, something went wrong.
+In order to do this, we must detect that something went wrong.
 Here is one way to do this.
 Use the type `Maybe`.
 It is a very common type in Haskell.
@@ -2235,7 +2236,7 @@ It is a very common type in Haskell.
 import Data.Maybe
 </code>
 </div>
-What is this thing? Maybe is a type which takes one parameter.
+What is this thing? `Maybe` is a type which takes one parameter.
 Its definition is:
 
 <code class="haskell">
@@ -2285,32 +2286,33 @@ main = do
           Nothing -> error "Bad format. Good Bye."
 </code>
 </div>
-In case of error, we prompt a nice error message.
+In case of error, we display a nice error message.
 
-Remark the type of each expression in the main's do block remains of the form `IO a`.
+Note that the type of each expression in the main's do block remains of the form `IO a`.
 The only strange construction is `error`. 
 I'll say `error msg` will simply take the needed type (here `IO ()`).
 
-One very important thing to note is the type of all the defined function.
+One very important thing to note is the type of all the functions defined so far.
 There is only one function which contains `IO` in its type: `main`. 
-That means main is impure. 
-But main use `getListFromString` which is pure.
-It is then clear just by looking at declared types where are pure and impure functions.
+This means main is impure.
+But main uses `getListFromString` which is pure.
+It is then clear just by looking at declared types which functions are pure and
+which are impure.
 
-Why purity matters? 
-I certainly forget many advantages, but the three main reason are:
+Why does purity matter?
+I certainly forget many advantages, but the three main reasons are:
 
 - It is far easier to think about pure code than impure one.
-- Purity protect you from all hard to reproduce bugs due to border effects.
+- Purity protects you from all the hard to reproduce bugs due to side effects.
 - You can evaluate pure functions in any order or in parallel without risk.
 
-This is why, you should generally put as most code as possible in pure functions.
+This is why you should generally put as most code as possible inside pure functions.
 
 <a href="code/03_Hell/01_IO/02_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>02_progressive_io_example.lhs</strong> </a>
 
 <hr/><a href="code/03_Hell/01_IO/03_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>03_progressive_io_example.lhs</strong></a>
 
-Our next evolution will be to ask the user again and again until it enters a valid answer.
+Our next evolution will be to prompt the user again and again until she enters a valid answer.
 
 We keep the first part:
 
@@ -2326,7 +2328,7 @@ getListFromString :: String -> Maybe [Integer]
 getListFromString str = maybeRead $ "[" ++ str ++ "]"
 </code>
 </div>
-Now, we create a function which will ask the user for an integer list
+Now, we create a function which will ask the user for an list of integers
 until the input is right.
 
 <div class="codehighlight">
@@ -2342,14 +2344,14 @@ askUser = do
 </code>
 </div>
 This function is of type `IO [Integer]`. 
-Such a type means, that we retrieved a value of type `[Integer]` through some IO actions.
+Such a type means that we retrieved a value of type `[Integer]` through some IO actions.
 Some people might explain while waving their hands: 
 
  > «This is an `[Integer]` inside an `IO`»
 
 If you want to understand the details behind all of this, you'll have to read the next section.
 But sincerely, if you just want to _use_ IO.
-Just exercise a little and remember to think about the type.
+Just practice a little and remember to think about the type.
 
 Finally our main function is quite simpler:
 
@@ -2362,21 +2364,21 @@ main = do
 </code>
 </div>
 We have finished with our introduction to `IO`.
-This was quite a fast.  Here are the main things to remind:
+This was quite fast. Here are the main things to remember:
 
 - in the `do` bloc, each expression must have the type `IO a`.
-  You are then limited in the number of expression you could use.
+  You are then limited in the number of expressions available.
   For example, `getLine`, `print`, `putStrLn`, etc...
-- Try to externalize the pure function as much as possible.  
-- the `IO a` type means: an IO _action_ which return an element of type `a`.
-  `IO` represent action; under the hood, `IO a` is the type of a function.
+- Try to externalize the pure functions as much as possible.
+- the `IO a` type means: an IO _action_ which returns an element of type `a`.
+  `IO` represents actions; under the hood, `IO a` is the type of a function.
   Read the next section if you are curious.
 
-If you exercise a bit, you should be able to _use_ `IO`.
+If you practice a bit, you should be able to _use_ `IO`.
 
  > _Exercises_:
  > 
- > - Make a program that sum all its argument. Hint: use the function `getArgs`.
+ > - Make a program that sums all of its arguments. Hint: use the function `getArgs`.
 
 <a href="code/03_Hell/01_IO/03_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>03_progressive_io_example.lhs</strong> </a>
 
@@ -2386,15 +2388,15 @@ If you exercise a bit, you should be able to _use_ `IO`.
 
  > Here is a <%=tldr%> for this section.
  > 
- > To separate pure from impure part, 
- > the main is defined as a function
- > which modify the state of the world
+ > To separate pure and impure parts,
+ > `main` is defined as a function
+ > which modifies the state of the world
  > 
  > ~~~
  > main :: World -> World
  > ~~~
  > 
- > A function is granted to have side effect only if it gets this value.
+ > A function is guaranteed to have side effects only if it has this type.
  > But look at a typical main function:
  >  
  > ~~~
@@ -2406,17 +2408,17 @@ If you exercise a bit, you should be able to _use_ `IO`.
  > ~~~
  > 
  > We have a lot of temporary elements (here `w1`, `w2` and `w3`) 
- > which must be passed to the next action.
+ > which must be passed on to the next action.
  >
  > We create a function `bind` or `(>>=)`. 
- > With `bind` we need no more temporary name.
+ > With `bind` we don't need temporary names anymore.
  > 
  > ~~~
  > main =
  >   action1 >>= action2 >>= action3 >>= action4
  > ~~~
  >
- > Bonus: Haskell has a syntactical sugar for us:
+ > Bonus: Haskell has syntactical sugar for us:
  >
  > ~~~
  > main = do
@@ -2426,11 +2428,11 @@ If you exercise a bit, you should be able to _use_ `IO`.
  >   action4 v3
  > ~~~
 
-Why did we used some strange syntax, and what exactly is this `IO` type.
+Why did we use this strange syntax, and what exactly is this `IO` type?
 It looks a bit like magic.
 
-For now let's just forget about all the pure part of our program, and focus
-on the impure part:
+For now let's just forget all about the pure parts of our program, and focus
+on the impure parts:
 
 <code class="haskell">
 askUser :: IO [Integer]
@@ -2449,33 +2451,33 @@ main = do
 </code>
 
 First remark; it looks like an imperative structure.
-Haskell is powerful enough to make some pure code to look imperative.
+Haskell is powerful enough to make impure code look imperative.
 For example, if you wish you could create a `while` in Haskell.
 In fact, for dealing with `IO`, imperative style is generally more appropriate.
 
-But, you should had remarked the notation is a bit unusual.
+But you should had noticed the notation is a bit unusual.
 Here is why, in detail.
 
 In an impure language, the state of the world can be seen as a huge hidden global variable. 
-This hidden variable is accessible by all function of your language.
+This hidden variable is accessible by all functions of your language.
 For example, you can read and write a file in any function.
-The fact a file exists or not, can be seen as different state of the world.
+The fact that a file exists or not can be seen as different states of the world.
 
 For Haskell this state is not hidden.
-It is explicitly said `main` is a function that _potentially_ change the state of the world.
-It's type is then something like:
+It is explicitly said `main` is a function that _potentially_ changes the state of the world.
+Its type is then something like:
 
 <code class="haskell">
 main :: World -> World
 </code>
 
-Not all function could have access to this variable.
-Those who have access to this variable can potentially be impure.
-Functions whose the world variable isn't provided to should be pure[^032001].
+Not all functions may have access to this variable.
+Those which have access to this variable are impure.
+Functions to which the world variable isn't provided are pure[^032001].
 
-[^032001]: There are some _unsafe_ exception to this rule. But you shouldn't see such usage on a real application except might be for some debugging purpose.
+[^032001]: There are some _unsafe_ exceptions to this rule. But you shouldn't see such use on a real application except maybe for debugging purpose.
 
-Haskell consider the state of the world is an input variable for `main`.
+Haskell considers the state of the world as an input variable to `main`.
 But the real type of main is closer to this one[^032002]:
 
 [^032002]: For the curious the real type is `data IO a = IO {unIO :: State# RealWorld -> (# State# RealWorld, a #)}`. All the `#` as to do with optimisation and I swapped the fields in my example. But mostly, the idea is exactly the same.
@@ -2496,17 +2498,17 @@ main w0 =
     x 
 </code>
 
-First, we remark, that all function which have side effect must have the type:
+First, we note that all functions which have side effects must have the type:
 
 <code class="haskell">
 World -> (a,World)
 </code>
 
-Where `a` is the type of result. 
+Where `a` is the type of the result.
 For example, a `getChar` function should have the type `World -> (Char,World)`.
 
-Another thing to remark is the trick to fix the order of evaluation.
-In Haskell to evaluate `f a b`, you generally have many choices: 
+Another thing to note is the trick to fix the order of evaluation.
+In Haskell, in order to evaluate `f a b`, you have many choices:
 
 - first eval `a` then `b` then `f a b`
 - first eval `b` then `a` then `f a b`.
@@ -2527,7 +2529,7 @@ Under the hood, `print` will evaluate as:
 - evaluate as `((),new world id)`.
 
 Now, if you look at the style of the main function, it is clearly awkward.
-Let's try to make the same to the askUser function:
+Let's try to do the same to the askUser function:
 
 <code class="haskell">
 askUser :: World -> ([Integer],World)
@@ -2562,9 +2564,9 @@ askUser w0 =
 This is similar, but awkward.
 Look at all these temporary `w?` names.
 
-The lesson, is, naive IO implementation in Pure functional language is awkward!
+The lesson, is, naive IO implementation in Pure functional languages is awkward!
 
-Fortunately, some have found a better way to handle this problem.
+Fortunately, there is a better way to handle this problem.
 We see a pattern.
 Each line is of the form:
 
@@ -2580,8 +2582,7 @@ Each function `f` must have a type similar to:
 f :: World -> (a,World)
 </code>
 
-Not only this, but we can also remark we use them always 
-with the following general pattern:
+Not only this, but we can also note that we always follow the same usage pattern:
 
 <code class="haskell">
 let (y,w1) = action1 w0 in
@@ -2590,7 +2591,7 @@ let (t,w3) = action3 w2 in
 ...
 </code>
 
-Each action can take 0 to some parameters.
+Each action can take from 0 to n parameters.
 And in particular, each action can take a parameter from the result of a line above.
 
 For example, we could also have:
@@ -2604,7 +2605,7 @@ let (_,w3) = action3 x z w2 in
 
 And of course `actionN w :: (World) -> (a,World)`.
 
- > IMPORTANT, there are only two important pattern for us:
+ > IMPORTANT, there are only two important patterns to consider:
  > 
  > ~~~
  > let (x,w1) = action1 w0 in
@@ -2620,7 +2621,7 @@ And of course `actionN w :: (World) -> (a,World)`.
 
 <%= leftblogimage("jocker_pencil_trick.jpg","Jocker pencil trick") %>
 
-Now, we will make a magic trick.
+Now, we will do a magic trick.
 We will make the temporary world symbol "disappear".
 We will `bind` the two lines. 
 Let's define the `bind` function.
@@ -2646,18 +2647,18 @@ getLine :: IO String
 print :: Show a => a -> IO ()
 </code>
 
-`getLine` is an IO action which take a world as parameter and return a couple `(String,World)`.
-Which can be said as: `getLine` is of type `IO String`.
+`getLine` is an IO action which takes a world as parameter and returns a couple `(String,World)`.
+Which can be summarized as: `getLine` is of type `IO String`.
 Which we also see as, an IO action which will return a String "embeded inside an IO".
 
-The function `print` is also interresting.
-It takes on argument which can be shown.
+The function `print` is also interesting.
+It takes one argument which can be shown.
 In fact it takes two arguments.
 The first is the value to print and the other is the state of world.
-It then return a couple of type `((),World)`. 
-This means it changes the world state, but don't give anymore data.
+It then returns a couple of type `((),World)`.
+This means it changes the state of the world, but doesn't yield anymore data.
 
-This type help us simplify the type of `bind`:
+This type helps us simplify the type of `bind`:
 
 <code class="haskell">
 bind :: IO a 
@@ -2683,7 +2684,7 @@ action2  :: a -> IO b
 (y,w2)   :: IO b
 </code>
 
-Doesn't seem familiar?
+Doesn't it seem familiar?
 
 <code class="haskell">
 (bind action1 action2) w0 =
@@ -2693,7 +2694,7 @@ Doesn't seem familiar?
 </code>
 
 The idea is to hide the World argument with this function. Let's go:
-As example imagine if we wanted to simulate:
+As an example imagine if we wanted to simulate:
 
 <code class="haskell">
 let (line1,w1) = getLine w0 in
@@ -2708,7 +2709,7 @@ Now, using the bind function:
 </code>
 
 As print is of type (World -> ((),World)), we know res = () (null type).
-If you didn't saw what was magic here, let's try with three lines this time.
+If you didn't see what was magic here, let's try with three lines this time.
 
 <code class="haskell">
 let (line1,w1) = getLine w0 in
@@ -2725,8 +2726,8 @@ Which is equivalent to:
                print (line1 ++ line2)))
 </code>
 
-Didn't you remark something?
-Yes, there isn't anymore temporary World variable used anywhere!
+Didn't you notice something?
+Yes, no temporary World variables are used anywhere!
 This is _MA_. _GIC_.
 
 We can use a better notation.
@@ -2741,7 +2742,7 @@ Let's use `(>>=)` instead of `bind`.
 </code>
 
 Ho Ho Ho! Happy Christmas Everyone!
-Haskell has made a syntactical sugar for us:
+Haskell has made syntactical sugar for us:
 
 <code class="haskell">
 do
@@ -2762,8 +2763,8 @@ action3 >>= \z ->
 
 Note you can use `x` in `action2` and `x` and `y` in `action3`.
 
-But what for line not using the `<-`?
-Easy another function `blindBind`:
+But what about the lines not using the `<-`?
+Easy, another function `blindBind`:
 
 <code class="haskell">
 blindBind :: IO a -> IO b -> IO b
@@ -2771,7 +2772,7 @@ blindBind action1 action2 w0 =
     bind action (\_ -> action2) w0
 </code>
 
-I didn't simplified this definition for clarity purpose.
+I didn't simplify this definition for clarity purpose.
 Of course we can use a better notation, we'll use the `(>>)` operator.
 
 And
@@ -2798,7 +2799,7 @@ putInIO :: a -> IO a
 putInIO x = IO (\w -> (x,w))
 </code>
 
-This is the general way to put pure value inside the "IO context".
+This is the general way to put pure values inside the "IO context".
 The general name for `putInIO` is `return`.
 This is quite a bad name when you learn Haskell. `return` is very different from what you might be used to. 
 
@@ -2849,7 +2850,7 @@ main = askUser >>=
   \list -> print $ sum list
 </code>
 </div>
-You can compile this code to verify it continues to work.
+You can compile this code to verify it keeps working.
 
 Imagine what it would look like without the `(>>)` and `(>>=)`.
 
@@ -2859,11 +2860,11 @@ Imagine what it would look like without the `(>>)` and `(>>=)`.
 
 <h3 id="monads">Monads</h3>
 
-<%= blogimage("dali_reve.jpg","Dali, reve. It represent a weapon out of the mouth of a tiger, itself out of the mouth of another tiger, itself out of the mouth of a fish itsleft out of a grenade. I could have choosen a picture of the Human centipede as it is a very good representation of what a monad really is. But just to thing about it, I find this disgusting and that wasn't the purpose of this document.") %>
+<%= blogimage("dali_reve.jpg","Dali, reve. It represents a weapon out of the mouth of a tiger, itself out of the mouth of another tiger, itself out of the mouth of a fish itself out of a grenade. I could have choosen a picture of the Human centipede as it is a very good representation of what a monad really is. But just to thing about it, I find this disgusting and that wasn't the purpose of this document.") %>
 
 Now the secret can be revealed: `IO` is a _monad_.
 Being a monad means you have access to some syntactical sugar with the `do` notation.
-But mainly, you have access to some coding pattern which will ease the flow of your code.
+But mainly, you have access to a coding pattern which will ease the flow of your code.
 
  > **Important remarks**:
  > 
@@ -2894,13 +2895,13 @@ class Monad m  where
  > 
  > - the keyword `class` is not your friend. 
  >   A Haskell class is _not_ a class like in object model.
- >   A Haskell class has a lot similarities with Java interfaces.
+ >   A Haskell class has a lot of similarities with Java interfaces.
  >   A better word should have been `typeclass`.
  >   That means a set of types.
- >   For a type to belong to a class, all function of the class must be provided for this type.
- > - In this particular example of type class, the type `m` must be a type that take an argument. 
+ >   For a type to belong to a class, all functions of the class must be provided for this type.
+ > - In this particular example of type class, the type `m` must be a type that takes an argument. 
  >   for example `IO a`, but also `Maybe a`, `[a]`, etc...
- > - To be a useful monad, your function must obey some rule.
+ > - To be a useful monad, your function must obey some rules.
  >   If your construction does not obey these rules strange things might happens:
  >   
  >   ~~~
@@ -2911,13 +2912,13 @@ class Monad m  where
 
 <h4 id="maybe-monad">Maybe is a monad</h4>
 
-There exists a lot of different type that are instance of `Monad`.
+There are a lot of different types that are instance of `Monad`.
 One of the easiest to describe is `Maybe`.
-If you have a sequence of `Maybe` values, you could use monad to manipulate them.
+If you have a sequence of `Maybe` values, you can use monads to manipulate them.
 It is particularly useful to remove very deep `if..then..else..` constructions.
 
 Imagine a complex bank operation. You are eligible to gain about 700€ only
-if you can afford to follow a list of operation without being negative.
+if you can afford to follow a list of operations without being negative.
 
 <div class="codehighlight">
 <code class="haskell">
@@ -2957,7 +2958,7 @@ main = do
 
 <hr/><a href="code/03_Hell/02_Monads/11_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>11_Monads.lhs</strong></a>
 
-Now, let's make it better using Maybe and the fact it is a Monad
+Now, let's make it better using Maybe and the fact that it is a Monad
 
 <div class="codehighlight">
 <code class="haskell">
@@ -3013,7 +3014,7 @@ main = do
   print $ eligible 299 -- Nothing
 </code>
 </div>
-We have proved Monad are nice to make our code more elegant.
+We have proven that Monads are a good way to make our code more elegant.
 Note this idea of code organization, in particular for `Maybe` can be used
 in most imperative language.
 In fact, this is the kind of construction we make naturally.
@@ -3022,7 +3023,7 @@ In fact, this is the kind of construction we make naturally.
  > 
  > The first element in the sequence being evaluated to `Nothing` will stop
  > the complete evaluation. 
- > That means, you don't execute all lines. 
+ > This means you don't execute all lines.
  > You have this for free, thanks to laziness.
 
 The `Maybe` monad proved to be useful while being a very simple example.
@@ -3037,7 +3038,7 @@ But now a cooler example, lists.
 
 <%= blogimage("golconde.jpg","Golconde de Magritte") %>
 
-The list monad help us to simulate non deterministic computation.
+The list monad helps us to simulate non deterministic computations.
 Here we go:
 
 <div class="codehighlight">
@@ -3074,8 +3075,8 @@ For the list monad, there is also a syntactical sugar:
                       4*x + 2*y < z ]
 </code>
 </div>
-I won't list all the monads, but there is a lot of monads.
-The usage of monad simplify the manipulation of some notion in pure languages.
+I won't list all the monads, but there are many monads.
+Using monads simplifies the manipulation of several notions in pure languages.
 In particular, monad are very useful for: 
 
 - IO,
@@ -3088,7 +3089,9 @@ In particular, monad are very useful for:
 If you have followed me until here, then you've done it! 
 You know monads[^03021301]!
 
-[^03021301]: Well, you'll certainly need to exercise a bit to be used to them and to understand when you can use them and create your own. But you already made a big step further.
+[^03021301]: Well, you'll certainly need to practice a bit to get used to them
+and to understand when you can use them and create your own. But you already
+made a big step in this direction.
 
 <a href="code/03_Hell/02_Monads/13_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>13_Monads.lhs</strong> </a>
 
@@ -3101,14 +3104,15 @@ It is just here to discuss some details further.
 
 <h3 id="more-on-infinite-tree">More on Infinite Tree</h3>
 
-In the section [Infinite Structures](#infinite-structures) we saw some simple construction.
-Unfortunately we removed two properties of our tree:
+In the section [Infinite Structures](#infinite-structures) we saw some simple
+constructions.
+Unfortunately we removed two properties from our tree:
 
 1. no duplicate node value
 2. well ordered tree
 
 In this section we will try to keep the first property.
-Concerning the second one, we must relax this one but we'll discuss on how to
+Concerning the second one, we must relax it but we'll discuss how to
 keep it as much as possible.
 
 <div style="display:none">
@@ -3171,7 +3175,7 @@ Our first step is to create some pseudo-random number list:
 shuffle = map (\x -> (x*3123) `mod` 4331) [1..]
 </code>
 </div>
-Just as reminder here are the definition of `treeFromList`
+Just as a reminder, here is the definition of `treeFromList`
 
 <div class="codehighlight">
 <code class="haskell">
@@ -3238,16 +3242,16 @@ treeTakeDepth 4 (treeFromList [1..])
 </code>
 
 will loop forever. 
-Simply because, it will try to access the head of `filter (<1) [2..]`.
-But filter is not smart enought to understand that the result is the empty list.
+Simply because it will try to access the head of `filter (<1) [2..]`.
+But `filter` is not smart enought to understand that the result is the empty list.
 
-Nonetheless, it is still a very cool example of what non strict program has to offer.
+Nonetheless, it is still a very cool example of what non strict programs have to offer.
 
 Left as an exercise to the reader:
 
-- Could you prove that there exists some number `n` such that `treeTakeDepth n (treeFromList shuffle)` will enter in an infinite loop.
+- Prove the existence of a number `n` so that `treeTakeDepth n (treeFromList shuffle)` will enter an infinite loop.
 - Find an upper bound for `n`.
-- Prove there is no `shuffle` list such that, for any depth, the program ends.
+- Prove there is no `shuffle` list so that, for any depth, the program ends.
 
 <a href="code/04_Appendice/01_More_on_infinite_trees/10_Infinite_Trees.lhs" class="cut">04_Appendice/01_More_on_infinite_trees/<strong>10_Infinite_Trees.lhs</strong> </a>
 
@@ -3428,3 +3432,12 @@ treeFromList' (x:xs) n = Node x left right
 
 <a href="code/04_Appendice/01_More_on_infinite_trees/11_Infinite_Trees.lhs" class="cut">04_Appendice/01_More_on_infinite_trees/<strong>11_Infinite_Trees.lhs</strong> </a>
 
+## Thanks
+
+Thanks to [`/r/haskell`](http://reddit.com/r/haskell) and 
+[`/r/programming`](http://reddit.com/r/programming).
+Your comment were most than welcome.
+
+Particularly, I want to thank [Emm](https://github.com/Emm) a thousand times 
+for the time he spent on correcting my English. 
+Thank you man.
