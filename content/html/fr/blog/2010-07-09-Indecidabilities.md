@@ -44,7 +44,7 @@ Voilà comment tout aurait pu commencer.
 
 enddiv
 
-<%= leftblogimage("genesis.png") %>
+leftblogimage("genesis.png")
 
 Au début, il n'y avait rien. 
 Puis un article de blog commença à prendre forme.
@@ -96,7 +96,7 @@ Voici ce que pense l'un de ces individus.
 > Mais comment être certain que tous les triangles de mon Univers possèdent cette propriété ?
 
 
-<%= leftblogimage('triangle_3_angles.png') %>
+leftblogimage("triangle_3_angles.png","three triangles")
 
 Certain d'entre eux commencent à formaliser un petit peu le problème
 et ils finissent faire une preuve mathématique.
@@ -127,7 +127,7 @@ Si certains se sentent accablés, il leur reste un espoir :
 ## Indécidabilité avec erreurs croissantes
 
 
-<%= leftblogimage('3_corps.png') %>
+leftblogimage("3_corps.png","Three bodies")
 
 Malheureusement pour eux, il y a le  _problème des 3 corps_. 
 Prenons les formules de la gravitation Universelle et appliquons la à deux corps célestes. 
@@ -151,7 +151,7 @@ Une fois encore, ça ne va pas très bien se passer.
 
 Considérons la question suivante :
 
-<%= leftblogimage('mandelbrot.png') %>
+leftblogimage("mandelbrot.png","Mandelbrot set")
 
 Soit des coordonnées GPS précises à 1m près.
 Les coordonnées sont proches des côtes de la Bretagne.
@@ -182,7 +182,7 @@ Un petit malin essaye de trouver la vérité en s'extrayant de mon Monde et en f
 
 ## Indécidabilité logique
 
-<%= leftblogimage("stackOverflow.png") %>
+leftblogimage("stackOverflow.png","recursive stack overflow")
 
 Jusqu'ici, tous les problèmes d'indécidabilités étaient dûs aux _erreurs_.
 Maintenant peut-être que privé d'erreur de mesure, on pourrait enfin résoudre tous les problèmes.  

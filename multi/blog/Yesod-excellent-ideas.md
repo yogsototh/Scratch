@@ -14,13 +14,13 @@ tags:
   - haskell
   - ideas
 -----
-<%= blogimage("main.png","Title image") %>
+blogimage("main.png","Title image")
 
 begindiv(intro)
 
-en: <%= tldr %>
+en: %tldr
 
-fr: <%= tlal %>
+fr: %tlal
 
 en: [Yesod](http://www.yesodweb.com) is a web framework which recently reached the maturity for which you should consider to use it.
 en: Before telling you why you should learn Haskell and use yesod, I will talk about ideas yesod introduced and I didn't saw in other frameworks before.

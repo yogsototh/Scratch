@@ -13,7 +13,7 @@ tags:
   - mac
 -----
 
-<%= blogimage("main.png","Title image","clean") %>
+blogimage("main.png","Title image","clean")
 
 begindiv(intro)
 

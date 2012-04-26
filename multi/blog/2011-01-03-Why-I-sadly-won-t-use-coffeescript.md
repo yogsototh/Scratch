@@ -10,7 +10,7 @@ author_uri: yannesposito.com
 tags:
   - Coffeescript
 -----
-<%= blogimage("main.png","Title image") %>
+blogimage("main.png","Title image")
 
 begindiv(encadre)
 
@@ -26,9 +26,9 @@ enddiv
 
 begindiv(intro)
 
-en: <%= tldr %> I would have loved to program client side using a Ruby-like syntax. But in the end, CoffeScript raised more disavantages than advantages.
+en: %tldr I would have loved to program client side using a Ruby-like syntax. But in the end, CoffeScript raised more disavantages than advantages.
 
-fr: <%= tlal %> Qu'est-ce qui n'allait pas avec Coffeescript? La meta-programmation, il faut le "vendre" aux autres, une nouvelle étape de compilation intermédiaire sans fournir les avantages de Cappuccino, la sensation que c'est un peu instable.
+fr: %tlal Qu'est-ce qui n'allait pas avec Coffeescript? La meta-programmation, il faut le "vendre" aux autres, une nouvelle étape de compilation intermédiaire sans fournir les avantages de Cappuccino, la sensation que c'est un peu instable.
 
 enddiv
 

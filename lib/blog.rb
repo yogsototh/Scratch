@@ -3,7 +3,9 @@
 def blogimage(filename,title="no name", divclass=nil)
     imgpath=blogimagedir + filename
     if not divclass.nil?
-        cls=%{ class="#{divclass}"}
+        if divclass !~ /\s*/
+            cls=%{ class="#{divclass}"}
+        end
     end
     return %{<img alt="#{title}" src="#{imgpath}"#{cls}/>}
 end

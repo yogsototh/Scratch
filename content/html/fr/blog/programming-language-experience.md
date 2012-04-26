@@ -16,15 +16,16 @@ tags:
   - Logo
   - Basic
 -----
-<%= blogimage("dragon.jpg","Title image") %>
+blogimage("dragon.jpg","Title image")
 
 begindiv(intro)
-<%=tlal%> Mon avis court et hautement subjectif concernant les différents languages de programmations que j'ai utilisé.
+%tlal Mon avis court et hautement subjectif concernant les différents languages de programmations que j'ai utilisé.
 enddiv
 
 ### `BASIC`
 
-<%= leftblogimage("basic.gif","Title image") %>
+leftblogimage("basic.gif","Title image")
+
 
 Ah ! Le language de mes premiers programmes ! 
 Je devais avoir 10-11 ans. 
@@ -57,7 +58,8 @@ Quel plaisir c'était !
 
 ### Logo
 
-<%=leftblogimage("dragon.jpg","Dragon fractal")%>
+leftblogimage("dragon.jpg","Dragon fractal")
+
 Toujours lors que j'avais 10 ans, on pouvait faire de petits programmes sympathiques.
 
 Je me souviens que lors du chargement de l'application logo on avait droit à de la musique de Bach.
@@ -112,7 +114,7 @@ Mais je préfère largement le C.
 
 ### C
 
-<%=leftblogimage("C.jpg","Pointer representation from Dancing links")%>
+leftblogimage("C.jpg","Pointer representation from Dancing links")
 
 Le langage des pointeurs
 
@@ -160,7 +162,7 @@ Donc les langages orientés objets se sont mis à fleurir.
 
 ### C++
 
-<%=leftblogimage("cplusplus.jpg","Messy router")%>
+leftblogimage("cplusplus.jpg","Messy router")
 
 Le malpropre
 
@@ -180,7 +182,7 @@ En conclusion je dirai que C++ est un très bon langage si vous vous fixez à l'
 
 ### Eiffel
 
-<%=leftblogimage("eiffel.jpg","Eiffel tower construction")%>
+leftblogimage("eiffel.jpg","Eiffel tower construction")
 
 Bon, ok c'est un très beau langage objet. 
 Bien plus propre que C++. 
@@ -192,7 +194,7 @@ Lorsqu'on viens du C, il est désagréable de changer ses habitudes.
 
 ### Java
 
-<%=leftblogimage("grail.jpg","Holy Grail from the Monty Python")%>
+leftblogimage("grail.jpg","Holy Grail from the Monty Python")
 
 On continue vers les langages objets. Alors, à une époque où j'en ai entendu parler, c'était _le Graal_ ! 
 
@@ -239,7 +241,7 @@ Veuillez noter que je n'ai pas dit que les programmeurs Java sont de mauvais pro
 
 ### Objective-C
 
-<%=leftblogimage("xcode_logo.png","Xcode Logo")%>
+leftblogimage("xcode_logo.png","Xcode Logo")
 
 Le langage que je n'ai appris et utilisé que pour faire des applications sur les plateformes d'Apple(c). 
 J'ai appris Objective-C après Python. 
@@ -258,7 +260,7 @@ Je ne peux que vous encourager à vous accrocher à ce langage et de faire un vr
 
 ### PHP
 
-<%= leftblogimage("php.jpg","A Jacky Touch Car") %>
+leftblogimage("php.jpg","A Jacky Touch Car")
 
 Le petit langage de script que nous utilisions tous pour faire des sites web à l'époque des gifs animées !
 
@@ -274,7 +276,7 @@ PHP, reste pour moi le langage de l'injection SQL. J'en fait encore un peu de te
 
 ### Python
 
-<%= leftblogimage("python.jpg","Python. Do you speak it?") %>
+leftblogimage("python.jpg","Python. Do you speak it?")
 
 Alors là, attention ! Révélation ! 
 

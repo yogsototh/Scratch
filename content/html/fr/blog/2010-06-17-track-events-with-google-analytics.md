@@ -81,6 +81,6 @@ Remplacez le : `UA-XXXXXXXX-1` par votre code google analytics. Maintenant l'ins
 
 Pour l'utiliser il suffit de se rendre dans google analytics rubrique `Content` puis `Event Tracking` comme sur la capture d'écran suivante :
 
-<%= blogimage('GA_events.png', 'Where to find events tracking in google analytics interface') %>
+blogimage("GA_events.png", "Where to find events tracking in google analytics interface")
 
 Joyeuse inspection du comportement de vos utilisateurs.

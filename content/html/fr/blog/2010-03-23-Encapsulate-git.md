@@ -34,11 +34,11 @@ Disons que j'ai les branches :
 
 Voilà comment je souhaiterai que ça fonctionne
 
-<%= blogimage("dynamic_branching.png","Dynamic branching") %>
+blogimage("dynamic_branching.png","Dynamic branching")
 
 Et plus précisément la hiérarchie des branches :
 
-<%= blogimage("branch_hierarchy.png","Branch hierarchy") %>
+blogimage("branch_hierarchy.png","Branch hierarchy")
 
 Une flèche de A vers B signifie que l'on peut merger A dans B. S'il n'y a pas de flèche de A vers B cela signifie qu'il est *interdit* de merger A dans B. Voici le code ruby correspondant :
 

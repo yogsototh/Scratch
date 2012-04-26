@@ -168,6 +168,25 @@ module Nanoc3::Filters
             end
         end
     end
+
+    class BlogImage < Nanoc3::Filter
+        identifiers :blogimage
+        def run(content, params={})
+            content.gsub(/(left)?blogimage\s*\(\s*"([^"]*)"\s*,\s*"([^"]*)"\s*(,\s*"([^"]*)"\s*)?\)/) do
+                position=$1
+                filename=$2
+                title=$3
+                cssclass=$5
+                # DEBUG # puts "MATCHED: #{$&}"
+                # DEBUG # puts "postiion: #{position}"
+                # DEBUG # puts "filename: #{filename}"
+                # DEBUG # puts "title: #{title}"
+                # DEBUG # puts "cssclass: #{cssclass}"
+                # DEBUG # puts "====================="
+                blogimage(filename,title,%{#{cssclass} #{position}})
+            end
+        end
+    end
 end
 
 def block(title, url, text, position="left")

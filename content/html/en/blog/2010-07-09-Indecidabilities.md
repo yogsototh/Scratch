@@ -44,7 +44,7 @@ Here begin the story.
 
 enddiv
 
-<%= leftblogimage("genesis.png") %>
+leftblogimage("genesis.png")
 
 In the beginning there was only void.
 Then a blog post beginning to be written.
@@ -96,7 +96,7 @@ Here is what one of them think:
 > It is certainly a rule of my Universe.
 > But how to be certain all triangle in my Universe share this property?
 
-<%= leftblogimage('triangle_3_angles.png') %>
+leftblogimage("triangle_3_angles.png","three triangles")
 
 
 Some began to formalize the problem.
@@ -128,7 +128,7 @@ _Hope_
 ## Growing errors Undecidability
 
 
-<%= leftblogimage('3_corps.png') %>
+leftblogimage("3_corps.png","Three bodies")
 
 
 Unfortunately, the three bodies problem will crush this _hope_.
@@ -150,7 +150,7 @@ Once again, this should not terminate has they hope.
 
 Consider the following question:
 
-<%= leftblogimage('mandelbrot.png') %>
+leftblogimage("mandelbrot.png","Mandelbrot set")
 
 
 Consider some GPS coordinates on a point around the cost of the "Bretagne" in France.
@@ -169,7 +169,7 @@ We can even imagine some mathematical structure where _all_ points are at the bo
 
 ## Logical Undecidability
 
-<%= leftblogimage("stackOverflow.png") %>
+leftblogimage("stackOverflow.png","recursive stack overflow")
 
 
 Until there all problem were undecidable because of measure _errors_.

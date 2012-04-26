@@ -15,7 +15,7 @@ tags:
   - programming
   - higher order functions
 -----
-<%= blogimage("main.jpg","Title image") %>
+blogimage("main.jpg","Title image")
 
 begindiv(intro)
 

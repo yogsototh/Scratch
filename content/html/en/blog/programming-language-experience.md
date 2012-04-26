@@ -16,15 +16,16 @@ tags:
   - Logo
   - Basic
 -----
-<%= blogimage("dragon.jpg","Title image") %>
+blogimage("dragon.jpg","Title image")
 
 begindiv(intro)
-<%=tldr%> My short and higly subjective feelings about programming languages I used.
+%tldr My short and higly subjective feelings about programming languages I used.
 enddiv
 
 ### `BASIC`
 
-<%= leftblogimage("basic.gif","Title image") %>
+leftblogimage("basic.gif","Title image")
+
 The language of my firsts programs!
 I was about 10, with an `MO5` and `Amstrad CPC 6128` and even with my `Atari STe`.
 This is the language of `GOTO`s.
@@ -56,7 +57,8 @@ What a pleasure!
 
 ### Logo
 
-<%=leftblogimage("dragon.jpg","Dragon fractal")%>
+leftblogimage("dragon.jpg","Dragon fractal")
+
 I was about 10 when I played with logo to draw on the computer.
 
 I remember the Bach's music while the program loaded.
@@ -109,7 +111,7 @@ In the end I prefer C.
 
 ### C
 
-<%=leftblogimage("C.jpg","Pointer representation from Dancing links")%>
+leftblogimage("C.jpg","Pointer representation from Dancing links")
 
 The pointer's language.
 
@@ -159,7 +161,7 @@ Then Object Oriented Languages appeared everywhere.
 
 ### C++
 
-<%=leftblogimage("cplusplus.jpg","Messy router")%>
+leftblogimage("cplusplus.jpg","Messy router")
 
 The ugly
 
@@ -180,7 +182,7 @@ To conclude, I'd say, C++ is very good if you work alone or with a fixed subset 
 
 ### Eiffel
 
-<%=leftblogimage("eiffel.jpg","Eiffel tower construction")%>
+leftblogimage("eiffel.jpg","Eiffel tower construction")
 
 Yes, it is a really nice language. 
 Full object in mind. Far cleaner than C++.
@@ -191,7 +193,7 @@ At that time I programmed a lot with C and like its syntax.
 
 ### Java
 
-<%=leftblogimage("grail.jpg","Holy Grail from the Monty Python")%>
+leftblogimage("grail.jpg","Holy Grail from the Monty Python")
 
 The first time I heard about Java it was _le Grail_!
 
@@ -236,7 +238,7 @@ Please note I didn't say Java programmer are bad programmer.
 
 ### Objective-C
 
-<%=leftblogimage("xcode_logo.png","Xcode Logo")%>
+leftblogimage("xcode_logo.png","Xcode Logo")
 
 The language I learned and used only to make application on Apple(c) platform.
 I learned Objective-C just after Python.
@@ -258,7 +260,7 @@ In the end you'll certainely find it better than expected.
 
 ### PHP
 
-<%= leftblogimage("php.jpg","A Jacky Touch Car") %>
+leftblogimage("php.jpg","A Jacky Touch Car")
 
 This small script language that we used all to make our website in the time of animated gifs.
 
@@ -274,7 +276,7 @@ I make a bit of PHP not so long ago, and it was a pain to protect my application
 
 ### Python
 
-<%= leftblogimage("python.jpg","Python. Do you speak it?") %>
+leftblogimage("python.jpg","Python. Do you speak it?")
 
 Revelation!
 

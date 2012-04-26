@@ -14,7 +14,7 @@ tags:
 
 -----
 
-<%= blogimage( 'intro.jpg' , 'Lost Highway' ) %>
+blogimage( 'intro.jpg' , 'Lost Highway' )
 
 <div class="small">
 ...this movie must be watched knowing you'll cannot resolve the solution. At his best you'll can suggest an interpretation close to the one of David Lynch.<br/>I believe I had found a coherent interpretation which allow to follow the movie without being totally lost. I believed it can give the keys necessary to make its own idea of the movie...
@@ -43,7 +43,7 @@ I believe I had found a coherent interpretation which allow to follow the movie 
 
 ## The Rorschach test
 
-<%= leftblogimage('rorschach.gif' , 'test de Rorschach') %>
+leftblogimage('rorschach.gif' , 'test de Rorschach')
 
 Like the protagonist, everybody see what he want to see in this movie. It is an invitation to think. Watch this movie is a little like watch a Rorschach's test. What do we see in it? Everybody put its own personnality in the interpretation of the movie.
 

@@ -10,7 +10,7 @@ tags:
   - password
   - security
 -----
-<%= blogimage("main.png","Title image") %>
+blogimage("main.png","Title image")
 
 <% password="P45sW0r|)" %>
 

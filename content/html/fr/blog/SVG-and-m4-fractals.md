@@ -21,7 +21,7 @@ macros:
  xslt: '<span class="sc">xslt</span>' 
  json: '<span class="sc">json</span>' 
 -----
-<%= blogimage("main.png","Yesod logo made in SVG and m4") %>
+blogimage("main.png","Yesod logo made in SVG and m4")
 
 begindiv(intro)
 
@@ -122,8 +122,8 @@ Et vous pouvez profitez ! Maintenant <sc>xslt</sc> devient plus lisible et plus 
 
 Tout d'abord, laissez moi vous montrer le résultat :
 
-<a href="<%= blogimagedir %>main.svg">
-<%= blogimage("main.png","Yesod logo made in SVG and m4") %>
+<a href="blogimagedirmain.svg">
+blogimage("main.png","Yesod logo made in SVG and m4")
 Cliquez sur l'image pour voir le %svg directement. Attention, si vous n'avez pas un ordinateur récent, ça risque de ramer.
 </a>
 

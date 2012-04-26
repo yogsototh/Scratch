@@ -16,12 +16,12 @@ tags:
   - programming
   - higher order functions
 -----
-<%= blogimage("main.jpg","Title image") %>
+blogimage("main.jpg","Title image")
 
 begindiv(intro)
 
-en: <%= tldr %> some simple implementation of higher order function for zsh.
-fr: <%= tlal %> des fonctions d'ordres supérieurs en zsh.
+en: %tldr some simple implementation of higher order function for zsh.
+fr: %tlal des fonctions d'ordres supérieurs en zsh.
 
 enddiv
 

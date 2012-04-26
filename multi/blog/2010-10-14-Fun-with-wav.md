@@ -16,9 +16,9 @@ tags:
 
 begindiv(intro)
 
-en: <%= tldr %> Played to process a `wav` file. `C` was easier and cleaner than Ruby.
+en: %tldr Played to process a `wav` file. `C` was easier and cleaner than Ruby.
 
-fr: <%= tlal %> Je me suis amusé à lire un fichier `wav`. Le `C` fut le langage le mieux adapté à ce traitement. Bien meilleur que Ruby par exemple.
+fr: %tlal Je me suis amusé à lire un fichier `wav`. Le `C` fut le langage le mieux adapté à ce traitement. Bien meilleur que Ruby par exemple.
 
 en: edit: I wanted this program to work only on one specific machine (a x86 on a 32 bit Ubuntu). Therefore I didn't had any portability consideration. This is only a _hack_.
 fr: edit: Je voulais que ce programme fonctionne sur une machine spécifique. En aucun cas je ne pensais publier ce code pour une utilisation autre que celle-ci.

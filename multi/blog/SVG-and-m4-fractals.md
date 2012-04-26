@@ -25,12 +25,12 @@ macros:
  xslt: '<span class="sc">xslt</span>' 
  json: '<span class="sc">json</span>' 
 -----
-<%= blogimage("main.png","Yesod logo made in SVG and m4") %>
+blogimage("main.png","Yesod logo made in SVG and m4")
 
 begindiv(intro)
 
-en: <%= tldr %> How to use m4 to increase the power of deficient languages. Two examples: improve %xslt syntax and make fractal with %svg.
-fr: <%= tlal %> Utiliser m4 pour accroître le pouvoir d'%xslt et d'%svg. Example cool, les fractales.
+en: %tldr How to use m4 to increase the power of deficient languages. Two examples: improve %xslt syntax and make fractal with %svg.
+fr: %tlal Utiliser m4 pour accroître le pouvoir d'%xslt et d'%svg. Example cool, les fractales.
 
 enddiv
 
@@ -161,8 +161,8 @@ fr: À ses débuts, beaucoup pensaient que ce serait le nouveau Flash. Apparemme
 en: Let me show you the result:
 fr: Tout d'abord, laissez moi vous montrer le résultat :
 
-<a href="<%= blogimagedir %>main.svg">
-<%= blogimage("main.png","Yesod logo made in SVG and m4") %>
+<a href="blogimagedirmain.svg">
+blogimage("main.png","Yesod logo made in SVG and m4")
 en: Click to view directly the %svg. It might slow down your computers if you have an old one.
 fr: Cliquez sur l'image pour voir le %svg directement. Attention, si vous n'avez pas un ordinateur récent, ça risque de ramer.
 </a>

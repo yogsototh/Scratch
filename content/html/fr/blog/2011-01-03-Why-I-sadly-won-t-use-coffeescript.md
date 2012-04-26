@@ -9,7 +9,7 @@ author_uri: yannesposito.com
 tags:
   - Coffeescript
 -----
-<%= blogimage("main.png","Title image") %>
+blogimage("main.png","Title image")
 
 begindiv(encadre)
 

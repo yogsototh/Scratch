@@ -14,7 +14,7 @@ tags:
 
 -----
 
-<%= blogimage( 'intro.jpg' , 'Lost Highway' ) %>
+blogimage( 'intro.jpg' , 'Lost Highway' )
 
 <div class="intro">
 Lost Highway ne laisse pas indiférent. Le revoir ne lasse pas même s'il parrait complètement obscur. 
@@ -46,7 +46,7 @@ Ces clés devraient vous aider à vous faire votre propre idée du film.
 
 ## Le test de Rorschach
 
-<%= leftblogimage('rorschach.gif' , 'test de Rorschach') %>
+leftblogimage('rorschach.gif' , 'test de Rorschach')
 À l'instar du protagoniste chacun voit dans ce film ce qu'il a envie d'y voir. Nous pouvons nous y perdre simplement parce que nous pouvons nous perdre dans notre propre esprit. C'est une invitation à la réflexion. Regarder ce film c'est un peu comme passer un test de Rorschach. Qu'y voit-on ? Chacun y met un peu de sa propre personnalité dans l'explication du film.
 
   - Si vous êtes un mystique, vous verrez dans l'homme mystérieux un démon

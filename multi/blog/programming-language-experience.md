@@ -17,16 +17,17 @@ tags:
   - Logo
   - Basic
 -----
-<%= blogimage("dragon.jpg","Title image") %>
+blogimage("dragon.jpg","Title image")
 
 begindiv(intro)
-en: <%=tldr%> My short and higly subjective feelings about programming languages I used.
-fr: <%=tlal%> Mon avis court et hautement subjectif concernant les différents languages de programmations que j'ai utilisé.
+en: %tldr My short and higly subjective feelings about programming languages I used.
+fr: %tlal Mon avis court et hautement subjectif concernant les différents languages de programmations que j'ai utilisé.
 enddiv
 
 ### `BASIC`
 
-<%= leftblogimage("basic.gif","Title image") %>
+leftblogimage("basic.gif","Title image")
+
 en: The language of my firsts programs!
 en: I was about 10, with an `MO5` and `Amstrad CPC 6128` and even with my `Atari STe`.
 en: This is the language of `GOTO`s.
@@ -71,7 +72,8 @@ fr: Quel plaisir c'était !
 
 ### Logo
 
-<%=leftblogimage("dragon.jpg","Dragon fractal")%>
+leftblogimage("dragon.jpg","Dragon fractal")
+
 en: I was about 10 when I played with logo to draw on the computer.
 fr: Toujours lors que j'avais 10 ans, on pouvait faire de petits programmes sympathiques.
 
@@ -139,7 +141,7 @@ fr: Mais je préfère largement le C.
 
 ### C
 
-<%=leftblogimage("C.jpg","Pointer representation from Dancing links")%>
+leftblogimage("C.jpg","Pointer representation from Dancing links")
 
 en: The pointer's language.
 fr: Le langage des pointeurs
@@ -216,7 +218,7 @@ fr: Donc les langages orientés objets se sont mis à fleurir.
 
 ### C++
 
-<%=leftblogimage("cplusplus.jpg","Messy router")%>
+leftblogimage("cplusplus.jpg","Messy router")
 
 fr: Le malpropre
 en: The ugly
@@ -250,7 +252,7 @@ en: To conclude, I'd say, C++ is very good if you work alone or with a fixed sub
 
 ### Eiffel
 
-<%=leftblogimage("eiffel.jpg","Eiffel tower construction")%>
+leftblogimage("eiffel.jpg","Eiffel tower construction")
 
 fr: Bon, ok c'est un très beau langage objet. 
 fr: Bien plus propre que C++. 
@@ -268,7 +270,7 @@ en: At that time I programmed a lot with C and like its syntax.
 
 ### Java
 
-<%=leftblogimage("grail.jpg","Holy Grail from the Monty Python")%>
+leftblogimage("grail.jpg","Holy Grail from the Monty Python")
 
 fr: On continue vers les langages objets. Alors, à une époque où j'en ai entendu parler, c'était _le Graal_ ! 
 en: The first time I heard about Java it was _le Grail_!
@@ -345,7 +347,7 @@ en: Please note I didn't say Java programmer are bad programmer.
 
 ### Objective-C
 
-<%=leftblogimage("xcode_logo.png","Xcode Logo")%>
+leftblogimage("xcode_logo.png","Xcode Logo")
 
 fr: Le langage que je n'ai appris et utilisé que pour faire des applications sur les plateformes d'Apple(c). 
 fr: J'ai appris Objective-C après Python. 
@@ -379,7 +381,7 @@ en: ## Modern Scripting Languages
 
 ### PHP
 
-<%= leftblogimage("php.jpg","A Jacky Touch Car") %>
+leftblogimage("php.jpg","A Jacky Touch Car")
 
 fr: Le petit langage de script que nous utilisions tous pour faire des sites web à l'époque des gifs animées !
 en: This small script language that we used all to make our website in the time of animated gifs.
@@ -403,7 +405,7 @@ en: I make a bit of PHP not so long ago, and it was a pain to protect my applica
 
 ### Python
 
-<%= leftblogimage("python.jpg","Python. Do you speak it?") %>
+leftblogimage("python.jpg","Python. Do you speak it?")
 
 fr: Alors là, attention ! Révélation ! 
 en: Revelation!

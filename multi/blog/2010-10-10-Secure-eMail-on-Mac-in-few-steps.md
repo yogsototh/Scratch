@@ -16,11 +16,11 @@ fr:   - courriel
   - mac
 -----
 
-<%= blogimage("main.png","Title image","clean") %>
+blogimage("main.png","Title image","clean")
 
 begindiv(intro)
 
-en: <%= tldr %> _on Mac_
+en: %tldr _on Mac_
 en: 
 en: - Get a certificate signed by a CA: [click here for a free one](http://www.instantssl.com/ssl-certificate-products/free-email-certificate.html),
 en: - open the file,
@@ -29,7 +29,7 @@ en: - use Mail instead of online gmail.
 en: - ???
 en: - Profit
 
-fr: <%= tlal %> _avec un Mac_ 
+fr: %tlal _avec un Mac_ 
 fr: 
 fr: - Récupérez un certificat signé par une AC: [cliquez ici pour un certificat gratuit](http://www.instantssl.com/ssl-certificate-products/free-email-certificate.html) ;
 fr: - ouvrez le fichier ;
@@ -66,13 +66,13 @@ en: - open the file,
 en: - empty your trash, put the file in the trash, secure empty trash,
 en: - use Mail instead of online gmail.
 en:   Now you should see these icons: 
-en:   <%= blogimage("sign_icon.png")%>
+en:   blogimage("sign_icon.png","Sign icon")
 fr: - Récupérez un certificat signé par une authorité de certification : [cliquez ici pour récupérer un certificat gratuit](http://www.instantssl.com/ssl-certificate-products/free-email-certificate.html) ;
 fr: - ouvrez le fichier ;
 fr: - supprimer le fichier en mode sécurisé ;
 fr: - utilisez Mail plutôt que l'interface web de gmail.
 fr:   Maintenant vous devriez voir ces icônes : 
-fr:   <%= blogimage("sign_icon.png")%>
+fr:   blogimage("sign_icon.png","icône signature")
 
 en: _n.b._: if you use gmail, you and work not alway with a Mac, you should consider to try the [gmail S/MIME firefox addon](https://addons.mozilla.org/firefox/addon/592).
 fr: _n.b._ : si vous utilisez gmail et que vous ne travaillez pas toujours avec un Mac, vous devriez considérer d'utiliser le [module gmail S/MIME](https://addons.mozilla.org/firefox/addon/592) de firefox.

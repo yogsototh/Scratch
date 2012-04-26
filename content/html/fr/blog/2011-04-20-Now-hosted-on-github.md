@@ -8,7 +8,7 @@ author_name: Yann Esposito
 author_uri: yannesposito.com
 # tags:
 -----
-<%= blogimage("main.png","Title image") %>
+blogimage("main.png","Title image")
 
 
 J'héberge mon site sur github à partir d'aujourd'hui.

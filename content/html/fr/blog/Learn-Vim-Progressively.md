@@ -13,7 +13,7 @@ tags:
   - tutoriel
   - apprendre
 -----
-<%= blogimage("uber_leet_use_vim.jpg","Über leet use vim!") %>
+blogimage("uber_leet_use_vim.jpg","Über leet use vim!")
 
 begindiv(intro)
 
@@ -182,7 +182,7 @@ Ne sautez pas cette section.
     > 1. `W` → aller au début du MOT suivant
     > 2. `E` → aller à la fin du MOT courant
     >
-    > <%= blogimage("word_moves.jpg","Word moves example") %>
+    > blogimage("word_moves.jpg","Word moves example")
 
 Passons aux commandes de déplacement les plus efficaces :
 
@@ -230,7 +230,7 @@ Celles que je n'ai retrouvé que dans vim (ou presque).
 > - `t,` → vous amène juste avant le `,`.
 > - `3fa` → recherche la 3ième occurrence de `a`.
 > - `F` et `T` → comme `f` et `t` mais en arrière.
-> <%= blogimage("line_moves.jpg","Line moves") %>
+> blogimage("line_moves.jpg","Line moves")
 
 Un truc pratique : `dt"` → supprime tout jusqu'au prochain `"`.
 
@@ -253,7 +253,7 @@ Supposons que le curseur soit positionné sur le premier `o` dans `(map (+) ("fo
 > - `v2i)` → sélectionnera `map (+) ("foo")`
 > - `v2a)` → sélectionnera `(map (+) ("foo"))`
 
-<%= blogimage("textobjects.png","Text objects selection") %>
+blogimage("textobjects.png","Text objects selection")
 
 ### Sélection de blocs rectangulaires : `<C-V>`.
 
@@ -266,14 +266,14 @@ Typiquement: `^<C-V><C-d>I-- [ESC]`
 - `<C-d>` → se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
 - `I-- [ESC]` → écrit `-- ` pour commenter le reste de la ligne.
 
-<%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
+blogimage("rectangular-blocks.gif","Rectangular blocks")
 
 Remarquez que sous windows, vous devez utiliser `<C-q>` plutôt que `<C-v>` si votre "presse papier" n'est pas vide.
 
 ### Complétion : `<C-n>` et `<C-p>`.
 
 En mode Insert, commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `<C-p>`. Magique.
-<%= blogimage("completion.gif","Completion") %> 
+blogimage("completion.gif","Completion") 
 
 ### Macros : `qa` faire quelque chose `q`, `@a`, `@@`
 
@@ -294,7 +294,7 @@ Ensuite `@a` va rejouer la macro enregistrée dans le registre `a` comme si c'es
 > - `@a` → écrit un 2 sous le 1.
 > - Écrivez `100@@`. Cela va créer une liste de nombre croissants jusqu'à 103.
 
-<%= blogimage("macros.gif","Macros") %>
+blogimage("macros.gif","Macros")
 
 ### Sélection visuelle : `v`,`V`,`<C-v>`
 
@@ -306,7 +306,7 @@ Et une fois la sélection visuelle faite vous pouvez par exemple:
 - `<` (resp. `>`) → indenter à gauche (resp. à droite).
 - `=` → auto indenter
 
-<%= blogimage("autoindent.gif","Autoindent") %>
+blogimage("autoindent.gif","Autoindent")
 
 Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellement : 
 
@@ -315,7 +315,7 @@ Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellemen
 - `$` aller à la fin 
 - `A`, écrire le texte, `Echap`.
 
-<%= blogimage("append-to-many-lines.gif","Ajouter à la fin de plusieurs lignes") %>
+blogimage("append-to-many-lines.gif","Ajouter à la fin de plusieurs lignes")
 
 ### Splits : `:split` et `vsplit`.
 
@@ -328,7 +328,7 @@ Voici les commandes principales :
 > - `<C-w>_` (resp. `<C-w>|`) →  Maximise la taille du split (resp. split vertical)
 > - `<C-w>+` (resp. `<C-w>-`) →  Agrandi (resp. diminue) le split
 
-<%= blogimage("split.gif","Split") %>
+blogimage("split.gif","Split")
 
 ## Conclusion
 

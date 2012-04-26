@@ -21,18 +21,18 @@ macros:
  url: '<span class="sc">url</span>' 
  css: '<span class="sc">css</span>' 
 -----
-<%= blogimage("flying_neo.jpg","Neo Flying at warp speed") %>
+blogimage("flying_neo.jpg","Neo Flying at warp speed")
 
 begindiv(intro)
 
 en: _update_: updated for yesod 0.10
 fr: _mise à jour_: mise à jour pour la version 0.10 de yesod.
 
-en: <%= tldr %> A simple yesod tutorial.
+en: %tldr A simple yesod tutorial.
 en: Yesod is a Haskell web framework.
 en: You shouldn't need to know Haskell. 
 
-fr: <%= tlal %> Un tutoriel pour yesod, un framework web Haskell.
+fr: %tlal Un tutoriel pour yesod, un framework web Haskell.
 fr: Vous ne devriez pas avoir besoin de savoir programmer en Haskell. 
 fr: Par contre je suis désolé pour les francophones, 
 fr: mais je n'ai pas eu le courage de traduire cet article en Français.
@@ -46,7 +46,7 @@ enddiv
 
 Why Haskell?
 
-<%= blogimage("haskell-benchmark.png","Impressive Haskell Benchmark") %>
+blogimage("haskell-benchmark.png","Impressive Haskell Benchmark")
 
 Its efficiency (see [Snap Benchmark][snapbench] _&_ 
 [Warp Benchmark][warpbench][^benchmarkdigression]).
@@ -63,7 +63,7 @@ One of the best property of Haskell being:
 Haskell web frameworks handle parallel tasks perfectly. 
 For example even better than node.js[^nodejstroll].
 
-<%= leftblogimage("thousands_smiths.jpg","Thousands of Agent Smith") %>
+leftblogimage("thousands_smiths.jpg","Thousands of Agent Smith")
 
 From the pure technical point of view,
 Haskell seems to be the perfect web development tool.
@@ -92,7 +92,7 @@ I had the feeling yesod make a better job at helping newcomers.
 Furthermore, apparently the yesod team seems the most active.
 Of course I might be wrong since it is a matter of feeling.
 
-<%= blogimage("owl_draw.png","1. Draw some circles. 2. Draw the rest of the fucking owl") %>
+blogimage("owl_draw.png","1. Draw some circles. 2. Draw the rest of the fucking owl")
 
 Why did I write this article?
 The yesod documentation and particularly the book are excellent.
@@ -292,7 +292,7 @@ TADA! It works!
 
 ### Bulletproof?
 
-<%= blogimage("neo_bullet_proof.jpg","Neo stops a myriad of bullets") %>
+blogimage("neo_bullet_proof.jpg","Neo stops a myriad of bullets")
 
 Even this extremely minimal web application has some impressive properties.
 For exemple, imagine an attacker entering this %url:
@@ -465,7 +465,7 @@ It is the time to make a slightly more complex example.
 
 ## Mirror
 
-<%= leftblogimage("mirror.jpg","Neo touching a mirror") %>
+leftblogimage("mirror.jpg","Neo touching a mirror")
 
 Let's make another minimal application.
 You should see a form containing a text field and a validation button.

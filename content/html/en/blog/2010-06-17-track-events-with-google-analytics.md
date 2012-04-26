@@ -81,6 +81,6 @@ Replace the: `UA-XXXXXXXX-1` by your google analytics code and you're done.
 
 To see what occurs, simply go in `Content` and `Event Tracking` as shown in the following screenshot:
 
-<%= blogimage('GA_events.png', 'Where to find events tracking in google analytics interface') %>
+blogimage("GA_events.png", "Where to find events tracking in google analytics interface")
 
 Happy tracking!

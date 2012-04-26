@@ -27,10 +27,8 @@ fr:     - script
 -----
 
 begindiv(intro)
-en: <% tldr=%{<abbr title="Too Long; Don't Read"><sc>tl;dr</sc></abbr>} %>
-fr: <% tlal=%{<abbr title="Trop Long À Lire"><sc>tlàl</sc></abbr>} %>
 
-en: <%=tldr%>: 
+en: %tldr: 
 en: 
 en: - I tried to program a simple filter
 en: - Was blocked 2 days
@@ -40,7 +38,7 @@ en: - Made some math.
 en: - Crushed the problem in 10 minutes
 en: - Conclusion: The pragmatism shouldn't mean "never use theory".
 
-fr: <%=tlal%> :
+fr: %tlal :
 fr: 
 fr: - J'ai essayé de programmer un simple filtre ;
 fr: - J'ai été bloqué pendant deux jours ;
@@ -51,8 +49,8 @@ fr: - J'ai résolu le problème en 10 minutes ;
 fr: - Conclusion: Pragmatisme n'est pas : &laquo;n'utilisez jamais la théorie&raquo;.
 enddiv
 
-en: ## Abstract (longer than <%=tldr%>)
-fr: ## Résumé (plus long que le  <%=tlal%>)
+en: ## Abstract (longer than %tldr)
+fr: ## Résumé (plus long que le  %tlal)
 
 en: For my job, I needed to resolve a problem. It first seems not too hard. 
 en: Then I started working directly on my program. 

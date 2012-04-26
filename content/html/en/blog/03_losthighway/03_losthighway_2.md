@@ -10,7 +10,7 @@ subtitle: Who is the mystery man?
 
 ## Who is the mysterious man?
 
-<%= leftblogimage( "mysteryman.jpg" , "l'homme mystérieux" ) %>
+leftblogimage( "mysteryman.jpg" , "l'homme mystérieux" )
 
 Who's this mysterious man? He tells Fred it's him who invited him in his house. He's present at the party and in the house of Fred in the same time. Eyes wide open, looking everything Fred's doing?
 

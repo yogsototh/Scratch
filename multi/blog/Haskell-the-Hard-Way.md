@@ -15,13 +15,13 @@ tags:
   - functional
   - tutorial
 -----
-<%= blogimage("magritte_pleasure_principle.jpg","Magritte pleasure principle") %>
+blogimage("magritte_pleasure_principle.jpg","Magritte pleasure principle")
 
 begindiv(intro)
 
-en: <%= tldr %> A very short and dense tutorial for learning Haskell.
+en: %tldr A very short and dense tutorial for learning Haskell.
 
-fr: <%= tlal %> Un tutoriel très court mais très dense pour apprendre Haskell.
+fr: %tlal Un tutoriel très court mais très dense pour apprendre Haskell.
 
 > <center><hr style="width:30%;float:left;border-color:#CCCCD0;margin-top:1em"/><span class="sc"><b>Table of Content</b></span><hr style="width:30%;float:right;border-color:#CCCCD0;margin-top:1em"/></center>
 > 
@@ -195,7 +195,7 @@ enddiv
 
 <h3 id="install">Install</h3>
 
-<%= blogimage("Haskell-logo.png", "Haskell logo") %>
+blogimage("Haskell-logo.png", "Haskell logo")
 
 - [Haskell Platform](http://www.haskell.org/platform) is the standard way to install Haskell.
 
@@ -207,7 +207,7 @@ Tools:
 
 <h3 id="don-t-be-afraid">Don't be afraid</h3>
 
-<%= blogimage("munch_TheScream.jpg","The Scream") %>
+blogimage("munch_TheScream.jpg","The Scream")
 
 Many book/articles about Haskell start by introducing some esoteric formula (quick sort, Fibonacci, etc...).
 I will do the exact opposite.
@@ -294,7 +294,7 @@ Just remember that Haskell can look a lot like mainstream imperative languages.
 
 <h3 id="very-basic-haskell">Very basic Haskell</h3>
 
-<%= blogimage("picasso_owl.jpg","Picasso minimal owl") %>
+blogimage("picasso_owl.jpg","Picasso minimal owl")
 
 Before continuing you need to be warned about some essential properties of Haskell.
 
@@ -591,7 +591,7 @@ from a type to another for you, you should really watch this great (and funny) v
 
 <h2 id="essential-haskell">Essential Haskell</h2>
 
-<%= blogimage("kandinsky_gugg.jpg","Kandinsky Gugg") %>
+blogimage("kandinsky_gugg.jpg","Kandinsky Gugg")
 
 I suggest you to skim this part. 
 Think of it like a reference.
@@ -818,7 +818,7 @@ The hard part can now begin.
 
 <h3 id="functional-style">Functional style</h3>
 
-<%= blogimage("hr_giger_biomechanicallandscape_500.jpg","Biomechanical Landscape by H.R. Giger") %>
+blogimage("hr_giger_biomechanicallandscape_500.jpg","Biomechanical Landscape by H.R. Giger")
 
 In this section, I will give a short example of the impressive refactoring ability provided by Haskell.
 We will select a problem and solve it using a standard imperative way.
@@ -1136,7 +1136,7 @@ main = print $ evenSum [1..10]
 
 <h4 id="higher-order-functions">Higher Order Functions</h4>
 
-<%= blogimage("escher_polygon.png","Escher") %>
+blogimage("escher_polygon.png","Escher")
 
 To make things even better we should use higher order functions.
 What are these beasts?
@@ -1372,9 +1372,9 @@ main = print $ evenSum [1..10]
 
 <h3 id="types">Types</h3>
 
-<%= blogimage("salvador-dali-the-madonna-of-port-lligat.jpg","Dali, the madonna of port Lligat") %>
+blogimage("salvador-dali-the-madonna-of-port-lligat.jpg","Dali, the madonna of port Lligat")
 
- > <%=tldr%>
+ > %tldr
  > 
  > - `type Name = AnotherType` is just an alias and the compiler doesn't do any difference between `Name` and `AnotherType`.
  > - `data Name = NameConstructor AnotherType` make a difference.
@@ -1648,7 +1648,7 @@ This prints:
 
 <h4 id="trees">Trees</h4>
 
-<%= blogimage("magritte-l-arbre.jpg","Magritte, l'Arbre") %>
+blogimage("magritte-l-arbre.jpg","Magritte, l'Arbre")
 
 We'll just give another standard example: binary trees.
 
@@ -1854,7 +1854,7 @@ Binary tree of Char binary trees:
 
 This is why I chose to prefix each line of tree display by `:` (except for the root).
 
-<%= blogimage("yo_dawg_tree.jpg","Yo Dawg Tree") %>
+blogimage("yo_dawg_tree.jpg","Yo Dawg Tree")
 
 <div class="codehighlight">
 <code class="haskell">
@@ -1920,7 +1920,7 @@ And we can even make a tree containing a tree of trees!
 
 <h3 id="infinite-structures">Infinite Structures</h3>
 
-<%= blogimage("escher_infinite_lizards.jpg","Escher") %>
+blogimage("escher_infinite_lizards.jpg","Escher")
 
 It is often stated that Haskell is _lazy_.
 
@@ -2172,9 +2172,9 @@ But they all be very rewarding.
 
 <h3 id="deal-with-io">Deal With IO</h3>
 
-<%= blogimage("magritte_carte_blanche.jpg","Magritte, Carte blanche") %>
+blogimage("magritte_carte_blanche.jpg","Magritte, Carte blanche")
 
- > <%=tldr%>
+ > %tldr
  > 
  > A typical function doing `IO` looks a lot like an imperative program:
  >
@@ -2443,9 +2443,9 @@ If you practice a bit, you should be able to _use_ `IO`.
 
 <h3 id="io-trick-explained">IO trick explained</h3>
 
-<%= blogimage("magritte_pipe.jpg","Magritte, ceci n'est pas une pipe") %>
+blogimage("magritte_pipe.jpg","Magritte, ceci n'est pas une pipe")
 
- > Here is a <%=tldr%> for this section.
+ > Here is a %tldr for this section.
  > 
  > To separate pure and impure parts,
  > `main` is defined as a function
@@ -2678,7 +2678,7 @@ And of course `actionN w :: (World) -> (a,World)`.
  > let (y,w2) = action2 w1 in
  > ~~~
 
-<%= leftblogimage("jocker_pencil_trick.jpg","Jocker pencil trick") %>
+leftblogimage("jocker_pencil_trick.jpg","Jocker pencil trick")
 
 Now, we will do a magic trick.
 We will make the temporary world symbol "disappear".
@@ -2919,7 +2919,7 @@ Imagine what it would look like without the `(>>)` and `(>>=)`.
 
 <h3 id="monads">Monads</h3>
 
-<%= blogimage("dali_reve.jpg","Dali, reve. It represents a weapon out of the mouth of a tiger, itself out of the mouth of another tiger, itself out of the mouth of a fish itself out of a grenade. I could have choosen a picture of the Human centipede as it is a very good representation of what a monad really is. But just to thing about it, I find this disgusting and that wasn't the purpose of this document.") %>
+blogimage("dali_reve.jpg","Dali, reve. It represents a weapon out of the mouth of a tiger, itself out of the mouth of another tiger, itself out of the mouth of a fish itself out of a grenade. I could have choosen a picture of the Human centipede as it is a very good representation of what a monad really is. But just to thing about it, I find this disgusting and that wasn't the purpose of this document.")
 
 Now the secret can be revealed: `IO` is a _monad_.
 Being a monad means you have access to some syntactical sugar with the `do` notation.
@@ -3095,7 +3095,7 @@ But now a cooler example, lists.
 
 <h4 id="the-list-monad">The list monad</h4>
 
-<%= blogimage("golconde.jpg","Golconde de Magritte") %>
+blogimage("golconde.jpg","Golconde de Magritte")
 
 The list monad helps us to simulate non deterministic computations.
 Here we go:

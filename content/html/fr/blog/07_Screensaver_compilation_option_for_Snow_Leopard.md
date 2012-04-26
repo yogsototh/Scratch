@@ -19,7 +19,7 @@ Cependant, même en recomilant en 64 bits ça ne fonctionnait toujours pas.
 Après un peu plus de recherches (merci à [ElectricSheep](http://community.electricsheep.org/node/236) ),
 j'ai découvert les bons paramètres.
 
-<%= blogimage("xcodeConfig.png","XCode configuration") %>
+blogimage("xcodeConfig.png","XCode configuration")
 
 Pour l'instant je ne l'ai pas compilé pour être compatible Tiger et Leopard. Je ne connais pas assez bien XCode pour savoir comment désactiver le garbage collector sur la version 32 bits et l'activer sur la version 64 bits.
 

@@ -19,13 +19,13 @@ fr:   - mathématiques
 
 begindiv(intro)
 
-en: <%= tldr %> I pretend to create a world to give examples of different meanings behind the word _undecidability_:
+en: %tldr I pretend to create a world to give examples of different meanings behind the word _undecidability_:
 en: 
 en: - Undecidability due to measure errors, 
 en: - Big errors resulting from small initial measure error,
 en: - Fractal undecidability ;
 en: - Logic Undecidability.
-fr: <%= tlal %> Je crée un mode mathématique simple pour parler de différents types d'_indécidabilités_ :
+fr: %tlal Je crée un mode mathématique simple pour parler de différents types d'_indécidabilités_ :
 fr: 
 fr: - indécidabilité due aux erreurs d'observation ;
 fr: - grandes erreurs résultant de petites erreurs de mesure ;
@@ -62,7 +62,7 @@ en: Here begin the story.
 
 enddiv
 
-<%= leftblogimage("genesis.png") %>
+leftblogimage("genesis.png")
 
 fr: Au début, il n'y avait rien. 
 fr: Puis un article de blog commença à prendre forme.
@@ -151,7 +151,7 @@ en: > Each time I sum up their angles I obtain π radiants (180°).
 en: > It is certainly a rule of my Universe.
 en: > But how to be certain all triangle in my Universe share this property?
 
-<%= leftblogimage('triangle_3_angles.png') %>
+leftblogimage("triangle_3_angles.png","three triangles")
 
 fr: Certain d'entre eux commencent à formaliser un petit peu le problème
 fr: et ils finissent faire une preuve mathématique.
@@ -203,7 +203,7 @@ fr: ## Indécidabilité avec erreurs croissantes
 en: ## Growing errors Undecidability
 
 
-<%= leftblogimage('3_corps.png') %>
+leftblogimage("3_corps.png","Three bodies")
 
 fr: Malheureusement pour eux, il y a le  _problème des 3 corps_. 
 fr: Prenons les formules de la gravitation Universelle et appliquons la à deux corps célestes. 
@@ -240,7 +240,7 @@ en: ## Fractal Undecidability
 fr: Considérons la question suivante :
 en: Consider the following question:
 
-<%= leftblogimage('mandelbrot.png') %>
+leftblogimage("mandelbrot.png","Mandelbrot set")
 
 fr: Soit des coordonnées GPS précises à 1m près.
 fr: Les coordonnées sont proches des côtes de la Bretagne.
@@ -281,7 +281,7 @@ fr: > Un monde similaire au notre mais où tout pourra être prédit.
 fr: ## Indécidabilité logique
 en: ## Logical Undecidability
 
-<%= leftblogimage("stackOverflow.png") %>
+leftblogimage("stackOverflow.png","recursive stack overflow")
 
 fr: Jusqu'ici, tous les problèmes d'indécidabilités étaient dûs aux _erreurs_.
 fr: Maintenant peut-être que privé d'erreur de mesure, on pourrait enfin résoudre tous les problèmes.  

@@ -12,7 +12,7 @@ tags:
 
 -----
 
-<%= blogimage("central_architecture.png","central architecture") %>
+blogimage("central_architecture.png","central architecture")
 
 begindiv(encadre)
 

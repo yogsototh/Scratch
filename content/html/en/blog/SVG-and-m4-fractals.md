@@ -21,7 +21,7 @@ macros:
  xslt: '<span class="sc">xslt</span>' 
  json: '<span class="sc">json</span>' 
 -----
-<%= blogimage("main.png","Yesod logo made in SVG and m4") %>
+blogimage("main.png","Yesod logo made in SVG and m4")
 
 begindiv(intro)
 
@@ -120,8 +120,8 @@ At its beginning some people believed it would be the new Flash. Apparently, it 
 
 Let me show you the result:
 
-<a href="<%= blogimagedir %>main.svg">
-<%= blogimage("main.png","Yesod logo made in SVG and m4") %>
+<a href="blogimagedirmain.svg">
+blogimage("main.png","Yesod logo made in SVG and m4")
 Click to view directly the %svg. It might slow down your computers if you have an old one.
 </a>
 

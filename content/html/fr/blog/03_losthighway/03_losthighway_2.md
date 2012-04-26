@@ -16,7 +16,7 @@ tags:
 
 ## Qui est l'homme mystérieux ?
 
-<%= leftblogimage( "mysteryman.jpg" , "l'homme mystérieux" ) %>
+leftblogimage( "mysteryman.jpg" , "l'homme mystérieux" )
 
 Qui est donc ce personnage étrange et inquiétant ? 
 Un être capable d'ubiquité qui dit être invité par Fred dans sa maison ? 

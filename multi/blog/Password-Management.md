@@ -11,18 +11,18 @@ tags:
   - password
   - security
 -----
-<%= blogimage("main.png","Title image") %>
+blogimage("main.png","Title image")
 
 <% password="P45sW0r|)" %>
 
 begindiv(intro)
 
-en: <%= tldr %> How I manage safely my password with success for some years now.  
+en: %tldr How I manage safely my password with success for some years now.  
 en: **`sha1( password + domain_name )`**  
 en: I memorize only one password.
 en: I use a different password on all website.
 
-fr: <%= tlal %> Une méthode de gestion des mots de passes que j'utilise avec succès depuis quelques années.  
+fr: %tlal Une méthode de gestion des mots de passes que j'utilise avec succès depuis quelques années.  
 fr: **`sha1( mot_de_passe + nom_de_domaine )`**  
 fr: Je ne mémorise qu'un seul mot de passe de très bonne qualité.
 fr: J'utilise des mots de passe différents sur tous les sites.

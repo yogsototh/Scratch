@@ -13,7 +13,7 @@ tags:
   - tutorial
   - learn
 -----
-<%= blogimage("uber_leet_use_vim.jpg","Über leet use vim!") %>
+blogimage("uber_leet_use_vim.jpg","Über leet use vim!")
 
 begindiv(intro)
 
@@ -179,7 +179,7 @@ Don't skip this section.
     > 1. `W` → go to the start of the following WORD,
     > 2. `E` → go to the end of this WORD.
     >
-    > <%= blogimage("word_moves.jpg","Word moves example") %>
+    > blogimage("word_moves.jpg","Word moves example")
 
 Now let's talk about very efficient moves:
 
@@ -224,7 +224,7 @@ Some of these features were the reason I started to use vim.
 > - `t,` → go just before the character `,`.
 > - `3fa` → search the 3rd occurrence of `a` on this line.
 > - `F` and `T` → like `f` and `t` but backward.
-> <%= blogimage("line_moves.jpg","Line moves") %>
+> blogimage("line_moves.jpg","Line moves")
 
 A useful tip is: `dt"` → remove everything until the `"`.
 
@@ -247,7 +247,7 @@ Suppose the cursor is on the first `o` of `(map (+) ("foo"))`.
 > - `v2i)` → will select `map (+) ("foo")`
 > - `v2a)` → will select `(map (+) ("foo"))`
 
-<%= blogimage("textobjects.png","Text objects selection") %>
+blogimage("textobjects.png","Text objects selection")
 
 ### Select rectangular blocks: `<C-v>`. 
 
@@ -260,14 +260,14 @@ Typically: `0<C-v><C-d>I-- [ESC]`
 - `I-- [ESC]` → write `-- ` to comment each line
 
 
-<%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
+blogimage("rectangular-blocks.gif","Rectangular blocks")
 
 Note on windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
 
 ### Completion: `<C-n>` and `<C-p>`.
 
 In Insert mode, just type the start of a word, then type `<C-p>`, magic...
-<%= blogimage("completion.gif","Completion") %> 
+blogimage("completion.gif","Completion") 
 
 ### Macros : `qa` do something `q`, `@a`, `@@`
 
@@ -290,7 +290,7 @@ Then `@a` will replay the macro saved into the register `a` as if you typed it.
 > - `@@` → write 3 under the 2
 > - Now do `100@@` will create a list of increasing numbers until 103.
 
-<%= blogimage("macros.gif","Macros") %>
+blogimage("macros.gif","Macros")
 
 ### Visual selection: `v`,`V`,`<C-v>`
 
@@ -302,7 +302,7 @@ Once the selection made, you can:
 - `<` (resp. `>`) → indent to the left (resp. to the right).
 - `=` → auto indent
 
-<%= blogimage("autoindent.gif","Autoindent") %>
+blogimage("autoindent.gif","Autoindent")
 
 Add something at the end of all visually selected lines:
 
@@ -311,7 +311,7 @@ Add something at the end of all visually selected lines:
 - `$` go to the end of line
 - `A`, write text, `ESC`.
 
-<%= blogimage("append-to-many-lines.gif","Append to many lines") %>
+blogimage("append-to-many-lines.gif","Append to many lines")
 
 ### Splits: `:split` and `vsplit`.
 
@@ -322,7 +322,7 @@ Here are the main commands, but you should look at `:help split`.
 > - `<C-w>_` (resp. `<C-w>|`) : maximise size of split (resp. vertical split)
 > - `<C-w>+` (resp. `<C-w>-`) : Grow (resp. shrink) split
 
-<%= blogimage("split.gif","Split") %>
+blogimage("split.gif","Split")
 
 ## Conclusion
 

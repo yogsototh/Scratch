@@ -16,7 +16,7 @@ macros:
  css: <span class="sc">css</span>
 
 -----
-<%= blogimage('first_sc_screenshot.png', "Screenshot of first in small caps with and without ligatures."); %>
+blogimage("first_sc_screenshot.png", "Screenshot of first in small caps with and without ligatures.");
 
 begindiv(intro)
 
@@ -37,7 +37,7 @@ I already made an automatic system which will detect and replace text by their l
 
 First, what is a ligatures?
 
-<%= blogimage('ligatures.png', "A ligature example"); %>
+blogimage("ligatures.png", "A ligature example");
 
 What is the problem between the Web and ligatures?
 The first one is: you cannot search them. For example, try to search the word "first":
@@ -52,7 +52,7 @@ The second one is the rendering, for example, try to use a ligature character wi
 
 Here is a screenshot of what I see:
 
-<%= blogimage('first_sc_screenshot.png', "Screenshot of first in small caps with and without ligatures."); %>
+blogimage("first_sc_screenshot.png", "Screenshot of first in small caps with and without ligatures.");
 
 The browser isn't able to understand that the ligature character "<span style="color:#800">ﬁ</span>" should render as <sc>fi</sc> when rendered in small caps. And one part of the problem is you should choose to display a character in small caps using %css.
 
@@ -60,7 +60,7 @@ This way, how could you use a ligature Unicode character on a site on which you 
 
 Let's compare to %latex.
 
-<%= blogimage('first_latex_screenshot.png', "LaTeX screenshot"); %>
+blogimage("first_latex_screenshot.png", "LaTeX screenshot");
 
 If you take attention to detail, you'll see the first "first" contains a ligature. Of course the second render nicely. The code I used were:
 
@@ -73,7 +73,7 @@ If you take attention to detail, you'll see the first "first" contains a ligatur
 
 The "<span style="color:#800">ﬆ</span>" ligature is rare and not rendered in %latex by default. But if you want you could also render rare ligature using %xelatex:
 
-<%= blogimage('xelatex_ligatures.jpg',"XeLaTeX ligatures"); %>
+blogimage("xelatex_ligatures.jpg","XeLaTeX ligatures");
 
 I took this image from the excellent article of [Dario Taraborelli](http://nitens.org/taraborelli/latex#rare).
 

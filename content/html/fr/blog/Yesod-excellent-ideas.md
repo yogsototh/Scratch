@@ -13,7 +13,7 @@ tags:
   - haskell
   - ideas
 -----
-<%= blogimage("main.png","Title image") %>
+blogimage("main.png","Title image")
 
 begindiv(intro)
 

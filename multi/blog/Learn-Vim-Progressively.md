@@ -16,13 +16,13 @@ fr:   - tutoriel
 en:   - learn
 fr:   - apprendre
 -----
-<%= blogimage("uber_leet_use_vim.jpg","Über leet use vim!") %>
+blogimage("uber_leet_use_vim.jpg","Über leet use vim!")
 
 begindiv(intro)
 
-en: <%= tldr %> Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way. Start by learning the minimal to survive, then integrate slowly all tricks.
+en: %tldr Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way. Start by learning the minimal to survive, then integrate slowly all tricks.
 
-fr: <%= tlal %> Vous désirez apprendre vim (le meilleur editeur de texte connu à ce jour) le plus rapidement possible. Voici mes conseils pour vous aider. Commencez à apprendre le minimum vital, puis apprenez doucement de nouvelles commandes.
+fr: %tlal Vous désirez apprendre vim (le meilleur editeur de texte connu à ce jour) le plus rapidement possible. Voici mes conseils pour vous aider. Commencez à apprendre le minimum vital, puis apprenez doucement de nouvelles commandes.
 
 enddiv
 
@@ -304,7 +304,7 @@ fr:     >
 fr:     > 1. `W` → aller au début du MOT suivant
 fr:     > 2. `E` → aller à la fin du MOT courant
     >
-    > <%= blogimage("word_moves.jpg","Word moves example") %>
+    > blogimage("word_moves.jpg","Word moves example")
 
 en: Now let's talk about very efficient moves:
 fr: Passons aux commandes de déplacement les plus efficaces :
@@ -383,7 +383,7 @@ fr: > - `fa` → vous amène à la prochaine occurrence de a sur la ligne couran
 fr: > - `t,` → vous amène juste avant le `,`.
 fr: > - `3fa` → recherche la 3ième occurrence de `a`.
 fr: > - `F` et `T` → comme `f` et `t` mais en arrière.
-> <%= blogimage("line_moves.jpg","Line moves") %>
+> blogimage("line_moves.jpg","Line moves")
 
 en: A useful tip is: `dt"` → remove everything until the `"`.
 fr: Un truc pratique : `dt"` → supprime tout jusqu'au prochain `"`.
@@ -420,7 +420,7 @@ fr: > - `va)` → sélectionnera `("foo")`.
 fr: > - `v2i)` → sélectionnera `map (+) ("foo")`
 fr: > - `v2a)` → sélectionnera `(map (+) ("foo"))`
 
-<%= blogimage("textobjects.png","Text objects selection") %>
+blogimage("textobjects.png","Text objects selection")
 
 en: ### Select rectangular blocks: `<C-v>`. 
 fr: ### Sélection de blocs rectangulaires : `<C-V>`.
@@ -441,7 +441,7 @@ fr: - `<C-V>` → Commencer la sélection du bloc
 fr: - `<C-d>` → se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
 fr: - `I-- [ESC]` → écrit `-- ` pour commenter le reste de la ligne.
 
-<%= blogimage("rectangular-blocks.gif","Rectangular blocks") %>
+blogimage("rectangular-blocks.gif","Rectangular blocks")
 
 en: Note on windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
 fr: Remarquez que sous windows, vous devez utiliser `<C-q>` plutôt que `<C-v>` si votre "presse papier" n'est pas vide.
@@ -451,7 +451,7 @@ fr: ### Complétion : `<C-n>` et `<C-p>`.
 
 en: In Insert mode, just type the start of a word, then type `<C-p>`, magic...
 fr: En mode Insert, commencez à écrire le début d'un mot déjà présent dans l'un des buffers (fichers) ouvert et tapes `<C-p>`. Magique.
-<%= blogimage("completion.gif","Completion") %> 
+blogimage("completion.gif","Completion") 
 
 en: ### Macros : `qa` do something `q`, `@a`, `@@`
 fr: ### Macros : `qa` faire quelque chose `q`, `@a`, `@@`
@@ -490,7 +490,7 @@ fr: >
 fr: > - `@a` → écrit un 2 sous le 1.
 fr: > - Écrivez `100@@`. Cela va créer une liste de nombre croissants jusqu'à 103.
 
-<%= blogimage("macros.gif","Macros") %>
+blogimage("macros.gif","Macros")
 
 en: ### Visual selection: `v`,`V`,`<C-v>`
 fr: ### Sélection visuelle : `v`,`V`,`<C-v>`
@@ -510,7 +510,7 @@ fr: - `J` → joindre toutes les lignes pour en faire une seule
 fr: - `<` (resp. `>`) → indenter à gauche (resp. à droite).
 fr: - `=` → auto indenter
 
-<%= blogimage("autoindent.gif","Autoindent") %>
+blogimage("autoindent.gif","Autoindent")
 
 en: Add something at the end of all visually selected lines:
 en: 
@@ -525,8 +525,8 @@ fr: - aller jusqu'à la ligne désirée (`jjj` ou `<C-d>` ou `/pattern` ou `%` e
 fr: - `$` aller à la fin 
 fr: - `A`, écrire le texte, `Echap`.
 
-en: <%= blogimage("append-to-many-lines.gif","Append to many lines") %>
-fr: <%= blogimage("append-to-many-lines.gif","Ajouter à la fin de plusieurs lignes") %>
+en: blogimage("append-to-many-lines.gif","Append to many lines")
+fr: blogimage("append-to-many-lines.gif","Ajouter à la fin de plusieurs lignes")
 
 en: ### Splits: `:split` and `vsplit`.
 fr: ### Splits : `:split` et `vsplit`.
@@ -546,7 +546,7 @@ fr: > - `<C-w><dir>` →  où dir est l'un de `hjkl` ou <-&darr;&uarr;→ permet
 fr: > - `<C-w>_` (resp. `<C-w>|`) →  Maximise la taille du split (resp. split vertical)
 fr: > - `<C-w>+` (resp. `<C-w>-`) →  Agrandi (resp. diminue) le split
 
-<%= blogimage("split.gif","Split") %>
+blogimage("split.gif","Split")
 
 ## Conclusion
 
