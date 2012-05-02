@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Arbres ; Pragmatisme et Formalisme" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -71,7 +74,7 @@
   <li>Used a pen and a sheet of paper</li>
   <li>Made some math.</li>
   <li>Crushed the problem in 10 minutes</li>
-  <li>Conclusion: The pragmatism shouldn&rsquo;t mean &ldquo;never use theory&rdquo;.</li>
+  <li>Conclusion: The pragmatism shouldn’t mean “never use theory”.</li>
 </ul>
 
 
@@ -86,10 +89,10 @@ I entered in the <em>infernal</em>: <em>try &amp; repair loop</em>.
 Each step was like:</p>
 
 <blockquote>
-  <p>&ndash; Just this thing to repair and that should be done.<br />
-  &ndash; OK, now that should just work.<br />
-  &ndash; Yeah!!!<br />
-  &ndash; Oops! I forgotten that&hellip;<br />
+  <p>– Just this thing to repair and that should be done.<br />
+  – OK, now that should just work.<br />
+  – Yeah!!!<br />
+  – Oops! I forgotten that…<br />
   <code>repeat until death</code></p>
 </blockquote>
 
@@ -117,52 +120,50 @@ I had to face a problem of the same kind at my job. The problem was simple to th
 
 <p>The source <span class="sc">xml</span> was in the following general format:</p>
 
-<pre class="twilight">
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">rubrique</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">contenu</span><span class="MetaTagAll">&gt;</span></span>
-        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">tag1</span><span class="MetaTagAll">&gt;</span></span>value1<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">tag1</span><span class="MetaTagAll">&gt;</span></span>
-        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">tag2</span><span class="MetaTagAll">&gt;</span></span>value2<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">tag2</span><span class="MetaTagAll">&gt;</span></span>
+<pre><code class="xml">&lt;rubrique&gt;
+    &lt;contenu&gt;
+        &lt;tag1&gt;value1&lt;/tag1&gt;
+        &lt;tag2&gt;value2&lt;/tag2&gt;
         ...
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">contenu</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">enfant</span><span class="MetaTagAll">&gt;</span></span>
-        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">rubrique</span><span class="MetaTagAll">&gt;</span></span>
+    &lt;/contenu&gt;
+    &lt;enfant&gt;
+        &lt;rubrique&gt;
             ...
-        <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">rubrique</span><span class="MetaTagAll">&gt;</span></span>
+        &lt;/rubrique&gt;
         ...
-        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">rubrique</span><span class="MetaTagAll">&gt;</span></span>
+        &lt;rubrique&gt;
             ...
-        <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">rubrique</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">enfant</span><span class="MetaTagAll">&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">menu</span><span class="MetaTagAll">&gt;</span></span>
-</pre>
+        &lt;/rubrique&gt;
+    &lt;/enfant&gt;
+&lt;/menu&gt;
+</code></pre>
 
 <p>and the destination format was in the following general format:</p>
 
-<pre class="twilight">
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">item</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>Menu0<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
-        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">item</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>menu<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
-            <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
-                <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">item</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>tag1<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
-                    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>value1<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
-                <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">item</span><span class="MetaTagAll">&gt;</span></span>
-                <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">item</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>tag2<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
-                    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>value2<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
-                <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">item</span><span class="MetaTagAll">&gt;</span></span>
+<pre><code class="xml">&lt;item name="Menu0"&gt;
+    &lt;value&gt;
+        &lt;item name="menu"&gt;
+            &lt;value&gt;
+                &lt;item name="tag1"&gt;
+                    &lt;value&gt;value1&lt;/value&gt;
+                &lt;/item&gt;
+                &lt;item name="tag2"&gt;
+                    &lt;value&gt;value2&lt;/value&gt;
+                &lt;/item&gt;
                 ...
-                <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">item</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>menu<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
-                    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
+                &lt;item name="menu"&gt;
+                    &lt;value&gt;
                         ...
-                    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
-                    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
+                    &lt;/value&gt;
+                    &lt;value&gt;
                         ...
-                    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
-                <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">item</span><span class="MetaTagAll">&gt;</span></span>
-            <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
-        <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">item</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">value</span><span class="MetaTagAll">&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">item</span><span class="MetaTagAll">&gt;</span></span>
-</pre>
+                    &lt;/value&gt;
+                &lt;/item&gt;
+            &lt;/value&gt;
+        &lt;/item&gt;
+    &lt;/value&gt;
+&lt;/item&gt;
+</code></pre>
 
 <p>At first sight I believed it will be easy. I was so certain it will be easy that I fixed to myself the following rules:</p>
 
@@ -173,7 +174,7 @@ I had to face a problem of the same kind at my job. The problem was simple to th
 </ol>
 
 <p>You can try if you want. If you attack the problem directly opening an editor, I assure you, it will certainly be not so simple.
-I can tell that, because it&rsquo;s what I&rsquo;ve done. And I must say I lost almost a complete day at work trying to resolve this. There was also, many small problems around that make me lose more than two days for this problem.</p>
+I can tell that, because it’s what I’ve done. And I must say I lost almost a complete day at work trying to resolve this. There was also, many small problems around that make me lose more than two days for this problem.</p>
 
 <p>Why after two days did I was unable to resolve this problem which seems so simple?</p>
 
@@ -194,14 +195,14 @@ I thought about how to resolve the problem but with the eyes of a <em>pragmatic 
 
 <blockquote>
   <p>That should be a simple perl search and replace program.<br />
-Let&rsquo;s begin to write code</p>
+Let’s begin to write code</p>
 </blockquote>
 
 <p>This is the second sentence that was plainly wrong. I started in the wrong direction. And the workflow did not work from this entry point.</p>
 
 <h2 id="think">Think</h2>
 
-<p>After some times, I just stopped to work. Tell myself <em>&ldquo;it is enough, now, I must finish it!&rdquo;</em>.
+<p>After some times, I just stopped to work. Tell myself <em>“it is enough, now, I must finish it!”</em>.
 I took a sheet of paper, a pen and began to draw some trees.</p>
 
 <p>I began by make by removing most of the verbosity.
@@ -248,23 +249,21 @@ r - b
 
 <p>And look at what it implies when you write it in <span class="sc">xml</span>:</p>
 
-<pre class="twilight">
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">r</span><span class="MetaTagAll">&gt;</span></span>
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">x</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">a</span><span class="MetaTagAll">&gt;</span></span>value for a<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">a</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">b</span><span class="MetaTagAll">&gt;</span></span>value for b<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">b</span><span class="MetaTagAll">&gt;</span></span>
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">x</span><span class="MetaTagAll">&gt;</span></span>
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">y</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">c</span><span class="MetaTagAll">&gt;</span></span>value for c<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">c</span><span class="MetaTagAll">&gt;</span></span>
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">y</span><span class="MetaTagAll">&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">r</span><span class="MetaTagAll">&gt;</span></span>
-</pre>
+<pre><code class="xml">&lt;r&gt;
+  &lt;x&gt;
+    &lt;a&gt;value for a&lt;/a&gt;
+    &lt;b&gt;value for b&lt;/b&gt;
+  &lt;/x&gt;
+  &lt;y&gt;
+    &lt;c&gt;value for c&lt;/c&gt;
+  &lt;/y&gt;
+&lt;/r&gt;
+</code></pre>
 
 <p>Then deleting all <code>x</code> nodes is equivalent to pass the <span class="sc">xml</span> via the following search and replace script:</p>
 
-<pre class="twilight">
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>&lt;<span class="StringRegexpSpecial">\/</span>?x&gt;</span><span class="StringRegexp"><span class="StringRegexp">/</span><span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-</pre>
+<pre><code class="perl">s/&lt;\/?x&gt;//g
+</code></pre>
 
 <p>Therefore, if there exists a one state deterministic transducer which transform my trees&nbsp;;
 I can transform the <span class="sc">xml</span> from one format to another with just a simple list of search and replace directives.</p>
@@ -307,28 +306,26 @@ M - V - M - V - tag2      tag1
 <p>can be done using the following one state deterministic tree transducer:</p>
 
 <blockquote>
-  <p>C &rarr; &epsilon;<br />
+  <p>C &rarr; ε<br />
    E &rarr; M<br />
    R &rarr; V  </p>
 </blockquote>
 
 <p>Wich can be traduced by the following simple search and replace directives: </p>
 
-<pre class="twilight">
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>C</span><span class="StringRegexp"><span class="StringRegexp">/</span><span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>E</span><span class="StringRegexp"><span class="StringRegexp">/</span>M<span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>R</span><span class="StringRegexp"><span class="StringRegexp">/</span>V<span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-</pre>
+<pre><code class="perl">s/C//g
+s/E/M/g
+s/R/V/g
+</code></pre>
 
 <p>Once adapted to <span class="sc">xml</span> it becomes:</p>
 
-<pre class="twilight">
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>%</span>&lt;/?contenu&gt;</span><span class="StringRegexp"><span class="StringRegexp">%</span><span class="StringRegexp">%</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>%</span>&lt;enfant&gt;</span><span class="StringRegexp"><span class="StringRegexp">%</span>&lt;item name=&quot;menu&quot;&gt;<span class="StringRegexp">%</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>%</span>&lt;/enfant&gt;</span><span class="StringRegexp"><span class="StringRegexp">%</span>&lt;/item&gt;<span class="StringRegexp">%</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>%</span>&lt;rubrique&gt;</span><span class="StringRegexp"><span class="StringRegexp">%</span>&lt;value&gt;<span class="StringRegexp">%</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>%</span>&lt;/rubrique&gt;</span><span class="StringRegexp"><span class="StringRegexp">%</span>&lt;/value&gt;<span class="StringRegexp">%</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-</pre>
+<pre><code class="perl">s%&lt;/?contenu&gt;%%g
+s%&lt;enfant&gt;%&lt;item name="menu"&gt;%g
+s%&lt;/enfant&gt;%&lt;/item&gt;%g
+s%&lt;rubrique&gt;%&lt;value&gt;%g
+s%&lt;/rubrique&gt;%&lt;/value&gt;%g
+</code></pre>
 
 <p>That is all.</p>
 

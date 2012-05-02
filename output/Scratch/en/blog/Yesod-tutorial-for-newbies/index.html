@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Site en Haskell" type="text/html" hreflang="fr" href="/Scratch/fr/blog/Yesod-tutorial-for-newbies/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -68,7 +71,7 @@
 
 <p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> A simple yesod tutorial.
 Yesod is a Haskell web framework.
-You shouldn&rsquo;t need to know Haskell. </p>
+You shouldn’t need to know Haskell. </p>
 
 <blockquote>
   <center><span class="sc"><b>Table of content</b></span></center>
@@ -116,18 +119,18 @@ than <code>C</code>, <code>C++</code> or <code>Java</code> for example.
 One of the best property of Haskell being:</p>
 
 <blockquote>
-  <p>&ldquo;If your program compile it will be 
- very close to what the programmer intended&rdquo;.</p>
+  <p>“If your program compile it will be 
+ very close to what the programmer intended”.</p>
 </blockquote>
 
 <p>Haskell web frameworks handle parallel tasks perfectly. 
 For example even better than node.js<sup id="fnref:nodejstroll"><a href="#fn:nodejstroll" rel="footnote">3</a></sup>.</p>
 
-<p><img alt="Thousands of Agent Smith" src="/Scratch/img/blog/Yesod-tutorial-for-newbies/thousands_smiths.jpg" class="left" /></p>
+<p><img alt="Thousands of Agent Smith" src="/Scratch/img/blog/Yesod-tutorial-for-newbies/thousands_smiths.jpg" class=" left" /></p>
 
 <p>From the pure technical point of view,
 Haskell seems to be the perfect web development tool.
-Weaknesses of Haskell certainly won&rsquo;t be technical:</p>
+Weaknesses of Haskell certainly won’t be technical:</p>
 
 <ul>
   <li>Hard to grasp Haskell</li>
@@ -136,7 +139,7 @@ Weaknesses of Haskell certainly won&rsquo;t be technical:</p>
   <li>There is no <a href="http://heroku.com">heroku</a> for Haskell (even if <a href="http://www.yesodweb.com/blog/2011/07/haskell-on-heroku">Greg Weber did it</a>, it was more a workaround).</li>
 </ul>
 
-<p>I won&rsquo;t say these are not important drawbacks.
+<p>I won’t say these are not important drawbacks.
 But, with Haskell your web application will have both properties
 to absorb an impressive number of parallel request securely
 and to adapt to change.</p>
@@ -149,7 +152,7 @@ and to adapt to change.</p>
   <li><a href="http://yesodweb.com">Yesod</a></li>
 </ol>
 
-<p>I don&rsquo;t think there is a real winner between these three framework.
+<p>I don’t think there is a real winner between these three framework.
 The choice I made for yesod is highly subjective.
 I just lurked a bit and tried some tutorials.
 I had the feeling yesod make a better job at helping newcomers.
@@ -161,18 +164,18 @@ Of course I might be wrong since it is a matter of feeling.</p>
 <p>Why did I write this article?
 The yesod documentation and particularly the book are excellent.
 But I missed an intermediate tutorial.
-This tutorial won&rsquo;t explain all details.
+This tutorial won’t explain all details.
 I tried to give a step by step of how to start from a five minute tutorial 
 to an almost production ready architecture.
 Furthermore explaining something to others is a great way to learn.
-If you are used to Haskell and Yesod, this tutorial won&rsquo;t learn you much.
+If you are used to Haskell and Yesod, this tutorial won’t learn you much.
 If you are completely new to Haskell and Yesod it might hopefully helps you.
 Also if you find yourself too confused by the syntax, it might helps to read this 
 <a href="http://blog.ezyang.com/2011/11/how-to-read-haskell/">article</a></p>
 
-<p>During this tutorial you&rsquo;ll install, initialize and configure your first yesod project.
+<p>During this tutorial you’ll install, initialize and configure your first yesod project.
 Then there is a very minimal 5 minutes yesod tutorial to heat up and verify the awesomeness of yesod.
-Then we will clean up the 5 minutes tutorial to use some &ldquo;best practices&rdquo;.
+Then we will clean up the 5 minutes tutorial to use some “best practices”.
 Finally there will be a more standard real world example; a minimal blog system.</p>
 
 <h2 id="before-the-real-start">Before the real start</h2>
@@ -185,10 +188,9 @@ is to download the <a href="http://www.haskell.org/platform">Haskell Platform</a
 <p>Once done, you need to install yesod.
 Open a terminal session and do:</p>
 
-<pre class="twilight">
-<span class="Keyword">~</span> cabal update
-<span class="Keyword">~</span> cabal install yesod cabal-dev
-</pre>
+<pre><code class="zsh">~ cabal update
+~ cabal install yesod cabal-dev
+</code></pre>
 
 <p>There are few steps but it should take some time to finish.</p>
 
@@ -197,18 +199,16 @@ Open a terminal session and do:</p>
 <p>You are now ready to initialize your first yesod project.
 Open a terminal and type:</p>
 
-<pre class="twilight">
-<span class="Keyword">~</span> yesod init
-</pre>
+<pre><code class="zsh">~ yesod init
+</code></pre>
 
 <p>Enter your name, choose <code>yosog</code> for the project name and enter <code>Yosog</code> for the name of the Foundation.
 Finally choose <code>sqlite</code>.
 Now, start the development cycle:</p>
 
-<pre class="twilight">
-<span class="Keyword">~</span> cd yosog
-<span class="Keyword">~</span> cabal-dev install <span class="Keyword">&amp;&amp;</span> yesod --dev devel
-</pre>
+<pre><code class="zsh">~ cd yosog
+~ cabal-dev install &amp;&amp; yesod --dev devel
+</code></pre>
 
 <p>This will compile the entire project. Be patient it could take a while the first time.
 Once finished a server is launched and you could visit it by clicking this link:</p>
@@ -221,9 +221,12 @@ Once finished a server is launched and you could visit it by clicking this link:
 
 Note: if something is messed up use the following command line inside the project directory.
 
-<pre class="twilight">
-<span class="Constant">\r</span>m -rf dist/* <span class="Keyword">;</span> cabal-dev install <span class="Keyword">&amp;&amp;</span> yesod --dev devel
-</pre>
+
+
+<pre><code class="zsh">\rm -rf dist/* ; cabal-dev install &amp;&amp; yesod --dev devel
+</code></pre>
+
+
 
 </blockquote>
 
@@ -239,23 +242,21 @@ but it is a good practice.</p>
 
 <p>Copy this <code>.gitignore</code> file into the <code>yosog</code> folder.</p>
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/.gitignore"> &#x27A5; .gitignore </a></div><div class="withfile">
-<pre class="twilight">
-cabal-dev
+<div class="codefile"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/.gitignore">&#x27A5; .gitignore</a></div>
+
+<pre><code class="zsh">cabal-dev
 dist
 .static-cache
 static/tmp
 *.sqlite3
-</pre>
-</div></div>
+</code></pre>
 
 <p>Then initialize your git repository:</p>
 
-<pre class="twilight">
-<span class="Keyword">~</span> git init .
-<span class="Keyword">~</span> git add .
-<span class="Keyword">~</span> git commit -a -m <span class="String"><span class="String">&quot;</span>Initial yesod commit<span class="String">&quot;</span></span>
-</pre>
+<pre><code class="zsh">~ git init .
+~ git add .
+~ git commit -a -m "Initial yesod commit"
+</code></pre>
 
 <p>We are almost ready to start.</p>
 
@@ -266,7 +267,7 @@ and a local web server listening the port 3000.
 If we modify a file inside this directory, yesod should try
 to recompile as fast as possible the site. 
 Instead of explaining the role of every file,
-let&rsquo;s focus only on the important files/directories for this tutorial:</p>
+let’s focus only on the important files/directories for this tutorial:</p>
 
 <ol>
   <li><code>config/routes</code></li>
@@ -281,7 +282,7 @@ let&rsquo;s focus only on the important files/directories for this tutorial:</p>
   <tbody>
     <tr>
       <td><code>config/routes</code></td>
-      <td>is where you&rsquo;ll configure the map <span class="sc">url</span> → Code.</td>
+      <td>is where you’ll configure the map <span class="sc">url</span> → Code.</td>
     </tr>
     <tr>
       <td><code>Handler/</code></td>
@@ -293,13 +294,13 @@ let&rsquo;s focus only on the important files/directories for this tutorial:</p>
     </tr>
     <tr>
       <td><code>config/models</code></td>
-      <td>is where you&rsquo;ll configure the persistent objects (database tables).</td>
+      <td>is where you’ll configure the persistent objects (database tables).</td>
     </tr>
   </tbody>
 </table>
 
-<p>During this tutorial we&rsquo;ll modify other files as well,
-but we won&rsquo;t explore them in detail.</p>
+<p>During this tutorial we’ll modify other files as well,
+but we won’t explore them in detail.</p>
 
 <p>Also note, shell commands are executed in the root directory of your project instead specified otherwise.</p>
 
@@ -308,16 +309,16 @@ but we won&rsquo;t explore them in detail.</p>
 <h2 id="echo">Echo</h2>
 
 <p>To verify the quality of the security of the yesod framework,
-let&rsquo;s make a minimal echo application.</p>
+let’s make a minimal echo application.</p>
 
 <blockquote>
   <p>Goal:</p>
 
-  <p>Make a server that when accessed <code>/echo/[some text]</code> should return a web page containing &ldquo;some text&rdquo; inside an <code>h1</code> bloc.</p>
+  <p>Make a server that when accessed <code>/echo/[some text]</code> should return a web page containing “some text” inside an <code>h1</code> bloc.</p>
 </blockquote>
 
 <p>In a first time, we must declare the <span class="sc">url</span> of the form <code>/echo/...</code> are meaningful.
-Let&rsquo;s take a look at the file <code>config/routes</code>:</p>
+Let’s take a look at the file <code>config/routes</code>:</p>
 
 <pre>
 /static StaticR Static getStatic
@@ -345,23 +346,22 @@ I am not particularly fan of the big R notation but this is the standard convent
 Application.hs:31:1: Not in scope: `getEchoR'
 </pre>
 
-<p>Why? Simply because we didn&rsquo;t written the code for the handler <code>EchoR</code>.
+<p>Why? Simply because we didn’t written the code for the handler <code>EchoR</code>.
 Edit the file <code>Handler/Home.hs</code> and append this:</p>
 
-<pre class="twilight">
-<span class="Entity">getEchoR</span> :: <span class="Constant">String</span> -&gt; <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
-getEchoR theText = <span class="Keyword">do</span>
-    defaultLayout $ <span class="Keyword">do</span>
+<pre><code class="haskell">getEchoR :: String -&gt; Handler RepHtml
+getEchoR theText = do
+    defaultLayout $ do
         [whamlet|&lt;h1&gt;#{theText}|]
-</pre>
+</code></pre>
 
-<p>Don&rsquo;t worry if you find all of this a bit cryptic. 
+<p>Don’t worry if you find all of this a bit cryptic. 
 In short it just declare a function named <code>getEchoR</code> with one argument (<code>theText</code>) of type String.
 When this function is called, it return a <code>Handler RepHtml</code> whatever it is. 
 But mainly this will encapsulate our expected result inside an <span class="sc">html</span> text.</p>
 
 <p>After saving the file, you should see yesod recompile the application.
-When the compilation is finished you&rsquo;ll see the message: <code>Starting devel application</code>.</p>
+When the compilation is finished you’ll see the message: <code>Starting devel application</code>.</p>
 
 <p>Now you can visit: <a href="http://localhost:3000/echo/Yesod%20rocks!"><code>http://localhost:3000/echo/Yesod%20rocks!</code></a></p>
 
@@ -383,18 +383,17 @@ A malicious user could not hide some bad script inside.</p>
 The <span class="sc">url</span> string is put inside a <span class="sc">url</span> type.
 Then the interesting part in the <span class="sc">url</span> is put inside a String type.
 To pass from <span class="sc">url</span> type to String type some transformation are made.
-For example, replace all &ldquo;<code>%20</code>&rdquo; by space characters.
+For example, replace all “<code>%20</code>” by space characters.
 Then to show the String inside an <span class="sc">html</span> document, the string is put inside an <span class="sc">html</span> type.
-Some transformations occurs like replace &ldquo;<code>&lt;</code>&rdquo; by &ldquo;<code>&amp;lt;</code>&rdquo;.
+Some transformations occurs like replace “<code>&lt;</code>” by “<code>&amp;lt;</code>”.
 Thanks to yesod, this tedious job is done for us.</p>
 
-<pre class="twilight">
-<span class="String"><span class="String">&quot;</span>http://localhost:3000/echo/some%20text&lt;a&gt;<span class="String">&quot;</span></span> :: URL
+<pre><code class="zsh">"http://localhost:3000/echo/some%20text&lt;a&gt;" :: URL
                     ↓
-              <span class="String"><span class="String">&quot;</span>some text&lt;a&gt;<span class="String">&quot;</span></span>                :: String
+              "some text&lt;a&gt;"                :: String
                     ↓
-          <span class="String"><span class="String">&quot;</span>some text &amp;lt;a&amp;gt;<span class="String">&quot;</span></span>             :: Html 
-</pre>
+          "some text &lt;a&gt;"             :: Html 
+</code></pre>
 
 <p>Yesod is not only fast, it helps us to remain secure.
 It protects us from many common errors in other paradigms.
@@ -409,42 +408,41 @@ We will clean up many details:</p>
   <li>Use a general <span class="sc">css</span> (cleaner than the empty by default)</li>
   <li>Dispatch handler code into different files</li>
   <li>Use <code>Data.Text</code> instead of <code>String</code></li>
-  <li>Put our &ldquo;views&rdquo;<sup id="fnref:explainviewwidget"><a href="#fn:explainviewwidget" rel="footnote">4</a></sup> inside the <code>template</code> directory</li>
+  <li>Put our “views”<sup id="fnref:explainviewwidget"><a href="#fn:explainviewwidget" rel="footnote">4</a></sup> inside the <code>template</code> directory</li>
 </ul>
 
 <h4 id="use-a-better-span-classsccssspan">Use a better <span class="sc">css</span></h4>
 
 <p>It is nice to note, the default template is based on <span class="sc">html5</span> boilerplate.
-Let&rsquo;s change the default <span class="sc">css</span>. 
+Let’s change the default <span class="sc">css</span>. 
 Add a file named <code>default-layout.lucius</code> inside the <code>templates/</code> directory containing:</p>
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/default-layout.lucius"> &#x27A5; default-layout.lucius </a></div><div class="withfile">
-<pre class="twilight">
-<span class="CssTagName">body</span> {
-    <span class="CssPropertyName">font-family</span>: <span class="SupportConstant">Helvetica</span>, <span class="SupportConstant">sans-serif</span>; 
-    <span class="CssPropertyName">font-size</span>: <span class="CssAdditionalConstants">18</span><span class="Keyword">px</span>; }
-<span class="CssId"><span class="CssId">#</span>main</span> {
-    <span class="CssPropertyName">padding</span>: <span class="CssAdditionalConstants">1</span><span class="Keyword">em</span>;
-    <span class="CssPropertyName">border</span>: <span class="CssAdditionalConstants"><span class="CssAdditionalConstants">#</span>CCC</span> <span class="CssPropertyValue">solid</span><span class="CssAdditionalConstants"> 2</span><span class="Keyword">px</span>;
-    <span class="CssPropertyName">border</span>-radius: <span class="CssAdditionalConstants">5</span><span class="Keyword">px</span>;
-    <span class="CssPropertyName">margin</span>: <span class="CssAdditionalConstants">1</span><span class="Keyword">em</span>;
-    <span class="CssPropertyName">width</span>: <span class="CssAdditionalConstants">37</span><span class="Keyword">em</span>;
-    <span class="CssPropertyName">margin</span>: <span class="CssAdditionalConstants">1</span><span class="Keyword">em</span> <span class="CssPropertyValue">auto</span>;
-    <span class="CssPropertyName">background</span>: <span class="CssAdditionalConstants"><span class="CssAdditionalConstants">#</span>F2F2F2</span>;
-    <span class="CssPropertyName">line-height</span>: <span class="CssAdditionalConstants">1.5</span><span class="Keyword">em</span>;
-    <span class="CssPropertyName">color</span>: <span class="CssAdditionalConstants"><span class="CssAdditionalConstants">#</span>333</span>; }
-<span class="CssClass"><span class="CssClass">.</span>required</span> { <span class="CssPropertyName">margin</span>: <span class="CssAdditionalConstants">1</span><span class="Keyword">em</span><span class="CssAdditionalConstants"> 0</span>; }
-<span class="CssClass"><span class="CssClass">.</span>optional</span> { <span class="CssPropertyName">margin</span>: <span class="CssAdditionalConstants">1</span><span class="Keyword">em</span><span class="CssAdditionalConstants"> 0</span>; }
-<span class="CssTagName">label</span> { <span class="CssPropertyName">width</span>: <span class="CssAdditionalConstants">8</span><span class="Keyword">em</span>; <span class="CssPropertyName">display</span>: <span class="CssPropertyValue">inline-block</span>; }
-<span class="CssTagName">input</span>, <span class="CssTagName">textarea</span> { <span class="CssPropertyName">background</span>: <span class="CssAdditionalConstants"><span class="CssAdditionalConstants">#</span>FAFAFA</span>}
-<span class="CssTagName">textarea</span> { <span class="CssPropertyName">width</span>: <span class="CssAdditionalConstants">27</span><span class="Keyword">em</span>; <span class="CssPropertyName">height</span>: <span class="CssAdditionalConstants">9</span><span class="Keyword">em</span>;}
-<span class="CssTagName">ul</span> { <span class="CssPropertyName">list-style</span>: <span class="CssPropertyValue">square</span>; }
-<span class="CssTagName">a</span> { <span class="CssPropertyName">color</span>: <span class="CssAdditionalConstants"><span class="CssAdditionalConstants">#</span>A56</span>; }
-<span class="CssTagName">a</span><span class="MetaTagInline"><span class="MetaTagInline">:</span>hover</span> { <span class="CssPropertyName">color</span>: <span class="CssAdditionalConstants"><span class="CssAdditionalConstants">#</span>C58</span>; }
-<span class="CssTagName">a</span><span class="MetaTagInline"><span class="MetaTagInline">:</span>active</span> { <span class="CssPropertyName">color</span>: <span class="CssAdditionalConstants"><span class="CssAdditionalConstants">#</span>C58</span>; }
-<span class="CssTagName">a</span><span class="MetaTagInline"><span class="MetaTagInline">:</span>visited</span> { <span class="CssPropertyName">color</span>: <span class="CssAdditionalConstants"><span class="CssAdditionalConstants">#</span>943</span>; }
-</pre>
-</div></div>
+<div class="codefile"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/default-layout.lucius">&#x27A5; default-layout.lucius</a></div>
+
+<pre><code class="css">body {
+    font-family: Helvetica, sans-serif; 
+    font-size: 18px; }
+#main {
+    padding: 1em;
+    border: #CCC solid 2px;
+    border-radius: 5px;
+    margin: 1em;
+    width: 37em;
+    margin: 1em auto;
+    background: #F2F2F2;
+    line-height: 1.5em;
+    color: #333; }
+.required { margin: 1em 0; }
+.optional { margin: 1em 0; }
+label { width: 8em; display: inline-block; }
+input, textarea { background: #FAFAFA}
+textarea { width: 27em; height: 9em;}
+ul { list-style: square; }
+a { color: #A56; }
+a:hover { color: #C58; }
+a:active { color: #C58; }
+a:visited { color: #943; }
+</code></pre>
 
 <p>Personally I would prefer if such a minimal <span class="sc">css</span> was put with the scaffolding tool.
 I am sure somebody already made such a minimal <span class="sc">css</span> which give the impression 
@@ -453,20 +451,19 @@ But I digress.</p>
 
 <h4 id="separate-handlers">Separate Handlers</h4>
 
-<p>Generally you don&rsquo;t want to have all your code inside a unique file.
+<p>Generally you don’t want to have all your code inside a unique file.
 This is why we will separate our handlers.
 In a first time create a new file <code>Handler/Echo.hs</code> containing:</p>
 
-<pre class="twilight">
-<span class="Keyword">module</span> <span class="Constant">Handler</span>.<span class="Constant">Echo</span> <span class="Keyword">where</span>
+<pre><code class="haskell">module Handler.Echo where
 
-<span class="Keyword">import</span> <span class="Constant">Import</span>
+import Import
 
-<span class="Entity">getEchoR</span> :: <span class="Constant">String</span> -&gt; <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
-getEchoR theText = <span class="Keyword">do</span>
-    defaultLayout $ <span class="Keyword">do</span>
+getEchoR :: String -&gt; Handler RepHtml
+getEchoR theText = do
+    defaultLayout $ do
         [whamlet|&lt;h1&gt;#{theText}|]
-</pre>
+</code></pre>
 
 <p>Do not forget to remove the getEchoR function inside <code>Handler/Home.hs</code>.</p>
 
@@ -478,11 +475,10 @@ Just after <code>Handler.Home</code>, add:</p>
 </pre>
 
 <p>We must also declare this new Handler module inside <code>Application.hs</code>.
-Just after the &ldquo;<code>import Handler.Home</code>&rdquo;, add:</p>
+Just after the “<code>import Handler.Home</code>”, add:</p>
 
-<pre class="twilight">
-<span class="Keyword">import</span> <span class="Constant">Handler</span>.<span class="Constant">Echo</span>
-</pre>
+<pre><code class="haskell">import Handler.Echo
+</code></pre>
 
 <p>This is it. </p>
 
@@ -495,9 +491,8 @@ Just after the &ldquo;<code>import Handler.Home</code>&rdquo;, add:</p>
 
 <p>To declare it, add this import directive to <code>Foundation.hs</code> (just after the last one):</p>
 
-<pre class="twilight">
-import Data.Text
-</pre>
+<pre><code class="diff">import Data.Text
+</code></pre>
 
 <p>We have to modify <code>config/routes</code> and our handler accordingly. 
 Replace <code>#String</code> by <code>#Text</code> in <code>config/routes</code>:</p>
@@ -508,18 +503,17 @@ Replace <code>#String</code> by <code>#Text</code> in <code>config/routes</code>
 
 <p>And do the same in <code>Handler/Echo.hs</code>:</p>
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/Echo.hs"> &#x27A5; Echo.hs </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Keyword">module</span> <span class="Constant">Handler</span>.<span class="Constant">Echo</span> <span class="Keyword">where</span>
+<div class="codefile"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/Echo.hs">&#x27A5; Echo.hs</a></div>
 
-<span class="Keyword">import</span> <span class="Constant">Import</span>
+<pre><code class="haskell">module Handler.Echo where
 
-<span class="Entity">getEchoR</span> :: <span class="Constant">Text</span> -&gt; <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
-getEchoR theText = <span class="Keyword">do</span>
-    defaultLayout $ <span class="Keyword">do</span>
+import Import
+
+getEchoR :: Text -&gt; Handler RepHtml
+getEchoR theText = do
+    defaultLayout $ do
         [whamlet|&lt;h1&gt;#{theText}|]
-</pre>
-</div></div>
+</code></pre>
 
 <h4 id="use-templates">Use templates</h4>
 
@@ -527,20 +521,18 @@ getEchoR theText = <span class="Keyword">do</span>
 We should put this part inside another file.
 Create the new file <code>templates/echo.hamlet</code> containing:</p>
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/echo.hamlet"> &#x27A5; echo.hamlet </a></div><div class="withfile">
-<pre class="twilight">
-&lt;h1&gt; #{theText}
-</pre>
-</div></div>
+<div class="codefile"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/echo.hamlet">&#x27A5; echo.hamlet</a></div>
+
+<pre><code class="haskell">&lt;h1&gt; #{theText}
+</code></pre>
 
 <p>and modify the handler <code>Handler/Echo.hs</code>:</p>
 
-<pre class="twilight">
-<span class="Entity">getEchoR</span> :: <span class="Constant">Text</span> -&gt; <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
-getEchoR theText = <span class="Keyword">do</span>
-    defaultLayout $ <span class="Keyword">do</span>
-        $(widgetFile <span class="String"><span class="String">&quot;</span>echo<span class="String">&quot;</span></span>)
-</pre>
+<pre><code class="haskell">getEchoR :: Text -&gt; Handler RepHtml
+getEchoR theText = do
+    defaultLayout $ do
+        $(widgetFile "echo")
+</code></pre>
 
 <p>At this point, our web application is structured between different files.
 Handler are grouped, we use <code>Data.Text</code> and our views are in templates.
@@ -548,13 +540,13 @@ It is the time to make a slightly more complex example.</p>
 
 <h2 id="mirror">Mirror</h2>
 
-<p><img alt="Neo touching a mirror" src="/Scratch/img/blog/Yesod-tutorial-for-newbies/mirror.jpg" class="left" /></p>
+<p><img alt="Neo touching a mirror" src="/Scratch/img/blog/Yesod-tutorial-for-newbies/mirror.jpg" class=" left" /></p>
 
-<p>Let&rsquo;s make another minimal application.
+<p>Let’s make another minimal application.
 You should see a form containing a text field and a validation button.
-When you enter some text (for example &ldquo;Jormungad&rdquo;) and validate,
+When you enter some text (for example “Jormungad”) and validate,
 the next page present you the content and its reverse appended to it. 
-In our example it should return &ldquo;JormungaddagnumroJ&rdquo;. </p>
+In our example it should return “JormungaddagnumroJ”. </p>
 
 <p>First, add a new route:</p>
 
@@ -565,59 +557,56 @@ In our example it should return &ldquo;JormungaddagnumroJ&rdquo;. </p>
 <p>This time the path <code>/mirror</code> will accept GET and POST requests.
 Add the corresponding new Handler file:</p>
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/Mirror.hs"> &#x27A5; Mirror.hs </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Keyword">module</span> <span class="Constant">Handler</span>.<span class="Constant">Mirror</span> <span class="Keyword">where</span>
+<div class="codefile"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/Mirror.hs">&#x27A5; Mirror.hs</a></div>
 
-<span class="Keyword">import</span> <span class="Constant">Import</span>
-<span class="Keyword">import</span> qualified <span class="Constant">Data</span>.<span class="Constant">Text</span> <span class="Keyword">as</span> <span class="Constant">T</span>
+<pre><code class="haskell">module Handler.Mirror where
 
-<span class="Entity">getMirrorR</span> :: <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
-getMirrorR = <span class="Keyword">do</span>
-    defaultLayout $ <span class="Keyword">do</span>
-        $(widgetFile <span class="String"><span class="String">&quot;</span>mirror<span class="String">&quot;</span></span>)
+import Import
+import qualified Data.Text as T
 
-<span class="Entity">postMirrorR</span> :: <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
-postMirrorR =  <span class="Keyword">do</span>
-        postedText &lt;- runInputPost $ ireq textField <span class="String"><span class="String">&quot;</span>content<span class="String">&quot;</span></span>
-        defaultLayout $ <span class="Keyword">do</span>
-            $(widgetFile <span class="String"><span class="String">&quot;</span>posted<span class="String">&quot;</span></span>)
-</pre>
-</div></div>
+getMirrorR :: Handler RepHtml
+getMirrorR = do
+    defaultLayout $ do
+        $(widgetFile "mirror")
 
-<p>Don&rsquo;t forget to declare it inside <code>yosog.cabal</code> and <code>Application.hs</code>.</p>
+postMirrorR :: Handler RepHtml
+postMirrorR =  do
+        postedText &lt;- runInputPost $ ireq textField "content"
+        defaultLayout $ do
+            $(widgetFile "posted")
+</code></pre>
+
+<p>Don’t forget to declare it inside <code>yosog.cabal</code> and <code>Application.hs</code>.</p>
 
 <p>We will need to use the <code>reverse</code> function provided by <code>Data.Text</code> 
 which explain the additional import.</p>
 
-<p>The only new thing here is the line that get the POST parameter named &ldquo;content&rdquo;.
+<p>The only new thing here is the line that get the POST parameter named “content”.
 If you want to know more detail about it and form in general you can take 
 look at <a href="http://www.yesodweb.com/book/forms">the yesod book</a>.</p>
 
 <p>Create the two corresponding templates:</p>
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/mirror.hamlet"> &#x27A5; mirror.hamlet </a></div><div class="withfile">
-<pre class="twilight">
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">h1</span><span class="MetaTagAll">&gt;</span></span> Enter your text
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">form</span> <span class="MetaTagAll">method</span>=<span class="MetaTagAll">post</span> <span class="MetaTagAll">action</span>=@<span class="EmbeddedSource">{MirrorR}</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">input</span> <span class="MetaTagInline">type</span>=<span class="MetaTagInline">text</span> <span class="MetaTagInline">name</span>=<span class="MetaTagInline">content</span><span class="MetaTagInline">&gt;</span></span>
-    <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">input</span> <span class="MetaTagInline">type</span>=<span class="MetaTagInline">submit</span><span class="MetaTagInline">&gt;</span></span>
-</pre>
-</div></div>
+<div class="codefile"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/mirror.hamlet">&#x27A5; mirror.hamlet</a></div>
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/posted.hamlet"> &#x27A5; posted.hamlet </a></div><div class="withfile">
-<pre class="twilight">
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">h1</span><span class="MetaTagAll">&gt;</span></span>You've just posted
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>#<span class="EmbeddedSource">{postedText}</span>#<span class="EmbeddedSource">{T.reverse postedText}</span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">hr</span><span class="MetaTagAll">&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span><span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">a</span> <span class="MetaTagInline">href</span>=@<span class="EmbeddedSource">{MirrorR}</span><span class="MetaTagInline">&gt;</span></span>Get back
-</pre>
-</div></div>
+<pre><code class="html">&lt;h1&gt; Enter your text
+&lt;form method=post action=@{MirrorR}&gt;
+    &lt;input type=text name=content&gt;
+    &lt;input type=submit&gt;
+</code></pre>
+
+<div class="codefile"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/posted.hamlet">&#x27A5; posted.hamlet</a></div>
+
+<pre><code class="html">&lt;h1&gt;You've just posted
+&lt;p&gt;#{postedText}#{T.reverse postedText}
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=@{MirrorR}&gt;Get back
+</code></pre>
 
 <p>And that is all.
-This time, we won&rsquo;t need to clean up.
+This time, we won’t need to clean up.
 We may have used another way to generate the form
-but we&rsquo;ll see this in the next section.</p>
+but we’ll see this in the next section.</p>
 
 <p>Just try it by <a href="http://localhost:3000/mirror">clicking here</a>.</p>
 
@@ -661,24 +650,23 @@ If you forget it, there will be an error.</p>
 <p>After the route and the model, we write the handler.
 First, declare a new Handler module.
 Add <code>import Handler.Blog</code> inside <code>Application.hs</code> and add it into <code>yosog.cabal</code>.
-Let&rsquo;s write the content of <code>Handler/Blog.hs</code>.
+Let’s write the content of <code>Handler/Blog.hs</code>.
 We start by declaring the module and by importing some block necessary to 
 handle Html in forms.</p>
 
-<pre class="twilight">
-<span class="Keyword">module</span> <span class="Constant">Handler</span>.<span class="Constant">Blog</span>
+<pre><code class="haskell">module Handler.Blog
     ( getBlogR
     , postBlogR
     , getArticleR
     )
-<span class="Keyword">where</span>
+where
 
-<span class="Keyword">import</span> <span class="Constant">Import</span>
+import Import
 
-<span class="Comment"><span class="Comment">--</span> to use Html into forms</span>
-<span class="Keyword">import</span> <span class="Constant">Yesod</span>.<span class="Constant">Form</span>.<span class="Constant">Nic</span> (<span class="Constant">YesodNic</span>, nicHtmlField)
-<span class="Keyword">instance</span> <span class="Constant">YesodNic</span> <span class="Constant">App</span>
-</pre>
+-- to use Html into forms
+import Yesod.Form.Nic (YesodNic, nicHtmlField)
+instance YesodNic App
+</code></pre>
 
 <p><small>Remark: it is a best practice to add the YesodNic instance inside <code>Foundation.hs</code>. 
 I put this definition here to make things easier but you should see a warning about this orphan instance.
@@ -687,58 +675,55 @@ To put the include inside Foundation.hs is left as an exercice to the reader.</s
 <p><small><em>Hint: Do not forget to put <code>YesodNic</code> and <code>nicHtmlField</code> inside the exported objects of the module.</em>
 </small></p>
 
-<pre class="twilight">
-<span class="Entity">entryForm</span> :: <span class="Constant">Form</span> <span class="Constant">Article</span>
-entryForm = renderDivs $ <span class="Constant">Article</span>
-    &lt;$&gt; areq   textField <span class="String"><span class="String">&quot;</span>Title<span class="String">&quot;</span></span> <span class="Constant">Nothing</span>
-    &lt;*&gt; areq   nicHtmlField <span class="String"><span class="String">&quot;</span>Content<span class="String">&quot;</span></span> <span class="Constant">Nothing</span>
-</pre>
+<pre><code class="haskell">entryForm :: Form Article
+entryForm = renderDivs $ Article
+    &lt;$&gt; areq   textField "Title" Nothing
+    &lt;*&gt; areq   nicHtmlField "Content" Nothing
+</code></pre>
 
 <p>This function defines a form for adding a new article.
-Don&rsquo;t pay attention to all the syntax. 
+Don’t pay attention to all the syntax. 
 If you are curious you can take a look at Applicative Functor.
 You just have to remember <code>areq</code> is for required form input.
 Its arguments being: <code>areq type label default_value</code>.</p>
 
-<pre class="twilight">
-<span class="Comment"><span class="Comment">--</span> The view showing the list of articles</span>
-<span class="Entity">getBlogR</span> :: <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
-getBlogR = <span class="Keyword">do</span>
-    <span class="Comment"><span class="Comment">--</span> Get the list of articles inside the database.</span>
-    articles &lt;- runDB $ selectList [] [<span class="Constant">Desc</span> <span class="Constant">ArticleTitle</span>]
-    <span class="Comment"><span class="Comment">--</span> We'll need the two &quot;objects&quot;: articleWidget and enctype</span>
-    <span class="Comment"><span class="Comment">--</span> to construct the form (see templates/articles.hamlet).</span>
+<pre><code class="haskell">-- The view showing the list of articles
+getBlogR :: Handler RepHtml
+getBlogR = do
+    -- Get the list of articles inside the database.
+    articles &lt;- runDB $ selectList [] [Desc ArticleTitle]
+    -- We'll need the two "objects": articleWidget and enctype
+    -- to construct the form (see templates/articles.hamlet).
     (articleWidget, enctype) &lt;- generateFormPost entryForm
-    defaultLayout $ <span class="Keyword">do</span>
-        $(widgetFile <span class="String"><span class="String">&quot;</span>articles<span class="String">&quot;</span></span>)
-</pre>
+    defaultLayout $ do
+        $(widgetFile "articles")
+</code></pre>
 
 <p>This handler should display a list of articles.
 We get the list from the DB and we construct the form.
 Just take a look at the corresponding template:</p>
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/articles.hamlet"> &#x27A5; articles.hamlet </a></div><div class="withfile">
-<pre class="twilight">
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">h1</span><span class="MetaTagAll">&gt;</span></span> Articles
+<div class="codefile"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/articles.hamlet">&#x27A5; articles.hamlet</a></div>
+
+<pre><code class="html">&lt;h1&gt; Articles
 $if null articles
     -- Show a standard message if there is no article
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span> There are no articles in the blog
+    &lt;p&gt; There are no articles in the blog
 $else
     -- Show the list of articles
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">ul</span><span class="MetaTagAll">&gt;</span></span>
-        $forall Entity articleId article <span class="InvalidIllegal">&lt;</span>- articles
-            <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">li</span><span class="MetaTagInline">&gt;</span></span> 
-                <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">a</span> <span class="MetaTagInline">href</span>=@<span class="EmbeddedSource">{ArticleR articleId}</span> <span class="MetaTagInline">&gt;</span></span> #<span class="EmbeddedSource">{articleTitle article}</span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">hr</span><span class="MetaTagAll">&gt;</span></span>
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">form</span> <span class="MetaTagAll">method</span>=<span class="MetaTagAll">post</span> <span class="MetaTagAll">enctype</span>=#<span class="EmbeddedSource">{enctype}</span><span class="MetaTagAll">&gt;</span></span>
-    ^<span class="EmbeddedSource">{articleWidget}</span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span>
-        <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">input</span> <span class="MetaTagInline">type</span>=<span class="MetaTagInline">submit</span> <span class="MetaTagInline">value</span>=<span class="String"><span class="String">&quot;</span>Post New Article<span class="String">&quot;</span></span><span class="MetaTagInline">&gt;</span></span>
-</pre>
-</div></div>
+    &lt;ul&gt;
+        $forall Entity articleId article &lt;- articles
+            &lt;li&gt; 
+                &lt;a href=@{ArticleR articleId} &gt; #{articleTitle article}
+&lt;hr&gt;
+  &lt;form method=post enctype=#{enctype}&gt;
+    ^{articleWidget}
+    &lt;div&gt;
+        &lt;input type=submit value="Post New Article"&gt;
+</code></pre>
 
 <p>You should remark we added some logic inside the template.
-There is a test and a &ldquo;loop&rdquo;.</p>
+There is a test and a “loop”.</p>
 
 <p>Another very interesting part is the creation of the form.
 The <code>articleWidget</code> was created by yesod.
@@ -749,20 +734,19 @@ But we have to create the submit button.</p>
 
 <p>Get back to <code>Handler/Blog.hs</code>.</p>
 
-<pre class="twilight">
-<span class="Comment"><span class="Comment">--</span> we continue Handler/Blog.hs</span>
-<span class="Entity">postBlogR</span> :: <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
-postBlogR = <span class="Keyword">do</span>
+<pre><code class="haskell">-- we continue Handler/Blog.hs
+postBlogR :: Handler RepHtml
+postBlogR = do
     ((res,articleWidget),enctype) &lt;- runFormPost entryForm
-    <span class="Keyword">case</span> res <span class="Keyword">of</span> 
-         <span class="Constant">FormSuccess</span> article -&gt; <span class="Keyword">do</span> 
+    case res of 
+         FormSuccess article -&gt; do 
             articleId &lt;- runDB $ insert article
-            setMessage $ toHtml $ (articleTitle article) &lt;&gt; <span class="String"><span class="String">&quot;</span> created<span class="String">&quot;</span></span>
-            redirect $ <span class="Constant">ArticleR</span> articleId 
-         _ -&gt; defaultLayout $ <span class="Keyword">do</span>
-                setTitle <span class="String"><span class="String">&quot;</span>Please correct your entry form<span class="String">&quot;</span></span>
-                $(widgetFile <span class="String"><span class="String">&quot;</span>articleAddError<span class="String">&quot;</span></span>)
-</pre>
+            setMessage $ toHtml $ (articleTitle article) &lt;&gt; " created"
+            redirect $ ArticleR articleId 
+         _ -&gt; defaultLayout $ do
+                setTitle "Please correct your entry form"
+                $(widgetFile "articleAddError")
+</code></pre>
 
 <p>This function should be used to create a new article.
 We handle the form response.
@@ -778,47 +762,43 @@ If things goes right: </p>
 
 <p>Here is the content of the error Page:</p>
 
-<pre class="twilight">
-&lt;form method=post enctype=#{enctype}&gt;
+<pre><code class="haskell">&lt;form method=post enctype=#{enctype}&gt;
     ^{articleWidget}
-    &lt;<span class="Entity">div</span>&gt;
-        &lt;input <span class="Keyword">type</span>=submit value=<span class="String"><span class="String">&quot;</span>Post New Article<span class="String">&quot;</span></span>&gt;
-</pre>
+    &lt;div&gt;
+        &lt;input type=submit value="Post New Article"&gt;
+</code></pre>
 
 <p>Finally we need to display an article:</p>
 
-<pre class="twilight">
-<span class="Entity">getArticleR</span> :: <span class="Constant">ArticleId</span> -&gt; <span class="Constant">Handler</span> <span class="Constant">RepHtml</span>
-getArticleR articleId = <span class="Keyword">do</span>
+<pre><code class="haskell">getArticleR :: ArticleId -&gt; Handler RepHtml
+getArticleR articleId = do
     article &lt;- runDB $ get404 articleId
-    defaultLayout $ <span class="Keyword">do</span>
+    defaultLayout $ do
         setTitle $ toHtml $ articleTitle article
-        $(widgetFile <span class="String"><span class="String">&quot;</span>article<span class="String">&quot;</span></span>)
-</pre>
+        $(widgetFile "article")
+</code></pre>
 
 <p>The <code>get404</code> function try to do a get on the DB. 
 If it fails it return a 404 page.
 The rest should be clear. 
 Here is the content of <code>templates/article.hamlet</code>:</p>
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/article.hamlet"> &#x27A5; article.hamlet </a></div><div class="withfile">
-<pre class="twilight">
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">h1</span><span class="MetaTagAll">&gt;</span></span> #<span class="EmbeddedSource">{articleTitle article}</span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">article</span><span class="MetaTagAll">&gt;</span></span> #<span class="EmbeddedSource">{articleContent article}</span>
-</pre>
-</div></div>
+<div class="codefile"><a href="/Scratch/en/blog/Yesod-tutorial-for-newbies/code/article.hamlet">&#x27A5; article.hamlet</a></div>
+
+<pre><code class="html">&lt;h1&gt; #{articleTitle article}
+&lt;article&gt; #{articleContent article}
+</code></pre>
 
 <p>The blog system is finished.
 Just for fun, you can try to create an article with the following content:</p>
 
-<pre class="twilight">
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>A last try to <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">em</span><span class="MetaTagInline">&gt;</span></span>cross script<span class="MetaTagInline"><span class="MetaTagInline">&lt;/</span><span class="MetaTagInline">em</span><span class="MetaTagInline">&gt;</span></span> 
-   and <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">em</span><span class="MetaTagInline">&gt;</span></span>SQL injection<span class="MetaTagInline"><span class="MetaTagInline">&lt;/</span><span class="MetaTagInline">em</span><span class="MetaTagInline">&gt;</span></span><span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>Here is the first try: 
-<span class="EmbeddedSource">   <span class="EmbeddedSource">&lt;</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span><span class="SupportFunction">alert</span><span class="EmbeddedSource">(</span><span class="String"><span class="String">&quot;</span>You loose<span class="String">&quot;</span></span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">;</span><span class="EmbeddedSource">&lt;/</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span></span><span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span> And Here is the last <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">p</span><span class="MetaTagAll">&gt;</span></span>
-&quot;); DROP TABLE ARTICLE;;
-</pre>
+<pre><code class="html">&lt;p&gt;A last try to &lt;em&gt;cross script&lt;/em&gt; 
+   and &lt;em&gt;SQL injection&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Here is the first try: 
+   &lt;script&gt;alert("You loose");&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt; And Here is the last &lt;/p&gt;
+"); DROP TABLE ARTICLE;;
+</code></pre>
 
 <h2 id="conclusion">Conclusion</h2>
 
@@ -829,11 +809,11 @@ I made it very minimal.</p>
 you should take a look at the
 recent <a href="http://yesodweb.com/blog/2012/01/blog-example">i18n blog tutorial</a>.
 It will be obvious I inspired my own tutorial on it.
-You&rsquo;ll learn in a very straightforward way how easy it is to use authorizations,
+You’ll learn in a very straightforward way how easy it is to use authorizations,
 Time and internationalization. </p>
 
-<p>If, on the other hand you don&rsquo;t know Haskell.
-Then you shouldn&rsquo;t jump directly to web programming.
+<p>If, on the other hand you don’t know Haskell.
+Then you shouldn’t jump directly to web programming.
 Haskell is a very complex and unusual language.
 My advice to go as fast as possible in using Haskell for web programming is:</p>
 
@@ -852,7 +832,7 @@ My advice to go as fast as possible in using Haskell for web programming is:</p>
   <li>Use <a href="http://community.haskell.org/~ndm/hlint/">hlint</a> as soon as possible to get good habits.</li>
 </ul>
 
-<p>As you should see, if you don&rsquo;t already know Haskell,
+<p>As you should see, if you don’t already know Haskell,
 the path is long but I guaranty you it will be very rewarding!</p>
 
 <p><em>ps:</em> You can download the source of this yesod blog tutorial at 
@@ -869,7 +849,7 @@ the path is long but I guaranty you it will be very rewarding!</p>
       <p>If you are curious, you can search about <a href="http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html">the Fibonacci node.js troll</a>. Without any tweaking, <a href="http://mathias-biilmann.net/posts/2011/10/is-haskell-the-cure">Haskell handled this problem perfectly</a>. I tested it myself using yesod instead of Snap.<a href="#fnref:nodejstroll" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:explainviewwidget">
-      <p>By view I mean yesod widget&rsquo;s hamlet, lucius and julius files. <a href="#fnref:explainviewwidget" rel="reference">&#8617;</a></p>
+      <p>By view I mean yesod widget’s hamlet, lucius and julius files. <a href="#fnref:explainviewwidget" rel="reference">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -985,7 +965,7 @@ the path is long but I guaranty you it will be very rewarding!</p>
                 </div>
                 <div id="lastmod">
                     Created: 01/15/2012
-                    Modified: 04/11/2012 
+                    Modified: 04/26/2012 
                 </div>
                 <div>
                     Entirely done with

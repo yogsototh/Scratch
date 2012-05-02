@@ -7,4 +7,4 @@ error_message: Request Timed Out
 
 noSubMenu: true
 -----
-Contact: <% mail_perso %>
+Contact: %mailperso

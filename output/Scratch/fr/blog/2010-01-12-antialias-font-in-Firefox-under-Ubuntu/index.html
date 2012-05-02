@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Fontes adoucies sous Ubuntu Firefox" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -59,67 +62,69 @@
 <p>modifiez le fichier <code>/etc/fonts/local.conf</code> en y incluant le contenu suivant&nbsp;: </p>
 
 <div>
-<div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/code/local.conf"> &#x27A5; local.conf </a></div><div class="withfile">
-<pre class="twilight">
+<div class="codefile"><a href="/Scratch/fr/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/code/local.conf">&#x27A5; local.conf</a></div>
 
-<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&lt;?</span><span class="DoctypeXmlProcessing">xml</span><span class="DoctypeXmlProcessing"> version</span>=<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&quot;</span>1.0<span class="DoctypeXmlProcessing">&quot;</span></span><span class="DoctypeXmlProcessing">?&gt;</span></span>
-<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&lt;!</span><span class="DoctypeXmlProcessing">DOCTYPE</span> fontconfig SYSTEM &quot;fonts.dtd&quot;<span class="DoctypeXmlProcessing">&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">fontconfig</span><span class="MetaTagAll">&gt;</span></span>
 
-<span class="Comment"><span class="Comment">&lt;!--</span> Miscellaneous settings <span class="Comment">--&gt;</span></span>
+<pre><code class="xml">
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "fonts.dtd"&gt;
+&lt;fontconfig&gt;
 
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">include</span> <span class="MetaTagAll">ignore_missing</span>=<span class="String"><span class="String">&quot;</span>yes<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>misc.conf<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">include</span><span class="MetaTagAll">&gt;</span></span>
+&lt;!-- Miscellaneous settings --&gt;
 
-<span class="Comment"><span class="Comment">&lt;!--</span> Define alias <span class="Comment">--&gt;</span></span>
+&lt;include ignore_missing="yes"&gt;misc.conf&lt;/include&gt;
 
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">include</span> <span class="MetaTagAll">ignore_missing</span>=<span class="String"><span class="String">&quot;</span>yes<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>alias.conf<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">include</span><span class="MetaTagAll">&gt;</span></span>
+&lt;!-- Define alias --&gt;
 
-<span class="Comment"><span class="Comment">&lt;!--</span> Rules for Microsoft fonts <span class="Comment">--&gt;</span></span>
+&lt;include ignore_missing="yes"&gt;alias.conf&lt;/include&gt;
 
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">include</span> <span class="MetaTagAll">ignore_missing</span>=<span class="String"><span class="String">&quot;</span>yes<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>msfonts-rules.conf<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">include</span><span class="MetaTagAll">&gt;</span></span>
+&lt;!-- Rules for Microsoft fonts --&gt;
 
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">match</span> <span class="MetaTagAll">target</span>=<span class="String"><span class="String">&quot;</span>pattern<span class="String">&quot;</span></span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>family<span class="String">&quot;</span></span> <span class="MetaTagAll">&gt;</span></span>
-      <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">test</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>family<span class="String">&quot;</span></span> <span class="MetaTagAll">qual</span>=<span class="String"><span class="String">&quot;</span>any<span class="String">&quot;</span></span> <span class="MetaTagAll">&gt;</span></span>
-          <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">string</span><span class="MetaTagAll">&gt;</span></span>Tahoma<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">string</span><span class="MetaTagAll">&gt;</span></span>
-      <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">test</span><span class="MetaTagAll">&gt;</span></span>
-      <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">edit</span> <span class="MetaTagAll">mode</span>=<span class="String"><span class="String">&quot;</span>assign<span class="String">&quot;</span></span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>family<span class="String">&quot;</span></span> <span class="MetaTagAll">&gt;</span></span>
-          <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">string</span><span class="MetaTagAll">&gt;</span></span>Verdana<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">string</span><span class="MetaTagAll">&gt;</span></span>
-      <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">edit</span><span class="MetaTagAll">&gt;</span></span>
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">match</span><span class="MetaTagAll">&gt;</span></span>
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">selectfont</span><span class="MetaTagAll">&gt;</span></span>
-      <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">acceptfont</span><span class="MetaTagAll">&gt;</span></span>
-          <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">pattern</span><span class="MetaTagAll">&gt;</span></span>
-              <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">patelt</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>family<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span> 
-                <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">string</span><span class="MetaTagAll">&gt;</span></span>Lucida Grande<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">string</span><span class="MetaTagAll">&gt;</span></span> 
-              <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">patelt</span><span class="MetaTagAll">&gt;</span></span>
-          <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">pattern</span><span class="MetaTagAll">&gt;</span></span>
-      <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">acceptfont</span><span class="MetaTagAll">&gt;</span></span>
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">selectfont</span><span class="MetaTagAll">&gt;</span></span>
+&lt;include ignore_missing="yes"&gt;msfonts-rules.conf&lt;/include&gt;
 
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">match</span> <span class="MetaTagAll">target</span>=<span class="String"><span class="String">&quot;</span>pattern<span class="String">&quot;</span></span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>family<span class="String">&quot;</span></span> <span class="MetaTagAll">&gt;</span></span>
-      <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">test</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>family<span class="String">&quot;</span></span> <span class="MetaTagAll">qual</span>=<span class="String"><span class="String">&quot;</span>any<span class="String">&quot;</span></span> <span class="MetaTagAll">&gt;</span></span>
-          <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">string</span><span class="MetaTagAll">&gt;</span></span>Georgia<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">string</span><span class="MetaTagAll">&gt;</span></span>
-      <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">test</span><span class="MetaTagAll">&gt;</span></span>
-      <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">edit</span> <span class="MetaTagAll">mode</span>=<span class="String"><span class="String">&quot;</span>assign<span class="String">&quot;</span></span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>family<span class="String">&quot;</span></span> <span class="MetaTagAll">&gt;</span></span>
-          <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">string</span><span class="MetaTagAll">&gt;</span></span>Georgia<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">string</span><span class="MetaTagAll">&gt;</span></span>
-      <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">edit</span><span class="MetaTagAll">&gt;</span></span>
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">match</span><span class="MetaTagAll">&gt;</span></span>
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">selectfont</span><span class="MetaTagAll">&gt;</span></span>
-      <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">acceptfont</span><span class="MetaTagAll">&gt;</span></span>
-          <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">pattern</span><span class="MetaTagAll">&gt;</span></span>
-              <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">patelt</span> <span class="MetaTagAll">name</span>=<span class="String"><span class="String">&quot;</span>family<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span> 
-                <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">string</span><span class="MetaTagAll">&gt;</span></span>Century Schoolbook L<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">string</span><span class="MetaTagAll">&gt;</span></span> 
-              <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">patelt</span><span class="MetaTagAll">&gt;</span></span>
-          <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">pattern</span><span class="MetaTagAll">&gt;</span></span>
-      <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">acceptfont</span><span class="MetaTagAll">&gt;</span></span>
-  <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">selectfont</span><span class="MetaTagAll">&gt;</span></span>
+  &lt;match target="pattern" name="family" &gt;
+      &lt;test name="family" qual="any" &gt;
+          &lt;string&gt;Tahoma&lt;/string&gt;
+      &lt;/test&gt;
+      &lt;edit mode="assign" name="family" &gt;
+          &lt;string&gt;Verdana&lt;/string&gt;
+      &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;selectfont&gt;
+      &lt;acceptfont&gt;
+          &lt;pattern&gt;
+              &lt;patelt name="family"&gt; 
+                &lt;string&gt;Lucida Grande&lt;/string&gt; 
+              &lt;/patelt&gt;
+          &lt;/pattern&gt;
+      &lt;/acceptfont&gt;
+  &lt;/selectfont&gt;
 
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">fontconfig</span><span class="MetaTagAll">&gt;</span></span>
-</pre>
-</div></div>
+  &lt;match target="pattern" name="family" &gt;
+      &lt;test name="family" qual="any" &gt;
+          &lt;string&gt;Georgia&lt;/string&gt;
+      &lt;/test&gt;
+      &lt;edit mode="assign" name="family" &gt;
+          &lt;string&gt;Georgia&lt;/string&gt;
+      &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;selectfont&gt;
+      &lt;acceptfont&gt;
+          &lt;pattern&gt;
+              &lt;patelt name="family"&gt; 
+                &lt;string&gt;Century Schoolbook L&lt;/string&gt; 
+              &lt;/patelt&gt;
+          &lt;/pattern&gt;
+      &lt;/acceptfont&gt;
+  &lt;/selectfont&gt;
+
+&lt;/fontconfig&gt;
+</code></pre>
+
+
 </div>
 
-<p>J&rsquo;espère que ça a pu aider quelqu&rsquo;un qui comme moi pleurait en regardant des fontes aussi laides.</p>
+<p>J’espère que ça a pu aider quelqu’un qui comme moi pleurait en regardant des fontes aussi laides.</p>
 
                 </div>
             

@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="découper un fichier par mots clés" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -54,41 +57,47 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>Assez bizarrement, je n&rsquo;ai trouvé aucun outil UNIX pour découper un fichier par mot clé. 
-Alors j&rsquo;en ai fait un en <code>awk</code>. Je le met ici principalement pour moi, mais ça peut toujours servir à quelqu&rsquo;un d&rsquo;autre.
+                    <p>Assez bizarrement, je n’ai trouvé aucun outil UNIX pour découper un fichier par mot clé. 
+Alors j’en ai fait un en <code>awk</code>. Je le met ici principalement pour moi, mais ça peut toujours servir à quelqu’un d’autre.
 Le code suivant découpe un fichier pour chacune de ses ligne contenant le mot <code>UTC</code>.</p>
 
-<div><pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>!/usr/bin/env awk</span>
-<span class="Entity">BEGIN</span>{i=0;}
-<span class="StringRegexp"><span class="StringRegexp">/</span>UTC<span class="StringRegexp">/</span></span> { 
-    i+=1;
-    FIC=<span class="SupportFunction">sprintf</span>(<span class="String"><span class="String">&quot;</span>fic.%03d<span class="String">&quot;</span></span>,i); 
-} 
-{<span class="SupportFunction">print</span> <span class="Variable"><span class="Variable">$</span>0</span>&gt;&gt;FIC}
-</pre></div>
+<div>
 
-<p>En réalité, j&rsquo;avais besoin de cet outils pour avoir un fichier par jour. Chaque ligne contenant UTC ayant le format suivant&nbsp;:</p>
+<pre><code class="perl">#!/usr/bin/env awk
+BEGIN{i=0;}
+/UTC/ { 
+    i+=1;
+    FIC=sprintf("fic.%03d",i); 
+} 
+{print $0&gt;&gt;FIC}
+</code></pre>
+
+</div>
+
+<p>En réalité, j’avais besoin de cet outils pour avoir un fichier par jour. Chaque ligne contenant UTC ayant le format suivant&nbsp;:</p>
 
 <pre class="twilight">
 Mon Dec  7 10:32:30 UTC 2009
 </pre>
 
-<p>J&rsquo;en suis finallement arrivé au code suivant&nbsp;:</p>
+<p>J’en suis finallement arrivé au code suivant&nbsp;:</p>
 
-<div><pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>!/usr/bin/env awk</span>
-<span class="Entity">BEGIN</span>{i=0;}
-<span class="StringRegexp"><span class="StringRegexp">/</span>UTC<span class="StringRegexp">/</span></span> {
-    date=<span class="Variable"><span class="Variable">$</span>1</span><span class="Variable"><span class="Variable">$</span>2</span><span class="Variable"><span class="Variable">$</span>3</span>; 
-    <span class="Keyword">if</span> ( date != olddate ) {
+<div>
+
+<pre><code class="perl">#!/usr/bin/env awk
+BEGIN{i=0;}
+/UTC/ {
+    date=$1$2$3; 
+    if ( date != olddate ) {
         olddate=date;
         i+=1;
-        FIC=<span class="SupportFunction">sprintf</span>(<span class="String"><span class="String">&quot;</span>fic.%03d<span class="String">&quot;</span></span>,i); 
+        FIC=sprintf("fic.%03d",i); 
     }
 } 
-{<span class="SupportFunction">print</span> <span class="Variable"><span class="Variable">$</span>0</span>&gt;&gt;FIC}
-</pre></div>
+{print $0&gt;&gt;FIC}
+</code></pre>
+
+</div>
 
                 </div>
             

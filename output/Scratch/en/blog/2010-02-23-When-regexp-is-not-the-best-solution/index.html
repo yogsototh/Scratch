@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Quand se passer des expressions régulières ?" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -59,50 +62,55 @@ Particularly when transformations you want to make are easy.</p>
 
 <p>I wanted to know how to get file extension from filename the fastest way possible. There is 3 natural way of doing this:</p>
 
-<div><pre class="twilight">
-<span class="Comment"><span class="Comment">#</span> regexp</span>
-str.<span class="Entity">match</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="StringRegexp">[</span>^.<span class="StringRegexp">]</span></span>*$</span><span class="StringRegexp"><span class="StringRegexp">/</span></span>); 
-ext<span class="Keyword">=</span><span class="Variable"><span class="Variable">$</span>&amp;</span>
+<div>
 
-<span class="Comment"><span class="Comment">#</span> split</span>
-ext<span class="Keyword">=</span>str.<span class="Entity">split</span>(<span class="String"><span class="String">'</span>.<span class="String">'</span></span>)[<span class="Keyword">-</span><span class="Constant">1</span>]
+<pre><code class="ruby"># regexp
+str.match(/[^.]*$/); 
+ext=$&amp;
 
-<span class="Comment"><span class="Comment">#</span> File module</span>
-ext<span class="Keyword">=</span><span class="Support">File</span>.<span class="Entity">extname</span>(str)
-</pre></div>
+# split
+ext=str.split('.')[-1]
+
+# File module
+ext=File.extname(str)
+</code></pre>
+
+</div>
 
 <p>At first sight I believed that the regexp should be faster than the split because it could be many <code>.</code> in a filename. But in reality, most of time there is only one dot and I realized the split will be faster. But not the fastest way. There is a function dedicated to this work in the <code>File</code> module.</p>
 
 <p>Here is the Benchmark ruby code:</p>
 
-<div><div class="code"><div class="file"><a href="/Scratch/en/blog/2010-02-23-When-regexp-is-not-the-best-solution/code/regex_benchmark_ext.rb"> &#x27A5; regex_benchmark_ext.rb </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>!/usr/bin/env ruby</span>
-<span class="Keyword">require</span> <span class="String"><span class="String">'</span>benchmark<span class="String">'</span></span>
-n<span class="Keyword">=</span><span class="Constant">80000</span>
-tab<span class="Keyword">=</span>[ <span class="String"><span class="String">'</span>/accounts/user.json<span class="String">'</span></span>,
-      <span class="String"><span class="String">'</span>/accounts/user.xml<span class="String">'</span></span>,
-      <span class="String"><span class="String">'</span>/user/titi/blog/toto.json<span class="String">'</span></span>,
-      <span class="String"><span class="String">'</span>/user/titi/blog/toto.xml<span class="String">'</span></span> ]
+<div><div class="codefile"><a href="/Scratch/en/blog/2010-02-23-When-regexp-is-not-the-best-solution/code/regex_benchmark_ext.rb">&#x27A5; regex_benchmark_ext.rb</a></div>
 
-puts <span class="String"><span class="String">&quot;</span>Get extname<span class="String">&quot;</span></span>
-<span class="Support">Benchmark</span>.<span class="Entity">bm</span> <span class="Keyword">do </span>|<span class="Variable">x</span>|
-    x.<span class="Entity">report</span>(<span class="String"><span class="String">&quot;</span>regexp:<span class="String">&quot;</span></span>) { n.<span class="Entity">times</span> <span class="Keyword">do </span>
-        str<span class="Keyword">=</span>tab[<span class="Entity">rand</span>(<span class="Constant">4</span>)]; 
-        str.<span class="Entity">match</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="StringRegexp">[</span>^.<span class="StringRegexp">]</span></span>*$</span><span class="StringRegexp"><span class="StringRegexp">/</span></span>); 
-        ext<span class="Keyword">=</span><span class="Variable"><span class="Variable">$</span>&amp;</span>; 
-    <span class="Keyword">end</span>  }
-    x.<span class="Entity">report</span>(<span class="String"><span class="String">&quot;</span> split:<span class="String">&quot;</span></span>) { n.<span class="Entity">times</span> <span class="Keyword">do </span>
-        str<span class="Keyword">=</span>tab[<span class="Entity">rand</span>(<span class="Constant">4</span>)]; 
-        ext<span class="Keyword">=</span>str.<span class="Entity">split</span>(<span class="String"><span class="String">'</span>.<span class="String">'</span></span>)[<span class="Keyword">-</span><span class="Constant">1</span>] ; 
-    <span class="Keyword">end</span> }
-    x.<span class="Entity">report</span>(<span class="String"><span class="String">&quot;</span>  File:<span class="String">&quot;</span></span>) { n.<span class="Entity">times</span> <span class="Keyword">do </span>
-        str<span class="Keyword">=</span>tab[<span class="Entity">rand</span>(<span class="Constant">4</span>)]; 
-        ext<span class="Keyword">=</span><span class="Support">File</span>.<span class="Entity">extname</span>(str); 
-    <span class="Keyword">end</span>  }
-<span class="Keyword">end</span>
-</pre>
-</div></div></div>
+
+<pre><code class="ruby">#!/usr/bin/env ruby
+require 'benchmark'
+n=80000
+tab=[ '/accounts/user.json',
+      '/accounts/user.xml',
+      '/user/titi/blog/toto.json',
+      '/user/titi/blog/toto.xml' ]
+
+puts "Get extname"
+Benchmark.bm do |x|
+    x.report("regexp:") { n.times do 
+        str=tab[rand(4)]; 
+        str.match(/[^.]*$/); 
+        ext=$&amp;; 
+    end  }
+    x.report(" split:") { n.times do 
+        str=tab[rand(4)]; 
+        ext=str.split('.')[-1] ; 
+    end }
+    x.report("  File:") { n.times do 
+        str=tab[rand(4)]; 
+        ext=File.extname(str); 
+    end  }
+end
+</code></pre>
+
+</div>
 
 <p>And here is the result</p>
 
@@ -118,30 +126,32 @@ regexp:  2.550000   0.020000   2.570000 (  2.693407)
 
 <h2 id="file-path-without-the-extension">file path without the extension.</h2>
 
-<div><div class="code"><div class="file"><a href="/Scratch/en/blog/2010-02-23-When-regexp-is-not-the-best-solution/code/regex_benchmark_strip.rb"> &#x27A5; regex_benchmark_strip.rb </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>!/usr/bin/env ruby</span>
-<span class="Keyword">require</span> <span class="String"><span class="String">'</span>benchmark<span class="String">'</span></span>
-n<span class="Keyword">=</span><span class="Constant">80000</span>
-tab<span class="Keyword">=</span>[ <span class="String"><span class="String">'</span>/accounts/user.json<span class="String">'</span></span>,
-      <span class="String"><span class="String">'</span>/accounts/user.xml<span class="String">'</span></span>,
-      <span class="String"><span class="String">'</span>/user/titi/blog/toto.json<span class="String">'</span></span>,
-      <span class="String"><span class="String">'</span>/user/titi/blog/toto.xml<span class="String">'</span></span> ]
+<div><div class="codefile"><a href="/Scratch/en/blog/2010-02-23-When-regexp-is-not-the-best-solution/code/regex_benchmark_strip.rb">&#x27A5; regex_benchmark_strip.rb</a></div>
 
-puts <span class="String"><span class="String">&quot;</span>remove extension<span class="String">&quot;</span></span>
-<span class="Support">Benchmark</span>.<span class="Entity">bm</span> <span class="Keyword">do </span>|<span class="Variable">x</span>|
-    x.<span class="Entity">report</span>(<span class="String"><span class="String">&quot;</span> File:<span class="String">&quot;</span></span>) { n.<span class="Entity">times</span> <span class="Keyword">do </span>
-        str<span class="Keyword">=</span>tab[<span class="Entity">rand</span>(<span class="Constant">4</span>)]; 
-        path<span class="Keyword">=</span><span class="Support">File</span>.<span class="Entity">expand_path</span>(str,<span class="Support">File</span>.<span class="Entity">basename</span>(str,<span class="Support">File</span>.<span class="Entity">extname</span>(str))); 
-    <span class="Keyword">end</span> }
-    x.<span class="Entity">report</span>(<span class="String"><span class="String">&quot;</span>chomp:<span class="String">&quot;</span></span>) { n.<span class="Entity">times</span> <span class="Keyword">do </span>
-        str<span class="Keyword">=</span>tab[<span class="Entity">rand</span>(<span class="Constant">4</span>)]; 
-        ext<span class="Keyword">=</span><span class="Support">File</span>.<span class="Entity">extname</span>(str); 
-        path<span class="Keyword">=</span>str.<span class="Entity">chomp</span>(ext); 
-    <span class="Keyword">end</span> }
-<span class="Keyword">end</span>
-</pre>
-</div></div></div>
+
+<pre><code class="ruby">#!/usr/bin/env ruby
+require 'benchmark'
+n=80000
+tab=[ '/accounts/user.json',
+      '/accounts/user.xml',
+      '/user/titi/blog/toto.json',
+      '/user/titi/blog/toto.xml' ]
+
+puts "remove extension"
+Benchmark.bm do |x|
+    x.report(" File:") { n.times do 
+        str=tab[rand(4)]; 
+        path=File.expand_path(str,File.basename(str,File.extname(str))); 
+    end }
+    x.report("chomp:") { n.times do 
+        str=tab[rand(4)]; 
+        ext=File.extname(str); 
+        path=str.chomp(ext); 
+    end }
+end
+</code></pre>
+
+</div>
 
 <p>and here is the result:</p>
 

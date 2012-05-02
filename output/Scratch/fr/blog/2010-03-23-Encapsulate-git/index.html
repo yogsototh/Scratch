@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Encapsuler git" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-03-23-Encapsulate-git/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -56,16 +59,16 @@
                 <div class="corps">
                     <p><span class="intro">
 Voici une solution pour conserver des branches divergentes avec <code>git</code>.
-Parce qu&rsquo;il est facile de <em>merger</em> par erreur, je propose un script qui encapsule le comportement de <code>git</code> pour interdire certains <em>merges</em> dangereux. Mais qui permet aussi de faire des merges en cascades de la racines vers les autres branches.
+Parce qu’il est facile de <em>merger</em> par erreur, je propose un script qui encapsule le comportement de <code>git</code> pour interdire certains <em>merges</em> dangereux. Mais qui permet aussi de faire des merges en cascades de la racines vers les autres branches.
 </span></p>
 
 <h2 id="se-prmunir-contre-les-erreurs">Se prémunir contre les erreurs</h2>
 
-<p>Je travaille sur un projet dans lequel certaines de mes branches <code>git</code> doivent rester divergentes. Et les divergences devraient aller en s&rsquo;accentuant.</p>
+<p>Je travaille sur un projet dans lequel certaines de mes branches <code>git</code> doivent rester divergentes. Et les divergences devraient aller en s’accentuant.</p>
 
-<p>J&rsquo;utilise aussi certaines branches qui contiennent la partie commune de ces projets.</p>
+<p>J’utilise aussi certaines branches qui contiennent la partie commune de ces projets.</p>
 
-<p>Disons que j&rsquo;ai les branches&nbsp;:</p>
+<p>Disons que j’ai les branches&nbsp;:</p>
 
 <ul>
   <li>master: commune à toutes les branches</li>
@@ -83,142 +86,150 @@ Parce qu&rsquo;il est facile de <em>merger</em> par erreur, je propose un script
 
 <p><img alt="Branch hierarchy" src="/Scratch/img/blog/2010-03-23-Encapsulate-git/branch_hierarchy.png" /></p>
 
-<p>Une flèche de A vers B signifie que l&rsquo;on peut merger A dans B. S&rsquo;il n&rsquo;y a pas de flèche de A vers B cela signifie qu&rsquo;il est <em>interdit</em> de merger A dans B. Voici le code ruby correspondant&nbsp;:</p>
+<p>Une flèche de A vers B signifie que l’on peut merger A dans B. S’il n’y a pas de flèche de A vers B cela signifie qu’il est <em>interdit</em> de merger A dans B. Voici le code ruby correspondant&nbsp;:</p>
 
-<div><pre class="twilight">
-<span class="Variable"><span class="Variable">$</span>architecture</span><span class="Keyword">=</span>{ 
-    <span class="Constant"><span class="Constant">:</span>master</span> =&gt; [ <span class="Constant"><span class="Constant">:</span>dev</span>, <span class="Constant"><span class="Constant">:</span>client</span> ],
-    <span class="Constant"><span class="Constant">:</span>dev</span> =&gt; [ <span class="Constant"><span class="Constant">:</span>master</span> ],
-    <span class="Constant"><span class="Constant">:</span>client</span> =&gt; [ <span class="Constant"><span class="Constant">:</span>clientA</span>, <span class="Constant"><span class="Constant">:</span>clientB</span> ] }
-</pre></div>
+<div>
 
-<p><code>:master =&gt; [ :dev, :client ]</code> signifie que l&rsquo;on peut merger la branche <code>master</code> dans la branche <code>dev</code> et la branche <code>client</code>.</p>
+<pre><code class="ruby">$architecture={ 
+    :master =&gt; [ :dev, :client ],
+    :dev =&gt; [ :master ],
+    :client =&gt; [ :clientA, :clientB ] }
+</code></pre>
+
+</div>
+
+<p><code>:master =&gt; [ :dev, :client ]</code> signifie que l’on peut merger la branche <code>master</code> dans la branche <code>dev</code> et la branche <code>client</code>.</p>
 
 <p>Je fait une erreur si je tape <code>git checkout master &amp;&amp; git merge clientA</code>.
-C&rsquo;est pour éviter ça que j&rsquo;ai fait un script pour encapsuler le comportement de <code>git</code>.</p>
+C’est pour éviter ça que j’ai fait un script pour encapsuler le comportement de <code>git</code>.</p>
 
-<p>Mais ce script fait bien plus que ça. Il fait des merges en cascade de la racine vers les feuilles avec l&rsquo;acion <code>allmerges</code>.</p>
+<p>Mais ce script fait bien plus que ça. Il fait des merges en cascade de la racine vers les feuilles avec l’acion <code>allmerges</code>.</p>
 
-<div><pre class="twilight">
-git co dev <span class="Keyword">&amp;&amp;</span> git merge master
-git co client <span class="Keyword">&amp;&amp;</span> git merge master
-git co clientA <span class="Keyword">&amp;&amp;</span> git merge client
-git co clientB <span class="Keyword">&amp;&amp;</span> git merge client
-</pre></div>
+<div>
 
-<p>Je peux ainsi mettre à jour toutes les branches. L&rsquo;algorithme ne boucle pas même s&rsquo;il y a des cycles dans la structure des branches.<br />
+<pre><code class="zsh">git co dev &amp;&amp; git merge master
+git co client &amp;&amp; git merge master
+git co clientA &amp;&amp; git merge client
+git co clientB &amp;&amp; git merge client
+</code></pre>
+
+</div>
+
+<p>Je peux ainsi mettre à jour toutes les branches. L’algorithme ne boucle pas même s’il y a des cycles dans la structure des branches.<br />
 Le voici&nbsp;:</p>
 
-<div class="small"><div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-03-23-Encapsulate-git/code/eng"> &#x27A5; eng </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>!/usr/bin/env ruby</span>
-<span class="Comment"><span class="Comment">#</span> encoding: utf-8</span>
+<div class="small"><div class="codefile"><a href="/Scratch/fr/blog/2010-03-23-Encapsulate-git/code/eng">&#x27A5; eng</a></div>
 
-<span class="Comment"><span class="Comment">#</span> architecture</span>
-<span class="Comment"><span class="Comment">#</span></span>
-<span class="Comment"><span class="Comment">#</span> master &lt;-&gt; dev</span>
-<span class="Comment"><span class="Comment">#</span> master -&gt; client</span>
-<span class="Comment"><span class="Comment">#</span> clien -&gt; clientA | clientB</span>
-<span class="Comment"><span class="Comment">#</span></span>
-<span class="Comment"><span class="Comment">#</span> merge using two of these branches should be </span>
-<span class="Comment"><span class="Comment">#</span>   restricted to these rules</span>
-<span class="Comment"><span class="Comment">#</span> merge to one of these branch and an unknown one should</span>
-<span class="Comment"><span class="Comment">#</span>   raise a warning, and may the option to add this new branch</span>
-<span class="Comment"><span class="Comment">#</span>   to the hierarchy</span>
 
-<span class="Variable"><span class="Variable">$</span>architecture</span><span class="Keyword">=</span>{ 
-    <span class="Constant"><span class="Constant">:</span>master</span> =&gt; [ <span class="Constant"><span class="Constant">:</span>dev</span>, <span class="Constant"><span class="Constant">:</span>client</span> ],
-    <span class="Constant"><span class="Constant">:</span>dev</span> =&gt; [ <span class="Constant"><span class="Constant">:</span>master</span> ],
-    <span class="Constant"><span class="Constant">:</span>client</span> =&gt; [ <span class="Constant"><span class="Constant">:</span>clientA</span>, <span class="Constant"><span class="Constant">:</span>clientB</span> ] }
+<pre><code class="ruby">#!/usr/bin/env ruby
+# encoding: utf-8
 
-<span class="Keyword">def</span> <span class="Entity">get_current_branch</span>(<span class="Variable"></span>)
-    (<span class="String"><span class="String">`</span>git branch --no-color | awk '$1 == &quot;*&quot; {print $2}'<span class="String">`</span></span>).<span class="Entity">chop</span>.<span class="Entity">intern</span>
-<span class="Keyword">end</span>
+# architecture
+#
+# master &lt;-&gt; dev
+# master -&gt; client
+# clien -&gt; clientA | clientB
+#
+# merge using two of these branches should be 
+#   restricted to these rules
+# merge to one of these branch and an unknown one should
+#   raise a warning, and may the option to add this new branch
+#   to the hierarchy
 
-<span class="Keyword">if</span> <span class="Variable">ARGV</span>.<span class="Entity">length</span> <span class="Keyword">==</span> <span class="Constant">0</span>
-    puts <span class="String"><span class="String">%{</span>usage: $0:t [git_command or local_command]</span>
-<span class="String">    </span>
-<span class="String">local commands:</span>
-<span class="String">    allmerges: merge from top to down<span class="String">}</span></span>
-    exit <span class="Constant">0</span>
-<span class="Keyword">end</span>
+$architecture={ 
+    :master =&gt; [ :dev, :client ],
+    :dev =&gt; [ :master ],
+    :client =&gt; [ :clientA, :clientB ] }
 
-<span class="Keyword">require</span> <span class="String"><span class="String">'</span>set<span class="String">'</span></span>
-<span class="Variable"><span class="Variable">$</span>known_branches</span><span class="Keyword">=</span><span class="Support">Set</span>.<span class="Entity">new</span>
-<span class="Variable"><span class="Variable">$</span>architecture</span>.<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">k</span>,<span class="Variable">v</span>| 
-    <span class="Variable"><span class="Variable">$</span>known_branches</span>.<span class="Entity">add</span>(k)
-    v.<span class="Entity">each</span> { |<span class="Variable">b</span>| <span class="Variable"><span class="Variable">$</span>known_branches</span>.<span class="Entity">add</span>(b) }
-<span class="Keyword">end</span>
+def get_current_branch()
+    (`git branch --no-color | awk '$1 == "*" {print $2}'`).chop.intern
+end
 
-<span class="Keyword">def</span> <span class="Entity">rec_merge</span>(<span class="Variable">branch</span>)
-    <span class="Keyword">if</span> <span class="Variable"><span class="Variable">$</span>architecture</span>[branch].<span class="Entity">nil?</span>
-        <span class="Keyword">return</span>
-    <span class="Keyword">end</span>
-    <span class="Variable"><span class="Variable">$</span>architecture</span>[branch].<span class="Entity">each</span> <span class="Keyword">do </span>|<span class="Variable">b</span>|
-        <span class="Keyword">if</span> <span class="Variable"><span class="Variable">$</span>flag</span>.<span class="Entity">has_key?</span>(b.<span class="Entity">to_s</span> <span class="Keyword">+</span> branch.<span class="Entity">to_s</span>)
-            <span class="Keyword">next</span>
-        <span class="Keyword">end</span>
-        flagname<span class="Keyword">=</span>branch.<span class="Entity">to_s</span> <span class="Keyword">+</span> b.<span class="Entity">to_s</span>
-        <span class="Keyword">if</span> <span class="Variable"><span class="Variable">$</span>flag</span>.<span class="Entity">has_key?</span>(flagname)
-            <span class="Keyword">next</span>
-        <span class="Keyword">end</span>
-        <span class="Keyword">if</span> system <span class="String"><span class="String">%{</span>eng checkout <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>b<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>
-            <span class="Keyword">if</span> get_current_branch <span class="Keyword">!=</span> b
-                puts <span class="String"><span class="String">&quot;</span>Can't checkout to <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>b<span class="StringEmbeddedSource">}</span></span><span class="String">&quot;</span></span>
-                exit <span class="Constant">2</span>
-            <span class="Keyword">end</span>
-            <span class="Keyword">if</span> system <span class="String"><span class="String">%{</span>eng merge <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>branch<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>
-                <span class="Variable"><span class="Variable">$</span>flag</span>[flagname]<span class="Keyword">=</span><span class="Constant">true</span>
-                <span class="Entity">rec_merge</span>(b)
-            <span class="Keyword">else</span>
-                exit <span class="Constant">1</span>
-            <span class="Keyword">end</span>
-        <span class="Keyword">else</span>
-            exit <span class="Constant">1</span>
-        <span class="Keyword">end</span>
-    <span class="Keyword">end</span>
-<span class="Keyword">end</span>
+if ARGV.length == 0
+    puts %{usage: $0:t [git_command or local_command]
+    
+local commands:
+    allmerges: merge from top to down}
+    exit 0
+end
 
-<span class="Keyword">def</span> <span class="Entity">do_all_merges</span>
-    puts <span class="String"><span class="String">'</span>Will merge from father to sons<span class="String">'</span></span>
-    current_branch<span class="Keyword">=</span>get_current_branch
-    <span class="Variable"><span class="Variable">$</span>flag</span><span class="Keyword">=</span>{}
-    <span class="Entity">rec_merge</span>(<span class="Constant"><span class="Constant">:</span>master</span>)
-    system <span class="String"><span class="String">%{</span>git co <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>current_branch<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>
-<span class="Keyword">end</span>
+require 'set'
+$known_branches=Set.new
+$architecture.each do |k,v| 
+    $known_branches.add(k)
+    v.each { |b| $known_branches.add(b) }
+end
 
-<span class="Keyword">def</span> <span class="Entity">do_merge</span>
-    current_branch<span class="Keyword">=</span>get_current_branch
-    src_branch<span class="Keyword">=</span><span class="Variable">ARGV</span>[<span class="Constant">1</span>].<span class="Entity">intern</span>
-    puts <span class="String"><span class="String">%{</span>do_merge: <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>src_branch<span class="StringEmbeddedSource">}</span></span> =&gt; <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>current_branch<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>
-    <span class="Keyword">if</span> <span class="Variable"><span class="Variable">$</span>known_branches</span>.<span class="Entity">include?</span>(current_branch)
-        <span class="Keyword">if</span> <span class="Variable"><span class="Variable">$</span>known_branches</span>.<span class="Entity">include?</span>(src_branch)
-            <span class="Keyword">if</span> <span class="Variable"><span class="Variable">$</span>architecture</span>.<span class="Entity">has_key?</span>(src_branch) <span class="Keyword">and</span> 
-                <span class="Variable"><span class="Variable">$</span>architecture</span>[src_branch].<span class="Entity">include?</span>(current_branch)
-                system <span class="String"><span class="String">%{</span>git merge <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>src_branch<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>
-            <span class="Keyword">else</span>
-                puts <span class="String"><span class="String">%{</span>Forbidden merge: <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>src_branch<span class="StringEmbeddedSource">}</span></span> =&gt; <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>current_branch<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>
-            <span class="Keyword">end</span>
-        <span class="Keyword">else</span>
-            puts <span class="String"><span class="String">%{</span>Warning! <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>src_branch<span class="StringEmbeddedSource">}</span></span> not mentionned in rb configuration<span class="String">}</span></span>
-            sleep <span class="Constant">2</span>
-            f system <span class="String"><span class="String">%{</span>git merge <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>src_branch<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>
-            puts <span class="String"><span class="String">%{</span>Warning! <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>src_branch<span class="StringEmbeddedSource">}</span></span> not mentionned in rb configuration<span class="String">}</span></span>
-        <span class="Keyword">end</span>
-    <span class="Keyword">end</span>
-<span class="Keyword">end</span>
+def rec_merge(branch)
+    if $architecture[branch].nil?
+        return
+    end
+    $architecture[branch].each do |b|
+        if $flag.has_key?(b.to_s + branch.to_s)
+            next
+        end
+        flagname=branch.to_s + b.to_s
+        if $flag.has_key?(flagname)
+            next
+        end
+        if system %{eng checkout #{b}}
+            if get_current_branch != b
+                puts "Can't checkout to #{b}"
+                exit 2
+            end
+            if system %{eng merge #{branch}}
+                $flag[flagname]=true
+                rec_merge(b)
+            else
+                exit 1
+            end
+        else
+            exit 1
+        end
+    end
+end
 
-<span class="Keyword">case</span> <span class="Variable">ARGV</span>[<span class="Constant">0</span>] 
-    <span class="Keyword">when</span> <span class="String"><span class="String">'</span>allmerges<span class="String">'</span></span> <span class="Keyword">then</span> do_all_merges
-    <span class="Keyword">when</span> <span class="String"><span class="String">'</span>merge<span class="String">'</span></span> <span class="Keyword">then</span> do_merge
-    <span class="Keyword">else</span> system <span class="String"><span class="String">%{</span>git <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span><span class="StringVariable">ARGV</span><span class="StringEmbeddedSource"><span class="StringEmbeddedSource">.</span><span class="Entity">join</span></span><span class="StringEmbeddedSource">(</span><span class="String"><span class="String">'</span> <span class="String">'</span></span><span class="StringEmbeddedSource">)</span><span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span>
-<span class="Keyword">end</span>
-</pre>
-</div></div></div>
+def do_all_merges
+    puts 'Will merge from father to sons'
+    current_branch=get_current_branch
+    $flag={}
+    rec_merge(:master)
+    system %{git co #{current_branch}}
+end
+
+def do_merge
+    current_branch=get_current_branch
+    src_branch=ARGV[1].intern
+    puts %{do_merge: #{src_branch} =&gt; #{current_branch}}
+    if $known_branches.include?(current_branch)
+        if $known_branches.include?(src_branch)
+            if $architecture.has_key?(src_branch) and 
+                $architecture[src_branch].include?(current_branch)
+                system %{git merge #{src_branch}}
+            else
+                puts %{Forbidden merge: #{src_branch} =&gt; #{current_branch}}
+            end
+        else
+            puts %{Warning! #{src_branch} not mentionned in rb configuration}
+            sleep 2
+            f system %{git merge #{src_branch}}
+            puts %{Warning! #{src_branch} not mentionned in rb configuration}
+        end
+    end
+end
+
+case ARGV[0] 
+    when 'allmerges' then do_all_merges
+    when 'merge' then do_merge
+    else system %{git #{ARGV.join(' ')}}
+end
+</code></pre>
+
+</div>
 
 <p>Pour que ça fonctionne il vous suffit de copier <code>eng</code> dans un répertoire présent dans votre <code>PATH</code>.</p>
 
-<p>Bien entendu, il faut essayer de faire aussi peu que possible des <code>cherry-pick</code> et des <code>rebase</code>. Ce script a pour but de s&rsquo;intégrer avec les workflow basé sur les <code>pull</code> et <code>merge</code>.</p>
+<p>Bien entendu, il faut essayer de faire aussi peu que possible des <code>cherry-pick</code> et des <code>rebase</code>. Ce script a pour but de s’intégrer avec les workflow basé sur les <code>pull</code> et <code>merge</code>.</p>
 
                 </div>
             
@@ -335,7 +346,7 @@ Le voici&nbsp;:</p>
                 </div>
                 <div id="lastmod">
                     Écrit le : 23/03/2010
-                    modifié le : 30/05/2011 
+                    modifié le : 26/04/2012 
                 </div>
                 <div>
                     Site entièrement réalisé avec

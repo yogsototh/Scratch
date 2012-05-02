@@ -12,11 +12,9 @@ tags:
 -----
 blogimage("main.png","Title image")
 
-<% password="P45sW0r|)" %>
-
 begindiv(intro)
 
-<%= tldr %> How I manage safely my password with success for some years now.  
+%tldr How I manage safely my password with success for some years now.  
 **`sha1( password + domain_name )`**  
 I memorize only one password.
 I use a different password on all website.
@@ -67,9 +65,9 @@ A _bad_ solution would be to
 chose passwords like this:
 
 
-- twitter: `<%=password%>Twitter`
-- gmail: `<%=password%>gmail`
-- badonlinegame: `<%=password%>badonlinegame`
+- twitter: `P45sW0r|)Twitter`
+- gmail: `P45sW0r|)gmail`
+- badonlinegame: `P45sW0r|)badonlinegame`
 
 
 Unfortunately, if someone get your password on 
@@ -88,7 +86,7 @@ hash("P45sW0r|)") = 9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63
 </code>
 
 If someone has `9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63`,
-he will have hard time to recover `<%=password%>`.
+he will have hard time to recover `P45sW0r|)`.
 
 
 Let choose SHA1 as hash function. 

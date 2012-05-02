@@ -1,5 +1,4 @@
 
-
 - (unsigned char *)sha1:(NSString *)baseString result:(unsigned char *)result {
     char *c_baseString=(char *)[baseString UTF8String];
     CC_SHA1(c_baseString, strlen(c_baseString), result);

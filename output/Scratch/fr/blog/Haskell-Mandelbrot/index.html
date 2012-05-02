@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Mandelbrot avec haskell" type="text/html" hreflang="fr" href="/Scratch/fr/blog/Haskell-Mandelbrot/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -54,25 +57,23 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>Voici le code &ldquo;obfusqué&rdquo;&nbsp;:</p>
+                    <p>Voici le code “obfusqué”&nbsp;:</p>
 
-<div class="code"><div class="file"><a href="/Scratch/fr/blog/Haskell-Mandelbrot/code/animandel.hs"> &#x27A5; animandel.hs </a></div><div class="withfile">
-<pre class="twilight">
-a=27;b=79;c=<span class="Constant">C</span>(-2.0,-1.0);d=<span class="Constant">C</span>(1.0,1.0);e=<span class="Constant">C</span>(-2.501,-1.003)
-<span class="Keyword">newtype</span> <span class="Constant">C</span> = <span class="Constant">C</span> (<span class="Constant">Double</span>,<span class="Constant">Double</span>) <span class="Keyword">deriving</span> (<span class="Constant">Show</span>,<span class="Constant">Eq</span>)
-<span class="Keyword">instance</span> <span class="Constant">Num</span> <span class="Constant">C</span> <span class="Keyword">where</span> <span class="Constant">C</span>(x,y)*<span class="Constant">C</span>(z,t)=<span class="Constant">C</span>(z*x-y*t,y*z+x*t);<span class="Constant">C</span>(x,y)+<span class="Constant">C</span>(z,t)=<span class="Constant">C</span>(x+z,y+t);<span class="Entity">abs</span>(<span class="Constant">C</span>(x,y))=<span class="Constant">C</span>(<span class="Entity">sqrt</span>(x*x+y*y),0.0)
-r(<span class="Constant">C</span>(x,y))=x;i(<span class="Constant">C</span>(x,y))=y
-f c z 0=0;f c z n=<span class="Keyword">if</span>(r(<span class="Entity">abs</span>(z))&gt;2)<span class="Keyword">then</span> n <span class="Keyword">else</span> f c ((z*z)+c) (n-1)
-h j k = <span class="Entity">map</span> (\z-&gt;(f (<span class="Constant">C</span> z) (<span class="Constant">C</span>(0,0)) 32,(<span class="Entity">fst</span> z&gt;l - q/2))) [(x,y)|y&lt;-[p,(p+((o-p)/a))..o],x&lt;-[m,(m + q)..l]] <span class="Keyword">where</span> o=i k;p=i j;m=r j;l=r k;q=(l-m)/b
-u j k = <span class="Entity">concat</span> $ <span class="Entity">map</span> v $ h j k <span class="Keyword">where</span> v (i,p)=(<span class="String"><span class="String">&quot;</span> .,`'°<span class="StringConstant">\&quot;</span>:;-+oO0123456789=!%*§&amp;$@#<span class="String">&quot;</span></span>!!i):rst p;rst <span class="Constant">True</span>=<span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>;rst <span class="Constant">False</span>=<span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
-main = <span class="Entity">putStrLn</span> $ im 0 <span class="Keyword">where</span> cl n (<span class="Constant">C</span> (x,y))=<span class="Keyword">let</span> cs=(1.1**n-1) <span class="Keyword">in</span> <span class="Constant">C</span> ((x+cs*(r e))/cs+1,(y+cs*(i e))/cs+1);bl n=cl n c;tr n=cl n d;im n=u (bl n) (tr n)++<span class="String"><span class="String">&quot;</span><span class="StringConstant">\x</span>1b[H<span class="StringConstant">\x</span>1b[25A<span class="String">&quot;</span></span>++im (n+1)
-</pre>
-</div></div>
+<div class="codefile"><a href="/Scratch/fr/blog/Haskell-Mandelbrot/code/animandel.hs">&#x27A5; animandel.hs</a></div>
+
+<pre><code class="haskell">a=27;b=79;c=C(-2.0,-1.0);d=C(1.0,1.0);e=C(-2.501,-1.003)
+newtype C = C (Double,Double) deriving (Show,Eq)
+instance Num C where C(x,y)*C(z,t)=C(z*x-y*t,y*z+x*t);C(x,y)+C(z,t)=C(x+z,y+t);abs(C(x,y))=C(sqrt(x*x+y*y),0.0)
+r(C(x,y))=x;i(C(x,y))=y
+f c z 0=0;f c z n=if(r(abs(z))&gt;2)then n else f c ((z*z)+c) (n-1)
+h j k = map (\z-&gt;(f (C z) (C(0,0)) 32,(fst z&gt;l - q/2))) [(x,y)|y&lt;-[p,(p+((o-p)/a))..o],x&lt;-[m,(m + q)..l]] where o=i k;p=i j;m=r j;l=r k;q=(l-m)/b
+u j k = concat $ map v $ h j k where v (i,p)=(" .,`'°\":;-+oO0123456789=!%*§&amp;$@#"!!i):rst p;rst True="\n";rst False=""
+main = putStrLn $ im 0 where cl n (C (x,y))=let cs=(1.1**n-1) in C ((x+cs*(r e))/cs+1,(y+cs*(i e))/cs+1);bl n=cl n c;tr n=cl n d;im n=u (bl n) (tr n)++"\x1b[H\x1b[25A"++im (n+1)
+</code></pre>
 
 <p>Pour le lancer, <a href="http://haskell.org">haskell</a> doit être installé. Puis vous devez écrire dans un terminal&nbsp;:</p>
 
-<pre class="twilight">ghc --make animandel.hs <span class="Keyword">&amp;&amp;</span> animandel
-</pre>
+<pre><code class="zsh">ghc --make animandel.hs &amp;&amp; animandel</code></pre>
 
 <p>Voici le résultat après 50 itérations.</p>
 
@@ -107,37 +108,36 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;WWWW
 
 <p>Here is the more readable version. I believe with this far more readable version, no more explanation is needed.</p>
 
-<pre class="twilight">
-nbvert = 30
+<pre><code class="haskell">nbvert = 30
 nbhor = 79
 zoomfactor = 1.01
-init_bottom_left = <span class="Constant">C</span> (-2.0,-2.0)
-init_top_right   = <span class="Constant">C</span> (3.0,2.0)
-interrest        = <span class="Constant">C</span> (-1.713,-0.000)
+init_bottom_left = C (-2.0,-2.0)
+init_top_right   = C (3.0,2.0)
+interrest        = C (-1.713,-0.000)
 
-<span class="Keyword">newtype</span> <span class="Constant">Complex</span> = <span class="Constant">C</span> (<span class="Constant">Float</span>,<span class="Constant">Float</span>) <span class="Keyword">deriving</span> (<span class="Constant">Show</span>,<span class="Constant">Eq</span>)
-<span class="Keyword">instance</span> <span class="Constant">Num</span> <span class="Constant">Complex</span> <span class="Keyword">where</span>
-    <span class="Entity">fromInteger</span> n     = <span class="Constant">C</span> (<span class="Entity">fromIntegral</span> n,0.0)
-    <span class="Constant">C</span> (x,y) * <span class="Constant">C</span> (z,t) = <span class="Constant">C</span> (z*x - y*t, y*z + x*t)
-    <span class="Constant">C</span> (x,y) + <span class="Constant">C</span> (z,t) = <span class="Constant">C</span> (x+z, y+t)
-    <span class="Entity">abs</span> (<span class="Constant">C</span> (x,y))     = <span class="Constant">C</span> (<span class="Entity">sqrt</span> (x*x + y*y),0.0)
-    <span class="Entity">signum</span> (<span class="Constant">C</span> (x,y))  = <span class="Constant">C</span> (<span class="Entity">signum</span> x , 0.0)
+newtype Complex = C (Float,Float) deriving (Show,Eq)
+instance Num Complex where
+    fromInteger n     = C (fromIntegral n,0.0)
+    C (x,y) * C (z,t) = C (z*x - y*t, y*z + x*t)
+    C (x,y) + C (z,t) = C (x+z, y+t)
+    abs (C (x,y))     = C (sqrt (x*x + y*y),0.0)
+    signum (C (x,y))  = C (signum x , 0.0)
 
-<span class="Entity">real</span> :: <span class="Constant">Complex</span> -&gt; <span class="Constant">Float</span>
-real (<span class="Constant">C</span> (x,y))    = x
-<span class="Entity">im</span> :: <span class="Constant">Complex</span> -&gt; <span class="Constant">Float</span>
-im   (<span class="Constant">C</span> (x,y))    = y
+real :: Complex -&gt; Float
+real (C (x,y))    = x
+im :: Complex -&gt; Float
+im   (C (x,y))    = y
 
-<span class="Entity">cabs</span> :: <span class="Constant">Complex</span> -&gt; <span class="Constant">Float</span>
-cabs = real.<span class="Entity">abs</span>
+cabs :: Complex -&gt; Float
+cabs = real.abs
 
-<span class="Entity">f</span> :: <span class="Constant">Complex</span> -&gt; <span class="Constant">Complex</span> -&gt; <span class="Constant">Int</span> -&gt; <span class="Constant">Int</span>
+f :: Complex -&gt; Complex -&gt; Int -&gt; Int
 f c z 0 = 0
-f c z n = <span class="Keyword">if</span> (cabs z &gt; 2) <span class="Keyword">then</span> n <span class="Keyword">else</span> f c ((z*z)+c) (n-1) 
+f c z n = if (cabs z &gt; 2) then n else f c ((z*z)+c) (n-1) 
 
 
-bmandel bottomleft topright = <span class="Entity">map</span> (\z -&gt; (f (<span class="Constant">C</span> z) (<span class="Constant">C</span>(0,0)) 32, (<span class="Entity">fst</span> z &gt; right - hstep/2 ))) [(x,y) | y &lt;- [bottom,(bottom + vstep)..top], x&lt;-[left,(left + hstep)..right]]
-    <span class="Keyword">where</span>
+bmandel bottomleft topright = map (\z -&gt; (f (C z) (C(0,0)) 32, (fst z &gt; right - hstep/2 ))) [(x,y) | y &lt;- [bottom,(bottom + vstep)..top], x&lt;-[left,(left + hstep)..right]]
+    where
         top = im topright
         bottom = im bottomleft
         left = real bottomleft
@@ -145,31 +145,32 @@ bmandel bottomleft topright = <span class="Entity">map</span> (\z -&gt; (f (<spa
         vstep=(top-bottom)/nbvert
         hstep=(right-left)/nbhor
 
-<span class="Entity">mandel</span> :: (<span class="Constant">Complex,Complex</span>) -&gt; <span class="Constant">String</span>
-mandel (bottomleft,topright) = <span class="Entity">concat</span> $ <span class="Entity">map</span> treat $ bmandel bottomleft topright
-    <span class="Keyword">where</span>
-        treat (i,jump) = <span class="String"><span class="String">&quot;</span> .,:;rcuowijlbCUOW&amp;$@#<span class="String">&quot;</span></span> !! (<span class="Entity">div</span> (i*22) 32):rst jump
-        rst <span class="Constant">True</span> = <span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>
-        rst <span class="Constant">False</span> = <span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
+mandel :: (Complex,Complex) -&gt; String
+mandel (bottomleft,topright) = concat $ map treat $ bmandel bottomleft topright
+    where
+        treat (i,jump) = " .,:;rcuowijlbCUOW&amp;$@#" !! (div (i*22) 32):rst jump
+        rst True = "\n"
+        rst False = ""
 
-<span class="Entity">cdiv</span> :: <span class="Constant">Complex</span> -&gt; <span class="Constant">Float</span> -&gt; <span class="Constant">Complex</span>
-cdiv (<span class="Constant">C</span>(x,y)) r = <span class="Constant">C</span>(x/r, y/r) 
-<span class="Entity">cmul</span> :: <span class="Constant">Complex</span> -&gt; <span class="Constant">Float</span> -&gt; <span class="Constant">Complex</span>
-cmul (<span class="Constant">C</span>(x,y)) r = <span class="Constant">C</span>(x*r, y*r) 
+cdiv :: Complex -&gt; Float -&gt; Complex
+cdiv (C(x,y)) r = C(x/r, y/r) 
+cmul :: Complex -&gt; Float -&gt; Complex
+cmul (C(x,y)) r = C(x*r, y*r) 
 
-<span class="Entity">zoom</span> :: <span class="Constant">Complex</span> -&gt; <span class="Constant">Complex</span> -&gt; <span class="Constant">Complex</span> -&gt; <span class="Constant">Float</span> -&gt; (<span class="Constant">Complex,Complex</span>)
+zoom :: Complex -&gt; Complex -&gt; Complex -&gt; Float -&gt; (Complex,Complex)
 zoom bl tr center magn = (f bl, f tr)
-    <span class="Keyword">where</span>
-        f point = ((center <span class="Entity"><span class="Entity">`</span>cmul` magn) + point ) `cdiv<span class="Entity">`</span></span> (magn + 1)
+    where
+        f point = ((center `cmul` magn) + point ) `cdiv` (magn + 1)
     
 
-main = <span class="Keyword">do</span>
-    x &lt;- <span class="Entity">getContents</span>
-    <span class="Entity">putStrLn</span> $ infinitemandel 0
-    <span class="Keyword">where</span>
+main = do
+    x &lt;- getContents
+    putStrLn $ infinitemandel 0
+    where
         window n = zoom init_bottom_left init_top_right interrest (zoomfactor**n) 
-        infinitemandel n = mandel (window n) ++ <span class="String"><span class="String">&quot;</span><span class="StringConstant">\x</span>1b[H<span class="StringConstant">\x</span>1b[25A<span class="String">&quot;</span></span> ++ infinitemandel (n+1)
-</pre>
+        infinitemandel n = mandel (window n) ++ "\x1b[H\x1b[25A" ++ infinitemandel (n+1)
+</code></pre>
+
 
                 </div>
             

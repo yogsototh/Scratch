@@ -1,4 +1,3 @@
-
 // Remove all CSS I don't want to use on IE
 $('link[rel=stylesheet]').each(function(i)
 {

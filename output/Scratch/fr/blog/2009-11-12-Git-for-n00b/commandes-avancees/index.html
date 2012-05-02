@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Git pour les nuls" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2009-11-12-Git-for-n00b/commandes-avancees/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -69,8 +72,8 @@
   <li>envoyer ses modifications aux autres&nbsp;;</li>
   <li>revenir dans le temps&nbsp;;</li>
   <li>lister les différences entre chaque version&nbsp;;</li>
-  <li>nommer certaines versions pour s&rsquo;y référer facilement&nbsp;;</li>
-  <li>afficher l&rsquo;historique des modifications&nbsp;;</li>
+  <li>nommer certaines versions pour s’y référer facilement&nbsp;;</li>
+  <li>afficher l’historique des modifications&nbsp;;</li>
   <li>savoir qui a fait quoi et quand&nbsp;;</li>
   <li>gérer des conflits&nbsp;;</li>
   <li>manipuler facilement des branches.</li>
@@ -78,114 +81,165 @@
 
 <h3 id="rcuprer-les-modifications-des-autres">récupérer les modifications des autres</h3>
 
-<div><pre class="twilight">
-$ git pull
-</pre></div>
+<div>
+
+<pre><code class="zsh">$ git pull
+</code></pre>
+
+</div>
 
 <h3 id="envoyer-ses-modifications-aux-autres">envoyer ses modifications aux autres</h3>
 
-<div><pre class="twilight">
-$ git push
-</pre></div>
+<div>
+
+<pre><code class="zsh">$ git push
+</code></pre>
+
+</div>
 
 <p>ou plus généralement</p>
 
-<div><pre class="twilight">
-$ git pull
+<div>
+
+<pre><code class="zsh">$ git pull
 $ git push
-</pre></div>
+</code></pre>
+
+</div>
 
 <h3 id="revenir-dans-le-temps">revenir dans le temps</h3>
 
-<h4 id="pour-toute-larborescence">Pour toute l&rsquo;arborescence</h4>
+<h4 id="pour-toute-larborescence">Pour toute l’arborescence</h4>
 
-<div><pre class="twilight">
-$ git checkout
-</pre></div>
+<div>
 
-<div><pre class="twilight">
-$ git revert
-</pre></div>
+<pre><code class="zsh">$ git checkout
+</code></pre>
+
+</div>
+
+<div>
+
+<pre><code class="zsh">$ git revert
+</code></pre>
+
+</div>
 
 <p>revenir trois versions en arrière</p>
 
-<div><pre class="twilight">
-$ git uncommit 3
-</pre></div>
+<div>
 
-<p>Revenir avant le dernier merge (s&rsquo;il s&rsquo;est mal passé).</p>
+<pre><code class="zsh">$ git uncommit 3
+</code></pre>
 
-<div><pre class="twilight">
-$ git revertbeforemerge
-</pre></div>
+</div>
+
+<p>Revenir avant le dernier merge (s’il s’est mal passé).</p>
+
+<div>
+
+<pre><code class="zsh">$ git revertbeforemerge
+</code></pre>
+
+</div>
 
 <h4 id="pour-un-seul-fichier">Pour un seul fichier</h4>
 
-<div><pre class="twilight">
-$ git checkout file
+<div>
+
+<pre><code class="zsh">$ git checkout file
 $ git checkout VersionHash file
 $ git checkout HEAD~3 file
-</pre></div>
+</code></pre>
+
+</div>
 
 <h3 id="lister-les-diffrences-entre-chaque-version">lister les différences entre chaque version</h3>
 
 <p>liste les fichiers en cours de modifications</p>
 
-<div><pre class="twilight">
-$ git status
-</pre></div>
+<div>
+
+<pre><code class="zsh">$ git status
+</code></pre>
+
+</div>
 
 <p>différences entre les fichiers de la dernière version et les fichiers locaux.</p>
 
-<div><pre class="twilight">
-$ git diff
-</pre></div>
+<div>
 
-<p>liste les différences entre les fichier d&rsquo;une certaine version et les fichiers locaux.</p>
+<pre><code class="zsh">$ git diff
+</code></pre>
 
-<div><pre class="twilight">
-$ git diff VersionHash fichier
-</pre></div>
+</div>
 
-<h3 id="nommer-certaines-versions-pour-sy-rfrer-facilement">nommer certaines versions pour s&rsquo;y référer facilement</h3>
+<p>liste les différences entre les fichier d’une certaine version et les fichiers locaux.</p>
 
-<div><pre class="twilight">
-$ git tag <span class="String"><span class="String">'</span>toto<span class="String">'</span></span>
-</pre></div>
+<div>
 
-<h3 id="afficher-lhistorique-des-modifications">afficher l&rsquo;historique des modifications</h3>
+<pre><code class="zsh">$ git diff VersionHash fichier
+</code></pre>
 
-<div><pre class="twilight">
-$ git log
+</div>
+
+<h3 id="nommer-certaines-versions-pour-sy-rfrer-facilement">nommer certaines versions pour s’y référer facilement</h3>
+
+<div>
+
+<pre><code class="zsh">$ git tag 'toto'
+</code></pre>
+
+</div>
+
+<h3 id="afficher-lhistorique-des-modifications">afficher l’historique des modifications</h3>
+
+<div>
+
+<pre><code class="zsh">$ git log
 $ git lg
 $ git logfull
-</pre></div>
+</code></pre>
+
+</div>
 
 <h3 id="savoir-qui-a-fait-quoi-et-quand">savoir qui a fait quoi et quand</h3>
 
-<div><pre class="twilight">
-$ git blame fichier
-</pre></div>
+<div>
+
+<pre><code class="zsh">$ git blame fichier
+</code></pre>
+
+</div>
 
 <h3 id="grer-des-conflits">gérer des conflits</h3>
 
-<div><pre class="twilight">
-$ git conflict
-</pre></div>
+<div>
+
+<pre><code class="zsh">$ git conflict
+</code></pre>
+
+</div>
 
 <h3 id="manipuler-facilement-des-branches">manipuler facilement des branches</h3>
 
 <p>Pour créer une branche&nbsp;: </p>
 
-<div><pre class="twilight">
-$ git branch branch_name
-</pre></div>
+<div>
+
+<pre><code class="zsh">$ git branch branch_name
+</code></pre>
+
+</div>
 
 <p>Pour changer de branche courante&nbsp;: </p>
 
-<div><pre class="twilight">
-$ git checkout branch_name
-</pre></div>
+<div>
+
+<pre><code class="zsh">$ git checkout branch_name
+</code></pre>
+
+</div>
 
 
                 </div>

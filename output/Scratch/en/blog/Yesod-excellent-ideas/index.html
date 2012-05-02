@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Les idées de yesod" type="text/html" hreflang="fr" href="/Scratch/fr/blog/Yesod-excellent-ideas/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -63,7 +66,7 @@
 <p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span></p>
 
 <p><a href="http://www.yesodweb.com">Yesod</a> is a web framework which recently reached the maturity for which you should consider to use it.
-Before telling you why you should learn Haskell and use yesod, I will talk about ideas yesod introduced and I didn&rsquo;t saw in other frameworks before.</p>
+Before telling you why you should learn Haskell and use yesod, I will talk about ideas yesod introduced and I didn’t saw in other frameworks before.</p>
 
 
 </div>
@@ -71,18 +74,17 @@ Before telling you why you should learn Haskell and use yesod, I will talk about
 
 <h2 id="type-safety">Type safety</h2>
 
-<p>Let&rsquo;s start by an obligatory link from <a href="http://xkcd.com">xkcd</a>:</p>
+<p>Let’s start by an obligatory link from <a href="http://xkcd.com">xkcd</a>:</p>
 
 <p><img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt="SQL injection by a mom" /></p>
 
 <p>When you create a web application, a lot of time is spent dealing with strings.
-Strings for URL, HTML, JavaScript, CSS, SQL, etc&hellip;
+Strings for URL, HTML, JavaScript, CSS, SQL, etc…
 To prevent malicious usage you have to protect each strings to be sure, no script will pass from one point to another.
 Suppose a user enter this user name:</p>
 
-<pre class="twilight">
-Newton<span class="Keyword">&lt;</span>script<span class="Keyword">&gt;</span><span class="SupportFunction">alert</span>(<span class="String"><span class="String">&quot;</span>An apple fall<span class="String">&quot;</span></span>)<span class="Keyword">&lt;</span>/script<span class="Keyword">&gt;</span>
-</pre>
+<pre><code class="javascript">Newton&lt;script&gt;alert("An apple fall")&lt;/script&gt;
+</code></pre>
 
 <p>You must transform each <code>&lt;</code> into <code>&amp;lt;</code>.
 Without this transformation alert will appear each time you try to display this user name.
@@ -93,19 +95,18 @@ And the right protection is made by default to prevent problems.</p>
 <p>Yesod does its best to handle cross scripting issues. Both between the client and the server and between the server and your DB.
 Here is an example:</p>
 
-<pre class="twilight"><span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">a</span> <span class="MetaTagInline">href</span>=@[<span class="MetaTagInline">AnotherPageR</span>]<span class="MetaTagInline">&gt;</span></span>Go to the other page
-</pre>
+<pre><code class="html">&lt;a href=@[AnotherPageR]&gt;Go to the other page
+</code></pre>
 
 <p>As <code>AnotherPageR</code> is of type URL and it could not contains something nefarious.
 It will be an URL safe. Not something like:</p>
 
-<pre class="twilight">
-falselink&quot;&gt;<span class="EmbeddedSource"><span class="EmbeddedSource">&lt;</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span> bad_code<span class="EmbeddedSource">(</span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">;</span> <span class="EmbeddedSource">&lt;/</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span></span><span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">a</span> <span class="MetaTagInline">href</span>=<span class="String"><span class="String">&quot;</span>pipo</span></span>
-</pre>
+<pre><code class="html">falselink"&gt;&lt;script&gt; bad_code(); &lt;/script&gt;&lt;a href="pipo
+</code></pre>
 
 <h2 id="widgets">Widgets</h2>
 
-<p>Yesod&rsquo;s widgets are different from javascript widget.
+<p>Yesod’s widgets are different from javascript widget.
 For yesod, widgets are sets of small parts of a web application.
 If you want to use many widgets in a same page yesod do the work.
 Some examples of widget are:</p>
@@ -114,7 +115,7 @@ Some examples of widget are:</p>
   <li>the footer of a webpage,</li>
   <li>the header of a webpage with a menu,</li>
   <li>a button which appears only when scrolling down, </li>
-  <li>etc&hellip;</li>
+  <li>etc…</li>
 </ul>
 
 <p>For each of this part, you might need, </p>
@@ -137,11 +138,10 @@ htmlbody = ...
 
 <p>The real syntax is:</p>
 
-<pre class="twilight">
-toWidgetHeader cassiusFile <span class="String"><span class="String">&quot;</span>button.cassius<span class="String">&quot;</span></span>
-toWidgetHeader juliusFile <span class="String"><span class="String">&quot;</span>button.julius<span class="String">&quot;</span></span>
-toWidget       hamletFile <span class="String"><span class="String">&quot;</span>buttonTemplate.hamlet<span class="String">&quot;</span></span>
-</pre>
+<pre><code class="haskell">toWidgetHeader cassiusFile "button.cassius"
+toWidgetHeader juliusFile "button.julius"
+toWidget       hamletFile "buttonTemplate.hamlet"
+</code></pre>
 
 <p>Note the awesome Shakespearean inspired name convention.
 Another good reason to use yesod.</p>
@@ -154,9 +154,8 @@ Another good reason to use yesod.</p>
 
 <p>And when your page render, yesod makes it easy to render everything nicely:</p>
 
-<pre class="twilight">
-myBigWidget =  menuWidget &gt;&gt; contentWidget &gt;&gt; footerWidget
-</pre>
+<pre><code class="haskell">myBigWidget =  menuWidget &gt;&gt; contentWidget &gt;&gt; footerWidget
+</code></pre>
 
 <p>Furthermore, if you use say 10 widgets each with a bit of CSS, yesod will create a unique and compressed CSS file. Except if you expressed a need to change the header by using different CSS. </p>
 
@@ -172,18 +171,16 @@ myBigWidget =  menuWidget &gt;&gt; contentWidget &gt;&gt; footerWidget
 Therefore it can optimize it.
 Of course two routes must not interfere.</p>
 
-<pre class="twilight">
-/blog/2003  Date2003R
+<pre><code class="html">/blog/2003  Date2003R
 /blog/$DATE DateR
-</pre>
+</code></pre>
 
-<p>is invalid by default (you can make it valid, but I don&rsquo;t think it is a good idea).</p>
+<p>is invalid by default (you can make it valid, but I don’t think it is a good idea).</p>
 
-<p>You&rsquo;d better</p>
+<p>You’d better</p>
 
-<pre class="twilight">
-/blog/$DATE DateR
-</pre>
+<pre><code class="html">/blog/$DATE DateR
+</code></pre>
 
 <p>and test if <code>date = 2003</code> inside the handler.</p>
 
@@ -195,7 +192,7 @@ Of course two routes must not interfere.</p>
   <li><em>Good ideas, excellent community</em>. I follow yesod from some month now and the speed at which the project progress is incredible.</li>
 </ol>
 
-<p>If you are a haskeller, I believe you shouldn&rsquo;t fear the special syntax imposed by the standard yesod way of doing things.
+<p>If you are a haskeller, I believe you shouldn’t fear the special syntax imposed by the standard yesod way of doing things.
 Just try it more than the firsts basic tutorials. </p>
 
 <p>Until here I believe it goes in the right direction. 
@@ -318,7 +315,7 @@ Even if I believe the real future is by generating HTML pages from the client (u
                 </div>
                 <div id="lastmod">
                     Created: 10/04/2011
-                    Modified: 10/26/2011 
+                    Modified: 04/26/2012 
                 </div>
                 <div>
                     Entirely done with

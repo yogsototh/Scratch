@@ -25,7 +25,7 @@ begindiv(intro)
 
 _update_: updated for yesod 0.10
 
-<%= tldr %> A simple yesod tutorial.
+%tldr A simple yesod tutorial.
 Yesod is a Haskell web framework.
 You shouldn't need to know Haskell. 
 

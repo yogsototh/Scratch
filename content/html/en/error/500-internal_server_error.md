@@ -7,4 +7,4 @@ error_message: Internal Server Error
 
 noSubMenu: true
 -----
-Contact: <% mail_perso %>
+Contact: %mailperso

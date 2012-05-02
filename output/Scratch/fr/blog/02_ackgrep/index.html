@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Mieux que grep" type="text/html" hreflang="fr" href="/Scratch/fr/blog/02_ackgrep/" /> 
@@ -17,6 +18,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -54,11 +57,11 @@
                 <div class="corps">
                     <h1 class="first" id="mise--jour">Mise à jour</h1>
 
-<p>Comme <a href="http://www.theworkinggeek.com">Andy Lester</a> me l&rsquo;a fait remarqué. <a href="http://betterthangrep.com"><code>ack</code></a> est un simple fichier perl qu&rsquo;il suffit de copier dans son répertoire personnel <code>~/bin</code>. Maintenant j&rsquo;ai <code>ack</code> sur mon serveur professionnel.</p>
+<p>Comme <a href="http://www.theworkinggeek.com">Andy Lester</a> me l’a fait remarqué. <a href="http://betterthangrep.com"><code>ack</code></a> est un simple fichier perl qu’il suffit de copier dans son répertoire personnel <code>~/bin</code>. Maintenant j’ai <code>ack</code> sur mon serveur professionnel.</p>
 
-<p>Il suffit d&rsquo;aller sur <a href="http://betterthangrep.com">http://betterthangrep.com</a> pour le télécharger.</p>
+<p>Il suffit d’aller sur <a href="http://betterthangrep.com">http://betterthangrep.com</a> pour le télécharger.</p>
 
-<p>Sincèrement, je ne comprend pas qu&rsquo;<code>ack</code> ne soit pas une commande implémentée par défaut sur les systèmes UNIX. Je ne peux vraiment plus m&rsquo;en passer, il m&rsquo;est devenu aussi essentiel qu&rsquo;un <code>which</code> ou un <code>find</code>.</p>
+<p>Sincèrement, je ne comprend pas qu’<code>ack</code> ne soit pas une commande implémentée par défaut sur les systèmes UNIX. Je ne peux vraiment plus m’en passer, il m’est devenu aussi essentiel qu’un <code>which</code> ou un <code>find</code>.</p>
 
 
 </div>
@@ -71,39 +74,42 @@
 <p>Un des mes usages principaux de <code>grep</code> est</p>
 
 <div>
-    <pre class="twilight">
-grep <span class="String"><span class="String">'</span>pattern<span class="String">'</span></span> **/*(.)
-</pre>
+    
+
+<pre><code class="zsh">grep 'pattern' **/*(.)</code></pre>
+
+
 </div>
 
-<p>La plupart du temps c&rsquo;est suffisant, mais ajouter de la coloration
-améliore beaucoup l&rsquo;utilité de cette commande. Il existe déjà un outil
-pour ça&nbsp;: il s&rsquo;appelle <code>ack-grep</code> sous Ubuntu.
-Comme je ne peux pas l&rsquo;installer sur le serveur de mon entreprise,
-j&rsquo;en ai créé un moi-même en quelques lignes&nbsp;:</p>
+<p>La plupart du temps c’est suffisant, mais ajouter de la coloration
+améliore beaucoup l’utilité de cette commande. Il existe déjà un outil
+pour ça&nbsp;: il s’appelle <code>ack-grep</code> sous Ubuntu.
+Comme je ne peux pas l’installer sur le serveur de mon entreprise,
+j’en ai créé un moi-même en quelques lignes&nbsp;:</p>
 
 <div>
-    <div class="code"><div class="file"><a href="/Scratch/fr/blog/02_ackgrep/code/ack"> &#x27A5; ack </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
-((<span class="Variable"><span class="Variable">$</span>#</span><span class="Keyword">&lt;</span>1)) <span class="Keyword">&amp;&amp;</span> { print <span class="String"><span class="String">'</span>usage: ack &quot;regexp&quot;<span class="String">'</span></span> <span class="Keyword">&gt;&amp;2</span><span class="Keyword">;</span> exit 1 }
+    <div class="codefile"><a href="/Scratch/fr/blog/02_ackgrep/code/ack">&#x27A5; ack</a></div>
+
+
+<pre><code class="zsh">#!/usr/bin/env zsh
+(($#&lt;1)) &amp;&amp; { print 'usage: ack "regexp"' &gt;&2; exit 1 }
 
 listeFic=( **/*(.) )
 autoload zargs
-zargs -- <span class="Variable"><span class="Variable">$</span>listeFic</span> -- grep <span class="Variable"><span class="Variable">$</span>1</span> <span class="Keyword">|</span> perl -ne <span class="String"><span class="String">'</span>use Term::ANSIColor;</span>
-<span class="String">if (m/([^:]*)(:.*)(<span class="String">'</span></span><span class="Variable"><span class="Variable">$</span>1</span><span class="String"><span class="String">'</span>)(.*)/) {</span>
-<span class="String">    print color(&quot;green&quot;).$1;</span>
-<span class="String">    print color(&quot;reset&quot;).$2;</span>
-<span class="String">    print color(&quot;black&quot;,&quot;on_yellow&quot;).$3;</span>
-<span class="String">    print color(&quot;reset&quot;).$4.&quot;\n&quot;;</span>
-<span class="String">} <span class="String">'</span></span>
-    
-</pre>
-</div></div>
+zargs -- $listeFic -- grep $1 | perl -ne 'use Term::ANSIColor;
+if (m/([^:]*)(:.*)('$1')(.*)/) {
+    print color("green").$1;
+    print color("reset").$2;
+    print color("black","on_yellow").$3;
+    print color("reset").$4."\n";
+} '
+    </code></pre>
+
+
 </div>
 
 <p>Pour mon utilisation personnelle et celle de mon équipe
-c&rsquo;est suffisant. J&rsquo;espère que ça pourra vous aider.</p>
+c’est suffisant. J’espère que ça pourra vous aider.</p>
 
                 </div>
             

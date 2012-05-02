@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
 from struct import calcsize, unpack
 from sys import argv, exit

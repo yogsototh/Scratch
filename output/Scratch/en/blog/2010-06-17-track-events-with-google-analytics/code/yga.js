@@ -1,4 +1,3 @@
-
 $(document).ready( function() {
     // add an event to all link for google analytics
     $('a').click(function () {

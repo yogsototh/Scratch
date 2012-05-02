@@ -1,4 +1,3 @@
-
 data = ARGF.read
  keys = %w[id totallength wavefmt format
        pcm channels frequency bytes_per_second

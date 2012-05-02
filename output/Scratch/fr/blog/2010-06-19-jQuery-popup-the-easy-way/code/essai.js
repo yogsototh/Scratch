@@ -1,4 +1,3 @@
-
 // --- code popup ---
 function openPopup() {
     $(this).clone(false).appendTo($("#_code"));

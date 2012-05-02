@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Une CSS pour IE seulement" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -54,38 +57,43 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>Pour les développeur de site web Internet Explorer est un cauchemar. C&rsquo;est pourquoi j&rsquo;utilise un style complètement différent pour ce navigateur. Avec la librairie jQuery.</p>
+                    <p>Pour les développeur de site web Internet Explorer est un cauchemar. C’est pourquoi j’utilise un style complètement différent pour ce navigateur. Avec la librairie jQuery.</p>
 
-<div><pre class="twilight">
-<span class="Keyword">$</span>(<span class="Support">document</span>).ready( <span class="Storage">function</span>() {
-    <span class="Keyword">if</span> (<span class="Keyword">$</span>.browser[<span class="String"><span class="String">&quot;</span>msie<span class="String">&quot;</span></span>]) {
-        <span class="Comment"><span class="Comment">//</span> include the ie.js file</span>
-        <span class="Keyword">$</span>(<span class="String"><span class="String">'</span>head<span class="String">'</span></span>).append(<span class="String"><span class="String">'</span>&lt;script type=&quot;text/javascript&quot; src=&quot;/js/ie.js&quot;&gt;&lt;/scr<span class="String">'</span></span> <span class="Keyword">+</span> <span class="String"><span class="String">'</span>ipt&gt;<span class="String">'</span></span>);
+<div>
+
+<pre><code class="javascript">$(document).ready( function() {
+    if ($.browser["msie"]) {
+        // include the ie.js file
+        $('head').append('&lt;script type="text/javascript" src="/js/ie.js"&gt;&lt;/scr' + 'ipt&gt;');
     }
 });
-</pre></div>
+</code></pre>
 
-<div><div class="code"><div class="file"><a href="/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/code/ie.js"> &#x27A5; ie.js </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Comment"><span class="Comment">//</span> Remove all CSS I don't want to use on IE</span>
-<span class="Keyword">$</span>(<span class="String"><span class="String">'</span>link[rel=stylesheet]<span class="String">'</span></span>).each(<span class="Storage">function</span>(i)
+</div>
+
+<div><div class="codefile"><a href="/Scratch/fr/blog/2009-10-30-How-to-handle-evil-IE/code/ie.js">&#x27A5; ie.js</a></div>
+
+
+<pre><code class="javascript">// Remove all CSS I don't want to use on IE
+$('link[rel=stylesheet]').each(function(i)
 {
-    <span class="Keyword">if</span> (<span class="Variable">this</span>.<span class="SupportFunction">getAttribute</span>(<span class="String"><span class="String">'</span>href<span class="String">'</span></span>) <span class="Keyword">==</span> <span class="String"><span class="String">'</span>/css/layout.css<span class="String">'</span></span>) 
-        <span class="Variable">this</span>.<span class="SupportConstant">disabled</span> <span class="Keyword">=</span> <span class="Constant">true</span>;
-    <span class="Keyword">if</span> (<span class="Variable">this</span>.<span class="SupportFunction">getAttribute</span>(<span class="String"><span class="String">'</span>href<span class="String">'</span></span>) <span class="Keyword">==</span> <span class="String"><span class="String">'</span>/css/shadows.css<span class="String">'</span></span>) 
-        <span class="Variable">this</span>.<span class="SupportConstant">disabled</span> <span class="Keyword">=</span> <span class="Constant">true</span>;
-    <span class="Keyword">if</span> (<span class="Variable">this</span>.<span class="SupportFunction">getAttribute</span>(<span class="String"><span class="String">'</span>href<span class="String">'</span></span>) <span class="Keyword">==</span> <span class="String"><span class="String">'</span>/css/gen.css<span class="String">'</span></span>)    
-        <span class="Variable">this</span>.<span class="SupportConstant">disabled</span> <span class="Keyword">=</span> <span class="Constant">true</span>;
+    if (this.getAttribute('href') == '/css/layout.css') 
+        this.disabled = true;
+    if (this.getAttribute('href') == '/css/shadows.css') 
+        this.disabled = true;
+    if (this.getAttribute('href') == '/css/gen.css')    
+        this.disabled = true;
 }) ;
 
-<span class="Comment"><span class="Comment">//</span> Append the CSS for IE only</span>
-<span class="Keyword">$</span>(<span class="String"><span class="String">'</span>head<span class="String">'</span></span>).append(<span class="String"><span class="String">'</span>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/ie.css&quot;/&gt;<span class="String">'</span></span>);
+// Append the CSS for IE only
+$('head').append('&lt;link rel="stylesheet" type="text/css" href="/css/ie.css"/&gt;');
 
-<span class="Comment"><span class="Comment">//</span> I also add a message on top of the page</span>
-<span class="Keyword">$</span>(<span class="String"><span class="String">'</span>body<span class="String">'</span></span>).prepend(<span class="String"><span class="String">'</span>&lt;div id=&quot;iemessage&quot;&gt;&lt;p&gt;&lt;span class=&quot;fr&quot;&gt;&lt;em&gt;Avec &lt;a href=&quot;http://www.firefox.com&quot;&gt; Firefox &lt;/a&gt; et &lt;a href=&quot;http://www.apple.com/safari&quot;&gt;Safari&lt;/a&gt; cette page est bien plus jolie !&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;en&quot;&gt;&lt;em&gt;This page is far nicer with &lt;a href=&quot;http://www.firefox.com&quot;&gt; Firefox &lt;/a&gt; and &lt;a href=&quot;http://www.apple.com/safari&quot;&gt;Safari&lt;/a&gt;!&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;.&lt;/div&gt;<span class="String">'</span></span>);
+// I also add a message on top of the page
+$('body').prepend('&lt;div id="iemessage"&gt;&lt;p&gt;&lt;span class="fr"&gt;&lt;em&gt;Avec &lt;a href="http://www.firefox.com"&gt; Firefox &lt;/a&gt; et &lt;a href="http://www.apple.com/safari"&gt;Safari&lt;/a&gt; cette page est bien plus jolie !&lt;/em&gt;&lt;/span&gt;&lt;span class="en"&gt;&lt;em&gt;This page is far nicer with &lt;a href="http://www.firefox.com"&gt; Firefox &lt;/a&gt; and &lt;a href="http://www.apple.com/safari"&gt;Safari&lt;/a&gt;!&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;.&lt;/div&gt;');
 
-</pre>
-</div></div></div>
+</code></pre>
+
+</div>
 
 <p>Voilà.</p>
 

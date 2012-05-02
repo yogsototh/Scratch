@@ -9,7 +9,7 @@ fr: # Comment me contacter
 en: <img src="/Scratch/img/about/avatar.png" alt="Avatar" class="left"/>
 fr: <img src="/Scratch/img/about/avatar.png" alt="Avatar" class="left"/>
 
-<%= mail_perso %>  
+%mailperso
 en:   Follow me on [twitter](http://twitter.com/yogsototh)  
 en:   My preferred bookmarks [pinboard](http://pinboard.in/u:yogsototh)  
 en:   Open Source [github](http://github.com/yogsototh)  

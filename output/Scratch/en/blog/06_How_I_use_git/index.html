@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Git en solo" type="text/html" hreflang="fr" href="/Scratch/fr/blog/06_How_I_use_git/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -58,7 +61,7 @@
 
 <p>I use <a href="http://www.git-scm.org/">Git</a> to manage my personnal projects.
 I have a centralized repository which all my computer should synchronize with.
-Unfortunately I didn&rsquo;t find clearly what I needed on the official Git documentation.</p>
+Unfortunately I didn’t find clearly what I needed on the official Git documentation.</p>
 
 <p>In two words, if you want to use an SVN workflow with Git (and all its advantages) here is how to proceed.</p>
 
@@ -70,15 +73,18 @@ Unfortunately I didn&rsquo;t find clearly what I needed on the official Git docu
 
 <h2 class="first" id="initialisation">Initialisation</h2>
 
-<p>Suppose I&rsquo;ve got a directory on my local computer containing a project I want to manage via Git. Here what to do: </p>
+<p>Suppose I’ve got a directory on my local computer containing a project I want to manage via Git. Here what to do: </p>
 
 <div>
-<pre class="twilight">
-cd to/project/directory/
+
+
+<pre><code class="zsh">cd to/project/directory/
 git init
 git add
 git commit
-</pre>
+</code></pre>
+
+
 </div>
 
 <p>Now all files in the <code>to/project/directory/</code> are versionned.
@@ -87,31 +93,40 @@ If you want not to follow some just edit the file <code>.gitignore</code></p>
 <p>for example mine is: </p>
 
 <div>
-<pre class="twilight">
-*.swp
+
+
+<pre><code class="zsh">*.swp
 .DS_Store
 ikog.py.bak
 output/Scratch/assets
 output/Scratch/en
 output/Scratch/fr
 output/Scratch/multi
-</pre>
+</code></pre>
+
+
 </div>
 
 <p>Next, you want to put your project on a directory accessible from the web:</p>
 
 <div>
-<pre class="twilight">
-git clone --bare . /path/to/repository
-</pre>
+
+
+<pre><code class="zsh">git clone --bare . /path/to/repository
+</code></pre>
+
+
 </div>
 
 <p>Now on any computer you can do: </p>
 
 <div>
-<pre class="twilight">
-git clone protocol://path/to/repository local_directory
-</pre>
+
+
+<pre><code class="zsh">git clone protocol://path/to/repository local_directory
+</code></pre>
+
+
 </div>
 
 <p>and <code>local_directory</code> will contain an up-to-date project.</p>
@@ -135,27 +150,36 @@ You should make this operation also on the computer used to create the repositor
 <p>Before begining your work, the first thing to do is to get all modification from the Internet to your local host: </p>
 
 <div>
-<pre class="twilight">
-git pull
-</pre>
+
+
+<pre><code class="zsh">git pull
+</code></pre>
+
+
 </div>
 
 <p>After that you can do (many times): </p>
 
 <div>
-<pre class="twilight">
-hack, hack, hack...
+
+
+<pre><code class="zsh">hack, hack, hack...
 git add some files
 git commit
-</pre>
+</code></pre>
+
+
 </div>
 
 <p>When you want your local modification to be on the Internet just do a simple:</p>
 
 <div>
-<pre class="twilight">
-git push
-</pre>
+
+
+<pre><code class="zsh">git push
+</code></pre>
+
+
 </div>
 
 <p>All should be ok.</p>
@@ -163,16 +187,19 @@ git push
 <p>If you have some trouble with the <code>push</code> and <code>pull</code> verify your <code>.git/config</code> file&nbsp;; it should contain the following lines:</p>
 
 <div>
-<pre class="twilight">
-...
-[remote <span class="String"><span class="String">&quot;</span>origin<span class="String">&quot;</span></span>]
+
+
+<pre><code class="zsh">...
+[remote "origin"]
 	url = protocol://url/of/the/repository
 	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch <span class="String"><span class="String">&quot;</span>master<span class="String">&quot;</span></span>]
+[branch "master"]
 	remote = origin
 	merge = refs/heads/master
 ...
-</pre>
+</code></pre>
+
+
 </div>
 
 <h2 id="branches-synchronisation">Branches Synchronisation</h2>
@@ -183,53 +210,63 @@ git push
 
 <p>Then when you want to create a new branch (locally and remotely)&nbsp;; you simply have to do a: </p>
 
-<div><pre class="twilight">git-create-new-branch branch_name
-</pre></div>
+<div>
+
+<pre><code class="zsh">git-create-new-branch branch_name</code></pre>
+
+</div>
 
 <p>and when you are on another computer and want to get locally all the remote branches you execute: </p>
 
-<div><pre class="twilight">git-get-remote-branches
-</pre></div>
+<div>
+
+<pre><code class="zsh">git-get-remote-branches</code></pre>
+
+</div>
 
 <p>Here are the code of theese two scripts: </p>
 
 <div>
-<div class="code"><div class="file"><a href="/Scratch/en/blog/06_How_I_use_git/code/git-create-new-branch"> &#x27A5; git-create-new-branch </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
+<div class="codefile"><a href="/Scratch/en/blog/06_How_I_use_git/code/git-create-new-branch">&#x27A5; git-create-new-branch</a></div>
 
-<span class="Keyword">if</span> ((<span class="Variable"><span class="Variable">$</span>#</span><span class="Keyword">&lt;</span>1))<span class="Keyword">;</span> <span class="Keyword">then</span>
-    print -- <span class="String"><span class="String">&quot;</span>usage: <span class="StringVariable"><span class="StringVariable">$</span>0</span>:t branch_name<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
+
+<pre><code class="zsh">#!/usr/bin/env zsh
+
+if (($#&lt;1)); then
+    print -- "usage: $0:t branch_name" &gt;&amp;2
     exit 1
-<span class="Keyword">fi</span>
+fi
 
-branch=<span class="Variable"><span class="Variable">$</span>1</span>
-git br <span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
-git co <span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
-git config branch.<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>.remote origin
-git config branch.<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>.merge refs/heads/<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
-</pre>
-</div></div>
+branch=$1
+git br ${branch}
+git co ${branch}
+git config branch.${branch}.remote origin
+git config branch.${branch}.merge refs/heads/${branch}
+</code></pre>
+
+
 </div>
 
 <div>
-<div class="code"><div class="file"><a href="/Scratch/en/blog/06_How_I_use_git/code/git-get-remote-branches"> &#x27A5; git-get-remote-branches </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
+<div class="codefile"><a href="/Scratch/en/blog/06_How_I_use_git/code/git-get-remote-branches">&#x27A5; git-get-remote-branches</a></div>
 
-<span class="Comment"><span class="Comment">#</span> recup branches not on local</span>
-localbranches=( <span class="String"><span class="String">$(</span>git br <span class="Keyword">|</span> sed <span class="String"><span class="String">'</span>s/\*/ /<span class="String">'</span></span><span class="String">)</span></span> )
-remoteMissingBranches=( <span class="String"><span class="String">$(</span>git br -r <span class="Keyword">|</span> \</span>
-<span class="String">    egrep -v <span class="String"><span class="String">&quot;</span>origin/HEAD|(<span class="StringVariable"><span class="StringVariable">${</span>(j:|:)localbranches<span class="StringVariable">}</span></span>)<span class="String">&quot;</span></span> <span class="String">)</span></span> )
-<span class="Keyword">for</span> br <span class="Keyword">in</span> <span class="Variable"><span class="Variable">$</span>remoteMissingBranches</span><span class="Keyword">;</span> <span class="Keyword">do</span>
-  branch=<span class="Variable"><span class="Variable">${</span>br#origin/<span class="Variable">}</span></span>
-  print <span class="String"><span class="String">&quot;</span>get remote branch <span class="StringVariable"><span class="StringVariable">$</span>branch</span><span class="String">&quot;</span></span>
-  git br <span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
-  git config branch.<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>.remote origin
-  git config branch.<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>.merge refs/heads/<span class="Variable"><span class="Variable">${</span>branch<span class="Variable">}</span></span>
-<span class="Keyword">done</span>
-</pre>
-</div></div>
+
+<pre><code class="zsh">#!/usr/bin/env zsh
+
+# recup branches not on local
+localbranches=( $(git br | sed 's/\*/ /') )
+remoteMissingBranches=( $(git br -r | \
+    egrep -v "origin/HEAD|(${(j:|:)localbranches})" ) )
+for br in $remoteMissingBranches; do
+  branch=${br#origin/}
+  print "get remote branch $branch"
+  git br ${branch}
+  git config branch.${branch}.remote origin
+  git config branch.${branch}.merge refs/heads/${branch}
+done
+</code></pre>
+
+
 </div>
 
                 </div>
@@ -347,7 +384,7 @@ remoteMissingBranches=( <span class="String"><span class="String">$(</span>git b
                 </div>
                 <div id="lastmod">
                     Created: 08/18/2009
-                    Modified: 04/20/2011 
+                    Modified: 04/26/2012 
                 </div>
                 <div>
                     Entirely done with

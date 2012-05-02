@@ -7,4 +7,4 @@ error_message: Service Unaviable
 
 noSubMenu: true
 -----
-Contact: <% mail_perso %>
+Contact: %mailperso

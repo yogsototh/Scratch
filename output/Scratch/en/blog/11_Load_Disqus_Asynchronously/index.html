@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Load Disqus Asynchronously [en]" type="text/html" hreflang="fr" href="/Scratch/fr/blog/11_Load_Disqus_Asynchronously/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -58,7 +61,7 @@
 
 <p>In fact this method works for old threads. But it fails to create new post threads. This is why I tried and be conquered by <a href="http://intensedebate.com">intensedebate</a>, as you can see in the bottom of this page.</p>
 
-<p>Remark I didn&rsquo;t have any comment on my blog when I switched. Therefore my lack of influence was a good thing&nbsp;:-).</p>
+<p>Remark I didn’t have any comment on my blog when I switched. Therefore my lack of influence was a good thing&nbsp;:-).</p>
 
 
 </div>
@@ -72,7 +75,7 @@
 
 <p>I also know there is a jQuery plugin to make just that. Unfortunately I had some issue with CSS.</p>
 
-<p><em>Now let&rsquo;s begin.</em></p>
+<p><em>Now let’s begin.</em></p>
 
 
 </div>
@@ -85,7 +88,7 @@
 <p>Why should I want to load the disqus javascript asynchronously?</p>
 
 <ul>
-  <li>Efficiency: I don&rsquo;t want my page to wait the complete execution of disqus script to load.</li>
+  <li>Efficiency: I don’t want my page to wait the complete execution of disqus script to load.</li>
   <li>More independance: when disqus is down, my page is blocked!</li>
 </ul>
 
@@ -97,27 +100,33 @@
 
 <h1 class="first" id="how">How?</h1>
 
-<p>I give a solution with jQuery, but I&rsquo;m certain it will work with many other js library.</p>
+<p>I give a solution with jQuery, but I’m certain it will work with many other js library.</p>
 
 <h3 id="javascript">Javascript</h3>
 
 <p>replace:</p>
 
 <div>
-<pre class="twilight">
-<span class="Keyword">&lt;</span>script type<span class="Keyword">=</span><span class="String"><span class="String">&quot;</span>text/javascript<span class="String">&quot;</span></span> src<span class="Keyword">=</span><span class="String"><span class="String">&quot;</span>http://disqus.com/forums/YOUR_DISQUS_ID/embed.js<span class="String">&quot;</span></span><span class="Keyword">&gt;</span><span class="Keyword">&lt;</span>/script<span class="Keyword">&gt;</span>
-</pre>
+
+
+<pre><code class="javascript">&lt;script type="text/javascript" src="http://disqus.com/forums/YOUR_DISQUS_ID/embed.js"&gt;&lt;/script&gt;
+</code></pre>
+
+
 </div>
 
 <p>by</p>
 
 <div>
-<pre class="twilight">
-<span class="Support">window</span>.disqus_no_style<span class="Keyword">=</span><span class="Constant">true</span>;
-<span class="Keyword">$</span>(<span class="Support">document</span>).ready(<span class="Storage">function</span>(){
-    <span class="Keyword">$</span>.getScript(<span class="String"><span class="String">&quot;</span>http://disqus.com/forums/YOUR_DISQUS_ID/embed.js<span class="String">&quot;</span></span>);
+
+
+<pre><code class="javascript">window.disqus_no_style=true;
+$(document).ready(function(){
+    $.getScript("http://disqus.com/forums/YOUR_DISQUS_ID/embed.js");
 });
-</pre>
+</code></pre>
+
+
 </div>
 
 <p>If you forget the <code>window.disqus_no_style=true;</code> then your page will be blank. Simply because without this option, the javascript use a <code>document.write</code> action after the document was closed, which cause a complete erasing of it.</p>
@@ -127,7 +136,7 @@
 <p>But with this option you still need to provide a CSS. This is why you have to copy the css code from the <code>embed.js</code> file and rewrite it in a CSS file. You can <a href="/Scratch/en/blog/11_Load_Disqus_Asynchronously/code/original_disqus.css">download the CSS</a> I obtained.</p>
 
 <hr />
-<p>Now it&rsquo;s done. I believe all should be fine but I just finished the manip for my own site only 1 hour ago. Therefore there should be some error, tell me if it is the case.</p>
+<p>Now it’s done. I believe all should be fine but I just finished the manip for my own site only 1 hour ago. Therefore there should be some error, tell me if it is the case.</p>
 
                 </div>
             

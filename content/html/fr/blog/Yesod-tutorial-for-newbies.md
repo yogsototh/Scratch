@@ -26,7 +26,7 @@ begindiv(intro)
 _mise à jour_: mise à jour pour la version 0.10 de yesod.
 
 
-<%= tlal %> Un tutoriel pour yesod, un framework web Haskell.
+%tlal Un tutoriel pour yesod, un framework web Haskell.
 Vous ne devriez pas avoir besoin de savoir programmer en Haskell. 
 Par contre je suis désolé pour les francophones, 
 mais je n'ai pas eu le courage de traduire cet article en Français.

@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Indécidabilités (partie 1)" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-07-09-Indecidabilities/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -81,10 +84,10 @@
 
 <p>If a demiurge made our world, he certainly had a great sense of humor.
 After this read, you should be convinced.
-I&rsquo;ll pretend to be him.
-I&rsquo;ll create a simplified world.
+I’ll pretend to be him.
+I’ll create a simplified world.
 A world that obey to simple mathematical rules.
-And I&rsquo;ll tell you about one of the curse on this world: the <em>undecidability</em>.
+And I’ll tell you about one of the curse on this world: the <em>undecidability</em>.
 The inability to know if we had find the <em>truth</em>.
 The inability to predict many things that should be natural.
 Here begin the story.</p>
@@ -93,14 +96,14 @@ Here begin the story.</p>
 </div>
 
 
-<p><img alt="no name" src="/Scratch/img/blog/2010-07-09-Indecidabilities/genesis.png" class="left" /></p>
+<p>leftblogimage(“genesis.png”)</p>
 
 <p>In the beginning there was only void.
 Then a blog post beginning to be written.
 I breath profoundly to feel the weight of the act I will accomplish.
-A last tense moment and&hellip; I <em>create</em> the <em>Universe</em>.
+A last tense moment and… I <em>create</em> the <em>Universe</em>.
 An incredible <em>Universe</em> which will exists only the time of this read.
-I&rsquo;m the <em>demiurge</em> of this universe and you are its observer.</p>
+I’m the <em>demiurge</em> of this universe and you are its observer.</p>
 
 <p>I construct this world using only simples rules.
 I decide that <em>real</em> rules of this world will be the one we believe are <em>true</em> for our world.
@@ -109,7 +112,7 @@ For their world, everything we <em>believe</em> today is <em>true</em> for them.
 Their world is then probably <em>simpler</em> than our.
 Particularly, we can describe this world with axioms and mathematic rules.
 It is not so sure for our Universe. 
-But we&rsquo;ll talk about that later.</p>
+But we’ll talk about that later.</p>
 
 <p>Lets the work begin.
 I create an <em>Earth</em>.
@@ -119,14 +122,14 @@ In particular they try to understand their world.
 They believe that if they know the rules of their world they will be able to predict the consequences of most of their acts.
 They are so naive.
 If only they knew.
-But I&rsquo;m here to help them.</p>
+But I’m here to help them.</p>
 
 <p>I am a God who likes jokes.
 The first joke I make to Ys is to make their sense imperfect.
 Furthermore it is not possible to make perfect precise measure in my world.
 I let Ys ameliorate their technology but there is a theoretical limit to the best precision they can reach.</p>
 
-<p>I&rsquo;d like to precise that these people believe their world is flat.
+<p>I’d like to precise that these people believe their world is flat.
 Some believe it is possible to find the rules of their Universe.
 Now, let the game begins.</p>
 
@@ -143,7 +146,7 @@ It is certainly a rule of my Universe.
 But how to be certain all triangle in my Universe share this property?</p>
 </blockquote>
 
-<p><img alt="no name" src="/Scratch/img/blog/2010-07-09-Indecidabilities/triangle_3_angles.png" class="left" /></p>
+<p><img alt="three triangles" src="/Scratch/img/blog/2010-07-09-Indecidabilities/triangle_3_angles.png" class=" left" /></p>
 
 <p>Some began to formalize the problem.
 They end by writing a mathematical proof.
@@ -153,14 +156,14 @@ The proof is based on rules and axioms.
 How to be certain these rules and axioms are right in their world?
 They will try to measure again and again the sum of the angles of triangles.
 The measure will never fail.
-But they&rsquo;ll never be certain the rules and axioms are right.
+But they’ll never be certain the rules and axioms are right.
 Because then only way to verify all axioms depends of observation.
 And as a facetious god, I forbid perfect measure in observation.</p>
 
 <p>Of course, they prey, they call me to help.
-And as any respectful god, I don&rsquo;t answer.
-Ah ah ah! I&rsquo;ve always loved to make these kind of thing.
-Let&rsquo;s act as if I don&rsquo;t exists.
+And as any respectful god, I don’t answer.
+Ah ah ah! I’ve always loved to make these kind of thing.
+Let’s act as if I don’t exists.
 What a good joke!</p>
 
 <p>They feel sad. But they have some hope:</p>
@@ -173,10 +176,10 @@ What a good joke!</p>
 
 <h2 id="growing-errors-undecidability">Growing errors Undecidability</h2>
 
-<p><img alt="no name" src="/Scratch/img/blog/2010-07-09-Indecidabilities/3_corps.png" class="left" /></p>
+<p><img alt="Three bodies" src="/Scratch/img/blog/2010-07-09-Indecidabilities/3_corps.png" class=" left" /></p>
 
 <p>Unfortunately, the three bodies problem will crush this <em>hope</em>.
-Using Newton&rsquo;s Universal Law of gravitation with two bodies, we can predict with precision what will be their position and speed in the future.
+Using Newton’s Universal Law of gravitation with two bodies, we can predict with precision what will be their position and speed in the future.
 Until there all seems OK.
 But now, add another body.
 All errors will grow.
@@ -195,25 +198,25 @@ And we should at least determine what we can predict and what we cannot.</p>
 
 <p>Consider the following question:</p>
 
-<p><img alt="no name" src="/Scratch/img/blog/2010-07-09-Indecidabilities/mandelbrot.png" class="left" /></p>
+<p><img alt="Mandelbrot set" src="/Scratch/img/blog/2010-07-09-Indecidabilities/mandelbrot.png" class=" left" /></p>
 
-<p>Consider some GPS coordinates on a point around the cost of the &ldquo;Bretagne&rdquo; in France.
+<p>Consider some GPS coordinates on a point around the cost of the “Bretagne” in France.
 The coordinates are 3 feet precise.
 Is the point in the water or on Earth?</p>
 
 <p>For some coordinates it is not possible to know.
 Even if we are authorize to move a bit to dodge the borders.
-Because there are some zone in which all point could be a &ldquo;border&rdquo; for any size of the zone.</p>
+Because there are some zone in which all point could be a “border” for any size of the zone.</p>
 
 <p>We can even imagine some mathematical structure where <em>all</em> points are at the border<sup id="fnref:2"><a href="#fn:2" rel="footnote">1</a></sup>. </p>
 
 <h2 id="logical-undecidability">Logical Undecidability</h2>
 
-<p><img alt="no name" src="/Scratch/img/blog/2010-07-09-Indecidabilities/stackOverflow.png" class="left" /></p>
+<p><img alt="recursive stack overflow" src="/Scratch/img/blog/2010-07-09-Indecidabilities/stackOverflow.png" class=" left" /></p>
 
 <p>Until there all problem were undecidable because of measure <em>errors</em>.
 May be in a controlled world without any <em>error</em> we should be able to predict anything.<br />
-I&rsquo;m sorry to say no.
+I’m sorry to say no.
 Even in a self-contained mathematical world it can be possible to create object with an unpredictable behaviour.</p>
 
 <p>It is the <em>halting problem</em>.</p>
@@ -229,8 +232,8 @@ More precisely:</p>
   <p>Hypothesis: there exists a program <code>P</code> such that:</p>
 
   <ul>
-    <li><code>P(x,y)</code> return &ldquo;stop&rdquo; in a finite amount of time if <code>x(y)</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">2</a></sup> will stop running.</li>
-    <li><code>P(x,y)</code> return &ldquo;loop&rdquo; in a finite amount of time if <code>x(y)</code> will never stop running.</li>
+    <li><code>P(x,y)</code> return “stop” in a finite amount of time if <code>x(y)</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">2</a></sup> will stop running.</li>
+    <li><code>P(x,y)</code> return “loop” in a finite amount of time if <code>x(y)</code> will never stop running.</li>
   </ul>
 
   <p>Remark: Any program can be represented as a string. Therefore, a program can be used as the input of another program.
@@ -247,8 +250,8 @@ Q(x) :
   <p>Now, what is the value of <code>P(Q,Q)</code>?</p>
 
   <ul>
-    <li>if <code>P(Q,Q)</code> returns &ldquo;stop&rdquo; that imply by construction of <code>Q</code> that <code>P(Q,Q)</code> returns &ldquo;loop&rdquo;.</li>
-    <li>if <code>P(Q,Q)</code> returns &ldquo;loop&rdquo; that means by construction of <code>Q</code> that <code>P(Q,Q)</code> return &ldquo;stop&rdquo;.</li>
+    <li>if <code>P(Q,Q)</code> returns “stop” that imply by construction of <code>Q</code> that <code>P(Q,Q)</code> returns “loop”.</li>
+    <li>if <code>P(Q,Q)</code> returns “loop” that means by construction of <code>Q</code> that <code>P(Q,Q)</code> return “stop”.</li>
   </ul>
 
   <p>Therefore there is a contradiction the only way to handle is by the non existence of the program <code>P</code>.</p>
@@ -256,7 +259,7 @@ Q(x) :
 
 <p>I am the demiurge of this imaginary world. 
 And I cannot know the future of this world.
-Therefore, creative power isn&rsquo;t equivalent to omnipotence.</p>
+Therefore, creative power isn’t equivalent to omnipotence.</p>
 
 
 </div>
@@ -266,7 +269,7 @@ Therefore, creative power isn&rsquo;t equivalent to omnipotence.</p>
 
 <p>After all this, it becomes difficult to know what we can believe.
 But it would be another error to throw away all our knowledge.
-In a future next part, I&rsquo;ll explain what we can hope and what attitude we should have once we&rsquo;ve realized most of truth are unaccessible.</p>
+In a future next part, I’ll explain what we can hope and what attitude we should have once we’ve realized most of truth are unaccessible.</p>
 <hr/><div class="footnotes">
   <ol>
     <li id="fn:2">
@@ -393,7 +396,7 @@ In a future next part, I&rsquo;ll explain what we can hope and what attitude we 
                 </div>
                 <div id="lastmod">
                     Created: 08/11/2010
-                    Modified: 04/11/2012 
+                    Modified: 04/26/2012 
                 </div>
                 <div>
                     Entirely done with

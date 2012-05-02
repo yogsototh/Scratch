@@ -1,4 +1,3 @@
-
 def gitmtime
     filepath=@item.path.sub('/Scratch/','content/html/').sub(/\/$/,'')
     ext=%{.#{@item[:extension]}}

@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Un menu qui attends avant de se cacher" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2009-10-Wait-to-hide-a-menu-in-jQuery/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -54,88 +57,97 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>J&rsquo;ai déjà dit pourquoi <a href="/Scratch/fr/blog/2009-10-Focus-vs-Minimalism">je préférais que mon menu de navigation soit caché</a>. J&rsquo;ai finalement décidé d&rsquo;attendre un peu avant de cacher le menu. Juste le temps que l&rsquo;utilisateur le voit. Mais voilà. Comment faire pour qu&rsquo;il ne disparaisse que lorsque l&rsquo;on ne s&rsquo;en sert pas pendant un petit moment&nbsp;?</p>
+                    <p>J’ai déjà dit pourquoi <a href="/Scratch/fr/blog/2009-10-Focus-vs-Minimalism">je préférais que mon menu de navigation soit caché</a>. J’ai finalement décidé d’attendre un peu avant de cacher le menu. Juste le temps que l’utilisateur le voit. Mais voilà. Comment faire pour qu’il ne disparaisse que lorsque l’on ne s’en sert pas pendant un petit moment&nbsp;?</p>
 
-<p>Voici la solution que j&rsquo;utilise avec jQuery</p>
+<p>Voici la solution que j’utilise avec jQuery</p>
 
 <p>HTML&nbsp;: </p>
 
 <div>
-<pre class="twilight">
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll"><span class="MetaTagAll">id</span><span class="MetaTagAll">=</span><span class="String"><span class="String">&quot;</span><span class="String">menuButton</span><span class="String">&quot;</span></span></span><span class="MetaTagAll">&gt;<span class="MetaTagAll">&lt;</span>/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll"><span class="MetaTagAll">id</span><span class="MetaTagAll">=</span><span class="String"><span class="String">&quot;</span><span class="String">entete</span><span class="String">&quot;</span></span></span><span class="MetaTagAll">&gt;</span></span>
-        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">ul</span><span class="MetaTagAll">&gt;</span></span>
-            <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">li</span><span class="MetaTagInline">&gt;</span></span> menu item 1 <span class="MetaTagInline"><span class="MetaTagInline">&lt;/</span><span class="MetaTagInline">li</span><span class="MetaTagInline">&gt;</span></span>
+
+
+<pre><code class="html">    &lt;div id="menuButton"&gt;&lt;/div&gt;
+    &lt;div id="entete"&gt;
+        &lt;ul&gt;
+            &lt;li&gt; menu item 1 &lt;/li&gt;
             ...
-            <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">li</span><span class="MetaTagInline">&gt;</span></span> menu item n <span class="MetaTagInline"><span class="MetaTagInline">&lt;/</span><span class="MetaTagInline">li</span><span class="MetaTagInline">&gt;</span></span>
-        <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">ul</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span>
-</pre>
+            &lt;li&gt; menu item n &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</code></pre>
+
+
 </div>
 
 <p>CSS&nbsp;: </p>
 
-<div><pre class="twilight">
-    <span class="CssId"><span class="CssId">#</span>entete</span> {
-      <span class="CssPropertyName">top</span>: <span class="CssAdditionalConstants">1</span><span class="Keyword">em</span>;
-      <span class="CssPropertyName">left</span>: <span class="CssAdditionalConstants">0</span>;
-      <span class="CssPropertyName">position</span>: <span class="CssPropertyValue">fixed</span>;
-      <span class="CssPropertyName">width</span>: <span class="CssAdditionalConstants">10</span><span class="Keyword">em</span>;
-      <span class="CssPropertyName">z-index</span>: <span class="CssAdditionalConstants">2000</span>; }
+<div>
+
+<pre><code class="css">    #entete {
+      top: 1em;
+      left: 0;
+      position: fixed;
+      width: 10em;
+      z-index: 2000; }
     
-    <span class="CssId"><span class="CssId">#</span>entete</span> {
-      <span class="CssPropertyName">top</span>: <span class="CssAdditionalConstants">1</span><span class="Keyword">em</span>;
-      <span class="CssPropertyName">height</span>: <span class="CssAdditionalConstants">22</span><span class="Keyword">em</span>;
-      <span class="CssPropertyName">left</span>: <span class="CssAdditionalConstants">0</span>;
-      <span class="CssPropertyName">position</span>: <span class="CssPropertyValue">fixed</span>;
-      <span class="CssPropertyName">width</span>: <span class="CssAdditionalConstants">10</span><span class="Keyword">em</span>; }
-</pre></div>
+    #entete {
+      top: 1em;
+      height: 22em;
+      left: 0;
+      position: fixed;
+      width: 10em; }
+</code></pre>
+
+</div>
 
 <p>Javascript&nbsp;: </p>
 
-<div><pre class="twilight">
-<span class="Storage">var</span> last<span class="Keyword">=</span><span class="Constant">0</span>;
+<div>
 
-<span class="Comment"><span class="Comment">//</span> will hide the menu in 5 seconds</span>
-<span class="Comment"><span class="Comment">//</span> if the variable 'last' has not changed its value</span>
-<span class="Storage">function</span> <span class="Entity">autoHideMenu</span>(<span class="Variable">value</span>) {
-    <span class="SupportFunction">setTimeout</span>(<span class="Storage">function</span>(){
-        <span class="Keyword">if</span> ( last <span class="Keyword">==</span> value ) { hideMenu(); }
-    },<span class="Constant">5000</span>);
+<pre><code class="javascript">var last=0;
+
+// will hide the menu in 5 seconds
+// if the variable 'last' has not changed its value
+function autoHideMenu(value) {
+    setTimeout(function(){
+        if ( last == value ) { hideMenu(); }
+    },5000);
 }
 
-<span class="Keyword">$</span>(<span class="Support">document</span>).ready( <span class="Storage">function</span>() {
-    <span class="Comment"><span class="Comment">//</span> show the menu when the mouse is on</span>
-    <span class="Comment"><span class="Comment">//</span> the good area</span>
-    <span class="Keyword">$</span>(<span class="String"><span class="String">'</span>#menuButton<span class="String">'</span></span>).hover(showMenu);
+$(document).ready( function() {
+    // show the menu when the mouse is on
+    // the good area
+    $('#menuButton').hover(showMenu);
 
-    <span class="Comment"><span class="Comment">//</span> If the mouse is on the menu change the</span>
-    <span class="Comment"><span class="Comment">//</span> value of 'last'</span>
-    <span class="Comment"><span class="Comment">//</span> try to hide the menu when the mouse </span>
-    <span class="Comment"><span class="Comment">//</span> go out off the menu.</span>
-    <span class="Keyword">$</span>(<span class="String"><span class="String">'</span>#entete<span class="String">'</span></span>).hover(
-        <span class="Storage">function</span>(){last<span class="Keyword">+</span><span class="Keyword">=</span><span class="Constant">1</span>;}, 
-        <span class="Storage">function</span>(){autoHideMenu(last);} );
-    autoHideMenu(<span class="Constant">0</span>);
+    // If the mouse is on the menu change the
+    // value of 'last'
+    // try to hide the menu when the mouse 
+    // go out off the menu.
+    $('#entete').hover(
+        function(){last+=1;}, 
+        function(){autoHideMenu(last);} );
+    autoHideMenu(0);
 });
 
-<span class="Comment"><span class="Comment">//</span> show / hide menu functions details</span>
+// show / hide menu functions details
 
-<span class="Comment"><span class="Comment">//</span> move to the left</span>
-<span class="Storage">function</span> <span class="Entity">hideMenu</span>() { 
-    <span class="Keyword">$</span>(<span class="String"><span class="String">'</span>#entete<span class="String">'</span></span>).animate({left:<span class="String"><span class="String">&quot;</span>-10em<span class="String">&quot;</span></span>}, <span class="Constant">500</span> ); 
+// move to the left
+function hideMenu() { 
+    $('#entete').animate({left:"-10em"}, 500 ); 
 }
 
-<span class="Comment"><span class="Comment">//</span> move to right and will try to hide in 5 sec.</span>
-<span class="Storage">function</span> <span class="Entity">showMenu</span>() { 
-    <span class="Keyword">$</span>(<span class="String"><span class="String">'</span>#entete<span class="String">'</span></span>).animate({left:<span class="String"><span class="String">&quot;</span>0em<span class="String">&quot;</span></span>}, <span class="Constant">500</span> );
-    last<span class="Keyword">+</span><span class="Keyword">=</span><span class="Constant">1</span>;
+// move to right and will try to hide in 5 sec.
+function showMenu() { 
+    $('#entete').animate({left:"0em"}, 500 );
+    last+=1;
     autoHideMenu(last);
 }
 
-</pre></div>
+</code></pre>
 
-<p>Simple et peu gourmand en ressources. Pas de timer (ou presque), pas de fuite de mémoire, pas d&rsquo;utilisation de date&hellip;</p>
+</div>
+
+<p>Simple et peu gourmand en ressources. Pas de timer (ou presque), pas de fuite de mémoire, pas d’utilisation de date…</p>
 
                 </div>
             

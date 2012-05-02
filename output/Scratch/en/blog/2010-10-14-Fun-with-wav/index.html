@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="S'amuser avec un .wav" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-10-14-Fun-with-wav/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -60,7 +63,7 @@
 
 <p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> Played to process a <code>wav</code> file. <code>C</code> was easier and cleaner than Ruby.</p>
 
-<p>edit: I wanted this program to work only on one specific machine (a x86 on a 32 bit Ubuntu). Therefore I didn&rsquo;t had any portability consideration. This is only a <em>hack</em>.</p>
+<p>edit: I wanted this program to work only on one specific machine (a x86 on a 32 bit Ubuntu). Therefore I didn’t had any portability consideration. This is only a <em>hack</em>.</p>
 
 
 </div>
@@ -69,7 +72,7 @@
 <p>I had to compute the sum of the absolute values of data of a <code>.wav</code> file.
 For efficiency (and fun) reasons, I had chosen <code>C</code> language.</p>
 
-<p>I didn&rsquo;t programmed in <code>C</code> for a long time.
+<p>I didn’t programmed in <code>C</code> for a long time.
 From my memory it was a pain to read and write to files.
 But in the end I was really impressed by the code I get. 
 It was really clean.
@@ -81,113 +84,109 @@ The header is then a block of packed bytes.</p>
 
 <ul>
   <li>The 4<sup>th</sup> first bytes must contains <code>RIFF</code> in ASCII,</li>
-  <li>the following 4<sup>th</sup> Bytes is an 32 bits integer giving the size of the file minus 8, etc&hellip;</li>
+  <li>the following 4<sup>th</sup> Bytes is an 32 bits integer giving the size of the file minus 8, etc…</li>
 </ul>
 
 <p>Surprisingly, I believe that reading this kind of file is easier in <code>C</code> than in most higher level language.
 Proof: I only have to search on the web the complete header format and write it in a struct.</p>
 
-<pre class="twilight">
-<span class="Storage">struct</span> wavfile
+<pre><code class="c">struct wavfile
 {
-    <span class="Storage">char</span>        id[<span class="Constant">4</span>];          <span class="Comment"><span class="Comment">//</span> should always contain &quot;RIFF&quot;</span>
-    <span class="Storage">int</span>     totallength;    <span class="Comment"><span class="Comment">//</span> total file length minus 8</span>
-    <span class="Storage">char</span>        wavefmt[<span class="Constant">8</span>];     <span class="Comment"><span class="Comment">//</span> should be &quot;WAVEfmt &quot;</span>
-    <span class="Storage">int</span>     format;         <span class="Comment"><span class="Comment">//</span> 16 for PCM format</span>
-    <span class="Storage">short</span>     pcm;            <span class="Comment"><span class="Comment">//</span> 1 for PCM format</span>
-    <span class="Storage">short</span>     channels;       <span class="Comment"><span class="Comment">//</span> channels</span>
-    <span class="Storage">int</span>     frequency;      <span class="Comment"><span class="Comment">//</span> sampling frequency</span>
-    <span class="Storage">int</span>     bytes_per_second;
-    <span class="Storage">short</span>     bytes_by_capture;
-    <span class="Storage">short</span>     bits_per_sample;
-    <span class="Storage">char</span>        data[<span class="Constant">4</span>];        <span class="Comment"><span class="Comment">//</span> should always contain &quot;data&quot;</span>
-    <span class="Storage">int</span>     bytes_in_data;
+    char        id[4];          // should always contain "RIFF"
+    int     totallength;    // total file length minus 8
+    char        wavefmt[8];     // should be "WAVEfmt "
+    int     format;         // 16 for PCM format
+    short     pcm;            // 1 for PCM format
+    short     channels;       // channels
+    int     frequency;      // sampling frequency
+    int     bytes_per_second;
+    short     bytes_by_capture;
+    short     bits_per_sample;
+    char        data[4];        // should always contain "data"
+    int     bytes_in_data;
 };
-</pre>
+</code></pre>
 
 <p>To read this kind of data in Ruby, I certainly had to write a block of code for each element in the struct.
 But in <code>C</code> I simply written:</p>
 
-<pre class="twilight">
-<span class="SupportFunction">fread</span>(&amp;header,<span class="Keyword">sizeof</span>(header),<span class="Constant">1</span>,wav)
-</pre>
+<pre><code class="c">fread(&amp;header,sizeof(header),1,wav)
+</code></pre>
 
 <p>Only one step to fill my data structure. Magic!</p>
 
 <p>Then, get an int value coded on two Bytes is also not a natural operation for high level language.
 In <code>C</code>, to read a sequence of 2 Bytes numbers I only had to write:</p>
 
-<pre class="twilight">
-<span class="Storage">short</span> value=<span class="Constant">0</span>;
-<span class="Keyword">while</span>( <span class="SupportFunction">fread</span>(&amp;value,<span class="Keyword">sizeof</span>(value),<span class="Constant">1</span>,wav) ) {
-    <span class="Comment"><span class="Comment">//</span> do something with value</span>
+<pre><code class="c">short value=0;
+while( fread(&amp;value,sizeof(value),1,wav) ) {
+    // do something with value
 }
-</pre>
+</code></pre>
 
 <p>Finally I ended with the following code. Remark I know the wav format (16 bit / 48000Hz):</p>
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/2010-10-14-Fun-with-wav/code/wavsum.c"> &#x27A5; wavsum.c </a></div><div class="withfile">
-<pre class="twilight">
-<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>stdio.h<span class="String">&gt;</span></span></span>
-<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>stdlib.h<span class="String">&gt;</span></span></span>
-<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>stdint.h<span class="String">&gt;</span></span></span>
+<div class="codefile"><a href="/Scratch/en/blog/2010-10-14-Fun-with-wav/code/wavsum.c">&#x27A5; wavsum.c</a></div>
 
-<span class="Storage">struct</span> wavfile
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdint.h&gt;
+
+struct wavfile
 {
-    <span class="Storage">char</span>        id[<span class="Constant">4</span>];          <span class="Comment"><span class="Comment">//</span> should always contain &quot;RIFF&quot;</span>
-    <span class="Storage">int</span>     totallength;    <span class="Comment"><span class="Comment">//</span> total file length minus 8</span>
-    <span class="Storage">char</span>        wavefmt[<span class="Constant">8</span>];     <span class="Comment"><span class="Comment">//</span> should be &quot;WAVEfmt &quot;</span>
-    <span class="Storage">int</span>     format;         <span class="Comment"><span class="Comment">//</span> 16 for PCM format</span>
-    <span class="Storage">short</span>     pcm;            <span class="Comment"><span class="Comment">//</span> 1 for PCM format</span>
-    <span class="Storage">short</span>     channels;       <span class="Comment"><span class="Comment">//</span> channels</span>
-    <span class="Storage">int</span>     frequency;      <span class="Comment"><span class="Comment">//</span> sampling frequency</span>
-    <span class="Storage">int</span>     bytes_per_second;
-    <span class="Storage">short</span>     bytes_by_capture;
-    <span class="Storage">short</span>     bits_per_sample;
-    <span class="Storage">char</span>        data[<span class="Constant">4</span>];        <span class="Comment"><span class="Comment">//</span> should always contain &quot;data&quot;</span>
-    <span class="Storage">int</span>     bytes_in_data;
+    char        id[4];          // should always contain "RIFF"
+    int     totallength;    // total file length minus 8
+    char        wavefmt[8];     // should be "WAVEfmt "
+    int     format;         // 16 for PCM format
+    short     pcm;            // 1 for PCM format
+    short     channels;       // channels
+    int     frequency;      // sampling frequency
+    int     bytes_per_second;
+    short     bytes_by_capture;
+    short     bits_per_sample;
+    char        data[4];        // should always contain "data"
+    int     bytes_in_data;
 };
 
-<span class="Storage">int</span> <span class="Entity">ma<span class="Entity">in</span></span>(<span class="Storage">int</span> argc, <span class="Storage">char</span> *argv[]) {
-    <span class="Storage">char</span> *filename=argv[<span class="Constant">1</span>];
-    FILE *wav = <span class="SupportFunction">fopen</span>(filename,<span class="String"><span class="String">&quot;</span>rb<span class="String">&quot;</span></span>);
-    <span class="Storage">struct</span> wavfile header;
+int main(int argc, char *argv[]) {
+    char *filename=argv[1];
+    FILE *wav = fopen(filename,"rb");
+    struct wavfile header;
 
-    <span class="Keyword">if</span> ( wav == <span class="Constant">NULL</span> ) {
-        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>Can't open input file <span class="StringConstant">%s</span><span class="String">&quot;</span></span>, filename);
-        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
+    if ( wav == NULL ) {
+        fprintf(stderr,"Can't open input file %s", filename);
+        exit(1);
     }
 
 
-    <span class="Comment"><span class="Comment">//</span> read header</span>
-    <span class="Keyword">if</span> ( <span class="SupportFunction">fread</span>(&amp;header,<span class="Keyword">sizeof</span>(header),<span class="Constant">1</span>,wav) &lt; <span class="Constant">1</span> )
+    // read header
+    if ( fread(&amp;header,sizeof(header),1,wav) &lt; 1 )
     {
-        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>Can't read file header<span class="StringConstant">\n</span><span class="String">&quot;</span></span>);
-        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
+        fprintf(stderr,"Can't read file header\n");
+        exit(1);
     }
-    <span class="Keyword">if</span> (    header.id[<span class="Constant">0</span>] != <span class="String"><span class="String">'</span>R<span class="String">'</span></span>
-         || header.id[<span class="Constant">1</span>] != <span class="String"><span class="String">'</span>I<span class="String">'</span></span> 
-         || header.id[<span class="Constant">2</span>] != <span class="String"><span class="String">'</span>F<span class="String">'</span></span> 
-         || header.id[<span class="Constant">3</span>] != <span class="String"><span class="String">'</span>F<span class="String">'</span></span> ) { 
-        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>ERROR: Not wav format<span class="StringConstant">\n</span><span class="String">&quot;</span></span>); 
-        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>); 
+    if (    header.id[0] != 'R'
+         || header.id[1] != 'I' 
+         || header.id[2] != 'F' 
+         || header.id[3] != 'F' ) { 
+        fprintf(stderr,"ERROR: Not wav format\n"); 
+        exit(1); 
     }
 
-    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>wav format<span class="StringConstant">\n</span><span class="String">&quot;</span></span>);
+    fprintf(stderr,"wav format\n");
 
-    <span class="Comment"><span class="Comment">//</span> read data</span>
-    <span class="Storage">long</span> sum=<span class="Constant">0</span>;
-    <span class="Storage">short</span> value=<span class="Constant">0</span>;
-    <span class="Keyword">while</span>( <span class="SupportFunction">fread</span>(&amp;value,<span class="Keyword">sizeof</span>(value),<span class="Constant">1</span>,wav) ) {
-        <span class="Comment"><span class="Comment">//</span> fprintf(stderr,&quot;%d\n&quot;, value);</span>
-        <span class="Keyword">if</span> (value&lt;<span class="Constant">0</span>) { value=-value; }
+    // read data
+    long sum=0;
+    short value=0;
+    while( fread(&amp;value,sizeof(value),1,wav) ) {
+        // fprintf(stderr,"%d\n", value);
+        if (value&lt;0) { value=-value; }
         sum += value;
     }
-    <span class="SupportFunction">printf</span>(<span class="String"><span class="String">&quot;</span><span class="StringConstant">%ld</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>,sum);
-    <span class="SupportFunction">exit</span>(<span class="Constant">0</span>);
+    printf("%ld\n",sum);
+    exit(0);
 }
-</pre>
-</div></div>
+</code></pre>
 
 <p>Of course it is only a hack. 
 But we can see how easy and clean it should be to improve.
@@ -207,185 +206,182 @@ But I must confess this task was a bit tedious.
 The code remain as readable as before.
 But I had to use some compiler specific declaration to force the structure to be packed:</p>
 
-<pre class="twilight">
-__attribute__((__packed__))
-</pre>
+<pre><code class="c">__attribute__((__packed__))
+</code></pre>
 
 <p>Therefore this implementation should for big and little endian architecture. 
 However, it must be compiled with <code>gcc</code>.
-The new code make more tests but still don&rsquo;t use <code>mmap</code>.
+The new code make more tests but still don’t use <code>mmap</code>.
 Here it is:</p>
 
 
 </div>
 
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/2010-10-14-Fun-with-wav/code/wavsum2.c"> &#x27A5; wavsum2.c </a></div><div class="withfile">
-<pre class="twilight">
-<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>stdio.h<span class="String">&gt;</span></span></span>
-<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>stdlib.h<span class="String">&gt;</span></span></span>
-<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>string.h<span class="String">&gt;</span></span> </span><span class="Comment"><span class="Comment">//</span> for memcmp</span>
-<span class="CCCPreprocessorLine">#<span class="CCCPreprocessorDirective">include</span> <span class="String"><span class="String">&lt;</span>stdint.h<span class="String">&gt;</span></span> </span><span class="Comment"><span class="Comment">//</span> for int16_t and int32_t</span>
+<div class="codefile"><a href="/Scratch/en/blog/2010-10-14-Fun-with-wav/code/wavsum2.c">&#x27A5; wavsum2.c</a></div>
 
-<span class="Storage">struct</span> wavfile
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt; // for memcmp
+#include &lt;stdint.h&gt; // for int16_t and int32_t
+
+struct wavfile
 {
-    <span class="Storage">char</span>    id[<span class="Constant">4</span>];          <span class="Comment"><span class="Comment">//</span> should always contain &quot;RIFF&quot;</span>
-    <span class="Support">int32_t</span> totallength;    <span class="Comment"><span class="Comment">//</span> total file length minus 8</span>
-    <span class="Storage">char</span>    wavefmt[<span class="Constant">8</span>];     <span class="Comment"><span class="Comment">//</span> should be &quot;WAVEfmt &quot;</span>
-    <span class="Support">int32_t</span> format;         <span class="Comment"><span class="Comment">//</span> 16 for PCM format</span>
-    <span class="Support">int16_t</span> pcm;            <span class="Comment"><span class="Comment">//</span> 1 for PCM format</span>
-    <span class="Support">int16_t</span> channels;       <span class="Comment"><span class="Comment">//</span> channels</span>
-    <span class="Support">int32_t</span> frequency;      <span class="Comment"><span class="Comment">//</span> sampling frequency</span>
-    <span class="Support">int32_t</span> bytes_per_second;
-    <span class="Support">int16_t</span> bytes_by_capture;
-    <span class="Support">int16_t</span> bits_per_sample;
-    <span class="Storage">char</span>    data[<span class="Constant">4</span>];        <span class="Comment"><span class="Comment">//</span> should always contain &quot;data&quot;</span>
-    <span class="Support">int32_t</span> bytes_in_data;
+    char    id[4];          // should always contain "RIFF"
+    int32_t totallength;    // total file length minus 8
+    char    wavefmt[8];     // should be "WAVEfmt "
+    int32_t format;         // 16 for PCM format
+    int16_t pcm;            // 1 for PCM format
+    int16_t channels;       // channels
+    int32_t frequency;      // sampling frequency
+    int32_t bytes_per_second;
+    int16_t bytes_by_capture;
+    int16_t bits_per_sample;
+    char    data[4];        // should always contain "data"
+    int32_t bytes_in_data;
 } __attribute__((__packed__));
 
-<span class="Storage">int</span> is_big_endian(<span class="Storage">void</span>) {
-    <span class="Storage">union</span> {
-        <span class="Support">uint32_t</span> i;
-        <span class="Storage">char</span> c[<span class="Constant">4</span>];
-    } bint = {<span class="Constant">0x01000000</span>};
-    <span class="Keyword">return</span> bint.c[<span class="Constant">0</span>]==<span class="Constant">1</span>;
+int is_big_endian(void) {
+    union {
+        uint32_t i;
+        char c[4];
+    } bint = {0x01000000};
+    return bint.c[0]==1;
 }
 
-<span class="Storage">int</span> <span class="Entity">ma<span class="Entity">in</span></span>(<span class="Storage">int</span> argc, <span class="Storage">char</span> *argv[]) {
-    <span class="Storage">char</span> *filename=argv[<span class="Constant">1</span>];
-    FILE *wav = <span class="SupportFunction">fopen</span>(filename,<span class="String"><span class="String">&quot;</span>rb<span class="String">&quot;</span></span>);
-    <span class="Storage">struct</span> wavfile header;
+int main(int argc, char *argv[]) {
+    char *filename=argv[1];
+    FILE *wav = fopen(filename,"rb");
+    struct wavfile header;
 
-    <span class="Keyword">if</span> ( wav == <span class="Constant">NULL</span> ) {
-        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>Can't open input file <span class="StringConstant">%s</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>, filename);
-        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
+    if ( wav == NULL ) {
+        fprintf(stderr,"Can't open input file %s\n", filename);
+        exit(1);
     }
 
 
-    <span class="Comment"><span class="Comment">//</span> read header</span>
-    <span class="Keyword">if</span> ( <span class="SupportFunction">fread</span>(&amp;header,<span class="Keyword">sizeof</span>(header),<span class="Constant">1</span>,wav) &lt; <span class="Constant">1</span> ) {
-        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>Can't read input file header <span class="StringConstant">%s</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>, filename);
-        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
+    // read header
+    if ( fread(&amp;header,sizeof(header),1,wav) &lt; 1 ) {
+        fprintf(stderr,"Can't read input file header %s\n", filename);
+        exit(1);
     }
 
-    <span class="Comment"><span class="Comment">//</span> if wav file isn't the same endianness than the current environment</span>
-    <span class="Comment"><span class="Comment">//</span> we quit</span>
-    <span class="Keyword">if</span> ( is_big_endian() ) {
-        <span class="Keyword">if</span> (   <span class="SupportFunction">memcmp</span>( header.id,<span class="String"><span class="String">&quot;</span>RIFX<span class="String">&quot;</span></span>, <span class="Constant">4</span>) != <span class="Constant">0</span> ) {
-            <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>ERROR: <span class="StringConstant">%s</span> is not a big endian wav file<span class="StringConstant">\n</span><span class="String">&quot;</span></span>, filename); 
-            <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
+    // if wav file isn't the same endianness than the current environment
+    // we quit
+    if ( is_big_endian() ) {
+        if (   memcmp( header.id,"RIFX", 4) != 0 ) {
+            fprintf(stderr,"ERROR: %s is not a big endian wav file\n", filename); 
+            exit(1);
         }
-    } <span class="Keyword">else</span> {
-        <span class="Keyword">if</span> (   <span class="SupportFunction">memcmp</span>( header.id,<span class="String"><span class="String">&quot;</span>RIFF<span class="String">&quot;</span></span>, <span class="Constant">4</span>) != <span class="Constant">0</span> ) {
-            <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>ERROR: <span class="StringConstant">%s</span> is not a little endian wav file<span class="StringConstant">\n</span><span class="String">&quot;</span></span>, filename); 
-            <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
+    } else {
+        if (   memcmp( header.id,"RIFF", 4) != 0 ) {
+            fprintf(stderr,"ERROR: %s is not a little endian wav file\n", filename); 
+            exit(1);
         }
     }
 
-    <span class="Keyword">if</span> (   <span class="SupportFunction">memcmp</span>( header.wavefmt, <span class="String"><span class="String">&quot;</span>WAVEfmt <span class="String">&quot;</span></span>, <span class="Constant">8</span>) != <span class="Constant">0</span> 
-        || <span class="SupportFunction">memcmp</span>( header.data, <span class="String"><span class="String">&quot;</span>data<span class="String">&quot;</span></span>, <span class="Constant">4</span>) != <span class="Constant">0</span> 
+    if (   memcmp( header.wavefmt, "WAVEfmt ", 8) != 0 
+        || memcmp( header.data, "data", 4) != 0 
             ) {
-        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>ERROR: Not wav format<span class="StringConstant">\n</span><span class="String">&quot;</span></span>); 
-        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>); 
+        fprintf(stderr,"ERROR: Not wav format\n"); 
+        exit(1); 
     }
-    <span class="Keyword">if</span> (header.format != <span class="Constant">16</span>) {
-        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span>ERROR: not 16 bit wav format.<span class="String">&quot;</span></span>);
-        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>);
+    if (header.format != 16) {
+        fprintf(stderr,"\nERROR: not 16 bit wav format.");
+        exit(1);
     }
-    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>format: <span class="StringConstant">%d</span> bits<span class="String">&quot;</span></span>, header.format);
-    <span class="Keyword">if</span> (header.format == <span class="Constant">16</span>) {
-        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, PCM<span class="String">&quot;</span></span>);
-    } <span class="Keyword">else</span> {
-        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, not PCM (<span class="StringConstant">%d</span>)<span class="String">&quot;</span></span>, header.format);
+    fprintf(stderr,"format: %d bits", header.format);
+    if (header.format == 16) {
+        fprintf(stderr,", PCM");
+    } else {
+        fprintf(stderr,", not PCM (%d)", header.format);
     }
-    <span class="Keyword">if</span> (header.pcm == <span class="Constant">1</span>) {
-        <span class="SupportFunction">fprintf</span>(stderr, <span class="String"><span class="String">&quot;</span> uncompressed<span class="String">&quot;</span></span> );
-    } <span class="Keyword">else</span> {
-        <span class="SupportFunction">fprintf</span>(stderr, <span class="String"><span class="String">&quot;</span> compressed<span class="String">&quot;</span></span> );
+    if (header.pcm == 1) {
+        fprintf(stderr, " uncompressed" );
+    } else {
+        fprintf(stderr, " compressed" );
     }
-    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, channel <span class="StringConstant">%d</span><span class="String">&quot;</span></span>, header.pcm);
-    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, freq <span class="StringConstant">%d</span><span class="String">&quot;</span></span>, header.frequency );
-    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, <span class="StringConstant">%d</span> bytes per sec<span class="String">&quot;</span></span>, header.bytes_per_second );
-    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, <span class="StringConstant">%d</span> bytes by capture<span class="String">&quot;</span></span>, header.bytes_by_capture );
-    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>, <span class="StringConstant">%d</span> bits per sample<span class="String">&quot;</span></span>, header.bytes_by_capture );
-    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span> );
+    fprintf(stderr,", channel %d", header.pcm);
+    fprintf(stderr,", freq %d", header.frequency );
+    fprintf(stderr,", %d bytes per sec", header.bytes_per_second );
+    fprintf(stderr,", %d bytes by capture", header.bytes_by_capture );
+    fprintf(stderr,", %d bits per sample", header.bytes_by_capture );
+    fprintf(stderr,"\n" );
 
-    <span class="Keyword">if</span> ( <span class="SupportFunction">memcmp</span>( header.data, <span class="String"><span class="String">&quot;</span>data<span class="String">&quot;</span></span>, <span class="Constant">4</span>) != <span class="Constant">0</span> ) { 
-        <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>ERROR: Prrroblem?<span class="StringConstant">\n</span><span class="String">&quot;</span></span>); 
-        <span class="SupportFunction">exit</span>(<span class="Constant">1</span>); 
+    if ( memcmp( header.data, "data", 4) != 0 ) { 
+        fprintf(stderr,"ERROR: Prrroblem?\n"); 
+        exit(1); 
     }
-    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>wav format<span class="StringConstant">\n</span><span class="String">&quot;</span></span>);
+    fprintf(stderr,"wav format\n");
 
-    <span class="Comment"><span class="Comment">//</span> read data</span>
-    <span class="Storage">long</span> <span class="Storage">long</span> sum=<span class="Constant">0</span>;
-    <span class="Support">int16_t</span> value;
-    <span class="Storage">int</span> i=<span class="Constant">0</span>;
-    <span class="SupportFunction">fprintf</span>(stderr,<span class="String"><span class="String">&quot;</span>---<span class="StringConstant">\n</span><span class="String">&quot;</span></span>, value);
-    <span class="Keyword">while</span>( <span class="SupportFunction">fread</span>(&amp;value,<span class="Keyword">sizeof</span>(value),<span class="Constant">1</span>,wav) ) {
-        <span class="Keyword">if</span> (value&lt;<span class="Constant">0</span>) { value=-value; }
+    // read data
+    long long sum=0;
+    int16_t value;
+    int i=0;
+    fprintf(stderr,"---\n", value);
+    while( fread(&amp;value,sizeof(value),1,wav) ) {
+        if (value&lt;0) { value=-value; }
         sum += value;
     }
-    <span class="SupportFunction">printf</span>(<span class="String"><span class="String">&quot;</span><span class="StringConstant">%lld</span><span class="StringConstant">\n</span><span class="String">&quot;</span></span>,sum);
-    <span class="SupportFunction">exit</span>(<span class="Constant">0</span>);
+    printf("%lld\n",sum);
+    exit(0);
 }
-</pre>
-</div></div>
+</code></pre>
 
 <p><em>Edit(3)</em>: 
 On <a href="http://reddit.com">reddit</a>
 <a href="http://www.reddit.com/user/Bogdanp">Bogdanp</a>
 proposed a Python version:</p>
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/2010-10-14-Fun-with-wav/code/wavsum.py"> &#x27A5; wavsum.py </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>!/usr/bin/env python</span>
-<span class="Keyword">from</span> struct <span class="Keyword">import</span> calcsize, unpack
-<span class="Keyword">from</span> sys <span class="Keyword">import</span> argv, exit
+<div class="codefile"><a href="/Scratch/en/blog/2010-10-14-Fun-with-wav/code/wavsum.py">&#x27A5; wavsum.py</a></div>
 
-<span class="Storage">def</span> <span class="Entity">word_iter</span>(<span class="Variable">f</span>):
-    <span class="Keyword">while</span> <span class="Constant">True</span>:
-        _bytes <span class="Keyword">=</span> f.read(<span class="Constant">2</span>)
+<pre><code class="python">#!/usr/bin/env python
+from struct import calcsize, unpack
+from sys import argv, exit
 
-    <span class="Keyword">if</span> <span class="SupportFunction">len</span>(_bytes) <span class="Keyword">!=</span> <span class="Constant">2</span>:
-        <span class="Keyword">raise</span> <span class="Support">StopIteration</span>
+def word_iter(f):
+    while True:
+        _bytes = f.read(2)
 
-    <span class="Keyword">yield</span> unpack(<span class="String"><span class="String">&quot;</span>=h<span class="String">&quot;</span></span>, _bytes)[<span class="Constant">0</span>]
+    if len(_bytes) != 2:
+        raise StopIteration
 
-<span class="Keyword">try</span>:
-    <span class="Keyword">with</span> <span class="Support">open</span>(argv[<span class="Constant">1</span>], <span class="String"><span class="String">&quot;</span>rb<span class="String">&quot;</span></span>) <span class="Keyword">as</span> f:
-        wav <span class="Keyword">=</span> <span class="String"><span class="String">&quot;</span>=4ci8cihhiihh4ci<span class="String">&quot;</span></span>
-        wav_size <span class="Keyword">=</span> calcsize(wav)
-        metadata <span class="Keyword">=</span> unpack(wav, f.read(wav_size))
+    yield unpack("=h", _bytes)[0]
 
-        <span class="Keyword">if</span> <span class="String"><span class="String">&quot;</span><span class="String"><span class="String">&quot;</span></span></span>.join(metadata[:<span class="Constant">4</span>]) <span class="Keyword">!=</span> <span class="String"><span class="String">&quot;</span>RIFF<span class="String">&quot;</span></span>:
-            <span class="Keyword">print</span> <span class="String"><span class="String">&quot;</span>error: not wav file.<span class="String">&quot;</span></span>
-            exit(<span class="Constant">1</span>)
+try:
+    with open(argv[1], "rb") as f:
+        wav = "=4ci8cihhiihh4ci"
+        wav_size = calcsize(wav)
+        metadata = unpack(wav, f.read(wav_size))
 
-        <span class="Keyword">print</span> <span class="SupportFunction">sum</span>(<span class="SupportFunction">abs</span>(word) <span class="Keyword">for</span> word <span class="Keyword">in</span> word_iter(f))
-<span class="Keyword">except</span> <span class="Support">IOError</span>:
-    <span class="Keyword">print</span> <span class="String"><span class="String">&quot;</span>error: can't open input file '<span class="StringConstant">%s</span>'.<span class="String">&quot;</span></span> <span class="Keyword">%</span> argv[<span class="Constant">1</span>]
-    exit(<span class="Constant">1</span>)
-</pre>
-</div></div>
+        if "".join(metadata[:4]) != "RIFF":
+            print "error: not wav file."
+            exit(1)
+
+        print sum(abs(word) for word in word_iter(f))
+except IOError:
+    print "error: can't open input file '%s'." % argv[1]
+    exit(1)
+</code></pre>
 
 <p>and <a href="http://www.reddit.com/user/luikore">luikore</a>
 proposed an impressive Ruby version:</p>
 
-<div class="code"><div class="file"><a href="/Scratch/en/blog/2010-10-14-Fun-with-wav/code/wavsum.rb"> &#x27A5; wavsum.rb </a></div><div class="withfile">
-<pre class="twilight">
-data <span class="Keyword">=</span> <span class="Variable">ARGF</span>.<span class="Entity">read</span>
- keys <span class="Keyword">=</span> <span class="String"><span class="String">%w[</span>id totallength wavefmt format</span>
-<span class="String">       pcm channels frequency bytes_per_second</span>
-<span class="String">         bytes_by_capture bits_per_sample</span>
-<span class="String">           data bytes_in_data sum</span>
-<span class="String"> <span class="String">]</span></span>
- values <span class="Keyword">=</span> data.<span class="Entity">unpack</span> <span class="String"><span class="String">'</span>Z4 i Z8 i s s i i s s Z4 i s*<span class="String">'</span></span>
- sum <span class="Keyword">=</span> values.<span class="Entity">drop</span>(<span class="Constant">12</span>).<span class="Entity">map</span>(<span class="Keyword">&amp;</span><span class="Constant"><span class="Constant">:</span>abs</span>).<span class="Entity">inject</span>(<span class="Constant"><span class="Constant">:</span>+</span>)
- keys.<span class="Entity">zip</span>(values.<span class="Entity">take</span>(<span class="Constant">12</span>) <span class="Keyword">&lt;&lt;</span> sum) {|<span class="Variable">k</span>, <span class="Variable">v</span>|
-       puts <span class="String"><span class="String">&quot;</span><span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>k<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">.</span><span class="Entity">ljust</span></span> <span class="StringConstant">17</span><span class="StringEmbeddedSource">}</span></span>: <span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>v<span class="StringEmbeddedSource">}</span></span><span class="String">&quot;</span></span>
+<div class="codefile"><a href="/Scratch/en/blog/2010-10-14-Fun-with-wav/code/wavsum.rb">&#x27A5; wavsum.rb</a></div>
+
+<pre><code class="ruby">data = ARGF.read
+ keys = %w[id totallength wavefmt format
+       pcm channels frequency bytes_per_second
+         bytes_by_capture bits_per_sample
+           data bytes_in_data sum
+ ]
+ values = data.unpack 'Z4 i Z8 i s s i i s s Z4 i s*'
+ sum = values.drop(12).map(&amp;:abs).inject(:+)
+ keys.zip(values.take(12) &lt;&lt; sum) {|k, v|
+       puts "#{k.ljust 17}: #{v}"
  }
-</pre>
-</div></div>
+</code></pre>
+
 
                 </div>
             

@@ -12,12 +12,10 @@ tags:
 -----
 blogimage("main.png","Title image")
 
-<% password="P45sW0r|)" %>
-
 begindiv(intro)
 
 
-<%= tlal %> Une méthode de gestion des mots de passes que j'utilise avec succès depuis quelques années.  
+%tlal Une méthode de gestion des mots de passes que j'utilise avec succès depuis quelques années.  
 **`sha1( mot_de_passe + nom_de_domaine )`**  
 Je ne mémorise qu'un seul mot de passe de très bonne qualité.
 J'utilise des mots de passe différents sur tous les sites.
@@ -67,9 +65,9 @@ Un _mauvaise_ solution peut être de choisir ses
 mots de passes de la façon suivante :
 
 
-- twitter: `<%=password%>Twitter`
-- gmail: `<%=password%>gmail`
-- badonlinegame: `<%=password%>badonlinegame`
+- twitter: `P45sW0r|)Twitter`
+- gmail: `P45sW0r|)gmail`
+- badonlinegame: `P45sW0r|)badonlinegame`
 
 
 Malheureusement, si quelqu'un récupère votre mot de passe sur 
@@ -86,7 +84,7 @@ Prenons un exemple :
 
 
 Si quelqu'un possède `9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63`,
-il va avoir de grande difficulté pour retrouver `<%=password%>`.
+il va avoir de grande difficulté pour retrouver `P45sW0r|)`.
 
 
 Choisisson la fonction de hashage `sha1`.

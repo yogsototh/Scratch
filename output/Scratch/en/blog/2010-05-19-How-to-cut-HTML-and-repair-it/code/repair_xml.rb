@@ -1,4 +1,3 @@
-
 # repair cutted XML code by closing the tags
 # work even if the XML is cut into a tag.
 # example:

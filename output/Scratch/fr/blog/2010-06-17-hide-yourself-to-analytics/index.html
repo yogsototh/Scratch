@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Se cacher de ses statistiques web" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -55,77 +58,74 @@
             <div id="afterheader">
                 <div class="corps">
                     <p>Voici un moyen très simple de ne plus être comptabilisé dans les visites de son propre site.
-Tout d&rsquo;abord, vous devriez jeter un coup d&rsquo;œil sur comment <a href="/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics">je gère les systèmes de récupération de statistiques</a>. 
+Tout d’abord, vous devriez jeter un coup d’œil sur comment <a href="/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics">je gère les systèmes de récupération de statistiques</a>. 
 Je centralise tout dans un seul fichier javascript ce qui facilite le travail.</p>
 
-<p>Cette méthode nécessite l&rsquo;utilisation de <code>jquery-cookie</code>.</p>
+<p>Cette méthode nécessite l’utilisation de <code>jquery-cookie</code>.</p>
 
-<p>Avant de comptabiliser les visites, je vérifie que la clé <code>admin</code> n&rsquo;est pas utilisée dans mes cookies.</p>
+<p>Avant de comptabiliser les visites, je vérifie que la clé <code>admin</code> n’est pas utilisée dans mes cookies.</p>
 
-<pre class="twilight">
-    <span class="Storage">var</span> admin <span class="Keyword">=</span> <span class="Keyword">$</span>.<span class="SupportConstant">cookie</span>(<span class="String"><span class="String">'</span>admin<span class="String">'</span></span>);
-    <span class="Keyword">if</span> (<span class="Keyword">!</span> admin) {
-        <span class="Comment"><span class="Comment">//</span> put your analytics code here</span>
-    } <span class="Keyword">else</span> {
-        <span class="Entity">console</span><span class="SupportFunction">.log</span>(<span class="String"><span class="String">&quot;</span>[WARNING] you're HIDDEN to analytics<span class="String">&quot;</span></span>);
+<pre><code class="javascript">    var admin = $.cookie('admin');
+    if (! admin) {
+        // put your analytics code here
+    } else {
+        console.log("[WARNING] you're HIDDEN to analytics");
     }
-</pre>
+</code></pre>
 
 <p>et il suffit de créer deux fichier <span class="sc">html</span>. Un pour se cacher&nbsp;:</p>
 
-<div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/code/become_hidden.html"> &#x27A5; become_hidden.html </a></div><div class="withfile">
-<pre class="twilight">
-<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&lt;?</span><span class="DoctypeXmlProcessing">xml</span> <span class="DoctypeXmlProcessing">version</span>=<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&quot;</span>1.0<span class="DoctypeXmlProcessing">&quot;</span></span> <span class="DoctypeXmlProcessing">encoding</span>=<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&quot;</span>utf-8<span class="DoctypeXmlProcessing">&quot;</span></span><span class="DoctypeXmlProcessing">?&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;!</span><span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">DOCTYPE</span> html PUBLIC <span class="DoctypeXmlProcessing">&quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;</span></span></span>
-<span class="MetaTagAll"><span class="DoctypeXmlProcessing">        <span class="DoctypeXmlProcessing">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">html</span> <span class="MetaTagAll">xmlns</span>=<span class="String"><span class="String">&quot;</span>http://www.w3.org/1999/xhtml<span class="String">&quot;</span></span> <span class="MetaTagAll">lang</span>=<span class="String"><span class="String">&quot;</span>fr<span class="String">&quot;</span></span> <span class="MetaTagAll">xml:lang</span>=<span class="String"><span class="String">&quot;</span>fr<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">head</span><span class="MetaTagAll">&gt;</span></span>
-        <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">meta</span> <span class="MetaTagInline">http-equiv</span>=<span class="String"><span class="String">&quot;</span>Content-Type<span class="String">&quot;</span></span> <span class="MetaTagInline">content</span>=<span class="String"><span class="String">&quot;</span>text/html; charset=UTF-8<span class="String">&quot;</span></span> /<span class="MetaTagInline">&gt;</span></span>
-<span class="EmbeddedSource">        <span class="EmbeddedSource">&lt;</span><span class="MetaTagInline">script</span> <span class="MetaTagInline">type</span>=<span class="String"><span class="String">&quot;</span>text/javascript<span class="String">&quot;</span></span> <span class="MetaTagInline">src</span>=<span class="String"><span class="String">&quot;</span>jquery.js<span class="String">&quot;</span></span><span class="EmbeddedSource">&gt;</span><span class="EmbeddedSource">&lt;/</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span></span>
-<span class="EmbeddedSource">        <span class="EmbeddedSource">&lt;</span><span class="MetaTagInline">script</span> <span class="MetaTagInline">type</span>=<span class="String"><span class="String">&quot;</span>text/javascript<span class="String">&quot;</span></span> <span class="MetaTagInline">src</span>=<span class="String"><span class="String">&quot;</span>jquery.cookie.js<span class="String">&quot;</span></span><span class="EmbeddedSource">&gt;</span><span class="EmbeddedSource">&lt;/</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span></span>
-<span class="EmbeddedSource">        <span class="EmbeddedSource">&lt;</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span></span>
-<span class="EmbeddedSource">            <span class="Keyword">$</span><span class="EmbeddedSource">(</span><span class="Support">document</span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">.</span>ready<span class="EmbeddedSource">(</span><span class="Storage">function</span><span class="EmbeddedSource">(</span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">{</span></span>
-<span class="EmbeddedSource">                <span class="Keyword">$</span><span class="EmbeddedSource">.</span><span class="SupportConstant">cookie</span><span class="EmbeddedSource">(</span><span class="String"><span class="String">'</span>admin<span class="String">'</span></span><span class="EmbeddedSource">,</span><span class="Constant">1</span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">;</span></span>
-<span class="EmbeddedSource">                <span class="Keyword">$</span><span class="EmbeddedSource">(</span><span class="String"><span class="String">'</span>#info<span class="String">'</span></span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">.</span>html<span class="EmbeddedSource">(</span><span class="String"><span class="String">'</span>Analytics can no more see you.<span class="String">'</span></span><span class="EmbeddedSource">)</span></span>
-<span class="EmbeddedSource">            <span class="EmbeddedSource">}</span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">;</span></span>
-<span class="EmbeddedSource">        <span class="EmbeddedSource">&lt;/</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span></span>
-        <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">title</span><span class="MetaTagInline">&gt;</span></span>Hide to analytics<span class="MetaTagInline"><span class="MetaTagInline">&lt;/</span><span class="MetaTagInline">title</span><span class="MetaTagInline">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">head</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">body</span><span class="MetaTagAll">&gt;</span></span>
-        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll"><span class="MetaTagAll">id</span><span class="MetaTagAll">=</span><span class="String"><span class="String">&quot;</span><span class="String">info</span><span class="String">&quot;</span></span></span><span class="MetaTagAll">&gt;<span class="MetaTagAll">&lt;</span>/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span> 
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">body</span><span class="MetaTagAll">&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">html</span><span class="MetaTagAll">&gt;</span></span>
-</pre>
-</div></div>
+<div class="codefile"><a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/code/become_hidden.html">&#x27A5; become_hidden.html</a></div>
+
+<pre><code class="html">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+        &lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript" src="jquery.cookie.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+            $(document).ready(function(){
+                $.cookie('admin',1);
+                $('#info').html('Analytics can no more see you.')
+            });
+        &lt;/script&gt;
+        &lt;title&gt;Hide to analytics&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="info"&gt;&lt;/div&gt; 
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
 <p>et un autre pour redevenir visible (ça peut être utile)&nbsp;:</p>
 
-<div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/code/become_visible.html"> &#x27A5; become_visible.html </a></div><div class="withfile">
-<pre class="twilight">
-<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&lt;?</span><span class="DoctypeXmlProcessing">xml</span> <span class="DoctypeXmlProcessing">version</span>=<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&quot;</span>1.0<span class="DoctypeXmlProcessing">&quot;</span></span> <span class="DoctypeXmlProcessing">encoding</span>=<span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">&quot;</span>utf-8<span class="DoctypeXmlProcessing">&quot;</span></span><span class="DoctypeXmlProcessing">?&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;!</span><span class="DoctypeXmlProcessing"><span class="DoctypeXmlProcessing">DOCTYPE</span> html PUBLIC <span class="DoctypeXmlProcessing">&quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;</span></span></span>
-<span class="MetaTagAll"><span class="DoctypeXmlProcessing">        <span class="DoctypeXmlProcessing">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">html</span> <span class="MetaTagAll">xmlns</span>=<span class="String"><span class="String">&quot;</span>http://www.w3.org/1999/xhtml<span class="String">&quot;</span></span> <span class="MetaTagAll">lang</span>=<span class="String"><span class="String">&quot;</span>fr<span class="String">&quot;</span></span> <span class="MetaTagAll">xml:lang</span>=<span class="String"><span class="String">&quot;</span>fr<span class="String">&quot;</span></span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">head</span><span class="MetaTagAll">&gt;</span></span>
-        <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">meta</span> <span class="MetaTagInline">http-equiv</span>=<span class="String"><span class="String">&quot;</span>Content-Type<span class="String">&quot;</span></span> <span class="MetaTagInline">content</span>=<span class="String"><span class="String">&quot;</span>text/html; charset=UTF-8<span class="String">&quot;</span></span> /<span class="MetaTagInline">&gt;</span></span>
-<span class="EmbeddedSource">        <span class="EmbeddedSource">&lt;</span><span class="MetaTagInline">script</span> <span class="MetaTagInline">type</span>=<span class="String"><span class="String">&quot;</span>text/javascript<span class="String">&quot;</span></span> <span class="MetaTagInline">src</span>=<span class="String"><span class="String">&quot;</span>jquery.js<span class="String">&quot;</span></span><span class="EmbeddedSource">&gt;</span><span class="EmbeddedSource">&lt;/</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span></span>
-<span class="EmbeddedSource">        <span class="EmbeddedSource">&lt;</span><span class="MetaTagInline">script</span> <span class="MetaTagInline">type</span>=<span class="String"><span class="String">&quot;</span>text/javascript<span class="String">&quot;</span></span> <span class="MetaTagInline">src</span>=<span class="String"><span class="String">&quot;</span>jquery.cookie.js<span class="String">&quot;</span></span><span class="EmbeddedSource">&gt;</span><span class="EmbeddedSource">&lt;/</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span></span>
-<span class="EmbeddedSource">        <span class="EmbeddedSource">&lt;</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span></span>
-<span class="EmbeddedSource">            <span class="Keyword">$</span><span class="EmbeddedSource">(</span><span class="Support">document</span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">.</span>ready<span class="EmbeddedSource">(</span><span class="Storage">function</span><span class="EmbeddedSource">(</span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">{</span></span>
-<span class="EmbeddedSource">                <span class="Keyword">$</span><span class="EmbeddedSource">.</span><span class="SupportConstant">cookie</span><span class="EmbeddedSource">(</span><span class="String"><span class="String">'</span>admin<span class="String">'</span></span><span class="EmbeddedSource">,</span><span class="Constant">null</span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">;</span></span>
-<span class="EmbeddedSource">                <span class="Keyword">$</span><span class="EmbeddedSource">(</span><span class="String"><span class="String">'</span>#info<span class="String">'</span></span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">.</span>html<span class="EmbeddedSource">(</span><span class="String"><span class="String">'</span>Analytics can see you.<span class="String">'</span></span><span class="EmbeddedSource">)</span></span>
-<span class="EmbeddedSource">            <span class="EmbeddedSource">}</span><span class="EmbeddedSource">)</span><span class="EmbeddedSource">;</span></span>
-<span class="EmbeddedSource">        <span class="EmbeddedSource">&lt;/</span><span class="MetaTagInline">script</span><span class="EmbeddedSource">&gt;</span></span>
-        <span class="MetaTagInline"><span class="MetaTagInline">&lt;</span><span class="MetaTagInline">title</span><span class="MetaTagInline">&gt;</span></span>Hide to analytics<span class="MetaTagInline"><span class="MetaTagInline">&lt;/</span><span class="MetaTagInline">title</span><span class="MetaTagInline">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">head</span><span class="MetaTagAll">&gt;</span></span>
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">body</span><span class="MetaTagAll">&gt;</span></span>
-        <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll"><span class="MetaTagAll">id</span><span class="MetaTagAll">=</span><span class="String"><span class="String">&quot;</span><span class="String">info</span><span class="String">&quot;</span></span></span><span class="MetaTagAll">&gt;<span class="MetaTagAll">&lt;</span>/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span> 
-    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">body</span><span class="MetaTagAll">&gt;</span></span>
-<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">html</span><span class="MetaTagAll">&gt;</span></span>
-</pre>
-</div></div>
+<div class="codefile"><a href="/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/code/become_visible.html">&#x27A5; become_visible.html</a></div>
 
-<p>Maintenant en accédant à ces fichiers depuis votre navigateur vous pouvez <em>disparaître</em> des systèmes d&rsquo;analyses ou bien être considéré comme tous les autres individus.
+<pre><code class="html">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+        &lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript" src="jquery.cookie.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+            $(document).ready(function(){
+                $.cookie('admin',null);
+                $('#info').html('Analytics can see you.')
+            });
+        &lt;/script&gt;
+        &lt;title&gt;Hide to analytics&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="info"&gt;&lt;/div&gt; 
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Maintenant en accédant à ces fichiers depuis votre navigateur vous pouvez <em>disparaître</em> des systèmes d’analyses ou bien être considéré comme tous les autres individus.
 Pensez à accéder à ces fichiers depuis tous les navigateurs que vous utilisez et vos visites ne seront plus comptabilisées.</p>
 
                 </div>

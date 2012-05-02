@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Usages non dits de Git" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2009-10-untaught-git-usage/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -54,9 +57,9 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p><small> <em>I explain why I had so much difficulties to use Git. There is an &ldquo;untaught rule&rdquo; that make hard to work without. Until I read the good document. </em></small></p>
+                    <p><small> <em>I explain why I had so much difficulties to use Git. There is an “untaught rule” that make hard to work without. Until I read the good document. </em></small></p>
 
-<p><small> <em> &ldquo;Cheap branches&rdquo; aren&rsquo;t designed to be totally isolated branches but rather should follow a &ldquo;Master Branch&rdquo;. There is a </em>Standard Workflow<em> to follow. If you don&rsquo;t follow it, you prepare yourself with some hard time with Git.</em> </small></p>
+<p><small> <em> “Cheap branches” aren’t designed to be totally isolated branches but rather should follow a “Master Branch”. There is a </em>Standard Workflow<em> to follow. If you don’t follow it, you prepare yourself with some hard time with Git.</em> </small></p>
 
 
 </div>
@@ -72,7 +75,7 @@
 
 <p>I must say I was completely convinced. And the more you learn about <abbr title="Decentralized Concurrent Versioning System">DCVS</abbr> the more you see good reason to use them.</p>
 
-<p>I then needed a versioning system for my team. As they were not used to open source versioning system except those heavy, with a GUI and with and administrator<sup><a href="#note1">&dagger;</a></sup></p>
+<p>I then needed a versioning system for my team. As they were not used to open source versioning system except those heavy, with a GUI and with and administrator<sup><a href="#note1">†</a></sup></p>
 
 <p>After some web searches, I founded three main choices:</p>
 
@@ -82,7 +85,7 @@
   <li><a href="http://selenic.com/mercurial">Mercurial</a></li>
 </ul>
 
-<p>After trying each other I chosen Bazaar. It has the simplest User Interface<sup><a href="#note2">&#42;</a></sup>. My choice was done.</p>
+<p>After trying each other I chosen Bazaar. It has the simplest User Interface<sup><a href="#note2">*</a></sup>. My choice was done.</p>
 
 <h3 id="from-bazaar-to-git">From Bazaar to Git</h3>
 
@@ -91,21 +94,21 @@
 <p>After some times, reading on many blogs, I realize Git is far more popular and by influent people. </p>
 
 <p>I then decide to use Git in particular to <em>version</em> this current website.
-But after trying it, I found it difficult and couter intuitive (I&rsquo;ll speak a work about it later).</p>
+But after trying it, I found it difficult and couter intuitive (I’ll speak a work about it later).</p>
 
 <p>After calling for some help, when I say Bazaar is much simpler to learn, some people answer me that Git:</p>
 
 <blockquote>
-  <p>&mdash; <em>SO-MUCH-EASY my 12 year old daughter uses it to version its school documents. She has no difficulties at all, creating branches, blah, blah, blah&hellip;</em></p>
+  <p>— <em>SO-MUCH-EASY my 12 year old daughter uses it to version its school documents. She has no difficulties at all, creating branches, blah, blah, blah…</em></p>
 </blockquote>
 
 <p>If a 12 years old girl has no problem with Git and I (with my Computer Science Ph.D.) have difficulties to uses it like I want, it is frustrating and humiliating. But what makes Git natural for some people and confusing for me? </p>
 
-<p>I finally understood why reading a document I didn&rsquo;t read before. It was the <em>untaught</em> part of the conception. The part every developer found so <em>natural</em> it is not necessary to say a word about it. But it was not <em>natural</em> for me.</p>
+<p>I finally understood why reading a document I didn’t read before. It was the <em>untaught</em> part of the conception. The part every developer found so <em>natural</em> it is not necessary to say a word about it. But it was not <em>natural</em> for me.</p>
 
-<p><small><a name="note1">&dagger;</a> - I speak about <em>ClearCase<small>&copy;</small></em>. I know there exists command line tools. But it was not the way my team used it.</small></p>
+<p><small><a name="note1">†</a> - I speak about <em>ClearCase<small>&copy;</small></em>. I know there exists command line tools. But it was not the way my team used it.</small></p>
 
-<p><small><a name="note2">&#42;</a> - I never really given its chance to Mercurial. The terminology they chosen was too far from the svn one. And I was used to it.</small></p>
+<p><small><a name="note2">*</a> - I never really given its chance to Mercurial. The terminology they chosen was too far from the svn one. And I was used to it.</small></p>
 
 
 </div>
@@ -113,7 +116,7 @@ But after trying it, I found it difficult and couter intuitive (I&rsquo;ll speak
 <div class="corps">
 
 
-<p>When you see explanation about <em>branches</em> and <abbr title="Decentralized Concurrent Versioning System">DCVS</abbr> we imagine each branch is totally uncorrelated to each other, except when <em>merging</em>. Everything is magic. This is the &ldquo;<em>Parallel World</em>&rdquo; explanation. This way of seeing is explained more in depth in the <a href="http://betterexplained.com/articles/a-visual-guide-to-version-control/">real good article about branches</a> on betterexplained. </p>
+<p>When you see explanation about <em>branches</em> and <abbr title="Decentralized Concurrent Versioning System">DCVS</abbr> we imagine each branch is totally uncorrelated to each other, except when <em>merging</em>. Everything is magic. This is the “<em>Parallel World</em>” explanation. This way of seeing is explained more in depth in the <a href="http://betterexplained.com/articles/a-visual-guide-to-version-control/">real good article about branches</a> on betterexplained. </p>
 
 <p>Git was designed to manage the Linux Kernel. Git was designed using the concept of <em>Patch</em> instead of <em>Parallel Worlds</em>.</p>
 
@@ -124,11 +127,11 @@ But after trying it, I found it difficult and couter intuitive (I&rsquo;ll speak
   <li>While Git seem base on the <em>Patch</em> model which will implie the creation of <em>Parallel Worlds</em>.</li>
 </ul>
 
-<p>I will not argument about which is the best. Just tell my vision of DCVS come from the <em>Parallel World</em> vision and Git was designed the other way<sup><a href="#note3">&Dagger;</a></sup>.</p>
+<p>I will not argument about which is the best. Just tell my vision of DCVS come from the <em>Parallel World</em> vision and Git was designed the other way<sup><a href="#note3">‡</a></sup>.</p>
 
 <h2 id="from-theory-to-real-life-usage">From Theory to Real Life Usage</h2>
 
-<p>I believe I understood conceptual mechanism under Git. But I had some difficulties with real usage. The worst point, the one I didn&rsquo;t get before long was because I didn&rsquo;t get really well the notion of <em>Cheap Branching</em>.</p>
+<p>I believe I understood conceptual mechanism under Git. But I had some difficulties with real usage. The worst point, the one I didn’t get before long was because I didn’t get really well the notion of <em>Cheap Branching</em>.</p>
 
 <p>What is a <em>Cheap Branch</em>? If like me you come from Bazaar, it is a totally new notion. It is in fact the ability to create a branches all of them using the same directory.</p>
 
@@ -136,10 +139,10 @@ But after trying it, I found it difficult and couter intuitive (I&rsquo;ll speak
 
 <p>In theory, <em>Cheap Branches</em> are exactly like Bazaar branches. The word used is <em>Branch</em> and not <em>Cheap Branch</em>. But there is a slight difference between them. A slight difference between a <em>Cloned Branch</em> and a <em>Cheap Branch</em>.</p>
 
-<p>A &ldquo;Standard branch&rdquo; is what is theoretically a kind of new <em>Parallel World</em>.
+<p>A “Standard branch” is what is theoretically a kind of new <em>Parallel World</em>.
 But <em>Cheap branch</em> was designed to be future <em>Patch</em> for the main branch of the directory/Cloned branch.</p>
 
-<p>Of course, I know anybody can state you can totally use <em>Cheap branches</em> as <em>Cloned branches</em>. But they weren&rsquo;t designed for that. On daily usage, it is a bit uneasy to use it like this.</p>
+<p>Of course, I know anybody can state you can totally use <em>Cheap branches</em> as <em>Cloned branches</em>. But they weren’t designed for that. On daily usage, it is a bit uneasy to use it like this.</p>
 
 <p>Here how Git <em>cheap branches</em> should be used (for more details see <a href="http://hoth.entp.com/output/git_for_designers.html">Git for Designers</a>):</p>
 
@@ -148,11 +151,11 @@ But <em>Cheap branch</em> was designed to be future <em>Patch</em> for the main 
   <li>creation of a <em>Cheap branch</em> containing differences which <strong>have</strong> to be patched somewhere in the future into <strong><span class="sc">The Great Repository</span></strong></li>
 </ul>
 
-<p>Here&rsquo;s how you should <strong>not</strong> use Git:</p>
+<p>Here’s how you should <strong>not</strong> use Git:</p>
 
 <ul>
   <li>Get or creation of a repository</li>
-  <li>Create a <em>cheap branch</em> which will never push it&rsquo;s modification to the main repository.</li>
+  <li>Create a <em>cheap branch</em> which will never push it’s modification to the main repository.</li>
 </ul>
 
 <p>This simple minor difference of point of view confused me a lot.</p>
@@ -170,23 +173,35 @@ And I return exactly in branches Bazaar provided me.</p>
 
 <p>For now, I prefer (from far) Bazaar terminology. They are cleaner and more understandable.</p>
 
-<div><pre class="twilight">bzr revert
-</pre></div>
+<div>
+
+<pre><code class="zsh">bzr revert</code></pre>
+
+</div>
 
 <p>Is clearer than</p>
 
-<div><pre class="twilight">git reset --hard HEAD
-</pre></div>
+<div>
+
+<pre><code class="zsh">git reset --hard HEAD</code></pre>
+
+</div>
 
 <p>We can tell the same thing about</p>
 
-<div><pre class="twilight">bzr revert -r -3
-</pre></div>
+<div>
+
+<pre><code class="zsh">bzr revert -r -3</code></pre>
+
+</div>
 
 <p>which seems preferable to</p>
 
-<div><pre class="twilight">git reset --hard HEAD~3
-</pre></div>
+<div>
+
+<pre><code class="zsh">git reset --hard HEAD~3</code></pre>
+
+</div>
 
 <p>Until now, it is not big business. But now, things will go worse.
 If we want to revert time on all the tree we use the keyword <code>reset</code>.</p>
@@ -195,34 +210,49 @@ If we want to revert time on all the tree we use the keyword <code>reset</code>.
 
 <p>Now, if I want to revert time on on file. We should naturally imagine the command will be:</p>
 
-<div><pre class="twilight">git reset --hard FILE
-</pre></div>
+<div>
+
+<pre><code class="zsh">git reset --hard FILE</code></pre>
+
+</div>
 
 <center>**OF COURSE NOT!**</center>
 
 <p>The solution is:</p>
 
-<div><pre class="twilight">git checkout FILE
-</pre></div>
+<div>
+
+<pre><code class="zsh">git checkout FILE</code></pre>
+
+</div>
 
 <p>What? <strong><code>checkout</code></strong>&nbsp;!? Well, ok. I accept. why not?
 With Bazaar it is:</p>
 
-<div><pre class="twilight">git revert FILE
-</pre></div>
+<div>
+
+<pre><code class="zsh">git revert FILE</code></pre>
+
+</div>
 
 <p>What I personally found far more natural.</p>
 
 <p>But the command to change the current <em>cheap branch</em> is really hard to be accepted (from the User Interface point of view).
 With Bazaar it is:</p>
 
-<div><pre class="twilight">cd ../branch
-</pre></div>
+<div>
+
+<pre><code class="zsh">cd ../branch</code></pre>
+
+</div>
 
 <p>Well yes. With Bazaar you have to change your directory to change your branch. It needs more disk resources but it is really clear. Which is my current branch, is just a <code>pwd</code> away. For Git here is the command:</p>
 
-<div><pre class="twilight">git checkout branch
-</pre></div>
+<div>
+
+<pre><code class="zsh">git checkout branch</code></pre>
+
+</div>
 
 <p><strong>WTF?</strong> I believed <code>checkout</code> was the key to get a file in some state (not the entire tree).</p>
 
@@ -232,15 +262,15 @@ With Bazaar it is:</p>
 
 <blockquote>
   <ul>
-    <li>&mdash;  Try to find the good keyword for this operation</li>
-    <li>&mdash; Wrong! Try again!</li>
-    <li>&mdash; False, it is not yet right!</li>
+    <li>—  Try to find the good keyword for this operation</li>
+    <li>— Wrong! Try again!</li>
+    <li>— False, it is not yet right!</li>
   </ul>
 </blockquote>
 
-<p>That were the Git bad side. But It has many advantages. Once you&rsquo;ve understood the <em>cheap branching</em> paradigm. All became clearer for me after. Even if there is also some difficulties with the edit of the <code>.git/config</code> files (not user friendly at all).</p>
+<p>That were the Git bad side. But It has many advantages. Once you’ve understood the <em>cheap branching</em> paradigm. All became clearer for me after. Even if there is also some difficulties with the edit of the <code>.git/config</code> files (not user friendly at all).</p>
 
-<p><small><a name="note3">&Dagger;</a> I must precise that I worked a lot with multi-modal logic and particularly about &ldquo;Temporal Logics&rdquo; (linear or not). This is why I was more inclined to see things this way. &ldquo;Ah&nbsp;! Just to remember my firsts love with computer science&nbsp;!&rdquo;</small></p>
+<p><small><a name="note3">‡</a> I must precise that I worked a lot with multi-modal logic and particularly about “Temporal Logics” (linear or not). This is why I was more inclined to see things this way. “Ah&nbsp;! Just to remember my firsts love with computer science&nbsp;!”</small></p>
 
 
 </div>
@@ -257,15 +287,15 @@ Such as working on a fix on a totally isolated branches.</p>
 
 <h3 id="is-git-better-than-bazaar">Is Git better than Bazaar?</h3>
 
-<p>Speaking about <em>features</em> I&rsquo;ll tell Git is the best.
-But Git was too much in my way. Is was exactly what I didn&rsquo;t want for my first DCVS.</p>
+<p>Speaking about <em>features</em> I’ll tell Git is the best.
+But Git was too much in my way. Is was exactly what I didn’t want for my first DCVS.</p>
 
-<p>I shouldn&rsquo;t have had those difficulties about understanding <em>cheap branching which must be a patch</em>. In reality, Git make a difference between the Tree and the Branch. Which is obviously not the case for Bazaar. Conceptually, bazaar is simpler to understand.</p>
+<p>I shouldn’t have had those difficulties about understanding <em>cheap branching which must be a patch</em>. In reality, Git make a difference between the Tree and the Branch. Which is obviously not the case for Bazaar. Conceptually, bazaar is simpler to understand.</p>
 
 <h3 id="finally">Finally</h3>
 
 <p>In conclusion, I use Git more often than Bazaar and I must say, that I have some preferences for Git. However, Git lack hardly clear commands name like <code>revert</code>.
-For now I don&rsquo;t made alias to correct that. But may be one day I should do that.</p>
+For now I don’t made alias to correct that. But may be one day I should do that.</p>
 
                 </div>
             

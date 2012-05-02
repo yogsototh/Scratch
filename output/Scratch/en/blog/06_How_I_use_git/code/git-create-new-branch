@@ -1,4 +1,3 @@
-
 #!/usr/bin/env zsh
 
 if (($#<1)); then

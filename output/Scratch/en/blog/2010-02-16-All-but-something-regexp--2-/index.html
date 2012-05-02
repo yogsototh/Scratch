@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Tout sauf quelquechose en expression régulière." type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-02-16-All-but-something-regexp--2-/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -54,7 +57,7 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>In my <a href="previouspost">previous post</a> I had given some trick to match all except something. On the same idea, the trick to match the smallest possible string. Say you want to match the string between &lsquo;a&rsquo; and &lsquo;b&rsquo;, for example, you want to match:</p>
+                    <p>In my <a href="previouspost">previous post</a> I had given some trick to match all except something. On the same idea, the trick to match the smallest possible string. Say you want to match the string between ‘a’ and ‘b’, for example, you want to match:</p>
 
 <pre class="twilight">
 a.....<span class="Constant"><strong>a......b</strong></span>..b..a....<span class="Constant"><strong>a....b</strong></span>...
@@ -75,7 +78,7 @@ a.....<span class="Constant"><strong>a......b</strong></span>..b..a....<span cla
 </pre>
 
 <p>The next natural way, is to change the <em>greediness</em>. But it is not enough as you will match from the first <code>a</code> to the first <code>b</code>.
-Then a simple constatation is that our matching string shouldn&rsquo;t contain any <code>a</code> nor <code>b</code>. Which lead to the last elegant solution.</p>
+Then a simple constatation is that our matching string shouldn’t contain any <code>a</code> nor <code>b</code>. Which lead to the last elegant solution.</p>
 
 <pre class="twilight">
 /a[^ab]*b/
@@ -85,64 +88,82 @@ a.....<span class="Constant"><strong>a......b</strong></span>..b..a....<span cla
 <p>Until now, that was, easy. 
 Now, just pass at the case you need to match not between <code>a</code> and <code>b</code>, but between strings.
 For example:</p>
-<div><pre class="twilight">
-&lt;li&gt;...&lt;li&gt;
-</pre></div>
+<div>
+
+<pre><code class="perl">&lt;li&gt;...&lt;li&gt;
+</code></pre>
+
+</div>
 
 <p>This is a bit difficult. You need to match </p>
-<div><pre class="twilight">
-&lt;li&gt;[anything not containing &lt;li&gt;]&lt;/li&gt;
-</pre></div>
+<div>
+
+<pre><code class="perl">&lt;li&gt;[anything not containing &lt;li&gt;]&lt;/li&gt;
+</code></pre>
+
+</div>
 
 <p>The first method would be to use the same reasoning as in my <a href="previouspost">previous post</a>. Here is a first try:</p>
 
-<div><pre class="twilight">
-&lt;li&gt;([^&lt;]|&lt;[^l]|&lt;l[^i]|&lt;li[^&gt;])*&lt;/li&gt;
-</pre></div>
+<div>
+
+<pre><code class="perl">&lt;li&gt;([^&lt;]|&lt;[^l]|&lt;l[^i]|&lt;li[^&gt;])*&lt;/li&gt;
+</code></pre>
+
+</div>
 
 <p>But what about the following string: </p>
-<div><pre class="twilight">
-&lt;li&gt;...&lt;li&lt;/li&gt;
-</pre></div>
+<div>
 
-<p>That string should not match. This is why if we really want to match it correctly<sup><a href="#note1">&dagger;</a></sup> we need to add:</p>
-<div><pre class="twilight">
-&lt;li&gt;([^&lt;]|&lt;[^l]|&lt;l[^i]|&lt;li[^&gt;])*(|&lt;|&lt;l|&lt;li)&lt;/li&gt;
-</pre></div>
+<pre><code class="perl">&lt;li&gt;...&lt;li&lt;/li&gt;
+</code></pre>
+
+</div>
+
+<p>That string should not match. This is why if we really want to match it correctly<sup><a href="#note1">†</a></sup> we need to add:</p>
+<div>
+
+<pre><code class="perl">&lt;li&gt;([^&lt;]|&lt;[^l]|&lt;l[^i]|&lt;li[^&gt;])*(|&lt;|&lt;l|&lt;li)&lt;/li&gt;
+</code></pre>
+
+</div>
 
 <p>Yes a bit complicated. But what if the string I wanted to match was even longer?</p>
 
 <p>Here is the algorithm way to handle this easily. You reduce the problem to the first one letter matching:</p>
 
-<div><pre class="twilight">
-<span class="Comment"><span class="Comment">#</span> transform a simple randomly choosen character</span>
-<span class="Comment"><span class="Comment">#</span> to an unique ID </span>
-<span class="Comment"><span class="Comment">#</span> (you should verify the identifier is REALLY unique)</span>
-<span class="Comment"><span class="Comment">#</span> beware the unique ID must not contain the </span>
-<span class="Comment"><span class="Comment">#</span> choosen character</span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>X</span><span class="StringRegexp"><span class="StringRegexp">/</span>_was_x_<span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>Y</span><span class="StringRegexp"><span class="StringRegexp">/</span>_was_y_<span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+<div>
 
-<span class="Comment"><span class="Comment">#</span> transform the long string in this simple character</span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>&lt;li&gt;</span><span class="StringRegexp"><span class="StringRegexp">/</span>X<span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>&lt;<span class="StringRegexpSpecial">\/</span>li&gt;</span><span class="StringRegexp"><span class="StringRegexp">/</span>Y<span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+<pre><code class="perl"># transform a simple randomly choosen character
+# to an unique ID 
+# (you should verify the identifier is REALLY unique)
+# beware the unique ID must not contain the 
+# choosen character
+s/X/_was_x_/g
+s/Y/_was_y_/g
 
-<span class="Comment"><span class="Comment">#</span> use the first method</span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>X([^X]*)Y</span><span class="StringRegexp"><span class="StringRegexp">/</span><span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+# transform the long string in this simple character
+s/&lt;li&gt;/X/g
+s/&lt;\/li&gt;/Y/g
 
-<span class="Comment"><span class="Comment">#</span> retransform choosen letter by string</span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>X</span><span class="StringRegexp"><span class="StringRegexp">/</span>&lt;li&gt;<span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>Y</span><span class="StringRegexp"><span class="StringRegexp">/</span>&lt;<span class="StringRegexpSpecial">\/</span>li&gt;<span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
+# use the first method
+s/X([^X]*)Y//g
 
-<span class="Comment"><span class="Comment">#</span> retransform the choosen character back</span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>_was_x_</span><span class="StringRegexp"><span class="StringRegexp">/</span>X<span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-<span class="StringRegexp"><span class="StringRegexp"><span class="SupportFunction">s</span>/</span>_was_y_</span><span class="StringRegexp"><span class="StringRegexp">/</span>Y<span class="StringRegexp">/</span></span><span class="StringRegexp"><span class="StringRegexp"><span class="Keyword">g</span></span></span>
-</pre></div>
+# retransform choosen letter by string
+s/X/&lt;li&gt;/g
+s/Y/&lt;\/li&gt;/g
+
+# retransform the choosen character back
+s/_was_x_/X/g
+s/_was_y_/Y/g
+</code></pre>
+
+</div>
 
 <p>And it works in only 9 lines for any beginning and ending string. This solution should look less <em>I AM THE GREAT REGEXP M45T3R, URAN00B</em>, but is more convenient in my humble opinion. Further more, using this last solution prove you master regexp, because you know it is difficult to manage such problems with only a regexp.</p>
 
 <hr />
-<p><small><a name="note1"><sup>&dagger;</sup></a> I know I used an HTML syntax example, but in my real life usage, I needed to match between <code>en:</code> and <code>::</code>. And sometimes the string could finish with <code>e::</code>.</small></p>
+<p><small><a name="note1"><sup>†</sup></a> I know I used an HTML syntax example, but in my real life usage, I needed to match between <code>en:</code> and <code>::</code>. And sometimes the string could finish with <code>e::</code>.</small></p>
 
 
                 </div>

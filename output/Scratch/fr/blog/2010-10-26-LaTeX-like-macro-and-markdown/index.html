@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Des macros LaTeX pour markdown" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2010-10-26-LaTeX-like-macro-and-markdown/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -58,24 +61,23 @@
 <div class="intro">
 
 
-<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> J&rsquo;ai fait un système simple de macros pour mon blog. Par exemple, il me suffit d&rsquo;écrire %<span></span>latex et ça affiche <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>.</p>
+<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> J’ai fait un système simple de macros pour mon blog. Par exemple, il me suffit d’écrire %<span></span>latex et ça affiche <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>.</p>
 
 
 </div>
 
 
-<p>J&rsquo;ai ajouter un système de macro pour mon système de blog.
-Lorsqu&rsquo;on est habitué à <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span> et que l&rsquo;on commence à écrire des articles
+<p>J’ai ajouter un système de macro pour mon système de blog.
+Lorsqu’on est habitué à <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span> et que l’on commence à écrire des articles
 un peu conséquent avec des notations mathématiques,
-les macros deviennent vite quelque chose d&rsquo;indispensable.</p>
+les macros deviennent vite quelque chose d’indispensable.</p>
 
-<p>Dans l&rsquo;entête de mes fichiers j&rsquo;écris simplement:</p>
+<p>Dans l’entête de mes fichiers j’écris simplement:</p>
 
-<pre class="twilight">
-<span class="MetaTagAll"><span class="MetaTagInline">macros</span><span class="MetaTagAll">:</span></span>
-  <span class="MetaTagAll"><span class="MetaTagInline">test</span><span class="MetaTagAll">:</span> </span><span class="String"><span class="String">&quot;</span>This is a macro test<span class="String">&quot;</span></span>
-  <span class="MetaTagAll"><span class="MetaTagInline">latex</span><span class="MetaTagAll">:</span> </span><span class="String"><span class="String">'</span>&lt;span style=&quot;text-transform: uppercase&quot;&gt;L&lt;sup style=&quot;vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em&quot;&gt;a&lt;/sup&gt;T&lt;sub style=&quot;vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em&quot;&gt;e&lt;/sub&gt;X&lt;/span&gt;<span class="String">'</span></span>
-</pre>
+<pre><code class="yaml">macros:
+  test: "This is a macro test"
+  latex: '&lt;span style="text-transform: uppercase"&gt;L&lt;sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em"&gt;a&lt;/sup&gt;T&lt;sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em"&gt;e&lt;/sub&gt;X&lt;/span&gt;'
+</code></pre>
 
 <p>Puis dans le corps ça va remplacer&nbsp;:</p>
 
@@ -87,53 +89,52 @@ les macros deviennent vite quelque chose d&rsquo;indispensable.</p>
 <p>Le code est assez simple. 
 Pour les utilisateurs de <code>nanoc</code> il suffit de copier le fichier suivant dans le répertoire <code>lib</code>. </p>
 
-<div class="code"><div class="file"><a href="/Scratch/fr/blog/2010-10-26-LaTeX-like-macro-and-markdown/code/macros.rb"> &#x27A5; macros.rb </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Comment"><span class="Comment">#</span> usage:</span>
-<span class="Comment"><span class="Comment">#</span> ---</span>
-<span class="Comment"><span class="Comment">#</span> ...</span>
-<span class="Comment"><span class="Comment">#</span> macros:</span>
-<span class="Comment"><span class="Comment">#</span>   test: &quot;passed test&quot;</span>
-<span class="Comment"><span class="Comment">#</span> ---</span>
-<span class="Comment"><span class="Comment">#</span> ...</span>
-<span class="Comment"><span class="Comment">#</span> Here is a This is a macro test.</span>
-<span class="Comment"><span class="Comment">#</span></span>
-<span class="Keyword">class</span> <span class="Entity">Macros<span class="EntityInheritedClass"> <span class="EntityInheritedClass">&lt;</span> Nanoc3::Filter</span></span>
-    identifier <span class="Constant"><span class="Constant">:</span>falacy</span>
-    <span class="Keyword">attr_accessor</span> <span class="Constant"><span class="Constant">:</span>macro</span>
-    <span class="Keyword">def</span> <span class="Entity">initialize</span>(<span class="Variable">arg</span>)
-        <span class="Keyword">super</span>
-        <span class="Variable"><span class="Variable">@</span>macro</span><span class="Keyword">=</span>{}
-        <span class="Variable"><span class="Variable">@</span>macro</span>[<span class="Constant"><span class="Constant">:</span>tlal</span>] <span class="Keyword">=</span> <span class="String"><span class="String">%{</span>&lt;span class=&quot;sc&quot;&gt;&lt;abbr title=&quot;Trop long à lire&quot;&gt;tlàl&lt;/abbr&gt; : &lt;/span&gt;<span class="String">}</span></span>
-        <span class="Variable"><span class="Variable">@</span>macro</span>[<span class="Constant"><span class="Constant">:</span>tldr</span>] <span class="Keyword">=</span> <span class="String"><span class="String">%{</span>&lt;span class=&quot;sc&quot;&gt;&lt;abbr title=&quot;Too long; didn't read&quot;&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt;<span class="String">}</span></span>
-        <span class="Keyword">if</span> <span class="Variable"><span class="Variable">@</span>item</span>.<span class="Entity">nil?</span>
-            <span class="Keyword">if</span> <span class="Keyword">not</span> arg.<span class="Entity">nil?</span>
-                <span class="Variable"><span class="Variable">@</span>macro</span>.<span class="Entity">merge!</span>( arg )
-            <span class="Keyword">end</span>
-        <span class="Keyword">else</span>
-            <span class="Keyword">if</span> <span class="Keyword">not</span> <span class="Variable"><span class="Variable">@</span>item</span>[<span class="Constant"><span class="Constant">:</span>macros</span>].<span class="Entity">nil?</span>
-                <span class="Variable"><span class="Variable">@</span>macro</span>.<span class="Entity">merge!</span>( <span class="Variable"><span class="Variable">@</span>item</span>[<span class="Constant"><span class="Constant">:</span>macros</span>] )
-            <span class="Keyword">end</span>
-        <span class="Keyword">end</span>
-    <span class="Keyword">end</span>
-    <span class="Keyword">def</span> <span class="Entity">macro_value_for</span>(<span class="Variable">macro_name</span>)
-        <span class="Keyword">if</span> macro_name.<span class="Entity">nil?</span> <span class="Keyword">or</span> macro_name<span class="Keyword">==</span><span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span> <span class="Keyword">or</span> <span class="Variable"><span class="Variable">@</span>macro</span>[macro_name.<span class="Entity">intern</span>].<span class="Entity">nil?</span>
-            <span class="Keyword">return</span> <span class="String"><span class="String">%{</span>%<span class="StringEmbeddedSource"><span class="StringEmbeddedSource">#{</span>macro_name<span class="StringEmbeddedSource">}</span></span><span class="String">}</span></span> 
-        <span class="Keyword">end</span>
-        <span class="Keyword">return</span> <span class="Variable"><span class="Variable">@</span>macro</span>[macro_name.<span class="Entity">intern</span>]
-    <span class="Keyword">end</span>
-    <span class="Keyword">def</span> <span class="Entity">run</span>(<span class="Variable">content<span class="Variable">,</span> params<span class="Keyword">=</span><span class="Variable">{</span><span class="Variable">}</span></span>)
-        content.<span class="Entity">gsub</span>(<span class="StringRegexp"><span class="StringRegexp">/</span></span><span class="StringRegexp">%<span class="StringRegexp"><span class="StringRegexp">(</span><span class="StringRegexpSpecial">\w</span>*<span class="StringRegexp">)</span></span></span><span class="StringRegexp"><span class="StringRegexp">/</span></span>) <span class="Keyword">do </span>|<span class="Variable">m</span>| 
-            <span class="Keyword">if</span> m <span class="Keyword">!=</span> <span class="String"><span class="String">'</span>%<span class="String">'</span></span>
-                <span class="Entity">macro_value_for</span>(<span class="Variable"><span class="Variable">$</span>1</span>)
-            <span class="Keyword">else</span>
+<div class="codefile"><a href="/Scratch/fr/blog/2010-10-26-LaTeX-like-macro-and-markdown/code/macros.rb">&#x27A5; macros.rb</a></div>
+
+<pre><code class="ruby"># usage:
+# ---
+# ...
+# macros:
+#   test: "passed test"
+# ---
+# ...
+# Here is a This is a macro test.
+#
+class Macros &lt; Nanoc3::Filter
+    identifier :falacy
+    attr_accessor :macro
+    def initialize(arg)
+        super
+        @macro={}
+        @macro[:tlal] = %{&lt;span class="sc"&gt;&lt;abbr title="Trop long à lire"&gt;tlàl&lt;/abbr&gt; : &lt;/span&gt;}
+        @macro[:tldr] = %{&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt;}
+        if @item.nil?
+            if not arg.nil?
+                @macro.merge!( arg )
+            end
+        else
+            if not @item[:macros].nil?
+                @macro.merge!( @item[:macros] )
+            end
+        end
+    end
+    def macro_value_for(macro_name)
+        if macro_name.nil? or macro_name=="" or @macro[macro_name.intern].nil?
+            return %{%#{macro_name}} 
+        end
+        return @macro[macro_name.intern]
+    end
+    def run(content, params={})
+        content.gsub(/%(\w*)/) do |m| 
+            if m != '%'
+                macro_value_for($1)
+            else
                 m
-            <span class="Keyword">end</span>
-        <span class="Keyword">end</span>
-    <span class="Keyword">end</span>
-<span class="Keyword">end</span>
-</pre>
-</div></div>
+            end
+        end
+    end
+end
+</code></pre>
 
 <p>Les macros peuvent être vraiment utiles. Lisez <a href="http://adam.gomaa.us/blog/2007/oct/22/markdown-doesnt-scale/index.html">cet article</a> par exemple.</p>
 

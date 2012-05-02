@@ -1,4 +1,3 @@
-
 <h1>You've just posted
 <p>#{postedText}#{T.reverse postedText}
 <hr>

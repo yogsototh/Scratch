@@ -7,4 +7,4 @@ error_message: Forbidden
 
 noSubMenu: true
 -----
-Contact: <% mail_perso %>
+Contact: %mailperso

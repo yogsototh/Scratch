@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/solarized.css" />
         <link rel="stylesheet" type="text/css" href="/Scratch/css/idc.css" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         
         <link rel="alternate" lang="fr" xml:lang="fr" title="Synchronisation avec mobileme (2)" type="text/html" hreflang="fr" href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/" /> 
@@ -19,6 +20,8 @@
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
+        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
+        <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -54,269 +57,279 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>J&rsquo;ai déjà discuté de la façon dont je <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe">synchronise mon site web sur mobileme</a>. J&rsquo;ai amélioré mon script pour le rendre incrémental.</p>
+                    <p>J’ai déjà discuté de la façon dont je <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe">synchronise mon site web sur mobileme</a>. J’ai amélioré mon script pour le rendre incrémental.</p>
 
-<p>Voici mon script, il créé tout d&rsquo;abord un fichier qui contient la liste des fichiers avec leur <em>hash</em>. Afin de les comparer avec ceux qui sont en ligne sans avoir à les parcourir. Ensuite pour chaque fichier qui semble différent, je met à jour le contenu.</p>
+<p>Voici mon script, il créé tout d’abord un fichier qui contient la liste des fichiers avec leur <em>hash</em>. Afin de les comparer avec ceux qui sont en ligne sans avoir à les parcourir. Ensuite pour chaque fichier qui semble différent, je met à jour le contenu.</p>
 
-<p>Cependant même avec ce script j&rsquo;ai encore des problèmes. Dû à webdav. En particulier le renommage de répertoire. Par exemple&nbsp;:</p>
+<p>Cependant même avec ce script j’ai encore des problèmes. Dû à webdav. En particulier le renommage de répertoire. Par exemple&nbsp;:</p>
 
-<div><pre class="twilight">
-mv folder folder2
-</pre></div>
+<div>
+
+<pre><code class="zsh">mv folder folder2
+</code></pre>
+
+</div>
 
 <p>Retourne OK et pourtant&nbsp;: </p>
 
-<div><pre class="twilight">
-$ ls 
+<div>
+
+<pre><code class="zsh">$ ls 
 folder folder2
-</pre></div>
+</code></pre>
 
-<p>Bouuhh&hellip;</p>
+</div>
 
-<p>Pour résoudre ce type de problèmes j&rsquo;utilise un <em>framework</em> en zsh. Il résout presque tous les problèmes liés à webdav à l&rsquo;exception du renommage de répertoire.</p>
+<p>Bouuhh…</p>
 
-<div><div class="code"><div class="file"><a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/code/webdav-framework"> &#x27A5; webdav-framework </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
+<p>Pour résoudre ce type de problèmes j’utilise un <em>framework</em> en zsh. Il résout presque tous les problèmes liés à webdav à l’exception du renommage de répertoire.</p>
+
+<div><div class="codefile"><a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/code/webdav-framework">&#x27A5; webdav-framework</a></div>
+
+
+<pre><code class="zsh">#!/usr/bin/env zsh
 
 function samelineprint {
-    print -n -P -- <span class="String"><span class="String">&quot;</span>\r<span class="StringVariable"><span class="StringVariable">$</span>*</span><span class="String">&quot;</span></span>
+    print -n -P -- "\r$*"
 }
 
-<span class="Comment"><span class="Comment">#</span> avec 1 essai par seconde: 300 = 5 minutes</span>
+# avec 1 essai par seconde: 300 = 5 minutes
 maxessais=300
 
-<span class="Comment"><span class="Comment">#</span> try to create a directory until success</span>
+# try to create a directory until success
 function trymkdir {
-    target=<span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>1</span><span class="String">&quot;</span></span>
-    print -- mkdir -p <span class="Variable"><span class="Variable">$</span>target</span>
+    target="$1"
+    print -- mkdir -p $target
     local essai=1
-    <span class="Keyword">while</span> <span class="Keyword">!</span> mkdir -p <span class="Variable"><span class="Variable">$</span>target</span><span class="Keyword">;</span> <span class="Keyword">do</span>
-        samelineprint <span class="String"><span class="String">&quot;</span>Echec: essai n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span><span class="String">&quot;</span></span>
+    while ! mkdir -p $target; do
+        samelineprint "Echec: essai n°$essai"
         ((essai++))
-        ((essai<span class="Keyword">&gt;</span>maxessais)) <span class="Keyword">&amp;&amp;</span> exit 5
-    <span class="Keyword">done</span>
+        ((essai&gt;maxessais)) &amp;&amp; exit 5
+    done
     print
 }
 
-<span class="Comment"><span class="Comment">#</span> try to copy until success</span>
+# try to copy until success
 function trycp {
-    element=<span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>1</span><span class="String">&quot;</span></span>
-    target=<span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>2</span><span class="String">&quot;</span></span>
-    <span class="Keyword">if</span> [[ <span class="Keyword">!</span> -d <span class="Variable"><span class="Variable">${</span>target:h<span class="Variable">}</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
-        trymkdir <span class="Variable"><span class="Variable">${</span>target:h<span class="Variable">}</span></span>
-    <span class="Keyword">fi</span>
+    element="$1"
+    target="$2"
+    if [[ ! -d ${target:h} ]]; then
+        trymkdir ${target:h}
+    fi
     local essai=1
-    print -- cp <span class="Variable"><span class="Variable">$</span>element</span> <span class="Variable"><span class="Variable">$</span>target</span>
-    <span class="Keyword">while</span> <span class="Keyword">!</span> <span class="Constant">\c</span>p <span class="Variable"><span class="Variable">$</span>element</span> <span class="Variable"><span class="Variable">$</span>target</span><span class="Keyword">;</span> <span class="Keyword">do</span>
-        samelineprint <span class="String"><span class="String">&quot;</span>Echec: essai n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span><span class="String">&quot;</span></span>
+    print -- cp $element $target
+    while ! \cp $element $target; do
+        samelineprint "Echec: essai n°$essai"
         ((essai++))
-        ((essai<span class="Keyword">&gt;</span>maxessais)) <span class="Keyword">&amp;&amp;</span> exit 5
-    <span class="Keyword">done</span>
+        ((essai&gt;maxessais)) &amp;&amp; exit 5
+    done
     print
 }
 
-<span class="Comment"><span class="Comment">#</span> try to remove until success</span>
+# try to remove until success
 function tryrm {
-    target=<span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>1</span><span class="String">&quot;</span></span>
+    target="$1"
     local essai=1
-    local options=<span class="String"><span class="String">'</span><span class="String">'</span></span>
-    [[ -d <span class="Variable"><span class="Variable">$</span>target</span> ]] <span class="Keyword">&amp;&amp;</span> options=<span class="String"><span class="String">'</span>-rf<span class="String">'</span></span>
-    print -- rm <span class="Variable"><span class="Variable">$</span>options</span> <span class="Variable"><span class="Variable">$</span>target</span>
-    <span class="Keyword">while</span> <span class="Keyword">!</span> rm <span class="Variable"><span class="Variable">$</span>options</span> <span class="Variable"><span class="Variable">$</span>target</span><span class="Keyword">;</span> <span class="Keyword">do</span>
-        samelineprint <span class="String"><span class="String">&quot;</span>Echec: essai n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span><span class="String">&quot;</span></span>
+    local options=''
+    [[ -d $target ]] &amp;&amp; options='-rf'
+    print -- rm $options $target
+    while ! rm $options $target; do
+        samelineprint "Echec: essai n°$essai"
         ((essai++))
-        ((essai<span class="Keyword">&gt;</span>maxessais)) <span class="Keyword">&amp;&amp;</span> exit 5
-    <span class="Keyword">done</span>
+        ((essai&gt;maxessais)) &amp;&amp; exit 5
+    done
     essai=1
-    <span class="Keyword">while</span> [[ -e <span class="Variable"><span class="Variable">$</span>element</span> ]]<span class="Keyword">;</span> <span class="Keyword">do</span>
-        samelineprint <span class="String"><span class="String">&quot;</span>rm reussi mais fichier source non disparu n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span><span class="String">&quot;</span></span>
+    while [[ -e $element ]]; do
+        samelineprint "rm reussi mais fichier source non disparu n°$essai"
         sleep 1
         ((essai++))
-        ((essai<span class="Keyword">&gt;</span>maxessais)) <span class="Keyword">&amp;&amp;</span> exit 5
-    <span class="Keyword">done</span>
+        ((essai&gt;maxessais)) &amp;&amp; exit 5
+    done
     print
 }
 
-<span class="Comment"><span class="Comment">#</span> try to rename until success</span>
+# try to rename until success
 function tryrename {
-    element=<span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>1</span><span class="String">&quot;</span></span>
-    target=<span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>2</span><span class="String">&quot;</span></span>
+    element="$1"
+    target="$2"
     local essai=1
-    <span class="Keyword">while</span> [[ -e <span class="Variable"><span class="Variable">$</span>target</span> ]]<span class="Keyword">;</span> <span class="Keyword">do</span>
-        samelineprint <span class="String"><span class="String">&quot;</span>Echec n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span> le fichier <span class="StringVariable"><span class="StringVariable">$</span>target</span> existe déjà<span class="String">&quot;</span></span>
+    while [[ -e $target ]]; do
+        samelineprint "Echec n°$essai le fichier $target existe déjà"
         ((essai++))
-        ((essai<span class="Keyword">&gt;</span>maxessais)) <span class="Keyword">&amp;&amp;</span> exit 5
+        ((essai&gt;maxessais)) &amp;&amp; exit 5
         sleep 1
-    <span class="Keyword">done</span>
-    print -- mv <span class="Variable"><span class="Variable">$</span>element</span> <span class="Variable"><span class="Variable">$</span>target</span>
-    <span class="Keyword">while</span> <span class="Keyword">!</span> mv <span class="Variable"><span class="Variable">$</span>element</span> <span class="Variable"><span class="Variable">$</span>target</span><span class="Keyword">;</span> <span class="Keyword">do</span>
-        samelineprint <span class="String"><span class="String">&quot;</span>Echec: essai n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span><span class="String">&quot;</span></span>
+    done
+    print -- mv $element $target
+    while ! mv $element $target; do
+        samelineprint "Echec: essai n°$essai"
         ((essai++))
-        ((essai<span class="Keyword">&gt;</span>maxessais)) <span class="Keyword">&amp;&amp;</span> exit 4
-    <span class="Keyword">done</span>
+        ((essai&gt;maxessais)) &amp;&amp; exit 4
+    done
     essai=1
-    <span class="Keyword">while</span> [[ -e <span class="Variable"><span class="Variable">$</span>element</span> ]]<span class="Keyword">;</span> <span class="Keyword">do</span>
-        samelineprint <span class="String"><span class="String">&quot;</span>mv reussi mais fichier source non disparu n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span><span class="String">&quot;</span></span>
+    while [[ -e $element ]]; do
+        samelineprint "mv reussi mais fichier source non disparu n°$essai"
         sleep 1
         ((essai++))
-        ((essai<span class="Keyword">&gt;</span>maxessais)) <span class="Keyword">&amp;&amp;</span> exit 5
-    <span class="Keyword">done</span>
+        ((essai&gt;maxessais)) &amp;&amp; exit 5
+    done
     print
 }
 
-<span class="Comment"><span class="Comment">#</span> try to move until success</span>
+# try to move until success
 function trymv {
-    element=<span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>1</span><span class="String">&quot;</span></span>
-    target=<span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>2</span><span class="String">&quot;</span></span>
+    element="$1"
+    target="$2"
     local essai=1
-    print -- mv <span class="Variable"><span class="Variable">$</span>element</span> <span class="Variable"><span class="Variable">$</span>target</span>
-    <span class="Keyword">while</span> <span class="Keyword">!</span> mv <span class="Variable"><span class="Variable">$</span>element</span> <span class="Variable"><span class="Variable">$</span>target</span><span class="Keyword">;</span> <span class="Keyword">do</span>
-        samelineprint <span class="String"><span class="String">&quot;</span>Echec: essai n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span><span class="String">&quot;</span></span>
+    print -- mv $element $target
+    while ! mv $element $target; do
+        samelineprint "Echec: essai n°$essai"
         ((essai++))
-        ((essai<span class="Keyword">&gt;</span>maxessais)) <span class="Keyword">&amp;&amp;</span> exit 5
-    <span class="Keyword">done</span>
+        ((essai&gt;maxessais)) &amp;&amp; exit 5
+    done
     essai=1
-    <span class="Keyword">while</span> [[ -e <span class="Variable"><span class="Variable">$</span>element</span> ]]<span class="Keyword">;</span> <span class="Keyword">do</span>
-        samelineprint <span class="String"><span class="String">&quot;</span>mv reussi mais fichier source non disparu n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span><span class="String">&quot;</span></span>
+    while [[ -e $element ]]; do
+        samelineprint "mv reussi mais fichier source non disparu n°$essai"
         sleep 1
         ((essai++))
-        ((essai<span class="Keyword">&gt;</span>maxessais)) <span class="Keyword">&amp;&amp;</span> exit 5
-    <span class="Keyword">done</span>
+        ((essai&gt;maxessais)) &amp;&amp; exit 5
+    done
     print
 }
-</pre>
-</div></div></div>
+</code></pre>
 
-<p>Et voici le code qui me permet de synchroniser mon site web. Il y a une partie un peu incompréhensible. C&rsquo;est pour enlever les mail réencodés par le filtre bluecloth qui est une implémentation de markdown. Mes mails, sont encodés à chaque fois de façon différente à chaque réengendrement de page html. C&rsquo;est pourquoi je les enlève pour ne pas les <em>uploadés</em> inutilement à chaque fois.</p>
+</div>
 
-<div><div class="code"><div class="file"><a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/code/publish"> &#x27A5; publish </a></div><div class="withfile">
-<pre class="twilight">
-<span class="Comment"><span class="Comment">#</span>!/usr/bin/env zsh</span>
+<p>Et voici le code qui me permet de synchroniser mon site web. Il y a une partie un peu incompréhensible. C’est pour enlever les mail réencodés par le filtre bluecloth qui est une implémentation de markdown. Mes mails, sont encodés à chaque fois de façon différente à chaque réengendrement de page html. C’est pourquoi je les enlève pour ne pas les <em>uploadés</em> inutilement à chaque fois.</p>
 
-<span class="Comment"><span class="Comment">#</span> Script synchronisant le site sur me.com</span>
-<span class="Comment"><span class="Comment">#</span> normalement, le site est indisponible le moins de temps possible</span>
-<span class="Comment"><span class="Comment">#</span> le temps de deux renommages de répertoire</span>
+<div><div class="codefile"><a href="/Scratch/fr/blog/2009-10-28-custom-website-synchronisation-with-mobileme--2-/code/publish">&#x27A5; publish</a></div>
 
-<span class="Comment"><span class="Comment">#</span> get configuration</span>
-<span class="Comment"><span class="Comment">#</span> mostly directories</span>
-source <span class="Variable"><span class="Variable">$</span>0</span>:h/config
 
-<span class="Comment"><span class="Comment">#</span> get trycp function (copy until success)</span>
-source <span class="Variable"><span class="Variable">$</span>0</span>:h/webdav-framework
+<pre><code class="zsh">#!/usr/bin/env zsh
 
-<span class="Keyword">if</span> [[ <span class="Variable"><span class="Variable">$</span>1</span> <span class="Keyword">==</span> <span class="String"><span class="String">'</span>-h<span class="String">'</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
-    print -- <span class="String"><span class="String">&quot;</span>usage : <span class="StringVariable"><span class="StringVariable">$</span>0</span>:h [-h|-s|-d]<span class="String">&quot;</span></span>
-    print -- <span class="String"><span class="String">&quot;</span>  -a sychronise aussi l'index<span class="String">&quot;</span></span>
-    print -- <span class="String"><span class="String">&quot;</span>  -h affiche l'aide<span class="String">&quot;</span></span>
-    print -- <span class="String"><span class="String">&quot;</span>  -d modification directe (pas de swap)<span class="String">&quot;</span></span>
-    print -- <span class="String"><span class="String">&quot;</span>  -s swappe simplement les répertoires<span class="String">&quot;</span></span>
-<span class="Keyword">fi</span>
+# Script synchronisant le site sur me.com
+# normalement, le site est indisponible le moins de temps possible
+# le temps de deux renommages de répertoire
 
-<span class="Comment"><span class="Comment">#</span> publication incrementale</span>
+# get configuration
+# mostly directories
+source $0:h/config
+
+# get trycp function (copy until success)
+source $0:h/webdav-framework
+
+if [[ $1 == '-h' ]]; then
+    print -- "usage : $0:h [-h|-s|-d]"
+    print -- "  -a sychronise aussi l'index"
+    print -- "  -h affiche l'aide"
+    print -- "  -d modification directe (pas de swap)"
+    print -- "  -s swappe simplement les répertoires"
+fi
+
+# publication incrementale
 function incrementalPublish {
-    local ydestRep=<span class="Variable"><span class="Variable">$</span>destRep</span><span class="Variable"><span class="Variable">$</span>suffix</span>
-    localRef=<span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>srcRep</span>/map.yrf<span class="String">&quot;</span></span>
-    print -- <span class="String"><span class="String">&quot;</span>Creation du fichier de references<span class="String">&quot;</span></span>
-    create-reference-file.sh <span class="Keyword">&gt;</span> <span class="Variable"><span class="Variable">$</span>localRef</span>
-    remoteRef=<span class="String"><span class="String">&quot;</span>/tmp/remoteSiteMapRef.<span class="StringVariable"><span class="StringVariable">$</span>$</span>.yrf<span class="String">&quot;</span></span>
-    <span class="Keyword">if</span> [[ <span class="Keyword">!</span> -e <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>ydestRep</span>/map.yrf<span class="String">&quot;</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
-        <span class="Comment"><span class="Comment">#</span> pas de fichier de reference sur la cible</span>
-        print -- <span class="String"><span class="String">&quot;</span>pas de fichier de reference sur la cible, passage en mode rsync<span class="String">&quot;</span></span>
+    local ydestRep=$destRep$suffix
+    localRef="$srcRep/map.yrf"
+    print -- "Creation du fichier de references"
+    create-reference-file.sh &gt; $localRef
+    remoteRef="/tmp/remoteSiteMapRef.$$.yrf"
+    if [[ ! -e "$ydestRep/map.yrf" ]]; then
+        # pas de fichier de reference sur la cible
+        print -- "pas de fichier de reference sur la cible, passage en mode rsync"
         rsyncPublish
         swap
-    <span class="Keyword">else</span>
-        trycp <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>ydestRep</span>/map.yrf<span class="String">&quot;</span></span> <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>remoteRef</span><span class="String">&quot;</span></span>
+    else
+        trycp "$ydestRep/map.yrf" "$remoteRef"
         typeset -U filesToUpdate
-        filesToUpdate=( <span class="String"><span class="String">$(</span>diff <span class="StringVariable"><span class="StringVariable">$</span>localRef</span> <span class="StringVariable"><span class="StringVariable">$</span>remoteRef</span> <span class="Keyword">|</span> awk <span class="String"><span class="String">'</span>/^[&lt;&gt;]/ {print $2}<span class="String">'</span></span> <span class="String">)</span></span> )
-        <span class="Keyword">if</span> ((<span class="Variable"><span class="Variable">${</span>#filesToUpdate<span class="Variable">}</span></span> == 1))<span class="Keyword">;</span> <span class="Keyword">then</span>
-            print -- <span class="String"><span class="String">&quot;</span>Seul le fichier <span class="StringVariable"><span class="StringVariable">${</span>filesToUpdate<span class="StringVariable">}</span></span> sera téléversé<span class="String">&quot;</span></span>
-        <span class="Keyword">elif</span> ((<span class="Variable"><span class="Variable">${</span>#filesToUpdate<span class="Variable">}</span></span><span class="Keyword">&lt;</span>10))<span class="Keyword">;</span> <span class="Keyword">then</span>
-            print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>#filesToUpdate<span class="StringVariable">}</span></span> fichiers seront téléversés :<span class="String">&quot;</span></span>
-            print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>filesToUpdate<span class="StringVariable">}</span></span><span class="String">&quot;</span></span>
-        <span class="Keyword">else</span>
-            print -- <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">${</span>#filesToUpdate<span class="StringVariable">}</span></span> fichiers seront téléversés<span class="String">&quot;</span></span>
-        <span class="Keyword">fi</span>
-        <span class="Comment"><span class="Comment">#</span> copy all file with some differences</span>
-        <span class="Comment"><span class="Comment">#</span> except the map in case of error</span>
-        <span class="Keyword">for</span> element <span class="Keyword">in</span> <span class="Variable"><span class="Variable">$</span>filesToUpdate</span><span class="Keyword">;</span> <span class="Keyword">do</span>
-            <span class="Keyword">if</span> [[ <span class="Variable"><span class="Variable">$</span>element</span> <span class="Keyword">==</span> <span class="String"><span class="String">&quot;</span>/map.yrf<span class="String">&quot;</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
-                <span class="Keyword">continue</span>
-            <span class="Keyword">fi</span>
-            <span class="Keyword">if</span> [[ -e <span class="Variable"><span class="Variable">$</span>srcRep</span><span class="Variable"><span class="Variable">$</span>element</span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
-                trycp <span class="Variable"><span class="Variable">$</span>srcRep</span><span class="Variable"><span class="Variable">$</span>element</span> <span class="Variable"><span class="Variable">$</span>ydestRep</span><span class="Variable"><span class="Variable">$</span>element</span>
-            <span class="Keyword">else</span>
-                tryrm <span class="Variable"><span class="Variable">$</span>ydestRep</span><span class="Variable"><span class="Variable">$</span>element</span>
-            <span class="Keyword">fi</span>
-        <span class="Keyword">done</span>
-        <span class="Comment"><span class="Comment">#</span> if all went fine, copy the map file</span>
-        trycp <span class="Variable"><span class="Variable">$</span>srcRep</span>/map.yrf <span class="Variable"><span class="Variable">$</span>ydestRep</span>/map.yrf
-        <span class="Comment"><span class="Comment">#</span> remove the temporary file</span>
-        <span class="Constant">\r</span>m <span class="Variable"><span class="Variable">$</span>remoteRef</span>
-        <span class="Comment"><span class="Comment">#</span> if we have used the tmp directory we swap</span>
-        <span class="Keyword">if</span> [[ <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>suffix</span><span class="String">&quot;</span></span> <span class="Keyword">!=</span> <span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
+        filesToUpdate=( $(diff $localRef $remoteRef | awk '/^[&lt;&gt;]/ {print $2}' ) )
+        if ((${#filesToUpdate} == 1)); then
+            print -- "Seul le fichier ${filesToUpdate} sera téléversé"
+        elif ((${#filesToUpdate}&lt;10)); then
+            print -- "${#filesToUpdate} fichiers seront téléversés :"
+            print -- "${filesToUpdate}"
+        else
+            print -- "${#filesToUpdate} fichiers seront téléversés"
+        fi
+        # copy all file with some differences
+        # except the map in case of error
+        for element in $filesToUpdate; do
+            if [[ $element == "/map.yrf" ]]; then
+                continue
+            fi
+            if [[ -e $srcRep$element ]]; then
+                trycp $srcRep$element $ydestRep$element
+            else
+                tryrm $ydestRep$element
+            fi
+        done
+        # if all went fine, copy the map file
+        trycp $srcRep/map.yrf $ydestRep/map.yrf
+        # remove the temporary file
+        \rm $remoteRef
+        # if we have used the tmp directory we swap
+        if [[ "$suffix" != "" ]]; then
             swap
-        <span class="Keyword">fi</span>
-    <span class="Keyword">fi</span>
+        fi
+    fi
 }
 
-<span class="Comment"><span class="Comment">#</span> publication via rsync</span>
+# publication via rsync
 function rsyncPublish {
     result=1
     essai=1
-    <span class="Keyword">while</span> (( <span class="Variable"><span class="Variable">$</span>result</span> <span class="Keyword">&gt;</span> 0 ))<span class="Keyword">;</span> <span class="Keyword">do</span>
-        print -- rsync -arv <span class="Variable"><span class="Variable">$</span>srcRep</span>/ <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
-        <span class="Keyword">if</span> ((<span class="Keyword">!</span>testmode))<span class="Keyword">;</span> <span class="Keyword">then</span>
-            rsync -arv <span class="Variable"><span class="Variable">$</span>srcRep</span>/ <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
-        <span class="Keyword">fi</span>
-        result=<span class="Variable"><span class="Variable">$</span>?</span>
-        <span class="Keyword">if</span> (( <span class="Variable"><span class="Variable">$</span>result</span> <span class="Keyword">&gt;</span> 0 ))<span class="Keyword">;</span> <span class="Keyword">then</span>
-            print -P -- <span class="String"><span class="String">&quot;</span>%BEchec du rsync%b (essai n°<span class="StringVariable"><span class="StringVariable">$</span>essai</span>)<span class="String">&quot;</span></span> <span class="Keyword">&gt;&amp;2</span>
-        <span class="Keyword">fi</span>
+    while (( $result &gt; 0 )); do
+        print -- rsync -arv $srcRep/ $destRep.tmp
+        if ((!testmode)); then
+            rsync -arv $srcRep/ $destRep.tmp
+        fi
+        result=$?
+        if (( $result &gt; 0 )); then
+            print -P -- "%BEchec du rsync%b (essai n°$essai)" &gt;&amp;2
+        fi
         ((essai++))
-    <span class="Keyword">done</span>
+    done
 }
 
-<span class="Comment"><span class="Comment">#</span> swap</span>
+# swap
 function swap {
-    print -P -- <span class="String"><span class="String">&quot;</span>%B[Directory Swap (tmp &lt;=&gt; target)]%b<span class="String">&quot;</span></span>
-    [[ -e <span class="Variable"><span class="Variable">$</span>destRep</span>.old ]] <span class="Keyword">&amp;&amp;</span> tryrm <span class="Variable"><span class="Variable">$</span>destRep</span>.old
+    print -P -- "%B[Directory Swap (tmp &lt;=&gt; target)]%b"
+    [[ -e $destRep.old ]] &amp;&amp; tryrm $destRep.old
     
-    print -- <span class="String"><span class="String">&quot;</span>  renommage du repertoire sandard vers le .old<span class="String">&quot;</span></span>
-    tryrename <span class="Variable"><span class="Variable">$</span>destRep</span> <span class="Variable"><span class="Variable">$</span>destRep</span>.old 
+    print -- "  renommage du repertoire sandard vers le .old"
+    tryrename $destRep $destRep.old 
     
-    print -- <span class="String"><span class="String">&quot;</span>  renommage du repertoire tmp (nouveau) vers le standard<span class="String">&quot;</span></span>
-    print -P -- <span class="String"><span class="String">&quot;</span>%B[Site Indisponible]%b <span class="String"><span class="String">$(</span>date<span class="String">)</span></span><span class="String">&quot;</span></span>
-    tryrename <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp <span class="Variable"><span class="Variable">$</span>destRep</span>
-    print -P -- <span class="String"><span class="String">&quot;</span>%B[Site Disponible]%b <span class="String"><span class="String">$(</span>date<span class="String">)</span></span><span class="String">&quot;</span></span>
+    print -- "  renommage du repertoire tmp (nouveau) vers le standard"
+    print -P -- "%B[Site Indisponible]%b $(date)"
+    tryrename $destRep.tmp $destRep
+    print -P -- "%B[Site Disponible]%b $(date)"
     
-    print -- <span class="String"><span class="String">&quot;</span>  renommage du repertoire old vers le tmp<span class="String">&quot;</span></span>
-    tryrename <span class="Variable"><span class="Variable">$</span>destRep</span>.old <span class="Variable"><span class="Variable">$</span>destRep</span>.tmp
+    print -- "  renommage du repertoire old vers le tmp"
+    tryrename $destRep.old $destRep.tmp
 
-    print -P -- <span class="String"><span class="String">&quot;</span>  publication terminée<span class="String">&quot;</span></span>
+    print -P -- "  publication terminée"
 }
 
-print -- <span class="String"><span class="String">&quot;</span>Root = <span class="StringVariable"><span class="StringVariable">$</span>webroot</span><span class="String">&quot;</span></span>
-print -- <span class="String"><span class="String">&quot;</span>Dest = <span class="StringVariable"><span class="StringVariable">$</span>destRep</span><span class="String">&quot;</span></span>
+print -- "Root = $webroot"
+print -- "Dest = $destRep"
 
-<span class="Keyword">if</span> [[ <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>1</span><span class="String">&quot;</span></span> = <span class="String"><span class="String">&quot;</span>-s<span class="String">&quot;</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
+if [[ "$1" = "-s" ]]; then
     swap
-<span class="Keyword">else</span> 
-    print -P <span class="String"><span class="String">&quot;</span>Copie de l'init<span class="String">&quot;</span></span>
-    <span class="Constant">\c</span>p -f <span class="Variable"><span class="Variable">$</span>webroot</span>/Scratch/multi/index.html <span class="Variable"><span class="Variable">$</span>webroot</span>/index.html
+else 
+    print -P "Copie de l'init"
+    \cp -f $webroot/Scratch/multi/index.html $webroot/index.html
 
-    <span class="Keyword">if</span> [[ <span class="String"><span class="String">&quot;</span><span class="StringVariable"><span class="StringVariable">$</span>1</span><span class="String">&quot;</span></span> = <span class="String"><span class="String">&quot;</span>-d<span class="String">&quot;</span></span> ]]<span class="Keyword">;</span> <span class="Keyword">then</span>
-        suffix=<span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
-    <span class="Keyword">else</span>
-        suffix=<span class="String"><span class="String">&quot;</span>.tmp<span class="String">&quot;</span></span>
-    <span class="Keyword">fi</span>
-    print -P -- <span class="String"><span class="String">&quot;</span>%BSync%b[<span class="StringVariable"><span class="StringVariable">${</span>Root:t<span class="StringVariable">}</span></span> =&gt; <span class="StringVariable"><span class="StringVariable">${</span>destRep:t<span class="StringVariable">}</span></span><span class="StringVariable"><span class="StringVariable">$</span>suffix</span>]<span class="String">&quot;</span></span>
+    if [[ "$1" = "-d" ]]; then
+        suffix=""
+    else
+        suffix=".tmp"
+    fi
+    print -P -- "%BSync%b[${Root:t} =&gt; ${destRep:t}$suffix]"
     incrementalPublish
-<span class="Keyword">fi</span>
-</pre>
-</div></div></div>
+fi
+</code></pre>
 
-<p>C&rsquo;est ma façon de remplacer <code>rsync</code> avec des filesystem qui ne permettent pas de l&rsquo;utiliser. J&rsquo;espère que ça pourra vous être utile. Je serai heureux de savoir si quelqu&rsquo;un à une idée sur comment gérer le problème de renommage de répertoire avec webdav.</p>
+</div>
+
+<p>C’est ma façon de remplacer <code>rsync</code> avec des filesystem qui ne permettent pas de l’utiliser. J’espère que ça pourra vous être utile. Je serai heureux de savoir si quelqu’un à une idée sur comment gérer le problème de renommage de répertoire avec webdav.</p>
 
                 </div>
             

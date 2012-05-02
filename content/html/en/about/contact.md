@@ -6,7 +6,7 @@ menupriority: 1
 
 <img src="/Scratch/img/about/avatar.png" alt="Avatar" class="left"/>
 
-<%= mail_perso %>  
+%mailperso
   Follow me on [twitter](http://twitter.com/yogsototh)  
   My preferred bookmarks [pinboard](http://pinboard.in/u:yogsototh)  
   Open Source [github](http://github.com/yogsototh)  
