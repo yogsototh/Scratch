@@ -13,8 +13,6 @@ tags:
 -----
 blogimage("main.png","Title image")
 
-<% password="P45sW0r|)" %>
-
 begindiv(intro)
 
 en: %tldr How I manage safely my password with success for some years now.  
@@ -97,13 +95,13 @@ en: chose passwords like this:
 fr: Un _mauvaise_ solution peut être de choisir ses 
 fr: mots de passes de la façon suivante :
 
-en: - twitter: `<%=password%>Twitter`
-en: - gmail: `<%=password%>gmail`
-en: - badonlinegame: `<%=password%>badonlinegame`
+en: - twitter: `P45sW0r|)Twitter`
+en: - gmail: `P45sW0r|)gmail`
+en: - badonlinegame: `P45sW0r|)badonlinegame`
 
-fr: - twitter: `<%=password%>Twitter`
-fr: - gmail: `<%=password%>gmail`
-fr: - badonlinegame: `<%=password%>badonlinegame`
+fr: - twitter: `P45sW0r|)Twitter`
+fr: - gmail: `P45sW0r|)gmail`
+fr: - badonlinegame: `P45sW0r|)badonlinegame`
 
 en: Unfortunately, if someone get your password on 
 en: badonlinegame, he could easily find your other passwords.
@@ -129,10 +127,10 @@ en: hash("P45sW0r|)") = 9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63
 en: </code>
 
 en: If someone has `9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63`,
-en: he will have hard time to recover `<%=password%>`.
+en: he will have hard time to recover `P45sW0r|)`.
 
 fr: Si quelqu'un possède `9f00fd5dbba232b7c03afd2b62b5fce5cdc7df63`,
-fr: il va avoir de grande difficulté pour retrouver `<%=password%>`.
+fr: il va avoir de grande difficulté pour retrouver `P45sW0r|)`.
 
 en: Let choose SHA1 as hash function. 
 en: Now the password for any website should 
