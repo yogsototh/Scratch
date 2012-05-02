@@ -3148,9 +3148,7 @@ In particular, monad are very useful for:
 If you have followed me until here, then you've done it! 
 You know monads[^03021301]!
 
-[^03021301]: Well, you'll certainly need to practice a bit to get used to them
-and to understand when you can use them and create your own. But you already
-made a big step in this direction.
+[^03021301]: Well, you'll certainly need to practice a bit to get used to them and to understand when you can use them and create your own. But you already made a big step in this direction.
 
 <a href="code/03_Hell/02_Monads/13_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>13_Monads.lhs</strong> </a>
 
