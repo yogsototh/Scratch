@@ -88,7 +88,7 @@
         tagSize.sort{|a,b| a[0].downcase <=> b[0].downcase}.each do |t,s|
             protected=t.gsub(/\W/,'_')
             grouped=t.gsub(/&/,'&amp;').gsub(/ /,'&nbsp;').gsub(/</,'&lt;').gsub(/>/,'&gt;')
-            tagCloud <<= %{<a href="##{protected}" style="font-size: #{s}em;" class="tag" onclick="tagSelected('#{protected}')" id="tag_#{protected}">#{grouped}</a> }
+            tagCloud <<= %{<a href="##{protected}" style="font-size: #{s}em;" class="tagname" onclick="tagSelected('#{protected}')" id="tag_#{protected}">#{grouped}</a> }
         end
         tagCloud <<= %{</div><div id="hiddenDivs" >}
         language=@item.path

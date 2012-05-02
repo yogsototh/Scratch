@@ -1,23 +1,22 @@
 class UltraVioletFilter < Nanoc3::Filter
     identifier :ultraviolet
 
+    def protect(str) 
+        str.gsub(%r{<([^>]*)>}) do
+            "&lt;#{$1}&gt;"
+        end
+    end
+
     def run(content, params={})
         require 'rubygems'
-        require 'uv'
-        code_rule = %r{(<code class="([^"]+?)"( file="([^"]+?)")?>(.+?)</code>)}m
+        code_rule = %r{(<code class="([^"]+?)"( file="([^"]+?)")?>\n?(.+?)</code>)}m
         new_content=content.gsub(code_rule) do |full|
-            @lang, @filename, @code = $2, $4, $5
-            if @lang =~ /^(zsh|bash|sh|csh|shell)$/
-                @lang='shell-unix-generic'
-            end
+            @full, @lang, @filename, @code = $1, $2, $4, $5
             @codeprefix=''
-            @codesuffix=''
             if not @filename.nil? and @filename != ""
                 create_file_for_code
             end
-            @codeprefix+
-                Uv.parse(@code, "xhtml", @lang, false, @config[:ultraviolet_theme])+
-                @codesuffix
+            @codeprefix+"\n\n<pre><code class=\"#{@lang}\">"+protect(@code)+"</code></pre>\n\n"
         end
         return new_content
     end
@@ -28,13 +27,10 @@ class UltraVioletFilter < Nanoc3::Filter
         webpath = @item.path
 
         url = webpath + 'code/' + @filename
-        @codeprefix=%{<div class="code"><div class="file"><a href="#{url}"> &#x27A5; #{@filename} </a></div><div class="withfile">\n}
-        @codesuffix=%{\n</div></div>}
+        @codeprefix=%{<div class="codefile"><a href="#{url}">&#x27A5; #{@filename}</a></div>\n}
 
         code_path = "output#{webpath}code"
-        puts %{\t\tEcriture de #{code_path}/#{@filename}}
         FileUtils.mkdir_p code_path
         File.open(%{#{code_path}/#{@filename}}, 'w'){|f|f.write(@code)}
     end
-
 end 

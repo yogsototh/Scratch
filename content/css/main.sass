@@ -128,7 +128,7 @@ body
   color: $base01
 
 pre, code
-  font-family: Monaco, monospace
+  font-family: Incosolata, Monaco, monospace
 
 pre
   &::selection 
@@ -174,7 +174,7 @@ ol li ul, ol li ol, ul li ol, ul li ul
   list-style: circle
 
 
-body, h1, h2, h3, h4, #entete, .tag
+body, h1, h2, h3, h4, #entete, .tagname
   font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   line-height: 1.4em
 
@@ -600,12 +600,12 @@ img.clean
   margin-top: 2em
   z-index: 9002
 
-.file
+.codefile
   font-size: 0.8em
   text-align: right
   padding-right: 1em
   margin-right: 0.1
-  margin-bottom: 0
+  margin-bottom: -1em 
 
 .flush
   clear: both
@@ -647,9 +647,6 @@ img.inside
 pre
   overflow-x: auto
   overflow-y: hidden
-
-.withfile pre
-  margin-top: 0
 
 .navigationprev, .navigationnext
   padding: 0px
@@ -707,7 +704,7 @@ table.impact tr td
   a, a:visited
     color: #ECA
 
-.tag
+.tagname
   display: inline
   cursor: pointer
   margin-left: 0.5em

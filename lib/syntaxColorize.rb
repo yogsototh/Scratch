@@ -2,7 +2,6 @@ module Nanoc3::Helpers
 
   module SyntaxColorize
 
-    require 'nanoc3/helpers/capturing'
     include Nanoc3::Helpers::Capturing
 
     def syntax_colorize(lang, type=:ultraviolet, &block)
