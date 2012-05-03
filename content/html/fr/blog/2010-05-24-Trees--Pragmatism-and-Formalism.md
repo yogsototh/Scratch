@@ -19,10 +19,9 @@ tags:
 -----
 
 begindiv(intro)
-<% tlal=%{<abbr title="Trop Long À Lire"><sc>tlàl</sc></abbr>} %>
 
 
-<%=tlal%> :
+%tlal :
 
 - J'ai essayé de programmer un simple filtre ;
 - J'ai été bloqué pendant deux jours ;
@@ -33,7 +32,7 @@ begindiv(intro)
 - Conclusion: Pragmatisme n'est pas : &laquo;n'utilisez jamais la théorie&raquo;.
 enddiv
 
-## Résumé (plus long que le  <%=tlal%>)
+## Résumé (plus long que le  %tlal)
 
 
 Je devais résoudre un problème à mon travail. Au début cela

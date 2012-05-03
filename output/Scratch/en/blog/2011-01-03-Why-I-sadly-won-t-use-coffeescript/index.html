@@ -65,7 +65,7 @@
 
 <p><em>Update</em>: I might change my mind now. Why?
 I just discovered a <a href="https://github.com/rstacruz/js2coffee">js2coffee converter</a>. Furthermore Denis Knauf told me about a <code>CoffeeScript.eval</code> function. 
-And as Denis said: “it is time to use Coffeescript as a javascript with Ruby-like syntax not a Ruby-like programming language”.</p>
+And as Denis said: &ldquo;it is time to use Coffeescript as a javascript with Ruby-like syntax not a Ruby-like programming language&rdquo;.</p>
 
 
 </div>
@@ -88,30 +88,30 @@ Recently I used <em>a lot</em> of javascript. After trying
 <a href="http://cappuccino.org">Cappuccino</a>, looking at
 <a href="documentcloud.github.com/backbone/">backbone.js</a> <em class="pala">&amp;</em>
 <a href="javascriptmvc.com">javascriptMVC</a>,
-I’ve finally decided to make my own minimal javascript MVC framework.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+I&rsquo;ve finally decided to make my own minimal javascript MVC framework.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 
 <p>I had to fight the horrible syntax of javascript. It was like experiencing a back-in-time travel: </p>
 
 <ul>
   <li>Verbose Java-like syntax, </li>
   <li>Strange and insanely Verbose Object Oriented Programming,</li>
-  <li>No easy way to refer to current instance of a class (<code>this</code> doesn’t work really well),</li>
-  <li>etc… </li>
+  <li>No easy way to refer to current instance of a class (<code>this</code> doesn&rsquo;t work really well),</li>
+  <li>etc&hellip; </li>
 </ul>
 
 <p>It was so annoying at a point, I had thinked about creating my <em>own</em> CoffeeScript.</p>
 
-<p>I’d finished a first draft of my MVC javascript framework. 
+<p>I&rsquo;d finished a first draft of my MVC javascript framework. 
 Just after I learned about the existence of CoffeeScript, I immediately created a new git branch to try it.</p>
 
 <p>Here is my experience:</p>
 
 <ol>
-  <li>I had to install <code>node.js</code> and use <code>npm</code> just to use CoffeeScript. It wasn’t a big deal but it wasn’t as straightfoward as I expected either.</li>
+  <li>I had to install <code>node.js</code> and use <code>npm</code> just to use CoffeeScript. It wasn&rsquo;t a big deal but it wasn&rsquo;t as straightfoward as I expected either.</li>
   <li>Existing javascript file are not coffee compatible. 
  I <em>had</em> to translate them by hand. 
  There were no script to help me in this process.
- Thanks to <a href="http://vim.org">vim</a>, it wasn’t too hard to translate 90% of the javascript using some regexp. 
+ Thanks to <a href="http://vim.org">vim</a>, it wasn&rsquo;t too hard to translate 90% of the javascript using some regexp. 
  The <code>--watch</code> option of coffee was also really helpful to help in the translation. 
  But I had to write my own shell script in order to follow an entire directory tree.</li>
   <li>An unexpected event. I made some meta-programming in javascript using <code>eval</code>. But in order to work, the string in the eval must be written in pure javascript not in coffee. It was like writing in two different languages. Really not so good.</li>
@@ -144,7 +144,7 @@ Just after I learned about the existence of CoffeeScript, I immediately created 
 
 <p>The last two point were definitively really problematic for me.</p>
 
-<p>But even if I’ll have to work alone, I certainly won’t use CoffeeScript either. 
+<p>But even if I&rsquo;ll have to work alone, I certainly won&rsquo;t use CoffeeScript either. 
 CoffeeScript is a third party and any of their update can break my code. 
 I experienced this kind of situation many times, and it is very annoying. 
 Far more than coding with a bad syntax.</p>
@@ -186,10 +186,10 @@ class MyClass
 <hr/><div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>I know it may not be the best nor productive decision, but I’d like to start from scratch and understand how things works under the hood.<a href="#fnref:1" rel="reference">&#8617;</a></p>
+      <p>I know it may not be the best nor productive decision, but I&rsquo;d like to start from scratch and understand how things works under the hood.<a href="#fnref:1" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>I know there is <code>rb2js</code>, but it doesn’t handle the problem I talk about.<a href="#fnref:2" rel="reference">&#8617;</a></p>
+      <p>I know there is <code>rb2js</code>, but it doesn&rsquo;t handle the problem I talk about.<a href="#fnref:2" rel="reference">&#8617;</a></p>
     </li>
   </ol>
 </div>

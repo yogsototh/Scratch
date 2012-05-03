@@ -80,7 +80,7 @@
     <li><a href="#introduction">Introduction</a>
       <ul>
         <li><a href="#install">Install</a></li>
-        <li><a href="#don-t-be-afraid">Don’t be afraid</a></li>
+        <li><a href="#don-t-be-afraid">Don&rsquo;t be afraid</a></li>
         <li><a href="#very-basic-haskell">Very basic Haskell</a>
           <ul>
             <li><a href="#function-declaration">Function declaration</a></li>
@@ -156,9 +156,9 @@
 
 <p>Je pense vraiment que
 tous les développeurs devraient apprendre Haskell.
-Peut-être pas devenir des ninjas d’Haskell, 
+Peut-être pas devenir des ninjas d&rsquo;Haskell, 
 mais au moins savoir ce que ce langage a de particulier.
-Son apprentissage ouvre énormément l’esprit.</p>
+Son apprentissage ouvre énormément l&rsquo;esprit.</p>
 
 <p>La plupart des langages partagent les mêmes fondamentaux&nbsp;:</p>
 
@@ -170,64 +170,64 @@ Son apprentissage ouvre énormément l’esprit.</p>
 </ul>
 
 <p>Haskell est très différent.
-Ce langage utilise des concepts dont je n’avais jamais entendu parlé avant.
+Ce langage utilise des concepts dont je n&rsquo;avais jamais entendu parlé avant.
 Beaucoup de ces concepts pourront vous aider à devenir un meilleur développeur.</p>
 
 <p>Plier son esprit à Haskell peut être difficile.
 Ce le fût pour moi.
-Dans cet article, j’essaye de fournir les informations qui m’ont manquées lors de mon apprentissage.</p>
+Dans cet article, j&rsquo;essaye de fournir les informations qui m&rsquo;ont manquées lors de mon apprentissage.</p>
 
 <p>Cet article sera certainement difficile à suivre.
-Mais c’est voulu.
-Il n’y a pas de raccourci pour apprendre Haskell.
-C’est difficile.
-Mais je pense que c’est une bonne chose.
-C’est parce qu’Haskell est difficile qu’il est intéressant.</p>
+Mais c&rsquo;est voulu.
+Il n&rsquo;y a pas de raccourci pour apprendre Haskell.
+C&rsquo;est difficile.
+Mais je pense que c&rsquo;est une bonne chose.
+C&rsquo;est parce qu&rsquo;Haskell est difficile qu&rsquo;il est intéressant.</p>
 
-<p>La manière conventionnelle d’apprendre Haskell est de lire deux livres.
-En premier <a href="http://learnyouahaskell.com">“Learn You a Haskell”</a> 
-et ensuite <a href="http://www.realworldhaskell.org">“Real World Haskell”</a>.
-Je pense aussi que c’est la bonne manière de s’y prendre.
-Mais apprendre même un tout petit peu d’Haskell est presque impossible sans se plonger réellement dans ces livres.</p>
+<p>La manière conventionnelle d&rsquo;apprendre Haskell est de lire deux livres.
+En premier <a href="http://learnyouahaskell.com">&ldquo;Learn You a Haskell&rdquo;</a> 
+et ensuite <a href="http://www.realworldhaskell.org">&ldquo;Real World Haskell&rdquo;</a>.
+Je pense aussi que c&rsquo;est la bonne manière de s&rsquo;y prendre.
+Mais apprendre même un tout petit peu d&rsquo;Haskell est presque impossible sans se plonger réellement dans ces livres.</p>
 
-<p>Cet article fait un résumé très dense et rapide des aspect majeurs d’Haskell.
-J’y ai aussi rajouté des informations qui m’ont manqué pendant l’apprentissage de ce langage.</p>
+<p>Cet article fait un résumé très dense et rapide des aspect majeurs d&rsquo;Haskell.
+J&rsquo;y ai aussi rajouté des informations qui m&rsquo;ont manqué pendant l&rsquo;apprentissage de ce langage.</p>
 
 <p>Pour les francophones&nbsp;; je suis désolé. 
-Je n’ai pas eu le courage de tout retraduire en français.
-Sachez cependant que si vous êtes plusieurs à insister, je ferai certainement l’effort de traduire l’article en entier.
-Et si vous vous sentez d’avoir une bonne âme je ne suis pas contre un peu d’aide.
+Je n&rsquo;ai pas eu le courage de tout retraduire en français.
+Sachez cependant que si vous êtes plusieurs à insister, je ferai certainement l&rsquo;effort de traduire l&rsquo;article en entier.
+Et si vous vous sentez d&rsquo;avoir une bonne âme je ne suis pas contre un peu d&rsquo;aide.
 Les sources de cet article sont sur <a href="http://github.com/yogsototh/learn_haskell.git">gihub</a>.</p>
 
 <p>Cet article contient cinq parties&nbsp;:</p>
 
 <ul>
-  <li>Introduction&nbsp;: un exemple rapide pour montrer qu’Haskell peut être facile.</li>
-  <li>Les bases d’Haskell&nbsp;: La syntaxe et des notions essentielles</li>
+  <li>Introduction&nbsp;: un exemple rapide pour montrer qu&rsquo;Haskell peut être facile.</li>
+  <li>Les bases d&rsquo;Haskell&nbsp;: La syntaxe et des notions essentielles</li>
   <li>Partie difficile&nbsp;: 
     <ul>
       <li>Style fonctionnel&nbsp;: un exemple progressif, du style impératif au style fonctionnel&nbsp;;</li>
-      <li>Types&nbsp;: la syntaxe et un exemple d’arbre binaire&nbsp;;</li>
+      <li>Types&nbsp;: la syntaxe et un exemple d&rsquo;arbre binaire&nbsp;;</li>
       <li>Structure infinie&nbsp;: manipulons un arbre infini&nbsp;!</li>
     </ul>
   </li>
   <li>Partie de difficulté infernale&nbsp;:
     <ul>
       <li>Utiliser les IO&nbsp;: un exemple très minimal&nbsp;;</li>
-      <li>Le truc des IO révélé&nbsp;: les détails cachés d’IO qui m’ont manqués</li>
+      <li>Le truc des IO révélé&nbsp;: les détails cachés d&rsquo;IO qui m&rsquo;ont manqués</li>
       <li>Les monades&nbsp;: incroyable à quel point on peut généraliser</li>
     </ul>
   </li>
   <li>Appendice&nbsp;:
     <ul>
-      <li>Revenons sur les arbres infinis&nbsp;: une discussion plus mathématique sur la manipulation d’arbres infinis.</li>
+      <li>Revenons sur les arbres infinis&nbsp;: une discussion plus mathématique sur la manipulation d&rsquo;arbres infinis.</li>
     </ul>
   </li>
 </ul>
 
 <blockquote>
   <p>Note: Chaque fois que vous voyez un séparateur avec un nom de fichier se terminant par <code>lhs</code>, vous pouvez cliquer sur le nom de fichier et télécharger le fichier. 
-Si vous sauvegardez le fichier sour le nom <code>filename.lhs</code>, vous pouvez l’exécuter avec&nbsp;:</p>
+Si vous sauvegardez le fichier sour le nom <code>filename.lhs</code>, vous pouvez l&rsquo;exécuter avec&nbsp;:</p>
   <pre>
 runhaskell filename.lhs
 </pre>
@@ -265,11 +265,11 @@ Vous devriez voir un lien juste en dessous.</p>
 
 <p><img alt="The Scream" src="/Scratch/img/blog/Haskell-the-Hard-Way/munch_TheScream.jpg" /></p>
 
-<p>Many book/articles about Haskell start by introducing some esoteric formula (quick sort, Fibonacci, etc…).
+<p>Many book/articles about Haskell start by introducing some esoteric formula (quick sort, Fibonacci, etc&hellip;).
 I will do the exact opposite.
-At first I won’t show you any Haskell super power.
+At first I won&rsquo;t show you any Haskell super power.
 I will start with similarities between Haskell and other programming languages.
-Let’s jump to the mandatory “Hello World”.</p>
+Let&rsquo;s jump to the mandatory &ldquo;Hello World&rdquo;.</p>
 
 <div class="codehighlight">
 
@@ -298,7 +298,7 @@ Hello World!
 <hr />
 <p><a href="code/01_basic/10_Introduction/10_hello_you.lhs" class="cut">01_basic/10_Introduction/<strong>10_hello_you.lhs</strong></a></p>
 
-<p>Now, a program asking your name and replying “Hello” using the name you entered:</p>
+<p>Now, a program asking your name and replying &ldquo;Hello&rdquo; using the name you entered:</p>
 
 <div class="codehighlight">
 
@@ -360,7 +360,7 @@ This means, <code>main</code> will cause side effects.</p>
 <p><em>Functional</em></p>
 
 <p>Haskell is a functional language.
-If you have an imperative language background, you’ll have to learn a lot of new things.
+If you have an imperative language background, you&rsquo;ll have to learn a lot of new things.
 Hopefully many of these new concepts will help you to program even in imperative languages.</p>
 
 <p><em>Smart Static Typing</em></p>
@@ -369,8 +369,8 @@ Hopefully many of these new concepts will help you to program even in imperative
 
 <p><em>Purity</em></p>
 
-<p>Generally your functions won’t modify anything in the outside world.
-This means, it can’t modify the value of a variable, can’t get user input, can’t write on the screen, can’t launch a missile.
+<p>Generally your functions won&rsquo;t modify anything in the outside world.
+This means, it can&rsquo;t modify the value of a variable, can&rsquo;t get user input, can&rsquo;t write on the screen, can&rsquo;t launch a missile.
 On the other hand, parallelism will be very easy to achieve.
 Haskell makes it clear where effects occur and where you are pure.
 Also, it will be far easier to reason about your program.
@@ -391,7 +391,7 @@ In consequence, it provides a very elegant way to manipulate infinite structures
 <p>A last warning on how you should read Haskell code.
 For me, it is like reading scientific papers.
 Some parts are very clear, but when you see a formula, just focus and read slower.
-Also, while learning Haskell, it <em>really</em> doesn’t matter much if you don’t understand syntax details.
+Also, while learning Haskell, it <em>really</em> doesn&rsquo;t matter much if you don&rsquo;t understand syntax details.
 If you meet a <code>&gt;&gt;=</code>, <code>&lt;$&gt;</code>, <code>&lt;-</code> or any other weird symbol, just ignore them and follows the flow of the code.</p>
 
 <h4 id="function-declaration">Function declaration</h4>
@@ -438,7 +438,7 @@ end
 
 <p>Very clean. No parenthesis, no <code>def</code>.</p>
 
-<p>Don’t forget, Haskell uses functions and types a lot.
+<p>Don&rsquo;t forget, Haskell uses functions and types a lot.
 It is thus very easy to define them.
 The syntax was particularly well thought for these objects.</p>
 
@@ -448,7 +448,7 @@ The syntax was particularly well thought for these objects.</p>
 This is not mandatory.
 The compiler is smart enough to discover it for you.</p>
 
-<p>Let’s play a little.</p>
+<p>Let&rsquo;s play a little.</p>
 
 <div class="codehighlight">
 
@@ -495,7 +495,7 @@ main = print (f 2.3 4.2)
     In the expression: print (f 2.3 4.2)
 </code></pre>
 
-<p>The problem: <code>4.2</code> isn’t an Int.</p>
+<p>The problem: <code>4.2</code> isn&rsquo;t an Int.</p>
 
 <p><a href="code/01_basic/10_Introduction/21_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>21_very_basic.lhs</strong> </a></p>
 
@@ -503,7 +503,7 @@ main = print (f 2.3 4.2)
 <p><a href="code/01_basic/10_Introduction/22_very_basic.lhs" class="cut">01_basic/10_Introduction/<strong>22_very_basic.lhs</strong></a></p>
 
 <p>The solution, 
-don’t declare the type for <code>f</code>.
+don&rsquo;t declare the type for <code>f</code>.
 Haskell will infer the most general type for us:</p>
 
 <div class="codehighlight">
@@ -517,8 +517,8 @@ main = print (f 2.3 4.2)
 
 </div>
 <p>It works! 
-Great, we don’t have to declare a new function for every single type.
-For example, in <code>C</code>, you’ll have to declare a function for <code>int</code>, for <code>float</code>, for <code>long</code>, for <code>double</code>, etc…</p>
+Great, we don&rsquo;t have to declare a new function for every single type.
+For example, in <code>C</code>, you&rsquo;ll have to declare a function for <code>int</code>, for <code>float</code>, for <code>long</code>, for <code>double</code>, etc&hellip;</p>
 
 <p>But, what type should we declare?
 To discover the type Haskell has found for us, just launch ghci:</p>
@@ -540,13 +540,13 @@ Prelude&gt;</code></span> let f x y = x*x + y*y
 <pre><code>Num a =&gt; a -&gt; a -&gt; a
 </code></pre>
 
-<p>First, let’s focus on the right part <code>a -&gt; a -&gt; a</code>.
+<p>First, let&rsquo;s focus on the right part <code>a -&gt; a -&gt; a</code>.
 To understand it, just look at a list of progressive examples: </p>
 
 <table>
   <tbody>
     <tr>
-      <td>The written type</td>
+      <td>The&nbsp;written&nbsp;type</td>
       <td>Its meaning</td>
     </tr>
     <tr>
@@ -579,13 +579,13 @@ To understand it, just look at a list of progressive examples: </p>
 <p>In the type <code>a -&gt; a -&gt; a</code>, the letter <code>a</code> is a <em>type variable</em>. 
 It means <code>f</code> is a function with two arguments and both arguments and the result have the same type.
 The type variable <code>a</code> could take many different type value.
-For example <code>Int</code>, <code>Integer</code>, <code>Float</code>…</p>
+For example <code>Int</code>, <code>Integer</code>, <code>Float</code>&hellip;</p>
 
-<p>So instead of having a forced type like in <code>C</code> with declaring the function for <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, etc… 
+<p>So instead of having a forced type like in <code>C</code> with declaring the function for <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, etc&hellip; 
 We declare only one function like in a dynamically typed language.</p>
 
 <p>Generally <code>a</code> can be any type. 
-For example a <code>String</code>, an <code>Int</code>, but also more complex types, like <code>Trees</code>, other functions, etc…
+For example a <code>String</code>, an <code>Int</code>, but also more complex types, like <code>Trees</code>, other functions, etc&hellip;
 But here our type is prefixed with <code>Num a =&gt; </code>. </p>
 
 <p><code>Num</code> is a <em>type class</em>.
@@ -763,7 +763,7 @@ Data.Ratio&gt; (11 % 15) * (5 % 3)
 
 <blockquote>
   <p><em>Remark</em>:
-In real code you shouldn’t use list of char to represent text.
+In real code you shouldn&rsquo;t use list of char to represent text.
 You should mostly use <code>Data.Text</code> instead.
 If you want to represent stream of ASCII char, you should use <code>Data.ByteString</code>.</p>
 </blockquote>
@@ -819,7 +819,7 @@ f :: a -&gt; b -&gt; c    ⇔ f is a function from a to (b→c)
 f :: (a -&gt; b) -&gt; c  ⇔ f is a function from (a→b) to c
 </code></pre>
 
-<p>Defining the type of a function before its declaration isn’t mandatory.
+<p>Defining the type of a function before its declaration isn&rsquo;t mandatory.
 Haskell infers the most general type for you.
 But it is considered a good practice to do so.</p>
 
@@ -849,7 +849,7 @@ square'' x = (^2) x
 
 </div>
 <p>We can remove <code>x</code> in the left and right side!
-It’s called η-reduction.</p>
+It&rsquo;s called η-reduction.</p>
 
 <div class="codehighlight">
 
@@ -934,7 +934,7 @@ We will select a problem and solve it using a standard imperative way.
 Then I will make the code evolve.
 The end result will be both more elegant and easier to adapt. </p>
 
-<p>Let’s solve the following problem:</p>
+<p>Let&rsquo;s solve the following problem:</p>
 
 <blockquote>
   <p>Given a list of integers, return the sum of the even numbers in the list.</p>
@@ -944,7 +944,7 @@ The end result will be both more elegant and easier to adapt. </p>
 </blockquote>
 
 <p>To show differences between the functional and imperative approach,
-I’ll start by providing an imperative solution (in Javascript):</p>
+I&rsquo;ll start by providing an imperative solution (in Javascript):</p>
 
 <pre><code class="javascript">function evenSum(list) {
     var result = 0;
@@ -957,7 +957,7 @@ I’ll start by providing an imperative solution (in Javascript):</p>
 }
 </code></pre>
 
-<p>But, in Haskell we don’t have variables, nor for loop.
+<p>But, in Haskell we don&rsquo;t have variables, nor for loop.
 One solution to achieve the same result without loops is to use recursion.</p>
 
 <blockquote>
@@ -1110,7 +1110,7 @@ First, we can generalize the type.</p>
 <p><a href="code/02_Hard_Part/12_Functions.lhs" class="cut">02_Hard_Part/<strong>12_Functions.lhs</strong></a></p>
 
 <p>Next, we can use sub functions using <code>where</code> or <code>let</code>.
-This way our <code>accumSum</code> function won’t pollute the global namespace.</p>
+This way our <code>accumSum</code> function won&rsquo;t pollute the global namespace.</p>
 
 <div class="codehighlight">
 
@@ -1275,7 +1275,7 @@ map :: (a -&gt; b) -&gt; [a] -&gt; [b]
 foldl :: (a -&gt; b -&gt; a) -&gt; a -&gt; [b] -&gt; a
 </code></pre>
 
-<p>Let’s proceed by small steps.</p>
+<p>Let&rsquo;s proceed by small steps.</p>
 
 <pre><code class="haskell">-- Version 5
 evenSum l = mysum 0 (filter even l)
@@ -1318,11 +1318,11 @@ foldl f z (x:xs) = foldl f (f z x) xs
 ⇔  f (... (f (f z x1) x2) ...) xn
 </code></pre>
 
-<p>But as Haskell is lazy, it doesn’t evaluate <code>(f z x)</code> and pushes it to the stack.
+<p>But as Haskell is lazy, it doesn&rsquo;t evaluate <code>(f z x)</code> and pushes it to the stack.
 This is why we generally use <code>foldl'</code> instead of <code>foldl</code>;
 <code>foldl'</code> is a <em>strict</em> version of <code>foldl</code>.
-If you don’t understand what lazy and strict means,
-don’t worry, just follow the code as if <code>foldl</code> and <code>foldl'</code> where identical.</p>
+If you don&rsquo;t understand what lazy and strict means,
+don&rsquo;t worry, just follow the code as if <code>foldl</code> and <code>foldl'</code> where identical.</p>
 
 <p>Now our new version of <code>evenSum</code> becomes:</p>
 
@@ -1335,7 +1335,7 @@ evenSum l = foldl' mysum 0 (filter even l)
 </code></pre>
 
 <p>Version we can simplify by using directly a lambda notation.
-This way we don’t have to create the temporary name <code>mysum</code>.</p>
+This way we don&rsquo;t have to create the temporary name <code>mysum</code>.</p>
 
 <div class="codehighlight">
 
@@ -1379,10 +1379,10 @@ evenSum :: Integral a =&gt; [a] -&gt; a
 evenSum l = foldl' (+) 0 (filter even l)
 </code></pre>
 
-<p><code>foldl'</code> isn’t the easiest function to intuit.
+<p><code>foldl'</code> isn&rsquo;t the easiest function to intuit.
 If you are not used to it, you should study it a bit.</p>
 
-<p>To help you understand what’s going on here, a step by step evaluation:</p>
+<p>To help you understand what&rsquo;s going on here, a step by step evaluation:</p>
 
 <pre>
   <span class="yellow">evenSum [1,2,3,4]</span>
@@ -1448,14 +1448,14 @@ squareEvenSum'' = sum' . (map (^2)) . (filter even)
 
 
 </div>
-<p>We just had to add another “transformation function”<sup id="fnref:0216"><a href="#fn:0216" rel="footnote">4</a></sup>.</p>
+<p>We just had to add another &ldquo;transformation function&rdquo;<sup id="fnref:0216"><a href="#fn:0216" rel="footnote">4</a></sup>.</p>
 
 <pre><code>map (^2) [1,2,3,4] ⇔ [1,4,9,16]
 </code></pre>
 
 <p>The <code>map</code> function simply apply a function to all element of a list.</p>
 
-<p>We didn’t had to modify anything <em>inside</em> the function definition.
+<p>We didn&rsquo;t had to modify anything <em>inside</em> the function definition.
 It feels more modular.
 But in addition you can think more mathematically about your function.
 You can then use your function as any other one.
@@ -1469,8 +1469,8 @@ If you want to know how, I suggest you to read this quite fun article: <a href="
 1/db-utwente-40501F46.pdf">Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire by Meijer, Fokkinga and Paterson</a>.</p>
 
 <p>This example should show you how great pure functional programming is.
-Unfortunately, using pure functional programming isn’t well suited to all usages.
-Or at least such a language hasn’t been found yet.</p>
+Unfortunately, using pure functional programming isn&rsquo;t well suited to all usages.
+Or at least such a language hasn&rsquo;t been found yet.</p>
 
 <p>One of the great powers of Haskell is the ability to create DSLs
 (Domain Specific Language)
@@ -1506,7 +1506,7 @@ essential aspect of Haskell: <em>Types</em>.</p>
   <p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span></p>
 
   <ul>
-    <li><code>type Name = AnotherType</code> is just an alias and the compiler doesn’t do any difference between <code>Name</code> and <code>AnotherType</code>.</li>
+    <li><code>type Name = AnotherType</code> is just an alias and the compiler doesn&rsquo;t do any difference between <code>Name</code> and <code>AnotherType</code>.</li>
     <li><code>data Name = NameConstructor AnotherType</code> make a difference.</li>
     <li><code>data</code> can construct structures which can be recursives.</li>
     <li><code>deriving</code> is magic and create functions for you.</li>
@@ -1524,7 +1524,7 @@ It will be easy to detect where you used the wrong parameter at the wrong place 
 
 <p>Static typing is generally essential to reach fast execution time.
 But most statically typed languages are bad at generalizing concepts.
-Haskell’s saving grace is that it can <em>infer</em> types.</p>
+Haskell&rsquo;s saving grace is that it can <em>infer</em> types.</p>
 
 <p>Here is a simple example. 
 The <code>square</code> function in Haskell:</p>
@@ -1611,7 +1611,7 @@ But unlike dynamically typed languages, most errors are caught before the execut
 Generally, in Haskell:</p>
 
 <blockquote>
-  <p>“if it compiles it certainly does what you intended” </p>
+  <p>&ldquo;if it compiles it certainly does what you intended&rdquo; </p>
 </blockquote>
 
 <hr />
@@ -1645,7 +1645,7 @@ main = putStrLn $ showInfos name color
 <hr />
 <p><a href="code/02_Hard_Part/22_Types.lhs" class="cut">02_Hard_Part/<strong>22_Types.lhs</strong></a></p>
 
-<p>But it doesn’t protect you much.
+<p>But it doesn&rsquo;t protect you much.
 Try to swap the two parameter of <code>showInfos</code> and run the program:</p>
 
 <pre><code class="haskell">    putStrLn $ showInfos color name
@@ -1754,7 +1754,7 @@ data List a = Nil | a ::: (List a)
 
 </div>
 <p>When you add <code>deriving (Show)</code> to your data declaration, Haskell create a <code>show</code> function for you.
-We’ll see soon how you can use your own <code>show</code> function.</p>
+We&rsquo;ll see soon how you can use your own <code>show</code> function.</p>
 
 <div class="codehighlight">
 
@@ -1790,7 +1790,7 @@ convertList (x:xs) = x ::: convertList xs
 
 <p><img alt="Magritte, l'Arbre" src="/Scratch/img/blog/Haskell-the-Hard-Way/magritte-l-arbre.jpg" /></p>
 
-<p>We’ll just give another standard example: binary trees.</p>
+<p>We&rsquo;ll just give another standard example: binary trees.</p>
 
 <div class="codehighlight">
 
@@ -1851,7 +1851,7 @@ In plain English: </p>
 <hr />
 <p><a href="code/02_Hard_Part/31_Trees.lhs" class="cut">02_Hard_Part/<strong>31_Trees.lhs</strong></a></p>
 
-<p>Just for fun, let’s code a better display for our trees.
+<p>Just for fun, let&rsquo;s code a better display for our trees.
 I simply had fun making a nice function to display trees in a general way.
 You can safely skip this part if you find it too difficult to follow.</p>
 
@@ -1870,7 +1870,7 @@ We will be able to test equality and compare trees.</p>
 
 
 </div>
-<p>Without the <code>deriving (Show)</code>, Haskell doesn’t create a <code>show</code> method for us.
+<p>Without the <code>deriving (Show)</code>, Haskell doesn&rsquo;t create a <code>show</code> method for us.
 We will create our own version of <code>show</code>.
 To achieve this, we must declare that our newly created type <code>BinTree a</code> 
 is an instance of the type class <code>Show</code>.
@@ -1881,7 +1881,7 @@ The general syntax is:</p>
 </code></pre>
 
 <p>Here is my version of how to show a binary tree.
-Don’t worry about the apparent complexity.
+Don&rsquo;t worry about the apparent complexity.
 I made a lot of improvements in order to display even stranger objects.</p>
 
 <div class="codehighlight">
@@ -2075,7 +2075,7 @@ make tree of trees!</p>
 :    :       :    `--'S'
 </code></pre>
 
-<p>Notice how duplicate trees aren’t inserted;
+<p>Notice how duplicate trees aren&rsquo;t inserted;
 there is only one tree corresponding to <code>"I","HEARD"</code>.
 We have this for (almost) free, because we have declared Tree to be an instance of <code>Eq</code>.</p>
 
@@ -2207,7 +2207,7 @@ instance (Show a) =&gt; Show (BinTree a) where
 </div>
 </div>
 
-<p>Suppose we don’t mind having an ordered binary tree.
+<p>Suppose we don&rsquo;t mind having an ordered binary tree.
 Here is an infinite binary tree:</p>
 
 <div class="codehighlight">
@@ -2262,7 +2262,7 @@ treeTakeDepth n (Node x left right) = let
 </code></pre>
 
 <p>Just to heat up your neurones a bit more,
-let’s make a slightly more interesting tree:</p>
+let&rsquo;s make a slightly more interesting tree:</p>
 
 <div class="codehighlight">
 
@@ -2292,7 +2292,7 @@ treeMap f (Node x left right) = Node (f x)
 
 
 </div>
-<p><em>Hint</em>: I won’t talk more about this here. 
+<p><em>Hint</em>: I won&rsquo;t talk more about this here. 
 If you are interested by the generalization of <code>map</code> to other data structures,
 search for functor and <code>fmap</code>.</p>
 
@@ -2353,7 +2353,7 @@ Now, some of the really hardcore stuff can start.</p>
 
 <p>If you are like me, you should get the functional style.
 You should also understand a bit more the advantages of laziness by default.
-But you also don’t really understand where to start in order to make a real
+But you also don&rsquo;t really understand where to start in order to make a real
 program.
 And in particular:</p>
 
@@ -2404,9 +2404,9 @@ To use pure functions you could do <code>action2 (purefunction x)</code> for exa
 </blockquote>
 
 <p>In this section, I will explain how to use IO, not how it works.
-You’ll see how Haskell separates the pure from the impure parts of the program.</p>
+You&rsquo;ll see how Haskell separates the pure from the impure parts of the program.</p>
 
-<p>Don’t stop because you’re trying to understand the details of the syntax.
+<p>Don&rsquo;t stop because you&rsquo;re trying to understand the details of the syntax.
 Answers will come in the next section.</p>
 
 <p>What to achieve?</p>
@@ -2431,7 +2431,7 @@ main = do
 
 </div>
 <p>It should be straightforward to understand the behavior of this program.
-Let’s analyze the types in more detail.</p>
+Let&rsquo;s analyze the types in more detail.</p>
 
 <pre><code>putStrLn :: String -&gt; IO ()
 getLine  :: IO String
@@ -2477,9 +2477,9 @@ The meaning of this sentence should be clearer by the end of the next section.</
 <hr />
 <p><a href="code/03_Hell/01_IO/02_progressive_io_example.lhs" class="cut">03_Hell/01_IO/<strong>02_progressive_io_example.lhs</strong></a></p>
 
-<p>Now let’s see how this program behaves.
+<p>Now let&rsquo;s see how this program behaves.
 For example, what occur if the user enter something strange?
-Let’s try:</p>
+Let&rsquo;s try:</p>
 
 <pre><code>    % runghc 02_progressive_io_example.lhs
     Enter a list of numbers (separated by comma):
@@ -2515,7 +2515,7 @@ The <code>maybeRead</code> function is a great example of this.
 This is a function similar to the function <code>read</code><sup id="fnref:1"><a href="#fn:1" rel="footnote">5</a></sup>,
 but if something goes wrong the returned value is <code>Nothing</code>.
 If the value is right, it returns <code>Just &lt;the value&gt;</code>.
-Don’t try to understand too much of this function. 
+Don&rsquo;t try to understand too much of this function. 
 I use a lower level function than <code>read</code>; <code>reads</code>.</p>
 
 <div class="codehighlight">
@@ -2531,7 +2531,7 @@ maybeRead s = case reads s of
 </div>
 <p>Now to be a bit more readable, we define a function which goes like this:
 If the string has the wrong format, it will return <code>Nothing</code>.
-Otherwise, for example for “1,2,3”, it will return <code>Just [1,2,3]</code>.</p>
+Otherwise, for example for &ldquo;1,2,3&rdquo;, it will return <code>Just [1,2,3]</code>.</p>
 
 <div class="codehighlight">
 
@@ -2561,9 +2561,9 @@ main = do
 </div>
 <p>In case of error, we display a nice error message.</p>
 
-<p>Note that the type of each expression in the main’s do block remains of the form <code>IO a</code>.
+<p>Note that the type of each expression in the main&rsquo;s do block remains of the form <code>IO a</code>.
 The only strange construction is <code>error</code>. 
-I’ll say <code>error msg</code> will simply take the needed type (here <code>IO ()</code>).</p>
+I&rsquo;ll say <code>error msg</code> will simply take the needed type (here <code>IO ()</code>).</p>
 
 <p>One very important thing to note is the type of all the functions defined so far.
 There is only one function which contains <code>IO</code> in its type: <code>main</code>. 
@@ -2633,7 +2633,7 @@ Some people might explain while waving their hands: </p>
   <p>«This is an <code>[Integer]</code> inside an <code>IO</code>»</p>
 </blockquote>
 
-<p>If you want to understand the details behind all of this, you’ll have to read the next section.
+<p>If you want to understand the details behind all of this, you&rsquo;ll have to read the next section.
 But sincerely, if you just want to <em>use</em> IO.
 Just practice a little and remember to think about the type.</p>
 
@@ -2656,7 +2656,7 @@ This was quite fast. Here are the main things to remember:</p>
 <ul>
   <li>in the <code>do</code> bloc, each expression must have the type <code>IO a</code>.
 You are then limited in the number of expressions available.
-For example, <code>getLine</code>, <code>print</code>, <code>putStrLn</code>, etc…</li>
+For example, <code>getLine</code>, <code>print</code>, <code>putStrLn</code>, etc&hellip;</li>
   <li>Try to externalize the pure functions as much as possible.</li>
   <li>the <code>IO a</code> type means: an IO <em>action</em> which returns an element of type <code>a</code>.
 <code>IO</code> represents actions; under the hood, <code>IO a</code> is the type of a function.
@@ -2703,7 +2703,7 @@ But look at a typical main function:</p>
 which must be passed on to the next action.</p>
 
   <p>We create a function <code>bind</code> or <code>(&gt;&gt;=)</code>. 
-With <code>bind</code> we don’t need temporary names anymore.</p>
+With <code>bind</code> we don&rsquo;t need temporary names anymore.</p>
 
   <pre><code>main =
   action1 &gt;&gt;= action2 &gt;&gt;= action3 &gt;&gt;= action4
@@ -2722,7 +2722,7 @@ With <code>bind</code> we don’t need temporary names anymore.</p>
 <p>Why did we use this strange syntax, and what exactly is this <code>IO</code> type?
 It looks a bit like magic.</p>
 
-<p>For now let’s just forget all about the pure parts of our program, and focus
+<p>For now let&rsquo;s just forget all about the pure parts of our program, and focus
 on the impure parts:</p>
 
 <pre><code class="haskell">askUser :: IO [Integer]
@@ -2762,7 +2762,7 @@ Its type is then something like:</p>
 
 <p>Not all functions may have access to this variable.
 Those which have access to this variable are impure.
-Functions to which the world variable isn’t provided are pure<sup id="fnref:032001"><a href="#fn:032001" rel="footnote">6</a></sup>.</p>
+Functions to which the world variable isn&rsquo;t provided are pure<sup id="fnref:032001"><a href="#fn:032001" rel="footnote">6</a></sup>.</p>
 
 <p>Haskell considers the state of the world as an input variable to <code>main</code>.
 But the real type of main is closer to this one<sup id="fnref:032002"><a href="#fn:032002" rel="footnote">7</a></sup>:</p>
@@ -2773,7 +2773,7 @@ But the real type of main is closer to this one<sup id="fnref:032002"><a href="#
 <p>The <code>()</code> type is the null type.
 Nothing to see here.</p>
 
-<p>Now let’s rewrite our main function with this in mind:</p>
+<p>Now let&rsquo;s rewrite our main function with this in mind:</p>
 
 <pre><code class="haskell">main w0 =
     let (list,w1) = askUser w0 in
@@ -2815,7 +2815,7 @@ Under the hood, <code>print</code> will evaluate as:</p>
 </ul>
 
 <p>Now, if you look at the style of the main function, it is clearly awkward.
-Let’s try to do the same to the askUser function:</p>
+Let&rsquo;s try to do the same to the askUser function:</p>
 
 <pre><code class="haskell">askUser :: World -&gt; ([Integer],World)
 </code></pre>
@@ -2856,7 +2856,7 @@ Each line is of the form:</p>
 <pre><code class="haskell">let (y,w') = action x w in
 </code></pre>
 
-<p>Even if for some line the first <code>x</code> argument isn’t needed.
+<p>Even if for some line the first <code>x</code> argument isn&rsquo;t needed.
 The output type is a couple, <code>(answer, newWorldValue)</code>.
 Each function <code>f</code> must have a type similar to:</p>
 
@@ -2901,9 +2901,9 @@ let (y,w2) = action2 w1 in
 <p><img alt="Jocker pencil trick" src="/Scratch/img/blog/Haskell-the-Hard-Way/jocker_pencil_trick.jpg" class=" left" /></p>
 
 <p>Now, we will do a magic trick.
-We will make the temporary world symbol “disappear”.
+We will make the temporary world symbol &ldquo;disappear&rdquo;.
 We will <code>bind</code> the two lines. 
-Let’s define the <code>bind</code> function.
+Let&rsquo;s define the <code>bind</code> function.
 Its type is quite intimidating at first:</p>
 
 <pre><code class="haskell">bind :: (World -&gt; (a,World)) 
@@ -2912,7 +2912,7 @@ Its type is quite intimidating at first:</p>
 </code></pre>
 
 <p>But remember that <code>(World -&gt; (a,World))</code> is the type for an IO action.
-Now let’s rename it for clarity:</p>
+Now let&rsquo;s rename it for clarity:</p>
 
 <pre><code class="haskell">type IO a = World -&gt; (a, World)
 </code></pre>
@@ -2925,14 +2925,14 @@ print :: Show a =&gt; a -&gt; IO ()
 
 <p><code>getLine</code> is an IO action which takes a world as parameter and returns a couple <code>(String,World)</code>.
 Which can be summarized as: <code>getLine</code> is of type <code>IO String</code>.
-Which we also see as, an IO action which will return a String “embeded inside an IO”.</p>
+Which we also see as, an IO action which will return a String &ldquo;embeded inside an IO&rdquo;.</p>
 
 <p>The function <code>print</code> is also interesting.
 It takes one argument which can be shown.
 In fact it takes two arguments.
 The first is the value to print and the other is the state of world.
 It then returns a couple of type <code>((),World)</code>.
-This means it changes the state of the world, but doesn’t yield anymore data.</p>
+This means it changes the state of the world, but doesn&rsquo;t yield anymore data.</p>
 
 <p>This type helps us simplify the type of <code>bind</code>:</p>
 
@@ -2957,7 +2957,7 @@ action2  :: a -&gt; IO b
 (y,w2)   :: IO b
 </code></pre>
 
-<p>Doesn’t it seem familiar?</p>
+<p>Doesn&rsquo;t it seem familiar?</p>
 
 <pre><code class="haskell">(bind action1 action2) w0 =
     let (x, w1) = action1 w0
@@ -2965,7 +2965,7 @@ action2  :: a -&gt; IO b
     in  (y, w2)
 </code></pre>
 
-<p>The idea is to hide the World argument with this function. Let’s go:
+<p>The idea is to hide the World argument with this function. Let&rsquo;s go:
 As an example imagine if we wanted to simulate:</p>
 
 <pre><code class="haskell">let (line1,w1) = getLine w0 in
@@ -2979,7 +2979,7 @@ let ((),w2) = print line1 in
 </code></pre>
 
 <p>As print is of type (World &rarr; ((),World)), we know res = () (null type).
-If you didn’t see what was magic here, let’s try with three lines this time.</p>
+If you didn&rsquo;t see what was magic here, let&rsquo;s try with three lines this time.</p>
 
 <pre><code class="haskell">let (line1,w1) = getLine w0 in
 let (line2,w2) = getLine w1 in
@@ -2994,12 +2994,12 @@ let ((),w3) = print (line1 ++ line2) in
                print (line1 ++ line2)))
 </code></pre>
 
-<p>Didn’t you notice something?
+<p>Didn&rsquo;t you notice something?
 Yes, no temporary World variables are used anywhere!
 This is <em>MA</em>. <em>GIC</em>.</p>
 
 <p>We can use a better notation.
-Let’s use <code>(&gt;&gt;=)</code> instead of <code>bind</code>. 
+Let&rsquo;s use <code>(&gt;&gt;=)</code> instead of <code>bind</code>. 
 <code>(&gt;&gt;=)</code> is an infix function like
 <code>(+)</code>; reminder <code>3 + 4 ⇔ (+) 3 4</code></p>
 
@@ -3036,8 +3036,8 @@ blindBind action1 action2 w0 =
     bind action (\_ -&gt; action2) w0
 </code></pre>
 
-<p>I didn’t simplify this definition for clarity purpose.
-Of course we can use a better notation, we’ll use the <code>(&gt;&gt;)</code> operator.</p>
+<p>I didn&rsquo;t simplify this definition for clarity purpose.
+Of course we can use a better notation, we&rsquo;ll use the <code>(&gt;&gt;)</code> operator.</p>
 
 <p>And</p>
 
@@ -3060,14 +3060,14 @@ action3
 putInIO x = IO (\w -&gt; (x,w))
 </code></pre>
 
-<p>This is the general way to put pure values inside the “IO context”.
+<p>This is the general way to put pure values inside the &ldquo;IO context&rdquo;.
 The general name for <code>putInIO</code> is <code>return</code>.
 This is quite a bad name when you learn Haskell. <code>return</code> is very different from what you might be used to. </p>
 
 <hr />
 <p><a href="code/03_Hell/01_IO/21_Detailled_IO.lhs" class="cut">03_Hell/01_IO/<strong>21_Detailled_IO.lhs</strong></a></p>
 
-<p>To finish, let’s translate our example:</p>
+<p>To finish, let&rsquo;s translate our example:</p>
 
 <pre><code class="haskell">
 askUser :: IO [Integer]
@@ -3170,7 +3170,7 @@ A better word should have been <code>typeclass</code>.
 That means a set of types.
 For a type to belong to a class, all functions of the class must be provided for this type.</li>
     <li>In this particular example of type class, the type <code>m</code> must be a type that takes an argument. 
-for example <code>IO a</code>, but also <code>Maybe a</code>, <code>[a]</code>, etc…</li>
+for example <code>IO a</code>, but also <code>Maybe a</code>, <code>[a]</code>, etc&hellip;</li>
     <li>
       <p>To be a useful monad, your function must obey some rules.
 If your construction does not obey these rules strange things might happens:</p>
@@ -3235,7 +3235,7 @@ main = do
 <hr />
 <p><a href="code/03_Hell/02_Monads/11_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>11_Monads.lhs</strong></a></p>
 
-<p>Now, let’s make it better using Maybe and the fact that it is a Monad</p>
+<p>Now, let&rsquo;s make it better using Maybe and the fact that it is a Monad</p>
 
 <div class="codehighlight">
 
@@ -3308,7 +3308,7 @@ In fact, this is the kind of construction we make naturally.</p>
 
   <p>The first element in the sequence being evaluated to <code>Nothing</code> will stop
 the complete evaluation. 
-This means you don’t execute all lines.
+This means you don&rsquo;t execute all lines.
 You have this for free, thanks to laziness.</p>
 </blockquote>
 
@@ -3367,7 +3367,7 @@ main = do
 
 
 </div>
-<p>I won’t list all the monads, but there are many monads.
+<p>I won&rsquo;t list all the monads, but there are many monads.
 Using monads simplifies the manipulation of several notions in pure languages.
 In particular, monad are very useful for: </p>
 
@@ -3377,10 +3377,10 @@ In particular, monad are very useful for: </p>
   <li>generating pseudo random numbers, </li>
   <li>keeping configuration state, </li>
   <li>writing state,</li>
-  <li>…</li>
+  <li>&hellip;</li>
 </ul>
 
-<p>If you have followed me until here, then you’ve done it! 
+<p>If you have followed me until here, then you&rsquo;ve done it! 
 You know monads<sup id="fnref:03021301"><a href="#fn:03021301" rel="footnote">8</a></sup>!</p>
 
 <p>and to understand when you can use them and create your own. But you already
@@ -3408,7 +3408,7 @@ Unfortunately we removed two properties from our tree:</p>
 </ol>
 
 <p>In this section we will try to keep the first property.
-Concerning the second one, we must relax it but we’ll discuss how to
+Concerning the second one, we must relax it but we&rsquo;ll discuss how to
 keep it as much as possible.</p>
 
 <div style="display:none">
@@ -3662,11 +3662,11 @@ To resolve this we make a slightly better <code>shuffle</code> function.</p>
 
 </div>
 <p>This shuffle function has the property (hopefully) not to have an upper nor lower bound.
-But having a better shuffle list isn’t enough not to enter an infinite loop.</p>
+But having a better shuffle list isn&rsquo;t enough not to enter an infinite loop.</p>
 
 <p>Generally, we cannot decide whether <code>filter (&lt;x) xs</code> is empty.
-Then to resolve this problem, I’ll authorize some error in the creation of our binary tree.
-This new version of code can create binary tree which don’t have the following property for some of its nodes: </p>
+Then to resolve this problem, I&rsquo;ll authorize some error in the creation of our binary tree.
+This new version of code can create binary tree which don&rsquo;t have the following property for some of its nodes: </p>
 
 <blockquote>
   <p>Any element of the left (resp. right) branch must all be strictly inferior (resp. superior) to the label of the root.</p>
@@ -3690,7 +3690,7 @@ treeFromList (x:xs) = Node x left right
 
 
 </div>
-<p>This new function <code>safefilter</code> is almost equivalent to <code>filter</code> but don’t enter infinite loop if the result is a finite list.
+<p>This new function <code>safefilter</code> is almost equivalent to <code>filter</code> but don&rsquo;t enter infinite loop if the result is a finite list.
 If it cannot find an element for which the test is true after 10000 consecutive steps, then it considers to be the end of the search.</p>
 
 <div class="codehighlight">
@@ -3744,15 +3744,15 @@ safefilter' f l = if filter f (take 10000 l) == []
                   then []
                   else filter f l
 </pre>
-    <p>Explain why it doesn’t work and can enter into an infinite loop.</p>
+    <p>Explain why it doesn&rsquo;t work and can enter into an infinite loop.</p>
   </li>
   <li>Suppose that <code>shuffle</code> is real random list with growing bounds.
-If you study a bit this structure, you’ll discover that with probability 1,
+If you study a bit this structure, you&rsquo;ll discover that with probability 1,
 this structure is finite.
 Using the following code 
 (suppose we could use <code>safefilter'</code> directly as if was not in the where of safefilter)
 find a definition of <code>f</code> such that with probability <code>1</code>, 
-treeFromList’ shuffle is infinite. And prove it.
+treeFromList&rsquo; shuffle is infinite. And prove it.
 Disclaimer, this is only a conjecture.</li>
 </ul>
 
@@ -3781,7 +3781,7 @@ Thank you man.</p>
       <p>Même si tous les langages récents essayent de les cacher, ils restent présents.<a href="#fnref:0001" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>I know I’m cheating. But I will talk about non-strict later.<a href="#fnref:2" rel="reference">&#8617;</a></p>
+      <p>I know I&rsquo;m cheating. But I will talk about non-strict later.<a href="#fnref:2" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:021301">
       <p>For the brave, a more complete explanation of pattern matching can be found <a href="http://www.cs.auckland.ac.nz/references/haskell/haskell-intro-html/patterns.html">here</a>.<a href="#fnref:021301" rel="reference">&#8617;</a></p>
@@ -3793,13 +3793,13 @@ Thank you man.</p>
       <p>Which itself is very similar to the javascript <code>eval</code> on a string containing JSON).<a href="#fnref:1" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:032001">
-      <p>There are some <em>unsafe</em> exceptions to this rule. But you shouldn’t see such use on a real application except maybe for debugging purpose.<a href="#fnref:032001" rel="reference">&#8617;</a></p>
+      <p>There are some <em>unsafe</em> exceptions to this rule. But you shouldn&rsquo;t see such use on a real application except maybe for debugging purpose.<a href="#fnref:032001" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:032002">
       <p>For the curious the real type is <code>data IO a = IO {unIO :: State# RealWorld -&gt; (# State# RealWorld, a #)}</code>. All the <code>#</code> as to do with optimisation and I swapped the fields in my example. But mostly, the idea is exactly the same.<a href="#fnref:032002" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:03021301">
-      <p>Well, you’ll certainly need to practice a bit to get used to them<a href="#fnref:03021301" rel="reference">&#8617;</a></p>
+      <p>Well, you&rsquo;ll certainly need to practice a bit to get used to them<a href="#fnref:03021301" rel="reference">&#8617;</a></p>
     </li>
   </ol>
 </div>

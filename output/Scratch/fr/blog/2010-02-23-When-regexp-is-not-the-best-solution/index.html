@@ -57,10 +57,10 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>Les expressions régulières sont très utiles. Cependant, elles ne sont pas toujours la meilleure manière d’aborder certain problème autour des chaines de caractères.
+                    <p>Les expressions régulières sont très utiles. Cependant, elles ne sont pas toujours la meilleure manière d&rsquo;aborder certain problème autour des chaines de caractères.
 Et surtout quand les transformations que vous voulez accomplir sont simples.</p>
 
-<p>Je voulais savoir comment récupérer le plus vite possible l’extension d’un nom de fichier. Il y a trois manière naturelle d’accomplir celà&nbsp;:</p>
+<p>Je voulais savoir comment récupérer le plus vite possible l&rsquo;extension d&rsquo;un nom de fichier. Il y a trois manière naturelle d&rsquo;accomplir celà&nbsp;:</p>
 
 <div>
 
@@ -77,7 +77,7 @@ ext=File.extname(str)
 
 </div>
 
-<p>A première vue, je pensais que l’expression régulière serait plus rapide que le <code>split</code> parce qu’il pouvait y avoir plusieurs de <code>.</code> dans un nom de fichier. Mais la majorité du temps il n’y a qu’un seul point par nom de fichier. C’est pourquoi j’ai réalisé que le <code>split</code> serait plus rapide. Mais pas le plus rapide possible. Il y a une fonction qui est dédiée à faire ce travail dans un module standard de ruby&nbsp;; le module <code>File</code>.</p>
+<p>A première vue, je pensais que l&rsquo;expression régulière serait plus rapide que le <code>split</code> parce qu&rsquo;il pouvait y avoir plusieurs de <code>.</code> dans un nom de fichier. Mais la majorité du temps il n&rsquo;y a qu&rsquo;un seul point par nom de fichier. C&rsquo;est pourquoi j&rsquo;ai réalisé que le <code>split</code> serait plus rapide. Mais pas le plus rapide possible. Il y a une fonction qui est dédiée à faire ce travail dans un module standard de ruby&nbsp;; le module <code>File</code>.</p>
 
 <p>Voici le code pour faire un benchmark&nbsp;:</p>
 
@@ -124,7 +124,7 @@ regexp:  2.550000   0.020000   2.570000 (  2.693407)
 
 <p>En conclusion, les fonction dédiées sont meilleures que votre façon de faire (la plupart du temps).</p>
 
-<h2 id="chemin-complet-dun-fichier-sans-lextension">Chemin complet d’un fichier sans l’extension</h2>
+<h2 id="chemin-complet-dun-fichier-sans-lextension">Chemin complet d&rsquo;un fichier sans l&rsquo;extension</h2>
 
 <div><div class="codefile"><a href="/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/code/regex_benchmark_strip.rb">&#x27A5; regex_benchmark_strip.rb</a></div>
 
@@ -162,7 +162,7 @@ remove extension
 chomp:  0.820000   0.040000   0.860000 (  0.947432)
 </pre>
 
-<p>En conclusion du ce second benchmark. Un fonction simple est meilleure que trois fonctions dédiées. Pas de surprise, mais c’est toujours bien de savoir.</p>
+<p>En conclusion du ce second benchmark. Un fonction simple est meilleure que trois fonctions dédiées. Pas de surprise, mais c&rsquo;est toujours bien de savoir.</p>
 
                 </div>
             

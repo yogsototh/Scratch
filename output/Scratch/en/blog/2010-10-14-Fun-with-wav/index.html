@@ -63,7 +63,7 @@
 
 <p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> Played to process a <code>wav</code> file. <code>C</code> was easier and cleaner than Ruby.</p>
 
-<p>edit: I wanted this program to work only on one specific machine (a x86 on a 32 bit Ubuntu). Therefore I didn’t had any portability consideration. This is only a <em>hack</em>.</p>
+<p>edit: I wanted this program to work only on one specific machine (a x86 on a 32 bit Ubuntu). Therefore I didn&rsquo;t had any portability consideration. This is only a <em>hack</em>.</p>
 
 
 </div>
@@ -72,7 +72,7 @@
 <p>I had to compute the sum of the absolute values of data of a <code>.wav</code> file.
 For efficiency (and fun) reasons, I had chosen <code>C</code> language.</p>
 
-<p>I didn’t programmed in <code>C</code> for a long time.
+<p>I didn&rsquo;t programmed in <code>C</code> for a long time.
 From my memory it was a pain to read and write to files.
 But in the end I was really impressed by the code I get. 
 It was really clean.
@@ -84,7 +84,7 @@ The header is then a block of packed bytes.</p>
 
 <ul>
   <li>The 4<sup>th</sup> first bytes must contains <code>RIFF</code> in ASCII,</li>
-  <li>the following 4<sup>th</sup> Bytes is an 32 bits integer giving the size of the file minus 8, etc…</li>
+  <li>the following 4<sup>th</sup> Bytes is an 32 bits integer giving the size of the file minus 8, etc&hellip;</li>
 </ul>
 
 <p>Surprisingly, I believe that reading this kind of file is easier in <code>C</code> than in most higher level language.
@@ -211,7 +211,7 @@ But I had to use some compiler specific declaration to force the structure to be
 
 <p>Therefore this implementation should for big and little endian architecture. 
 However, it must be compiled with <code>gcc</code>.
-The new code make more tests but still don’t use <code>mmap</code>.
+The new code make more tests but still don&rsquo;t use <code>mmap</code>.
 Here it is:</p>
 
 

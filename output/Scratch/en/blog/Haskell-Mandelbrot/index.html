@@ -71,7 +71,7 @@ u j k = concat $ map v $ h j k where v (i,p)=(" .,`'°\":;-+oO0123456789=!%*§&a
 main = putStrLn $ im 0 where cl n (C (x,y))=let cs=(1.1**n-1) in C ((x+cs*(r e))/cs+1,(y+cs*(i e))/cs+1);bl n=cl n c;tr n=cl n d;im n=u (bl n) (tr n)++"\x1b[H\x1b[25A"++im (n+1)
 </code></pre>
 
-<p>To launch it, you’ll need to have <a href="http://haskell.org">haskell</a> installed and to run:</p>
+<p>To launch it, you&rsquo;ll need to have <a href="http://haskell.org">haskell</a> installed and to run:</p>
 
 <pre><code class="zsh">ghc --make animandel.hs &amp;&amp; animandel</code></pre>
 

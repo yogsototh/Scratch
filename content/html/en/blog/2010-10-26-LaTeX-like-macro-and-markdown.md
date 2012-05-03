@@ -19,7 +19,7 @@ tags:
 
 begindiv(intro)
 
-<%= tldr %> I made a simple macro system for my blog. Now I juste have to write %<span></span>latex and it show as %latex.
+%tldr I made a simple macro system for my blog. Now I juste have to write %<span></span>latex and it show as %latex.
 
 enddiv
 

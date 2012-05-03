@@ -15,7 +15,7 @@ tags:
 
 begindiv(intro)
 
-<%= tldr %> Played to process a `wav` file. `C` was easier and cleaner than Ruby.
+%tldr Played to process a `wav` file. `C` was easier and cleaner than Ruby.
 
 
 edit: I wanted this program to work only on one specific machine (a x86 on a 32 bit Ubuntu). Therefore I didn't had any portability consideration. This is only a _hack_.

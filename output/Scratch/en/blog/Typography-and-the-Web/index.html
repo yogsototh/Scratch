@@ -63,7 +63,7 @@
 <div class="intro">
 
 
-<p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> Web typography sucks and we’ll have to wait forever before it will be fixed.</p>
+<p><span class="sc"><abbr title="Too long; didn't read">tl;dr</abbr>: </span> Web typography sucks and we&rsquo;ll have to wait forever before it will be fixed.</p>
 
 
 </div>
@@ -85,7 +85,7 @@ We can all create better web typography ourselves, today.»</p>
 <p><img alt="A ligature example" src="/Scratch/img/blog/Typography-and-the-Web/ligatures.png" />;</p>
 
 <p>What is the problem between the Web and ligatures?
-The first one is: you cannot search them. For example, try to search the word “first”:</p>
+The first one is: you cannot search them. For example, try to search the word &ldquo;first&rdquo;:</p>
 
 <ul>
   <li>first ← No ligature, no problem</li>
@@ -107,15 +107,15 @@ The first one is: you cannot search them. For example, try to search the word �
 
 <p><img alt="Screenshot of first in small caps with and without ligatures." src="/Scratch/img/blog/Typography-and-the-Web/first_sc_screenshot.png" />;</p>
 
-<p>The browser isn’t able to understand that the ligature character “<span style="color:#800">ﬁ</span>” should render as <span class="sc">fi</span> when rendered in small caps. And one part of the problem is you should choose to display a character in small caps using <span class="sc">css</span>.</p>
+<p>The browser isn&rsquo;t able to understand that the ligature character &ldquo;<span style="color:#800">ﬁ</span>&rdquo; should render as <span class="sc">fi</span> when rendered in small caps. And one part of the problem is you should choose to display a character in small caps using <span class="sc">css</span>.</p>
 
 <p>This way, how could you use a ligature Unicode character on a site on which you could change the <span class="sc">css</span>?</p>
 
-<p>Let’s compare to <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>.</p>
+<p>Let&rsquo;s compare to <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>.</p>
 
 <p><img alt="LaTeX screenshot" src="/Scratch/img/blog/Typography-and-the-Web/first_latex_screenshot.png" />;</p>
 
-<p>If you take attention to detail, you’ll see the first “first” contains a ligature. Of course the second render nicely. The code I used were:</p>
+<p>If you take attention to detail, you&rsquo;ll see the first &ldquo;first&rdquo; contains a ligature. Of course the second render nicely. The code I used were:</p>
 
 <pre><code class="latex">\item first
 \item {\sc first}
@@ -123,7 +123,7 @@ The first one is: you cannot search them. For example, try to search the word �
 
 <p><span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span> was intelligent enough to create himself the ligatures when needed.</p>
 
-<p>The “<span style="color:#800">ﬆ</span>” ligature is rare and not rendered in <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span> by default. But if you want you could also render rare ligature using <span style="text-transform: uppercase">X<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">Ǝ</sub>L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>:</p>
+<p>The &ldquo;<span style="color:#800">ﬆ</span>&rdquo; ligature is rare and not rendered in <span style="text-transform: uppercase">L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span> by default. But if you want you could also render rare ligature using <span style="text-transform: uppercase">X<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">&#x018E;</sub>L<sup style="vertical-align: 0.15em; margin-left: -0.36em; margin-right: -0.15em; font-size: .85em">a</sup>T<sub style="vertical-align: -0.5ex; margin-left: -0.1667em; margin-right: -0.125em; font-size: 1em">e</sub>X</span>:</p>
 
 <p><img alt="XeLaTeX ligatures" src="/Scratch/img/blog/Typography-and-the-Web/xelatex_ligatures.jpg" />;</p>
 
@@ -135,9 +135,9 @@ Simply imagine the number of strange little exceptions:</p>
 <ul>
   <li>The text is rendered in small caps, I cannot use ligature.</li>
   <li>The current word contains a ligature unicode character, I should search for ligature in this one.</li>
-  <li>The current font does not defined the ligature unicode character, we shouldn’t use it, etc</li>
+  <li>The current font does not defined the ligature unicode character, we shouldn&rsquo;t use it, etc</li>
   <li>A javascript command changed the CSS, I should verify if I had to revert the insertion of ligatures characters</li>
-  <li>etc…</li>
+  <li>etc&hellip;</li>
 </ul>
 
 <p>Nonetheless if someone has a solution, I would be happy to hear about it.</p>

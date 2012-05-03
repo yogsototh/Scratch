@@ -19,9 +19,8 @@ tags:
 -----
 
 begindiv(intro)
-<% tldr=%{<abbr title="Too Long; Don't Read"><sc>tl;dr</sc></abbr>} %>
 
-<%=tldr%>: 
+%tldr: 
 
 - I tried to program a simple filter
 - Was blocked 2 days
@@ -33,7 +32,7 @@ begindiv(intro)
 
 enddiv
 
-## Abstract (longer than <%=tldr%>)
+## Abstract (longer than %tldr)
 
 For my job, I needed to resolve a problem. It first seems not too hard. 
 Then I started working directly on my program. 

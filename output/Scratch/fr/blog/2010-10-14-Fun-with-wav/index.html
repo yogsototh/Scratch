@@ -69,24 +69,24 @@
 </div>
 
 
-<p>J’ai eu besoin de calculer la somme des valeurs absolue des données d’un fichier <code>wav</code>.
-Pour des raison d’efficacité (et aussi de fun), j’ai fait le programme en <code>C</code>.</p>
+<p>J&rsquo;ai eu besoin de calculer la somme des valeurs absolue des données d&rsquo;un fichier <code>wav</code>.
+Pour des raison d&rsquo;efficacité (et aussi de fun), j&rsquo;ai fait le programme en <code>C</code>.</p>
 
-<p>Celà faisait longtemps que je n’avais pas programmé en <code>C</code>.
+<p>Celà faisait longtemps que je n&rsquo;avais pas programmé en <code>C</code>.
 De mémoire il était peu aisé de manipuler des fichiers.
-Mais je dois concéder que j’ai été étonné de la clarté du code que j’ai obtenu.</p>
+Mais je dois concéder que j&rsquo;ai été étonné de la clarté du code que j&rsquo;ai obtenu.</p>
 
-<p>Tout d’abord, un fichier <code>wav</code> se compose d’un entête qui contient pas mal de meta données.
+<p>Tout d&rsquo;abord, un fichier <code>wav</code> se compose d&rsquo;un entête qui contient pas mal de meta données.
 Cet entête a été optimisé pour prendre peu de place.
-Donc on discute de l’entête avec des nombres d’octets&nbsp;:</p>
+Donc on discute de l&rsquo;entête avec des nombres d&rsquo;octets&nbsp;:</p>
 
 <ul>
   <li>Les 4 premiers octets doivent contenir <code>RIFF</code> en ASCII&nbsp;;</li>
   <li>les 4 octects suivant correspondent à un entier codé sur 32 bits qui donne la taille du fichier moins 8 octets. etc..</li>
 </ul>
 
-<p>Etonnamment je pense que lire ce type de fichier avec un langage de haut niveau aurait été plus pénible qu’en C.
-La preuve, il m’a suffit de chercher sur le net le format complet de l’entête et de l’écrire dans un struct.</p>
+<p>Etonnamment je pense que lire ce type de fichier avec un langage de haut niveau aurait été plus pénible qu&rsquo;en C.
+La preuve, il m&rsquo;a suffit de chercher sur le net le format complet de l&rsquo;entête et de l&rsquo;écrire dans un struct.</p>
 
 <pre><code class="c">struct wavfile
 {
@@ -105,16 +105,16 @@ La preuve, il m’a suffit de chercher sur le net le format complet de l’entê
 };
 </code></pre>
 
-<p>Si j’avais eu à faire ça en Ruby, je pense qu’il m’aurait fallu pour chaque bloc de l’entête écrire un bout de code de lecture du bon nombre d’octets.
-Alors qu’en <code>C</code> il m’a suffit d’écrire: </p>
+<p>Si j&rsquo;avais eu à faire ça en Ruby, je pense qu&rsquo;il m&rsquo;aurait fallu pour chaque bloc de l&rsquo;entête écrire un bout de code de lecture du bon nombre d&rsquo;octets.
+Alors qu&rsquo;en <code>C</code> il m&rsquo;a suffit d&rsquo;écrire: </p>
 
 <pre><code class="c">fread(&amp;header,sizeof(header),1,wav)
 </code></pre>
 
 <p>Et en une seule étape ma structure de donnée a été remplie avec les valeurs souhaitées. Magique&nbsp;!</p>
 
-<p>Ensuite, récupérer un entier à partir de deux octets n’est pas non plus une opération naturelle dans les nouveaux langages de programmation.
-Alors qu’en <code>C</code>. Pour récupérer un entier codé sur 16 bits il suffit d’écrire&nbsp;:</p>
+<p>Ensuite, récupérer un entier à partir de deux octets n&rsquo;est pas non plus une opération naturelle dans les nouveaux langages de programmation.
+Alors qu&rsquo;en <code>C</code>. Pour récupérer un entier codé sur 16 bits il suffit d&rsquo;écrire&nbsp;:</p>
 
 <pre><code class="c">short value=0;
 while( fread(&amp;value,sizeof(value),1,wav) ) {
@@ -186,29 +186,29 @@ int main(int argc, char *argv[]) {
 }
 </code></pre>
 
-<p>Bien entendu ce code n’est qu’un <em>hack</em>.
+<p>Bien entendu ce code n&rsquo;est qu&rsquo;un <em>hack</em>.
 Mais on voit bien comment on peut facilement améliorer ce code, ajouter des cas possibles par exemple.
 Comme je dis souvent&nbsp;: le bon outil pour la bonne tâche.
 On voit en effet que pour cette tâche <code>C</code> est bien supérieur à Ruby par exemple.</p>
 
-<p>_màj&nbsp;: pour des raisons de compatibilité (machines 64 bits) j’ai utilisé <code>int16_t</code> au lieu de <code>short</code> et <code>int</code> au lieu de <code>int</code>.</p>
+<p>_màj&nbsp;: pour des raisons de compatibilité (machines 64 bits) j&rsquo;ai utilisé <code>int16_t</code> au lieu de <code>short</code> et <code>int</code> au lieu de <code>int</code>.</p>
 
-<p>Je serai curieux de savoir s’il existe un manière plus propre en Ruby que je ne connais pas.
-Certainement qu’en Python ça doit être la cas.</p>
+<p>Je serai curieux de savoir s&rsquo;il existe un manière plus propre en Ruby que je ne connais pas.
+Certainement qu&rsquo;en Python ça doit être la cas.</p>
 
 
 <div class="intro">
 
 
 <p>Màj (2)&nbsp;: après toutes les remarques concernant la portabilité. 
-J’ai fait une nouvelle version qui devrait être plus portable.
+J&rsquo;ai fait une nouvelle version qui devrait être plus portable.
 Elle fait aussi plus de test pour vérifier le fichier.
-Cependant j’utilise une assertion spécifique à <code>gcc</code> pour être certain que la structure de donnée n’ai pas de “trou”&nbsp;:</p>
+Cependant j&rsquo;utilise une assertion spécifique à <code>gcc</code> pour être certain que la structure de donnée n&rsquo;ai pas de &ldquo;trou&rdquo;&nbsp;:</p>
 
 <pre><code class="c">__attribute__((__packed__))
 </code></pre>
 
-<p>Le nouveau code n’utilise pas mmap et devrait être plus compatible.<br />
+<p>Le nouveau code n&rsquo;utilise pas mmap et devrait être plus compatible.<br />
 Voici le dernier résultat&nbsp;:</p>
 
 

@@ -65,7 +65,7 @@
 <div class="intro">
 
 
-<p>Même si je considère que <code>git</code> a beaucoup de points noirs, je pense qu’il reste le meilleur DCVS à ce jour avec lequel travailler. C’est pourquoi je commencerai par parler des qualité de bazaar qui manquent à git. Ensuite seulement je donnerai le seul avantage de git qui suffit à le rendre préférable à Bazaar.</p>
+<p>Même si je considère que <code>git</code> a beaucoup de points noirs, je pense qu&rsquo;il reste le meilleur DCVS à ce jour avec lequel travailler. C&rsquo;est pourquoi je commencerai par parler des qualité de bazaar qui manquent à git. Ensuite seulement je donnerai le seul avantage de git qui suffit à le rendre préférable à Bazaar.</p>
 
 
 </div>
@@ -73,20 +73,20 @@
 
 <h2 id="la-dcouverte-des-dcvs">La découverte des DCVS</h2>
 
-<p>À savoir avant de débuter  l’article. Je suis, comme beaucoup, un ancien utilisateur de <em>subversion</em>. Je trouve subversion très bien, mais j’ai été conquis par les capacités supplémentaires apportées par les systèmes de versions concurrentes <em>décentralisés</em>.</p>
+<p>À savoir avant de débuter  l&rsquo;article. Je suis, comme beaucoup, un ancien utilisateur de <em>subversion</em>. Je trouve subversion très bien, mais j&rsquo;ai été conquis par les capacités supplémentaires apportées par les systèmes de versions concurrentes <em>décentralisés</em>.</p>
 
-<p>Il y a deux façon de percevoir les systèmes de versions. Soit on voit un système de branches (voir le très bon article sur <a href="http://betterexplained.com/articles/a-visual-guide-to-version-control/">betterexplained</a>). Soit on peut voir les systèmes de versions comme des moyens d’appliquer des patches. C’est-à-dire que l’on peut soit se concentrer sur les nœuds soit sur les transitions du graphe induit par les différentes versions d’un projet.</p>
+<p>Il y a deux façon de percevoir les systèmes de versions. Soit on voit un système de branches (voir le très bon article sur <a href="http://betterexplained.com/articles/a-visual-guide-to-version-control/">betterexplained</a>). Soit on peut voir les systèmes de versions comme des moyens d&rsquo;appliquer des patches. C&rsquo;est-à-dire que l&rsquo;on peut soit se concentrer sur les nœuds soit sur les transitions du graphe induit par les différentes versions d&rsquo;un projet.</p>
 
-<p>Pour git, c’est plutôt ce deuxième point de vue qui a été adopté. C’est un peu normal, étant donné que c’est Linus Torvald qui l’a inventé pour combler les problèmes inhérent aux problèmes de création de code dans le noyau Linux. Et comme historiquement, la communauté Linux se base beaucoup sur les patches, il semblait logique que ce soit ce second point de vue qui soit adopté.</p>
+<p>Pour git, c&rsquo;est plutôt ce deuxième point de vue qui a été adopté. C&rsquo;est un peu normal, étant donné que c&rsquo;est Linus Torvald qui l&rsquo;a inventé pour combler les problèmes inhérent aux problèmes de création de code dans le noyau Linux. Et comme historiquement, la communauté Linux se base beaucoup sur les patches, il semblait logique que ce soit ce second point de vue qui soit adopté.</p>
 
-<p>J’ai d’abord été convaincu par Bazaar. Pourquoi&nbsp;? Les arguments en faveur de bazaar étaient&nbsp;: facilité d’utilisation en particulier, facilité d’adaptation pour tous ceux qui étaient habitués à subversion. Comme c’était mon cas, et que lorsque j’avais essayé de suivre la doc Git à l’époque c’était un peu épique. 
-Puis avec le temps, je me suis dit que je n’allais quand même pas mourir idiot et que j’allais me mettre sérieusement à <code>git</code> histoire de voir si ses défenseurs avaient vraiment raison.</p>
+<p>J&rsquo;ai d&rsquo;abord été convaincu par Bazaar. Pourquoi&nbsp;? Les arguments en faveur de bazaar étaient&nbsp;: facilité d&rsquo;utilisation en particulier, facilité d&rsquo;adaptation pour tous ceux qui étaient habitués à subversion. Comme c&rsquo;était mon cas, et que lorsque j&rsquo;avais essayé de suivre la doc Git à l&rsquo;époque c&rsquo;était un peu épique. 
+Puis avec le temps, je me suis dit que je n&rsquo;allais quand même pas mourir idiot et que j&rsquo;allais me mettre sérieusement à <code>git</code> histoire de voir si ses défenseurs avaient vraiment raison.</p>
 
-<p>Mon dieu, que ce fut fastidieux. La terminologie est <em>affreuse</em>&nbsp;! Et ce n’est rien de le dire. </p>
+<p>Mon dieu, que ce fut fastidieux. La terminologie est <em>affreuse</em>&nbsp;! Et ce n&rsquo;est rien de le dire. </p>
 
 <h2 id="l-o-bazaar-est-meilleur-que-git">Là où Bazaar est meilleur que <code>git</code></h2>
 
-<p>Par exemple, <code>checkout</code> qui sert certainement à la même chose du point de vue technique, est dans l’usage un terme employé pour faire des actions qui semblent très différentes à un utilisateur λ. Exemple&nbsp;:</p>
+<p>Par exemple, <code>checkout</code> qui sert certainement à la même chose du point de vue technique, est dans l&rsquo;usage un terme employé pour faire des actions qui semblent très différentes à un utilisateur λ. Exemple&nbsp;:</p>
 
 <div>
 
@@ -106,7 +106,7 @@ Puis avec le temps, je me suis dit que je n’allais quand même pas mourir idio
 
 <p>change de la branche courante vers la branche <code>pipo</code></p>
 
-<p>Et là, comme moi, vous remarquez que la même commande à deux sens complètement différents. Comment ça se passe alors, quand il y a une branche <code>pipo</code> et un fichier <code>pipo</code> alors&nbsp;? Et bien par défaut, ça change de branche. Pour lever l’ambigüité il faut utiliser la syntaxe </p>
+<p>Et là, comme moi, vous remarquez que la même commande à deux sens complètement différents. Comment ça se passe alors, quand il y a une branche <code>pipo</code> et un fichier <code>pipo</code> alors&nbsp;? Et bien par défaut, ça change de branche. Pour lever l&rsquo;ambigüité il faut utiliser la syntaxe </p>
 
 <div>
 
@@ -115,11 +115,11 @@ Puis avec le temps, je me suis dit que je n’allais quand même pas mourir idio
 
 </div>
 
-<p>Oui, bon… Voilà, voilà, voilà….</p>
+<p>Oui, bon&hellip; Voilà, voilà, voilà&hellip;.</p>
 
-<p>Ça marche, mais ce n’est pas très convivial. D’autant plus que le mot clé checkout signifiait sous CVS et SVN l’opération pour récupérer un projet distant.</p>
+<p>Ça marche, mais ce n&rsquo;est pas très convivial. D&rsquo;autant plus que le mot clé checkout signifiait sous CVS et SVN l&rsquo;opération pour récupérer un projet distant.</p>
 
-<p>Là où la différence se creuse c’est avec la terminologie Bazaar qui est bien plus naturelle. Car il n’y a pas de commande pour changer de branche, puisqu’il y a une branche par répertoire. Ainsi, pour changer de branche, il suffit de faire <code>cd path/to/branch</code>. Et pour revenir en arrière&nbsp;:</p>
+<p>Là où la différence se creuse c&rsquo;est avec la terminologie Bazaar qui est bien plus naturelle. Car il n&rsquo;y a pas de commande pour changer de branche, puisqu&rsquo;il y a une branche par répertoire. Ainsi, pour changer de branche, il suffit de faire <code>cd path/to/branch</code>. Et pour revenir en arrière&nbsp;:</p>
 
 <div>
 
@@ -128,7 +128,7 @@ Puis avec le temps, je me suis dit que je n’allais quand même pas mourir idio
 
 </div>
 
-<p>De plus, la plupart des commandes bazaar prennent en paramètre un numéro de révision, par exemple pour revenir 3 versions précédentes il suffit d’écrire&nbsp;:</p>
+<p>De plus, la plupart des commandes bazaar prennent en paramètre un numéro de révision, par exemple pour revenir 3 versions précédentes il suffit d&rsquo;écrire&nbsp;:</p>
 
 <div>
 
@@ -137,7 +137,7 @@ Puis avec le temps, je me suis dit que je n’allais quand même pas mourir idio
 
 </div>
 
-<p>L’équivalent sous git est beaucoup plus cryptique&nbsp;:</p>
+<p>L&rsquo;équivalent sous git est beaucoup plus cryptique&nbsp;:</p>
 
 <div>
 
@@ -159,7 +159,7 @@ Puis avec le temps, je me suis dit que je n’allais quand même pas mourir idio
 
 </div>
 
-<p>et avec <code>git</code>&nbsp;? <code>git checkout</code>&nbsp;? Bien sûr que non voyons&nbsp;! Ce serait bien trop simple. Ce que l’on trouve dans les forums c’est&nbsp;:</p>
+<p>et avec <code>git</code>&nbsp;? <code>git checkout</code>&nbsp;? Bien sûr que non voyons&nbsp;! Ce serait bien trop simple. Ce que l&rsquo;on trouve dans les forums c&rsquo;est&nbsp;:</p>
 
 <div>
 
@@ -168,7 +168,7 @@ Puis avec le temps, je me suis dit que je n’allais quand même pas mourir idio
 
 </div>
 
-<p>Sauf que cette syntaxe est horrible. Elle oublie ‘réellement’ les révisions. Il faut donc l’utiliser avec prudence. Mais en effet, je conseillerai plutôt&nbsp;:</p>
+<p>Sauf que cette syntaxe est horrible. Elle oublie &lsquo;réellement&rsquo; les révisions. Il faut donc l&rsquo;utiliser avec prudence. Mais en effet, je conseillerai plutôt&nbsp;:</p>
 
 <div>
 
@@ -177,7 +177,7 @@ Puis avec le temps, je me suis dit que je n’allais quand même pas mourir idio
 
 </div>
 
-<p>Histoire d’avoir la branche backup sous la main, car sinon, on risque de perdre définitivement la version courante de HEAD.  Qui ramène la branche locale à ce point. Mais il reste des erreur s’il y a eu des ajouts de fichier entre temps. <em>Le seul et l’unique vraiment propre de revenir en arrière dans git c’est de lancer la commande suivante&nbsp;:</em></p>
+<p>Histoire d&rsquo;avoir la branche backup sous la main, car sinon, on risque de perdre définitivement la version courante de HEAD.  Qui ramène la branche locale à ce point. Mais il reste des erreur s&rsquo;il y a eu des ajouts de fichier entre temps. <em>Le seul et l&rsquo;unique vraiment propre de revenir en arrière dans git c&rsquo;est de lancer la commande suivante&nbsp;:</em></p>
 
 <div>
 
@@ -189,11 +189,11 @@ git commit -m "reverted 3 versions back"
 
 </div>
 
-<p>ce qui signifie sur un système <code>UNIX</code> en <code>zsh</code> (ou <code>bash</code>) faire <code>git revert</code> de toutes les dernières versions. Même si quelqu’un d’autre à fait un pull de vos modification intermédiaire il ne sera pas embêté et il sera au courant de ce qu’il s’est passé.</p>
+<p>ce qui signifie sur un système <code>UNIX</code> en <code>zsh</code> (ou <code>bash</code>) faire <code>git revert</code> de toutes les dernières versions. Même si quelqu&rsquo;un d&rsquo;autre à fait un pull de vos modification intermédiaire il ne sera pas embêté et il sera au courant de ce qu&rsquo;il s&rsquo;est passé.</p>
 
-<p>La règle est simple&nbsp;: <em>Ne JAMAIS utiliser la commande <code>git reset</code> avec une version que d’autres personnes auraient pu avoir <code>fetcher</code>.</em></p>
+<p>La règle est simple&nbsp;: <em>Ne JAMAIS utiliser la commande <code>git reset</code> avec une version que d&rsquo;autres personnes auraient pu avoir <code>fetcher</code>.</em></p>
 
-<p>Voilà, c’est dit. Découvrir ça m’a pris pas mal de temps, avec plein d’essai de tous les cotés. Le plus sûr reste toujours la méthode vue plus haut. Si vous souhaitez automatiser cela, le plus simple est d’ajouter l’alias suivant à votre fichier <code>~/.gitconfig</code>. Bien sûr l’alias ne fonctionnera que sur les environnement possédant <code>zsh</code>, ce qui est le cas de la plupart des environnements UNIX (Ubuntu, Mac OS X…).</p>
+<p>Voilà, c&rsquo;est dit. Découvrir ça m&rsquo;a pris pas mal de temps, avec plein d&rsquo;essai de tous les cotés. Le plus sûr reste toujours la méthode vue plus haut. Si vous souhaitez automatiser cela, le plus simple est d&rsquo;ajouter l&rsquo;alias suivant à votre fichier <code>~/.gitconfig</code>. Bien sûr l&rsquo;alias ne fonctionnera que sur les environnement possédant <code>zsh</code>, ce qui est le cas de la plupart des environnements UNIX (Ubuntu, Mac OS X&hellip;).</p>
 
 <div><div class="codefile"><a href="/Scratch/fr/blog/2009-12-14-Git-vs--Bzr/code/gitconfig">&#x27A5; gitconfig</a></div>
 
@@ -204,13 +204,13 @@ git commit -m "reverted 3 versions back"
 
 </div>
 
-<h1 id="ce-qui-fait-que-git-est-le-meilleur-dcvs-jusqu-aujourdhui">Ce qui fait que <code>git</code> est le meilleur DCVS jusqu’à aujourd’hui</h1>
+<h1 id="ce-qui-fait-que-git-est-le-meilleur-dcvs-jusqu-aujourdhui">Ce qui fait que <code>git</code> est le meilleur DCVS jusqu&rsquo;à aujourd&rsquo;hui</h1>
 
 <p>Après avoir énoncé les cotés négatifs (et je les trouve nombreux) de git. Voici les cotés positifs qui a eux seul valent la peine de se coltiner tous les problèmes inhérent à <code>git</code>.</p>
 
 <h2 id="cheap-branching">Cheap branching</h2>
 
-<p>Vous travaillez toujours dans le même répertoire principal. Par exemple, vous pouvez travailler sur deux corrections de bug. Disons <code>fix1</code> et <code>fix2</code> nécessitant la modification respective de <code>file1</code> et <code>file2</code>. Vous pouvez travailler dans n’importe quel ordre sur vos deux fichiers dans la branche <code>master</code>. Puis, une fois votre travail fini. Aller dans la branche <code>fix1</code> pour commiter <code>file1</code>. Puis aller dans la branche <code>fix2</code> pour commiter <code>file2</code>. Et enfin, merger les deux branches dans <code>master</code>.</p>
+<p>Vous travaillez toujours dans le même répertoire principal. Par exemple, vous pouvez travailler sur deux corrections de bug. Disons <code>fix1</code> et <code>fix2</code> nécessitant la modification respective de <code>file1</code> et <code>file2</code>. Vous pouvez travailler dans n&rsquo;importe quel ordre sur vos deux fichiers dans la branche <code>master</code>. Puis, une fois votre travail fini. Aller dans la branche <code>fix1</code> pour commiter <code>file1</code>. Puis aller dans la branche <code>fix2</code> pour commiter <code>file2</code>. Et enfin, merger les deux branches dans <code>master</code>.</p>
 
 <div>
 
@@ -229,11 +229,11 @@ git commit -m "reverted 3 versions back"
 
 </div>
 
-<p>Et il est vraiment très agréable de ne pas se soucier d’être dans la <em>bonne</em> branche. Vous n’avez à vous occuper que de votre code et seulement ensuite vous occuper du système de version.</p>
+<p>Et il est vraiment très agréable de ne pas se soucier d&rsquo;être dans la <em>bonne</em> branche. Vous n&rsquo;avez à vous occuper que de votre code et seulement ensuite vous occuper du système de version.</p>
 
-<p>Sous Bazaar, il m’est souvent arriver de coder dans la mauvaise branche. Pour récupérer le coup, on doit copier les modifications du fichier dans la bonne branche et faire un revert sur le fichier en question, puis aller dans la bonne branche pour commiter les modifications. Enfin, la plupart du temps, je me trompe de branche et puis tant pis, je merge les deux tout en sachant que c’est sale.</p>
+<p>Sous Bazaar, il m&rsquo;est souvent arriver de coder dans la mauvaise branche. Pour récupérer le coup, on doit copier les modifications du fichier dans la bonne branche et faire un revert sur le fichier en question, puis aller dans la bonne branche pour commiter les modifications. Enfin, la plupart du temps, je me trompe de branche et puis tant pis, je merge les deux tout en sachant que c&rsquo;est sale.</p>
 
-<p>C’est pourquoi je préfère utiliser <code>git</code>. Si Bazaar venait à implémenter ce système de <em>cheap branching</em>, je le replacerai certainement en tête.</p>
+<p>C&rsquo;est pourquoi je préfère utiliser <code>git</code>. Si Bazaar venait à implémenter ce système de <em>cheap branching</em>, je le replacerai certainement en tête.</p>
 
                 </div>
             

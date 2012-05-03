@@ -61,7 +61,7 @@
             <div class="flush"></div>
             <div id="afterheader">
                 <div class="corps">
-                    <p>Sur ma page d’accueil vous pouvez voir la liste des mes derniers articles avec le début de ceux-ci. Pour arriver à faire ça, j’ai besoin de couper le code XHTML de mes pages en plein milieu. Il m’a donc fallu trouver un moyen de les réparer.</p>
+                    <p>Sur ma page d&rsquo;accueil vous pouvez voir la liste des mes derniers articles avec le début de ceux-ci. Pour arriver à faire ça, j&rsquo;ai besoin de couper le code XHTML de mes pages en plein milieu. Il m&rsquo;a donc fallu trouver un moyen de les réparer.</p>
 
 <p>Prenons un exemple&nbsp;:</p>
 
@@ -75,7 +75,7 @@
 &lt;/div&gt;
 </code></pre>
 
-<p>Après avoir coupé, j’obtiens&nbsp;:</p>
+<p>Après avoir coupé, j&rsquo;obtiens&nbsp;:</p>
 
 <pre><code class="html">&lt;div class="corps"&gt;
     &lt;div class="intro"&gt;
@@ -85,13 +85,13 @@
     &lt;img src="/img/im
 </code></pre>
 
-<p>En plein milieu d’un tag <code>&lt;img&gt;</code>&nbsp;!</p>
+<p>En plein milieu d&rsquo;un tag <code>&lt;img&gt;</code>&nbsp;!</p>
 
-<p>En réalité, ce n’est pas si difficile que celà peut paraître au premier abord. Le secret réside dans le fait de comprendre que l’on n’a pas besoin de conserver la structure complète de l’arbre pour le réparer, mais seulement la liste des parents non fermés.</p>
+<p>En réalité, ce n&rsquo;est pas si difficile que celà peut paraître au premier abord. Le secret réside dans le fait de comprendre que l&rsquo;on n&rsquo;a pas besoin de conserver la structure complète de l&rsquo;arbre pour le réparer, mais seulement la liste des parents non fermés.</p>
 
-<p>Pour notre exemple, juste après le paragraphe <code>first paragraph</code> nous n’avons qu’à fermer un <code>div</code> pour la classe <code>corps</code> et le XML est réparé. Bien entendu, quand on est dans le cas où un tag est coupé au milieu, on a qu’à remonté juste avant le début de ce tag corrompu.</p>
+<p>Pour notre exemple, juste après le paragraphe <code>first paragraph</code> nous n&rsquo;avons qu&rsquo;à fermer un <code>div</code> pour la classe <code>corps</code> et le XML est réparé. Bien entendu, quand on est dans le cas où un tag est coupé au milieu, on a qu&rsquo;à remonté juste avant le début de ce tag corrompu.</p>
 
-<p>Donc, tout ce que nous avons à faire, c’est d’enregistrer la liste des parents dans une pile. Supposons que nous traitions le premier exemple complètement. La pile passera par les états suivants&nbsp;:</p>
+<p>Donc, tout ce que nous avons à faire, c&rsquo;est d&rsquo;enregistrer la liste des parents dans une pile. Supposons que nous traitions le premier exemple complètement. La pile passera par les états suivants&nbsp;:</p>
 
 <pre><code class="html">[]           
 [div]           &lt;div class="corps"&gt;
@@ -110,7 +110,7 @@
 []              &lt;/div&gt;
 </code></pre>
 
-<p>L’algorithme est alors très simple&nbsp;:</p>
+<p>L&rsquo;algorithme est alors très simple&nbsp;:</p>
 
 <pre><code class="html">let res be the XML as a string ; 
 read res and each time you encouter a tag: 
@@ -128,7 +128,7 @@ return res
 
 <p>Et <code>res</code> contiend le XML réparé.</p>
 
-<p>Finallement, voici le code en ruby que j’utilise. La variable <code>xml</code> contient le XML coupé.</p>
+<p>Finallement, voici le code en ruby que j&rsquo;utilise. La variable <code>xml</code> contient le XML coupé.</p>
 
 <div class="codefile"><a href="/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/code/repair_xml.rb">&#x27A5; repair_xml.rb</a></div>
 
@@ -158,7 +158,7 @@ def repair_xml( xml )
 end
 </code></pre>
 
-<p>Je ne sais pas si ce code pourra vous être utile. Par contre le raisonnement pour y parvenir mérite d’être connu.</p>
+<p>Je ne sais pas si ce code pourra vous être utile. Par contre le raisonnement pour y parvenir mérite d&rsquo;être connu.</p>
 
                 </div>
             

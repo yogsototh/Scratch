@@ -59,16 +59,16 @@
                 <div class="corps">
                     <p><span class="intro">
 Voici une solution pour conserver des branches divergentes avec <code>git</code>.
-Parce qu’il est facile de <em>merger</em> par erreur, je propose un script qui encapsule le comportement de <code>git</code> pour interdire certains <em>merges</em> dangereux. Mais qui permet aussi de faire des merges en cascades de la racines vers les autres branches.
+Parce qu&rsquo;il est facile de <em>merger</em> par erreur, je propose un script qui encapsule le comportement de <code>git</code> pour interdire certains <em>merges</em> dangereux. Mais qui permet aussi de faire des merges en cascades de la racines vers les autres branches.
 </span></p>
 
 <h2 id="se-prmunir-contre-les-erreurs">Se prémunir contre les erreurs</h2>
 
-<p>Je travaille sur un projet dans lequel certaines de mes branches <code>git</code> doivent rester divergentes. Et les divergences devraient aller en s’accentuant.</p>
+<p>Je travaille sur un projet dans lequel certaines de mes branches <code>git</code> doivent rester divergentes. Et les divergences devraient aller en s&rsquo;accentuant.</p>
 
-<p>J’utilise aussi certaines branches qui contiennent la partie commune de ces projets.</p>
+<p>J&rsquo;utilise aussi certaines branches qui contiennent la partie commune de ces projets.</p>
 
-<p>Disons que j’ai les branches&nbsp;:</p>
+<p>Disons que j&rsquo;ai les branches&nbsp;:</p>
 
 <ul>
   <li>master: commune à toutes les branches</li>
@@ -86,7 +86,7 @@ Parce qu’il est facile de <em>merger</em> par erreur, je propose un script qui
 
 <p><img alt="Branch hierarchy" src="/Scratch/img/blog/2010-03-23-Encapsulate-git/branch_hierarchy.png" /></p>
 
-<p>Une flèche de A vers B signifie que l’on peut merger A dans B. S’il n’y a pas de flèche de A vers B cela signifie qu’il est <em>interdit</em> de merger A dans B. Voici le code ruby correspondant&nbsp;:</p>
+<p>Une flèche de A vers B signifie que l&rsquo;on peut merger A dans B. S&rsquo;il n&rsquo;y a pas de flèche de A vers B cela signifie qu&rsquo;il est <em>interdit</em> de merger A dans B. Voici le code ruby correspondant&nbsp;:</p>
 
 <div>
 
@@ -98,12 +98,12 @@ Parce qu’il est facile de <em>merger</em> par erreur, je propose un script qui
 
 </div>
 
-<p><code>:master =&gt; [ :dev, :client ]</code> signifie que l’on peut merger la branche <code>master</code> dans la branche <code>dev</code> et la branche <code>client</code>.</p>
+<p><code>:master =&gt; [ :dev, :client ]</code> signifie que l&rsquo;on peut merger la branche <code>master</code> dans la branche <code>dev</code> et la branche <code>client</code>.</p>
 
 <p>Je fait une erreur si je tape <code>git checkout master &amp;&amp; git merge clientA</code>.
-C’est pour éviter ça que j’ai fait un script pour encapsuler le comportement de <code>git</code>.</p>
+C&rsquo;est pour éviter ça que j&rsquo;ai fait un script pour encapsuler le comportement de <code>git</code>.</p>
 
-<p>Mais ce script fait bien plus que ça. Il fait des merges en cascade de la racine vers les feuilles avec l’acion <code>allmerges</code>.</p>
+<p>Mais ce script fait bien plus que ça. Il fait des merges en cascade de la racine vers les feuilles avec l&rsquo;acion <code>allmerges</code>.</p>
 
 <div>
 
@@ -115,7 +115,7 @@ git co clientB &amp;&amp; git merge client
 
 </div>
 
-<p>Je peux ainsi mettre à jour toutes les branches. L’algorithme ne boucle pas même s’il y a des cycles dans la structure des branches.<br />
+<p>Je peux ainsi mettre à jour toutes les branches. L&rsquo;algorithme ne boucle pas même s&rsquo;il y a des cycles dans la structure des branches.<br />
 Le voici&nbsp;:</p>
 
 <div class="small"><div class="codefile"><a href="/Scratch/fr/blog/2010-03-23-Encapsulate-git/code/eng">&#x27A5; eng</a></div>
@@ -229,7 +229,7 @@ end
 
 <p>Pour que ça fonctionne il vous suffit de copier <code>eng</code> dans un répertoire présent dans votre <code>PATH</code>.</p>
 
-<p>Bien entendu, il faut essayer de faire aussi peu que possible des <code>cherry-pick</code> et des <code>rebase</code>. Ce script a pour but de s’intégrer avec les workflow basé sur les <code>pull</code> et <code>merge</code>.</p>
+<p>Bien entendu, il faut essayer de faire aussi peu que possible des <code>cherry-pick</code> et des <code>rebase</code>. Ce script a pour but de s&rsquo;intégrer avec les workflow basé sur les <code>pull</code> et <code>merge</code>.</p>
 
                 </div>
             
