@@ -147,7 +147,7 @@ fr: Dans vim, lorsque vous êtes en mode Normal, c'est comme si vous mainteniez 
 en: A last word about notations: 
 en: 
 en: - instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
-en: - command staring by `:` will must end by `<enter>`. For example, when I write `:q` it means `:q<enter>`.
+en: - command starting by `:` will must end by `<enter>`. For example, when I write `:q` it means `:q<enter>`.
 fr: Quelques mots concernant les notations :
 fr: 
 fr: - Au lieu d'écrire `Ctrl-λ`, j'écrirai `<C-λ>`. 
