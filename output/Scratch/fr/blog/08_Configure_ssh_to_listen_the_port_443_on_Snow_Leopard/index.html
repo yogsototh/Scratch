@@ -22,6 +22,7 @@
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
         <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
         <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -34,11 +35,9 @@
         </script>
 
         <div id="content">
-
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
-                <div id="choixlang">
-                    <a href="/Scratch/en/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/" onclick="setLanguage('en')">in English</a>
+                <div id="choixlang"><a href="/Scratch/en/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/" onclick="setLanguage('en')">in English</a>
                 </div>
                 <div class="flush"></div>
             </div>
@@ -140,7 +139,7 @@ Merci à tous ceux qui m&rsquo;ont aidé. Et la solution est&nbsp;:</p>
 <p>Encore une fois j&rsquo;espère que ça a pu être utile.</p>
 
                 </div>
-            
+                
                 
 
                 <div id="social">
@@ -192,78 +191,79 @@ Merci à tous ceux qui m&rsquo;ont aidé. Et la solution est&nbsp;:</p>
     
                 </div>
 
-            <div id="entete" class="corps_spaced">
-                <div id="liens">
-                    <ul><li><a href="/Scratch/fr/">Bienvenue</a></li>
+                <div id="entete" class="corps_spaced">
+                    <div id="liens">
+                        <ul><li><a href="/Scratch/fr/">Bienvenue</a></li>
 <li><a href="/Scratch/fr/blog/">Blog</a></li>
 <li><a href="/Scratch/fr/softwares/">Softwares</a></li>
 <li><a href="/Scratch/fr/about/">À propos</a></li></ul>
-                </div>
-                <div class="flush"></div>
-                <hr/>
-                <div id="next_before_articles">
-                    <div id="previous_articles">
-                        articles précédents
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/"><span class="nicer">«</span>&nbsp;Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small></a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/fr/blog/06_How_I_use_git/"><span class="nicer">«</span>&nbsp;Git en solo</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/fr/blog/05_git_create_remote_branch/"><span class="nicer">«</span>&nbsp;Création de branches externe avec Git</a>
-                        </div>
-                        
-                        
-                    </div>
-                    <div id="next_articles">
-                        articles suivants
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/09_Why_I_didn-t_keep_whosamung-us/">Pourquoi je n'ai pas conservé whos.amung.us&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en]&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
                     </div>
                     <div class="flush"></div>
+                    <hr/>
+                    <div id="next_before_articles">
+                        <div id="previous_articles">
+                            articles précédents
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/fr/blog/07_Screensaver_compilation_option_for_Snow_Leopard/"><span class="nicer">«</span>&nbsp;Compilation d'économiseur d'écran sous Snow Leopard<small>&copy;</small></a>
+                            </div>
+                            
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/fr/blog/06_How_I_use_git/"><span class="nicer">«</span>&nbsp;Git en solo</a>
+                            </div>
+                            
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/fr/blog/05_git_create_remote_branch/"><span class="nicer">«</span>&nbsp;Création de branches externe avec Git</a>
+                            </div>
+                            
+                            
+                        </div>
+                        <div id="next_articles">
+                            articles suivants
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/fr/blog/09_Why_I_didn-t_keep_whosamung-us/">Pourquoi je n'ai pas conservé whos.amung.us&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/fr/blog/10_Synchronize_Custom_WebSite_with_mobileMe/">Héberger son site personnel sur le site mobileMe&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/fr/blog/11_Load_Disqus_Asynchronously/">Load Disqus Asynchronously [en]&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="flush"></div>
+                    </div>
                 </div>
-            </div>
 
 
-            <div id="bottom">
-                <div>
-                    <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
+                <div id="bottom">
+                    <div>
+                        <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
+                    </div>
+                    <div>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                    </div>
+                    <div id="lastmod">
+                        Écrit le : 07/09/2009
+                        modifié le : 09/05/2010 
+                    </div>
+                    <div>
+                        Site entièrement réalisé avec
+                        <a href="http://www.vim.org">Vim</a>
+                        et 
+                        <a href="http://nanoc.stoneship.org">nanoc</a>
+                    </div>
                 </div>
-                <div>
-                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
-                </div>
-                <div id="lastmod">
-                    Écrit le : 07/09/2009
-                    modifié le : 09/05/2010 
-                </div>
-                <div>
-                    Site entièrement réalisé avec
-                    <a href="http://www.vim.org">Vim</a>
-                    et 
-                    <a href="http://nanoc.stoneship.org">nanoc</a>
-                </div>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
         </div>
     </body>
 </html>

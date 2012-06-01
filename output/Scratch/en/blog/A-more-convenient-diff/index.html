@@ -22,6 +22,7 @@
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
         <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
         <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -34,11 +35,9 @@
         </script>
 
         <div id="content">
-
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
-                <div id="choixlang">
-                    <a href="/Scratch/fr/blog/A-more-convenient-diff/" onclick="setLanguage('fr')">en Français</a>
+                <div id="choixlang"><a href="/Scratch/fr/blog/A-more-convenient-diff/" onclick="setLanguage('fr')">en Français</a>
                 </div>
                 <div class="flush"></div>
             </div>
@@ -91,7 +90,7 @@ diff -u $* | colorize_diff
 
 
                 </div>
-            
+                
                 
 
                 <div id="social">
@@ -143,78 +142,79 @@ diff -u $* | colorize_diff
     
                 </div>
 
-            <div id="entete" class="corps_spaced">
-                <div id="liens">
-                    <ul><li><a href="/Scratch/en/">Home</a></li>
+                <div id="entete" class="corps_spaced">
+                    <div id="liens">
+                        <ul><li><a href="/Scratch/en/">Home</a></li>
 <li><a href="/Scratch/en/blog/">Blog</a></li>
 <li><a href="/Scratch/en/softwares/">Softwares</a></li>
 <li><a href="/Scratch/en/about/">About</a></li></ul>
-                </div>
-                <div class="flush"></div>
-                <hr/>
-                <div id="next_before_articles">
-                    <div id="previous_articles">
-                        previous entries
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/Haskell-Mandelbrot/"><span class="nicer">«</span>&nbsp;ASCII Haskell Mandelbrot</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/Password-Management/"><span class="nicer">«</span>&nbsp;40 character's passwords</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/2011-04-20-Now-hosted-on-github/"><span class="nicer">«</span>&nbsp;Now hosted on github</a>
-                        </div>
-                        
-                        
-                    </div>
-                    <div id="next_articles">
-                        next entries
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/Learn-Vim-Progressively/">Learn Vim Progressively&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/programming-language-experience/">Programming Language Experience&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/Higher-order-function-in-zsh/">Higher order function in zsh&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
                     </div>
                     <div class="flush"></div>
+                    <hr/>
+                    <div id="next_before_articles">
+                        <div id="previous_articles">
+                            previous entries
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/en/blog/Haskell-Mandelbrot/"><span class="nicer">«</span>&nbsp;ASCII Haskell Mandelbrot</a>
+                            </div>
+                            
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/en/blog/Password-Management/"><span class="nicer">«</span>&nbsp;40 character's passwords</a>
+                            </div>
+                            
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/en/blog/2011-04-20-Now-hosted-on-github/"><span class="nicer">«</span>&nbsp;Now hosted on github</a>
+                            </div>
+                            
+                            
+                        </div>
+                        <div id="next_articles">
+                            next entries
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/en/blog/Learn-Vim-Progressively/">Learn Vim Progressively&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/en/blog/programming-language-experience/">Programming Language Experience&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/en/blog/Higher-order-function-in-zsh/">Higher order function in zsh&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="flush"></div>
+                    </div>
                 </div>
-            </div>
 
 
-            <div id="bottom">
-                <div>
-                    <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
+                <div id="bottom">
+                    <div>
+                        <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
+                    </div>
+                    <div>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                    </div>
+                    <div id="lastmod">
+                        Created: 08/17/2011
+                        Modified: 08/17/2011 
+                    </div>
+                    <div>
+                        Entirely done with
+                        <a href="http://www.vim.org">Vim</a>
+                        and 
+                        <a href="http://nanoc.stoneship.org">nanoc</a>
+                    </div>
                 </div>
-                <div>
-                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
-                </div>
-                <div id="lastmod">
-                    Created: 08/17/2011
-                    Modified: 08/17/2011 
-                </div>
-                <div>
-                    Entirely done with
-                    <a href="http://www.vim.org">Vim</a>
-                    and 
-                    <a href="http://nanoc.stoneship.org">nanoc</a>
-                </div>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
         </div>
     </body>
 </html>

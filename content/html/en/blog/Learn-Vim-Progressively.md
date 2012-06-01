@@ -17,7 +17,7 @@ blogimage("uber_leet_use_vim.jpg","Über leet use vim!")
 
 begindiv(intro)
 
-<%= tldr %> Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way. Start by learning the minimal to survive, then integrate slowly all tricks.
+%tldr Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way. Start by learning the minimal to survive, then integrate slowly all tricks.
 
 
 enddiv
@@ -92,7 +92,7 @@ With vim in Normal mode, it is a bit like if your `Ctrl` key is always pushed do
 A last word about notations: 
 
 - instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
-- command staring by `:` will must end by `<enter>`. For example, when I write `:q` it means `:q<enter>`.
+- command starting by `:` will must end by `<enter>`. For example, when I write `:q` it means `:q<enter>`.
 
 ## 2nd Level -- Feel comfortable
 

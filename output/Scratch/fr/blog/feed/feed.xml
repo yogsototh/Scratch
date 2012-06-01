@@ -2,13 +2,43 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2012-02-08T13:17:53Z</updated>
+  <updated>2012-04-30T17:17:53Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomfr"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2012-04-30:/Scratch/fr/blog/Haskell-OpenGL-Mandelbrot/</id>
+    <title type="html">Un programme Haskell fonctionnel</title>
+    <published>2012-04-30T17:17:53Z</published>
+    <updated>2012-04-30T17:17:53Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Haskell-OpenGL-Mandelbrot/"/>
+    <content type="html">&lt;p&gt;&lt;img alt="The plan in image" src="/Scratch/img/blog/Haskell-OpenGL-Mandelbrot/HGL_Plan.png" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt; Un exemple progressif de programmation avec Haskell.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;center&gt;&lt;hr style="width:30%;float:left;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;span class="sc"&gt;&lt;b&gt;Table of Content&lt;/b&gt;&lt;/span&gt;&lt;hr style="width:30%;float:right;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;/center&gt;
+
+&lt;ul id="markdown-toc"&gt;
+  &lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#first-version"&gt;First version&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#lets-play-the-song-of-our-people"&gt;Let&amp;rsquo;s play the song of our people&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#let-us-start"&gt;Let us start&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+...&lt;/ul&gt;&lt;/hr&gt;&lt;/center&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2012-02-08:/Scratch/fr/blog/Haskell-the-Hard-Way/</id>
     <title type="html">Haskell comme un vrai!</title>
@@ -1122,34 +1152,5 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 &lt;/pre&gt;
 
 &lt;p&gt;La premi&#232;re erreur vient de l&amp;rsquo;utilisation du &lt;em&gt;terrible&lt;/em&gt; &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2010-02-15:/Scratch/fr/blog/2010-02-15-All-but-something-regexp/</id>
-    <title type="html">Expression r&#233;guli&#232;re pour tout sauf quelquechose</title>
-    <published>2010-02-15T09:16:12Z</published>
-    <updated>2010-02-15T09:16:12Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-02-15-All-but-something-regexp/"/>
-    <content type="html">&lt;p&gt;Parfois vous ne pouvez simplement pas &#233;crire&amp;nbsp;:&lt;/p&gt;
-
-&lt;div&gt;
-
-&lt;pre&gt;&lt;code class="ruby"&gt;if str.match(regexp) and 
-    not str.match(other_regexp)
-        do_something
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;et vous devez obtenir le m&#234;me comportement avec seulement une expression r&#233;guli&#232;re. Le probl&#232;me c&amp;rsquo;est que le compl&#233;mentaire des r&#233;gulier n&amp;rsquo;est pas r&#233;gulier. Cel&#224; peut s&amp;rsquo;av&#233;rer impossible.&lt;/p&gt;
-
-&lt;p&gt;Cependant, pour certaines expressions ce peut &#234;tre possible&lt;sup&gt;&lt;a href="#note1"&gt;&amp;dagger;&lt;/a&gt;&lt;/sup&gt;. Disons que vous souhaitez &lt;em&gt;matcher&lt;/em&gt; toutes les lignes contenant le mot &lt;code&gt;bull&lt;/code&gt;, mais que vous ne souhaitez pas matcher &lt;code&gt;bullshit&lt;/code&gt;. Voici une fa&#231;on sympa d&amp;rsquo;y arriver&amp;nbsp;:&lt;/p&gt;
-
-&lt;div&gt;
-
-&lt;pre&gt;&lt;code class="ruby"&gt;# matcher toute les chaines qui ...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
 </feed>

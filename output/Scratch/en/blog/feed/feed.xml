@@ -2,13 +2,43 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2012-02-08T13:17:53Z</updated>
+  <updated>2012-04-30T17:17:53Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2012-04-30:/Scratch/en/blog/Haskell-OpenGL-Mandelbrot/</id>
+    <title type="html">Haskell Working Program</title>
+    <published>2012-04-30T17:17:53Z</published>
+    <updated>2012-04-30T17:17:53Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/Haskell-OpenGL-Mandelbrot/"/>
+    <content type="html">&lt;p&gt;&lt;img alt="The plan in image" src="/Scratch/img/blog/Haskell-OpenGL-Mandelbrot/HGL_Plan.png" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; A progressive real world example.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;center&gt;&lt;hr style="width:30%;float:left;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;span class="sc"&gt;&lt;b&gt;Table of Content&lt;/b&gt;&lt;/span&gt;&lt;hr style="width:30%;float:right;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;/center&gt;
+
+&lt;ul id="markdown-toc"&gt;
+  &lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#first-version"&gt;First version&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#lets-play-the-song-of-our-people"&gt;Let&amp;rsquo;s play the song of our people&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#let-us-start"&gt;Let us start&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/hr&gt;&lt;/center&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2012-02-08:/Scratch/en/blog/Haskell-the-Hard-Way/</id>
     <title type="html">Learn Haskell Fast and Hard</title>
@@ -1220,36 +1250,5 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 &lt;pre class="twilight"&gt;
 /a.*?b/
 &lt;span class="Constant"&gt;&lt;strong&gt;...&lt;/strong&gt;&lt;/span&gt;&lt;/pre&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2010-02-15:/Scratch/en/blog/2010-02-15-All-but-something-regexp/</id>
-    <title type="html">Pragmatic Regular Expression Exclude</title>
-    <published>2010-02-15T09:16:12Z</published>
-    <updated>2010-02-15T09:16:12Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-02-15-All-but-something-regexp/"/>
-    <content type="html">&lt;p&gt;Sometimes you cannot simply write:&lt;/p&gt;
-
-&lt;div&gt;
-
-&lt;pre&gt;&lt;code class="ruby"&gt;if str.match(regexp) and 
-    not str.match(other_regexp)
-        do_something
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;and you have to make this behaviour with only one regular expression.
-But, there exists a major problem: the complementary of a regular language might not be regular.
-Then, for some expression it is absolutely impossible to negate a regular expression.&lt;/p&gt;
-
-&lt;p&gt;But sometimes with some simple regular expression it should be possible&lt;sup&gt;&lt;a href="#note1"&gt;&amp;dagger;&lt;/a&gt;&lt;/sup&gt;. Say you want to match everything containing the some word say &lt;code&gt;bull&lt;/code&gt; but don&amp;rsquo;t want to match &lt;code&gt;bullshit&lt;/code&gt;. Here is a nice way to do that:&lt;/p&gt;
-
-&lt;div&gt;
-
-&lt;pre&gt;&lt;code class="ruby"&gt;# match all string containing 'bull' (bullsh...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
 </feed>
