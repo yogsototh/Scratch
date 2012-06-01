@@ -21,7 +21,9 @@
 /* base03 */
 pre {
     padding: .8em;
-    background-color: #002b36;
+    /* background-color: #002b36; */
+    background: #f3f4f5;
+    color: #657b83;
 }
 
 pre .high0 { color:#93a1a1; }
@@ -134,7 +136,9 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 
 pre code {
   display: block;
-  background: #002b36; color: #839496;
+  /* background: #002b36; */ 
+  color: #657b83;
+  background-color: #f3f4f5;
 }
 
 pre .comment,
@@ -143,7 +147,7 @@ pre .diff .header,
 pre .doctype,
 pre .lisp .string,
 pre .javadoc {
-  color: #586e75;
+  color: #93a1a1;
   font-style: italic;
 }
 
@@ -214,5 +218,5 @@ pre .deletion {
 }
 
 pre .tex .formula {
-  background: #073642;
+  background: #eee8d5;
 }

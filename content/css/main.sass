@@ -199,7 +199,7 @@ body, h1, h2, h3, h4, #entete, .tagname
 
 pre
   +codeColor
-  box-shadow: 0 0 1em #001 inset
+  box-shadow: 0 0 5px ($secondBackgroundColor - #222) inset
   border-radius: 3px
   padding: 1em
   line-height: 1.2em
@@ -935,7 +935,7 @@ p, ul li, ol li
     border: none
     padding: 0
   code
-    background: $secondBackgroundColor
+    background: $secondBackgroundColor - #020202
     border: solid 1px $borderColor
     padding: 2px
 
@@ -969,7 +969,7 @@ a.cut
   strong
     font-weight: bold
 .codehighlight pre
-  border: 4px solid $borderColor
+  border-left: 4px solid $borderColor
 
 #social
   text-align: left
