@@ -567,7 +567,7 @@ fr: Heureusement vim est founi avec un très bon tutoriel et une excellente docu
 fr: Lancez vimtutor jusqu'à ce que vous vous sentiez à l'aise avec les commandes basiques.
 fr: De plus, vous devriez aussi lire en détail la page suivate : `:help usr_02.txt`.
 
-en: Then, you will learn about `!`, folds, registers, the plugins and many other features.
+en: Then, you will learn about `!`, folds, registers, plugins and many other features.
 en: Learn vim like you'd learn piano and all should be fine.
 fr: Ensuite vous découvrirez `!`, les folds, les registres, les plugins et tout un tas d'autres choses.
 fr: Apprenez vim comme vous apprendriez le piano et vous devriez très bien vous en sortir.
