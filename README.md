@@ -1,6 +1,6 @@
 # yannesposito.com
 
-This is the source code of the [yannesposito.com](yannesposito.com) website.
+This is the source code for the [yannesposito.com](yannesposito.com) website.
 
 It is mainly a multi-language blog based on [nanoc](nanoc.stoneship.org).
 
