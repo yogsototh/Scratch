@@ -20,7 +20,7 @@ blogimage("uber_leet_use_vim.jpg","Über leet use vim!")
 
 begindiv(intro)
 
-en: %tldr Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way. Start by learning the minimal to survive, then integrate slowly all tricks.
+en: %tldr You want to teach yourself vim (the best text editor known to human kind) in the fastest way possible. This my way of doing it. You start by learning the minimal to survive, then you integrate all the tricks slowly.
 
 fr: %tlal Vous désirez apprendre vim (le meilleur editeur de texte connu à ce jour) le plus rapidement possible. Voici mes conseils pour vous aider. Commencez à apprendre le minimum vital, puis apprenez doucement de nouvelles commandes.
 
@@ -33,19 +33,19 @@ en: > Better, Stronger, Faster.
 fr: > Meilleur, plus fort, plus rapide.
 
 en: Learn [vim] and it will be your last text editor.
-en: There isn't any better text editor I know.
-en: Hard to learn, but incredible to use.
+en: There isn't any better text editor that I know of.
+en: It is hard to learn, but incredible to use.
 fr: Apprenez [vim] et ce sera votre dernier éditeur.
 fr: Aucun éditeur que je connaisse ne le surpasse.
 fr: Sa prise en mais est difficile, mais payante.
 
-en: I suggest you to learn it in 4 steps:
+en: I suggest you teach yourself Vim in 4 steps:
 fr: Je vous conseille de l'apprendre en 4 étapes :
 
 en: 1. Survive
 en: 2. Feel comfortable
 en: 3. Feel Better, Stronger, Faster
-en: 4. Use vim superpowers
+en: 4. Use superpowers of vim
 fr: 1. La survie
 fr: 2. Se sentir à son aise
 fr: 3. Se sentir meilleur, plus fort et plus rapide
@@ -57,7 +57,7 @@ fr: À la fin de ces leçons vous serez transformé.
 en: But before we start, just a warning.
 en: Learning vim will be painful at first.
 en: It will take time.
-en: It will be a lot like playing a music instrument.
+en: It will be a lot like playing a musical instrument.
 en: Don't expect to be more efficient with vim than with another editor in less than 3 days.
 en: In fact it will certainly take 2 weeks instead of 3 days.
 fr: Avant de commencer, un message pour vous prévenir.
@@ -86,8 +86,8 @@ fr: 2. NE TOUCHEZ A RIEN! Lisez
 en: In a standard editor, typing on the keyboard is enough to write something and see it on the screen.
 en: Not this time.
 en: Vim is in _Normal_ mode.
-en: Let's get in _Insert_ mode.
-en: Type on the letter `i`.
+en: Let's go to _Insert_ mode.
+en: Type the letter `i`.
 fr: Dans un éditeur normal, il suffit de taper sur une touche du clavier et la lettre s'affiche à l'écran.
 fr: Pas ici.
 fr: Vim est en mode _Normal_.
@@ -95,14 +95,14 @@ fr: Commençons par placer vim en mode _Insert_.
 fr: Tapez sur la touche `i`.
 
 en: You should feel a bit better.
-en: You can type letters like in a standard notepad.
-en: To get back in _Normal_ mode just tap the `ESC` key.
+en: You can type letters like in a standard editor.
+en: To get back to _Normal_ mode just press the `ESC` key.
 fr: Voilà, c'est magique. 
 fr: Vous pouvez tapez comme dans un éditeur standard.
 fr: Pour repasser en mode Normal tapez sur la touche `Echap`.
 
-en: You know how to switch between _Insert_ and _Normal_ mode.
-en: And now, the list of command you can use in _Normal_ mode to survive:
+en: You now know how to switch between _Insert_ and _Normal_ mode.
+en: And now, here are the commands that you need in order to survive in _Normal_ mode:
 fr: Maintenant que vous savez passer du mode _Normal_ au mode _Insert_.
 fr: Voici les commandes de survie (toutes en mode _Normal_) :
 
@@ -114,8 +114,8 @@ en: > - `p` → Paste
 en: > 
 en: > Recommended:
 en: > 
-en: > - `hjkl` (highly recommended but not mandatory) →  basic cursor move (<-&darr;&uarr;→). Hint: `j` look like a down arrow.
-en: > - `:help <command>` → Show help about `<command>`, you can start using `:help` without anything else.
+en: > - `hjkl` (highly recommended but not mandatory) →  basic cursor move (<-&darr;&uarr;→). Hint: `j` looks like a down arrow.
+en: > - `:help <command>` → Show help about `<command>`. You can use `:help` without a `<command>` to get general help.
 fr: > - `i` → Passer en mode insértion. Taper `Echap` pour repasser en mode Normal.
 fr: > - `x` → Supprimer le caractère sous le curseur
 fr: > - `:wq` → Sauvegarder et quitter (`:w` sauvegarde, `:q<enter>` quitter)
@@ -127,18 +127,18 @@ fr: >
 fr: > - `hjkl` (optionnel) → se déplacer (<-&darr;&uarr;→). Souvenez vous `j` ressemble à une flèche vers le bas.
 fr: > - `:help <commande>` → Affiche l'aide pour `<commande>`. Vous pouvez aussi écrire `:help` pour atterir sur l'aide générale.
 
-en: Only 5 commands. This is very few to start.
-en: Once these command start to become natural (may be after a complete day), you should go on level 2.
+en: Only 5 commands. That is all you need to get started.
+en: Once these command start to become natural (maybe after day or so), you should move on to level 2.
 fr: Seulement 5 commandes. 
 fr: Voilà, c'est tout pour un début. 
 fr: Essayez d'éditer vos fichiers comme ça pendant une petite journée. 
 fr: Lorsque ces commandes vous sembleront naturelles, 
 fr: vous pourrez passer à l'étape d'après. 
 
-en: But before, just a little remark on _Normal mode_.
+en: But first, just a little remark about _Normal mode_.
 en: In standard editors, to copy you have to use the `Ctrl` key (`Ctrl-c` generally).
-en: In fact, when you press `Ctrl`, it is a bit like if all your key change meaning.
-en: With vim in Normal mode, it is a bit like if your `Ctrl` key is always pushed down.
+en: In fact, when you press `Ctrl`, it is as if all of your keys change meaning.
+en: Using vim in normal mode is a bit like having the editor automatically press the `Ctrl` key for you.
 fr: Mais avant un petit mot sur le mode Normal.
 fr: Dans un éditeur normal pour copier il faut utiliser une combinaison de touches (`Ctrl-c`). 
 fr: En fait, lorsque vous appuyez sur la touche `Ctrl`, c'est un peu comme si toutes les touches du clavier avaient un autre usage.
@@ -147,7 +147,7 @@ fr: Dans vim, lorsque vous êtes en mode Normal, c'est comme si vous mainteniez 
 en: A last word about notations: 
 en: 
 en: - instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
-en: - command staring by `:` will must end by `<enter>`. For example, when I write `:q` it means `:q<enter>`.
+en: - commands starting with `:` end with `<enter>`. For example, when I write `:q`, I mean `:q<enter>`.
 fr: Quelques mots concernant les notations :
 fr: 
 fr: - Au lieu d'écrire `Ctrl-λ`, j'écrirai `<C-λ>`. 
