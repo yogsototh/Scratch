@@ -357,7 +357,7 @@ fr: est aussi vrai pour `d` (delete → supprimer), `v` (sélection visuelle), `
 en: ## 4th Level -- Vim Superpowers
 fr: ## 4ième Niveau -- Les super pouvoirs de Vim
 
-en: With all preceding commands you should be comfortable to use vim.
+en: With all preceding commands you should be comfortable using vim.
 en: But now, here are the killer features.
 en: Some of these features were the reason I started to use vim.
 fr: Jusqu'ici vous avez appris les commandes les plus courantes.
@@ -371,9 +371,9 @@ en: > - `0` → go to column 0
 en: > - `^` → go to first character on the line
 en: > - `$` → go to the last column
 en: > - `g_` → go to the last character on the line
-en: > - `fa` → go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will seek for the next (resp. previous) occurrence.
-en: > - `t,` → go just before the character `,`.
-en: > - `3fa` → search the 3rd occurrence of `a` on this line.
+en: > - `fa` → go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will find the next (resp. previous) occurrence.
+en: > - `t,` → go to just before the character `,`.
+en: > - `3fa` → find the 3rd occurrence of `a` on this line.
 en: > - `F` and `T` → like `f` and `t` but backward.
 fr: > - `0` → aller à la colonne 0,
 fr: > - `^` → aller au premier caractère de la ligne
@@ -391,7 +391,7 @@ fr: Un truc pratique : `dt"` → supprime tout jusqu'au prochain `"`.
 en: ### Zone selection `<action>a<object>` or `<action>i<object>`
 fr: ### Selection de zone `<action>a<object>` ou `<action>i<object>`
 
-en: These command can only be used after an operator of in visual mode.
+en: These command can only be used after an operator in visual mode.
 en: But they are very powerful. Their main pattern is:
 fr: Ces commandes sont utilisable seulement en mode visuel ou après un "opérateur".
 fr: Mais elles sont très puissantes. Leur forme générale est:
@@ -400,7 +400,7 @@ en: `<action>a<object>` and `<action>i<object>`
 fr: `<action>a<objet>` et `<action>i<objet>`
 
 en: Where action can be any action, for example, `d` (delete), `y` (yank), `v` (select in visual mode).
-en: And object can be: `w` a word, `W` a WORD (extended word), `s` a sentence, `p` a paragraph. But also, natural character such as `"`, `'`, `)`, `}`, `]`.
+en: The object can be: `w` a word, `W` a WORD (extended word), `s` a sentence, `p` a paragraph. But also, natural character such as `"`, `'`, `)`, `}`, `]`.
 fr: Où action peut être par exemple `d` (delete), `y` (yank), `v` (select in visual mode), etc...
 fr: Un objet peut être: `w` un mot, `W` un MOT (mot étendu), `s` une phrase, `p` un paragraphe. Mais aussi des caractère plus naturels comme `"`, `'`, `)`, `}`, `]`.
 
@@ -425,7 +425,7 @@ blogimage("textobjects.png","Text objects selection")
 en: ### Select rectangular blocks: `<C-v>`. 
 fr: ### Sélection de blocs rectangulaires : `<C-V>`.
 
-en: Rectangular blocks are very useful to comment many lines of code.
+en: Rectangular blocks are very useful for commenting many lines of code.
 en: Typically: `0<C-v><C-d>I-- [ESC]`
 en: 
 en: - `^` → go to start of the line
@@ -443,7 +443,7 @@ fr: - `I-- [ESC]` → écrit `-- ` pour commenter le reste de la ligne.
 
 blogimage("rectangular-blocks.gif","Rectangular blocks")
 
-en: Note on windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
+en: Note: in Windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
 fr: Remarquez que sous windows, vous devez utiliser `<C-q>` plutôt que `<C-v>` si votre "presse papier" n'est pas vide.
 
 en: ### Completion: `<C-n>` and `<C-p>`.
@@ -497,9 +497,9 @@ fr: ### Sélection visuelle : `v`,`V`,`<C-v>`
 
 en: We saw an example with `<C-v>`. 
 en: There is also `v` and `V`.
-en: Once the selection made, you can:
+en: Once the selection has been made, you can:
 en: 
-en: - `J` → join all lines together.
+en: - `J` → join all the lines together.
 en: - `<` (resp. `>`) → indent to the left (resp. to the right).
 en: - `=` → auto indent
 fr: On a déjà vu un exemple avec `<C-V>`. 
@@ -516,7 +516,7 @@ en: Add something at the end of all visually selected lines:
 en: 
 en: - `<C-v>` 
 en: - go to desired line (`jjj` or `<C-d>` or `/pattern` or `%` etc...)
-en: - `$` go to the end of line
+en: - `$` go to the end of the line
 en: - `A`, write text, `ESC`.
 fr: Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellement : 
 fr: 
@@ -531,11 +531,11 @@ fr: blogimage("append-to-many-lines.gif","Ajouter à la fin de plusieurs lignes"
 en: ### Splits: `:split` and `vsplit`.
 fr: ### Splits : `:split` et `vsplit`.
 
-en: Here are the main commands, but you should look at `:help split`.
+en: These are the most important commands, but you should look at `:help split`.
 en: 
 en: > - `:split` → create a split (`:vsplit` create a vertical split)
-en: > - `<C-w><dir>` : where dir is any of `hjkl` or <-&darr;&uarr;→ to change split.
-en: > - `<C-w>_` (resp. `<C-w>|`) : maximise size of split (resp. vertical split)
+en: > - `<C-w><dir>` : where dir is any of `hjkl` or <-&darr;&uarr;→ to change the split.
+en: > - `<C-w>_` (resp. `<C-w>|`) : maximise the size of the split (resp. vertical split)
 en: > - `<C-w>+` (resp. `<C-w>-`) : Grow (resp. shrink) split
 fr: Je vous conseille de faire un `:help split`. 
 fr: Celà permet de manipuler plusieurs buffer sur la même fenêtre.
@@ -550,8 +550,8 @@ blogimage("split.gif","Split")
 
 ## Conclusion
 
-en: That was 90% of commands I use every day.
-en: I suggest you to learn no more than one or two new command per day.
+en: That was 90% of the commands I use every day.
+en: I suggest that you learn no more than one or two new commands per day.
 en: After two to three weeks you'll start to feel the power of vim in your hands.
 fr: Voilà, je vous ai donné 90% des commandes que j'utilise tous les jours.
 fr: N'essayez pas de toutes les apprendre en une journée. 
@@ -559,9 +559,9 @@ fr: Il faut le temps de s'habituer à chaque nouvelle commande.
 fr: Je vous conseille de ne pas apprendre plus d'une ou deux commandes par jour.
 
 en: Learning Vim is more a matter of training than plain memorization.
-en: Fortunately vim comes with some very good tools and an excellent documentation.
+en: Fortunately vim comes with some very good tools and excellent documentation.
 en: Run vimtutor until you are familiar with most basic commands.
-en: Also, you should read carefully this page: `:help usr_02.txt`.
+en: Also, you should read this page carefully: `:help usr_02.txt`.
 fr: Apprendre Vim est plus une question d'entraînement que de mémorisation.
 fr: Heureusement vim est founi avec un très bon tutoriel et une excellente documentation.
 fr: Lancez vimtutor jusqu'à ce que vous vous sentiez à l'aise avec les commandes basiques.
