@@ -109,7 +109,7 @@ fr: Voici les commandes de survie (toutes en mode _Normal_) :
 en: > - `i` → _Insert_ mode. Type `ESC` to return to Normal mode.
 en: > - `x` → Delete the char under the cursor
 en: > - `:wq` → Save and Quit (`:w` save, `:q` quit)
-en: > - `dd` → Delete (and copy) current line
+en: > - `dd` → Delete (and copy) the current line
 en: > - `p` → Paste
 en: > 
 en: > Recommended:
@@ -158,7 +158,7 @@ fr: ## 2ème Niveau -- Se sentir à son aise
 
 en: You know the commands required for survival. 
 en: It's time to learn a few more commands.
-en: I suggest:
+en: These are my suggestions:
 fr: Vous connaissez les commandes de survie.
 fr: Passons à des commandes pour être un peu plus à notre aise.
 fr: Je vous suggère :
@@ -168,7 +168,7 @@ en:
 en:     > - `a`     → insert after the cursor
 en:     > - `o`     → insert a new line after the current one
 en:     > - `O`     → insert a new line before the current one
-en:     > - `cw`    → replace from the cursor to the end the word
+en:     > - `cw`    → replace from the cursor to the end of the word
 fr: 1. Les variantes de l'insertion
 fr: 
 fr:     > - `a`     → Comme `i`, mais après la position du curseur.
@@ -178,8 +178,8 @@ fr:     > - `cw`    → Remplacer la fin du mot.
 
 en: 2. Basic moves
 en: 
-en:     > - `0`         → go to first column
-en:     > - `^`         → go to first non-blank character of the line
+en:     > - `0`         → go to the first column
+en:     > - `^`         → go to the first non-blank character of the line
 en:     > - `$`         → go to the end of line
 en:     > - `g_`         → go to the last non-blank character of line
 en:     > - `/pattern`  → search for `pattern` 
@@ -194,7 +194,7 @@ fr:     > - `/pattern`  → Rechercher `pattern` dans le fichier.
 en: 3. Copy/Paste
 en: 
 en:     > - `P`  → paste before, remember `p` is paste after current position.
-en:     > - `yy` → copy current line, easier but equivalent to `ddP`
+en:     > - `yy` → copy the current line, easier but equivalent to `ddP`
 fr: 3. Copier/Coller
 fr: 
 fr:     > - `P`  → Coller avant. Souvenez vous, `p` colle après la position du curseur.
@@ -215,7 +215,7 @@ en:     > - `:e <path/to/file>` →  open
 en:     > - `:w` → save
 en:     > - `:saveas <path/to/file>` → save to `<path/to/file>`
 en:     > - `:x`, `ZZ` or `:wq` → save and quit (`:x` only save if necessary)
-en:     > - `:q!` → quit without saving, also `:qa!` to even if there are  some modified hidden buffers.
+en:     > - `:q!` → quit without saving, also: `:qa!` to quit even if there are modified hidden buffers.
 en:     > - `:bn` (resp. `:bp`) → show next (resp. previous) file (buffer)
 fr: 5. Ouvrir/Sauvegarder/Quitter/Changer de fichier (buffer)
 fr: 
@@ -226,18 +226,18 @@ fr:     > - `:x`, `ZZ` ou `:wq` → Sauvegarder et quitter (`:x` sauvegarde seul
 fr:     > - `:q!` → Quitter sans sauvegarder. De même `:qa!` quitte même si d'autres fichiers (buffers) ont des modifications non sauvegardées.
 fr:     > - `:bn` (resp. `:bp`) → Affiche le fichier suivant (resp. précédent).
 
-en: Take the time to integrate all of these command.
-en: Once done, you should be able to do every thing you are able to do on other editors.
-en: But until now, it is a bit awkward. But follow me to the next level and you'll see why.
+en: Take the time to learn all of these command.
+en: Once done, you should be able to do every thing you are able to do in other editors.
+en: You may still feel a bit awkward. But follow me to the next level and you'll see why vim is worth the extra work.
 fr: Prenez le temps de bien intégrer ces commandes.
 fr: Une fois fait, vous devriez être capable de faire tout ce qu'on peut attendre d'un éditeur de texte classique.
 
 en: ## 3rd Level -- Better. Stronger. Faster.
 fr: ## 3ième Niveau -- Meilleur. Plus fort. Plus rapide.
 
-en: Congratulation reaching this far!
-en: We can start the interesting stuff.
-en: At level 3, we'll only talk about command which are compatible with the old vi.
+en: Congratulation for reaching this far!
+en: Now we can start with the interesting stuff.
+en: At level 3, we'll only talk about commands which are compatible with the old vi editor.
 fr: Bravo ! Si vous êtes arrivé jusqu'ici nous allons pouvoir commencer à apprendre les choses vraiment intéressantes.
 fr: Pour cette section, je vais seulement parler de commandes disponible dans vi et vim. 
 fr: Vim est la contraction de "vi improved", ou en Français, "vi amélioré".
@@ -249,7 +249,7 @@ en: Let's look at how vim could help you to repeat yourself:
 fr: Voyons comment nous pouvons éviter les répétitions avec vi :
 
 en: 1. `.` → (dot) will repeat the last command,
-en: 2. N&lt;command&gt; → will do the command N times.
+en: 2. N&lt;command&gt; → will repeat the command N times.
 fr: 1. `.` → Le caractère point répètera la dernière commande. Très utile.
 fr: 2. N`<commande>` → répètera la commande N fois. 
 
@@ -276,16 +276,16 @@ fr: Savoir se déplacer efficacement avec vim est _très_ important.
 fr: Ne sautez pas cette section.
 
 en: 1. N`G` → Go to line N
-en: 2. `gg` → shortcut for `1G`, go to the start of the file
+en: 2. `gg` → shortcut for `1G` - go to the start of the file
 en: 3. `G`  → Go to last line
 en: 4. Word moves:
 en: 
 en:     > 1. `w` → go to the start of the following word,
 en:     > 2. `e` → go to the end of this word.
 en:     >
-en:     > By default, word are composed of letter and the underscore character.
+en:     > By default, words are composed of letters and the underscore character.
 en:     > Let's call a WORD a group of letter separated by blank characters. 
-en:     > If you want to consider WORDS, then just use uppercases:
+en:     > If you want to consider WORDS, then just use uppercase characters:
 en:     >
 en:     > 1. `W` → go to the start of the following WORD,
 en:     > 2. `E` → go to the end of this WORD.
@@ -309,7 +309,7 @@ fr:     > 2. `E` → aller à la fin du MOT courant
 en: Now let's talk about very efficient moves:
 fr: Passons aux commandes de déplacement les plus efficaces :
 
-en: > - `%` : Go to corresponding `(`, `{`, `[`.
+en: > - `%` : Go to the corresponding `(`, `{`, `[`.
 en: > - `*` (resp. `#`) : go to next (resp. previous) occurrence of the word under the cursor
 fr: > - `%` : Aller à la parenthèse, accolade, crochet correspondante.
 fr: > - `*` (resp. `#`) : Aller à la prochaine (resp. précédente) occurrence du mot sous le curseur
