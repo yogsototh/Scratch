@@ -51,7 +51,7 @@ Here are features I added:
     macros.rb    → Macros system (%latex => LaTeX, etc...)
     mail.rb      → My uniquely encoded personal email
     multiMenu.rb → The machinery for the menu
-    multi.rb     → The machinery for helping to be multi-language
+    multi.rb     → Machinery for multi-language support
     nanoc_item_conf.rb
     repair_html.rb
     syntaxColorize.rb
