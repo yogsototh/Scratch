@@ -22,6 +22,7 @@
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
         <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
         <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -34,11 +35,9 @@
         </script>
 
         <div id="content">
-
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
-                <div id="choixlang">
-                    <a href="/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/" onclick="setLanguage('en')">in English</a>
+                <div id="choixlang"><a href="/Scratch/en/blog/2010-08-23-Now-heberged-on-heroku/" onclick="setLanguage('en')">in English</a>
                 </div>
                 <div class="flush"></div>
             </div>
@@ -146,7 +145,7 @@ J&rsquo;espère que ça a pu vous être utile.</p>
 </div>
 
                 </div>
-            
+                
                 
 
                 <div id="social">
@@ -198,78 +197,79 @@ J&rsquo;espère que ça a pu vous être utile.</p>
     
                 </div>
 
-            <div id="entete" class="corps_spaced">
-                <div id="liens">
-                    <ul><li><a href="/Scratch/fr/">Bienvenue</a></li>
+                <div id="entete" class="corps_spaced">
+                    <div id="liens">
+                        <ul><li><a href="/Scratch/fr/">Bienvenue</a></li>
 <li><a href="/Scratch/fr/blog/">Blog</a></li>
 <li><a href="/Scratch/fr/softwares/">Softwares</a></li>
 <li><a href="/Scratch/fr/about/">À propos</a></li></ul>
-                </div>
-                <div class="flush"></div>
-                <hr/>
-                <div id="next_before_articles">
-                    <div id="previous_articles">
-                        articles précédents
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/fr/blog/2010-07-09-Indecidabilities/"><span class="nicer">«</span>&nbsp;Indécidabilités (partie 1)</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/fr/blog/2010-07-31-New-style-after-holidays/"><span class="nicer">«</span>&nbsp;Nouveau style après les vacances</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/"><span class="nicer">«</span>&nbsp;N'utilisez pas de gradients avec Chrome</a>
-                        </div>
-                        
-                        
-                    </div>
-                    <div id="next_articles">
-                        articles suivants
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/">base64 et sha1 sur iPhone&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/">Utilisation de git pour calculer les mtimes&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
                     </div>
                     <div class="flush"></div>
+                    <hr/>
+                    <div id="next_before_articles">
+                        <div id="previous_articles">
+                            articles précédents
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/fr/blog/2010-07-09-Indecidabilities/"><span class="nicer">«</span>&nbsp;Indécidabilités (partie 1)</a>
+                            </div>
+                            
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/fr/blog/2010-07-31-New-style-after-holidays/"><span class="nicer">«</span>&nbsp;Nouveau style après les vacances</a>
+                            </div>
+                            
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/"><span class="nicer">«</span>&nbsp;N'utilisez pas de gradients avec Chrome</a>
+                            </div>
+                            
+                            
+                        </div>
+                        <div id="next_articles">
+                            articles suivants
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/">Envoyer un mail en ligne de commande avec un fichier attaché&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/">base64 et sha1 sur iPhone&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/">Utilisation de git pour calculer les mtimes&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="flush"></div>
+                    </div>
                 </div>
-            </div>
 
 
-            <div id="bottom">
-                <div>
-                    <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
+                <div id="bottom">
+                    <div>
+                        <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
+                    </div>
+                    <div>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
+                    </div>
+                    <div id="lastmod">
+                        Écrit le : 23/08/2010
+                        modifié le : 20/04/2011 
+                    </div>
+                    <div>
+                        Site entièrement réalisé avec
+                        <a href="http://www.vim.org">Vim</a>
+                        et 
+                        <a href="http://nanoc.stoneship.org">nanoc</a>
+                    </div>
                 </div>
-                <div>
-                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Droits de reproduction ©, Yann Esposito</a>
-                </div>
-                <div id="lastmod">
-                    Écrit le : 23/08/2010
-                    modifié le : 20/04/2011 
-                </div>
-                <div>
-                    Site entièrement réalisé avec
-                    <a href="http://www.vim.org">Vim</a>
-                    et 
-                    <a href="http://nanoc.stoneship.org">nanoc</a>
-                </div>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
         </div>
     </body>
 </html>

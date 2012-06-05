@@ -22,6 +22,7 @@
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
         <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
         <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -34,11 +35,9 @@
         </script>
 
         <div id="content">
-
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
-                <div id="choixlang">
-                    <a href="/Scratch/fr/blog/05_git_create_remote_branch/" onclick="setLanguage('fr')">en Français</a>
+                <div id="choixlang"><a href="/Scratch/fr/blog/05_git_create_remote_branch/" onclick="setLanguage('fr')">en Français</a>
                 </div>
                 <div class="flush"></div>
             </div>
@@ -89,7 +88,7 @@ git config branch.${branch}.merge refs/heads/${branch}
 <p>Of course, I suppose <code>origin</code> is already configured.</p>
 
                 </div>
-            
+                
                 
 
                 <div id="social">
@@ -141,78 +140,79 @@ git config branch.${branch}.merge refs/heads/${branch}
     
                 </div>
 
-            <div id="entete" class="corps_spaced">
-                <div id="liens">
-                    <ul><li><a href="/Scratch/en/">Home</a></li>
+                <div id="entete" class="corps_spaced">
+                    <div id="liens">
+                        <ul><li><a href="/Scratch/en/">Home</a></li>
 <li><a href="/Scratch/en/blog/">Blog</a></li>
 <li><a href="/Scratch/en/softwares/">Softwares</a></li>
 <li><a href="/Scratch/en/about/">About</a></li></ul>
-                </div>
-                <div class="flush"></div>
-                <hr/>
-                <div id="next_before_articles">
-                    <div id="previous_articles">
-                        previous entries
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/04_drm/"><span class="nicer">«</span>&nbsp;DRM are EVIL</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/03_losthighway/"><span class="nicer">«</span>&nbsp;A try to demystify 'Lost Highway'</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/02_ackgrep/"><span class="nicer">«</span>&nbsp;Better than Grep</a>
-                        </div>
-                        
-                        
-                    </div>
-                    <div id="next_articles">
-                        next entries
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/06_How_I_use_git/">Git for self&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/07_Screensaver_compilation_option_for_Snow_Leopard/">Screensaver compilation option for Snow Leopard<sub>&copy;</sub>&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh to Listen 443 on Snow Leopard&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
                     </div>
                     <div class="flush"></div>
+                    <hr/>
+                    <div id="next_before_articles">
+                        <div id="previous_articles">
+                            previous entries
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/en/blog/04_drm/"><span class="nicer">«</span>&nbsp;DRM are EVIL</a>
+                            </div>
+                            
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/en/blog/03_losthighway/"><span class="nicer">«</span>&nbsp;A try to demystify 'Lost Highway'</a>
+                            </div>
+                            
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/en/blog/02_ackgrep/"><span class="nicer">«</span>&nbsp;Better than Grep</a>
+                            </div>
+                            
+                            
+                        </div>
+                        <div id="next_articles">
+                            next entries
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/en/blog/06_How_I_use_git/">Git for self&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/en/blog/07_Screensaver_compilation_option_for_Snow_Leopard/">Screensaver compilation option for Snow Leopard<sub>&copy;</sub>&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/en/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/">ssh to Listen 443 on Snow Leopard&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="flush"></div>
+                    </div>
                 </div>
-            </div>
 
 
-            <div id="bottom">
-                <div>
-                    <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
+                <div id="bottom">
+                    <div>
+                        <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
+                    </div>
+                    <div>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                    </div>
+                    <div id="lastmod">
+                        Created: 08/17/2009
+                        Modified: 05/09/2010 
+                    </div>
+                    <div>
+                        Entirely done with
+                        <a href="http://www.vim.org">Vim</a>
+                        and 
+                        <a href="http://nanoc.stoneship.org">nanoc</a>
+                    </div>
                 </div>
-                <div>
-                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
-                </div>
-                <div id="lastmod">
-                    Created: 08/17/2009
-                    Modified: 05/09/2010 
-                </div>
-                <div>
-                    Entirely done with
-                    <a href="http://www.vim.org">Vim</a>
-                    and 
-                    <a href="http://nanoc.stoneship.org">nanoc</a>
-                </div>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
         </div>
     </body>
 </html>

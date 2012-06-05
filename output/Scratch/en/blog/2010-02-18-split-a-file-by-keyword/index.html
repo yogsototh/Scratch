@@ -22,6 +22,7 @@
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
         <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
         <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -34,11 +35,9 @@
         </script>
 
         <div id="content">
-
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
-                <div id="choixlang">
-                    <a href="/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/" onclick="setLanguage('fr')">en Français</a>
+                <div id="choixlang"><a href="/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/" onclick="setLanguage('fr')">en Français</a>
                 </div>
                 <div class="flush"></div>
             </div>
@@ -99,7 +98,7 @@ BEGIN{i=0;}
 </div>
 
                 </div>
-            
+                
                 
 
                 <div id="social">
@@ -151,78 +150,79 @@ BEGIN{i=0;}
     
                 </div>
 
-            <div id="entete" class="corps_spaced">
-                <div id="liens">
-                    <ul><li><a href="/Scratch/en/">Home</a></li>
+                <div id="entete" class="corps_spaced">
+                    <div id="liens">
+                        <ul><li><a href="/Scratch/en/">Home</a></li>
 <li><a href="/Scratch/en/blog/">Blog</a></li>
 <li><a href="/Scratch/en/softwares/">Softwares</a></li>
 <li><a href="/Scratch/en/about/">About</a></li></ul>
-                </div>
-                <div class="flush"></div>
-                <hr/>
-                <div id="next_before_articles">
-                    <div id="previous_articles">
-                        previous entries
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/2010-02-16-All-but-something-regexp--2-/"><span class="nicer">«</span>&nbsp;Pragmatic Regular Expression Exclude (2)</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/2010-02-15-All-but-something-regexp/"><span class="nicer">«</span>&nbsp;Pragmatic Regular Expression Exclude</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/"><span class="nicer">«</span>&nbsp;antialias font in Firefox under Ubuntu</a>
-                        </div>
-                        
-                        
-                    </div>
-                    <div id="next_articles">
-                        next entries
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/2010-02-23-When-regexp-is-not-the-best-solution/">When regexp is not the best solution&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/2010-03-22-Git-Tips/">Git Tips&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/2010-03-23-Encapsulate-git/">Encapsulate git&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
                     </div>
                     <div class="flush"></div>
+                    <hr/>
+                    <div id="next_before_articles">
+                        <div id="previous_articles">
+                            previous entries
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/en/blog/2010-02-16-All-but-something-regexp--2-/"><span class="nicer">«</span>&nbsp;Pragmatic Regular Expression Exclude (2)</a>
+                            </div>
+                            
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/en/blog/2010-02-15-All-but-something-regexp/"><span class="nicer">«</span>&nbsp;Pragmatic Regular Expression Exclude</a>
+                            </div>
+                            
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/en/blog/2010-01-12-antialias-font-in-Firefox-under-Ubuntu/"><span class="nicer">«</span>&nbsp;antialias font in Firefox under Ubuntu</a>
+                            </div>
+                            
+                            
+                        </div>
+                        <div id="next_articles">
+                            next entries
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/en/blog/2010-02-23-When-regexp-is-not-the-best-solution/">When regexp is not the best solution&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/en/blog/2010-03-22-Git-Tips/">Git Tips&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/en/blog/2010-03-23-Encapsulate-git/">Encapsulate git&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="flush"></div>
+                    </div>
                 </div>
-            </div>
 
 
-            <div id="bottom">
-                <div>
-                    <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
+                <div id="bottom">
+                    <div>
+                        <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
+                    </div>
+                    <div>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                    </div>
+                    <div id="lastmod">
+                        Created: 02/18/2010
+                        Modified: 05/09/2010 
+                    </div>
+                    <div>
+                        Entirely done with
+                        <a href="http://www.vim.org">Vim</a>
+                        and 
+                        <a href="http://nanoc.stoneship.org">nanoc</a>
+                    </div>
                 </div>
-                <div>
-                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
-                </div>
-                <div id="lastmod">
-                    Created: 02/18/2010
-                    Modified: 05/09/2010 
-                </div>
-                <div>
-                    Entirely done with
-                    <a href="http://www.vim.org">Vim</a>
-                    and 
-                    <a href="http://nanoc.stoneship.org">nanoc</a>
-                </div>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
         </div>
     </body>
 </html>

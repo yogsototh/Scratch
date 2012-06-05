@@ -22,6 +22,7 @@
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
         <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>                 
         <script type="text/javascript" src="/Scratch/js/article.js"></script>                 
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -34,11 +35,9 @@
         </script>
 
         <div id="content">
-
             <div id="choix"> 
                 <div class="return"><a href="#entete">&darr; Menu &darr;</a></div>
-                <div id="choixlang">
-                    <a href="/Scratch/fr/blog/11_Load_Disqus_Asynchronously/" onclick="setLanguage('fr')">en Français</a>
+                <div id="choixlang"><a href="/Scratch/fr/blog/11_Load_Disqus_Asynchronously/" onclick="setLanguage('fr')">en Français</a>
                 </div>
                 <div class="flush"></div>
             </div>
@@ -139,7 +138,7 @@ $(document).ready(function(){
 <p>Now it&rsquo;s done. I believe all should be fine but I just finished the manip for my own site only 1 hour ago. Therefore there should be some error, tell me if it is the case.</p>
 
                 </div>
-            
+                
                 
 
                 <div id="social">
@@ -191,78 +190,79 @@ $(document).ready(function(){
     
                 </div>
 
-            <div id="entete" class="corps_spaced">
-                <div id="liens">
-                    <ul><li><a href="/Scratch/en/">Home</a></li>
+                <div id="entete" class="corps_spaced">
+                    <div id="liens">
+                        <ul><li><a href="/Scratch/en/">Home</a></li>
 <li><a href="/Scratch/en/blog/">Blog</a></li>
 <li><a href="/Scratch/en/softwares/">Softwares</a></li>
 <li><a href="/Scratch/en/about/">About</a></li></ul>
-                </div>
-                <div class="flush"></div>
-                <hr/>
-                <div id="next_before_articles">
-                    <div id="previous_articles">
-                        previous entries
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/10_Synchronize_Custom_WebSite_with_mobileMe/"><span class="nicer">«</span>&nbsp;Synchronize Custom WebSite with mobileMe</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/09_Why_I_didn-t_keep_whosamung-us/"><span class="nicer">«</span>&nbsp;Why I didn't keep whos.amung.us</a>
-                        </div>
-                        
-                        
-                        <div class="previous_article">
-                            <a href="/Scratch/en/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/"><span class="nicer">«</span>&nbsp;ssh to Listen 443 on Snow Leopard</a>
-                        </div>
-                        
-                        
-                    </div>
-                    <div id="next_articles">
-                        next entries
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/2009-09-replace-all-except-some-part/">replace all except some part&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
-                        <div class="next_article">
-                            <a href="/Scratch/en/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus versus Intense Debate (Why I switched)&nbsp;<span class="nicer">»</span></a>
-                        </div>
-                        
-                        
                     </div>
                     <div class="flush"></div>
+                    <hr/>
+                    <div id="next_before_articles">
+                        <div id="previous_articles">
+                            previous entries
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/en/blog/10_Synchronize_Custom_WebSite_with_mobileMe/"><span class="nicer">«</span>&nbsp;Synchronize Custom WebSite with mobileMe</a>
+                            </div>
+                            
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/en/blog/09_Why_I_didn-t_keep_whosamung-us/"><span class="nicer">«</span>&nbsp;Why I didn't keep whos.amung.us</a>
+                            </div>
+                            
+                            
+                            <div class="previous_article">
+                                <a href="/Scratch/en/blog/08_Configure_ssh_to_listen_the_port_443_on_Snow_Leopard/"><span class="nicer">«</span>&nbsp;ssh to Listen 443 on Snow Leopard</a>
+                            </div>
+                            
+                            
+                        </div>
+                        <div id="next_articles">
+                            next entries
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/en/blog/2009-09-replace-all-except-some-part/">replace all except some part&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/en/blog/2009-09-jQuery-Tag-Cloud/">jQuery Tag Cloud&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                            <div class="next_article">
+                                <a href="/Scratch/en/blog/2009-09-Disqus-versus-Intense-Debate--Why-I-switched-/">Disqus versus Intense Debate (Why I switched)&nbsp;<span class="nicer">»</span></a>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="flush"></div>
+                    </div>
                 </div>
-            </div>
 
 
-            <div id="bottom">
-                <div>
-                    <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
+                <div id="bottom">
+                    <div>
+                        <a href="https://twitter.com/yogsototh">Follow @yogsototh</a>
+                    </div>
+                    <div>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                    </div>
+                    <div id="lastmod">
+                        Created: 09/17/2009
+                        Modified: 04/20/2011 
+                    </div>
+                    <div>
+                        Entirely done with
+                        <a href="http://www.vim.org">Vim</a>
+                        and 
+                        <a href="http://nanoc.stoneship.org">nanoc</a>
+                    </div>
                 </div>
-                <div>
-                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
-                </div>
-                <div id="lastmod">
-                    Created: 09/17/2009
-                    Modified: 04/20/2011 
-                </div>
-                <div>
-                    Entirely done with
-                    <a href="http://www.vim.org">Vim</a>
-                    and 
-                    <a href="http://nanoc.stoneship.org">nanoc</a>
-                </div>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
         </div>
     </body>
 </html>
