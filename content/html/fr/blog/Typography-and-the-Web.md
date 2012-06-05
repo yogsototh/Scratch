@@ -21,7 +21,7 @@ blogimage("first_sc_screenshot.png", "Screenshot of first in small caps with and
 begindiv(intro)
 
 
-<%= tlal %> La typography sur le web est pourrie et nous ne somme pas près de voir ce problème réparé.
+%tlal La typography sur le web est pourrie et nous ne somme pas près de voir ce problème réparé.
 
 enddiv
 

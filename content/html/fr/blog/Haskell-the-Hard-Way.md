@@ -18,7 +18,7 @@ blogimage("magritte_pleasure_principle.jpg","Magritte pleasure principle")
 begindiv(intro)
 
 
-<%= tlal %> Un tutoriel très court mais très dense pour apprendre Haskell.
+%tlal Un tutoriel très court mais très dense pour apprendre Haskell.
 
 > <center><hr style="width:30%;float:left;border-color:#CCCCD0;margin-top:1em"/><span class="sc"><b>Table of Content</b></span><hr style="width:30%;float:right;border-color:#CCCCD0;margin-top:1em"/></center>
 > 
@@ -1321,7 +1321,7 @@ main = print $ evenSum [1..10]
 
 blogimage("salvador-dali-the-madonna-of-port-lligat.jpg","Dali, the madonna of port Lligat")
 
- > <%=tldr%>
+ > %tldr
  > 
  > - `type Name = AnotherType` is just an alias and the compiler doesn't do any difference between `Name` and `AnotherType`.
  > - `data Name = NameConstructor AnotherType` make a difference.
@@ -2121,7 +2121,7 @@ But they all be very rewarding.
 
 blogimage("magritte_carte_blanche.jpg","Magritte, Carte blanche")
 
- > <%=tldr%>
+ > %tldr
  > 
  > A typical function doing `IO` looks a lot like an imperative program:
  >
@@ -2392,7 +2392,7 @@ If you practice a bit, you should be able to _use_ `IO`.
 
 blogimage("magritte_pipe.jpg","Magritte, ceci n'est pas une pipe")
 
- > Here is a <%=tldr%> for this section.
+ > Here is a %tldr for this section.
  > 
  > To separate pure and impure parts,
  > `main` is defined as a function
@@ -3095,9 +3095,7 @@ In particular, monad are very useful for:
 If you have followed me until here, then you've done it! 
 You know monads[^03021301]!
 
-[^03021301]: Well, you'll certainly need to practice a bit to get used to them
-and to understand when you can use them and create your own. But you already
-made a big step in this direction.
+[^03021301]: Well, you'll certainly need to practice a bit to get used to them and to understand when you can use them and create your own. But you already made a big step in this direction.
 
 <a href="code/03_Hell/02_Monads/13_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>13_Monads.lhs</strong> </a>
 

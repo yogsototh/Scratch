@@ -3375,9 +3375,6 @@ In particular, monad are very useful for: </p>
 <p>If you have followed me until here, then you&rsquo;ve done it! 
 You know monads<sup id="fnref:03021301"><a href="#fn:03021301" rel="footnote">8</a></sup>!</p>
 
-<p>and to understand when you can use them and create your own. But you already
-made a big step in this direction.</p>
-
 <p><a href="code/03_Hell/02_Monads/13_Monads.lhs" class="cut">03_Hell/02_Monads/<strong>13_Monads.lhs</strong> </a></p>
 
 <h2 id="appendix">Appendix</h2>
@@ -3791,7 +3788,7 @@ Thank you man.</p>
       <p>For the curious the real type is <code>data IO a = IO {unIO :: State# RealWorld -&gt; (# State# RealWorld, a #)}</code>. All the <code>#</code> as to do with optimisation and I swapped the fields in my example. But mostly, the idea is exactly the same.<a href="#fnref:032002" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:03021301">
-      <p>Well, you&rsquo;ll certainly need to practice a bit to get used to them<a href="#fnref:03021301" rel="reference">&#8617;</a></p>
+      <p>Well, you&rsquo;ll certainly need to practice a bit to get used to them and to understand when you can use them and create your own. But you already made a big step in this direction.<a href="#fnref:03021301" rel="reference">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -20,7 +20,7 @@ blogimage("first_sc_screenshot.png", "Screenshot of first in small caps with and
 
 begindiv(intro)
 
-<%= tldr %> Web typography sucks and we'll have to wait forever before it will be fixed.
+%tldr Web typography sucks and we'll have to wait forever before it will be fixed.
 
 
 enddiv

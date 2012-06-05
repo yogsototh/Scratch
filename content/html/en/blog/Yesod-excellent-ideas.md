@@ -17,7 +17,7 @@ blogimage("main.png","Title image")
 
 begindiv(intro)
 
-<%= tldr %>
+%tldr
 
 
 [Yesod](http://www.yesodweb.com) is a web framework which recently reached the maturity for which you should consider to use it.

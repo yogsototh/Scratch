@@ -287,7 +287,7 @@ It is not even good to learn pr...&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</content>
 &lt;div class="intro"&gt;
 
 
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way. Start by learning the minimal to survive, then integrate slowly all tricks.&lt;/p&gt;
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; You want to teach yourself vim (the best text editor known to human kind) in the fastest way possible. This my way of doing it. You start by learning the minimal to survive, then you integrate all the tricks slowly.&lt;/p&gt;
 
 
 &lt;/div&gt;
@@ -300,14 +300,10 @@ It is not even good to learn pr...&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</content>
 &lt;/blockquote&gt;
 
 &lt;p&gt;Learn &lt;a href="http://www.vim.org"&gt;vim&lt;/a&gt; and it will be your last text editor.
-There isn&amp;rsquo;t any better text editor I know.
-Hard to learn, but incredible to use.&lt;/p&gt;
+There isn&amp;rsquo;t any better text editor that I know of.
+It is hard to learn, but incredible to use.&lt;/p&gt;
 
-&lt;p&gt;I suggest you to learn it in 4 steps:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Survive&lt;/li&gt;
- ...&lt;/ol&gt;&lt;/p&gt;</content>
+&lt;p&gt;I suggest you teach yo...&lt;/p&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-08-17:/Scratch/en/blog/A-more-convenient-diff/</id>
@@ -714,37 +710,8 @@ require 'rack-rewr...&lt;/code&gt;&lt;/pre&gt;</content>
       <uri>yannesposito.com</uri>
     </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-07-09-Indecidabilities/"/>
-    <content type="html">&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; I pretend to create a world to give examples of different meanings behind the word &lt;em&gt;undecidability&lt;/em&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Undecidability due to measure errors, &lt;/li&gt;
-  &lt;li&gt;Big errors resulting from small initial measure error,&lt;/li&gt;
-  &lt;li&gt;Fractal undecidability&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;Logic Undecidability.&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;h1 class="first" id="the-undecidabilities"&gt;The Undecidabilities&lt;/h1&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;If a demiurge made our world, he certainly had a great sense of humor.
-After this read, you should be convinced.
-I&amp;rsquo;ll pretend to be him.
-I&amp;rsquo;ll create a simplified world.
-A world that obey to simple mathematical rules.
-And I&amp;rsquo;ll tell you about one of ...&lt;/p&gt;</content>
+    <content type="html">
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-07-31:/Scratch/en/blog/2010-07-31-New-style-after-holidays/</id>

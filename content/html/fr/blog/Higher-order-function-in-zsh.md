@@ -19,7 +19,7 @@ blogimage("main.jpg","Title image")
 
 begindiv(intro)
 
-<%= tlal %> des fonctions d'ordres supérieurs en zsh.
+%tlal des fonctions d'ordres supérieurs en zsh.
 
 enddiv
 

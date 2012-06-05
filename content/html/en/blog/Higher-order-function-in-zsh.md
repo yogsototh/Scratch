@@ -19,7 +19,7 @@ blogimage("main.jpg","Title image")
 
 begindiv(intro)
 
-<%= tldr %> some simple implementation of higher order function for zsh.
+%tldr some simple implementation of higher order function for zsh.
 
 enddiv
 

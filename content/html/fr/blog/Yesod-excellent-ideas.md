@@ -18,7 +18,7 @@ blogimage("main.png","Title image")
 begindiv(intro)
 
 
-<%= tlal %>
+%tlal
 
 Cela fait un moment que je suis la progression du [framework yesod](http://www.yesodweb.com). 
 À mon humble avis on peut commencer à l'utiliser pour des applications sérieuses (comprendre en prod).

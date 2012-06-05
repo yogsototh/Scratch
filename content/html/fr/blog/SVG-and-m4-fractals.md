@@ -25,7 +25,7 @@ blogimage("main.png","Yesod logo made in SVG and m4")
 
 begindiv(intro)
 
-<%= tlal %> Utiliser m4 pour accroître le pouvoir d'%xslt et d'%svg. Example cool, les fractales.
+%tlal Utiliser m4 pour accroître le pouvoir d'%xslt et d'%svg. Example cool, les fractales.
 
 enddiv
 
