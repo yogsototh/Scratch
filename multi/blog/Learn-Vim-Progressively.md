@@ -20,7 +20,7 @@ blogimage("uber_leet_use_vim.jpg","Über leet use vim!")
 
 begindiv(intro)
 
-en: %tldr Want to learn vim (the best text editor known to human kind) the fastest way possible. I suggest you a way. Start by learning the minimal to survive, then integrate slowly all tricks.
+en: %tldr You want to teach yourself vim (the best text editor known to human kind) in the fastest way possible. This my way of doing it. You start by learning the minimal to survive, then you integrate all the tricks slowly.
 
 fr: %tlal Vous désirez apprendre vim (le meilleur editeur de texte connu à ce jour) le plus rapidement possible. Voici mes conseils pour vous aider. Commencez à apprendre le minimum vital, puis apprenez doucement de nouvelles commandes.
 
@@ -33,19 +33,19 @@ en: > Better, Stronger, Faster.
 fr: > Meilleur, plus fort, plus rapide.
 
 en: Learn [vim] and it will be your last text editor.
-en: There isn't any better text editor I know.
-en: Hard to learn, but incredible to use.
+en: There isn't any better text editor that I know of.
+en: It is hard to learn, but incredible to use.
 fr: Apprenez [vim] et ce sera votre dernier éditeur.
 fr: Aucun éditeur que je connaisse ne le surpasse.
 fr: Sa prise en mais est difficile, mais payante.
 
-en: I suggest you to learn it in 4 steps:
+en: I suggest you teach yourself Vim in 4 steps:
 fr: Je vous conseille de l'apprendre en 4 étapes :
 
 en: 1. Survive
 en: 2. Feel comfortable
 en: 3. Feel Better, Stronger, Faster
-en: 4. Use vim superpowers
+en: 4. Use superpowers of vim
 fr: 1. La survie
 fr: 2. Se sentir à son aise
 fr: 3. Se sentir meilleur, plus fort et plus rapide
@@ -57,7 +57,7 @@ fr: À la fin de ces leçons vous serez transformé.
 en: But before we start, just a warning.
 en: Learning vim will be painful at first.
 en: It will take time.
-en: It will be a lot like playing a music instrument.
+en: It will be a lot like playing a musical instrument.
 en: Don't expect to be more efficient with vim than with another editor in less than 3 days.
 en: In fact it will certainly take 2 weeks instead of 3 days.
 fr: Avant de commencer, un message pour vous prévenir.
@@ -86,8 +86,8 @@ fr: 2. NE TOUCHEZ A RIEN! Lisez
 en: In a standard editor, typing on the keyboard is enough to write something and see it on the screen.
 en: Not this time.
 en: Vim is in _Normal_ mode.
-en: Let's get in _Insert_ mode.
-en: Type on the letter `i`.
+en: Let's go to _Insert_ mode.
+en: Type the letter `i`.
 fr: Dans un éditeur normal, il suffit de taper sur une touche du clavier et la lettre s'affiche à l'écran.
 fr: Pas ici.
 fr: Vim est en mode _Normal_.
@@ -95,27 +95,27 @@ fr: Commençons par placer vim en mode _Insert_.
 fr: Tapez sur la touche `i`.
 
 en: You should feel a bit better.
-en: You can type letters like in a standard notepad.
-en: To get back in _Normal_ mode just tap the `ESC` key.
+en: You can type letters like in a standard editor.
+en: To get back to _Normal_ mode just press the `ESC` key.
 fr: Voilà, c'est magique. 
 fr: Vous pouvez tapez comme dans un éditeur standard.
 fr: Pour repasser en mode Normal tapez sur la touche `Echap`.
 
-en: You know how to switch between _Insert_ and _Normal_ mode.
-en: And now, the list of command you can use in _Normal_ mode to survive:
+en: You now know how to switch between _Insert_ and _Normal_ mode.
+en: And now, here are the commands that you need in order to survive in _Normal_ mode:
 fr: Maintenant que vous savez passer du mode _Normal_ au mode _Insert_.
 fr: Voici les commandes de survie (toutes en mode _Normal_) :
 
 en: > - `i` → _Insert_ mode. Type `ESC` to return to Normal mode.
 en: > - `x` → Delete the char under the cursor
 en: > - `:wq` → Save and Quit (`:w` save, `:q` quit)
-en: > - `dd` → Delete (and copy) current line
+en: > - `dd` → Delete (and copy) the current line
 en: > - `p` → Paste
 en: > 
 en: > Recommended:
 en: > 
-en: > - `hjkl` (highly recommended but not mandatory) →  basic cursor move (<-&darr;&uarr;→). Hint: `j` look like a down arrow.
-en: > - `:help <command>` → Show help about `<command>`, you can start using `:help` without anything else.
+en: > - `hjkl` (highly recommended but not mandatory) →  basic cursor move (<-&darr;&uarr;→). Hint: `j` looks like a down arrow.
+en: > - `:help <command>` → Show help about `<command>`. You can use `:help` without a `<command>` to get general help.
 fr: > - `i` → Passer en mode insértion. Taper `Echap` pour repasser en mode Normal.
 fr: > - `x` → Supprimer le caractère sous le curseur
 fr: > - `:wq` → Sauvegarder et quitter (`:w` sauvegarde, `:q<enter>` quitter)
@@ -127,18 +127,18 @@ fr: >
 fr: > - `hjkl` (optionnel) → se déplacer (<-&darr;&uarr;→). Souvenez vous `j` ressemble à une flèche vers le bas.
 fr: > - `:help <commande>` → Affiche l'aide pour `<commande>`. Vous pouvez aussi écrire `:help` pour atterir sur l'aide générale.
 
-en: Only 5 commands. This is very few to start.
-en: Once these command start to become natural (may be after a complete day), you should go on level 2.
+en: Only 5 commands. That is all you need to get started.
+en: Once these command start to become natural (maybe after day or so), you should move on to level 2.
 fr: Seulement 5 commandes. 
 fr: Voilà, c'est tout pour un début. 
 fr: Essayez d'éditer vos fichiers comme ça pendant une petite journée. 
 fr: Lorsque ces commandes vous sembleront naturelles, 
 fr: vous pourrez passer à l'étape d'après. 
 
-en: But before, just a little remark on _Normal mode_.
+en: But first, just a little remark about _Normal mode_.
 en: In standard editors, to copy you have to use the `Ctrl` key (`Ctrl-c` generally).
-en: In fact, when you press `Ctrl`, it is a bit like if all your key change meaning.
-en: With vim in Normal mode, it is a bit like if your `Ctrl` key is always pushed down.
+en: In fact, when you press `Ctrl`, it is as if all of your keys change meaning.
+en: Using vim in normal mode is a bit like having the editor automatically press the `Ctrl` key for you.
 fr: Mais avant un petit mot sur le mode Normal.
 fr: Dans un éditeur normal pour copier il faut utiliser une combinaison de touches (`Ctrl-c`). 
 fr: En fait, lorsque vous appuyez sur la touche `Ctrl`, c'est un peu comme si toutes les touches du clavier avaient un autre usage.
@@ -147,7 +147,7 @@ fr: Dans vim, lorsque vous êtes en mode Normal, c'est comme si vous mainteniez 
 en: A last word about notations: 
 en: 
 en: - instead of writing `Ctrl-λ`, I'll write `<C-λ>`.
-en: - command staring by `:` will must end by `<enter>`. For example, when I write `:q` it means `:q<enter>`.
+en: - commands starting with `:` end with `<enter>`. For example, when I write `:q`, I mean `:q<enter>`.
 fr: Quelques mots concernant les notations :
 fr: 
 fr: - Au lieu d'écrire `Ctrl-λ`, j'écrirai `<C-λ>`. 
@@ -158,7 +158,7 @@ fr: ## 2ème Niveau -- Se sentir à son aise
 
 en: You know the commands required for survival. 
 en: It's time to learn a few more commands.
-en: I suggest:
+en: These are my suggestions:
 fr: Vous connaissez les commandes de survie.
 fr: Passons à des commandes pour être un peu plus à notre aise.
 fr: Je vous suggère :
@@ -168,7 +168,7 @@ en:
 en:     > - `a`     → insert after the cursor
 en:     > - `o`     → insert a new line after the current one
 en:     > - `O`     → insert a new line before the current one
-en:     > - `cw`    → replace from the cursor to the end the word
+en:     > - `cw`    → replace from the cursor to the end of the word
 fr: 1. Les variantes de l'insertion
 fr: 
 fr:     > - `a`     → Comme `i`, mais après la position du curseur.
@@ -178,8 +178,8 @@ fr:     > - `cw`    → Remplacer la fin du mot.
 
 en: 2. Basic moves
 en: 
-en:     > - `0`         → go to first column
-en:     > - `^`         → go to first non-blank character of the line
+en:     > - `0`         → go to the first column
+en:     > - `^`         → go to the first non-blank character of the line
 en:     > - `$`         → go to the end of line
 en:     > - `g_`         → go to the last non-blank character of line
 en:     > - `/pattern`  → search for `pattern` 
@@ -194,7 +194,7 @@ fr:     > - `/pattern`  → Rechercher `pattern` dans le fichier.
 en: 3. Copy/Paste
 en: 
 en:     > - `P`  → paste before, remember `p` is paste after current position.
-en:     > - `yy` → copy current line, easier but equivalent to `ddP`
+en:     > - `yy` → copy the current line, easier but equivalent to `ddP`
 fr: 3. Copier/Coller
 fr: 
 fr:     > - `P`  → Coller avant. Souvenez vous, `p` colle après la position du curseur.
@@ -215,7 +215,7 @@ en:     > - `:e <path/to/file>` →  open
 en:     > - `:w` → save
 en:     > - `:saveas <path/to/file>` → save to `<path/to/file>`
 en:     > - `:x`, `ZZ` or `:wq` → save and quit (`:x` only save if necessary)
-en:     > - `:q!` → quit without saving, also `:qa!` to even if there are  some modified hidden buffers.
+en:     > - `:q!` → quit without saving, also: `:qa!` to quit even if there are modified hidden buffers.
 en:     > - `:bn` (resp. `:bp`) → show next (resp. previous) file (buffer)
 fr: 5. Ouvrir/Sauvegarder/Quitter/Changer de fichier (buffer)
 fr: 
@@ -226,18 +226,18 @@ fr:     > - `:x`, `ZZ` ou `:wq` → Sauvegarder et quitter (`:x` sauvegarde seul
 fr:     > - `:q!` → Quitter sans sauvegarder. De même `:qa!` quitte même si d'autres fichiers (buffers) ont des modifications non sauvegardées.
 fr:     > - `:bn` (resp. `:bp`) → Affiche le fichier suivant (resp. précédent).
 
-en: Take the time to integrate all of these command.
-en: Once done, you should be able to do every thing you are able to do on other editors.
-en: But until now, it is a bit awkward. But follow me to the next level and you'll see why.
+en: Take the time to learn all of these command.
+en: Once done, you should be able to do every thing you are able to do in other editors.
+en: You may still feel a bit awkward. But follow me to the next level and you'll see why vim is worth the extra work.
 fr: Prenez le temps de bien intégrer ces commandes.
 fr: Une fois fait, vous devriez être capable de faire tout ce qu'on peut attendre d'un éditeur de texte classique.
 
 en: ## 3rd Level -- Better. Stronger. Faster.
 fr: ## 3ième Niveau -- Meilleur. Plus fort. Plus rapide.
 
-en: Congratulation reaching this far!
-en: We can start the interesting stuff.
-en: At level 3, we'll only talk about command which are compatible with the old vi.
+en: Congratulation for reaching this far!
+en: Now we can start with the interesting stuff.
+en: At level 3, we'll only talk about commands which are compatible with the old vi editor.
 fr: Bravo ! Si vous êtes arrivé jusqu'ici nous allons pouvoir commencer à apprendre les choses vraiment intéressantes.
 fr: Pour cette section, je vais seulement parler de commandes disponible dans vi et vim. 
 fr: Vim est la contraction de "vi improved", ou en Français, "vi amélioré".
@@ -249,7 +249,7 @@ en: Let's look at how vim could help you to repeat yourself:
 fr: Voyons comment nous pouvons éviter les répétitions avec vi :
 
 en: 1. `.` → (dot) will repeat the last command,
-en: 2. N&lt;command&gt; → will do the command N times.
+en: 2. N&lt;command&gt; → will repeat the command N times.
 fr: 1. `.` → Le caractère point répètera la dernière commande. Très utile.
 fr: 2. N`<commande>` → répètera la commande N fois. 
 
@@ -276,16 +276,16 @@ fr: Savoir se déplacer efficacement avec vim est _très_ important.
 fr: Ne sautez pas cette section.
 
 en: 1. N`G` → Go to line N
-en: 2. `gg` → shortcut for `1G`, go to the start of the file
+en: 2. `gg` → shortcut for `1G` - go to the start of the file
 en: 3. `G`  → Go to last line
 en: 4. Word moves:
 en: 
 en:     > 1. `w` → go to the start of the following word,
 en:     > 2. `e` → go to the end of this word.
 en:     >
-en:     > By default, word are composed of letter and the underscore character.
+en:     > By default, words are composed of letters and the underscore character.
 en:     > Let's call a WORD a group of letter separated by blank characters. 
-en:     > If you want to consider WORDS, then just use uppercases:
+en:     > If you want to consider WORDS, then just use uppercase characters:
 en:     >
 en:     > 1. `W` → go to the start of the following WORD,
 en:     > 2. `E` → go to the end of this WORD.
@@ -309,7 +309,7 @@ fr:     > 2. `E` → aller à la fin du MOT courant
 en: Now let's talk about very efficient moves:
 fr: Passons aux commandes de déplacement les plus efficaces :
 
-en: > - `%` : Go to corresponding `(`, `{`, `[`.
+en: > - `%` : Go to the corresponding `(`, `{`, `[`.
 en: > - `*` (resp. `#`) : go to next (resp. previous) occurrence of the word under the cursor
 fr: > - `%` : Aller à la parenthèse, accolade, crochet correspondante.
 fr: > - `*` (resp. `#`) : Aller à la prochaine (resp. précédente) occurrence du mot sous le curseur
@@ -357,7 +357,7 @@ fr: est aussi vrai pour `d` (delete → supprimer), `v` (sélection visuelle), `
 en: ## 4th Level -- Vim Superpowers
 fr: ## 4ième Niveau -- Les super pouvoirs de Vim
 
-en: With all preceding commands you should be comfortable to use vim.
+en: With all preceding commands you should be comfortable using vim.
 en: But now, here are the killer features.
 en: Some of these features were the reason I started to use vim.
 fr: Jusqu'ici vous avez appris les commandes les plus courantes.
@@ -371,9 +371,9 @@ en: > - `0` → go to column 0
 en: > - `^` → go to first character on the line
 en: > - `$` → go to the last column
 en: > - `g_` → go to the last character on the line
-en: > - `fa` → go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will seek for the next (resp. previous) occurrence.
-en: > - `t,` → go just before the character `,`.
-en: > - `3fa` → search the 3rd occurrence of `a` on this line.
+en: > - `fa` → go to next occurrence of the letter `a` on the line. `,` (resp. `;`) will find the next (resp. previous) occurrence.
+en: > - `t,` → go to just before the character `,`.
+en: > - `3fa` → find the 3rd occurrence of `a` on this line.
 en: > - `F` and `T` → like `f` and `t` but backward.
 fr: > - `0` → aller à la colonne 0,
 fr: > - `^` → aller au premier caractère de la ligne
@@ -391,7 +391,7 @@ fr: Un truc pratique : `dt"` → supprime tout jusqu'au prochain `"`.
 en: ### Zone selection `<action>a<object>` or `<action>i<object>`
 fr: ### Selection de zone `<action>a<object>` ou `<action>i<object>`
 
-en: These command can only be used after an operator of in visual mode.
+en: These command can only be used after an operator in visual mode.
 en: But they are very powerful. Their main pattern is:
 fr: Ces commandes sont utilisable seulement en mode visuel ou après un "opérateur".
 fr: Mais elles sont très puissantes. Leur forme générale est:
@@ -400,7 +400,7 @@ en: `<action>a<object>` and `<action>i<object>`
 fr: `<action>a<objet>` et `<action>i<objet>`
 
 en: Where action can be any action, for example, `d` (delete), `y` (yank), `v` (select in visual mode).
-en: And object can be: `w` a word, `W` a WORD (extended word), `s` a sentence, `p` a paragraph. But also, natural character such as `"`, `'`, `)`, `}`, `]`.
+en: The object can be: `w` a word, `W` a WORD (extended word), `s` a sentence, `p` a paragraph. But also, natural character such as `"`, `'`, `)`, `}`, `]`.
 fr: Où action peut être par exemple `d` (delete), `y` (yank), `v` (select in visual mode), etc...
 fr: Un objet peut être: `w` un mot, `W` un MOT (mot étendu), `s` une phrase, `p` un paragraphe. Mais aussi des caractère plus naturels comme `"`, `'`, `)`, `}`, `]`.
 
@@ -425,7 +425,7 @@ blogimage("textobjects.png","Text objects selection")
 en: ### Select rectangular blocks: `<C-v>`. 
 fr: ### Sélection de blocs rectangulaires : `<C-V>`.
 
-en: Rectangular blocks are very useful to comment many lines of code.
+en: Rectangular blocks are very useful for commenting many lines of code.
 en: Typically: `0<C-v><C-d>I-- [ESC]`
 en: 
 en: - `^` → go to start of the line
@@ -443,7 +443,7 @@ fr: - `I-- [ESC]` → écrit `-- ` pour commenter le reste de la ligne.
 
 blogimage("rectangular-blocks.gif","Rectangular blocks")
 
-en: Note on windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
+en: Note: in Windows you might have to use `<C-q>` instead of `<C-v>` if your clipboard is not empty.
 fr: Remarquez que sous windows, vous devez utiliser `<C-q>` plutôt que `<C-v>` si votre "presse papier" n'est pas vide.
 
 en: ### Completion: `<C-n>` and `<C-p>`.
@@ -497,9 +497,9 @@ fr: ### Sélection visuelle : `v`,`V`,`<C-v>`
 
 en: We saw an example with `<C-v>`. 
 en: There is also `v` and `V`.
-en: Once the selection made, you can:
+en: Once the selection has been made, you can:
 en: 
-en: - `J` → join all lines together.
+en: - `J` → join all the lines together.
 en: - `<` (resp. `>`) → indent to the left (resp. to the right).
 en: - `=` → auto indent
 fr: On a déjà vu un exemple avec `<C-V>`. 
@@ -516,7 +516,7 @@ en: Add something at the end of all visually selected lines:
 en: 
 en: - `<C-v>` 
 en: - go to desired line (`jjj` or `<C-d>` or `/pattern` or `%` etc...)
-en: - `$` go to the end of line
+en: - `$` go to the end of the line
 en: - `A`, write text, `ESC`.
 fr: Ajouter quelque chose à la fin de toutes les lignes sélectionnées visuellement : 
 fr: 
@@ -531,11 +531,11 @@ fr: blogimage("append-to-many-lines.gif","Ajouter à la fin de plusieurs lignes"
 en: ### Splits: `:split` and `vsplit`.
 fr: ### Splits : `:split` et `vsplit`.
 
-en: Here are the main commands, but you should look at `:help split`.
+en: These are the most important commands, but you should look at `:help split`.
 en: 
 en: > - `:split` → create a split (`:vsplit` create a vertical split)
-en: > - `<C-w><dir>` : where dir is any of `hjkl` or <-&darr;&uarr;→ to change split.
-en: > - `<C-w>_` (resp. `<C-w>|`) : maximise size of split (resp. vertical split)
+en: > - `<C-w><dir>` : where dir is any of `hjkl` or <-&darr;&uarr;→ to change the split.
+en: > - `<C-w>_` (resp. `<C-w>|`) : maximise the size of the split (resp. vertical split)
 en: > - `<C-w>+` (resp. `<C-w>-`) : Grow (resp. shrink) split
 fr: Je vous conseille de faire un `:help split`. 
 fr: Celà permet de manipuler plusieurs buffer sur la même fenêtre.
@@ -550,8 +550,8 @@ blogimage("split.gif","Split")
 
 ## Conclusion
 
-en: That was 90% of commands I use every day.
-en: I suggest you to learn no more than one or two new command per day.
+en: That was 90% of the commands I use every day.
+en: I suggest that you learn no more than one or two new commands per day.
 en: After two to three weeks you'll start to feel the power of vim in your hands.
 fr: Voilà, je vous ai donné 90% des commandes que j'utilise tous les jours.
 fr: N'essayez pas de toutes les apprendre en une journée. 
@@ -559,15 +559,15 @@ fr: Il faut le temps de s'habituer à chaque nouvelle commande.
 fr: Je vous conseille de ne pas apprendre plus d'une ou deux commandes par jour.
 
 en: Learning Vim is more a matter of training than plain memorization.
-en: Fortunately vim comes with some very good tools and an excellent documentation.
+en: Fortunately vim comes with some very good tools and excellent documentation.
 en: Run vimtutor until you are familiar with most basic commands.
-en: Also, you should read carefully this page: `:help usr_02.txt`.
+en: Also, you should read this page carefully: `:help usr_02.txt`.
 fr: Apprendre Vim est plus une question d'entraînement que de mémorisation.
 fr: Heureusement vim est founi avec un très bon tutoriel et une excellente documentation.
 fr: Lancez vimtutor jusqu'à ce que vous vous sentiez à l'aise avec les commandes basiques.
 fr: De plus, vous devriez aussi lire en détail la page suivate : `:help usr_02.txt`.
 
-en: Then, you will learn about `!`, folds, registers, the plugins and many other features.
+en: Then, you will learn about `!`, folds, registers, plugins and many other features.
 en: Learn vim like you'd learn piano and all should be fine.
 fr: Ensuite vous découvrirez `!`, les folds, les registres, les plugins et tout un tas d'autres choses.
 fr: Apprenez vim comme vous apprendriez le piano et vous devriez très bien vous en sortir.
