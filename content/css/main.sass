@@ -45,6 +45,20 @@ $secondTextColor: #666677
 $codeBlockColor: #839496
 $codeBlockBackgroundColor: #002b36
 
+// include Computer Modern fonts
+@font-face
+  font-family: 'cmunrm'
+  src: url('fonts/cmunrm.eot')
+  src: local('☺'), url('fonts/cmunrm.woff') format('woff'), url('fonts/cmunrm.ttf') format('truetype'), url('fonts/cmunrm.svg') format('svg')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'cmunorm'
+  src: url('fonts/cmunorm.eot')
+  src: local('☺'), url('fonts/cmunorm.woff') format('woff'), url('fonts/cmunorm.ttf') format('truetype'), url('fonts/cmunorm.svg') format('svg')
+  font-weight: normal
+  font-style: normal
 
 =mainColor
   color: $behindColor
@@ -128,7 +142,7 @@ body
   color: $base01
 
 pre, code
-  font-family: Incosolata, Monaco, monospace
+  font-family: "CMU Concrete", "cmunorm",Incosolata, Monaco, monospace
 
 pre
   &::selection 
@@ -175,7 +189,8 @@ ol li ul, ol li ol, ul li ol, ul li ul
 
 
 body, h1, h2, h3, h4, #entete, .tagname
-  font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
+  font-family: "CMU Serif", "cmunrm", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
+  text-rendering: optimizelegibility
   line-height: 1.4em
 
 /* Header Numbering */

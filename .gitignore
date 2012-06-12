@@ -7,6 +7,7 @@ tmp/
 recupen.pl
 recupfr.pl
 .sass-cache
+crash.log
 
 # output/Scratch/**/index.html
 output/Scratch/*/index.html
