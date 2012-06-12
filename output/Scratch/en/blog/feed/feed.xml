@@ -80,7 +80,7 @@
       <uri>yannesposito.com</uri>
     </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/Typography-and-the-Web/"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Screenshot of first in small caps with and without ligatures." src="/Scratch/img/blog/Typography-and-the-Web/first_sc_screenshot.png" /&gt;;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="Screenshot of first in small caps with and without ligatures." src="/Scratch/img/blog/Typography-and-the-Web/first_sc_screenshot.png" /&gt;&lt;/p&gt;
 
 
 &lt;div class="intro"&gt;
@@ -101,7 +101,7 @@ We can all create better web typography ourselves, today.&#187;&lt;/p&gt;
 
 &lt;p&gt;As somebody who tried to make my website using some nice typography features and in particular &lt;em&gt;ligatures&lt;/em&gt;, I believe this is wrong.&lt;/p&gt;
 
-&lt;p&gt;I already made an autom...&lt;/p&gt;&lt;/p&gt;</content>
+&lt;p&gt;I already made an automa...&lt;/p&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2012-01-15:/Scratch/en/blog/Yesod-tutorial-for-newbies/</id>

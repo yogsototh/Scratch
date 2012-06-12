@@ -79,7 +79,7 @@
       <uri>yannesposito.com</uri>
     </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Typography-and-the-Web/"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Screenshot of first in small caps with and without ligatures." src="/Scratch/img/blog/Typography-and-the-Web/first_sc_screenshot.png" /&gt;;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="Screenshot of first in small caps with and without ligatures." src="/Scratch/img/blog/Typography-and-the-Web/first_sc_screenshot.png" /&gt;&lt;/p&gt;
 
 
 &lt;div class="intro"&gt;
@@ -102,7 +102,7 @@ We can all create better web typography ourselves, today.&#187;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&#171;Nous ne somme pas oblig&#233; d&amp;rsquo;attendre le d&#233;veloppement des navigateurs.
-Nous pou...&lt;/p&gt;&lt;/blockquote&gt;&lt;/p&gt;</content>
+Nous pouv...&lt;/p&gt;&lt;/blockquote&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2012-01-15:/Scratch/fr/blog/Yesod-tutorial-for-newbies/</id>
