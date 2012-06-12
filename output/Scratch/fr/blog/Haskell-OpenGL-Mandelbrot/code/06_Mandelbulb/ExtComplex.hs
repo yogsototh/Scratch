@@ -21,13 +21,13 @@ extcomplex :: GLfloat -> GLfloat -> GLfloat -> ExtComplex
 extcomplex x y z = C (x,y,z)
 
 real :: ExtComplex -> GLfloat
-real (C (x,y,z))    = x
+real (C (x,_,_))    = x
 
 im :: ExtComplex -> GLfloat
-im   (C (x,y,z))    = y
+im   (C (_,y,_))    = y
 
 strange :: ExtComplex -> GLfloat
-strange (C (x,y,z)) = z
+strange (C (_,_,z)) = z
 
 magnitude :: ExtComplex -> GLfloat
 magnitude = real.abs

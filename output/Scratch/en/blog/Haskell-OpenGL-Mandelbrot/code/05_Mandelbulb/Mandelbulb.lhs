@@ -18,7 +18,7 @@ Some points:
 Then here is how I imagine things should go.
 First, what the main loop should look like:
 
-<code class="haskell">
+<code class="no-highlight">
 functionalMainLoop =
     Read user inputs and provide a list of actions
     Apply all actions to the World

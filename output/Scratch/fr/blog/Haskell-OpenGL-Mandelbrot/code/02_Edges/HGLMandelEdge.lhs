@@ -51,6 +51,10 @@
 </div>
 
 This time, instead of drawing all points, I'll simply want to draw the edges of the Mandelbrot set.
+The method I use is a rough approximation. 
+I consider the Mandelbrot set to be almost convex.
+The result will be good enough.
+
 We change slightly the drawMandelbrot function.
 We replace the `Points` by `LineLoop`
 
@@ -73,18 +77,19 @@ we will choose only point on the surface.
 >       map (\(x,y,c) -> (x,-y,c)) (reverse positivePoints)
 
 We only need to compute the positive point.
-The mandelbrot set is symetric on the abscisse axis.
+The Mandelbrot set is symmetric on the abscisse axis.
 
 > positivePoints :: [(GLfloat,GLfloat,Color3 GLfloat)]
 > positivePoints = do
->               x <- [-width..width]
->               let y = findMaxOrdFor (mandel x) 0 height 10 -- log height
->               if y < 1 -- We don't draw point in the absciss
->                  then []
->                  else return (x/width,y/height,colorFromValue $ mandel x y)
+>      x <- [-width..width]
+>      let y = findMaxOrdFor (mandel x) 0 height (log2 height)
+>      if y < 1 -- We don't draw point in the absciss
+>         then []
+>         else return (x/width,y/height,colorFromValue $ mandel x y)
+>      where
+>          log2 n = floor ((log n) / log 2)
 
-
-This function is interresting. 
+This function is interesting. 
 For those not used to the list monad here is a natural language version of this function:
 
 ~~~
@@ -96,7 +101,7 @@ positivePoints =
 ~~~
 
 In fact using the list monad you write like if you consider only one element at a time and the computation is done non deterministically.
-To find the smallest number such that mandel x y > 0 we create a simple dichotomic search:
+To find the smallest number such that `mandel x y > 0` we use a simple dichotomy:
 
 > findMaxOrdFor func minval maxval 0 = (minval+maxval)/2
 > findMaxOrdFor func minval maxval n = 
@@ -105,9 +110,7 @@ To find the smallest number such that mandel x y > 0 we create a simple dichotom
 >        else findMaxOrdFor func medpoint maxval (n-1)
 >   where medpoint = (minval+maxval)/2
 
-No rocket science here.
-I know, due to the fact the mandelbrot set is not convex this approach does some errors. But the approximation will be good enough.
-See the result now:
+No rocket science here. See the result now:
 
 blogimage("HGLMandelEdges.png","The edges of the mandelbrot set")
 

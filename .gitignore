@@ -7,3 +7,11 @@ tmp/
 recupen.pl
 recupfr.pl
 .sass-cache
+
+# output/Scratch/**/index.html
+output/Scratch/*/index.html
+output/Scratch/*/*/index.html
+output/Scratch/*/*/*/index.html
+output/Scratch/*/*/*/*/index.html
+output/Scratch/*/*/*/*/*/index.html
+output/Scratch/*/*/*/*/*/*/index.html

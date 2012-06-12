@@ -1,13 +1,10 @@
  ## First version
 
 We can consider two parts.
-The first being mostly some boilerplate[^1].
-The second part, contain more interesting stuff.
-Even in this part, there are some necessary boilerplate. 
-But it is due to the OpenGL library this time.
+The first being mostly some boilerplate[^011].
+And the second part more focused on OpenGL and content.
 
-
-[^1]: Generally in Haskell you need to declare a lot of import lines.
+[^011]: Generally in Haskell you need to declare a lot of import lines.
       This is something I find annoying.
       In particular, it should be possible to create a special file, Import.hs
       which make all the necessary import for you, as you generally need them all.
@@ -50,9 +47,6 @@ We declare some useful functions for manipulating complex numbers:
 
  ### Let us start
 
-Well, up until here we didn't made something useful.
-Just a lot of boilerplate and default value.
-Sorry but it is not completely the end.
 We start by giving the main architecture of our program:
 
 > main :: IO ()
@@ -69,7 +63,8 @@ We start by giving the main architecture of our program:
 >   -- We enter the main loop
 >   mainLoop
 
-The only interesting part is we declared that the function `display` will be used to render the graphics:
+Mainly, we initialize our OpenGL application.
+We declared that the function `display` will be used to render the graphics:
 
 > display = do
 >   clear [ColorBuffer] -- make the window black
@@ -77,12 +72,12 @@ The only interesting part is we declared that the function `display` will be use
 >   preservingMatrix drawMandelbrot
 >   swapBuffers -- refresh screen
 
-Also here, there is only one interesting part, 
-the draw will occurs in the function `drawMandelbrot`.
+Also here, there is only one interesting line;
+the draw will occur in the function `drawMandelbrot`.
 
-Now we must speak a bit about how OpenGL works.
-We said that OpenGL is imperative by design.
-In fact, you must write the list of actions in the right order.
+This function will provide a list of draw actions.
+Remember that OpenGL is imperative by design.
+Then, one of the consequence is you must write the actions in the right order.
 No easy parallel drawing here.
 Here is the function which will render something on the screen:
 
@@ -111,8 +106,8 @@ drawMandelbrot =
 ~~~
 
 We also need some kind of global variables. 
-In fact, global variable are a proof of some bad design. 
-But remember it is our first try:
+In fact, global variable are a proof of a design problem. 
+We will get rid of them later.
 
 > width = 320 :: GLfloat
 > height = 320 :: GLfloat
@@ -135,7 +130,7 @@ We need a function which transform an integer value to some color:
 >   in
 >     Color3 (t n) (t (n+5)) (t (n+10))
 
-And now the mandel function. 
+And now the `mandel` function. 
 Given two coordinates in pixels, it returns some integer value:
 
 > mandel x y = 
@@ -144,8 +139,8 @@ Given two coordinates in pixels, it returns some integer value:
 >   in
 >       f (complex r i) 0 64
 
-It uses the main mandelbrot function for each complex \\(c\\).
-The mandelbrot set is the set of complex number c such that the following sequence does not escape to infinity.
+It uses the main Mandelbrot function for each complex \\(c\\).
+The Mandelbrot set is the set of complex number c such that the following sequence does not escape to infinity.
 
 Let us define \\(f_c: \mathbb{C} \to \mathbb{C}\\)
 
@@ -163,15 +158,15 @@ Of course, instead of trying to test the real limit, we just make a test after a
 >           then n
 >           else f c ((z*z)+c) (n-1)
 
-Well, if you download this lhs file, compile it and run it this is the result:
+Well, if you download this file (look at the bottom of this section), compile it and run it this is the result:
 
 blogimage("hglmandel_v01.png","The mandelbrot set version 1")
 
 A first very interesting property of this program is that the computation for all the points is done only once.
-The proof is that it might be a bit long before a first image appears, but if you resize the window, it updates instantaneously.
+It is a bit long before the first image appears, but if you resize the window, it updates instantaneously.
 This property is a direct consequence of purity.
 If you look closely, you see that `allPoints` is a pure list.
-Therefore, calling `allPoints` will always render the same result.
+Therefore, calling `allPoints` will always render the same result and Haskell is clever enough to use this property.
 While Haskell doesn't garbage collect `allPoints` the result is reused for free.
 We didn't specified this value should be saved for later use. 
 It is saved for us.
@@ -180,7 +175,6 @@ See what occurs if we make the window bigger:
 
 blogimage("hglmandel_v01_too_wide.png","The mandelbrot too wide, black lines and columns")
 
-Yep, we see some black lines.
-Why? Simply because we drawn less point than there is on the surface.
+We see some black lines because we drawn less point than there is on the surface.
 We can repair this by drawing little squares instead of just points.
 But, instead we will do something a bit different and unusual.

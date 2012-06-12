@@ -1,8 +1,8 @@
- ## Cleaning the code
+ ## Naïve code cleaning
 
 The first thing to do is to separate the GLUT/OpenGL 
 part from the computation of the shape.
-Here is the cleaned version of the preceeding section.
+Here is the cleaned version of the preceding section.
 Most boilerplate was put in external files.
 
 - [`YBoiler.hs`](code/04_Mandelbulb/YBoiler.hs), the 3D rendering
@@ -79,6 +79,3 @@ But I would have preferred to control the user actions.
 
 On the other hand, we continue to handle a lot rendering details.
 For example, we provide ordered vertices.
-I feel, this should be externalized.
-
-I would have preferred to make things a bit more general.

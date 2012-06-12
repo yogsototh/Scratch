@@ -19,13 +19,13 @@
       <uri>yannesposito.com</uri>
     </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/Haskell-OpenGL-Mandelbrot/"/>
-    <content type="html">&lt;p&gt;&lt;img alt="The plan in image" src="/Scratch/img/blog/Haskell-OpenGL-Mandelbrot/HGL_Plan.png" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="The B in Beno&#238;t B. Mandelbrot stand for Beno&#238;t B. Mandelbrot" src="/Scratch/img/blog/Haskell-OpenGL-Mandelbrot/BenoitBMandelbrot.jpg" /&gt;&lt;/p&gt;
 
 
 &lt;div class="intro"&gt;
 
 
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; A progressive real world example.&lt;/p&gt;
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; You will see how to go from theory to a real application using Haskell.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;center&gt;&lt;hr style="width:30%;float:left;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;span class="sc"&gt;&lt;b&gt;Table of Content&lt;/b&gt;&lt;/span&gt;&lt;hr style="width:30%;float:right;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;/center&gt;
@@ -34,10 +34,7 @@
   &lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="#first-version"&gt;First version&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href="#lets-play-the-song-of-our-people"&gt;Let&amp;rsquo;s play the song of our people&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href="#let-us-start"&gt;Let us start&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/hr&gt;&lt;/center&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/p&gt;</content>
+   ...&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/hr&gt;&lt;/center&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2012-02-08:/Scratch/en/blog/Haskell-the-Hard-Way/</id>

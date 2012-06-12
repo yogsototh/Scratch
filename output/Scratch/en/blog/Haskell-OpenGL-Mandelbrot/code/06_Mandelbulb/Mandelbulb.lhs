@@ -3,7 +3,7 @@
 All feel good from the architecture point of vue.
 More precisely, the separation between rendering and world behavior is clear.
 But this is extremely slow now.
-Because we compute the mandelbulb for each frame now.
+Because we compute the Mandelbulb for each frame now.
 
 Before we had
 
@@ -31,7 +31,8 @@ function, we will provide the list of atoms directly.
 > -- Centralize all user input interaction
 > inputActionMap :: InputMap World
 > inputActionMap = inputMapFromList [
->      (Press 'k' , rotate xdir 5)
+>      (Press ' ' , switch_rotation)
+>     ,(Press 'k' , rotate xdir 5)
 >     ,(Press 'i' , rotate xdir (-5))
 >     ,(Press 'j' , rotate ydir 5)
 >     ,(Press 'l' , rotate ydir (-5))
@@ -45,14 +46,15 @@ function, we will provide the list of atoms directly.
 >     ,(Press 'r' , translate zdir (-0.1))
 >     ,(Press '+' , zoom 1.1)
 >     ,(Press '-' , zoom (1/1.1))
->     ,(Press 'h' , resize 1.2)
->     ,(Press 'g' , resize (1/1.2))
+>     ,(Press 'h' , resize 2.0)
+>     ,(Press 'g' , resize (1/2.0))
 >     ]
 
 </div>
 
 > data World = World {
 >       angle       :: Point3D
+>     , anglePerSec :: Scalar
 >     , scale       :: Scalar
 >     , position    :: Point3D
 >     , box         :: Box3D
@@ -84,6 +86,11 @@ function, we will provide the list of atoms directly.
 > rotate dir angleValue world = 
 >   world {
 >      angle = (angle world) + (angleValue -*< dir) }
+>
+> switch_rotation :: World -> World
+> switch_rotation world = 
+>   world {
+>      anglePerSec = if anglePerSec world > 0 then 0 else 5.0 }
 > 
 > translate :: Point3D -> Scalar -> World -> World
 > translate dir len world = 
@@ -108,11 +115,12 @@ Our initial world state is slightly changed:
 > initialWorld :: World
 > initialWorld = World {
 >    angle = makePoint3D (30,30,0)
+>  , anglePerSec = 5.0
 >  , position = makePoint3D (0,0,0)
 >  , scale = 1.0
 >  , box = Box3D { minPoint = makePoint3D (-2,-2,-2)
 >                , maxPoint =  makePoint3D (2,2,2)
->                , resolution =  0.02 }
+>                , resolution =  0.03 }
 >  , told = 0
 >  -- We declare cache directly this time
 >  , cache = objectFunctionFromWorld initialWorld
@@ -124,11 +132,12 @@ This way instead of providing `XYFunc`, we provide directly a list of Atoms.
 > objectFunctionFromWorld :: World -> [YObject]
 > objectFunctionFromWorld w = [Atoms atomList]
 >   where atomListPositive = 
->           getObject3DFromShapeFunction (shapeFunc (resolution (box w))) (box w)
+>           getObject3DFromShapeFunction
+>               (shapeFunc (resolution (box w))) (box w)
 >         atomList = atomListPositive ++ 
 >           map negativeTriangle atomListPositive
 >         negativeTriangle (ColoredTriangle (p1,p2,p3,c)) = 
->               ColoredTriangle (negz p1,negz p2,negz p3,c)
+>               ColoredTriangle (negz p1,negz p3,negz p2,c)
 >               where negz (P (x,y,z)) = P (x,y,-z)
 
 We know that resize is the only world change that necessitate to 
@@ -153,10 +162,18 @@ All the rest is exactly the same.
 >       , told = tnew
 >       }
 >   where 
->       anglePerSec = 5.0
->       delta = anglePerSec * elapsed / 1000.0
+>       delta = anglePerSec world * elapsed / 1000.0
 >       elapsed = fromIntegral (tnew - (told world))
 > 
+> shapeFunc' :: Scalar -> Function3D
+> shapeFunc' res x y = if or [tmp u v>=0 | u<-[x,x+res], v<-[y,y+res]]
+>                       then Just (z,hexColor "#AD4") 
+>                       else Nothing
+>                     where tmp x y = (x**2 + y**2)
+>                           protectSqrt t = if t<0 then 0 else sqrt t
+>                           z = sqrt (a**2 - (c - protectSqrt(tmp x y))**2)
+>                           a = 0.2
+>                           c = 0.5
 > shapeFunc :: Scalar -> Function3D
 > shapeFunc res x y = 
 >   let 
@@ -165,13 +182,13 @@ All the rest is exactly the same.
 >   if and [ findMaxOrdFor (ymandel (x+xeps) (y+yeps)) 0 1 20 < 0.000001 |
 >               val <- [res], xeps <- [-val,val], yeps<-[-val,val]]
 >       then Nothing 
->       else Just (z,colorFromValue ((ymandel x y z) * 64))
+>       else Just (z,colorFromValue 0)
 > 
 > colorFromValue :: Point -> Color
 > colorFromValue n =
 >   let 
 >       t :: Point -> Scalar
->       t i = 0.7 + 0.3*cos( i / 10 )
+>       t i = 0.0 + 0.5*cos( i /10 )
 >   in
 >     makeColor (t n) (t (n+5)) (t (n+10))
 > 

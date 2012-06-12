@@ -227,10 +227,11 @@ yMainLoop inputActionMap
           Just (keyboardMouse inputActionMap worldRef)
   -- We generate one frame using the callback
   displayCallback $= display worldRef
+  normalize $= Enabled
   -- Lights
   lighting $= Enabled
   ambient (Light 0) $= Color4 0 0 0 1
-  diffuse (Light 0) $= Color4 1 1 1 1
+  diffuse (Light 0) $= Color4 0.5 0.5 0.5 1
   specular (Light 0) $= Color4 1 1 1 1
   position (Light 0) $= Vertex4 1 1 0 1
   light (Light 0) $= Enabled
@@ -239,7 +240,7 @@ yMainLoop inputActionMap
   materialAmbient Front $= Color4 0.5 0.5 0.5 1 
   materialSpecular Front $= Color4 0.2 0.2 0.2 1 
   materialEmission Front $= Color4 0.3 0.3 0.3 1
-  materialShininess Front $= 50.0
+  materialShininess Front $= 90.0
   -- We enter the main loop
   mainLoop
 

@@ -1,20 +1,21 @@
  ## 3D Mandelbrot?
 
-Why only draw the edge? 
-It is clearly not as nice as drawing the complete surface.
-Yeah, I know, but, as we use OpenGL, why not show something in 3D.
-
-But, complex number are only in 2D and there is no 3D equivalent to complex.
-In fact, the only extension known are quaternions, 4D.
-As I know almost nothing about quaternions, I will use some extended complex.
+Now we will we extend to a third dimension.
+But, there is no 3D equivalent to complex.
+In fact, the only extension known are quaternions (in 4D).
+As I know almost nothing about quaternions, I will use some extended complex,
+instead of using a 3D projection of quaternions.
 I am pretty sure this construction is not useful for numbers.
-But it will be enough for us to create something nice.
+But it will be enough for us to create something that look nice.
 
-As there is a lot of code, I'll give a high level view to what occurs:
+This section is quite long, but don't be afraid,
+most of the code is some OpenGL boilerplate.
+For those you want to skim,
+here is a high level representation:
 
  > - OpenGL Boilerplate
  >  
- >   - set some IORef for states  
+ >   - set some IORef (understand variables) for states  
  >   - Drawing: 
  > 
  >      - set doubleBuffer, handle depth, window size...
@@ -49,8 +50,8 @@ As there is a lot of code, I'll give a high level view to what occurs:
 
 </div>
 
-We declare a new type `ExtComplex` (for exttended complex). 
-An extension of complex numbers:
+We declare a new type `ExtComplex` (for extended complex). 
+An extension of complex numbers with a third component:
 
 > data ExtComplex = C (GLfloat,GLfloat,GLfloat) 
 >                   deriving (Show,Eq)
@@ -67,7 +68,17 @@ An extension of complex numbers:
 >     signum (C (x,y,z))  = C (signum x, 0, 0)
 
 The most important part is the new multiplication instance.
-Modifying this formula will change radically the shape of this somehow 3D mandelbrot.
+Modifying this formula will change radically the shape of the result.
+Here is the formula written in a more mathematical notation.
+I called the third component of these extended complex _strange_.
+
+$$ \mathrm{real}      ((x,y,z) * (x',y',z')) = xx' - yy' - zz' $$
+
+$$ \mathrm{im}        ((x,y,z) * (x',y',z')) = xy' - yx' + zz' $$
+
+$$ \mathrm{strange}   ((x,y,z) * (x',y',z')) = xz' + zx' $$
+
+Note how if `z=z'=0` then the multiplication is the same to the complex one.
 
 <div style="display:none">
 
@@ -104,15 +115,14 @@ And also we will listen the keyboard.
 >   createWindow "3D HOpengGL Mandelbrot"
 >   -- We add some directives
 >   depthFunc  $= Just Less
->   -- matrixMode $= Projection
 >   windowSize $= Size 500 500
 >   -- Some state variables (I know it feels BAD)
 >   angle   <- newIORef ((35,0)::(GLfloat,GLfloat))
 >   zoom    <- newIORef (2::GLfloat)
 >   campos  <- newIORef ((0.7,0)::(GLfloat,GLfloat))
->   -- Action to call when waiting
+>   -- Function to call each frame
 >   idleCallback $= Just idle
->   -- We will use the keyboard
+>   -- Function to call when keyboard or mouse is used
 >   keyboardMouseCallback $= 
 >           Just (keyboardMouse angle zoom campos)
 >   -- Each time we will need to update the display
@@ -122,12 +132,16 @@ And also we will listen the keyboard.
 >   -- We enter the main loop
 >   mainLoop
 
-The `idle` function necessary for animation.
+The `idle` is here to change the states.
+There should never be any modification done in the `display` function.
 
 > idle = postRedisplay Nothing
 
 We introduce some helper function to manipulate
 standard `IORef`.
+Mainly `modVar x f` is equivalent to the imperative `x:=f(x)`,
+`modFst (x,y) (+1)` is equivalent to `(x,y) := (x+1,y)`
+and `modSnd (x,y) (+1)` is equivalent to `(x,y) := (x,y+1)`
 
 > modVar v f = do
 >   v' <- get v
@@ -139,23 +153,27 @@ And we use them to code the function handling keyboard.
 We will use the keys `hjkl` to rotate, 
 `oi` to zoom and `sedf` to move.
 Also, hitting space will reset the view.
+Remember that `angle` and `campos` are pairs and `zoom` is a scalar.
+Also note `(+0.5)` is the function `\x->x+0.5` 
+and `(-0.5)` is the number `-0.5` (yes I share your pain).
 
-> keyboardMouse angle zoom pos key state modifiers position =
->   kact angle zoom pos key state
+> keyboardMouse angle zoom campos key state modifiers position =
+>   -- We won't use modifiers nor position
+>   kact angle zoom campos key state
 >   where 
 >     -- reset view when hitting space
 >     kact a z p (Char ' ') Down = do
->           a $= (0,0)
->           z $= 1
->           p $= (0,0)
+>           a $= (0,0) -- angle 
+>           z $= 1     -- zoom
+>           p $= (0,0) -- camera position
 >     -- use of hjkl to rotate
 >     kact a _ _ (Char 'h') Down = modVar a (mapFst (+0.5))
 >     kact a _ _ (Char 'l') Down = modVar a (mapFst (+(-0.5)))
 >     kact a _ _ (Char 'j') Down = modVar a (mapSnd (+0.5))
 >     kact a _ _ (Char 'k') Down = modVar a (mapSnd (+(-0.5)))
 >     -- use o and i to zoom
->     kact _ s _ (Char 'o') Down = modVar s (*1.1)
->     kact _ s _ (Char 'i') Down = modVar s (*0.9)
+>     kact _ z _ (Char 'o') Down = modVar z (*1.1)
+>     kact _ z _ (Char 'i') Down = modVar z (*0.9)
 >     -- use sdfe to move the camera
 >     kact _ _ p (Char 's') Down = modVar p (mapFst (+0.1))
 >     kact _ _ p (Char 'f') Down = modVar p (mapFst (+(-0.1)))
@@ -164,9 +182,8 @@ Also, hitting space will reset the view.
 >     -- any other keys does nothing
 >     kact _ _ _ _ _ = return ()
 
-Now, we will show the object using the display function.
-Note, this time, display take some parameters.
-Mainly, this function if full of boilerplate:
+Note `display` take some parameters this time.
+This function if full of boilerplate:
 
 > display angle zoom position = do
 >    -- set the background color (dark solarized theme)
@@ -184,9 +201,11 @@ Mainly, this function if full of boilerplate:
 >   (xangle,yangle) <- get angle
 >   rotate xangle $ Vector3 1.0 0.0 (0.0::GLfloat)
 >   rotate yangle $ Vector3 0.0 1.0 (0.0::GLfloat)
+>   
 >   -- Now that all transformation were made
 >   -- We create the object(s)
 >   preservingMatrix drawMandelbrot
+>   
 >   swapBuffers -- refresh screen
 
 Not much to say about this function.
@@ -194,9 +213,9 @@ Mainly there are two parts: apply some transformations, draw the object.
 
  ### The 3D Mandelbrot
 
-Now, that we talked about the OpenGL part, let's talk about how we 
+We have finished with the OpenGL section, let's talk about how we 
 generate the 3D points and colors.
-First, we will set the number of detatils to 180 pixels in the three dimensions.
+First, we will set the number of details to 200 pixels in the three dimensions.
 
 > nbDetails = 200 :: GLfloat
 > width  = nbDetails
@@ -205,7 +224,9 @@ First, we will set the number of detatils to 180 pixels in the three dimensions.
 
 This time, instead of just drawing some line or some group of points,
 we will show triangles.
-The idea is that we should provide points three by three.
+The function `allPoints` will provide a multiple of three points.
+Each three successive point representing the coordinate of each vertex of a triangle.
+
 
 > drawMandelbrot = do
 >   -- We will print Points (not triangles for example) 
@@ -216,14 +237,13 @@ The idea is that we should provide points three by three.
 >           color c
 >           vertex $ Vertex3 x y z
 
-Now instead of providing only one point at a time, we will provide six ordered points. 
+In fact, we will provide six ordered points. 
 These points will be used to draw two triangles.
 
 blogimage("triangles.png","Explain triangles")
 
-Note in 3D the depth of the point is generally different.
 The next function is a bit long. 
-An approximative English version is:
+Here is an approximative English version:
 
 ~~~
 forall x from -width to width
@@ -243,7 +263,8 @@ depthPoints = do
   x <- [-width..width]
   y <- [-height..height]
   let 
-      depthOf x' y' = findMaxOrdFor (mandel x' y') 0 deep 7
+      depthOf x' y' = findMaxOrdFor (mandel x' y') 0 deep logdeep 
+      logdeep = floor ((log deep) / log 2)
       z1 = depthOf    x     y
       z2 = depthOf (x+1)    y
       z3 = depthOf (x+1) (y+1)
@@ -252,10 +273,10 @@ depthPoints = do
       c2 = mandel (x+1)    y  (z2+1)
       c3 = mandel (x+1) (y+1) (z3+1)
       c4 = mandel    x  (y+1) (z4+1)
-      p1 = (   x /width,   y /height, z1/deep,colorFromValue c1)
-      p2 = ((x+1)/width,   y /height, z2/deep,colorFromValue c2)
-      p3 = ((x+1)/width,(y+1)/height, z3/deep,colorFromValue c3)
-      p4 = (   x /width,(y+1)/height, z4/deep,colorFromValue c4)
+      p1 = (   x /width,   y /height, z1/deep, colorFromValue c1)
+      p2 = ((x+1)/width,   y /height, z2/deep, colorFromValue c2)
+      p3 = ((x+1)/width,(y+1)/height, z3/deep, colorFromValue c3)
+      p4 = (   x /width,(y+1)/height, z4/deep, colorFromValue c4)
   if (and $ map (>=57) [c1,c2,c3,c4])
   then []
   else [p1,p2,p3,p1,p3,p4]
@@ -263,15 +284,16 @@ depthPoints = do
 
 If you look at the function above, you see a lot of common patterns.
 Haskell is very efficient to make this better.
-Here is a somehow less readable but more generic refactored function:
+Here is a harder to read but shorter and more generic rewritten function:
 
 > depthPoints :: [ColoredPoint]
 > depthPoints = do
 >   x <- [-width..width]
->   y <- [0..height]
+>   y <- [-height..height]
 >   let 
 >     neighbors = [(x,y),(x+1,y),(x+1,y+1),(x,y+1)]
->     depthOf (u,v) = findMaxOrdFor (mandel u v) 0 deep 7
+>     depthOf (u,v) = findMaxOrdFor (mandel u v) 0 deep logdeep
+>     logdeep = floor ((log deep) / log 2)
 >     -- zs are 3D points with found depth
 >     zs = map (\(u,v) -> (u,v,depthOf (u,v))) neighbors
 >     -- ts are 3D pixels + mandel value
@@ -288,22 +310,17 @@ Here is a somehow less readable but more generic refactored function:
 If you prefer the first version, then just imagine how hard it will be to change the enumeration of the point from (x,y) to (x,z) for example.
 
 Also, we didn't searched for negative values. 
-For simplicity, I mirror these values. 
-I haven't even tested if this modified mandelbrot is symetric relatively to the plan {(x,y,z)|z=0}.
+This modified Mandelbrot is no more symmetric relatively to the plan `y=0`.
+But it is symmetric relatively to the plan `z=0`.
+Then I mirror these values. 
 
 > allPoints :: [ColoredPoint]
 > allPoints = planPoints ++ map inverseDepth  planPoints
 >   where 
->       planPoints = depthPoints ++ map inverseHeight depthPoints
->       inverseHeight (x,y,z,c) = (x,-y,z,c)
+>       planPoints = depthPoints
 >       inverseDepth (x,y,z,c) = (x,y,-z+1/deep,c)
 
-I cheat by making these symmetry.
-But it is faster and render a nice form.
-For this tutorial it will be good enough.
-Also, the dichotomic method I use is mostly right but false for some cases.
-
-The rest of the program is very close to the preceeding one.
+The rest of the program is very close to the preceding one.
 
 <div style="display:none">
 
@@ -333,7 +350,8 @@ We only changed from `Complex` to `ExtComplex` of the main `f` function.
 
 </div>
 
-We simply add a new dimenstion to the mandel function. Also we simply need to change the type signature of the function `f` from `Complex` to `ExtComplex`.
+We simply add a new dimension to the `mandel` function
+and change the type signature of `f` from `Complex` to `ExtComplex`.
 
 > mandel x y z = 
 >   let r = 2.0 * x / width
@@ -343,9 +361,6 @@ We simply add a new dimenstion to the mandel function. Also we simply need to ch
 >       f (extcomplex r i s) 0 64
 
 
-And here is the result (if you use 500 for `nbDetails`):
+Here is the result:
 
 blogimage("mandelbrot_3D.png","A 3D mandelbrot like")
-
-This image is quite nice.
-
