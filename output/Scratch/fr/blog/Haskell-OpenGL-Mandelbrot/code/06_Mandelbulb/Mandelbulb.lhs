@@ -1,17 +1,23 @@
  ## Optimization
 
-All feel good from the architecture point of vue.
-More precisely, the separation between rendering and world behavior is clear.
-But this is extremely slow now.
-Because we compute the Mandelbulb for each frame now.
+From the architecture stand point all is clear.
+If you read the code, you'll see I didn't made everything perfect, for example, I didn't coded nicely the lights.
+But I believe it is a good first step and it will be easy to go further.
+The separation between rendering and world behavior is clear.
+Unfortunately the program of the preceding session is extremely slow.
+We compute the Mandelbulb for each frame now.
 
 Before we had
 
-   Constant Function -> Constant List of Triangles -> Display
+<code class="no-highlight">
+Constant Function -> Constant List of Triangles -> Display
+</code>
 
 Now we have 
 
-    World -> Function -> List of Objects -> Atoms -> Display
+<code class="no-highlight">
+World -> Function -> List of Objects -> Atoms -> Display
+</code>
 
 And the World state could change. 
 Then it is no more straightforward for the compiler to understand

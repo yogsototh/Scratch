@@ -18,7 +18,7 @@ Some points:
 Then here is how I imagine things should go.
 First, what the main loop should look like:
 
-<code class="haskell">
+<code class="no-highlight">
 functionalMainLoop =
     Read user inputs and provide a list of actions
     Apply all actions to the World
@@ -47,21 +47,21 @@ It means, the user input will transform the world state.
 > -- Centralize all user input interaction
 > inputActionMap :: InputMap World
 > inputActionMap = inputMapFromList [
->      (Press 'k' , rotate xdir 5)
+>      (Press 'k' , rotate xdir   5)
 >     ,(Press 'i' , rotate xdir (-5))
->     ,(Press 'j' , rotate ydir 5)
+>     ,(Press 'j' , rotate ydir   5)
 >     ,(Press 'l' , rotate ydir (-5))
->     ,(Press 'o' , rotate zdir 5)
+>     ,(Press 'o' , rotate zdir   5)
 >     ,(Press 'u' , rotate zdir (-5))
->     ,(Press 'f' , translate xdir 0.1)
+>     ,(Press 'f' , translate xdir   0.1)
 >     ,(Press 's' , translate xdir (-0.1))
->     ,(Press 'e' , translate ydir 0.1)
+>     ,(Press 'e' , translate ydir   0.1)
 >     ,(Press 'd' , translate ydir (-0.1))
->     ,(Press 'z' , translate zdir 0.1)
+>     ,(Press 'z' , translate zdir   0.1)
 >     ,(Press 'r' , translate zdir (-0.1))
->     ,(Press '+' , zoom 1.1)
+>     ,(Press '+' , zoom    1.1)
 >     ,(Press '-' , zoom (1/1.1))
->     ,(Press 'h' , resize 1.2)
+>     ,(Press 'h' , resize    1.2)
 >     ,(Press 'g' , resize (1/1.2))
 >     ]
 

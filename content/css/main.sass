@@ -60,6 +60,30 @@ $codeBlockBackgroundColor: #002b36
   font-weight: normal
   font-style: normal
 
+// --
+@font-face
+  font-family: 'cmunsl'
+  src: url('fonts/cmunsl.eot')
+  src: local('☺'), url('fonts/cmunsl.woff') format('woff'), url('fonts/cmunsl.ttf') format('truetype'), url('fonts/cmunsl. → svg') format('svg')
+  font-weight: normal
+  font-style: normal
+
+
+@font-face
+  font-family: 'cmunrb'
+  src: url('fonts/cmunrb.eot')
+  src: local('☺'), url('fonts/cmunrb.woff') format('woff'), url('fonts/cmunrb.ttf') format('truetype'), url('fonts/cmunrb.svg') format('svg')
+  font-weight: normal
+  font-style: normal
+
+i, em
+  font-family: "cmunsl", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
+  font-style: normal
+
+b, h1, h2, h3, h4, h5, h6
+  font-family: "cmunrb", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
+  font-weight: normal
+
 =mainColor
   color: $behindColor
   background:
@@ -189,9 +213,11 @@ ol li ul, ol li ol, ul li ol, ul li ul
 
 
 body, h1, h2, h3, h4, #entete, .tagname
-  font-family: "CMU Serif", "cmunrm", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   text-rendering: optimizelegibility
   line-height: 1.4em
+
+body
+  font-family: "CMU Serif", "cmunrm", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
 
 /* Header Numbering */
 .article #afterheader
