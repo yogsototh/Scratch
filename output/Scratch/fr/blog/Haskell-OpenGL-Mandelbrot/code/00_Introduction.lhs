@@ -39,11 +39,13 @@ and something nice to see in 3D.
 
 Here is what you'll end with:
 
-blogimage("GoldenMandelbulb.png","A golden mandelbulb")
+blogfigure("GoldenMandelbulb.png","The entire Mandelbulb")
+blogfigure("3DMandelbulbDetail.png","A Mandelbulb detail")
+blogfigure("3DMandelbulbDetail2.png","Another detail of the Mandelbulb")
 
 And here are the intermediate steps:
 
 blogimage("HGL_Plan.png","The parts of the article")
 
-From 1 to 3 it will be _dirtier_ and _dirtier_.
-We start cleaning everything at the 4th part.
+From the 2nd section to the 4th it will be _dirtier_ and _dirtier_.
+We start cleaning everything at the 5th section.

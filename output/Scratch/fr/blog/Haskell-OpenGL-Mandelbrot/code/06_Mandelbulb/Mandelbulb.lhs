@@ -1,7 +1,8 @@
  ## Optimization
 
 From the architecture stand point all is clear.
-If you read the code, you'll see I didn't made everything perfect, for example, I didn't coded nicely the lights.
+If you read the code of `YGL.hs`, you'll see I didn't made everything perfect. 
+For example, I didn't finished the code of the lights.
 But I believe it is a good first step and it will be easy to go further.
 The separation between rendering and world behavior is clear.
 Unfortunately the program of the preceding session is extremely slow.
@@ -124,13 +125,14 @@ Our initial world state is slightly changed:
 >  , anglePerSec = 5.0
 >  , position = makePoint3D (0,0,0)
 >  , scale = 1.0
->  , box = Box3D { minPoint = makePoint3D (-2,-2,-2)
->                , maxPoint =  makePoint3D (2,2,2)
->                , resolution =  0.03 }
+>  , box = Box3D { minPoint = makePoint3D (0-eps, 0-eps, 0-eps)
+>                , maxPoint = makePoint3D (0+eps, 0+eps, 0+eps)
+>                , resolution =  0.02 }
 >  , told = 0
 >  -- We declare cache directly this time
 >  , cache = objectFunctionFromWorld initialWorld
 >  }
+>  where eps=2
 
 We use the `YGL.getObject3DFromShapeFunction` function directly.
 This way instead of providing `XYFunc`, we provide directly a list of Atoms.
@@ -183,9 +185,9 @@ All the rest is exactly the same.
 > shapeFunc :: Scalar -> Function3D
 > shapeFunc res x y = 
 >   let 
->       z = findMaxOrdFor (ymandel x y) 0 1 20
+>       z = maxZeroIndex (ymandel x y) 0 1 20
 >   in
->   if and [ findMaxOrdFor (ymandel (x+xeps) (y+yeps)) 0 1 20 < 0.000001 |
+>   if and [ maxZeroIndex (ymandel (x+xeps) (y+yeps)) 0 1 20 < 0.000001 |
 >               val <- [res], xeps <- [-val,val], yeps<-[-val,val]]
 >       then Nothing 
 >       else Just (z,colorFromValue 0)
@@ -198,19 +200,29 @@ All the rest is exactly the same.
 >   in
 >     makeColor (t n) (t (n+5)) (t (n+10))
 > 
-> findMaxOrdFor :: (Fractional a,Num a,Num b,Eq b) => 
+> -- given f min max nbtest,
+> -- considering 
+> --  - f is an increasing function
+> --  - f(min)=0
+> --  - f(max)≠0
+> -- then maxZeroIndex f min max nbtest returns x such that
+> --    f(x - ε)=0 and f(x + ε)≠0
+> --    where ε=(max-min)/2^(nbtest+1) 
+> maxZeroIndex :: (Fractional a,Num a,Num b,Eq b) => 
 >                  (a -> b) -> a -> a -> Int -> a
-> findMaxOrdFor _ minval maxval 0 = (minval+maxval)/2
-> findMaxOrdFor func minval maxval n = 
+> maxZeroIndex _ minval maxval 0 = (minval+maxval)/2
+> maxZeroIndex func minval maxval n = 
 >   if func medpoint /= 0 
->        then findMaxOrdFor func minval medpoint (n-1)
->        else findMaxOrdFor func medpoint maxval (n-1)
+>        then maxZeroIndex func minval medpoint (n-1)
+>        else maxZeroIndex func medpoint maxval (n-1)
 >   where medpoint = (minval+maxval)/2
 > 
 > ymandel :: Point -> Point -> Point -> Point
 > ymandel x y z = fromIntegral (mandel x y z 64) / 64
 
 </div>
+
+And you can also consider small changes in other source files.
 
 - [`YGL.hs`](code/06_Mandelbulb/YGL.hs), the 3D rendering framework
 - [`Mandel`](code/06_Mandelbulb/Mandel.hs), the mandel function

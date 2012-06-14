@@ -1,6 +1,3 @@
--- The languages include needed because I wanted to use
--- (Point,Point,Point) instead of 
--- data Point3D = Point3D (Point,Point,Point) deriving ...
 {-
 The module YGL will contains most boilerplate
 And display details.
@@ -37,17 +34,27 @@ module YGL (
     -- The main loop function to call
     , yMainLoop) where
 
-import Numeric (readHex)
+-- A bunch of imports
+import Numeric (readHex) -- to read hexadecimal values
+
+-- Import of OpenGL and GLUT
+-- but, I use my own Color type, therefore I hide the definition
+-- of Color inside GLUT and OpenGL packages
 import Graphics.Rendering.OpenGL hiding (Color)
 import Graphics.UI.GLUT hiding (Color)
 import Data.IORef
+
+-- I use Map to deal with user interaction
 import qualified Data.Map as Map
+
+-- Some standard stuff
 import Control.Monad (when)
 import Data.Maybe (isNothing)
 
 {-- Things start to be complex here.
 - Just take the time to follow me.
 --}
+
 
 -- | A 1D point
 type Point   = GLfloat 

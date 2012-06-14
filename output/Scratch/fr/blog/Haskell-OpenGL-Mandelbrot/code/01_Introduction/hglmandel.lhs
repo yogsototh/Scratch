@@ -140,7 +140,7 @@ Given two coordinates in pixels, it returns some integer value:
 >       f (complex r i) 0 64
 
 It uses the main Mandelbrot function for each complex \\(c\\).
-The Mandelbrot set is the set of complex number c such that the following sequence does not escape to infinity.
+The Mandelbrot set is the set of complex number \\(c\\) such that the following sequence does not escape to infinity.
 
 Let us define \\(f_c: \mathbb{C} \to \mathbb{C}\\)
 

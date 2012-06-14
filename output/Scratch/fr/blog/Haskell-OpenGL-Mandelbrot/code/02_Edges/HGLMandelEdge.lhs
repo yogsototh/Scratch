@@ -55,7 +55,7 @@ The method I use is a rough approximation.
 I consider the Mandelbrot set to be almost convex.
 The result will be good enough.
 
-We change slightly the drawMandelbrot function.
+We change slightly the `drawMandelbrot` function.
 We replace the `Points` by `LineLoop`
 
 > drawMandelbrot =
@@ -77,12 +77,12 @@ we will choose only point on the surface.
 >       map (\(x,y,c) -> (x,-y,c)) (reverse positivePoints)
 
 We only need to compute the positive point.
-The Mandelbrot set is symmetric on the abscisse axis.
+The Mandelbrot set is symmetric relatively to the abscisse axis.
 
 > positivePoints :: [(GLfloat,GLfloat,Color3 GLfloat)]
 > positivePoints = do
 >      x <- [-width..width]
->      let y = findMaxOrdFor (mandel x) 0 height (log2 height)
+>      let y = maxZeroIndex (mandel x) 0 height (log2 height)
 >      if y < 1 -- We don't draw point in the absciss
 >         then []
 >         else return (x/width,y/height,colorFromValue $ mandel x y)
@@ -92,22 +92,30 @@ The Mandelbrot set is symmetric on the abscisse axis.
 This function is interesting. 
 For those not used to the list monad here is a natural language version of this function:
 
-~~~
+<code class="no-highlight">
 positivePoints =
     for all x in the range [-width..width]
     let y be smallest number s.t. mandel x y > 0
     if y is on 0 then don't return a point
     else return the value corresonding to (x,y,color for (x+iy))
-~~~
+</code>
 
 In fact using the list monad you write like if you consider only one element at a time and the computation is done non deterministically.
 To find the smallest number such that `mandel x y > 0` we use a simple dichotomy:
 
-> findMaxOrdFor func minval maxval 0 = (minval+maxval)/2
-> findMaxOrdFor func minval maxval n = 
+> -- given f min max nbtest,
+> -- considering 
+> --  - f is an increasing function
+> --  - f(min)=0
+> --  - f(max)≠0
+> -- then maxZeroIndex f min max nbtest returns x such that
+> --    f(x - ε)=0 and f(x + ε)≠0
+> --    where ε=(max-min)/2^(nbtest+1) 
+> maxZeroIndex func minval maxval 0 = (minval+maxval)/2
+> maxZeroIndex func minval maxval n = 
 >   if (func medpoint) /= 0 
->        then findMaxOrdFor func minval medpoint (n-1)
->        else findMaxOrdFor func medpoint maxval (n-1)
+>        then maxZeroIndex func minval medpoint (n-1)
+>        else maxZeroIndex func medpoint maxval (n-1)
 >   where medpoint = (minval+maxval)/2
 
 No rocket science here. See the result now:

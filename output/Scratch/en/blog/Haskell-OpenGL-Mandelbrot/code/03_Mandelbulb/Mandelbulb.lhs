@@ -10,7 +10,7 @@ But it will be enough for us to create something that look nice.
 
 This section is quite long, but don't be afraid,
 most of the code is some OpenGL boilerplate.
-For those you want to skim,
+If you just want to skim this section,
 here is a high level representation:
 
  > - OpenGL Boilerplate
@@ -263,7 +263,7 @@ depthPoints = do
   x <- [-width..width]
   y <- [-height..height]
   let 
-      depthOf x' y' = findMaxOrdFor (mandel x' y') 0 deep logdeep 
+      depthOf x' y' = maxZeroIndex (mandel x' y') 0 deep logdeep 
       logdeep = floor ((log deep) / log 2)
       z1 = depthOf    x     y
       z2 = depthOf (x+1)    y
@@ -292,7 +292,7 @@ Here is a harder to read but shorter and more generic rewritten function:
 >   y <- [-height..height]
 >   let 
 >     neighbors = [(x,y),(x+1,y),(x+1,y+1),(x,y+1)]
->     depthOf (u,v) = findMaxOrdFor (mandel u v) 0 deep logdeep
+>     depthOf (u,v) = maxZeroIndex (mandel u v) 0 deep logdeep
 >     logdeep = floor ((log deep) / log 2)
 >     -- zs are 3D points with found depth
 >     zs = map (\(u,v) -> (u,v,depthOf (u,v))) neighbors
@@ -324,11 +324,21 @@ The rest of the program is very close to the preceding one.
 
 <div style="display:none">
 
-> findMaxOrdFor func minval maxval 0 = (minval+maxval)/2
-> findMaxOrdFor func minval maxval n = 
+> -- given f min max nbtest,
+> -- considering 
+> --  - f is an increasing function
+> --  - f(min)=0
+> --  - f(max)≠0
+> -- then maxZeroIndex f min max nbtest returns x such that
+> --    f(x - ε)=0 and f(x + ε)≠0
+> --    where ε=(max-min)/2^(nbtest+1) 
+> maxZeroIndex :: (Fractional a,Num a,Num b,Eq b) => 
+>                  (a -> b) -> a -> a -> Int -> a
+> maxZeroIndex func minval maxval 0 = (minval+maxval)/2
+> maxZeroIndex func minval maxval n = 
 >   if (func medpoint) /= 0 
->        then findMaxOrdFor func minval medpoint (n-1)
->        else findMaxOrdFor func medpoint maxval (n-1)
+>        then maxZeroIndex func minval medpoint (n-1)
+>        else maxZeroIndex func medpoint maxval (n-1)
 >   where medpoint = (minval+maxval)/2
 
 I made the color slightly brighter

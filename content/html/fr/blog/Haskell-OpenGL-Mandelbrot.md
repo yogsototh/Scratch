@@ -69,14 +69,16 @@ and something nice to see in 3D.
 
 Here is what you'll end with:
 
-blogimage("GoldenMandelbulb.png","A golden mandelbulb")
+blogfigure("GoldenMandelbulb.png","The entire Mandelbulb")
+blogfigure("3DMandelbulbDetail.png","A Mandelbulb detail")
+blogfigure("3DMandelbulbDetail2.png","Another detail of the Mandelbulb")
 
 And here are the intermediate steps:
 
 blogimage("HGL_Plan.png","The parts of the article")
 
-From 1 to 3 it will be _dirtier_ and _dirtier_.
-We start cleaning everything at the 4th part.
+From the 2nd section to the 4th it will be _dirtier_ and _dirtier_.
+We start cleaning everything at the 5th section.
 
 <hr/><a href="code/01_Introduction/hglmandel.lhs" class="cut">Download the source code of this section → 01_Introduction/<strong>hglmandel.lhs</strong></a>
 
@@ -264,7 +266,7 @@ mandel x y =
 </div>
 
 It uses the main Mandelbrot function for each complex \\(c\\).
-The Mandelbrot set is the set of complex number c such that the following sequence does not escape to infinity.
+The Mandelbrot set is the set of complex number \\(c\\) such that the following sequence does not escape to infinity.
 
 Let us define \\(f_c: \mathbb{C} \to \mathbb{C}\\)
 
@@ -371,7 +373,7 @@ The method I use is a rough approximation.
 I consider the Mandelbrot set to be almost convex.
 The result will be good enough.
 
-We change slightly the drawMandelbrot function.
+We change slightly the `drawMandelbrot` function.
 We replace the `Points` by `LineLoop`
 
 <div class="codehighlight">
@@ -401,14 +403,14 @@ allPoints = positivePoints ++
 </div>
 
 We only need to compute the positive point.
-The Mandelbrot set is symmetric on the abscisse axis.
+The Mandelbrot set is symmetric relatively to the abscisse axis.
 
 <div class="codehighlight">
 <code class="haskell">
 positivePoints :: [(GLfloat,GLfloat,Color3 GLfloat)]
 positivePoints = do
      x <- [-width..width]
-     let y = findMaxOrdFor (mandel x) 0 height (log2 height)
+     let y = maxZeroIndex (mandel x) 0 height (log2 height)
      if y < 1 -- We don't draw point in the absciss
         then []
         else return (x/width,y/height,colorFromValue $ mandel x y)
@@ -420,24 +422,32 @@ positivePoints = do
 This function is interesting. 
 For those not used to the list monad here is a natural language version of this function:
 
-~~~
+<code class="no-highlight">
 positivePoints =
     for all x in the range [-width..width]
     let y be smallest number s.t. mandel x y > 0
     if y is on 0 then don't return a point
     else return the value corresonding to (x,y,color for (x+iy))
-~~~
+</code>
 
 In fact using the list monad you write like if you consider only one element at a time and the computation is done non deterministically.
 To find the smallest number such that `mandel x y > 0` we use a simple dichotomy:
 
 <div class="codehighlight">
 <code class="haskell">
-findMaxOrdFor func minval maxval 0 = (minval+maxval)/2
-findMaxOrdFor func minval maxval n = 
+-- given f min max nbtest,
+-- considering 
+--  - f is an increasing function
+--  - f(min)=0
+--  - f(max)≠0
+-- then maxZeroIndex f min max nbtest returns x such that
+--    f(x - ε)=0 and f(x + ε)≠0
+--    where ε=(max-min)/2^(nbtest+1) 
+maxZeroIndex func minval maxval 0 = (minval+maxval)/2
+maxZeroIndex func minval maxval n = 
   if (func medpoint) /= 0 
-       then findMaxOrdFor func minval medpoint (n-1)
-       else findMaxOrdFor func medpoint maxval (n-1)
+       then maxZeroIndex func minval medpoint (n-1)
+       else maxZeroIndex func medpoint maxval (n-1)
   where medpoint = (minval+maxval)/2
 </code>
 </div>
@@ -497,7 +507,7 @@ But it will be enough for us to create something that look nice.
 
 This section is quite long, but don't be afraid,
 most of the code is some OpenGL boilerplate.
-For those you want to skim,
+If you just want to skim this section,
 here is a high level representation:
 
  > - OpenGL Boilerplate
@@ -787,7 +797,7 @@ depthPoints = do
   x <- [-width..width]
   y <- [-height..height]
   let 
-      depthOf x' y' = findMaxOrdFor (mandel x' y') 0 deep logdeep 
+      depthOf x' y' = maxZeroIndex (mandel x' y') 0 deep logdeep 
       logdeep = floor ((log deep) / log 2)
       z1 = depthOf    x     y
       z2 = depthOf (x+1)    y
@@ -818,7 +828,7 @@ depthPoints = do
   y <- [-height..height]
   let 
     neighbors = [(x,y),(x+1,y),(x+1,y+1),(x,y+1)]
-    depthOf (u,v) = findMaxOrdFor (mandel u v) 0 deep logdeep
+    depthOf (u,v) = maxZeroIndex (mandel u v) 0 deep logdeep
     logdeep = floor ((log deep) / log 2)
     -- zs are 3D points with found depth
     zs = map (\(u,v) -> (u,v,depthOf (u,v))) neighbors
@@ -858,11 +868,21 @@ The rest of the program is very close to the preceding one.
 
 <div class="codehighlight">
 <code class="haskell">
-findMaxOrdFor func minval maxval 0 = (minval+maxval)/2
-findMaxOrdFor func minval maxval n = 
+-- given f min max nbtest,
+-- considering 
+--  - f is an increasing function
+--  - f(min)=0
+--  - f(max)≠0
+-- then maxZeroIndex f min max nbtest returns x such that
+--    f(x - ε)=0 and f(x + ε)≠0
+--    where ε=(max-min)/2^(nbtest+1) 
+maxZeroIndex :: (Fractional a,Num a,Num b,Eq b) => 
+                 (a -> b) -> a -> a -> Int -> a
+maxZeroIndex func minval maxval 0 = (minval+maxval)/2
+maxZeroIndex func minval maxval n = 
   if (func medpoint) /= 0 
-       then findMaxOrdFor func minval medpoint (n-1)
-       else findMaxOrdFor func medpoint maxval (n-1)
+       then maxZeroIndex func minval medpoint (n-1)
+       else maxZeroIndex func medpoint maxval (n-1)
   where medpoint = (minval+maxval)/2
 </code>
 </div>
@@ -978,7 +998,7 @@ depthPoints = do
   y <- [0..height]
   let 
     neighbors = [(x,y),(x+1,y),(x+1,y+1),(x,y+1)]
-    depthOf (u,v) = findMaxOrdFor (ymandel u v) 0 deep 7
+    depthOf (u,v) = maxZeroIndex (ymandel u v) 0 deep 7
     -- zs are 3D points with found depth
     zs = map (\(u,v) -> (u,v,depthOf (u,v))) neighbors
     -- ts are 3D pixels + mandel value
@@ -992,11 +1012,20 @@ depthPoints = do
   -- Draw two triangles
   else [ps!!0,ps!!1,ps!!2,ps!!0,ps!!2,ps!!3]
 
-findMaxOrdFor func minval maxval 0 = (minval+maxval)/2
-findMaxOrdFor func minval maxval n = 
+
+-- given f min max nbtest,
+-- considering 
+--  - f is an increasing function
+--  - f(min)=0
+--  - f(max)≠0
+-- then maxZeroIndex f min max nbtest returns x such that
+--    f(x - ε)=0 and f(x + ε)≠0
+--    where ε=(max-min)/2^(nbtest+1) 
+maxZeroIndex func minval maxval 0 = (minval+maxval)/2
+maxZeroIndex func minval maxval n = 
   if (func medpoint) /= 0 
-       then findMaxOrdFor func minval medpoint (n-1)
-       else findMaxOrdFor func medpoint maxval (n-1)
+       then maxZeroIndex func minval medpoint (n-1)
+       else maxZeroIndex func medpoint maxval (n-1)
   where medpoint = (minval+maxval)/2
 
 colorFromValue n =
@@ -1026,21 +1055,26 @@ For example, we provide ordered vertices.
 
 Some points:
 
-1. OpenGL and GLUT are linked to the C library.
+1. OpenGL and GLUT is done in C.
    In particular the `mainLoop` function is a direct link to the C library (FFI).
-   This function if so far from the pure spirit of functional languages.
+   This function is clearly far from the functional paradigm.
    Could we make this better?
-   We will have two choices, or create our own `mainLoop` function to make it more functional.
-   Or deal with the imperative nature of the GLUT `mainLoop` function.
-   As a goal of this article is to understand how to deal with existing library and particularly the one coming from imperative language we will continue to use the `mainLoop` function.
-2. Or main problem come from user interaction.
-   If you ask the Internet, about how to deal with user interaction with a functional paradigm, the main answer is to use _functional reactive programming_ (FRP).
-   I read very few about FRP, and I might be completely wrong when I say that it is about creating a DSL where atoms are time functions.
-   While I'm writing these lines, I don't know if I'll do something looking close to that.
-   For now I'll simply try to resolve the first problem.
+   We will have two choices: 
 
-Then here is how I imagine things should go.
-First, what the main loop should look like:
+   - create our own `mainLoop` function to make it more functional.
+   - deal with the imperative nature of the GLUT `mainLoop` function.
+
+   As one of the goal of this article is to understand how to deal with existing libraries and particularly the one coming from imperative languages, we will continue to use the `mainLoop` function.
+2. Our main problem come from user interaction.
+   If you ask "the Internet", 
+   about how to deal with user interaction with a functional paradigm, 
+   the main answer is to use _functional reactive programming_ (FRP).
+   I won't use FRP in this article.
+   Instead, I'll use a simpler while less effective way to deal with user interaction.
+   But The method I'll use will be as pure and functional as possible.
+
+Here is how I imagine things should go.
+First, what the main loop should look like if we could make our own:
 
 <code class="no-highlight">
 functionalMainLoop =
@@ -1127,6 +1161,14 @@ instance DisplayableWorld World where
         camPos = position w, 
         camDir = angle w,
         camZoom = scale w }
+  -- objects for world w
+  -- is the list of one unique element
+  -- The element is an YObject
+  --   more precisely the XYFunc Function3D Box3D
+  --   where the Function3D is the type
+  --             Point -> Point -> Maybe (Point,Color)
+  --   and its value here is ((shape w) res)
+  --   and the Box3D value is defbox
   objects w = [XYFunc ((shape  w) res) defbox]
               where
                   res = resolution $ box w
@@ -1154,8 +1196,8 @@ zdir = makePoint3D (0,0,1)
 </code>
 </div>
 
-Note `(-*<)` is scalar product.
-Also note we could add Point3D as numbers. 
+Note `(-*<)` is the scalar product (`α -*< (x,y,z) = (αx,αy,αz)`).
+Also note we could add two Point3D. 
 
 <div class="codehighlight">
 <code class="haskell">
@@ -1250,9 +1292,9 @@ Because we consider partial functions
 shapeFunc :: Scalar -> Function3D
 shapeFunc res x y = 
   let 
-      z = findMaxOrdFor (ymandel x y) 0 1 20
+      z = maxZeroIndex (ymandel x y) 0 1 20
   in
-  if and [ findMaxOrdFor (ymandel (x+xeps) (y+yeps)) 0 1 20 < 0.000001 |
+  if and [ maxZeroIndex (ymandel (x+xeps) (y+yeps)) 0 1 20 < 0.000001 |
               val <- [res], xeps <- [-val,val], yeps<-[-val,val]]
       then Nothing 
       else Just (z,colorFromValue ((ymandel x y z) * 64))
@@ -1277,13 +1319,21 @@ The rest is similar to the preceding sections.
 
 <div class="codehighlight">
 <code class="haskell">
-findMaxOrdFor :: (Fractional a,Num a,Num b,Eq b) => 
+-- given f min max nbtest,
+-- considering 
+--  - f is an increasing function
+--  - f(min)=0
+--  - f(max)≠0
+-- then maxZeroIndex f min max nbtest returns x such that
+--    f(x - ε)=0 and f(x + ε)≠0
+--    where ε=(max-min)/2^(nbtest+1) 
+maxZeroIndex :: (Fractional a,Num a,Num b,Eq b) => 
                  (a -> b) -> a -> a -> Int -> a
-findMaxOrdFor _ minval maxval 0 = (minval+maxval)/2
-findMaxOrdFor func minval maxval n = 
-  if func medpoint /= 0 
-       then findMaxOrdFor func minval medpoint (n-1)
-       else findMaxOrdFor func medpoint maxval (n-1)
+maxZeroIndex func minval maxval 0 = (minval+maxval)/2
+maxZeroIndex func minval maxval n = 
+  if (func medpoint) /= 0 
+       then maxZeroIndex func minval medpoint (n-1)
+       else maxZeroIndex func medpoint maxval (n-1)
   where medpoint = (minval+maxval)/2
 
 ymandel :: Point -> Point -> Point -> Point
@@ -1291,9 +1341,9 @@ ymandel x y z = fromIntegral (mandel x y z 64) / 64
 </code>
 </div>
 
-I won't put how the magic occurs directly here.
-But all the magic occurs in the file `YGL.hs`.
-This file is commented a lot.
+I won't explain how the magic occurs here.
+If you are interested, just read the file [`YGL.hs`](code/05_Mandelbulb/YGL.hs).
+It is commented a lot.
 
 - [`YGL.hs`](code/05_Mandelbulb/YGL.hs), the 3D rendering framework
 - [`Mandel`](code/05_Mandelbulb/Mandel.hs), the mandel function
@@ -1306,7 +1356,8 @@ This file is commented a lot.
 ## Optimization
 
 From the architecture stand point all is clear.
-If you read the code, you'll see I didn't made everything perfect, for example, I didn't coded nicely the lights.
+If you read the code of `YGL.hs`, you'll see I didn't made everything perfect. 
+For example, I didn't finished the code of the lights.
 But I believe it is a good first step and it will be easy to go further.
 The separation between rendering and world behavior is clear.
 Unfortunately the program of the preceding session is extremely slow.
@@ -1449,13 +1500,14 @@ initialWorld = World {
  , anglePerSec = 5.0
  , position = makePoint3D (0,0,0)
  , scale = 1.0
- , box = Box3D { minPoint = makePoint3D (-2,-2,-2)
-               , maxPoint =  makePoint3D (2,2,2)
-               , resolution =  0.03 }
+ , box = Box3D { minPoint = makePoint3D (0-eps, 0-eps, 0-eps)
+               , maxPoint = makePoint3D (0+eps, 0+eps, 0+eps)
+               , resolution =  0.02 }
  , told = 0
  -- We declare cache directly this time
  , cache = objectFunctionFromWorld initialWorld
  }
+ where eps=2
 </code>
 </div>
 
@@ -1520,9 +1572,9 @@ shapeFunc' res x y = if or [tmp u v>=0 | u<-[x,x+res], v<-[y,y+res]]
 shapeFunc :: Scalar -> Function3D
 shapeFunc res x y = 
   let 
-      z = findMaxOrdFor (ymandel x y) 0 1 20
+      z = maxZeroIndex (ymandel x y) 0 1 20
   in
-  if and [ findMaxOrdFor (ymandel (x+xeps) (y+yeps)) 0 1 20 < 0.000001 |
+  if and [ maxZeroIndex (ymandel (x+xeps) (y+yeps)) 0 1 20 < 0.000001 |
               val <- [res], xeps <- [-val,val], yeps<-[-val,val]]
       then Nothing 
       else Just (z,colorFromValue 0)
@@ -1535,13 +1587,21 @@ colorFromValue n =
   in
     makeColor (t n) (t (n+5)) (t (n+10))
 
-findMaxOrdFor :: (Fractional a,Num a,Num b,Eq b) => 
+-- given f min max nbtest,
+-- considering 
+--  - f is an increasing function
+--  - f(min)=0
+--  - f(max)≠0
+-- then maxZeroIndex f min max nbtest returns x such that
+--    f(x - ε)=0 and f(x + ε)≠0
+--    where ε=(max-min)/2^(nbtest+1) 
+maxZeroIndex :: (Fractional a,Num a,Num b,Eq b) => 
                  (a -> b) -> a -> a -> Int -> a
-findMaxOrdFor _ minval maxval 0 = (minval+maxval)/2
-findMaxOrdFor func minval maxval n = 
+maxZeroIndex _ minval maxval 0 = (minval+maxval)/2
+maxZeroIndex func minval maxval n = 
   if func medpoint /= 0 
-       then findMaxOrdFor func minval medpoint (n-1)
-       else findMaxOrdFor func medpoint maxval (n-1)
+       then maxZeroIndex func minval medpoint (n-1)
+       else maxZeroIndex func medpoint maxval (n-1)
   where medpoint = (minval+maxval)/2
 
 ymandel :: Point -> Point -> Point -> Point
@@ -1551,9 +1611,36 @@ ymandel x y z = fromIntegral (mandel x y z 64) / 64
 
 </div>
 
+And you can also consider small changes in other source files.
+
 - [`YGL.hs`](code/06_Mandelbulb/YGL.hs), the 3D rendering framework
 - [`Mandel`](code/06_Mandelbulb/Mandel.hs), the mandel function
 - [`ExtComplex`](code/06_Mandelbulb/ExtComplex.hs), the extended complexes
 
 <a href="code/06_Mandelbulb/Mandelbulb.lhs" class="cut">Download the source code of this section → 06_Mandelbulb/<strong>Mandelbulb.lhs</strong> </a>
 
+## Conclusion
+
+As we can use imperative style in a functional language,
+know you can use functional style in imperative languages.
+This article exposed a way to organize some code in a functional way.
+I'd like to stress the usage of Haskell made it very simple to achieve this.
+
+Once you are used to pure functional style,
+it is hard not to see all advantages it offers.
+
+The code in the two last sections is completely pure and functional.
+Furthermore I don't use `GLfloat`, `Color3` or any other OpenGL type.
+If I want to use another library in the future, 
+I would be able to keep all the pure code and simply update the YGL module.
+
+The `YGL` module can be seen as a "wrapper" around 3D display and user interaction. 
+It is a clean separator between the imperative paradigm and functional paradigm.
+
+If you want to go further, it shouldn't be hard to add parallelism.
+This should be easy mainly because most of the visible code is pure.
+Such an optimization would have been harder by using directly the OpenGL library.
+
+You should also want to make a more precise object. Because, the Mandelbulb is
+clearly not convex. But a precise rendering might be very long from 
+O(n².log(n)) to O(n³).

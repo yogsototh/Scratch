@@ -42,7 +42,7 @@ This is similar to the preceding section.
 >   y <- [0..height]
 >   let 
 >     neighbors = [(x,y),(x+1,y),(x+1,y+1),(x,y+1)]
->     depthOf (u,v) = findMaxOrdFor (ymandel u v) 0 deep 7
+>     depthOf (u,v) = maxZeroIndex (ymandel u v) 0 deep 7
 >     -- zs are 3D points with found depth
 >     zs = map (\(u,v) -> (u,v,depthOf (u,v))) neighbors
 >     -- ts are 3D pixels + mandel value
@@ -56,11 +56,20 @@ This is similar to the preceding section.
 >   -- Draw two triangles
 >   else [ps!!0,ps!!1,ps!!2,ps!!0,ps!!2,ps!!3]
 > 
-> findMaxOrdFor func minval maxval 0 = (minval+maxval)/2
-> findMaxOrdFor func minval maxval n = 
+> 
+> -- given f min max nbtest,
+> -- considering 
+> --  - f is an increasing function
+> --  - f(min)=0
+> --  - f(max)≠0
+> -- then maxZeroIndex f min max nbtest returns x such that
+> --    f(x - ε)=0 and f(x + ε)≠0
+> --    where ε=(max-min)/2^(nbtest+1) 
+> maxZeroIndex func minval maxval 0 = (minval+maxval)/2
+> maxZeroIndex func minval maxval n = 
 >   if (func medpoint) /= 0 
->        then findMaxOrdFor func minval medpoint (n-1)
->        else findMaxOrdFor func medpoint maxval (n-1)
+>        then maxZeroIndex func minval medpoint (n-1)
+>        else maxZeroIndex func medpoint maxval (n-1)
 >   where medpoint = (minval+maxval)/2
 > 
 > colorFromValue n =

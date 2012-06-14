@@ -2,21 +2,26 @@
 
 Some points:
 
-1. OpenGL and GLUT are linked to the C library.
+1. OpenGL and GLUT is done in C.
    In particular the `mainLoop` function is a direct link to the C library (FFI).
-   This function if so far from the pure spirit of functional languages.
+   This function is clearly far from the functional paradigm.
    Could we make this better?
-   We will have two choices, or create our own `mainLoop` function to make it more functional.
-   Or deal with the imperative nature of the GLUT `mainLoop` function.
-   As a goal of this article is to understand how to deal with existing library and particularly the one coming from imperative language we will continue to use the `mainLoop` function.
-2. Or main problem come from user interaction.
-   If you ask the Internet, about how to deal with user interaction with a functional paradigm, the main answer is to use _functional reactive programming_ (FRP).
-   I read very few about FRP, and I might be completely wrong when I say that it is about creating a DSL where atoms are time functions.
-   While I'm writing these lines, I don't know if I'll do something looking close to that.
-   For now I'll simply try to resolve the first problem.
+   We will have two choices: 
 
-Then here is how I imagine things should go.
-First, what the main loop should look like:
+   - create our own `mainLoop` function to make it more functional.
+   - deal with the imperative nature of the GLUT `mainLoop` function.
+
+   As one of the goal of this article is to understand how to deal with existing libraries and particularly the one coming from imperative languages, we will continue to use the `mainLoop` function.
+2. Our main problem come from user interaction.
+   If you ask "the Internet", 
+   about how to deal with user interaction with a functional paradigm, 
+   the main answer is to use _functional reactive programming_ (FRP).
+   I won't use FRP in this article.
+   Instead, I'll use a simpler while less effective way to deal with user interaction.
+   But The method I'll use will be as pure and functional as possible.
+
+Here is how I imagine things should go.
+First, what the main loop should look like if we could make our own:
 
 <code class="no-highlight">
 functionalMainLoop =
@@ -89,6 +94,14 @@ We simply have to provide the definition of some functions.
 >         camPos = position w, 
 >         camDir = angle w,
 >         camZoom = scale w }
+>   -- objects for world w
+>   -- is the list of one unique element
+>   -- The element is an YObject
+>   --   more precisely the XYFunc Function3D Box3D
+>   --   where the Function3D is the type
+>   --             Point -> Point -> Maybe (Point,Color)
+>   --   and its value here is ((shape w) res)
+>   --   and the Box3D value is defbox
 >   objects w = [XYFunc ((shape  w) res) defbox]
 >               where
 >                   res = resolution $ box w
@@ -110,8 +123,8 @@ These function are used to update the world state.
 > zdir :: Point3D
 > zdir = makePoint3D (0,0,1)
 
-Note `(-*<)` is scalar product.
-Also note we could add Point3D as numbers. 
+Note `(-*<)` is the scalar product (`α -*< (x,y,z) = (αx,αy,αz)`).
+Also note we could add two Point3D. 
 
 > rotate :: Point3D -> Scalar -> World -> World
 > rotate dir angleValue world = 
@@ -188,9 +201,9 @@ Because we consider partial functions
 > shapeFunc :: Scalar -> Function3D
 > shapeFunc res x y = 
 >   let 
->       z = findMaxOrdFor (ymandel x y) 0 1 20
+>       z = maxZeroIndex (ymandel x y) 0 1 20
 >   in
->   if and [ findMaxOrdFor (ymandel (x+xeps) (y+yeps)) 0 1 20 < 0.000001 |
+>   if and [ maxZeroIndex (ymandel (x+xeps) (y+yeps)) 0 1 20 < 0.000001 |
 >               val <- [res], xeps <- [-val,val], yeps<-[-val,val]]
 >       then Nothing 
 >       else Just (z,colorFromValue ((ymandel x y z) * 64))
@@ -207,21 +220,29 @@ With the color function.
 
 The rest is similar to the preceding sections.
 
-> findMaxOrdFor :: (Fractional a,Num a,Num b,Eq b) => 
+> -- given f min max nbtest,
+> -- considering 
+> --  - f is an increasing function
+> --  - f(min)=0
+> --  - f(max)≠0
+> -- then maxZeroIndex f min max nbtest returns x such that
+> --    f(x - ε)=0 and f(x + ε)≠0
+> --    where ε=(max-min)/2^(nbtest+1) 
+> maxZeroIndex :: (Fractional a,Num a,Num b,Eq b) => 
 >                  (a -> b) -> a -> a -> Int -> a
-> findMaxOrdFor _ minval maxval 0 = (minval+maxval)/2
-> findMaxOrdFor func minval maxval n = 
->   if func medpoint /= 0 
->        then findMaxOrdFor func minval medpoint (n-1)
->        else findMaxOrdFor func medpoint maxval (n-1)
+> maxZeroIndex func minval maxval 0 = (minval+maxval)/2
+> maxZeroIndex func minval maxval n = 
+>   if (func medpoint) /= 0 
+>        then maxZeroIndex func minval medpoint (n-1)
+>        else maxZeroIndex func medpoint maxval (n-1)
 >   where medpoint = (minval+maxval)/2
 > 
 > ymandel :: Point -> Point -> Point -> Point
 > ymandel x y z = fromIntegral (mandel x y z 64) / 64
 
-I won't put how the magic occurs directly here.
-But all the magic occurs in the file `YGL.hs`.
-This file is commented a lot.
+I won't explain how the magic occurs here.
+If you are interested, just read the file [`YGL.hs`](code/05_Mandelbulb/YGL.hs).
+It is commented a lot.
 
 - [`YGL.hs`](code/05_Mandelbulb/YGL.hs), the 3D rendering framework
 - [`Mandel`](code/05_Mandelbulb/Mandel.hs), the mandel function
