@@ -40,7 +40,7 @@ for fic in *(N); do
     case $fic in 
         output) continue;;
     esac
-    debug \rm -rf $fic(N)
+    debug \rm -rf $fic
 done
 (( $? == 0 )) || { exit 1 }
 debug mv output/index.html .
