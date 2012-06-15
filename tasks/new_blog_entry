@@ -72,5 +72,6 @@ ENDFORMAT
 print "imagedir = $imgdirname"
 mkdir $imgdirname
 ln -sf $filename $linkname
+[[ -e $imglinkname ]] && \rm $imglinkname
 ln -sf $imgdirname $imglinkname
 vim $linkname

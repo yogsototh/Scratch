@@ -184,6 +184,11 @@ module Nanoc3::Filters
                 # DEBUG # puts "cssclass: #{cssclass}"
                 # DEBUG # puts "====================="
                 blogimage(filename,title,%{#{cssclass} #{position}})
+            end.gsub(/blogfigure\s*\(\s*"([^"]*)"\s*,\s*"([^"]*)"\s*(,\s*"([^"]*)"\s*)?\)/) do
+                filename=$1
+                title=$2
+                cssclass=$4
+                blogfigure(filename,title,cssclass)
             end
         end
     end

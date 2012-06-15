@@ -17,7 +17,7 @@ tags:
 
 begindiv(intro)
 
-<%= tldr %> I pretend to create a world to give examples of different meanings behind the word _undecidability_:
+%tldr I pretend to create a world to give examples of different meanings behind the word _undecidability_:
 
 - Undecidability due to measure errors, 
 - Big errors resulting from small initial measure error,

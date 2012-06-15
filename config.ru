@@ -22,7 +22,9 @@ module ::Rack
                 @next += 1
             end
             tmp=(404 == resp[0] ? @app.call : resp)
-            tmp[1]["Content-Type"]=tmp[1]["Content-Type"] + "; charset=utf-8"
+            if not tmp[1].nil? and not tmp[1]["Content-Type"].nil? then
+                tmp[1]["Content-Type"]=tmp[1]["Content-Type"] + "; charset=utf-8"
+            end
             return tmp
         end
 

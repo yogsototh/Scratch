@@ -61,7 +61,7 @@ function detectClient() {
         $('head').append('<meta name="viewport" content="width=device-width; initial-scale=0.5; maximum-scale=2.0;">');
         $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/iPhone.css"/>');
     }
-    return userAgent
+    return userAgent;
 }
 
 // Ce que l'on va lancer à l'init.

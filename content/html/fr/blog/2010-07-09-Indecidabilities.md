@@ -17,7 +17,7 @@ tags:
 
 begindiv(intro)
 
-<%= tlal %> Je crée un mode mathématique simple pour parler de différents types d'_indécidabilités_ :
+%tlal Je crée un mode mathématique simple pour parler de différents types d'_indécidabilités_ :
 
 - indécidabilité due aux erreurs d'observation ;
 - grandes erreurs résultant de petites erreurs de mesure ;

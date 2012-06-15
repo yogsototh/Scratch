@@ -25,7 +25,7 @@ blogimage("main.png","Yesod logo made in SVG and m4")
 
 begindiv(intro)
 
-<%= tldr %> How to use m4 to increase the power of deficient languages. Two examples: improve %xslt syntax and make fractal with %svg.
+%tldr How to use m4 to increase the power of deficient languages. Two examples: improve %xslt syntax and make fractal with %svg.
 
 enddiv
 

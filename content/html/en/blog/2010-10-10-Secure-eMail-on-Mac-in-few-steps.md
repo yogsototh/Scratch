@@ -17,7 +17,7 @@ blogimage("main.png","Title image","clean")
 
 begindiv(intro)
 
-<%= tldr %> _on Mac_
+%tldr _on Mac_
 
 - Get a certificate signed by a CA: [click here for a free one](http://www.instantssl.com/ssl-certificate-products/free-email-certificate.html),
 - open the file,
@@ -47,6 +47,6 @@ Encrypt: because sometimes you need to be 100% sure a conversation remains priva
 - empty your trash, put the file in the trash, secure empty trash,
 - use Mail instead of online gmail.
   Now you should see these icons: 
-  <%= blogimage("sign_icon.png")%>
+  blogimage("sign_icon.png","Sign icon")
 
 _n.b._: if you use gmail, you and work not alway with a Mac, you should consider to try the [gmail S/MIME firefox addon](https://addons.mozilla.org/firefox/addon/592).

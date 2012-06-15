@@ -23,7 +23,7 @@ enddiv
 begindiv(intro)
 
 
-<%= tlal %> Qu'est-ce qui n'allait pas avec Coffeescript? La meta-programmation, il faut le "vendre" aux autres, une nouvelle étape de compilation intermédiaire sans fournir les avantages de Cappuccino, la sensation que c'est un peu instable.
+%tlal Qu'est-ce qui n'allait pas avec Coffeescript? La meta-programmation, il faut le "vendre" aux autres, une nouvelle étape de compilation intermédiaire sans fournir les avantages de Cappuccino, la sensation que c'est un peu instable.
 
 enddiv
 

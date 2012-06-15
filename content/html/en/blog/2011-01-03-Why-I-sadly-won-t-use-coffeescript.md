@@ -22,7 +22,7 @@ enddiv
 
 begindiv(intro)
 
-<%= tldr %> I would have loved to program client side using a Ruby-like syntax. But in the end, CoffeScript raised more disavantages than advantages.
+%tldr I would have loved to program client side using a Ruby-like syntax. But in the end, CoffeScript raised more disavantages than advantages.
 
 
 enddiv

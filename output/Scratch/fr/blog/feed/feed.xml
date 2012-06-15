@@ -2,13 +2,39 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2012-02-08T13:17:53Z</updated>
+  <updated>2012-04-30T17:17:53Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomfr"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2012-04-30:/Scratch/fr/blog/Haskell-OpenGL-Mandelbrot/</id>
+    <title type="html">Un example progressif avec Haskell</title>
+    <published>2012-04-30T17:17:53Z</published>
+    <updated>2012-04-30T17:17:53Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Haskell-OpenGL-Mandelbrot/"/>
+    <content type="html">&lt;p&gt;&lt;img alt="The B in Beno&#238;t B. Mandelbrot stand for Beno&#238;t B. Mandelbrot" src="/Scratch/img/blog/Haskell-OpenGL-Mandelbrot/BenoitBMandelbrot.jpg" /&gt;&lt;/p&gt;
+
+
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt; Un exemple progressif d&amp;rsquo;utilisation d&amp;rsquo;Haskell.
+Vous pourrez voir un ensemble de Mandelbrot &#233;tendu &#224; la troisi&#232;me dimension.
+De plus le code sera tr&#232;s propre.
+Les d&#233;tails de rendu sont s&#233;par&#233;s dans un module externe.
+Le code descriptif int&#233;ressant est concentr&#233; dans un environnement pur et fonctionnel.
+Vous pouvez vous inspirer de ce code utilisant le paradigme fonctional dans tous les languages.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;center&gt;&lt;hr style="width:30%;float:left;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;span class="sc"&gt;&lt;/span&gt;&lt;/hr&gt;&lt;/center&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2012-02-08:/Scratch/fr/blog/Haskell-the-Hard-Way/</id>
     <title type="html">Haskell comme un vrai!</title>
@@ -52,7 +78,7 @@
       <uri>yannesposito.com</uri>
     </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Typography-and-the-Web/"/>
-    <content type="html">&lt;p&gt;&lt;img alt="Screenshot of first in small caps with and without ligatures." src="/Scratch/img/blog/Typography-and-the-Web/first_sc_screenshot.png" /&gt;;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="Screenshot of first in small caps with and without ligatures." src="/Scratch/img/blog/Typography-and-the-Web/first_sc_screenshot.png" /&gt;&lt;/p&gt;
 
 
 &lt;div class="intro"&gt;
@@ -75,7 +101,7 @@ We can all create better web typography ourselves, today.&#187;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&#171;Nous ne somme pas oblig&#233; d&amp;rsquo;attendre le d&#233;veloppement des navigateurs.
-Nous pou...&lt;/p&gt;&lt;/blockquote&gt;&lt;/p&gt;</content>
+Nous pouv...&lt;/p&gt;&lt;/blockquote&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2012-01-15:/Scratch/fr/blog/Yesod-tutorial-for-newbies/</id>
@@ -631,35 +657,8 @@ Voici comment configurer un site statique sur heroku.&lt;/p&gt;
       <uri>yannesposito.com</uri>
     </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-07-09-Indecidabilities/"/>
-    <content type="html">&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Trop long &#224; lire"&gt;tl&#224;l&lt;/abbr&gt;&amp;nbsp;: &lt;/span&gt; Je cr&#233;e un mode math&#233;matique simple pour parler de diff&#233;rents types d&amp;rsquo;&lt;em&gt;ind&#233;cidabilit&#233;s&lt;/em&gt;&amp;nbsp;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ind&#233;cidabilit&#233; due aux erreurs d&amp;rsquo;observation&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;grandes erreurs r&#233;sultant de petites erreurs de mesure&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;ind&#233;cidabilit&#233; fractales&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;ind&#233;cidabilit&#233; logique.&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;h1 class="first" id="les-indcidabilits"&gt;Les ind&#233;cidabilit&#233;s&lt;/h1&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;Si le monde a &#233;t&#233; fabriqu&#233; par un d&#233;miurge, on peut dire que celui-ci devait avoir le sens de l&amp;rsquo;humour. 
-Et le r&#233;cit que je vais faire va vous en fournir la preuve.
-Je vais me mettre &#224; sa place. 
-Je vais cr&#233;er u...&lt;/p&gt;</content>
+    <content type="html">
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-07-31:/Scratch/fr/blog/2010-07-31-New-style-after-holidays/</id>
@@ -1122,34 +1121,5 @@ a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/spa
 &lt;/pre&gt;
 
 &lt;p&gt;La premi&#232;re erreur vient de l&amp;rsquo;utilisation du &lt;em&gt;terrible&lt;/em&gt; &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2010-02-15:/Scratch/fr/blog/2010-02-15-All-but-something-regexp/</id>
-    <title type="html">Expression r&#233;guli&#232;re pour tout sauf quelquechose</title>
-    <published>2010-02-15T09:16:12Z</published>
-    <updated>2010-02-15T09:16:12Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-02-15-All-but-something-regexp/"/>
-    <content type="html">&lt;p&gt;Parfois vous ne pouvez simplement pas &#233;crire&amp;nbsp;:&lt;/p&gt;
-
-&lt;div&gt;
-
-&lt;pre&gt;&lt;code class="ruby"&gt;if str.match(regexp) and 
-    not str.match(other_regexp)
-        do_something
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;et vous devez obtenir le m&#234;me comportement avec seulement une expression r&#233;guli&#232;re. Le probl&#232;me c&amp;rsquo;est que le compl&#233;mentaire des r&#233;gulier n&amp;rsquo;est pas r&#233;gulier. Cel&#224; peut s&amp;rsquo;av&#233;rer impossible.&lt;/p&gt;
-
-&lt;p&gt;Cependant, pour certaines expressions ce peut &#234;tre possible&lt;sup&gt;&lt;a href="#note1"&gt;&amp;dagger;&lt;/a&gt;&lt;/sup&gt;. Disons que vous souhaitez &lt;em&gt;matcher&lt;/em&gt; toutes les lignes contenant le mot &lt;code&gt;bull&lt;/code&gt;, mais que vous ne souhaitez pas matcher &lt;code&gt;bullshit&lt;/code&gt;. Voici une fa&#231;on sympa d&amp;rsquo;y arriver&amp;nbsp;:&lt;/p&gt;
-
-&lt;div&gt;
-
-&lt;pre&gt;&lt;code class="ruby"&gt;# matcher toute les chaines qui ...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
 </feed>
