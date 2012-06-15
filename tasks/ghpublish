@@ -37,6 +37,7 @@ debug mv output/index.html $ghroot
 debug mv output/* $ghroot
 debug cd $ghroot
 debug cp Scratch/en/error/404-not_found/index.html ./404.html
+debug echo "yannesposito.com" > CNAME
 debug tar cf ghroot.tar *
 
 debug cd $rootdir
@@ -47,10 +48,9 @@ debug git co gh-pages
 debug git pull
 debug \rm -rf *(N)
 debug tar xf $ghroot/ghroot.tar
-debug echo "yannesposito.com" > CNAME
 debug git add .
 debug git commit -m '"updated website"'
 debug git push origin gh-pages:gh-pages
 debug git co $current_branch
 
-rm -rf $ghroot
+# rm -rf $ghroot
