@@ -1,0 +1,244 @@
+Crashlog created at Wed Jun 13 00:05:57 +0200 2012
+
+=== MESSAGE:
+
+Sass::SyntaxError: Invalid CSS after "optimizelegibility": expected expression (e.g. 1px, bold), was ";"
+
+=== COMPILATION STACK:
+
+  - [item]   /css/main/ (rep default)
+
+=== BACKTRACE:
+
+  0. content/css/main.sass:183
+  1. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/scss/parser.rb:1010:in `expected'
+  2. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/script/lexer.rb:191:in `expected!'
+  3. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/script/parser.rb:465:in `assert_done'
+  4. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/script/parser.rb:50:in `parse'
+  5. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/script/parser.rb:140:in `parse'
+  6. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/script.rb:31:in `parse'
+  7. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:832:in `parse_script'
+  8. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:593:in `parse_property'
+  9. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:582:in `parse_property_or_rule'
+  10. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:563:in `parse_line'
+  11. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:456:in `build_tree'
+  12. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:475:in `append_children'
+  13. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:474:in `each'
+  14. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:474:in `append_children'
+  15. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:465:in `build_tree'
+  16. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:458:in `each'
+  17. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:458:in `build_tree'
+  18. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:475:in `append_children'
+  19. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:474:in `each'
+  20. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:474:in `append_children'
+  21. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:330:in `_to_tree'
+  22. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:300:in `_render'
+  23. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/../sass/engine.rb:247:in `render'
+  24. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/filters/sass.rb:62:in `run'
+  25. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/base/result_data/item_rep.rb:343:in `filter'
+  26. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/base/compilation/item_rep_proxy.rb:47:in `filter'
+  27. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/base/compilation/rule_context.rb:54:in `filter'
+  28. ./Rules:12:in `load'
+  29. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/base/compilation/rule.rb:68:in `instance_eval'
+  30. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/base/compilation/rule.rb:68:in `apply_to'
+  31. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/base/compilation/compiler.rb:381:in `compile_rep'
+  32. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/base/compilation/compiler.rb:337:in `compile_reps'
+  33. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/base/compilation/compiler.rb:330:in `loop'
+  34. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/base/compilation/compiler.rb:330:in `compile_reps'
+  35. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/base/compilation/compiler.rb:85:in `run'
+  36. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/base/source_data/site.rb:57:in `compile'
+  37. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/cli/commands/compile.rb:57:in `run'
+  38. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/cli/command_runner.rb:14:in `call'
+  39. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/cli/error_handler.rb:63:in `handle_while'
+  40. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  41. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/cli/command_runner.rb:13:in `call'
+  42. /Library/Ruby/Gems/1.8/gems/cri-2.3.0/lib/cri/command_dsl.rb:185:in `runner'
+  43. /Library/Ruby/Gems/1.8/gems/cri-2.3.0/lib/cri/command.rb:296:in `call'
+  44. /Library/Ruby/Gems/1.8/gems/cri-2.3.0/lib/cri/command.rb:296:in `run_this'
+  45. /Library/Ruby/Gems/1.8/gems/cri-2.3.0/lib/cri/command.rb:249:in `run'
+  46. /Library/Ruby/Gems/1.8/gems/cri-2.3.0/lib/cri/command.rb:262:in `run'
+  47. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/cli.rb:47:in `run'
+  48. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/cli/error_handler.rb:63:in `handle_while'
+  49. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  50. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib/nanoc/cli.rb:44:in `run'
+  51. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/bin/nanoc:19
+  52. /usr/bin/nanoc:19:in `load'
+  53. /usr/bin/nanoc:19
+
+=== VERSION INFORMATION:
+
+nanoc 3.4.0 © 2007-2012 Denis Defreyne.
+Running ruby 1.8.7 (2011-12-28) on universal-darwin11.0 with RubyGems 1.8.13.
+
+=== INSTALLED GEMS:
+
+  em-twitter 0.1.3
+  heroku-api 0.2.4
+  netrc 0.7.1, 0.7.4
+  dm-core 1.0.0, 1.0.2, 1.2.0
+  faraday 0.7.5, 0.7.6, 0.8.1
+  http_parser.rb 0.5.3
+  rack-streaming-proxy 1.0.3
+  heroku 1.9.13, 1.17.5, 2.17.0, 2.24.1, 2.26.7
+  thor 0.15.2
+  taps 0.3.14, 0.3.23, 0.3.24
+  t 0.9.9
+  sass 3.1.1, 3.1.4, 3.1.12, 3.1.15, 3.1.19
+  rubygems-update 1.5.0, 1.8.13, 1.8.21, 1.8.24
+  rest-client 1.4.2, 1.6.7
+  nokogiri 1.4.3.1, 1.5.0, 1.5.2, 1.5.4
+  do_sqlite3 0.10.2, 0.10.7, 0.10.8
+  haml 3.0.13, 3.0.18, 3.1.2, 3.1.4, 3.1.6
+  mime-types 1.16, 1.17.2, 1.18
+  fssm 0.2.7, 0.2.9
+  hashie 0.4.0, 1.2.0
+  dm-sqlite-adapter 1.0.0, 1.2.0
+  koala 0.10.0, 1.2.1, 1.4.0, 1.5.0
+  oauth 0.4.4, 0.4.5, 0.4.6
+  nanoc 3.1.3, 3.2.0, 3.2.3, 3.3.3, 3.4.0
+  plist 3.1.0
+  rack-rewrite 1.0.0, 1.0.2, 1.2.1
+  builder 2.1.2, 3.0.0
+  oniguruma 1.1.0
+  tilt 1.3, 1.3.3
+  htmlentities 4.3.1
+  i18n 0.5.0, 0.6.0
+  pony 1.2, 1.4
+  multipart-post 1.1.0, 1.1.4, 1.1.5
+  nanoc3 3.1.3, 3.1.5, 3.2.0a3, 3.2.0, 3.2.3, 3.3.0
+  chunky_png 1.1.1, 1.2.5
+  twitter 0.9.12, 2.0.2, 2.2.0, 2.4.0, 2.5.0
+  daemons 1.1.8
+  kgio 2.7.0, 2.7.4
+  cri 1.0.1, 2.0.2, 2.2.1, 2.3.0
+  twitter-stream 0.1.15
+  treetop 1.4.9, 1.4.10
+  sqlite3-ruby 1.3.3
+  highline 1.6.1, 1.6.9, 1.6.11, 1.6.12
+  launchy 0.3.7, 2.0.5, 2.1.0
+  json 1.4.6, 1.6.4, 1.6.6, 1.7.3
+  data_objects 0.10.2, 0.10.7, 0.10.8
+  configuration 1.1.0, 1.3.1
+  fastercsv 1.5.5
+  rubyzip 0.9.5, 0.9.7, 0.9.8
+  raindrops 0.8.0, 0.9.0
+  em-http-request 1.0.2
+  eventmachine 0.12.10, 1.0.0.beta.4
+  excon 0.14.0
+  unicorn 1.1.2, 4.1.1, 4.2.1, 4.3.1
+  simple_oauth 0.1.5, 0.1.8
+  compass-less-plugin 1.0
+  retryable 1.2.5, 1.3.0
+  dm-do-adapter 1.0.0, 1.2.0
+  faker 0.3.1, 1.0.1
+  json_pure 1.4.6, 1.6.4, 1.6.6, 1.7.3
+  tweetstream 1.1.5, 2.0.0
+  textpow 0.10.1
+  dm-migrations 1.0.0, 1.2.0
+  twitter-text 1.4.17
+  sinatra 1.0, 1.2.6, 1.3.2
+  servolux 0.8.1, 0.9.6, 0.10.0
+  httparty 0.6.1, 0.8.1, 0.8.2, 0.8.3
+  sqlite3 1.3.5, 1.3.6
+  rack-contrib 1.0.1, 1.1.0
+  rack-protection 1.2.0
+  compass 0.10.6, 0.11.1, 0.11.6, 0.12.1
+  multi_xml 0.4.1, 0.4.2, 0.5.1
+  abstract 1.0.0
+  crack 0.1.8, 0.3.1
+  term-ansicolor 1.0.7
+  sequel 3.17.0, 3.20.0, 3.30.0, 3.34.1, 3.36.1
+  erubis 2.6.6, 2.7.0
+  colored 1.2
+  ultraviolet 0.10.2
+  rainpress 1.0
+  mail 2.2.12, 2.3.0, 2.4.4
+  addressable 2.2.0, 2.2.2, 2.2.6, 2.2.7, 2.2.8
+  kramdown 0.9.0, 0.12.0, 0.13.4, 0.13.5, 0.13.7
+  em-socksify 0.2.0
+  polyglot 0.3.1, 0.3.3
+  extlib 0.9.15
+  multi_json 0.0.5, 1.0.4, 1.2.0, 1.3.6
+  rack 1.2.1, 1.4.0, 1.4.1
+  cookiejar 0.3.0
+  geokit 1.6.5
+  rack-proxy 0.3.4, 0.3.7
+  activesupport 3.0.3, 3.1.3, 3.2.3, 3.2.5
+
+=== ENVIRONMENT:
+
+Apple_PubSub_Socket_Render => "/tmp/launch-6vm0pL/Render"
+Apple_Ubiquity_Message => "/tmp/launch-P4hKhI/Apple_Ubiquity_Message"
+CLICOLOR => "1"
+COLORFGBG => "12;8"
+COMMAND_MODE => "unix2003"
+DISPLAY => "/tmp/launch-bVvLRv/org.x:0"
+HOME => "/Users/esposito"
+ITERM_PROFILE => "tmux"
+ITERM_SESSION_ID => "w0t0p0"
+LANG => "fr_FR.UTF-8"
+LOGNAME => "esposito"
+LSCOLORS => "ExFxCxDxBxegedabagacad"
+OLDPWD => "/Users/esposito"
+PATH => "/Users/esposito/bin:/Users/esposito/.cabal/bin:/Users/esposito/Sites/dev/narwhal/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/Users/esposito/bin:/usr/local/texlive/2009/bin/universal-darwin:/Users/esposito/.rvm/bin"
+PROMPT => "$(hostname) %{${fg[blue]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} "
+PWD => "/Users/esposito/Sites/webroot"
+SHELL => "/bin/zsh"
+SHLVL => "1"
+SSH_AUTH_SOCK => "/tmp/launch-EeY4EA/Listeners"
+SVN_EDITOR => "/usr/bin/vi"
+TERM => "xterm-color"
+TERM_PROGRAM => "iTerm.app"
+TMPDIR => "/var/folders/_t/j7kbk_1d59n0qjwzp1hl8wx00000gt/T/"
+USER => "esposito"
+_ => "/usr/bin/nanoc"
+__CF_USER_TEXT_ENCODING => "0x1FA:0:1"
+__array_start => "1"
+_first => "1"
+_second => "2"
+escape_flag => "1"
+rvm_alias_expanded => ""
+rvm_bin_path => "/Users/esposito/.rvm/bin"
+rvm_docs_type => ""
+rvm_gemstone_package_file => ""
+rvm_gemstone_url => ""
+rvm_hook => ""
+rvm_niceness => ""
+rvm_nightly_flag => ""
+rvm_path => "/Users/esposito/.rvm"
+rvm_prefix => "/Users/esposito"
+rvm_proxy => ""
+rvm_quiet_flag => ""
+rvm_ruby_file => ""
+rvm_ruby_make => ""
+rvm_ruby_make_install => ""
+rvm_ruby_mode => ""
+rvm_script_name => ""
+rvm_sdk => ""
+rvm_silent_flag => ""
+rvm_version => "1.12.2 ()"
+rvm_wrapper_name => ""
+
+=== $LOAD_PATH:
+
+  0. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib/sass/..
+  1. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib
+  2. /Library/Ruby/Gems/1.8/gems/nanoc-3.4.0/lib
+  3. /Library/Ruby/Gems/1.8/gems/colored-1.2/lib
+  4. /Library/Ruby/Gems/1.8/gems/cri-2.3.0/lib
+  5. /Library/Ruby/Gems/1.8/gems/kramdown-0.13.7/lib
+  6. /Library/Ruby/Gems/1.8/gems/haml-3.1.6/lib
+  7. /Library/Ruby/Gems/1.8/gems/sass-3.1.19/lib
+  8. /Library/Ruby/Gems/1.8/gems/rainpress-1.0/lib
+  9. /Library/Ruby/Gems/1.8/gems/builder-3.0.0/lib
+  10. /Library/Ruby/Site/1.8
+  11. /Library/Ruby/Site/1.8/powerpc-darwin11.0
+  12. /Library/Ruby/Site/1.8/universal-darwin11.0
+  13. /Library/Ruby/Site
+  14. /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/vendor_ruby/1.8
+  15. /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/vendor_ruby/1.8/universal-darwin11.0
+  16. /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/vendor_ruby
+  17. /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8
+  18. /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/powerpc-darwin11.0
+  19. /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin11.0
+  20. .
