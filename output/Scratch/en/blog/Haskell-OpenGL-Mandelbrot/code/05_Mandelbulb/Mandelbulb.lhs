@@ -34,7 +34,7 @@ functionalMainLoop =
 Clearly, ideally we should provide only three parameters to this main loop function:
 
 - an initial World state
-- a mapping between the user interaction and function which modify the world
+- a mapping between the user interactions and functions which modify the world
 - a function taking two parameters: time and world state and render a new world without user interaction.
 
 Here is a real working code, I've hidden most display functions.

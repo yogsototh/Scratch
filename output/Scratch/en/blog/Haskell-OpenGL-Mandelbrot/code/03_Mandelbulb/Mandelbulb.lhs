@@ -184,7 +184,7 @@ and `(-0.5)` is the number `-0.5` (yes I share your pain).
 >     -- any other keys does nothing
 >     kact _ _ _ _ _ = return ()
 
-Note `display` take some parameters this time.
+Note `display` takes some parameters this time.
 This function if full of boilerplate:
 
 > display angle zoom position = do

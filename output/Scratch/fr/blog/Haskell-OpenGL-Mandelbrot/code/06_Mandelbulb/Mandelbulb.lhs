@@ -1,14 +1,15 @@
  ## Optimization
 
-From the architecture stand point all is clear.
+Our code architecture feel very clean.
+All the meaningful code is in our main file and all display details are
+externalized.
 If you read the code of `YGL.hs`, you'll see I didn't made everything perfect. 
 For example, I didn't finished the code of the lights.
 But I believe it is a good first step and it will be easy to go further.
-The separation between rendering and world behavior is clear.
 Unfortunately the program of the preceding session is extremely slow.
 We compute the Mandelbulb for each frame now.
 
-Before we had
+Before our program structure was:
 
 <code class="no-highlight">
 Constant Function -> Constant List of Triangles -> Display
@@ -17,18 +18,16 @@ Constant Function -> Constant List of Triangles -> Display
 Now we have 
 
 <code class="no-highlight">
-World -> Function -> List of Objects -> Atoms -> Display
+Main loop -> World -> Function -> List of Objects -> Atoms -> Display
 </code>
 
-And the World state could change. 
-Then it is no more straightforward for the compiler to understand
-when not to recompute the entire list of atoms.
+The World state could change. 
+The compiler can no more optimize the computation for us. 
+We have to manually explain when to redraw the shape.
 
-Then to optimize we will have to make things a little less separate.
-We must control the flow of atom generation.
-
-Mostly the program is the same as before, but instead of providing a 
-function, we will provide the list of atoms directly.
+To optimize we must do some things in a lower level.
+Mostly the program remains the same, 
+but it will provide the list of atoms directly.
 
 <div style="display:none">
 
@@ -115,7 +114,6 @@ function, we will provide the list of atoms directly.
 
 Our initial world state is slightly changed:
 
-
 > -- We initialize the world state
 > -- then angle, position and zoom of the camera
 > -- And the shape function
@@ -133,6 +131,8 @@ Our initial world state is slightly changed:
 >  , cache = objectFunctionFromWorld initialWorld
 >  }
 >  where eps=2
+
+The use of `eps` is a hint to make a better zoom by computing with the right bounds.
 
 We use the `YGL.getObject3DFromShapeFunction` function directly.
 This way instead of providing `XYFunc`, we provide directly a list of Atoms.
@@ -213,9 +213,8 @@ All the rest is exactly the same.
 
 </div>
 
-And you can also consider small changes in other source files.
+And you can also consider minor changes in the `YGL.hs` source file.
 
 - [`YGL.hs`](code/06_Mandelbulb/YGL.hs), the 3D rendering framework
 - [`Mandel`](code/06_Mandelbulb/Mandel.hs), the mandel function
 - [`ExtComplex`](code/06_Mandelbulb/ExtComplex.hs), the extended complexes
-

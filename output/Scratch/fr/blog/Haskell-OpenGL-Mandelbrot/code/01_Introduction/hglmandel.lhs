@@ -18,7 +18,7 @@ And the second part more focused on OpenGL and content.
 > import Graphics.UI.GLUT
 > import Data.IORef
 
-For efficiency reason, I won't use the default Haskell `Complex` data type.
+For efficiency reason, I will not use the default Haskell `Complex` data type.
 
 > newtype Complex = C (Float,Float) deriving (Show,Eq)
 
@@ -168,13 +168,13 @@ This property is a direct consequence of purity.
 If you look closely, you see that `allPoints` is a pure list.
 Therefore, calling `allPoints` will always render the same result and Haskell is clever enough to use this property.
 While Haskell doesn't garbage collect `allPoints` the result is reused for free.
-We didn't specified this value should be saved for later use. 
+We did not specified this value should be saved for later use. 
 It is saved for us.
 
 See what occurs if we make the window bigger:
 
 blogimage("hglmandel_v01_too_wide.png","The mandelbrot too wide, black lines and columns")
 
-We see some black lines because we drawn less point than there is on the surface.
+We see some black lines because we have drawn less point than there is on the surface.
 We can repair this by drawing little squares instead of just points.
 But, instead we will do something a bit different and unusual.

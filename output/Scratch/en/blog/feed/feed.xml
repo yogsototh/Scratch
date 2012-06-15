@@ -28,9 +28,9 @@
 &lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; A progressive Haskell example. 
 A Mandelbrot set extended in 3D, rendered using OpenGL and coded with Haskell.
 In the end the code will be very clean.
-The meaningful stuff will be in a pure functional bubble. 
+The significant stuff will be in a pure functional bubble. 
 The display details will be put in an external module playing the role of a wrapper.
-You&amp;rsquo;ll can use this kind of functional organization even in imperative language.&lt;/p&gt;
+Imperative language could also benefit from this functional organization.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;center&gt;&lt;hr style="width:30%;float:left;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;span class="sc"&gt;&lt;b&gt;Table of Content&lt;/b&gt;&lt;/span&gt;&lt;/hr&gt;&lt;/center&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/p&gt;</content>

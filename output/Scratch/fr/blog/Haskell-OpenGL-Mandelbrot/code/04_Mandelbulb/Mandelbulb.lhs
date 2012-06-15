@@ -1,6 +1,6 @@
  ## Naïve code cleaning
 
-The first thing to do is to separate the GLUT/OpenGL 
+The first approach to clean the code is to separate the GLUT/OpenGL 
 part from the computation of the shape.
 Here is the cleaned version of the preceding section.
 Most boilerplate was put in external files.

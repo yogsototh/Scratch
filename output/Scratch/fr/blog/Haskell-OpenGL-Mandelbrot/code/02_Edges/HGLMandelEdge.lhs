@@ -50,10 +50,11 @@
 
 </div>
 
-This time, instead of drawing all points, I'll simply want to draw the edges of the Mandelbrot set.
+This time, instead of drawing all points, 
+we will simply draw the edges of the Mandelbrot set.
 The method I use is a rough approximation. 
 I consider the Mandelbrot set to be almost convex.
-The result will be good enough.
+The result will be good enough for the purpose of this tutorial.
 
 We change slightly the `drawMandelbrot` function.
 We replace the `Points` by `LineLoop`

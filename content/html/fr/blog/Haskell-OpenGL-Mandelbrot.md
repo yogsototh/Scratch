@@ -39,7 +39,7 @@ enddiv
 In my
 [preceding article](/Scratch/en/blog/Haskell-the-Hard-Way/) I introduced Haskell. 
 
-This article go further.
+This article goes further.
 It will show how to use functional programming with interactive programs.
 But more than that, it will show how to organize your code in a functional way.
 This article is more about functional paradigm than functional language.
@@ -50,18 +50,18 @@ In reality, the firsts sections will use an imperative paradigm.
 As you can use functional paradigm in imperative language, 
 you can also use imperative paradigm in functional languages.
 
-This article is about creating a useful and clean program.
+This article is about creating an useful and clean program.
 It can interact with the user in real time.
 It uses OpenGL, a library with imperative programming foundations.
-But the final code will be quite clean. 
-Most of the code will remain in the pure part (no `IO`).
+Despite this fact, 
+most of the final code will remain in the pure part (no `IO`).
 
 I believe the main audience for this article are:
 
 - Haskell programmer looking for an OpengGL tutorial.
 - People interested in program organization (programming language agnostic).
 - Fractal lovers and in particular 3D fractal.
-- Game programmers (any language)
+- People interested in user interaction in a functional paradigm.
 
 I had in mind for some time now to make a Mandelbrot set explorer.
 I had already written a [command line Mandelbrot set generator in Haskell](http://github.com/yogsototh/mandelbrot.git).
@@ -69,7 +69,8 @@ This utility is highly parallel; it uses the `repa` package[^001].
 
 [^001]: Unfortunately, I couldn't make this program to work on my Mac. More precisely, I couldn't make the [DevIL](http://openil.sourceforge.net/) library work on Mac to output the image. Yes I have done a `brew install libdevil`. But even a minimal program who simply write some `jpg` didn't worked. I tried both with `Haskell` and `C`.
 
-This time, we will display the Mandelbrot set extended in 3D using OpenGL and Haskell.
+This time, we will not parallelize the computation.
+Instead, we will display the Mandelbrot set extended in 3D using OpenGL and Haskell.
 You will be able to move it using your keyboard.
 This object is a Mandelbrot set in the plan (z=0),
 and something nice to see in 3D.
@@ -113,7 +114,7 @@ import Data.IORef
 </code>
 </div>
 
-For efficiency reason, I won't use the default Haskell `Complex` data type.
+For efficiency reason, I will not use the default Haskell `Complex` data type.
 
 <div class="codehighlight">
 <code class="haskell">
@@ -305,14 +306,14 @@ This property is a direct consequence of purity.
 If you look closely, you see that `allPoints` is a pure list.
 Therefore, calling `allPoints` will always render the same result and Haskell is clever enough to use this property.
 While Haskell doesn't garbage collect `allPoints` the result is reused for free.
-We didn't specified this value should be saved for later use. 
+We did not specified this value should be saved for later use. 
 It is saved for us.
 
 See what occurs if we make the window bigger:
 
 blogimage("hglmandel_v01_too_wide.png","The mandelbrot too wide, black lines and columns")
 
-We see some black lines because we drawn less point than there is on the surface.
+We see some black lines because we have drawn less point than there is on the surface.
 We can repair this by drawing little squares instead of just points.
 But, instead we will do something a bit different and unusual.
 
@@ -375,10 +376,11 @@ height = 320 :: GLfloat
 
 </div>
 
-This time, instead of drawing all points, I'll simply want to draw the edges of the Mandelbrot set.
+This time, instead of drawing all points, 
+we will simply draw the edges of the Mandelbrot set.
 The method I use is a rough approximation. 
 I consider the Mandelbrot set to be almost convex.
-The result will be good enough.
+The result will be good enough for the purpose of this tutorial.
 
 We change slightly the `drawMandelbrot` function.
 We replace the `Points` by `LineLoop`
@@ -714,7 +716,7 @@ keyboardMouse angle zoom campos key state modifiers position =
 </code>
 </div>
 
-Note `display` take some parameters this time.
+Note `display` takes some parameters this time.
 This function if full of boilerplate:
 
 <div class="codehighlight">
@@ -947,7 +949,7 @@ blogimage("mandelbrot_3D.png","A 3D mandelbrot like")
 
 ## Naïve code cleaning
 
-The first thing to do is to separate the GLUT/OpenGL 
+The first approach to clean the code is to separate the GLUT/OpenGL 
 part from the computation of the shape.
 Here is the cleaned version of the preceding section.
 Most boilerplate was put in external files.
@@ -1096,7 +1098,7 @@ functionalMainLoop =
 Clearly, ideally we should provide only three parameters to this main loop function:
 
 - an initial World state
-- a mapping between the user interaction and function which modify the world
+- a mapping between the user interactions and functions which modify the world
 - a function taking two parameters: time and world state and render a new world without user interaction.
 
 Here is a real working code, I've hidden most display functions.
@@ -1364,15 +1366,16 @@ It is commented a lot.
 
 ## Optimization
 
-From the architecture stand point all is clear.
+Our code architecture feel very clean.
+All the meaningful code is in our main file and all display details are
+externalized.
 If you read the code of `YGL.hs`, you'll see I didn't made everything perfect. 
 For example, I didn't finished the code of the lights.
 But I believe it is a good first step and it will be easy to go further.
-The separation between rendering and world behavior is clear.
 Unfortunately the program of the preceding session is extremely slow.
 We compute the Mandelbulb for each frame now.
 
-Before we had
+Before our program structure was:
 
 <code class="no-highlight">
 Constant Function -> Constant List of Triangles -> Display
@@ -1381,18 +1384,16 @@ Constant Function -> Constant List of Triangles -> Display
 Now we have 
 
 <code class="no-highlight">
-World -> Function -> List of Objects -> Atoms -> Display
+Main loop -> World -> Function -> List of Objects -> Atoms -> Display
 </code>
 
-And the World state could change. 
-Then it is no more straightforward for the compiler to understand
-when not to recompute the entire list of atoms.
+The World state could change. 
+The compiler can no more optimize the computation for us. 
+We have to manually explain when to redraw the shape.
 
-Then to optimize we will have to make things a little less separate.
-We must control the flow of atom generation.
-
-Mostly the program is the same as before, but instead of providing a 
-function, we will provide the list of atoms directly.
+To optimize we must do some things in a lower level.
+Mostly the program remains the same, 
+but it will provide the list of atoms directly.
 
 <div style="display:none">
 
@@ -1520,6 +1521,8 @@ initialWorld = World {
 </code>
 </div>
 
+The use of `eps` is a hint to make a better zoom by computing with the right bounds.
+
 We use the `YGL.getObject3DFromShapeFunction` function directly.
 This way instead of providing `XYFunc`, we provide directly a list of Atoms.
 
@@ -1611,7 +1614,7 @@ ymandel x y z = fromIntegral (mandel x y z 64) / 64
 
 </div>
 
-And you can also consider small changes in other source files.
+And you can also consider minor changes in the `YGL.hs` source file.
 
 - [`YGL.hs`](code/06_Mandelbulb/YGL.hs), the 3D rendering framework
 - [`Mandel`](code/06_Mandelbulb/Mandel.hs), the mandel function
