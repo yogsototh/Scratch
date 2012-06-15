@@ -15,7 +15,7 @@ instance Num ExtComplex where
     fromInteger n = C (fromIntegral n, 0, 0)
     C (x,y,z) + C (x',y',z') = C (x+x', y+y', z+z')
     abs (C (x,y,z))     = C (sqrt (x*x + y*y + z*z), 0, 0)
-    signum (C (x,y,z))  = C (signum x, 0, 0)
+    signum (C (x,_,_))  = C (signum x, 0, 0)
 
 extcomplex :: GLfloat -> GLfloat -> GLfloat -> ExtComplex
 extcomplex x y z = C (x,y,z)

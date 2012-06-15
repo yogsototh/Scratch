@@ -230,7 +230,7 @@ The rest is similar to the preceding sections.
 > --    where ε=(max-min)/2^(nbtest+1) 
 > maxZeroIndex :: (Fractional a,Num a,Num b,Eq b) => 
 >                  (a -> b) -> a -> a -> Int -> a
-> maxZeroIndex func minval maxval 0 = (minval+maxval)/2
+> maxZeroIndex _ minval maxval 0 = (minval+maxval)/2
 > maxZeroIndex func minval maxval n = 
 >   if (func medpoint) /= 0 
 >        then maxZeroIndex func minval medpoint (n-1)

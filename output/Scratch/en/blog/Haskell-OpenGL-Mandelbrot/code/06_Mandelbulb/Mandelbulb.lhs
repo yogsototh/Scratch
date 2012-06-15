@@ -38,7 +38,7 @@ function, we will provide the list of atoms directly.
 > -- Centralize all user input interaction
 > inputActionMap :: InputMap World
 > inputActionMap = inputMapFromList [
->      (Press ' ' , switch_rotation)
+>      (Press ' ' , switchRotation)
 >     ,(Press 'k' , rotate xdir 5)
 >     ,(Press 'i' , rotate xdir (-5))
 >     ,(Press 'j' , rotate ydir 5)
@@ -92,17 +92,17 @@ function, we will provide the list of atoms directly.
 > rotate :: Point3D -> Scalar -> World -> World
 > rotate dir angleValue world = 
 >   world {
->      angle = (angle world) + (angleValue -*< dir) }
+>      angle = angle world + (angleValue -*< dir) }
 >
-> switch_rotation :: World -> World
-> switch_rotation world = 
+> switchRotation :: World -> World
+> switchRotation world = 
 >   world {
 >      anglePerSec = if anglePerSec world > 0 then 0 else 5.0 }
 > 
 > translate :: Point3D -> Scalar -> World -> World
 > translate dir len world = 
 >   world {
->     position = (position world) + (len -*< dir) }
+>     position = position world + (len -*< dir) }
 > 
 > zoom :: Scalar -> World -> World
 > zoom z world = world {
@@ -166,22 +166,13 @@ All the rest is exactly the same.
 > idleAction :: Time -> World -> World
 > idleAction tnew world = 
 >       world {
->         angle = (angle world) + (delta -*< zdir)
+>         angle = angle world + (delta -*< zdir)
 >       , told = tnew
 >       }
 >   where 
 >       delta = anglePerSec world * elapsed / 1000.0
 >       elapsed = fromIntegral (tnew - (told world))
 > 
-> shapeFunc' :: Scalar -> Function3D
-> shapeFunc' res x y = if or [tmp u v>=0 | u<-[x,x+res], v<-[y,y+res]]
->                       then Just (z,hexColor "#AD4") 
->                       else Nothing
->                     where tmp x y = (x**2 + y**2)
->                           protectSqrt t = if t<0 then 0 else sqrt t
->                           z = sqrt (a**2 - (c - protectSqrt(tmp x y))**2)
->                           a = 0.2
->                           c = 0.5
 > shapeFunc :: Scalar -> Function3D
 > shapeFunc res x y = 
 >   let 

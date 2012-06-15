@@ -76,13 +76,25 @@ $codeBlockBackgroundColor: #002b36
   font-weight: normal
   font-style: normal
 
-i, em
+=italic
   font-family: "cmunsl", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   font-style: normal
 
-b, h1, h2, h3, h4, h5, h6
+=bold
   font-family: "cmunrb", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   font-weight: normal
+
+=normal
+  font-family: "cmunrm", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
+  font-weight: normal
+  font-style: normal
+
+
+i, em
+  +italic
+
+b, strong, h1, h2, h3, h4, h5, h6
+  +bold
 
 =mainColor
   color: $behindColor
@@ -104,13 +116,20 @@ b, h1, h2, h3, h4, h5, h6
 
 =highlight
   font:
-    style: italic
+    family: "cmunsl", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   padding: 0.5em 1em
   color: $highlightBlockColor
   a:hover
     color: $revealColor
-  strong, b, i, em
+  i, em
     font:
+      family: "cmunrm", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
+      weight: normal
+      style: normal
+    color: $behindColor
+  strong, b 
+    font:
+      family: "cmunrb", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
       weight: normal
       style: normal
     color: $behindColor
@@ -587,8 +606,8 @@ img.clean
 .definitionCell
   width: 5em
   vertical-align: top
-  font-weight: bold
   text-align: center
+  +bold
 
 .valueCell
   text-align: right
@@ -597,7 +616,7 @@ img.clean
   float: left
   width: 50%
   font-size: 1em
-  font-weight: bold
+  +bold
 
 .largeblock
   float: right
@@ -771,8 +790,8 @@ table.impact tr td
 
 #previous_articles, #next_articles
   color: $highlightColor
-  font-style: italic
   font-size: .8em
+  +italic
 
 #previous_articles
   float: left
@@ -829,12 +848,10 @@ a.return
   font-size: 0.8em
   ol
     color: $base0
-    font-weight: bold
+    +bold
     p
       color: $behindColor
-      font-weight: normal
-
-    
+      +normal
 
 .fontnotes ol
   margin-left: 0
@@ -938,7 +955,7 @@ ul.bloglist, .archive ul
     a:after
       content: ""
 .article .corps sup a
-  font-weight: bold
+  +bold
   background: $base0
   padding: 0 .3em
   margin-left: 2px
@@ -1008,7 +1025,7 @@ a.cut
     border-color: $borderColor 
     box-shadow: 0 0 3px $borderColor inset
   strong
-    font-weight: bold
+    +bold
 .codehighlight pre
   border-left: 4px solid $borderColor
 

@@ -8,31 +8,37 @@ Typically separate the display function.
 
 -}
 module YGL (
-    -- Datas
-    Point 
-    , Time
-    , Scalar
-    , Color
-    , Point3D
+    -- Here is declared our interface with external files
+    -- that will include our YGL module
+
+    -- Declarations related to data types
+    Point  -- the 1 dimension point type
+    , Time -- the type for the time
+    , Scalar  -- the type for scalar values
+    , Color   -- the type for color (3 scalars)
+    , Point3D (..) -- A 3D point type (3 Points)
     , makePoint3D -- helper (x,y,z) -> Point3D
-    , (-*<) -- scalar product on Point3D
-    , Function3D
+    , (-*<) -- scalar product on Point3D a -*< (x,y,z) = (ax,ay,az)
+    , Function3D -- Point -> Point -> Maybe (Point,Color)
+
     -- Your world state must be an instance
     -- of the DisplayableWorld type class
     , DisplayableWorld (..)
     -- Datas related to DisplayableWorld
-    , Camera (..)
-    , YObject (..)
-    , Box3D (..)
-    , makeBox
-    , hexColor
-    , makeColor
-    -- Datas related to user Input
+    , Camera (..) 
+    , YObject (..) -- 3D Objects to display
+    , Box3D (..)   -- Some bounded 3D box
+    , makeBox      -- helper to make a box
+    , hexColor     -- Color from hexadecimal string
+    , makeColor    -- make color from RGB values
+    -- Interface related to user input
     , InputMap
     , UserInput (Press,Ctrl,Alt,CtrlAlt)
     , inputMapFromList
+
     -- The main loop function to call
-    , yMainLoop) where
+    , yMainLoop
+) where
 
 -- A bunch of imports
 import Numeric (readHex) -- to read hexadecimal values
@@ -55,17 +61,17 @@ import Data.Maybe (isNothing)
 - Just take the time to follow me.
 --}
 
-
 -- | A 1D point
 type Point   = GLfloat 
 -- | A Scalar value
 type Scalar  = GLfloat
--- | The time type (currently its Int
+-- | The time type (currently its Int)
 type Time = Int
 -- | A 3D Point mainly '(x,y,z)'
 data Point3D = P (Point,Point,Point) deriving (Eq,Show,Read)
 type Color = Color3 Scalar
 
+-- Get x (resp. y, z) coordinate of a 3D point
 xpoint :: Point3D -> Point
 xpoint (P (x,_,_)) = x
 ypoint :: Point3D -> Point
@@ -73,10 +79,11 @@ ypoint (P (_,y,_)) = y
 zpoint :: Point3D -> Point
 zpoint (P (_,_,z)) = z
 
+-- Create a Point3D element from a triplet
 makePoint3D :: (Point,Point,Point) -> Point3D
-makePoint3D p = P p
+makePoint3D = P
 
-
+-- Make Point3D an instance of Num
 instance Num Point3D where
     (+) (P (ax,ay,az)) (P (bx,by,bz)) = P (ax+bx,ay+by,az+bz)
     (-) (P (ax,ay,az)) (P (bx,by,bz)) = P (ax-bx,ay-by,az-bz)
@@ -87,11 +94,12 @@ instance Num Point3D where
     signum (P (x,y,z)) = P (signum x, signum y, signum z)
     fromInteger i = P (fromInteger i, 0, 0)
 
+-- The scalar product
 infixr 5 -*<
 (-*<) :: Scalar -> Point3D -> Point3D
 (-*<) s p = P (s*xpoint p, s*ypoint p, s*zpoint p)
 
-
+-- Used internally to convert point3D to different types
 toGLVector3 :: Point3D -> Vector3 GLfloat
 toGLVector3 (P(x,y,z)) = Vector3 x y z
 
@@ -110,31 +118,46 @@ data Box3D = Box3D {
        , maxPoint :: Point3D
        , resolution :: Scalar }
 
+-- | An helper to make a Box3D
 makeBox :: (Point,Point,Point) -> (Point,Point,Point) -> Scalar -> Box3D
 makeBox mini maxi res = Box3D {
       minPoint = makePoint3D mini
     , maxPoint = makePoint3D maxi
     , resolution = res  }
 
+-- | A Triangle3D is simply 3 points and a color
 type Triangle3D = (Point3D,Point3D,Point3D,Color)
--- For a general purpose library we should add many other different atoms
--- corresponding to Quads for example.
+
+-- | The type Atom is the atom for our display here we'll only use triangles.
+-- | For a general purpose library we should add many other different atoms
+-- | corresponding to Quads for example.
 data Atom = ColoredTriangle Triangle3D 
+
+-- | A Function3D is simply a function for each x,y associate a z and a color
+-- | If undefined at point (x,y), it returns Nothing.
 type Function3D = Point -> Point -> Maybe (Point,Color)
+
+-- | Our objects that will be displayed
+-- |    Wether a function3D delimited by a Box
+-- |      or a list of Atoms
 data YObject =   XYFunc Function3D Box3D
                | Atoms [Atom]
 
+-- | The function atoms retrieve the list of atoms from an YObject
 atoms :: YObject -> [Atom]
 atoms (XYFunc f b) = getObject3DFromShapeFunction f b
 atoms (Atoms atomList) = atomList
 
 -- | We decalre the input map type we need here
 -- | It is our API
+-- | I don't use Mouse but it can be easily added
 type InputMap worldType = Map.Map UserInput (worldType -> worldType)
 data UserInput = Press Char | Ctrl Char | Alt Char | CtrlAlt Char 
                  deriving (Eq,Ord,Show,Read)
 
--- | A displayable world 
+-- | A displayable world is a type for which
+-- | ther exists a function that provide sufficient informations
+-- | to provide a camera, lights, objects and a window title.
 class DisplayableWorld world where
     camera :: world -> Camera
     camera _ = defaultCamera 
@@ -152,6 +175,7 @@ data Camera = Camera {
         , camDir  :: Point3D
         , camZoom :: Scalar }
 
+-- | A default initial camera
 defaultCamera :: Camera
 defaultCamera = Camera {
       camPos = makePoint3D (0,0,0)
@@ -159,8 +183,8 @@ defaultCamera = Camera {
     , camZoom = 1 }
 
 
--- Given a shape function and a delimited Box3D
--- return a list of Triangles to be displayed
+-- | Given a shape function and a delimited Box3D
+-- | return a list of Atoms (here only colored triangles) to be displayed
 getObject3DFromShapeFunction :: Function3D -> Box3D -> [Atom]
 getObject3DFromShapeFunction shape box = do
   x <- [xmin,xmin+res..xmax]
@@ -199,6 +223,7 @@ getObject3DFromShapeFunction shape box = do
     ymax = ypoint $ maxPoint box
     res = resolution box
 
+-- | Get the user input map from a list
 inputMapFromList :: (DisplayableWorld world) => 
     [(UserInput,world -> world)] -> InputMap world
 inputMapFromList = Map.fromList
@@ -208,13 +233,17 @@ inputMapFromList = Map.fromList
 - As you can see the code is _not_ pure 
 - and not even functionnal friendly!
 - But when called,
-- it will look like a standard function.
+- it will look like a pure functional function.
 --}
 yMainLoop :: (DisplayableWorld worldType) =>
-             InputMap worldType -- the mapping user input / world
-             -> (Time -> worldType -> worldType)
-             -> worldType -- the world state
-             -> IO ()     -- into IO () for obvious reason
+             -- the mapping user input / world
+             InputMap worldType
+                -- function that modify the world
+             -> (Time -> worldType -> worldType) 
+               -- the world state of type worldType
+             -> worldType 
+                -- into IO () for obvious reason
+             -> IO ()    
 yMainLoop inputActionMap 
           worldTranformer
           world = do
@@ -234,14 +263,18 @@ yMainLoop inputActionMap
           Just (keyboardMouse inputActionMap worldRef)
   -- We generate one frame using the callback
   displayCallback $= display worldRef
+  -- let OpenGL resize normal vectors to unity
   normalize $= Enabled
-  -- Lights
+  shadeModel $= Smooth
+  -- Lights (in a better version should be put elsewhere)
   lighting $= Enabled
   ambient (Light 0) $= Color4 0 0 0 1
   diffuse (Light 0) $= Color4 0.5 0.5 0.5 1
   specular (Light 0) $= Color4 1 1 1 1
   position (Light 0) $= Vertex4 1 1 0 1
   light (Light 0) $= Enabled
+  pointSmooth $= Enabled
+
   colorMaterial $= Just (Front,AmbientAndDiffuse)
   materialDiffuse Front $= Color4 0.5 0.5 0.5 1 
   materialAmbient Front $= Color4 0.5 0.5 0.5 1 
@@ -259,15 +292,15 @@ idle worldTranformer world = do
     world $= worldTranformer t w
     postRedisplay Nothing
 
--- Get User Input
--- both cleaner, terser and more expendable than the preceeding code
+-- | Get User Input
+-- | both cleaner, terser and more expendable than the preceeding code
 keyboardMouse :: InputMap a -> IORef a
                  -> Key -> KeyState -> Modifiers -> Position -> IO()
 keyboardMouse input world key state _ _ =
     when (state == Down) $
          let 
             charFromKey (Char c) = c
-            -- To replace
+            -- To complete if you want to finish it
             charFromKey _ = '#'
 
             transformator = Map.lookup (Press (charFromKey key)) input 
@@ -280,7 +313,7 @@ keyboardMouse input world key state _ _ =
             world $= transform w
 
 
--- The function that will display datas
+-- | The function that will display datas
 display :: (HasGetter g, DisplayableWorld world) => 
            g world -> IO ()
 display worldRef = do
@@ -295,6 +328,7 @@ display worldRef = do
     --          and refere to competent authorities
     let cam = camera w
     -- set the background color (dark solarized theme)
+    -- Could also be externalized to world state
     clearColor $= Color4 0 0.1686 0.2117 1
     clear [ColorBuffer,DepthBuffer]
     -- Transformation to change the view
@@ -316,25 +350,22 @@ display worldRef = do
 scalarFromHex :: String -> Scalar
 scalarFromHex = (/256) . fst . head . readHex 
 
-hexColor :: [Char] -> Color
-hexColor ('#':rd:ru:gd:gu:bd:bu:[]) = Color3 (scalarFromHex (rd:ru:[]))
-                                             (scalarFromHex (gd:gu:[])) 
-                                             (scalarFromHex (bd:bu:[]))
-hexColor ('#':r:g:b:[]) = hexColor ('#':r:r:g:g:b:b:[])
+-- | Color from CSS style color string
+hexColor :: String -> Color
+hexColor ('#':rd:ru:gd:gu:bd:bu:[]) = Color3 (scalarFromHex [rd,ru])
+                                             (scalarFromHex [gd,gu]) 
+                                             (scalarFromHex [bd,bu])
+hexColor ('#':r:g:b:[]) = hexColor ['#',r,r,g,g,b,b]
 hexColor _ = error "Bad color!!!!"
 
+-- | Helper to make a color from RGB scalar values
 makeColor :: Scalar -> Scalar -> Scalar -> Color
-makeColor x y z = Color3 x y z
----
+makeColor = Color3
 
--- drawObject :: (YObject obj) => obj -> IO()
+-- | Where the drawing occurs
 drawObject :: YObject -> IO()
-drawObject shape = do
-  -- We will print only Triangles
-  renderPrimitive Triangles $ do
-    -- solarized base3 color
-    -- color $ hexColor "#fdf603" 
-    mapM_ drawAtom (atoms shape)
+drawObject shape = renderPrimitive Triangles $
+                        mapM_ drawAtom (atoms shape)
 
 -- simply draw an Atom
 drawAtom :: Atom -> IO ()
@@ -345,6 +376,8 @@ drawAtom atom@(ColoredTriangle (p0,p1,p2,c)) = do
     vertex $ toGLVertex3 p1
     vertex $ toGLVertex3 p2
 
--- get the normal vector of an Atom
+-- | get the normal vector of an Atom 
+-- I don't normalize it; it is done by OpenGL 
+-- in main with 'normalize $= Enabled'
 getNormal :: Atom -> Point3D
 getNormal (ColoredTriangle (p0,p1,p2,_)) = (p1 - p0) * (p2 - p0)

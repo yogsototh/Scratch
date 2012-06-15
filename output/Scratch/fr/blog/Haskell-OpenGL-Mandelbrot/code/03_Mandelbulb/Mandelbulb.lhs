@@ -99,6 +99,8 @@ Note how if `z=z'=0` then the multiplication is the same to the complex one.
 
 </div>
 
+ ### From 2D to 3D 
+
 As we will use some 3D, we add some new directive in the boilerplate.
 But mainly, we simply state that will use some depth buffer.
 And also we will listen the keyboard.
