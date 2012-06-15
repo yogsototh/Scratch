@@ -35,8 +35,8 @@ ghroot=/tmp/ghroot$$
 mkdir $ghroot
 debug mv output/index.html $ghroot
 debug mv output/* $ghroot
-debug cp output/Scratch/en/error/404-not_found/index.html $ghroot/404.html
 debug cd $ghroot
+debug cp Scratch/en/error/404-not_found/index.html ./404.html
 debug tar cf ghroot.tar *
 
 debug cd $rootdir
