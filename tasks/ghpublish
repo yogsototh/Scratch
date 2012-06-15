@@ -37,7 +37,7 @@ debug mv output/index.html $ghroot
 debug mv output/* $ghroot
 debug cd $ghroot
 debug cp Scratch/en/error/404-not_found/index.html ./404.html
-debug echo "yannesposito.com" > CNAME
+echo "yannesposito.com" > CNAME
 debug tar cf ghroot.tar *
 
 debug cd $rootdir
