@@ -36,11 +36,13 @@ debug git co gh-pages
 (( $? == 0 )) || { exit 1 }
 debug git pull
 (( $? == 0 )) || { exit 1 }
-debug \rm -rf *(N)
+for fic in *(N); do
+    case $fic in 
+        output) continue;;
+    esac
+    debug \rm -rf $fic(N)
+done
 (( $? == 0 )) || { exit 1 }
-debug git co master output
-(( $? == 0 )) || { exit 1 }
-debug git unstage output
 debug mv output/index.html .
 (( $? == 0 )) || { exit 1 }
 debug mv output/* .
