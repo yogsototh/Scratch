@@ -6,7 +6,7 @@ function log {
     print -P -- $*
 }
 function debug {
-    # print -- $*
+    print -- $*
     eval $*
 }
 
