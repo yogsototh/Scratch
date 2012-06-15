@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2012-04-30T17:17:53Z</updated>
+  <updated>2012-06-15T17:16:43Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
@@ -10,10 +10,10 @@
     <uri>http://yannesposito.com</uri>
   </author>
   <entry>
-    <id>tag:yannesposito.com,2012-04-30:/Scratch/en/blog/Haskell-OpenGL-Mandelbrot/</id>
+    <id>tag:yannesposito.com,2012-06-15:/Scratch/en/blog/Haskell-OpenGL-Mandelbrot/</id>
     <title type="html">Haskell Progressive Example</title>
-    <published>2012-04-30T17:17:53Z</published>
-    <updated>2012-04-30T17:17:53Z</updated>
+    <published>2012-06-15T17:16:43Z</published>
+    <updated>2012-06-15T17:16:43Z</updated>
     <author>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>

@@ -2,7 +2,7 @@
 isHidden:       false
 menupriority:   1
 kind:           article
-created_at:     2012-04-30T19:17:53+02:00
+created_at:     2012-06-15T19:16:43+02:00
 title: Un example progressif avec Haskell
 subtitle: Une extension de l'ensemble de Mandelbrot en 3D et en OpenGL
 author_name: Yann Esposito
