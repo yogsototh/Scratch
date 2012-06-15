@@ -8,8 +8,8 @@ function log {
 function debug {
     print -- $*
     eval $*
+    (( $? == 0 )) || { exit 1 }
 }
-
 
 current_branch=$(git branch | egrep '^\*' | awk '{print $2}')
 
@@ -30,33 +30,27 @@ else
     git commit -m "regeneration" 
 fi
 
+log "tar creation"
+ghroot=/tmp/ghroot$$
+mkdir $ghroot
+debug mv output/index.html $ghroot
+debug mv output/* $ghroot
+debug cp output/Scratch/en/error/404-not_found/index.html $ghroot/404.html
+debug cd $ghroot
+debug tar cf ghroot.tar *
+
+debug cd $rootdir
+
 # update & push gh-pages
 log "Update and push gh-pages"
 debug git co gh-pages
-(( $? == 0 )) || { exit 1 }
 debug git pull
-(( $? == 0 )) || { exit 1 }
-for fic in *(N); do
-    case $fic in 
-        output) continue;;
-    esac
-    debug \rm -rf $fic
-done
-(( $? == 0 )) || { exit 1 }
-debug mv output/index.html .
-(( $? == 0 )) || { exit 1 }
-debug mv output/* .
-(( $? == 0 )) || { exit 1 }
-debug \rm -rf output
-(( $? == 0 )) || { exit 1 }
-debug cp Scratch/en/error/404-not_found/index.html 404.html
-(( $? == 0 )) || { exit 1 }
+debug \rm -rf *(N)
+debug tar xf $ghroot/ghroot.tar
 debug echo "yannesposito.com" > CNAME
-(( $? == 0 )) || { exit 1 }
 debug git add .
-(( $? == 0 )) || { exit 1 }
 debug git commit -m '"updated website"'
-(( $? == 0 )) || { exit 1 }
 debug git push origin gh-pages:gh-pages
-(( $? == 0 )) || { exit 1 }
 debug git co $current_branch
+
+rm -rf $ghroot
