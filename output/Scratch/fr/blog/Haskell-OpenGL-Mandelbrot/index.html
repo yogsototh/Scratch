@@ -182,7 +182,7 @@ import Data.IORef
 <div class="codehighlight">
 
 
-<pre><code class="haskell">newtype Complex = C (Float,Float) deriving (Show,Eq)
+<pre><code class="haskell">data Complex = C (Float,Float) deriving (Show,Eq)
 </code></pre>
 
 
@@ -427,7 +427,7 @@ But, instead we will do something a bit different and unusual.</p>
 <pre><code class="haskell">import Graphics.Rendering.OpenGL
 import Graphics.UI.GLUT
 import Data.IORef
-newtype Complex = C (Float,Float) deriving (Show,Eq)
+data Complex = C (Float,Float) deriving (Show,Eq)
 instance Num Complex where
     fromInteger n = C (fromIntegral n,0.0)
     C (x,y) * C (z,t) = C (z*x - y*t, y*z + x*t)

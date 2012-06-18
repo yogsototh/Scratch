@@ -118,7 +118,7 @@ For efficiency reason, I will not use the default Haskell `Complex` data type.
 
 <div class="codehighlight">
 <code class="haskell">
-newtype Complex = C (Float,Float) deriving (Show,Eq)
+data Complex = C (Float,Float) deriving (Show,Eq)
 </code>
 </div>
 
@@ -330,7 +330,7 @@ But, instead we will do something a bit different and unusual.
 import Graphics.Rendering.OpenGL
 import Graphics.UI.GLUT
 import Data.IORef
-newtype Complex = C (Float,Float) deriving (Show,Eq)
+data Complex = C (Float,Float) deriving (Show,Eq)
 instance Num Complex where
     fromInteger n = C (fromIntegral n,0.0)
     C (x,y) * C (z,t) = C (z*x - y*t, y*z + x*t)

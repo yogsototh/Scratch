@@ -20,7 +20,7 @@ And the second part more focused on OpenGL and content.
 
 For efficiency reason, I will not use the default Haskell `Complex` data type.
 
-> newtype Complex = C (Float,Float) deriving (Show,Eq)
+> data Complex = C (Float,Float) deriving (Show,Eq)
 
 
 > instance Num Complex where
