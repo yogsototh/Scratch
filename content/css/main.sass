@@ -45,13 +45,7 @@ $secondTextColor: #666677
 $codeBlockColor: #839496
 $codeBlockBackgroundColor: #002b36
 
-include Computer Modern fonts
-@font-face
-  font-family: 'cmunrm'
-  src: url('fonts/cmunrm.eot')
-  src: local('☺'), url('fonts/cmunrm.svg') format('svg'), url('fonts/cmunrm.ttf') format('truetype')
-  font-weight: normal
-  font-style: normal
+// include Computer Modern fonts
 
 @font-face
   font-family: 'cmuntt'
@@ -60,32 +54,30 @@ include Computer Modern fonts
   font-weight: normal
   font-style: normal
 
-// --
 @font-face
-  font-family: 'cmunsl'
-  src: url('fonts/cmunsl.eot')
-  src: local('☺'), url('fonts/cmunsl.svg') format('svg'), url('fonts/cmunsl.ttf') format('truetype')
-  font-weight: normal
-  font-style: normal
-
-
-@font-face
-  font-family: 'cmunrb'
+  font-family: 'CMU Serif'
   src: url('fonts/cmunrb.eot')
   src: local('☺'), url('fonts/cmunrb.svg') format('svg'), url('fonts/cmunrb.ttf') format('truetype')
+  font-weight: bold
+@font-face
+  font-family: 'CMU Serif'
+  src: url('fonts/cmunsl.eot')
+  src: local('☺'), url('fonts/cmunsl.svg') format('svg'), url('fonts/cmunsl.ttf') format('truetype')
+  font-style: italic,oblique
+@font-face
+  font-family: 'CMU Serif'
+  src: url('fonts/cmunrm.eot')
+  src: local('☺'), url('fonts/cmunrm.svg') format('svg'), url('fonts/cmunrm.ttf') format('truetype')
   font-weight: normal
   font-style: normal
 
 =italic
-  font-family: "CMU Serif Slanted", cmunsl, Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
-  font-style: normal
+  font-style: italic
 
 =bold
-  font-family: "CMU Serif Bold", cmunrb, Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
-  font-weight: normal
+  font-weight: bold
 
 =normal
-  font-family: "CMU Serif", cmunrm, Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
   font-weight: normal
   font-style: normal
 
@@ -229,7 +221,7 @@ body, h1, h2, h3, h4, #entete, .tagname
   line-height: 1.4em
 
 body
-  font-family: "CMU Serif", cmunrm, Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
+  font-family: "CMU Serif", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
 
 /* Header Numbering */
 .article #afterheader
