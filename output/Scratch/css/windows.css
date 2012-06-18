@@ -1,0 +1,20 @@
+body, p {
+  font-family: "CMU Serif", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif;  }
+
+.intro, .resume, em, i, blockquote, #previous_articles, #next_articles {
+  font-family: "CMU Serif", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif;  
+  font-style: italic;
+}
+.intro em, .intro i,
+.resume em, .resume i, 
+.blockquote em, .blockquote i {
+    font-style: normal;
+}
+b, strong {
+  font-family: "CMU Serif", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif;  
+  font-weight: bold;
+}
+
+.footnotes ol p {
+  font-family: "CMU Serif", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif; 
+  }

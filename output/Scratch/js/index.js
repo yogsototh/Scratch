@@ -55,9 +55,11 @@ var userAgent;
 
 function detectClient() {
     userAgent = navigator.userAgent.toLowerCase();
+    /*
     if (/msie/.test(userAgent) ) {
         $('body').prepend('<div id="iemessage"><p><span><em>Avec <a href="http://www.firefox.com"> Firefox </a>, <a href="http://www.apple.com/safari">Safari</a> ou <a href="http://google.com/chrome">Chrome</a> cette page est bien plus jolie !</em></span><br/><br/><span><em>This page is far nicer when opened with <a href="http://www.firefox.com"> Firefox </a>, <a href="http://www.apple.com/safari">Safari</a> or <a href="http://google.com/chrome">Chrome</a>!</em></span></p></div>');
-    } else if (/ip(od|hone)/.test(userAgent)) {
+    }*/ 
+    if (/ip(od|hone)/.test(userAgent)) {
         $('head').append('<meta name="viewport" content="width=device-width; initial-scale=0.5; maximum-scale=2.0;">');
         $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/iPhone.css"/>');
     }
@@ -69,6 +71,9 @@ $(document).ready( function() {
     var client=detectClient();
     if ( ! /msie/.test(client) ) {
         initCode();
+    }
+    if (/windows/.test(navigator.userAgent.toLowerCase())) {
+        $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/windows.css"/>');
     }
     $('#blackpage').fadeOut();
     analytics();
