@@ -177,7 +177,7 @@ import Data.IORef
 
 </div>
 
-<p>For efficiency reason, I will not use the default Haskell <code>Complex</code> data type.</p>
+<p>For efficiency reason<sup id="fnref:010001"><a href="#fn:010001" rel="footnote">3</a></sup>, I will not use the default Haskell <code>Complex</code> data type.</p>
 
 <div class="codehighlight">
 
@@ -1933,6 +1933,9 @@ O(n².log(n)) to O(n³).</p>
   I understand why this is cleaner to force the programmer not to do so,
   but, each time I do a copy/paste, I feel something is wrong.
   I believe this concern can be generalized to the lack of namespace in Haskell.<a href="#fnref:011" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:010001">
+      <p>I tried <code>Complex Double</code>, <code>Complex Float</code>, this current data type with <code>Double</code> and the actual version <code>Float</code>. For rendering a 1024x1024 Mandelbrot set it takes <code>Complex Double</code> about 6.8s, for <code>Complex Float</code> about 5.1s, for the actual version with <code>Double</code> and <code>Float</code> it takes about <code>1.6</code> sec. See these sources for testing yourself: <a href="https://gist.github.com/2945043">https://gist.github.com/2945043</a>. I haven&rsquo;t tried to use unpacked data type because it looks weird in a tutorial. But I might try it in a sequel.<a href="#fnref:010001" rel="reference">&#8617;</a></p>
     </li>
   </ol>
 </div>
