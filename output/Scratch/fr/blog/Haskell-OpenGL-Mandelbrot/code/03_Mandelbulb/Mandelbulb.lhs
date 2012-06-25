@@ -65,7 +65,7 @@ An extension of complex numbers with a third component:
 >     fromInteger n = C (fromIntegral n, 0, 0)
 >     C (x,y,z) + C (x',y',z') = C (x+x', y+y', z+z')
 >     abs (C (x,y,z))     = C (sqrt (x*x + y*y + z*z), 0, 0)
->     signum (C (x,y,z))  = C (signum x, 0, 0)
+>     signum (C (x,y,z))  = C (signum x, signum y, signum z)
 
 The most important part is the new multiplication instance.
 Modifying this formula will change radically the shape of the result.
