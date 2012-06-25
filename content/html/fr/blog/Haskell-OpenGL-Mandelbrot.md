@@ -116,7 +116,7 @@ import Data.IORef
 
 For efficiency reason[^010001], I will not use the default Haskell `Complex` data type.
 
-[^010001]: I tried `Complex Double`, `Complex Float`, this current data type with `Double` and the actual version `Float`. For rendering a 1024x1024 Mandelbrot set it takes `Complex Double` about 6.8s, for `Complex Float` about 5.1s, for the actual version with `Double` and `Float` it takes about `1.6` sec. See these sources for testing yourself: [https://gist.github.com/2945043](https://gist.github.com/2945043). I haven't tried to use unpacked data type because it looks weird in a tutorial. But I might try it in a sequel.
+[^010001]: I tried `Complex Double`, `Complex Float`, this current data type with `Double` and the actual version `Float`. For rendering a 1024x1024 Mandelbrot set it takes `Complex Double` about 6.8s, for `Complex Float` about 5.1s, for the actual version with `Double` and `Float` it takes about `1.6` sec. See these sources for testing yourself: [https://gist.github.com/2945043](https://gist.github.com/2945043). If you really want to things to go faster, use `data Complex = C {-# UNPACK #-} !Float {-# UNPACK #-} !Float`. It takes only one second instead of 1.6s.
 
 <div class="codehighlight">
 <code class="haskell">
@@ -332,21 +332,25 @@ But, instead we will do something a bit different and unusual.
 import Graphics.Rendering.OpenGL
 import Graphics.UI.GLUT
 import Data.IORef
-data Complex = C (Float,Float) deriving (Show,Eq)
+-- Use UNPACK data because it is faster
+-- The ! is for strict instead of lazy
+data Complex = C  {-# UNPACK #-} !Float 
+                  {-# UNPACK #-} !Float 
+               deriving (Show,Eq)
 instance Num Complex where
-    fromInteger n = C (fromIntegral n,0.0)
-    C (x,y) * C (z,t) = C (z*x - y*t, y*z + x*t)
-    C (x,y) + C (z,t) = C (x+z, y+t)
-    abs (C (x,y))     = C (sqrt (x*x + y*y),0.0)
-    signum (C (x,y))  = C (signum x , 0.0)
+    fromInteger n = C (fromIntegral n) 0.0
+    (C x y) * (C z t) = C (z*x - y*t) (y*z + x*t)
+    (C x y) + (C z t) = C (x+z) (y+t)
+    abs (C x y)     = C (sqrt (x*x + y*y)) 0.0
+    signum (C x y)  = C (signum x) 0.0
 complex :: Float -> Float -> Complex
-complex x y = C (x,y)
+complex x y = C x y
 
 real :: Complex -> Float
-real (C (x,y))    = x
+real (C x y)    = x
 
 im :: Complex -> Float
-im   (C (x,y))    = y
+im   (C x y)    = y
 
 magnitude :: Complex -> Float
 magnitude = real.abs

@@ -427,21 +427,25 @@ But, instead we will do something a bit different and unusual.</p>
 <pre><code class="haskell">import Graphics.Rendering.OpenGL
 import Graphics.UI.GLUT
 import Data.IORef
-data Complex = C (Float,Float) deriving (Show,Eq)
+-- Use UNPACK data because it is faster
+-- The ! is for strict instead of lazy
+data Complex = C  {-# UNPACK #-} !Float 
+                  {-# UNPACK #-} !Float 
+               deriving (Show,Eq)
 instance Num Complex where
-    fromInteger n = C (fromIntegral n,0.0)
-    C (x,y) * C (z,t) = C (z*x - y*t, y*z + x*t)
-    C (x,y) + C (z,t) = C (x+z, y+t)
-    abs (C (x,y))     = C (sqrt (x*x + y*y),0.0)
-    signum (C (x,y))  = C (signum x , 0.0)
+    fromInteger n = C (fromIntegral n) 0.0
+    (C x y) * (C z t) = C (z*x - y*t) (y*z + x*t)
+    (C x y) + (C z t) = C (x+z) (y+t)
+    abs (C x y)     = C (sqrt (x*x + y*y)) 0.0
+    signum (C x y)  = C (signum x) 0.0
 complex :: Float -&gt; Float -&gt; Complex
-complex x y = C (x,y)
+complex x y = C x y
 
 real :: Complex -&gt; Float
-real (C (x,y))    = x
+real (C x y)    = x
 
 im :: Complex -&gt; Float
-im   (C (x,y))    = y
+im   (C x y)    = y
 
 magnitude :: Complex -&gt; Float
 magnitude = real.abs
@@ -1935,7 +1939,7 @@ O(n².log(n)) to O(n³).</p>
   I believe this concern can be generalized to the lack of namespace in Haskell.<a href="#fnref:011" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:010001">
-      <p>I tried <code>Complex Double</code>, <code>Complex Float</code>, this current data type with <code>Double</code> and the actual version <code>Float</code>. For rendering a 1024x1024 Mandelbrot set it takes <code>Complex Double</code> about 6.8s, for <code>Complex Float</code> about 5.1s, for the actual version with <code>Double</code> and <code>Float</code> it takes about <code>1.6</code> sec. See these sources for testing yourself: <a href="https://gist.github.com/2945043">https://gist.github.com/2945043</a>. I haven&rsquo;t tried to use unpacked data type because it looks weird in a tutorial. But I might try it in a sequel.<a href="#fnref:010001" rel="reference">&#8617;</a></p>
+      <p>I tried <code>Complex Double</code>, <code>Complex Float</code>, this current data type with <code>Double</code> and the actual version <code>Float</code>. For rendering a 1024x1024 Mandelbrot set it takes <code>Complex Double</code> about 6.8s, for <code>Complex Float</code> about 5.1s, for the actual version with <code>Double</code> and <code>Float</code> it takes about <code>1.6</code> sec. See these sources for testing yourself: <a href="https://gist.github.com/2945043">https://gist.github.com/2945043</a>. If you really want to things to go faster, use <code>data Complex = C {-# UNPACK #-} !Float {-# UNPACK #-} !Float</code>. It takes only one second instead of 1.6s.<a href="#fnref:010001" rel="reference">&#8617;</a></p>
     </li>
   </ol>
 </div>
