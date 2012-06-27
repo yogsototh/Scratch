@@ -26,10 +26,10 @@ pre {
     color: #657b83;
 }
 
-pre .high0 { color:#93a1a1; }
+pre .high0 { color:#586e75; }
 pre .high, 
-pre .high1 { color:#eee8d5; }
-pre .high2 { color:#fdf6e3; }
+pre .high1 { color:#073642; }
+pre .high2 { color:#002b36; }
 
 /* default text color */
 pre, 
