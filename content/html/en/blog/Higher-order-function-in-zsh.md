@@ -19,18 +19,42 @@ blogimage("main.jpg","Title image")
 
 begindiv(intro)
 
-UPDATE: [Nicholas Sterling had discovered a way to implement anonymous functions](http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/) 
+UPDATE: [Nicholas Sterling had discovered a way to implement anonymous functions](http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/)
 and [Arash Rouhani has made a github repo which make install easier and added some tests](https://github.com/Tarrasch/zsh_functional).
+Thanks to both of you!
+
 With this last version you should use `map` if you use external function.
 `mapl` to use lambda function. And `mapa` for arithmetic operations.
 
 Example: 
 
 <code class="zsh">
-~ mapl 'result $1' $(mapa '$1+5' $(mapa '$1*2' {1..3}))
+$ filterl 'echo $1|grep a >/dev/null' ab cd ef ada
+ab
+ada
+
+$ folda '$1+$2' {1..5}
+15
+
+$ folda '$1*$2' {1..20}
+2432902008176640000
+
+$ mapl 'X $1:t Y' ~/.zsh/functional/src/*
+X each Y
+X filter Y
+X fold Y
+X map Y
+
+$ mapa '$1*2' {1..3}
+2
+4
+6
+
+$ mapl 'result $1' $(mapa '$1+5' $(mapa '$1*2' {1..3}))
 result 7
 result 9
 result 11
+
 </code>
 
 %tldr some simple implementation of higher order function for zsh.
@@ -121,7 +145,9 @@ Just believe me that the functional programming approach is superior.
 Actually I lack the lambda operator. 
 If someone has an idea on how to create anonymous functions, just tell me, thanks.
 
-Here is the source code:
+Here is the (first version[^1]) source code:
+
+[^1]: As stated in the intro, if you want to install it, just go [there](https://github.com/Tarrasch/zsh_functional).
 
 <code class="zsh" file="functional.sh">
 #!/usr/bin/env zsh

@@ -21,6 +21,8 @@ begindiv(intro)
 
 UPDATE: [Nicholas Sterling a découvert un moyen de faire des fonctions anonymes](http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/) 
 et [Arash Rouhani a créé un repository sur github qui simplifie l'installation](https://github.com/Tarrasch/zsh_functional).
+Merci à vous deux!
+
 Avec cette dernière version vous pouvez utiliser `map` si vous utilisez
 des fonctions déclarées. `mapl` pour les fonctions anonymes 
 et `mapa` pour les fonctions arithmétiques.
@@ -28,10 +30,32 @@ et `mapa` pour les fonctions arithmétiques.
 Exemple :
 
 <code class="zsh">
-~ mapl 'result $1' $(mapa '$1+5' $(mapa '$1*2' {1..3}))
+$ filterl 'echo $1|grep a >/dev/null' ab cd ef ada
+ab
+ada
+
+$ folda '$1+$2' {1..5}
+15
+
+$ folda '$1*$2' {1..20}
+2432902008176640000
+
+$ mapl 'X $1:t Y' ~/.zsh/functional/src/*
+X each Y
+X filter Y
+X fold Y
+X map Y
+
+$ mapa '$1*2' {1..3}
+2
+4
+6
+
+$ mapl 'result $1' $(mapa '$1+5' $(mapa '$1*2' {1..3}))
 result 7
 result 9
 result 11
+
 </code>
 
 %tlal des fonctions d'ordres supérieurs en zsh.
@@ -124,7 +148,9 @@ Je vous demande simplement de me croire quand je dis que l'approche fonctionnell
 Actuellement il me manque une fonction lambda, si quelqu'un à une idée elle serait la bienvenue. 
 Je ne sais pas encore comment créer facilement des fonctions anonymes.
 
-Voici le code source :
+Voici le code source (de la première version[^1]) :
+
+[^1]: Comme précisé dans l'introduction, si vous voulez l'installez allez plutôt voir dans ce [repository](https://github.com/Tarrasch/zsh_functional).
 
 <code class="zsh" file="functional.sh">
 #!/usr/bin/env zsh

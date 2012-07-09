@@ -20,14 +20,18 @@ blogimage("main.jpg","Title image")
 
 begindiv(intro)
 
-en: UPDATE: [Nicholas Sterling had discovered a way to implement anonymous functions](http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/) 
+en: UPDATE: [Nicholas Sterling had discovered a way to implement anonymous functions](http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/)
 en: and [Arash Rouhani has made a github repo which make install easier and added some tests](https://github.com/Tarrasch/zsh_functional).
+en: Thanks to both of you!
+en: 
 en: With this last version you should use `map` if you use external function.
 en: `mapl` to use lambda function. And `mapa` for arithmetic operations.
 en: 
 en: Example: 
 fr: UPDATE: [Nicholas Sterling a découvert un moyen de faire des fonctions anonymes](http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/) 
 fr: et [Arash Rouhani a créé un repository sur github qui simplifie l'installation](https://github.com/Tarrasch/zsh_functional).
+fr: Merci à vous deux!
+fr: 
 fr: Avec cette dernière version vous pouvez utiliser `map` si vous utilisez
 fr: des fonctions déclarées. `mapl` pour les fonctions anonymes 
 fr: et `mapa` pour les fonctions arithmétiques.
@@ -35,10 +39,32 @@ fr:
 fr: Exemple :
 
 <code class="zsh">
-~ mapl 'result $1' $(mapa '$1+5' $(mapa '$1*2' {1..3}))
+$ filterl 'echo $1|grep a >/dev/null' ab cd ef ada
+ab
+ada
+
+$ folda '$1+$2' {1..5}
+15
+
+$ folda '$1*$2' {1..20}
+2432902008176640000
+
+$ mapl 'X $1:t Y' ~/.zsh/functional/src/*
+X each Y
+X filter Y
+X fold Y
+X map Y
+
+$ mapa '$1*2' {1..3}
+2
+4
+6
+
+$ mapl 'result $1' $(mapa '$1+5' $(mapa '$1*2' {1..3}))
 result 7
 result 9
 result 11
+
 </code>
 
 en: %tldr some simple implementation of higher order function for zsh.
@@ -153,8 +179,11 @@ fr: Je ne sais pas encore comment créer facilement des fonctions anonymes.
 en: Actually I lack the lambda operator. 
 en: If someone has an idea on how to create anonymous functions, just tell me, thanks.
 
-en: Here is the source code:
-fr: Voici le code source :
+en: Here is the (first version[^1]) source code:
+fr: Voici le code source (de la première version[^1]) :
+
+en: [^1]: As stated in the intro, if you want to install it, just go [there](https://github.com/Tarrasch/zsh_functional).
+fr: [^1]: Comme précisé dans l'introduction, si vous voulez l'installez allez plutôt voir dans ce [repository](https://github.com/Tarrasch/zsh_functional).
 
 <code class="zsh" file="functional.sh">
 #!/usr/bin/env zsh

@@ -212,19 +212,19 @@ Avant de vous dire pourquoi vous devriez aussi le consid&#233;rer, je pr&#233;f&
 
 &lt;p&gt;UPDATE: &lt;a href="http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/"&gt;Nicholas Sterling a d&#233;couvert un moyen de faire des fonctions anonymes&lt;/a&gt; 
 et &lt;a href="https://github.com/Tarrasch/zsh_functional"&gt;Arash Rouhani a cr&#233;&#233; un repository sur github qui simplifie l&amp;rsquo;installation&lt;/a&gt;.
-Avec cette derni&#232;re version vous pouvez utiliser &lt;code&gt;map&lt;/code&gt; si vous utilisez
+Merci &#224; vous deux!&lt;/p&gt;
+
+&lt;p&gt;Avec cette derni&#232;re version vous pouvez utiliser &lt;code&gt;map&lt;/code&gt; si vous utilisez
 des fonctions d&#233;clar&#233;es. &lt;code&gt;mapl&lt;/code&gt; pour les fonctions anonymes 
 et &lt;code&gt;mapa&lt;/code&gt; pour les fonctions arithm&#233;tiques.&lt;/p&gt;
 
 &lt;p&gt;Exemple&amp;nbsp;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class="zsh"&gt;~ mapl 'result $1' $(mapa '$1+5' $(mapa '$1*2' {1..3}))
-result 7
-result 9
-result 11
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class="zsh"&gt;$ filterl 'echo $1|grep a &amp;gt;/dev/null' ab cd ef ada
+ab
+ada
 
-&lt;p&gt;...&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;</content>
+$ folda '$1+...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-09-28:/Scratch/fr/blog/programming-language-experience/</id>
