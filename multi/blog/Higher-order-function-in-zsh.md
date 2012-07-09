@@ -20,6 +20,27 @@ blogimage("main.jpg","Title image")
 
 begindiv(intro)
 
+en: UPDATE: [Nicholas Sterling had discovered a way to implement anonymous functions](http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/) 
+en: and [Arash Rouhani has made a github repo which make install easier and added some tests](https://github.com/Tarrasch/zsh_functional).
+en: With this last version you should use `map` if you use external function.
+en: `mapl` to use lambda function. And `mapa` for arithmetic operations.
+en: 
+en: Example: 
+fr: UPDATE: [Nicholas Sterling a découvert un moyen de faire des fonctions anonymes](http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/) 
+fr: et [Arash Rouhani a créé un repository sur github qui simplifie l'installation](https://github.com/Tarrasch/zsh_functional).
+fr: Avec cette dernière version vous pouvez utiliser `map` si vous utilisez
+fr: des fonctions déclarées. `mapl` pour les fonctions anonymes 
+fr: et `mapa` pour les fonctions arithmétiques.
+fr: 
+fr: Exemple :
+
+<code class="zsh">
+~ mapl 'result $1' $(mapa '$1+5' $(mapa '$1*2' {1..3}))
+result 7
+result 9
+result 11
+</code>
+
 en: %tldr some simple implementation of higher order function for zsh.
 fr: %tlal des fonctions d'ordres supérieurs en zsh.
 

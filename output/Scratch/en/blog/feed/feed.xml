@@ -215,24 +215,20 @@ Before telling you why you should learn Haskell and use yesod, I will talk about
 &lt;div class="intro"&gt;
 
 
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; some simple implementation of higher order function for zsh.&lt;/p&gt;
+&lt;p&gt;UPDATE: &lt;a href="http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/"&gt;Nicholas Sterling had discovered a way to implement anonymous functions&lt;/a&gt; 
+and &lt;a href="https://github.com/Tarrasch/zsh_functional"&gt;Arash Rouhani has made a github repo which make install easier and added some tests&lt;/a&gt;.
+With this last version you should use &lt;code&gt;map&lt;/code&gt; if you use external function.
+&lt;code&gt;mapl&lt;/code&gt; to use lambda function. And &lt;code&gt;mapa&lt;/code&gt; for arithmetic operations.&lt;/p&gt;
 
+&lt;p&gt;Example: &lt;/p&gt;
 
-&lt;/div&gt;
+&lt;pre&gt;&lt;code class="zsh"&gt;~ mapl 'result $1' $(mapa '$1+5' $(mapa '$1*2' {1..3}))
+result 7
+result 9
+result 11
+&lt;/code&gt;&lt;/pre&gt;
 
-
-&lt;p&gt;Why is it important to have these functions?
-Simply because, the more I programmed with zsh the more I tended to work using functional programming style.&lt;/p&gt;
-
-&lt;p&gt;The minimal to have better code are the functions &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;filter&lt;/code&gt; and &lt;code&gt;fold&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s compare.
-First a program which convert all gif to png in many different directories of different projects.&lt;/p&gt;
-
-&lt;p&gt;Before &#8658;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="zsh"&gt;# for each directory in projects dir
-for toProject in /path/to/projects/*(...&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;span class="sc"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-09-28:/Scratch/en/blog/programming-language-experience/</id>
