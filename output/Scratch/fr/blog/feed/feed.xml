@@ -3,8 +3,8 @@
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
   <updated>2012-06-15T17:16:43Z</updated>
-  <link href="http://yannesposito.com/" rel="alternate"/>
-  <link href="http://feeds.feedburner.com/yannespositocomfr" rel="self"/>
+  <link rel="alternate" href="http://yannesposito.com/"/>
+  <link rel="self" href="http://feeds.feedburner.com/yannespositocomfr"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
@@ -18,7 +18,7 @@
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/Haskell-OpenGL-Mandelbrot/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Haskell-OpenGL-Mandelbrot/"/>
     <content type="html">&lt;p&gt;&lt;img alt="The B in Beno&#238;t B. Mandelbrot stand for Beno&#238;t B. Mandelbrot" src="/Scratch/img/blog/Haskell-OpenGL-Mandelbrot/BenoitBMandelbrot.jpg" /&gt;&lt;/p&gt;
 
 
@@ -44,7 +44,7 @@ Vous pouvez vous inspirer de ce code utilisant le paradigme fonctional dans tous
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/Haskell-the-Hard-Way/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Haskell-the-Hard-Way/"/>
     <content type="html">&lt;p&gt;&lt;img alt="Magritte pleasure principle" src="/Scratch/img/blog/Haskell-the-Hard-Way/magritte_pleasure_principle.jpg" /&gt;&lt;/p&gt;
 
 
@@ -77,7 +77,7 @@ Vous pouvez vous inspirer de ce code utilisant le paradigme fonctional dans tous
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/Typography-and-the-Web/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Typography-and-the-Web/"/>
     <content type="html">&lt;p&gt;&lt;img alt="Screenshot of first in small caps with and without ligatures." src="/Scratch/img/blog/Typography-and-the-Web/first_sc_screenshot.png" /&gt;&lt;/p&gt;
 
 
@@ -112,7 +112,7 @@ Nous pouv...&lt;/p&gt;&lt;/blockquote&gt;&lt;/p&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/Yesod-tutorial-for-newbies/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Yesod-tutorial-for-newbies/"/>
     <content type="html">&lt;p&gt;&lt;img alt="Neo Flying at warp speed" src="/Scratch/img/blog/Yesod-tutorial-for-newbies/flying_neo.jpg" /&gt;&lt;/p&gt;
 
 
@@ -143,7 +143,7 @@ mais je n&amp;rsquo;ai pas eu le courage de traduire cet article en Fran&#231;ai
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/SVG-and-m4-fractals/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/SVG-and-m4-fractals/"/>
     <content type="html">&lt;p&gt;&lt;img alt="Yesod logo made in SVG and m4" src="/Scratch/img/blog/SVG-and-m4-fractals/main.png" /&gt;&lt;/p&gt;
 
 
@@ -171,7 +171,7 @@ Non seulement comme format de fichie...&lt;/p&gt;&lt;/p&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/Yesod-excellent-ideas/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Yesod-excellent-ideas/"/>
     <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Yesod-excellent-ideas/main.png" /&gt;&lt;/p&gt;
 
 
@@ -203,7 +203,7 @@ Avant de vous dire pourquoi vous devriez aussi le consid&#233;rer, je pr&#233;f&
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/Higher-order-function-in-zsh/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Higher-order-function-in-zsh/"/>
     <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Higher-order-function-in-zsh/main.jpg" /&gt;&lt;/p&gt;
 
 
@@ -235,7 +235,7 @@ $ folda '$1+...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/programming-language-experience/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/programming-language-experience/"/>
     <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/programming-language-experience/dragon.jpg" /&gt;&lt;/p&gt;
 
 
@@ -266,7 +266,7 @@ C&amp;rsquo;est &#224; peu pr&#234;t le seul int&#233;r&#234;t de c...&lt;/p&gt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/Learn-Vim-Progressively/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Learn-Vim-Progressively/"/>
     <content type="html">&lt;p&gt;&lt;img alt="&#220;ber leet use vim!" src="/Scratch/img/blog/Learn-Vim-Progressively/uber_leet_use_vim.jpg" /&gt;&lt;/p&gt;
 
 
@@ -298,7 +298,7 @@ Sa prise en mais est difficile, mais p...&lt;/p&gt;&lt;/p&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/A-more-convenient-diff/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/A-more-convenient-diff/"/>
     <content type="html">&lt;p&gt;&lt;code&gt;diff&lt;/code&gt; est un utilitaire tr&#232;s pratique, mais il n&amp;rsquo;est pas facile &#224; lire pour nous, les Hommes.&lt;/p&gt;
 
 &lt;p&gt;C&amp;rsquo;est pourquoi, lorsque vous utilisez &lt;code&gt;git&lt;/code&gt;, il vous montre un formatage plus agr&#233;able avec des couleurs.&lt;/p&gt;
@@ -330,7 +330,7 @@ function colorize_diff {
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/Haskell-Mandelbrot/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Haskell-Mandelbrot/"/>
     <content type="html">&lt;p&gt;Voici le code &amp;ldquo;obfusqu&#233;&amp;rdquo;&amp;nbsp;:&lt;/p&gt;
 
 &lt;div class="codefile"&gt;&lt;a href="/Scratch/fr/blog/Haskell-Mandelbrot/code/animandel.hs"&gt;&amp;#x27A5; animandel.hs&lt;/a&gt;&lt;/div&gt;
@@ -353,7 +353,7 @@ main ...&lt;/code&gt;&lt;/pre&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/Password-Management/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/Password-Management/"/>
     <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/Password-Management/main.png" /&gt;&lt;/p&gt;
 
 
@@ -383,7 +383,7 @@ Bon, d&amp;rsquo;accord, m&#234;me si vous ne t&#233;l&#233;chargez pas mon appl
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2011-04-20-Now-hosted-on-github/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2011-04-20-Now-hosted-on-github/"/>
     <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/2011-04-20-Now-hosted-on-github/main.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;J&amp;rsquo;h&#233;berge mon site sur github &#224; partir d&amp;rsquo;aujourd&amp;rsquo;hui.&lt;/p&gt;
@@ -398,7 +398,7 @@ Bon, d&amp;rsquo;accord, m&#234;me si vous ne t&#233;l&#233;chargez pas mon appl
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/"/>
     <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/2011-01-03-Why-I-sadly-won-t-use-coffeescript/main.png" /&gt;&lt;/p&gt;
 
 
@@ -428,7 +428,7 @@ Tout d&amp;rsquo;abord, je viens de d&#233;couvrir un convertisseur javascript v
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2011-01-03-Happy-New-Year/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2011-01-03-Happy-New-Year/"/>
     <content type="html">&lt;p&gt;Bonne et heureuse ann&#233;e&amp;nbsp;!&lt;/p&gt;
 
 &lt;p&gt;J&amp;rsquo;&#233;tais tr&#232;s occup&#233; ces derniers mois.
@@ -453,7 +453,7 @@ Je n&amp;rsquo;en ai pas encore termin&#233; avec &#231;a. Mais si je tarde trop
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-10-26-LaTeX-like-macro-and-markdown/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-10-26-LaTeX-like-macro-and-markdown/"/>
     <content type="html">
 &lt;div class="intro"&gt;
 
@@ -476,7 +476,7 @@ Lorsqu&amp;rsquo;on est habitu&#233; &#224; &lt;span style="text-transform: uppe
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-10-14-Fun-with-wav/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-10-14-Fun-with-wav/"/>
     <content type="html">
 &lt;div class="intro"&gt;
 
@@ -504,7 +504,7 @@ De m&#233;moire il &#233;tait peu ais&#233; de manipuler des ...&lt;/p&gt;</cont
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/"/>
     <content type="html">&lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/2010-10-10-Secure-eMail-on-Mac-in-few-steps/main.png" class="clean " /&gt;&lt;/p&gt;
 
 
@@ -537,7 +537,7 @@ Il y a seulement quelques ann&#233;es c&amp;r...&lt;/p&gt;&lt;/p&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-10-06-New-Blog-Design-Constraints/"/>
     <content type="html">&lt;p&gt;Vous avez pu constater que j&amp;rsquo;ai modifi&#233; le design de mon blog.
 Maintenant il doit &#234;tre beaucoup plus l&#233;ger qu&amp;rsquo;avant.
 Je n&amp;rsquo;utilise plus de CSS3 et beaucoup moins de javascript.
@@ -560,7 +560,7 @@ Les r&#232;gles que je me suis fix&#233;es sont donc:&lt;/p&gt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-09-02-Use-git-to-calculate-trusted-mtimes/"/>
     <content type="html">&lt;p&gt;Vous pouvez remarquer qu&amp;rsquo;&#224; la fin de chaque page je donne une date de derni&#232;re modification.
 Pr&#233;c&#233;demment cette date &#233;tait calcul&#233;e en utilisant la date du fichier.
 Mais il arrive fr&#233;quemment que je fasse un &lt;code&gt;touch&lt;/code&gt; d&amp;rsquo;un fichier pour engendrer tout le site de nouveau.
@@ -581,7 +581,7 @@ Voici comment je m&amp;rsquo;y prend avec &lt;a href="http://nanoc.stoneship.org
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-09-02-base64-and-sha1-on-iPhone/"/>
     <content type="html">&lt;p&gt;Allons directement &#224; l&amp;rsquo;essentiel&amp;nbsp;:
 voici deux fonctions &#224; int&#233;grer &#224; votre application iPhone pour afficher l&amp;rsquo;encodage en base64 ou en hexadecimal du hash sha1 d&amp;rsquo;un string en Objective-C pour iPhone.&lt;/p&gt;
 
@@ -609,7 +609,7 @@ Il n&amp;rsquo;y a pas de librairie officielle qui s&amp;rsquo;occupe de &#231;a
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-08-31-send-mail-from-command-line-with-attached-file/"/>
     <content type="html">&lt;p&gt;J&amp;rsquo;ai d&#251; envoyer un mail en ligne de commande r&#233;cemment. 
 Quelle ne f&#251;t pas ma surprise lorsque je constatais que ce n&amp;rsquo;&#233;tait vraiment pas &#233;vident.
 Je n&amp;rsquo;avais ni &lt;code&gt;pine&lt;/code&gt; ni &lt;code&gt;mutt&lt;/code&gt;. Seulement &lt;code&gt;mail&lt;/code&gt; et &lt;code&gt;mailx&lt;/code&gt;.&lt;/p&gt;
@@ -634,7 +634,7 @@ Avec le format &lt;code&gt;.bz2&lt;/code&gt; le mail re&#231;u avait bien un fic
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-08-23-Now-heberged-on-heroku/"/>
     <content type="html">&lt;h1 class="first" id="maintenant-sur-herokuhttpherokucom"&gt;Maintenant sur &lt;a href="http://heroku.com"&gt;Heroku&lt;/a&gt;&lt;/h1&gt;
 
 &lt;p&gt;J&amp;rsquo;ai chang&#233; mon h&#233;bergeur. Mobileme n&amp;rsquo;est absolument pas adapt&#233; &#224; la diffusion de mon blog. C&amp;rsquo;est pourquoi je suis pass&#233; &#224; &lt;a href="http://heroku.com"&gt;Heroku&lt;/a&gt;.&lt;/p&gt;
@@ -655,7 +655,7 @@ Voici comment configurer un site statique sur heroku.&lt;/p&gt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-07-09-Indecidabilities/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-07-09-Indecidabilities/"/>
     <content type="html">
 </content>
   </entry>
@@ -668,7 +668,7 @@ Voici comment configurer un site statique sur heroku.&lt;/p&gt;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-07-31-New-style-after-holidays/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-07-31-New-style-after-holidays/"/>
     <content type="html">&lt;p&gt;Avant les vacances beaucoup d&amp;rsquo;utilisateurs se sont plaints de la lenteur de rendu de mon site. 
 Il s&amp;rsquo;agit notamment de probl&#232;mes avec Chrome en particulier. 
 Mais pour &#233;viter tout probl&#232;me. 
@@ -687,7 +687,7 @@ Il est inspir&#233; du style de l&amp;rsquo;application iBooks&lt;small&gt;&amp;
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-07-07-CSS-rendering-problems-by-navigator/"/>
     <content type="html">&lt;p&gt;Beaucoup d&amp;rsquo;utilisateurs de &lt;a href="http://reddit.com"&gt;Reddit&lt;/a&gt; m&amp;rsquo;ont rapport&#233; que mon site &#233;tait tr&#232;s long &#224; charger et &#224; &lt;em&gt;scroller&lt;/em&gt;.
 Ils pensaient qu&amp;rsquo;il s&amp;rsquo;agissait d&amp;rsquo;un probl&#232;me d&#251; aux ombres que j&amp;rsquo;applique sur le texte.
 J&amp;rsquo;&#233;tais un peu surpris puisque je fais mes tests sur une machine vraiment tr&#232;s lente et je n&amp;rsquo;avais jamais d&#233;tect&#233; ces probl&#232;mes.
@@ -711,7 +711,7 @@ En r&#233;alit&#233;, ce qui ralenti le rendu de ce site est par ordre d&amp;rsq
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-07-05-Cappuccino-and-Web-applications/"/>
     <content type="html">
 &lt;div class="intro"&gt;
 
@@ -745,7 +745,7 @@ En r&#233;alit&#233;, ce qui ralenti le rendu de ce site est par ordre d&amp;rsq
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/"/>
     <content type="html">&lt;p&gt;Voici une fa&#231;on simple et rapide pour faire des popups avec jQuery.&lt;/p&gt;
 
 &lt;div class="codefile"&gt;&lt;a href="/Scratch/fr/blog/2010-06-19-jQuery-popup-the-easy-way/code/essai.js"&gt;&amp;#x27A5; essai.js&lt;/a&gt;&lt;/div&gt;
@@ -778,7 +778,7 @@ function initCode() {
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-06-17-hide-yourself-to-analytics/"/>
     <content type="html">&lt;p&gt;Voici un moyen tr&#232;s simple de ne plus &#234;tre comptabilis&#233; dans les visites de son propre site.
 Tout d&amp;rsquo;abord, vous devriez jeter un coup d&amp;rsquo;&#339;il sur comment &lt;a href="/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics"&gt;je g&#232;re les syst&#232;mes de r&#233;cup&#233;ration de statistiques&lt;/a&gt;. 
 Je centralise tout dans un seul fichier javascript ce qui facilite le travail.&lt;/p&gt;
@@ -802,7 +802,7 @@ Je centralise tout dans un seul fichier javascript ce qui facilite le travail.&l
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-06-17-track-events-with-google-analytics/"/>
     <content type="html">&lt;p&gt;Voici comment analyser tous les clics que font vos utilisateurs sur votre blog en incluant google analytics de fa&#231;on asynchrone.&lt;/p&gt;
 
 &lt;p&gt;Dans le html, il faut utiliser &lt;a href="http://jquery.com"&gt;jQuery&lt;/a&gt; et un fichier que j&amp;rsquo;ai appel&#233; &lt;code&gt;yga.js&lt;/code&gt;&amp;nbsp;:&lt;/p&gt;
@@ -828,7 +828,7 @@ Je centralise tout dans un seul fichier javascript ce qui facilite le travail.&l
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-06-15-Get-my-blog-engine/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-06-15-Get-my-blog-engine/"/>
     <content type="html">&lt;p&gt;J&amp;rsquo;ai publi&#233; une version &lt;em&gt;light&lt;/em&gt; de mon syst&#232;me de blog hier soir. Par &lt;em&gt;light&lt;/em&gt; il faut comprendre avec un CSS plus &#233;pur&#233; et plus portable (sans les bords ronds).
 Vous pouvez le r&#233;cup&#233;rer sur &lt;a href="http://github.com/yogsototh/nanoc3_blog"&gt;github.com&lt;/a&gt;.&lt;/p&gt;
 
@@ -850,7 +850,7 @@ Vous pouvez le r&#233;cup&#233;rer sur &lt;a href="http://github.com/yogsototh/n
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-06-14-multi-language-choices/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-06-14-multi-language-choices/"/>
     <content type="html">&lt;p&gt;Je traduis la plupart de mes articles pour qu&amp;rsquo;ils soient disponibles en fran&#231;ais et en anglais. 
 La fa&#231;on que l&amp;rsquo;on m&amp;rsquo;a conseill&#233; &#233;tait d&amp;rsquo;avoir un fichier par langue. En g&#233;n&#233;ral &#231;a donne &#231;a.&lt;/p&gt;
 
@@ -884,7 +884,7 @@ Lorsque je m&amp;...&lt;/p&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-05-24-Trees--Pragmatism-and-Formalism/"/>
     <content type="html">
 &lt;div class="intro"&gt;
 
@@ -915,7 +915,7 @@ Lorsque je m&amp;...&lt;/p&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-05-19-How-to-cut-HTML-and-repair-it/"/>
     <content type="html">&lt;p&gt;Sur ma page d&amp;rsquo;accueil vous pouvez voir la liste des mes derniers articles avec le d&#233;but de ceux-ci. Pour arriver &#224; faire &#231;a, j&amp;rsquo;ai besoin de couper le code XHTML de mes pages en plein milieu. Il m&amp;rsquo;a donc fallu trouver un moyen de les r&#233;parer.&lt;/p&gt;
 
 &lt;p&gt;Prenons un exemple&amp;nbsp;:&lt;/p&gt;
@@ -946,7 +946,7 @@ Lorsque je m&amp;...&lt;/p&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-05-17-at-least-this-blog-revive/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-05-17-at-least-this-blog-revive/"/>
     <content type="html">&lt;p&gt;Bonjour &#224; tous&amp;nbsp;!&lt;/p&gt;
 
 &lt;blockquote cite="http://www.madore.org/~david/weblog/2010-05.html#d.2010-05-12.1752"&gt;
@@ -969,7 +969,7 @@ Lorsque je m&amp;...&lt;/p&gt;</content>
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-03-23-Encapsulate-git/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-03-23-Encapsulate-git/"/>
     <content type="html">&lt;p&gt;&lt;span class="intro"&gt;
 Voici une solution pour conserver des branches divergentes avec &lt;code&gt;git&lt;/code&gt;.
 Parce qu&amp;rsquo;il est facile de &lt;em&gt;merger&lt;/em&gt; par erreur, je propose un script qui encapsule le comportement de &lt;code&gt;git&lt;/code&gt; pour interdire certains &lt;em&gt;merges&lt;/em&gt; dangereux. Mais qui permet aussi de faire des merges en cascades de la racines vers les autres branches.
@@ -994,7 +994,7 @@ Parce qu&amp;rsquo;il est facile de &lt;em&gt;merger&lt;/em&gt; par erreur, je p
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-03-22-Git-Tips/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-03-22-Git-Tips/"/>
     <content type="html">&lt;h2 class="first" id="cloner-de-github--travers-un-pare-feu"&gt;Cloner de github &#224; travers un pare-feu&lt;/h2&gt;
 
 &lt;p&gt;La fa&#231;on standard:&lt;/p&gt;
@@ -1034,7 +1034,7 @@ Parce qu&amp;rsquo;il est facile de &lt;em&gt;merger&lt;/em&gt; par erreur, je p
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-02-23-When-regexp-is-not-the-best-solution/"/>
     <content type="html">&lt;p&gt;Les expressions r&#233;guli&#232;res sont tr&#232;s utiles. Cependant, elles ne sont pas toujours la meilleure mani&#232;re d&amp;rsquo;aborder certain probl&#232;me autour des chaines de caract&#232;res.
 Et surtout quand les transformations que vous voulez accomplir sont simples.&lt;/p&gt;
 
@@ -1066,7 +1066,7 @@ ext=File.extname(str)
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-02-18-split-a-file-by-keyword/"/>
     <content type="html">&lt;p&gt;Assez bizarrement, je n&amp;rsquo;ai trouv&#233; aucun outil UNIX pour d&#233;couper un fichier par mot cl&#233;. 
 Alors j&amp;rsquo;en ai fait un en &lt;code&gt;awk&lt;/code&gt;. Je le met ici principalement pour moi, mais &#231;a peut toujours servir &#224; quelqu&amp;rsquo;un d&amp;rsquo;autre.
 Le code suivant d&#233;coupe un fichier pour chacune de ses ligne contenant le mot &lt;code&gt;UTC&lt;/code&gt;.&lt;/p&gt;
@@ -1104,7 +1104,7 @@ Mon Dec  7 10:32:30 UTC 2009
       <name>Yann Esposito</name>
       <uri>yannesposito.com</uri>
     </author>
-    <link href="http://yannesposito.com/Scratch/fr/blog/2010-02-16-All-but-something-regexp--2-/" rel="alternate"/>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/fr/blog/2010-02-16-All-but-something-regexp--2-/"/>
     <content type="html">&lt;p&gt;Dans mon &lt;a href="previouspost"&gt;pr&#233;c&#233;dent article&lt;/a&gt; j&amp;rsquo;ai donn&#233; certaines astuces pour matcher &amp;lsquo;tout sauf quelque chose&amp;rsquo;. De la m&#234;me mani&#232;re, un truc pour matcher la chaine de caract&#232;re la plus petite possible.
 Disons que vous voulez matcher la chaine de caract&#232;re entre &amp;lsquo;a&amp;rsquo; et &amp;lsquo;b&amp;rsquo;. Par exemple, vous voulez matcher&amp;nbsp;:&lt;/p&gt;
 
