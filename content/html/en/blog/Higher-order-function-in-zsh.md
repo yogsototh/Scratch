@@ -39,7 +39,7 @@ $ folda '$1+$2' {1..5}
 $ folda '$1*$2' {1..20}
 2432902008176640000
 
-$ mapl 'X $1:t Y' ~/.zsh/functional/src/*
+$ mapl 'echo X $1:t Y' ~/.zsh/functional/src/*
 X each Y
 X filter Y
 X fold Y
@@ -50,7 +50,7 @@ $ mapa '$1*2' {1..3}
 4
 6
 
-$ mapl 'result $1' $(mapa '$1+5' $(mapa '$1*2' {1..3}))
+$ mapl 'echo result $1' $(mapa '$1+5' $(mapa '$1*2' {1..3}))
 result 7
 result 9
 result 11
