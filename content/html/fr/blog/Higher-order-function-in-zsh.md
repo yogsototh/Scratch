@@ -150,7 +150,7 @@ Je ne sais pas encore comment créer facilement des fonctions anonymes.
 
 Voici le code source (de la première version[^1]) :
 
-[^1]: Comme précisé dans l'introduction, si vous voulez l'installez allez plutôt voir dans ce [repository](https://github.com/Tarrasch/zsh_functional).
+[^1]: Comme précisé dans l'introduction, si vous voulez l'installez allez plutôt voir dans ce [repository](https://github.com/yogsototh/zsh_functional).
 
 <code class="zsh" file="functional.sh">
 #!/usr/bin/env zsh

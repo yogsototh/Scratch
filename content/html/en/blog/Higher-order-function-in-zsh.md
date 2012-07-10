@@ -147,7 +147,7 @@ If someone has an idea on how to create anonymous functions, just tell me, thank
 
 Here is the (first version[^1]) source code:
 
-[^1]: As stated in the intro, if you want to install it, just go [there](https://github.com/Tarrasch/zsh_functional).
+[^1]: As stated in the intro, if you want to install it, just go [there](https://github.com/yogsototh/zsh_functional).
 
 <code class="zsh" file="functional.sh">
 #!/usr/bin/env zsh

@@ -182,8 +182,8 @@ en: If someone has an idea on how to create anonymous functions, just tell me, t
 en: Here is the (first version[^1]) source code:
 fr: Voici le code source (de la première version[^1]) :
 
-en: [^1]: As stated in the intro, if you want to install it, just go [there](https://github.com/Tarrasch/zsh_functional).
-fr: [^1]: Comme précisé dans l'introduction, si vous voulez l'installez allez plutôt voir dans ce [repository](https://github.com/Tarrasch/zsh_functional).
+en: [^1]: As stated in the intro, if you want to install it, just go [there](https://github.com/yogsototh/zsh_functional).
+fr: [^1]: Comme précisé dans l'introduction, si vous voulez l'installez allez plutôt voir dans ce [repository](https://github.com/yogsototh/zsh_functional).
 
 <code class="zsh" file="functional.sh">
 #!/usr/bin/env zsh
