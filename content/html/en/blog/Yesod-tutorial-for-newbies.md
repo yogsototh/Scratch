@@ -576,6 +576,7 @@ module Handler.Blog
 where
 
 import Import
+import Data.Monoid
 
 -- to use Html into forms
 import Yesod.Form.Nic (YesodNic, nicHtmlField)
