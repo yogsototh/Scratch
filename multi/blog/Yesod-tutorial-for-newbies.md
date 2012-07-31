@@ -314,9 +314,9 @@ Thanks to yesod, this tedious job is done for us.
 <code class="zsh">
 "http://localhost:3000/echo/some%20text<a>" :: URL
                     ↓
-              "some text<a>"                :: String
+              "some text<a>"                 :: String
                     ↓
-          "some text &lt;a&gt;"             :: Html 
+          "some text &amp;lt;a&amp;gt;"             :: Html 
 </code>
 
 Yesod is not only fast, it helps us to remain secure.
