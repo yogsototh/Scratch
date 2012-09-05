@@ -2,22 +2,22 @@
 
 -----
 /* Solarized palette */
-$base03 : #002b36 
-$base02 : #073642 
-$base01 : #586e75 
-$base00 : #657b83 
-$base0  : #839496 
-$base1  : #93a1a1 
-$base2  : #eee8d5 
-$base3  : #fdf6e3 
-$yellow : #b58900 
-$orange : #cb4b16 
-$red    : #dc322f 
-$magenta: #d33682 
-$violet : #6c71c4 
-$blue   : #268bd2 
-$cyan   : #2aa198 
-$green  : #859900 
+$base03 : #002b36
+$base02 : #073642
+$base01 : #586e75
+$base00 : #657b83
+$base0  : #839496
+$base1  : #93a1a1
+$base2  : #eee8d5
+$base3  : #fdf6e3
+$yellow : #b58900
+$orange : #cb4b16
+$red    : #dc322f
+$magenta: #d33682
+$violet : #6c71c4
+$blue   : #268bd2
+$cyan   : #2aa198
+$green  : #859900
 /* I won't use completely */
 
 $behindColor: $base03
@@ -115,7 +115,7 @@ b, strong, h1, h2, h3, h4, h5, h6
   i, em
     +normal
     color: $behindColor
-  strong, b 
+  strong, b
     +bold
     color: $behindColor
 
@@ -173,9 +173,9 @@ pre, code, a.cut
   font-family: "cmuntt",Incosolata, Monaco, monospace
 
 pre
-  &::selection 
+  &::selection
     +darkselected
-  *::selection 
+  *::selection
     +darkselected
 pre
   &::-moz-selection
@@ -206,7 +206,8 @@ hr
 
 ul
   list-style: none
-ul li:before
+
+.corps ul li:before
   content: "- "
 
 ol,ul
@@ -237,11 +238,11 @@ body
   h3
     counter-increment: niv03
     counter-reset: niv04
-    &:before 
+    &:before
       content: counter(niv02) "." counter(niv03) ". "
   h4
     counter-increment: niv04
-    &:before 
+    &:before
       content: counter(niv02) "." counter(niv03) "." counter(niv04) ". "
 
 pre
@@ -655,7 +656,7 @@ img.clean
   text-align: right
   padding-right: 1em
   margin-right: 0.1
-  margin-bottom: -1em 
+  margin-bottom: -1em
 
 .flush
   clear: both
@@ -686,7 +687,7 @@ img
 img.left
   float: left
   max-width: 30%
-  margin: 
+  margin:
     top: .6em
     right: 2em
 
@@ -907,7 +908,7 @@ a:hover .nicer
 .right
   float: right
 
-.corps 
+.corps
   p a, ul a
     color: $textLinkColor
   p a:hover, ul a:hover
@@ -941,8 +942,8 @@ ul.bloglist, .archive ul
   line-height: 0
   font-size: .66em
   color: $highlightColor
-.article .corps 
-  .footnotes, sup 
+.article .corps
+  .footnotes, sup
     a:after
       content: ""
 .article .corps sup a
@@ -1007,12 +1008,12 @@ a.cut
   display: block
   width: 100%
   opacity: .5
-  border: 1px solid $mainBackgroundColor 
+  border: 1px solid $mainBackgroundColor
   border-radius: 3px
   &:hover
     opacity: 1
     background-color: $secondBackgroundColor
-    border-color: $borderColor 
+    border-color: $borderColor
     box-shadow: 0 0 3px $borderColor inset
   strong
     +bold
