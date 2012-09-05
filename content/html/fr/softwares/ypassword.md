@@ -11,7 +11,7 @@ Souvenez vous d'_un_ seul mot de passe de bonne qualité, le reste suis.
 Ici vous trouverez :
 
 
- - Un [widget](/Scratch/files/YPassword-1.6.zip) ;
+ - Un [widget](/Scratch/files/YPassword-1.7.zip) ;
  - un [Applescript](/Scratch/files/forcePaste.app.zip) pour simuler la copie dans les champs textes protégés ;
  - une [application web](/Scratch/fr/softwares/ypassword/web/) écrite avec [Cappuccino](http://cappuccino.org),
  - une [application web](/Scratch/fr/softwares/ypassword/iphoneweb/) pour iPhone ;

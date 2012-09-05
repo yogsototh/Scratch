@@ -117,7 +117,7 @@ Selon ma situation, voici les outils que j'ai fait et que j'utilise :
 
 
 - Sur mon Mac : 
-  - J'utilise le widget [YPassword](http://yannesposito.com/Scratch/files/YPassword-1.6.zip)
+  - J'utilise le widget [YPassword](http://yannesposito.com/Scratch/files/YPassword-1.7.zip)
   - Parfois, certains champs de mots passe interdisent la copie.  Dans ce cas, j'utilise un petit utilitaire en AppleScript : [ForcePaste](http://yannesposito.com/Scratch/files/forcePaste.app.zip). 
 - Sous mon Linux : J'utilise le script [ypassword](http://github.com/yogsototh/getpass)
 - Sur mon iPhone : J'utilise l'application [YPassword](http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=436268354&mt=8)

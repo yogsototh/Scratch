@@ -182,7 +182,7 @@ en: Depending on my situation here are the tools I made _&_ use:
 fr: Selon ma situation, voici les outils que j'ai fait et que j'utilise :
 
 en: - On my Mac: 
-en:   - I use the dashboard widget [YPassword](http://yannesposito.com/Scratch/files/YPassword-1.6.zip)
+en:   - I use the dashboard widget [YPassword](http://yannesposito.com/Scratch/files/YPassword-1.7.zip)
 en:   - Sometimes, some password field are forbidden to paste into. For time like this, I use this AppleScript made tool: [ForcePaste](http://yannesposito.com/Scratch/files/forcePaste.app.zip). 
 en: - On my Linux Box: I use the script [ypassword](http://github.com/yogsototh/getpass)
 en: - On my iPhone: I use the [YPassword app](http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=436268354&mt=8)
@@ -191,7 +191,7 @@ en:   - [Cappuccino Made YPassword](http://yannesposito.com/Scratch/en/softwares
 en:   - [jQuery Made YPassword](http://yannesposito.com/Scratch/en/softwares/ypassword/iphoneweb/) Web application
 
 fr: - Sur mon Mac : 
-fr:   - J'utilise le widget [YPassword](http://yannesposito.com/Scratch/files/YPassword-1.6.zip)
+fr:   - J'utilise le widget [YPassword](http://yannesposito.com/Scratch/files/YPassword-1.7.zip)
 fr:   - Parfois, certains champs de mots passe interdisent la copie.  Dans ce cas, j'utilise un petit utilitaire en AppleScript : [ForcePaste](http://yannesposito.com/Scratch/files/forcePaste.app.zip). 
 fr: - Sous mon Linux : J'utilise le script [ypassword](http://github.com/yogsototh/getpass)
 fr: - Sur mon iPhone : J'utilise l'application [YPassword](http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=436268354&mt=8)

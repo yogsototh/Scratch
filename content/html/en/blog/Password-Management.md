@@ -124,7 +124,7 @@ This is why, for each website I need some other parameters:
 Depending on my situation here are the tools I made _&_ use:
 
 - On my Mac: 
-  - I use the dashboard widget [YPassword](http://yannesposito.com/Scratch/files/YPassword-1.6.zip)
+  - I use the dashboard widget [YPassword](http://yannesposito.com/Scratch/files/YPassword-1.7.zip)
   - Sometimes, some password field are forbidden to paste into. For time like this, I use this AppleScript made tool: [ForcePaste](http://yannesposito.com/Scratch/files/forcePaste.app.zip). 
 - On my Linux Box: I use the script [ypassword](http://github.com/yogsototh/getpass)
 - On my iPhone: I use the [YPassword app](http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=436268354&mt=8)
