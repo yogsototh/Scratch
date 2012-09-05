@@ -205,7 +205,9 @@ hr
     right: none
 
 ul
-  list-style: square
+  list-style: none
+ul li:before
+  content: "- "
 
 ol,ul
   padding-left: 0
@@ -213,7 +215,7 @@ ol li, ul li
   margin: .5em 0
 ol li ul, ol li ol, ul li ol, ul li ul
   margin: .5em 1.5em
-  list-style: circle
+  list-style: none
 
 
 body, h1, h2, h3, h4, #entete, .tagname
