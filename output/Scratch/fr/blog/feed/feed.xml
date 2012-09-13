@@ -211,8 +211,7 @@ Avant de vous dire pourquoi vous devriez aussi le considérer, je préfère vous
 
 
 &lt;p&gt;UPDATE: &lt;a href="http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/"&gt;Nicholas Sterling a découvert un moyen de faire des fonctions anonymes&lt;/a&gt; 
-et &lt;a href="https://github.com/Tarrasch/zsh_functional"&gt;Arash Rouhani a créé un repository sur github qui simplifie l’installation&lt;/a&gt;.
-Merci à vous deux!&lt;/p&gt;
+Merci!&lt;/p&gt;
 
 &lt;p&gt;Avec cette dernière version vous pouvez utiliser &lt;code&gt;map&lt;/code&gt; si vous utilisez
 des fonctions déclarées. &lt;code&gt;mapl&lt;/code&gt; pour les fonctions anonymes 
@@ -226,7 +225,17 @@ ada
 
 $ folda '$1+$2' {1..5}
 15
-...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</content>
+
+$ folda '$1*$2' {1..20}
+2432902008176640000
+
+$ mapl 'echo X $1:t Y' ~/.zsh/functional/src/*
+X each Y
+X filter Y
+X fold Y
+X map Y
+
+$ mapa '$1*2' {1....&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-09-28:/Scratch/fr/blog/programming-language-experience/</id>
@@ -252,14 +261,14 @@ $ folda '$1+$2' {1..5}
 
 &lt;p&gt;&lt;img alt="Title image" src="/Scratch/img/blog/programming-language-experience/basic.gif" class=" left" /&gt;&lt;/p&gt;
 
-&lt;p&gt;Ah&amp;nbsp;! Le language de mes premiers programmes&amp;nbsp;! 
-Je devais avoir 10-11 ans. 
+&lt;p&gt;Ah&amp;nbsp;! Le language de mes premiers programmes&amp;nbsp;!
+Je devais avoir 10-11 ans.
 Sous &lt;code&gt;MO5&lt;/code&gt;, &lt;code&gt;Amstrad CPC 6128&lt;/code&gt; et même &lt;code&gt;Atari STe&lt;/code&gt;.
-Le langage des &lt;code&gt;GOTO&lt;/code&gt;s. 
-Je suis empleint de nostalgie rien que d’y penser. 
+Le langage des &lt;code&gt;GOTO&lt;/code&gt;s.
+Je suis empleint de nostalgie rien que d’y penser.
 C’est à peu prêt le seul intérêt de ce langage.&lt;/p&gt;
 
-&lt;p&gt;Aujourd’...&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</content>
+&lt;p&gt;Aujourd’hui ...&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-08-25:/Scratch/fr/blog/Learn-Vim-Progressively/</id>

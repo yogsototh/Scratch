@@ -216,8 +216,7 @@ Before telling you why you should learn Haskell and use yesod, I will talk about
 
 
 &lt;p&gt;UPDATE: &lt;a href="http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/"&gt;Nicholas Sterling had discovered a way to implement anonymous functions&lt;/a&gt;
-and &lt;a href="https://github.com/Tarrasch/zsh_functional"&gt;Arash Rouhani has made a github repo which make install easier and added some tests&lt;/a&gt;.
-Thanks to both of you!&lt;/p&gt;
+Thanks!&lt;/p&gt;
 
 &lt;p&gt;With this last version you should use &lt;code&gt;map&lt;/code&gt; if you use external function.
 &lt;code&gt;mapl&lt;/code&gt; to use lambda function. And &lt;code&gt;mapa&lt;/code&gt; for arithmetic operations.&lt;/p&gt;
@@ -232,7 +231,20 @@ $ folda '$1+$2' {1..5}
 15
 
 $ folda '$1*$2' {1..20}
-...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</content>
+2432902008176640000
+
+$ mapl 'echo X $1:t Y' ~/.zsh/functional/src/*
+X each Y
+X filter Y
+X fold Y
+X map Y
+
+$ mapa '$1*2' {1..3}
+2
+4
+6
+
+$ mapl 'echo result $1' $(m...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2011-09-28:/Scratch/en/blog/programming-language-experience/</id>

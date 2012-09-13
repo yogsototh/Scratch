@@ -20,8 +20,7 @@ blogimage("main.jpg","Title image")
 begindiv(intro)
 
 UPDATE: [Nicholas Sterling had discovered a way to implement anonymous functions](http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/)
-and [Arash Rouhani has made a github repo which make install easier and added some tests](https://github.com/Tarrasch/zsh_functional).
-Thanks to both of you!
+Thanks!
 
 With this last version you should use `map` if you use external function.
 `mapl` to use lambda function. And `mapa` for arithmetic operations.

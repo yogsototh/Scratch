@@ -20,8 +20,7 @@ blogimage("main.jpg","Title image")
 begindiv(intro)
 
 UPDATE: [Nicholas Sterling a découvert un moyen de faire des fonctions anonymes](http://nicholassterling.wordpress.com/2012/03/30/a-zsh-map-function/) 
-et [Arash Rouhani a créé un repository sur github qui simplifie l'installation](https://github.com/Tarrasch/zsh_functional).
-Merci à vous deux!
+Merci!
 
 Avec cette dernière version vous pouvez utiliser `map` si vous utilisez
 des fonctions déclarées. `mapl` pour les fonctions anonymes 
