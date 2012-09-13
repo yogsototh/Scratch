@@ -1,4 +1,0 @@
----
-layout: latest
-isHidden: true
----
