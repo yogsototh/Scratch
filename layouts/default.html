@@ -18,6 +18,7 @@
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
         <title><%= @item[:title] %></title>
+        <%= content_for(@item, :css).nil? ? "" : "<style>"+content_for(@item,:css)+"</style>" %>
     </head>
     <body lang="<%= language %>">
         <script type="text/javascript">// <![CDATA[
@@ -28,7 +29,7 @@
         <div id="content">
             <% unless @item[:no_entete] %>
             <div id="entete">
-                <div id="choix"> 
+                <div id="choix">
                     <div id="choixrss"><%= choixrss %></div>
                     <div id="choixlang"><%= choixlang %></div>
                     <div class="flush"></div>
@@ -36,7 +37,7 @@
                 <div id="liens"><%= generateMenu %></div>
             </div>
             <% end %>
-            <img src="<%=@config[:webprefix]%>/img/presentation.png" alt="Presentation drawing"/>
+            <img src="<%=@config[:webprefix]%>/img/presentation.png" alt="Presentation drawing" id="mainlogo"/>
             <div id="titre">
                 <h1>
                     <%= content_for(@item, :title).nil? ? @item[:title] : content_for(@item,:title) %>
@@ -63,9 +64,6 @@
             <div id="afterheader">
                 <div class="corps">
                     <%= yield %>
-                    <% unless @item[:no_entete] %>
-                    <div class="return"><a href="#entete" onclick="fastShowMenu()">&uarr;</a></div>
-                    <% end %>
                 </div>
                 <div id="bottom">
                     <div>

@@ -8,8 +8,8 @@
         <link rel="shortcut icon" type="image/x-icon" href="/Scratch/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/Scratch/assets/css/main.css" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomen"/>
-        <link rel="alternate" lang="fr" xml:lang="fr" title="Bienvenue" type="text/html" hreflang="fr" href="/Scratch/fr/" />
-<link rel="alternate" lang="en" xml:lang="en" title="Home" type="text/html" hreflang="en" href="/Scratch/en/" />
+        <link rel="alternate" lang="fr" xml:lang="fr" title="Home" type="text/html" hreflang="fr" href="/" />
+<link rel="alternate" lang="en" xml:lang="en" title="Home" type="text/html" hreflang="en" href="/" />
         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
         <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/Scratch/js/index.js"></script>
@@ -17,6 +17,10 @@
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
         <title>Home</title>
+        <style>
+#mainlogo { display: none; }
+#bottom { margin: 0; padding: 0; }
+</style>
     </head>
     <body lang="en">
         <script type="text/javascript">// <![CDATA[
@@ -26,50 +30,96 @@
 
         <div id="content">
             
-            <div id="titre" style="margin-top: 2em">
-                <h1><span style="color: #93a1a1; font-family: cmunrm, Georgia, serif; font-weight: normal; text-shadow: 0 0 2px #DDD;"">yann<span style="color:#002b36; text-shadow: 0 0 2px #CCC;">esposito</span>.com</span></h1>
-                 
-                <div class="english left" style="text-align: left; width: 30%;">
-                        <div style="color: #AAA">English</div>
-                        <h3><a href="/Scratch/en/blog/" onclick="setLanguage('en')"> Blog <span class="nicer">»</span></a>&nbsp;&nbsp; <small><em><a style="color: #888" href="/Scratch/en/latest">Latest <span class="nicer">»</span></a></em></small></h3> 
-                        <h3> <a href="/Scratch/en/softwares" onclick="setLanguage('en')"> Softwares <span class="nicer">»</span> </a> </h3>
-                        <h3> <a href="/Scratch/en/about/contact" onclick="setLanguage('en')">Contact <span class="nicer">»</span> </a> </h3>
-                        <h3> <a href="http://resume.espozito.com"> Resume <span class="nicer">»</span> </a> </h3>
-                </div>
-                <div class="francais right"style="text-align: right; width: 30%;">
-                    <div style="color: #AAA">Français</div>
-                    <h3> <a href="/Scratch/fr/blog/" onclick="setLanguage('fr')"> Blog <span class="nicer">»</span></a>&nbsp;&nbsp; <small><em><a style="color: #888" href="/Scratch/fr/latest">Dernier article <span class="nicer">»</span></a></em></small></h3>
-                    <h3> <a href="/Scratch/fr/softwares" onclick="setLanguage('fr')"> Logiciels <span class="nicer">»</span> </a> </h3>
-                    <h3> <a href="/Scratch/fr/about/contact" onclick="setLanguage('fr')"> Contact <span class="nicer">»</span> </a> </h3>
-                    <h3> <a href="http://j.mp/btfRJ2"> Curriculum Vitæ <span class="nicer">»</span> </a> </h3>
-                    <h3> <a href="http://yann.esposito.free.fr/enseignement/enseignement.php"> Enseignement <span class="nicer">»</span> </a> </h3>
-                </div>
-                <img src="/Scratch/img/presentation.png" alt="Presentation drawing" />
-                <div class="flush"></div>
-                <h2 style="font-size: 15px;"> 
-                    <a href="http://twitter.com/yogsototh">@yogsototh</a> 
-                    ,<a href="https://plus.google.com/117858550730178181663">+yogsototh</a> 
-                </h2>
+            <img src="/Scratch/img/presentation.png" alt="Presentation drawing" id="mainlogo"/>
+            <div id="titre">
+                <h1>
+                    
+    <span style="color: #93a1a1; font-family: cmunrm, Georgia, serif; font-weight: normal; text-shadow: 0 0 2px #DDD;"">yann<span style="color:#002b36; text-shadow: 0 0 2px #CCC;">esposito</span>.com</span>
+<div id="content">
+
+                </h1>
+                
             </div>
 
             <div class="flush"></div>
 
+            
+
+            
+
+            <div class="flush"></div>
+
             <div id="afterheader">
-            <div id="bottom">
-                <div>
-                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                <div class="corps">
+                    
+
+
+    <div class="english left" style="font-size: 0.8em; text-align: left; width: 30%;">
+        <div style="color: #AAA">
+            English
+        </div>
+        <h3>
+            <a href="/Scratch/en/blog/" onclick="setLanguage('en')">
+                Blog <span class="nicer">»</span>
+            </a>
+            &nbsp;&nbsp;
+            <small>
+                <em>
+                    <a style="color: #888" href="/Scratch/en/blog/Haskell-OpenGL-Mandelbrot/">
+                        Latest <span class="nicer">»</span>
+                    </a>
+                </em>
+            </small>
+        </h3>
+        <h3><a href="/Scratch/en/softwares" onclick="setLanguage('en')"> Softwares <span class="nicer">»</span> </a></h3>
+        <h3><a href="/Scratch/en/about/contact" onclick="setLanguage('en')">Contact <span class="nicer">»</span> </a></h3>
+        <h3> <a href="http://resume.espozito.com"> Resume <span class="nicer">»</span> </a> </h3>
+    </div>
+    <div class="francais right"style="text-align: right; width: 30%; font-size: 0.8em">
+        <div style="color: #AAA">Français</div>
+        <h3>
+            <a href="/Scratch/fr/blog/" onclick="setLanguage('fr')">
+                Blog <span class="nicer">»</span>
+            </a>
+            &nbsp;&nbsp;
+            <small>
+                <em>
+                    <a style="color: #888" href="/Scratch/fr/blog/Haskell-OpenGL-Mandelbrot/">
+                        Dernier article <span class="nicer">»</span>
+                    </a>
+                </em>
+            </small>
+        </h3>
+        <h3> <a href="/Scratch/fr/softwares" onclick="setLanguage('fr')"> Logiciels <span class="nicer">»</span> </a> </h3>
+        <h3> <a href="/Scratch/fr/about/contact" onclick="setLanguage('fr')"> Contact <span class="nicer">»</span> </a> </h3>
+        <h3> <a href="http://j.mp/btfRJ2"> Curriculum Vitæ <span class="nicer">»</span> </a> </h3>
+        <h3> <a href="http://yann.esposito.free.fr/enseignement/enseignement.php"> Enseignement <span class="nicer">»</span> </a> </h3>
+    </div>
+    <img class="clean" src="/Scratch/img/presentation.png" alt="Presentation drawing" />
+    <div class="flush"></div>
+    <center>
+        <h2 style="font-size: 15px;">
+            <a href="http://twitter.com/yogsototh">@yogsototh</a>
+            , <a href="https://plus.google.com/117858550730178181663">+yogsototh</a>
+        </h2>
+    </center>
+</div>
                 </div>
-                <div id="lastmod">
-                    Modified: 01/11/2012 
-                </div>
-                <div>
-                    Entirely done with
-                    <a href="http://www.vim.org">Vim</a>
-                    and 
-                    <a href="http://nanoc.stoneship.org">nanoc</a>
+                <div id="bottom">
+                    <div>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Copyright ©, Yann Esposito</a>
+                    </div>
+                    <div id="lastmod">
+                        Modified: 09/13/2012 
+                    </div>
+                    <div>
+                        Entirely done with
+                        <a href="http://www.vim.org">Vim</a>
+                        and 
+                        <a href="http://nanoc.stoneship.org">nanoc</a>
+                    </div>
                 </div>
             </div>
-            <div class="clear"></div>
         </div>
     </body>
 </html>
