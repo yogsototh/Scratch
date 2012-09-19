@@ -13,13 +13,13 @@ fr: Souvenez vous d'_un_ seul mot de passe de bonne qualité, le reste suis.
 en: Here you can find:
 fr: Ici vous trouverez :
 
-en:  - A [Dashboard Widget](/Scratch/files/YPassword-1.7.zip),
+en:  - A [Dashboard Widget](/Scratch/files/YPassword-1.8.zip),
 en:  - An [Applescript](/Scratch/files/forcePaste.app.zip) to simulate copy/paste in protected fields,
 en:  - An alpha [Web Application](/Scratch/en/softwares/ypassword/web/) made with [Cappuccino](http://cappuccino.org),
 en:  - An alpha [Web Application](/Scratch/en/softwares/ypassword/iphoneweb/) for iPhone,
 en:  - A [command line tool](http://github.com/yogsototh/YPasswordCLI).
 
-fr:  - Un [widget](/Scratch/files/YPassword-1.7.zip) ;
+fr:  - Un [widget](/Scratch/files/YPassword-1.8.zip) ;
 fr:  - un [Applescript](/Scratch/files/forcePaste.app.zip) pour simuler la copie dans les champs textes protégés ;
 fr:  - une [application web](/Scratch/fr/softwares/ypassword/web/) écrite avec [Cappuccino](http://cappuccino.org),
 fr:  - une [application web](/Scratch/fr/softwares/ypassword/iphoneweb/) pour iPhone ;
