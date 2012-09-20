@@ -31,7 +31,7 @@ Movies I like:
 
 [My online bookmarks on pinboard](http://pinboard.in/u:yogsototh)
 
-newcorps
+[My resume](/resume)
 
 ## Shortly
 

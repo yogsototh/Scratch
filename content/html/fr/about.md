@@ -31,7 +31,7 @@ Films que j'aime :
 
 [Mes bookmarks sur pinboard](http://pinboard.in/u:yogsototh)
 
-newcorps
+[Mon cv (en anglais)](/resume)
 
 ## En deux mots
 
