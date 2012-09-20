@@ -4,7 +4,7 @@ menupriority: 1
 -----
 # How to contact me
 
-<img src="/Scratch/img/about/avatar.png" alt="Avatar" class="left"/>
+<img src="/Scratch/img/about/avatar.png" alt="Avatar" class="clean left"/>
 
 %mailperso
   Follow me on [twitter](http://twitter.com/yogsototh)  

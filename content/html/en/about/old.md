@@ -1,7 +1,12 @@
 ----- 
-title: Other website
+title: Other websites
 menupriority: 5
 -----
+<%= block( %{YPassword}, 
+    %{http://ypassword.espozito.com}, 
+    %{Official YPassword website} 
+) %>
+
 <%= block( %{Research}, 
     %{http://yann.esposito.free.fr/recherche.php?css=blue&amp;lang=en}, 
     %{My research activities.} 
