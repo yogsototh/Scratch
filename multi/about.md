@@ -45,7 +45,8 @@ fr: Films que j'aime :
 en: [My online bookmarks on pinboard](http://pinboard.in/u:yogsototh)
 fr: [Mes bookmarks sur pinboard](http://pinboard.in/u:yogsototh)
 
-newcorps
+en: [My resume](/resume)
+fr: [Mon cv (en anglais)](/resume)
 
 en: ## Shortly
 fr: ## En deux mots
