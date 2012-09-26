@@ -1,8 +1,17 @@
 ----- 
 fr: title: Autres sites
-en: title: Other website
+en: title: Other websites
 menupriority: 5
 -----
+fr: <%= block( %{YPassword}, 
+fr:     %{http://ypassword.espozito.com}, 
+fr:     %{Le site officiel de YPassword} 
+fr: ) %>
+en: <%= block( %{YPassword}, 
+en:     %{http://ypassword.espozito.com}, 
+en:     %{Official YPassword website} 
+en: ) %>
+
 fr: <%= block( %{Recherche}, 
 fr:     %{http://yann.esposito.free.fr/recherche.php?css=blue&amp;lang=fr}, 
 fr:     %{Mes activités de recherches.} 

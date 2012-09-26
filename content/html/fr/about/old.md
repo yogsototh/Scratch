@@ -2,6 +2,11 @@
 title: Autres sites
 menupriority: 5
 -----
+<%= block( %{YPassword}, 
+    %{http://ypassword.espozito.com}, 
+    %{Le site officiel de YPassword} 
+) %>
+
 <%= block( %{Recherche}, 
     %{http://yann.esposito.free.fr/recherche.php?css=blue&amp;lang=fr}, 
     %{Mes activités de recherches.} 
