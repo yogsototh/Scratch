@@ -23,6 +23,9 @@ en: %tldr A very short and dense tutorial for learning Haskell.
 
 fr: %tlal Un tutoriel très court mais très dense pour apprendre Haskell.
 
+en: [A Russian version](http://habrahabr.ru/post/152889/) ; thanks to [Oleg Taykalo](https://plus.google.com/u/0/113751420744109290534)!
+fr: [Une version Russe](http://habrahabr.ru/post/152889/) ; merci à [Oleg Taykalo](https://plus.google.com/u/0/113751420744109290534)!
+
 > <center><hr style="width:30%;float:left;border-color:#CCCCD0;margin-top:1em"/><span class="sc"><b>Table of Content</b></span><hr style="width:30%;float:right;border-color:#CCCCD0;margin-top:1em"/></center>
 >
 > begindiv(toc)
