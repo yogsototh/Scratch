@@ -20,8 +20,10 @@ begindiv(intro)
 
 %tlal Un tutoriel très court mais très dense pour apprendre Haskell.
 
+Merci à [Oleg Taykalo](https://plus.google.com/u/0/113751420744109290534) vous pouvez trouver une traduction Russe ici: [Partie 1](http://habrahabr.ru/post/152889/) _&_ [Partie 2](http://habrahabr.ru/post/153383/) ; 
+
 > <center><hr style="width:30%;float:left;border-color:#CCCCD0;margin-top:1em"/><span class="sc"><b>Table of Content</b></span><hr style="width:30%;float:right;border-color:#CCCCD0;margin-top:1em"/></center>
-> 
+>
 > begindiv(toc)
 >
 > * <a href="#introduction">Introduction</a>
@@ -200,14 +202,14 @@ main = do
 First, let us compare with a similar program in some imperative languages:
 
 <code class="python">
- # Python
+# Python
 print "What is your name?"
 name = raw_input()
 print "Hello %s!" % name
 </code>
 
 <code class="ruby">
- # Ruby
+# Ruby
 puts "What is your name?"
 name = gets.chomp
 puts "Hello #{name}!"
@@ -215,7 +217,7 @@ puts "Hello #{name}!"
 
 <code class="c">
 // In C
- #include <stdio.h>
+#include <stdio.h>
 int main (int argc, char **argv) {
     char name[666]; // <- An Evil Number!
     // What if my name is more than 665 character long?
@@ -540,9 +542,9 @@ from a type to another for you, you should really watch this great (and funny) v
 
 blogimage("kandinsky_gugg.jpg","Kandinsky Gugg")
 
-I suggest you to skim this part. 
+I suggest you to skim this part.
 Think of it like a reference.
-Haskell has a lot of features. 
+Haskell has a lot of features.
 Many informations are missing here.
 Get back here if notation feels strange.
 
@@ -577,7 +579,7 @@ x**y    for y any kind of number (Float for example)
 `Integer` have no limit except the capacity of your machine:
 
 ~~~
-4^103   
+4^103
 102844034832575377634685573909834406561420991602098741459288064
 ~~~
 
@@ -628,7 +630,7 @@ In Haskell strings are list of `Char`.
 
 <h5 id="tuples">Tuples</h5>
 
-The type of couple is `(a,b)`. 
+The type of couple is `(a,b)`.
 Elements in a tuple can have different type.
 
 ~~~
@@ -653,7 +655,7 @@ To remove some parentheses you can use two functions: `($)` and `(.)`.
 f g h x         ⇔  (((f g) h) x)
 
 -- the $ replace parenthesis from the $
--- to the end of the expression 
+-- to the end of the expression
 f g $ h x       ⇔  f g (h x) ⇔ (f g) (h x)
 f $ g h x       ⇔  f (g h x) ⇔ f ((g h) x)
 f $ g $ h x     ⇔  f (g (h x))
@@ -770,12 +772,12 @@ blogimage("hr_giger_biomechanicallandscape_500.jpg","Biomechanical Landscape by 
 In this section, I will give a short example of the impressive refactoring ability provided by Haskell.
 We will select a problem and solve it using a standard imperative way.
 Then I will make the code evolve.
-The end result will be both more elegant and easier to adapt. 
+The end result will be both more elegant and easier to adapt.
 
 Let's solve the following problem:
 
  > Given a list of integers, return the sum of the even numbers in the list.
- > 
+ >
  > example:
  > `[1,2,3,4,5] ⇒  2 + 4 ⇒  6`
 
@@ -797,7 +799,7 @@ function evenSum(list) {
 But, in Haskell we don't have variables, nor for loop.
 One solution to achieve the same result without loops is to use recursion.
 
- > _Remark_:  
+ > _Remark_:
  > Recursion is generally perceived as slow in imperative languages.
  > But it is generally not the case in functional programming.
  > Most of the time Haskell will handle recursive functions efficiently.
@@ -1102,9 +1104,9 @@ Let's proceed by small steps.
 <code class="haskell">
 -- Version 5
 evenSum l = mysum 0 (filter even l)
-    where 
+    where
       mysum n [] = n
-      mysum n (x:xs) = mysum (n+x) xs 
+      mysum n (x:xs) = mysum (n+x) xs
 </code>
 
 where
@@ -1322,7 +1324,7 @@ main = print $ evenSum [1..10]
 blogimage("salvador-dali-the-madonna-of-port-lligat.jpg","Dali, the madonna of port Lligat")
 
  > %tldr
- > 
+ >
  > - `type Name = AnotherType` is just an alias and the compiler doesn't do any difference between `Name` and `AnotherType`.
  > - `data Name = NameConstructor AnotherType` make a difference.
  > - `data` can construct structures which can be recursives.
@@ -1341,7 +1343,7 @@ Static typing is generally essential to reach fast execution time.
 But most statically typed languages are bad at generalizing concepts.
 Haskell's saving grace is that it can _infer_ types.
 
-Here is a simple example. 
+Here is a simple example.
 The `square` function in Haskell:
 
 <code class="haskell">
@@ -1376,7 +1378,7 @@ int     int_square(int x) { return x*x; }
 float   float_square(float x) {return x*x; }
 
 complex complex_square (complex z) {
-    complex tmp; 
+    complex tmp;
     tmp.real = z.real * z.real - z.img * z.img;
     tmp.img = 2 * z.img * z.real;
 }
@@ -1408,28 +1410,28 @@ int main() {
     // double
     cout << (double)square(5.3) << endl;
     // complex
-    cout << square( complex<double>(5,3) ) 
+    cout << square( complex<double>(5,3) )
          << endl;
     return 0;
 }
 </code>
 
-C++ does a far better job than C. 
+C++ does a far better job than C.
 For more complex function the syntax can be hard to follow:
-look at 
-[this article](http://bartoszmilewski.com/2009/10/21/what-does-haskell-have-to-do-with-c/) 
+look at
+[this article](http://bartoszmilewski.com/2009/10/21/what-does-haskell-have-to-do-with-c/)
 for example.
 
 In C++ you must declare that a function can work with different types.
-In Haskell this is the opposite. 
+In Haskell this is the opposite.
 The function will be as general as possible by default.
 
 Type inference gives Haskell the feeling of freedom that dynamically
-typed languages provide. 
+typed languages provide.
 But unlike dynamically typed languages, most errors are caught before the execution.
 Generally, in Haskell:
 
- > "if it compiles it certainly does what you intended" 
+ > "if it compiles it certainly does what you intended"
 
 <hr/><a href="code/02_Hard_Part/21_Types.lhs" class="cut">02_Hard_Part/<strong>21_Types.lhs</strong></a>
 
@@ -1603,8 +1605,8 @@ We'll just give another standard example: binary trees.
 <code class="haskell">
 import Data.List
 
-data BinTree a = Empty 
-                 | Node a (BinTree a) (BinTree a) 
+data BinTree a = Empty
+                 | Node a (BinTree a) (BinTree a)
                               deriving (Show)
 </code>
 </div>
@@ -1619,7 +1621,7 @@ treeFromList (x:xs) = Node x (treeFromList (filter (<x) xs))
 </code>
 </div>
 Look at how elegant this function is.
-In plain English: 
+In plain English:
 
 - an empty list will be converted to an empty tree.
 - a list `(x:xs)` will be converted to a tree where:
@@ -1655,14 +1657,14 @@ We will be able to test equality and compare trees.
 
 <div class="codehighlight">
 <code class="haskell">
-data BinTree a = Empty 
-                 | Node a (BinTree a) (BinTree a) 
+data BinTree a = Empty
+                 | Node a (BinTree a) (BinTree a)
                   deriving (Eq,Ord)
 </code>
 </div>
 Without the `deriving (Show)`, Haskell doesn't create a `show` method for us.
 We will create our own version of `show`.
-To achieve this, we must declare that our newly created type `BinTree a` 
+To achieve this, we must declare that our newly created type `BinTree a`
 is an instance of the type class `Show`.
 The general syntax is:
 
@@ -1683,32 +1685,32 @@ instance (Show a) => Show (BinTree a) where
   -- and put a : a begining of line
   show t = "< " ++ replace '\n' "\n: " (treeshow "" t)
     where
-    -- treeshow pref Tree 
+    -- treeshow pref Tree
     --   shows a tree and starts each line with pref
     -- We don't display the Empty tree
     treeshow pref Empty = ""
     -- Leaf
-    treeshow pref (Node x Empty Empty) = 
+    treeshow pref (Node x Empty Empty) =
                   (pshow pref x)
 
     -- Right branch is empty
-    treeshow pref (Node x left Empty) = 
+    treeshow pref (Node x left Empty) =
                   (pshow pref x) ++ "\n" ++
                   (showSon pref "`--" "   " left)
 
     -- Left branch is empty
-    treeshow pref (Node x Empty right) = 
+    treeshow pref (Node x Empty right) =
                   (pshow pref x) ++ "\n" ++
                   (showSon pref "`--" "   " right)
 
     -- Tree with left and right children non empty
-    treeshow pref (Node x left right) = 
+    treeshow pref (Node x left right) =
                   (pshow pref x) ++ "\n" ++
                   (showSon pref "|--" "|  " left) ++ "\n" ++
                   (showSon pref "`--" "   " right)
 
     -- shows a tree using some prefixes to make it nice
-    showSon pref before next t = 
+    showSon pref before next t =
                   pref ++ before ++ treeshow (pref ++ next) t
 
     -- pshow replaces "\n" by "\n"++pref
@@ -1718,7 +1720,7 @@ instance (Show a) => Show (BinTree a) where
     replace c new string =
       concatMap (change c new) string
       where
-          change c new x 
+          change c new x
               | x == c = new
               | otherwise = x:[] -- "x"
 </code>
@@ -1756,7 +1758,7 @@ Int binary tree:
 :       `--23
 ~~~
 
-Now it is far better! 
+Now it is far better!
 The root is shown by starting the line with the `<` character.
 And each following line starts with a `:`.
 But we could also use another type.
@@ -1782,7 +1784,7 @@ make tree of trees!
 <div class="codehighlight">
 <code class="haskell">
   putStrLn "\nBinary tree of Char binary trees:"
-  print ( treeFromList 
+  print ( treeFromList
            (map treeFromList ["baz","zara","bar"]))
 </code>
 </div>
@@ -1817,7 +1819,7 @@ Which is equivalent to
 
 <code class="haskell">
 print ( treeFromList (
-          map treeFromList 
+          map treeFromList
              [ map treeFromList ["YO","DAWG"]
              , map treeFromList ["I","HEARD"]
              , map treeFromList ["I","HEARD"]
@@ -1899,7 +1901,7 @@ And it stops.
 
 How?
 
-Instead of trying to evaluate `numbers` entirely, 
+Instead of trying to evaluate `numbers` entirely,
 it evaluates elements only when needed.
 
 Also, note in Haskell there is a notation for infinite lists
@@ -2122,7 +2124,7 @@ But they all be very rewarding.
 blogimage("magritte_carte_blanche.jpg","Magritte, Carte blanche")
 
  > %tldr
- > 
+ >
  > A typical function doing `IO` looks a lot like an imperative program:
  >
  > ~~~
@@ -2393,32 +2395,32 @@ If you practice a bit, you should be able to _use_ `IO`.
 blogimage("magritte_pipe.jpg","Magritte, ceci n'est pas une pipe")
 
  > Here is a %tldr for this section.
- > 
+ >
  > To separate pure and impure parts,
  > `main` is defined as a function
  > which modifies the state of the world
- > 
+ >
  > ~~~
  > main :: World -> World
  > ~~~
- > 
+ >
  > A function is guaranteed to have side effects only if it has this type.
  > But look at a typical main function:
- >  
+ >
  > ~~~
- > main w0 = 
+ > main w0 =
  >     let (v1,w1) = action1 w0 in
  >     let (v2,w2) = action2 v1 w1 in
  >     let (v3,w3) = action3 v2 w2 in
  >     action4 v3 w3
  > ~~~
- > 
- > We have a lot of temporary elements (here `w1`, `w2` and `w3`) 
+ >
+ > We have a lot of temporary elements (here `w1`, `w2` and `w3`)
  > which must be passed on to the next action.
  >
- > We create a function `bind` or `(>>=)`. 
+ > We create a function `bind` or `(>>=)`.
  > With `bind` we don't need temporary names anymore.
- > 
+ >
  > ~~~
  > main =
  >   action1 >>= action2 >>= action3 >>= action4
@@ -2428,7 +2430,7 @@ blogimage("magritte_pipe.jpg","Magritte, ceci n'est pas une pipe")
  >
  > ~~~
  > main = do
- >   v1 <- action1 
+ >   v1 <- action1
  >   v2 <- action2 v1
  >   v3 <- action3 v2
  >   action4 v3
@@ -2464,7 +2466,7 @@ In fact, for dealing with `IO`, imperative style is generally more appropriate.
 But you should had noticed the notation is a bit unusual.
 Here is why, in detail.
 
-In an impure language, the state of the world can be seen as a huge hidden global variable. 
+In an impure language, the state of the world can be seen as a huge hidden global variable.
 This hidden variable is accessible by all functions of your language.
 For example, you can read and write a file in any function.
 The fact that a file exists or not can be seen as different states of the world.
@@ -2501,7 +2503,7 @@ Now let's rewrite our main function with this in mind:
 main w0 =
     let (list,w1) = askUser w0 in
     let (x,w2) = print (sum list,w1) in
-    x 
+    x
 </code>
 
 First, we note that all functions which have side effects must have the type:
@@ -2612,15 +2614,15 @@ let (_,w3) = action3 x z w2 in
 And of course `actionN w :: (World) -> (a,World)`.
 
  > IMPORTANT, there are only two important patterns to consider:
- > 
+ >
  > ~~~
  > let (x,w1) = action1 w0 in
  > let (y,w2) = action2 x w1 in
  > ~~~
- > 
+ >
  > and
- > 
- > ~~~ 
+ >
+ > ~~~
  > let (_,w1) = action1 w0 in
  > let (y,w2) = action2 w1 in
  > ~~~
@@ -2629,14 +2631,14 @@ leftblogimage("jocker_pencil_trick.jpg","Jocker pencil trick")
 
 Now, we will do a magic trick.
 We will make the temporary world symbol "disappear".
-We will `bind` the two lines. 
+We will `bind` the two lines.
 Let's define the `bind` function.
 Its type is quite intimidating at first:
 
 <code class="haskell">
-bind :: (World -> (a,World)) 
-        -> (a -> (World -> (b,World))) 
-        -> (World -> (b,World)) 
+bind :: (World -> (a,World))
+        -> (a -> (World -> (b,World)))
+        -> (World -> (b,World))
 </code>
 
 But remember that `(World -> (a,World))` is the type for an IO action.
@@ -2667,8 +2669,8 @@ This means it changes the state of the world, but doesn't yield anymore data.
 This type helps us simplify the type of `bind`:
 
 <code class="haskell">
-bind :: IO a 
-        -> (a -> IO b) 
+bind :: IO a
+        -> (a -> IO b)
         -> IO b
 </code>
 
@@ -2714,7 +2716,7 @@ Now, using the bind function:
 (res,w2) = (bind getLine (\l -> print l)) w0
 </code>
 
-As print is of type (World -> ((),World)), we know res = () (null type).
+As print is of type `(World -> ((),World))`, we know `res = ()` (null type).
 If you didn't see what was magic here, let's try with three lines this time.
 
 <code class="haskell">
@@ -2728,7 +2730,7 @@ Which is equivalent to:
 
 <code class="haskell">
 (res,w3) = bind getLine (\line1 ->
-             bind getLine (\line2 -> 
+             bind getLine (\line2 ->
                print (line1 ++ line2)))
 </code>
 
@@ -2737,7 +2739,7 @@ Yes, no temporary World variables are used anywhere!
 This is _MA_. _GIC_.
 
 We can use a better notation.
-Let's use `(>>=)` instead of `bind`. 
+Let's use `(>>=)` instead of `bind`.
 `(>>=)` is an infix function like
 `(+)`; reminder `3 + 4 ⇔ (+) 3 4`
 
@@ -2794,7 +2796,7 @@ Is transformed into
 
 <code class="haskell">
 action1 >>
-action2 >> 
+action2 >>
 action3
 </code>
 
@@ -2807,7 +2809,7 @@ putInIO x = IO (\w -> (x,w))
 
 This is the general way to put pure values inside the "IO context".
 The general name for `putInIO` is `return`.
-This is quite a bad name when you learn Haskell. `return` is very different from what you might be used to. 
+This is quite a bad name when you learn Haskell. `return` is very different from what you might be used to.
 
 <hr/><a href="code/03_Hell/01_IO/21_Detailled_IO.lhs" class="cut">03_Hell/01_IO/<strong>21_Detailled_IO.lhs</strong></a>
 
@@ -2873,7 +2875,7 @@ Being a monad means you have access to some syntactical sugar with the `do` nota
 But mainly, you have access to a coding pattern which will ease the flow of your code.
 
  > **Important remarks**:
- > 
+ >
  > - Monad are not necessarily about effects!
  >   There are a lot of _pure_ monads.
  > - Monad are more about sequencing
@@ -2898,18 +2900,18 @@ class Monad m  where
 </code>
 
  > Remarks:
- > 
- > - the keyword `class` is not your friend. 
+ >
+ > - the keyword `class` is not your friend.
  >   A Haskell class is _not_ a class like in object model.
  >   A Haskell class has a lot of similarities with Java interfaces.
  >   A better word should have been `typeclass`.
  >   That means a set of types.
  >   For a type to belong to a class, all functions of the class must be provided for this type.
- > - In this particular example of type class, the type `m` must be a type that takes an argument. 
+ > - In this particular example of type class, the type `m` must be a type that takes an argument.
  >   for example `IO a`, but also `Maybe a`, `[a]`, etc...
  > - To be a useful monad, your function must obey some rules.
  >   If your construction does not obey these rules strange things might happens:
- >   
+ >
  >   ~~~
  >   return a >>= k  ==  k a
  >   m >>= return  ==  m
@@ -2932,25 +2934,25 @@ deposit  value account = account + value
 withdraw value account = account - value
 
 eligible :: (Num a,Ord a) => a -> Bool
-eligible account = 
+eligible account =
   let account1 = deposit 100 account in
-    if (account1 < 0) 
+    if (account1 < 0)
     then False
-    else 
+    else
       let account2 = withdraw 200 account1 in
-      if (account2 < 0) 
+      if (account2 < 0)
       then False
-      else 
+      else
         let account3 = deposit 100 account2 in
-        if (account3 < 0) 
+        if (account3 < 0)
         then False
-        else 
+        else
           let account4 = withdraw 300 account3 in
-          if (account4 < 0) 
+          if (account4 < 0)
           then False
-          else 
+          else
             let account5 = deposit 1000 account4 in
-            if (account5 < 0) 
+            if (account5 < 0)
             then False
             else
               True
@@ -3032,6 +3034,18 @@ In fact, this is the kind of construction we make naturally.
  > This means you don't execute all lines.
  > You have this for free, thanks to laziness.
 
+You could also replay these example with the definition of `(>>=)` for `Maybe`
+in mind:
+
+<code class="haskell">
+instance Monad Maybe where
+    (>>=) :: Maybe a -> (a -> Maybe b) -> Maybe b
+    Nothing  >>= _  = Nothing
+    (Just x) >>= f  = f x
+
+    return x = Just x
+</code>
+
 The `Maybe` monad proved to be useful while being a very simple example.
 We saw the utility of the `IO` monad.
 But now a cooler example, lists.
@@ -3075,24 +3089,24 @@ For the list monad, there is also a syntactical sugar:
 
 <div class="codehighlight">
 <code class="haskell">
-  print $ [ (x,y,z) | x <- allCases, 
-                      y <- allCases, 
-                      z <- allCases, 
+  print $ [ (x,y,z) | x <- allCases,
+                      y <- allCases,
+                      z <- allCases,
                       4*x + 2*y < z ]
 </code>
 </div>
 I won't list all the monads, but there are many monads.
 Using monads simplifies the manipulation of several notions in pure languages.
-In particular, monad are very useful for: 
+In particular, monad are very useful for:
 
 - IO,
 - non deterministic computation,
-- generating pseudo random numbers, 
-- keeping configuration state, 
+- generating pseudo random numbers,
+- keeping configuration state,
 - writing state,
 - ...
 
-If you have followed me until here, then you've done it! 
+If you have followed me until here, then you've done it!
 You know monads[^03021301]!
 
 [^03021301]: Well, you'll certainly need to practice a bit to get used to them and to understand when you can use them and create your own. But you already made a big step in this direction.
