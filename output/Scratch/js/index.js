@@ -66,8 +66,22 @@ function detectClient() {
     return userAgent;
 }
 
+function cleanStr(str) {
+    return str.replace(/^\s*/,"").replace(/\s*$/,"");
+}
+
+$(document).ready(function(){
+    $('#blackpage').prepend('<div class="animation"></div>');
+    var msg=cleanStr( $('#titre h1').text()) +
+            " ; " + cleanStr($('#titre h2').text());
+    for (var i=0;i<msg.length;i++) {
+        (function(s){
+            setTimeout(function(){$('#blackpage .animation').html(s)}
+            , (i+1)*500);})(msg.slice(0,i)); }
+});
+
 // Ce que l'on va lancer à l'init.
-$(document).ready( function() {
+$(window).bind("load", function() {
     var client=detectClient();
     if ( ! /msie/.test(client) ) {
         initCode();
