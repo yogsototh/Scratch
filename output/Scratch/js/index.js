@@ -70,6 +70,9 @@ $(document).ready(function(){
     var msgh1=$('#titre h1').html();
     var msgh2=$('#titre h2').html();
     var msgintro=$('.corps .intro').html();
+    if (!msgh1) { msgh1=""; }
+    if (!msgh2) { msgh2=""; }
+    if (!msgintro) { msgintro=""; }
     $('#blackpage').prepend('<div class="preh1">'+msgh1+'</div>');
     $('#blackpage').prepend('<div class="preh2">'+msgh2+'</div>');
     $('#blackpage').append('<div class="preintro">'+msgintro+'</div>');
