@@ -1,8 +1,8 @@
-Crashlog created at 2012-10-05 10:55:11 +0200
+Crashlog created at 2012-10-05 10:57:23 +0200
 
 === MESSAGE:
 
-Sass::SyntaxError: Invalid CSS after "Georgia, serif": expected expression (e.g. 1px, bold), was ";"
+Sass::SyntaxError: Invalid CSS after "italic": expected expression (e.g. 1px, bold), was ";"
 
 === COMPILATION STACK:
 
@@ -10,7 +10,7 @@ Sass::SyntaxError: Invalid CSS after "Georgia, serif": expected expression (e.g.
 
 === BACKTRACE:
 
-  0. content/css/main.sass:630
+  0. content/css/main.sass:631
   1. /var/lib/gems/1.9.1/gems/sass-3.1.19/lib/sass/scss/parser.rb:1010:in `expected'
   2. /var/lib/gems/1.9.1/gems/sass-3.1.19/lib/sass/script/lexer.rb:191:in `expected!'
   3. /var/lib/gems/1.9.1/gems/sass-3.1.19/lib/sass/script/parser.rb:465:in `assert_done'
