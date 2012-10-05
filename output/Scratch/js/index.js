@@ -66,18 +66,13 @@ function detectClient() {
     return userAgent;
 }
 
-function cleanStr(str) {
-    return str.replace(/^\s*/,"").replace(/\s*$/,"");
-}
-
 $(document).ready(function(){
-    $('#blackpage').prepend('<div class="animation"></div>');
-    var msg=cleanStr( $('#titre h1').text()) +
-            " ; " + cleanStr($('#titre h2').text());
-    for (var i=0;i<msg.length;i++) {
-        (function(s){
-            setTimeout(function(){$('#blackpage .animation').html(s)}
-            , (i+1)*500);})(msg.slice(0,i)); }
+    var msgh1=$('#titre h1').html();
+    var msgh2=$('#titre h2').html();
+    var msgintro=$('.corps .intro').html();
+    $('#blackpage').prepend('<div class="preh1">'+msgh1+'</div>');
+    $('#blackpage').prepend('<div class="preh2">'+msgh2+'</div>');
+    $('#blackpage').append('<div class="preintro">'+msgintro+'</div>');
 });
 
 // Ce que l'on va lancer à l'init.
