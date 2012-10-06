@@ -621,12 +621,12 @@ img.clean
   top: 0
   left: 0
   width: 100%
-  height: 100%
+  min-height: 100%
   margin-left: 0
   margin-right: 0
   margin-top: 0
   margin-bottom: 0
-  position: fixed
+  position: absolute
   text-align: center
 
 #blackpage
@@ -640,6 +640,8 @@ img.clean
   img
     background: none
     border: none
+    max-width: 80%
+    margin: 0 auto
   a
     cursor: pointer
   .preh1
@@ -652,7 +654,7 @@ img.clean
     margin-bottom: 1em
   .preintro
     text-align: left
-    width: 30em
+    width: $content_width
     margin: 0 auto
 
 #nojsredirect

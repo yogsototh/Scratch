@@ -69,13 +69,13 @@ function detectClient() {
 $(document).ready(function(){
     var msgh1=$('#titre h1').html();
     var msgh2=$('#titre h2').html();
-    var msgintro=$('.corps .intro').html();
+    var msgintro=$('.corps').html();
     if (!msgh1) { msgh1=""; }
     if (!msgh2) { msgh2=""; }
     if (!msgintro) { msgintro=""; }
     $('#blackpage').prepend('<div class="preh1">'+msgh1+'</div>');
     $('#blackpage').prepend('<div class="preh2">'+msgh2+'</div>');
-    $('#blackpage').append('<div class="preintro">'+msgintro+'</div>');
+    $('#blackpage').append('<div class="preintro"><div class="corps">'+msgintro+'</div></div>');
 });
 
 // Ce que l'on va lancer à l'init.
