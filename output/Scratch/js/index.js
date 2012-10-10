@@ -87,7 +87,7 @@ $(window).bind("load", function() {
     if (/windows/.test(navigator.userAgent.toLowerCase())) {
         $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/windows.css"/>');
     }
-    $('#blackpage').fadeOut();
+    $('#blackpage').fadeOut('slow',function(){ $('#blackpage').remove(); });
     analytics();
 });
 

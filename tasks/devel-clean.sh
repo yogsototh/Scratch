@@ -9,7 +9,7 @@ for fic in $webroot/content/html/??/blog/*(N); do
 done
 print -- "Clean multi/blog"
 if [[ $(uname) = Linux ]]; then
-    column=8
+    column=9
 else
     column=9
 fi
