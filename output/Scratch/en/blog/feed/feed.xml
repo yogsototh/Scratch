@@ -2,13 +2,53 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://yannesposito.com/</id>
   <title>Yogsototh's last blogs entries</title>
-  <updated>2012-06-15T17:16:43Z</updated>
+  <updated>2012-10-01T17:16:43Z</updated>
   <link rel="alternate" href="http://yannesposito.com/"/>
   <link rel="self" href="http://feeds.feedburner.com/yannespositocomen"/>
   <author>
     <name>Yann Esposito</name>
     <uri>http://yannesposito.com</uri>
   </author>
+  <entry>
+    <id>tag:yannesposito.com,2012-10-01:/Scratch/en/blog/Category-Theory-Programming/</id>
+    <title type="html">Categeory Theory Programming</title>
+    <published>2012-10-01T17:16:43Z</published>
+    <updated>2012-10-01T17:16:43Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/Category-Theory-Programming/"/>
+    <content type="html">
+&lt;div class="intro"&gt;
+
+
+&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; How to program using category theory.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;center&gt;&lt;hr style="width:30%;float:left;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;span class="sc"&gt;&lt;b&gt;Table of Content&lt;/b&gt;&lt;/span&gt;&lt;hr style="width:30%;float:right;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;/center&gt;
+
+&lt;ul id="markdown-toc"&gt;
+  &lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#programming-paradigms"&gt;Programming Paradigms&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href="#get-some-intuition"&gt;Get some intuition&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#representation-of-category"&gt;Representation of Category&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/blockquote&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;%TODO{Do every...&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <id>tag:yannesposito.com,2012-06-15:/Scratch/en/blog/Haskell-OpenGL-Mandelbrot/</id>
     <title type="html">Haskell Progressive Example</title>
@@ -1188,34 +1228,5 @@ BEGIN{i=0;}
     date=$1$2$3; 
     if ( date != olddate ) {
        ...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <id>tag:yannesposito.com,2010-02-16:/Scratch/en/blog/2010-02-16-All-but-something-regexp--2-/</id>
-    <title type="html">Pragmatic Regular Expression Exclude (2)</title>
-    <published>2010-02-16T08:33:21Z</published>
-    <updated>2010-02-16T08:33:21Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-02-16-All-but-something-regexp--2-/"/>
-    <content type="html">&lt;p&gt;In my &lt;a href="previouspost"&gt;previous post&lt;/a&gt; I had given some trick to match all except something. On the same idea, the trick to match the smallest possible string. Say you want to match the string between &amp;lsquo;a&amp;rsquo; and &amp;lsquo;b&amp;rsquo;, for example, you want to match:&lt;/p&gt;
-
-&lt;pre class="twilight"&gt;
-a.....&lt;span class="Constant"&gt;&lt;strong&gt;a......b&lt;/strong&gt;&lt;/span&gt;..b..a....&lt;span class="Constant"&gt;&lt;strong&gt;a....b&lt;/strong&gt;&lt;/span&gt;...
-&lt;/pre&gt;
-
-&lt;p&gt;Here are two common errors and a solution:&lt;/p&gt;
-
-&lt;pre class="twilight"&gt;
-/a.*b/
-&lt;span class="Constant"&gt;&lt;strong&gt;a.....a......b..b..a....a....b&lt;/strong&gt;&lt;/span&gt;...
-&lt;/pre&gt;
-
-&lt;p&gt;The first error is to use the &lt;em&gt;evil&lt;/em&gt; &lt;code&gt;.*&lt;/code&gt;. Because you will match from the first to the last.&lt;/p&gt;
-
-&lt;pre class="twilight"&gt;
-/a.*?b/
-&lt;span class="Constant"&gt;&lt;strong&gt;...&lt;/strong&gt;&lt;/span&gt;&lt;/pre&gt;</content>
   </entry>
 </feed>
