@@ -12,8 +12,8 @@ class Graph < Nanoc3::Filter
                         fontsize=10;
                         rankdir="LR";
                         graph [truecolor bgcolor="#FAFAFA00"];
-                        node [width=0, height=0, fontname="Optima Bold", shape="box", color="#333333", style="filled" fillcolor="#FAFAFA", fontcolor="#333333"] ;
-                        edge [arrowsize=.5, color="#333333"] ; ]
+                        node [width=0, height=0, fontname="CMU Serif Italic", shape="box", color="#333333", style="filled" fillcolor="#FAFAFA", fontcolor="#333333"] ;
+                        edge [fontname="CMU Serif Italic", arrowsize=.5, color="#333333"] ; ]
             f.write str
             f.write %[}]
             end
