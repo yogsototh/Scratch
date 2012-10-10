@@ -212,8 +212,9 @@ ul
 
 ol,ul
   padding-left: 0
-ol li, ul li
-  margin: .5em 0
+.toc
+  ol li, ul li
+    margin: .5em 0
 ol li ul, ol li ol, ul li ol, ul li ul
   margin: .5em 1.5em
   list-style: none
@@ -221,7 +222,7 @@ ol li ul, ol li ol, ul li ol, ul li ul
 
 body, h1, h2, h3, h4, #entete, .tagname
   text-rendering: optimizelegibility
-  line-height: 1.4em
+  line-height: 1.5em
 
 body
   font-family: "ComputerModern", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
@@ -250,7 +251,7 @@ pre
   box-shadow: 0 0 5px ($secondBackgroundColor - #222) inset
   border-radius: 3px
   padding: 1em
-  line-height: 1.2em
+  line-height: 1em
   font-size: .9em
 
 p
@@ -560,11 +561,23 @@ $fontcorps: 1.25
 
 .corps
   font-size: #{$fontcorps}em
-  line-height: 1.6em
+  line-height: 1.5em
   text-align: justify
   padding: $VPadCorps 3em
   margin: 0 $HMarginCorps
   clear: both
+  p, ol, ul, blockquote, pre, code
+    margin-top: 1.5em
+    margin-bottom: 1.5em
+  pre code
+    margin: 0
+  p, ol, ul, blockquote
+    line-height: 1.5em
+  pre, code
+    line-height: 1em
+  ul li ul, ol li ul, ul li ol, ol li ol
+    margin-top: 0
+    margin-bottom: 0
 
 $corps_width: ($content_width - 2 * $contentMargin) / $fontcorps
 $hpadding: 1
@@ -875,7 +888,6 @@ a.return
   padding: 0
 
 strong, b, i, em
-  font-weight: normal
   color: $highlightColor
   a
     color: $mainTextColor
