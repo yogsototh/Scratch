@@ -3,7 +3,7 @@ isHidden:       false
 menupriority:   1
 kind:           article
 created_at:     2012-10-01T19:16:43+02:00
-title: Categeory Theory Programming
+title: Category Theory Programming
 author_name: Yann Esposito
 author_uri: yannesposito.com
 tags:
@@ -149,7 +149,7 @@ AC      [label="", fixedsize="false", width=0,height=0,shape=none];
 
 f -> fg  [color="#b58900",style=dashed,arrowhead=None]
 fg -> g  [color="#b58900",style=dashed,arrowhead=None]
-fg -> AC [label="h=g∘f",colorlabel="#b58900",color="#b58900",style=bold]
+fg -> AC [label="h=g∘f",fontcolor="#b58900",color="#b58900",style=bold]
 
 A -> AC [label="h",arrowhead=None]
 AC -> C
@@ -190,19 +190,19 @@ ApCp[label="", fixedsize="false", width=0,height=0,shape=none];
 
 f -> fg  [color="#b58900",style=dashed,arrowhead=None]
 fg -> g  [color="#b58900",style=dashed,arrowhead=None]
-fg -> AC [color="#b58900",style=bold,label="h=g∘f"]
+fg -> AC [color="#b58900",style=bold,fontcolor="#b58900",label="h=g∘f"]
 
 fp -> fpgp [color="#d33682",style=dashed,arrowhead=None]
 fpgp -> gp [color="#d33682",style=dashed,arrowhead=None]
-fpgp -> AC [color="#d33682",style=bold,label="h=g'∘f'"]
+fpgp -> AC [color="#d33682",style=bold,fontcolor="#d33682",label="h=g'∘f'"]
 
 fp -> fpg   [color="#dc322f",style=dashed,arrowhead=None]
 fpg -> g    [color="#dc322f",style=dashed,arrowhead=None]
-fpg -> ApCp [color="#dc322f",style=bold,label="h'=g∘f'"]
+fpg -> ApCp [color="#dc322f",style=bold,fontcolor="#dc322f",label="h'=g∘f'"]
 
 f -> fgp    [color="#268bd2",style=dashed,arrowhead=None]
 fgp -> gp   [color="#268bd2",style=dashed,arrowhead=None]
-fgp -> ApCp [color="#268bd2",style=bold,label="h'=g'∘f"]
+fgp -> ApCp [color="#268bd2",style=bold,fontcolor="#268bd2",label="h'=g'∘f"]
 
 A -> AC [label="h",arrowhead=None]
 AC -> C
@@ -215,13 +215,13 @@ ApCp -> C
 In fact we could have made something equivalent and far easier to read.
 But the ∘ relation will be more hidden.
 
-<graph title="Naïve Category Representation Mess">
+<graph title="Less Graphic Category Representation">
 
 A -> B[label="f"]
 A -> B[label="f'"]
 B -> C[label="g"]
 B -> C[label="g'"]
-A -> C [label="h=g∘f=g'∘f'"]
-A -> C [label="h'=g'∘f=g∘f'"]
+A -> C [label="h\n=g∘f\n=g'∘f'"]
+A -> C [label="h'\n=g'∘f\n=g∘f'"]
 
 </graph>
