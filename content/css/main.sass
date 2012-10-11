@@ -968,6 +968,10 @@ ul.bloglist, .archive ul
 .pala
   font-family: Palatino
 
+sup
+  vertical-align: top
+  font-size: .7em
+
 .article .corps a:after
   content: "†"
   vertical-align: super
@@ -980,15 +984,13 @@ ul.bloglist, .archive ul
       content: ""
 .article .corps sup a
   +bold
-  background: $base0
   padding: 0 .3em
   margin-left: 2px
   border-radius:  3px
   -moz-border-radius:  3px
   -webkit-border-radius:  3px
-  color: $mainBackgroundColor
   &:hover
-    background: $revealColor
+    color: $revealColor
 
 ul#markdown-toc, .intro .toc ul
   +sc
