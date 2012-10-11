@@ -16,3 +16,8 @@ output/Scratch/*/*/*/index.html
 output/Scratch/*/*/*/*/index.html
 output/Scratch/*/*/*/*/*/index.html
 output/Scratch/*/*/*/*/*/*/index.html
+output/Scratch/*/graph
+output/Scratch/*/*/graph
+output/Scratch/*/*/*/graph
+output/Scratch/*/*/*/*/graph
+output/Scratch/*/*/*/*/*/graph
