@@ -47,7 +47,7 @@ class Graph < Nanoc3::Filter
                         fontsize=10;
                         rankdir="LR";
                         graph [truecolor bgcolor="#fafafc"];
-                        node [width=0, height=0, fontname="CMU Serif Italic", shape="box", color="#657b83", style="filled" fillcolor="#fafafc", fontcolor="#657b83"] ;
+                        node [width=0, height=0, fontname="CMU Serif Italic", shape="circle", color="#657b83", style="filled" fillcolor="#fafafc", fontcolor="#657b83"] ;
                         edge [fontname="CMU Serif Italic", arrowsize=.5, color="#657b83",fontcolor="#657b83"] ; ]
             f.write solarized(str)
             f.write %[}]
