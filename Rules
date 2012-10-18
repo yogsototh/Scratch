@@ -48,6 +48,7 @@ compile '/html/*' do
 
     filter :ultraviolet # must be before kramdown
     filter :graph
+    filter :mpost
     filter :description
     filter :falacy
     filter :blogimage
