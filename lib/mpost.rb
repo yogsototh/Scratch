@@ -4,9 +4,9 @@ class MPost < Nanoc3::Filter
     @@name=["Zero","One","Two","Three"]
     def solarized(str)
         str.gsub(
-            %r{base([0123])},'base'+@@name[0]+@@name[$2]
+            %r{base0([0123])},'base'+@@name[0]+@@name[$1.to_i]
         ).gsub(
-            %r{base([0123])},'base'+@@name[$2]
+            %r{base([0123])},'base'+@@name[$1.to_i]
         ).gsub(
             %{red},'s_red'
         ).gsub(
@@ -15,14 +15,13 @@ class MPost < Nanoc3::Filter
             %{green},'s_green'
         )
     end
-    def run(content, params={}) 
+    def run(content, params={})
         content.gsub(%r{<mpost( title="([^"]*)")?>(.+?)</mpost>}m) do |full|
             # FileUtils.rm(@@tmpfic)
             title=$2
             str=$3
             filename=title.gsub(/[^a-zA-Z0-9_]/,"_")
-            File.open(@@tmpfic,'w') do |f|
-             f.write %{
+            code=%{
              color   baseZeroThree, baseZeroTwo, baseZeroOne, baseZeroZero
                    , baseZero, baseOne, baseTwo, baseThree, yellow, orange
                    , s_red, magenta, violet, s_blue, cyan, s_green;
@@ -44,10 +43,14 @@ class MPost < Nanoc3::Filter
              cyan           :=(0.164705882352941 ,0.631372549019608,0.596078431372549);
              s_green        :=(0.52156862745098  ,0.6              ,0.0);
 
+             prologues:=3;
+             drawoptions (withcolor base02);
              beginfig(1)
-             }
-             f.write str
-             f.write %{\nendfig;\nend\n}
+             }.sub(%r{^\s*},"")
+             code <<= str
+             code <<= %{\nendfig;\nbye;\n}
+            File.open(@@tmpfic,'w') do |f|
+             f.write solarized(code)
             end
             FileUtils.mkdir_p('output'+@item.path+'mpost')
             webpath=@item.path + 'mpost/' + filename + '.png'
