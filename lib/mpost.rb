@@ -76,18 +76,35 @@ class MPost < Nanoc3::Filter
                     draw fullcircle scaled u shifted pos;
                 enddef;
 
-                def drawEdgeWithAngle(expr posA,posB,l,an) =
-                    path s; s := posA {dir an} .. posB {dir -an};
+                def drawEdgeWithDoubleAngle(expr posA,posB,l,inan,outan) =
+                    path s; s := posA {dir inan} .. {dir outan} posB ;
                     pair bA;
                     pair bA; bA = (fullcircle scaled 1.2u shifted posA) intersectionpoint s;
                     pair eB; eB = (fullcircle scaled 1.2u shifted posB) intersectionpoint s;
-                    path sub; sub := bA {dir an} .. eB {dir -an};
+                    path sub; sub := bA {dir inan} .. {dir outan} eB ;
                     drawarrow sub;
                     pair mid; mid = point 1/2length(sub) of sub;
-                    label.top(l,mid);
+                    picture lab;
+                    lab:=thelabel(l,origin);
+                    if (an>-35) and (an<35):
+                        label.top(lab rotated an,mid);
+                    elseif (an>75) and (an<120):
+                        label.lft(l,mid);
+                    elseif (an>-120) and (an<-75):
+                        label.rt(l,mid);
+                    elseif (an>145) or (an<-145):
+                        label.top(lab rotated (an+180),mid);
+                    else:
+                        label.top(l,mid);
+                    fi;
+                enddef;
+                def drawEdgeWithAngle(expr posA,posB,l,an) =
+                    drawEdgeWithDoubleAngle(posA,posB,l,an,-an);
                 enddef;
                 def drawEdge(expr posA,posB,l) =
-                    drawEdgeWithAngle(posA,posB,l,0);
+                    numeric an;
+                    an=angle(posB-posA);
+                    drawEdgeWithDoubleAngle(posA,posB,l,an,an);
                 enddef;
 
              prologues:=3;
