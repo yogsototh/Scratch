@@ -1,6 +1,6 @@
 class MPost < Nanoc3::Filter
     identifier :mpost
-    @@tmpfic="/tmp/graphtemp.mp"
+    @@tmp="/tmp/mp/"
     @@name=["Zero","One","Two","Three"]
     def solarized(str)
         str.gsub(
@@ -211,14 +211,20 @@ beginfig(1)
    drawoptions (withcolor base01);\n}
              code <<= str
              code <<= %{\nendfig;\nbye;\n}
-            File.open(@@tmpfic,'w') do |f|
+            File.open(@@tmp+filename+'.mp','w') do |f|
              f.write solarized(code)
             end
-            FileUtils.mkdir_p('output'+@item.path+'mpost')
             webpath=@item.path + 'mpost/' + filename + '.png'
-            path='output'+webpath
-            cmd="cd /tmp && mpost graphtemp.mp >/dev/null 2>&1 && convert -density 180 graphtemp.1 $OLDPWD/#{path} >/dev/null 2>&1"
-            system(cmd)
+            if not (File.exists?(@@tmp+filename+'.old') and FileUtils.compare_file(@@tmp+filename+'.mp',@@tmp+filename+'.old'))
+            then
+                FileUtils.mkdir_p(@@tmp)
+                FileUtils.mkdir_p('output'+@item.path+'mpost')
+                path='output'+webpath
+                cmd="cd #{@@tmp} && mpost #{filename}.mp >/dev/null 2>&1 && convert -density 180 #{filename}.1 $OLDPWD/#{path} >/dev/null"
+                if system(cmd)
+                    FileUtils.copy(@@tmp+filename+'.mp',@@tmp+filename+'.old')
+                end
+            end
             %{<figure><img alt="#{title}" src="#{webpath}"/><figcaption>#{title}</figcaption></figure>}
         end
     end
