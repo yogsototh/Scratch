@@ -116,7 +116,7 @@ enddef;
 % out angle from A is inan
 vardef edgeAngle(expr posA,posB,an) =
     path sub;
-    sub := _edgeFullParam(posA,posB,an,-an,u);
+    sub := _edgeFullParam(posA,posB,an,-an,1.2u);
     sub
 enddef;
 % return the direct edge between A and B
@@ -124,7 +124,7 @@ vardef edge(expr posA,posB) =
     numeric an;
     an := angle(posB-posA);
     path sub;
-    sub := _edgeFullParam(posA,posB,an,an,u);
+    sub := _edgeFullParam(posA,posB,an,an,1.2u);
     sub
 enddef;
 
