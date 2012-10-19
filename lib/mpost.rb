@@ -42,6 +42,15 @@ blue         :=(0.149019607843137 ,0.545098039215686,0.823529411764706);
 cyan           :=(0.164705882352941 ,0.631372549019608,0.596078431372549);
 green        :=(0.52156862745098  ,0.6              ,0.0);
 
+
+vardef shorten(expr p,d) =
+    path q,bcirc,ecirc;
+    bcirc := fullcircle scaled d shifted point 0 of p;
+    ecirc := fullcircle scaled d shifted point length(p) of p;
+    q := p cutbefore bcirc cutafter ecirc;
+    q
+enddef;
+
 %%%%%%%%%%%%%%%%%%%%
 % Automata drawing %
 %%%%%%%%%%%%%%%%%%%%
