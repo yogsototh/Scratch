@@ -220,13 +220,13 @@ beginfig(1)
    drawoptions (withcolor base01);\n}
              code <<= str
              code <<= %{\nendfig;\nbye;\n}
+            FileUtils.mkdir_p(@@tmp)
             File.open(@@tmp+filename+'.mp','w') do |f|
              f.write solarized(code)
             end
             webpath=@item.path + 'mpost/' + filename + '.png'
             if not (File.exists?(@@tmp+filename+'.old') and FileUtils.compare_file(@@tmp+filename+'.mp',@@tmp+filename+'.old'))
             then
-                FileUtils.mkdir_p(@@tmp)
                 FileUtils.mkdir_p('output'+@item.path+'mpost')
                 path='output'+webpath
                 cmd="cd #{@@tmp} && mpost #{filename}.mp >/dev/null 2>&1 && convert -density 180 #{filename}.1 $OLDPWD/#{path} >/dev/null"
