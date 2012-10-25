@@ -141,12 +141,10 @@ But the second one is clearly far superior in architecture.
 I don't want to argue why here. 
 Just believe me that the functional programming approach is superior.
 
-Actually I lack the lambda operator. 
-If someone has an idea on how to create anonymous functions, just tell me, thanks.
+You can find an [updated version of the code (thanks to Arash Rouhani)](https://github.com/Tarrasch/zsh-functional). 
+An older version is [here thought](https://github.com/yogsototh/zsh_functional).
+Here is the (first version) source code:
 
-Here is the (first version[^1]) source code:
-
-[^1]: As stated in the intro, if you want to install it, just go [there](https://github.com/yogsototh/zsh_functional).
 
 <code class="zsh" file="functional.sh">
 #!/usr/bin/env zsh

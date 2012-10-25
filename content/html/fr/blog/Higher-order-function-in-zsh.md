@@ -144,12 +144,10 @@ Mais la seconde est plus bien supérieure en terme d'architecture.
 Je ne veux pas discuster ici pourquoi c'est mieux.
 Je vous demande simplement de me croire quand je dis que l'approche fonctionnelle est supérieure.
 
-Actuellement il me manque une fonction lambda, si quelqu'un à une idée elle serait la bienvenue. 
-Je ne sais pas encore comment créer facilement des fonctions anonymes.
+Vous pouvez télécharger [une version à jour du code (merci à Arash Rouhani)](https://github.com/Tarrasch/zsh-functional). 
+Une ancienne version est [ici](https://github.com/yogsototh/zsh_functional).
+Voici le code source (de la première version) :
 
-Voici le code source (de la première version[^1]) :
-
-[^1]: Comme précisé dans l'introduction, si vous voulez l'installez allez plutôt voir dans ce [repository](https://github.com/yogsototh/zsh_functional).
 
 <code class="zsh" file="functional.sh">
 #!/usr/bin/env zsh
