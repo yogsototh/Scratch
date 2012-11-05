@@ -20,8 +20,8 @@ tags:
 blogimage("dragon.jpg","Title image")
 
 begindiv(intro)
-en: %tldr My short and higly subjective feelings about programming languages I used.
-fr: %tlal Mon avis court et hautement subjectif concernant les différents languages de programmations que j'ai utilisé.
+en: %tldr My short and highly subjective feelings about the programming languages I used.
+fr: %tlal Mon avis succinct et hautement subjectif concernant les différents languages de programmation que j'ai utilisé.
 enddiv
 
 ### `BASIC`
@@ -74,7 +74,7 @@ fr: Quel plaisir c'était !
 
 leftblogimage("dragon.jpg","Dragon fractal")
 
-en: I was about 10 when I played with logo to draw on the computer.
+en: I was about 10 when I played with logo to draw things on a screen.
 fr: Toujours lors que j'avais 10 ans, on pouvait faire de petits programmes sympathiques.
 
 en: I remember the Bach's music while the program loaded.
@@ -86,7 +86,7 @@ fr: Oui, il fallait charger le programme en mémoire avec une cassette.
 fr: Et elle ne faisait pas les 'Krrrkrr csssss krrrr'.
 
 en: Some years after, I used it to learn programming to my college student.
-en: It was really good as a first language.
+en: It was a really good first language.
 en: Making fractals is like a game for children.
 fr: Je l'avais utilisé sans les boucles.
 fr: Des années plus tard, je le réutiliser pour faire de l'initiation à l'informatique à mes étudiants de DEUG MIAS première année.
@@ -94,7 +94,7 @@ fr: Il s'est en fait révélé très utile.
 fr: Grace à lui, faire des fractales se révèle être un jeu d'enfant, au sens litéral.
 fr: Je ne peux que conseiller ce langage pour apprendre à programmer et aussi pour le fun.
 
-en: Here is an example of code. It draws the dragon fractal.
+en: Here is the code to draw the dragon fractal:
 fr: Voici un exemple de code et le résultat est la jolie fractale 'dragon'.
 
 <code class="zsh">
@@ -126,7 +126,7 @@ dragon 6 3000
 
 ### Pascal
 
-en: The always second.
+en: The eternal second.
 fr: L'éternel numéro 2.
 
 en: I made my firsts real serious program with Pascal.
@@ -149,14 +149,14 @@ fr: Le langage des pointeurs
 en: _Le_ programming language.
 fr: Ah, _le_ langage de programmation par excellence.
 
-en: Once you understand loops and recursivity.
-en: It is time to make things serious.
-en: If you want to have good quality code, knowing C is almost mandatory.
+en: Once you understand loops and recursion,
+en: it is time to do serious things.
+en: If you want to make good quality code, knowing C is almost mandatory.
 fr: Une fois que vous avez compris les boucles et la récursivité.
 fr: Il est temps de passer aux choses sérieuses.
 fr: Si vous voulez avoir du code de bonne qualité, alors apprendre le C est quasi-obligatoire.
 
-en: This language is close to machine language.
+en: This language is close to the machine language.
 en: So much, there is (mostly) a linear relation between the size of your code and the size of the compiled one.
 fr: Ce langage est très proche du langage machine.
 fr: En particulier, (la majorité du temps).
@@ -165,22 +165,22 @@ fr: Il y a une relation linéaire entre la taille du code en C et de son résult
 en: In short, each time you write a C instruction there won't be anything strange that will occurs, like starting a long algorithm behind the scene.
 fr: Ça signifie qu'à chaque fois que vous écrivez une ligne de C, il ne va pas se passer de choses toutes bizarres comme lancer un algorithme qui va prendre deux plombes.
 
-en: It is very close to the machine while keeping sufficient abstractions to be fun.
+en: While close to the machine, `C` keep sufficient abstractions to be fun.
 fr: Il est très proche de la machine tout en ayant une abstraction suffisante pour ne pas être "trop"  désagréable.
 
 en: I made a lot of program with it.
-en: From sort algorithms to AI ones (SAT3), system, network prgramming, etc...
+en: From sort algorithms to AI ones (SAT3), system, network programming, etc...
 en: It is a very useful language that will help you understand how things works on your computer.
 en: Most modern computer language hide a lot of informations on what occurs.
-en: This is not the case with C.
+en: This is not the case with `C`.
 fr: J'ai fait beaucoup de choses avec.
 fr: Tous les algorithmes de tri, des algorithmes d'intelligence artificielle (résolution de SAT3), du système, du réseau etc...
 fr: Bref il est versatile, et on ne peut pas dire que l'on sait programmer si on ne s'est jamais mis à programmer sérieusement en `C`.
 
 ### ADA
 
-en: The super-clean one.
-fr: Le langage super-propre.
+en: The "super clean" one.
+fr: Le langage "super propre".
 
 en: I liked ADA. I must confess I didn't used it a lot.
 en: May be one day I will try it again.
@@ -200,11 +200,11 @@ en: More clearly, the language didn't helped you to structure your program.
 fr: En gros, il n'y avait pas d'aide pour structurer votre code.
 
 en: In order to limit the number of bugs, particularly for huge programs, we started to think about how to organize computer programs.
-en: In the end, from the imperatives language culture, it produced the Object Oriented programming (OOP).
-en: Beware, the Object Oriented programming isn't a miracle. Proof? How many bug-free software do you use?
+en: In the end, from the imperative language culture, it produced the Object Oriented programming (OOP).
+en: Beware, the Object Oriented programming isn't a miracle. Proof? How many bug free software do you use?
 en: Furthermore, OOP doesn't fit all problems.
-en: But to make a bank application, an application which help to manage stock, clients or text archives.
-en: I mean an information system, the OOP is not so bad.
+en: But to make a bank application, an application which help to manage stock, clients or text archives or more generally
+en: an information system, the OOP is not so bad.
 
 fr: Alors, pour aider à limiter le nombre de bug, en particulier pour la création de très gros programmes, on s'est mis à réfléchir à la meilleure façon d'organiser du code d'ordinateur.
 fr: À la fin, ça à donné la programmation orienté objet. Et donc les langages comme le C manquaient de système pour aider au développement orienté objet.
@@ -223,6 +223,20 @@ leftblogimage("cplusplus.jpg","Messy router")
 fr: Le malpropre
 en: The ugly
 
+en: Industry wanted an Object Oriented Language without losing all their old C code.
+en: Solution, keep C and add an Object layer on it.
+en: My main concern about C++ is: it does too many things.
+en: I appreciated multiple inheritance and templates.
+en: In reality I liked a lot C++ while I was working alone.
+en: I used it to write `DEES` my main thesis software.
+en: My only concern was about a lack in the STL.
+en: In the doc, one could use `String<T>`.
+en: But in reality, `T` had to be only `char` or `char16`.
+en: Then I had to reduce my alphabet to 2<sup>16</sup> letters.
+en: Except for some application, the alphabet must be far larger than that.
+en:
+en: To conclude, I'd say, C++ is very good if you work alone or with a fixed subset of its features.
+
 fr: Et oui l'industrie voulait un langage objet, mais elle n'était pas prête à mettre à la poubelle tout ses codes en C.
 fr: La solution, prendre C et lui rajouter une couche objet.
 fr: Le problème avec C++ c'est qu'il fait trop de choses.
@@ -235,61 +249,46 @@ fr: Du coup, mon alphabet était limité à 2<sup>16</sup> lettres.
 fr: Hors, pour certaines application, l'alphabet doit être gigantesque.
 fr:
 fr: En conclusion je dirai que C++ est un très bon langage si vous vous fixez à l'avance un sous ensemble de ses fonctionnalités.
-en: Industry wanted an Object Oriented Language without losing all their old C code.
-en: Solution, keep C and add an Object layer on it.
-en: My main concern about C++ is: it do too many things.
-en: I appreciated multiple inheritance and templates.
-en: In reality I liked a lot C++ while I was working alone.
-en: I used it to write `DEES` my main thesis software.
-en: My only concern was about a lack in the STL.
-en: In the doc, one could use `String<T>`.
-en: But in reality, T have to be only `char` or `char16`.
-en: Then I had to reduce my alphabet to 2<sup>16</sup> letters.
-en: Except for some application, the alphabet must be far larger than that.
-en:
-en: To conclude, I'd say, C++ is very good if you work alone or with a fixed subset of its features.
 
 
 ### Eiffel
 
 leftblogimage("eiffel.jpg","Eiffel tower construction")
 
-fr: Bon, ok c'est un très beau langage objet.
+en: Yes, it is a really nice language.
+en: Full object in mind. Far cleaner than C++.
+en: But it isn't so popular.
+en: Behind C++ there is a large community to help new users and to write libraries.
+en: Furthermore, I preferred working with C++.
+en: When I learned Eiffel, I programmed a lot with C and liked its syntax.
+
+fr: Eiffel est un très beau langage objet.
 fr: Bien plus propre que C++.
 fr: Mais, à moins que les choses aient changées, il n'est pas très populaire.
 fr: Derrière lui il n'a pas la communauté de C++.
 fr: Pour être franc, j'ai préféré travailler en C++.
 fr: J'ai menti à mes profs de l'époque pour leur faire plaisir.
 fr: Lorsqu'on viens du C, il est désagréable de changer ses habitudes.
-en: Yes, it is a really nice language.
-en: Full object in mind. Far cleaner than C++.
-en: But it isn't so popular.
-en: Behind C++ there is a large community to help new users and to write libraries.
-en: Furthermore, I preferred working with C++.
-en: At that time I programmed a lot with C and like its syntax.
 
 ### Java
 
 leftblogimage("grail.jpg","Holy Grail from the Monty Python")
 
-fr: On continue vers les langages objets. Alors, à une époque où j'en ai entendu parler, c'était _le Graal_ !
 en: The first time I heard about Java it was _le Grail_!
 
-fr: La portabilité, votre programme marchera partout. Il était orienté objet. Incrusté à l'intérieur il y avait des concepts d'architecture qui empêchent de faire n'importe quoi... Sauf que.
-en: Perfect portability, your program will work on all platform.
-en: There was incrusted inside the language architecture concepts to help limit mistakes, and force you to use good programming habits. But...
+fr: On continue vers les langages objets. Alors, à une époque où j'en ai entendu parler, c'était _le Graal_ !
 
+en: Perfect portability, your program will work on all platform.
+en: The language helps limit mistakes, and force you to use good programming habits.
+en: But...
+
+fr: La portabilité, votre programme marchera partout. Il était orienté objet. Incrusté à l'intérieur il y avait des concepts d'architecture qui empêchent de faire n'importe quoi... Sauf que.
+
+en: But It is extremely verbose.
+en: Many limitations are quite boring if you know what you're doing.
 fr: Sauf qu'il est incroyablement verbeux.
 fr: Et que les limitations sont très désagréables si on sait ce que l'on fait.
-en: But It is extremely verbose.
-en: And limitations are quite boring if you know what you're doing.
 
-fr: Par exemple, il n'y a pas d'héritage multiple en Java.
-fr: Ce qui est en général un choix que je trouve cohérent s'il est bien appuyé par des systèmes qui compensent ce manque.
-fr: En java, il existe les interfaces.
-fr: Les interfaces permettent d'ajouter des méthodes à une classe.
-fr: En aucun cas on ne peut rajouter un attribut autrement qu'en héritant.
-fr: Cet état de fait m'a vraiment géné.
 en: For example, there is no multiple inheritance.
 en: Generally it is a coherent choice when there are a way to compensate.
 en: In Java, there are interfaces for this.
@@ -297,52 +296,60 @@ en: Except, interfaces can only add methods to a class.
 en: You cannot add any attribute to a class except by subclassing.
 en: I really lacked this feature.
 
+fr: Par exemple, il n'y a pas d'héritage multiple en Java.
+fr: Ce qui est en général un choix que je trouve cohérent s'il est bien appuyé par des systèmes qui compensent ce manque.
+fr: En java, il existe les interfaces.
+fr: Les interfaces permettent d'ajouter des méthodes à une classe.
+fr: En aucun cas on ne peut rajouter un attribut autrement qu'en héritant.
+fr: Cet état de fait m'a vraiment géné.
+
+en: I made a GUI using Java Swing and I created my own notification system between different element of the GUI.
+en: In the beginning I only needed to send notification one to one.
+en: After some time, I wanted to send one to many notifications.
+en: I had to make a bunch of copy/paste inside all my subclasses!
+en: Copy/paste are exactly what should be avoided the most by object oriented languages.
 fr: Typiquement je faisais une GUI en Java Swing.
 fr: J'avais créé mon propre système de notification entre objets.
 fr: Au début je considérais qu'un objet ne devait envoyer des notifications qu'à un seul objet.
 fr: Ô quelle erreur lorsque je réalisais qu'il fallait non plus gérer un seul objet mais parfois plusieurs.
 fr: Je changeais mon implémentation d'interface partout, conséquence, des copier/coller dans tous les sens pour mes classes.
 fr: Les copier/coller qui sont justement un problème censé être évité par les langages orientés objets.
-en: I made a GUI using Java Swing and I created my own notification system between different element of the GUI.
-en: Then, at the begining I only needed to send notification 1 to 1.
-en: After some times, I needed to make 1 to many notifications.
-en: And I had to make a bunch of copy/paste inside all my subclasses!
-en: Copy/paste are exactly what should be avoided the most by object oriented languages.
 
+en: Another thing: threads.
+en: I was forced to make my own thread management system to avoid locks and send notifications between threads (wait the end of this thread, ...).
+en: At that time I used Java 1.5.
+en: This problem should have been solved with Java 1.6.
+en: I wish it is the case, but lacking such an essential feature for a language was very bad.
 fr: De plus toujours pour ma GUI, je devais évidemment gérer des threads.
 fr: Hors, il m'a fallu faire mon propre système de gestion de threads pour éviter les locks, pour les notifications (ce thread à fini, etc...).
 fr: À l'époque j'utilisais Java 1.5.
 fr: Normallement ce problème devait être réglé sur Java 1.6.
 fr: J'espère que c'est le cas, mais avoir ce type de "feature" essentielle oubliée par le langage était assez grave.
-en: Another thing: threads.
-en: I was forced to make my own thread management system to avoid locks and notifications between threads (wait the end of this thread, ...).
-en: At that time I used Java 1.5.
-en: This problem should have been solved with Java 1.6.
-en: I wish it is the case, but lacking such an essential feature for a language was very bad.
 
+en: In the same idea, it was very long to wait for the "foreach" loops.
 fr: De même, il a fallu attendre très longtemps avant d'avoir des boucles foreach qui rendent le code bien plus lisible.
-en: In the same idea, it was very long to wait for the foreach loops.
 
-fr: Bon, après cette expérience je déconseillerai Java.
-fr: La portabilité, n'est pas si intéressante que ce qu'on pourrait croire.
 en: After my experience, I don't recommend Java.
 en: Portability does not worth this price.
+fr: Bon, après cette expérience je déconseillerai Java.
+fr: La portabilité, n'est pas si intéressante que ce qu'on pourrait croire.
 
-fr: En ce qui concerne les GUI, portable signifie interface fonctionnelle mais médiocre sur toutes les plateformes.
-fr: Quelquesoit le système d'ailleurs (wxWidget, QT, etc...).
-fr: Donc, pour des applications à distribuer à des tiers, c'est à éviter.
-en: GUI protability means mediocre experience on all platforms.
+en: GUI portability means mediocre experience on all platforms.
 en: Any system it might be (wxWidget, QT, etc...).
+fr: En ce qui concerne les GUI, portable signifie interface fonctionnelle mais médiocre sur toutes les plateformes.
+fr: Quelque soit le système d'ailleurs (wxWidget, QT, etc...).
+fr: Donc, pour des applications à distribuer à des tiers, c'est à éviter.
 
+en: The Java ideology is "closed".
+en: But it resolve a big problem.
+en: It helps medium to low quality developers to work in team without the ability to make too much harm to the product.
+en: A good programmer will be able to make very interesting things with it thought.
+en: Please note I didn't say Java programmer are bad programmer.
 fr: Le système de Java est très clos.
-fr: Par contre il résoud un très bon problème.
+fr: Par contre il résout un très bon problème.
 fr: Il permet à des développeurs médiocres de travailler en groupe sans faire trop de mal.
 fr: Et un bon programmeur sera tout de même capable d'y faire des choses très intéressantes.
 fr: Veuillez noter que je n'ai pas dit que les programmeurs Java sont de mauvais programmeurs, ce n'est pas ce que je pense.
-en: The Java ideology is "closed". But it resolve a big problem.
-en: It helps medium to low quality developper to work in team without the ability to make too much harm to the product.
-en: A good programmer will be able to make very interresting things with it thought.
-en: Please note I didn't say Java programmer are bad programmer.
 
 
 ### Objective-C
@@ -362,19 +369,19 @@ en: The language I learned and used only to make application on Apple(c) platfor
 en: I learned Objective-C just after Python.
 en: It was hard to do it.
 en: At first I didn't liked the syntax and many other details.
-en: But it is this kind of language you like more and more you use it.
+en: But it is this kind of language the more you use, the more you like.
 en: In fact, Objective-C is a simple language, but associated with the Cocoa framework it is a really good tool.
 en: Cocoa is very different to other framework I used before.
-en: I find many of its idea extermely good.
+en: I find many of its idea extremely good.
 en: Both simple and efficient.
-en: It might seems like small details on paper, but once you start using it, it make all the difference.
+en: It might seems like small details on paper, but once you start using it, it makes all the difference.
 
 fr: Vraiment jusqu'ici, même si Objective-C reste assez bas niveau, le fait que le typage de ce langage soit dynamique est un vrai plus pour l'interface graphique.
 fr: Je ne peux que vous encourager à vous accrocher à ce langage et de faire un vrai programme avec. Vous en serez certainement plus ravi qu'il n'y parrait eu début.
 en: Even if Objective-C is a relatively low level language.
 en: Its dynamic typing ability make it very good for GUI programming.
-en: I recommand to continue working with this language.
-en: In the end you'll certainely find it better than expected.
+en: I recommend to continue working with this language.
+en: In the end you'll certainly find it better than expected.
 
 fr: ## Les langages interprétés modernes
 en: ## Modern Scripting Languages
@@ -389,7 +396,10 @@ en: This small script language that we used all to make our website in the time 
 fr: Sympatique, mais sans plus. Apparemment il y a eu pas mal de progrès depuis PHP5, un jour peut-être que j'y reviendrai. Mais, il a derrière lui une réputation de langage pour les "scripts kiddies".
 fr: En gros ceux qui ne savent pas coder.
 fr: Des trous de sécurité de tous les cotés, etc...
-en: Nice but no more. Apparently there were a lot of progress since PHP5. Maybe one day I'll use it again. But behind it, this language has a "script kiddies only" reputation.
+en: Nice but no more.
+en: Apparently there were a lot of progress since PHP5.
+en: Maybe one day I'll use it again.
+en: But behind it, this language has a "script kiddies only" reputation.
 en: Also long history of easy to make security holes.
 
 fr: En réalité, PHP est au niveau d'abstration à peine supérieur au C.
@@ -401,7 +411,8 @@ en: For web applications it is a real problem.
 
 fr: PHP, reste pour moi le langage de l'injection SQL. J'en fait encore un peu de temps en temps. Et j'ai moi-même dû protéger les accès au SQL pour éviter les injections. Oui, je n'ai pas trouvé de librairie toute prête pour protéger les entrées SQL. Je n'ai pas beaucoup cherché non plus.
 en: PHP remains for me the SQL injection language.
-en: I made a bit of PHP not so long ago, and it was a pain to protect my application to SQL injection. Yep, I didn't found any standard library to make this, but I didn't searched a lot.
+en: I made a bit of PHP not so long ago, and it was a pain to protect my application to SQL injection.
+en: Yep, I didn't found any standard library to make this, but I didn't searched a lot.
 
 ### Python
 
@@ -450,8 +461,8 @@ fr: Perl c'est assez magique, mais la syntaxe est tellement désagréable à lir
 fr: A moins que tous les autres soient des cadors du Perl.
 fr: Mais la feature qui tue, les expressions régulières :
 en: Perl is magic, but the syntax is so hideous nobody can like to work in an environment with many different person in Perl.
-en: Or at least, all other collaboratos must be excellent programmers.
-en: But the very good feature is the integration of some perl syntax.
+en: Or at least, all other collaborators must be excellent programmers.
+en: A great feature of perl is its integration with regular expression in its syntax:
 
 
 <code class="perl">
@@ -463,8 +474,8 @@ fr: Et oui, les expressions régulière y sont intégrées directement comme ave
 fr: Et ça rend le code beacoup plus compact (et parfois illisible).
 fr: Mais c'est vraiment pas mal.
 fr: C'est une sorte de `awk` sous stéroides.
-en: This program will replace every toto by titi inside the `$var` variable.
-en: The Perl code is often very compact and usally unreadable.
+en: This program will replace every `toto` by `titi` inside the `$var` variable.
+en: The Perl code is often very compact and generally unreadable.
 en: But it is a language good to know.
 en: It is a kind of `awk` under steroids.
 
@@ -480,16 +491,26 @@ fr: C'est le langage qui perd quasiment tous les benchmarks.
 fr: Par contre c'est un outil parfait pour faire des prototypes.
 fr: Et si vous voulez faire un prototype de site web, RoR est ce qui se fait de mieux.
 fr: De l'idée au site, il ne se passera que peu de temps.
-en: Ruby is a very good language. It is often compared (opposed ?) to Python.
+en: Ruby is a very good language.
+en: It is often compared (opposed ?) to Python.
 en: There are the regular expression operators Perl inside the langage.
 en: But the syntax is extremely clear, like in Python.
-en: Many feature were inspired by functionnal programming (as in Python).
+en: Many feature were inspired by functional programming (as in Python).
 en: I used it a lot.
 en: It is the worst language I know in term of efficiency.
 en: This is the language that lose almost all benchmarks.
 en: But it is the perfect tool for prototypes.
 en: If you want to make a website prototype, RoR (Ruby on Rails) is certainly one of the best system known to mankind.
-en: From idea to realisation, few time will occur. Make this site work for thousands of people, will, on the other hand, certainly require a lot of optimisations.
+en: From idea to realisation, few time will occur.
+en: Make this site work for thousands of people, will, on the other hand, certainly require a lot of optimisations.
+
+en: One of the greatest Ruby feature is its ability to make the program extremely readable.
+en: It is very close to natural language.
+en: On the other hand, I found the Object Oriented layer a bit disappointing.
+en: The fact there is no real "class variable" but only "tree class variable" for example.
+
+en: Considering the community, the ruby one feels closer to the creative than the engineer.
+en: I am under the impression designer tends to use Ruby instead of Python.
 
 ### Javascript
 
@@ -521,7 +542,7 @@ en: It is very nice to use.
 en: As I said, this is a good surprise.
 en: Javascript was chosen by chance as the script inside your navigator.
 en: Instead of the java inspired syntax, everything else is very good.
-en: In order to compensate the syntax, you can use CoffeScript.
+en: In order to compensate the syntax, you can use CoffeeScript.
 
 fr: ## Les langages fonctionnels
 en: ## Functional Languages
@@ -533,7 +554,7 @@ fr: J'étais plutôt bon, et j'avais les bonnes intuitions mathématiques qui vo
 fr: Mais je dois avouer que je ne l'ai plus jamais utilisé.
 fr: Simplement, ce type de langage semble si loin de ce qui se fait pour fabriquer des produits que ça me donnais vraiment l'impression d'être un langage pour chercheurs.
 en: I learned CamL during the college.
-en: It was really interresting.
+en: It was really interesting.
 en: Functional programming is very different to imperative programming (most of popular languages).
 en: I had good mathematic intuitions to use this language.
 en: But I must confess I never used it for something serious.
@@ -558,17 +579,34 @@ fr: Pas de "L0L! URAN00B!".
 fr: Et aussi pas de concession du langage pour devenir populaire.
 fr: Le langage est bon, voilà tout.
 fr: Alors qu'en Java et C++, typiquement certain choix ont été fait en dépis du bon sens pour "faire plaisir".
-en: I am still learning this language.
+en: I believe I will still learning this language in many years.
 en: I must say it is a pleasure.
 en: Generally it takes me no more than some hours to some days to learn a new programming language.
-en: Concerning haskell, this is very different.
-en: To master haskell you need to understand very hard concepts.
+en: Concerning Haskell, this is very different.
+en: To master Haskell you need to understand very abstract concepts.
 en: Monads and Arrows are some of them.
-en: I didn't understand them before I read some scientific paper.
+en: I didn't understood them before I read some scientific paper.
 en: Many week will be necessary to master it perfectly (if someone does).
-en: Also the community is very friendly and nice. There is no "LOL! URAN00B! RTFM!"
+en: Also the community is very friendly and nice.
+en: There is no "LOL! URAN00B! RTFM!"
 en: And no concession has been made to make this language more popular (I'm looking at you C++, Java and Javascript).
 en: This langage remain pure (I know there are two meaning).
+
+en: Concerning making real product with Haskell.
+en: In fact, Haskell is very efficient concerning code change.
+en: Refactoring code is incredibly easy with Haskell.
+en: And in the same time, the Haskell type system helps to make your product bug free.
+
+en: Technically this language is close to perfection.
+en: But it has some major problems:
+
+en: - not so popular
+en: - hard to learn
+en: - I also believe there is not actually enough success stories with Haskell
+
+en: On the other hand, knowing Haskell will help you learn a lot of thing about programming in general.
+en: You should at least take a look.
+en: [I made an Haskell introduction if you are curious](/Scratch/en/blog/Haskell-the-Hard-Way/).
 
 fr: ## Langages originaux
 en: ## Unpopular Languages
@@ -616,8 +654,9 @@ fr: Mais c'est aussi un langage de script très bien adapté aux traitement de f
 fr: Je le recommande chaudement.
 fr: C'est pour l'instant le meilleur shell que j'ai utilisé. Je le préfère au bash.
 en: Yes, zsh is a shell.
-en: But it is also a script language extremly well suited to file management.
-en: For now, it is the best shell I used. I prefer zsh to bash.
+en: But it is also a script language very well suited to file management.
+en: For now, it is the best shell I used.
+en: I prefer zsh to bash.
 
 ### Prolog
 
@@ -638,12 +677,12 @@ fr: ## Les langages à découvrir
 en: ## Languages to discover
 
 fr: Il reste encore pas mal de langages et de framework à essayer.
-fr: Actuellement je pense que je vais passer un moment avec haskell.
+fr: Actuellement je pense que je vais passer un moment avec Haskell.
 fr: Peut-être demain que j'irai apprendre LISP, Scala ou Erlang.
 fr: Comme je suis plus dans la création de site web, j'irai certainement jeter un coup d'œil à clojure aussi.
 fr: Et certainement beaucoup d'autres choses.
 en: Many languages and framework remains to be learnt and tried.
-en: Actually I believe I will stay a while with haskell.
+en: Actually I believe I will stay a while with Haskell.
 en: Maybe tomorrow I will look at LISP, Scala or Erlang.
 en: I also certainly look at clojure to make web application.
 
