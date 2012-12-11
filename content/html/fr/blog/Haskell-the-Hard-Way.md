@@ -133,7 +133,7 @@ Cet article contient cinq parties :
  > runhaskell filename.lhs
  > </pre>
  >
- > Certain ne marcheront pas, mais la majorité vous donneront un résultat.
+ > Certains ne marcheront pas, mais la majorité vous donneront un résultat.
  > Vous devriez voir un lien juste en dessous.
 
 enddiv
