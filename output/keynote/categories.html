@@ -93,6 +93,14 @@
 </ul>
 </section>
 <section class="slide">
+<h2 id="not-really-about-cat-glory">Not really about: Cat <span class="and">&amp;</span> glory</h2>
+<figure>
+<img src="categories/img/categlory.jpg" alt="Cat n glory" /> <figcaption>credit to Tokuhiro Kawai (川井徳寛)</figcaption>
+</figure>
+
+
+</section>
+<section class="slide">
 <h2 id="general-overview">General Overview</h2>
 <div style="float:right; width: 18%">
 <img src="categories/img/eilenberg.gif" alt="Samuel Eilenberg"/> <img src="categories/img/maclaine.jpg" alt="Saunders Mac Lane"/>
@@ -115,11 +123,16 @@
 <blockquote>
 <p>Category Theory is a new language/framework for Math</p>
 </blockquote>
+<ul>
+<li>Another way of thinking</li>
+<li>Extremely efficient for generalization</li>
+</ul>
 </section>
 <section class="slide">
 <h2 id="math-programming-relation">Math Programming relation</h2>
 <img class="right" src="categories/img/buddha.gif" alt="Buddha Fractal"/>
 <p>Programming <em><span class="yellow">is</span></em> doing Math</p>
+<p>Strong relations between type theory and category theory.</p>
 <p>Not convinced?<br />Certainly a <em>vocabulary</em> problem.</p>
 <p>One of the goal of Category Theory is to create a <em>homogeneous vocabulary</em> between different disciplines.</p>
 </section>
@@ -419,6 +432,12 @@ such that for each \(f:A→B\):</p>
 <p class="yellow">Only identities</p>
 </section>
 <section class="slide">
+<h2 id="choice">Choice</h2>
+<p>The same object can be seen in many different way as a category.</p>
+<p>You can choose what are object, morphisms and composition.</p>
+<p>ex: <strong>Str</strong> and discrete(Σ<sup>*</sup>)</p>
+</section>
+<section class="slide">
 <h2 class="base1">Categorical Properties</h2>
 
 <p class="base1">Any property which can be expressed in term of category, objects, morphism and composition.</p>
@@ -488,12 +507,13 @@ A <em>functor</em> <span class="yellow">\(\F\)</span> from <span class="blue">\(
 <section class="slide">
 <h2>Plan</h2>
 <ul style="font-size: 2em; font-weight:bold">
-    <li>Why?</li>
-    <li>What?</li>
-    <li><span class="yellow">How?
-        <ul class="base01" style="border-left: 2px solid; padding-left: 1em; font-size: .6em; float: right; font-weight: bold; margin: -2em 0 0 1em">
+    <li>General overview</li>
+    <li>Definitions</li>
+    <li><span class="yellow">Applications
+        <ul class="base01" style="border-left: 2px solid; padding-left: 1em; font-size: .6em; float: right; font-weight: bold; margin: -4em 0 0 1em">
             <li>\(\Hask\) category
             </li><li> Functors
+            </li><li> Natural transformations
             </li><li> Monads
             </li><li> κατα-morphisms
             </li></ul>
@@ -523,7 +543,7 @@ A <em>functor</em> <span class="yellow">\(\F\)</span> from <span class="blue">\(
 <p>Types have <em>kinds</em>; The kind is to type what type is to function. Kind are the types for types (so meta).</p>
 <pre><code>Int, Char :: *
 [], Maybe :: * -&gt; *
-(,) :: * -&gt; * -&gt; *
+(,), (-&gt;) :: * -&gt; * -&gt; *
 [Int], Maybe Char, Maybe [Int] :: *</code></pre>
 </section>
 <section class="slide">
@@ -872,7 +892,7 @@ join (η [x]) = [x] = join [η x]</code></pre>
 <pre class="haskell left smaller" style="width:40%"><code>main = drawImage (width,height)
 
 drawImage :: Screen -&gt; DrawScene
-drawImage <span class="orange">screen</span> =
+drawImage <span class="orange">screen</span> = do
     drawPoint p <span class="orange">screen</span>
     drawCircle c <span class="orange">screen</span>
     drawRectangle r <span class="orange">screen</span>
@@ -923,7 +943,7 @@ drawPoint p = do
 <p>Where is the missing information?</p>
 <ul>
 <li>Functor operator <code>fmap</code></li>
-<li>Algebra representing the <code>(+1)</code> and also knowing the <code>0</code>.</li>
+<li>Algebra representing the <code>(+1)</code> and also knowing about the <code>0</code>.</li>
 </ul>
 <p>First example, make <code>length</code> on <code>[Char]</code></p>
 </section>
@@ -931,10 +951,11 @@ drawPoint p = do
 <h2 id="κατα-morphism-type-work">κατα-morphism: Type work</h2>
 <pre class="haskell"><code>
 data StrF a = Cons Char a | Nil
-data Str = StrF Str
+data Str' = StrF Str'
 
 -- generalize the construction of Str to other datatype
--- Mu :: type fixed point
+-- Mu: type fixed point
+-- Mu :: (* -> *) -> *
 
 data Mu f = InF { outF :: f (Mu f) }
 data Str = Mu StrF
@@ -949,12 +970,16 @@ foo=InF { outF = Cons 'f'
 </section>
 <section class="slide">
 <h2 id="κατα-morphism-missing-information-retrieved">κατα-morphism: missing information retrieved</h2>
-<pre><code>type Algebra f a = f a -&gt; a
+<pre class="haskell"><code>type Algebra f a = f a -> a
 instance Functor (StrF a) =
     fmap f (Cons c x) = Cons c (f x)
     fmap _ Nil = Nil</code></pre>
-<pre><code>cata :: Functor f =&gt; Algebra f a -&gt; Mu f -&gt; a
+
+<pre class="haskell"><code>cata :: Functor f => Algebra f a -> Mu f -> a
 cata f = f . fmap (cata f) . outF</code></pre>
+
+
+
 </section>
 <section class="slide">
 <h2 id="κατα-morphism-finally-length">κατα-morphism: Finally length</h2>
@@ -995,6 +1020,7 @@ depth = cata phi where
 <li>Better modularity</li>
 <li>Better control through properties of types</li>
 </ul>
+<p><span class="smaller">No cat were harmed in the making of this presentation.</span></p>
 </section>
 <!-- End slides. -->
 
@@ -1046,7 +1072,7 @@ depth = cata phi where
 	});
 </script>
 <!-- Y theme -->
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="js/highlight/highlight.pack.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
