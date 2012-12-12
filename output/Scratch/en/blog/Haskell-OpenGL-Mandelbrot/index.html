@@ -1956,34 +1956,26 @@ O(n².log(n)) to O(n³).</p>
                         Subscribe
                     </a>
                 </div>
-                <script type="text/javascript">
-                    $(document).ready(function(){
-                            $('#comment').hide();
-                            $('#clickcomment').click(showComments);
-                        });
-                    function showComments() {
-                        $('#comment').show();
-                        $('#clickcomment').fadeOut();
-                    }
-                    document.write('<div id="clickcomment">Comments &amp; Share</div>');
-                </script>
                 <div class="flush"></div>
 
                 <div class="corps" id="comment">
                     <h2 class="first">comments</h2>
-                    <noscript>
-                        You must enable javascript to comment.
-                    </noscript>
-                    
-    <script type="text/javascript">
-    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
-    var idcomments_post_id = '/Scratch/en/blog/Haskell-OpenGL-Mandelbrot/';
-    var idcomments_post_url = 'http://yannesposito.com/Scratch/en/blog/Haskell-OpenGL-Mandelbrot/';
-    </script>
-    <span id="IDCommentsPostTitle" style="display:none"></span>
-    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
-    
-                </div>
+
+					<div id="disqus_thread"></div>
+        			<script type="text/javascript">
+        			    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        			    var disqus_shortname = 'yannesposito'; // required: replace example with your forum shortname
+
+        			    /* * * DON'T EDIT BELOW THIS LINE * * */
+        			    (function() {
+        			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        			        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        			    })();
+        			</script>
+        			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        			<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+				</div>
 
                 <div id="entete" class="corps_spaced">
                     <div id="liens">
