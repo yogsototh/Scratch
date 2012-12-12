@@ -515,22 +515,15 @@ $hauteur_menu: 4em
 
 $contentMargin: 0em
 
-.encadre, .black, .red, .intro, .resume, .shadow
+.encadre, .black, .intro, .resume, .shadow
   padding: 2em
   margin:
     top: 2em
     bottom: 2em
 
 
-.encadre, .black, .red, .shadow
+.encadre, .black, .shadow
   +secondColor
-
-pre .red
-  background: none
-  padding: 0
-  margin: auto
-  border: none
-  box-shadow: none
 
 .intro, .resume
   font-size: 0.9em
@@ -599,6 +592,9 @@ figure
   figcaption
     text-align: center
     margin: .5em 0
+
+figure.left, figure.right
+  max-width: 30%
 
 img.clean
   border: none
@@ -717,6 +713,11 @@ img
   background: none
   border: none
 
+img.right
+  max-width: 30%
+  margin:
+    top: .6em
+    left: 2em
 img.left
   float: left
   max-width: 30%
@@ -1070,3 +1071,42 @@ a.cut
     img
       max-width: 80%
       max-height: 6em
+
+section.slide
+  border-color: $borderColor
+  border: solid 1px
+  margin-bottom: 1em
+  padding: .5em
+
+.base03
+  color: $base03
+.base02
+  color: $base02
+.base01
+  color: $base01
+.base00
+  color: $base00
+.base0
+  color: $base0
+.base1
+  color: $base1
+.base2
+  color: $base2
+.base3
+  color: $base3
+.yellow
+  color: $yellow
+.orange
+  color: $orange
+.red
+  color: $red
+.magenta
+  color: $magenta
+.violet
+  color: $violet
+.blue
+  color: $blue
+.cyan
+  color: $cyan
+.green
+  color: $green
