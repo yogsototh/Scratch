@@ -705,7 +705,7 @@ toHList (Cons x xs) = x:toHList xs</pre>
 <p><code>toHList</code> is a natural transformation. It is also a morphism from <code>List</code> to <code>[]</code> in the Category of \(\Hask\) endofunctors.</p>
 <img style="float:left;width:30%" src="/keynote/categories/img/mp/nattrans-tree-list.png" alt="natural transformation commutative diagram"/>
 <figure style="float:right;width:60%">
-<img style="width:40%" src="/keynote/categories/img/mp/tree-list-endofunctor-morphism.png" alt="natural transformation commutative diagram"/> <figcaption><code>toList . toHList = id</code> <span class="and">&amp;</span> <code>toHList . toList = id</code> <span style="visibility:hidden"><span class="and">&amp;</span></span><br/> therefore <code>[]</code> <span class="and">&amp;</span> <code>Tree</code> are <span class="orange">isomorph</span>. </figcaption>
+<img style="width:40%" src="/keynote/categories/img/mp/tree-list-endofunctor-morphism.png" alt="natural transformation commutative diagram"/> <figcaption><code>toList . toHList = id</code> <span class="and">&amp;</span> <code>toHList . toList = id</code> <span style="visibility:hidden"><span class="and">&amp;</span></span><br/> therefore <code>[]</code> <span class="and">&amp;</span> <code>List</code> are <span class="orange">isomorph</span>. </figcaption>
 </figure>
 
 
