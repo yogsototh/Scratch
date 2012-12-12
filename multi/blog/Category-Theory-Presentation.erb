@@ -683,7 +683,7 @@ Haskell types look like a fractal:</p>
 <section class="slide">
 <h2 id="natural-transformation-examples-14">Natural Transformation Examples (1/4)</h2>
 <pre><code class="haskell small">data List a = Nil | Cons a (List a)
-toList :: [a] -> Tree a
+toList :: [a] -> List a
 toList [] = Nil
 toList (x:xs) = Cons x (toList xs)</pre>
 </code>
