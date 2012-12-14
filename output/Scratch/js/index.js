@@ -93,7 +93,9 @@ $(document).ready(function() {
 
 $(window).bind("load", function() {
 	// lorsque toutes les ressources ont ete chargees
-	$('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/assets/css/cmu.css"/>');
+    if (! /windows/.test(navigator.userAgent.toLowerCase())) {
+		$('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/assets/css/cmu.css"/>');
+	}
 });
 
 
