@@ -81,19 +81,16 @@ function detectClient() {
 // Ce que l'on va lancer à l'init.
 $(document).ready(function() {
     var client=detectClient();
-    if ( ! /msie/.test(client) ) {
-        initCode();
-    }
-    if (/windows/.test(navigator.userAgent.toLowerCase())) {
-        $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/windows.css"/>');
-    }
+    if ( ! /msie/.test(client) ) { initCode(); }
     $('#blackpage').fadeOut('slow',function(){ $('#blackpage').remove(); });
     analytics();
 });
 
 $(window).bind("load", function() {
 	// lorsque toutes les ressources ont ete chargees
-    if (! /windows/.test(navigator.userAgent.toLowerCase())) {
+    if (/windows/.test(navigator.userAgent.toLowerCase())) {
+        $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/windows.css"/>');
+	} else {
 		$('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/assets/css/cmu.css"/>');
 	}
 });
