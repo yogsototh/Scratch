@@ -71,10 +71,10 @@ compile '/html/*' do
     # filter :yabbreviations
     filter :footnotes
 
-    if item[:kind] == 'article'
-        layout 'article'
-    elsif not item[:layout].nil?
+    if not item[:layout].nil?
         layout item[:layout]
+    elsif item[:kind] == 'article'
+        layout 'article'
     else
         layout 'default' unless item[:layout] == "none"
     end
