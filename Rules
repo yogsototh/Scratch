@@ -59,6 +59,7 @@ compile '/html/*' do
         filter :erb # I'll try not to use ruby anymore inside content
         filter :kramdown
         # filter :math_repair # after kramdown
+        filter :fix_img
     else
         raise "Filter is not configured for #{item.identifier} in Rules file."
     end
