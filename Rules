@@ -51,6 +51,7 @@ compile '/html/*' do
     elsif ext == 'haml' || ext.nil?
         filter :haml
     elsif ext == 'md' || ext == 'markdown'
+		filter :code
     	filter :graph
     	filter :description
     	filter :falacy
