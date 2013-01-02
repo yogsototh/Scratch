@@ -46,21 +46,17 @@ compile '/html/*' do
     # item[:extension] returns 'html.erb' for multi-dotted filename
     ext = item[:extension].nil? ? nil : item[:extension].split('.').last
 
-    filter :ultraviolet # must be before kramdown
-    filter :graph
-    filter :mpost
-    filter :description
-    filter :falacy
-    filter :blogimage
-
     if ext == 'erb'
         filter :erb
     elsif ext == 'haml' || ext.nil?
         filter :haml
     elsif ext == 'md' || ext == 'markdown'
-        filter :erb # I'll try not to use ruby anymore inside content
+    	filter :graph
+    	filter :description
+    	filter :falacy
+    	filter :blogimage
         filter :kramdown
-        # filter :math_repair # after kramdown
+        filter :fix_img
     else
         raise "Filter is not configured for #{item.identifier} in Rules file."
     end
@@ -72,10 +68,10 @@ compile '/html/*' do
     # filter :yabbreviations
     filter :footnotes
 
-    if item[:kind] == 'article'
-        layout 'article'
-    elsif not item[:layout].nil?
+    if not item[:layout].nil?
         layout item[:layout]
+    elsif item[:kind] == 'article'
+        layout 'article'
     else
         layout 'default' unless item[:layout] == "none"
     end

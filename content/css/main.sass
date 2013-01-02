@@ -170,7 +170,7 @@ body
   color: $base01
 
 pre, code, a.cut
-  font-family: "cmuntt",Incosolata, Monaco, monospace
+  font-family: Incosolata, Monaco, monospace
 
 pre
   &::selection
@@ -210,8 +210,13 @@ ul
 .corps ul li:before
   content: "- "
 
-ol,ul
+ul
   padding-left: 0
+  margin-left: 1.5ex
+  text-indent: -1.5ex
+ol
+  padding-left: 0
+
 .toc
   ol li, ul li
     margin: .5em 0
@@ -225,7 +230,7 @@ body, h1, h2, h3, h4, #entete, .tagname
   line-height: 1.5em
 
 body
-  font-family: "ComputerModern", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
+  font-family: Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif
 
 /* Header Numbering */
 .article #afterheader
@@ -251,7 +256,7 @@ pre
   box-shadow: 0 0 5px ($secondBackgroundColor - #222) inset
   border-radius: 3px
   padding: 1em
-  line-height: 1em
+  line-height: 1.1em
   font-size: .9em
 
 p
@@ -404,7 +409,7 @@ $VMarginCorps: 3em
 
 // ATTENTION DOIT ETRE 0 pour le bon callage
 $HMarginCorps: 0
-$content_width: 52em
+$content_width: 47em
 
 body
   text-align: center
@@ -515,22 +520,15 @@ $hauteur_menu: 4em
 
 $contentMargin: 0em
 
-.encadre, .black, .red, .intro, .resume, .shadow
+.encadre, .black, .intro, .resume, .shadow
   padding: 2em
   margin:
     top: 2em
     bottom: 2em
 
 
-.encadre, .black, .red, .shadow
+.encadre, .black, .shadow
   +secondColor
-
-pre .red
-  background: none
-  padding: 0
-  margin: auto
-  border: none
-  box-shadow: none
 
 .intro, .resume
   font-size: 0.9em
@@ -573,8 +571,6 @@ $fontcorps: 1.25
     margin: 0
   p, ol, ul, blockquote
     line-height: 1.5em
-  pre, code
-    line-height: 1em
   ul li ul, ol li ul, ul li ol, ol li ol
     margin-top: 0
     margin-bottom: 0
@@ -599,6 +595,9 @@ figure
   figcaption
     text-align: center
     margin: .5em 0
+
+figure.left, figure.right
+  max-width: 30%
 
 img.clean
   border: none
@@ -717,6 +716,11 @@ img
   background: none
   border: none
 
+img.right
+  max-width: 30%
+  margin:
+    top: .6em
+    left: 2em
 img.left
   float: left
   max-width: 30%
@@ -1070,3 +1074,44 @@ a.cut
     img
       max-width: 80%
       max-height: 6em
+
+section.slide
+  border-color: $borderColor
+  border: solid 1px
+  margin-bottom: 1em
+  padding: .5em
+  font-family: sans-serif
+  font-size: .8em
+
+.base03
+  color: $base03
+.base02
+  color: $base02
+.base01
+  color: $base01
+.base00
+  color: $base00
+.base0
+  color: $base0
+.base1
+  color: $base1
+.base2
+  color: $base2
+.base3
+  color: $base3
+.yellow
+  color: $yellow
+.orange
+  color: $orange
+.red
+  color: $red
+.magenta
+  color: $magenta
+.violet
+  color: $violet
+.blue
+  color: $blue
+.cyan
+  color: $cyan
+.green
+  color: $green

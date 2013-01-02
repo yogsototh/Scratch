@@ -66,29 +66,33 @@ function detectClient() {
     return userAgent;
 }
 
-$(document).ready(function(){
-    var msgh1=$('#titre h1').html();
-    var msgh2=$('#titre h2').html();
-    var msgintro=$('.corps').html();
-    if (!msgh1) { msgh1=""; }
-    if (!msgh2) { msgh2=""; }
-    if (!msgintro) { msgintro=""; }
-    $('#blackpage').prepend('<div class="preh1">'+msgh1+'</div>');
-    $('#blackpage').prepend('<div class="preh2">'+msgh2+'</div>');
-    $('#blackpage').append('<div class="preintro"><div class="corps">'+msgintro+'</div></div>');
-});
+// $(document).ready(function(){
+//     var msgh1=$('#titre h1').html();
+//     var msgh2=$('#titre h2').html();
+//     var msgintro=$('.corps').html();
+//     if (!msgh1) { msgh1=""; }
+//     if (!msgh2) { msgh2=""; }
+//     if (!msgintro) { msgintro=""; }
+//     $('#blackpage').prepend('<div class="preh1">'+msgh1+'</div>');
+//     $('#blackpage').prepend('<div class="preh2">'+msgh2+'</div>');
+//     $('#blackpage').append('<div class="preintro"><div class="corps">'+msgintro+'</div></div>');
+// });
 
 // Ce que l'on va lancer à l'init.
-$(window).bind("load", function() {
+$(document).ready(function() {
     var client=detectClient();
-    if ( ! /msie/.test(client) ) {
-        initCode();
-    }
-    if (/windows/.test(navigator.userAgent.toLowerCase())) {
-        $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/windows.css"/>');
-    }
+    if ( ! /msie/.test(client) ) { initCode(); }
     $('#blackpage').fadeOut('slow',function(){ $('#blackpage').remove(); });
     analytics();
+});
+
+$(window).bind("load", function() {
+	// lorsque toutes les ressources ont ete chargees
+    if (/windows/.test(navigator.userAgent.toLowerCase())) {
+        $('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/css/windows.css"/>');
+	} else {
+		$('head').append('<link rel="stylesheet" type="text/css" href="/Scratch/assets/css/cmu.css"/>');
+	}
 });
 
 

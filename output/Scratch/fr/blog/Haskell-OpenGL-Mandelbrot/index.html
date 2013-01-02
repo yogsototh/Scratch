@@ -10,12 +10,7 @@
         <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/yannespositocomfr"/>
         <link rel="alternate" lang="fr" xml:lang="fr" title="Un example progressif avec Haskell" type="text/html" hreflang="fr" href="/Scratch/fr/blog/Haskell-OpenGL-Mandelbrot/" /> 
-        <link rel="alternate" lang="en" xml:lang="en" title="Haskell Progressive Example" type="text/html" hreflang="en" href="/Scratch/en/blog/Haskell-OpenGL-Mandelbrot/" />         <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
-        <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
-        <script type="text/javascript" src="/Scratch/js/index.js"></script>
-        <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>
-        <script type="text/javascript" src="/Scratch/js/article.js"></script>
-        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <link rel="alternate" lang="en" xml:lang="en" title="Haskell Progressive Example" type="text/html" hreflang="en" href="/Scratch/en/blog/Haskell-OpenGL-Mandelbrot/" /> 
         <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <![endif]-->
@@ -23,7 +18,7 @@
     </head>
     <body lang="fr" class="article">
         <script type="text/javascript">// <![CDATA[
-            document.write('<div id="blackpage"><img src="/Scratch/img/loading.gif" alt="Chargement en cours..."/></div>');
+            document.write('<div id="blackpage"><div>Bonjour ! Commencez à lire, un meilleur style se charge...<img src="/Scratch/img/loading.gif" alt="Chargement en cours..."/></div></div>');
             // ]]>
         </script>
 
@@ -59,7 +54,7 @@
 <div class="intro">
 
 
-<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Un exemple progressif d’utilisation d’Haskell.
+<p><span class="sc"><abbr title="Trop long à lire">tlàl</abbr>&nbsp;: </span> Un exemple progressif d&rsquo;utilisation d&rsquo;Haskell.
 Vous pourrez voir un ensemble de Mandelbrot étendu à la troisième dimension.
 De plus le code sera très propre.
 Les détails de rendu sont séparés dans un module externe.
@@ -72,7 +67,7 @@ Vous pouvez vous inspirer de ce code utilisant le paradigme fonctional dans tous
 <ul id="markdown-toc">
   <li><a href="#introduction">Introduction</a></li>
   <li><a href="#first-version">First version</a>    <ul>
-      <li><a href="#lets-play-the-song-of-our-people">Let’s play the song of our people</a></li>
+      <li><a href="#lets-play-the-song-of-our-people">Let&rsquo;s play the song of our people</a></li>
       <li><a href="#let-us-start">Let us start</a></li>
     </ul>
   </li>
@@ -157,7 +152,7 @@ We start cleaning the code at the 5<sup>th</sup> section.</p>
 The first being mostly some boilerplate<sup id="fnref:011"><a href="#fn:011" rel="footnote">2</a></sup>.
 And the second part more focused on OpenGL and content.</p>
 
-<h3 id="lets-play-the-song-of-our-people">Let’s play the song of our people</h3>
+<h3 id="lets-play-the-song-of-our-people">Let&rsquo;s play the song of our people</h3>
 
 <div class="codehighlight">
 
@@ -393,7 +388,7 @@ It is a bit long before the first image appears, but if you resize the window, i
 This property is a direct consequence of purity.
 If you look closely, you see that <code>allPoints</code> is a pure list.
 Therefore, calling <code>allPoints</code> will always render the same result and Haskell is clever enough to use this property.
-While Haskell doesn’t garbage collect <code>allPoints</code> the result is reused for free.
+While Haskell doesn&rsquo;t garbage collect <code>allPoints</code> the result is reused for free.
 We did not specified this value should be saved for later use. 
 It is saved for us.</p>
 
@@ -631,7 +626,7 @@ instead of using a 3D projection of quaternions.
 I am pretty sure this construction is not useful for numbers.
 But it will be enough for us to create something that look nice.</p>
 
-<p>This section is quite long, but don’t be afraid,
+<p>This section is quite long, but don&rsquo;t be afraid,
 most of the code is some OpenGL boilerplate.
 If you just want to skim this section,
 here is a high level representation:</p>
@@ -647,7 +642,7 @@ here is a high level representation:</p>
           <p>Drawing: </p>
 
           <ul>
-            <li>set doubleBuffer, handle depth, window size…</li>
+            <li>set doubleBuffer, handle depth, window size&hellip;</li>
             <li>Use state to apply some transformations</li>
           </ul>
         </li>
@@ -903,7 +898,7 @@ Mainly there are two parts: apply some transformations, draw the object.</p>
 
 <h3 id="the-3d-mandelbrot">The 3D Mandelbrot</h3>
 
-<p>We have finished with the OpenGL section, let’s talk about how we 
+<p>We have finished with the OpenGL section, let&rsquo;s talk about how we 
 generate the 3D points and colors.
 First, we will set the number of details to 200 pixels in the three dimensions.</p>
 
@@ -1017,7 +1012,7 @@ depthPoints = do
 
 <p>If you prefer the first version, then just imagine how hard it will be to change the enumeration of the point from (x,y) to (x,z) for example.</p>
 
-<p>Also, we didn’t searched for negative values. 
+<p>Also, we didn&rsquo;t searched for negative values. 
 This modified Mandelbrot is no more symmetric relatively to the plan <code>y=0</code>.
 But it is symmetric relatively to the plan <code>z=0</code>.
 Then I mirror these values. </p>
@@ -1242,7 +1237,7 @@ ymandel x y z = mandel (2*x/width) (2*y/height) (2*z/deep) 64
 
 </div>
 
-<p>This code is cleaner but many things doesn’t feel right.
+<p>This code is cleaner but many things doesn&rsquo;t feel right.
 First, all the user interaction code is outside our main file.
 I feel it is okay to hide the detail for the rendering.
 But I would have preferred to control the user actions.</p>
@@ -1276,12 +1271,12 @@ We will have two choices: </p>
   </li>
   <li>
     <p>Our main problem come from user interaction.
-If you ask “the Internet”, 
+If you ask &ldquo;the Internet&rdquo;, 
 about how to deal with user interaction with a functional paradigm, 
 the main answer is to use <em>functional reactive programming</em> (FRP).
-I won’t use FRP in this article.
-Instead, I’ll use a simpler while less effective way to deal with user interaction.
-But The method I’ll use will be as pure and functional as possible.</p>
+I won&rsquo;t use FRP in this article.
+Instead, I&rsquo;ll use a simpler while less effective way to deal with user interaction.
+But The method I&rsquo;ll use will be as pure and functional as possible.</p>
   </li>
 </ol>
 
@@ -1303,7 +1298,7 @@ First, what the main loop should look like if we could make our own:</p>
   <li>a function taking two parameters: time and world state and render a new world without user interaction.</li>
 </ul>
 
-<p>Here is a real working code, I’ve hidden most display functions.
+<p>Here is a real working code, I&rsquo;ve hidden most display functions.
 The YGL, is a kind of framework to display 3D functions.
 But it can easily be extended to many kind of representation.</p>
 
@@ -1523,7 +1518,7 @@ idleAction tnew world = world {
 <p>Now the function which will generate points in 3D.
 The first parameter (<code>res</code>) is the resolution of the vertex generation.
 More precisely, <code>res</code> is distance between two points on one direction.
-We need it to “close” our shape.</p>
+We need it to &ldquo;close&rdquo; our shape.</p>
 
 <p>The type <code>Function3D</code> is <code>Point -&gt; Point -&gt; Maybe Point</code>.
 Because we consider partial functions
@@ -1592,7 +1587,7 @@ ymandel x y z = fromIntegral (mandel x y z 64) / 64
 
 </div>
 
-<p>I won’t explain how the magic occurs here.
+<p>I won&rsquo;t explain how the magic occurs here.
 If you are interested, just read the file <a href="code/05_Mandelbulb/YGL.hs"><code>YGL.hs</code></a>.
 It is commented a lot.</p>
 
@@ -1612,8 +1607,8 @@ It is commented a lot.</p>
 <p>Our code architecture feel very clean.
 All the meaningful code is in our main file and all display details are
 externalized.
-If you read the code of <code>YGL.hs</code>, you’ll see I didn’t made everything perfect. 
-For example, I didn’t finished the code of the lights.
+If you read the code of <code>YGL.hs</code>, you&rsquo;ll see I didn&rsquo;t made everything perfect. 
+For example, I didn&rsquo;t finished the code of the lights.
 But I believe it is a good first step and it will be easy to go further.
 Unfortunately the program of the preceding session is extremely slow.
 We compute the Mandelbulb for each frame now.</p>
@@ -1897,20 +1892,20 @@ ymandel x y z = fromIntegral (mandel x y z 64) / 64
 <p>As we can use imperative style in a functional language,
 know you can use functional style in imperative languages.
 This article exposed a way to organize some code in a functional way.
-I’d like to stress the usage of Haskell made it very simple to achieve this.</p>
+I&rsquo;d like to stress the usage of Haskell made it very simple to achieve this.</p>
 
 <p>Once you are used to pure functional style,
 it is hard not to see all advantages it offers.</p>
 
 <p>The code in the two last sections is completely pure and functional.
-Furthermore I don’t use <code>GLfloat</code>, <code>Color3</code> or any other OpenGL type.
+Furthermore I don&rsquo;t use <code>GLfloat</code>, <code>Color3</code> or any other OpenGL type.
 If I want to use another library in the future, 
 I would be able to keep all the pure code and simply update the YGL module.</p>
 
-<p>The <code>YGL</code> module can be seen as a “wrapper” around 3D display and user interaction. 
+<p>The <code>YGL</code> module can be seen as a &ldquo;wrapper&rdquo; around 3D display and user interaction. 
 It is a clean separator between the imperative paradigm and functional paradigm.</p>
 
-<p>If you want to go further, it shouldn’t be hard to add parallelism.
+<p>If you want to go further, it shouldn&rsquo;t be hard to add parallelism.
 This should be easy mainly because most of the visible code is pure.
 Such an optimization would have been harder by using directly the OpenGL library.</p>
 
@@ -1920,7 +1915,7 @@ O(n².log(n)) to O(n³).</p>
 <hr/><div class="footnotes">
   <ol>
     <li id="fn:001">
-      <p>Unfortunately, I couldn’t make this program to work on my Mac. More precisely, I couldn’t make the <a href="http://openil.sourceforge.net/">DevIL</a> library work on Mac to output the image. Yes I have done a <code>brew install libdevil</code>. But even a minimal program who simply write some <code>jpg</code> didn’t worked. I tried both with <code>Haskell</code> and <code>C</code>.<a href="#fnref:001" rel="reference">&#8617;</a></p>
+      <p>Unfortunately, I couldn&rsquo;t make this program to work on my Mac. More precisely, I couldn&rsquo;t make the <a href="http://openil.sourceforge.net/">DevIL</a> library work on Mac to output the image. Yes I have done a <code>brew install libdevil</code>. But even a minimal program who simply write some <code>jpg</code> didn&rsquo;t worked. I tried both with <code>Haskell</code> and <code>C</code>.<a href="#fnref:001" rel="reference">&#8617;</a></p>
     </li>
     <li id="fn:011">
       <p>Generally in Haskell you need to declare a lot of import lines.
@@ -1961,34 +1956,26 @@ O(n².log(n)) to O(n³).</p>
                         s'abonner
                     </a>
                 </div>
-                <script type="text/javascript">
-                    $(document).ready(function(){
-                            $('#comment').hide();
-                            $('#clickcomment').click(showComments);
-                        });
-                    function showComments() {
-                        $('#comment').show();
-                        $('#clickcomment').fadeOut();
-                    }
-                    document.write('<div id="clickcomment">Commentaires &amp; Partage</div>');
-                </script>
                 <div class="flush"></div>
 
                 <div class="corps" id="comment">
                     <h2 class="first">commentaires</h2>
-                    <noscript>
-                        Vous devez activer javascript pour commenter.
-                    </noscript>
-                    
-    <script type="text/javascript">
-    var idcomments_acct = 'a307f0044511ff1b5cfca573fc0a52e7';
-    var idcomments_post_id = '/Scratch/fr/blog/Haskell-OpenGL-Mandelbrot/';
-    var idcomments_post_url = 'http://yannesposito.com/Scratch/fr/blog/Haskell-OpenGL-Mandelbrot/';
-    </script>
-    <span id="IDCommentsPostTitle" style="display:none"></span>
-    <script type='text/javascript' src='/Scratch/js/genericCommentWrapperV2.js'></script>
-    
-                </div>
+
+					<div id="disqus_thread"></div>
+        			<script type="text/javascript">
+        			    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        			    var disqus_shortname = 'yannesposito'; // required: replace example with your forum shortname
+
+        			    /* * * DON'T EDIT BELOW THIS LINE * * */
+        			    (function() {
+        			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        			        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        			    })();
+        			</script>
+        			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        			<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+				</div>
 
                 <div id="entete" class="corps_spaced">
                     <div id="liens">
@@ -2023,7 +2010,7 @@ O(n².log(n)) to O(n³).</p>
                             articles suivants
                             
                             <div class="next_article">
-                                <a href="/Scratch/fr/blog/Category-Theory-Programming/">Programmation en Théorie des Catégories&nbsp;<span class="nicer">»</span></a>
+                                <a href="/Scratch/fr/blog/Category-Theory-Presentation/">Category Theory Presentation&nbsp;<span class="nicer">»</span></a>
                             </div>
                             
                             
@@ -2057,4 +2044,10 @@ O(n².log(n)) to O(n³).</p>
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="/Scratch/js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="/Scratch/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/Scratch/js/index.js"></script>
+    <script type="text/javascript" src="/Scratch/js/highlight/highlight.pack.js"></script>
+    <script type="text/javascript" src="/Scratch/js/article.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </html>

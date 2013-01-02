@@ -18,6 +18,6 @@ def generateIntenseDebateThread
     var idcomments_post_url = 'http://yannesposito.com#{protectedPath}';
     </script>
     <span id="IDCommentsPostTitle" style="display:none"></span>
-    <script type='text/javascript' src='#{@config[:webprefix]}/js/genericCommentWrapperV2.js'></script>
+    <script type=”text/javascript” src=”http://www.intensedebate.com/js/genericCommentWrapperV2.js”></script>
     }
 end

@@ -19,7 +19,7 @@ tags:
 blogimage("dragon.jpg","Title image")
 
 begindiv(intro)
-%tlal Mon avis court et hautement subjectif concernant les différents languages de programmations que j'ai utilisé.
+%tlal Mon avis succinct et hautement subjectif concernant les différents languages de programmation que j'ai utilisé.
 enddiv
 
 ### `BASIC`
@@ -138,7 +138,7 @@ Bref il est versatile, et on ne peut pas dire que l'on sait programmer si on ne 
 
 ### ADA
 
-Le langage super-propre.
+Le langage "super propre".
 
 J'avais bien aimé ADA, mais j'avoue que ça n'a duré que le temps d'un semestre de cours.
 Peut-être qu'un jour je m'y remettrai.
@@ -166,6 +166,8 @@ leftblogimage("cplusplus.jpg","Messy router")
 
 Le malpropre
 
+en:
+
 Et oui l'industrie voulait un langage objet, mais elle n'était pas prête à mettre à la poubelle tout ses codes en C.
 La solution, prendre C et lui rajouter une couche objet.
 Le problème avec C++ c'est qu'il fait trop de choses.
@@ -178,14 +180,14 @@ Du coup, mon alphabet était limité à 2<sup>16</sup> lettres.
 Hors, pour certaines application, l'alphabet doit être gigantesque.
 fr:
 En conclusion je dirai que C++ est un très bon langage si vous vous fixez à l'avance un sous ensemble de ses fonctionnalités.
-en:
 
 
 ### Eiffel
 
 leftblogimage("eiffel.jpg","Eiffel tower construction")
 
-Bon, ok c'est un très beau langage objet.
+
+Eiffel est un très beau langage objet.
 Bien plus propre que C++.
 Mais, à moins que les choses aient changées, il n'est pas très populaire.
 Derrière lui il n'a pas la communauté de C++.
@@ -197,12 +199,15 @@ Lorsqu'on viens du C, il est désagréable de changer ses habitudes.
 
 leftblogimage("grail.jpg","Holy Grail from the Monty Python")
 
+
 On continue vers les langages objets. Alors, à une époque où j'en ai entendu parler, c'était _le Graal_ !
+
 
 La portabilité, votre programme marchera partout. Il était orienté objet. Incrusté à l'intérieur il y avait des concepts d'architecture qui empêchent de faire n'importe quoi... Sauf que.
 
 Sauf qu'il est incroyablement verbeux.
 Et que les limitations sont très désagréables si on sait ce que l'on fait.
+
 
 Par exemple, il n'y a pas d'héritage multiple en Java.
 Ce qui est en général un choix que je trouve cohérent s'il est bien appuyé par des systèmes qui compensent ce manque.
@@ -230,11 +235,11 @@ Bon, après cette expérience je déconseillerai Java.
 La portabilité, n'est pas si intéressante que ce qu'on pourrait croire.
 
 En ce qui concerne les GUI, portable signifie interface fonctionnelle mais médiocre sur toutes les plateformes.
-Quelquesoit le système d'ailleurs (wxWidget, QT, etc...).
+Quelque soit le système d'ailleurs (wxWidget, QT, etc...).
 Donc, pour des applications à distribuer à des tiers, c'est à éviter.
 
 Le système de Java est très clos.
-Par contre il résoud un très bon problème.
+Par contre il résout un très bon problème.
 Il permet à des développeurs médiocres de travailler en groupe sans faire trop de mal.
 Et un bon programmeur sera tout de même capable d'y faire des choses très intéressantes.
 Veuillez noter que je n'ai pas dit que les programmeurs Java sont de mauvais programmeurs, ce n'est pas ce que je pense.
@@ -333,6 +338,8 @@ Par contre c'est un outil parfait pour faire des prototypes.
 Et si vous voulez faire un prototype de site web, RoR est ce qui se fait de mieux.
 De l'idée au site, il ne se passera que peu de temps.
 
+
+
 ### Javascript
 
 C'est la bonne surprise.
@@ -383,6 +390,10 @@ Et aussi pas de concession du langage pour devenir populaire.
 Le langage est bon, voilà tout.
 Alors qu'en Java et C++, typiquement certain choix ont été fait en dépis du bon sens pour "faire plaisir".
 
+
+
+
+
 ## Langages originaux
 
 ### Metapost
@@ -430,7 +441,7 @@ Un peu comme la programmation fonctionnelle mais en beaucoup plus puissant.
 ## Les langages à découvrir
 
 Il reste encore pas mal de langages et de framework à essayer.
-Actuellement je pense que je vais passer un moment avec haskell.
+Actuellement je pense que je vais passer un moment avec Haskell.
 Peut-être demain que j'irai apprendre LISP, Scala ou Erlang.
 Comme je suis plus dans la création de site web, j'irai certainement jeter un coup d'œil à clojure aussi.
 Et certainement beaucoup d'autres choses.

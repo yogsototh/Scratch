@@ -172,16 +172,13 @@ fr: Mais la seconde est plus bien supérieure en terme d'architecture.
 fr: Je ne veux pas discuster ici pourquoi c'est mieux.
 fr: Je vous demande simplement de me croire quand je dis que l'approche fonctionnelle est supérieure.
 
-fr: Actuellement il me manque une fonction lambda, si quelqu'un à une idée elle serait la bienvenue. 
-fr: Je ne sais pas encore comment créer facilement des fonctions anonymes.
-en: Actually I lack the lambda operator. 
-en: If someone has an idea on how to create anonymous functions, just tell me, thanks.
+en: You can find an [updated version of the code (thanks to Arash Rouhani)](https://github.com/Tarrasch/zsh-functional). 
+en: An older version is [here thought](https://github.com/yogsototh/zsh_functional).
+en: Here is the (first version) source code:
+fr: Vous pouvez télécharger [une version à jour du code (merci à Arash Rouhani)](https://github.com/Tarrasch/zsh-functional). 
+fr: Une ancienne version est [ici](https://github.com/yogsototh/zsh_functional).
+fr: Voici le code source (de la première version) :
 
-en: Here is the (first version[^1]) source code:
-fr: Voici le code source (de la première version[^1]) :
-
-en: [^1]: As stated in the intro, if you want to install it, just go [there](https://github.com/yogsototh/zsh_functional).
-fr: [^1]: Comme précisé dans l'introduction, si vous voulez l'installez allez plutôt voir dans ce [repository](https://github.com/yogsototh/zsh_functional).
 
 <code class="zsh" file="functional.sh">
 #!/usr/bin/env zsh
