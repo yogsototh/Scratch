@@ -19,244 +19,87 @@ $blue   : #268bd2
 $cyan   : #2aa198
 $green  : #859900
 
-/* $backtext: #FAFAFC */
-$backtext: $base3 + #151515
-$fronttext: $base02
-$hightext: $base03
-$borderColor: $base2
-$altback: $base3
+$unit: 16px
+$lineheight: $unit * 1.5
 
-@import url(/Scratch/assets/css/cmufontface.css)
-
-/* General */
-body
-  font-family: 'Futura', serif
-  font-size: 20px
-  color: $base3
-  background: $base02
-
-a, a:link, a:visited, a:active, a:hover
-  color: $hightext
-  text-decoration: none
-  outline: none
-
-a:hover
-  color: $orange
-
-hr
-  color: $borderColor
-  border:
-    top: 1px solid $borderColor
-    bottom: none
-    left: none
-    right: none
-
-ul
-  list-style: none
-  padding-left: 0
-  margin-left: 1.5ex
-  text-indent: -1.5ex
-ol
-  padding-left: 0
-
-ul li:before
-  content: "- "
-
-ol li ul, ol li ol, ul li ol, ul li ul
-  margin: .5em 1.5em
-  list-style: none
-
-/* fix for possible markdown issues */
-li p, ol p
-  display: inline
+html
   padding: 0
-
-table tr
-  &:nth-child(odd)
-    background-color: $altback
-table
-  border:
-    top:    solid 2px $borderColor
-    bottom: solid 2px $borderColor
-
 body
-  text-rendering: optimizelegibility
-  line-height: 1.5em
-
-h1, h2, h3, h4, h5, h6
-  color: $hightext
-  line-height: 1.1em
-  padding-left: 30px
-
-/* Header Numbering */
-.article #afterheader
-  counter-reset: niv02
-  h2
-    counter-increment: niv02
-    counter-reset: niv03
-    marker-offset: 3em
-    &:before
-      content: counter(niv02) ". "
-  h3
-    counter-increment: niv03
-    counter-reset: niv04
-    &:before
-      content: counter(niv02) "." counter(niv03) ". "
-  h4
-    counter-increment: niv04
-    &:before
-      content: counter(niv02) "." counter(niv03) "." counter(niv04) ". "
-
-p, ul, ol, h1, h2, h3, h4
-  margin-bottom: 30px
-  padding: 0 30px
-  text-align: justify
-
-pre
-  line-height: 1.1em
-  margin-bottom: 30px
-  padding: 30px
-  overflow: auto
-  background: $base3
-  font-size: 18px
-
-=sc
-  text-transform: uppercase
-  font-size: 0.8em
-
-abbr, acronym
-  +sc
-  text:
-    decoration: none
-  border:
-    bottom:
-      width: 0
-
-// -- TYPOGRAPHY --
-.small
-  font-size: 0.8em
-
-.sc
-  +sc
-
-.clear,.flush
-  clear: both
-
-.impact, .darkimpact
-  font-size: 2em
-  margin: 0 auto 1em auto
-  line-height: 1.3em
-
-figure
-  margin: 3em 0
-  img
-    box-shadow: 0 10px 15px #CCC inset
-  figcaption
-    text-align: center
-    margin: .5em 0
-figure.left, figure.right
-  max-width: 30%
-
-/* Specific */
-#afterheader
+  padding: 0
+  margin: 0
+body
+  font-family: Helvetica, sans-serif !important
+  font-size: $unit
+  line-height: $lineheight
+  background: $magenta
   color: $base01
-  background-color: $backtext
 
-.intro, .resume, blockquote
-  font-style: italic
-  padding: 0.5em 1em
-  a:hover
-    color: $orange
-  i, em
-    font-style: normal
-  strong, b
-    font-weight: normal
-
-.intro, .resume
-  font-size: 0.9em
-
-blockquote
-  border: solid 1px $borderColor
-  background-color: $altback
-  pre, pre code
-    background-color: $base2
-  pre
-    border: solid 1px rgba(0,0,0,0.1)
-  ul
-    padding-left: 1.5em
-
-section.slide
-  border-color: $borderColor
-  border: solid 1px
-  margin-bottom: 1em
-  padding: .5em
-  font-family: sans-serif
-  font-size: .8em
-
-.base03
-  color: $base03
-.base02
+a
+  text-decoration: none
   color: $base02
-.base01
-  color: $base01
-.base00
+a:visited
   color: $base00
-.base0
-  color: $base0
-.base1
-  color: $base1
-.base2
-  color: $base2
-.base3
-  color: $base3
-.yellow
-  color: $yellow
-.orange
-  color: $orange
-.red
-  color: $red
-.magenta
-  color: $magenta
-.violet
-  color: $violet
-.blue
-  color: $blue
-.cyan
-  color: $cyan
-.green
-  color: $green
 
-/* Black page */
-#blackpage
-  font-family: sans-serif
-  font-style: italic
-  padding-top: 8em
-  z-index: 9000
-  cursor: wait
-  img
-    background: none
-    border: none
-    max-width: 80%
-    margin: 0 auto
-  a
-    cursor: pointer
-
-.cut
-  font-size: .8em
-  text-align: right
-  display: inline-block
-  width: 100%
-  opacity: 0.3
-
-.cut:hover
-  opacity: 1
-
-
-/* Layout */
-#afterheader
-  width: 35em
+#content
+  width: 40em
   margin: 0 auto
+  padding: 0
+  background: #FFF
+  color: #444
+  h1,h2,h3,h4,h5,h6
+    color: #222
+    padding: 0 $unit
+    margin: (2*$unit) 0
+  figure
+    margin: 0
+    padding: 0
+    figcaption
+      padding: 0 $unit
+      margin: (2*$unit) 0
+  p
+    padding: 0 (2*$unit)
+    margin: $unit 0
   img
     width: 100%
-  img.left, img.right
-    width: 30%
+  pre
+    font-family: monaco, monospace
+    overflow: auto
+    padding: 16px
+    line-height: 18px
+  ul
+    list-style: none
+  ul li:before
+    content: "- "
+  ul
+    padding-left: 0
+    margin-left: 33px
+    text-indent: -10px
+  ol
+    padding-left: 0
+    margin-left: 32px
+  .toc
+    ol li, ul li
+      margin: .5em 0
+  ol li ul, ol li ol, ul li ol, ul li ul
+    margin: .5em 1.5em
+    list-style: none
+  li p
+    display: inline
+    margin: 0
+    padding: 0
+
+#choix
+  font-size: 12px
+  padding: 0 16px
+  .return
+    float: right
+.cut
+  font-size: 12px
+  opacity: .5
+.cut:hover
+  opacity: 1
+hr
+  color: $base2
+  border-color: $base2
+  padding: 0 32px
+  margin: 0 32px
