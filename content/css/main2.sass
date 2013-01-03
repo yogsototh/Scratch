@@ -41,6 +41,20 @@ a
 a:visited
   color: $base00
 
+
+#blackpage, #nojsredirect
+  top: 0
+  left: 0
+  width: 100%
+  min-height: 100%
+  margin-left: 0
+  margin-right: 0
+  margin-top: 0
+  margin-bottom: 0
+  position: absolute
+  text-align: center
+  background: $base3
+
 #content
   width: 37*$unit + 2*$hmargin
   margin: 0 auto
@@ -78,12 +92,12 @@ a:visited
     content: "- "
   ul
     padding-left: 0
-    margin-left: $hmargin
+    margin: $unit $hmargin
     // width of '-'
     text-indent: -($unit/2)
   ol
     padding-left: 0
-    margin-left: $hmargin
+    margin: $unit $hmargin
   .toc
     ol li, ul li
       margin: ($unit/2) 0
@@ -94,6 +108,12 @@ a:visited
     display: inline
     margin: 0
     padding: 0
+
+#entete > #choix > #choixrss
+  margin: 0
+  padding: 0
+#entete > #choix > #choixlang
+  float: left
 
 #choix
   font-size: (3*$unit / 4)
@@ -113,6 +133,110 @@ p code, li code
   padding: 1px 2px
   background: $base3
   border: solid 1px $base2
+blockquote
+  border: solid 1px $base2
+  background: $base3
+  code
+    background: $base2
+    border: solid 1px rgba(0,0,0,0.1)
 
-#social
+// Specific elements
+#social,#choixrss,#comment
   margin: $unit $hmargin
+#social
+  float: left
+  opacity: 0.3
+  &:hover
+    opacity: 1
+#choixrss
+  float: right
+  opacity: 0.3
+  &:hover
+    opacity: 1
+#comment
+  img
+    width: auto
+    max-width: 100%
+.intro
+  font-size: 14px
+  line-height: 21px
+  color: $base02
+.left
+  float: left
+.right
+  float: right
+.flush
+  clear: both
+
+#bottom
+  padding: $unit 0
+  background: $base2
+  text-align: center
+  font-size: 14px
+  line-height: 21px
+#entete
+  padding: $unit 0
+  background: $base2
+  text-align: center
+  ul
+    text-indent: 0
+  ul li:before
+    content: ""
+  ul li
+    display: inline-block
+    span.active
+      color: $yellow
+  ul li > *
+    padding: 2px $unit
+    border: solid
+#previous_articles
+  float: left
+  text-align: left
+#next_articles
+  float: right
+  text-align: right
+.corps
+  padding-bottom: 2*$unit
+
+#tagcloud
+  margin: $unit $hmargin
+  font-size: 14px
+  line-height: 21px
+#sousliens.archive > ul
+  display: none
+#sousliens.archive > h4:hover
+  cursor: pointer
+#hiddenDivs > div
+  display: none
+.list
+  margin: $unit $hmargin
+#content img#mainlogo
+  width: auto
+  margin: 0 auto
+  display: block
+  max-width: 100%
+.date, .day, .month, .year
+  display: inline-block
+  padding-left: 10px
+  text-align: right
+.day
+  width: 10px
+.month
+  width: 20px
+.year
+  width: 30px
+.date
+  margin-right: 10px
+
+.popularblock
+  display: block
+  float: left
+  margin: 1.5%
+  width: 30%
+  figure
+    width: 100%
+    height: 120px
+    overflow: hidden
+    figcaption
+      display: none
+
