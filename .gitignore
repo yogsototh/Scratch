@@ -16,4 +16,5 @@ output/Scratch/*/*/*/index.html
 output/Scratch/*/*/*/*/index.html
 output/Scratch/*/*/*/*/*/index.html
 output/Scratch/*/*/*/*/*/*/index.html
+output/Scratch/assets/**/*
 crash.log
