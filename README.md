@@ -13,7 +13,8 @@ What you'll need to use it:
 
 - [nanoc](nanoc.stoneship.org) → `gem install nanoc`
 - [zsh](zsh.org) → Installed by default on most good system
-- A bunch of gems: `gem install ultraviolet krambook sass rainpress`
+- A bunch of gems: `gem install kramdown builder sass rainpress`
+- Optionally if you want to serve locally: `gem install unicorn rack rack-contrib rack-rewrite mime-types`
 
 Optionally
 

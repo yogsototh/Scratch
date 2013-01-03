@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+# watch and update the css
+
+typeset -A hmap
+
+while true; do
+	for src in content/css/*.sass; do
+		val=$(md5sum $src|awk '{print $1}')
+		if [[ $hmap[$src] != "$val" ]]; then
+			print "$src changed. Updating..."
+			hmap[${src}]=$val
+			dst="output/Scratch/assets/css/${${src:t}:r}.css"
+			tail -n +4 $src | sass > $dst
+		fi
+	done
+	sleep 1
+done

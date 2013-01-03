@@ -16,5 +16,9 @@ output/Scratch/*/*/*/index.html
 output/Scratch/*/*/*/*/index.html
 output/Scratch/*/*/*/*/*/index.html
 output/Scratch/*/*/*/*/*/*/index.html
-output/Scratch/assets/**/*
-crash.log
+output/Scratch/assets/css/*.css
+output/Scratch/*/graph
+output/Scratch/*/*/graph
+output/Scratch/*/*/*/graph
+output/Scratch/*/*/*/*/graph
+output/Scratch/*/*/*/*/*/graph

@@ -51,14 +51,13 @@ compile '/html/*' do
     elsif ext == 'haml' || ext.nil?
         filter :haml
     elsif ext == 'md' || ext == 'markdown'
-		filter :ultraviolet # must be before kramdown
+		filter :code
     	filter :graph
     	filter :description
     	filter :falacy
     	filter :blogimage
-        filter :erb # I'll try not to use ruby anymore inside content
+        filter :erb # I should try to remove all erb code inside markdown
         filter :kramdown
-        # filter :math_repair # after kramdown
         filter :fix_img
     else
         raise "Filter is not configured for #{item.identifier} in Rules file."

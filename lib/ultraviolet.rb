@@ -1,7 +1,7 @@
 class UltraVioletFilter < Nanoc3::Filter
-    identifier :ultraviolet
+    identifier :code
 
-    def protect(str) 
+    def protect(str)
         str.gsub(%r{<([^>]*)>}) do
             "&lt;#{$1}&gt;"
         end
@@ -33,4 +33,4 @@ class UltraVioletFilter < Nanoc3::Filter
         FileUtils.mkdir_p code_path
         File.open(%{#{code_path}/#{@filename}}, 'w'){|f|f.write(@code)}
     end
-end 
+end
