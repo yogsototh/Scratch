@@ -21,6 +21,7 @@ $green  : #859900
 
 $unit: 16px
 $lineheight: $unit * 1.5
+$hmargin: 4*$unit
 
 html
   padding: 0
@@ -31,7 +32,7 @@ body
   font-family: Helvetica, sans-serif !important
   font-size: $unit
   line-height: $lineheight
-  background: $magenta
+  background: $base2
   color: $base01
 
 a
@@ -41,47 +42,53 @@ a:visited
   color: $base00
 
 #content
-  width: 40em
+  width: 37*$unit + 2*$hmargin
   margin: 0 auto
   padding: 0
-  background: #FFF
-  color: #444
+  background: $base3 + #111111
+  color: $base01
   h1,h2,h3,h4,h5,h6
-    color: #222
-    padding: 0 $unit
-    margin: (2*$unit) 0
+    color: $base02
+    padding: 0 $hmargin
+    margin: $unit 0
   figure
     margin: 0
     padding: 0
     figcaption
-      padding: 0 $unit
-      margin: (2*$unit) 0
+      padding: 0 $hmargin
+      margin: $unit 0
   p
-    padding: 0 (2*$unit)
+    padding: 0 $hmargin
     margin: $unit 0
   img
     width: 100%
   pre
+    background: $base3
     font-family: monaco, monospace
     overflow: auto
-    padding: 16px
-    line-height: 18px
+    padding: $unit
+    line-height: $unit + 2px
+    border-top: solid 1px $base2
+    border-bottom: solid 1px $base2
+  pre code
+    background: $base3
   ul
     list-style: none
   ul li:before
     content: "- "
   ul
     padding-left: 0
-    margin-left: 33px
-    text-indent: -10px
+    margin-left: $hmargin
+    // width of '-'
+    text-indent: -($unit/2)
   ol
     padding-left: 0
-    margin-left: 32px
+    margin-left: $hmargin
   .toc
     ol li, ul li
-      margin: .5em 0
+      margin: ($unit/2) 0
   ol li ul, ol li ol, ul li ol, ul li ul
-    margin: .5em 1.5em
+    margin: ($unit/2) (3*$unit/2)
     list-style: none
   li p
     display: inline
@@ -89,17 +96,23 @@ a:visited
     padding: 0
 
 #choix
-  font-size: 12px
-  padding: 0 16px
+  font-size: (3*$unit / 4)
+  padding: 0 $unit
   .return
     float: right
 .cut
-  font-size: 12px
+  font-size: (3*$unit / 4)
   opacity: .5
 .cut:hover
   opacity: 1
 hr
   color: $base2
   border-color: $base2
-  padding: 0 32px
-  margin: 0 32px
+  margin: 0 ($unit / 4)
+p code, li code
+  padding: 1px 2px
+  background: $base3
+  border: solid 1px $base2
+
+#social
+  margin: $unit $hmargin
