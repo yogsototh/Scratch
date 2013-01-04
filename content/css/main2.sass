@@ -37,9 +37,11 @@ body
 
 a
   text-decoration: none
-  color: $base02
+  color: $yellow
 a:visited
-  color: $base00
+  color: $blue
+a:hover
+  color: $orange
 
 
 #blackpage, #nojsredirect
@@ -51,7 +53,7 @@ a:visited
   margin-right: 0
   margin-top: 0
   margin-bottom: 0
-  position: absolute
+  position: fixed
   text-align: center
   background: $base3
 
@@ -98,7 +100,9 @@ a:visited
   ol
     padding-left: 0
     margin: $unit $hmargin
-  .toc
+  .toc, #markdown-toc
+    a
+      color: $base01
     ol li, ul li
       margin: ($unit/2) 0
   ol li ul, ol li ol, ul li ol, ul li ul

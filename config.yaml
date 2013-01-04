@@ -70,8 +70,8 @@ translations:
         fr: "Chargement en cours..."
         en: "loading..."
     welcomeloading:
-        fr: "Bonjour ! Commencez à lire, un meilleur style se charge..."
-        en: "Hi! Start reading while a better style is loading..."
+        fr: "Chargement en cours..."
+        en: "Loading..."
     entirely_done_with:
         en: "Entirely done with"
         fr: "Site entièrement réalisé avec"
