@@ -19,7 +19,7 @@ $blue   : #268bd2
 $cyan   : #2aa198
 $green  : #859900
 
-$unit: 16px
+$unit: 20px
 $lineheight: $unit * 1.5
 $hmargin: 4*$unit
 
@@ -165,6 +165,9 @@ blockquote
   float: left
 .right
   float: right
+#content
+  img.right, img.left
+    max-width: 30%
 .flush
   clear: both
 
@@ -240,3 +243,77 @@ blockquote
     figcaption
       display: none
 
+// classes for colors
+.base03
+  color: $base03
+.base02
+  color: $base02
+.base01
+  color: $base01
+.base00
+  color: $base00
+.base0
+  color: $base0
+.base1
+  color: $base1
+.base2
+  color: $base2
+.base3
+  color: $base3
+.yellow
+  color: $yellow
+.orange
+  color: $orange
+.red
+  color: $red
+.magenta
+  color: $magenta
+.violet
+  color: $violet
+.blue
+  color: $blue
+.cyan
+  color: $cyan
+.green
+  color: $green
+
+// Presentation
+#content
+  section.slide
+    margin-bottom: 2*$unit
+    background-color: $base03
+    color: $base1
+    padding: $unit 0
+    box-shadow: 0 0 $unit #000 inset
+    a
+      text-decoration: none
+      color: $base00
+    a:visited
+      color: $base01
+    pre,code
+      background-color: $base02
+      border-color: $base01
+    blockquote
+      background-color: $base02
+      border-color: $base01
+    h1,h2,h3,h4,h5,h6
+      color: $base0
+    ul li
+      margin: .5em 1.5em
+    img
+      display: block
+      max-width: 80%
+      margin: $unit auto
+      padding: .5*$unit
+      background-color: $base02
+      border: solid 1px $base01
+    img.right, img.left, figure.right, figure.left
+      max-width: 30%
+      margin: .5*$unit
+      figcaption
+        padding: 0
+    figure
+      max-width: 80%
+      margin: 0 auto
+      img
+        max-width: 80%
