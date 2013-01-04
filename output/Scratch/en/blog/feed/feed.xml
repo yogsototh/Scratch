@@ -37,46 +37,6 @@ just continue to read as a standard web page.
 \(\newcommand{\C}{\mathc...&lt;/div&gt;&lt;/img&gt;</content>
   </entry>
   <entry>
-    <id>tag:yannesposito.com,2012-10-01:/Scratch/en/blog/Category-Theory-Programming/</id>
-    <title type="html">Category Theory Programming</title>
-    <published>2012-10-01T17:16:43Z</published>
-    <updated>2012-10-01T17:16:43Z</updated>
-    <author>
-      <name>Yann Esposito</name>
-      <uri>yannesposito.com</uri>
-    </author>
-    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/Category-Theory-Programming/"/>
-    <content type="html">
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; How to program using category theory.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;center&gt;&lt;hr style="width:30%;float:left;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;span class="sc"&gt;&lt;b&gt;Table of Content&lt;/b&gt;&lt;/span&gt;&lt;hr style="width:30%;float:right;border-color:#CCCCD0;margin-top:1em" /&gt;&lt;/center&gt;
-
-&lt;ul id="markdown-toc"&gt;
-  &lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href="#programming-paradigms"&gt;Programming Paradigms&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href="#get-some-intuition"&gt;Get some intuition&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href="#representation-of-category"&gt;Representation of Category&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/blockquote&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;%TODO{Do every...&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
     <id>tag:yannesposito.com,2012-06-15:/Scratch/en/blog/Haskell-OpenGL-Mandelbrot/</id>
     <title type="html">Haskell Progressive Example</title>
     <published>2012-06-15T17:16:43Z</published>
@@ -777,42 +737,8 @@ require 'rack-rewr...&lt;/code&gt;&lt;/pre&gt;</content>
       <uri>yannesposito.com</uri>
     </author>
     <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-07-09-Indecidabilities/"/>
-    <content type="html">&lt;p&gt;&amp;lt;% # toremove_ %&amp;gt;&lt;/p&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;&lt;span class="sc"&gt;&lt;abbr title="Too long; didn't read"&gt;tl;dr&lt;/abbr&gt;: &lt;/span&gt; I pretend to create a world to give examples of different meanings behind the word &lt;em&gt;undecidability&lt;/em&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Undecidability due to measure errors, &lt;/li&gt;
-  &lt;li&gt;Big errors resulting from small initial measure error,&lt;/li&gt;
-  &lt;li&gt;Fractal undecidability&amp;nbsp;;&lt;/li&gt;
-  &lt;li&gt;Logic Undecidability.&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-
-
-
-&lt;/div&gt;
-
-&lt;div class="corps"&gt;
-
-
-&lt;h1 class="first" id="the-undecidabilities"&gt;The Undecidabilities&lt;/h1&gt;
-
-
-&lt;div class="intro"&gt;
-
-
-&lt;p&gt;If a demiurge made our world, he certainly had a great sense of humor.
-After this read, you should be convinced.
-I&amp;#8217;ll pretend to be him.
-I&amp;#8217;ll create a simplified world.
-A world that obey to simple ma...&lt;/p&gt;&lt;/div&gt;</content>
+    <content type="html">
+</content>
   </entry>
   <entry>
     <id>tag:yannesposito.com,2010-07-31:/Scratch/en/blog/2010-07-31-New-style-after-holidays/</id>
@@ -1246,5 +1172,48 @@ ext=File.extname(str)
 &lt;p&gt;At first sight I believed that the regexp should be faster than the split because it could be many &lt;code&gt;.&lt;/code&gt; in a filename. But in reality, most of time there is only one dot and I realized the split will be faster. But not the fastest way. There is a function dedicated to this work in the &lt;code&gt;File&lt;/code&gt; module.&lt;/p&gt;
 
 </content>
+  </entry>
+  <entry>
+    <id>tag:yannesposito.com,2010-02-18:/Scratch/en/blog/2010-02-18-split-a-file-by-keyword/</id>
+    <title type="html">split a file by keyword</title>
+    <published>2010-02-18T13:29:14Z</published>
+    <updated>2010-02-18T13:29:14Z</updated>
+    <author>
+      <name>Yann Esposito</name>
+      <uri>yannesposito.com</uri>
+    </author>
+    <link rel="alternate" href="http://yannesposito.com/Scratch/en/blog/2010-02-18-split-a-file-by-keyword/"/>
+    <content type="html">&lt;p&gt;Strangely enough, I didn&amp;#8217;t find any built-in tool to split a file by keyword. I made one myself in &lt;code&gt;awk&lt;/code&gt;. I put it here mostly for myself. But it could also helps someone else.
+The following code split a file for each line containing the word &lt;code&gt;UTC&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div&gt;
+
+&lt;pre&gt;&lt;code class="perl"&gt;#!/usr/bin/env awk
+BEGIN{i=0;}
+/UTC/ { 
+    i+=1;
+    FIC=sprintf("fic.%03d",i); 
+} 
+{print $0&amp;gt;&amp;gt;FIC}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;In my real world example, I wanted one file per day, each line containing UTC being in the following format:&lt;/p&gt;
+
+&lt;pre class="twilight"&gt;
+Mon Dec  7 10:32:30 UTC 2009
+&lt;/pre&gt;
+
+&lt;p&gt;I then finished with the following code:&lt;/p&gt;
+
+&lt;div&gt;
+
+&lt;pre&gt;&lt;code class="perl"&gt;#!/usr/bin/env awk
+BEGIN{i=0;}
+/UTC/ {
+    date=$1$2$3; 
+    if ( date != olddate ) {
+       ...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
   </entry>
 </feed>
