@@ -30,9 +30,12 @@ translations:
     langue: 
         fr: "langue"
         en: "language"
-    switchTo: 
+    switchTo:
         fr: "en Français"
         en: "in English"
+    switchCss:
+        fr: "Changer le style"
+        en: "Switch style"
     clickForComment:
         fr: "Commentaires &amp; Partage"
         en: "Comments &amp; Share"

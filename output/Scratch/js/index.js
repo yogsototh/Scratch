@@ -78,12 +78,37 @@ function detectClient() {
 //     $('#blackpage').append('<div class="preintro"><div class="corps">'+msgintro+'</div></div>');
 // });
 
+
+// Ability to switch css by clicking on #swtichcss
+function switchcss() {
+	var pref='/Scratch/assets/css';
+	var latexstyle=pref+'/main.css';
+	var modernstyle=pref+'/main2.css';
+
+	if ( $.cookie('css') == latexstyle ) {
+		$('link[href="'+modernstyle+'"]').attr('href',latexstyle);
+	}
+	if ( $.cookie('css') == modernstyle ) {
+		$('link[href="'+latexstyle+'"]').attr('href',modernstyle);
+	}
+	$('#switchcss').click(function(){
+			if ($('link[href="'+latexstyle+'"]').length > 0) {
+				$('link[href="'+latexstyle+'"]').attr('href',modernstyle);
+				$.cookie('css',modernstyle);
+			} else {
+				$('link[href="'+modernstyle+'"]').attr('href',latexstyle);
+				$.cookie('css',latexstyle);
+			}
+		});
+}
+
 // Ce que l'on va lancer à l'init.
 $(document).ready(function() {
     var client=detectClient();
     if ( ! /msie/.test(client) ) { initCode(); }
     $('#blackpage').fadeOut('slow',function(){ $('#blackpage').remove(); });
     analytics();
+    switchcss();
 });
 
 $(window).bind("load", function() {
