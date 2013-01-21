@@ -28,12 +28,11 @@ html
 body
   padding: 0
   margin: 0
-body
   font-family: Helvetica, sans-serif !important
   font-size: $unit
   line-height: $lineheight
-  background: $base2
-  color: $base01
+  background: $base02
+  color: $base1
 
 a
   text-decoration: none
@@ -55,16 +54,14 @@ a:hover
   margin-bottom: 0
   position: fixed
   text-align: center
-  background: $base3
+  background: $base02
 
 #content
   width: 37*$unit + 2*$hmargin
   margin: 0 auto
   padding: 0
-  background: $base3 + #111111
-  color: $base01
   h1,h2,h3,h4,h5,h6
-    color: $base02
+    color: $base0
     padding: 0 $hmargin
     margin: $unit 0
   figure
@@ -81,9 +78,10 @@ a:hover
   pre
     background: $base3
     font-family: monaco, monospace
+    font-size: 0.8*$unit
     overflow: auto
     padding: $unit
-    line-height: $unit + 2px
+    line-height: 1.4 * 0.8 * $unit
     border-top: solid 1px $base2
     border-bottom: solid 1px $base2
   pre code
@@ -188,13 +186,11 @@ blockquote
 
 #bottom
   padding: $unit 0
-  background: $base2
   text-align: center
   font-size: 14px
   line-height: 21px
 #entete
   padding: $unit 0
-  background: $base2
   text-align: center
   ul
     text-indent: 0
@@ -295,8 +291,11 @@ blockquote
 // Presentation
 #content
   section.slide
+    & > *
+      padding: 0 $unit
     margin-bottom: 2*$unit
     background-color: $base03
+    border-radius: 3px
     color: $base1
     padding: $unit 0
     box-shadow: 0 0 $unit #000 inset
@@ -305,9 +304,15 @@ blockquote
       color: $base00
     a:visited
       color: $base01
+    pre
+      padding: $unit
     pre,code
       background-color: $base02
-      border-color: $base01
+      margin: $unit
+      border: 1px solid $base01
+      code
+        border: none
+        background: none
     blockquote
       background-color: $base02
       border-color: $base01
