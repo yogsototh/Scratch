@@ -86,6 +86,10 @@ a:hover
     tr
       &:nth-child(odd)
         background-color: $altbackground
+      th
+        border: solid medium $altfront
+        padding: 0.25*$unit
+        margin: 0
       td
         border: solid 1px $altfront
         padding: 0.25*$unit
@@ -366,8 +370,11 @@ pre .list
       border-color: $altfront
     h1,h2,h3,h4,h5,h6
       color: $lighter
-    ul li
-      margin: .5em 1.5em
+    ul
+      margin: $unit 0
+      padding: 0
+      li
+        margin: 0.5*$unit 1.5*$unit
     img
       display: block
       max-width: 80%
@@ -376,10 +383,11 @@ pre .list
       background-color: $altbackground
       border: solid 1px $altfront
     img.right, img.left, figure.right, figure.left
-      max-width: 30%
+      max-width: 26%
       margin: .5*$unit
       figcaption
         padding: 0
+        text-align: center
     figure
       max-width: 80%
       margin: 0 auto

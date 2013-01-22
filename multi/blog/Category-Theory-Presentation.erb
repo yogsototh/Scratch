@@ -46,21 +46,17 @@ just continue to read as a standard web page.
 \(\newcommand{\fmap}{\mathtt{fmap}}\)
 </div>
 
-<section class="slide">
+<section class="slide" style="text-align: center;">
 <h1 style="position: relative;">Category Theory <span class="and">&amp;</span> Programming</h1>
 <div><em class="base01">for</em> <a href="http://www.meetup.com/riviera-scala-clojure">Rivieria Scala Clojure</a> (Note this presentation uses Haskell)</div>
 <author><em class="base01">by</em> <a href="http://yannesposito.com">Yann Esposito</a></author>
-<div style="font-size:.8em">
+<div style="font-size:.8em; margin: 5em auto">
     <twitter>
         <a href="http://twitter.com/yogsototh">@yogsototh</a>,
      </twitter>
      <googleplus>
         <a href="https://plus.google.com/117858550730178181663">+yogsototh</a>
      </googleplus>
-</div>
-<div class="base01" style="font-size: .5em; font-weight: 400; font-variant:italic">
-    <div class="button" style="margin: .5em auto;border: solid 2px; padding: 5px; width: 8em; border-radius: 1em; background:rgba(255,255,255,0.05);"  onclick="javascript:gofullscreen();">ENTER FULLSCREEN</div>
-    HTML presentation: use arrows, space, swipe to navigate.
 </div>
 <div class="flush"></div></section>
 <section class="slide">
@@ -92,7 +88,7 @@ just continue to read as a standard web page.
 <li><em>New math foundation</em><br /> formalism abstraction, package entire theory<sup>★</sup></li>
 <li><em>Bridge between disciplines</em><br /> Physics, Quantum Physics, Topology, Logic, Computer Science<sup>☆</sup></li>
 </ul>
-<p  class="smaller base01" style="border-top: solid 1px">
+<p  class="base01" style="border-top: solid 1px; width: 70%; font-size: 0.7em">
 ★: <a href="http://www.math.harvard.edu/~mazur/preprints/when_is_one.pdf">When is one thing equal to some other thing?, Barry Mazur, 2007</a><br/> ☆: <a href="http://math.ucr.edu/home/baez/rosetta.pdf">Physics, Topology, Logic and Computation: A Rosetta Stone, John C. Baez, Mike Stay, 2009</a>
 </p>
 
@@ -120,14 +116,14 @@ just continue to read as a standard web page.
 <h2 id="vocabulary">Vocabulary</h2>
 <img class="right" src="/keynote/categories/img/mindblown.gif" alt="mind blown"/>
 <p>Math vocabulary used in this presentation:</p>
-<blockquote>
+<blockquote style="width:55%">
 <p>Category, Morphism, Associativity, Preorder, Functor, Endofunctor, Categorial property, Commutative diagram, Isomorph, Initial, Dual, Monoid, Natural transformation, Monad, Klesli arrows, κατα-morphism, ...</p>
 </blockquote>
 <div class="flush"></div></section>
 <section class="slide">
 <h2 id="programmer-translation">Programmer Translation</h2>
 <img class="right" src="/keynote/categories/img/readingcat.jpg" alt="lolcat"/>
-<table style="width:60%">
+<table style="width:50%">
 <tr><th>
 Mathematician
 </th><th>
@@ -235,7 +231,7 @@ such that for each \(f:A→B\):</p>
 <h2>Commutative diagrams</h2>
 
 <p>Two path with the same source and destination are equal.</p>
-<figure class="left" style="max-width: 40%;margin-left: 10%;">
+<figure class="left" style="max-width: 40%;margin-left: 5%;">
     <img
       src="/keynote/categories/img/mp/commutative-diagram-assoc.png"
       alt="Commutative Diagram (Associativity)"/>
@@ -294,7 +290,7 @@ such that for each \(f:A→B\):</p>
         <br/><span class="red">NO</span>
     </figcaption>
 </figure>
-<figure class="right" style="min-width: 59%">
+<figure class="right" style="min-width: 50%">
     <img src="/keynote/categories/img/mp/cat-example5.png" alt="Category example 5"/>
     <figcaption class="slide">
     \((h∘g)∘f=\id_B∘f=f\)<br/>
@@ -665,7 +661,7 @@ Haskell types look like a fractal:</p>
 <div class="flush"></div></section>
 <section class="slide">
 <h2 id="category-of-hask-endofunctors">Category of \(\Hask\) Endofunctors</h2>
-<img width="60%" src="/keynote/categories/img/mp/cat-hask-endofunctor.png" alt="Category of Hask endofunctors" />
+<img width="50%" src="/keynote/categories/img/mp/cat-hask-endofunctor.png" alt="Category of Hask endofunctors" />
 <div class="flush"></div></section>
 <section class="slide">
 <h2 id="category-of-functors">Category of Functors</h2>
@@ -688,11 +684,10 @@ Haskell types look like a fractal:</p>
 <pre><code class="haskell small">data List a = Nil | Cons a (List a)
 toList :: [a] -> List a
 toList [] = Nil
-toList (x:xs) = Cons x (toList xs)</pre>
-</code>
+toList (x:xs) = Cons x (toList xs)</code></pre>
 <p><code>toList</code> is a natural transformation. It is also a morphism from <code>[]</code> to <code>List</code> in the Category of \(\Hask\) endofunctors.</p>
-<img style="float:left;width:30%" src="/keynote/categories/img/mp/nattrans-list-tree.png" alt="natural transformation commutative diagram"/>
-<figure style="float:right;width:60%">
+<img style="float:left;width:30%;margin-left: 1em;" src="/keynote/categories/img/mp/nattrans-list-tree.png" alt="natural transformation commutative diagram"/>
+<figure style="float:right;width:50%">
 <img style="width:40%" src="/keynote/categories/img/mp/list-tree-endofunctor-morphism.png" alt="natural transformation commutative diagram"/>
 </figure>
 
@@ -703,11 +698,10 @@ toList (x:xs) = Cons x (toList xs)</pre>
 <pre><code class="haskell small">data List a = Nil | Cons a (List a)
 toHList :: List a -> [a]
 toHList Nil = []
-toHList (Cons x xs) = x:toHList xs</pre>
-</code>
+toHList (Cons x xs) = x:toHList xs</code></pre>
 <p><code>toHList</code> is a natural transformation. It is also a morphism from <code>List</code> to <code>[]</code> in the Category of \(\Hask\) endofunctors.</p>
-<img style="float:left;width:30%" src="/keynote/categories/img/mp/nattrans-tree-list.png" alt="natural transformation commutative diagram"/>
-<figure style="float:right;width:60%">
+<img style="float:left;width:30%;margin-left:1em" src="/keynote/categories/img/mp/nattrans-tree-list.png" alt="natural transformation commutative diagram"/>
+<figure style="float:right;width:50%">
 <img style="width:40%" src="/keynote/categories/img/mp/tree-list-endofunctor-morphism.png" alt="natural transformation commutative diagram"/> <figcaption><code>toList . toHList = id</code> <span class="and">&amp;</span> <code>toHList . toList = id</code> <span style="visibility:hidden"><span class="and">&amp;</span></span><br/> therefore <code>[]</code> <span class="and">&amp;</span> <code>List</code> are <span class="orange">isomorph</span>. </figcaption>
 </figure>
 
@@ -717,11 +711,10 @@ toHList (Cons x xs) = x:toHList xs</pre>
 <h2 id="natural-transformation-examples-34">Natural Transformation Examples (3/4)</h2>
 <pre><code class="haskell small">toMaybe :: [a] -> Maybe a
 toMaybe [] = Nothing
-toMaybe (x:xs) = Just x</pre>
-</code>
+toMaybe (x:xs) = Just x</code></pre>
 <p><code>toMaybe</code> is a natural transformation. It is also a morphism from <code>[]</code> to <code>Maybe</code> in the Category of \(\Hask\) endofunctors.</p>
-<img style="float:left;width:30%" src="/keynote/categories/img/mp/nattrans-list-maybe.png" alt="natural transformation commutative diagram"/>
-<figure style="float:right;width:60%">
+<img style="float:left;width:30%;margin-left:1em;" src="/keynote/categories/img/mp/nattrans-list-maybe.png" alt="natural transformation commutative diagram"/>
+<figure style="float:right;width:50%">
 <img style="width:40%" src="/keynote/categories/img/mp/list-maybe-endofunctor-morphism.png" alt="natural transformation commutative diagram"/>
 </figure>
 
@@ -731,11 +724,10 @@ toMaybe (x:xs) = Just x</pre>
 <h2 id="natural-transformation-examples-44">Natural Transformation Examples (4/4)</h2>
 <pre><code class="haskell small">mToList :: Maybe a -> [a]
 mToList Nothing = []
-mToList Just x  = [x]</pre>
-</code>
+mToList Just x  = [x]</code></pre>
 <p><code>toMaybe</code> is a natural transformation. It is also a morphism from <code>[]</code> to <code>Maybe</code> in the Category of \(\Hask\) endofunctors.</p>
-<img style="float:left;width:30%" src="/keynote/categories/img/mp/nattrans-maybe-list.png" alt="natural transformation commutative diagram"/>
-<figure style="float:right;width:60%">
+<img style="float:left;width:30%;margin-left:1em;" src="/keynote/categories/img/mp/nattrans-maybe-list.png" alt="natural transformation commutative diagram"/>
+<figure style="float:right;width:50%">
 <img style="width:40%" src="/keynote/categories/img/mp/maybe-list-endofunctor-morphsm.png" alt="relation between [] and Maybe"/> <figcaption>There is <span class="red">no isomorphism</span>.<br/> Hint: <code>Bool</code> lists longer than 1. </figcaption>
 </figure>
 
@@ -880,7 +872,7 @@ drawImage <span class="orange">screen</span> = do
 drawPoint point <span class="orange">screen</span> = ...
 drawCircle circle <span class="orange">screen</span> = ...
 drawRectangle rectangle <span class="orange">screen</span> = ...</code></pre>
-<pre class="haskell right smaller" style="width:45%"><code>main = do
+<pre class="haskell right smaller" style="width:40%"><code>main = do
     <span class="orange">put (Screen 1024 768)</span>
     drawImage
 
@@ -890,7 +882,8 @@ drawImage = do
     drawCircle c
     drawRectangle r
 
-drawPoint :: Point -&gt; State Screen DrawScene
+drawPoint :: Point -&gt;
+               State Screen DrawScene
 drawPoint p = do
     <span class="orange">Screen width height &lt;- get</span>
     ...</code></pre>
