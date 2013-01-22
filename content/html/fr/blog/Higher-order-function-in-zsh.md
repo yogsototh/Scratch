@@ -91,7 +91,7 @@ done
 
 Après
 
-<code class="zsh">
+<code class="bash">
 gif_to_png() { convert $1 ${1:r}.png && \rm -f $1 }
 
 handle_resources() { map gif_to_png $1/resources/*.gif(.N) }

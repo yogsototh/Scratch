@@ -95,8 +95,7 @@ function switchCssTo(style) {
 	styles.forEach(function(trystyle){
 		if ($('link[href="'+trystyle+'"]').length > 0) {
 			$('link[href="'+trystyle+'"]').attr('href',style);
-			styleindex = $.inArray(style,styles);
-			console.log('styleindex = ' + styleindex + ', style = ' + style);
+			styleindex=styles.indexOf(style);
 		}
 	});
 	// save the preference

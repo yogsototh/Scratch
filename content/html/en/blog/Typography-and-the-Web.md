@@ -43,20 +43,20 @@ What is the problem between the Web and ligatures?
 The first one is: you cannot search them. For example, try to search the word "first":
 
 - first ← No ligature, no problem[^1]
-- <span style="color: #800">ﬁ</span>r<span style="color: #800">ﬆ </span> ← ligature nice but unsearchable
+- <span class="red">ﬁ</span>r<span class="red">ﬆ </span> ← ligature nice but unsearchable
 
 [^1]: In fact, you might see a ligature and the search works because I now use some CSS ninja skills: `text-rendering: optimizelegibility`. But it also works because I use the right font; Computer Modern. Steal my CSS at will.
 
 The second one is the rendering, for example, try to use a ligature character with small caps:
 
 - <sc>first</sc>
-- <sc><span style="color:#800">ﬁ</span>r<span style="color:#800">ﬆ</span></sc>
+- <sc><span class="red">ﬁ</span>r<span class="red">ﬆ</span></sc>
 
 Here is a screenshot of what I see:
 
 blogimage("first_sc_screenshot.png", "Screenshot of first in small caps with and without ligatures.")
 
-The browser isn't able to understand that the ligature character "<span style="color:#800">ﬁ</span>" should render as <sc>fi</sc> when rendered in small caps. And one part of the problem is you should choose to display a character in small caps using %css.
+The browser isn't able to understand that the ligature character "<span class="red">ﬁ</span>" should render as <sc>fi</sc> when rendered in small caps. And one part of the problem is you should choose to display a character in small caps using %css.
 
 This way, how could you use a ligature Unicode character on a site on which you could change the %css?
 
@@ -73,7 +73,7 @@ If you take attention to detail, you'll see the first "first" contains a ligatur
 
 %latex was intelligent enough to create himself the ligatures when needed.
 
-The "<span style="color:#800">ﬆ</span>" ligature is rare and not rendered in %latex by default. But if you want you could also render rare ligature using %xelatex:
+The "<span class="red">ﬆ</span>" ligature is rare and not rendered in %latex by default. But if you want you could also render rare ligature using %xelatex:
 
 blogimage("xelatex_ligatures.jpg","XeLaTeX ligatures")
 

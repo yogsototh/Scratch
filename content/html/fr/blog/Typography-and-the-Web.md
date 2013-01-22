@@ -48,20 +48,20 @@ Quel est le problème des ligatures sur le web ?
 Le premier c'est que vous ne pouvez pas chercher les mots qui contiennent ces ligatures. Par exemple essayez de chercher le mot "first".
 
 - first ←  Pas de ligature, pas de problème[^1].
-- <span style="color: #800">ﬁ</span>r<span style="color: #800">ﬆ </span> ← Une jolie ligature, mais introuvable avec une recherche (<code>C-f</code>).
+- <span class="red">ﬁ</span>r<span class="red">ﬆ </span> ← Une jolie ligature, mais introuvable avec une recherche (<code>C-f</code>).
 
 [^1]: En réalité, vous devriez pouvoir voir une ligature. Maintenant j'utilise : `text-rendering: optimizelegibility`. Le rendu est correct parce que j'utilise une fonte correct, à savoir Computer Modern de Donald Knuth.
 
 Le second problème est le rendu. Par exemple, essayer d'utiliser un charactère de ligature en petites capitales :
 
 - <sc>first</sc>
-- <sc><span style="color:#800">ﬁ</span>r<span style="color:#800">ﬆ</span></sc>
+- <sc><span class="red">ﬁ</span>r<span class="red">ﬆ</span></sc>
 
 Voici une capture d'écran pour que vous voyez ce que je vois :
 
 blogimage("first_sc_screenshot.png", "Screenshot of first in small caps with and without ligatures.")
 
-Le navigateur est incapable de comprendre que le caractère de ligature "<span style="color:#800">ﬁ</span>" doit être rendu comme <sc>fi</sc> lorsqu'il est en petites capitales. 
+Le navigateur est incapable de comprendre que le caractère de ligature "<span class="red">ﬁ</span>" doit être rendu comme <sc>fi</sc> lorsqu'il est en petites capitales. 
 Et une part du problème est que l'on peut décider d'écrire en petite majuscule dans le %css.
 
 Comment par exemple utiliser un charactère de ligature unicode sur un site qui possède différents rendus via différentes %css ?
@@ -79,7 +79,7 @@ Si vous faites attention au détail, vous constaterez que le premier "first" con
 
 %latex a été suffisamment intelligent pour créer les ligatures si nécessaire.
 
-La ligature "<span style="color:#800">ﬆ</span>" est rare et n'est pas rendu par défaut par %latex. 
+La ligature "<span class="red">ﬆ</span>" est rare et n'est pas rendu par défaut par %latex. 
 Si vous voulez voir des ligatures rares, vous pouvez utiliser %xelatex:
 
 blogimage("xelatex_ligatures.jpg","XeLaTeX ligatures")
