@@ -56,9 +56,9 @@ fr: Quel est le problème des ligatures sur le web ?
 fr: Le premier c'est que vous ne pouvez pas chercher les mots qui contiennent ces ligatures. Par exemple essayez de chercher le mot "first".
 
 en: - first ← No ligature, no problem[^1]
-en: - <span style="color: #800">ﬁ</span>r<span style="color: #800">ﬆ </span> ← ligature nice but unsearchable
+en: - <span class="red">ﬁ</span>r<span class="red">ﬆ </span> ← ligature nice but unsearchable
 fr: - first ←  Pas de ligature, pas de problème[^1].
-fr: - <span style="color: #800">ﬁ</span>r<span style="color: #800">ﬆ </span> ← Une jolie ligature, mais introuvable avec une recherche (<code>C-f</code>).
+fr: - <span class="red">ﬁ</span>r<span class="red">ﬆ </span> ← Une jolie ligature, mais introuvable avec une recherche (<code>C-f</code>).
 
 en: [^1]: In fact, you might see a ligature and the search works because I now use some CSS ninja skills: `text-rendering: optimizelegibility`. But it also works because I use the right font; Computer Modern. Steal my CSS at will.
 fr: [^1]: En réalité, vous devriez pouvoir voir une ligature. Maintenant j'utilise : `text-rendering: optimizelegibility`. Le rendu est correct parce que j'utilise une fonte correct, à savoir Computer Modern de Donald Knuth.
@@ -67,15 +67,15 @@ en: The second one is the rendering, for example, try to use a ligature characte
 fr: Le second problème est le rendu. Par exemple, essayer d'utiliser un charactère de ligature en petites capitales :
 
 - <sc>first</sc>
-- <sc><span style="color:#800">ﬁ</span>r<span style="color:#800">ﬆ</span></sc>
+- <sc><span class="red">ﬁ</span>r<span class="red">ﬆ</span></sc>
 
 en: Here is a screenshot of what I see:
 fr: Voici une capture d'écran pour que vous voyez ce que je vois :
 
 blogimage("first_sc_screenshot.png", "Screenshot of first in small caps with and without ligatures.")
 
-en: The browser isn't able to understand that the ligature character "<span style="color:#800">ﬁ</span>" should render as <sc>fi</sc> when rendered in small caps. And one part of the problem is you should choose to display a character in small caps using %css.
-fr: Le navigateur est incapable de comprendre que le caractère de ligature "<span style="color:#800">ﬁ</span>" doit être rendu comme <sc>fi</sc> lorsqu'il est en petites capitales. 
+en: The browser isn't able to understand that the ligature character "<span class="red">ﬁ</span>" should render as <sc>fi</sc> when rendered in small caps. And one part of the problem is you should choose to display a character in small caps using %css.
+fr: Le navigateur est incapable de comprendre que le caractère de ligature "<span class="red">ﬁ</span>" doit être rendu comme <sc>fi</sc> lorsqu'il est en petites capitales. 
 fr: Et une part du problème est que l'on peut décider d'écrire en petite majuscule dans le %css.
 
 en: This way, how could you use a ligature Unicode character on a site on which you could change the %css?
@@ -97,8 +97,8 @@ fr: Si vous faites attention au détail, vous constaterez que le premier "first"
 en: %latex was intelligent enough to create himself the ligatures when needed.
 fr: %latex a été suffisamment intelligent pour créer les ligatures si nécessaire.
 
-en: The "<span style="color:#800">ﬆ</span>" ligature is rare and not rendered in %latex by default. But if you want you could also render rare ligature using %xelatex:
-fr: La ligature "<span style="color:#800">ﬆ</span>" est rare et n'est pas rendu par défaut par %latex. 
+en: The "<span class="red">ﬆ</span>" ligature is rare and not rendered in %latex by default. But if you want you could also render rare ligature using %xelatex:
+fr: La ligature "<span class="red">ﬆ</span>" est rare et n'est pas rendu par défaut par %latex. 
 fr: Si vous voulez voir des ligatures rares, vous pouvez utiliser %xelatex:
 
 blogimage("xelatex_ligatures.jpg","XeLaTeX ligatures")
