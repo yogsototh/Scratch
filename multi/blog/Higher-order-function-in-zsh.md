@@ -110,7 +110,7 @@ fr: - Le `:t` signfie "tail" ; si `toto=/path/to/file.ext` alors `${toto:t}=file
 en: After ⇒
 fr: Après
 
-<code class="zsh">
+<code class="bash">
 gif_to_png() { convert $1 ${1:r}.png && \rm -f $1 }
 
 handle_resources() { map gif_to_png $1/resources/*.gif(.N) }
