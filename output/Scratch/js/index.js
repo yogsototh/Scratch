@@ -78,27 +78,39 @@ function detectClient() {
 //     $('#blackpage').append('<div class="preintro"><div class="corps">'+msgintro+'</div></div>');
 // });
 
+var pref='/Scratch/assets/css';
+var styleindex=0;
+var styles=[ pref+'/scientific.css'
+		  , pref+'/modern.css'
+		  , pref+'/darkmodern.css'];
 
+function reloadStylesheets() {
+	var queryString = '?reload=' + new Date().getTime();
+	$('link[rel="stylesheet"]').each(function () {
+		this.href = this.href.replace(/\?.*|$/, queryString);
+	});
+}
+function switchCssTo(style) {
+	// try each style
+	styles.forEach(function(trystyle){
+		if ($('link[href="'+trystyle+'"]').length > 0) {
+			$('link[href="'+trystyle+'"]').attr('href',style);
+			styleindex = $.inArray(style,styles);
+			console.log('styleindex = ' + styleindex + ', style = ' + style);
+		}
+	});
+	// save the preference
+	$.cookie('css',style);
+}
 // Ability to switch css by clicking on #swtichcss
 function switchcss() {
-	var pref='/Scratch/assets/css';
-	var latexstyle=pref+'/main.css';
-	var modernstyle=pref+'/main2.css';
-
-	if ( $.cookie('css') == latexstyle ) {
-		$('link[href="'+modernstyle+'"]').attr('href',latexstyle);
-	}
-	if ( $.cookie('css') == modernstyle ) {
-		$('link[href="'+latexstyle+'"]').attr('href',modernstyle);
+	// If the user has saved a preference
+	// load its preferred style
+	if ( $.cookie('css') !== null ) {
+		setTimeout(function(){switchCssTo($.cookie('css'));}, 1000);
 	}
 	$('#switchcss').click(function(){
-			if ($('link[href="'+latexstyle+'"]').length > 0) {
-				$('link[href="'+latexstyle+'"]').attr('href',modernstyle);
-				$.cookie('css',modernstyle);
-			} else {
-				$('link[href="'+modernstyle+'"]').attr('href',latexstyle);
-				$.cookie('css',latexstyle);
-			}
+		switchCssTo(styles[ (styleindex+1) % styles.length ]);
 		});
 }
 
