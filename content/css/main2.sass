@@ -19,6 +19,20 @@ $blue   : #268bd2
 $cyan   : #2aa198
 $green  : #859900
 
+// Dark
+// $background: $base03
+// $altbackground: $base02
+// $front: $base1
+// $altfront: $base01
+// $lighter: $base0
+
+// Light
+$background: $base3
+$altbackground: $base2
+$front: $base01
+$altfront: $base1
+$lighter: $base00
+
 $unit: 20px
 $lineheight: $unit * 1.5
 $hmargin: 4*$unit
@@ -31,8 +45,8 @@ body
   font-family: 'Droid Sans', Helvetica, sans-serif !important
   font-size: $unit
   line-height: $lineheight
-  background: $base02
-  color: $base1
+  background: $altbackground
+  color: $front
 
 a
   text-decoration: none
@@ -54,16 +68,16 @@ a:hover
   margin-bottom: 0
   position: fixed
   text-align: center
-  background: $base02
+  background: $altbackground
 
 #content
-  background: $base03
-  color: $base1
+  background: $background
+  color: $front
   width: 37*$unit + 2*$hmargin
   margin: 0 auto
   padding: 0
   h1,h2,h3,h4,h5,h6
-    color: $base0
+    color: $lighter
     padding: 0 $hmargin
     margin: $unit 0
   table
@@ -71,9 +85,9 @@ a:hover
     padding: 0 $hmargin
     tr
       &:nth-child(odd)
-        background-color: $base02
+        background-color: $altbackground
       td
-        border: solid 1px $base01
+        border: solid 1px $altfront
         padding: 0.25*$unit
         margin: 0
   figure
@@ -92,14 +106,14 @@ a:hover
     border-bottom: medium solid
     margin: $unit auto
   pre
-    background: $base03
+    background: $background
     font-family: monaco, monospace
     font-size: 0.8*$unit
     overflow: auto
     padding: $unit
     line-height: 1.4 * 0.8 * $unit
-    border-top: solid 1px $base01
-    border-bottom: solid 1px $base01
+    border-top: solid 1px $altfront
+    border-bottom: solid 1px $altfront
   pre code
     background: none
   ul
@@ -116,7 +130,7 @@ a:hover
     margin: $unit $hmargin
   .toc, #markdown-toc
     a
-      color: $base01
+      color: $altfront
     ol li, ul li
       margin: ($unit/2) 0
   ol li ul, ol li ol, ul li ol, ul li ul
@@ -144,13 +158,13 @@ a:hover
 #choix
   text-align: center
   font-size: (3*$unit / 4)
-  background: $base03
+  background: $background
   padding: 0 $unit
   font-weight: bold
   .return
     float: right
 .cut
-  color: $base1
+  color: $front
   font-size: (2*$unit/3)
   opacity: .5
   display: block
@@ -160,21 +174,21 @@ a:hover
   &:hover
     opacity: 1
 hr
-  color: $base01
-  border-color: $base01
+  color: $altfront
+  border-color: $altfront
   margin: 0 $hmargin
 p code, li code
   padding: 1px 2px
-  background: $base02
-  border: solid 1px $base01
+  background: $altbackground
+  border: solid 1px $altfront
 #content
   blockquote
-    border: solid 1px $base01
-    background: $base02
+    border: solid 1px $altfront
+    background: $altbackground
     p
       padding: 0 $unit
     code
-      background: $base02
+      background: $altbackground
       border: solid 1px rgba(0,0,0,0.1)
     pre code
       background: none
@@ -199,7 +213,7 @@ p code, li code
 .intro
   font-size: 14px
   line-height: 21px
-  color: $base0
+  color: $lighter
 .left
   float: left
 .right
@@ -323,36 +337,35 @@ pre .list
 
 // Presentation
 #content
+  section.slide.last
+    border-bottom: ($unit/5) solid $altfront
   section.slide
-    border-top: 1px solid $base01
-    border-bottom: 1px solid $base01
+    border-top: ($unit/5) solid $altfront
     & > *
       padding: 0 $unit
-    margin-bottom: 2*$unit
-    background-color: $base03
-    border-radius: 3px
-    color: $base1
+    margin: 0
+    background-color: $background
+    color: $front
     padding: $unit 0
-    box-shadow: 0 0 $unit #000 inset
     a
       text-decoration: none
-      color: $base00
+      color: $lighter
     a:visited
-      color: $base01
+      color: $altfront
     pre
       padding: $unit
       margin: $unit
     pre,code
-      background-color: $base02
-      border: 1px solid $base01
+      background-color: $altbackground
+      border: 1px solid $altfront
       code
         border: none
         background: none
     blockquote
-      background-color: $base02
-      border-color: $base01
+      background-color: $altbackground
+      border-color: $altfront
     h1,h2,h3,h4,h5,h6
-      color: $base0
+      color: $lighter
     ul li
       margin: .5em 1.5em
     img
@@ -360,8 +373,8 @@ pre .list
       max-width: 80%
       margin: $unit auto
       padding: .5*$unit
-      background-color: $base02
-      border: solid 1px $base01
+      background-color: $altbackground
+      border: solid 1px $altfront
     img.right, img.left, figure.right, figure.left
       max-width: 30%
       margin: .5*$unit
@@ -378,3 +391,7 @@ pre .list
   margin-bottom: -2*$unit
 .footnotes
   font-size: 0.8*$unit
+#next_before_articles
+  font-size: (14 * $unit / 20)
+  padding: 0 $hmargin
+  margin: $unit 0
