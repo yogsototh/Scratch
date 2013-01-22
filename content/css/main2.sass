@@ -57,6 +57,8 @@ a:hover
   background: $base02
 
 #content
+  background: $base03
+  color: $base1
   width: 37*$unit + 2*$hmargin
   margin: 0 auto
   padding: 0
@@ -64,6 +66,16 @@ a:hover
     color: $base0
     padding: 0 $hmargin
     margin: $unit 0
+  table
+    margin: $unit 0
+    padding: 0 $hmargin
+    tr
+      &:nth-child(odd)
+        background-color: $base02
+      td
+        border: solid 1px $base01
+        padding: 0.25*$unit
+        margin: 0
   figure
     margin: 0
     padding: 0
@@ -76,16 +88,16 @@ a:hover
   img
     width: 100%
   pre
-    background: $base3
+    background: $base03
     font-family: monaco, monospace
     font-size: 0.8*$unit
     overflow: auto
     padding: $unit
     line-height: 1.4 * 0.8 * $unit
-    border-top: solid 1px $base2
-    border-bottom: solid 1px $base2
+    border-top: solid 1px $base01
+    border-bottom: solid 1px $base01
   pre code
-    background: $base3
+    background: $base03
   ul
     list-style: none
   ul li:before
@@ -139,19 +151,22 @@ a:hover
 .cut:hover
   opacity: 1
 hr
-  color: $base2
-  border-color: $base2
+  color: $base01
+  border-color: $base01
   margin: 0 $hmargin
 p code, li code
   padding: 1px 2px
-  background: $base3
-  border: solid 1px $base2
-blockquote
-  border: solid 1px $base2
-  background: $base3
-  code
-    background: $base2
-    border: solid 1px rgba(0,0,0,0.1)
+  background: $base02
+  border: solid 1px $base01
+#content
+  blockquote
+    border: solid 1px $base01
+    background: $base02
+    p
+      padding: 0 $unit
+    code
+      background: $base02
+      border: solid 1px rgba(0,0,0,0.1)
 
 // Specific elements
 #social,#choixrss,#comment
@@ -173,7 +188,7 @@ blockquote
 .intro
   font-size: 14px
   line-height: 21px
-  color: $base02
+  color: $base0
 .left
   float: left
 .right
@@ -181,6 +196,10 @@ blockquote
 #content
   img.right, img.left
     max-width: 30%
+  img.left
+    margin: 0 (0.5*$hmargin) 0 $hmargin
+  img.right
+    margin: 0 $hmargin 0 (0.5*$hmargin)
 .flush
   clear: both
 
@@ -291,6 +310,8 @@ blockquote
 // Presentation
 #content
   section.slide
+    border-top: 1px solid $base01
+    border-bottom: 1px solid $base01
     & > *
       padding: 0 $unit
     margin-bottom: 2*$unit
@@ -337,3 +358,7 @@ blockquote
       margin: 0 auto
       img
         max-width: 80%
+.codefile
+  font-size: 0.7*$unit
+  text-align: right
+  margin-bottom: -2*$unit
