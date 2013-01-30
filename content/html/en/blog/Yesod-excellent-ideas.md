@@ -20,8 +20,7 @@ begindiv(intro)
 %tldr
 
 
-[Yesod](http://www.yesodweb.com) is a web framework which recently reached the maturity for which you should consider to use it.
-Before telling you why you should learn Haskell and use yesod, I will talk about ideas yesod introduced and I didn't saw in other frameworks before.
+[Yesod](http://www.yesodweb.com) is a framework which has recently matured to the point where you should consider using it. Before telling you why you should learn Haskell and use Yesod, I will illustrate the many features Yesod introduces which are missing in other frameworks.
 
 enddiv
 

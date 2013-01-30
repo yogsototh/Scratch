@@ -22,8 +22,7 @@ en: %tldr
 
 fr: %tlal
 
-en: [Yesod](http://www.yesodweb.com) is a web framework which recently reached the maturity for which you should consider to use it.
-en: Before telling you why you should learn Haskell and use yesod, I will talk about ideas yesod introduced and I didn't saw in other frameworks before.
+en: [Yesod](http://www.yesodweb.com) is a framework which has recently matured to the point where you should consider using it. Before telling you why you should learn Haskell and use Yesod, I will illustrate the many features Yesod introduces which are missing in other frameworks.
 fr: Cela fait un moment que je suis la progression du [framework yesod](http://www.yesodweb.com). 
 fr: À mon humble avis on peut commencer à l'utiliser pour des applications sérieuses (comprendre en prod).
 fr: Avant de vous dire pourquoi vous devriez aussi le considérer, je préfère vous parler de bonnes idées (parmi d'autres) introduites par yesod que je n'avais jamais vu ailleurs.
