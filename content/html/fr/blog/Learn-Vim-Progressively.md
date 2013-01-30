@@ -261,7 +261,7 @@ blogimage("textobjects.png","Text objects selection")
 Les blocs rectangulaires sont très commodes pour commenter plusieurs lignes de codes.
 Typiquement: `^<C-V><C-d>I-- [ESC]`
 
-- `^` → aller en début de ligne
+- `^` → aller au premier caractère de la ligne
 - `<C-V>` → Commencer la sélection du bloc
 - `<C-d>` → se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
 - `I-- [ESC]` → écrit `-- ` pour commenter le reste de la ligne.
