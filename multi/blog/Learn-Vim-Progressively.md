@@ -428,7 +428,7 @@ fr: ### Sélection de blocs rectangulaires : `<C-V>`.
 en: Rectangular blocks are very useful for commenting many lines of code.
 en: Typically: `0<C-v><C-d>I-- [ESC]`
 en: 
-en: - `^` → go to start of the line
+en: - `^` → go to the first non-blank character of the line
 en: - `<C-v>` → Start block selection
 en: - `<C-d>` → move down (could also be `jjj` or `%`, etc...)
 en: - `I-- [ESC]` → write `-- ` to comment each line
@@ -436,7 +436,7 @@ en: - `I-- [ESC]` → write `-- ` to comment each line
 fr: Les blocs rectangulaires sont très commodes pour commenter plusieurs lignes de codes.
 fr: Typiquement: `^<C-V><C-d>I-- [ESC]`
 fr: 
-fr: - `^` → aller en début de ligne
+fr: - `^` → aller au premier caractère de la ligne
 fr: - `<C-V>` → Commencer la sélection du bloc
 fr: - `<C-d>` → se déplacer vers le bas (pourrait être `jjj` ou `%` etc...)
 fr: - `I-- [ESC]` → écrit `-- ` pour commenter le reste de la ligne.
