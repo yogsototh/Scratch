@@ -20,14 +20,14 @@ Here is one from many way to use [Git][git]. This method is sufficient to work o
 
 Work with [Git][git] immediately:
 
-+ Get modification done by others <span class="black">`git pull`</span>,
-+ See details of these modifications <span class="black">`git log`</span>,
++ Get modification done by others `git pull`,
++ See details of these modifications `git log`,
 + Many times:
   + *Make an atomic modification*
-  + Verify details of this modification: <span class="black">`git status`</span> and <span class="black">`git diff`</span>,
-  + Add some file to be versionned if necessary:<br/><span class="black">`git add [file]`</span>,
-  + Save you modifications <br/><span class="black">`git commit -a -m "message"`</span>,
-  + Send your modifications to others: <span class="black">`git push`</span> (redo a `git pull` if push return an error).
+  + Verify details of this modification: `git status` and `git diff`,
+  + Add some file to be versionned if necessary:<br/>`git add [file]`,
+  + Save you modifications <br/>`git commit -a -m "message"`,
+  + Send your modifications to others: `git push` (redo a `git pull` if push return an error).
 
 With these few commands you can use [Git][git]. Even if it is sufficient, you need to know one more thing before really begin ; How to manage *conflicts*.
 
