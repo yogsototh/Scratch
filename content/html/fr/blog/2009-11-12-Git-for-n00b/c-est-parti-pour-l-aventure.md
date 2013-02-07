@@ -66,7 +66,7 @@ $ git pull
 remote: Counting objects: 5, done.
 remote: Total 3 (delta 0), reused 0 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From /home/e640846/tmp/conflictTest
+From /home/yogsototh/tmp/conflictTest
    d3ea395..2dc7ffb  master     -> origin/master
 Auto-merging foo
 CONFLICT (content): Merge conflict in foo
